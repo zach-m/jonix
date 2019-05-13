@@ -33,9 +33,9 @@ import java.io.Serializable;
 /**
  * <h1>Work identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;WorkIdentifier&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 16</td></tr><tr><td>Reference name</td><td>&lt;WorkIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b201&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;WorkIDType&gt;1&lt;/WorkIDType&gt;
+ * tag</td><td>&lt;b201&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;WorkIDType&gt;11&lt;/WorkIDType&gt;
  * (ISTC)</td></tr></table>
  */
 public class WorkIDType implements OnixElement<WorkIdentifierTypes>, Serializable {
@@ -55,6 +55,9 @@ public class WorkIDType implements OnixElement<WorkIdentifierTypes>, Serializabl
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

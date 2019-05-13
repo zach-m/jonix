@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 24 (Extent unit code)
+ * marker interface to assist in IDE navigation to code-list 24 (Extent unit)
  */
 interface CodeList24 {
 }
@@ -37,10 +37,10 @@ interface CodeList24 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 24</b>
  * <p>
- * Description: Extent unit code
+ * Description: Extent unit
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist24">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist24">ONIX
  * Codelist 24 in Reference Guide</a>
  */
 public enum ExtentUnits implements OnixCodelist, CodeList24 {
@@ -66,6 +66,15 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
     Tracks("11", "Tracks"), //
 
     /**
+     * Of an audiobook on multiple Red Book audio CDs. Conventionally, each disc is 60-70 minutes of running time, and
+     * disc counts are misleading and inappropriate if the average disc duration is significantly more or less than this
+     * (for example if the discs are Yellow Book CDs containing mp3 files). Note that disc breaks are not necessarily
+     * aligned with structural breaks in the text (eg chapter breaks). For use in ONIX 3.0 only &lt;p&gt;NOTE:
+     * Introduced in Onix3
+     */
+    Discs("12", "Discs"), //
+
+    /**
      * Fill with leading zeroes if any elements are missing
      */
     Hours_HHH("14", "Hours HHH"), //
@@ -89,7 +98,7 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
     public final String code;
     public final String description;
 
-    private ExtentUnits(String code, String description) {
+    ExtentUnits(String code, String description) {
         this.code = code;
         this.description = description;
     }

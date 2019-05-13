@@ -32,9 +32,10 @@ import java.io.Serializable;
 /**
  * <h1>Percentage</h1><p>The percentage of the unit value of the product that is assignable to a designated product
  * classification. Optional and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two
- * or more product classifications. If omitted, the product classification code applies to 100% of the
- * product.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Real decimal number in the range 0 to
- * 100</td></tr><tr><td>Reference name</td><td>&lt;Percent&gt;</td></tr><tr><td>Short
+ * or more product classes within a particular scheme. If omitted, the product classification code applies to 100% of
+ * the product.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Real number between zero and 100
+ * (inclusive), with explicit decimal point when required, suggested maximum length 7
+ * characters</td></tr><tr><td>Reference name</td><td>&lt;Percent&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b337&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Percent&gt;66.67&lt;/Percent&gt;</td></tr></table>
  */
 public class Percent implements OnixElement<Double>, Serializable {
@@ -54,6 +55,9 @@ public class Percent implements OnixElement<Double>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +65,8 @@ public class Percent implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Real decimal number in the range 0 to 100<p> (type: dt.PercentDecimal)
+     * Raw Format: Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested
+     * maximum length 7 characters<p> (type: dt.PercentDecimal)
      */
     public Double value;
 

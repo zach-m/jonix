@@ -36,19 +36,22 @@ interface CodeList100 {
  * <p>
  * Description: Discount code type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist100">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist100">ONIX
  * Codelist 100 in Reference Guide</a>
  */
 public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
     /**
-     * UK publisher's or distributor's discount group code in a format specified by BIC to ensure uniqueness
+     * UK publisher's or distributor's discount group code in a format specified by BIC to ensure uniqueness (a
+     * five-letter prefix allocated by BIC, plus one to three alphanumeric characters - normally digits - chosen by the
+     * supplier)
      */
     BIC_discount_group_code("01", "BIC discount group code"), //
 
     /**
-     * A publisher's or supplier's own code which identifies a trade discount category, the actual discount being set by
-     * trading partner agreement (applies to goods supplied on standard trade discounting terms)
+     * A publisher's or supplier's own code which identifies a trade discount category, as specified in
+     * &lt;DiscountCodeTypeName&gt;. The actual discount for each code is set by trading partner agreement (applies to
+     * goods supplied on standard trade discounting terms)
      */
     Proprietary_discount_code("02", "Proprietary discount code"), //
 
@@ -63,8 +66,9 @@ public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
     German_terms_code("04", "German terms code"), //
 
     /**
-     * A publisher's or supplier's own code which identifies a commission rate category, the actual commission rate
-     * being set by trading partner agreement (applies to goods supplied on agency terms)
+     * A publisher's or supplier's own code which identifies a commission rate category, as specified in
+     * &lt;DiscountCodeTypeName&gt;. The actual commission rate for each code is set by trading partner agreement
+     * (applies to goods supplied on agency terms)
      */
     Proprietary_commission_code("05", "Proprietary commission code"), //
 
@@ -78,7 +82,7 @@ public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
     public final String code;
     public final String description;
 
-    private DiscountCodeTypes(String code, String description) {
+    DiscountCodeTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

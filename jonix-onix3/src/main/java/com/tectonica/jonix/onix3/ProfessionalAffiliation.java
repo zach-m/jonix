@@ -32,8 +32,8 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Professional affiliation composite</h1><p>A repeatable group of data elements which together identify a
- * contributor’s professional position and/or affiliation, allowing multiple positions and affiliations to be
+ * <h1>Professional affiliation composite</h1><p>An optional group of data elements which together identify a subject’s
+ * professional position and/or affiliation, repeatable to allow multiple positions and affiliations to be
  * specified.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProfessionalAffiliation&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;professionalaffiliation&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
@@ -54,6 +54,9 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

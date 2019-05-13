@@ -39,8 +39,8 @@ interface CodeList93 {
  * <p>
  * Description: Supplier role
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist93">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist93">ONIX
  * Codelist 93 in Reference Guide</a>
  */
 public enum SupplierRoles implements OnixCodelist, CodeList93 {
@@ -100,12 +100,32 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
     /**
      * Use only where exclusive/non-exclusive status is not known. Prefer 10 or 11 as appropriate, where possible
      */
-    Distributor_to_end_customers("12", "Distributor to end-customers");
+    Distributor_to_end_customers("12", "Distributor to end-customers"), //
+
+    /**
+     * Intermediary as exclusive distributor to retailers and direct to consumers and/or institutional customers. For
+     * use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Exclusive_distributor_to_retailers_and_end_customers("13",
+        "Exclusive distributor to retailers and end-customers"), //
+
+    /**
+     * Intermediary as non-exclusive distributor to retailers and direct to consumers and/or institutional customers.
+     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Non_exclusive_distributor_to_retailers_and_end_customers("14",
+        "Non-exclusive distributor to retailers and end-customers"), //
+
+    /**
+     * Use only where exclusive/non-exclusive status is not known. Prefer codes 13 or 14 as appropriate whenever
+     * possible. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Distributor_to_retailers_and_end_customers("15", "Distributor to retailers and end-customers");
 
     public final String code;
     public final String description;
 
-    private SupplierRoles(String code, String description) {
+    SupplierRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -39,8 +39,8 @@ interface CodeList203 {
  * <p>
  * Description: ONIX Adult Audience rating
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist203">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist203">ONIX
  * Codelist 203 in Reference Guide</a>
  */
 public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
@@ -77,15 +77,15 @@ public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
     Content_warning_language("06", "Content warning (language)"), //
 
     /**
-     * The publisher warns the product includes content involving intolerance of particular groups (eg religious,
-     * ethnic, racial, social)
+     * The publisher warns the product includes content involving intolerance or abuse of particular groups (eg
+     * religious, ethnic, racial, social)
      */
     Content_warning_intolerance("07", "Content warning (intolerance)");
 
     public final String code;
     public final String description;
 
-    private OnixAdultAudienceRatings(String code, String description) {
+    OnixAdultAudienceRatings(String code, String description) {
         this.code = code;
         this.description = description;
     }

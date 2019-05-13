@@ -51,6 +51,9 @@ public class PrizeYear implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

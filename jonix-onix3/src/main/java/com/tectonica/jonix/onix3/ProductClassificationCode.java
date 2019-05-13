@@ -54,6 +54,9 @@ public class ProductClassificationCode implements OnixElement<String>, Serializa
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

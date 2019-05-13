@@ -31,12 +31,12 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Territory composite</h1><p>A group of data elements which together identify a territory in which the price stated
- * in an occurrence of the &lt;Price&gt; composite is applicable. Optional and non-repeating.</p><p><strong>Additional
- * guidance on the description of price territories in ONIX 3.0 will be found in a separate document <cite>ONIX for
- * Books Product Information Message: How to Specify Markets and Suppliers in ONIX 3</cite>.</strong></p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Territory&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;territory&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <h1>Territory composite</h1><p>A group of data elements which together identify a territory within which the price
+ * stated in an occurrence of the &lt;Price&gt; composite is applicable. Optional and
+ * non-repeating.</p><p><strong>Additional guidance on the description of price territories in ONIX&nbsp;3.0 will be
+ * found in a separate document <cite>ONIX for Books Product Information Message: How to Specify Markets and Suppliers
+ * in ONIX 3</cite>.</strong></p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;Territory&gt;</td></tr><tr><td>Short tag</td><td>&lt;territory&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
 public class Territory implements OnixDataComposite<JonixTerritory>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,6 +55,9 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -99,13 +102,13 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
                 case RegionsIncluded.shortname:
                     regionsIncluded = new RegionsIncluded(e);
                     break;
-                case CountriesExcluded.refname:
-                case CountriesExcluded.shortname:
-                    countriesExcluded = new CountriesExcluded(e);
-                    break;
                 case RegionsExcluded.refname:
                 case RegionsExcluded.shortname:
                     regionsExcluded = new RegionsExcluded(e);
+                    break;
+                case CountriesExcluded.refname:
+                case CountriesExcluded.shortname:
+                    countriesExcluded = new CountriesExcluded(e);
                     break;
                 default:
                     break;
@@ -142,16 +145,6 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
         return regionsIncluded;
     }
 
-    private CountriesExcluded countriesExcluded = CountriesExcluded.EMPTY;
-
-    /**
-     * (this field is optional)
-     */
-    public CountriesExcluded countriesExcluded() {
-        _initialize();
-        return countriesExcluded;
-    }
-
     private RegionsExcluded regionsExcluded = RegionsExcluded.EMPTY;
 
     /**
@@ -162,14 +155,24 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
         return regionsExcluded;
     }
 
+    private CountriesExcluded countriesExcluded = CountriesExcluded.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public CountriesExcluded countriesExcluded() {
+        _initialize();
+        return countriesExcluded;
+    }
+
     @Override
     public JonixTerritory asStruct() {
         _initialize();
         JonixTerritory struct = new JonixTerritory();
         struct.countriesIncluded = countriesIncluded.value;
         struct.regionsIncluded = regionsIncluded.value;
-        struct.countriesExcluded = countriesExcluded.value;
         struct.regionsExcluded = regionsExcluded.value;
+        struct.countriesExcluded = countriesExcluded.value;
         return struct;
     }
 }

@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.EditionTypes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -39,7 +39,8 @@ import java.io.Serializable;
  * the product has characteristics of two or more types (<em>eg</em> revised and annotated).</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three upper-case letters</td></tr><tr><td>Codelist</td><td>List
  * 21</td></tr><tr><td>Reference name</td><td>&lt;EditionTypeCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b056&gt;</td></tr><tr><td>Example</td><td>&lt;EditionTypeCode&gt;ILL&lt;/EditionTypeCode&gt;&#160;&#160;&#160;&#160;Illustrated</td></tr></table>
+ * tag</td><td>&lt;b056&gt;</td></tr><tr><td>Example</td><td>&lt;EditionTypeCode&gt;ILL&lt;/EditionTypeCode&gt;
+ * Illustrated</td></tr></table>
  */
 public class EditionTypeCode implements OnixElement<EditionTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,7 +56,7 @@ public class EditionTypeCode implements OnixElement<EditionTypes>, Serializable 
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -97,7 +98,7 @@ public class EditionTypeCode implements OnixElement<EditionTypes>, Serializable 
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -41,7 +41,7 @@ import java.io.Serializable;
  * specified.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
  * digits.</td></tr><tr><td>Codelist</td><td>List 31 The only value which is valid in this element is 04
  * (&#8220;To&#8221;)</td></tr><tr><td>Reference name</td><td>&lt;AudienceRangePrecision&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b075&gt;</td></tr><tr><td>Example</td><td>&lt;b075&gt;04&lt;/b075&gt;&#160;&#160;&#160;&#160;To</td></tr></table>
+ * tag</td><td>&lt;b075&gt;</td></tr><tr><td>Example</td><td>&lt;b075&gt;04&lt;/b075&gt; To</td></tr></table>
  */
 public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisions>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -57,7 +57,7 @@ public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisio
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -99,7 +99,7 @@ public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisio
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

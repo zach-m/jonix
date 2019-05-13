@@ -33,8 +33,8 @@ import java.io.Serializable;
  * <h1>Amount of price taxable</h1><p>The amount of the unit price of the product, excluding tax, which is taxable at
  * the rate specified in an occurrence of the &lt;Tax&gt; composite. Optional and non-repeating; but required if tax is
  * charged on part of the price. Omission of this element implies that tax is charged on the full amount of the
- * price.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length real number, with explicit decimal
- * point when required, suggested maximum length 12 characters</td></tr><tr><td>Reference
+ * price.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit decimal point
+ * when required, suggested maximum length 12 characters</td></tr><tr><td>Reference
  * name</td><td>&lt;TaxableAmount&gt;</td></tr><tr><td>Short tag</td><td>&lt;x473&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x473&gt;10.64&lt;/x473&gt;</td></tr></table>
  */
 public class TaxableAmount implements OnixElement<Double>, Serializable {
@@ -54,6 +54,9 @@ public class TaxableAmount implements OnixElement<Double>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +64,7 @@ public class TaxableAmount implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+     * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 12
      * characters<p> (type: dt.StrictPositiveDecimal)
      */
     public Double value;

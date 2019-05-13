@@ -32,9 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>License expression link</h1><p>The URI for the license expression. Mandatory in each instance of the
  * &lt;EpubLicenseExpression&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 300
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 300
  * characters</td></tr><tr><td>Reference name</td><td>&lt;EpubLicenseExpressionLink&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x510&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;EpubLicenseExpressionLink&gt;http://creativecommons.org/&#8203;licenses/&#8203;by/&#8203;3.0/&#8203;deed.en_GB&lt;/EpubLicenseExpressionLink&gt;</td></tr></table>
+ * tag</td><td>&lt;x510&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;EpubLicenseExpressionLink&gt;http://creativecommons.org/licenses/by/3.0/deed.en_GB&lt;/EpubLicenseExpressionLink&gt;</td></tr></table>
  */
 public class EpubLicenseExpressionLink implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,6 +53,9 @@ public class EpubLicenseExpressionLink implements OnixElement<String>, Serializa
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,7 @@ public class EpubLicenseExpressionLink implements OnixElement<String>, Serializa
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 300 characters<p> (type: dt.NonEmptyURI)
+     * Raw Format: Variable length text, suggested maximum length 300 characters<p> (type: dt.NonEmptyURI)
      */
     public String value;
 

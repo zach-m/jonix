@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -39,10 +39,10 @@ import java.io.Serializable;
  * &lt;RecordSourceIdentifier&gt; element is taken. Optional and non-repeating, but &lt;RecordSourceIdentifier&gt; must
  * also be present if this field is present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * two numeric digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference
- * name</td><td>&lt;RecordSourceIdentifierType&gt;</td></tr><tr><td>Short tag</td><td>&lt;a195&gt;</td></tr><tr><td>Example</td><td>&lt;a195&gt;03&lt;/a195&gt;&#160;&#160;&#160;&#160;Deutsche
- * Bibliothek publisher identifier</td></tr></table>
+ * name</td><td>&lt;RecordSourceIdentifierType&gt;</td></tr><tr><td>Short tag</td><td>&lt;a195&gt;</td></tr><tr><td>Example</td><td>&lt;a195&gt;03&lt;/a195&gt;
+ * Deutsche Bibliothek publisher identifier</td></tr></table>
  */
-public class RecordSourceIdentifierType implements OnixElement<NameCodeTypes>, Serializable {
+public class RecordSourceIdentifierType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "RecordSourceIdentifierType";
@@ -56,7 +56,7 @@ public class RecordSourceIdentifierType implements OnixElement<NameCodeTypes>, S
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -73,13 +73,13 @@ public class RecordSourceIdentifierType implements OnixElement<NameCodeTypes>, S
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public NameCodeTypes value;
+    public NameIdentifierTypes value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public NameCodeTypes _value() {
+    public NameIdentifierTypes _value() {
         return value;
     }
 
@@ -98,13 +98,13 @@ public class RecordSourceIdentifierType implements OnixElement<NameCodeTypes>, S
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = NameCodeTypes.byCode(JPU.getContentAsString(element));
+        value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
     @Override

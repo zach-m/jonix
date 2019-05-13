@@ -54,6 +54,9 @@ public class TitleType implements OnixElement<TitleTypes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

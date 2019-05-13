@@ -34,8 +34,8 @@ import java.util.List;
 
 /**
  * <h1>Sales restriction composite</h1><p>A group of data elements which together identify a non-territorial sales
- * restriction which applies within a geographical market. Optional and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesRestriction&gt;</td></tr><tr><td>Short
+ * restriction which applies within a geographical market. Optional, and repeatable if more than a single restriction
+ * applies.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesRestriction&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;salesrestriction&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class SalesRestriction implements OnixSuperComposite, Serializable {
@@ -55,6 +55,9 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

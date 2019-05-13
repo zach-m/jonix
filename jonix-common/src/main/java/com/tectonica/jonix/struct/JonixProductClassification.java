@@ -38,7 +38,8 @@ public class JonixProductClassification implements JonixKeyedStruct<ProductClass
     public ProductClassificationTypes productClassificationType;
 
     /**
-     * Raw Format: Real decimal number in the range 0 to 100 <p> (type: dt.PercentDecimal)
+     * Raw Format: Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested
+     * maximum length 7 characters <p> (type: dt.PercentDecimal)
      */
     public Double percent;
 

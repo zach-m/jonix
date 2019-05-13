@@ -39,8 +39,8 @@ interface CodeList59 {
  * <p>
  * Description: Price type qualifier
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist59">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist59">ONIX
  * Codelist 59 in Reference Guide</a>
  */
 public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
@@ -110,48 +110,42 @@ public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
     Linked_price("09", "Linked price"), //
 
     /**
-     * Price for sale only to libraries (including public, school and academic libraries) &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * Price for sale only to libraries (including public, school and academic libraries)
      */
     Library_price("10", "Library price"), //
 
     /**
      * Price for sale only to educational institutions (including school and academic libraries), educational buying
-     * consortia, government and local government bodies purchasing for use in education &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * consortia, government and local government bodies purchasing for use in education
      */
     Education_price("11", "Education price"), //
 
     /**
-     * Price for sale to corporate customers only &lt;p&gt;NOTE: Introduced in Onix3
+     * Price for sale to corporate customers only
      */
     Corporate_price("12", "Corporate price"), //
 
     /**
      * Price for sale to organisations or services offering consumers subscription access to a library of books
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Subscription_service_price("13", "Subscription service price"), //
 
     /**
-     * Price for primary and secondary education &lt;p&gt;NOTE: Introduced in Onix3
+     * Price for primary and secondary education
      */
     School_library_price("14", "School library price"), //
 
     /**
-     * Price for higher education and scholarly institutions &lt;p&gt;NOTE: Introduced in Onix3
+     * Price for higher education and scholarly institutions
      */
     Academic_library_price("15", "Academic library price"), //
 
-    /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
-     */
     Public_library_price("16", "Public library price");
 
     public final String code;
     public final String description;
 
-    private PriceTypeQualifiers(String code, String description) {
+    PriceTypeQualifiers(String code, String description) {
         this.code = code;
         this.description = description;
     }

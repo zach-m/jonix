@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Edition type code</h1><p>An ONIX code, indicating the type of a version or edition. Optional, and repeatable if
  * the product has characteristics of two or more types (<i>eg</i> ‘revised’ and ‘annotated’).</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three upper-case letters</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, three upper-case letters</td></tr><tr><td>Codelist</td><td>List
  * 21</td></tr><tr><td>Reference name</td><td>&lt;EditionType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x419&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;EditionType&gt;ILL&lt;/EditionType&gt;
  * (Illustrated edition)</td></tr></table>
@@ -55,6 +55,9 @@ public class EditionType implements OnixElement<EditionTypes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

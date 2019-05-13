@@ -39,8 +39,8 @@ interface CodeList68 {
  * <p>
  * Description: Market publishing status
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist68">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist68">ONIX
  * Codelist 68 in Reference Guide</a>
  */
 public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
@@ -51,18 +51,19 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
     Unspecified("00", "Unspecified"), //
 
     /**
-     * The product was announced for publication in this market, and subsequently abandoned
+     * The product was announced for publication in this market, and subsequently abandoned. A market publication date
+     * must not be sent
      */
     Cancelled("01", "Cancelled"), //
 
     /**
-     * Not yet published in this market, should be accompanied by expected local publication date.
+     * Not yet published in this market, should be accompanied by expected local publication date
      */
     Forthcoming("02", "Forthcoming"), //
 
     /**
      * The product was announced for publication in this market, and subsequently postponed with no expected local
-     * publication date
+     * publication date. A market publication date must not be sent
      */
     Postponed_indefinitely("03", "Postponed indefinitely"), //
 
@@ -73,29 +74,32 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
     Active("04", "Active"), //
 
     /**
-     * Responsibility for the product in this market has been transferred elsewhere
+     * Responsibility for the product in this market has been transferred elsewhere (with details of acquiring publisher
+     * representative in this market if possible in PR.25 (ONIX 2.1) OR P.25 (ONIX 3.0))
      */
     No_longer_our_product("05", "No longer our product"), //
 
     /**
-     * The product was active, but is now inactive in the sense that (a) no further stock is expected to be made
-     * available in this market, though stock may still be available elsewhere in the supply chain, and (b) there are no
-     * current plans to bring it back into stock
+     * The product was active in this market, but is now inactive in the sense that (a) the publisher representative
+     * (local publisher or sales agent) cannot fulfill orders for it, though stock may still be available elsewhere in
+     * the supply chain, and (b) there are no current plans to bring it back into stock in this market. Code 06 does not
+     * specifically imply that returns are or are not still accepted
      */
     Out_of_stock_indefinitely("06", "Out of stock indefinitely"), //
 
     /**
-     * The product was active, but is now permanently inactive in the sense that (a) no further stock is expected to be
-     * made available in this market, though stock may still be available elsewhere in the supply chain, and (b) the
-     * product will not be made available again under the same ISBN
+     * The product was active in this market, but is now permanently inactive in this market in the sense that (a) the
+     * publisher representative (local publisher or sales agent) will not accept orders for it, though stock may still
+     * be available elsewhere in the supply chain, and (b) the product will not be made available again in this market
+     * under the same ISBN. Code 07 normally implies that the publisher will not accept returns beyond a specified date
      */
     Out_of_print("07", "Out of print"), //
 
     /**
-     * The product was active, but is now permanently or indefinitely inactive in the sense that no further stock is
-     * expected to be made available in this market, though stock may still be available elsewhere in the supply chain.
-     * Code 08 covers both of codes 06 and 07, and may be used where the distinction between those values is either
-     * unnecessary or meaningless
+     * The product was active in this market, but is now permanently or indefinitely inactive in the sense that the
+     * publisher representative (local publisher or sales agent) will not accept orders for it, though stock may still
+     * be available elsewhere in the supply chain. Code 08 covers both of codes 06 and 07, and may be used where the
+     * distinction between those values is either unnecessary or meaningless
      */
     Inactive("08", "Inactive"), //
 
@@ -105,13 +109,14 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
     Unknown("09", "Unknown"), //
 
     /**
-     * The product is no longer available in this market from the local publisher, under the current ISBN, at the
-     * current price. It may be available to be traded through another channel, usually at a reduced price
+     * The product is no longer available in this market from the publisher representative (local publisher or sales
+     * agent), under the current ISBN, at the current price. It may be available to be traded through another channel,
+     * usually at a reduced price
      */
     Remaindered("10", "Remaindered"), //
 
     /**
-     * Withdrawn from sale in this market, typically for legal reasons
+     * Withdrawn from sale in this market, typically for legal reasons or to avoid giving offence
      */
     Withdrawn_from_sale("11", "Withdrawn from sale"), //
 
@@ -123,7 +128,8 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
 
     /**
      * The product is published in this market and active but, as a publishing decision, it is not sold separately -
-     * only in an assembly or as part of a package
+     * only in an assembly or as part of a package. Depending on product composition and pricing, it may be saleable
+     * separately at retail
      */
     Active_but_not_sold_separately("13", "Active, but not sold separately"), //
 
@@ -150,7 +156,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
     public final String code;
     public final String description;
 
-    private MarketPublishingStatuss(String code, String description) {
+    MarketPublishingStatuss(String code, String description) {
         this.code = code;
         this.description = description;
     }

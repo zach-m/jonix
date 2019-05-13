@@ -22,8 +22,8 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixHeader;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -60,7 +60,7 @@ public class Header implements OnixHeader, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -94,7 +94,7 @@ public class Header implements OnixHeader, Serializable {
         this.element = element;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -230,13 +230,13 @@ public class Header implements OnixHeader, Serializable {
         return fromSAN;
     }
 
-    private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameCodeTypes> senderIdentifiers =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes>
+        senderIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameCodeTypes> senderIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes> senderIdentifiers() {
         _initialize();
         return senderIdentifiers;
     }
@@ -291,13 +291,13 @@ public class Header implements OnixHeader, Serializable {
         return toSAN;
     }
 
-    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes>
+    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes>
         addresseeIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes> addresseeIdentifiers() {
         _initialize();
         return addresseeIdentifiers;
     }

@@ -34,7 +34,7 @@ import java.io.Serializable;
  * <h1>Product relation code</h1><p>An ONIX code which identifies the nature of the relationship between two products,
  * <i>eg</i> ‘replaced-by’. Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite, and repeatable where
  * the related product has multiple types of relationship to the product described.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 51</td></tr><tr><td>Reference name</td><td>&lt;ProductRelationCode&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x455&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td>&lt;x455&gt;06&lt;/x455&gt;
  * (Alternative format)</td></tr></table>
@@ -56,6 +56,9 @@ public class ProductRelationCode implements OnixElement<ProductRelations>, Seria
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

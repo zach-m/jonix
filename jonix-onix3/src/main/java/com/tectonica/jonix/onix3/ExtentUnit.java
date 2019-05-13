@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Extent unit</h1><p>An ONIX code indicating the unit used for the &lt;ExtentValue&gt; and the format in which the
  * value is presented. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 24</td></tr><tr><td>Reference name</td><td>&lt;ExtentUnit&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b220&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b220&gt;04&lt;/b220&gt;
  * (Hours as integer and decimals)</td></tr></table>
@@ -55,6 +55,9 @@ public class ExtentUnit implements OnixElement<ExtentUnits>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

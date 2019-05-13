@@ -38,7 +38,7 @@ public class JonixPriceCoded implements JonixKeyedStruct<PriceCodeTypes>, Serial
     public PriceCodeTypes priceCodeType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String priceCodeTypeName;
 

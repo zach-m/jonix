@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 226 (Record status &lt;p&gt;NOTE: Introduced in Onix3)
+ * marker interface to assist in IDE navigation to code-list 226 (Record status)
  */
 interface CodeList226 {
 }
@@ -34,10 +34,10 @@ interface CodeList226 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 226</b>
  * <p>
- * Description: Record status &lt;p&gt;NOTE: Introduced in Onix3
+ * Description: Record status
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist226">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist226">ONIX
  * Codelist 226 in Reference Guide</a>
  */
 public enum RecordStatuss implements OnixCodelist, CodeList226 {
@@ -79,7 +79,7 @@ public enum RecordStatuss implements OnixCodelist, CodeList226 {
     public final String code;
     public final String description;
 
-    private RecordStatuss(String code, String description) {
+    RecordStatuss(String code, String description) {
         this.code = code;
         this.description = description;
     }

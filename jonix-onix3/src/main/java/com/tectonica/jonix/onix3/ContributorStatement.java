@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
@@ -32,16 +32,16 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor statement</h1><p>Free text showing how the authorship should be described in an online display, when
- * a standard concatenation of individual contributor elements would not give a satisfactory presentation. Optional, and
- * repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a single
- * instance of &lt;ContributorStatement&gt;, but must be included in each instance if &lt;ContributorStatement&gt; is
- * repeated. When the &lt;ContributorStatement&gt; field is sent, the receiver should use it to replace all name detail
- * sent in the &lt;Contributor&gt; composite <em>for display purposes only</em>. It does not replace the
- * &lt;BiographicalNote&gt; element. The individual name detail must also be sent in the &lt;Contributor&gt; composite
- * for indexing and retrieval.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
- * suggested maximum length 1000 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX
- * text fields</td></tr><tr><td>Reference name</td><td>&lt;ContributorStatement&gt;</td></tr><tr><td>Short
+ * <h1>Contributor statement</h1><p>Free text showing how the authorship of a content item should be described in an
+ * online display, when a standard concatenation of individual contributor elements would not give a satisfactory
+ * presentation. Optional, and repeatable if parallel text is provided in multiple languages. The language attribute is
+ * optional for a single instance of &lt;ContributorStatement&gt;, but must be included in each instance if
+ * &lt;ContributorStatement&gt; is repeated. When the &lt;ContributorStatement&gt; field is sent, the receiver should
+ * use it to replace all name detail (though not the biographical, date or place details) sent in the
+ * &lt;Contributor&gt; composite for display purposes only. The individual name detail must also be sent in the
+ * &lt;Contributor&gt; composite for indexing and retrieval.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
+ * length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see Using XHTML, HTML or
+ * XML with ONIX text fields</td></tr><tr><td>Reference name</td><td>&lt;ContributorStatement&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b049&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
  * textformat</td></tr><tr><td>Example</td><td>&lt;b049&gt;Written and illustrated by Fred and Emily
  * Jackson&lt;/b049&gt;</td></tr></table>
@@ -63,9 +63,12 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TextFormats textformat;
 
@@ -74,7 +77,7 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
+     * Raw Format: Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
      * see Using XHTML, HTML or XML with ONIX text fields<p> (type: XHTML)
      */
     public String value;
@@ -103,7 +106,7 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
         value = JPU.getChildXHTML(element, true);

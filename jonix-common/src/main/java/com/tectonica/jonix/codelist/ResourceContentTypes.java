@@ -39,8 +39,8 @@ interface CodeList158 {
  * <p>
  * Description: Resource content type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist158">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist158">ONIX
  * Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -91,7 +91,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Contributor_event_schedule("14", "Contributor event schedule"), //
 
     /**
-     * For example: sample chapter text, page images, screenshots
+     * For example: a short excerpt, sample text or a complete sample chapter, page images, screenshots etc
      */
     Sample_content("15", "Sample content"), //
 
@@ -178,43 +178,64 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Index("32", "Index"), //
 
     /**
-     * Including associated student / learner resources &lt;p&gt;NOTE: Introduced in Onix3
+     * Including associated student / learner resources
      */
     Student_s_guide("33", "Student’s guide"), //
 
     /**
-     * For example a PDF or other digital representation of a publisher's 'new titles' or range catalogue &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * For example a PDF or other digital representation of a publisher's 'new titles' or range catalogue
      */
     Publisher_s_catalogue("34", "Publisher’s catalogue"), //
 
     /**
      * For example a banner ad for the product. Pixel dimensions should typically be included in
-     * &lt;ResourceVersionFeature&gt; &lt;p&gt;NOTE: Introduced in Onix3
+     * &lt;ResourceVersionFeature&gt;
      */
     Online_advertisement_panel("35", "Online advertisement panel"), //
 
     /**
-     * German 'B&#250;hnenbild' &lt;p&gt;NOTE: Introduced in Onix3
+     * German 'B&#250;hnenbild'
      */
     Online_advertisement_page("36", "Online advertisement page"), //
 
     /**
      * For example, posters, logos, banners, advertising templates for use in connection with a promotional event
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Promotional_event_material("37", "Promotional event material"), //
 
     /**
      * Availability of a digital review or digital proof copy, may be limited to authorised users or account holders
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Digital_review_copy("38", "Digital review copy"), //
 
     /**
-     * For example, video showing how to use the product &lt;p&gt;NOTE: Introduced in Onix3
+     * For example, video showing how to use the product
      */
     Instructional_material("39", "Instructional material"), //
+
+    /**
+     * null &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Errata("40", "Errata"), //
+
+    /**
+     * Introduction, preface or other preliminary material in a separate resource file &lt;p&gt;NOTE: Introduced in
+     * Onix3
+     */
+    Introduction("41", "Introduction"), //
+
+    /**
+     * Descriptive material in a separate resource file, not in the ONIX record. Equivalent of code 17 in List 153. Use
+     * the &lt;TextContent&gt; composite for collection descriptions carried in the ONIX record. Use &lt;Supporting
+     * Resource&gt; for material (which need not be solely only) offered as a separate file resource for reproduction as
+     * part of promotional material for the product and collection &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Collection_description("42", "Collection description"), //
+
+    /**
+     * Complete list of books by the author(s), supplied as a separate resource file &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Bibliography("43", "Bibliography"), //
 
     /**
      * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.
@@ -225,7 +246,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     public final String code;
     public final String description;
 
-    private ResourceContentTypes(String code, String description) {
+    ResourceContentTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

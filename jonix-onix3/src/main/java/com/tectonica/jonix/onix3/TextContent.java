@@ -56,6 +56,9 @@ public class TextContent implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -100,9 +103,17 @@ public class TextContent implements OnixSuperComposite, Serializable {
                 case ContentAudience.shortname:
                     contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
                     break;
+                case Territory.refname:
+                case Territory.shortname:
+                    territory = new Territory(e);
+                    break;
                 case Text.refname:
                 case Text.shortname:
                     texts = JPU.addToList(texts, new Text(e));
+                    break;
+                case ReviewRating.refname:
+                case ReviewRating.shortname:
+                    reviewRating = new ReviewRating(e);
                     break;
                 case TextAuthor.refname:
                 case TextAuthor.shortname:
@@ -155,6 +166,16 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
+    private Territory territory = Territory.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public Territory territory() {
+        _initialize();
+        return territory;
+    }
+
     private ListOfOnixElement<Text, String> texts = ListOfOnixElement.empty();
 
     /**
@@ -163,6 +184,16 @@ public class TextContent implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<Text, String> texts() {
         _initialize();
         return texts;
+    }
+
+    private ReviewRating reviewRating = ReviewRating.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public ReviewRating reviewRating() {
+        _initialize();
+        return reviewRating;
     }
 
     private ListOfOnixElement<TextAuthor, String> textAuthors = ListOfOnixElement.empty();

@@ -34,8 +34,8 @@ import java.io.Serializable;
  * ‘progressive’ discounts. Optional, but where used, must be preceded by a minimum qualifying order quantity (even if
  * that minimum is 1). For the special case where there is no maximum (<i>ie</i> in the repeat of the &lt;Discount&gt;
  * composite that specifies the highest progressive discount), use zero.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length decimal number, here necessarily an
- * integer</td></tr><tr><td>Reference name</td><td>&lt;ToQuantity&gt;</td></tr><tr><td>Short
+ * cellpadding='3'><tr><td>Format</td><td>Positive number, here necessarily an integer, or zero. Suggested maximum
+ * length 7 digits</td></tr><tr><td>Reference name</td><td>&lt;ToQuantity&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x514&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ToQuantity&gt;25&lt;/ToQuantity&gt;</td></tr></table>
  */
 public class ToQuantity implements OnixElement<Double>, Serializable {
@@ -55,6 +55,9 @@ public class ToQuantity implements OnixElement<Double>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +65,8 @@ public class ToQuantity implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length decimal number, here necessarily an integer<p> (type: dt.PositiveDecimal)
+     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits<p> (type:
+     * dt.PositiveDecimal)
      */
     public Double value;
 

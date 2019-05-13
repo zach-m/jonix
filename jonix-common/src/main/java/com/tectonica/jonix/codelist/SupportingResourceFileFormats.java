@@ -39,8 +39,8 @@ interface CodeList178 {
  * <p>
  * Description: Supporting resource file format
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist178">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist178">ONIX
  * Codelist 178 in Reference Guide</a>
  */
 public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
@@ -68,6 +68,11 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
      * Advanced Audio Coding format
      */
     AAC("A107", "AAC"), //
+
+    /**
+     * Vorbis audio format in the Ogg container
+     */
+    Ogg_Vorbis("A108", "Ogg/Vorbis"), //
 
     /**
      * Audio Interchange File format
@@ -120,7 +125,7 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     WebM("D109", "WebM"), //
 
     /**
-     * Portable Document File format
+     * Portable Document File (single page image)
      */
     PDF("D401", "PDF"), //
 
@@ -145,6 +150,26 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     TIFF("D504", "TIFF"), //
 
     /**
+     * Windows Bitmap format &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    BMP("D505", "BMP"), //
+
+    /**
+     * JPEG 2000, improved Joint Photographic Experts Group format &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    JP2("D506", "JP2"), //
+
+    /**
+     * Adobe Photoshop native file format, PSD or PSB &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    PSD("D507", "PSD"), //
+
+    /**
+     * Image as Postscript or Encapsulated Postscript file (.ps or .eps) &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    EPS("D508", "EPS"), //
+
+    /**
      * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
      * (IDPF) [File extension .epub]
      */
@@ -161,7 +186,7 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     PDF_("E107", "PDF"), //
 
     /**
-     * Plain text (either ASCII or UTF-8/16 Unicode) &lt;p&gt;NOTE: Introduced in Onix3
+     * Plain text (either ASCII or UTF-8/16 Unicode)
      */
     TXT("E112", "TXT"), //
 
@@ -194,7 +219,7 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     public final String code;
     public final String description;
 
-    private SupportingResourceFileFormats(String code, String description) {
+    SupportingResourceFileFormats(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -56,6 +56,9 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

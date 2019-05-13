@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
 
@@ -55,6 +55,9 @@ public class Addressee implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -122,13 +125,13 @@ public class Addressee implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes>
+    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes>
         addresseeIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes> addresseeIdentifiers() {
         _initialize();
         return addresseeIdentifiers;
     }

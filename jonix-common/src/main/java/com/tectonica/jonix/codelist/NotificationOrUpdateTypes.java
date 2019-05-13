@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 1 (Notification or update type code)
+ * marker interface to assist in IDE navigation to code-list 1 (Notification or update type)
  */
 interface CodeList1 {
 }
@@ -37,10 +37,10 @@ interface CodeList1 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 1</b>
  * <p>
- * Description: Notification or update type code
+ * Description: Notification or update type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist1">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist1">ONIX
  * Codelist 1 in Reference Guide</a>
  */
 public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
@@ -56,14 +56,17 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
     Advance_notification_confirmed("02", "Advance notification (confirmed)"), //
 
     /**
-     * Use for a complete record issued to confirm advance information at or just before actual publication date; or for
-     * a complete record issued at any later date
+     * Use for a complete record issued to confirm advance information at or just before actual publication date,
+     * usually from the book-in-hand, or for a complete record issued at any later date
      */
     Notification_confirmed_on_publication("03", "Notification confirmed on publication"), //
 
     /**
-     * In ONIX 3.0 only, use when sending a 'block update' record. In previous ONIX releases, ONIX updating has
-     * generally been by complete record replacement using code 03, and code 04 is not used
+     * In ONIX 3.0 only, use when sending a 'block update' record. A block update implies using the supplied block(s) to
+     * update the existing record for the product, replacing only the blocks included in the block update, and leaving
+     * other blocks unchanged - for example, replacing old information from Blocks 4 and 6 with the newly-received data
+     * while retailing information from Blocks 1-3 and 5 untouched. In previous ONIX releases, and for ONIX 3.0 using
+     * other notification types, updating is by replacing the complete record with the newly-received data
      */
     Update_partial("04", "Update (partial)"), //
 
@@ -71,7 +74,7 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
      * Use when sending an instruction to delete a record which was previously issued. Note that a Delete instruction
      * should NOT be used when a product is cancelled, put out of print, or otherwise withdrawn from sale: this should
      * be handled as a change of Publishing status, leaving the receiver to decide whether to retain or delete the
-     * record. A Delete instruction is only used when there is a particular reason to withdraw a record completely, eg
+     * record. A Delete instruction is used ONLY when there is a particular reason to withdraw a record completely, eg
      * because it was issued in error
      */
     Delete("05", "Delete"), //
@@ -87,36 +90,39 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
     Notice_of_acquisition("09", "Notice of acquisition"), //
 
     /**
-     * ONIX Books 2.1 supply update - &lt;SupplyDetail&gt; only (not used in ONIX 3.0)
+     * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded when testing is complete.
+     * Sender must ensure the &lt;RecordReference&gt; matches a previously-sent Test record
+     */
+    Test_update_Partial("88", "Test update (Partial)"), //
+
+    /**
+     * Record may be processed for test purposes, but data should be discarded when testing is complete. Sender must
+     * ensure the &lt;RecordReference&gt; does not match any previously-sent live product record
+     */
+    Test_record("89", "Test record"), //
+
+    /**
+     * ONIX Books 2.1 supply update - &lt;SupplyDetail&gt; only (not used in ONIX 3.0) &lt;p&gt;NOTE: Deprecated in
+     * Onix3
      */
     Update_SupplyDetail_only("12", "Update – SupplyDetail only"), //
 
     /**
-     * ONIX Books 2.1 supply update - &lt;MarketRepresentation&gt; only (not used in ONIX 3.0)
+     * ONIX Books 2.1 supply update - &lt;MarketRepresentation&gt; only (not used in ONIX 3.0) &lt;p&gt;NOTE: Deprecated
+     * in Onix3
      */
     Update_MarketRepresentation_only("13", "Update – MarketRepresentation only"), //
 
     /**
      * ONIX Books 2.1 supply update - both &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; (not used in ONIX 3.0)
+     * &lt;p&gt;NOTE: Deprecated in Onix3
      */
-    Update_SupplyDetail_and_MarketRepresentation("14", "Update – SupplyDetail and MarketRepresentation"), //
-
-    /**
-     * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded. Sender must ensure the
-     * &lt;RecordReference&gt; matches a previously-sent Test record
-     */
-    Test_update_Partial("88", "Test update (Partial)"), //
-
-    /**
-     * Record may be processed for test purposes, but data should be discarded. Sender must ensure the
-     * &lt;RecordReference&gt; does not match any previously-sent live product record
-     */
-    Test_record("89", "Test record");
+    Update_SupplyDetail_and_MarketRepresentation("14", "Update – SupplyDetail and MarketRepresentation");
 
     public final String code;
     public final String description;
 
-    private NotificationOrUpdateTypes(String code, String description) {
+    NotificationOrUpdateTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

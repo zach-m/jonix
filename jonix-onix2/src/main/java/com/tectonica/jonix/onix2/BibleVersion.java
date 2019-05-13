@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.BibleVersions;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -40,7 +40,8 @@ import java.io.Serializable;
  * and repeatable if a work includes text in two or more versions.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three letters</td></tr><tr><td>Codelist</td><td>List
  * 83</td></tr><tr><td>Reference name</td><td>&lt;BibleVersion&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b353&gt;</td></tr><tr><td>Example</td><td>&lt;BibleVersion&gt;JER&lt;/BibleVersion&gt;&#160;&#160;&#160;&#160;Jerusalem</td></tr></table>
+ * tag</td><td>&lt;b353&gt;</td></tr><tr><td>Example</td><td>&lt;BibleVersion&gt;JER&lt;/BibleVersion&gt;
+ * Jerusalem</td></tr></table>
  */
 public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -56,7 +57,7 @@ public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -98,7 +99,7 @@ public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

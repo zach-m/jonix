@@ -32,9 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>Quantity</h1><p>A minimum order quantity required to qualify for a specified discount. Optional, and
  * non-repeating. Where omitted, the discount applies regardless of the order quantity (<i>ie</i> the minimum qualifying
- * order quantity is 1).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length decimal number,
- * here necessarily an integer</td></tr><tr><td>Reference name</td><td>&lt;Quantity&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x320&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Quantity&gt;12&lt;/Quantity&gt;</td></tr></table>
+ * order quantity is 1).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive number, here necessarily
+ * an integer, or zero. Suggested maximum length 7 digits</td></tr><tr><td>Reference
+ * name</td><td>&lt;Quantity&gt;</td></tr><tr><td>Short tag</td><td>&lt;x320&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Quantity&gt;12&lt;/Quantity&gt;</td></tr></table>
  */
 public class Quantity implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,6 +53,9 @@ public class Quantity implements OnixElement<Double>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,8 @@ public class Quantity implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length decimal number, here necessarily an integer<p> (type: dt.PositiveDecimal)
+     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits<p> (type:
+     * dt.PositiveDecimal)
      */
     public Double value;
 

@@ -39,13 +39,13 @@ interface CodeList55 {
  * <p>
  * Description: Date format
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist55">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist55">ONIX
  * Codelist 55 in Reference Guide</a>
  */
 public enum DateFormats implements OnixCodelist, CodeList55 {
     /**
-     * Year month day (default)
+     * Common Era year, month and day (default for most dates)
      */
     YYYYMMDD("00", "YYYYMMDD"), //
 
@@ -70,7 +70,7 @@ public enum DateFormats implements OnixCodelist, CodeList55 {
     YYYYS("04", "YYYYS"), //
 
     /**
-     * Year
+     * Year (default for some dates)
      */
     YYYY("05", "YYYY"), //
 
@@ -105,7 +105,7 @@ public enum DateFormats implements OnixCodelist, CodeList55 {
     YYYYYYYY("11", "YYYYYYYY"), //
 
     /**
-     * For complex, approximate or uncertain dates
+     * For complex, approximate or uncertain dates, or dates BCE
      */
     Text_string("12", "Text string"), //
 
@@ -148,7 +148,7 @@ public enum DateFormats implements OnixCodelist, CodeList55 {
     public final String code;
     public final String description;
 
-    private DateFormats(String code, String description) {
+    DateFormats(String code, String description) {
         this.code = code;
         this.description = description;
     }

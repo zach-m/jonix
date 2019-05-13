@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Quantity unit code</h1><p>An ONIX code value specifying the unit in which a price condition quantity is stated.
  * Mandatory in each occurrence of the &lt;PriceConditionQuantity&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 169</td></tr><tr><td>Reference name</td><td>&lt;QuantityUnit&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x466&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;QuantityUnit&gt;09&lt;/QuantityUnit&gt;
  * (Months)</td></tr></table>
@@ -55,6 +55,9 @@ public class QuantityUnit implements OnixElement<QuantityUnits>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

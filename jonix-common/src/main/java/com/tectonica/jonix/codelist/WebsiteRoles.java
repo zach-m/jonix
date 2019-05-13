@@ -39,8 +39,8 @@ interface CodeList73 {
  * <p>
  * Description: Website role
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist73">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist73">ONIX
  * Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -106,8 +106,8 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * A webpage devoted to an individual work, and maintained by a publisher other than the publisher of the item
      * described in the ONIX record
      */
-    Other_publisher_s_website_relating_to_specified_work("11", "Other publisher’s website relating to specified work"),
-    //
+    Other_publisher_s_website_relating_to_specified_work("11",
+        "Other publisher’s website relating to specified work"), //
 
     /**
      * A webpage devoted to an individual work, and maintained by a third party (eg a fan site)
@@ -165,8 +165,8 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     Web_page_for_sample_content("28", "Web page for sample content"), //
 
     /**
-     * Use this value in the &lt;Website&gt; composite in &lt;SupplyDetail&gt; when sending a link to a webpage at which
-     * a digital product is available for download and/or online access
+     * Use this value in the &lt;Website&gt; composite (typically within &lt;Publisher&gt; or &lt;SupplyDetail&gt;) when
+     * sending a link to a webpage at which a digital product is available for download and/or online access
      */
     Web_page_for_full_content("29", "Web page for full content"), //
 
@@ -245,15 +245,22 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
         "Social networking URL for specific article, chapter or content item"), //
 
     /**
-     * For example, a service offering click-through licensing of extracts &lt;p&gt;NOTE: Introduced in Onix3
+     * For example, a service offering click-through licensing of extracts
      */
     Publisher_s_or_third_party_website_for_permissions_requests("45",
-        "Publisher’s or third party website for permissions requests");
+        "Publisher’s or third party website for permissions requests"), //
+
+    /**
+     * For example, a page providing details related to GDPR. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in
+     * Onix3
+     */
+    Publisher_s_or_third_party_website_for_privacy_statement("46",
+        "Publisher’s or third party website for privacy statement");
 
     public final String code;
     public final String description;
 
-    private WebsiteRoles(String code, String description) {
+    WebsiteRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }

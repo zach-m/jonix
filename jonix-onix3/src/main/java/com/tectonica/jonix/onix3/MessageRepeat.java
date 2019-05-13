@@ -32,8 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>Message repeat number</h1><p>A number which distinguishes any repeat transmissions of a message. If this element
  * is used, the original is numbered 1 and repeats are numbered 2, 3 <i>etc</i>. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length integer</td></tr><tr><td>Reference
- * name</td><td>&lt;MessageRepeat&gt;</td></tr><tr><td>Short tag</td><td>&lt;m181&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;m181&gt;2&lt;/m181&gt;</td></tr></table>
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 4
+ * digits</td></tr><tr><td>Reference name</td><td>&lt;MessageRepeat&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;m181&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;m181&gt;2&lt;/m181&gt;</td></tr></table>
  */
 public class MessageRepeat implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -52,6 +53,9 @@ public class MessageRepeat implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +63,7 @@ public class MessageRepeat implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length integer<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 4 digits<p> (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

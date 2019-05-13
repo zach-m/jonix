@@ -22,8 +22,8 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeUncommon;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Countrys;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.RightsRegions;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -57,7 +57,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -91,7 +91,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         this.element = element;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -149,12 +149,12 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         return salesRightsType;
     }
 
-    private ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys = ListOfOnixElement.empty();
+    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys = ListOfOnixElement.empty();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys() {
+    public ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys() {
         _initialize();
         return rightsCountrys;
     }

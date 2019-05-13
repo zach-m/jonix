@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixCopyrightOwnerIdentifier;
 
@@ -38,7 +38,7 @@ import java.io.Serializable;
  * name</td><td>&lt;CopyrightOwnerIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;copyrightowneridentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class CopyrightOwnerIdentifier
-    implements OnixDataCompositeWithKey<JonixCopyrightOwnerIdentifier, NameCodeTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixCopyrightOwnerIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "CopyrightOwnerIdentifier";
@@ -55,6 +55,9 @@ public class CopyrightOwnerIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -159,7 +162,7 @@ public class CopyrightOwnerIdentifier
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return copyrightOwnerIDType().value;
     }
 }

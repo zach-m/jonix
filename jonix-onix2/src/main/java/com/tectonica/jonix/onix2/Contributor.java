@@ -25,8 +25,8 @@ import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Countrys;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.PersonDateRoles;
 import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -66,7 +66,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -100,7 +100,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         this.element = element;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -260,12 +260,12 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return contributorRoles;
     }
 
-    private ListOfOnixElement<LanguageCode, LanguageCodes> languageCodes = ListOfOnixElement.empty();
+    private ListOfOnixElement<LanguageCode, Languages> languageCodes = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<LanguageCode, LanguageCodes> languageCodes() {
+    public ListOfOnixElement<LanguageCode, Languages> languageCodes() {
         _initialize();
         return languageCodes;
     }
@@ -493,12 +493,12 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return unnamedPersons;
     }
 
-    private ListOfOnixElement<CountryCode, CountryCodes> countryCodes = ListOfOnixElement.empty();
+    private ListOfOnixElement<CountryCode, Countrys> countryCodes = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<CountryCode, CountryCodes> countryCodes() {
+    public ListOfOnixElement<CountryCode, Countrys> countryCodes() {
         _initialize();
         return countryCodes;
     }

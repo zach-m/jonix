@@ -36,13 +36,13 @@ interface CodeList170 {
  * <p>
  * Description: Discount type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist170">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist170">ONIX
  * Codelist 170 in Reference Guide</a>
  */
 public enum DiscountTypes implements OnixCodelist, CodeList170 {
     /**
-     * Discount applied to all units in a qualifying order
+     * Discount applied to all units in a qualifying order. The default if no &lt;DiscountType&gt; is specified
      */
     Rising_discount("01", "Rising discount"), //
 
@@ -64,7 +64,7 @@ public enum DiscountTypes implements OnixCodelist, CodeList170 {
     public final String code;
     public final String description;
 
-    private DiscountTypes(String code, String description) {
+    DiscountTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

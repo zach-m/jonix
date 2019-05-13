@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 96 (Currency code - ISO 4217)
+ * marker interface to assist in IDE navigation to code-list 96 (Currency code - based on ISO 4217)
  */
 interface CodeList96 {
 }
@@ -37,10 +37,10 @@ interface CodeList96 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 96</b>
  * <p>
- * Description: Currency code - ISO 4217
+ * Description: Currency code - based on ISO 4217
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist96">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist96">ONIX
  * Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -85,8 +85,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Argentine_Peso("ARS", "Argentine Peso"), //
 
     /**
-     * Austria. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Austria. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Schilling("ATS", "Schilling"), //
 
@@ -104,7 +104,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Azerbaijan
      */
-    Azerbaijanian_Manat("AZN", "Azerbaijanian Manat"), //
+    Azerbaijan_Manat("AZN", "Azerbaijan Manat"), //
 
     /**
      * Bosnia and Herzegovina
@@ -122,8 +122,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Taka("BDT", "Taka"), //
 
     /**
-     * Belgium. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Belgium. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Belgian_Franc("BEF", "Belgian Franc"), //
 
@@ -183,15 +183,15 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Pula("BWP", "Pula"), //
 
     /**
-     * Belarus (prices normally quoted as integers). Now replaced by new Belarussian Ruble (BYN): use only for
-     * historical prices that pre-date the introduction of the new Belarussian Ruble
+     * Belarus (prices normally quoted as integers). Deprecated - now replaced by new Belarussian Ruble (BYN): use only
+     * for historical prices that pre-date the introduction of the new Belarussian Ruble
      */
-    Belarussian_Ruble("BYR", "Belarussian Ruble"), //
+    _Old("BYR", "(Old) Belarussian Ruble"), //
 
     /**
-     * Belarus &lt;p&gt;NOTE: Introduced in Onix3
+     * Belarus
      */
-    Belarussian_Ruble_("BYN", "Belarussian Ruble"), //
+    Belarussian_Ruble("BYN", "Belarussian Ruble"), //
 
     /**
      * Belize
@@ -254,19 +254,19 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Cabo_Verde_Escudo("CVE", "Cabo Verde Escudo"), //
 
     /**
-     * Cyprus. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Cyprus. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Cyprus_Pound("CYP", "Cyprus Pound"), //
 
     /**
-     * Czech Republic
+     * Czechia
      */
     Czech_Koruna("CZK", "Czech Koruna"), //
 
     /**
-     * Germany. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Germany. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Mark("DEM", "Mark"), //
 
@@ -291,8 +291,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Algerian_Dinar("DZD", "Algerian Dinar"), //
 
     /**
-     * Estonia.Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Estonia.Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Kroon("EEK", "Kroon"), //
 
@@ -307,8 +307,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Nakfa("ERN", "Nakfa"), //
 
     /**
-     * Spain. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
-     * (prices normally quoted as integers)
+     * Spain. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the introduction
+     * of the Euro (prices normally quoted as integers)
      */
     Peseta("ESP", "Peseta"), //
 
@@ -326,8 +326,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Euro("EUR", "Euro"), //
 
     /**
-     * Finland. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Finland. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Markka("FIM", "Markka"), //
 
@@ -342,13 +342,14 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Falkland_Islands_Pound("FKP", "Falkland Islands Pound"), //
 
     /**
-     * France. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * France. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Franc("FRF", "Franc"), //
 
     /**
-     * United Kingdom, Isle of Man, Channel Islands, South Georgia, South Sandwich Islands
+     * United Kingdom, Isle of Man, Channel Islands, South Georgia, South Sandwich Islands, British Indian Ocean
+     * Territory (de jure)
      */
     Pound_Sterling("GBP", "Pound Sterling"), //
 
@@ -380,11 +381,11 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Guinea (prices normally quoted as integers)
      */
-    Guinea_Franc("GNF", "Guinea Franc"), //
+    Guinean_Franc("GNF", "Guinean Franc"), //
 
     /**
-     * Greece. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Greece. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Drachma("GRD", "Drachma"), //
 
@@ -434,8 +435,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Rupiah("IDR", "Rupiah"), //
 
     /**
-     * Ireland. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Ireland. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Punt("IEP", "Punt"), //
 
@@ -465,8 +466,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Iceland_Krona("ISK", "Iceland Krona"), //
 
     /**
-     * italy. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
-     * (prices normally quoted as integers)
+     * Italy. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the introduction
+     * of the Euro (prices normally quoted as integers)
      */
     Lira("ITL", "Lira"), //
 
@@ -503,7 +504,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Comoros (prices normally quoted as integers)
      */
-    Comoro_Franc("KMF", "Comoro Franc"), //
+    Comorian_Franc("KMF", "Comorian Franc"), //
 
     /**
      * Korea (Democratic People's Republic of) (prices normally quoted as integers)
@@ -533,7 +534,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Lao People's Democratic Republic (prices normally quoted as integers)
      */
-    Kip("LAK", "Kip"), //
+    Lao_Kip("LAK", "Lao Kip"), //
 
     /**
      * Lebanon (prices normally quoted as integers)
@@ -556,20 +557,20 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Loti("LSL", "Loti"), //
 
     /**
-     * Lithuania. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Lithuania. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Litus("LTL", "Litus"), //
 
     /**
-     * Luxembourg. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro (prices normally quoted as integers)
+     * Luxembourg. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro (prices normally quoted as integers)
      */
     Luxembourg_Franc("LUF", "Luxembourg Franc"), //
 
     /**
-     * Latvia. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Latvia. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Latvian_Lats("LVL", "Latvian Lats"), //
 
@@ -619,12 +620,20 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Pataca("MOP", "Pataca"), //
 
     /**
-     * Mauritania (0 or 1 - 1 khoums = UM0.2)
+     * Mauritania (prices normally quoted with 0 or 1 decimal place - 1 khoums = UM0.2). Was interchangeable with MRU
+     * (New) Ouguiya at rate of 10:1 until June 2018. DEPRECATED, use MRU instead
      */
-    Ouguiya("MRO", "Ouguiya"), //
+    _Old_("MRO", "(Old) Ouguiya"), //
 
     /**
-     * Malta. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
+     * Mauritania (prices normally quoted with 0 or 1 decimal place - 1 khoums = UM0.2). Replaced MRO (old) Ouguiya at
+     * rate of 10:1 in June 2018. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Ouguiya("MRU", "Ouguiya"), //
+
+    /**
+     * Malta. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the introduction
+     * of the Euro
      */
     Maltese_Lira("MTL", "Maltese Lira"), //
 
@@ -641,7 +650,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Malawi
      */
-    Kwacha("MWK", "Kwacha"), //
+    Malawi_Kwacha("MWK", "Malawi Kwacha"), //
 
     /**
      * Mexico
@@ -674,8 +683,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Cordoba_Oro("NIO", "Cordoba Oro"), //
 
     /**
-     * Netherlands. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Netherlands. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Guilder("NLG", "Guilder"), //
 
@@ -705,9 +714,9 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Balboa("PAB", "Balboa"), //
 
     /**
-     * Peru
+     * Peru (formerly Nuevo Sol)
      */
-    Nuevo_Sol("PEN", "Nuevo Sol"), //
+    Sol("PEN", "Sol"), //
 
     /**
      * Papua New Guinea
@@ -727,11 +736,11 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Poland
      */
-    Zloty("PLN", "Zloty"), //
+    Z_oty("PLN", "Złoty"), //
 
     /**
-     * Portugal. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Portugal. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Escudo("PTE", "Escudo"), //
 
@@ -816,14 +825,14 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Saint_Helena_Pound("SHP", "Saint Helena Pound"), //
 
     /**
-     * Slovenia. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Slovenia. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Tolar("SIT", "Tolar"), //
 
     /**
-     * Slovakia. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-     * Euro
+     * Slovakia. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Slovak_Koruna("SKK", "Slovak Koruna"), //
 
@@ -848,9 +857,16 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Suriname_Guilder("SRG", "Suriname Guilder"), //
 
     /**
-     * S&#227;o Tome and Principe (prices normally quoted as integers)
+     * S&#227;o Tome and Principe (prices normally quoted as integers). Was interchangeable with STN (New) Dobra at rate
+     * of 1000:1 until June 2018. DEPRECATED, use STN instead
      */
-    Dobra("STD", "Dobra"), //
+    _Old__("STD", "(Old) Dobra"), //
+
+    /**
+     * S&#227;o Tome and Principe. Replaced STD (old) Dobra at rate of 1000:1 in June 2018. For use in ONIX 3.0 only
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Dobra("STN", "Dobra"), //
 
     /**
      * El Salvador
@@ -863,7 +879,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Syrian_Pound("SYP", "Syrian Pound"), //
 
     /**
-     * Swaziland
+     * Eswatini (formerly known as Swaziland)
      */
     Lilangeni("SZL", "Lilangeni"), //
 
@@ -957,12 +973,18 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Deprecated, replaced by VEF
      */
-    Bolivar("VEB", "Bolivar"), //
+    Bol_var("VEB", "Bolívar"), //
 
     /**
-     * Venezuela
+     * Venezuela (formerly Bol&#237;var fuerte). Deprecated, replaced by VES
      */
-    Bolivar_fuerte("VEF", "Bolivar fuerte"), //
+    Bol_var_("VEF", "Bolívar"), //
+
+    /**
+     * Venezuela (replaced VEF from August 2018 at rate of 100,000:1). For use in ONIX 3.0 only &lt;p&gt;NOTE:
+     * Introduced in Onix3
+     */
+    Bol_var_Soberano("VES", "Bolívar Soberano"), //
 
     /**
      * Viet Nam (prices normally quoted as integers)
@@ -1019,7 +1041,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Zambia. Deprecated, replaced with ZMW (prices normally quoted as integers)
      */
-    Kwacha_("ZMK", "Kwacha"), //
+    Kwacha("ZMK", "Kwacha"), //
 
     /**
      * Zambia
@@ -1039,7 +1061,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     public final String code;
     public final String description;
 
-    private CurrencyCodes(String code, String description) {
+    CurrencyCodes(String code, String description) {
         this.code = code;
         this.description = description;
     }

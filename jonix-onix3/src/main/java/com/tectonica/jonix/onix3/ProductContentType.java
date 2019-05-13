@@ -55,6 +55,9 @@ public class ProductContentType implements OnixElement<ProductContentTypes>, Ser
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

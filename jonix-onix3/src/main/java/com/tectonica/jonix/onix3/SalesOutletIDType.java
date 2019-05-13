@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Sales outlet identifier type</h1><p>An ONIX code which identifies the scheme from which the value in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;SalesOutletIdentifier&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 102</td></tr><tr><td>Reference name</td><td>&lt;SalesOutletIDType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b393&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b393&gt;03&lt;/b393&gt;
  * (ONIX sales outlet ID code)</td></tr></table>
@@ -55,6 +55,9 @@ public class SalesOutletIDType implements OnixElement<SalesOutletIdentifierTypes
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

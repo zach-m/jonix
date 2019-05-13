@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixSenderIdentifier;
 
@@ -38,7 +38,8 @@ import java.io.Serializable;
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;SenderIdentifier&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;senderidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIdentifier, NameCodeTypes>, Serializable {
+public class SenderIdentifier
+    implements OnixDataCompositeWithKey<JonixSenderIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "SenderIdentifier";
@@ -55,6 +56,9 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -159,7 +163,7 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return senderIDType().value;
     }
 }

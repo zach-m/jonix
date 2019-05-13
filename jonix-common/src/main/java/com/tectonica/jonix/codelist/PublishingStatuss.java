@@ -39,8 +39,8 @@ interface CodeList64 {
  * <p>
  * Description: Publishing status
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist64">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist64">ONIX
  * Codelist 64 in Reference Guide</a>
  */
 public enum PublishingStatuss implements OnixCodelist, CodeList64 {
@@ -52,18 +52,21 @@ public enum PublishingStatuss implements OnixCodelist, CodeList64 {
     Unspecified("00", "Unspecified"), //
 
     /**
-     * The product was announced, and subsequently abandoned; the &lt;PublicationDate&gt; element must not be sent
+     * The product was announced, and subsequently abandoned; the &lt;PublicationDate&gt; element in ONIX 2.1 or its
+     * equivalent in &lt;PublishingDate&gt; in ONIX 3.0 must not be sent
      */
     Cancelled("01", "Cancelled"), //
 
     /**
-     * Not yet published, must be accompanied by expected date in &lt;PublicationDate&gt;
+     * Not yet published; must be accompanied by the expected date in &lt;PublicationDate&gt; in ONIX 2.1, or its
+     * equivalent in the &lt;PublishingDate&gt; composite in ONIX 3.0
      */
     Forthcoming("02", "Forthcoming"), //
 
     /**
-     * The product was announced, and subsequently postponed with no expected publication date; the &lt;Publication
-     * Date&gt; element (ONIX 2.1), or its equivalent as a date composite in ONIX 3.0, must not be sent
+     * The product was announced, and subsequently postponed with no expected publication date; the
+     * &lt;PublicationDate&gt; element in ONIX 2.1, or its equivalent as a &lt;PublishingDate&gt; composite in ONIX 3.0,
+     * must not be sent
      */
     Postponed_indefinitely("03", "Postponed indefinitely"), //
 
@@ -132,6 +135,13 @@ public enum PublishingStatuss implements OnixCodelist, CodeList64 {
     Recalled("12", "Recalled"), //
 
     /**
+     * The product is published and active but, as a publishing decision, it is not sold separately - only in an
+     * assembly or as part of a pack. Depending on product composition and pricing, it may be saleable separately at
+     * retail
+     */
+    Active_but_not_sold_separately("13", "Active, but not sold separately"), //
+
+    /**
      * Recalled for reasons of consumer safety
      */
     Recalled_("15", "Recalled"), //
@@ -144,15 +154,15 @@ public enum PublishingStatuss implements OnixCodelist, CodeList64 {
     Temporarily_withdrawn_from_sale("16", "Temporarily withdrawn from sale"), //
 
     /**
-     * Withdrawn permanently from the market. Effectively synonymous with 'Out of print' (code 07), but specific to
-     * downloadable and online digital products (where no 'stock' would remain in the supply chain)
+     * Withdrawn permanently from sale in all markets. Effectively synonymous with 'Out of print' (code 07), but
+     * specific to downloadable and online digital products (where no 'stock' would remain in the supply chain)
      */
     Permanently_withdrawn_from_sale("17", "Permanently withdrawn from sale");
 
     public final String code;
     public final String description;
 
-    private PublishingStatuss(String code, String description) {
+    PublishingStatuss(String code, String description) {
         this.code = code;
         this.description = description;
     }

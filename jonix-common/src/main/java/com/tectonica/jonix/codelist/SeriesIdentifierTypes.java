@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 13 (Series identifier type code)
+ * marker interface to assist in IDE navigation to code-list 13 (Series identifier type)
  */
 interface CodeList13 {
 }
@@ -37,15 +37,15 @@ interface CodeList13 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 13</b>
  * <p>
- * Description: Series identifier type code
+ * Description: Series identifier type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist13">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist13">ONIX
  * Codelist 13 in Reference Guide</a>
  */
 public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
     /**
-     * For example, publisher's own series ID
+     * For example, publisher's own series ID. Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
     Proprietary("01", "Proprietary"), //
 
@@ -85,14 +85,26 @@ public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
     URN("22", "URN"), //
 
     /**
-     * French National Bibliography series ID, maintained by the Biblioth&#232;que Nationale de France
+     * French National Bibliography series ID. Identifiant des publications en s&#233;rie maintenu par la
+     * Biblioth&#232;que Nationale de France
      */
-    Identifiant_BNF_des_publications_en_s_rie("29", "Identifiant BNF des publications en série");
+    BNF_Control_number("29", "BNF Control number"), //
+
+    /**
+     * Archival Resource Key, as a URL (including the address of the ARK resolver provided by eg a national library)
+     */
+    ARK("35", "ARK"), //
+
+    /**
+     * International Standard Serial Number 'linking ISSN', used when distinct from the serial ISSN. Unhyphenated, 8
+     * digits. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    ISSN_L("38", "ISSN-L");
 
     public final String code;
     public final String description;
 
-    private SeriesIdentifierTypes(String code, String description) {
+    SeriesIdentifierTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

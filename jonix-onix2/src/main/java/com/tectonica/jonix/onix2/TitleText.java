@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -36,8 +36,8 @@ import java.io.Serializable;
 /**
  * <h1>Title text</h1><p>The text of the title specified by the &lt;TitleType&gt; code; and excluding the subtitle, if
  * any. Optional and non-repeating: see text at the head of the &lt;Title&gt; composite for details of valid title text
- * options. The &lt;TitleText&gt; element may carry any of the following ONIX attributes: textformat, language,
- * transliteration, textcase.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
+ * options. The &lt;TitleText&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
+ * transliteration, textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
  * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td>&lt;TitleText&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b203&gt;</td></tr><tr><td>Example</td><td>&lt;TitleText&gt;Nicholas
  * Nickleby&lt;/TitleText&gt;</td></tr></table>
@@ -56,7 +56,7 @@ public class TitleText implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -101,7 +101,7 @@ public class TitleText implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

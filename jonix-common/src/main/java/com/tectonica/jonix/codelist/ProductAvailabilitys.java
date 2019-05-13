@@ -39,8 +39,8 @@ interface CodeList65 {
  * <p>
  * Description: Product availability
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist65">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist65">ONIX
  * Codelist 65 in Reference Guide</a>
  */
 public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
@@ -48,6 +48,13 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
      * Cancelled: product was announced, and subsequently abandoned
      */
     Cancelled("01", "Cancelled"), //
+
+    /**
+     * Not yet available, publisher indicates that it has been postponed indefinitely. Should be used in preference to
+     * code 10 where the publisher has indicated that a previously-announced publication date is no longer correct, and
+     * no new date has yet been announced. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Not_yet_available_postponed_indefinitely("09", "Not yet available, postponed indefinitely"), //
 
     /**
      * Not yet available (requires expected date, either as &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt;
@@ -155,7 +162,7 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     Apply_direct("44", "Apply direct"), //
 
     /**
-     * Must be bought as part of a set (identify set in &lt;RelatedProduct&gt;)
+     * Must be bought as part of a set or trade pack (identify set or pack in &lt;RelatedProduct&gt;)
      */
     Not_sold_separately("45", "Not sold separately"), //
 
@@ -220,7 +227,7 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     public final String code;
     public final String description;
 
-    private ProductAvailabilitys(String code, String description) {
+    ProductAvailabilitys(String code, String description) {
         this.code = code;
         this.description = description;
     }

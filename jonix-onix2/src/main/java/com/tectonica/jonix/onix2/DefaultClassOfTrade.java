@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -34,12 +34,12 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Default class of trade    USA only</h1><p>Free text indicating the class of trade which is assumed for prices
- * given in the message, unless explicitly stated otherwise specified in &lt;j149&gt;. For example: Institutional,
- * General trade, Wholesale distributor, which may be represented by a suitable code or abbreviation agreed between
- * trading partners. otherwise specified in the product record. Optional and non-repeating.</p><p class="new214">The
- * text is not limited to ASCII characters.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length
- * ASCII text, suggested maximum length 50 characters</td></tr><tr><td>Reference name</td><td>&lt;DefaultClassOfTrade&gt;</td></tr><tr><td>Short
+ * <h1>Default class of trade USA only</h1><p>Free text indicating the class of trade which is assumed for prices given
+ * in the message, unless explicitly stated otherwise specified in &lt;j149&gt;. For example: Institutional, General
+ * trade, Wholesale distributor, which may be represented by a suitable code or abbreviation agreed between trading
+ * partners. otherwise specified in the product record. Optional and non-repeating.</p><p class="new214">The text is not
+ * limited to ASCII characters.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length ASCII text,
+ * suggested maximum length 50 characters</td></tr><tr><td>Reference name</td><td>&lt;DefaultClassOfTrade&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;m193&gt;</td></tr><tr><td>Example</td><td>&lt;m193&gt;gen&lt;/m193&gt;</td></tr></table>
  */
 public class DefaultClassOfTrade implements OnixElement<String>, Serializable {
@@ -56,7 +56,7 @@ public class DefaultClassOfTrade implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -101,7 +101,7 @@ public class DefaultClassOfTrade implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Religious text feature code</h1><p>An ONIX code describing a feature specified in the associated
  * &lt;ReligiousTextFeatureType&gt; element. Mandatory in each occurrence of the &lt;ReligiousTextFeature&gt; composite,
- * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 90</td></tr><tr><td>Reference name</td><td>&lt;ReligiousTextFeatureCode&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b359&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;ReligiousTextFeatureCode&gt;10&lt;/ReligiousTextFeatureCode&gt;
  * (Lent)</td></tr></table>
@@ -55,6 +55,9 @@ public class ReligiousTextFeatureCode implements OnixElement<ReligiousTextFeatur
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

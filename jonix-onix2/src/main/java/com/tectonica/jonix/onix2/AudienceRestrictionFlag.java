@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.AudienceRestrictionFlags;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -40,8 +40,8 @@ import java.io.Serializable;
  * bona fide teachers) or by another agency (<em>eg</em> “indexing” in the German market). Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Provisional: fixed-length, single
  * letter</td></tr><tr><td>Codelist</td><td>List 56</td></tr><tr><td>Reference name</td><td>&lt;AudienceRestrictionFlag&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j146&gt;</td></tr><tr><td>Example</td><td>&lt;AudienceRestrictionFlag&gt;R&lt;/AudienceRestrictionFlag&gt;&#160;&#160;&#160;&#160;Restrictions
- * apply</td></tr></table>
+ * tag</td><td>&lt;j146&gt;</td></tr><tr><td>Example</td><td>&lt;AudienceRestrictionFlag&gt;R&lt;/AudienceRestrictionFlag&gt;
+ * Restrictions apply</td></tr></table>
  */
 public class AudienceRestrictionFlag implements OnixElement<AudienceRestrictionFlags>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -57,7 +57,7 @@ public class AudienceRestrictionFlag implements OnixElement<AudienceRestrictionF
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -99,7 +99,7 @@ public class AudienceRestrictionFlag implements OnixElement<AudienceRestrictionF
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

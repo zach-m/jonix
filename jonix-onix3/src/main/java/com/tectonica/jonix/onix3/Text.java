@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
@@ -48,12 +48,13 @@ import java.io.Serializable;
  * aesthetic absolute; mythology, art and language; mythology, language and being&lt;/li&gt;&lt;li&gt;Part
  * 5&#8230;&lt;/li&gt;&lt;/ul&gt;&lt;/Text&gt; (Table of contents supplied as a list, with XHTML
  * markup)</td></tr><tr><td></td><td>&lt;d104 language=&quot;eng&quot;&gt;'The Name of the Rose' is the author's first
- * novel. It is a historical murder mystery set in an Italian monastery in the year 1327, an intellectual mystery
- * weaving semiotics, biblical analysis, medieval studies and literary theory into gripping fiction.&lt;/d104&gt;
- * &lt;d104 language=&quot;ita&quot;&gt;'Il nome della rosa' &#232; il primo romanzo dell'autore. Si tratta di un
- * misterioso omicidio storico ambientato in un monastero italiano nel corso dell'anno 1327, un mistero intellettuale
- * che unisce semiotica, analisi biblici, studi medievali e teoria letteraria nella narrativa avvincente.&lt;/d104&gt;
- * (Parallel short description text provided in two languages)</td></tr></table>
+ * novel. It is a historical murder mystery set in an Italian monastery in the year 1327, and at the same time, it's an
+ * intellectual puzzle weaving semiotics, biblical analysis, medieval studies and literary theory into gripping
+ * fiction.&lt;/d104&gt; &lt;d104 language=&quot;ita&quot;&gt;'Il nome della rosa' &#232; il primo romanzo dell'autore.
+ * Si tratta di un misterioso omicidio storico ambientato in un monastero italiano nel corso dell'anno 1327, e allo
+ * stesso tempo, &#232; un misterio intellettuale che unisce semiotica, analisi biblici, studi medievali e teoria
+ * letteraria nella narrativa avvincente.&lt;/d104&gt; (Parallel short description text provided in two
+ * languages)</td></tr></table>
  */
 public class Text implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,9 +73,12 @@ public class Text implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TextFormats textformat;
 
@@ -112,7 +116,7 @@ public class Text implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
         value = JPU.getChildXHTML(element, true);

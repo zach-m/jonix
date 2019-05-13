@@ -32,8 +32,8 @@ import java.io.Serializable;
 /**
  * <h1>Quantity in shipment</h1><p>The quantity of stock on order in a particular shipment. Mandatory in each occurrence
  * of the &lt;OnOrderDetail&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum length 7
- * digits</td></tr><tr><td>Reference name</td><td>&lt;OnOrder&gt;</td></tr><tr><td>Short
+ * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, here necessarily positive, suggested maximum length
+ * 7 digits</td></tr><tr><td>Reference name</td><td>&lt;OnOrder&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j351&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;j351&gt;600&lt;/j351&gt;</td></tr></table>
  */
 public class OnOrder implements OnixElement<Integer>, Serializable {
@@ -53,6 +53,9 @@ public class OnOrder implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,8 @@ public class OnOrder implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 7 digits<p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, here necessarily positive, suggested maximum length 7 digits<p> (type:
+     * dt.PositiveInteger)
      */
     public Integer value;
 

@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Measure type code</h1><p>An ONIX code indicating the dimension which is specified by an occurrence of the measure
  * composite. Mandatory in each occurrence of the &lt;Measure&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 48</td></tr><tr><td>Reference name</td><td>&lt;MeasureType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x315&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x315&gt;01&lt;/x315&gt;
  * (Height)</td></tr></table>
@@ -55,6 +55,9 @@ public class MeasureType implements OnixElement<MeasureTypes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

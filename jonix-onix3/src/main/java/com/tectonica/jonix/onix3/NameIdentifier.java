@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixNameIdentifier;
 
@@ -32,13 +32,14 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Name identifier composite</h1><p>A repeatable group of data elements which together specify a name identifier,
- * used here to carry an identifier for a person or organization name given in an occurrence of the &lt;Contributor&gt;
- * composite. Optional: see Group&nbsp;P.7 introductory text for valid options.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;NameIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;nameidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Name identifier composite</h1><p>A group of data elements which together specify a name identifier, used here to
+ * carry an identifier for a person or organization name given in an occurrence of the &lt;Contributor&gt; composite.
+ * Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable to specify name identifiers of different
+ * types for the same person or organization name.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;NameIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;nameidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class NameIdentifier implements OnixDataCompositeWithKey<JonixNameIdentifier, NameCodeTypes>, Serializable {
+public class NameIdentifier
+    implements OnixDataCompositeWithKey<JonixNameIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "NameIdentifier";
@@ -55,6 +56,9 @@ public class NameIdentifier implements OnixDataCompositeWithKey<JonixNameIdentif
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -159,7 +163,7 @@ public class NameIdentifier implements OnixDataCompositeWithKey<JonixNameIdentif
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return nameIDType().value;
     }
 }

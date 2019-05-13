@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Price condition quantity type</h1><p>An ONIX code identifying a type of price condition quantity. Mandatory in
  * each occurrence of the &lt;PriceConditionQuantity&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 168</td></tr><tr><td>Reference name</td><td>&lt;PriceConditionQuantityType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x464&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x464&gt;01&lt;/x464&gt;
  * (Time period)</td></tr></table>
@@ -55,6 +55,9 @@ public class PriceConditionQuantityType implements OnixElement<PriceConditionQua
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

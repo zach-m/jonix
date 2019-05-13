@@ -32,7 +32,7 @@ import java.io.Serializable;
 /**
  * <h1>Record source name</h1><p>The name of the party which issued the record, as free text. Optional and
  * non-repeating, independently of the occurrence of any other field.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
  * characters</td></tr><tr><td>Reference name</td><td>&lt;RecordSourceName&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;a197&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;RecordSourceName&gt;Cambridge
  * University Press&lt;/RecordSourceName&gt;</td></tr><tr><td>Notes</td><td>The record source need not be the same as
@@ -56,6 +56,9 @@ public class RecordSourceName implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +66,7 @@ public class RecordSourceName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 

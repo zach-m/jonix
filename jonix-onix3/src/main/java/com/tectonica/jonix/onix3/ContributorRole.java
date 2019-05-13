@@ -34,7 +34,7 @@ import java.io.Serializable;
  * <h1>Contributor role</h1><p>An ONIX code indicating the role played by a person or corporate body in the creation of
  * the product. Mandatory in each occurrence of a &lt;Contributor&gt; composite, and may be repeated if the same person
  * or corporate body has more than one role in relation to the product.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, one letter and two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, one letter and two digits</td></tr><tr><td>Codelist</td><td>List
  * 17</td></tr><tr><td>Reference name</td><td>&lt;ContributorRole&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b035&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td>&lt;b035&gt;A01&lt;/b035&gt;
  * (Written by)</td></tr></table>
@@ -56,6 +56,9 @@ public class ContributorRole implements OnixElement<ContributorRoles>, Serializa
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

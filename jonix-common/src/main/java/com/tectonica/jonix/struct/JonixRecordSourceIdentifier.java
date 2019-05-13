@@ -20,7 +20,7 @@
 package com.tectonica.jonix.struct;
 
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 
 import java.io.Serializable;
 
@@ -29,16 +29,16 @@ import java.io.Serializable;
  */
 
 @SuppressWarnings("serial")
-public class JonixRecordSourceIdentifier implements JonixKeyedStruct<NameCodeTypes>, Serializable {
+public class JonixRecordSourceIdentifier implements JonixKeyedStruct<NameIdentifierTypes>, Serializable {
     public static JonixRecordSourceIdentifier EMPTY = new JonixRecordSourceIdentifier();
 
     /**
      * the key of this struct (by which it can be looked up)
      */
-    public NameCodeTypes recordSourceIDType;
+    public NameIdentifierTypes recordSourceIDType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String idTypeName;
 
@@ -48,7 +48,7 @@ public class JonixRecordSourceIdentifier implements JonixKeyedStruct<NameCodeTyp
     public String idValue;
 
     @Override
-    public NameCodeTypes key() {
+    public NameIdentifierTypes key() {
         return recordSourceIDType;
     }
 }

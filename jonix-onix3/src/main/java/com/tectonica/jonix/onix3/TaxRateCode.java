@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TaxRateCodeds;
+import com.tectonica.jonix.codelist.TaxRateTypes;
 
 import java.io.Serializable;
 
@@ -32,12 +32,12 @@ import java.io.Serializable;
 
 /**
  * <h1>Tax rate code</h1><p>An ONIX code which specifies a tax rate. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, one letter</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, one letter</td></tr><tr><td>Codelist</td><td>List
  * 62</td></tr><tr><td>Reference name</td><td>&lt;TaxRateCode&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x471&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x471&gt;Z&lt;/x471&gt;
  * (Zero-rated)</td></tr></table>
  */
-public class TaxRateCode implements OnixElement<TaxRateCodeds>, Serializable {
+public class TaxRateCode implements OnixElement<TaxRateTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "TaxRateCode";
@@ -54,19 +54,22 @@ public class TaxRateCode implements OnixElement<TaxRateCodeds>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public TaxRateCodeds value;
+    public TaxRateTypes value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public TaxRateCodeds _value() {
+    public TaxRateTypes _value() {
         return value;
     }
 
@@ -87,7 +90,7 @@ public class TaxRateCode implements OnixElement<TaxRateCodeds>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = TaxRateCodeds.byCode(JPU.getContentAsString(element));
+        value = TaxRateTypes.byCode(JPU.getContentAsString(element));
     }
 
     @Override

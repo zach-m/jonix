@@ -32,9 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>Tax rate percent</h1><p>A tax rate expressed numerically as a percentage. Optional and non-repeating; but either
  * &lt;TaxRatePercent&gt; or &lt;TaxAmount&gt; or both must be present in each occurrence of the &lt;Tax&gt;
- * composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an explicit
- * decimal point where required</td></tr><tr><td>Reference name</td><td>&lt;TaxRatePercent&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x472&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;TaxRatePercent&gt;17.5&lt;/TaxRatePercent&gt;</td></tr></table>
+ * composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Real number between zero and 100 (inclusive),
+ * with explicit decimal point when required, suggested maximum length 7 characters</td></tr><tr><td>Reference
+ * name</td><td>&lt;TaxRatePercent&gt;</td></tr><tr><td>Short tag</td><td>&lt;x472&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;TaxRatePercent&gt;17.5&lt;/TaxRatePercent&gt;</td></tr></table>
  */
 public class TaxRatePercent implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,6 +53,9 @@ public class TaxRatePercent implements OnixElement<Double>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,8 +63,8 @@ public class TaxRatePercent implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length real number, with an explicit decimal point where required<p> (type:
-     * dt.PercentDecimal)
+     * Raw Format: Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested
+     * maximum length 7 characters<p> (type: dt.PercentDecimal)
      */
     public Double value;
 

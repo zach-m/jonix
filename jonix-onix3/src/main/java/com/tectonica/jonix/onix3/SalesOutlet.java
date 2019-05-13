@@ -35,9 +35,9 @@ import java.io.Serializable;
 /**
  * <h1>Sales outlet composite</h1><p>An optional and repeatable group of data elements which together identify a sales
  * outlet to which a restriction is linked. Each occurrence of the composite must include a
- * &lt;SalesOutletIdentifier&gt; composite of a &lt;SalesOutletName&gt; or both.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesOutlet&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;salesoutlet&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * &lt;SalesOutletIdentifier&gt; composite or a &lt;SalesOutletName&gt; or both. Repeatable in order to identify
+ * multiple sales outlets subject to the restriction.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;SalesOutlet&gt;</td></tr><tr><td>Short tag</td><td>&lt;salesoutlet&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class SalesOutlet implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -56,6 +56,9 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

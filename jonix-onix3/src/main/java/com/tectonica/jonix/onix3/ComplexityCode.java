@@ -31,8 +31,8 @@ import java.io.Serializable;
 
 /**
  * <h1>Complexity code</h1><p>A code specifying the level of complexity of a text. Mandatory in each occurrence of the
- * &lt;Complexity&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * alphanumeric, suggested maximum length 20 characters</td></tr><tr><td>Codelist</td><td>The scheme specified in the
+ * &lt;Complexity&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
+ * length alphanumeric, suggested maximum length 20 characters, according to the code type specified in the
  * &lt;ComplexitySchemeIdentifier&gt; element</td></tr><tr><td>Reference name</td><td>&lt;ComplexityCode&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b078&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;ComplexityCode&gt;880L&lt;/ComplexityCode&gt;</td></tr></table>
  */
@@ -53,6 +53,9 @@ public class ComplexityCode implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,8 @@ public class ComplexityCode implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters, according to the code type
+     * specified in the &lt;ComplexitySchemeIdentifier&gt; element<p> (type: dt.NonEmptyString)
      */
     public String value;
 

@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 3 (Record source type code)
+ * marker interface to assist in IDE navigation to code-list 3 (Record source type)
  */
 interface CodeList3 {
 }
@@ -37,10 +37,10 @@ interface CodeList3 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 3</b>
  * <p>
- * Description: Record source type code
+ * Description: Record source type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist3">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist3">ONIX
  * Codelist 3 in Reference Guide</a>
  */
 public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
@@ -62,7 +62,7 @@ public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
     Bibliographic_agency("04", "Bibliographic agency"), //
 
     /**
-     * Bookseller selling to libraries (including academic libraries)
+     * Library supplier. Bookseller selling to libraries (including academic libraries)
      */
     Library_bookseller("05", "Library bookseller"), //
 
@@ -73,14 +73,14 @@ public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
     Publisher_s_sales_agent("06", "Publisher’s sales agent"), //
 
     /**
-     * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of
+     * Downstream provider of e-publication format conversion services (who might also be a distributor or retailer of
      * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
      * publisher's ISBN prefix
      */
     Publisher_s_conversion_service_provider("07", "Publisher’s conversion service provider"), //
 
     /**
-     * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of
+     * Downstream provider of e-publication format conversion services (who might also be a distributor or retailer of
      * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
      * service provider's prefix (whether or not the service provider dedicates that prefix to a particular publisher)
      */
@@ -91,19 +91,24 @@ public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
     ISTC_Registration_Agency("10", "ISTC Registration Agency"), //
 
     /**
-     * Bookseller selling primarily to consumers &lt;p&gt;NOTE: Introduced in Onix3
+     * Bookseller selling primarily to consumers
      */
     Retail_bookseller("11", "Retail bookseller"), //
 
     /**
-     * Bookseller selling primarily to educational institutions &lt;p&gt;NOTE: Introduced in Onix3
+     * Bookseller selling primarily to educational institutions
      */
-    Education_bookseller("12", "Education bookseller");
+    Education_bookseller("12", "Education bookseller"), //
+
+    /**
+     * Library service providing enhanced metadata to publishers or other parties
+     */
+    Library("13", "Library");
 
     public final String code;
     public final String description;
 
-    private RecordSourceTypes(String code, String description) {
+    RecordSourceTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

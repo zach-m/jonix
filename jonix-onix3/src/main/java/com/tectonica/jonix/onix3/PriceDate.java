@@ -32,9 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price date composite</h1><p>An optional and repeatable group of data elements which together specify a date
- * associated with a price.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;PriceDate&gt;</td></tr><tr><td>Short tag</td><td>&lt;pricedate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Price date composite</h1><p>An optional group of data elements which together specify a date associated with a
+ * price, repeatable in order to specify multiple associated dates.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;PriceDate&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;pricedate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, PriceDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,6 +54,9 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

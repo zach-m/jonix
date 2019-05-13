@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -38,7 +38,7 @@ import java.io.Serializable;
  * must be complete in itself, <i>ie</i> it should not be treated as merely supplementary to other elements within the
  * &lt;Prize&gt; composite. Nor should &lt;PrizeStatement&gt; be supplied <em>instead</em> of those other elements – at
  * minimum, the &lt;PrizeCode&gt; element, and whenever appropriate the &lt;PrizeYear&gt; element should be
- * supplied.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length
+ * supplied.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length
  * 100 characters</td></tr><tr><td>Reference name</td><td>&lt;PrizeStatement&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x503&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;PrizeStatement
  * language=&quot;eng&quot;&gt;Joint winner of the Mao Dun Literature Prize, 2000&lt;/PrizeStatement&gt;</td></tr></table>
@@ -60,16 +60,19 @@ public class PrizeStatement implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -97,7 +100,7 @@ public class PrizeStatement implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

@@ -31,17 +31,19 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title element composite</h1><p>A repeatable group of data elements which together represent an element of a
- * title. At least one title element is mandatory in each occurrence of the &lt;TitleDetail&gt; composite. An instance
- * of the &lt;TitleElement&gt; composite must include at least one of: &lt;PartNumber&gt;; &lt;YearOfAnnual&gt;;
- * &lt;TitleText&gt;, &lt;NoPrefix/&gt; together with &lt;TitleWithoutPrefix&gt;, or &lt;TitlePrefix&gt; together with
- * &lt;TitleWithoutPrefix&gt;. In other words it <em>must</em> carry <em>either</em> the text of a title <em>or</em> a
- * part or year designation, and it <em>may</em> carry both.</p><p>A title element must be designated as belonging to
- * product level, collection level, or subcollection level (the last-named only in the case of a multi-level
- * collection).</p><p>In the simplest case, a product title will consist of a single title element, at product level.
- * However, the composite structure in ONIX 3.0 allows complex titles to be correctly represented, in the sequence in
- * which the publisher wishes the elements to be displayed.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;TitleElement&gt;</td></tr><tr><td>Short tag</td><td>&lt;titleelement&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * <h1>Title element composite</h1><p>A group of data elements which together represent an element of a title. At least
+ * one title element is mandatory in each occurrence of the &lt;TitleDetail&gt; composite. The composite is repeatable
+ * with different sequence numbers and/or title element levels, each repeat carrying a different part of the title. An
+ * instance of the &lt;TitleElement&gt; composite must include at least one of: &lt;PartNumber&gt;;
+ * &lt;YearOfAnnual&gt;; &lt;TitleText&gt;, &lt;NoPrefix/&gt; together with &lt;TitleWithoutPrefix&gt;, or
+ * &lt;TitlePrefix&gt; together with &lt;TitleWithoutPrefix&gt;. In other words it <em>must</em> carry <em>either</em>
+ * the text of a title <em>or</em> a part or year designation, and it <em>may</em> carry both.</p><p>A title element
+ * must be designated as belonging to product level, collection level, or subcollection level (the last-named only in
+ * the case of a multi-level collection).</p><p>In the simplest case, a product title will consist of a single title
+ * element, at product level. However, the composite structure in ONIX&nbsp;3.0 allows complex titles to be correctly
+ * represented, in the sequence in which the publisher wishes the elements to be displayed.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;TitleElement&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;titleelement&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
  */
 public class TitleElement implements OnixDataComposite<JonixTitleElement>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -60,6 +62,9 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

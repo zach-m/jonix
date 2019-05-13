@@ -32,9 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor place composite</h1><p>An optional and repeatable group of data elements which together identify a
- * geographical location with which a contributor is associated, used to support ‘local interest’ promotions.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ContributorPlace&gt;</td></tr><tr><td>Short
+ * <h1>Contributor place composite</h1><p>An optional group of data elements which together identify a geographical
+ * location with which a contributor is associated, used to support ‘local interest’ promotions. Repeatable to identify
+ * multiple geographical locations, each usually with a different relationship to the contributor.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ContributorPlace&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;contributorplace&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ContributorPlace implements OnixDataComposite<JonixContributorPlace>, Serializable {
@@ -54,6 +55,9 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

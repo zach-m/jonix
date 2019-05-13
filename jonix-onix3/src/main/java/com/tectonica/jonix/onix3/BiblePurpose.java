@@ -32,8 +32,8 @@ import java.io.Serializable;
 
 /**
  * <h1>Bible purpose</h1><p>An ONIX code indicating the purpose for which a Bible or selected Biblical text is intended,
- * for example ‘Family’, ‘Lectern/pulpit’. Optional and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters</td></tr><tr><td>Codelist</td><td>List
+ * for example ‘Family’, ‘Lectern/pulpit’. Optional, and repeatable to list multiple purposes.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two letters</td></tr><tr><td>Codelist</td><td>List
  * 85</td></tr><tr><td>Reference name</td><td>&lt;BiblePurpose&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b354&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;BiblePurpose&gt;LP&lt;/BiblePurpose&gt;
  * (Lectern/pulpit)</td></tr></table>
@@ -55,6 +55,9 @@ public class BiblePurpose implements OnixElement<BiblePurposes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

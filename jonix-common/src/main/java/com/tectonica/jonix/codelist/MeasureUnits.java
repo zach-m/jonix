@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 50 (Measure unit code)
+ * marker interface to assist in IDE navigation to code-list 50 (Measure unit)
  */
 interface CodeList50 {
 }
@@ -37,10 +37,10 @@ interface CodeList50 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 50</b>
  * <p>
- * Description: Measure unit code
+ * Description: Measure unit
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist50">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist50">ONIX
  * Codelist 50 in Reference Guide</a>
  */
 public enum MeasureUnits implements OnixCodelist, CodeList50 {
@@ -69,7 +69,7 @@ public enum MeasureUnits implements OnixCodelist, CodeList50 {
     public final String code;
     public final String description;
 
-    private MeasureUnits(String code, String description) {
+    MeasureUnits(String code, String description) {
         this.code = code;
         this.description = description;
     }

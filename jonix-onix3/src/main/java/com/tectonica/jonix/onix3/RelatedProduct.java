@@ -23,7 +23,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.ProductFormDetailsList175;
+import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductRelations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -36,8 +36,9 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Related product composite</h1><p>An optional and repeatable group of data elements which together describe a
- * product which has a specified relationship to the product described in the ONIX record.</p><table border='1'
+ * <h1>Related product composite</h1><p>An optional group of data elements which together describe a product which has a
+ * specified relationship to the product described in the ONIX record. The composite is repeatable in order to specify
+ * different products which each have a relationship to the product described.</p><table border='1'
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;RelatedProduct&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;relatedproduct&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
@@ -58,6 +59,9 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -156,13 +160,12 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return productForm;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails =
-        ListOfOnixElement.empty();
+    private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails() {
+    public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
         return productFormDetails;
     }

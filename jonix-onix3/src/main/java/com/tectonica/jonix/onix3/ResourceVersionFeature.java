@@ -33,10 +33,11 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource version feature composite</h1><p>A repeatable group of data elements which together describe a feature
- * of a supporting resource which is specific to a version in which the resource is offered. Formally optional, but it
- * is unlikely that a supporting resource version could be adequately described without specifying some of its
- * features.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ResourceVersionFeature&gt;</td></tr><tr><td>Short
+ * <h1>Resource version feature composite</h1><p>A group of data elements which together describe a feature of a
+ * supporting resource which is specific to a particular version in which the resource is offered. Formally optional,
+ * but it is unlikely that a supporting resource version could be adequately described without specifying some of its
+ * features. Repeatable in order to specify multiple features of the version of the resource.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ResourceVersionFeature&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;resourceversionfeature&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ResourceVersionFeature
@@ -57,6 +58,9 @@ public class ResourceVersionFeature
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

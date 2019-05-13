@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 72 (Thesis type code)
+ * marker interface to assist in IDE navigation to code-list 72 (Thesis type)
  */
 interface CodeList72 {
 }
@@ -34,10 +34,10 @@ interface CodeList72 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 72</b>
  * <p>
- * Description: Thesis type code
+ * Description: Thesis type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist72">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist72">ONIX
  * Codelist 72 in Reference Guide</a>
  */
 public enum ThesisTypes implements OnixCodelist, CodeList72 {
@@ -79,7 +79,7 @@ public enum ThesisTypes implements OnixCodelist, CodeList72 {
     public final String code;
     public final String description;
 
-    private ThesisTypes(String code, String description) {
+    ThesisTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

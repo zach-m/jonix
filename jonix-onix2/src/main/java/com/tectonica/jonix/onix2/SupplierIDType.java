@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -39,7 +39,8 @@ import java.io.Serializable;
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;SupplierIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric
  * digits</td></tr><tr><td>Codelist</td><td>List 92</td></tr><tr><td>Reference name</td><td>&lt;SupplierIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j345&gt;</td></tr><tr><td>Example</td><td>&lt;SupplierIDType&gt;06&lt;/SupplierIDType&gt;&#160;&#160;&#160;&#160;GLN</td></tr></table>
+ * tag</td><td>&lt;j345&gt;</td></tr><tr><td>Example</td><td>&lt;SupplierIDType&gt;06&lt;/SupplierIDType&gt;
+ * GLN</td></tr></table>
  */
 public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,7 +56,7 @@ public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Ser
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -97,7 +98,7 @@ public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Ser
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

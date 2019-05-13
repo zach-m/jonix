@@ -25,20 +25,20 @@ import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixProduct;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
-import com.tectonica.jonix.codelist.Audiences;
-import com.tectonica.jonix.codelist.BarcodeIndicators;
+import com.tectonica.jonix.codelist.AudienceTypes;
+import com.tectonica.jonix.codelist.BarcodeIndicatorsList6;
 import com.tectonica.jonix.codelist.BookFormDetails;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
-import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.MeasureTypes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.codelist.ProductContentTypes;
-import com.tectonica.jonix.codelist.ProductFormDetails;
+import com.tectonica.jonix.codelist.ProductFormDetailsList78;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -89,7 +89,7 @@ public class Product implements OnixProduct, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -123,7 +123,7 @@ public class Product implements OnixProduct, Serializable {
         this.element = element;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -914,12 +914,12 @@ public class Product implements OnixProduct, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixElement<Barcode, BarcodeIndicators> barcodes = ListOfOnixElement.empty();
+    private ListOfOnixElement<Barcode, BarcodeIndicatorsList6> barcodes = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<Barcode, BarcodeIndicators> barcodes() {
+    public ListOfOnixElement<Barcode, BarcodeIndicatorsList6> barcodes() {
         _initialize();
         return barcodes;
     }
@@ -954,12 +954,13 @@ public class Product implements OnixProduct, Serializable {
         return productForm;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
+    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
+        ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
+    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
         _initialize();
         return productFormDetails;
     }
@@ -1490,12 +1491,12 @@ public class Product implements OnixProduct, Serializable {
         return religiousText;
     }
 
-    private ListOfOnixElement<LanguageOfText, LanguageCodes> languageOfTexts = ListOfOnixElement.empty();
+    private ListOfOnixElement<LanguageOfText, Languages> languageOfTexts = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<LanguageOfText, LanguageCodes> languageOfTexts() {
+    public ListOfOnixElement<LanguageOfText, Languages> languageOfTexts() {
         _initialize();
         return languageOfTexts;
     }
@@ -1693,12 +1694,12 @@ public class Product implements OnixProduct, Serializable {
         return placeAsSubjects;
     }
 
-    private ListOfOnixElement<AudienceCode, Audiences> audienceCodes = ListOfOnixElement.empty();
+    private ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<AudienceCode, Audiences> audienceCodes() {
+    public ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes() {
         _initialize();
         return audienceCodes;
     }

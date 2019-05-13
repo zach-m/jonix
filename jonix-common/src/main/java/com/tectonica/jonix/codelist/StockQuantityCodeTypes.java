@@ -36,11 +36,14 @@ interface CodeList70 {
  * <p>
  * Description: Stock quantity code type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist70">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist70">ONIX
  * Codelist 70 in Reference Guide</a>
  */
 public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70 {
+    /**
+     * As specified in &lt;StockQuantityCodeTypeName&gt;
+     */
     Proprietary("01", "Proprietary"), //
 
     /**
@@ -51,7 +54,7 @@ public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70 {
     public final String code;
     public final String description;
 
-    private StockQuantityCodeTypes(String code, String description) {
+    StockQuantityCodeTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

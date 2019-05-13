@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 32 (Complexity scheme identifier code)
+ * marker interface to assist in IDE navigation to code-list 32 (Complexity scheme identifier)
  */
 interface CodeList32 {
 }
@@ -37,10 +37,10 @@ interface CodeList32 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 32</b>
  * <p>
- * Description: Complexity scheme identifier code
+ * Description: Complexity scheme identifier
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist32">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist32">ONIX
  * Codelist 32 in Reference Guide</a>
  */
 public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
@@ -55,8 +55,8 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
     Lexile_number("02", "Lexile number"), //
 
     /**
-     * Fry readability metric based on number of sentences and syllables per 100 words. Expressed as a number from 1 to
-     * 15 in &lt;ComplexityCode&gt;
+     * Fry readability metric based on number of sentences and syllables per 100 words. Expressed as an integer from 1
+     * to 15 in &lt;ComplexityCode&gt;
      */
     Fry_Readability_score("03", "Fry Readability score"), //
 
@@ -87,26 +87,25 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
 
     /**
      * Flesch-Kincaid Grade Level Formula, a standard readability measure based on the weighted number of syllables per
-     * word and words per sentence. &lt;ComplexityCode&gt; is a real number between about -1 and 20
+     * word and words per sentence. &lt;ComplexityCode&gt; is a real number typically between about -1 and 20
      */
     Flesch_Kincaid_Grade_Level("08", "Flesch-Kincaid Grade Level"), //
 
     /**
      * Use this code for books levelled by the publisher or a third party using the Fountas and Pinnell Guided Reading
-     * methodology &lt;p&gt;NOTE: Introduced in Onix3
+     * methodology
      */
     Guided_Reading_Level("09", "Guided Reading Level"), //
 
     /**
      * Used for books aimed at K-2 literacy intervention. &lt;ComplexityCode&gt; is an integer between 1 and 20
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Reading_Recovery_Level("10", "Reading Recovery Level");
 
     public final String code;
     public final String description;
 
-    private ComplexitySchemeIdentifiers(String code, String description) {
+    ComplexitySchemeIdentifiers(String code, String description) {
         this.code = code;
         this.description = description;
     }

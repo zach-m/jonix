@@ -36,8 +36,8 @@ interface CodeList156 {
  * <p>
  * Description: Cited content type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist156">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist156">ONIX
  * Codelist 156 in Reference Guide</a>
  */
 public enum CitedContentTypes implements OnixCodelist, CodeList156 {
@@ -56,12 +56,18 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
     /**
      * (North America) Inclusion in a program such as 'Chicago Reads', 'Seattle Reads'
      */
-    _One_locality_one_book_program("04", "‘One locality, one book’ program");
+    _One_locality_one_book_program("04", "‘One locality, one book’ program"), //
+
+    /**
+     * For example a 'best books of the year' or '25 books you should have read' list, without regard to their
+     * bestseller status &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Curated_list("05", "Curated list");
 
     public final String code;
     public final String description;
 
-    private CitedContentTypes(String code, String description) {
+    CitedContentTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

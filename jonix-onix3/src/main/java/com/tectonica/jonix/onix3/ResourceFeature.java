@@ -33,10 +33,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource feature composite</h1><p>A repeatable group of data elements which together describe a feature of a
- * supporting resource which is common to all versions in which the resource is offered. Optional.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;ResourceFeature&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;resourcefeature&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Resource feature composite</h1><p>A group of data elements which together describe a feature of a supporting
+ * resource which is common to all versions in which the resource is offered. Optional, and repeatable in order to
+ * describe multiple features of the resource.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;ResourceFeature&gt;</td></tr><tr><td>Short tag</td><td>&lt;resourcefeature&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ResourceFeature
     implements OnixDataCompositeWithKey<JonixResourceFeature, ResourceFeatureTypes>, Serializable {
@@ -56,6 +56,9 @@ public class ResourceFeature
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

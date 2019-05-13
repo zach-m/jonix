@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -37,7 +37,7 @@ import java.io.Serializable;
  * <h1>Thesis presented to</h1><p>The name of an academic institution to which a thesis was presented. Optional and
  * non-repeating, but if this element is present, &lt;ThesisType&gt; must also be present.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Free text, suggested maximum length 300 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;ThesisPresentedTo&gt;</td></tr><tr><td>Short tag</td><td>&lt;b369&gt;</td></tr><tr><td>Example</td><td>&#160;</td></tr></table>
+ * name</td><td>&lt;ThesisPresentedTo&gt;</td></tr><tr><td>Short tag</td><td>&lt;b369&gt;</td></tr></table>
  */
 public class ThesisPresentedTo implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,7 +53,7 @@ public class ThesisPresentedTo implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -98,7 +98,7 @@ public class ThesisPresentedTo implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

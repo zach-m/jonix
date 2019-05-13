@@ -23,6 +23,7 @@ import com.tectonica.jonix.JonixKeyedStruct;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 
 import java.io.Serializable;
+import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -38,7 +39,7 @@ public class JonixReturnsConditions implements JonixKeyedStruct<ReturnsCondition
     public ReturnsConditionsCodeTypes returnsCodeType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String returnsCodeTypeName;
 
@@ -46,6 +47,11 @@ public class JonixReturnsConditions implements JonixKeyedStruct<ReturnsCondition
      * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt; <p> (type: dt.NonEmptyString)
      */
     public String returnsCode;
+
+    /**
+     * Raw Format: Variable length text, suggested maximum length 200 characters <p> (type: dt.NonEmptyString)
+     */
+    public List<String> returnsNotes;
 
     @Override
     public ReturnsConditionsCodeTypes key() {

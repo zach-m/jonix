@@ -34,9 +34,9 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>New supplier composite</h1><p>A group of data elements which together specify a new supply source to which orders
- * are referred. Use only when the code in &lt;ProductAvailability&gt; indicates ‘no longer available from us, refer to
- * new supplier’. Only one occurrence of the composite is permitted in this context.</p><table border='1'
+ * <h1>New supplier composite</h1><p>An optional group of data elements which together specify a new supply source to
+ * which orders are referred. Use only when the code in &lt;ProductAvailability&gt; indicates ‘no longer available from
+ * us, refer to new supplier’. Only one occurrence of the composite is permitted in this context.</p><table border='1'
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;NewSupplier&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;newsupplier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
@@ -57,6 +57,9 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

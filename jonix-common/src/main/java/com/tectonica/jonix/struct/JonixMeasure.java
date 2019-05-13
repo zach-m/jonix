@@ -41,8 +41,8 @@ public class JonixMeasure implements JonixKeyedStruct<MeasureTypes>, Serializabl
     public MeasureUnits measureUnitCode;
 
     /**
-     * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-     * characters including a decimal point <p> (type: dt.StrictPositiveDecimal)
+     * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 6
+     * characters <p> (type: dt.StrictPositiveDecimal)
      */
     public Double measurement;
 

@@ -35,7 +35,7 @@ import java.io.Serializable;
  * &lt;NumberOfItemsOfThisForm&gt; must be used to carry the quantity, even if the number is ‘1’. Consequently the
  * element is mandatory and non-repeating in an occurrence of the &lt;ProductPart&gt; composite if
  * &lt;NumberOfCopies&gt; is not present; and it must not be used if &lt;ProductIdentifier&gt; is present.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, maximum four
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 4
  * digits</td></tr><tr><td>Reference name</td><td>&lt;NumberOfItemsOfThisForm&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x322&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x322&gt;3&lt;/x322&gt;</td></tr></table>
  */
@@ -56,6 +56,9 @@ public class NumberOfItemsOfThisForm implements OnixElement<Integer>, Serializab
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +66,7 @@ public class NumberOfItemsOfThisForm implements OnixElement<Integer>, Serializab
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, maximum four digits<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 4 digits<p> (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

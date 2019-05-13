@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,10 +33,10 @@ import java.io.Serializable;
 /**
  * <h1>Conference acronym</h1><p>An acronym used as a short form of the name of a conference or conference series given
  * in the &lt;ConferenceName&gt; element. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 20
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 20
  * characters</td></tr><tr><td>Reference name</td><td>&lt;ConferenceAcronym&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b341&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ConferenceAcronym&gt;ICCC
- * 2009&lt;/ConferenceAcronym&gt;</td></tr></table>
+ * tag</td><td>&lt;b341&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;ConferenceAcronym&gt;UNFCCC
+ * COP17&lt;/ConferenceAcronym&gt;</td></tr></table>
  */
 public class ConferenceAcronym implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -54,14 +55,19 @@ public class ConferenceAcronym implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
+
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -89,6 +95,7 @@ public class ConferenceAcronym implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

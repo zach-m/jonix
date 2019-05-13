@@ -39,8 +39,8 @@ interface CodeList151 {
  * <p>
  * Description: Contributor place relator
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist151">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist151">ONIX
  * Codelist 151 in Reference Guide</a>
  */
 public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
@@ -56,6 +56,9 @@ public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
 
     Worked_in("06", "Worked in"), //
 
+    /**
+     * ('Floruit')
+     */
     Flourished_in("07", "Flourished in"), //
 
     /**
@@ -66,7 +69,7 @@ public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
     public final String code;
     public final String description;
 
-    private ContributorPlaceRelators(String code, String description) {
+    ContributorPlaceRelators(String code, String description) {
         this.code = code;
         this.description = description;
     }

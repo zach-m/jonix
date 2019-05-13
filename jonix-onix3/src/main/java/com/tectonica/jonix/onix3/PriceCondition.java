@@ -35,8 +35,9 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price condition composite</h1><p>A repeatable group of data elements which together specify a condition relating
- * to a price.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;PriceCondition&gt;</td></tr><tr><td>Short
+ * <h1>Price condition composite</h1><p>An optional group of data elements which together specify a condition relating
+ * to a price, repeatable in order to specify multiple conditions.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;PriceCondition&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;pricecondition&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class PriceCondition implements OnixSuperComposite, Serializable {
@@ -56,6 +57,9 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

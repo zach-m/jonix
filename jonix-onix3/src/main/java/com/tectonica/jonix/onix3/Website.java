@@ -32,10 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Website composite</h1><p>An optional and repeatable group of data elements which together identify and provide
- * pointers to a website which is related to the organization identified in an occurrence of the &lt;Supplier&gt;
- * composite.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Website&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;website&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Website composite</h1><p>An optional group of data elements which together identify and provide a pointer to a
+ * website which is related to the organization identified in an occurrence of the &lt;Supplier&gt; composite.
+ * Repeatable in order to provide links to multiple websites.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;Website&gt;</td></tr><tr><td>Short tag</td><td>&lt;website&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -54,6 +54,9 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -100,7 +103,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
                     break;
                 case WebsiteLink.refname:
                 case WebsiteLink.shortname:
-                    websiteLink = new WebsiteLink(e);
+                    websiteLinks = JPU.addToList(websiteLinks, new WebsiteLink(e));
                     break;
                 default:
                     break;
@@ -137,14 +140,14 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         return websiteDescriptions;
     }
 
-    private WebsiteLink websiteLink = WebsiteLink.EMPTY;
+    private ListOfOnixElement<WebsiteLink, String> websiteLinks = ListOfOnixElement.empty();
 
     /**
-     * (this field is required)
+     * (this list is required to contain at least one item)
      */
-    public WebsiteLink websiteLink() {
+    public ListOfOnixElement<WebsiteLink, String> websiteLinks() {
         _initialize();
-        return websiteLink;
+        return websiteLinks;
     }
 
     @Override
@@ -152,7 +155,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         _initialize();
         JonixWebsite struct = new JonixWebsite();
         struct.websiteDescriptions = websiteDescriptions.values();
-        struct.websiteLink = websiteLink.value;
+        struct.websiteLinks = websiteLinks.values();
         struct.websiteRole = websiteRole.value;
         return struct;
     }

@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StudyBibleTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -39,7 +39,7 @@ import java.io.Serializable;
  * for example Life Application. Optional and non-repeating. Some study Bibles are available in different editions based
  * on different text versions.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three
  * letters</td></tr><tr><td>Codelist</td><td>List 84</td></tr><tr><td>Reference name</td><td>&lt;StudyBibleType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b389&gt;</td></tr><tr><td>Example</td><td>&lt;b389&gt;OXF&lt;/b389&gt;&#160;&#160;&#160;&#160;Oxford
+ * tag</td><td>&lt;b389&gt;</td></tr><tr><td>Example</td><td>&lt;b389&gt;OXF&lt;/b389&gt; Oxford
  * Annotated</td></tr></table>
  */
 public class StudyBibleType implements OnixElement<StudyBibleTypes>, Serializable {
@@ -56,7 +56,7 @@ public class StudyBibleType implements OnixElement<StudyBibleTypes>, Serializabl
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -98,7 +98,7 @@ public class StudyBibleType implements OnixElement<StudyBibleTypes>, Serializabl
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

@@ -39,8 +39,8 @@ interface CodeList83 {
  * <p>
  * Description: Bible version
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist83">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist83">ONIX
  * Codelist 83 in Reference Guide</a>
  */
 public enum BibleVersions implements OnixCodelist, CodeList83 {
@@ -433,7 +433,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     public final String code;
     public final String description;
 
-    private BibleVersions(String code, String description) {
+    BibleVersions(String code, String description) {
         this.code = code;
         this.description = description;
     }

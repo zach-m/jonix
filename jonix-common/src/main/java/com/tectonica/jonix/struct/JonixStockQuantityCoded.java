@@ -43,7 +43,7 @@ public class JonixStockQuantityCoded implements JonixKeyedStruct<StockQuantityCo
     public String stockQuantityCode;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String stockQuantityCodeTypeName;
 

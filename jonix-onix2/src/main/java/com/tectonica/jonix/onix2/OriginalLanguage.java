@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -41,7 +41,7 @@ import java.io.Serializable;
  * 639-2/B List 74</td></tr><tr><td>Reference name</td><td>&lt;OriginalLanguage&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b060&gt;</td></tr><tr><td>Example</td><td>&lt;b060&gt;spa&lt;/b060&gt;</td></tr></table>
  */
-public class OriginalLanguage implements OnixElement<LanguageCodes>, Serializable {
+public class OriginalLanguage implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "OriginalLanguage";
@@ -55,7 +55,7 @@ public class OriginalLanguage implements OnixElement<LanguageCodes>, Serializabl
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -72,13 +72,13 @@ public class OriginalLanguage implements OnixElement<LanguageCodes>, Serializabl
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public LanguageCodes value;
+    public Languages value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public LanguageCodes _value() {
+    public Languages _value() {
         return value;
     }
 
@@ -97,13 +97,13 @@ public class OriginalLanguage implements OnixElement<LanguageCodes>, Serializabl
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = LanguageCodes.byCode(JPU.getContentAsString(element));
+        value = Languages.byCode(JPU.getContentAsString(element));
     }
 
     @Override

@@ -53,6 +53,9 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

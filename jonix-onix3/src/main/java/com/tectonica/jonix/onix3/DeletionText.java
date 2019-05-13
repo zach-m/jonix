@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -36,7 +36,7 @@ import java.io.Serializable;
  * <i>language</i> attribute is optional for a single instance of &lt;DeletionText&gt;, but must be included in each
  * instance if &lt;DeletionText&gt; is repeated. Note that it refers to the reason why the <em>record</em> is being
  * deleted, not the reason why a <em>product</em> has been ‘deleted’ (in industries which use this terminology when a
- * product is withdrawn).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested
+ * product is withdrawn).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested
  * maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;DeletionText&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;a199&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;a199&gt;Issued
  * in error&lt;/a199&gt;</td></tr></table>
@@ -58,16 +58,19 @@ public class DeletionText implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -95,7 +98,7 @@ public class DeletionText implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

@@ -38,9 +38,10 @@ import java.util.List;
  */
 
 /**
- * <h1>Collection composite</h1><p>A repeatable group of data elements which carry attributes of a collection of which
- * the product is part. The composite is optional.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Collection&gt;</td></tr><tr><td>Short tag</td><td>&lt;collection&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Collection composite</h1><p>An optional group of data elements which carry attributes of a collection of which
+ * the product is part. The composite is repeatable, to provide details when the product belongs to multiple
+ * collections.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Collection&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;collection&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Collection implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -59,6 +60,9 @@ public class Collection implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -122,6 +126,10 @@ public class Collection implements OnixSuperComposite, Serializable {
                 case ContributorStatement.refname:
                 case ContributorStatement.shortname:
                     contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
+                    break;
+                case NoContributor.refname:
+                case NoContributor.shortname:
+                    noContributor = new NoContributor(e);
                     break;
                 default:
                     break;
@@ -193,7 +201,7 @@ public class Collection implements OnixSuperComposite, Serializable {
     private List<Contributor> contributors = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * (this list is required to contain at least one item)
      */
     public List<Contributor> contributors() {
         _initialize();
@@ -208,5 +216,19 @@ public class Collection implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
         return contributorStatements;
+    }
+
+    private NoContributor noContributor = NoContributor.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public NoContributor noContributor() {
+        _initialize();
+        return noContributor;
+    }
+
+    public boolean isNoContributor() {
+        return (noContributor().exists());
     }
 }

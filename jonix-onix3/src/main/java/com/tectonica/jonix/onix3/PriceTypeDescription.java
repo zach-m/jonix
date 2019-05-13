@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -31,14 +31,14 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price type description</h1><p>Free text which further describes the price type. Optional, and repeatable if
- * parallel descriptions are provided in multiple languages. The <i>language</i> attribute is optional for a single
- * instance of &lt;PriceTypeDescription&gt;, but must be included in each instance if &lt;PriceTypeDescription&gt; is
- * repeated in multiple languages. In the Netherlands and elsewhere, when the &lt;PriceQualifier&gt; code identifies a
- * ‘voucher price’, the &lt;PriceTypeDescription&gt; should give the ‘EAN action number’ that identifies the
- * offer.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 200
- * characters</td></tr><tr><td>Reference name</td><td>&lt;PriceTypeDescription&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j262&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;j262&gt;When
+ * <h1>Price type description</h1><p>Free text which further describes the price type, qualifier, constraints and other
+ * parameters of the price. Optional, and repeatable if parallel descriptions are provided in multiple languages. The
+ * <i>language</i> attribute is optional for a single instance of &lt;PriceTypeDescription&gt;, but must be included in
+ * each instance if &lt;PriceTypeDescription&gt; is repeated in multiple languages. In the Netherlands and elsewhere,
+ * when the &lt;PriceQualifier&gt; code identifies a ‘voucher price’, the &lt;PriceTypeDescription&gt; should give the
+ * ‘EAN action number’ that identifies the offer.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
+ * length text, suggested maximum length 200 characters</td></tr><tr><td>Reference
+ * name</td><td>&lt;PriceTypeDescription&gt;</td></tr><tr><td>Short tag</td><td>&lt;j262&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;j262&gt;When
  * purchased as part of a three-item set with&#8230;&lt;/j262&gt;</td></tr></table>
  */
 public class PriceTypeDescription implements OnixElement<String>, Serializable {
@@ -58,16 +58,19 @@ public class PriceTypeDescription implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 200 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 200 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -95,7 +98,7 @@ public class PriceTypeDescription implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

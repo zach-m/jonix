@@ -32,10 +32,12 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product classification composite</h1><p>A repeatable group of data elements which together define a product
+ * <h1>Product classification composite</h1><p>An optional group of data elements which together define a product
  * classification (<em>not</em> to be confused with a subject classification). The intended use is to enable national or
- * international trade classifications (also known as commodity codes) to be carried in an ONIX record.
- * Optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductClassification&gt;</td></tr><tr><td>Short
+ * international trade classifications (also known as commodity codes) to be carried in an ONIX record. The composite is
+ * repeatable if parts of the product are classified differently within a single product classification scheme, or to
+ * provide classification codes from multiple classification schemes.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductClassification&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;productclassification&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ProductClassification
@@ -56,6 +58,9 @@ public class ProductClassification
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

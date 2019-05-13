@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixConferenceSponsorIdentifier;
 
@@ -37,7 +37,7 @@ import java.io.Serializable;
  * name</td><td>&lt;ConferenceSponsorIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;conferencesponsoridentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ConferenceSponsorIdentifier
-    implements OnixDataCompositeWithKey<JonixConferenceSponsorIdentifier, NameCodeTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixConferenceSponsorIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ConferenceSponsorIdentifier";
@@ -54,6 +54,9 @@ public class ConferenceSponsorIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -158,7 +161,7 @@ public class ConferenceSponsorIdentifier
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return conferenceSponsorIDType().value;
     }
 }

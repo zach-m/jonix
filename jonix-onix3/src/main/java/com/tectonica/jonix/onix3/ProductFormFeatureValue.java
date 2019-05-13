@@ -55,7 +55,7 @@ import java.io.Serializable;
  * storage or other hardware requirements), use free text in &lt;ProductFormFeatureDescription&gt; within a separate
  * repeat of the &lt;ProductFormFeature&gt; composite</td></tr><tr><td></td><td>For e-publication accessibility features
  * for print-impaired readers, see List 196</td></tr><tr><td></td><td>Further features with corresponding code lists may
- * be added from time to time without a re-issue of this document - see the latest release of Code List
+ * be added from time to time without a re-issue of this document - see the latest release of List
  * 79</td></tr><tr><td>Reference name</td><td>&lt;ProductFormFeatureValue&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b335&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b335&gt;BLK&lt;/b335&gt;
  * (Black color)</td></tr></table>
@@ -77,6 +77,9 @@ public class ProductFormFeatureValue implements OnixElement<String>, Serializabl
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

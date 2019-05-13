@@ -30,10 +30,9 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>“No authorship” indicator</h1><p>An empty element that provides a positive indication that a product has no
- * stated authorship. Intended to be used in an ONIX accreditation scheme to confirm that author information is being
- * consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no
- * other elements from Group&nbsp;P.7.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty
+ * <h1>“No authorship” indicator</h1><p>An empty element that provides a positive indication that a content item has no
+ * stated authorship. Optional and non-repeating. Must only be sent in a &lt;ContentItem&gt; composite that has no
+ * &lt;Contributor&gt; elements.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty
  * element</td></tr><tr><td>Reference name</td><td>&lt;NoContributor&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;n339&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;NoContributor/&gt;</td></tr></table>
  */
@@ -54,6 +53,9 @@ public class NoContributor implements OnixFlag, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

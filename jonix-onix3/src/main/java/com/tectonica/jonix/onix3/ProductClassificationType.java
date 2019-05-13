@@ -55,6 +55,9 @@ public class ProductClassificationType implements OnixElement<ProductClassificat
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

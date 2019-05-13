@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 42 (Text item type code)
+ * marker interface to assist in IDE navigation to code-list 42 (Text item type)
  */
 interface CodeList42 {
 }
@@ -37,10 +37,10 @@ interface CodeList42 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 42</b>
  * <p>
- * Description: Text item type code
+ * Description: Text item type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist42">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist42">ONIX
  * Codelist 42 in Reference Guide</a>
  */
 public enum TextItemTypes implements OnixCodelist, CodeList42 {
@@ -68,66 +68,69 @@ public enum TextItemTypes implements OnixCodelist, CodeList42 {
     Back_matter("04", "Back matter"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Serial_item_miscellaneous_or_unspecified("10", "Serial item, miscellaneous or unspecified"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Research_article("11", "Research article"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Review_article("12", "Review article"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Letter("13", "Letter"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Short_communication("14", "Short communication"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Erratum("15", "Erratum"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Abstract("16", "Abstract"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Book_review_or_review_of_other_publication("17", "Book review (or review of other publication)"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Editorial("18", "Editorial"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Product_review("19", "Product review"), //
 
+    /**
+     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     */
     Index("20", "Index"), //
 
     /**
-     * For journals
+     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
      */
     Obituary("21", "Obituary");
 
     public final String code;
     public final String description;
 
-    private TextItemTypes(String code, String description) {
+    TextItemTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

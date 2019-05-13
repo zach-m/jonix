@@ -55,6 +55,9 @@ public class EpubUsageType implements OnixElement<UsageTypes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 27 (Subject scheme identifier code)
+ * marker interface to assist in IDE navigation to code-list 27 (Subject scheme identifier)
  */
 interface CodeList27 {
 }
@@ -37,10 +37,10 @@ interface CodeList27 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 27</b>
  * <p>
- * Description: Subject scheme identifier code
+ * Description: Subject scheme identifier
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist27">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist27">ONIX
  * Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -89,14 +89,14 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * BISAC Subject Headings are used in the North American market to categorize books based on topical content. They
      * serve as a guideline for shelving books in physical stores and browsing books in online stores. See
-     * https://www.bisg.org/complete-bisac-subject-headings-2014-edition
+     * https://bisg.org/page/BISACSubjectCodes
      */
     BISAC_Subject_Heading("10", "BISAC Subject Heading"), //
 
     /**
      * A geographical qualifier used with a BISAC subject category
      */
-    BISAC_region_code("11", "BISAC region code"), //
+    BISAC_Regional_theme("11", "BISAC Regional theme"), //
 
     /**
      * For all BIC subject codes and qualifiers, see http://www.bic.org.uk/7/BIC-Standard-Subject-Categories/
@@ -123,14 +123,14 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     LC_fiction_genre_heading("19", "LC fiction genre heading"), //
 
     /**
-     * Where multiple keywords or keyword phrases are sent in a single instance of the &lt;SubjectHeadingText&gt;
-     * element, it is recommended that they should be separated by semi-colons (this is consistent with Library of
-     * Congress preferred practice)
+     * For indexing and search purposes, not normally intended for display. Where multiple keywords or keyword phrases
+     * are sent, this should be in a single instance of the &lt;SubjectHeadingText&gt; element, and it is recommended
+     * that they should be separated by semi-colons (this is consistent with Library of Congress preferred practice)
      */
     Keywords("20", "Keywords"), //
 
     /**
-     * See http://www.bic.org.uk/8/Children's-Books-Marketing-Classifications/
+     * See PA/BIC CBMC guidelines at http://www.bic.org.uk/8/Children%27s-Books-Marketing-Classifications/
      */
     BIC_children_s_book_marketing_category("21", "BIC children’s book marketing category"), //
 
@@ -161,7 +161,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * Schlagwortnormdatei - Subject Headings Authority File in the German-speaking countries. See
      * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm
-     * (English). DEPRECATED in favour of the GND
+     * (English). DEPRECATED in favor of the GND
      */
     SWD("27", "SWD"), //
 
@@ -352,8 +352,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     CSH("62", "CSH"), //
 
     /**
-     * R&#233;pertoire de vedettes-mati&#232;re (Biblioth&#232;que et Archives Canada et Biblioth&#232;que de
-     * l'Universit&#233; Laval) (French)
+     * R&#233;pertoire de vedettes-mati&#232;re Biblioth&#232;que de l'Universit&#233; Laval) (French)
      */
     RVM("63", "RVM"), //
 
@@ -432,7 +431,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Suomalainen_oppiaineluokitus("77", "Suomalainen oppiaineluokitus"), //
 
     /**
-     * See 'http://www.asahi-net.or.jp/~ax2s-kmtn/ref/ccode.html' (in Japanese)
+     * See http://www.asahi-net.or.jp/~ax2s-kmtn/ref/ccode.html (in Japanese)
      */
     Japanese_book_trade_C_Code("78", "Japanese book trade C-Code"), //
 
@@ -508,9 +507,12 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      */
     BIC_UKSLC("92", "BIC UKSLC"), //
 
+    /**
+     * International multilingual subject category scheme -&#160;see https://ns.editeur.org/thema
+     */
     Thema_subject_category("93", "Thema subject category"), //
 
-    Thema_geographical_qualifier("94", "Thema geographical qualifier"), //
+    Thema_place_qualifier("94", "Thema place qualifier"), //
 
     Thema_language_qualifier("95", "Thema language qualifier"), //
 
@@ -540,13 +542,12 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     CCSS("A4", "CCSS"), //
 
     /**
-     * French library classification
+     * French library subject headings
      */
     Rameau("A5", "Rameau"), //
 
     /**
-     * French educational subject classification scolomfr-voc-015, used for example on WizWiz.fr. See
-     * http://www.lom-fr.fr/scolomfr/vocabulaires/consultation-des-vocabulaires.html
+     * French educational subject classification scolomfr-voc-015. See https://www.reseau-canope.fr/scolomfr/accueil.html
      */
     Nomenclature_discipline_scolaire("A6", "Nomenclature discipline scolaire"), //
 
@@ -560,31 +561,59 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Library of Congress Children's Subject Headings: LCSHAC supplementary headings for Children's books
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     LC_Children_s_Subject_Headings("A8", "LC Children’s Subject Headings"), //
 
     /**
-     * Swedish bookselling educational subject &lt;p&gt;NOTE: Introduced in Onix3
+     * Swedish bookselling educational subject
      */
     Ny_L_romedel("A9", "Ny Läromedel"), //
 
     /**
      * EuroVoc multilingual thesaurus. &lt;SubjectCode&gt; should be a EuroVoc concept dc:identifier (for example, 2777,
-     * 'refrigerated products'). See http://eurovoc.europa.eu &lt;p&gt;NOTE: Introduced in Onix3
+     * 'refrigerated products'). See http://eurovoc.europa.eu
      */
     EuroVoc("B0", "EuroVoc"), //
 
     /**
-     * Controlled vocabulary for educational objectives. See https://www.bisg.org/educational-taxonomy &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * Controlled vocabulary for educational objectives. See https://www.bisg.org/educational-taxonomy
      */
-    BISG_Educational_Taxonomy("B1", "BISG Educational Taxonomy");
+    BISG_Educational_Taxonomy("B1", "BISG Educational Taxonomy"), //
+
+    /**
+     * For indexing and search purposes, MUST not be displayed. Where multiple keywords or keyword phrases are sent,
+     * this should be in a single instance of the &lt;SubjectHeadingText&gt; element, and it is recommended that they
+     * should be separated by semi-colons. Use of code B2 should be very rare: use B2 in preference to code 20 only
+     * where it is important to show the keyword list is specifically NOT for display to purchasers (eg some keywords
+     * for a medical textbook may appear offensive if displayed out of context)
+     */
+    Keywords_not_for_display("B2", "Keywords (not for display)"), //
+
+    /**
+     * French higher and vocational educational subject classification scolomfr-voc-29 subject category for degree and
+     * diploma study. See https://www.reseau-canope.fr/scolomfr/accueil.html
+     */
+    Nomenclature_Dipl_me("B3", "Nomenclature Diplôme"), //
+
+    /**
+     * For fiction and non-fiction, one or more key names, provided - like keywords - for indexing and search purposes.
+     * Where multiple character names are sent, this should be in a single instance of &lt;SubjectHeadingText&gt;, and
+     * multiple names should be separated by semi-colons. Note &lt;NameAsSubject&gt; should be used for people who are
+     * the central subject of the book. Code B4 may be used for names of lesser importance
+     */
+    Key_character_names("B4", "Key character names"), //
+
+    /**
+     * For fiction and non-fiction, one or more key names, provded - like keywords - for indexing and search purposes.
+     * Where multiple place names are sent, this should in a single instance of &lt;SubjectHeadingText&gt;, and multiple
+     * names should be separated by semi-colons. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Key_place_names("B5", "Key place names");
 
     public final String code;
     public final String description;
 
-    private SubjectSchemeIdentifiers(String code, String description) {
+    SubjectSchemeIdentifiers(String code, String description) {
         this.code = code;
         this.description = description;
     }

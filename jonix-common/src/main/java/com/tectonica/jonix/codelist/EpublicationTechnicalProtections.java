@@ -21,6 +21,9 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -36,8 +39,8 @@ interface CodeList144 {
  * <p>
  * Description: E-publication technical protection
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist144">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist144">ONIX
  * Codelist 144 in Reference Guide</a>
  */
 public enum EpublicationTechnicalProtections implements OnixCodelist, CodeList144 {
@@ -62,19 +65,29 @@ public enum EpublicationTechnicalProtections implements OnixCodelist, CodeList14
     Adobe_DRM("03", "Adobe DRM"), //
 
     /**
-     * FairPlay' DRM protection applied via Apple proprietary online store
+     * Has FairPlay DRM protection applied via Apple proprietary online store
      */
     Apple_DRM("04", "Apple DRM"), //
 
     /**
      * Has OMA v2 DRM protection applied, as used to protect some mobile phone content
      */
-    OMA_DRM("05", "OMA DRM");
+    OMA_DRM("05", "OMA DRM"), //
+
+    /**
+     * Has Licensed Content Protection DRM applied by a Readium License Server
+     */
+    Readium_LCP_DRM("06", "Readium LCP DRM"), //
+
+    /**
+     * Has Sony DADC User Rights Management (URMS) DRM protection applied
+     */
+    Sony_DRM("07", "Sony DRM");
 
     public final String code;
     public final String description;
 
-    private EpublicationTechnicalProtections(String code, String description) {
+    EpublicationTechnicalProtections(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -89,15 +102,29 @@ public enum EpublicationTechnicalProtections implements OnixCodelist, CodeList14
         return description;
     }
 
+    private static volatile Map<String, EpublicationTechnicalProtections> map;
+
+    private static Map<String, EpublicationTechnicalProtections> map() {
+        Map<String, EpublicationTechnicalProtections> result = map;
+        if (result == null) {
+            synchronized (EpublicationTechnicalProtections.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (EpublicationTechnicalProtections e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static EpublicationTechnicalProtections byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (EpublicationTechnicalProtections e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 }

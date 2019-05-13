@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
@@ -37,10 +37,11 @@ import java.io.Serializable;
  * particularly when a standard concatenation of individual title elements from Group&nbsp;P.6 (in the order specified
  * by the &lt;SequenceNumber&gt; data elements) would not give a satisfactory result. Optional and non-repeating. When
  * this field is sent, the recipient should use it to replace all title detail sent in Group&nbsp;P.6 <em>for display
- * purposes only</em>. The individual title element detail must also be sent, for indexing and retrieval.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 1000 characters.
- * XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields</td></tr><tr><td>Reference
- * name</td><td>&lt;TitleStatement&gt;</td></tr><tr><td>Short tag</td><td>&lt;x478&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language,
+ * purposes only</em>. The individual title element detail <em>must</em> also be sent, for indexing and retrieval
+ * purposes.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length
+ * 1000 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
+ * fields</td></tr><tr><td>Reference name</td><td>&lt;TitleStatement&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x478&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language,
  * textformat</td></tr><tr><td>Example</td><td>&lt;TitleStatement&gt;Granta - the magazine of new writing: The Best of
  * Young Spanish Language Novelists&lt;/TitleStatement&gt;</td></tr></table>
  */
@@ -61,9 +62,12 @@ public class TitleStatement implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TextFormats textformat;
 
@@ -101,7 +105,7 @@ public class TitleStatement implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
         value = JPU.getChildXHTML(element, true);

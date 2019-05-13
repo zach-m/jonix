@@ -32,11 +32,11 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Usage constraint composite (digital products)</h1><p>An optional and repeatable group of data elements which
- * together describe a usage constraint on a digital product (or the absence of such a constraint), whether enforced by
- * DRM technical protection, inherent in the platform used, or specified by license agreement.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;EpubUsageConstraint&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;epubusageconstraint&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Usage constraint composite (digital products)</h1><p>An optional group of data elements which together describe a
+ * usage constraint on a digital product (or the absence of such a constraint), whether enforced by DRM technical
+ * protection, inherent in the platform used, or specified by license agreement. Repeatable in order to describe
+ * multiple constraints on usage.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;EpubUsageConstraint&gt;</td></tr><tr><td>Short tag</td><td>&lt;epubusageconstraint&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,6 +55,9 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

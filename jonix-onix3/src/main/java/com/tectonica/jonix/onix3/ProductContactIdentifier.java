@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductContactIdentifier;
 
@@ -32,14 +32,14 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product contact identifier composite</h1><p>A group of data elements which together define an identifier of the
+ * <h1>Product contact identifier composite</h1><p>A group of data elements which together specify an identifier of the
  * product contact. The composite is optional, and repeatable if more than one identifier of different types is sent;
  * but <em>either</em> a &lt;ProductContactName&gt; <em>or</em> a &lt;ProductContactIdentifier&gt; <em>must</em> be
  * included.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductContactIdentifier&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;productcontactidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ProductContactIdentifier
-    implements OnixDataCompositeWithKey<JonixProductContactIdentifier, NameCodeTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixProductContactIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ProductContactIdentifier";
@@ -56,6 +56,9 @@ public class ProductContactIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -160,7 +163,7 @@ public class ProductContactIdentifier
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return productContactIDType().value;
     }
 }

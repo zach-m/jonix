@@ -55,6 +55,9 @@ public class EpubLicenseExpressionType implements OnixElement<LicenseExpressionT
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

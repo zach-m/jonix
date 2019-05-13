@@ -33,7 +33,7 @@ import java.io.Serializable;
  * <h1>First page number</h1><p>The number of the first page of a sequence of contiguous pages. Mandatory in each
  * occurrence of the &lt;PageRun&gt; composite, and non-repeating. Note that here and in the &lt;LastPageNumber&gt;
  * element a page ‘number’ may be Arabic, Roman, or an alphanumeric string (<i>eg</i> L123).</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length alphanumeric, suggested maximum length 20
+ * cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested maximum length 20
  * characters</td></tr><tr><td>Reference name</td><td>&lt;FirstPageNumber&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b286&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;FirstPageNumber&gt;23&lt;/FirstPageNumber&gt;</td></tr></table>
  */
@@ -54,6 +54,9 @@ public class FirstPageNumber implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +64,7 @@ public class FirstPageNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 

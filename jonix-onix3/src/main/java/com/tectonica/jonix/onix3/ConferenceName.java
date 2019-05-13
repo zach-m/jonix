@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -33,10 +33,10 @@ import java.io.Serializable;
 /**
  * <h1>Conference name</h1><p>The name of a conference or conference series to which the product is related. This
  * element is mandatory in each occurrence of the &lt;Conference&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 200
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 200
  * characters</td></tr><tr><td>Reference name</td><td>&lt;ConferenceName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b052&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;b052&gt;International
- * Conference on Climate Change&lt;/b052&gt;</td></tr></table>
+ * tag</td><td>&lt;b052&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;b052&gt;United
+ * Nations Climate Change Conference&lt;/b052&gt;</td></tr></table>
  */
 public class ConferenceName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,16 +55,19 @@ public class ConferenceName implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 200 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 200 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -92,7 +95,7 @@ public class ConferenceName implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

@@ -39,8 +39,8 @@ interface CodeList84 {
  * <p>
  * Description: Study Bible type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist84">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist84">ONIX
  * Codelist 84 in Reference Guide</a>
  */
 public enum StudyBibleTypes implements OnixCodelist, CodeList84 {
@@ -99,7 +99,7 @@ public enum StudyBibleTypes implements OnixCodelist, CodeList84 {
     public final String code;
     public final String description;
 
-    private StudyBibleTypes(String code, String description) {
+    StudyBibleTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 164 (Work relation code)
+ * marker interface to assist in IDE navigation to code-list 164 (Work relation)
  */
 interface CodeList164 {
 }
@@ -34,28 +34,32 @@ interface CodeList164 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 164</b>
  * <p>
- * Description: Work relation code
+ * Description: Work relation
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist164">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist164">ONIX
  * Codelist 164 in Reference Guide</a>
  */
 public enum WorkRelations implements OnixCodelist, CodeList164 {
     /**
-     * Product X is or includes a manifestation of work Y
+     * Product X is or includes a manifestation of work Y. (There is a direct parent-child relation between work Y and
+     * the product)
      */
     Manifestation_of("01", "Manifestation of"), //
 
     /**
      * Product X is or includes a manifestation of a work derived (directly) from related work Y in one or more of the
-     * ways specified in ISTC rules. This relation type is intended to enable products with a common 'parent' work to be
-     * linked without specifying the precise nature of their derivation
+     * ways specified in ISTC rules. (There is a relationship between a grandparent work Y and a prent work, and between
+     * that parent work and the product.) This relation type is intended to enable products with a common 'grandparent'
+     * work to be linked without specifying the precise nature of their derivation, and without necessarily assigning an
+     * identifier to the product's parent
      */
     Derived_from("02", "Derived from"), //
 
     /**
      * Product X is a manifestation of a work from which related work Y is (directly) derived in one or more of the ways
-     * specified in ISTC rules (reciprocal of code 02)
+     * specified in ISTC rules. (There is a relationship between a parent work and a child work Y, and between the
+     * parent work and the product)
      */
     Related_work_is_derived_from_this("03", "Related work is derived from this"), //
 
@@ -72,7 +76,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
     public final String code;
     public final String description;
 
-    private WorkRelations(String code, String description) {
+    WorkRelations(String code, String description) {
         this.code = code;
         this.description = description;
     }

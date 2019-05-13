@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
@@ -40,9 +41,9 @@ import java.util.List;
 
 /**
  * <h1>Supply detail composite</h1><p>A group of data elements which together give details of a supply source, and price
- * and availability from that source. Mandatory in each occurrence of the &lt;ProductSupply&gt; block and
- * repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SupplyDetail&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;supplydetail&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * and availability from that source. Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to
+ * give details of multiple supply sources.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;SupplyDetail&gt;</td></tr><tr><td>Short tag</td><td>&lt;supplydetail&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
  */
 public class SupplyDetail implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -61,6 +62,9 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -101,6 +105,10 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
                 case Supplier.shortname:
                     supplier = new Supplier(e);
                     break;
+                case SupplyContact.refname:
+                case SupplyContact.shortname:
+                    supplyContacts = JPU.addToList(supplyContacts, new SupplyContact(e));
+                    break;
                 case SupplierOwnCoding.refname:
                 case SupplierOwnCoding.shortname:
                     supplierOwnCodings = JPU.addToList(supplierOwnCodings, new SupplierOwnCoding(e));
@@ -132,6 +140,18 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
                 case PackQuantity.refname:
                 case PackQuantity.shortname:
                     packQuantity = new PackQuantity(e);
+                    break;
+                case PalletQuantity.refname:
+                case PalletQuantity.shortname:
+                    palletQuantity = new PalletQuantity(e);
+                    break;
+                case OrderQuantityMinimum.refname:
+                case OrderQuantityMinimum.shortname:
+                    orderQuantityMinimums = JPU.addToList(orderQuantityMinimums, new OrderQuantityMinimum(e));
+                    break;
+                case OrderQuantityMultiple.refname:
+                case OrderQuantityMultiple.shortname:
+                    orderQuantityMultiple = new OrderQuantityMultiple(e);
                     break;
                 case UnpricedItemType.refname:
                 case UnpricedItemType.shortname:
@@ -168,6 +188,16 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public Supplier supplier() {
         _initialize();
         return supplier;
+    }
+
+    private List<SupplyContact> supplyContacts = Collections.emptyList();
+
+    /**
+     * (this list may be empty)
+     */
+    public List<SupplyContact> supplyContacts() {
+        _initialize();
+        return supplyContacts;
     }
 
     private ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes>
@@ -251,6 +281,36 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public PackQuantity packQuantity() {
         _initialize();
         return packQuantity;
+    }
+
+    private PalletQuantity palletQuantity = PalletQuantity.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public PalletQuantity palletQuantity() {
+        _initialize();
+        return palletQuantity;
+    }
+
+    private ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums = ListOfOnixElement.empty();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums() {
+        _initialize();
+        return orderQuantityMinimums;
+    }
+
+    private OrderQuantityMultiple orderQuantityMultiple = OrderQuantityMultiple.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public OrderQuantityMultiple orderQuantityMultiple() {
+        _initialize();
+        return orderQuantityMultiple;
     }
 
     private UnpricedItemType unpricedItemType = UnpricedItemType.EMPTY;

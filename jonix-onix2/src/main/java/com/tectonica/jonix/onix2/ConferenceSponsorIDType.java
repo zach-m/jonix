@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -39,9 +39,10 @@ import java.io.Serializable;
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;ConferenceSponsorIdentifier&gt; composite,
  * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
  * digits.</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;ConferenceSponsorIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b391&gt;</td></tr><tr><td>Example</td><td>&lt;ConferenceSponsorIDType&gt;01&lt;/ConferenceSponsorIDType&gt;&#160;&#160;&#160;&#160;Proprietary</td></tr></table>
+ * tag</td><td>&lt;b391&gt;</td></tr><tr><td>Example</td><td>&lt;ConferenceSponsorIDType&gt;01&lt;/ConferenceSponsorIDType&gt;
+ * Proprietary</td></tr></table>
  */
-public class ConferenceSponsorIDType implements OnixElement<NameCodeTypes>, Serializable {
+public class ConferenceSponsorIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ConferenceSponsorIDType";
@@ -55,7 +56,7 @@ public class ConferenceSponsorIDType implements OnixElement<NameCodeTypes>, Seri
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -72,13 +73,13 @@ public class ConferenceSponsorIDType implements OnixElement<NameCodeTypes>, Seri
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public NameCodeTypes value;
+    public NameIdentifierTypes value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public NameCodeTypes _value() {
+    public NameIdentifierTypes _value() {
         return value;
     }
 
@@ -97,13 +98,13 @@ public class ConferenceSponsorIDType implements OnixElement<NameCodeTypes>, Seri
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = NameCodeTypes.byCode(JPU.getContentAsString(element));
+        value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
     @Override

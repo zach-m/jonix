@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -37,10 +37,10 @@ import java.io.Serializable;
  * <h1>Other text</h1><p>The text specified in the &lt;TextTypeCode&gt; element, if it is suitable to be sent in full as
  * part of the ONIX record. Either the &lt;Text&gt; element or both of the &lt;TextLinkType&gt; and &lt;TextLink&gt;
  * elements must be present in any occurrence of the &lt;OtherText&gt; composite. Non-repeating.</p><p>The &lt;Text&gt;
- * element may carry any of the following ONIX attributes: textformat, language, transliteration, textcase.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text (XHTML is enabled in this element - see ONIX
- * for Books - Product Information Message - XML Message Specification, Section 7)</td></tr><tr><td>Reference
- * name</td><td>&lt;Text&gt;</td></tr><tr><td>Short tag</td><td>&lt;d104&gt;</td></tr><tr><td>Example</td><td>&lt;Text
+ * element may carry any of the following ONIX attributes: <i>textformat, language, transliteration,
+ * textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text (XHTML is enabled in
+ * this element - see ONIX for Books - Product Information Message - XML Message Specification, Section
+ * 7)</td></tr><tr><td>Reference name</td><td>&lt;Text&gt;</td></tr><tr><td>Short tag</td><td>&lt;d104&gt;</td></tr><tr><td>Example</td><td>&lt;Text
  * textformat=&quot;06&quot;&gt;Introduction: aesthetics and modernity; aesthetics and post-modernity. Part 1 Modern
  * philosophy and the emergence of aesthetic theory - Kant: self-consciousness, knowledge and freedom; the unity of the
  * subject; the unification of nature; the purpose of beauty; the limits of beauty. Part 2 German idealism and early
@@ -72,7 +72,7 @@ public class Text implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -118,7 +118,7 @@ public class Text implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

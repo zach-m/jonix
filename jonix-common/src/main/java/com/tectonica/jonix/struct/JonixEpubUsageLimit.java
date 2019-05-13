@@ -33,7 +33,8 @@ public class JonixEpubUsageLimit implements JonixStruct, Serializable {
     public static JonixEpubUsageLimit EMPTY = new JonixEpubUsageLimit();
 
     /**
-     * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
+     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits <p> (type:
+     * dt.PositiveDecimal)
      */
     public Double quantity;
 

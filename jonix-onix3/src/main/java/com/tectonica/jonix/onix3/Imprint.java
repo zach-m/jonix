@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixImprintIdentifier;
 
@@ -33,10 +33,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Imprint or brand composite</h1><p>A repeatable group of data elements which together identify an imprint or brand
- * under which the product is marketed. The composite must carry either a name identifier or a name or both.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Imprint&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;imprint&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Imprint or brand composite</h1><p>An optional group of data elements which together identify an imprint or brand
+ * under which the product is marketed. The composite must carry either a name identifier or a name or both, and is
+ * repeatable to specify multiple imprints or brands.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;Imprint&gt;</td></tr><tr><td>Short tag</td><td>&lt;imprint&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Imprint implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,6 +55,9 @@ public class Imprint implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -114,13 +117,13 @@ public class Imprint implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameCodeTypes>
+    private ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameIdentifierTypes>
         imprintIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameCodeTypes> imprintIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameIdentifierTypes> imprintIdentifiers() {
         _initialize();
         return imprintIdentifiers;
     }

@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -43,8 +43,8 @@ import java.io.Serializable;
  * letters with or without a hyphen, successive codes being separated by spaces. Suggested maximum length 100
  * characters.</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate, country subdivision codes are
  * derived from the UN LOCODE scheme based on ISO 3166.</td></tr><tr><td>Reference
- * name</td><td>&lt;RightsTerritory&gt;</td></tr><tr><td>Short tag</td><td>&lt;b388&gt;</td></tr><tr><td>Example</td><td>&lt;RightsTerritory&gt;WORLD&lt;/RightsTerritory&gt;&#160;&#160;&#160;&#160;Whole
- * world</td></tr><tr><td></td><td>&lt;b388&gt;GB-EWS&lt;/b388&gt;&#160;&#160;&#160;&#160;UK excluding Northern
+ * name</td><td>&lt;RightsTerritory&gt;</td></tr><tr><td>Short tag</td><td>&lt;b388&gt;</td></tr><tr><td>Example</td><td>&lt;RightsTerritory&gt;WORLD&lt;/RightsTerritory&gt;
+ * Whole world</td></tr><tr><td></td><td>&lt;b388&gt;GB-EWS&lt;/b388&gt; UK excluding Northern
  * Ireland</td></tr></table>
  */
 public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Serializable {
@@ -61,7 +61,7 @@ public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Ser
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -103,7 +103,7 @@ public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Ser
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

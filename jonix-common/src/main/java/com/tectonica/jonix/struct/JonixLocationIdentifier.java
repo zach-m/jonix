@@ -38,7 +38,7 @@ public class JonixLocationIdentifier implements JonixKeyedStruct<SupplierIdentif
     public SupplierIdentifierTypes locationIDType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String idTypeName;
 

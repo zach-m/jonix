@@ -39,8 +39,8 @@ interface CodeList155 {
  * <p>
  * Description: Content date role
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist155">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist155">ONIX
  * Codelist 155 in Reference Guide</a>
  */
 public enum ContentDateRoles implements OnixCodelist, CodeList155 {
@@ -87,12 +87,24 @@ public enum ContentDateRoles implements OnixCodelist, CodeList155 {
      * Date until which a supporting resource is available for download. Note that this date does not imply it must be
      * removed from display to the intended audience on this date - for this, use Until date (code 15)
      */
-    Available_until("28", "Available until");
+    Available_until("28", "Available until"), //
+
+    /**
+     * Start date referenced by the supporting resource, for example, the 'earliest exam date' for an official
+     * recommendation &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Associated_start_date("31", "Associated start date"), //
+
+    /**
+     * End date referenced by the supporting resource, for example, the 'latest exam date' for an official
+     * recommendation &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Associated_end_date("32", "Associated end date");
 
     public final String code;
     public final String description;
 
-    private ContentDateRoles(String code, String description) {
+    ContentDateRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }

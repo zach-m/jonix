@@ -55,6 +55,9 @@ public class TitleElementLevel implements OnixElement<TitleElementLevels>, Seria
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

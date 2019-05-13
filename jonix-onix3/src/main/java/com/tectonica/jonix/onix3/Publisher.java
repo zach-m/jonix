@@ -23,23 +23,26 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPublisherIdentifier;
 import com.tectonica.jonix.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Publisher composite</h1><p>A repeatable group of data elements which together identify an entity which is
+ * <h1>Publisher composite</h1><p>An optional group of data elements which together identify an entity which is
  * associated with the publishing of a product. The composite allows additional publishing roles to be introduced
  * without adding new fields. Each occurrence of the composite must carry a publishing role code and either a name
- * identifier code or a name or both.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Publisher&gt;</td></tr><tr><td>Short tag</td><td>&lt;publisher&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * identifier or a name or both, and the composite is repeatable in order to identify multiple entities.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Publisher&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;publisher&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Publisher implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -58,6 +61,9 @@ public class Publisher implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -106,6 +112,10 @@ public class Publisher implements OnixSuperComposite, Serializable {
                 case PublisherName.shortname:
                     publisherName = new PublisherName(e);
                     break;
+                case Funding.refname:
+                case Funding.shortname:
+                    fundings = JPU.addToList(fundings, new Funding(e));
+                    break;
                 case Website.refname:
                 case Website.shortname:
                     websites = JPU.addToList(websites, new Website(e));
@@ -135,13 +145,13 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return publishingRole;
     }
 
-    private ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameCodeTypes>
+    private ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameIdentifierTypes>
         publisherIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameCodeTypes> publisherIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameIdentifierTypes> publisherIdentifiers() {
         _initialize();
         return publisherIdentifiers;
     }
@@ -154,6 +164,16 @@ public class Publisher implements OnixSuperComposite, Serializable {
     public PublisherName publisherName() {
         _initialize();
         return publisherName;
+    }
+
+    private List<Funding> fundings = Collections.emptyList();
+
+    /**
+     * (this list may be empty)
+     */
+    public List<Funding> fundings() {
+        _initialize();
+        return fundings;
     }
 
     private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();

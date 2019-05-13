@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -38,9 +38,8 @@ import java.io.Serializable;
  * strictly according to the conventions defined below. Optional and non-repeating. <strong>The &lt;AudienceRange&gt;
  * composite on the next page provides a more general method of handling interest age and other ranges, and is to be
  * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, maximum 15
- * characters.</td></tr><tr><td></td><td>from n1 to n2&#160;&#160;&#160;&#160;Age range from n1 to n2 from
- * n&#160;&#160;&#160;&#160;From age n upwards to n&#160;&#160;&#160;&#160;Up to age n n&#160;&#160;&#160;&#160;Age n
- * only where n is an integer representing age in years</td></tr><tr><td>Reference
+ * characters.</td></tr><tr><td></td><td>from n1 to n2 Age range from n1 to n2 from n From age n upwards to n Up to age
+ * n n Age n only where n is an integer representing age in years</td></tr><tr><td>Reference
  * name</td><td>&lt;InterestAge&gt;</td></tr><tr><td>Short tag</td><td>&lt;b190&gt;</td></tr><tr><td>Example</td><td>&lt;InterestAge&gt;from
  * 9 to 12&lt;/InterestAge&gt;</td></tr></table>
  */
@@ -58,7 +57,7 @@ public class InterestAge implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -103,7 +102,7 @@ public class InterestAge implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

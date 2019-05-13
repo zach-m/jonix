@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 21 (Edition type code)
+ * marker interface to assist in IDE navigation to code-list 21 (Edition type)
  */
 interface CodeList21 {
 }
@@ -37,10 +37,10 @@ interface CodeList21 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 21</b>
  * <p>
- * Description: Edition type code
+ * Description: Edition type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist21">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist21">ONIX
  * Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -72,9 +72,16 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Annotated_edition("ANN", "Annotated edition"), //
 
     /**
-     * Both languages should be specified in the 'Language' group. Use MLL for an edition in more than two languages
+     * Both languages should be specified in the &lt;Language&gt; group. Use MLL for an edition in more than two
+     * languages
      */
     Bilingual_edition("BLL", "Bilingual edition"), //
+
+    /**
+     * Use only where the two languages are presented in parallel on facing pages, or in parallel columns of text on a
+     * single page (otherwise use BLL). Both languages should be specified in the &lt;Language&gt; group
+     */
+    Bilingual_facing_page_edition("BLP", "Bilingual ‘facing page’ edition"), //
 
     /**
      * Braille edition
@@ -135,7 +142,13 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Illustrated_edition("ILL", "Illustrated edition"), //
 
     /**
-     * Large print edition, print sizes 14 to 19 pt - see also ULP
+     * A product aimed specifically at markets other than the country of original publication, usually titled as an
+     * 'International edition' and with specification and/or content changes
+     */
+    International_edition("INT", "International edition"), //
+
+    /**
+     * Large print edition, print sizes 14 to 19pt - see also ULP
      */
     Large_type_large_print_edition("LTE", "Large type / large print edition"), //
 
@@ -184,13 +197,19 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     School_edition("SCH", "School edition"), //
 
     /**
+     * Individually autographed by the author(s)
+     */
+    Signed_edition("SIG", "Signed edition"), //
+
+    /**
      * An edition that uses simplified language (Finnish 'Selkokirja')
      */
     Simplified_language_edition("SMP", "Simplified language edition"), //
 
     /**
      * Use for anniversary, collectors', de luxe, gift, limited (but prefer codes NUM or UNN as appropriate),
-     * autographed edition. Use &lt;EditionStatement&gt; to describe the exact nature of the special edition
+     * autographed (but prefer code SIG as appropriate) edition. Use &lt;EditionStatement&gt; to describe the exact
+     * nature of the special edition
      */
     Special_edition("SPE", "Special edition"), //
 
@@ -200,7 +219,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Student_edition("STU", "Student edition"), //
 
     /**
-     * Where a text is available in both student and teacher's editions; use also for instructor's or leader's editions
+     * Where a text is available in both student and teacher's editions; use also for instructor's or leader's editions,
+     * and for editions intended exclusively for educators where no specific student edition is available
      */
     Teacher_s_edition("TCH", "Teacher’s edition"), //
 
@@ -217,8 +237,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
 
     /**
      * A limited edition in which each copy is not individually numbered - but where the actual number of copies is
-     * strictly limited. Use &lt;EditionStatement&gt; to give details of the number of copies printed &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * strictly limited. Use &lt;EditionStatement&gt; to give details of the number of copies printed
      */
     Edition_with_unnumbered_copies("UNN", "Edition with unnumbered copies"), //
 
@@ -236,7 +255,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     public final String code;
     public final String description;
 
-    private EditionTypes(String code, String description) {
+    EditionTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

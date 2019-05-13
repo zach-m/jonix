@@ -26,7 +26,8 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 140 (US CPSIA choking hazard warning code)
+ * marker interface to assist in IDE navigation to code-list 140 (US CPSIA choking hazard warning code &lt;p&gt;NOTE:
+ * Deprecated in Onix3)
  */
 interface CodeList140 {
 }
@@ -34,10 +35,10 @@ interface CodeList140 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 140</b>
  * <p>
- * Description: US CPSIA choking hazard warning code
+ * Description: US CPSIA choking hazard warning code &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist140">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist140">ONIX
  * Codelist 140 in Reference Guide</a>
  */
 public enum UsCpsiaChokingHazardWarnings implements OnixCodelist, CodeList140 {
@@ -64,8 +65,7 @@ public enum UsCpsiaChokingHazardWarnings implements OnixCodelist, CodeList140 {
      */
     WARNING_CHOKING_HAZARD_Children_under_8_yrs_can_choke_or_suffocate_on_uninflated_or_broken_balloons_Adult_supervision_required_Keep_uninflated_balloons_from_children_Discard_broken_balloons_at_once_(
         "04",
-        "WARNING: CHOKING HAZARD – Children under 8 yrs. can choke or suffocate on uninflated or broken balloons. Adult supervision required | Keep uninflated balloons from children. Discard broken balloons at once."),
-    //
+        "WARNING: CHOKING HAZARD – Children under 8 yrs. can choke or suffocate on uninflated or broken balloons. Adult supervision required | Keep uninflated balloons from children. Discard broken balloons at once."), //
 
     /**
      * List withdrawn - use List 143
@@ -87,7 +87,7 @@ public enum UsCpsiaChokingHazardWarnings implements OnixCodelist, CodeList140 {
     public final String code;
     public final String description;
 
-    private UsCpsiaChokingHazardWarnings(String code, String description) {
+    UsCpsiaChokingHazardWarnings(String code, String description) {
         this.code = code;
         this.description = description;
     }

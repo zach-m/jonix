@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Market publishing status</h1><p>An ONIX code which identifies the status of a published product in a specified
  * market. Mandatory in each occurrence of the &lt;MarketPublishingDetail&gt; composite, and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 68</td></tr><tr><td>Reference name</td><td>&lt;MarketPublishingStatus&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j407&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;MarketPublishingStatus&gt;02&lt;/MarketPublishingStatus&gt;
  * (Forthcoming)</td></tr></table>
@@ -55,6 +55,9 @@ public class MarketPublishingStatus implements OnixElement<MarketPublishingStatu
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

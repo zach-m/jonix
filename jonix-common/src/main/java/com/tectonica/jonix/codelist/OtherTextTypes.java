@@ -29,7 +29,8 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 33 (Other text type code)
+ * marker interface to assist in IDE navigation to code-list 33 (Other text type code &lt;p&gt;NOTE: Deprecated in
+ * Onix3)
  */
 interface CodeList33 {
 }
@@ -37,10 +38,10 @@ interface CodeList33 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 33</b>
  * <p>
- * Description: Other text type code
+ * Description: Other text type code &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist33">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist33">ONIX
  * Codelist 33 in Reference Guide</a>
  */
 public enum OtherTextTypes implements OnixCodelist, CodeList33 {
@@ -215,14 +216,13 @@ public enum OtherTextTypes implements OnixCodelist, CodeList33 {
     /**
      * Short summary statement that the product is available only in digital formats (eg 'Digital exclusive'). If a
      * non-digital version is planned, an &lt;EndDate&gt; should be used to specify the date when exclusivity will end.
-     * If a non-digital version is available, the statement should not be included &lt;p&gt;NOTE: Introduced in Onix3
+     * If a non-digital version is available, the statement should not be included
      */
     Digital_exclusivity_statement("48", "Digital exclusivity statement"), //
 
     /**
      * For example a recommendation or approval provided by a ministry of education or other official body. Use
-     * &lt;Text&gt; to provide details and &lt;TextSourceCorporate&gt; to name the approver &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * &lt;Text&gt; to provide details and &lt;TextSourceCorporate&gt; to name the approver
      */
     Official_recommendation("49", "Official recommendation"), //
 
@@ -244,7 +244,7 @@ public enum OtherTextTypes implements OnixCodelist, CodeList33 {
     public final String code;
     public final String description;
 
-    private OtherTextTypes(String code, String description) {
+    OtherTextTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 48 (Measure type code)
+ * marker interface to assist in IDE navigation to code-list 48 (Measure type)
  */
 interface CodeList48 {
 }
@@ -37,28 +37,31 @@ interface CodeList48 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 48</b>
  * <p>
- * Description: Measure type code
+ * Description: Measure type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist48">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist48">ONIX
  * Codelist 48 in Reference Guide</a>
  */
 public enum MeasureTypes implements OnixCodelist, CodeList48 {
     /**
-     * For a book, the spine height when standing on a shelf. For a folded map, the height when folded. In general, the
-     * height of a product in the form in which it is presented or packaged for retail sale
+     * For a book, the overall height when standing on a shelf. For a folded map, the height when folded. For packaged
+     * products, the height of the retail packaging. In general, the height of a product in the form in which it is
+     * presented or packaged for retail sale
      */
     Height("01", "Height"), //
 
     /**
-     * For a book, the horizontal dimension of the cover when standing upright. For a folded map, the width when folded.
-     * In general, the width of a product in the form in which it is presented or packaged for retail sale
+     * For a book, the overall horizontal dimension of the cover when standing upright. For a folded map, the width when
+     * folded. For packaged products, the width of the retail packaging. In general, the width of a product in the form
+     * in which it is presented or packaged for retail sale
      */
     Width("02", "Width"), //
 
     /**
-     * For a book, the thickness of the spine. For a folded map, the thickness when folded. In general, the thickness or
-     * depth of a product in the form in which it is presented or packaged for retail sale
+     * For a book, the overall thickness of the spine. For a folded map, the thickness when folded. For packaged
+     * products, the depth of the packaging. In general, the thickness or depth of a product in the form in which it is
+     * presented or packaged for retail sale
      */
     Thickness("03", "Thickness"), //
 
@@ -72,6 +75,9 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      */
     Page_trim_width("05", "Page trim width"), //
 
+    /**
+     * The weight of the product, including any retail packaging
+     */
     Unit_weight("08", "Unit weight"), //
 
     /**
@@ -99,12 +105,46 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * The length of a side of the cross-section of a long triangular or square package, usually carrying a rolled sheet
      * product. Use 01 'Height' for the height or length of the package
      */
-    Rolled_sheet_package_side_measure("13", "Rolled sheet package side measure");
+    Rolled_sheet_package_side_measure("13", "Rolled sheet package side measure"), //
+
+    /**
+     * As height, but of the product without packaging (use only for products supplied in retail packaging, must also
+     * supply overall size when packaged using code 01). For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Unpackaged_height("14", "Unpackaged height"), //
+
+    /**
+     * As width, but of the product without packaging (use only for products supplied in retail packaging, must also
+     * supply overall size when packaged using code 02). For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Unpackaged_width("15", "Unpackaged width"), //
+
+    /**
+     * As thickness, but of the product without packaging (use only for products supplied in retail packaging, must also
+     * supply overall size when packaged using code 03). For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Unpackaged_thickness("16", "Unpackaged thickness"), //
+
+    /**
+     * Weight of batteries built-in, pre-installed or supplied with the product. Details of the batteries should be
+     * provided using &lt;ProductFormFeature&gt;. A per-battery unit weight may be calculated from the number of
+     * batteries if required. Use only with ONIX 3.0 &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Total_battery_weight("17", "Total battery weight"), //
+
+    /**
+     * Mass or equivalent mass of elemental Lithium within the batteries built-in, pre-installed or supplied with the
+     * product (eg a Lithium Iron phosphate battery with 160g of cathode material would have a total of around 7g of
+     * Lithium). Details of the batteries must be provided using ProductFormFeature. A per-battery unit mass of Lithium
+     * may be calculated from the number of batteries if required. Use only with ONIX 3.0 &lt;p&gt;NOTE: Introduced in
+     * Onix3
+     */
+    Total_weight_of_Lithium("18", "Total weight of Lithium");
 
     public final String code;
     public final String description;
 
-    private MeasureTypes(String code, String description) {
+    MeasureTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

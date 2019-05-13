@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixConferenceSponsorIdentifier;
 
@@ -56,6 +56,9 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -120,13 +123,13 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameCodeTypes>
+    private ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameIdentifierTypes>
         conferenceSponsorIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameCodeTypes> conferenceSponsorIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameIdentifierTypes> conferenceSponsorIdentifiers() {
         _initialize();
         return conferenceSponsorIdentifiers;
     }

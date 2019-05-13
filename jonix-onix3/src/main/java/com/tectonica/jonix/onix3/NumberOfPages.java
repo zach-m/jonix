@@ -32,7 +32,7 @@ import java.io.Serializable;
 /**
  * <h1>Number of pages</h1><p>The page extent of a text item within a paginated product. Optional and non-repeating, but
  * normally expected when the text item is being referenced as part of a structured table of contents.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length integer, suggested maximum length 6
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 6
  * digits</td></tr><tr><td>Reference name</td><td>&lt;NumberOfPages&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b061&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;NumberOfPages&gt;12&lt;/NumberOfPages&gt;</td></tr></table>
  */
@@ -53,6 +53,9 @@ public class NumberOfPages implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,7 @@ public class NumberOfPages implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length integer, suggested maximum length 6 digits<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 6 digits<p> (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

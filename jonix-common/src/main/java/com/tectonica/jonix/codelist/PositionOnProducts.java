@@ -39,8 +39,8 @@ interface CodeList142 {
  * <p>
  * Description: Position on product
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist142">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist142">ONIX
  * Codelist 142 in Reference Guide</a>
  */
 public enum PositionOnProducts implements OnixCodelist, CodeList142 {
@@ -107,7 +107,7 @@ public enum PositionOnProducts implements OnixCodelist, CodeList142 {
     public final String code;
     public final String description;
 
-    private PositionOnProducts(String code, String description) {
+    PositionOnProducts(String code, String description) {
         this.code = code;
         this.description = description;
     }

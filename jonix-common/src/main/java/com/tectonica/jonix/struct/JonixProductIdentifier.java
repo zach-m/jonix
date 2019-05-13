@@ -38,7 +38,7 @@ public class JonixProductIdentifier implements JonixKeyedStruct<ProductIdentifie
     public ProductIdentifierTypes productIDType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String idTypeName;
 

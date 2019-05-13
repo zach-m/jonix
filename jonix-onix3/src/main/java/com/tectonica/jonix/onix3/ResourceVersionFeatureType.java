@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Resource version feature type</h1><p>An ONIX code which specifies a feature described by an instance of the
  * &lt;ResourceVersionFeature&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 162</td></tr><tr><td>Reference name</td><td>&lt;ResourceVersionFeatureType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x442&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x442&gt;03&lt;/x442&gt;
  * (Image width in pixels)</td></tr></table>
@@ -55,6 +55,9 @@ public class ResourceVersionFeatureType implements OnixElement<ResourceVersionFe
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

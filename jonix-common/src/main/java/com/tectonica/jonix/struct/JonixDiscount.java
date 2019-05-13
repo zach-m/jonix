@@ -35,23 +35,25 @@ public class JonixDiscount implements JonixStruct, Serializable {
     public DiscountTypes discountType;
 
     /**
-     * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
+     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits <p> (type:
+     * dt.PositiveDecimal)
      */
     public Double quantity;
 
     /**
-     * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
+     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits <p> (type:
+     * dt.PositiveDecimal)
      */
     public Double toQuantity;
 
     /**
-     * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
-     * <p> (type: dt.PercentDecimal)
+     * Raw Format: Real number between zero and 100 (inclusive), including explicit decimal point when required,
+     * suggested maximum length 6 characters <p> (type: dt.PercentDecimal)
      */
     public Double discountPercent;
 
     /**
-     * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+     * Raw Format: Positive real number, with explicit decimal point when required, or zero, suggested maximum length 12
      * characters <p> (type: dt.PositiveDecimal)
      */
     public Double discountAmount;

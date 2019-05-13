@@ -32,9 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Measure composite</h1><p>An optional and repeatable group of data elements which together identify a measurement
- * and the units in which it is expressed; used to specify the overall dimensions of a physical product including its
- * packaging (if any).</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Measure&gt;</td></tr><tr><td>Short
+ * <h1>Measure composite (product part)</h1><p>An optional group of data elements which together identify a measurement
+ * and the units in which it is expressed; used to specify the overall dimensions of a physical product part including
+ * its inner packaging (if any). Repeatable to provide multiple combinations of dimension and unit.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;Measure&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;measure&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTypes>, Serializable {
@@ -54,6 +55,9 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

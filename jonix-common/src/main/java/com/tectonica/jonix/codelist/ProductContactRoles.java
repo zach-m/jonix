@@ -21,6 +21,9 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -36,11 +39,16 @@ interface CodeList198 {
  * <p>
  * Description: Product contact role
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist198">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist198">ONIX
  * Codelist 198 in Reference Guide</a>
  */
 public enum ProductContactRoles implements OnixCodelist, CodeList198 {
+    /**
+     * For queries and feedback concerning the metadata record itself &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Metadata_contact("00", "Metadata contact"), //
+
     /**
      * Eg for requests for supply of mutable digital files for conversion to other formats
      */
@@ -69,12 +77,23 @@ public enum ProductContactRoles implements OnixCodelist, CodeList198 {
     /**
      * Eg for requests to reproduce or repurpose parts of the publication
      */
-    Permissions_contact("06", "Permissions contact");
+    Permissions_contact("06", "Permissions contact"), //
+
+    /**
+     * Eg for use where authorisation must be gained from the publisher rather than the distributor or wholesaler
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Return_authorisation_contact("07", "Return authorisation contact"), //
+
+    /**
+     * null &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    CIP_Legal_deposit_contact("08", "CIP / Legal deposit contact");
 
     public final String code;
     public final String description;
 
-    private ProductContactRoles(String code, String description) {
+    ProductContactRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -89,15 +108,29 @@ public enum ProductContactRoles implements OnixCodelist, CodeList198 {
         return description;
     }
 
+    private static volatile Map<String, ProductContactRoles> map;
+
+    private static Map<String, ProductContactRoles> map() {
+        Map<String, ProductContactRoles> result = map;
+        if (result == null) {
+            synchronized (ProductContactRoles.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (ProductContactRoles e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static ProductContactRoles byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (ProductContactRoles e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 }

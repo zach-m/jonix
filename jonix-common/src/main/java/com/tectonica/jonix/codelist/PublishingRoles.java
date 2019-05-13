@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 45 (Publishing role code)
+ * marker interface to assist in IDE navigation to code-list 45 (Publishing role)
  */
 interface CodeList45 {
 }
@@ -37,10 +37,10 @@ interface CodeList45 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 45</b>
  * <p>
- * Description: Publishing role code
+ * Description: Publishing role
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist45">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist45">ONIX
  * Codelist 45 in Reference Guide</a>
  */
 public enum PublishingRoles implements OnixCodelist, CodeList45 {
@@ -105,19 +105,19 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
     Former_publisher("13", "Former publisher"), //
 
     /**
-     * Body funding publication fees, if different from the body funding the underlying research. For use with open
-     * access publications
+     * Body funding publication fees, if different from the body funding the underlying research. Intended primarily for
+     * use with open access publications
      */
     Publication_funder("14", "Publication funder"), //
 
     /**
-     * Body funding the research on which publication is based, if different from the body funding the publication. For
-     * use with open access publications
+     * Body funding the research on which publication is based, if different from the body funding the publication.
+     * Intended primarily for use with open access publications
      */
     Research_funder("15", "Research funder"), //
 
     /**
-     * Body funding research and publication. For use with open access publications
+     * Body funding research and publication. Intended primarily for use with open access publications
      */
     Funding_body("16", "Funding body"), //
 
@@ -137,14 +137,13 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
     /**
      * Organisation primarily responsible for physical manufacture of a product, when neither Printer nor Binder is
      * directly appropriate (for example, with disc or tape products, or digital products on a physical carrier)
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Manufacturer("19", "Manufacturer");
 
     public final String code;
     public final String description;
 
-    private PublishingRoles(String code, String description) {
+    PublishingRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }

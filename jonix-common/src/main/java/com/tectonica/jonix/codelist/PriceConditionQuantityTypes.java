@@ -36,8 +36,8 @@ interface CodeList168 {
  * <p>
  * Description: Price condition quantity type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist168">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist168">ONIX
  * Codelist 168 in Reference Guide</a>
  */
 public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
@@ -49,12 +49,20 @@ public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
     /**
      * The price condition quantity is a number of updates
      */
-    Number_of_updates("02", "Number of updates");
+    Number_of_updates("02", "Number of updates"), //
+
+    /**
+     * Use with Price condition type 06 and a Quantity of units. Price is valid when purchased with a specific number of
+     * products from a list of product identifiers provided in the associated &lt;ProductIdentifier&gt; composites. Use
+     * for example when describing a price for this product which is valid if it is purchased along with any two from a
+     * list of other products &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Number_of_linked_products("03", "Number of linked products");
 
     public final String code;
     public final String description;
 
-    private PriceConditionQuantityTypes(String code, String description) {
+    PriceConditionQuantityTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

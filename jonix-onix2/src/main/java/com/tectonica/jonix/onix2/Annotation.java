@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -37,8 +37,9 @@ import java.io.Serializable;
  * <h1>Annotation</h1><p>A brief descriptive paragraph about the product, length strictly limited to 350 characters.
  * Optional and non-repeating. <strong>The &lt;OtherText&gt; composite on the next page provides a more general method
  * of handling annotations, and is to be preferred.</strong></p><p>The &lt;Annotation&gt; element may carry any of the
- * following ONIX attributes: textformat, language, transliteration, textcase.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, maximum 350 characters</td></tr><tr><td>Reference
+ * following ONIX attributes: <i>textformat, language, transliteration, textcase</i>.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, maximum 350 characters (XHTML is enabled in this element
+ * - see ONIX for Books - Product Information Message - XML Message Specification, Section 7)</td></tr><tr><td>Reference
  * name</td><td>&lt;Annotation&gt;</td></tr><tr><td>Short tag</td><td>&lt;d100&gt;</td></tr><tr><td>Example</td><td>&lt;d100&gt;Set
  * on the Greek island of Cephallonia during World War II, this is the story of a beautiful young woman and her two
  * suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head of the Italian garrison
@@ -58,7 +59,7 @@ public class Annotation implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -76,7 +77,8 @@ public class Annotation implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, maximum 350 characters<p> (type: XHTML)
+     * Raw Format: Variable-length text, maximum 350 characters (XHTML is enabled in this element - see ONIX for Books -
+     * Product Information Message - XML Message Specification, Section 7)<p> (type: XHTML)
      */
     public String value;
 
@@ -103,7 +105,7 @@ public class Annotation implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

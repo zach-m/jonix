@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
@@ -40,23 +40,23 @@ import java.io.Serializable;
  * ONIX should <em>always</em> contain the name of the person or body concerned, and it should <em>always</em> be
  * presented as a piece of continuous text consisting of full sentences. Some recipients of ONIX data feeds will not
  * accept text which has embedded URLs. A contributor website link can be sent using the &lt;Website&gt; composite
- * below.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, no suggested maximum length
+ * below.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, no suggested maximum length
  * (since there is no suggested length for the text in a &lt;TextContent&gt; composite, where a biographical note can
  * alternatively be sent). XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
  * fields</td></tr><tr><td>Reference name</td><td>&lt;BiographicalNote&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b044&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
  * textformat</td></tr><tr><td>Example</td><td>&lt;b044 language=&quot;eng&quot; textformat=&quot;05&quot;&gt;&lt;p&gt;&lt;strong&gt;Umberto
- * Eco&lt;/strong&gt;, professor of semiotics at the University of Bologna, and author of &lt;em&gt;The Name Of The
- * Rose&lt;/em&gt; and &lt;em&gt;Foucault's Pendulum&lt;/em&gt;, is one of the world's bestselling
+ * Eco&lt;/strong&gt;, professor of semiotics at the University of Bologna, and author of &lt;cite&gt;The Name Of The
+ * Rose&lt;/cite&gt; and &lt;cite&gt;Foucault's Pendulum&lt;/cite&gt;, is one of the world's bestselling
  * novelists.&lt;/p&gt;&lt;p&gt;As well as novels, he also writes children's books and academic
  * works.&lt;/p&gt;&lt;/b044&gt; &lt;b044 language=&quot;ita&quot; textformat=&quot;05&quot;&gt;&lt;p&gt;&lt;strong&gt;Umberto
- * Eco&lt;/strong&gt;, professore di semiotica all'Universit&#224; di Bologna e autore di &lt;em&gt;Il nome della
- * rosa&lt;/em&gt; e &lt;em&gt;Il pendolo di Foucault&lt;/em&gt;, &#232; uno dei romanzieri pi&#249; venduto al
+ * Eco&lt;/strong&gt;, professore di semiotica all'Universit&#224; di Bologna e autore di &lt;cite&gt;Il nome della
+ * rosa&lt;/cite&gt; e &lt;cite&gt;Il pendolo di Foucault&lt;/cite&gt;, &#232; uno dei romanzieri pi&#249; venduto al
  * mondo.&lt;/p&gt;&lt;p&gt;Cos&#236; come romanzi, lui scrive anche libri per bambini e opere
  * accademici.&lt;/p&gt;&lt;/b044&gt; (text is marked up with XHTML, and both English and Italian versions are
- * provided)</td></tr><tr><td></td><td>&lt;b044&gt;Umberto Eco, professor of semiotics at the University of Bologna, and
- * author of 'The Name Of The Rose' and 'Foucault's Pendulum', is one of the world's bestselling novelists. As well as
- * novels, he also writes children's books and academic works.&lt;/b044&gt; (text is not marked
+ * provided)</td></tr><tr><td>Example</td><td>&lt;b044&gt;Umberto Eco, professor of semiotics at the University of
+ * Bologna, and author of 'The Name Of The Rose' and 'Foucault's Pendulum', is one of the world's bestselling novelists.
+ * As well as novels, he also writes children's books and academic works.&lt;/b044&gt; (text is not marked
  * up)</td></tr><tr><td>Notes</td><td>Beware of biographical notes including phrases such as 'her latest work
  * is&#8230;', as they are somewhat time-sensitive, and consider the use of the datestamp attribute if such phrases
  * cannot be avoided.</td></tr></table>
@@ -78,9 +78,12 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TextFormats textformat;
 
@@ -89,7 +92,7 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, no suggested maximum length (since there is no suggested length for the text in
+     * Raw Format: Variable length text, no suggested maximum length (since there is no suggested length for the text in
      * a &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this
      * element - see Using XHTML, HTML or XML with ONIX text fields<p> (type: XHTML)
      */
@@ -119,7 +122,7 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
         value = JPU.getChildXHTML(element, true);

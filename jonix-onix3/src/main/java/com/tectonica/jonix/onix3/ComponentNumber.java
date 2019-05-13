@@ -32,7 +32,7 @@ import java.io.Serializable;
 /**
  * <h1>Component number</h1><p>The number (if any) which is given to the content item in the product, in the form
  * (<i>eg</i> Arabic or Roman) in which it is given in the product. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length alphanumeric, suggested maximum length 20
+ * cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested maximum length 20
  * characters</td></tr><tr><td>Reference name</td><td>&lt;ComponentNumber&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b289&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ComponentNumber&gt;XX&lt;/ComponentNumber&gt;</td></tr></table>
  */
@@ -53,6 +53,9 @@ public class ComponentNumber implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,7 @@ public class ComponentNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 

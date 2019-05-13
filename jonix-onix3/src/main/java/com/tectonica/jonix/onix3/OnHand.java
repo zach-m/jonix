@@ -32,9 +32,10 @@ import java.io.Serializable;
 /**
  * <h1>Quantity on hand</h1><p>The quantity of stock on hand and available to fulfill new orders. Either
  * &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of the &lt;Stock&gt; composite, even if
- * the quantity on hand is zero. Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * integer, suggested maximum length 7 digits</td></tr><tr><td>Reference name</td><td>&lt;OnHand&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j350&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;OnHand&gt;4259&lt;/OnHand&gt;</td></tr></table>
+ * the quantity on hand is zero. Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive or
+ * negative integer or zero, suggested maximum length 7 digits. Negative numbers indicate order commitments in excess of
+ * the copies on hand for which no further stock has been ordered</td></tr><tr><td>Reference
+ * name</td><td>&lt;OnHand&gt;</td></tr><tr><td>Short tag</td><td>&lt;j350&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;OnHand&gt;4259&lt;/OnHand&gt;</td></tr></table>
  */
 public class OnHand implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,6 +54,9 @@ public class OnHand implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +64,9 @@ public class OnHand implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 7 digits<p> (type: dt.Integer)
+     * Raw Format: Positive or negative integer or zero, suggested maximum length 7 digits. Negative numbers indicate
+     * order commitments in excess of the copies on hand for which no further stock has been ordered<p> (type:
+     * dt.Integer)
      */
     public Integer value;
 

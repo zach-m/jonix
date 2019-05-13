@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 22 (Language role code)
+ * marker interface to assist in IDE navigation to code-list 22 (Language role)
  */
 interface CodeList22 {
 }
@@ -37,10 +37,10 @@ interface CodeList22 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 22</b>
  * <p>
- * Description: Language role code
+ * Description: Language role
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist22">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist22">ONIX
  * Codelist 22 in Reference Guide</a>
  */
 public enum LanguageRoles implements OnixCodelist, CodeList22 {
@@ -57,39 +57,59 @@ public enum LanguageRoles implements OnixCodelist, CodeList22 {
     Language_of_abstracts("03", "Language of abstracts"), //
 
     /**
-     * Language to which specified rights apply
-     */
-    Rights_language("04", "Rights language"), //
-
-    /**
-     * Language to which specified rights do not apply
-     */
-    Rights_excluded_language("05", "Rights-excluded language"), //
-
-    /**
-     * Where the text in the original language is part of a bilingual or multilingual edition
+     * Where the text in the original language is part of a bilingual or multilingual product
      */
     Original_language_in_a_multilingual_edition("06", "Original language in a multilingual edition"), //
 
     /**
-     * Where the text in a translated language is part of a bilingual or multilingual edition
+     * Where the text in a translated language is part of a bilingual or multilingual product
      */
     Translated_language_in_a_multilingual_edition("07", "Translated language in a multilingual edition"), //
 
     /**
-     * For example, on a DVD
+     * For example, on an audiobook or video product. Use for the only available audio track, or where there are
+     * multiple tracks (eg on a DVD), for an alternate language audio track that is NOT the original. (In the latter
+     * case, use code 11 for the original language audio if it is included in the product, or code 10 to identify an
+     * original language that is not present in the product)
      */
     Language_of_audio_track("08", "Language of audio track"), //
 
     /**
      * For example, on a DVD
      */
-    Language_of_subtitles("09", "Language of subtitles");
+    Language_of_subtitles("09", "Language of subtitles"), //
+
+    /**
+     * Where the audio in the original language is NOT part of the current product
+     */
+    Language_of_original_audio_track("10", "Language of original audio track"), //
+
+    /**
+     * Where the audio in the original language is part of a multilingual product with multiple audio tracks
+     */
+    Original_language_audio_track_in_a_multilingual_product("11",
+        "Original language audio track in a multilingual product"), //
+
+    /**
+     * Use for the language of footnotes, endnotes, annotations or commentary, etc, where it is different from the
+     * language of the main text
+     */
+    Language_of_notes("12", "Language of notes"), //
+
+    /**
+     * Language to which specified rights apply &lt;p&gt;NOTE: Deprecated in Onix3
+     */
+    Rights_language("04", "Rights language"), //
+
+    /**
+     * Language to which specified rights do not apply &lt;p&gt;NOTE: Deprecated in Onix3
+     */
+    Rights_excluded_language("05", "Rights-excluded language");
 
     public final String code;
     public final String description;
 
-    private LanguageRoles(String code, String description) {
+    LanguageRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }

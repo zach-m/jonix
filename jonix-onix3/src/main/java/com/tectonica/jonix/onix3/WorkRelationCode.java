@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Work relation code</h1><p>An ONIX code which identifies the nature of the relationship between a product and a
  * work. Mandatory in each occurrence of the &lt;RelatedWork&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 164</td></tr><tr><td>Reference name</td><td>&lt;WorkRelationCode&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x454&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;WorkRelationCode&gt;01&lt;/WorkRelationCode&gt;
  * (Manifestation of)</td></tr></table>
@@ -55,6 +55,9 @@ public class WorkRelationCode implements OnixElement<WorkRelations>, Serializabl
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

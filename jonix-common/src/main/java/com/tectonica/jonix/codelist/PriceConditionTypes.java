@@ -39,8 +39,8 @@ interface CodeList167 {
  * <p>
  * Description: Price condition type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist167">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist167">ONIX
  * Codelist 167 in Reference Guide</a>
  */
 public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
@@ -65,6 +65,12 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
     Updates_available("03", "Updates available"), //
 
     /**
+     * Purchase at this price requires commitment to purchase specified other product, not included in price
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Linked_subsequent_purchase_price("04", "Linked subsequent purchase price"), //
+
+    /**
      * Purchase at this price requires prior purchase of other product
      */
     Linked_prior_purchase_price("05", "Linked prior purchase price"), //
@@ -75,7 +81,7 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
     Linked_price("06", "Linked price"), //
 
     /**
-     * The duration of the rental to which the price applies
+     * The duration of the rental to which the price applies. Deprecated, use &lt;PriceConstraint&gt; instead
      */
     Rental_duration("10", "Rental duration"), //
 
@@ -86,15 +92,16 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
     Rental_to_purchase("11", "Rental to purchase"), //
 
     /**
-     * Upgrade to longer rental duration. &lt;PriceConditionQuantity&gt; gives minimum prior rental duration. Separate
-     * price condition with rental duration (code 10) specifies the new combined rental duration
+     * Upgrade to longer rental duration. &lt;PriceConditionQuantity&gt; gives minimum prior rental duration, and
+     * &lt;ProductIdentifier&gt; may be used if rental uses a different product identifier. Separate price constraint
+     * with time limited licence duration (code 07) specifies the new combined rental duration
      */
     Rental_extension("12", "Rental extension");
 
     public final String code;
     public final String description;
 
-    private PriceConditionTypes(String code, String description) {
+    PriceConditionTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -36,14 +36,14 @@ interface CodeList179 {
  * <p>
  * Description: Price code type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist179">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist179">ONIX
  * Codelist 179 in Reference Guide</a>
  */
 public enum PriceCodeTypes implements OnixCodelist, CodeList179 {
     /**
-     * A publisher or retailer's proprietary code list which identifies particular codes with particular price points,
-     * price tiers or bands
+     * A publisher or retailer's proprietary code list as specified in &lt;PriceCodeTypeName&gt; which identifies
+     * particular codes with particular price points, price tiers or bands
      */
     Proprietary("01", "Proprietary"), //
 
@@ -62,7 +62,7 @@ public enum PriceCodeTypes implements OnixCodelist, CodeList179 {
     public final String code;
     public final String description;
 
-    private PriceCodeTypes(String code, String description) {
+    PriceCodeTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

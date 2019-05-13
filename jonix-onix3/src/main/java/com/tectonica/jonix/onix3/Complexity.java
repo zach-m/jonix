@@ -31,9 +31,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Complexity composite</h1><p>An optional and repeatable group of data elements which together describe the level
- * of complexity of a text.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Complexity&gt;</td></tr><tr><td>Short tag</td><td>&lt;complexity&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Complexity composite</h1><p>An optional group of data elements which together describe the level of complexity of
+ * a text. Repeatable to specify the complexity using different schemes.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;Complexity&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;complexity&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Complexity implements OnixDataComposite<JonixComplexity>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -52,6 +53,9 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

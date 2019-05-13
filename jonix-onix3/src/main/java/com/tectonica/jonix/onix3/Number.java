@@ -32,7 +32,7 @@ import java.io.Serializable;
 /**
  * <h1>Number of illustrations or other content items</h1><p>The number of illustrations or other content items of the
  * type specified in &lt;AncillaryContentType&gt;. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum length 6
+ * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, suggested maximum length 6
  * digits</td></tr><tr><td>Reference name</td><td>&lt;Number&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b257&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Number&gt;12&lt;/Number&gt;</td></tr></table>
  */
@@ -53,6 +53,9 @@ public class Number implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,7 @@ public class Number implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 6 digits<p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, suggested maximum length 6 digits<p> (type: dt.PositiveInteger)
      */
     public Integer value;
 

@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -39,7 +39,7 @@ import java.io.Serializable;
  * class="new214">The text is not limited to ASCII characters.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length ASCII text, suggested maximum 50
  * characters</td></tr><tr><td>Reference name</td><td>&lt;IDTypeName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b233&gt;</td></tr><tr><td>Example</td><td>&#160;</td></tr></table>
+ * tag</td><td>&lt;b233&gt;</td></tr></table>
  */
 public class IDTypeName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,7 +55,7 @@ public class IDTypeName implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -100,7 +100,7 @@ public class IDTypeName implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

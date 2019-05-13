@@ -24,7 +24,7 @@ import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixProduct;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixBarcode;
@@ -44,10 +44,10 @@ import java.util.List;
  * &lt;Product&gt; composites or a single &lt;NoProduct/&gt; empty element.</p><h3 class="nobreak">Product
  * composite</h3><p>A product is described by a group of data elements beginning with an XML label &lt;Product&gt; and
  * ending with an XML label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two
- * labels constitutes an ONIX Product record. The product record is the fundamental unit within an ONIX Product
+ * labels constitutes an ONIX product record. The product record is the fundamental unit within an ONIX Product
  * Information message. In almost every case, each product record describes an individually tradable item; and in all
  * circumstances, each tradable item identified by a recognized product identifier should be described by one, and only
- * one, ONIX Product record.</p><p>In ONIX 3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data
+ * one, ONIX product record.</p><p>In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data
  * element Groups P.1 and P.2, and carrying data that identifies the record and the product to which it refers. This is
  * followed by up to six ‘blocks’, each optional, some of which are repeatable.</p><table border='1'
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;Product&gt;</td></tr><tr><td>Short
@@ -70,6 +70,9 @@ public class Product implements OnixProduct, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -217,13 +220,13 @@ public class Product implements OnixProduct, Serializable {
         return recordSourceType;
     }
 
-    private ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameCodeTypes>
+    private ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes>
         recordSourceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameCodeTypes> recordSourceIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes> recordSourceIdentifiers() {
         _initialize();
         return recordSourceIdentifiers;
     }

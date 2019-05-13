@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 46 (Sales rights type code)
+ * marker interface to assist in IDE navigation to code-list 46 (Sales rights type)
  */
 interface CodeList46 {
 }
@@ -37,10 +37,10 @@ interface CodeList46 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 46</b>
  * <p>
- * Description: Sales rights type code
+ * Description: Sales rights type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist46">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist46">ONIX
  * Codelist 46 in Reference Guide</a>
  */
 public enum SalesRightsTypes implements OnixCodelist, CodeList46 {
@@ -59,17 +59,14 @@ public enum SalesRightsTypes implements OnixCodelist, CodeList46 {
         "Not for sale in the specified countries or territories (reason unspecified)"), //
 
     Not_for_sale_in_the_specified_countries_but_publisher_holds_exclusive_rights_in_those_countries_or_territories("04",
-        "Not for sale in the specified countries (but publisher holds exclusive rights in those countries or territories)"),
-    //
+        "Not for sale in the specified countries (but publisher holds exclusive rights in those countries or territories)"), //
 
     Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories("05",
-        "Not for sale in the specified countries (publisher holds non-exclusive rights in those countries or territories)"),
-    //
+        "Not for sale in the specified countries (publisher holds non-exclusive rights in those countries or territories)"), //
 
     Not_for_sale_in_the_specified_countries_because_publisher_does_not_hold_rights_in_those_countries_or_territories(
         "06",
-        "Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)"),
-    //
+        "Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)"), //
 
     /**
      * Only for use with ONIX 3. Deprecated
@@ -86,7 +83,7 @@ public enum SalesRightsTypes implements OnixCodelist, CodeList46 {
     public final String code;
     public final String description;
 
-    private SalesRightsTypes(String code, String description) {
+    SalesRightsTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

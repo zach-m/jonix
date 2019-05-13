@@ -39,8 +39,8 @@ interface CodeList162 {
  * <p>
  * Description: Resource version feature type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist162">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist162">ONIX
  * Codelist 162 in Reference Guide</a>
  */
 public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
@@ -60,7 +60,8 @@ public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
     Image_width_in_pixels("03", "Image width in pixels"), //
 
     /**
-     * Resource Version Feature Value carries the filename of the supporting resource
+     * Resource Version Feature Value carries the filename of the supporting resource, necessary only when it is
+     * different from the last part of the path provided in &lt;ResourceLink&gt;
      */
     Filename("04", "Filename"), //
 
@@ -85,14 +86,14 @@ public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
     /**
      * SHA-256 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 256-bit digest
      * value (as 64 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it
-     * has been retrieved &lt;p&gt;NOTE: Introduced in Onix3
+     * has been retrieved
      */
     SHA_256_hash_value("08", "SHA-256 hash value");
 
     public final String code;
     public final String description;
 
-    private ResourceVersionFeatureTypes(String code, String description) {
+    ResourceVersionFeatureTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

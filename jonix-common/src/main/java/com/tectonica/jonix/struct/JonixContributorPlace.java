@@ -21,7 +21,7 @@ package com.tectonica.jonix.struct;
 
 import com.tectonica.jonix.JonixStruct;
 import com.tectonica.jonix.codelist.ContributorPlaceRelators;
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.codelist.Regions;
 
 import java.io.Serializable;
@@ -37,12 +37,12 @@ public class JonixContributorPlace implements JonixStruct, Serializable {
 
     public ContributorPlaceRelators contributorPlaceRelator;
 
-    public CountryCodes countryCode;
+    public Countrys countryCode;
 
     public Regions regionCode;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
      */
     public List<String> locationNames;
 }

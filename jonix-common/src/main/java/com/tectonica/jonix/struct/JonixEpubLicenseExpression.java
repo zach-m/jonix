@@ -38,12 +38,12 @@ public class JonixEpubLicenseExpression implements JonixKeyedStruct<LicenseExpre
     public LicenseExpressionTypes epubLicenseExpressionType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String epubLicenseExpressionTypeName;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: dt.NonEmptyURI)
+     * Raw Format: Variable length text, suggested maximum length 300 characters <p> (type: dt.NonEmptyURI)
      */
     public String epubLicenseExpressionLink;
 

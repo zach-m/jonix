@@ -35,8 +35,9 @@ import java.util.List;
 
 /**
  * <h1>Conference composite</h1><p>A group of data elements which together describe a conference to which the product is
- * related. Optional, and repeatable if the product contains material from two or more conferences.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;Conference&gt;</td></tr><tr><td>Short
+ * related. Optional, and repeatable if the product contains material from two or more conferences.</p><p> The whole of
+ * the &lt;Conference&gt; composite is deprecated, in favor of the &lt;Event&gt; composite which has an equivalent
+ * structure.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Conference&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;conference&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Conference implements OnixSuperComposite, Serializable {
@@ -56,6 +57,9 @@ public class Conference implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

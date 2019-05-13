@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixRecordSourceIdentifier;
 
@@ -32,13 +32,13 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Record source identifier composite</h1><p>A repeatable group of data elements which together define an identifier
- * of the organization which is the source of the ONIX record. Optional.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;RecordSourceIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;recordsourceidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Record source identifier composite</h1><p>A group of data elements which together define an identifier of the
+ * organization which is the source of the ONIX record. Optional, and repeatable in order to send multiple identifiers
+ * for the same organization.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;RecordSourceIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;recordsourceidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class RecordSourceIdentifier
-    implements OnixDataCompositeWithKey<JonixRecordSourceIdentifier, NameCodeTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixRecordSourceIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "RecordSourceIdentifier";
@@ -55,6 +55,9 @@ public class RecordSourceIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -159,7 +162,7 @@ public class RecordSourceIdentifier
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return recordSourceIDType().value;
     }
 }

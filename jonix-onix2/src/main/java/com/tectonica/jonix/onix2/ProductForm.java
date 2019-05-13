@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.ProductFormsList7;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -39,10 +39,10 @@ import java.io.Serializable;
  * non-repeating; required in any occurrence of the &lt;RelatedProduct&gt; composite that does not carry a product
  * identifier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
  * letters.</td></tr><tr><td>Codelist</td><td>List 7</td></tr><tr><td>Reference name</td><td>&lt;ProductForm&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b012&gt;</td></tr><tr><td>Example</td><td>&lt;b012&gt;BB&lt;/b012&gt;&#160;&#160;&#160;&#160;Hardback
+ * tag</td><td>&lt;b012&gt;</td></tr><tr><td>Example</td><td>&lt;b012&gt;BB&lt;/b012&gt; Hardback
  * book</td></tr></table>
  */
-public class ProductForm implements OnixElement<ProductForms>, Serializable {
+public class ProductForm implements OnixElement<ProductFormsList7>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ProductForm";
@@ -56,7 +56,7 @@ public class ProductForm implements OnixElement<ProductForms>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -73,13 +73,13 @@ public class ProductForm implements OnixElement<ProductForms>, Serializable {
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public ProductForms value;
+    public ProductFormsList7 value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public ProductForms _value() {
+    public ProductFormsList7 _value() {
         return value;
     }
 
@@ -98,13 +98,13 @@ public class ProductForm implements OnixElement<ProductForms>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = ProductForms.byCode(JPU.getContentAsString(element));
+        value = ProductFormsList7.byCode(JPU.getContentAsString(element));
     }
 
     @Override

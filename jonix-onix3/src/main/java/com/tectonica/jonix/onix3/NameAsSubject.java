@@ -20,22 +20,29 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
+import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixNameIdentifier;
+import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
+import com.tectonica.jonix.struct.JonixSubjectDate;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Name as subject composite</h1><p>A group of data elements which together identify a person or organization as a
- * subject of a content item. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;NameAsSubject&gt;</td></tr><tr><td>Short tag</td><td>&lt;nameassubject&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Name as subject composite</h1><p>An optional and repeatable group of data elements which together represent the
+ * name of a person or organization – real or fictional – that is part of the subject of a content item.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;NameAsSubject&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;nameassubject&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class NameAsSubject implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -54,6 +61,9 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -138,6 +148,10 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
                 case TitlesAfterNames.shortname:
                     titlesAfterNames = new TitlesAfterNames(e);
                     break;
+                case Gender.refname:
+                case Gender.shortname:
+                    gender = new Gender(e);
+                    break;
                 case CorporateName.refname:
                 case CorporateName.shortname:
                     corporateName = new CorporateName(e);
@@ -145,6 +159,18 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
                 case CorporateNameInverted.refname:
                 case CorporateNameInverted.shortname:
                     corporateNameInverted = new CorporateNameInverted(e);
+                    break;
+                case AlternativeName.refname:
+                case AlternativeName.shortname:
+                    alternativeNames = JPU.addToList(alternativeNames, new AlternativeName(e));
+                    break;
+                case SubjectDate.refname:
+                case SubjectDate.shortname:
+                    subjectDates = JPU.addToList(subjectDates, new SubjectDate(e));
+                    break;
+                case ProfessionalAffiliation.refname:
+                case ProfessionalAffiliation.shortname:
+                    professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(e));
                     break;
                 default:
                     break;
@@ -171,13 +197,13 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return nameType;
     }
 
-    private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameCodeTypes> nameIdentifiers =
+    private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameCodeTypes> nameIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {
         _initialize();
         return nameIdentifiers;
     }
@@ -282,6 +308,16 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
+    private Gender gender = Gender.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public Gender gender() {
+        _initialize();
+        return gender;
+    }
+
     private CorporateName corporateName = CorporateName.EMPTY;
 
     /**
@@ -300,5 +336,37 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     public CorporateNameInverted corporateNameInverted() {
         _initialize();
         return corporateNameInverted;
+    }
+
+    private List<AlternativeName> alternativeNames = Collections.emptyList();
+
+    /**
+     * (this list may be empty)
+     */
+    public List<AlternativeName> alternativeNames() {
+        _initialize();
+        return alternativeNames;
+    }
+
+    private ListOfOnixDataCompositeWithKey<SubjectDate, JonixSubjectDate, PersonOrganizationDateRoles> subjectDates =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<SubjectDate, JonixSubjectDate, PersonOrganizationDateRoles> subjectDates() {
+        _initialize();
+        return subjectDates;
+    }
+
+    private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations =
+        ListOfOnixDataComposite.empty();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations() {
+        _initialize();
+        return professionalAffiliations;
     }
 }

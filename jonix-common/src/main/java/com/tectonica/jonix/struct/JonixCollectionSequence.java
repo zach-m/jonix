@@ -43,8 +43,9 @@ public class JonixCollectionSequence implements JonixKeyedStruct<CollectionSeque
     public String collectionSequenceTypeName;
 
     /**
-     * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
-     * character, suggested maximum length 100 characters <p> (type: dt.MultiLevelNumber)
+     * Raw Format: Variable length string of one or more positive integers or hyphens, each successive integer or hyphen
+     * being separated by a period character, suggested maximum length 50 characters <p> (type:
+     * dt.MultiLevelNumberOrHyphen)
      */
     public String collectionSequenceNumber;
 

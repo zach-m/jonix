@@ -29,7 +29,8 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 10 (Epublication type code)
+ * marker interface to assist in IDE navigation to code-list 10 (Epublication type code &lt;p&gt;NOTE: Deprecated in
+ * Onix3)
  */
 interface CodeList10 {
 }
@@ -37,10 +38,10 @@ interface CodeList10 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 10</b>
  * <p>
- * Description: Epublication type code
+ * Description: Epublication type code &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist10">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist10">ONIX
  * Codelist 10 in Reference Guide</a>
  */
 public enum EpublicationTypes implements OnixCodelist, CodeList10 {
@@ -327,7 +328,7 @@ public enum EpublicationTypes implements OnixCodelist, CodeList10 {
 
     /**
      * Proprietary format based on PDF used by Barnes and Noble for fixed-format e-books, readable on some NOOK devices
-     * and Nook reader software &lt;p&gt;NOTE: Introduced in Onix3
+     * and Nook reader software
      */
     Page_Perfect("048", "Page Perfect"), //
 
@@ -344,7 +345,7 @@ public enum EpublicationTypes implements OnixCodelist, CodeList10 {
     public final String code;
     public final String description;
 
-    private EpublicationTypes(String code, String description) {
+    EpublicationTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

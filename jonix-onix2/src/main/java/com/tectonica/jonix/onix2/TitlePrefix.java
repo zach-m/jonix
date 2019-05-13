@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -38,9 +38,9 @@ import java.io.Serializable;
  * and non-repeating; can only be used if the &lt;TitleWithoutPrefix&gt; element is also present. These two elements may
  * be used in combination in applications where it is necessary to distinguish an initial word or character string which
  * is to be ignored for filing purposes, <em>eg</em> in library systems and in some bookshop databases. The
- * &lt;TitlePrefix&gt; element may carry any of the following ONIX attributes: textformat, language, transliteration,
- * textcase.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length
- * 20 characters</td></tr><tr><td>Reference name</td><td>&lt;TitlePrefix&gt;</td></tr><tr><td>Short
+ * &lt;TitlePrefix&gt; element may carry any of the following ONIX attributes: <i>textformat, language, transliteration,
+ * textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
+ * length 20 characters</td></tr><tr><td>Reference name</td><td>&lt;TitlePrefix&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b030&gt;</td></tr><tr><td>Example</td><td>&lt;b030&gt;The&lt;/b030&gt;</td></tr></table>
  */
 public class TitlePrefix implements OnixElement<String>, Serializable {
@@ -57,7 +57,7 @@ public class TitlePrefix implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -102,7 +102,7 @@ public class TitlePrefix implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

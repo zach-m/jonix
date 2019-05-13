@@ -34,7 +34,7 @@ import java.io.Serializable;
  * <h1>Bible version</h1><p>An ONIX code indicating the version of a Bible or selected Biblical text, for example ‘King
  * James’, ‘Jerusalem’, ‘New American Standard’, ‘Reina Valera’. Mandatory in each occurrence of the &lt;Bible&gt;
  * composite, and repeatable if a work includes text in two or more versions.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three letters</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, three letters</td></tr><tr><td>Codelist</td><td>List
  * 83</td></tr><tr><td>Reference name</td><td>&lt;BibleVersion&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b353&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td>&lt;BibleVersion&gt;JER&lt;/BibleVersion&gt;
  * (Jerusalem)</td></tr></table>
@@ -56,6 +56,9 @@ public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

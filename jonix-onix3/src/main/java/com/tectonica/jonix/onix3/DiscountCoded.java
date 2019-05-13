@@ -32,12 +32,12 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Discount code composite</h1><p>A repeatable group of data elements which together define a discount code from a
- * specified scheme, and allowing different discount code schemes to be supported without defining additional data
- * elements. Optional. A discount code is generally used when the exact percentage discount (or commission, in an agency
- * business model) that a code represents may vary from reseller to reseller (or from agent to agent), or if terms must
- * be kept confidential. If the discount (or commission) is the same for all resellers (or agents) and need not be kept
- * confidential, use &lt;Discount&gt; and &lt;DiscountPercent&gt; instead.</p><table border='1'
+ * <h1>Discount code composite</h1><p>An optional group of data elements which together define a discount code from a
+ * specified scheme, and repeatable to allow different discount code schemes to be supported without defining additional
+ * data elements.</p><p>A discount code is generally used when the exact percentage discount (or commission, in an
+ * agency business model) that a code represents may vary from reseller to reseller (or from agent to agent), or if
+ * terms must be kept confidential. If the discount (or commission) is the same for all resellers (or agents) and need
+ * not be kept confidential, use &lt;Discount&gt; and &lt;DiscountPercent&gt; instead.</p><table border='1'
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;DiscountCoded&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;discountcoded&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
@@ -58,6 +58,9 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

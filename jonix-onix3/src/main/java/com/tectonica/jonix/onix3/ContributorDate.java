@@ -32,9 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor date composite</h1><p>A repeatable group of data elements which together specify a date associated
- * with the person or organization identified in an occurrence of the &lt;Contributor&gt; composite, <i>eg</i> birth or
- * death. Optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ContributorDate&gt;</td></tr><tr><td>Short
+ * <h1>Contributor date composite</h1><p>A group of data elements which together specify a date associated with the
+ * person or organization identified in an occurrence of the &lt;Contributor&gt; composite, <i>eg</i> birth or death.
+ * Optional, and repeatable to allow multiple dates to be specified.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ContributorDate&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;contributordate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ContributorDate
@@ -55,6 +56,9 @@ public class ContributorDate
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

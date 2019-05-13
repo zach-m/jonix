@@ -20,9 +20,12 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.JonixTax;
+import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
 
@@ -31,14 +34,18 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Tax composite</h1><p>A repeatable group of data elements which together specify tax applicable to a price.
- * Optional. For items to which two different taxes or tax rates apply (<i>eg</i> mixed media products in the UK which
- * are partly taxed at standard rate and partly at zero rate), the composite is repeated for each separate tax or tax
- * rate. For UK VAT, it is recommended that all elements in the composite should be explicitly populated.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Tax&gt;</td></tr><tr><td>Short
+ * <h1>Tax composite</h1><p>A repeatable group of data elements which together specify tax included within a price
+ * amount. Optional, and used only when &lt;PriceType&gt; indicates an inc-tax price. For items to which different taxes
+ * or tax rates apply (<i>eg</i> mixed media products in the UK which are partly taxed at standard rate and partly at
+ * zero rate), the composite is repeated for each separate tax or tax rate. Although only one of &lt;TaxRatePercent&gt;
+ * or &lt;TaxAmount&gt; is mandatory within the composite, it is recommended that all tax elements in the composite
+ * should be explicitly populated.</p><p>If the tax regime requires separate tax rates and amounts linked explicitly to
+ * particular product parts (<i>eg</i> in Germany), the &lt;ProductIdentifier&gt; composite may be included in each
+ * &lt;Tax&gt; composite. Where tax is payable on multiple product parts, each should have its own instance of the
+ * &lt;Tax&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Tax&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;tax&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Tax implements OnixDataComposite<JonixTax>, Serializable {
+public class Tax implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Tax";
@@ -55,6 +62,9 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -91,6 +101,14 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case PricePartDescription.refname:
+                case PricePartDescription.shortname:
+                    pricePartDescriptions = JPU.addToList(pricePartDescriptions, new PricePartDescription(e));
+                    break;
                 case TaxType.refname:
                 case TaxType.shortname:
                     taxType = new TaxType(e);
@@ -125,6 +143,27 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+        _initialize();
+        return productIdentifiers;
+    }
+
+    private ListOfOnixElement<PricePartDescription, String> pricePartDescriptions = ListOfOnixElement.empty();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<PricePartDescription, String> pricePartDescriptions() {
+        _initialize();
+        return pricePartDescriptions;
+    }
 
     private TaxType taxType = TaxType.EMPTY;
 
@@ -174,17 +213,5 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
     public TaxAmount taxAmount() {
         _initialize();
         return taxAmount;
-    }
-
-    @Override
-    public JonixTax asStruct() {
-        _initialize();
-        JonixTax struct = new JonixTax();
-        struct.taxType = taxType.value;
-        struct.taxRateCode = taxRateCode.value;
-        struct.taxRatePercent = taxRatePercent.value;
-        struct.taxableAmount = taxableAmount.value;
-        struct.taxAmount = taxAmount.value;
-        return struct;
     }
 }

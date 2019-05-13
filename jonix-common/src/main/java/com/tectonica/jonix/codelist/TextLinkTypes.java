@@ -26,7 +26,8 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 35 (Text link type code)
+ * marker interface to assist in IDE navigation to code-list 35 (Text link type code &lt;p&gt;NOTE: Deprecated in
+ * Onix3)
  */
 interface CodeList35 {
 }
@@ -34,10 +35,10 @@ interface CodeList35 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 35</b>
  * <p>
- * Description: Text link type code
+ * Description: Text link type code &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist35">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist35">ONIX
  * Codelist 35 in Reference Guide</a>
  */
 public enum TextLinkTypes implements OnixCodelist, CodeList35 {
@@ -56,7 +57,7 @@ public enum TextLinkTypes implements OnixCodelist, CodeList35 {
     public final String code;
     public final String description;
 
-    private TextLinkTypes(String code, String description) {
+    TextLinkTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

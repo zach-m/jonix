@@ -32,8 +32,8 @@ import java.io.Serializable;
 /**
  * <h1>Subject scheme version number</h1><p>A number which identifies a version or edition of the subject scheme
  * specified in the associated &lt;SubjectSchemeIdentifier&gt; element. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Free form. Suggested maximum length 10 characters, for consistency with other
- * version number elements</td></tr><tr><td>Reference name</td><td>&lt;SubjectSchemeVersion&gt;</td></tr><tr><td>Short
+ * cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested maximum length 10 characters for
+ * consistency with other version number elements</td></tr><tr><td>Reference name</td><td>&lt;SubjectSchemeVersion&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b068&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;SubjectSchemeVersion&gt;2.1&lt;/SubjectSchemeVersion&gt;</td></tr></table>
  */
 public class SubjectSchemeVersion implements OnixElement<String>, Serializable {
@@ -53,6 +53,9 @@ public class SubjectSchemeVersion implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,8 +63,8 @@ public class SubjectSchemeVersion implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number
-     * elements<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 10 characters for consistency with other
+     * version number elements<p> (type: dt.NonEmptyString)
      */
     public String value;
 

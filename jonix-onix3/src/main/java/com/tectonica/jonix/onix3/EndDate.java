@@ -54,6 +54,9 @@ public class EndDate implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     public DateFormats dateformat;

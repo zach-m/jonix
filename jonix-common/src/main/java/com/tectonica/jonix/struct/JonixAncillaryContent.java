@@ -39,13 +39,13 @@ public class JonixAncillaryContent implements JonixKeyedStruct<IllustrationAndOt
     public IllustrationAndOtherContentTypes ancillaryContentType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see
+     * Raw Format: Variable length text, suggested maximum length 100 characters. XHTML is enabled in this element - see
      * Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
      */
     public List<String> ancillaryContentDescriptions;
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 6 digits <p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, suggested maximum length 6 digits <p> (type: dt.PositiveInteger)
      */
     public Integer number;
 

@@ -55,6 +55,9 @@ public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Ser
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

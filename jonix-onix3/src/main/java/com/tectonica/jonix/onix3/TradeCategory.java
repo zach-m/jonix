@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Trade category code</h1><p>An ONIX code which indicates a trade category which is somewhat related to, but not
  * properly an attribute of, product form. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 12</td></tr><tr><td>Reference name</td><td>&lt;TradeCategory&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b384&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;TradeCategory&gt;03&lt;/TradeCategory&gt;
  * (Sonderausgabe - Germany)</td></tr></table>
@@ -55,6 +55,9 @@ public class TradeCategory implements OnixElement<TradeCategorys>, Serializable 
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

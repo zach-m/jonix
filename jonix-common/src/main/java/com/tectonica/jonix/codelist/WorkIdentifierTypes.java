@@ -21,12 +21,15 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 16 (Work identifier type code)
+ * marker interface to assist in IDE navigation to code-list 16 (Work identifier type)
  */
 interface CodeList16 {
 }
@@ -34,13 +37,16 @@ interface CodeList16 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 16</b>
  * <p>
- * Description: Work identifier type code
+ * Description: Work identifier type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist16">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist16">ONIX
  * Codelist 16 in Reference Guide</a>
  */
 public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
+    /**
+     * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
+     */
     Proprietary("01", "Proprietary"), //
 
     /**
@@ -63,19 +69,30 @@ public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
     ISTC("11", "ISTC"), //
 
     /**
-     * 13-character ISBN of manifestation of work, when this is the only work identifier available
+     * 13-character ISBN of manifestation of work, when this is the only work identifier available (13 digits, without
+     * spaces or hyphens)
      */
     ISBN_13("15", "ISBN-13"), //
 
     /**
      * International Standard Recording Code
      */
-    ISRC("18", "ISRC");
+    ISRC("18", "ISRC"), //
+
+    /**
+     * Global Library Manifestation Identifier, OCLC's 'manifestation cluster' ID
+     */
+    GLIMIR("32", "GLIMIR"), //
+
+    /**
+     * OCLC Work Identifier
+     */
+    OWI("33", "OWI");
 
     public final String code;
     public final String description;
 
-    private WorkIdentifierTypes(String code, String description) {
+    WorkIdentifierTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -90,15 +107,29 @@ public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
         return description;
     }
 
+    private static volatile Map<String, WorkIdentifierTypes> map;
+
+    private static Map<String, WorkIdentifierTypes> map() {
+        Map<String, WorkIdentifierTypes> result = map;
+        if (result == null) {
+            synchronized (WorkIdentifierTypes.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (WorkIdentifierTypes e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static WorkIdentifierTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (WorkIdentifierTypes e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 }

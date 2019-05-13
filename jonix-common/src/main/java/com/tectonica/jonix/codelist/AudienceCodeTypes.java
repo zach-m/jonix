@@ -39,8 +39,8 @@ interface CodeList29 {
  * <p>
  * Description: Audience code type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist29">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist29">ONIX
  * Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -49,6 +49,9 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
      */
     ONIX_audience_codes("01", "ONIX audience codes"), //
 
+    /**
+     * As specified in &lt;AudienceCodeTypeName&gt;
+     */
     Proprietary("02", "Proprietary"), //
 
     /**
@@ -163,9 +166,10 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
 
     /**
      * Codes A1 to C2 indicating standardised level of language learning or teaching material, from beginner to
-     * advanced, used in EU
+     * advanced, defined by the Council of Europe (see http://www.coe.int/lang-CEFR)
      */
-    Common_European_Framework_for_Language_Learning("23", "Common European Framework for Language Learning"), //
+    Common_European_Framework_of_Reference_for_Language_Learning_CEFR("23",
+        "Common European Framework of Reference for Language Learning (CEFR)"), //
 
     /**
      * Rating used in Korea to control selling of books and e-books to minors. Current values are 0 (suitable for all)
@@ -198,14 +202,14 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
 
     /**
      * Code indicating the intended curriculum (eg Naturvetenskapsprogrammet, Estetica programmet) in Swedish higher
-     * secondary education &lt;p&gt;NOTE: Introduced in Onix3
+     * secondary education
      */
     Gymnasieprogram("29", "Gymnasieprogram");
 
     public final String code;
     public final String description;
 
-    private AudienceCodeTypes(String code, String description) {
+    AudienceCodeTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

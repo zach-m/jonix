@@ -36,8 +36,8 @@ interface CodeList14 {
  * <p>
  * Description: Text case flag
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist14">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist14">ONIX
  * Codelist 14 in Reference Guide</a>
  */
 public enum TextCaseFlags implements OnixCodelist, CodeList14 {
@@ -59,14 +59,15 @@ public enum TextCaseFlags implements OnixCodelist, CodeList14 {
     Title_case("02", "Title case"), //
 
     /**
-     * For example, 'THE CONQUEST OF MEXICO'
+     * For example, 'THE CONQUEST OF MEXICO'. Use only when Sentence or Title case are not possible (for example because
+     * of system limitations). Do NOT use simply because title is (correctly) in all caps (eg 'BBQ USA')
      */
     All_capitals("03", "All capitals");
 
     public final String code;
     public final String description;
 
-    private TextCaseFlags(String code, String description) {
+    TextCaseFlags(String code, String description) {
         this.code = code;
         this.description = description;
     }

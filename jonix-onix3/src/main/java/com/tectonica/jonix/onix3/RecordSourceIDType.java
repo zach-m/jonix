@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -33,12 +33,12 @@ import java.io.Serializable;
 /**
  * <h1>Record source identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;RecordSourceIdentifier&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;RecordSourceIDType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x311&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x311&gt;03&lt;/x311&gt;
  * (Deutsche Bibliothek publisher identifier)</td></tr></table>
  */
-public class RecordSourceIDType implements OnixElement<NameCodeTypes>, Serializable {
+public class RecordSourceIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "RecordSourceIDType";
@@ -55,19 +55,22 @@ public class RecordSourceIDType implements OnixElement<NameCodeTypes>, Serializa
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public NameCodeTypes value;
+    public NameIdentifierTypes value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public NameCodeTypes _value() {
+    public NameIdentifierTypes _value() {
         return value;
     }
 
@@ -88,7 +91,7 @@ public class RecordSourceIDType implements OnixElement<NameCodeTypes>, Serializa
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = NameCodeTypes.byCode(JPU.getContentAsString(element));
+        value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
     @Override

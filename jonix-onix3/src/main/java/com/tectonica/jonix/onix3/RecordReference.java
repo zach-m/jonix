@@ -37,11 +37,13 @@ import java.io.Serializable;
  * product identifier as a part or the whole of your record reference – it identifies <em>your information record about
  * the product</em>, so that the person to whom you are sending an update can match it with what you have previously
  * sent. A good way of generating references which are not part of a recognized product identification scheme but which
- * can be guaranteed to be unique is to prefix a product identifier with a reversed Internet domain name which is
- * registered to your organization (reversal prevents the record reference appearing to be a resolvable URL).</p><p>This
- * field is mandatory and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length,
- * alphanumeric, suggested maximum length 100 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;RecordReference&gt;</td></tr><tr><td>Short tag</td><td>&lt;a001&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;a001&gt;com.xyzpublishers.onix.9780001234567&lt;/a001&gt;</td></tr></table>
+ * can be guaranteed to be unique is to prefix a product identifier or a meaningless row ID from your internal database
+ * with a reversed Internet domain name which is registered to your organization (reversal prevents the record reference
+ * appearing to be a resolvable URL). Alternatively, use a UUID.</p><p>This field is mandatory and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested
+ * maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;RecordReference&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;a001&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;a001&gt;com.xyzpublishers.onix.36036&lt;/a001&gt;
+ * (36036 is row ID in an internal database that is the source of the data in the record)</td></tr></table>
  */
 public class RecordReference implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -60,6 +62,9 @@ public class RecordReference implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -67,7 +72,7 @@ public class RecordReference implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length, alphanumeric, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 

@@ -36,8 +36,8 @@ interface CodeList197 {
  * <p>
  * Description: Collection sequence type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist197">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist197">ONIX
  * Codelist 197 in Reference Guide</a>
  */
 public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
@@ -66,12 +66,24 @@ public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
      * Original publication order, for a republished collection or collected works originally published outside a
      * collection
      */
-    Original_publication_order("05", "Original publication order");
+    Original_publication_order("05", "Original publication order"), //
+
+    /**
+     * Where it is different from the title order, publication order, narrative order etc &lt;p&gt;NOTE: Introduced in
+     * Onix3
+     */
+    Suggested_reading_order("06", "Suggested reading order"), //
+
+    /**
+     * Where it is different from the title order, publication order, narrative order, reading order etc &lt;p&gt;NOTE:
+     * Introduced in Onix3
+     */
+    Suggested_display_order("07", "Suggested display order");
 
     public final String code;
     public final String description;
 
-    private CollectionSequenceTypes(String code, String description) {
+    CollectionSequenceTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

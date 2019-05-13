@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -39,8 +39,8 @@ import java.io.Serializable;
  * the &lt;WebsiteLink&gt; element. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
  * 73</td></tr><tr><td>Reference name</td><td>&lt;WebsiteRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b367&gt;</td></tr><tr><td>Example</td><td>&lt;WebsiteRole&gt;37&lt;/WebsiteRole&gt;&#160;&#160;&#160;&#160;Supplier's
- * B2B website for work</td></tr></table>
+ * tag</td><td>&lt;b367&gt;</td></tr><tr><td>Example</td><td>&lt;WebsiteRole&gt;37&lt;/WebsiteRole&gt; Supplier's B2B
+ * website for work</td></tr></table>
  */
 public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -56,7 +56,7 @@ public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -98,7 +98,7 @@ public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

@@ -20,7 +20,7 @@
 package com.tectonica.jonix.struct;
 
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 
 import java.io.Serializable;
@@ -36,16 +36,16 @@ public class JonixPrize implements JonixStruct, Serializable {
 
     public PrizeOrAwardAchievements prizeCode;
 
-    public CountryCodes prizeCountry;
+    public Countrys prizeCountry;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+     * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
      * Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
      */
     public List<String> prizeJurys;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
      */
     public List<String> prizeNames;
 

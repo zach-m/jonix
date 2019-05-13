@@ -33,7 +33,7 @@ import java.io.Serializable;
  * <h1>Subject code</h1><p>A subject class or category code from the scheme specified in the
  * &lt;SubjectSchemeIdentifier&gt; element. Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be
  * present in each occurrence of the &lt;Subject&gt; composite. Non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length, alphanumeric, suggested maximum length 20
+ * cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested maximum length 20
  * characters</td></tr><tr><td>Codelist</td><td>The scheme specified in the associated &lt;SubjectSchemeIdentifier&gt;
  * element</td></tr><tr><td>Reference name</td><td>&lt;SubjectCode&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b069&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;SubjectCode&gt;623.95&lt;/SubjectCode&gt;</td></tr></table>
@@ -55,6 +55,9 @@ public class SubjectCode implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +65,7 @@ public class SubjectCode implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 

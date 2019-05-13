@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -41,7 +41,7 @@ import java.io.Serializable;
  * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;SenderIDType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;m379&gt;</td></tr><tr><td>Example</td><td>&lt;SenderIDType&gt;01&lt;/SenderIDType&gt;</td></tr></table>
  */
-public class SenderIDType implements OnixElement<NameCodeTypes>, Serializable {
+public class SenderIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "SenderIDType";
@@ -55,7 +55,7 @@ public class SenderIDType implements OnixElement<NameCodeTypes>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -72,13 +72,13 @@ public class SenderIDType implements OnixElement<NameCodeTypes>, Serializable {
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public NameCodeTypes value;
+    public NameIdentifierTypes value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public NameCodeTypes _value() {
+    public NameIdentifierTypes _value() {
         return value;
     }
 
@@ -97,13 +97,13 @@ public class SenderIDType implements OnixElement<NameCodeTypes>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = NameCodeTypes.byCode(JPU.getContentAsString(element));
+        value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
     @Override

@@ -25,13 +25,14 @@ import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixContributorDate;
 import com.tectonica.jonix.struct.JonixContributorPlace;
 import com.tectonica.jonix.struct.JonixNameIdentifier;
+import com.tectonica.jonix.struct.JonixPrize;
 import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
 import com.tectonica.jonix.struct.JonixWebsite;
 
@@ -65,6 +66,9 @@ public class Contributor implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -165,6 +169,10 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case TitlesAfterNames.shortname:
                     titlesAfterNames = new TitlesAfterNames(e);
                     break;
+                case Gender.refname:
+                case Gender.shortname:
+                    gender = new Gender(e);
+                    break;
                 case CorporateName.refname:
                 case CorporateName.shortname:
                     corporateName = new CorporateName(e);
@@ -172,6 +180,10 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case CorporateNameInverted.refname:
                 case CorporateNameInverted.shortname:
                     corporateNameInverted = new CorporateNameInverted(e);
+                    break;
+                case UnnamedPersons.refname:
+                case UnnamedPersons.shortname:
+                    unnamedPersons = new UnnamedPersons(e);
                     break;
                 case AlternativeName.refname:
                 case AlternativeName.shortname:
@@ -185,6 +197,10 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case ProfessionalAffiliation.shortname:
                     professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(e));
                     break;
+                case Prize.refname:
+                case Prize.shortname:
+                    prizes = JPU.addToList(prizes, new Prize(e));
+                    break;
                 case BiographicalNote.refname:
                 case BiographicalNote.shortname:
                     biographicalNotes = JPU.addToList(biographicalNotes, new BiographicalNote(e));
@@ -196,10 +212,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case ContributorDescription.refname:
                 case ContributorDescription.shortname:
                     contributorDescriptions = JPU.addToList(contributorDescriptions, new ContributorDescription(e));
-                    break;
-                case UnnamedPersons.refname:
-                case UnnamedPersons.shortname:
-                    unnamedPersons = new UnnamedPersons(e);
                     break;
                 case ContributorPlace.refname:
                 case ContributorPlace.shortname:
@@ -240,22 +252,22 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return contributorRoles;
     }
 
-    private ListOfOnixElement<FromLanguage, LanguageCodes> fromLanguages = ListOfOnixElement.empty();
+    private ListOfOnixElement<FromLanguage, Languages> fromLanguages = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<FromLanguage, LanguageCodes> fromLanguages() {
+    public ListOfOnixElement<FromLanguage, Languages> fromLanguages() {
         _initialize();
         return fromLanguages;
     }
 
-    private ListOfOnixElement<ToLanguage, LanguageCodes> toLanguages = ListOfOnixElement.empty();
+    private ListOfOnixElement<ToLanguage, Languages> toLanguages = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<ToLanguage, LanguageCodes> toLanguages() {
+    public ListOfOnixElement<ToLanguage, Languages> toLanguages() {
         _initialize();
         return toLanguages;
     }
@@ -270,13 +282,13 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return nameType;
     }
 
-    private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameCodeTypes> nameIdentifiers =
+    private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameCodeTypes> nameIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {
         _initialize();
         return nameIdentifiers;
     }
@@ -381,6 +393,16 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
+    private Gender gender = Gender.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public Gender gender() {
+        _initialize();
+        return gender;
+    }
+
     private CorporateName corporateName = CorporateName.EMPTY;
 
     /**
@@ -399,6 +421,16 @@ public class Contributor implements OnixSuperComposite, Serializable {
     public CorporateNameInverted corporateNameInverted() {
         _initialize();
         return corporateNameInverted;
+    }
+
+    private UnnamedPersons unnamedPersons = UnnamedPersons.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public UnnamedPersons unnamedPersons() {
+        _initialize();
+        return unnamedPersons;
     }
 
     private List<AlternativeName> alternativeNames = Collections.emptyList();
@@ -433,6 +465,16 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return professionalAffiliations;
     }
 
+    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
+        _initialize();
+        return prizes;
+    }
+
     private ListOfOnixElement<BiographicalNote, String> biographicalNotes = ListOfOnixElement.empty();
 
     /**
@@ -461,16 +503,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ContributorDescription, String> contributorDescriptions() {
         _initialize();
         return contributorDescriptions;
-    }
-
-    private UnnamedPersons unnamedPersons = UnnamedPersons.EMPTY;
-
-    /**
-     * (this field is required)
-     */
-    public UnnamedPersons unnamedPersons() {
-        _initialize();
-        return unnamedPersons;
     }
 
     private ListOfOnixDataComposite<ContributorPlace, JonixContributorPlace> contributorPlaces =

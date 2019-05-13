@@ -33,7 +33,7 @@ import java.io.Serializable;
  * <h1>Product contact name</h1><p>The name of the product contact organization, which should always be stated in a
  * standard form. Optional and non-repeating; but <em>either</em> a &lt;ProductContactName&gt; element <em>or</em> a
  * &lt;ProductContactIdentifier&gt; composite <em>must</em> be included.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum 50
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum 50
  * characters</td></tr><tr><td>Reference name</td><td>&lt;ProductContactName&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x484&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ProductContactName&gt;Little
  * Brown Book Group&lt;/ProductContactName&gt;</td></tr></table>
@@ -55,6 +55,9 @@ public class ProductContactName implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +65,7 @@ public class ProductContactName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum 50 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 50 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 

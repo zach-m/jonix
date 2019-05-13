@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplytoRegions;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -41,8 +41,8 @@ import java.io.Serializable;
  * upwards compatibility only. Note that Open Market distribution rights should be specified, like any others, by
  * listing countries and territories.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * three numeric digits</td></tr><tr><td>Codelist</td><td>List 52</td></tr><tr><td>Reference
- * name</td><td>&lt;SupplyToRegion&gt;</td></tr><tr><td>Short tag</td><td>&lt;j139&gt;</td></tr><tr><td>Example</td><td>&lt;SupplyToRegion&gt;004&lt;/SupplyToRegion&gt;&#160;&#160;&#160;&#160;UK
- * 'open market'</td></tr></table>
+ * name</td><td>&lt;SupplyToRegion&gt;</td></tr><tr><td>Short tag</td><td>&lt;j139&gt;</td></tr><tr><td>Example</td><td>&lt;SupplyToRegion&gt;004&lt;/SupplyToRegion&gt;
+ * UK 'open market'</td></tr></table>
  */
 public class SupplyToRegion implements OnixElement<SupplytoRegions>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -58,7 +58,7 @@ public class SupplyToRegion implements OnixElement<SupplytoRegions>, Serializabl
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -100,7 +100,7 @@ public class SupplyToRegion implements OnixElement<SupplytoRegions>, Serializabl
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

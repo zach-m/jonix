@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Discount code type name</h1><p>A name which identifies a proprietary discount code. Must be used when, and only
  * when the code in the &lt;DiscountCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own
- * code. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
+ * code. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text,
  * suggested maximum length 50 characters</td></tr><tr><td>Reference name</td><td>&lt;DiscountCodeTypeName&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j378&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;j378&gt;IngramDC&lt;/j378&gt;</td></tr></table>
  */
@@ -54,16 +54,19 @@ public class DiscountCodeTypeName implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -91,7 +94,7 @@ public class DiscountCodeTypeName implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

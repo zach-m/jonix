@@ -39,8 +39,8 @@ interface CodeList82 {
  * <p>
  * Description: Bible contents
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist82">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist82">ONIX
  * Codelist 82 in Reference Guide</a>
  */
 public enum BibleContentss implements OnixCodelist, CodeList82 {
@@ -65,8 +65,8 @@ public enum BibleContentss implements OnixCodelist, CodeList82 {
     /**
      * I and II Esdras; Prayer of Manasseh; Psalm 151; III and IV Maccabees
      */
-    Additional_Apocryphal_texts_Slavonic_Orthodox_canon("AY", "Additional Apocryphal texts: Slavonic Orthodox canon"),
-    //
+    Additional_Apocryphal_texts_Slavonic_Orthodox_canon("AY",
+        "Additional Apocryphal texts: Slavonic Orthodox canon"), //
 
     /**
      * Additional Apocryphal texts included in some Bible versions: I and II Esdras; Prayer of Manasseh
@@ -75,20 +75,20 @@ public enum BibleContentss implements OnixCodelist, CodeList82 {
 
     /**
      * The 66 books included in the Protestant, Catholic and Orthodox canons, together with the seven portions of the
-     * Apocrypha included in the Catholic canon
+     * Apocrypha included in the Catholic canon. (Equivalent to OT plus NT plus AP)
      */
     General_canon_with_Apocrypha_Catholic_canon("GA", "General canon with Apocrypha (Catholic canon)"), //
 
     /**
      * The 66 books included in the Protestant, Catholic and Orthodox canons, together with Apocryphal texts, canon not
-     * specified
+     * specified. (Equivalent to OT plus NT plus AQ)
      */
     General_canon_with_Apocryphal_texts_canon_unspecified("GC",
         "General canon with Apocryphal texts (canon unspecified)"), //
 
     /**
      * The 66 books included in the Protestant, Catholic and Orthodox canons, 39 from the Old Testament and 27 from the
-     * New Testament. The sequence of books may differ in different canons
+     * New Testament. The sequence of books may differ in different canons. (Equivalent to OT plus NT)
      */
     General_canon("GE", "General canon"), //
 
@@ -110,7 +110,8 @@ public enum BibleContentss implements OnixCodelist, CodeList82 {
     New_Testament("NT", "New Testament"), //
 
     /**
-     * Includes the 27 books of the New Testament plus Psalms and Proverbs from the Old Testament
+     * Includes the 27 books of the New Testament plus Psalms and Proverbs from the Old Testament. Equivalent to NT plus
+     * PP)
      */
     New_Testament_with_Psalms_and_Proverbs("NP", "New Testament with Psalms and Proverbs"), //
 
@@ -142,7 +143,7 @@ public enum BibleContentss implements OnixCodelist, CodeList82 {
     public final String code;
     public final String description;
 
-    private BibleContentss(String code, String description) {
+    BibleContentss(String code, String description) {
         this.code = code;
         this.description = description;
     }

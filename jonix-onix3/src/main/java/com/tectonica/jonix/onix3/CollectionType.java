@@ -55,6 +55,9 @@ public class CollectionType implements OnixElement<CollectionTypes>, Serializabl
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

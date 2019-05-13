@@ -36,8 +36,8 @@ interface CodeList18 {
  * <p>
  * Description: Person / organization name type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist18">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist18">ONIX
  * Codelist 18 in Reference Guide</a>
  */
 public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
@@ -50,6 +50,9 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
 
     Authority_controlled_name("02", "Authority-controlled name"), //
 
+    /**
+     * Use only within &lt;AlternativeName&gt;
+     */
     Earlier_name("03", "Earlier name"), //
 
     /**
@@ -60,12 +63,17 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
     /**
      * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified
      */
-    Transliterated_form_of_primary_name("05", "Transliterated form of primary name");
+    Transliterated_form_of_primary_name("05", "Transliterated form of primary name"), //
+
+    /**
+     * Use only within &lt;AlternativeName&gt;
+     */
+    Later_name("06", "Later name");
 
     public final String code;
     public final String description;
 
-    private PersonOrganizationNameTypes(String code, String description) {
+    PersonOrganizationNameTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

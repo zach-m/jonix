@@ -32,9 +32,13 @@ import java.util.List;
  */
 
 /**
- * <h1>Market composite</h1><p>A repeatable group of data elements which together give details of a geographical
- * territory and any non-geographical sales restrictions that apply within it. Optional in terms of the schema
- * definitions, but required in most ONIX applications.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * <h1>Market composite</h1><p>A group of data elements which together give details of a geographical territory and any
+ * non-geographical sales restrictions that apply within it. Optional in terms of the schema definitions, but required
+ * in most ONIX applications. If omitted, the geographical extent of the market must be assumed to be the area defined
+ * by the sales rights.</p><p>The &lt;Market&gt; composite is repeatable, but in almost all cases only a single instance
+ * is required. It may be repeated if a non-geographical sales restriction applies only to a <em>part</em> of a
+ * geographically-defined market – for example where a product is sold throughout the European Union, but exclusive to a
+ * single retailer in France.</p><table border='1' cellpadding='3'><tr><td>Reference
  * name</td><td>&lt;Market&gt;</td></tr><tr><td>Short tag</td><td>&lt;market&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Market implements OnixSuperComposite, Serializable {
@@ -54,6 +58,9 @@ public class Market implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

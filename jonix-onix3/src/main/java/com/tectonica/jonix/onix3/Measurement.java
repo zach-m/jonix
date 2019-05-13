@@ -32,10 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>Measurement</h1><p>The number which represents the dimension specified in &lt;MeasureType&gt; in the measure
  * units specified in &lt;MeasureUnitCode&gt;. Mandatory in each occurrence of the &lt;Measure&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an
- * explicit decimal point when required, suggested maximum length 6 characters including a decimal
- * point</td></tr><tr><td>Reference name</td><td>&lt;Measurement&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;c094&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;c094&gt;8.25&lt;/c094&gt;</td></tr></table>
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit
+ * decimal point when required, suggested maximum length 6 characters</td></tr><tr><td>Reference
+ * name</td><td>&lt;Measurement&gt;</td></tr><tr><td>Short tag</td><td>&lt;c094&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;c094&gt;8.25&lt;/c094&gt;</td></tr></table>
  */
 public class Measurement implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -54,6 +53,9 @@ public class Measurement implements OnixElement<Double>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -61,8 +63,8 @@ public class Measurement implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-     * characters including a decimal point<p> (type: dt.StrictPositiveDecimal)
+     * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 6
+     * characters<p> (type: dt.StrictPositiveDecimal)
      */
     public Double value;
 

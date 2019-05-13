@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -43,7 +43,7 @@ import java.io.Serializable;
  * characters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper case
  * only.]</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference
  * name</td><td>&lt;MarketCountry&gt;</td></tr><tr><td>Short tag</td><td>&lt;j403&gt;</td></tr><tr><td>Example</td><td>&lt;j403&gt;US
- * CA&lt;/j403&gt;&#160;&#160;&#160;&#160;USA and Canada</td></tr></table>
+ * CA&lt;/j403&gt; USA and Canada</td></tr></table>
  */
 public class MarketCountry implements OnixElement<java.util.Set<String>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -59,7 +59,7 @@ public class MarketCountry implements OnixElement<java.util.Set<String>>, Serial
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -106,7 +106,7 @@ public class MarketCountry implements OnixElement<java.util.Set<String>>, Serial
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

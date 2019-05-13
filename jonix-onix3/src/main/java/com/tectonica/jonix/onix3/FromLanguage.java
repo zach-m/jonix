@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -35,12 +35,12 @@ import java.io.Serializable;
  * indicating a translator, to specify the source language from which the translation was made. This element makes it
  * possible to specify a translator’s exact responsibility when a work involves translation from two or more languages.
  * Optional, and repeatable in the event that a single person has been responsible for translation from two or more
- * languages.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three lower-case letters. Note
+ * languages.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, three lower-case letters. Note
  * that ISO 639 specifies that these codes should always be in lower-case</td></tr><tr><td>Codelist</td><td>ISO 639-2/B
  * List 74</td></tr><tr><td>Reference name</td><td>&lt;FromLanguage&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x412&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;FromLanguage&gt;eng&lt;/FromLanguage&gt;</td></tr></table>
  */
-public class FromLanguage implements OnixElement<LanguageCodes>, Serializable {
+public class FromLanguage implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "FromLanguage";
@@ -57,19 +57,22 @@ public class FromLanguage implements OnixElement<LanguageCodes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public LanguageCodes value;
+    public Languages value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public LanguageCodes _value() {
+    public Languages _value() {
         return value;
     }
 
@@ -90,7 +93,7 @@ public class FromLanguage implements OnixElement<LanguageCodes>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = LanguageCodes.byCode(JPU.getContentAsString(element));
+        value = Languages.byCode(JPU.getContentAsString(element));
     }
 
     @Override

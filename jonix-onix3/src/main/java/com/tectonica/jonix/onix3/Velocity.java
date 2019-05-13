@@ -54,6 +54,9 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixCopyrightOwnerIdentifier;
 
@@ -56,6 +56,9 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -120,13 +123,13 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameCodeTypes>
+    private ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameIdentifierTypes>
         copyrightOwnerIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameCodeTypes> copyrightOwnerIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameIdentifierTypes> copyrightOwnerIdentifiers() {
         _initialize();
         return copyrightOwnerIdentifiers;
     }

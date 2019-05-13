@@ -34,15 +34,16 @@ public class JonixWebsite implements JonixStruct, Serializable {
     public static JonixWebsite EMPTY = new JonixWebsite();
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+     * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
      * Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
      */
     public List<String> websiteDescriptions;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: dt.NonEmptyURI)
+     * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
+     * maximum length 300 characters <p> (type: dt.NonEmptyURI)
      */
-    public String websiteLink;
+    public List<String> websiteLinks;
 
     public WebsiteRoles websiteRole;
 }

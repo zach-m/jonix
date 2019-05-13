@@ -36,8 +36,8 @@ interface CodeList87 {
  * <p>
  * Description: Bible reference location
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist87">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist87">ONIX
  * Codelist 87 in Reference Guide</a>
  */
 public enum BibleReferenceLocations implements OnixCodelist, CodeList87 {
@@ -74,7 +74,7 @@ public enum BibleReferenceLocations implements OnixCodelist, CodeList87 {
     public final String code;
     public final String description;
 
-    private BibleReferenceLocations(String code, String description) {
+    BibleReferenceLocations(String code, String description) {
         this.code = code;
         this.description = description;
     }

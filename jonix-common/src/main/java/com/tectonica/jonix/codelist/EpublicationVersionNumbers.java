@@ -36,8 +36,8 @@ interface CodeList220 {
  * <p>
  * Description: E-publication version number
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist220">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist220">ONIX
  * Codelist 220 in Reference Guide</a>
  */
 public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
@@ -57,6 +57,11 @@ public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
     EPUB_3_0_1("101C", "EPUB 3.0.1"), //
 
     /**
+     * Use only with &lt;ProductFormDetail&gt; code E101
+     */
+    EPUB_3_1("101D", "EPUB 3.1"), //
+
+    /**
      * Use only with &lt;ProductFormDetail&gt; codes E116 or E127
      */
     Kindle_mobi_7("116A", "Kindle mobi 7"), //
@@ -64,12 +69,17 @@ public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
     /**
      * Use only with &lt;ProductFormDetail&gt; code E116
      */
-    Kindle_KF8("116B", "Kindle KF8");
+    Kindle_KF8("116B", "Kindle KF8"), //
+
+    /**
+     * Use only with &lt;ProductFormDetail&gt; code E116 &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Kindle_KFX("116C", "Kindle KFX");
 
     public final String code;
     public final String description;
 
-    private EpublicationVersionNumbers(String code, String description) {
+    EpublicationVersionNumbers(String code, String description) {
         this.code = code;
         this.description = description;
     }

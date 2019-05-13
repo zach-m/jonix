@@ -31,7 +31,7 @@ import java.io.Serializable;
 
 /**
  * <h1>Supplier e-mail address</h1><p>An e-mail address for a supply source from which the product may be ordered by a
- * trade customer. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
+ * trade customer. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length
  * text, suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;EmailAddress&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j272&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;j272&gt;david@polecat.dircon.co.uk&lt;/j272&gt;</td></tr></table>
  */
@@ -52,6 +52,9 @@ public class EmailAddress implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +62,7 @@ public class EmailAddress implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: dt.EmailString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.EmailString)
      */
     public String value;
 

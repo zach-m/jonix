@@ -36,8 +36,8 @@ interface CodeList149 {
  * <p>
  * Description: Title element level
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist149">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist149">ONIX
  * Codelist 149 in Reference Guide</a>
  */
 public enum TitleElementLevels implements OnixCodelist, CodeList149 {
@@ -59,7 +59,7 @@ public enum TitleElementLevels implements OnixCodelist, CodeList149 {
 
     /**
      * The title element refers to a content item within a product, eg a work included in a combined or 'omnibus'
-     * edition, or a chapter in a book
+     * edition, or a chapter in a book. Generally used only for titles within &lt;ContentItem&gt; (Block 3)
      */
     Content_item("04", "Content item"), //
 
@@ -79,7 +79,7 @@ public enum TitleElementLevels implements OnixCodelist, CodeList149 {
     public final String code;
     public final String description;
 
-    private TitleElementLevels(String code, String description) {
+    TitleElementLevels(String code, String description) {
         this.code = code;
         this.description = description;
     }

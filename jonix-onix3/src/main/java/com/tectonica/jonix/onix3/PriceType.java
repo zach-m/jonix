@@ -34,7 +34,7 @@ import java.io.Serializable;
  * <h1>Price type code</h1><p>An ONIX code indicating the type of the comparison price in the &lt;PriceAmount&gt;
  * element within the &lt;ComparisonProductPrice&gt; composite. Optional if a &lt;DefaultPriceType&gt; has been
  * specified in the message header, otherwise mandatory. Non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 58</td></tr><tr><td>Reference name</td><td>&lt;PriceType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x462&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PriceType&gt;01&lt;/PriceType&gt;
  * (RRP excluding tax)</td></tr></table>
@@ -56,6 +56,9 @@ public class PriceType implements OnixElement<PriceTypes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

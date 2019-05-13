@@ -33,10 +33,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Related work composite</h1><p>An optional and repeatable group of data elements which together describe a work
- * which has a specified relationship to the product described in the ONIX record.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;RelatedWork&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;relatedwork&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Related work composite</h1><p>An optional group of data elements which together describe a work which has a
+ * specified relationship to the product described in the ONIX record. Repeatable in order to specify multiple works and
+ * their various relationships to the product.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;RelatedWork&gt;</td></tr><tr><td>Short tag</td><td>&lt;relatedwork&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class RelatedWork implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,6 +55,9 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

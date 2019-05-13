@@ -39,13 +39,15 @@ interface CodeList145 {
  * <p>
  * Description: Usage type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist145">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist145">ONIX
  * Codelist 145 in Reference Guide</a>
  */
 public enum UsageTypes implements OnixCodelist, CodeList145 {
     /**
-     * Preview before purchase
+     * Preview before purchase. Allows a retail customer, account holder or patron to view a proportion of the book
+     * before purchase. Also applies to borrowers making use of 'acquisition on demand' models in libraries, and to
+     * 'subscription' models where the purchase is made on behalf of the reader
      */
     Preview("01", "Preview"), //
 
@@ -60,7 +62,9 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
     Copy_paste("03", "Copy / paste"), //
 
     /**
-     * Share product across multiple concurrent devices
+     * Share product across multiple concurrent devices. Allows a retail customer, account holder or patron to read the
+     * book across multiple devices linked to the same account. Also applies to readers in library borrowing and
+     * 'subscription' models
      */
     Share("04", "Share"), //
 
@@ -70,27 +74,43 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
     Text_to_speech("05", "Text to speech"), //
 
     /**
-     * Lendable to other device owner or account holder, eg 'Lend-to-a-friend', library lending. The 'primary' copy
-     * becomes unusable while the secondary copy is 'on loan' unless a number of concurrent borrowers is also
-     * specified)
+     * Lendable by the purchaser to other device owner or account holder or patron, eg 'Lend-to-a-friend', library
+     * lending (where the library product has a separate &lt;ProductIdentifier&gt; from the consumer product). The
+     * 'primary' copy becomes unusable while the secondary copy is 'on loan' unless a number of concurrent borrowers is
+     * also specified
      */
     Lend("06", "Lend"), //
 
     /**
-     * E-publication license is time limited. Use with 02 from List 146 and a number of days in &lt;EpubUsageLimit&gt;
+     * E-publication license is time limited. Use with 02 from List 146 and a time period in days, weeks or months in
+     * &lt;EpubUsageLimit&gt;. The purchased copy becomes unusable when the license expires
      */
     Time_limited_license("07", "Time-limited license"), //
 
     /**
-     * Maximum number of consecutive loans (eg from a library) to a single device owner or account holder. Note that a
-     * limit of 1 indicates that a loan cannot be renewed
+     * Maximum number of consecutive loans or loan extensions (eg from a library) to a single device owner or account
+     * holder. Note that a limit of 1 indicates that a loan cannot be renewed or extended
      */
-    Loan_renewal("08", "Loan renewal");
+    Loan_renewal("08", "Loan renewal"), //
+
+    /**
+     * E-publication license is multi-user. Maximum number of concurrent users licensed to use the product should be
+     * given in &lt;EpubUsageLimit&gt;
+     */
+    Multi_user_license("09", "Multi-user license"), //
+
+    /**
+     * Preview locally before purchase. Allows a retail customer, account holder or patron to view a proportion of the
+     * book (or the whole book, if no proportion is specified) before purchase, but ONLY while located physically in the
+     * retailer's store (eg while logged on to the store or library wifi). Also applies to patrons making use of
+     * 'acquisition on demand' models in libraries &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Preview_on_premises("10", "Preview on premises");
 
     public final String code;
     public final String description;
 
-    private UsageTypes(String code, String description) {
+    UsageTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

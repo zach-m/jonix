@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -38,8 +38,8 @@ import java.io.Serializable;
  * <h1>Text item type code</h1><p>An ONIX code which identifies the nature of a text item. Mandatory in each occurrence
  * of the &lt;TextItem&gt; composite, and non-repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, 2 numeric digits</td></tr><tr><td>Codelist</td><td>List 42</td></tr><tr><td>Reference
- * name</td><td>&lt;TextItemType&gt;</td></tr><tr><td>Short tag</td><td>&lt;b290&gt;</td></tr><tr><td>Example</td><td>&lt;b290&gt;04&lt;/b290&gt;&#160;&#160;&#160;&#160;Back
- * matter</td></tr></table>
+ * name</td><td>&lt;TextItemType&gt;</td></tr><tr><td>Short tag</td><td>&lt;b290&gt;</td></tr><tr><td>Example</td><td>&lt;b290&gt;04&lt;/b290&gt;
+ * Back matter</td></tr></table>
  */
 public class TextItemType implements OnixElement<TextItemTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,7 +55,7 @@ public class TextItemType implements OnixElement<TextItemTypes>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -97,7 +97,7 @@ public class TextItemType implements OnixElement<TextItemTypes>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

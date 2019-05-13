@@ -33,10 +33,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product form feature composite (product part)</h1><p>A repeatable group of data elements which together describe
+ * <h1>Product form feature composite (product part)</h1><p>An optional group of data elements which together describe
  * an aspect of product form that is too specific to be covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt;
- * elements. Optional, and not normally expected to be used in the description of a product part. The composite is
- * included here so that it can if necessary be used in the US to carry consumer protection data related to a product
+ * elements. Repeatable in order to describe different aspects of the form of the product part. The composite is
+ * included here so that it can for example be used to carry consumer protection data related to a product
  * part.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductFormFeature&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;productformfeature&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
@@ -58,6 +58,9 @@ public class ProductFormFeature
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -32,12 +32,12 @@ public class JonixPageRun implements JonixStruct, Serializable {
     public static JonixPageRun EMPTY = new JonixPageRun();
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
      */
     public String firstPageNumber;
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
      */
     public String lastPageNumber;
 }

@@ -54,6 +54,9 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

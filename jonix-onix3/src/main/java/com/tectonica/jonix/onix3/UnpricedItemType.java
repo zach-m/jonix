@@ -31,12 +31,14 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Unpriced item type</h1><p>An ONIX code which specifies a reason why a price amount is not sent. <em>If code value
- * 02 is used to send advance information without giving a price, the price must be confirmed as soon as possible.</em>
- * Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a price.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * <h1>Unpriced item type</h1><p>An ONIX code which specifies that the product is free of charge, or a reason why a
+ * price amount or price code is not sent. <em>If code value 02 is used to send advance information without giving a
+ * price, the price must be confirmed as soon as possible.</em> Optional and non-repeating, but required if the
+ * &lt;Price&gt; composite does not carry a price amount or price code.</p><p>Use here in preference to P.26.42 when the
+ * product is available under a variety of priced and unpriced terms from the same supplier.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 57</td></tr><tr><td>Reference name</td><td>&lt;UnpricedItemType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j192&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;j192&gt;01&lt;/j192&gt;
+ * tag</td><td>&lt;j192&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;UnpricedItemType&gt;01&lt;/UnpricedItemType&gt;
  * (Free of charge)</td></tr></table>
  */
 public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Serializable {
@@ -56,6 +58,9 @@ public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Seriali
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -26,8 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 222 (Message status date role &lt;p&gt;NOTE: Introduced in
- * Onix3)
+ * marker interface to assist in IDE navigation to code-list 222 (Message status date role)
  */
 interface CodeList222 {
 }
@@ -35,10 +34,10 @@ interface CodeList222 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 222</b>
  * <p>
- * Description: Message status date role &lt;p&gt;NOTE: Introduced in Onix3
+ * Description: Message status date role
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist222">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist222">ONIX
  * Codelist 222 in Reference Guide</a>
  */
 public enum MessageStatusDateRoles implements OnixCodelist, CodeList222 {
@@ -56,7 +55,7 @@ public enum MessageStatusDateRoles implements OnixCodelist, CodeList222 {
     public final String code;
     public final String description;
 
-    private MessageStatusDateRoles(String code, String description) {
+    MessageStatusDateRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }

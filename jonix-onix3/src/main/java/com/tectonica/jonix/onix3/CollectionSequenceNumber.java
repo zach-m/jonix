@@ -31,12 +31,16 @@ import java.io.Serializable;
 
 /**
  * <h1>Collection sequence number</h1><p>A number which specifies the ordinal position of the product in a collection.
- * The ordinal position may be a simple number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level if the collection has a
- * multi-level structure (<i>ie</i> there are both collection and sub-collection title elements). Mandatory and
- * non-repeating within the &lt;CollectionSequence&gt; composite.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length string of one or more integers, each successive integer being
- * separated by a period character, suggested maximum length 100 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;CollectionSequenceNumber&gt;</td></tr><tr><td>Short tag</td><td>&lt;x481&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;CollectionSequenceNumber&gt;2.4&lt;/CollectionSequenceNumber&gt;</td></tr></table>
+ * The ordinal position may be a simple number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level (<i>eg</i> 3.2) if the
+ * collection has a multi-level structure (<i>ie</i> there are both collection and sub-collection title elements).
+ * Mandatory and non-repeating within the &lt;CollectionSequence&gt; composite.</p><p><span style="color: deeppink;
+ * font-weight: bold">New in 3.0.4</span> A hyphen may be used in place of an integer within a multi-level number, where
+ * a particular level of the hierarchy is unnumbered, for example -.3 where a product is the third in a sub-collection,
+ * and the sub-collection is unnumbered within the collection.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable length string of one or more positive integers or hyphens, each
+ * successive integer or hyphen being separated by a period character, suggested maximum length 50
+ * characters</td></tr><tr><td>Reference name</td><td>&lt;CollectionSequenceNumber&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x481&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;CollectionSequenceNumber&gt;2.4&lt;/CollectionSequenceNumber&gt;</td></tr></table>
  */
 public class CollectionSequenceNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -55,6 +59,9 @@ public class CollectionSequenceNumber implements OnixElement<String>, Serializab
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -62,8 +69,9 @@ public class CollectionSequenceNumber implements OnixElement<String>, Serializab
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
-     * character, suggested maximum length 100 characters<p> (type: dt.MultiLevelNumber)
+     * Raw Format: Variable length string of one or more positive integers or hyphens, each successive integer or hyphen
+     * being separated by a period character, suggested maximum length 50 characters<p> (type:
+     * dt.MultiLevelNumberOrHyphen)
      */
     public String value;
 

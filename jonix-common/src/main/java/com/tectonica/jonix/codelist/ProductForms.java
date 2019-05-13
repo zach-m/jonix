@@ -29,21 +29,21 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 7 (Product form code)
+ * marker interface to assist in IDE navigation to code-list 150 (Product form)
  */
-interface CodeList7 {
+interface CodeList150 {
 }
 
 /**
- * <code>Enum</code> that corresponds to ONIX <b>Codelist 7</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 150</b>
  * <p>
- * Description: Product form code
+ * Description: Product form
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist7">ONIX
- * Codelist 7 in Reference Guide</a>
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist150">ONIX
+ * Codelist 150 in Reference Guide</a>
  */
-public enum ProductForms implements OnixCodelist, CodeList7 {
+public enum ProductForms implements OnixCodelist, CodeList150 {
     Undefined("00", "Undefined"), //
 
     /**
@@ -57,8 +57,8 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Audio_cassette("AB", "Audio cassette"), //
 
     /**
-     * Audio compact disc, in any recording format: use for 'red book' (conventional audio CD) and SACD, and use coding
-     * in Product Form Detail to specify the format, if required
+     * Audio compact disc: use for 'Red book' discs (conventional audio CD) and SACD, and use coding in
+     * &lt;ProductFormDetail&gt; to specify the format, if required
      */
     CD_Audio("AC", "CD-Audio"), //
 
@@ -68,7 +68,8 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     DAT("AD", "DAT"), //
 
     /**
-     * Audio disc (excluding CD-Audio)
+     * Audio disc (excluding CD-Audio): use for 'Yellow book' (CD-Rom-style) discs, including for example mp3 CDs, and
+     * use coding in &lt;ProductFormDetail&gt; to specify the format of the data on the disc
      */
     Audio_disc("AE", "Audio disc"), //
 
@@ -83,21 +84,21 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     MiniDisc("AG", "MiniDisc"), //
 
     /**
-     * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for 'blue book' and
-     * 'yellow/red book' two-session discs
+     * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for 'Blue book' and
+     * 'Yellow/Red book' two-session discs
      */
     CD_Extra("AH", "CD-Extra"), //
 
     DVD_Audio("AI", "DVD Audio"), //
 
     /**
-     * Audio recording downloadable online
+     * Digital audio recording downloadable to the purchaser's own device(s)
      */
     Downloadable_audio_file("AJ", "Downloadable audio file"), //
 
     /**
-     * For example, Playaway audiobook and player: use coding in Product Form Detail to specify the recording format, if
-     * required
+     * For example, Playaway audiobook and player: use coding in &lt;ProductFormDetail&gt; to specify the recording
+     * format, if required
      */
     Pre_recorded_digital_audio_player("AK", "Pre-recorded digital audio player"), //
 
@@ -107,7 +108,24 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Pre_recorded_SD_card("AL", "Pre-recorded SD card"), //
 
     /**
-     * Other audio format not specified by AB to AL
+     * Vinyl disc (analogue). &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    LP("AM", "LP"), //
+
+    /**
+     * Digital audio recording available both by download to the purchaser's own device(s) and by online (eg streamed)
+     * access &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Downloadable_and_online_audio_file("AN", "Downloadable and online audio file"), //
+
+    /**
+     * Digital audio recording available online (eg streamed), not downloadable to the purchaser's own device(s)
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Online_audio_file("AO", "Online audio file"), //
+
+    /**
+     * Other audio format not specified by AB to AM
      */
     Other_audio_format("AZ", "Other audio format"), //
 
@@ -137,11 +155,14 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Spiral_bound("BE", "Spiral bound"), //
 
     /**
-     * Pamphlet or brochure, stapled; German 'geheftet'. Includes low-extent wire-stitched books bound without a
-     * distinct spine (eg many comic books)
+     * Pamphlet, stapled; use for German 'geheftet'. Includes low-extent wire-stitched books bound without a distinct
+     * spine (eg many comic books)
      */
     Pamphlet("BF", "Pamphlet"), //
 
+    /**
+     * Use &lt;ProductFormDetail&gt; to provide additional description
+     */
     Leather_fine_binding("BG", "Leather / fine binding"), //
 
     /**
@@ -183,7 +204,8 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Part_work_fasc_culo("BN", "Part-work (fascículo)"), //
 
     /**
-     * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German 'Leporello'
+     * Concertina-folded booklet or chart, designed to fold to pocket or regular page size, and usually bound within
+     * distinct board or card covers: use for German 'Leporello'
      */
     Fold_out_book_or_chart("BO", "Fold-out book or chart"), //
 
@@ -207,7 +229,7 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Sheet_map_flat("CC", "Sheet map, flat"), //
 
     /**
-     * See Code List 80 for 'rolled in tube'
+     * See &lt;ProductPackaging&gt; and Codelist 80 for 'rolled in tube'
      */
     Sheet_map_rolled("CD", "Sheet map, rolled"), //
 
@@ -222,21 +244,16 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Other_cartographic("CZ", "Other cartographic"), //
 
     /**
-     * Digital or multimedia (detail unspecified)
+     * Digital content delivered on a physical carrier (detail unspecified)
      */
-    Digital("DA", "Digital"), //
+    Digital_on_physical_carrier("DA", "Digital (on physical carrier)"), //
 
     CD_ROM("DB", "CD-ROM"), //
 
     /**
-     * CD interactive, use for 'green book' discs
+     * CD interactive: use for 'Green book' discs
      */
     CD_I("DC", "CD-I"), //
-
-    /**
-     * DEPRECATED - use VI for DVD video, AI for DVD audio, DI for DVD-ROM
-     */
-    DVD("DD", "DVD"), //
 
     Game_cartridge("DE", "Game cartridge"), //
 
@@ -244,16 +261,6 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
      * AKA 'floppy disc'
      */
     Diskette("DF", "Diskette"), //
-
-    /**
-     * Electronic book text in proprietary or open standard format
-     */
-    Electronic_book_text("DG", "Electronic book text"), //
-
-    /**
-     * An electronic database or other resource or service accessible through online networks
-     */
-    Online_resource("DH", "Online resource"), //
 
     DVD_ROM("DI", "DVD-ROM"), //
 
@@ -266,31 +273,39 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     USB_Flash_Drive("DM", "USB Flash Drive"), //
 
     /**
-     * Double-sided disc, one side CD-Audio/CD-ROM, other side DVD-Audio/DVD-Video/DVD-ROM (at least one side must be
-     * -ROM)
+     * Double-sided disc, one side Audio CD/CD-ROM, other side DVD
      */
     Double_sided_CD_DVD("DN", "Double-sided CD/DVD"), //
 
     /**
-     * Digital product license delivered through the retail supply chain as a physical 'key', typically a card or
-     * booklet containing a code enabling the purchaser to download or activate the associated product
+     * Other carrier of digital content not specified by DB to DN
      */
-    Digital_product_license_key("DO", "Digital product license key"), //
+    Other_digital_carrier("DZ", "Other digital carrier"), //
 
     /**
-     * Other digital or multimedia not specified by DB to DN
+     * Digital content delivered electronically (delivery method unspecified)
      */
-    Other_digital("DZ", "Other digital"), //
+    Digital_delivered_electronically("EA", "Digital (delivered electronically)"), //
+
+    /**
+     * Digital content available both by download and by online access
+     */
+    Digital_download_and_online("EB", "Digital download and online"), //
+
+    /**
+     * Digital content accessed online only
+     */
+    Digital_online("EC", "Digital online"), //
+
+    /**
+     * Digital content delivered by download only
+     */
+    Digital_download("ED", "Digital download"), //
 
     /**
      * Film or transparency - detail unspecified
      */
     Film_or_transparency("FA", "Film or transparency"), //
-
-    /**
-     * Continuous film or filmstrip: DEPRECATED - use FE or FF
-     */
-    Film("FB", "Film"), //
 
     /**
      * Photographic transparencies mounted for projection
@@ -302,17 +317,37 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
      */
     OHP_transparencies("FD", "OHP transparencies"), //
 
+    /**
+     * Photographic transparencies, unmounted but cut into short multi-frame strips
+     */
     Filmstrip("FE", "Filmstrip"), //
 
     /**
      * Continuous movie film as opposed to filmstrip
      */
-    Film_("FF", "Film"), //
+    Film("FF", "Film"), //
 
     /**
      * Other film or transparency format not specified by FB to FF
      */
     Other_film_or_transparency_format("FZ", "Other film or transparency format"), //
+
+    /**
+     * Digital product license (delivery method not encoded)
+     */
+    Digital_product_license("LA", "Digital product license"), //
+
+    /**
+     * Digital product license delivered through the retail supply chain as a physical 'key', typically a card or
+     * booklet containing a code enabling the purchaser to download the associated product
+     */
+    Digital_product_license_key("LB", "Digital product license key"), //
+
+    /**
+     * Digital product license delivered by email or other electronic distribution, typically providing a code enabling
+     * the purchaser to activate, upgrade or extend the license supplied with the associated product
+     */
+    Digital_product_license_code("LC", "Digital product license code"), //
 
     /**
      * Microform - detail unspecified
@@ -337,7 +372,7 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Miscellaneous_print("PA", "Miscellaneous print"), //
 
     /**
-     * May use product form detail codes P201 to P204 to specify binding
+     * May use &lt;ProductFormDetail&gt; codes P201 to P204 to specify binding
      */
     Address_book("PB", "Address book"), //
 
@@ -354,7 +389,7 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Copymasters("PE", "Copymasters"), //
 
     /**
-     * May use product form detail codes P201 to P204 to specify binding
+     * May use &lt;ProductFormDetail&gt; codes P201 to P204 to specify binding
      */
     Diary("PF", "Diary"), //
 
@@ -379,13 +414,15 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Poster("PK", "Poster"), //
 
     /**
-     * Record book (eg 'birthday book', 'baby book'): may use product form detail codes P201 to P204 to specify binding
+     * Record book (eg 'birthday book', 'baby book'): binding unspecified; may use &lt;ProductFormDetail&gt; codes P201
+     * to P204 to specify binding
      */
     Record_book("PL", "Record book"), //
 
     /**
      * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat 'wallet' as
-     * packaging (List 80), but if this is not possible the product as a whole may be coded as a 'wallet'
+     * packaging in &lt;ProductPackaging&gt; with Codelist 80, but if this is not possible the product as a whole may be
+     * coded as a 'wallet'
      */
     Wallet_or_folder("PM", "Wallet or folder"), //
 
@@ -401,22 +438,60 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Plate_l_mina("PQ", "Plate (lámina)"), //
 
     /**
-     * A book with all pages blank for the buyer's own use: may use product form detail codes P201 to P204 to specify
-     * binding
+     * A book with all pages blank for the buyer's own use; may use &lt;ProductFormDetail&gt; codes P201 to P204 to
+     * specify binding
      */
     Notebook_blank_book("PR", "Notebook / blank book"), //
 
     /**
-     * May use product form detail codes P201 to P204 to specify binding
+     * May use &lt;ProductFormDetail&gt; codes P201 to P204 to specify binding
      */
     Organizer("PS", "Organizer"), //
 
     Bookmark("PT", "Bookmark"), //
 
     /**
-     * Other printed item not specified by PB to PT
+     * Folded but unbound &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Leaflet("PU", "Leaflet"), //
+
+    /**
+     * Other printed item not specified by PB to PQ
      */
     Other_printed_item("PZ", "Other printed item"), //
+
+    /**
+     * Presentation unspecified: format of product components must be given in &lt;ProductPart&gt;
+     */
+    Multiple_component_retail_product("SA", "Multiple-component retail product"), //
+
+    /**
+     * Format of product components must be given in &lt;ProductPart&gt;
+     */
+    Multiple_component_retail_product_boxed("SB", "Multiple-component retail product, boxed"), //
+
+    /**
+     * Format of product components must be given in &lt;ProductPart&gt;
+     */
+    Multiple_component_retail_product_slip_cased("SC", "Multiple-component retail product, slip-cased"), //
+
+    /**
+     * Format of product components must be given in &lt;ProductPart&gt;. Use code XL for a shrink-wrapped pack for
+     * trade supply, where the retail items it contains are intended for sale individually
+     */
+    Multiple_component_retail_product_shrink_wrapped("SD", "Multiple-component retail product, shrink-wrapped"), //
+
+    /**
+     * Format of product components must be given in &lt;ProductPart&gt;
+     */
+    Multiple_component_retail_product_loose("SE", "Multiple-component retail product, loose"), //
+
+    /**
+     * Multiple component product where subsidiary product part(s) is/are supplied as enclosures to the primary part, eg
+     * a book with a CD packaged in a sleeve glued within the back cover. Format of product components must be given in
+     * &lt;ProductPart&gt;
+     */
+    Multiple_component_retail_product_part_s("SF", "Multiple-component retail product, part(s) enclosed"), //
 
     /**
      * Video - detail unspecified
@@ -424,52 +499,22 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Video("VA", "Video"), //
 
     /**
-     * DEPRECATED - use new VJ
-     */
-    Video_VHS_PAL("VB", "Video, VHS, PAL"), //
-
-    /**
-     * DEPRECATED - use new VJ
-     */
-    Video_VHS_NTSC("VC", "Video, VHS, NTSC"), //
-
-    /**
-     * DEPRECATED - use new VK
-     */
-    Video_Betamax_PAL("VD", "Video, Betamax, PAL"), //
-
-    /**
-     * DEPRECATED - use new VK
-     */
-    Video_Betamax_NTSC("VE", "Video, Betamax, NTSC"), //
-
-    /**
      * eg Laserdisc
      */
     Videodisc("VF", "Videodisc"), //
 
     /**
-     * DEPRECATED - use new VJ
-     */
-    Video_VHS_SECAM("VG", "Video, VHS, SECAM"), //
-
-    /**
-     * DEPRECATED - use new VK
-     */
-    Video_Betamax_SECAM("VH", "Video, Betamax, SECAM"), //
-
-    /**
-     * DVD video: specify TV standard in List 78
+     * DVD video: specify TV standard in &lt;ProductFormDetail&gt;
      */
     DVD_video("VI", "DVD video"), //
 
     /**
-     * VHS videotape: specify TV standard in List 78
+     * VHS videotape: specify TV standard in &lt;ProductFormDetail&gt;
      */
     VHS_video("VJ", "VHS video"), //
 
     /**
-     * Betamax videotape: specify TV standard in List 78
+     * Betamax videotape: specify TV standard in &lt;ProductFormDetail&gt;
      */
     Betamax_video("VK", "Betamax video"), //
 
@@ -499,26 +544,14 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     UMD_Video("VP", "UMD Video"), //
 
     /**
-     * Other video format not specified by VB to VP
+     * China Blue High-Definition, derivative of HD-DVD
+     */
+    CBHD("VQ", "CBHD"), //
+
+    /**
+     * Other video format not specified by VB to VQ
      */
     Other_video_format("VZ", "Other video format"), //
-
-    /**
-     * A product consisting of two or more items in different media or different product forms, eg book and CD-ROM, book
-     * and toy, hardback book and e-book, etc
-     */
-    Mixed_media_product("WW", "Mixed media product"), //
-
-    /**
-     * A product containing multiple copies of one or more items packaged together for retail sale, consisting of either
-     * (a) several copies of a single item (eg 6 copies of a graded reader), or (b) several copies of each of several
-     * items (eg 3 copies each of 3 different graded readers), or (c) several copies of one or more single items plus a
-     * single copy of one or more related items (eg 30 copies of a pupil's textbook plus 1 of teacher's text). NOT TO BE
-     * CONFUSED WITH: multi-volume sets, or sets containing a single copy of a number of different items (boxed,
-     * slip-cased or otherwise); items with several components of different physical forms (see WW); or packs intended
-     * for trade distribution only, where the contents are retailed separately (see XC, XE, XL)
-     */
-    Multiple_copy_pack("WX", "Multiple copy pack"), //
 
     /**
      * Trade-only material (unspecified)
@@ -528,14 +561,16 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Dumpbin_empty("XB", "Dumpbin – empty"), //
 
     /**
-     * Dumpbin with contents
+     * Dumpbin with contents. ISBN (where applicable) and format of contained items must be given in
+     * &lt;ProductPart&gt;
      */
     Dumpbin_filled("XC", "Dumpbin – filled"), //
 
     Counterpack_empty("XD", "Counterpack – empty"), //
 
     /**
-     * Counterpack with contents
+     * Counterpack with contents. ISBN (where applicable) and format of contained items must be given in
+     * &lt;ProductPart&gt;
      */
     Counterpack_filled("XE", "Counterpack – filled"), //
 
@@ -561,16 +596,17 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Large_book_display("XK", "Large book display"), //
 
     /**
-     * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
-     * sale individually - see also WX. For products or product bundles supplied shrink-wrapped for retail sale, use the
-     * Product Form code of the contents plus code 21 from List 80
+     * A quantity pack with its own product code, usually for trade supply only: the retail items it contains are
+     * intended for sale individually. ISBN (where applicable) and format of contained items must be given in
+     * &lt;ProductPart&gt;. For products or product bundles supplied individually shrink-wrapped for retail sale, use
+     * code SD
      */
     Shrink_wrapped_pack("XL", "Shrink-wrapped pack"), //
 
     /**
-     * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
-     * sale individually - see also WX. For products or product bundles supplied boxed for retail sale, use the Product
-     * Form code of the contents plus code 09 from List 80
+     * A quantity pack with its own product code, usually for trade supply only: the retail items it contains are
+     * intended for sale individually. ISBN (where applicable) and format of contained items must be given in
+     * &lt;ProductPart&gt;. For products or product bundles boxed individually for retail sale, use code SB
      */
     Boxed_pack("XM", "Boxed pack"), //
 
@@ -594,7 +630,7 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Toy("ZD", "Toy"), //
 
     /**
-     * Board game, or other game (except computer game: see DE)
+     * Board game, or other game (except computer game: see DE and other D* codes)
      */
     Game("ZE", "Game"), //
 
@@ -618,7 +654,29 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     Jigsaw("ZJ", "Jigsaw"), //
 
     /**
-     * Other apparel items not specified by ZB to ZJ, including promotional or branded scarves, caps, aprons etc
+     * For example, branded, promotional or tie-in drinking mug, cup etc
+     */
+    Mug("ZK", "Mug"), //
+
+    /**
+     * For example, branded, promotional or tie-in bag
+     */
+    Tote_bag("ZL", "Tote bag"), //
+
+    /**
+     * For example, branded, promotional or tie-in plates, bowls etc (note for mugs and cups, use code ZK)
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Tableware("ZM", "Tableware"), //
+
+    /**
+     * For example, branded, promotional or tie-in umbrella &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Umbrella("ZN", "Umbrella"), //
+
+    /**
+     * Other apparel items not specified by ZB to ZJ, including branded, promotional or tie-in scarves, caps, aprons
+     * etc
      */
     Other_apparel("ZY", "Other apparel"), //
 
@@ -630,7 +688,7 @@ public enum ProductForms implements OnixCodelist, CodeList7 {
     public final String code;
     public final String description;
 
-    private ProductForms(String code, String description) {
+    ProductForms(String code, String description) {
         this.code = code;
         this.description = description;
     }

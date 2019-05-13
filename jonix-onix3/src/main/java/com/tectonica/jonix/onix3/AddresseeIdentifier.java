@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
 
@@ -33,13 +33,13 @@ import java.io.Serializable;
 
 /**
  * <h1>Addressee identifier composite</h1><p>A group of data elements which together define an identifier of the
- * addressee. The composite is optional, and repeatable if more than one identifier of different types is sent; but
- * <em>either</em> an &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt; <em>must</em> be
- * included.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;AddresseeIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;addresseeidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * addressee. The composite is optional, and repeatable if more than one identifier of different types for the same
+ * addressee is sent; but <em>either</em> an &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt;
+ * <em>must</em> be included.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;AddresseeIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;addresseeidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class AddresseeIdentifier
-    implements OnixDataCompositeWithKey<JonixAddresseeIdentifier, NameCodeTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixAddresseeIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "AddresseeIdentifier";
@@ -56,6 +56,9 @@ public class AddresseeIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -160,7 +163,7 @@ public class AddresseeIdentifier
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return addresseeIDType().value;
     }
 }

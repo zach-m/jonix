@@ -32,10 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sales outlet identifier composite</h1><p>A group of data elements which together represent a coded identification
- * of a person or organization, used here to identify a sales outlet. Non-repeating in this context.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesOutletIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;salesoutletidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <h1>Sales outlet identifier composite</h1><p>An optional group of data elements which together represent a coded
+ * identification of a person or organization, used here to identify a sales outlet. Repeatable in order to identify
+ * multiple identifiers for the same sales outlet.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;SalesOutletIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;salesoutletidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class SalesOutletIdentifier
     implements OnixDataCompositeWithKey<JonixSalesOutletIdentifier, SalesOutletIdentifierTypes>, Serializable {
@@ -55,6 +55,9 @@ public class SalesOutletIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

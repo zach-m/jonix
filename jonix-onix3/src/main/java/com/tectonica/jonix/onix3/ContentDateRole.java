@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Content date role code</h1><p>An ONIX code indicating the significance of the date in relation to the supporting
  * resource. Mandatory in each occurrence of the &lt;ContentDate&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 155</td></tr><tr><td>Reference name</td><td>&lt;ContentDateRole&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x429&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x429&gt;15&lt;/x429&gt;
  * ([Resource available] Until)</td></tr></table>
@@ -55,6 +55,9 @@ public class ContentDateRole implements OnixElement<ContentDateRoles>, Serializa
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -24,8 +24,8 @@ import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Countrys;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.codelist.SupplytoRegions;
@@ -63,7 +63,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -97,7 +97,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         this.element = element;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -352,13 +352,12 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplierRole;
     }
 
-    private ListOfOnixElement<SupplyToCountry, java.util.Set<CountryCodes>> supplyToCountrys =
-        ListOfOnixElement.empty();
+    private ListOfOnixElement<SupplyToCountry, java.util.Set<Countrys>> supplyToCountrys = ListOfOnixElement.empty();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixElement<SupplyToCountry, java.util.Set<CountryCodes>> supplyToCountrys() {
+    public ListOfOnixElement<SupplyToCountry, java.util.Set<Countrys>> supplyToCountrys() {
         _initialize();
         return supplyToCountrys;
     }
@@ -383,13 +382,13 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplyToRegions;
     }
 
-    private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<CountryCodes>> supplyToCountryExcludeds =
+    private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds =
         ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<CountryCodes>> supplyToCountryExcludeds() {
+    public ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds() {
         _initialize();
         return supplyToCountryExcludeds;
     }

@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -35,9 +35,9 @@ import java.io.Serializable;
  * code value, or if the code in &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text
  * description may be added. Optional, and repeatable to provide parallel descriptive text in multiple languages. The
  * <i>language</i> attribute is optional for a single instance of &lt;ProductFormFeatureDescription&gt;, but must be
- * included in each instance if &lt;ProductFormFeatureDescription&gt; is repeated to provide parallel text in multiple
- * languages.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length
- * 500 characters</td></tr><tr><td>Reference name</td><td>&lt;ProductFormFeatureDescription&gt;</td></tr><tr><td>Short
+ * included in each instance if &lt;ProductFormFeatureDescription&gt; is repeated.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 500
+ * characters</td></tr><tr><td>Reference name</td><td>&lt;ProductFormFeatureDescription&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b336&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;b336&gt;11pt
  * Helvetica&lt;/b336&gt;</td></tr></table>
  */
@@ -58,16 +58,19 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 500 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 500 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -95,7 +98,7 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

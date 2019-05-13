@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 9 (Product classification type code)
+ * marker interface to assist in IDE navigation to code-list 9 (Product classification type)
  */
 interface CodeList9 {
 }
@@ -37,20 +37,21 @@ interface CodeList9 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 9</b>
  * <p>
- * Description: Product classification type code
+ * Description: Product classification type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist9">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist9">ONIX
  * Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     /**
-     * World Customs Organization Harmonized Commodity Coding and Description System
+     * World Customs Organization Harmonized Commodity Coding and Description System. Use 6 (or occasionally 8 or 10)
+     * digits, without punctuation
      */
     WCO_Harmonized_System("01", "WCO Harmonized System"), //
 
     /**
-     * UN Standard Product and Service Classification
+     * UN Standard Product and Service Classification. Use 8 (or occasionally 10) digits, without punctuation
      */
     UNSPSC("02", "UNSPSC"), //
 
@@ -65,7 +66,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     Warenverzeichnis_f_r_die_Au_enhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"), //
 
     /**
-     * EU TARIC codes, an extended version of the Harmonized System
+     * EU TARIC codes, an extended version of the Harmonized System. Use 10 digits, without punctuation
      */
     TARIC("05", "TARIC"), //
 
@@ -87,16 +88,22 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
 
     /**
      * Statistical Classification of Products by Activity in the European Economic Community, see
-     * http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&amp;StrNom=CPA_2008. Up to six
-     * digits, with one or two periods. For example, printed children's books are '58.11.13', but the periods are
-     * normally ommited in ONIX
+     * http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&amp;StrNom=CPA_2008. Use 6
+     * digits, without punctuation. For example, printed children's books are '58.11.13', but the periods are normally
+     * ommited in ONIX
      */
     CPA("09", "CPA"), //
 
     /**
-     * Mercosur/Mercosul Common Nomenclature, based on the Harmonised System
+     * Mercosur/Mercosul Common Nomenclature, based on the Harmonised System. Use 8 digits, without punctuation
      */
     NCM("10", "NCM"), //
+
+    /**
+     * Common Procurement Vocabulary, uses to describe requirements for tender for public tendering and procurement
+     * within the EU. Code is a nine digit number (including the check digit). See http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=URISERV:l22008
+     */
+    CPV("11", "CPV"), //
 
     /**
      * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)
@@ -106,7 +113,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     public final String code;
     public final String description;
 
-    private ProductClassificationTypes(String code, String description) {
+    ProductClassificationTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

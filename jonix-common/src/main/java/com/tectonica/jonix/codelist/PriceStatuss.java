@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 61 (Price status code)
+ * marker interface to assist in IDE navigation to code-list 61 (Price status)
  */
 interface CodeList61 {
 }
@@ -34,10 +34,10 @@ interface CodeList61 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 61</b>
  * <p>
- * Description: Price status code
+ * Description: Price status
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist61">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist61">ONIX
  * Codelist 61 in Reference Guide</a>
  */
 public enum PriceStatuss implements OnixCodelist, CodeList61 {
@@ -53,7 +53,7 @@ public enum PriceStatuss implements OnixCodelist, CodeList61 {
     public final String code;
     public final String description;
 
-    private PriceStatuss(String code, String description) {
+    PriceStatuss(String code, String description) {
         this.code = code;
         this.description = description;
     }

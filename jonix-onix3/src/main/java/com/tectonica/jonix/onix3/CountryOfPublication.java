@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,12 +32,12 @@ import java.io.Serializable;
 
 /**
  * <h1>Country of publication</h1><p>A code identifying the country where the product is published. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters. Note that ISO
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two letters. Note that ISO
  * 3166-1 specifies that country codes shall be sent as upper case only</td></tr><tr><td>Codelist</td><td>ISO 3166-1
  * two-letter country codes List 91</td></tr><tr><td>Reference name</td><td>&lt;CountryOfPublication&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b083&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b083&gt;US&lt;/b083&gt;</td></tr></table>
  */
-public class CountryOfPublication implements OnixElement<CountryCodes>, Serializable {
+public class CountryOfPublication implements OnixElement<Countrys>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "CountryOfPublication";
@@ -54,19 +54,22 @@ public class CountryOfPublication implements OnixElement<CountryCodes>, Serializ
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public CountryCodes value;
+    public Countrys value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public CountryCodes _value() {
+    public Countrys _value() {
         return value;
     }
 
@@ -87,7 +90,7 @@ public class CountryOfPublication implements OnixElement<CountryCodes>, Serializ
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = CountryCodes.byCode(JPU.getContentAsString(element));
+        value = Countrys.byCode(JPU.getContentAsString(element));
     }
 
     @Override

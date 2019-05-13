@@ -32,11 +32,11 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supplier identifier composite</h1><p>A repeatable group of data elements which together define the identifier of
- * a supplier in accordance with a specified scheme, and allowing different types of supplier identifier to be included
- * without defining additional data elements. Optional, but each occurrence of the &lt;NewSupplier&gt; composite must
- * carry <em>either</em> at least one supplier identifier, <em>or</em> a &lt;SupplierName&gt;, <em>or</em>
- * both.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SupplierIdentifier&gt;</td></tr><tr><td>Short
+ * <h1>New supplier identifier composite</h1><p>A group of data elements which together define the identity of a
+ * supplier in accordance with a specified scheme, and repeatable to allow different types of supplier identifier to be
+ * included without defining additional data elements. Optional, but each occurrence of the &lt;NewSupplier&gt;
+ * composite must carry <em>either</em> at least one supplier identifier, <em>or</em> a &lt;SupplierName&gt;,
+ * <em>or</em> both.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SupplierIdentifier&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;supplieridentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class SupplierIdentifier
@@ -57,6 +57,9 @@ public class SupplierIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

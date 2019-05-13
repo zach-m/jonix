@@ -21,9 +21,9 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextScriptCodes;
+import com.tectonica.jonix.codelist.TextScripts;
 
 import java.io.Serializable;
 
@@ -34,9 +34,9 @@ import java.io.Serializable;
 /**
  * <h1>Person name</h1><p>The name of a person, used here for a personal copyright owner. Optional and non-repeating.
  * Each occurrence of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an
- * identifier, or both a name and an identifier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;PersonName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b036&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
+ * identifier, or both a name and an identifier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
+ * length text, suggested maximum length 100 characters</td></tr><tr><td>Reference
+ * name</td><td>&lt;PersonName&gt;</td></tr><tr><td>Short tag</td><td>&lt;b036&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
  * language, textscript</td></tr><tr><td>Example</td><td>&lt;PersonName&gt;James J. Johnson
  * III&lt;/PersonName&gt;</td></tr></table>
  */
@@ -57,20 +57,26 @@ public class PersonName implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String collationkey;
 
-    public TextScriptCodes textscript;
+    public TextScripts textscript;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -99,8 +105,8 @@ public class PersonName implements OnixElement<String>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
         collationkey = JPU.getAttribute(element, "collationkey");
-        textscript = TextScriptCodes.byCode(JPU.getAttribute(element, "textscript"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

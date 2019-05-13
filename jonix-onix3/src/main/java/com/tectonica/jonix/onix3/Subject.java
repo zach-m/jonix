@@ -32,9 +32,9 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Subject composite</h1><p>A group of data elements which together describe a subject of a content item. Optional
- * and repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Subject&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;subject&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Subject composite</h1><p>A group of data elements which together specify a subject classification or a subject
+ * heading relating to a content item. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;Subject&gt;</td></tr><tr><td>Short tag</td><td>&lt;subject&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,6 +53,9 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

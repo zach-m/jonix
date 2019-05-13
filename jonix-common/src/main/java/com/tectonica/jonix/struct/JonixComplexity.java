@@ -33,7 +33,8 @@ public class JonixComplexity implements JonixStruct, Serializable {
     public static JonixComplexity EMPTY = new JonixComplexity();
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters, according to the code type
+     * specified in the &lt;ComplexitySchemeIdentifier&gt; element <p> (type: dt.NonEmptyString)
      */
     public String complexityCode;
 

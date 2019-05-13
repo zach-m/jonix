@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 71 (Sales restriction type code)
+ * marker interface to assist in IDE navigation to code-list 71 (Sales restriction type)
  */
 interface CodeList71 {
 }
@@ -37,10 +37,10 @@ interface CodeList71 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 71</b>
  * <p>
- * Description: Sales restriction type code
+ * Description: Sales restriction type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist71">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist71">ONIX
  * Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
@@ -113,20 +113,28 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
 
     /**
      * Not for sale to organisations or services offering consumers subscription access to a library of books
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Not_for_sale_to_subscription_services("12", "Not for sale to subscription services"), //
 
     /**
      * Restricted to organisations or services offering consumers subscription access to a library of books
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
-    Subscription_services_only("13", "Subscription services only");
+    Subscription_services_only("13", "Subscription services only"), //
+
+    /**
+     * Exclusive to bricks-and-mortar retail outlets
+     */
+    Not_for_retail_online("14", "Not for retail online"), //
+
+    /**
+     * Exclusive to online retail outlets
+     */
+    Online_retail_only("15", "Online retail only");
 
     public final String code;
     public final String description;
 
-    private SalesRestrictionTypes(String code, String description) {
+    SalesRestrictionTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

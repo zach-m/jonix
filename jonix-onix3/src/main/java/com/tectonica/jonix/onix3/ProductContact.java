@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductContactIdentifier;
 
@@ -35,7 +35,8 @@ import java.io.Serializable;
 /**
  * <h1>Product contact composite</h1><p>A group of data elements which together specify an organization (which may or
  * may not be the publisher’s representative) responsible for dealing with enquiries related to the product in the
- * market.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductContact&gt;</td></tr><tr><td>Short
+ * market. Optional, and repeatable in order to specify multiple contacts.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductContact&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;productcontact&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ProductContact implements OnixSuperComposite, Serializable {
@@ -55,6 +56,9 @@ public class ProductContact implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -137,13 +141,13 @@ public class ProductContact implements OnixSuperComposite, Serializable {
         return productContactRole;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameCodeTypes>
+    private ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameIdentifierTypes>
         productContactIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * (this list is required to contain at least one item)
      */
-    public ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameCodeTypes> productContactIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameIdentifierTypes> productContactIdentifiers() {
         _initialize();
         return productContactIdentifiers;
     }

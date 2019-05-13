@@ -35,7 +35,7 @@ import java.io.Serializable;
  * illustrations. The more informative free text field &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt;
  * composite are strongly preferred. This element has been added specifically to cater for a situation where a sender of
  * product information maintains only a yes/no flag, and it should not otherwise be used. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 152</td></tr><tr><td>Reference name</td><td>&lt;Illustrated&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x422&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Illustrated&gt;01&lt;/Illustrated&gt;
  * (No)</td></tr></table>
@@ -57,6 +57,9 @@ public class Illustrated implements OnixElement<IllustratedNotIllustrateds>, Ser
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

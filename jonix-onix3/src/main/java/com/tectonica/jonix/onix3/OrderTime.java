@@ -32,8 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>Order time</h1><p>The expected average number of days from receipt of order to despatch (for items ‘manufactured
  * on demand’ or ‘only to order’). Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, one or two digits only</td></tr><tr><td>Reference
- * name</td><td>&lt;OrderTime&gt;</td></tr><tr><td>Short tag</td><td>&lt;j144&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;OrderTime&gt;7&lt;/OrderTime&gt;</td></tr></table>
+ * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, one or two digits only. Zero indicates expected
+ * 'same day' dispatch</td></tr><tr><td>Reference name</td><td>&lt;OrderTime&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j144&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;OrderTime&gt;7&lt;/OrderTime&gt;</td></tr></table>
  */
 public class OrderTime implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -52,6 +53,9 @@ public class OrderTime implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +63,8 @@ public class OrderTime implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, one or two digits only<p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, one or two digits only. Zero indicates expected 'same day' dispatch<p>
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

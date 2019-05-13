@@ -21,7 +21,7 @@ package com.tectonica.jonix.struct;
 
 import com.tectonica.jonix.JonixStruct;
 import com.tectonica.jonix.codelist.Proximitys;
-import com.tectonica.jonix.codelist.Velocitys;
+import com.tectonica.jonix.codelist.VelocityMetrics;
 
 import java.io.Serializable;
 
@@ -33,10 +33,11 @@ import java.io.Serializable;
 public class JonixVelocity implements JonixStruct, Serializable {
     public static JonixVelocity EMPTY = new JonixVelocity();
 
-    public Velocitys velocityMetric;
+    public VelocityMetrics velocityMetric;
 
     /**
-     * Raw Format: Variable length integer, suggested maximum length 7 digits <p> (type: dt.Integer)
+     * Raw Format: Positive or negative integer or zero, suggested maximum length 7 digits. Negative numbers indicate
+     * returns exceed the fulfillment rate <p> (type: dt.Integer)
      */
     public Integer rate;
 

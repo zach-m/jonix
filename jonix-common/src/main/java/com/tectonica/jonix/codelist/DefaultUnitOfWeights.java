@@ -26,7 +26,8 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 95 (Default unit of weight)
+ * marker interface to assist in IDE navigation to code-list 95 (Default unit of weight &lt;p&gt;NOTE: Deprecated in
+ * Onix3)
  */
 interface CodeList95 {
 }
@@ -34,10 +35,10 @@ interface CodeList95 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 95</b>
  * <p>
- * Description: Default unit of weight
+ * Description: Default unit of weight &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist95">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist95">ONIX
  * Codelist 95 in Reference Guide</a>
  */
 public enum DefaultUnitOfWeights implements OnixCodelist, CodeList95 {
@@ -50,7 +51,7 @@ public enum DefaultUnitOfWeights implements OnixCodelist, CodeList95 {
     public final String code;
     public final String description;
 
-    private DefaultUnitOfWeights(String code, String description) {
+    DefaultUnitOfWeights(String code, String description) {
         this.code = code;
         this.description = description;
     }

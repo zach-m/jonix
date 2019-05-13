@@ -24,9 +24,9 @@ import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.BookFormDetails;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.ProductContentTypes;
-import com.tectonica.jonix.codelist.ProductFormDetails;
+import com.tectonica.jonix.codelist.ProductFormDetailsList78;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -68,7 +68,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -102,7 +102,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         this.element = element;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -227,12 +227,13 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return productForm;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
+    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
+        ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
+    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
         _initialize();
         return productFormDetails;
     }

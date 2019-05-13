@@ -36,10 +36,13 @@ import java.util.List;
 /**
  * <h1>null</h1><h4 class="nobreak">Collateral detail composite</h4><p>The collateral detail block covers data element
  * Groups P.14 to P.17, all of which are primarily concerned with information and/or resources which in one way or
- * another support the marketing of the product. The block as a whole is non-repeating. It is not mandatory within the
- * &lt;Product&gt; record, nor are any of the individual sections mandatory within an occurrence of the block.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;CollateralDetail&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;collateraldetail&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * another support the marketing of the product. The block as a whole is non-repeating.</p><p>The block is not mandatory
+ * within the &lt;Product&gt; record, nor are any of the individual sections mandatory within an occurrence of the
+ * block. However, in most circumstances, the block should contain at least one instance of &lt;TextContent&gt;,
+ * &lt;CitedContent&gt;, &lt;SupportingResource&gt; or &lt;Prize&gt;. It may be empty <em>only</em> within a partial or
+ * ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all
+ * previously-supplied collateral material.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;CollateralDetail&gt;</td></tr><tr><td>Short tag</td><td>&lt;collateraldetail&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
 public class CollateralDetail implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -58,6 +61,9 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

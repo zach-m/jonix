@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Product availability</h1><p>An ONIX code indicating the availability of a product from a supplier. Mandatory in
  * each occurrence of the &lt;SupplyDetail&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 65</td></tr><tr><td>Reference name</td><td>&lt;ProductAvailability&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j396&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;j396
  * datestamp=&quot;20101029&quot;&gt;41&lt;/j396&gt; (Replaced by new product)</td></tr><tr><td>Notes</td><td>Note the
@@ -67,6 +67,9 @@ public class ProductAvailability implements OnixElement<ProductAvailabilitys>, S
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

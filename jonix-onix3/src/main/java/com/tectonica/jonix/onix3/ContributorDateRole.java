@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Contributor date role code</h1><p>An ONIX code indicating the significance of the date in relation to the
  * contributor name. Mandatory in each occurrence of the &lt;ContributorDate&gt; composite, and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 177</td></tr><tr><td>Reference name</td><td>&lt;ContributorDateRole&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x417&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;ContributorDateRole&gt;50&lt;/ContributorDateRole&gt;
  * (Date of birth)</td></tr></table>
@@ -55,6 +55,9 @@ public class ContributorDateRole implements OnixElement<PersonOrganizationDateRo
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

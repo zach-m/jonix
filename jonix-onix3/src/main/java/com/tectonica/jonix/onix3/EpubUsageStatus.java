@@ -55,6 +55,9 @@ public class EpubUsageStatus implements OnixElement<UsageStatuss>, Serializable 
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -31,9 +31,10 @@ import java.io.Serializable;
 
 /**
  * <h1>Pack or carton quantity</h1><p>The quantity in each carton or binder’s pack in stock currently held by the
- * supplier. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * integer, suggested maximum length four digits</td></tr><tr><td>Reference name</td><td>&lt;PackQuantity&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j145&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PackQuantity&gt;24&lt;/PackQuantity&gt;</td></tr></table>
+ * supplier. Optional and non-repeating.</p><p>Note that orders do not <em>have</em> to be aligned with multiples of the
+ * pack size, but such orders may be more convenient to handle.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 4 digits</td></tr><tr><td>Reference
+ * name</td><td>&lt;PackQuantity&gt;</td></tr><tr><td>Short tag</td><td>&lt;j145&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PackQuantity&gt;24&lt;/PackQuantity&gt;</td></tr></table>
  */
 public class PackQuantity implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -52,6 +53,9 @@ public class PackQuantity implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +63,7 @@ public class PackQuantity implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length four digits<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 4 digits<p> (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

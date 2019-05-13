@@ -33,9 +33,9 @@ import java.io.Serializable;
  * <h1>Discount percentage</h1><p>A discount percentage applicable to the price carried in an occurrence of the
  * &lt;Price&gt; composite. Optional and non-repeating; but either &lt;DiscountPercent&gt; or &lt;DiscountAmount&gt; or
  * both must be present in each occurrence of the &lt;Discount&gt; composite.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length numeric, including decimal point if required, suggested
- * maximum length 6 characters</td></tr><tr><td>Reference name</td><td>&lt;DiscountPercent&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j267&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;DiscountPercent&gt;37.5&lt;/DiscountPercent&gt;</td></tr></table>
+ * cellpadding='3'><tr><td>Format</td><td>Real number between zero and 100 (inclusive), including explicit decimal point
+ * when required, suggested maximum length 6 characters</td></tr><tr><td>Reference
+ * name</td><td>&lt;DiscountPercent&gt;</td></tr><tr><td>Short tag</td><td>&lt;j267&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;DiscountPercent&gt;37.5&lt;/DiscountPercent&gt;</td></tr></table>
  */
 public class DiscountPercent implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -54,6 +54,9 @@ public class DiscountPercent implements OnixElement<Double>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -61,8 +64,8 @@ public class DiscountPercent implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6
-     * characters<p> (type: dt.PercentDecimal)
+     * Raw Format: Real number between zero and 100 (inclusive), including explicit decimal point when required,
+     * suggested maximum length 6 characters<p> (type: dt.PercentDecimal)
      */
     public Double value;
 

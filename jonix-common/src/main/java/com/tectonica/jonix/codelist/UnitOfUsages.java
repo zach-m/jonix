@@ -39,8 +39,8 @@ interface CodeList147 {
  * <p>
  * Description: Unit of usage
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist147">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist147">ONIX
  * Codelist 147 in Reference Guide</a>
  */
 public enum UnitOfUsages implements OnixCodelist, CodeList147 {
@@ -81,70 +81,149 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     Concurrent_users("07", "Concurrent users"), //
 
     /**
+     * Maximum number of licenced individual users, independent of concurrency of use &lt;p&gt;NOTE: Introduced in
+     * Onix3
+     */
+    Users("15", "Users"), //
+
+    /**
+     * A 'class' is a group of learners attending a specific course or lesson and generally taught as a group
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Concurrent_classes("19", "Concurrent classes"), //
+
+    /**
+     * Maximum number of classes of learners, independent of concurrency of use &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Classes("20", "Classes"), //
+
+    /**
      * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
-     * specified as another EpubUsageQuantity
+     * specified as another EpubUsageQuantity &lt;p&gt;NOTE: Introduced in Onix3
      */
     Percentage_per_time_period("08", "Percentage per time period"), //
 
     /**
-     * Maximum time period in days
+     * Maximum time period in days (beginning from product purchase or activation) &lt;p&gt;NOTE: Introduced in Onix3
      */
     Days("09", "Days"), //
 
     /**
-     * Maximum time period in weeks
+     * Maximum time period in weeks &lt;p&gt;NOTE: Introduced in Onix3
      */
     Weeks("13", "Weeks"), //
 
     /**
-     * Maximum time period in months
+     * Maximum time period in months &lt;p&gt;NOTE: Introduced in Onix3
      */
     Months("14", "Months"), //
 
     /**
-     * Maximum number of times a specified usage event may occur
+     * Maximum about of time in hours, minutes and seconds allowed in a permitted extract for a specified usage, in the
+     * format HHHMMSS (7 digits, with leading zeros if necessary) &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Hours_minutes_and_seconds("16", "Hours minutes and seconds"), //
+
+    /**
+     * Maximum time period in days (beginning from the product publication date). In effect, this defines a fixed end
+     * date for the license independent of the purchase or activation date
+     */
+    Days_fixed_start("27", "Days (fixed start)"), //
+
+    /**
+     * Maximum time period in weeks
+     */
+    Weeks_fixed_start("28", "Weeks (fixed start)"), //
+
+    /**
+     * Maximum time period in months
+     */
+    Months_fixed_start("29", "Months (fixed start)"), //
+
+    /**
+     * Maximum number of times a specified usage event may occur (in the lifetime of the product)
      */
     Times("10", "Times"), //
 
     /**
-     * Maximum resolution of printed or copy/pasted extracts &lt;p&gt;NOTE: Introduced in Onix3
+     * Maximum frequency a specified usage event may occur (per day)
+     */
+    Times_per_day("22", "Times per day"), //
+
+    /**
+     * Maximum frequency a specified usage event may occur (per month)
+     */
+    Times_per_month("23", "Times per month"), //
+
+    /**
+     * Maximum frequency a specified usage event may occur (per year)
+     */
+    Times_per_year("24", "Times per year"), //
+
+    /**
+     * Maximum resolution of printed or copy/pasted extracts
      */
     Dots_per_inch("21", "Dots per inch"), //
+
+    /**
+     * Maximum resolution of printed or copy/pasted extracts
+     */
+    Dots_per_cm("26", "Dots per cm"), //
 
     /**
      * Page number where allowed usage begins. &lt;Quantity&gt; should contain an absolute page number, counting the
      * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
      * pagination). Use with (max number of) Pages, Percentage of content, or End page to specify pages allowed in
-     * Preview &lt;p&gt;NOTE: Introduced in Onix3
+     * Preview
      */
     Allowed_usage_start_page("11", "Allowed usage start page"), //
 
     /**
      * Page number at which allowed usage ends. &lt;Quantity&gt; should contain an absolute page number, counting the
      * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
-     * pagination). Use with Start page to specify pages allowed in a preview &lt;p&gt;NOTE: Introduced in Onix3
+     * pagination). Use with Start page to specify pages allowed in a preview
      */
     Allowed_usage_end_page("12", "Allowed usage end page"), //
 
     /**
-     * Page number where allowed usage begins. &lt;Quantity&gt; should contain an absolute page number, counting the
-     * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
-     * pagination). Use with (max number of) Pages, Percentage of content, or End page to specify pages allowed in
-     * Preview. &lt;p&gt;NOTE: Deprecated in Onix3
+     * Time at which allowed usage begins. &lt;Quantity&gt; should contain an absolute time, counting from the beginning
+     * of an audio or video product, in the format HHHMMSS or HHHMMSScc. Use with Time, Percentage of content, or End
+     * time to specify time-based extract allowed in Preview &lt;p&gt;NOTE: Introduced in Onix3
      */
-    Allowed_usage_start_page_("11", "Allowed usage start page"), //
+    Allowed_usage_start_time("17", "Allowed usage start time"), //
 
     /**
-     * Page number at which allowed usage ends. &lt;Quantity&gt; should contain an absolute page number, counting the
-     * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
-     * pagination). Use with Start page to specify pages allowed in a preview. &lt;p&gt;NOTE: Deprecated in Onix3
+     * Time at which allowed usage ends. &lt;Quantity&gt; should contain an absolute time, counting from the beginning
+     * of an audio or video product, in the format HHHMMSS or HHHMMSScc. Use with Start time to specify time-based
+     * extract allowed in Preview &lt;p&gt;NOTE: Introduced in Onix3
      */
-    Allowed_usage_end_page_("12", "Allowed usage end page");
+    Allowed_usage_end_time("18", "Allowed usage end time"), //
+
+    /**
+     * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
+     * specified as another EpubUsageQuantity &lt;p&gt;NOTE: Deprecated in Onix3
+     */
+    Percentage_per_time_period_("08", "Percentage per time period"), //
+
+    /**
+     * Maximum time period in days (beginning from product purchase or activation) &lt;p&gt;NOTE: Deprecated in Onix3
+     */
+    Days_("09", "Days"), //
+
+    /**
+     * Maximum time period in weeks &lt;p&gt;NOTE: Deprecated in Onix3
+     */
+    Weeks_("13", "Weeks"), //
+
+    /**
+     * Maximum time period in months &lt;p&gt;NOTE: Deprecated in Onix3
+     */
+    Months_("14", "Months");
 
     public final String code;
     public final String description;
 
-    private UnitOfUsages(String code, String description) {
+    UnitOfUsages(String code, String description) {
         this.code = code;
         this.description = description;
     }

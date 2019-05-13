@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
+import com.tectonica.jonix.codelist.EventRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,11 +33,11 @@ import java.io.Serializable;
 /**
  * <h1>Conference role</h1><p>An ONIX code which indicates the relationship between the product and a conference to
  * which it is related, <i>eg</i> Proceedings of / Selected papers from / Developed from. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 20</td></tr><tr><td>Reference name</td><td>&lt;ConferenceRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b051&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&#160;</td></tr></table>
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 20 (only code 01 may be used)</td></tr><tr><td>Reference
+ * name</td><td>&lt;ConferenceRole&gt;</td></tr><tr><td>Short tag</td><td>&lt;b051&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
-public class ConferenceRole implements OnixElement<String>, Serializable {
+public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ConferenceRole";
@@ -53,22 +54,22 @@ public class ConferenceRole implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * Raw Format: Fixed-length, two digits<p> (type: List20)
-     */
-    public String value;
+    public EventRoles value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public String _value() {
+    public EventRoles _value() {
         return value;
     }
 
@@ -89,7 +90,7 @@ public class ConferenceRole implements OnixElement<String>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = JPU.getContentAsString(element);
+        value = EventRoles.byCode(JPU.getContentAsString(element));
     }
 
     @Override

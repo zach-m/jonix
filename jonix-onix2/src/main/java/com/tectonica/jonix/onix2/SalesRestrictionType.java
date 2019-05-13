@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRestrictionTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -39,8 +39,8 @@ import java.io.Serializable;
  * in each occurrence of the &lt;SalesRestriction&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits.</td></tr><tr><td>Codelist</td><td>List
  * 71</td></tr><tr><td>Reference name</td><td>&lt;SalesRestrictionType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b381&gt;</td></tr><tr><td>Example</td><td>&lt;b381&gt;02&lt;/b381&gt;&#160;&#160;&#160;&#160;To be
- * sold only though office supplies wholesalers</td></tr></table>
+ * tag</td><td>&lt;b381&gt;</td></tr><tr><td>Example</td><td>&lt;b381&gt;02&lt;/b381&gt; To be sold only though office
+ * supplies wholesalers</td></tr></table>
  */
 public class SalesRestrictionType implements OnixElement<SalesRestrictionTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -56,7 +56,7 @@ public class SalesRestrictionType implements OnixElement<SalesRestrictionTypes>,
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -98,7 +98,7 @@ public class SalesRestrictionType implements OnixElement<SalesRestrictionTypes>,
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

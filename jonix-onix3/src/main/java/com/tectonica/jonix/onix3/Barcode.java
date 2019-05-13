@@ -54,6 +54,9 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

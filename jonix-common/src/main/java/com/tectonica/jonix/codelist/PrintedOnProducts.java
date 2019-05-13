@@ -36,8 +36,8 @@ interface CodeList174 {
  * <p>
  * Description: Printed on product
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist174">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist174">ONIX
  * Codelist 174 in Reference Guide</a>
  */
 public enum PrintedOnProducts implements OnixCodelist, CodeList174 {
@@ -54,7 +54,7 @@ public enum PrintedOnProducts implements OnixCodelist, CodeList174 {
     public final String code;
     public final String description;
 
-    private PrintedOnProducts(String code, String description) {
+    PrintedOnProducts(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -26,7 +26,8 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 94 (Default linear unit)
+ * marker interface to assist in IDE navigation to code-list 94 (Default linear unit &lt;p&gt;NOTE: Deprecated in
+ * Onix3)
  */
 interface CodeList94 {
 }
@@ -34,10 +35,10 @@ interface CodeList94 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 94</b>
  * <p>
- * Description: Default linear unit
+ * Description: Default linear unit &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist94">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist94">ONIX
  * Codelist 94 in Reference Guide</a>
  */
 public enum DefaultLinearUnits implements OnixCodelist, CodeList94 {
@@ -53,7 +54,7 @@ public enum DefaultLinearUnits implements OnixCodelist, CodeList94 {
     public final String code;
     public final String description;
 
-    private DefaultLinearUnits(String code, String description) {
+    DefaultLinearUnits(String code, String description) {
         this.code = code;
         this.description = description;
     }

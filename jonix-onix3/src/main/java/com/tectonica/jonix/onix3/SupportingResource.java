@@ -59,6 +59,9 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -102,6 +105,10 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
                 case ContentAudience.refname:
                 case ContentAudience.shortname:
                     contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+                    break;
+                case Territory.refname:
+                case Territory.shortname:
+                    territory = new Territory(e);
                     break;
                 case ResourceMode.refname:
                 case ResourceMode.shortname:
@@ -148,6 +155,16 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
         return contentAudiences;
+    }
+
+    private Territory territory = Territory.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public Territory territory() {
+        _initialize();
+        return territory;
     }
 
     private ResourceMode resourceMode = ResourceMode.EMPTY;

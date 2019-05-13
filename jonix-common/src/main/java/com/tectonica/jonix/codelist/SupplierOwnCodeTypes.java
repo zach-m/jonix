@@ -36,8 +36,8 @@ interface CodeList165 {
  * <p>
  * Description: Supplier own code type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist165">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist165">ONIX
  * Codelist 165 in Reference Guide</a>
  */
 public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
@@ -67,21 +67,20 @@ public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
     /**
      * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
      * to that the distributor or supplier estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or
-     * GTIN-13 &lt;p&gt;NOTE: Introduced in Onix3
+     * GTIN-13
      */
     Supplier_s_sales_expectation("05", "Supplier’s sales expectation"), //
 
     /**
      * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
      * to that the publisher estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or GTIN-13
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Publisher_s_sales_expectation("06", "Publisher’s sales expectation");
 
     public final String code;
     public final String description;
 
-    private SupplierOwnCodeTypes(String code, String description) {
+    SupplierOwnCodeTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

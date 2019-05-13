@@ -33,7 +33,7 @@ import java.io.Serializable;
  * <h1>Last page number</h1><p>The number of the last page of a sequence of contiguous pages (ignoring any blank verso
  * which is left after the last text page). This element is omitted if an item begins and ends on the same page;
  * otherwise it should occur once and only once in each occurrence of the &lt;PageRun&gt; composite.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length alphanumeric, suggested maximum length 20
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested maximum length 20
  * characters</td></tr><tr><td>Reference name</td><td>&lt;LastPageNumber&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b287&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b287&gt;35&lt;/b287&gt;</td></tr></table>
  */
@@ -54,6 +54,9 @@ public class LastPageNumber implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +64,7 @@ public class LastPageNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 

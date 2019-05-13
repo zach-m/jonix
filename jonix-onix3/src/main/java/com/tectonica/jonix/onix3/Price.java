@@ -25,6 +25,7 @@ import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.DiscountCodeTypes;
+import com.tectonica.jonix.codelist.EpublicationTechnicalProtections;
 import com.tectonica.jonix.codelist.PriceDateRoles;
 import com.tectonica.jonix.codelist.PriceIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -33,7 +34,6 @@ import com.tectonica.jonix.struct.JonixDiscount;
 import com.tectonica.jonix.struct.JonixDiscountCoded;
 import com.tectonica.jonix.struct.JonixPriceDate;
 import com.tectonica.jonix.struct.JonixPriceIdentifier;
-import com.tectonica.jonix.struct.JonixTax;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -44,8 +44,8 @@ import java.util.List;
  */
 
 /**
- * <h1>Price composite</h1><p>A optional and repeatable group of data elements which together specify a unit price, used
- * here to indicate a price that will apply when the product is reissued. Deprecated in this context.</p><table
+ * <h1>Price composite</h1><p>An optional and repeatable group of data elements which together specify a unit price,
+ * used here to indicate a price that will apply when the product is reissued. Deprecated in this context.</p><table
  * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Price&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;price&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
@@ -66,6 +66,9 @@ public class Price implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -114,6 +117,18 @@ public class Price implements OnixSuperComposite, Serializable {
                 case PriceQualifier.shortname:
                     priceQualifier = new PriceQualifier(e);
                     break;
+                case EpubTechnicalProtection.refname:
+                case EpubTechnicalProtection.shortname:
+                    epubTechnicalProtections = JPU.addToList(epubTechnicalProtections, new EpubTechnicalProtection(e));
+                    break;
+                case PriceConstraint.refname:
+                case PriceConstraint.shortname:
+                    priceConstraints = JPU.addToList(priceConstraints, new PriceConstraint(e));
+                    break;
+                case EpubLicense.refname:
+                case EpubLicense.shortname:
+                    epubLicense = new EpubLicense(e);
+                    break;
                 case PriceTypeDescription.refname:
                 case PriceTypeDescription.shortname:
                     priceTypeDescriptions = JPU.addToList(priceTypeDescriptions, new PriceTypeDescription(e));
@@ -157,6 +172,14 @@ public class Price implements OnixSuperComposite, Serializable {
                 case Tax.refname:
                 case Tax.shortname:
                     taxs = JPU.addToList(taxs, new Tax(e));
+                    break;
+                case TaxExempt.refname:
+                case TaxExempt.shortname:
+                    taxExempt = new TaxExempt(e);
+                    break;
+                case UnpricedItemType.refname:
+                case UnpricedItemType.shortname:
+                    unpricedItemType = new UnpricedItemType(e);
                     break;
                 case CurrencyCode.refname:
                 case CurrencyCode.shortname:
@@ -230,6 +253,37 @@ public class Price implements OnixSuperComposite, Serializable {
     public PriceQualifier priceQualifier() {
         _initialize();
         return priceQualifier;
+    }
+
+    private ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
+        ListOfOnixElement.empty();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections() {
+        _initialize();
+        return epubTechnicalProtections;
+    }
+
+    private List<PriceConstraint> priceConstraints = Collections.emptyList();
+
+    /**
+     * (this list may be empty)
+     */
+    public List<PriceConstraint> priceConstraints() {
+        _initialize();
+        return priceConstraints;
+    }
+
+    private EpubLicense epubLicense = EpubLicense.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public EpubLicense epubLicense() {
+        _initialize();
+        return epubLicense;
     }
 
     private ListOfOnixElement<PriceTypeDescription, String> priceTypeDescriptions = ListOfOnixElement.empty();
@@ -333,14 +387,38 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceCoded;
     }
 
-    private ListOfOnixDataComposite<Tax, JonixTax> taxs = ListOfOnixDataComposite.empty();
+    private List<Tax> taxs = Collections.emptyList();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixDataComposite<Tax, JonixTax> taxs() {
+    public List<Tax> taxs() {
         _initialize();
         return taxs;
+    }
+
+    private TaxExempt taxExempt = TaxExempt.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public TaxExempt taxExempt() {
+        _initialize();
+        return taxExempt;
+    }
+
+    public boolean isTaxExempt() {
+        return (taxExempt().exists());
+    }
+
+    private UnpricedItemType unpricedItemType = UnpricedItemType.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public UnpricedItemType unpricedItemType() {
+        _initialize();
+        return unpricedItemType;
     }
 
     private CurrencyCode currencyCode = CurrencyCode.EMPTY;

@@ -36,19 +36,24 @@ interface CodeList177 {
  * <p>
  * Description: Person / organization date role
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist177">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist177">ONIX
  * Codelist 177 in Reference Guide</a>
  */
 public enum PersonOrganizationDateRoles implements OnixCodelist, CodeList177 {
     Date_of_birth("50", "Date of birth"), //
 
-    Date_of_death("51", "Date of death");
+    Date_of_death("51", "Date of death"), //
+
+    /**
+     * ('Floruit'). To date the height of or most productive period during a career
+     */
+    Flourished_around("56", "Flourished around");
 
     public final String code;
     public final String description;
 
-    private PersonOrganizationDateRoles(String code, String description) {
+    PersonOrganizationDateRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }

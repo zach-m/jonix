@@ -22,9 +22,12 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
+import com.tectonica.jonix.struct.JonixLocationIdentifier;
 import com.tectonica.jonix.struct.JonixOnOrderDetail;
 import com.tectonica.jonix.struct.JonixStockQuantityCoded;
 import com.tectonica.jonix.struct.JonixVelocity;
@@ -36,8 +39,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Stock quantity composite</h1><p>A repeatable group of data elements which together specify a quantity of stock
- * and, where a supplier has more than one warehouse, a supplier location. Optional.</p><table border='1'
+ * <h1>Stock quantity composite</h1><p>An optional group of data elements which together specify a quantity of stock,
+ * repeatable where a supplier has more than one warehouse or supplier location.</p><p>Within a single instance of the
+ * &lt;Stock&gt; composite, the location name and identifier are both optional. If &lt;Stock&gt; is repeated, at least
+ * one identifier or a location name must be included in each instance.</p><table border='1'
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;Stock&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;stock&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
@@ -58,6 +63,9 @@ public class Stock implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -96,11 +104,11 @@ public class Stock implements OnixSuperComposite, Serializable {
             switch (name) {
                 case LocationIdentifier.refname:
                 case LocationIdentifier.shortname:
-                    locationIdentifier = new LocationIdentifier(e);
+                    locationIdentifiers = JPU.addToList(locationIdentifiers, new LocationIdentifier(e));
                     break;
                 case LocationName.refname:
                 case LocationName.shortname:
-                    locationName = new LocationName(e);
+                    locationNames = JPU.addToList(locationNames, new LocationName(e));
                     break;
                 case StockQuantityCoded.refname:
                 case StockQuantityCoded.shortname:
@@ -113,6 +121,10 @@ public class Stock implements OnixSuperComposite, Serializable {
                 case Proximity.refname:
                 case Proximity.shortname:
                     proximity = new Proximity(e);
+                    break;
+                case Reserved.refname:
+                case Reserved.shortname:
+                    reserved = new Reserved(e);
                     break;
                 case OnOrder.refname:
                 case OnOrder.shortname:
@@ -145,24 +157,25 @@ public class Stock implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private LocationIdentifier locationIdentifier = LocationIdentifier.EMPTY;
+    private ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier, SupplierIdentifierTypes>
+        locationIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this field is optional)
+     * (this list may be empty)
      */
-    public LocationIdentifier locationIdentifier() {
+    public ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier, SupplierIdentifierTypes> locationIdentifiers() {
         _initialize();
-        return locationIdentifier;
+        return locationIdentifiers;
     }
 
-    private LocationName locationName = LocationName.EMPTY;
+    private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
 
     /**
-     * (this field is optional)
+     * (this list may be empty)
      */
-    public LocationName locationName() {
+    public ListOfOnixElement<LocationName, String> locationNames() {
         _initialize();
-        return locationName;
+        return locationNames;
     }
 
     private ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes>
@@ -194,6 +207,16 @@ public class Stock implements OnixSuperComposite, Serializable {
     public Proximity proximity() {
         _initialize();
         return proximity;
+    }
+
+    private Reserved reserved = Reserved.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public Reserved reserved() {
+        _initialize();
+        return reserved;
     }
 
     private OnOrder onOrder = OnOrder.EMPTY;

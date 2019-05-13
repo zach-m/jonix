@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -34,9 +34,11 @@ import java.io.Serializable;
  * <h1>Subject heading text</h1><p>The text of a subject heading taken from the scheme specified in the
  * &lt;SubjectSchemeIdentifier&gt; element, or of free language keywords if the scheme is specified as ‘keywords’; or
  * the text equivalent to the &lt;SubjectCode&gt; value, if both code and text are sent. Either &lt;SubjectCode&gt; or
- * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;Subject&gt; composite. Optional, and
- * repeatable if the text is sent in multiple languages.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 250 characters</td></tr><tr><td>Reference name</td><td>&lt;SubjectHeadingText&gt;</td></tr><tr><td>Short
+ * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;Subject&gt;
+ * composite.</p><p>Optional, and repeatable if the text is sent in multiple languages. The <i>language</i> attribute is
+ * optional for a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance if
+ * &lt;SubjectHeadingText&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length
+ * text, suggested maximum length 500 characters</td></tr><tr><td>Reference name</td><td>&lt;SubjectHeadingText&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b070&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;b070&gt;Labor
  * and industrial relations&lt;/b070&gt;</td></tr></table>
  */
@@ -57,16 +59,19 @@ public class SubjectHeadingText implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 250 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 500 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -94,7 +99,7 @@ public class SubjectHeadingText implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

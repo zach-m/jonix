@@ -31,8 +31,8 @@ import java.io.Serializable;
 
 /**
  * <h1>Price amount</h1><p>The amount of the comparison product price. Mandatory and non-repeating within any occurrence
- * of the &lt;ComparisonProductPrice&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length real number, with explicit decimal point when required, suggested maximum length 12
+ * of the &lt;ComparisonProductPrice&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive
+ * real number, with explicit decimal point when required, suggested maximum length 12
  * characters</td></tr><tr><td>Reference name</td><td>&lt;PriceAmount&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j151&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;PriceAmount&gt;18.99&lt;/PriceAmount&gt;</td></tr></table>
  */
@@ -53,6 +53,9 @@ public class PriceAmount implements OnixElement<Double>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,7 @@ public class PriceAmount implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+     * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 12
      * characters<p> (type: dt.StrictPositiveDecimal)
      */
     public Double value;

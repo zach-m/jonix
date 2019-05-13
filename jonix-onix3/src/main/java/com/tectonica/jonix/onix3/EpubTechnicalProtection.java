@@ -31,14 +31,17 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Digital product technical protection</h1><p>An ONIX code specifying whether a digital product has DRM or other
- * technical protection features. Optional and repeatable, if a product has two or more kinds of protection.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 144</td></tr><tr><td>Reference name</td><td>&lt;EpubTechnicalProtection&gt;</td></tr><tr><td>Short
+ * <h1>Digital product technical protection (Price)</h1><p>An ONIX code specifying whether a digital product has DRM or
+ * other technical protection features that form or enforce part of the commercial offer for a product. Optional, and
+ * repeatable if a product has two or more kinds of protection.</p><p>The Digital product technical protection element
+ * is also present in Group&nbsp;P.3. Use here where a single product is available under multiple commercial offers with
+ * differing Price constraints, to indicate whether the constraints are enforced via technical protection
+ * measures.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 144</td></tr><tr><td>Reference name</td><td>&lt;EpubTechnicalProtection&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x317&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;x317&gt;03&lt;/x317&gt;
  * (Has digital watermarking)</td></tr><tr><td>Notes</td><td>'Epub' ('e-publication') here and in other element names
- * below refers to any digital product, and has no necessary link with the .epub file format maintained by the
- * IDPF.</td></tr></table>
+ * below refers to any digital product, and has no necessary link with the .epub file format developed by the
+ * IDPF</td></tr></table>
  */
 public class EpubTechnicalProtection implements OnixElement<EpublicationTechnicalProtections>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -57,6 +60,9 @@ public class EpubTechnicalProtection implements OnixElement<EpublicationTechnica
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -39,8 +39,8 @@ interface CodeList30 {
  * <p>
  * Description: Audience range qualifier
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist30">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist30">ONIX
  * Codelist 30 in Reference Guide</a>
  */
 public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
@@ -124,15 +124,20 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     Chinese_School_Grade_range("29", "Chinese School Grade range"), //
 
     /**
-     * French educational level classification scolomfr-voc-022, used for example on WizWiz.fr. See
-     * http://www.lom-fr.fr/scolomfr/vocabulaires/consultation-des-vocabulaires.html
+     * French educational level classification scolomfr-voc-022. See https://www.reseau-canope.fr/scolomfr/accueil.html
      */
-    Nomenclature_niveaux("30", "Nomenclature niveaux");
+    Nomenclature_niveaux("30", "Nomenclature niveaux"), //
+
+    /**
+     * N&#237;vel de Educa&#231;&#227;o do Brasil, see List 238. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in
+     * Onix3
+     */
+    Brazil_Education_level("31", "Brazil Education level");
 
     public final String code;
     public final String description;
 
-    private AudienceRangeQualifiers(String code, String description) {
+    AudienceRangeQualifiers(String code, String description) {
         this.code = code;
         this.description = description;
     }

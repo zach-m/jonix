@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.BarcodeIndicatorsList141;
+import com.tectonica.jonix.codelist.BarcodeIndicators;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -33,12 +33,12 @@ import java.io.Serializable;
 /**
  * <h1>Barcode type</h1><p>An ONIX code indicating whether, and in what form, a barcode is carried on a product.
  * Mandatory in any instance of the &lt;Barcode&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 141</td></tr><tr><td>Reference name</td><td>&lt;BarcodeType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x312&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x312&gt;03&lt;/x312&gt;
  * (GTIN-13+5 - US dollar price encoded)</td></tr></table>
  */
-public class BarcodeType implements OnixElement<BarcodeIndicatorsList141>, Serializable {
+public class BarcodeType implements OnixElement<BarcodeIndicators>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "BarcodeType";
@@ -55,19 +55,22 @@ public class BarcodeType implements OnixElement<BarcodeIndicatorsList141>, Seria
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public BarcodeIndicatorsList141 value;
+    public BarcodeIndicators value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public BarcodeIndicatorsList141 _value() {
+    public BarcodeIndicators _value() {
         return value;
     }
 
@@ -88,7 +91,7 @@ public class BarcodeType implements OnixElement<BarcodeIndicatorsList141>, Seria
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = BarcodeIndicatorsList141.byCode(JPU.getContentAsString(element));
+        value = BarcodeIndicators.byCode(JPU.getContentAsString(element));
     }
 
     @Override

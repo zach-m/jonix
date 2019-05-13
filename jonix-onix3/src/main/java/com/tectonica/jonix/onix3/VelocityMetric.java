@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.Velocitys;
+import com.tectonica.jonix.codelist.VelocityMetrics;
 
 import java.io.Serializable;
 
@@ -37,7 +37,7 @@ import java.io.Serializable;
  * name</td><td>&lt;VelocityMetric&gt;</td></tr><tr><td>Short tag</td><td>&lt;x504&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x504&gt;02&lt;/x504&gt;
  * (Mean daily sale)</td></tr></table>
  */
-public class VelocityMetric implements OnixElement<Velocitys>, Serializable {
+public class VelocityMetric implements OnixElement<VelocityMetrics>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "VelocityMetric";
@@ -54,19 +54,22 @@ public class VelocityMetric implements OnixElement<Velocitys>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public Velocitys value;
+    public VelocityMetrics value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public Velocitys _value() {
+    public VelocityMetrics _value() {
         return value;
     }
 
@@ -87,7 +90,7 @@ public class VelocityMetric implements OnixElement<Velocitys>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = Velocitys.byCode(JPU.getContentAsString(element));
+        value = VelocityMetrics.byCode(JPU.getContentAsString(element));
     }
 
     @Override

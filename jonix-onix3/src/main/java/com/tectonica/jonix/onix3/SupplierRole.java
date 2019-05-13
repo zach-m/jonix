@@ -31,9 +31,9 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supplier role</h1><p>An ONIX code identifying the role of a supplier in relation to the product, <i>eg</i>
+ * <h1>Supplier role</h1><p>An ONIX code identifying the role of the supplier in relation to the product, <i>eg</i>
  * Publisher, Publisher’s exclusive distributor, <i>etc</i>. Mandatory in each occurrence of the &lt;Supplier&gt;
- * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 93</td></tr><tr><td>Reference name</td><td>&lt;SupplierRole&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j292&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;SupplierRole&gt;01&lt;/SupplierRole&gt;
  * (Publisher)</td></tr></table>
@@ -55,6 +55,9 @@ public class SupplierRole implements OnixElement<SupplierRoles>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.ProductFormDetailsList175;
+import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,13 +32,13 @@ import java.io.Serializable;
 
 /**
  * <h1>Related product form detail</h1><p>An ONIX code which provides added detail of the medium and/or format of a
- * related product. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * related product. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length,
  * four characters: one letter followed by three digits</td></tr><tr><td>Codelist</td><td>List
  * 175</td></tr><tr><td>Reference name</td><td>&lt;ProductFormDetail&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b333&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;b333&gt;B206&lt;/b333&gt;
  * (Pop-up book)</td></tr></table>
  */
-public class ProductFormDetail implements OnixElement<ProductFormDetailsList175>, Serializable {
+public class ProductFormDetail implements OnixElement<ProductFormDetails>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ProductFormDetail";
@@ -55,19 +55,22 @@ public class ProductFormDetail implements OnixElement<ProductFormDetailsList175>
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public ProductFormDetailsList175 value;
+    public ProductFormDetails value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public ProductFormDetailsList175 _value() {
+    public ProductFormDetails _value() {
         return value;
     }
 
@@ -88,7 +91,7 @@ public class ProductFormDetail implements OnixElement<ProductFormDetailsList175>
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = ProductFormDetailsList175.byCode(JPU.getContentAsString(element));
+        value = ProductFormDetails.byCode(JPU.getContentAsString(element));
     }
 
     @Override

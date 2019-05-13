@@ -35,11 +35,12 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Text item composite</h1><p>A group of data elements which are specific to text content. The composite must occur
- * once and only once in a &lt;ContentItem&gt; composite which describes a text content item. (Similar composites may be
- * defined for other media, and the occurrence of one of them will be mandatory in any &lt;ContentItem&gt;
- * composite.)</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;TextItem&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;textitem&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr></table>
+ * <h1>Text item composite</h1><p>A group of data elements which are specific to text content. Optional, but exactly one
+ * of either the &lt;TextItem&gt; composite or the similar &lt;AVItem&gt; composite must occur in a &lt;ContentItem&gt;
+ * composite which describes a particular content item. (Similar composites may be defined for other media, and the
+ * occurrence of one of them will be mandatory in any &lt;ContentItem&gt; composite.)</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;TextItem&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;textitem&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
 public class TextItem implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -58,6 +59,9 @@ public class TextItem implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

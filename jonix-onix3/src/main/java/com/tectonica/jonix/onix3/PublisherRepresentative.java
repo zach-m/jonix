@@ -58,6 +58,9 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

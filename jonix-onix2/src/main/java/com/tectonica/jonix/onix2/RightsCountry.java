@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Countrys;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -44,10 +44,10 @@ import java.io.Serializable;
  * upper case letters, successive codes being separated by spaces. Suggested maximum length 600 characters. [Note that
  * ISO 3166-1 specifies that country codes shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO
  * 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference name</td><td>&lt;RightsCountry&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b090&gt;</td></tr><tr><td>Example</td><td>&lt;RightsCountry&gt;US
- * CA&lt;/RightsCountry&gt;&#160;&#160;&#160;&#160;USA and Canada</td></tr></table>
+ * tag</td><td>&lt;b090&gt;</td></tr><tr><td>Example</td><td>&lt;RightsCountry&gt;US CA&lt;/RightsCountry&gt; USA and
+ * Canada</td></tr></table>
  */
-public class RightsCountry implements OnixElement<java.util.Set<CountryCodes>>, Serializable {
+public class RightsCountry implements OnixElement<java.util.Set<Countrys>>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "RightsCountry";
@@ -61,7 +61,7 @@ public class RightsCountry implements OnixElement<java.util.Set<CountryCodes>>, 
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -78,13 +78,13 @@ public class RightsCountry implements OnixElement<java.util.Set<CountryCodes>>, 
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public java.util.Set<CountryCodes> value;
+    public java.util.Set<Countrys> value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public java.util.Set<CountryCodes> _value() {
+    public java.util.Set<Countrys> _value() {
         return value;
     }
 
@@ -103,7 +103,7 @@ public class RightsCountry implements OnixElement<java.util.Set<CountryCodes>>, 
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -111,7 +111,7 @@ public class RightsCountry implements OnixElement<java.util.Set<CountryCodes>>, 
 
         value = new java.util.HashSet<>();
         for (String split : JPU.getContentAsString(element).trim().split(" +")) {
-            value.add(CountryCodes.byCode(split));
+            value.add(Countrys.byCode(split));
         }
     }
 

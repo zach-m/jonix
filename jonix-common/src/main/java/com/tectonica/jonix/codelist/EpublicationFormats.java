@@ -29,7 +29,8 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 11 (Epublication format code)
+ * marker interface to assist in IDE navigation to code-list 11 (Epublication format code &lt;p&gt;NOTE: Deprecated in
+ * Onix3)
  */
 interface CodeList11 {
 }
@@ -37,10 +38,10 @@ interface CodeList11 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 11</b>
  * <p>
- * Description: Epublication format code
+ * Description: Epublication format code &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist11">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist11">ONIX
  * Codelist 11 in Reference Guide</a>
  */
 public enum EpublicationFormats implements OnixCodelist, CodeList11 {
@@ -81,7 +82,7 @@ public enum EpublicationFormats implements OnixCodelist, CodeList11 {
     public final String code;
     public final String description;
 
-    private EpublicationFormats(String code, String description) {
+    EpublicationFormats(String code, String description) {
         this.code = code;
         this.description = description;
     }

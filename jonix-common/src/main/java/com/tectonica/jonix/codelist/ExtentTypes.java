@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 23 (Extent type code)
+ * marker interface to assist in IDE navigation to code-list 23 (Extent type)
  */
 interface CodeList23 {
 }
@@ -37,10 +37,10 @@ interface CodeList23 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 23</b>
  * <p>
- * Description: Extent type code
+ * Description: Extent type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist23">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist23">ONIX
  * Codelist 23 in Reference Guide</a>
  */
 public enum ExtentTypes implements OnixCodelist, CodeList23 {
@@ -70,8 +70,8 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
 
     /**
      * The total number of numbered (often Roman-numbered) pages that follow the main content of a book. This usually
-     * consists of an afterword, appendices, endnotes, index, etc. It excludes blank (or advertising) pages that are
-     * present only for convenience of printing and binding
+     * consists of an afterword, appendices, endnotes, index, etc. It excludes extracts or 'teaser' material from other
+     * works, and blank (or advertising) pages that are present only for convenience of printing and binding
      */
     Back_matter_page_count("04", "Back matter page count"), //
 
@@ -85,7 +85,8 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
 
     /**
      * The total number of pages in a book, including unnumbered pages, front matter, back matter, etc. This includes
-     * any blank pages at the back that carry no content and are present only for convenience of printing and binding
+     * any extracts or 'teaser' material from other works, and blank pages at the back that carry no content and are
+     * present only for convenience of printing and binding
      */
     Production_page_count("06", "Production page count"), //
 
@@ -96,21 +97,20 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
     Absolute_page_count("07", "Absolute page count"), //
 
     /**
-     * The total number of pages (equivalent to the Content page count) in the print counterpart of a digital product
-     * delivered without fixed pagination
+     * The total number of pages (equivalent to the Content page count, code 11) in the print counterpart of a digital
+     * product delivered without fixed pagination, or of an audio product
      */
     Number_of_pages_in_print_counterpart("08", "Number of pages in print counterpart"), //
 
     /**
-     * Total duration in time, expressed in the specified extent unit. This is the 'running time' equivalent of codes 05
-     * or 11
+     * Total duration in time, expressed in the specified extent unit. This is the 'running time' equivalent of code 11
      */
     Duration("09", "Duration"), //
 
     /**
      * An estimate of the number of 'pages' in a digital product delivered without fixed pagination, and with no print
-     * counterpart, given as an indication of the size of the work. Equivalent to code 08, but for exclusively digital
-     * products
+     * counterpart, given as an indication of the size of the work. Equivalent to code 08, but exclusively for digital
+     * or audio products
      */
     Notional_number_of_pages_in_digital_product("10", "Notional number of pages in digital product"), //
 
@@ -128,8 +128,8 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
 
     /**
      * Duration in time, expressed in the specified extent units, of introductory matter. This is the 'running time'
-     * equivalent of code 03, and comprises any significant amount of running time represented by announcements, titles,
-     * introduction or other material prefacing the main content
+     * equivalent of code 03, and comprises any significant amount of running time represented by a musical intro,
+     * announcements, titles, introduction or other material prefacing the main content
      */
     Duration_of_introductory_matter("13", "Duration of introductory matter"), //
 
@@ -141,6 +141,21 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
     Duration_of_main_content("14", "Duration of main content"), //
 
     /**
+     * Duration in time, expressed in the specified extent units, of any content that follows the main content of a
+     * book. This may consist of an afterword, appendices, endnotes, end music etc. It excludes extracts or 'teaser'
+     * material from other works. This is the 'running time' equivalent of code 04
+     */
+    Duration_of_back_matter("15", "Duration of back matter"), //
+
+    /**
+     * Duration in time, expressed in the specified extent units, of the complete content of a book. This is the
+     * 'running time' equivalent of code 06, and includes time represented by musical themes, announcements, titles,
+     * introductory and other prefatory material, plus 'back matter' such as any afterword, appendices, plus any
+     * extracts or 'teaser' material from other works
+     */
+    Production_duration("16", "Production duration"), //
+
+    /**
      * The size of a digital file, expressed in the specified extent unit
      */
     Filesize("22", "Filesize");
@@ -148,7 +163,7 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
     public final String code;
     public final String description;
 
-    private ExtentTypes(String code, String description) {
+    ExtentTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

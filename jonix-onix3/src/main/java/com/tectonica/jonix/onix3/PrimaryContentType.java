@@ -35,7 +35,7 @@ import java.io.Serializable;
  * product. The element is intended to be used in particular for digital products, when the sender wishes to make it
  * clear that one of a number of content types (<i>eg</i> text, audio, video) is the primary type for the product. Other
  * content types may be specified in the &lt;ProductContentType&gt;. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 81</td></tr><tr><td>Reference name</td><td>&lt;PrimaryContentType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x416&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x416&gt;10&lt;/x416&gt;
  * (Eye-readable text)</td></tr></table>
@@ -57,6 +57,9 @@ public class PrimaryContentType implements OnixElement<ProductContentTypes>, Ser
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

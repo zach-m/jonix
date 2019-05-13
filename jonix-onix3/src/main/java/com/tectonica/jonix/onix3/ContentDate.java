@@ -32,9 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Content date composite</h1><p>An optional and repeatable group of data elements which together specify a date
- * associated with a supporting resource version, <i>eg</i> the date until which the resource version will be available
- * for download.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ContentDate&gt;</td></tr><tr><td>Short
+ * <h1>Content date composite</h1><p>An optional group of data elements which together specify a date associated with a
+ * supporting resource version, <i>eg</i> the date until which the resource version will be available for download.
+ * Repeatable to specify different dates with their various roles.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ContentDate&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;contentdate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, ContentDateRoles>, Serializable {
@@ -54,6 +55,9 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

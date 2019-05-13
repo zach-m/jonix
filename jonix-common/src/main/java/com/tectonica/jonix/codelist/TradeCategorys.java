@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 12 (Trade category code)
+ * marker interface to assist in IDE navigation to code-list 12 (Trade category)
  */
 interface CodeList12 {
 }
@@ -37,10 +37,10 @@ interface CodeList12 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 12</b>
  * <p>
- * Description: Trade category code
+ * Description: Trade category
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist12">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist12">ONIX
  * Codelist 12 in Reference Guide</a>
  */
 public enum TradeCategorys implements OnixCodelist, CodeList12 {
@@ -63,10 +63,10 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     Sonderausgabe("03", "Sonderausgabe"), //
 
     /**
-     * In countries where recognised as a distinct trade category, eg France 'livre de poche', Germany 'Taschenbuch',
-     * Italy 'tascabile', Spain 'libro de bolsillo'
+     * In countries where recognised as a distinct trade category, eg France &#171;&#160;livre de poche &#187;, Germany
+     * ,Taschenbuch', Italy &#171;tascabile&#187;, Spain &#171;libro de bolsillo&#187;
      */
-    Pocket_paperback("04", "Pocket paperback"), //
+    Pocket_book("04", "Pocket book"), //
 
     /**
      * Edition produced solely for sale in designated export markets
@@ -125,12 +125,37 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
      * 'Short' e-book (sometimes also called a 'single'), typically containing a single short story, an essay or piece
      * of long-form journalism
      */
-    E_book_short("14", "E-book short");
+    E_book_short("14", "E-book short"), //
+
+    /**
+     * In countries where recognised as a distinct trade category, eg Italy &#171;supertascabile&#187;. For use in ONIX
+     * 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Superpocket_book("15", "Superpocket book"), //
+
+    /**
+     * Category of books, usually hardcover and of a large format (A4 or larger) and printed on high-quality paper,
+     * where the primary features are illustrations, and these are more important than text. Sometimes called
+     * 'coffee-table books' or 'art books' in English. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Beau_livre("16", "Beau-livre"), //
+
+    /**
+     * Category of audio products typically distinguished by being free of charge (but which may be monetised through
+     * advertising content) and episodic. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Podcast("17", "Podcast"), //
+
+    /**
+     * Category of books or e-books which are single issues of a periodical publication, sold as independent products.
+     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Periodical("18", "Periodical");
 
     public final String code;
     public final String description;
 
-    private TradeCategorys(String code, String description) {
+    TradeCategorys(String code, String description) {
         this.code = code;
         this.description = description;
     }

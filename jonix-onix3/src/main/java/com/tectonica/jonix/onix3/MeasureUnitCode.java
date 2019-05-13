@@ -33,8 +33,8 @@ import java.io.Serializable;
 /**
  * <h1>Measure unit code</h1><p>An ONIX code indicating the measure unit in which dimensions are given. Mandatory in
  * each occurrence of the &lt;Measure&gt; composite, and non-repeating. This element must follow the dimension to which
- * the measure unit applies. See example below.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
- * two letters</td></tr><tr><td>Codelist</td><td>List 50</td></tr><tr><td>Reference
+ * the measure unit applies. See example below.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
+ * length, two letters</td></tr><tr><td>Codelist</td><td>List 50</td></tr><tr><td>Reference
  * name</td><td>&lt;MeasureUnitCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;c095&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;c095&gt;mm&lt;/c095&gt;</td></tr></table>
  */
 public class MeasureUnitCode implements OnixElement<MeasureUnits>, Serializable {
@@ -54,6 +54,9 @@ public class MeasureUnitCode implements OnixElement<MeasureUnits>, Serializable 
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -36,8 +36,8 @@ interface CodeList19 {
  * <p>
  * Description: Unnamed person(s)
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist19">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist19">ONIX
  * Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
@@ -73,7 +73,7 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
     public final String code;
     public final String description;
 
-    private UnnamedPersonss(String code, String description) {
+    UnnamedPersonss(String code, String description) {
         this.code = code;
         this.description = description;
     }

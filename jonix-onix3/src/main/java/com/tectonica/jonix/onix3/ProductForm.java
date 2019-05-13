@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.ProductFormsList150;
+import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -37,12 +37,12 @@ import java.io.Serializable;
  * related product itself.</p><p>Since this and the following element provide data about a related product, ONIX
  * suppliers are cautioned of the risk of contradictory data in separate data feeds. <em>This and the following element
  * should not be supplied unless specifically requested by a particular recipient.</em></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters</td></tr><tr><td>Codelist</td><td>List
- * 150</td></tr><tr><td>Reference name</td><td>&lt;ProductForm&gt;</td></tr><tr><td>Short
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two letters (or the digits
+ * 00)</td></tr><tr><td>Codelist</td><td>List 150</td></tr><tr><td>Reference name</td><td>&lt;ProductForm&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b012&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ProductForm&gt;BC&lt;/ProductForm&gt;
  * (Paperback book)</td></tr></table>
  */
-public class ProductForm implements OnixElement<ProductFormsList150>, Serializable {
+public class ProductForm implements OnixElement<ProductForms>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ProductForm";
@@ -59,19 +59,22 @@ public class ProductForm implements OnixElement<ProductFormsList150>, Serializab
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public ProductFormsList150 value;
+    public ProductForms value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public ProductFormsList150 _value() {
+    public ProductForms _value() {
         return value;
     }
 
@@ -92,7 +95,7 @@ public class ProductForm implements OnixElement<ProductFormsList150>, Serializab
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = ProductFormsList150.byCode(JPU.getContentAsString(element));
+        value = ProductForms.byCode(JPU.getContentAsString(element));
     }
 
     @Override

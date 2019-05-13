@@ -56,6 +56,9 @@ public class CitedContent implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -100,9 +103,17 @@ public class CitedContent implements OnixSuperComposite, Serializable {
                 case ContentAudience.shortname:
                     contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
                     break;
+                case Territory.refname:
+                case Territory.shortname:
+                    territory = new Territory(e);
+                    break;
                 case SourceType.refname:
                 case SourceType.shortname:
                     sourceType = new SourceType(e);
+                    break;
+                case ReviewRating.refname:
+                case ReviewRating.shortname:
+                    reviewRating = new ReviewRating(e);
                     break;
                 case SourceTitle.refname:
                 case SourceTitle.shortname:
@@ -163,6 +174,16 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
+    private Territory territory = Territory.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public Territory territory() {
+        _initialize();
+        return territory;
+    }
+
     private SourceType sourceType = SourceType.EMPTY;
 
     /**
@@ -171,6 +192,16 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     public SourceType sourceType() {
         _initialize();
         return sourceType;
+    }
+
+    private ReviewRating reviewRating = ReviewRating.EMPTY;
+
+    /**
+     * (this field is required)
+     */
+    public ReviewRating reviewRating() {
+        _initialize();
+        return reviewRating;
     }
 
     private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();

@@ -20,7 +20,7 @@
 package com.tectonica.jonix.struct;
 
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.codelist.Regions;
 
 import java.io.Serializable;
@@ -33,11 +33,11 @@ import java.io.Serializable;
 public class JonixTerritory implements JonixStruct, Serializable {
     public static JonixTerritory EMPTY = new JonixTerritory();
 
-    public java.util.Set<CountryCodes> countriesIncluded;
+    public java.util.Set<Countrys> countriesIncluded;
 
     public java.util.Set<Regions> regionsIncluded;
 
-    public java.util.Set<CountryCodes> countriesExcluded;
-
     public java.util.Set<Regions> regionsExcluded;
+
+    public java.util.Set<Countrys> countriesExcluded;
 }

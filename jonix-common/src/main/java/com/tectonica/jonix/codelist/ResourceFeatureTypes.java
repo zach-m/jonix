@@ -36,8 +36,8 @@ interface CodeList160 {
  * <p>
  * Description: Resource feature type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist160">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist160">ONIX
  * Codelist 160 in Reference Guide</a>
  */
 public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
@@ -75,15 +75,14 @@ public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
     /**
      * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List
      * 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
-     * proprietary ID, which must match a proprietary ID given in an instance of &lt;Contributor&gt; &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * proprietary ID, which must match a proprietary ID given in an instance of &lt;Contributor&gt;
      */
     Proprietary_ID_of_resource_contributor("06", "Proprietary ID of resource contributor");
 
     public final String code;
     public final String description;
 
-    private ResourceFeatureTypes(String code, String description) {
+    ResourceFeatureTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -32,8 +32,8 @@ import java.io.Serializable;
 /**
  * <h1>Map scale</h1><p>The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data
  * element, without spaces or punctuation. Optional, and repeatable if a product comprises maps with two or more
- * different scales.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length integer, suggested
- * maximum length 8 digits</td></tr><tr><td>Reference name</td><td>&lt;MapScale&gt;</td></tr><tr><td>Short
+ * different scales.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum
+ * length 8 digits</td></tr><tr><td>Reference name</td><td>&lt;MapScale&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b063&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;b063&gt;50000&lt;/b063&gt;
  * (One to 50,000, 2cm = 1km)</td></tr></table>
  */
@@ -54,6 +54,9 @@ public class MapScale implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +64,7 @@ public class MapScale implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length integer, suggested maximum length 8 digits<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 8 digits<p> (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

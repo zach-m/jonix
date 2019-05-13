@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -37,7 +37,7 @@ import java.io.Serializable;
  * which it appears on the title page. If the place name appears in more than one language, &lt;CityOfPublication&gt;
  * may be repeated. The <i>language</i> attribute is optional with a single instance of &lt;CityOfPublication&gt;, but
  * must be included in each instance if &lt;CityOfPublication&gt; is repeated.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 50
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 50
  * characters</td></tr><tr><td>Reference name</td><td>&lt;CityOfPublication&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b209&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;CityOfPublication&gt;New
  * York&lt;/CityOfPublication&gt;</td></tr></table>
@@ -59,16 +59,19 @@ public class CityOfPublication implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -96,7 +99,7 @@ public class CityOfPublication implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

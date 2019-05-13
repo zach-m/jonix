@@ -21,10 +21,10 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextScriptCodes;
+import com.tectonica.jonix.codelist.TextScripts;
 
 import java.io.Serializable;
 
@@ -35,10 +35,10 @@ import java.io.Serializable;
 /**
  * <h1>Title text</h1><p>The text of a title element, excluding any subtitle. Optional and non-repeating, may only be
  * used where &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.</p><p>This element is
- * intended to be used when the sending system cannot reliably provide prefixes that are ignored for sorting purposes in
- * a separate data element. If the system <em>can</em> reliably separate prefixes, it should state whether a prefix is
- * present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
- * &lt;TitleWithoutPrefix&gt;).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
+ * intended to be used only when the sending system cannot reliably provide prefixes that are ignored for sorting
+ * purposes in a separate data element. If the system <em>can</em> reliably separate prefixes, it should state whether a
+ * prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
+ * &lt;TitleWithoutPrefix&gt;).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text,
  * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td>&lt;TitleText&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b203&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
  * language, textscript, textcase</td></tr><tr><td>Example</td><td>&lt;b203&gt;Nicholas
@@ -61,13 +61,19 @@ public class TitleText implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String collationkey;
 
-    public LanguageCodes language;
+    public Languages language;
 
-    public TextScriptCodes textscript;
+    public TextScripts textscript;
 
     public TextCaseFlags textcase;
 
@@ -76,7 +82,7 @@ public class TitleText implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum 300 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 300 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -105,8 +111,8 @@ public class TitleText implements OnixElement<String>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
         collationkey = JPU.getAttribute(element, "collationkey");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-        textscript = TextScriptCodes.byCode(JPU.getAttribute(element, "textscript"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 
         value = JPU.getContentAsString(element);

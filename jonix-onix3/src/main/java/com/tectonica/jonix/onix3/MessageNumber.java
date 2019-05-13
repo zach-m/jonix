@@ -32,8 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>Message sequence number</h1><p>A monotonic sequence number of the messages in a series sent between trading
  * partners, to enable the receiver to check against gaps and duplicates. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length integer</td></tr><tr><td>Reference
- * name</td><td>&lt;MessageNumber&gt;</td></tr><tr><td>Short tag</td><td>&lt;m180&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;m180&gt;1234&lt;/m180&gt;</td></tr></table>
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 8
+ * digits</td></tr><tr><td>Reference name</td><td>&lt;MessageNumber&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;m180&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;m180&gt;1234&lt;/m180&gt;</td></tr></table>
  */
 public class MessageNumber implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -52,6 +53,9 @@ public class MessageNumber implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +63,7 @@ public class MessageNumber implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length integer<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 8 digits<p> (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

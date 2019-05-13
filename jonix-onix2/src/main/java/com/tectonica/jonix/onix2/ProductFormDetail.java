@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.ProductFormDetails;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.ProductFormDetailsList78;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -38,10 +38,10 @@ import java.io.Serializable;
  * <h1>Product form detail</h1><p>An ONIX code which provides added detail of the medium and/or format of the product.
  * Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, four characters:
  * one letter followed by three numeric digits</td></tr><tr><td>Codelist</td><td>List 78</td></tr><tr><td>Reference
- * name</td><td>&lt;ProductFormDetail&gt;</td></tr><tr><td>Short tag</td><td>&lt;b333&gt;</td></tr><tr><td>Example</td><td>&lt;ProductFormDetail&gt;B206&lt;/ProductFormDetail&gt;&#160;&#160;&#160;&#160;Pop-up
- * book</td></tr></table>
+ * name</td><td>&lt;ProductFormDetail&gt;</td></tr><tr><td>Short tag</td><td>&lt;b333&gt;</td></tr><tr><td>Example</td><td>&lt;ProductFormDetail&gt;B206&lt;/ProductFormDetail&gt;
+ * Pop-up book</td></tr></table>
  */
-public class ProductFormDetail implements OnixElement<ProductFormDetails>, Serializable {
+public class ProductFormDetail implements OnixElement<ProductFormDetailsList78>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ProductFormDetail";
@@ -55,7 +55,7 @@ public class ProductFormDetail implements OnixElement<ProductFormDetails>, Seria
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -72,13 +72,13 @@ public class ProductFormDetail implements OnixElement<ProductFormDetails>, Seria
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public ProductFormDetails value;
+    public ProductFormDetailsList78 value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public ProductFormDetails _value() {
+    public ProductFormDetailsList78 _value() {
         return value;
     }
 
@@ -97,13 +97,13 @@ public class ProductFormDetail implements OnixElement<ProductFormDetails>, Seria
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = ProductFormDetails.byCode(JPU.getContentAsString(element));
+        value = ProductFormDetailsList78.byCode(JPU.getContentAsString(element));
     }
 
     @Override

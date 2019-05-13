@@ -53,6 +53,9 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

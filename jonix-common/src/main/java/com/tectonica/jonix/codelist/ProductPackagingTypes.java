@@ -39,8 +39,8 @@ interface CodeList80 {
  * <p>
  * Description: Product packaging type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist80">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist80">ONIX
  * Codelist 80 in Reference Guide</a>
  */
 public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
@@ -148,12 +148,17 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
     /**
      * A case with carrying handle, typically for a set of educational books and/or learning materials
      */
-    Carry_case("23", "Carry case");
+    Carry_case("23", "Carry case"), //
+
+    /**
+     * Individual item, items or set in metal box or can with separate or hinged lid
+     */
+    In_tin("24", "In tin");
 
     public final String code;
     public final String description;
 
-    private ProductPackagingTypes(String code, String description) {
+    ProductPackagingTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

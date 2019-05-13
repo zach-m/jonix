@@ -36,8 +36,8 @@ interface CodeList31 {
  * <p>
  * Description: Audience range precision
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist31">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist31">ONIX
  * Codelist 31 in Reference Guide</a>
  */
 public enum AudienceRangePrecisions implements OnixCodelist, CodeList31 {
@@ -50,7 +50,7 @@ public enum AudienceRangePrecisions implements OnixCodelist, CodeList31 {
     public final String code;
     public final String description;
 
-    private AudienceRangePrecisions(String code, String description) {
+    AudienceRangePrecisions(String code, String description) {
         this.code = code;
         this.description = description;
     }

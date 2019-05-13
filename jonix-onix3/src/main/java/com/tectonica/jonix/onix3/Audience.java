@@ -32,8 +32,9 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience composite</h1><p>A repeatable group of data elements which together describe an audience to which the
- * product is directed.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Audience&gt;</td></tr><tr><td>Short
+ * <h1>Audience composite</h1><p>An optional group of data elements which together describe an audience to which the
+ * product is directed. Repeatable to specify multiple distinct audiences.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;Audience&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;audience&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class Audience implements OnixDataCompositeWithKey<JonixAudience, AudienceCodeTypes>, Serializable {
@@ -53,6 +54,9 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

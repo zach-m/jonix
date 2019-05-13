@@ -20,9 +20,9 @@
 package com.tectonica.jonix.struct;
 
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.codelist.LanguageRoles;
+import com.tectonica.jonix.codelist.Languages;
 
 import java.io.Serializable;
 
@@ -39,9 +39,9 @@ public class JonixLanguage implements JonixKeyedStruct<LanguageRoles>, Serializa
      */
     public LanguageRoles languageRole;
 
-    public CountryCodes countryCode;
+    public Countrys countryCode;
 
-    public LanguageCodes languageCode;
+    public Languages languageCode;
 
     @Override
     public LanguageRoles key() {

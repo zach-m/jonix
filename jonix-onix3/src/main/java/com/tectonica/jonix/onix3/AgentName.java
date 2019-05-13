@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Agent name</h1><p>The name of an agent or local publisher. Optional and non-repeating; required if no agent
  * identifier is sent in an occurrence of the &lt;PublisherRepresentative&gt; composite.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
  * characters</td></tr><tr><td>Reference name</td><td>&lt;AgentName&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j401&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;AgentName&gt;Littlehampton
  * Book Services&lt;/AgentName&gt;</td></tr></table>
@@ -55,16 +55,19 @@ public class AgentName implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -92,7 +95,7 @@ public class AgentName implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

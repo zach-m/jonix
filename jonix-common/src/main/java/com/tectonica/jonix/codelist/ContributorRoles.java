@@ -39,8 +39,8 @@ interface CodeList17 {
  * <p>
  * Description: Contributor role code
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist17">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist17">ONIX
  * Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -50,7 +50,8 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     By_author("A01", "By (author)"), //
 
     /**
-     * With or as told to: 'ghost' author of a literary work
+     * With or as told to: 'ghost' or secondary author of a literary work (for clarity, should not be used for true
+     * 'ghost' authors who are not credited on the book and whose existence is secret)
      */
     With("A02", "With"), //
 
@@ -227,15 +228,16 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     /**
      * Use for secondary creators when separate persons are named as having respectively drawn and
      * inked/colored/finished artwork, eg for a graphic novel or comic book. Use with A12 for 'drawn by'. Use A40 for
-     * &apos;finished by&apos;, but prefer more specific codes A46 to A48 instead of A40 unless the more specific
-     * secondary roles are inappropriate, unclear or unavailable
+     * 'finished by', but prefer more specific codes A46 to A48 instead of A40 unless the more specific secondary roles
+     * are inappropriate, unclear or unavailable
      */
     Inked_or_colored_by("A40", "Inked or colored by"), //
 
     /**
-     * Designer of pop-ups in a pop-up book, who may be different from the illustrator
+     * Designer or paper engineer of die-cuts, press-outs or of pop-ups in a pop-up book, who may be different from the
+     * illustrator
      */
-    Pop_ups_by("A41", "Pop-ups by"), //
+    Paper_engineering_by("A41", "Paper engineering by"), //
 
     /**
      * Use where a standard work is being continued by somebody other than the original author
@@ -247,27 +249,31 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Interviewee("A44", "Interviewee"), //
 
     /**
-     * Writer of dialogue, captions in a comic book (following an outline by the primary writer) &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * Writer of dialogue, captions in a comic book (following an outline by the primary writer)
      */
     Comic_script_by("A45", "Comic script by"), //
 
     /**
      * Renders final comic book line art based on work of the illustrator or penciller. Preferred to code A40
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Inker("A46", "Inker"), //
 
     /**
-     * Provides comic book color art and effects. Preferred to code A40 &lt;p&gt;NOTE: Introduced in Onix3
+     * Provides comic book color art and effects. Preferred to code A40
      */
     Colorist("A47", "Colorist"), //
 
     /**
      * Creates comic book text balloons and other text elements (where this is a distinct role from script writer and/or
-     * illustrator) &lt;p&gt;NOTE: Introduced in Onix3
+     * illustrator)
      */
     Letterer("A48", "Letterer"), //
+
+    /**
+     * Person or organization responsible for performing research on which the work is based. For use in ONIX 3.0 only
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Research_by("A51", "Research by"), //
 
     /**
      * Other type of primary creator not specified above
@@ -355,9 +361,20 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Thesis_examiner("B28", "Thesis examiner"), //
 
     /**
-     * Responsible overall for the scientific content of the publication &lt;p&gt;NOTE: Introduced in Onix3
+     * Responsible overall for the scientific content of the publication
      */
     Scientific_editor("B29", "Scientific editor"), //
+
+    /**
+     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Historical_advisor("B30", "Historical advisor"), //
+
+    /**
+     * Editor of the first edition (usually of a standard work) who is not an editor of the current edition. For use in
+     * ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Original_editor("B31", "Original editor"), //
 
     /**
      * Other type of adaptation or editing not specified above
@@ -375,12 +392,12 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Selected_by("C02", "Selected by"), //
 
     /**
-     * Eg for a collection of photographs etc &lt;p&gt;NOTE: Introduced in Onix3
+     * Eg for a collection of photographs etc
      */
     Non_text_material_selected_by("C03", "Non-text material selected by"), //
 
     /**
-     * Eg for an exhibition &lt;p&gt;NOTE: Introduced in Onix3
+     * Eg for an exhibition
      */
     Curated_by("C04", "Curated by"), //
 
@@ -399,14 +416,26 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Conductor("D03", "Conductor"), //
 
     /**
+     * Of a dance performance. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Choreographer("D04", "Choreographer"), //
+
+    /**
      * Other type of direction not specified above
      */
     Other_direction_by("D99", "Other direction by"), //
 
+    /**
+     * Performer in a dramatized production (including a voice actor in an audio production)
+     */
     Actor("E01", "Actor"), //
 
     Dancer("E02", "Dancer"), //
 
+    /**
+     * Where the narrator is a character in a dramatized production (including a voice actor in an audio production).
+     * For the 'narrator' of a non-dramatized audiobook, see code E07
+     */
     Narrator("E03", "Narrator"), //
 
     Commentator("E04", "Commentator"), //
@@ -434,7 +463,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Speaker("E09", "Speaker"), //
 
     /**
-     * Introduces and links other contributors and material, eg within a documentary &lt;p&gt;NOTE: Introduced in Onix3
+     * Introduces and links other contributors and material, eg within a documentary
      */
     Presenter("E10", "Presenter"), //
 
@@ -462,9 +491,6 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      */
     Assisted_by("Z01", "Assisted by"), //
 
-    /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
-     */
     Honored_dedicated_to("Z02", "Honored/dedicated to"), //
 
     /**
@@ -481,7 +507,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     public final String code;
     public final String description;
 
-    private ContributorRoles(String code, String description) {
+    ContributorRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }

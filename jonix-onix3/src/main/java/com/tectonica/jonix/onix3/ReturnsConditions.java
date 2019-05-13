@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
@@ -32,8 +33,8 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Returns conditions composite</h1><p>An optional and repeatable group of data elements which together allow
- * returns conditions to be specified in coded form.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * <h1>Returns conditions composite</h1><p>An optional and repeatable group of data elements which together allow the
+ * supplier’s returns conditions to be specified in coded form.</p><table border='1' cellpadding='3'><tr><td>Reference
  * name</td><td>&lt;ReturnsConditions&gt;</td></tr><tr><td>Short tag</td><td>&lt;returnsconditions&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ReturnsConditions
@@ -54,6 +55,9 @@ public class ReturnsConditions
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -102,6 +106,10 @@ public class ReturnsConditions
                 case ReturnsCode.shortname:
                     returnsCode = new ReturnsCode(e);
                     break;
+                case ReturnsNote.refname:
+                case ReturnsNote.shortname:
+                    returnsNotes = JPU.addToList(returnsNotes, new ReturnsNote(e));
+                    break;
                 default:
                     break;
             }
@@ -147,6 +155,16 @@ public class ReturnsConditions
         return returnsCode;
     }
 
+    private ListOfOnixElement<ReturnsNote, String> returnsNotes = ListOfOnixElement.empty();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<ReturnsNote, String> returnsNotes() {
+        _initialize();
+        return returnsNotes;
+    }
+
     @Override
     public JonixReturnsConditions asStruct() {
         _initialize();
@@ -154,6 +172,7 @@ public class ReturnsConditions
         struct.returnsCodeType = returnsCodeType.value;
         struct.returnsCodeTypeName = returnsCodeTypeName.value;
         struct.returnsCode = returnsCode.value;
+        struct.returnsNotes = returnsNotes.values();
         return struct;
     }
 

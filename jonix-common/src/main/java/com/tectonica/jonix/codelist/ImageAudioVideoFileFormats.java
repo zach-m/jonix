@@ -29,7 +29,8 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 39 (Image/audio/video file format code)
+ * marker interface to assist in IDE navigation to code-list 39 (Image/audio/video file format code &lt;p&gt;NOTE:
+ * Deprecated in Onix3)
  */
 interface CodeList39 {
 }
@@ -37,10 +38,10 @@ interface CodeList39 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 39</b>
  * <p>
- * Description: Image/audio/video file format code
+ * Description: Image/audio/video file format code &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist39">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist39">ONIX
  * Codelist 39 in Reference Guide</a>
  */
 public enum ImageAudioVideoFileFormats implements OnixCodelist, CodeList39 {
@@ -127,7 +128,7 @@ public enum ImageAudioVideoFileFormats implements OnixCodelist, CodeList39 {
     public final String code;
     public final String description;
 
-    private ImageAudioVideoFileFormats(String code, String description) {
+    ImageAudioVideoFileFormats(String code, String description) {
         this.code = code;
         this.description = description;
     }

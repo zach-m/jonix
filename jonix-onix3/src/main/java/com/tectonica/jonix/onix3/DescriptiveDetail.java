@@ -25,7 +25,7 @@ import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
-import com.tectonica.jonix.codelist.Audiences;
+import com.tectonica.jonix.codelist.AudienceTypes;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationTechnicalProtections;
 import com.tectonica.jonix.codelist.ExtentTypes;
@@ -34,7 +34,7 @@ import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.MeasureTypes;
 import com.tectonica.jonix.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.codelist.ProductContentTypes;
-import com.tectonica.jonix.codelist.ProductFormDetailsList175;
+import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAncillaryContent;
@@ -81,6 +81,9 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -221,6 +224,10 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case NoContributor.shortname:
                     noContributor = new NoContributor(e);
                     break;
+                case Event.refname:
+                case Event.shortname:
+                    events = JPU.addToList(events, new Event(e));
+                    break;
                 case Conference.refname:
                 case Conference.shortname:
                     conferences = JPU.addToList(conferences, new Conference(e));
@@ -336,13 +343,12 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return productForm;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails =
-        ListOfOnixElement.empty();
+    private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails() {
+    public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
         return productFormDetails;
     }
@@ -589,6 +595,16 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return (noContributor().exists());
     }
 
+    private List<Event> events = Collections.emptyList();
+
+    /**
+     * (this list may be empty)
+     */
+    public List<Event> events() {
+        _initialize();
+        return events;
+    }
+
     private List<Conference> conferences = Collections.emptyList();
 
     /**
@@ -746,12 +762,12 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return nameAsSubjects;
     }
 
-    private ListOfOnixElement<AudienceCode, Audiences> audienceCodes = ListOfOnixElement.empty();
+    private ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixElement.empty();
 
     /**
      * (this list may be empty)
      */
-    public ListOfOnixElement<AudienceCode, Audiences> audienceCodes() {
+    public ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes() {
         _initialize();
         return audienceCodes;
     }

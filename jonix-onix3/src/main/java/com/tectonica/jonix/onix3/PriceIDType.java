@@ -56,6 +56,9 @@ public class PriceIDType implements OnixElement<PriceIdentifierTypes>, Serializa
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

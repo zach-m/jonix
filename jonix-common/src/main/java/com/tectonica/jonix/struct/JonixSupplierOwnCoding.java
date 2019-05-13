@@ -38,7 +38,7 @@ public class JonixSupplierOwnCoding implements JonixKeyedStruct<SupplierOwnCodeT
     public SupplierOwnCodeTypes supplierCodeType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String supplierCodeTypeName;
 

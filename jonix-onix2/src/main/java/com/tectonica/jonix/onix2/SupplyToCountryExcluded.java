@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Countrys;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -46,7 +46,7 @@ import java.io.Serializable;
  * tag</td><td>&lt;j140&gt;</td></tr><tr><td>Example</td><td>&lt;SupplyToCountryExcluded&gt;US
  * CA&lt;/SupplyToCountryExcluded&gt;</td></tr></table>
  */
-public class SupplyToCountryExcluded implements OnixElement<java.util.Set<CountryCodes>>, Serializable {
+public class SupplyToCountryExcluded implements OnixElement<java.util.Set<Countrys>>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "SupplyToCountryExcluded";
@@ -60,7 +60,7 @@ public class SupplyToCountryExcluded implements OnixElement<java.util.Set<Countr
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -77,13 +77,13 @@ public class SupplyToCountryExcluded implements OnixElement<java.util.Set<Countr
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public java.util.Set<CountryCodes> value;
+    public java.util.Set<Countrys> value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public java.util.Set<CountryCodes> _value() {
+    public java.util.Set<Countrys> _value() {
         return value;
     }
 
@@ -102,7 +102,7 @@ public class SupplyToCountryExcluded implements OnixElement<java.util.Set<Countr
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -110,7 +110,7 @@ public class SupplyToCountryExcluded implements OnixElement<java.util.Set<Countr
 
         value = new java.util.HashSet<>();
         for (String split : JPU.getContentAsString(element).trim().split(" +")) {
-            value.add(CountryCodes.byCode(split));
+            value.add(Countrys.byCode(split));
         }
     }
 

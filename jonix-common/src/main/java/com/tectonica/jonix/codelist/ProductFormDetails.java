@@ -29,21 +29,21 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 78 (Product form detail)
+ * marker interface to assist in IDE navigation to code-list 175 (Product form detail)
  */
-interface CodeList78 {
+interface CodeList175 {
 }
 
 /**
- * <code>Enum</code> that corresponds to ONIX <b>Codelist 78</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 175</b>
  * <p>
  * Description: Product form detail
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist78">ONIX
- * Codelist 78 in Reference Guide</a>
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist175">ONIX
+ * Codelist 175 in Reference Guide</a>
  */
-public enum ProductFormDetails implements OnixCodelist, CodeList78 {
+public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * CD 'red book' format
      */
@@ -56,9 +56,6 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
      */
     MP3_format("A103", "MP3 format"), //
 
-    /**
-     * Waveform audio file
-     */
     WAV_format("A104", "WAV format"), //
 
     Real_Audio_format("A105", "Real Audio format"), //
@@ -105,16 +102,16 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
 
     DAISY_2_full_audio_with_navigation_no_text("A202", "DAISY 2: full audio with navigation (no text)"), //
 
-    DAISY_2_full_audio_with_navigation_and_partial_text("A203", "DAISY 2: full audio with navigation and partial text"),
-    //
+    DAISY_2_full_audio_with_navigation_and_partial_text("A203",
+        "DAISY 2: full audio with navigation and partial text"), //
 
     DAISY_2_full_audio_with_navigation_and_full_text("A204", "DAISY 2: full audio with navigation and full text"), //
 
     /**
      * Reading systems may provide full audio via text-to-speech
      */
-    DAISY_2_full_text_with_navigation_and_partial_audio("A205", "DAISY 2: full text with navigation and partial audio"),
-    //
+    DAISY_2_full_text_with_navigation_and_partial_audio("A205",
+        "DAISY 2: full text with navigation and partial audio"), //
 
     /**
      * Reading systems may provide full audio via text-to-speech
@@ -128,20 +125,21 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
 
     DAISY_3_full_audio_with_navigation_no_text("A208", "DAISY 3: full audio with navigation (no text)"), //
 
-    DAISY_3_full_audio_with_navigation_and_partial_text("A209", "DAISY 3: full audio with navigation and partial text"),
-    //
+    DAISY_3_full_audio_with_navigation_and_partial_text("A209",
+        "DAISY 3: full audio with navigation and partial text"), //
 
     DAISY_3_full_audio_with_navigation_and_full_text("A210", "DAISY 3: full audio with navigation and full text"), //
 
     /**
      * Reading systems may provide full audio via text-to-speech
      */
-    DAISY_3_full_text_with_navigation_and_some_audio("A211", "DAISY 3: full text with navigation and some audio"), //
+    DAISY_3_full_text_with_navigation_and_partial_audio("A211",
+        "DAISY 3: full text with navigation and partial audio"), //
 
     /**
      * Reading systems may provide full audio via text-to-speech
      */
-    DAISY_3_full_text_with_navigation_no_audio("A212", "DAISY 3: full text with navigation (no audio)"), //
+    DAISY_3_full_text_with_navigation_and_no_audio("A212", "DAISY 3: full text with navigation and no audio"), //
 
     Standalone_audio("A301", "Standalone audio"), //
 
@@ -170,47 +168,45 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Synchronised_audio("A305", "Synchronised audio"), //
 
     /**
-     * Includes &apos;stereo&apos; where channels are identical &lt;p&gt;NOTE: Introduced in Onix3
+     * Includes 'stereo' where channels are identical
      */
     Mono("A410", "Mono"), //
 
-    /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
-     */
     Stereo("A420", "Stereo"), //
 
     /**
-     * Stereo plus low-frequency channel &lt;p&gt;NOTE: Introduced in Onix3
+     * Stereo plus low-frequency channel
      */
     Stereo_2_1("A421", "Stereo 2.1"), //
 
     /**
-     * Five-channel audio (including low-frequency channel) &lt;p&gt;NOTE: Introduced in Onix3
+     * Five-channel audio (including low-frequency channel)
      */
     Surround_4_1("A441", "Surround 4.1"), //
 
     /**
-     * Six-channel audio (including low-frequency channel) &lt;p&gt;NOTE: Introduced in Onix3
+     * Six-channel audio (including low-frequency channel)
      */
     Surround_5_1("A451", "Surround 5.1"), //
 
     /**
-     * In North America, a category of paperback characterized partly by page size (typically 4&#188; x 7 1/8 inches)
-     * and partly by target market and terms of trade. Use with Product Form code BC
+     * In North America, a category of paperback characterized partly by page size (typically from 6&#190; up to
+     * 7&#8539; x 4&#188; inches) and partly by target market and terms of trade. Use with Product Form code BC
      */
     Mass_market_rack("B101", "Mass market (rack) paperback"), //
 
     /**
-     * In North America, a category of paperback characterized partly by page size and partly by target market and terms
-     * of trade. AKA 'quality paperback', and including textbooks. Most paperback books sold in North America except
-     * 'mass-market' (B101) and 'tall rack' (B107) are correctly described with this code. Use with Product Form code
-     * BC
+     * In North America, a category of paperback characterized partly by page size (larger than rack-sized) and partly
+     * by target market and terms of trade. AKA 'quality paperback', and including textbooks. Most paperback books sold
+     * in North America except 'mass-market' (B101) and 'tall rack' (B107) are correctly described with this code. Use
+     * with Product Form code BC
      */
     Trade_paperback_US("B102", "Trade paperback (US)"), //
 
     /**
-     * In North America, a category of paperback characterized by page size and generally used for children's books; use
-     * with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3
+     * In North America, a category of paperback characterized by page size (typically 7 x 5 inches) and generally used
+     * for children's books; use with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue
+     * 3
      */
     Digest_format_paperback("B103", "Digest format paperback"), //
 
@@ -227,34 +223,35 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     B_format_paperback("B105", "B-format paperback"), //
 
     /**
-     * In UK, a category of paperback characterized partly by size (usually in traditional hardback dimensions), and
-     * often used for paperback originals; use with Product Form code BC (replaces 'C-format' from former List 8)
+     * In UK, a category of paperback characterized largely by size (usually in traditional hardback dimensions), and
+     * often used for paperback originals or retailer/travel/export-exclusives; use with Product Form code BC
      */
     Trade_paperback_UK("B106", "Trade paperback (UK)"), //
 
     /**
-     * In North America, a category of paperback characterised partly by page size and partly by target market and terms
-     * of trade; use with Product Form code BC
+     * In North America, a category of paperback characterised partly by page size (typically 7&#189; x 4&#188; inches)
+     * and partly by target market and terms of trade; use with Product Form code BC
      */
     Tall_rack_paperback_US("B107", "Tall rack paperback (US)"), //
 
     /**
-     * 210x148mm
+     * Japanese A-series size, 210 x 148mm. A tankobon is a complete collected story originally published in serialised
+     * form (eg in a magazine)
      */
     A5_size_Tankobon("B108", "A5 size Tankobon"), //
 
     /**
-     * Japanese B-series size, 257x182mm
+     * Japanese B-series size, 257 x 182mm
      */
     JIS_B5_size_Tankobon("B109", "JIS B5 size Tankobon"), //
 
     /**
-     * Japanese B-series size, 182x128mm
+     * Japanese B-series size, 182 x 128mm
      */
     JIS_B6_size_Tankobon("B110", "JIS B6 size Tankobon"), //
 
     /**
-     * 148x105mm
+     * Japanese A-series size, 148 x 105mm
      */
     A6_size_Bunko("B111", "A6 size Bunko"), //
 
@@ -269,7 +266,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Pocket_Sweden_Norway_France("B113", "Pocket (Sweden, Norway, France)"), //
 
     /**
-     * A Swedish paperback format, use with Product Form Code BC
+     * A Swedish paperback format, use with Product Form Code BC. In Finnish, J&#228;ttipokkari
      */
     Storpocket_Sweden("B114", "Storpocket (Sweden)"), //
 
@@ -290,57 +287,58 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
 
     /**
      * Also called 'Flipback'. A softback book in a specially compact proprietary format with pages printed in landscape
-     * on very thin paper and bound along the long (top) edge - see www.dwarsligger.com
+     * on very thin paper and bound along the long (top) edge (ie parallel with the lines of text). Use with Product
+     * Form code BC - see www.dwarsligger.com
      */
     Dwarsligger("B118", "Dwarsligger"), //
 
     /**
-     * Japanese format: 188x127mm
+     * Japanese format, 188 x 127mm
      */
     _46_size("B119", "46 size"), //
 
     /**
-     * Japanese format
+     * Japanese format, 188 x 127mm
      */
     _46_Henkei_size("B120", "46-Henkei size"), //
 
     /**
-     * 297x210mm
+     * 297 x 210mm
      */
     A4("B121", "A4"), //
 
     /**
-     * Japanese format
+     * Japanese format, 297 x 210mm
      */
     A4_Henkei_size("B122", "A4-Henkei size"), //
 
     /**
-     * Japanese format
+     * Japanese format, 210 x 146mm
      */
     A5_Henkei_size("B123", "A5-Henkei size"), //
 
     /**
-     * Japanese format
+     * Japanese format, 257 x 182mm
      */
     B5_Henkei_size("B124", "B5-Henkei size"), //
 
     /**
-     * Japanese format
+     * Japanese format, 182 x 128mm
      */
     B6_Henkei_size("B125", "B6-Henkei size"), //
 
     /**
-     * 257x210mm
+     * 257 x 210mm
      */
     AB_size("B126", "AB size"), //
 
     /**
-     * Japanese B-series size, 128x91mm
+     * Japanese B-series size, 128 x 91mm
      */
     JIS_B7_size("B127", "JIS B7 size"), //
 
     /**
-     * Japanese format, 218x152mm or 227x152mm
+     * Japanese format, 218 x 152mm or 227 x 152mm
      */
     Kiku_size("B128", "Kiku size"), //
 
@@ -350,23 +348,34 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Kiku_Henkei_size("B129", "Kiku-Henkei size"), //
 
     /**
-     * Japanese B-series size, 364x257mm
+     * Japanese B-series size, 364 x 257 mm
      */
     JIS_B4_size("B130", "JIS B4 size"), //
 
     /**
-     * German paperback format, greater than 205mm high, with flaps. Use with Product form code BC
+     * German large paperback format, greater than about 205mm high, with flaps. Use with Product form code BC
      */
     Paperback_DE("B131", "Paperback (DE)"), //
+
+    /**
+     * Spanish pocket paperback. Use with Product form code BC
+     */
+    Libro_de_bolsillo("B132", "Libro de bolsillo"), //
+
+    /**
+     * German ,Taschenbuch', Italian &#171;Tascabile / Supertascabile&#187; pocket-sized format, usually less than about
+     * 205mm high. Use with Product form code BB or BC &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Pocket_sized("B133", "Pocket-sized"), //
+
+    /**
+     * 210 x 148mm &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    A5("B134", "A5"), //
 
     Coloring_join_the_dot_book("B201", "Coloring / join-the-dot book"), //
 
     Lift_the_flap_book("B202", "Lift-the-flap book"), //
-
-    /**
-     * DEPRECATED because of ambiguity - use B210, B214 or B215 as appropriate
-     */
-    Fuzzy_book("B203", "Fuzzy book"), //
 
     /**
      * Note: was wrongly shown as B203 (duplicate entry) in Issue 3
@@ -388,11 +397,6 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
      * and B215
      */
     Touch_and_feel_book("B210", "Touch-and-feel book"), //
-
-    /**
-     * DEPRECATED - use B212 or B213 as appropriate
-     */
-    Toy_die_cut_book("B211", "Toy / die-cut book"), //
 
     /**
      * A book which is cut into a distinctive non-rectilinear shape and/or in which holes or shapes have been cut
@@ -418,6 +422,12 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Fuzzy_felt_book("B215", "Fuzzy-felt book"), //
 
     /**
+     * A book containing pages with die-cut or press-out pieces that can be used as a jigsaw, puzzle pieces, etc
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Press_out_puzzle_pieces("B216", "Press-out puzzle pieces"), //
+
+    /**
      * Children's picture book: use with applicable Product Form code
      */
     Picture_book("B221", "Picture book"), //
@@ -427,6 +437,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
      * toy or Pop-up book)
      */
     _Carousel_book("B222", "‘Carousel’ book"), //
+
+    /**
+     * A book with movable card 'tabs' within the pages. Pull a tab to reveal or animate part of a picture (distinct
+     * from a 'lift-the-flap' book, where flaps simply reveal hidden pictures, and not a 'pop-up' book with 3D paper
+     * engineering)
+     */
+    Pull_the_tab_book("B223", "Pull-the-tab book"), //
 
     /**
      * Use with Product Form code BD
@@ -459,17 +476,19 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Library_binding("B306", "Library binding"), //
 
     /**
-     * Strengthened binding, not specifically intended for libraries
+     * Strengthened binding, not specifically intended for libraries: use with Product form code BB or BC
      */
     Reinforced_binding("B307", "Reinforced binding"), //
 
     /**
-     * Must be accompanied by a code specifiying a material, eg 'half-bound real leather'
+     * Highest qualiy material used on spine and corners only. Must be accompanied by a code specifiying a material, eg
+     * 'half-bound real leather'
      */
     Half_bound("B308", "Half bound"), //
 
     /**
-     * Must be accompanied by a code specifiying a material, eg 'quarter bound real leather'
+     * Highest qualiy material used on spine only. Must be accompanied by a code specifiying a material, eg 'quarter
+     * bound real leather'
      */
     Quarter_bound("B309", "Quarter bound"), //
 
@@ -489,51 +508,77 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Wire_O("B312", "Wire-O"), //
 
     /**
-     * Cased over Coiled or Wire-O binding: use with Product Form code BE and Product Form Detail code B312 or B315
+     * Cased over Coiled or Wire-O binding: use with Product Form code BE and Product Form Detail code B312 or B314
      */
     Concealed_wire("B313", "Concealed wire"), //
 
     /**
      * Spiral wire bound. Use with product form code BE. The default if a spiral binding type is not stated. Cf. Comb
-     * and Wire-O binding &lt;p&gt;NOTE: Introduced in Onix3
+     * and Wire-O binding
      */
     Coiled_wire_bound("B314", "Coiled wire bound"), //
 
     /**
      * Hardcover binding intended for general consumers rather than libraries, use with Product form code BB. The
-     * default if a hardcover binding detail is not stated. cf. Library binding &lt;p&gt;NOTE: Introduced in Onix3
+     * default if a hardcover binding detail is not stated. cf. Library binding
      */
     Trade_binding("B315", "Trade binding"), //
 
     /**
-     * Covers do not use a distinctive stock, but are the same as the body pages &lt;p&gt;NOTE: Introduced in Onix3
+     * Cover is attached to the book block along only one edge of the spine, allowing the cover to lay flat
      */
-    Self_cover("B400", "Self-cover"), //
+    Swiss_binding("B316", "Swiss binding"), //
 
     /**
-     * AKA fabric, linen over boards
+     * Refinement of perfect binding, with notches cut in the spine of the book block prior to glueing, to improve
+     * adhesion and durability
+     */
+    Notched_binding("B317", "Notched binding"), //
+
+    /**
+     * Covers do not use a distinctive stock, but are the same as the body pages
+     */
+    Self_covered("B400", "Self-covered"), //
+
+    /**
+     * Cotton, linen or other woven fabric over boards. Use with &lt;ProductForm&gt; BB
      */
     Cloth_over_boards("B401", "Cloth over boards"), //
 
+    /**
+     * Cellulose-based or similar non-woven material, which may be printed and may be embossed with an artificial cloth
+     * or leather-like texture, over boards. Use with &lt;ProductForm&gt; BB
+     */
     Paper_over_boards("B402", "Paper over boards"), //
 
+    /**
+     * Covered with leather created by tanning animal hide. May be 'full-grain' using the entire thickness of the hide,
+     * 'top grain' using the outer layer of the hide, or 'split' using the inner layers of the hide. Split leather may
+     * be embossed with an artificial grain or texture. Use with &lt;ProductForm&gt; BG, and if appropriate with codes
+     * B308 or B309 (otherwise 'full-bound' is implied)
+     */
     Leather_real("B403", "Leather, real"), //
 
+    /**
+     * Covered with synthetic leather-like material - polymer or non-animal fibre over a textile backing, usually coated
+     * and embossed with an artificial grain or texture. Leatherette, pleather etc. Use with &lt;ProductForm&gt; BB (or
+     * BG if particularly high-quality), and if appropriate with codes B308 or B309 (otherwise 'full-bound' is implied)
+     */
     Leather_imitation("B404", "Leather, imitation"), //
 
+    /**
+     * Covered with leather reconstituted from a pulp made from shredded animal hide, layered on a fibre or textile
+     * backing, coated and usually embossed with an artificial grain or texture. Use with &lt;ProductForm&gt; BG, and if
+     * appropriate with codes B308 or B309 (otherwise 'full-bound' is implied)
+     */
     Leather_bonded("B405", "Leather, bonded"), //
 
+    /**
+     * Pages made with prepared but untanned animal skin (usually calf, occasionally goat or sheep). Includes parchment,
+     * a thicker and less refined form of animal skin, but not 'paper vellum' or vegetable parchment made from synthetic
+     * or plant fibres
+     */
     Vellum("B406", "Vellum"), //
-
-    /**
-     * DEPRECATED - use new B412 or B413 as appropriate
-     */
-    Plastic("B407", "Plastic"), //
-
-    /**
-     * DEPRECATED - use new B412 or B414 as appropriate
-     */
-    Vinyl("B408", "Vinyl"), //
 
     /**
      * Cloth, not necessarily over boards - cf B401
@@ -564,9 +609,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
 
     /**
      * With card cover (like a typical paperback). As distinct from a self-cover or more elaborate binding
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Card_cover("B416", "Card cover"), //
+
+    /**
+     * Printed both inside and outside the front and/or back cover &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Duplex_printed_cover("B417", "Duplex-printed cover"), //
 
     /**
      * Type unspecified
@@ -613,7 +662,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     /**
      * With one or more gatefold or foldout sections bound in
      */
-    With_foldout("B511", "With foldout"), //
+    Foldout("B511", "Foldout"), //
 
     /**
      * Pages include extra-wide margin specifically intended for hand-written annotations
@@ -621,18 +670,46 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Wide_margin("B512", "Wide margin"), //
 
     /**
-     * Book with attached loop for fixing to baby stroller, cot, chair etc &lt;p&gt;NOTE: Introduced in Onix3
+     * Book with attached loop for fixing to baby stroller, cot, chair etc
      */
     With_fastening_strap("B513", "With fastening strap"), //
 
     /**
-     * With one or more pages perforated and intended to be torn out for use &lt;p&gt;NOTE: Introduced in Onix3
+     * With one or more pages perforated and intended to be torn out for use
      */
     With_perforated_pages("B514", "With perforated pages"), //
 
     /**
+     * Printed on acid-free or alkaline buffered paper conforming with ISO 9706
+     */
+    Acid_free_paper("B515", "Acid-free paper"), //
+
+    /**
+     * Printed on acid-free or alkaline buffered paper with a high cotton content, conforming with ISO 11108
+     */
+    Archival_paper("B516", "Archival paper"), //
+
+    /**
+     * Strap acts as closure or as page marker &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    With_elasticated_strap("B517", "With elasticated strap"), //
+
+    /**
+     * For example, holographic sticker such as the banderol used in the Turkish book trade &lt;p&gt;NOTE: Introduced in
+     * Onix3
+     */
+    With_serialized_authenticity_token("B518", "With serialized authenticity token"), //
+
+    /**
+     * Jacket in the form of a pamphlet or poster, specifically intended to be removed and read or used separately from
+     * the book &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    With_dust_jacket_poster("B519", "With dust jacket poster"), //
+
+    /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
-     * 'flip-book', 'back-to-back', (fr.) 't&#234;te-b&#234;che' (usually an omnibus of two works)
+     * 'flip-book' or 't&#234;te-b&#234;che' (Fr) binding, it has two front covers and a single spine. Usually an
+     * omnibus of two works
      */
     Turn_around_book("B601", "Turn-around book"), //
 
@@ -640,6 +717,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
      * Manga with pages and panels in the sequence of the original Japanese, but with Western text
      */
     Unflipped_manga_format("B602", "Unflipped manga format"), //
+
+    /**
+     * A book in which half the content is printed so as to be read from the other cover. All content is printed the
+     * same way up. Also known as 'dos-&#224;-dos' (Fr) binding, it has two front covers and two spines. Usually an
+     * omnibus of two works &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Back_to_back_book("B603", "Back-to-back book"), //
 
     /**
      * Text shows syllable breaks
@@ -657,7 +741,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     UK_Contracted_Braille("B702", "UK Contracted Braille"), //
 
     /**
-     * DEPRECATED- use B704/B705 as appropriate instead
+     * For US Braille, prefer codes B704 and B705 as appropriate
      */
     US_Braille("B703", "US Braille"), //
 
@@ -665,6 +749,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
 
     US_Contracted_Braille("B705", "US Contracted Braille"), //
 
+    /**
+     * For UEB, prefer codes B708 and B709 as appropriate
+     */
     Unified_English_Braille("B706", "Unified English Braille"), //
 
     /**
@@ -672,8 +759,12 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
      */
     Moon("B707", "Moon"), //
 
+    Unified_English_Uncontracted_Braille("B708", "Unified English Uncontracted Braille"), //
+
+    Unified_English_Contracted_Braille("B709", "Unified English Contracted Braille"), //
+
     /**
-     * Includes RealVideo packaged within a .rm RealMedia container
+     * Proprietary RealNetworks format. Includes Real Video packaged within a .rm RealMedia container
      */
     Real_Video_format("D101", "Real Video format"), //
 
@@ -787,14 +878,266 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Sony_PlayStation_Portable_PSP("D316", "Sony PlayStation Portable (PSP)"), //
 
     /**
-     * Use where a particular e-publication type (specified in &lt;EpubType&gt;) has both reflowable and fixed-format
-     * variants
+     * No code allocated for this e-publication format yet
+     */
+    Other("E100", "Other"), //
+
+    /**
+     * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
+     * (IDPF) [File extension .epub]
+     */
+    EPUB("E101", "EPUB"), //
+
+    /**
+     * The Open EBook format of the IDPF, a predecessor of the full EPUB format, still (2008) supported as part of the
+     * latter [File extension .opf]. Includes EPUB format up to and including version 2 - but prefer code E101 for EPUB
+     * 2, and always use code E101 for EPUB 3
+     */
+    OEB("E102", "OEB"), //
+
+    /**
+     * Microsoft Word binary document format [File extension .doc]
+     */
+    DOC("E103", "DOC"), //
+
+    /**
+     * Office Open XML / Microsoft Word XML document format (ISO/IEC 29500:2008) [File extension .docx]
+     */
+    DOCX("E104", "DOCX"), //
+
+    /**
+     * HyperText Mark-up Language [File extension .html, .htm]
+     */
+    HTML("E105", "HTML"), //
+
+    /**
+     * Open Document Format [File extension .odt]
+     */
+    ODF("E106", "ODF"), //
+
+    /**
+     * Portable Document Format (ISO 32000-1:2008) [File extension .pdf]
+     */
+    PDF("E107", "PDF"), //
+
+    /**
+     * PDF archiving format defined by ISO 19005-1:2005 [File extension .pdf]
+     */
+    PDF_A("E108", "PDF/A"), //
+
+    /**
+     * Rich Text Format [File extension .rtf]
+     */
+    RTF("E109", "RTF"), //
+
+    /**
+     * Standard Generalized Mark-up Language
+     */
+    SGML("E110", "SGML"), //
+
+    /**
+     * A compressed text format mainly used on Psion handheld devices [File extension .tcr]
+     */
+    TCR("E111", "TCR"), //
+
+    /**
+     * Text file format [File extension .txt]. Typically ASCII or Unicode UTF-8/16
+     */
+    TXT("E112", "TXT"), //
+
+    /**
+     * Extensible Hypertext Markup Language [File extension .xhtml, .xht, .xml, .html, .htm]
+     */
+    XHTML("E113", "XHTML"), //
+
+    /**
+     * A compressed text format mainly used on Palm handheld devices [File extension .pdb - see also E121, E125, E130]
+     */
+    zTXT("E114", "zTXT"), //
+
+    /**
+     * XML Paper Specification format [File extension .xps]
+     */
+    XPS("E115", "XPS"), //
+
+    /**
+     * A format proprietary to Amazon for use with its Kindle reading devices or software readers [File extensions .azw,
+     * .mobi, .prc etc]
+     */
+    Amazon_Kindle("E116", "Amazon Kindle"), //
+
+    /**
+     * A Sony proprietary format for use with the Sony Reader and LIBRI&#233; reading devices [File extension .lrf]
+     */
+    BBeB("E117", "BBeB"), //
+
+    /**
+     * A proprietary format for use with DXReader software
+     */
+    DXReader("E118", "DXReader"), //
+
+    /**
+     * A format proprietary to the Ebook Library service
+     */
+    EBL("E119", "EBL"), //
+
+    /**
+     * A format proprietary to the Ebrary service
+     */
+    Ebrary("E120", "Ebrary"), //
+
+    /**
+     * A proprietary format for use with eReader (AKA 'Palm Reader') software on various hardware platforms [File
+     * extension .pdb - see also E114, E125, E130]
+     */
+    eReader("E121", "eReader"), //
+
+    /**
+     * A proprietary format with its own reading system for Windows platforms [File extension .exe]
+     */
+    Exebook("E122", "Exebook"), //
+
+    /**
+     * A proprietary format for use with the Franklin eBookman reader
+     */
+    Franklin_eBookman("E123", "Franklin eBookman"), //
+
+    /**
+     * A proprietary format for use with the Gemstar Rocketbook reader [File extension .rb]
+     */
+    Gemstar_Rocketbook("E124", "Gemstar Rocketbook"), //
+
+    /**
+     * A proprietary format for use with iSilo software on various hardware platforms [File extension .pdb - see also
+     * E114, E121, E130]
+     */
+    iSilo("E125", "iSilo"), //
+
+    /**
+     * A proprietary format for use with Microsoft Reader software on Windows and Pocket PC platforms [File extension
+     * .lit]
+     */
+    Microsoft_Reader("E126", "Microsoft Reader"), //
+
+    /**
+     * A proprietary format for use with Mobipocket software on various hardware platforms [File extensions .mobi,
+     * .prc]. Includes Amazon Kindle formats up to and including version 7 - but prefer code E116 for version 7, and
+     * always use E116 for KF8
+     */
+    Mobipocket("E127", "Mobipocket"), //
+
+    /**
+     * A format proprietary to the MyiLibrary service
+     */
+    MyiLibrary("E128", "MyiLibrary"), //
+
+    /**
+     * A format proprietary to the NetLibrary service
+     */
+    NetLibrary("E129", "NetLibrary"), //
+
+    /**
+     * A proprietary format for use with Plucker reader software on Palm and other handheld devices [File extension .pdb
+     * - see also E114, E121, E125]
+     */
+    Plucker("E130", "Plucker"), //
+
+    /**
+     * A format proprietary to the VitalSource service
+     */
+    VitalBook("E131", "VitalBook"), //
+
+    /**
+     * A proprietary digital product combining text and video content and available to be used online or as a
+     * downloadable application for a mobile device - see www.vook.com
+     */
+    Vook("E132", "Vook"), //
+
+    /**
+     * An epublication made available by Google in association with a publisher; readable online on a browser-enabled
+     * device and offline on designated ebook readers
+     */
+    Google_Edition("E133", "Google Edition"), //
+
+    /**
+     * Epublication packaged as application for iOS (eg Apple iPhone, iPad etc), containing both executable code and
+     * content. Use &lt;ProductContentType&gt; to describe content, and &lt;ProductFormFeatureType&gt; to list detailed
+     * technical requirements
+     */
+    Book_app_for_iOS("E134", "Book ‘app’ for iOS"), //
+
+    /**
+     * Epublication packaged as application for Android (eg Android phone or tablet), containing both executable code
+     * and content. Use &lt;ProductContentType&gt; to describe content, and &lt;ProductFormFeatureType&gt; to list
+     * detailed technical requirements
+     */
+    Book_app_for_Android("E135", "Book ‘app’ for Android"), //
+
+    /**
+     * Epublication packaged as application, containing both executable code and content. Use where other 'app' codes
+     * are not applicable. Technical requirements such as target operating system and/or device should be provided eg in
+     * &lt;ProductFormFeatureType&gt;. Content type (text or text plus various 'enhancements') may be described with
+     * &lt;ProductContentType&gt;
+     */
+    Book_app_for_other_operating_system("E136", "Book ‘app’ for other operating system"), //
+
+    /**
+     * Founder Apabi's proprietary basic e-book format
+     */
+    CEB("E139", "CEB"), //
+
+    /**
+     * Founder Apabi's proprietary XML e-book format
+     */
+    CEBX("E140", "CEBX"), //
+
+    /**
+     * Apple's iBook format (a proprietary extension of EPUB), can only be read on Apple iOS devices
+     */
+    iBook("E141", "iBook"), //
+
+    /**
+     * Proprietary format based on EPUB used by Barnes and Noble for fixed-format e-books, readable on NOOK devices and
+     * Nook reader software
+     */
+    ePIB("E142", "ePIB"), //
+
+    /**
+     * Sharable Content Object Reference Model, standard content and packaging format for e-learning objects
+     */
+    SCORM("E143", "SCORM"), //
+
+    /**
+     * E-book Plus (proprietary Norwegian e-book format)
+     */
+    EBP("E144", "EBP"), //
+
+    /**
+     * Proprietary format based on PDF used by Barnes and Noble for fixed-format e-books, readable on some NOOK devices
+     * and Nook reader software
+     */
+    Page_Perfect("E145", "Page Perfect"), //
+
+    /**
+     * Electronic Braille file &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    BRF("E146", "BRF"), //
+
+    /**
+     * Proprietary XML format for articles, see for example https://www.cairn.info/services-aux-editeurs.php
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Erudit("E147", "Erudit"), //
+
+    /**
+     * Use this and/or code E201 when a particular e-publication type (specified using codes E100 and upwards) has both
+     * fixed format and reflowable variants, to indicate which option is included in this product
      */
     Reflowable("E200", "Reflowable"), //
 
     /**
-     * Use where a particular e-publication type (specified in &lt;EpubType&gt;) has both reflowable and fixed-format
-     * variants
+     * Use this and/or code E200 when a particular e-publication type (specified using codes E100 and upwards) has both
+     * fixed format and reflowable variants, to indicate which option is included in this product
      */
     Fixed_format("E201", "Fixed format"), //
 
@@ -805,7 +1148,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
 
     /**
      * E-publication requires a network connection to access some resources (eg an enhanced e-book where video clips are
-     * not stored within the e-publication 'package' itself, but are delivered via an internet connection)
+     * not stored within the e-publication package itself, but are delivered via an internet connection)
      */
     Requires_network_connection("E203", "Requires network connection"), //
 
@@ -934,7 +1277,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Other_calendar_or_organiser_product("P114", "Other calendar or organiser product"), //
 
     /**
-     * Kamishibai / Cantastoria cards &lt;p&gt;NOTE: Introduced in Onix3
+     * Kamishibai / Cantastoria cards
      */
     Picture_story_cards("P120", "Picture story cards"), //
 
@@ -959,39 +1302,54 @@ public enum ProductFormDetails implements OnixCodelist, CodeList78 {
     Leather_fine_binding_stationery("P204", "Leather / fine binding (stationery)"), //
 
     /**
-     * For map, poster, wallchart etc &lt;p&gt;NOTE: Introduced in Onix3
+     * For wall map, poster, wallchart etc
      */
     With_hanging_strips("P301", "With hanging strips"), //
 
     /**
-     * TV standard for video or DVD
+     * SD TV standard for video or DVD
      */
     PAL("V201", "PAL"), //
 
     /**
-     * TV standard for video or DVD
+     * SD TV standard for video or DVD
      */
     NTSC("V202", "NTSC"), //
 
     /**
-     * TV standard for video or DVD
+     * SD TV standard for video or DVD
      */
     SECAM("V203", "SECAM"), //
 
     /**
-     * Licensed for use in domestic contexts only &lt;p&gt;NOTE: Introduced in Onix3
+     * Up to 2K resolution (1920 or 2048 pixels wide) eg for Blu-Ray &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    HD("V205", "HD"), //
+
+    /**
+     * Up to 4K resolution (3840 or 4096 pixels wide) eg for Ultra HD Blu-Ray &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    UHD("V206", "UHD"), //
+
+    /**
+     * Eg for Blu-ray 3D &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    _3D_video("V207", "3D video"), //
+
+    /**
+     * Licensed for use in domestic contexts only
      */
     Home_use("V220", "Home use"), //
 
     /**
-     * Licensed for use in education &lt;p&gt;NOTE: Introduced in Onix3
+     * Licensed for use in education
      */
     Classroom_use("V221", "Classroom use");
 
     public final String code;
     public final String description;
 
-    private ProductFormDetails(String code, String description) {
+    ProductFormDetails(String code, String description) {
         this.code = code;
         this.description = description;
     }

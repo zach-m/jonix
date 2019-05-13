@@ -39,8 +39,8 @@ interface CodeList153 {
  * <p>
  * Description: Text type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist153">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist153">ONIX
  * Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -62,13 +62,13 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     Description("03", "Description"), //
 
     /**
-     * Used for a table of contents sent as a single text field, which may or may not carry structure expressed as
+     * Used for a table of contents sent as a single text field, which may or may not carry structure expressed using
      * XHTML
      */
     Table_of_contents("04", "Table of contents"), //
 
     /**
-     * Descriptive blurb taken from the back cover and/or flaps
+     * Primary descriptive blurb taken from the back cover and/or flaps. See also code 27
      */
     Flap_cover_copy("05", "Flap / cover copy"), //
 
@@ -119,7 +119,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     Publisher_s_notice("13", "Publisher’s notice"), //
 
     /**
-     * A short excerpt from the work
+     * A short excerpt from the main text of the work
      */
     Excerpt("14", "Excerpt"), //
 
@@ -156,26 +156,59 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * Short summary statement that the product is available only in digital formats (eg 'Digital exclusive'). If a
      * non-digital version is planned, &lt;ContentDate&gt; should be used to specify the date when exclusivity will end
      * (use content date role code 15). If a non-digital version is available, the statement should not be included
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     Digital_exclusivity_statement("21", "Digital exclusivity statement"), //
 
     /**
      * For example a recommendation or approval provided by a ministry of education or other official body. Use
-     * &lt;Text&gt; to provide details and ideally use &lt;TextSourceCorporate&gt; to name the approver &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * &lt;Text&gt; to provide details and ideally use &lt;TextSourceCorporate&gt; to name the approver
      */
     Official_recommendation("22", "Official recommendation"), //
 
     /**
-     * Short description in format specified by Japanese Book Publishers Association &lt;p&gt;NOTE: Introduced in Onix3
+     * Short description in format specified by Japanese Book Publishers Association
      */
-    JBPA_description("23", "JBPA description");
+    JBPA_description("23", "JBPA description"), //
+
+    /**
+     * JSON-LD snippet suitable for use within an HTML &lt;script type=&quot;application/ld+json&quot;&gt; tag,
+     * containing structured metadata suitable for use with schema.org
+     */
+    schema_org_snippet("24", "schema.org snippet"), //
+
+    /**
+     * null &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Errata("25", "Errata"), //
+
+    /**
+     * Introduction, preface or the text of other preliminary material, sent as a single text field, which may be
+     * structured using XHTML &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Introduction("26", "Introduction"), //
+
+    /**
+     * Secondary descriptive blurb taken from the back cover and/or flaps, used only when there are two separate texts
+     * and the primary text is included using code 05 &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Secondary_flap_cover_copy("27", "Secondary flap / cover copy"), //
+
+    /**
+     * For use with dramatized audiobooks, filmed entertainment etc, for a cast list sent as a single text field, which
+     * may or may not carry structure expressed using XHTML &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Full_cast_and_credit_list("28", "Full cast and credit list"), //
+
+    /**
+     * Complete list of books by the author(s), supplied as a single text field, which may be structured using (X)HTML
+     * &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Bibliography("29", "Bibliography");
 
     public final String code;
     public final String description;
 
-    private TextTypes(String code, String description) {
+    TextTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

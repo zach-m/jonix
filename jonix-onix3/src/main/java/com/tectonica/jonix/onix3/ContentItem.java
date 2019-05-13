@@ -21,8 +21,12 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixSubject;
 
 import java.io.Serializable;
@@ -34,10 +38,12 @@ import java.util.List;
  */
 
 /**
- * <h1>Content item composite</h1><p>A repeatable group of data elements which together describe a content item within a
- * product. Mandatory in any occurrence of the &lt;ContentDetail&gt; composite.</p><table border='1'
+ * <h1>Content item composite</h1><p>A group of data elements which together describe a content item within a product.
+ * Optional in any occurrence of the &lt;ContentDetail&gt; composite, but it may be omitted only within a partial or
+ * ‘block update’ (Notification or update type 04, see P.1.2) when the intention is to remove all previously supplied
+ * content detail. When used normally, it is repeatable for each content item within the product.</p><table border='1'
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;ContentItem&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;contentitem&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * tag</td><td>&lt;contentitem&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ContentItem implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -56,6 +62,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -100,6 +109,10 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case TextItem.shortname:
                     textItem = new TextItem(e);
                     break;
+                case AVItem.refname:
+                case AVItem.shortname:
+                    avItem = new AVItem(e);
+                    break;
                 case ComponentTypeName.refname:
                 case ComponentTypeName.shortname:
                     componentTypeName = new ComponentTypeName(e);
@@ -115,6 +128,18 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case Contributor.refname:
                 case Contributor.shortname:
                     contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
+                case ContributorStatement.refname:
+                case ContributorStatement.shortname:
+                    contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
+                    break;
+                case NoContributor.refname:
+                case NoContributor.shortname:
+                    noContributor = new NoContributor(e);
+                    break;
+                case Language.refname:
+                case Language.shortname:
+                    languages = JPU.addToList(languages, new Language(e));
                     break;
                 case Subject.refname:
                 case Subject.shortname:
@@ -139,6 +164,10 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case RelatedWork.refname:
                 case RelatedWork.shortname:
                     relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
+                    break;
+                case RelatedProduct.refname:
+                case RelatedProduct.shortname:
+                    relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
                     break;
                 default:
                     break;
@@ -168,11 +197,21 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private TextItem textItem = TextItem.EMPTY;
 
     /**
-     * (this field is required)
+     * (this field is optional)
      */
     public TextItem textItem() {
         _initialize();
         return textItem;
+    }
+
+    private AVItem avItem = AVItem.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public AVItem avItem() {
+        _initialize();
+        return avItem;
     }
 
     private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
@@ -208,11 +247,46 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<Contributor> contributors = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * (this list is required to contain at least one item)
      */
     public List<Contributor> contributors() {
         _initialize();
         return contributors;
+    }
+
+    private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
+        _initialize();
+        return contributorStatements;
+    }
+
+    private NoContributor noContributor = NoContributor.EMPTY;
+
+    /**
+     * (this field is optional)
+     */
+    public NoContributor noContributor() {
+        _initialize();
+        return noContributor;
+    }
+
+    public boolean isNoContributor() {
+        return (noContributor().exists());
+    }
+
+    private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
+
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
+        _initialize();
+        return languages;
     }
 
     private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
@@ -273,5 +347,15 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     public List<RelatedWork> relatedWorks() {
         _initialize();
         return relatedWorks;
+    }
+
+    private List<RelatedProduct> relatedProducts = Collections.emptyList();
+
+    /**
+     * (this list may be empty)
+     */
+    public List<RelatedProduct> relatedProducts() {
+        _initialize();
+        return relatedProducts;
     }
 }

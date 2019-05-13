@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -40,7 +40,7 @@ import java.io.Serializable;
  * hyphen, successive codes being separated by spaces. Suggested maximum length 8 characters.</td></tr><tr><td>Codelist</td><td>List
  * 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on ISO
  * 3166.</td></tr><tr><td>Reference name</td><td>&lt;RegionCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b398&gt;</td></tr><tr><td>Example</td><td>&lt;b398&gt;CA-BC&lt;/b398&gt;&#160;&#160;&#160;&#160;British
+ * tag</td><td>&lt;b398&gt;</td></tr><tr><td>Example</td><td>&lt;b398&gt;CA-BC&lt;/b398&gt; British
  * Columbia</td></tr></table>
  */
 public class RegionCode implements OnixElement<java.util.Set<String>>, Serializable {
@@ -57,7 +57,7 @@ public class RegionCode implements OnixElement<java.util.Set<String>>, Serializa
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -103,7 +103,7 @@ public class RegionCode implements OnixElement<java.util.Set<String>>, Serializa
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

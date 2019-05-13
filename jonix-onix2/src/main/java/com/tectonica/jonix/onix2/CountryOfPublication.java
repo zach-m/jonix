@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Countrys;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -41,7 +41,7 @@ import java.io.Serializable;
  * two-letter country codes - List 91</td></tr><tr><td>Reference name</td><td>&lt;CountryOfPublication&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b083&gt;</td></tr><tr><td>Example</td><td>&lt;CountryOfPublication&gt;US&lt;/CountryOfPublication&gt;</td></tr></table>
  */
-public class CountryOfPublication implements OnixElement<CountryCodes>, Serializable {
+public class CountryOfPublication implements OnixElement<Countrys>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "CountryOfPublication";
@@ -55,7 +55,7 @@ public class CountryOfPublication implements OnixElement<CountryCodes>, Serializ
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -72,13 +72,13 @@ public class CountryOfPublication implements OnixElement<CountryCodes>, Serializ
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public CountryCodes value;
+    public Countrys value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public CountryCodes _value() {
+    public Countrys _value() {
         return value;
     }
 
@@ -97,13 +97,13 @@ public class CountryOfPublication implements OnixElement<CountryCodes>, Serializ
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = CountryCodes.byCode(JPU.getContentAsString(element));
+        value = Countrys.byCode(JPU.getContentAsString(element));
     }
 
     @Override

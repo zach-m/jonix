@@ -32,11 +32,12 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publishing date composite</h1><p>A repeatable group of data elements which together specify a date associated
- * with the publishing of the product. Optional, but a date of publication <em>must</em> be specified <em>either</em>
- * here (as a ‘global’ pubdate) <em>or</em> in &lt;MarketPublishingDetail&gt; (P.25). Other dates related to the
- * publishing of a product can be sent in further repeats.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;PublishingDate&gt;</td></tr><tr><td>Short tag</td><td>&lt;publishingdate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Publishing date composite</h1><p>A group of data elements which together specify a date associated with the
+ * publishing of the product. Optional, but where known, at least a date of publication <em>must</em> be specified
+ * <em>either</em> here (as a ‘global’ pub date) <em>or</em> in &lt;MarketPublishingDetail&gt; (P.25). Other dates
+ * related to the publishing of a product can be sent in further repeats of the composite.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;PublishingDate&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;publishingdate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class PublishingDate
     implements OnixDataCompositeWithKey<JonixPublishingDate, PublishingDateRoles>, Serializable {
@@ -56,6 +57,9 @@ public class PublishingDate
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

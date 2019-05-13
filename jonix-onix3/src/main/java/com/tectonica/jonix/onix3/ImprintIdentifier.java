@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixImprintIdentifier;
 
@@ -33,12 +33,13 @@ import java.io.Serializable;
 
 /**
  * <h1>Imprint identifier composite</h1><p>A group of data elements which together define the identifier of an imprint
- * name. Optional and repeatable, but mandatory if the &lt;Imprint&gt; composite does not carry an
- * &lt;ImprintName&gt;.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ImprintIdentifier&gt;</td></tr><tr><td>Short
+ * name. Optional, but mandatory if the &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite
+ * is repeatable in order to specify multiple identifiers for the same imprint or brand.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ImprintIdentifier&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;imprintidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ImprintIdentifier
-    implements OnixDataCompositeWithKey<JonixImprintIdentifier, NameCodeTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixImprintIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ImprintIdentifier";
@@ -55,6 +56,9 @@ public class ImprintIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -159,7 +163,7 @@ public class ImprintIdentifier
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return imprintIDType().value;
     }
 }

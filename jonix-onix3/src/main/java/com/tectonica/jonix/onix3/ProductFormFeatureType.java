@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Product form feature type</h1><p>An ONIX code which specifies the feature described by an instance of the
  * &lt;ProductFormFeature&gt; composite, <i>eg</i> binding color. Mandatory in each occurrence of the composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 79</td></tr><tr><td>Reference name</td><td>&lt;ProductFormFeatureType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b334&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b334&gt;02&lt;/b334&gt;
  * (Page edge color)</td></tr></table>
@@ -55,6 +55,9 @@ public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTyp
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -36,20 +36,21 @@ interface CodeList89 {
  * <p>
  * Description: Religious text feature type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist89">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist89">ONIX
  * Codelist 89 in Reference Guide</a>
  */
 public enum ReligiousTextFeatureTypes implements OnixCodelist, CodeList89 {
     /**
-     * A church season or activity for which a religious text is intended
+     * A church season or activity for which a religious text is intended. Religious text feature code must be taken
+     * from List 90
      */
     Church_season_or_activity("01", "Church season or activity");
 
     public final String code;
     public final String description;
 
-    private ReligiousTextFeatureTypes(String code, String description) {
+    ReligiousTextFeatureTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

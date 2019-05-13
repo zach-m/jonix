@@ -36,39 +36,40 @@ interface CodeList2 {
  * <p>
  * Description: Product composition
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist2">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist2">ONIX
  * Codelist 2 in Reference Guide</a>
  */
 public enum ProductCompositions implements OnixCodelist, CodeList2 {
-    Single_item_retail_product("00", "Single-item retail product"), //
+    Single_component_retail_product("00", "Single-component retail product"), //
 
     /**
-     * Multiple-item product retailed as a whole
+     * Multiple-component product retailed as a whole
      */
-    Multiple_item_retail_product("10", "Multiple-item retail product"), //
+    Multiple_component_retail_product("10", "Multiple-component retail product"), //
 
     /**
-     * Used when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed as
-     * such
+     * Used only when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed
+     * as such
      */
-    Multiple_item_collection_retailed_as_separate_parts("11", "Multiple-item collection, retailed as separate parts"),
-    //
+    Multiple_item_collection_retailed_as_separate_parts("11",
+        "Multiple-item collection, retailed as separate parts"), //
 
     /**
-     * Product not for retail, and not carrying retail items, eg empty dumpbin, empty counterpack, promotional material
+     * Product available to the book trade, but not for retail sale, and not carrying retail items, eg empty dumpbin,
+     * empty counterpack, promotional material
      */
     Trade_only_product("20", "Trade-only product"), //
 
     /**
-     * Carrying multiple copies for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled
-     * counterpack
+     * Product available to the book trade, but not for general retail sale as a whole. It carries multiple components
+     * for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled counterpack
      */
-    Multiple_item_trade_pack("30", "Multiple-item trade pack"), //
+    Multiple_item_trade_only_pack("30", "Multiple-item trade-only pack"), //
 
     /**
-     * Carrying multiple copies, primarily for retailing as separate items. The pack may be split and retailed as
-     * separate items OR retailed as a single item. Use instead of Multiple item trade pack (code 30) only if the data
+     * Carrying multiple components, primarily for retailing as separate items. The pack may be split and retailed as
+     * separate items OR retailed as a single item. Use instead of Multiple-item trade-only pack (code 30) if the data
      * provider specifically wishes to make explicit that the pack may optionally be retailed as a whole
      */
     Multiple_item_pack("31", "Multiple-item pack");
@@ -76,7 +77,7 @@ public enum ProductCompositions implements OnixCodelist, CodeList2 {
     public final String code;
     public final String description;
 
-    private ProductCompositions(String code, String description) {
+    ProductCompositions(String code, String description) {
         this.code = code;
         this.description = description;
     }

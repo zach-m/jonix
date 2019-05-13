@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 204 (ONIX Returns conditions code)
+ * marker interface to assist in IDE navigation to code-list 204 (ONIX Returns conditions)
  */
 interface CodeList204 {
 }
@@ -34,10 +34,10 @@ interface CodeList204 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 204</b>
  * <p>
- * Description: ONIX Returns conditions code
+ * Description: ONIX Returns conditions
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist204">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist204">ONIX
  * Codelist 204 in Reference Guide</a>
  */
 public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
@@ -62,8 +62,8 @@ public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
     /**
      * Contact supplier for applicable returns authorization process. The retailer is invoiced immediately for the goods
      * and pays within the specified credit period, but can return excess unsold inventory to the supplier for full
-     * credit at a later date (some kind of returns authorisation process is normally required, and returns of stripped
-     * covers or proof of destruction may be allowed instead)
+     * credit at a later date (some kind of returns authorisation process is normally required and returns must be in
+     * saleable conditon, except when return of stripped covers or proof of destruction may be allowed instead)
      */
     Sale_or_return("03", "Sale or return"), //
 
@@ -77,7 +77,7 @@ public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
     public final String code;
     public final String description;
 
-    private OnixReturnsConditionss(String code, String description) {
+    OnixReturnsConditionss(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPublisherIdentifier;
 
@@ -32,13 +32,14 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publisher identifier composite</h1><p>A group of data elements which together define the identifier of a
- * publisher name. Optional and repeatable, but mandatory if the &lt;Publisher&gt; composite does not carry a
- * &lt;PublisherName&gt;.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;PublisherIdentifier&gt;</td></tr><tr><td>Short
+ * <h1>Publisher identifier composite</h1><p>An optional group of data elements which together define the identifier of
+ * a publisher name. Optional, but mandatory if the &lt;Publisher&gt; composite does not carry a &lt;PublisherName&gt;.
+ * The composite it repeatable in order to specify multiple identifiers for the same publisher.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;PublisherIdentifier&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;publisheridentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class PublisherIdentifier
-    implements OnixDataCompositeWithKey<JonixPublisherIdentifier, NameCodeTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixPublisherIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "PublisherIdentifier";
@@ -55,6 +56,9 @@ public class PublisherIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -159,7 +163,7 @@ public class PublisherIdentifier
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return publisherIDType().value;
     }
 }

@@ -32,8 +32,8 @@ import java.io.Serializable;
 /**
  * <h1>Position on list</h1><p>The position that a product has reached on a bestseller list specified in
  * &lt;ListName&gt;. Optional and non-repeating. The &lt;ListName&gt; element must also be present if
- * &lt;PositionOnList&gt; is included.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * integer, suggested maximum 3 characters</td></tr><tr><td>Reference name</td><td>&lt;PositionOnList&gt;</td></tr><tr><td>Short
+ * &lt;PositionOnList&gt; is included.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer,
+ * suggested maximum length 3 digits</td></tr><tr><td>Reference name</td><td>&lt;PositionOnList&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x433&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PositionOnList&gt;1&lt;/PositionOnList&gt;</td></tr></table>
  */
 public class PositionOnList implements OnixElement<Integer>, Serializable {
@@ -53,6 +53,9 @@ public class PositionOnList implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +63,7 @@ public class PositionOnList implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum 3 characters<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 3 digits<p> (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

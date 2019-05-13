@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -42,7 +42,7 @@ import java.io.Serializable;
  * separated by spaces. Suggested maximum length 100 characters.</td></tr><tr><td>Codelist</td><td>List 49 Where
  * possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on ISO
  * 3166.</td></tr><tr><td>Reference name</td><td>&lt;Territory&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j303&gt;</td></tr><tr><td>Example</td><td>&lt;Territory&gt;ES-CN&lt;/Territory&gt;&#160;&#160;&#160;&#160;Canary
+ * tag</td><td>&lt;j303&gt;</td></tr><tr><td>Example</td><td>&lt;Territory&gt;ES-CN&lt;/Territory&gt; Canary
  * Islands</td></tr></table>
  */
 public class Territory implements OnixElement<java.util.Set<Regions>>, Serializable {
@@ -59,7 +59,7 @@ public class Territory implements OnixElement<java.util.Set<Regions>>, Serializa
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -101,7 +101,7 @@ public class Territory implements OnixElement<java.util.Set<Regions>>, Serializa
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

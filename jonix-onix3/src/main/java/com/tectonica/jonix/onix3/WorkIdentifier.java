@@ -32,10 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Work identifier composite</h1><p>A repeatable group of data elements which together define an identifier of a
- * work in accordance with a specified scheme. Mandatory in each occurrence of the &lt;RelatedWork&gt; composite.
- * Repeatable only if two or more identifiers for the same work are sent using different identifier schemes (<i>eg</i>
- * ISTC and DOI).</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;WorkIdentifier&gt;</td></tr><tr><td>Short
+ * <h1>Work identifier composite</h1><p>A group of data elements which together define an identifier of a work in
+ * accordance with a specified scheme. Mandatory in each occurrence of the &lt;RelatedWork&gt; composite, and repeatable
+ * if two or more identifiers for the same work are sent using different identifier schemes (<i>eg</i> ISTC and
+ * DOI).</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;WorkIdentifier&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;workidentifier&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
  */
 public class WorkIdentifier
@@ -56,6 +56,9 @@ public class WorkIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

@@ -34,8 +34,8 @@ import java.io.Serializable;
  * <h1>Currency code</h1><p>An ISO standard code identifying the currency in which the &lt;PriceAmount&gt; in an
  * occurrence of the &lt;ComparisonProductPrice&gt; composite is stated. Optional and non-repeating, but required if the
  * currency is not the default currency for the ONIX message. To avoid any possible ambiguity, it is strongly
- * recommended that the currency should be stated here.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
- * three letters</td></tr><tr><td>Codelist</td><td>ISO 4217 currency codes List 96</td></tr><tr><td>Reference
+ * recommended that the currency should be stated here.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
+ * length, three letters</td></tr><tr><td>Codelist</td><td>ISO 4217 currency codes List 96</td></tr><tr><td>Reference
  * name</td><td>&lt;CurrencyCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;j152&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;j152&gt;GBP&lt;/j152&gt;
  * (UK Pound Sterling)</td></tr></table>
  */
@@ -56,6 +56,9 @@ public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

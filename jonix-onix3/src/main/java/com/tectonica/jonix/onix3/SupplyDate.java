@@ -32,9 +32,9 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supply date composite</h1><p>An optional and repeatable group of data elements which together specify a date
- * associated with the supply status of the product, <i>eg</i> expected ship date.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SupplyDate&gt;</td></tr><tr><td>Short
+ * <h1>Supply date composite</h1><p>An optional group of data elements which together specify a date associated with the
+ * supply status of the product, <i>eg</i> expected ship date. Repeatable in order to specify multiple dates.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SupplyDate&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;supplydate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, SupplyDateRoles>, Serializable {
@@ -54,6 +54,9 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

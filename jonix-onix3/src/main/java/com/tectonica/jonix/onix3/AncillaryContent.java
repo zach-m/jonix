@@ -33,9 +33,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Ancillary content composite</h1><p>A repeatable group of data elements which together specify the number of
- * illustrations or other content items of a stated type which the product carries. Use of the &lt;AncillaryContent&gt;
- * composite is optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;AncillaryContent&gt;</td></tr><tr><td>Short
+ * <h1>Ancillary content composite</h1><p>A group of data elements which together specify the number of illustrations or
+ * other content items of a stated type which the product carries. Use of the &lt;AncillaryContent&gt; composite is
+ * optional, but is repeatable if necessary to specify different types of content items.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;AncillaryContent&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;ancillarycontent&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class AncillaryContent
@@ -56,6 +57,9 @@ public class AncillaryContent
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

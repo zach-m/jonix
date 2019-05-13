@@ -21,9 +21,9 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TaxRateCodeds;
+import com.tectonica.jonix.codelist.TaxRateTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
@@ -39,9 +39,9 @@ import java.io.Serializable;
  * is specified in &lt;TaxableAmount2&gt;. See notes on &lt;TaxRateCode1&gt;.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, one letter.</td></tr><tr><td>Codelist</td><td>List
  * 62</td></tr><tr><td>Reference name</td><td>&lt;TaxRateCode2&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j157&gt;</td></tr><tr><td>Example</td><td>&lt;j157&gt;Z&lt;/j157&gt;&#160;&#160;&#160;&#160;Zero-rated</td></tr></table>
+ * tag</td><td>&lt;j157&gt;</td></tr><tr><td>Example</td><td>&lt;j157&gt;Z&lt;/j157&gt; Zero-rated</td></tr></table>
  */
-public class TaxRateCode2 implements OnixElement<TaxRateCodeds>, Serializable {
+public class TaxRateCode2 implements OnixElement<TaxRateTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "TaxRateCode2";
@@ -55,7 +55,7 @@ public class TaxRateCode2 implements OnixElement<TaxRateCodeds>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -72,13 +72,13 @@ public class TaxRateCode2 implements OnixElement<TaxRateCodeds>, Serializable {
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public TaxRateCodeds value;
+    public TaxRateTypes value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public TaxRateCodeds _value() {
+    public TaxRateTypes _value() {
         return value;
     }
 
@@ -97,13 +97,13 @@ public class TaxRateCode2 implements OnixElement<TaxRateCodeds>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = TaxRateCodeds.byCode(JPU.getContentAsString(element));
+        value = TaxRateTypes.byCode(JPU.getContentAsString(element));
     }
 
     @Override

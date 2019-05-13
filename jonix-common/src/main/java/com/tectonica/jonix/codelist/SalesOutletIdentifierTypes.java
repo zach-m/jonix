@@ -36,30 +36,41 @@ interface CodeList102 {
  * <p>
  * Description: Sales outlet identifier type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist102">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist102">ONIX
  * Codelist 102 in Reference Guide</a>
  */
 public enum SalesOutletIdentifierTypes implements OnixCodelist, CodeList102 {
     /**
-     * Proprietary list of retail and other end-user sales outlet IDs
+     * Proprietary list of retail and other end-user sales outlet IDs. Note that &lt;IDTypeName&gt; is required with
+     * proprietary identifiers
      */
     Proprietary("01", "Proprietary"), //
 
     /**
-     * DEPRECATED - use code 03
-     */
-    BIC_sales_outlet_ID_code("02", "BIC sales outlet ID code"), //
-
-    /**
      * Use with ONIX retail and other end-user sales outlet IDs from List 139
      */
-    ONIX_retail_sales_outlet_ID_code("03", "ONIX retail sales outlet ID code");
+    ONIX_retail_sales_outlet_ID_code("03", "ONIX retail sales outlet ID code"), //
+
+    /**
+     * 13-digit GS1 global location number (formerly EAN location number) &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Retail_sales_outlet_GLN("04", "Retail sales outlet GLN"), //
+
+    /**
+     * 7-digit Book trade Standard Address Number (US, UK etc) &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Retail_sales_outlet_SAN("05", "Retail sales outlet SAN"), //
+
+    /**
+     * DEPRECATED - use code 03 &lt;p&gt;NOTE: Deprecated in Onix3
+     */
+    BIC_sales_outlet_ID_code("02", "BIC sales outlet ID code");
 
     public final String code;
     public final String description;
 
-    private SalesOutletIdentifierTypes(String code, String description) {
+    SalesOutletIdentifierTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

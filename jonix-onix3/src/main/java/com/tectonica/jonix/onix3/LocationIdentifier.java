@@ -32,11 +32,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Location identifier composite</h1><p>A group of data elements which together define the identifier of a stock
- * location in accordance with a specified scheme, and allowing different types of location identifier to be supported
- * without defining additional data elements. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;LocationIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;locationidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <h1>Location identifier composite</h1><p>An optional group of data elements which together define the identifier of a
+ * stock location in accordance with a specified scheme, and repeatable to allow different types of location identifier
+ * to be supported without defining additional data elements..</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;LocationIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;locationidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class LocationIdentifier
     implements OnixDataCompositeWithKey<JonixLocationIdentifier, SupplierIdentifierTypes>, Serializable {
@@ -56,6 +55,9 @@ public class LocationIdentifier
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

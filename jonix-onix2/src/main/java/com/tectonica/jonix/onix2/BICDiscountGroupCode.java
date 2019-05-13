@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -34,15 +34,14 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>BIC discount group code    UK only</h1><p>A BIC code indicating the supplier’s discount group to which the price
+ * <h1>BIC discount group code UK only</h1><p>A BIC code indicating the supplier’s discount group to which the price
  * carried in an occurrence of the &lt;Price&gt; composite belongs. This code does not identify an absolute rate of
  * discount, but it allows a bookseller to derive the actual discount by reference to a look-up table provided
  * separately by the supplier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 8 characters
- * Position 1&#160;&#160;&#160;&#160;A (identifying BIC as the source of the supplier code) Positions
- * 2-5&#160;&#160;&#160;&#160;Supplier code, alphabetical, assigned by BIC Positions 6-8&#160;&#160;&#160;&#160;Discount
- * group code, alphanumeric, assigned by the supplier. If less than three characters, the code is left justified and
- * unused positions are sent as spaces.</td></tr><tr><td>Reference name</td><td>&lt;BICDiscountGroupCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j150&gt;</td></tr><tr><td>Example</td><td>&lt;j150&gt;APUBL122&lt;/j150&gt;</td></tr></table>
+ * Position 1 A (identifying BIC as the source of the supplier code) Positions 2-5 Supplier code, alphabetical, assigned
+ * by BIC Positions 6-8 Discount group code, alphanumeric, assigned by the supplier. If less than three characters, the
+ * code is left justified and unused positions are sent as spaces.</td></tr><tr><td>Reference
+ * name</td><td>&lt;BICDiscountGroupCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;j150&gt;</td></tr><tr><td>Example</td><td>&lt;j150&gt;APUBL122&lt;/j150&gt;</td></tr></table>
  */
 public class BICDiscountGroupCode implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -58,7 +57,7 @@ public class BICDiscountGroupCode implements OnixElement<String>, Serializable {
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -76,10 +75,10 @@ public class BICDiscountGroupCode implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, 8 characters Position 1&#160;&#160;&#160;&#160;A (identifying BIC as the source of the
-     * supplier code) Positions 2-5&#160;&#160;&#160;&#160;Supplier code, alphabetical, assigned by BIC Positions
-     * 6-8&#160;&#160;&#160;&#160;Discount group code, alphanumeric, assigned by the supplier. If less than three
-     * characters, the code is left justified and unused positions are sent as spaces.<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, 8 characters Position 1 A (identifying BIC as the source of the supplier code)
+     * Positions 2-5 Supplier code, alphabetical, assigned by BIC Positions 6-8 Discount group code, alphanumeric,
+     * assigned by the supplier. If less than three characters, the code is left justified and unused positions are sent
+     * as spaces.<p> (type: NonEmptyString)
      */
     public String value;
 
@@ -106,7 +105,7 @@ public class BICDiscountGroupCode implements OnixElement<String>, Serializable {
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

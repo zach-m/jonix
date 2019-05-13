@@ -38,7 +38,7 @@ public class JonixTextItemIdentifier implements JonixKeyedStruct<TextItemIdentif
     public TextItemIdentifierTypes textItemIDType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
      */
     public String idTypeName;
 

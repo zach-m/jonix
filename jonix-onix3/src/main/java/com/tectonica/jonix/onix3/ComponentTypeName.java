@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -34,7 +34,7 @@ import java.io.Serializable;
  * <h1>Component type name</h1><p>The generic name (if any) which is given in the product to the type of section which
  * the content item represents, <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a
  * title (in the &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the
- * &lt;ContentItem&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length alphanumeric,
+ * &lt;ContentItem&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric,
  * suggested maximum length 20 characters</td></tr><tr><td>Reference name</td><td>&lt;ComponentTypeName&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b288&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;b288&gt;Chapter&lt;/b288&gt;</td></tr></table>
  */
@@ -55,16 +55,19 @@ public class ComponentTypeName implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
-    public LanguageCodes language;
+    public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 
@@ -92,7 +95,7 @@ public class ComponentTypeName implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }

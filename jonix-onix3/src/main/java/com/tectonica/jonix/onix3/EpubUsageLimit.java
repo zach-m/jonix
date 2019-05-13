@@ -31,10 +31,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Usage limit composite (digital products)</h1><p>An optional and repeatable group of data elements which together
- * specify a quantitative limit on a particular type of usage of a digital product.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;EpubUsageLimit&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;epubusagelimit&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Usage limit composite (digital products)</h1><p>An optional group of data elements which together specify a
+ * quantitative limit on a particular type of usage of a digital product. Repeatable in order to specify two or more
+ * limits on the usage type.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;EpubUsageLimit&gt;</td></tr><tr><td>Short tag</td><td>&lt;epubusagelimit&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,6 +53,9 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

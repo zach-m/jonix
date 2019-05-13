@@ -36,8 +36,8 @@ interface CodeList159 {
  * <p>
  * Description: Resource mode
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist159">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist159">ONIX
  * Codelist 159 in Reference Guide</a>
  */
 public enum ResourceModes implements OnixCodelist, CodeList159 {
@@ -74,7 +74,7 @@ public enum ResourceModes implements OnixCodelist, CodeList159 {
     public final String code;
     public final String description;
 
-    private ResourceModes(String code, String description) {
+    ResourceModes(String code, String description) {
         this.code = code;
         this.description = description;
     }

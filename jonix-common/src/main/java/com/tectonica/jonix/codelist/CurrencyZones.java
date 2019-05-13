@@ -36,20 +36,20 @@ interface CodeList172 {
  * <p>
  * Description: Currency zone
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist172">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist172">ONIX
  * Codelist 172 in Reference Guide</a>
  */
 public enum CurrencyZones implements OnixCodelist, CodeList172 {
     /**
-     * Countries that at the time being have the Euro as their national currency. Deprecated in ONIX 3
+     * Countries that at the time being have the Euro as their national currency. Deprecated
      */
     Eurozone("EUR", "Eurozone");
 
     public final String code;
     public final String description;
 
-    private CurrencyZones(String code, String description) {
+    CurrencyZones(String code, String description) {
         this.code = code;
         this.description = description;
     }

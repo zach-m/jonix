@@ -29,7 +29,8 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 26 (Main subject scheme identifier code)
+ * marker interface to assist in IDE navigation to code-list 26 (Main subject scheme identifier code &lt;p&gt;NOTE:
+ * Deprecated in Onix3)
  */
 interface CodeList26 {
 }
@@ -37,10 +38,10 @@ interface CodeList26 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 26</b>
  * <p>
- * Description: Main subject scheme identifier code
+ * Description: Main subject scheme identifier code &lt;p&gt;NOTE: Deprecated in Onix3
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist26">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist26">ONIX
  * Codelist 26 in Reference Guide</a>
  */
 public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
@@ -123,9 +124,9 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     LC_fiction_genre_heading("19", "LC fiction genre heading"), //
 
     /**
-     * Where multiple keywords or keyword phrases are sent in a single instance of the &lt;SubjectHeadingText&gt;
-     * element, it is recommended that they should be separated by semi-colons (this is consistent with Library of
-     * Congress preferred practice)
+     * For indexing and search purposes, not normally intended for display. Where multiple keywords or keyword phrases
+     * are sent, this should be in a single instance of the &lt;SubjectHeadingText&gt; element, and it is recommended
+     * that they should be separated by semi-colons (this is consistent with Library of Congress preferred practice)
      */
     Keywords("20", "Keywords"), //
 
@@ -336,8 +337,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     CSH("62", "CSH"), //
 
     /**
-     * R&#233;pertoire de vedettes-mati&#232;re (Biblioth&#232;que et Archives Canada et Biblioth&#232;que de
-     * l'Universit&#233; Laval) (French)
+     * R&#233;pertoire de vedettes-mati&#232;re (Biblioth&#232;que de l'Universit&#233; Laval) (French)
      */
     RVM("63", "RVM"), //
 
@@ -416,7 +416,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     Suomalainen_oppiaineluokitus("77", "Suomalainen oppiaineluokitus"), //
 
     /**
-     * See 'http://www.asahi-net.or.jp/~ax2s-kmtn/ref/ccode.html' (in Japanese)
+     * See http://www.asahi-net.or.jp/~ax2s-kmtn/ref/ccode.html (in Japanese)
      */
     Japanese_book_trade_C_Code("78", "Japanese book trade C-Code"), //
 
@@ -490,7 +490,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     CCSS("A4", "CCSS"), //
 
     /**
-     * French library classification
+     * French library subject headings
      */
     Rameau("A5", "Rameau"), //
 
@@ -502,39 +502,37 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
 
     /**
      * International Standard Industry Classification, a classification of economic activities. Use for books that are
-     * about a particular industry or economic activity. See 'http://unstats.un.org/unsd/cr/registry/isic-4.asp'.
-     * &lt;SubjectCode&gt; should be a single letter denoting an ISIC section OR a 2-, 3- or 4-digit number denoting an
-     * ISIC division, group or class
+     * about a particular industry or economic activity. &lt;SubjectCode&gt; should be a single letter denoting an ISIC
+     * section OR a 2-, 3- or 4-digit number denoting an ISIC division, group or class. See
+     * http://unstats.un.org/unsd/cr/registry/isic-4.asp
      */
     ISIC("A7", "ISIC"), //
 
     /**
      * Library of Congress Children's Subject Headings: LCSHAC supplementary headings for Children's books
-     * &lt;p&gt;NOTE: Introduced in Onix3
      */
     LC_Children_s_Subject_Headings("A8", "LC Children’s Subject Headings"), //
 
     /**
-     * Swedish bookselling educational subject &lt;p&gt;NOTE: Introduced in Onix3
+     * Swedish bookselling educational subject
      */
     Ny_L_romedel("A9", "Ny Läromedel"), //
 
     /**
      * EuroVoc multilingual thesaurus. &lt;SubjectCode&gt; should be a EuroVoc concept dc:identifier (for example, 2777,
-     * 'Refrigerated products'). See http://eurovoc.europa.eu &lt;p&gt;NOTE: Introduced in Onix3
+     * 'Refrigerated products'). See http://eurovoc.europa.eu
      */
     EuroVoc("B0", "EuroVoc"), //
 
     /**
-     * Controlled vocabulary for educational objectives. See https://www.bisg.org/educational-taxonomy &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * Controlled vocabulary for educational objectives. See https://www.bisg.org/educational-taxonomy
      */
     BISG_Educational_Taxonomy("B1", "BISG Educational Taxonomy");
 
     public final String code;
     public final String description;
 
-    private MainSubjectSchemeIdentifiers(String code, String description) {
+    MainSubjectSchemeIdentifiers(String code, String description) {
         this.code = code;
         this.description = description;
     }

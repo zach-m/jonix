@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -41,7 +41,7 @@ import java.io.Serializable;
  * name</td><td>&lt;ConferenceSponsorIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;conferencesponsoridentifier&gt;</td></tr></table>
  */
 public class ConferenceSponsorIdentifier
-    implements OnixDataCompositeWithKey<JonixConferenceSponsorIdentifier, NameCodeTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixConferenceSponsorIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ConferenceSponsorIdentifier";
@@ -55,7 +55,7 @@ public class ConferenceSponsorIdentifier
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -89,7 +89,7 @@ public class ConferenceSponsorIdentifier
         this.element = element;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -174,7 +174,7 @@ public class ConferenceSponsorIdentifier
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return conferenceSponsorIDType().value;
     }
 }

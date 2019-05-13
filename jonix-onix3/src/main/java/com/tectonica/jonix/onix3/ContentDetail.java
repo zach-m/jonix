@@ -36,7 +36,10 @@ import java.util.List;
  * element Group&nbsp;P.18. The block as a whole is non-repeating. It is not mandatory within the &lt;Product&gt;
  * record, and is used only when there is a requirement to describe individual chapters or parts within a product in a
  * fully structured way. The more usual ONIX practice is to send a table of contents as text, possibly in XHTML, in
- * Group&nbsp;P.14.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ContentDetail&gt;</td></tr><tr><td>Short
+ * Group&nbsp;P.14.</p><p>When used, the block should normally contain at least one instance of &lt;ContentItem&gt;. It
+ * may be empty <em>only</em> within a partial or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2),
+ * when the intention is to remove all previously-supplied content detail.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ContentDetail&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;contentdetail&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
 public class ContentDetail implements OnixSuperComposite, Serializable {
@@ -56,6 +59,9 @@ public class ContentDetail implements OnixSuperComposite, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +120,7 @@ public class ContentDetail implements OnixSuperComposite, Serializable {
     private List<ContentItem> contentItems = Collections.emptyList();
 
     /**
-     * (this list is required to contain at least one item)
+     * (this list may be empty)
      */
     public List<ContentItem> contentItems() {
         _initialize();

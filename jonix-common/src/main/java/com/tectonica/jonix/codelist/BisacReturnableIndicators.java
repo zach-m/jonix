@@ -36,8 +36,8 @@ interface CodeList66 {
  * <p>
  * Description: BISAC returnable indicator
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist66">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist66">ONIX
  * Codelist 66 in Reference Guide</a>
  */
 public enum BisacReturnableIndicators implements OnixCodelist, CodeList66 {
@@ -55,7 +55,7 @@ public enum BisacReturnableIndicators implements OnixCodelist, CodeList66 {
     public final String code;
     public final String description;
 
-    private BisacReturnableIndicators(String code, String description) {
+    BisacReturnableIndicators(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -41,8 +41,8 @@ public class JonixExtent implements JonixKeyedStruct<ExtentTypes>, Serializable 
     public ExtentUnits extentUnit;
 
     /**
-     * Raw Format: Numeric, with decimal point where required, as appropriate for the units specified in
-     * &lt;ExtentUnit&gt; <p> (type: dt.StrictPositiveDecimal)
+     * Raw Format: Positive real number, with explicit decimal point when required, as appropriate for the units
+     * specified in &lt;ExtentUnit&gt;. Suggested maximum length 8 characters <p> (type: dt.StrictPositiveDecimal)
      */
     public Double extentValue;
 

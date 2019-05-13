@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Supplier code type</h1><p>An ONIX code identifying the type of a supplier own code. Mandatory in each occurrence
  * of the &lt;SupplierOwnCoding&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
  * 165</td></tr><tr><td>Reference name</td><td>&lt;SupplierCodeType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x458&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;SupplierCodeType&gt;01&lt;/SupplierCodeType&gt;
  * (Supplier's sales classification)</td></tr></table>
@@ -55,6 +55,9 @@ public class SupplierCodeType implements OnixElement<SupplierOwnCodeTypes>, Seri
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

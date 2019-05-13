@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Date format</h1><p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in
  * each occurrence of the &lt;PriceDate&gt; composite, and non-repeating. Deprecated – where possible, use the
- * <i>dateformat</i> attribute instead.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * <i>dateformat</i> attribute instead.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 55</td></tr><tr><td>Reference name</td><td>&lt;DateFormat&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j260&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;j260&gt;02&lt;/j260&gt;
  * (YYYYWW)</td></tr></table>
@@ -55,6 +55,9 @@ public class DateFormat implements OnixElement<DateFormats>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

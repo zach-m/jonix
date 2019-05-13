@@ -33,7 +33,7 @@ import java.io.Serializable;
  * <h1>Source name</h1><p>If the &lt;CollectionType&gt; code indicates an ascribed collection (<i>ie</i> a collection
  * which has been identified and described by a supply chain organization other than the publisher), this element may be
  * used to carry the name of the organization responsible. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 50
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 50
  * characters</td></tr><tr><td>Reference name</td><td>&lt;SourceName&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;x330&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;SourceName&gt;Bowker&lt;/SourceName&gt;</td></tr></table>
  */
@@ -54,6 +54,9 @@ public class SourceName implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +64,7 @@ public class SourceName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
      */
     public String value;
 

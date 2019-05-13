@@ -26,8 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 223 (Status detail code type &lt;p&gt;NOTE: Introduced in
- * Onix3)
+ * marker interface to assist in IDE navigation to code-list 223 (Status detail code type)
  */
 interface CodeList223 {
 }
@@ -35,10 +34,10 @@ interface CodeList223 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 223</b>
  * <p>
- * Description: Status detail code type &lt;p&gt;NOTE: Introduced in Onix3
+ * Description: Status detail code type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist223">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist223">ONIX
  * Codelist 223 in Reference Guide</a>
  */
 public enum StatusDetailCodeTypes implements OnixCodelist, CodeList223 {
@@ -52,7 +51,7 @@ public enum StatusDetailCodeTypes implements OnixCodelist, CodeList223 {
     public final String code;
     public final String description;
 
-    private StatusDetailCodeTypes(String code, String description) {
+    StatusDetailCodeTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -39,12 +39,43 @@ interface CodeList196 {
  * <p>
  * Description: E-publication Accessibility Details
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist196">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist196">ONIX
  * Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
+    /**
+     * &lt;ProductFormFeatureDescription&gt; contains a short explanatory summary of the accessibility of the product,
+     * consistent with the more specific conformance and feature details provided. The summary should note both the
+     * accessibility features provided and any potential deficiencies. More detailed information may be provided using
+     * codes 94-96. For use in ONIX 3.0 only. See also code 00 for a summary of the accessibility features of the
+     * product itself &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    Accessibility_summary("00", "Accessibility summary"), //
+
     LIA_Compliance_Scheme("01", "LIA Compliance Scheme"), //
+
+    /**
+     * Conforms with the requirements of EPUB Accessibility Spec 1.0 and WCAG level A.
+     * &lt;ProductFormFeatureDescription&gt; may carry a URL linking to a compliance report or certification provided by
+     * an independent third party certifier. In the absence of a URL, conformance with the requirements of the
+     * Accessibility Specification is self-certified by the publisher
+     */
+    Accessibility_Specification_1_0_A("02", "Accessibility Specification 1.0 A"), //
+
+    /**
+     * Conforms with the requirements of EPUB Accessibility Spec 1.0 and WCAG level AA.
+     * &lt;ProductFormFeatureDescription&gt; may carry a URL linking to a compliance report or certification provided by
+     * an independent third party certifier. In the absence of a URL, conformance with the requirements of the
+     * Accessibility Specification is self-certified by the publisher
+     */
+    Accessibility_Specification_1_0_AA("03", "Accessibility Specification 1.0 AA"), //
+
+    /**
+     * Known to lack significant features required for broad accessibility. For use in ONIX 3.0 only &lt;p&gt;NOTE:
+     * Introduced in Onix3
+     */
+    Inaccessible("09", "Inaccessible"), //
 
     /**
      * No accessibility features offered by the reading system, device or reading software (including but not limited to
@@ -102,8 +133,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * Where data visualisations are provided (eg graphs and charts), the underlying data is also available in
      * non-graphical (usually tabular, textual) form
      */
-    Visualised_data_also_available_as_non_graphical_data("16", "Visualised data also available as non-graphical data"),
-    //
+    Visualised_data_also_available_as_non_graphical_data("16",
+        "Visualised data also available as non-graphical data"), //
 
     /**
      * Mathematical content such as equations is usable with assistive technology, eg through use of MathML. Semantic
@@ -140,6 +171,13 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Language_tagging_provided("22", "Language tagging provided"), //
 
     /**
+     * Specialised font, character and line spacing, justification and paragraph spacing, colouring and other options
+     * provided specifically to improve readability for dyslexic readers. Details, including the name of the font,
+     * should be listed in &lt;ProductFormFeatureDescription&gt;
+     */
+    Dyslexia_readability("24", "Dyslexia readability"), //
+
+    /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
      * accessibility features, compatibility, testing etc. The web page should be maintained by an independent
      * compliance scheme or testing organization
@@ -163,9 +201,10 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
         "Publisher’s web page for detailed accessibility information"), //
 
     /**
-     * &lt;ProductFormFeatureDescription&gt; carries a short description of compatibility testing carried out for this
-     * product, including detailed compatibility with various assistive technology such as third-party screen-reading
-     * software
+     * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving a short description of compatibility
+     * testing carried out for this product, including detailed compatibility with various assistive technology such as
+     * third-party screen-reading software. See also code 00 for a summary of the accessibility features of the product
+     * itself
      */
     Compatibility_tested("97", "Compatibility tested"), //
 
@@ -185,7 +224,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     public final String code;
     public final String description;
 
-    private EpublicationAccessibilityDetailss(String code, String description) {
+    EpublicationAccessibilityDetailss(String code, String description) {
         this.code = code;
         this.description = description;
     }

@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -44,7 +44,8 @@ import java.io.Serializable;
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;SenderIdentifier&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;senderidentifier&gt;</td></tr></table>
  */
-public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIdentifier, NameCodeTypes>, Serializable {
+public class SenderIdentifier
+    implements OnixDataCompositeWithKey<JonixSenderIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "SenderIdentifier";
@@ -58,7 +59,7 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -92,7 +93,7 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
         this.element = element;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
@@ -177,7 +178,7 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
     }
 
     @Override
-    public NameCodeTypes structKey() {
+    public NameIdentifierTypes structKey() {
         return senderIDType().value;
     }
 }

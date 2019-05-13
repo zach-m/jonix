@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Returns code type</h1><p>An ONIX code identifying the scheme from which the returns conditions code in
  * &lt;ReturnsCode&gt; is taken. Mandatory in each occurrence of the &lt;ReturnsConditions&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * digits</td></tr><tr><td>Codelist</td><td>List 53</td></tr><tr><td>Reference name</td><td>&lt;ReturnsCodeType&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;j268&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;ReturnsCodeType&gt;01&lt;/ReturnsCodeType&gt;
  * (CLIL French book trade returns conditions code)</td></tr></table>
@@ -55,6 +55,9 @@ public class ReturnsCodeType implements OnixElement<ReturnsConditionsCodeTypes>,
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////

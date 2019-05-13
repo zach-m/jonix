@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,13 +32,13 @@ import java.io.Serializable;
 
 /**
  * <h1>Language code</h1><p>An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt;
- * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three
+ * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, three
  * lower-case letters. Note that ISO 639 specifies that these codes should always be in
  * lower-case</td></tr><tr><td>Codelist</td><td>ISO 639-2/B List 74</td></tr><tr><td>Reference
  * name</td><td>&lt;LanguageCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;b252&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b252&gt;eng&lt;/b252&gt;
  * (English)</td></tr></table>
  */
-public class LanguageCode implements OnixElement<LanguageCodes>, Serializable {
+public class LanguageCode implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "LanguageCode";
@@ -55,19 +55,22 @@ public class LanguageCode implements OnixElement<LanguageCodes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public LanguageCodes value;
+    public Languages value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public LanguageCodes _value() {
+    public Languages _value() {
         return value;
     }
 
@@ -88,7 +91,7 @@ public class LanguageCode implements OnixElement<LanguageCodes>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = LanguageCodes.byCode(JPU.getContentAsString(element));
+        value = Languages.byCode(JPU.getContentAsString(element));
     }
 
     @Override

@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.FrontCoverImageFileLinkTypes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -39,8 +39,8 @@ import java.io.Serializable;
  * &lt;CoverImageLink&gt;.</p><p>The &lt;MediaFile&gt; composite on the next page provides a more general method of
  * handling cover images, and is to be preferred.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * two numeric digits</td></tr><tr><td>Codelist</td><td>List 37</td></tr><tr><td>Reference
- * name</td><td>&lt;CoverImageLinkTypeCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;f112&gt;</td></tr><tr><td>Example</td><td>&lt;f112&gt;05&lt;/f112&gt;&#160;&#160;&#160;&#160;FTP
- * address</td></tr></table>
+ * name</td><td>&lt;CoverImageLinkTypeCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;f112&gt;</td></tr><tr><td>Example</td><td>&lt;f112&gt;05&lt;/f112&gt;
+ * FTP address</td></tr></table>
  */
 public class CoverImageLinkTypeCode implements OnixElement<FrontCoverImageFileLinkTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -56,7 +56,7 @@ public class CoverImageLinkTypeCode implements OnixElement<FrontCoverImageFileLi
 
     public TextCaseFlags textcase;
 
-    public LanguageCodes language;
+    public Languages language;
 
     public TransliterationSchemes transliteration;
 
@@ -98,7 +98,7 @@ public class CoverImageLinkTypeCode implements OnixElement<FrontCoverImageFileLi
         exists = true;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
         transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));

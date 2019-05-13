@@ -39,11 +39,14 @@ interface CodeList92 {
  * <p>
  * Description: Supplier identifier type
  *
- * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist92">ONIX
+ * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist92">ONIX
  * Codelist 92 in Reference Guide</a>
  */
 public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
+    /**
+     * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
+     */
     Proprietary("01", "Proprietary"), //
 
     /**
@@ -87,7 +90,7 @@ public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
     public final String code;
     public final String description;
 
-    private SupplierIdentifierTypes(String code, String description) {
+    SupplierIdentifierTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }

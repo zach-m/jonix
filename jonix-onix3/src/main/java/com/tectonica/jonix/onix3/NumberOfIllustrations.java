@@ -34,7 +34,7 @@ import java.io.Serializable;
  * informative free text field &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt; composite are strongly
  * preferred, but where a sender of product information maintains only a simple numeric field, the
  * &lt;NumberOfIllustrations&gt; element may be used. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length integer, suggested maximum length 6
+ * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, suggested maximum length 6
  * digits</td></tr><tr><td>Reference name</td><td>&lt;NumberOfIllustrations&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;b125&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;NumberOfIllustrations&gt;64&lt;/NumberOfIllustrations&gt;</td></tr></table>
  */
@@ -55,6 +55,9 @@ public class NumberOfIllustrations implements OnixElement<Integer>, Serializable
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +65,7 @@ public class NumberOfIllustrations implements OnixElement<Integer>, Serializable
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length integer, suggested maximum length 6 digits<p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, suggested maximum length 6 digits<p> (type: dt.PositiveInteger)
      */
     public Integer value;
 

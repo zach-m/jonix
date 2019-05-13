@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,13 +32,13 @@ import java.io.Serializable;
 
 /**
  * <h1>Country code</h1><p>A code identifying the country when this specifies a variant of the language, <i>eg</i> US
- * English. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * English. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
  * letters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case
  * only</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes List 91</td></tr><tr><td>Reference
  * name</td><td>&lt;CountryCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;b251&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;CountryCode&gt;US&lt;/CountryCode&gt;
  * (US [English])</td></tr></table>
  */
-public class CountryCode implements OnixElement<CountryCodes>, Serializable {
+public class CountryCode implements OnixElement<Countrys>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "CountryCode";
@@ -55,19 +55,22 @@ public class CountryCode implements OnixElement<CountryCodes>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
     public String sourcename;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public CountryCodes value;
+    public Countrys value;
 
     /**
      * Internal API, use the {@link #value} field instead
      */
     @Override
-    public CountryCodes _value() {
+    public Countrys _value() {
         return value;
     }
 
@@ -88,7 +91,7 @@ public class CountryCode implements OnixElement<CountryCodes>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = CountryCodes.byCode(JPU.getContentAsString(element));
+        value = Countrys.byCode(JPU.getContentAsString(element));
     }
 
     @Override
