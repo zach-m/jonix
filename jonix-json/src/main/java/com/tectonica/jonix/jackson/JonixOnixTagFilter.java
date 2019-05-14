@@ -58,7 +58,7 @@ public class JonixOnixTagFilter extends SimpleBeanPropertyFilter {
                 return;
             }
             if (tagList.get(0) instanceof OnixComposite) {
-                // eagerly populate the fields in the items of of this (lazy) list of composites
+                // eagerly populate the fields in the items of this (lazy) list of composites
                 List<OnixComposite> compositeList = (List<OnixComposite>) memberObject;
                 compositeList.forEach(OnixComposite::_initialize);
             }

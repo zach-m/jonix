@@ -29,11 +29,12 @@ import java.util.Objects;
 /**
  * Helper class for JSON serialization service of Jonix objects.
  * <p>
- * The fundamental APIs are the generic {@link #objectToJson(Object)} and the very-specific
- * {@link #productToJson(OnixProduct)}.
+ * The fundamental APIs are the generic {@link #objectToJson(Object)} and the very-specific {@link
+ * #productToJson(OnixProduct)}.
  */
 public class JonixJson {
-    private static final ObjectMapper PRODUCT_OBJECT_MAPPER = new JonixProductObjectMapper();
+    private static final ObjectMapper PRODUCT_OBJECT_MAPPER = new JonixProductObjectMapper(true);
+    private static final ObjectMapper PRODUCT_OBJECT_MAPPER_NO_IDENT = new JonixProductObjectMapper(false);
     private static final ObjectMapper PUBLIC_FIELDS_MAPPER = new JonixPublicFieldsObjectMapper();
 
     /**
@@ -41,22 +42,28 @@ public class JonixJson {
      * <p>
      * This specific is needed in addition to the generic {@link #objectToJson(Object)} because {@link OnixProduct}s are
      * populated "lazily". In other words, their internal fields get populated with actual values only when accessed
-     * explicitly (via accessor methods, that induce the population of the {@link OnixComposite} they refer to). This
-     * is a design choice to make Jonix more performant and less memory hungry. However, for the underlying JSON
-     * serialization framework (<code>Jsckson</code> is this case), this laziness presents a problem, as no accessors
+     * explicitly (via accessor methods, that induce the population of the {@link OnixComposite} they refer to). This is
+     * a design choice to make Jonix more performant and less memory hungry. However, for the underlying JSON
+     * serialization framework (<code>Jackson</code> is this case), this laziness presents a problem, as no accessors
      * are explicitly invoked, and the (private) fields are accessed directly. So some advanced configuration of the
      * <code>Jackson</code> serializer is needed, which is exactly what this API is all about.
      *
      * @param onixProduct the ONIX Product to serialize to JSON
+     * @param indent      whether the returned JSON should be indented
      * @return JSON representation of the product
      */
-    public static String productToJson(OnixProduct onixProduct) {
+    public static String productToJson(OnixProduct onixProduct, boolean indent) {
         Objects.requireNonNull(onixProduct)._initialize();
         try {
-            return PRODUCT_OBJECT_MAPPER.writeValueAsString(onixProduct);
+            ObjectMapper mapper = indent ? PRODUCT_OBJECT_MAPPER : PRODUCT_OBJECT_MAPPER_NO_IDENT;
+            return mapper.writeValueAsString(onixProduct);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String productToJson(OnixProduct onixProduct) {
+        return productToJson(onixProduct, false);
     }
 
     /**

@@ -30,7 +30,8 @@ import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
 public class JonixProductObjectMapper extends ObjectMapper {
-    public JonixProductObjectMapper() {
+
+    public JonixProductObjectMapper(boolean indent) {
         addMixIn(OnixTag.class, JonixOnixTagFilter.OnixTagMixIn.class);
         setFilterProvider(
             new SimpleFilterProvider().addFilter(JonixOnixTagFilter.FILTER_NAME, new JonixOnixTagFilter()));
@@ -39,11 +40,14 @@ public class JonixProductObjectMapper extends ObjectMapper {
 
         // general configuration
         setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        enable(SerializationFeature.INDENT_OUTPUT);
         enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+        if (indent) {
+            enable(SerializationFeature.INDENT_OUTPUT);
+        }
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         setDateFormat(sdf);
     }
+
 }
