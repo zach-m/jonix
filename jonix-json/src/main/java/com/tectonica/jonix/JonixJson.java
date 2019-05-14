@@ -63,7 +63,7 @@ public class JonixJson {
     }
 
     public static String productToJson(OnixProduct onixProduct) {
-        return productToJson(onixProduct, false);
+        return productToJson(onixProduct, true);
     }
 
     /**

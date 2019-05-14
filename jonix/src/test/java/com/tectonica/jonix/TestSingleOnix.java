@@ -33,6 +33,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
 import java.io.StringReader;
 
+import static org.junit.Assert.assertEquals;
+
 public class TestSingleOnix {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestSingleOnix.class);
 
@@ -55,18 +57,18 @@ public class TestSingleOnix {
         for (JonixRecord record : Jonix.source(source)) {
             Assert.assertFalse(entered); // there should be exactly one product in the file
             entered = true;
-            Assert.assertEquals(expectedOnixVersion, record.source.onixVersion);
+            assertEquals(expectedOnixVersion, record.source.onixVersion);
 
             String json = JonixJson.productToJson(record.product, false);
             LOGGER.debug("API: {}", json); // or: JonixJson.productToJson(record.product);
-            Assert.assertEquals(expectedLength, json.length());
+            assertEquals(expectedLength, json.length());
         }
     }
 
     private void testViaDOM(String xmlResourceName, int expectedLength, OnixVersion expectedOnixVersion) {
         final Document doc = docOf(xmlResourceName);
         final NodeList products = doc.getElementsByTagName("Product");
-        Assert.assertEquals(products.getLength(), 1);
+        assertEquals(products.getLength(), 1);
 
         final Element productElem = (Element) products.item(0);
         final OnixProduct product;
@@ -78,11 +80,11 @@ public class TestSingleOnix {
 
         String json = JonixJson.productToJson(product, false);
         LOGGER.debug("DOM: {}", json); // or: JonixJson.productToJson(product);
-        Assert.assertEquals(expectedLength, json.length());
+        assertEquals(expectedLength, json.length());
     }
 
     private Document docOf(String xmlResourceName) {
-        try (InputStream is = this.getClass().getResourceAsStream(xmlResourceName)) {
+        try (InputStream is = getClass().getResourceAsStream(xmlResourceName)) {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
             docBuilderFactory.setCoalescing(true); // required for Jonix classes to properly process CDATA nodes
             DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
