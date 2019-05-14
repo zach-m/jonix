@@ -25,6 +25,8 @@ import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.After;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 import javax.xml.namespace.QName;
@@ -32,13 +34,17 @@ import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
 import java.io.InputStream;
 
+import static org.junit.Assert.assertEquals;
+
 public class TestBaseProduct {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestBaseProduct.class);
+
     private static final String PRODUCT_REF = com.tectonica.jonix.onix2.Product.refname;
     private static final String PRODUCT_SHORT = com.tectonica.jonix.onix2.Product.shortname;
 
     @After
     public void tearDown() {
-        System.out.println("\n***********************************************************************************");
+        LOGGER.debug("***********************************************************************************");
     }
 
     @Test
@@ -64,10 +70,10 @@ public class TestBaseProduct {
                     final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
                     // create a unified-version of the product
                     final BaseProduct bp = new BaseProduct2(product);
-                    System.out.println("\nRAW ONIX2  --------------------------------------------------------------");
-                    System.out.println(JonixJson.productToJson(product));
-                    System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
-                    System.out.println(JonixJson.objectToJson(bp));
+                    LOGGER.debug("RAW ONIX2  --------------------------------------------------------------");
+                    LOGGER.debug(JonixJson.productToJson(product, false));
+                    LOGGER.debug("BASIC ONIX2  ------------------------------------------------------------");
+                    LOGGER.debug(JonixJson.objectToJson(bp));
                 }
                 return true;
             }
@@ -78,11 +84,10 @@ public class TestBaseProduct {
     private String jsonDirect = null;
     private String jsonViaReader = null;
 
-    private static final String RESOURCE_NAME = "/single-book-onix3.xml";
-
     @Test
     public void readSingleProductOfOnix3AlsoWithReader() {
-        InputStream stream = getClass().getResourceAsStream(RESOURCE_NAME);
+        String onix3Resource = "/single-book-onix3.xml";
+        InputStream stream = getClass().getResourceAsStream(onix3Resource);
 
         XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener() {
 
@@ -101,10 +106,10 @@ public class TestBaseProduct {
                 if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT)) {
                     final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
                     BaseProduct bp = new BaseProduct3(product);
-                    System.out.println("\nRAW ONIX3  --------------------------------------------------------------");
-                    System.out.println(JonixJson.productToJson(product));
-                    System.out.println("\nBASIC ONIX3  ------------------------------------------------------------");
-                    System.out.println(jsonDirect = JonixJson.objectToJson(bp));
+                    LOGGER.debug("RAW ONIX3  --------------------------------------------------------------");
+                    LOGGER.debug(JonixJson.productToJson(product, false));
+                    LOGGER.debug("BASIC ONIX3  ------------------------------------------------------------");
+                    LOGGER.debug(jsonDirect = JonixJson.objectToJson(bp));
                 }
                 return true;
             }
@@ -112,10 +117,10 @@ public class TestBaseProduct {
         });
 
         // read the same file, this time using a JonixReader
-        Jonix.source(getClass().getResourceAsStream(RESOURCE_NAME)).streamUnified().limit(1)
+        Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified().limit(1)
             .forEach(record -> jsonViaReader = JonixJson.objectToJson(record.product));
 
         // compare the JSON received in both methods
-        org.junit.Assert.assertEquals(jsonDirect, jsonViaReader);
+        assertEquals(jsonDirect, jsonViaReader);
     }
 }

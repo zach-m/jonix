@@ -23,6 +23,8 @@ import com.tectonica.jonix.unify.BaseTabulation;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,20 +33,20 @@ import java.util.Arrays;
 import static com.tectonica.jonix.tabulate.JonixDelimitedWriter.toDelimitedFile;
 
 public class TestTabDelimited {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestTabDelimited.class);
+
     @Test
     @Ignore
     // this test is ignored by default, as it scans through many files, that exist only on the author's machine
     public void exportVariousOnixSourcesIntoTSV() throws IOException {
         File samples = new File("..", "samples");
         if (!samples.exists()) {
-            System.err.println("Samples directory is missing: " + samples.getAbsolutePath());
-            System.err.println("Skipping");
+            LOGGER.warn("Samples directory is missing: " + samples.getAbsolutePath());
+            LOGGER.warn("Skipping");
             return;
         }
 
         int[] totalCount = new int[3];
-        totalCount[0] = 0;
-        totalCount[1] = 0;
 
         // prepare to read from various sources
         JonixRecords records = Jonix
@@ -53,10 +55,10 @@ public class TestTabDelimited {
             .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
             .source(new File(samples, "onix-2/SB/SB_short.xml")) // short-references ONIX2 file
             .source(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
-            .onSourceStart(src -> System.err.println("Opening " + src.onixVersion + " file: " + src.sourceName()))
+            .onSourceStart(src -> LOGGER.debug("Opening {} file: {}", src.onixVersion, src.sourceName()))
             .onSourceEnd(src -> {
                 totalCount[0] += src.productsProcessedCount();
-                System.err.println(" .. Read " + src.productsProcessedCount() + " records");
+                LOGGER.debug(" .. Read {} records", src.productsProcessedCount());
             })
             .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
 
@@ -66,7 +68,7 @@ public class TestTabDelimited {
             .peek(r -> totalCount[1]++)
             .collect(toDelimitedFile(targetFile, ',', BaseTabulation.ALL));
 
-        System.err.println("Written " + Arrays.toString(totalCount) + " records to " + targetFile.getAbsolutePath());
+        LOGGER.debug("Written " + Arrays.toString(totalCount) + " records to " + targetFile.getAbsolutePath());
 
         Assert.assertEquals(totalCount[0], totalCount[1]);
         Assert.assertEquals(totalCount[0], totalCount[2]);

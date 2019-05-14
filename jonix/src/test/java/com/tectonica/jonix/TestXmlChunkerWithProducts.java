@@ -24,10 +24,10 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.struct.JonixTitle;
 import com.tectonica.xmlchunk.XmlChunker;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 import javax.xml.namespace.QName;
@@ -39,6 +39,7 @@ import java.io.FileNotFoundException;
 import java.util.Optional;
 
 public class TestXmlChunkerWithProducts {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestXmlChunkerWithProducts.class);
 
     @Test
     @Ignore
@@ -46,8 +47,8 @@ public class TestXmlChunkerWithProducts {
     public void readProductsAndExtractProperties() throws FileNotFoundException {
         File samples = new File("..", "samples");
         if (!samples.exists()) {
-            System.err.println("Samples directory is missing: " + samples.getAbsolutePath());
-            System.err.println("Skipping");
+            LOGGER.warn("Samples directory is missing: {}", samples.getAbsolutePath());
+            LOGGER.warn("Skipping");
             return;
         }
 
@@ -55,6 +56,8 @@ public class TestXmlChunkerWithProducts {
         if (!file.exists()) {
             throw new RuntimeException("couldn't found " + file.getAbsolutePath());
         }
+
+        LOGGER.debug("Opening {}..", file.getAbsolutePath());
 
         XmlChunker.parse(new FileInputStream(file), "UTF-8", 2, new XmlChunker.Listener() {
             private int count = 0;
@@ -69,20 +72,20 @@ public class TestXmlChunkerWithProducts {
                     // get some basic properties of the book
                     Optional<JonixTitle> title = product.titles().findAsStruct(TitleTypes.Distinctive_title_book);
                     String titleValue = title.map(t -> t.titleText).orElse("N/A");
-                    String isbnValue =
-                        product.productIdentifiers().findAsStruct(ProductIdentifierTypes.ISBN_13).map(i -> i.idValue)
-                            .orElse("N/A");
+
+                    String isbnValue = product.productIdentifiers().find(ProductIdentifierTypes.ISBN_13)
+                        .map(pid -> pid.idValue().value).orElse("N/A");
                     String seriesPrefix =
                         product.seriess().isEmpty() ? "" : product.seriess().get(0).titleOfSeries().value + " / ";
 
                     // print
                     ++count;
-                    System.out.println(String.format("#%04d: title='%s', isbn='%s'", count,
-                        seriesPrefix + titleValue, isbnValue));
+                    LOGGER.debug(String.format("#%04d: title='%s', isbn='%s'",
+                        count, seriesPrefix + titleValue, isbnValue));
 
-                    // in rare cases where there is no title, we print the entire XML record (as JSON)
+                    // in rare cases where there is no title, we print the entire product record (as JSON)
                     if (!title.isPresent()) {
-                        System.err.println(JonixJson.productToJson(product));
+                        LOGGER.debug(JonixJson.productToJson(product, false));
                     }
                 }
                 return true;
@@ -98,6 +101,6 @@ public class TestXmlChunkerWithProducts {
             }
         });
 
-        System.err.println("** DONE");
+        LOGGER.debug("** DONE");
     }
 }
