@@ -113,10 +113,16 @@ public class JPU {
         return str.toString().trim();
     }
 
+    //static {
+    //    System.setProperty("javax.xml.transform.TransformerFactory",
+    //        "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
+    //}
+    private static TransformerFactory transformerFactory = TransformerFactory.newInstance();
+
     public static String getChildXHTML(Node node, boolean strip) {
         StringWriter sw = new StringWriter();
         try {
-            Transformer t = TransformerFactory.newInstance().newTransformer();
+            Transformer t = transformerFactory.newTransformer(); // TODO: check if the instance can be singleton
             t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
             t.transform(new DOMSource(node), new StreamResult(sw));
         } catch (TransformerException e) {
