@@ -215,7 +215,7 @@ public class BaseFieldTabulator {
         for (BasePrice price : prices) {
             row.set(pos + 0, price.priceType.name());
             row.set(pos + 1, price.priceAmountAsStr);
-            row.set(pos + 2, price.currencyCode.name());
+            row.set(pos + 2, price.currencyCode == null ? null : price.currencyCode.name());
             pos += 3;
             if (pos >= row.size()) {
                 break;

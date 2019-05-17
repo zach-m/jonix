@@ -36,5 +36,5 @@ public abstract class BasePrice implements Serializable {
     public PriceTypes priceType;
     public Double priceAmount;
     public String priceAmountAsStr;
-    public CurrencyCodes currencyCode;
+    public CurrencyCodes currencyCode; // NOTE: could be NULL by ONIX specs
 }
