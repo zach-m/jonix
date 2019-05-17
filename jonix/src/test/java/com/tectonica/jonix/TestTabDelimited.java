@@ -48,13 +48,16 @@ public class TestTabDelimited {
 
         int[] totalCount = new int[3];
 
+        long encodedSourceCount = Jonix.source(new File(samples, "onix-2-iso"), "*.xml", false)
+            .encoding("iso-8859-1")
+            .stream().count();
+        Assert.assertEquals(1101, encodedSourceCount);
+
         // prepare to read from various sources
         JonixRecords records = Jonix
-            .source(new File(samples, "onix-3"), "*.onix", false)  // ONIX3 files
-            .source(new File(samples, "onix-3"), "*.xml", true)  // ONIX3 files from EDItEUR
-            .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
-            .source(new File(samples, "onix-2/SB/SB_short.xml")) // short-references ONIX2 file
-            .source(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
+            .source(new File(samples, "onix-3"), "*.onix", false)
+            .source(new File(samples, "onix-3"), "*.xml", true)
+            .source(new File(samples, "onix-2"), "*.xml", true)
             .onSourceStart(src -> LOGGER.debug("Opening {} file: {}", src.onixVersion, src.sourceName()))
             .onSourceEnd(src -> {
                 totalCount[0] += src.productsProcessedCount();

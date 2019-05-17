@@ -37,4 +37,9 @@ public class BaseRecord {
     public Optional<BaseHeader> header() {
         return source.header().map(JonixUnifier::unifyHeader);
     }
+
+    @Override
+    public String toString() {
+        return String.format("{source=%s, product=%s}", source, product);
+    }
 }

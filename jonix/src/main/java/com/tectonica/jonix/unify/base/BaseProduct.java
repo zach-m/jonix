@@ -22,6 +22,8 @@ package com.tectonica.jonix.unify.base;
 import com.tectonica.jonix.OnixProduct;
 
 import java.io.Serializable;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Contains the essential information included in ONIX &lt;Product&gt;.
@@ -55,5 +57,13 @@ public abstract class BaseProduct implements Serializable {
 
     public String getLabel() {
         return (titles.size() > 0) ? titles.get(0).titleText : info.recordReference;
+    }
+
+    @Override
+    public String toString() {
+        return Stream.concat(
+            titles.stream().map(title -> String.format("%s='%s'", title.titleType, title.titleText)),
+            info.productIds.stream().map(pid -> String.format("%s=%s", pid.productIDType, pid.idValue))
+        ).collect(Collectors.joining(", ", "[", "]"));
     }
 }

@@ -111,4 +111,9 @@ public class JonixSource {
         }
         return localConfig.get(id);
     }
+
+    @Override
+    public String toString() {
+        return String.format("[%s / %s]", onixVersion, (file == null) ? "<stream>" : file.getAbsolutePath());
+    }
 }

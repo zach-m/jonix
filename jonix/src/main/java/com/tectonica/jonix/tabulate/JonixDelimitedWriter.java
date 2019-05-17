@@ -76,7 +76,11 @@ public class JonixDelimitedWriter<P> implements AutoCloseable {
     }
 
     protected void writeProduct(P product) {
-        writeRow(tabulation.row(product));
+        try {
+            writeRow(tabulation.row(product));
+        } catch (Exception e) {
+            throw new RuntimeException(product.toString(), e);
+        }
         ++linesWritten;
     }
 
