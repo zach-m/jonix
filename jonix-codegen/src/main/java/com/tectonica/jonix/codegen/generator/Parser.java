@@ -37,6 +37,7 @@ import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 import com.tectonica.jonix.codegen.metadata.Primitive;
 import com.tectonica.jonix.codegen.util.DOM;
 import com.tectonica.jonix.codegen.util.DOM.ElementListener;
+import com.tectonica.jonix.codegen.util.OnixSpecs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -54,14 +55,10 @@ import java.util.Set;
 public class Parser {
     private static final Logger LOGGER = LoggerFactory.getLogger(Parser.class);
 
-    public enum OnixVersion {
-        Ver2_1_03, Ver3_0_06
-    }
-
     public static class SchemaContext {
-        private final OnixVersion onixVersion;
+        private final OnixSpecs.OnixVersion onixVersion;
 
-        SchemaContext(OnixVersion onixVersion) {
+        SchemaContext(OnixSpecs.OnixVersion onixVersion) {
             this.onixVersion = onixVersion;
         }
 
@@ -73,7 +70,7 @@ public class Parser {
     private final SchemaContext context;
     private final OnixMetadata meta;
 
-    public Parser(OnixVersion onixVersion, boolean isShort, String codelistIssue) {
+    public Parser(OnixSpecs.OnixVersion onixVersion, boolean isShort, String codelistIssue) {
         context = new SchemaContext(onixVersion);
         meta = new OnixMetadata(onixVersion, isShort, codelistIssue);
     }
@@ -686,7 +683,7 @@ public class Parser {
         "b398", "j403", "j404", "j405"));
 
     private void patchOnixElement(final OnixElementDef onixElement) {
-        if (context.onixVersion == OnixVersion.Ver2_1_03) {
+        if (context.onixVersion == OnixSpecs.OnixVersion.Onix2) {
             if (onixElement.name.equals("AgentIDType") || onixElement.name.equals("j400")) {
                 // patch for error in Onix2_rev03 XSD with regards to AgentIDType (listed as free text)
                 onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List92"));

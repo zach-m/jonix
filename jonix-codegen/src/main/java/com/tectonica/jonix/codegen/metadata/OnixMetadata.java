@@ -21,7 +21,7 @@ package com.tectonica.jonix.codegen.metadata;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
+import com.tectonica.jonix.codegen.util.OnixSpecs.OnixVersion;
 
 import java.util.Collection;
 import java.util.HashMap;

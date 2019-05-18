@@ -20,7 +20,6 @@
 package com.tectonica.jonix.codegen.util;
 
 import com.tectonica.jonix.codegen.generator.Parser;
-import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,38 +38,16 @@ import java.io.StringReader;
 public class ParseUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(ParseUtil.class);
 
-    public static final String CODELIST_ISSUE_2 = "36";
-    public static final String RES_CODELIST_2 =
-        "/xsd/onix2.1_2013-11-15_rev03_codelist36/ONIX_BookProduct_CodeLists.xsd";
-    public static final String RES_REF_2 =
-        "/xsd/onix2.1_2013-11-15_rev03_codelist36/ONIX_BookProduct_Release2.1_reference.xsd";
-    public static final String RES_SHORT_2 =
-        "/xsd/onix2.1_2013-11-15_rev03_codelist36/ONIX_BookProduct_Release2.1_short.xsd";
-    public static final String RES_HTML_SPEC_2 =
-        "/xsd/onix2.1_2013-11-15_rev03_codelist36/ONIX_for_Books_Format_Specification_2.1.4.html";
+    public static OnixMetadata parse(OnixSpecs specs) throws IOException, ParserConfigurationException, SAXException {
+        Document codelistDoc = docOf(specs.codelistXsd);
+        Document structureDoc = docOf(specs.structureXsd);
 
-    public static final String CODELIST_ISSUE_3 = "45";
-    public static final String RES_CODELIST_3 =
-        "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_BookProduct_CodeLists.xsd";
-    public static final String RES_REF_3 =
-        "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_BookProduct_3.0_reference.xsd";
-    public static final String RES_SHORT_3 =
-        "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_BookProduct_3.0_short.xsd";
-    public static final String RES_HTML_SPEC_3 =
-        "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_for_Books_Format_Specification_3.0.6.html";
+        final Parser parser = new Parser(specs.onixVersion, specs.isShort, specs.codelistIssue);
+        parser.analyzeSchema(codelistDoc, new File(specs.codelistXsd).getName());
+        parser.analyzeSchema(structureDoc, new File(specs.structureXsd).getName());
+        parser.postAnalysis(specs.specHtml);
 
-    public static OnixMetadata parse(OnixVersion onixVersion, boolean isShort, String structureXsd, String codelistXsd,
-                                     String specHtml, String codelistIssue)
-        throws IOException, ParserConfigurationException, SAXException {
-        Document codelistDoc = docOf(codelistXsd);
-        Document structureDoc = docOf(structureXsd);
-
-        final Parser parser = new Parser(onixVersion, isShort, codelistIssue);
-        parser.analyzeSchema(codelistDoc, new File(codelistXsd).getName());
-        parser.analyzeSchema(structureDoc, new File(structureXsd).getName());
-        parser.postAnalysis(specHtml);
-
-        LOGGER.info(">>> Successfully processed " + structureXsd);
+        LOGGER.info(">>> Successfully processed " + specs.structureXsd);
 
         return parser.getMetadata();
     }

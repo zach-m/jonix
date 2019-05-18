@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.codegen;
 
-import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixFlagDef;
@@ -27,6 +26,7 @@ import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
 import com.tectonica.jonix.codegen.util.JSON;
+import com.tectonica.jonix.codegen.util.OnixSpecs;
 import com.tectonica.jonix.codegen.util.ParseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +35,9 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+
+import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_2_1_03_REF;
+import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_2_1_03_SHORT;
 
 public class MetadataDump {
     private static final File DUMP_FOLDER = new File("parsed");
@@ -51,13 +54,8 @@ public class MetadataDump {
     }
 
     private static void parse2() throws IOException, ParserConfigurationException, SAXException {
-        final OnixMetadata ref2 =
-            ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2,
-                ParseUtil.RES_HTML_SPEC_2, ParseUtil.CODELIST_ISSUE_2);
-
-        final OnixMetadata short2 =
-            ParseUtil.parse(OnixVersion.Ver2_1_03, true, ParseUtil.RES_SHORT_2, ParseUtil.RES_CODELIST_2,
-                ParseUtil.RES_HTML_SPEC_2, ParseUtil.CODELIST_ISSUE_2);
+        final OnixMetadata ref2 = ParseUtil.parse(SPECS_2_1_03_REF);
+        final OnixMetadata short2 = ParseUtil.parse(SPECS_2_1_03_SHORT);
 
         File parent = new File(DUMP_FOLDER, "onix2");
         saveMetadata(ref2, new File(parent, "reference"));
@@ -65,13 +63,8 @@ public class MetadataDump {
     }
 
     private static void parse3() throws IOException, ParserConfigurationException, SAXException {
-        final OnixMetadata ref3 =
-            ParseUtil.parse(OnixVersion.Ver3_0_06, false, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
-                ParseUtil.RES_HTML_SPEC_3, ParseUtil.CODELIST_ISSUE_3);
-
-        final OnixMetadata short3 =
-            ParseUtil.parse(OnixVersion.Ver3_0_06, true, ParseUtil.RES_SHORT_3, ParseUtil.RES_CODELIST_3,
-                ParseUtil.RES_HTML_SPEC_3, ParseUtil.CODELIST_ISSUE_3);
+        final OnixMetadata ref3 = ParseUtil.parse(OnixSpecs.SPECS_3_0_06_REF);
+        final OnixMetadata short3 = ParseUtil.parse(OnixSpecs.SPECS_3_0_06_SHORT);
 
         File parent = new File(DUMP_FOLDER, "onix3");
         saveMetadata(ref3, new File(parent, "reference"));

@@ -20,7 +20,6 @@
 package com.tectonica.jonix.codegen.generator;
 
 import com.tectonica.jonix.codegen.metadata.OnixDocs;
-import com.tectonica.jonix.codegen.util.ParseUtil;
 import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +27,9 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+
+import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_2_1_03_REF;
+import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_06_REF;
 
 public class OnixDocsParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(OnixDocsParser.class);
@@ -42,8 +44,8 @@ public class OnixDocsParser {
     public static void main(String[] args) throws IOException {
         File outDir = new File("parsed");
         outDir.mkdirs();
-        parseAndSave(ParseUtil.RES_HTML_SPEC_2, new File(outDir, "Onix2.html"));
-        parseAndSave(ParseUtil.RES_HTML_SPEC_3, new File(outDir, "Onix3.html"));
+        parseAndSave(SPECS_2_1_03_REF.specHtml, new File(outDir, "Onix2.html"));
+        parseAndSave(SPECS_3_0_06_REF.specHtml, new File(outDir, "Onix3.html"));
     }
 
     private static void parseAndSave(final String specHtml, File targetHtml) throws IOException {
