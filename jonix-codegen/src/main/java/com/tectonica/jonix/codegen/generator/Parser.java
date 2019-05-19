@@ -168,7 +168,7 @@ public class Parser {
                         break;
                     case "xs:union":
                         // currently we only handle unions containing a single <xs:simpleType>
-                        processSimpleType(singleSimpleTypeChildOf(simpleTypeDefElem), simpleType);
+                        processSimpleType(singleSimpleTypeChildOf(simpleTypeDefElem, true), simpleType);
                         definitionAcquired = true;
                         break;
                     case "xs:list":
@@ -260,7 +260,7 @@ public class Parser {
                 // when the xs:restriction has no 'base', it defines a simple-type from scratch (no inheritance).
                 // this is only rarely used in ONIX XSDs, as a way to define a min-sized list of another xs:simpleType.
                 // We support it by using the target xs:simpleType as if it were this one directly (i.e. recursively).
-                final Element simpleTypeElemBelowRestriction = singleSimpleTypeChildOf(restrictionElem);
+                final Element simpleTypeElemBelowRestriction = singleSimpleTypeChildOf(restrictionElem, false);
                 LOGGER.debug("simpleType {} is a base-less restriction, a copy of another xs:simpleType",
                     simpleType.name);
                 processSimpleType(simpleTypeElemBelowRestriction, simpleType); // CASE 3
@@ -307,12 +307,17 @@ public class Parser {
                 simpleType.isList = true;
             }
 
-            private Element singleSimpleTypeChildOf(Element element) {
+            private Element singleSimpleTypeChildOf(Element element, boolean warnOnly) {
                 final Element simpleTypeChild = DOM.firstElemChild(element, "xs:simpleType");
                 if (simpleTypeChild != null) {
                     if (DOM.nextElemChild(simpleTypeChild, "xs:simpleType") != null) {
-                        throw new RuntimeException("simpleType " + simpleType.name
-                            + " violated expectancy for a single <xs:simpleType>");
+                        String msg = String
+                            .format("simpleType %s violated expectancy for a single <xs:simpleType>", simpleType.name);
+                        if (warnOnly) {
+                            LOGGER.warn(msg);
+                        } else {
+                            throw new RuntimeException(msg);
+                        }
                     }
                     return simpleTypeChild;
                 }
@@ -516,6 +521,11 @@ public class Parser {
                         + contentType);
         }
 
+        if (onixClass == null) {
+            LOGGER.debug("Ignoring ONIX Class {} ({})", onixTagName, contentType);
+            return;
+        }
+
         // other than attributes, we don't expect other information about the class we just created
         DOM.ensureTagNames(DOM.nextElemChild(contentElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
         extractAttributes(attributesParentElem, onixClass);
@@ -534,7 +544,6 @@ public class Parser {
         if (baseType.isEmpty()) {
             throw new RuntimeException("found xs:extension without base");
         }
-
         // under the xs:extension tag, we expect only xs:attribute and xs:attributeGroup tags
         DOM.ensureTagNames(DOM.firstElemChild(extensionElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
 
@@ -544,6 +553,9 @@ public class Parser {
             // xs:simpleContent is an extension of a simpleType with some attributes
             baseSimpleType = meta.typeByName(baseType);
             if (baseSimpleType == null) {
+                if ("xs:integer".equals(baseType)) {
+                    return null; // extremely rare, not worth the effort, we ignore (e.g. LatestReprintNumber in 3.0.1)
+                }
                 throw new RuntimeException("Unknown type " + baseType);
             }
         } else {

@@ -37,8 +37,8 @@ import java.util.List;
     {"name", "primitiveType", "comment", "isList", "enum", "enumName", "enumCodelistIssue", "enumAliasFor",
         "enumValues"})
 public class OnixSimpleType implements Comparable<OnixSimpleType> {
-    public static final OnixSimpleType XHTML = new OnixSimpleType("XHTML", Primitive.String, "Free XHTML content",
-        null);
+    public static final OnixSimpleType XHTML =
+        new OnixSimpleType("XHTML", Primitive.String, "Free XHTML content", null);
 
     /**
      * the official ONIX name of the type, as named in the XSD tag {@code <xs:simpleType name="??">}

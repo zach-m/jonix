@@ -150,9 +150,14 @@ public class GenerateCode {
 
     // /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private static Map<String, OnixSimpleType> unifyCodelists(OnixMetadata ref2, OnixMetadata ref3) {
-        final Map<String, OnixSimpleType> unifiedCodelists = new HashMap<>();
+    /**
+     * NOTE: this unification process actually modifies some metadata fields parsed from the XSD and passed here as
+     * {@link OnixMetadata}, including comment and enumName
+     */
+    public static Map<String, OnixSimpleType> unifyCodelists(OnixMetadata ref2, OnixMetadata ref3) {
+
         final String SPACER = "                                        ";
+        final Map<String, OnixSimpleType> unifiedCodelists = new HashMap<>();
 
         // we iterate over the list of enums from Onix2 and Onix3, matching them by name
         ListDiff.sortAndCompare(ref2.getEnums(), ref3.getEnums(), (enum2, enum3) -> {
@@ -195,13 +200,13 @@ public class GenerateCode {
             for (Map.Entry<String, Long> clash : clashes) {
                 String enumName = clash.getKey();
                 unifiedCodelists.values().stream()
-                    .filter(ost -> ost.isEnum() && ost.enumAliasFor == null)
+                    .filter(ost -> ost.enumAliasFor == null)
                     .filter(ost -> enumName.equals(ost.enumName))
                     .sorted(Comparator.comparing(o -> Long.parseLong(o.enumCodelistIssue)))
                     .forEach(ost -> {
                         if (clash.getValue() > 1) {
                             String newEnumName = ost.enumName + ost.name;
-                            LOGGER.debug("unifyCodelists: renaming {}.{} -> {} in issue {}",
+                            LOGGER.info("unifyCodelists: renaming {}.{} -> {} in issue {}",
                                 ost.name, ost.enumName, newEnumName, ost.enumCodelistIssue);
                             ost.enumName = newEnumName;
                             clash.setValue(clash.getValue() - 1L);
@@ -209,7 +214,6 @@ public class GenerateCode {
                     });
             }
         }
-        // TODO: I think this might be the only place where we change a metadata field after parsing
 
         ref2.unifiedCodelists = unifiedCodelists;
         ref3.unifiedCodelists = unifiedCodelists;
