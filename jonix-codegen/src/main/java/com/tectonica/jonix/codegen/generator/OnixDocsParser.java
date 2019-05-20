@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.codegen.generator;
 
-import com.tectonica.jonix.codegen.metadata.OnixDocs;
+import com.tectonica.jonix.codegen.metadata.OnixDocList;
 import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,30 +34,28 @@ import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_06_REF;
 public class OnixDocsParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(OnixDocsParser.class);
 
-    public static OnixDocs parse(String specHtml) throws IOException {
-        return new OnixDocs(Jsoup.parse(OnixDocsParser.class.getResourceAsStream(specHtml), "UTF-8", "file://"));
+    public static OnixDocList parse(String specHtml) throws IOException {
+        return new OnixDocList(Jsoup.parse(OnixDocsParser.class.getResourceAsStream(specHtml), "UTF-8", "file://"));
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //TODO: turn into test
     public static void main(String[] args) throws IOException {
-        File outDir = new File("parsed");
-        outDir.mkdirs();
+        File outDir = new File("meta");
         parseAndSave(SPECS_2_1_03_REF.specHtml, new File(outDir, "Onix2.html"));
         parseAndSave(SPECS_3_0_06_REF.specHtml, new File(outDir, "Onix3.html"));
     }
 
     private static void parseAndSave(final String specHtml, File targetHtml) throws IOException {
         LOGGER.info("Parsing " + specHtml + " into " + targetHtml.getAbsolutePath());
-        OnixDocs onixDocs = parse(specHtml);
+        OnixDocList onixDocList = parse(specHtml);
 
-        //JSON.saveAsJson(new File(targetHtml + ".json"), onixDocs);
+        //JSON.saveAsJson(new File(targetHtml + ".json"), onixDocList);
 
         try (final PrintStream out = new PrintStream(targetHtml, "UTF-8")) {
-            out.println(onixDocs.toHtml());
+            out.println(onixDocList.toHtml());
         }
 
-        LOGGER.info(onixDocs.allTags.toString());
+        LOGGER.info(onixDocList.allTags.toString());
     }
 }

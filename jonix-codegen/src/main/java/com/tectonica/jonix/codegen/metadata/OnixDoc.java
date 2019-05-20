@@ -73,14 +73,17 @@ public class OnixDoc {
     @JsonIgnore
     public String format;
 
-    // ONIX2: [new211, new212, deprecated, element, new210, new213, new214, composite]
-    // ONIX3: [deprecated, element, new302, composite, new301]
+    // ONIX2: [composite, deprecated, element, new210, new211, new212, new213, new214]
+    // ONIX3: [composite, deprecated, element, mod304, new301, new302, new303, new304, new305, new306]
     public Set<String> tags;
 
     public String title;
 
     public String descriptionHtml;
 
+    /**
+     * key-value pairs, which will be added to the javadocs as a table
+     */
     public List<OnixDoc.Detail> details;
 
     public String toHtml() {

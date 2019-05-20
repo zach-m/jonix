@@ -93,8 +93,8 @@ public class OnixMetadata {
         return type;
     }
 
-    public OnixClass classByName(String name) {
-        OnixClass onixClass = onixComposites.get(name);
+    public OnixClassDef classByName(String name) {
+        OnixClassDef onixClass = onixComposites.get(name);
         if (onixClass == null) {
             onixClass = onixElements.get(name);
             if (onixClass == null) {

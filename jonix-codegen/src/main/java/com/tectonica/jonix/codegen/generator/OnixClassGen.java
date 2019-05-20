@@ -22,7 +22,7 @@ package com.tectonica.jonix.codegen.generator;
 import com.tectonica.jonix.codegen.generator.GenUtil.FieldInfo;
 import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
 import com.tectonica.jonix.codegen.metadata.OnixAttribute;
-import com.tectonica.jonix.codegen.metadata.OnixClass;
+import com.tectonica.jonix.codegen.metadata.OnixClassDef;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
 import com.tectonica.jonix.codegen.metadata.OnixConst;
@@ -51,7 +51,7 @@ public class OnixClassGen {
         GenUtil.prepareOutputFolder(folder);
     }
 
-    public void generate(OnixClass onixClass) {
+    public void generate(OnixClassDef onixClass) {
         try {
             File javaFile = new File(folder, onixClass.name + ".java");
 
@@ -100,21 +100,21 @@ public class OnixClassGen {
             }
         }
 
-        p.println(Comments.Copyright);
+        p.printf("%s\n", Comments.Copyright);
         p.printf("package %s;\n", packageName);
-        p.println();
-        p.println("import java.io.Serializable;");
-        p.println("import java.util.List;");
-        p.println("import java.util.ArrayList;");
-        p.println("import java.util.Arrays;");
-        p.println("import java.util.Collections;");
-        p.println();
+        p.print("\n");
+        p.print("import java.io.Serializable;\n");
+        p.print("import java.util.List;\n");
+        p.print("import java.util.ArrayList;\n");
+        p.print("import java.util.Arrays;\n");
+        p.print("import java.util.Collections;\n");
+        p.print("\n");
         p.printf("import %s.*;\n", GenUtil.COMMON_PACKAGE);
         p.printf("import %s.OnixComposite.*;\n", GenUtil.COMMON_PACKAGE);
         p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
         p.printf("import %s.struct.*;\n", GenUtil.COMMON_PACKAGE);
-        p.println();
-        p.println(Comments.AutoGen);
+        p.print("\n");
+        p.printf("%s\n", Comments.AutoGen);
 
         printOnixDoc(p, composite.onixDoc);
         p.printf("public class %s implements %s, Serializable\n", composite.name, markerInterfaceName);
@@ -126,17 +126,17 @@ public class OnixClassGen {
         // CONSTRUCTION
         /////////////////////////////////////////////////////////////////////////////////
 
-        p.println();
+        p.print("\n");
         printCaptionComment(p, "CONSTRUCTION");
 
-        p.println();
+        p.print("\n");
         p.printf("   private boolean initialized;\n");
         p.printf("   private final boolean exists;\n");
         p.printf("   private final org.w3c.dom.Element element;\n");
         p.printf("   public static final %s EMPTY = new %s();\n", composite.name, composite.name);
 
         // default-constructor
-        p.println();
+        p.print("\n");
         p.printf("   public %s() {\n", composite.name);
         p.printf("      exists = false;\n");
         p.printf("      element = null;\n");
@@ -145,7 +145,7 @@ public class OnixClassGen {
         p.printf("   }\n");
 
         // constructor
-        p.println();
+        p.print("\n");
         p.printf("   public %s(org.w3c.dom.Element element) {\n", composite.name);
         p.printf("      exists = true;\n");
         p.printf("      initialized = false;\n");
@@ -153,13 +153,13 @@ public class OnixClassGen {
         setInitializers(composite, p);
         p.printf("   }\n");
 
-        p.println();
+        p.print("\n");
         p.printf("   @Override\n");
         p.printf("   public void _initialize() {\n");
         p.printf("      if (initialized) return;\n");
         p.printf("      initialized = true;\n");
 
-        p.println();
+        p.print("\n");
         p.printf("      JPU.forElementsOf(element, e -> {\n");
         p.printf("         final String name = e.getNodeName();\n");
         p.printf("         switch (name) {\n");
@@ -186,7 +186,7 @@ public class OnixClassGen {
 
         p.printf("   }\n");
 
-        p.println();
+        p.print("\n");
         p.printf("   @Override\n");
         p.printf("   public boolean exists() {\n");
         p.printf("      return exists;\n");
@@ -196,18 +196,18 @@ public class OnixClassGen {
         // MEMBERS
         /////////////////////////////////////////////////////////////////////////////////
 
-        p.println();
+        p.print("\n");
         printCaptionComment(p, "MEMBERS");
 
         for (OnixCompositeMember member : composite.members) {
             final FieldInfo fi = genUtil.fieldInfoOf(member, ref);
 
             // declare member in a private field
-            p.println();
+            p.print("\n");
             p.printf("   private %s %s = %s;\n", fi.type, fi.name, fi.emptyPhrase);
 
             // declare public accessor to the member
-            p.println();
+            p.print("\n");
             p.printf("   /**\n");
             p.printf("    * %s\n", fi.comment);
             p.printf("    */\n");
@@ -224,7 +224,7 @@ public class OnixClassGen {
                     throw new RuntimeException("can't handle multiple flags");
                 }
 
-                p.println();
+                p.print("\n");
                 p.printf("   public boolean is%s() {\n", member.className);
                 p.printf("      return (%s().exists());\n", fi.name);
                 p.printf("   }\n");
@@ -235,7 +235,7 @@ public class OnixClassGen {
         if (struct != null) {
             final String structName = "Jonix" + composite.name;
 
-            p.println();
+            p.print("\n");
             p.printf("   @Override\n");
             p.printf("   public %s asStruct() {\n", structName);
             p.printf("      _initialize();\n");
@@ -290,7 +290,7 @@ public class OnixClassGen {
                 }
                 OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
                 TypeInfo keyTypeInfo = genUtil.typeInfoOf(keyClass.valueMember.simpleType);
-                p.println();
+                p.print("\n");
                 p.printf("   @Override\n");
                 p.printf("   public %s structKey() {\n", keyTypeInfo.javaType);
                 p.printf("      return %s().value;\n", field);
@@ -298,19 +298,19 @@ public class OnixClassGen {
             }
         }
 
-        p.println("}");
+        p.print("}\n");
     }
 
     private void writeElementClass(OnixElementDef element, PrintStream p) {
-        p.println(Comments.Copyright);
+        p.printf("%s\n", Comments.Copyright);
         p.printf("package %s;\n", packageName);
-        p.println();
-        p.println("import java.io.Serializable;");
+        p.print("\n");
+        p.print("import java.io.Serializable;\n");
         p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
         p.printf("import %s.OnixElement;\n", GenUtil.COMMON_PACKAGE);
         p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
-        p.println();
-        p.println(Comments.AutoGen);
+        p.print("\n");
+        p.printf("%s\n", Comments.AutoGen);
 
         // analyze the main value of the element
         final TypeInfo ti = genUtil.typeInfoOf(element.valueMember.simpleType);
@@ -322,11 +322,11 @@ public class OnixClassGen {
 
         declareConstsAndAttributes(p, element);
 
-        p.println();
+        p.print("\n");
         printCaptionComment(p, "VALUE MEMBER");
 
         // declare value
-        p.println();
+        p.print("\n");
         if (ti.comment != null) {
             p.printf("   /**\n");
             if (element.onixDoc != null && element.onixDoc.format != null && !element.onixDoc.format.isEmpty()) {
@@ -338,7 +338,7 @@ public class OnixClassGen {
         p.printf("   public %s value;\n", valueType);
 
         // declare internal accessor to value
-        p.println();
+        p.print("\n");
         p.printf("   /**\n");
         p.printf("   * Internal API, use the {@link #value} field instead\n");
         p.printf("   */\n");
@@ -347,27 +347,27 @@ public class OnixClassGen {
         p.printf("      return value;\n");
         p.printf("   }\n");
 
-        p.println();
+        p.print("\n");
         printCaptionComment(p, "SERVICES");
 
-        p.println();
+        p.print("\n");
         p.printf("   private final boolean exists;\n");
         p.printf("   public static final %s EMPTY = new %s();\n", element.name, element.name);
 
         // default-constructor
-        p.println();
+        p.print("\n");
         p.printf("   public %s() {\n", element.name);
         p.printf("      exists = false;\n");
         p.printf("   }\n");
 
         // constructor
-        p.println();
+        p.print("\n");
         p.printf("   public %s(org.w3c.dom.Element element) {\n", element.name);
         p.printf("      exists = true;\n");
 
         setInitializers(element, p);
 
-        p.println();
+        p.print("\n");
         if (ti.isXHTML) {
             p.printf("      value = JPU.getChildXHTML(element, true);\n");
         } else if (!element.isSpaceable) {
@@ -388,25 +388,25 @@ public class OnixClassGen {
 
         p.printf("   }\n");
 
-        p.println();
+        p.print("\n");
         p.printf("   @Override\n");
         p.printf("   public boolean exists() {\n");
         p.printf("      return exists;\n");
         p.printf("   }\n");
 
-        p.println("}");
+        p.print("}\n");
     }
 
     private void writeFlagClass(OnixFlagDef flag, PrintStream p) {
-        p.println(Comments.Copyright);
+        p.printf("%s\n", Comments.Copyright);
         p.printf("package %s;\n", packageName);
-        p.println();
-        p.println("import java.io.Serializable;");
+        p.print("\n");
+        p.print("import java.io.Serializable;\n");
         p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
         p.printf("import %s.OnixFlag;\n", GenUtil.COMMON_PACKAGE);
         p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
-        p.println();
-        p.println(Comments.AutoGen);
+        p.print("\n");
+        p.printf("%s\n", Comments.AutoGen);
 
         printOnixDoc(p, flag.onixDoc);
         p.printf("public class %s implements OnixFlag, Serializable\n", flag.name);
@@ -414,21 +414,21 @@ public class OnixClassGen {
 
         declareConstsAndAttributes(p, flag);
 
-        p.println();
+        p.print("\n");
         printCaptionComment(p, "CONSTRUCTORS");
 
-        p.println();
+        p.print("\n");
         p.printf("   private final boolean exists;\n");
         p.printf("   public static final %s EMPTY = new %s();\n", flag.name, flag.name);
 
         // default-constructor
-        p.println();
+        p.print("\n");
         p.printf("   public %s() {\n", flag.name);
         p.printf("      exists = false;\n");
         p.printf("   }\n");
 
         // constructor
-        p.println();
+        p.print("\n");
         p.printf("   public %s(org.w3c.dom.Element element) {\n", flag.name);
         p.printf("      exists = true;\n");
 
@@ -436,13 +436,13 @@ public class OnixClassGen {
 
         p.printf("   }\n");
 
-        p.println();
+        p.print("\n");
         p.printf("   @Override\n");
         p.printf("   public boolean exists() {\n");
         p.printf("      return exists;\n");
         p.printf("   }\n");
 
-        p.println("}");
+        p.print("}\n");
     }
 
     private void printOnixDoc(PrintStream p, OnixDoc onixDoc) {
@@ -453,18 +453,18 @@ public class OnixClassGen {
         }
     }
 
-    private void declareConstsAndAttributes(PrintStream p, OnixClass clz) {
+    private void declareConstsAndAttributes(PrintStream p, OnixClassDef clz) {
         p.printf("   private static final long serialVersionUID = 1L;\n\n");
 
         for (OnixConst c : clz.consts) {
             p.printf("   public static final String %s = \"%s\";\n", c.name, c.value);
         }
 
-        p.println();
+        p.print("\n");
         printCaptionComment(p, "ATTRIBUTES");
         for (OnixAttribute a : clz.attributes) {
             final TypeInfo ti = genUtil.typeInfoOf(a);
-            p.println();
+            p.print("\n");
             if (ti.comment != null) {
                 p.printf("   /**\n");
                 p.printf("    * %s\n", ti.comment);
@@ -474,7 +474,7 @@ public class OnixClassGen {
         }
     }
 
-    private void setInitializers(OnixClass clz, PrintStream p) {
+    private void setInitializers(OnixClassDef clz, PrintStream p) {
         for (OnixAttribute a : clz.attributes) {
             TypeInfo ti = genUtil.typeInfoOf(a);
 
@@ -489,8 +489,8 @@ public class OnixClassGen {
     }
 
     private void printCaptionComment(PrintStream p, String caption) {
-        p.println("   /////////////////////////////////////////////////////////////////////////////////");
-        p.println("   // " + caption);
-        p.println("   /////////////////////////////////////////////////////////////////////////////////");
+        p.print("   /////////////////////////////////////////////////////////////////////////////////\n");
+        p.printf("%s\n", "   // " + caption);
+        p.print("   /////////////////////////////////////////////////////////////////////////////////\n");
     }
 }

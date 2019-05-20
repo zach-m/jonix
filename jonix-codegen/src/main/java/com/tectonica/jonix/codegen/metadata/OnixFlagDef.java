@@ -22,7 +22,7 @@ package com.tectonica.jonix.codegen.metadata;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder( {"name", "consts", "attributes"})
-public class OnixFlagDef extends OnixClass {
+public class OnixFlagDef extends OnixClassDef {
     @Override
     public String toString() {
         return name + ", attributes=" + attributes;

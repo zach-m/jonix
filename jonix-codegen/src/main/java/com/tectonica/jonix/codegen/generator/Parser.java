@@ -21,11 +21,12 @@ package com.tectonica.jonix.codegen.generator;
 
 import com.tectonica.jonix.codegen.metadata.Cardinality;
 import com.tectonica.jonix.codegen.metadata.OnixAttribute;
-import com.tectonica.jonix.codegen.metadata.OnixClass;
+import com.tectonica.jonix.codegen.metadata.OnixClassDef;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
 import com.tectonica.jonix.codegen.metadata.OnixConst;
 import com.tectonica.jonix.codegen.metadata.OnixDoc;
+import com.tectonica.jonix.codegen.metadata.OnixDocList;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixElementMember;
 import com.tectonica.jonix.codegen.metadata.OnixEnumValue;
@@ -486,7 +487,7 @@ public class Parser {
             LOGGER.debug("--- {} ({})", onixTagName, contentType);
         }
 
-        final OnixClass onixClass;
+        final OnixClassDef onixClass;
         Element attributesParentElem = complexTypeElem;
 
         // the first child of <xs:complexType> determines how to process it, there are 3 cases
@@ -502,7 +503,7 @@ public class Parser {
             case "xs:sequence":
             case "xs:group":
                 // special treatment for Onix2 Flow (tag containing HTML content)
-                OnixClass onix2Flow = extractOnixElementForOnix2Flow(onixTagName, contentType, contentElem);
+                OnixClassDef onix2Flow = extractOnixElementForOnix2Flow(onixTagName, contentType, contentElem);
                 if (onix2Flow != null) {
                     onixClass = onix2Flow;
                 } else {
@@ -534,7 +535,7 @@ public class Parser {
     /**
      * extracts an OnixElement which is a mere extension of some xs:simpleType (primitive or codelist)
      */
-    private OnixClass extractOnixElement(String onixTagName, String contentType, Element extensionElem) {
+    private OnixClassDef extractOnixElement(String onixTagName, String contentType, Element extensionElem) {
         // validate that the passed child element is indeed an xs:extension with a base (i.e. inheritance)
         if (!extensionElem.getNodeName().equals("xs:extension")) {
             throw new RuntimeException("expected xs:extension as first child of " + contentType + ", found: "
@@ -577,7 +578,7 @@ public class Parser {
         return onixElement;
     }
 
-    private OnixClass extractOnixElementForOnix2Flow(String onixTagName, String contentType, Element contentElem) {
+    private OnixClassDef extractOnixElementForOnix2Flow(String onixTagName, String contentType, Element contentElem) {
         // special treatment for Onix2 Flow (tag containing HTML content)
         if (contentType.equals("xs:choice")) {
             if (DOM.firstElemChild(contentElem, "xs:element", "ref", "p") != null) {
@@ -594,7 +595,7 @@ public class Parser {
         return null;
     }
 
-    private OnixClass extractOnixComposite(String onixTagName, String contentType, Element contentElem) {
+    private OnixClassDef extractOnixComposite(String onixTagName, String contentType, Element contentElem) {
         final Map<String, OnixCompositeMember> members = new LinkedHashMap<>();
         if (contentType.equals("xs:group")) {
             extractMembersFromGroup(contentElem, members);
@@ -681,7 +682,7 @@ public class Parser {
         extractMembers(groupDefTopElem, members);
     }
 
-    private OnixClass extractOnixFlag(String onixTagName) {
+    private OnixClassDef extractOnixFlag(String onixTagName) {
         final OnixFlagDef onixFlagClass = new OnixFlagDef();
         onixFlagClass.name = onixTagName;
         meta.onixFlags.put(onixFlagClass.name, onixFlagClass);
@@ -723,7 +724,7 @@ public class Parser {
         }
     }
 
-    private void extractAttributes(Element attributesParentElem, final OnixClass onixClass) {
+    private void extractAttributes(Element attributesParentElem, final OnixClassDef onixClass) {
         final ElementListener attributeWorker = attributeElem -> extractAttribute(attributeElem, onixClass);
 
         DOM.forElementsOf(attributesParentElem, "xs:attribute", attributeWorker);
@@ -742,7 +743,7 @@ public class Parser {
         });
     }
 
-    private void extractAttribute(Element attributeElem, final OnixClass onixClass) {
+    private void extractAttribute(Element attributeElem, final OnixClassDef onixClass) {
         final String name = attributeElem.getAttribute("name");
         final String fixed = attributeElem.getAttribute("fixed");
 
@@ -843,8 +844,9 @@ public class Parser {
         // attach documentation
         if (!meta.isShort) {
             try {
-                for (OnixDoc onixDoc : OnixDocsParser.parse(specHtml)) {
-                    OnixClass onixClass = meta.classByName(onixDoc.onixClassName);
+                OnixDocList onixDocList = OnixDocsParser.parse(specHtml);
+                for (OnixDoc onixDoc : onixDocList) {
+                    OnixClassDef onixClass = meta.classByName(onixDoc.onixClassName);
                     if (onixClass == null) {
                         LOGGER.warn("No class for onixDoc: '{}'", onixDoc.onixClassName);
                     } else {

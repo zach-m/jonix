@@ -75,24 +75,24 @@ public class OnixStructGen {
             structKeyQualifier = "<" + keyTypeInfo.javaType + ">";
         }
 
-        p.println(Comments.Copyright);
+        p.printf("%s\n", Comments.Copyright);
         p.printf("package %s;\n", packageName);
-        p.println();
-        p.println("import java.io.Serializable;");
-        p.println("import java.util.List;");
-        p.println();
+        p.print("\n");
+        p.print("import java.io.Serializable;\n");
+        p.print("import java.util.List;\n");
+        p.print("\n");
 
         p.printf("import %s.%s;\n", COMMON_PACKAGE, structMarkerInterface);
         p.printf("import %s.codelist.*;\n", COMMON_PACKAGE);
-        p.println();
-        p.println(Comments.AutoGen);
+        p.print("\n");
+        p.printf("%s\n", Comments.AutoGen);
         p.printf("@SuppressWarnings(\"serial\")\n");
         p.printf("public class %s implements %s%s, Serializable\n", structName, structMarkerInterface,
             structKeyQualifier);
         p.printf("{\n");
 
         p.printf("   public static %s EMPTY = new %s();\n", structName, structName);
-        p.println();
+        p.print("\n");
 
         // declare key
         if (struct.isKeyed()) {
@@ -103,7 +103,7 @@ public class OnixStructGen {
             }
             p.printf("    */\n");
             p.printf("   public %s %s;\n", keyTypeInfo.javaType, keyField);
-            p.println();
+            p.print("\n");
         }
 
         // declare members
@@ -138,7 +138,7 @@ public class OnixStructGen {
             }
 
             if (!firstField) {
-                p.println();
+                p.print("\n");
             } else {
                 firstField = false;
             }
@@ -156,11 +156,11 @@ public class OnixStructGen {
 
         // declare key
         if (struct.isKeyed()) {
-            p.println();
+            p.printf("\n");
             p.printf("   @Override\n");
             p.printf("   public %s key() { return %s; }\n", keyTypeInfo.javaType, keyField);
         }
 
-        p.println("}");
+        p.print("}\n");
     }
 }

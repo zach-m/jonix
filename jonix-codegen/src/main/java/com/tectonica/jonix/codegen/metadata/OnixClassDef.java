@@ -23,22 +23,26 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class OnixClass implements Comparable<OnixClass> {
+public abstract class OnixClassDef implements Comparable<OnixClassDef> {
     public String name;
     public List<OnixConst> consts;
     public List<OnixAttribute> attributes;
     public OnixDoc onixDoc;
-
-    @Override
-    public int compareTo(OnixClass other) {
-        return name.compareTo(other.name);
-    }
 
     public void add(OnixConst onixConst) {
         if (consts == null) {
             consts = new ArrayList<>();
         }
         consts.add(onixConst);
+    }
+
+    public String constValue(String constName) {
+        for (OnixConst aConst : consts) {
+            if (aConst.name.equals(constName)) {
+                return aConst.value;
+            }
+        }
+        return null;
     }
 
     public void add(OnixAttribute onixAttribute) {
@@ -55,5 +59,10 @@ public abstract class OnixClass implements Comparable<OnixClass> {
         if (consts != null) {
             Collections.sort(consts);
         }
+    }
+
+    @Override
+    public int compareTo(OnixClassDef other) {
+        return name.compareTo(other.name);
     }
 }

@@ -25,7 +25,7 @@ import java.util.Collections;
 import java.util.List;
 
 @JsonPropertyOrder( {"name", "members", "consts", "attributes"})
-public class OnixCompositeDef extends OnixClass {
+public class OnixCompositeDef extends OnixClassDef {
     public List<OnixCompositeMember> members;
 
     @Override

@@ -65,19 +65,19 @@ public class OnixEnumGen {
     }
 
     private void writeEnumClass(OnixSimpleType enumType, PrintStream p) {
-        p.println(Comments.Copyright);
+        p.printf("%s\n", Comments.Copyright);
         p.printf("package %s;\n", packageName);
 
-        p.println();
-        p.println("import com.tectonica.jonix.OnixCodelist;");
+        p.print("\n");
+        p.print("import com.tectonica.jonix.OnixCodelist;\n");
         if (enumType.enumValues.size() >= MIN_FOR_MAP) {
-            p.println();
-            p.println("import java.util.Map;");
-            p.println("import java.util.HashMap;");
+            p.print("\n");
+            p.print("import java.util.Map;\n");
+            p.print("import java.util.HashMap;\n");
         }
 
-        p.println();
-        p.println(Comments.AutoGen);
+        p.print("\n");
+        p.printf("%s\n", Comments.AutoGen);
 
         String codelistNum = enumType.name.substring("List".length());
         String codelistDescription = XML.escape(enumType.comment);
@@ -89,7 +89,7 @@ public class OnixEnumGen {
         p.printf("interface CodeList%s\n", codelistNum);
         p.printf("{}\n");
 
-        p.println();
+        p.print("\n");
         p.printf("/**\n");
         p.printf(" * <code>Enum</code> that corresponds to ONIX <b>Codelist %s</b>\n", codelistNum);
         if (enumType.comment != null) {
@@ -129,31 +129,31 @@ public class OnixEnumGen {
         }
         p.print(";\n");
 
-        p.println();
+        p.print("\n");
         p.printf("   public final String code;\n");
         p.printf("   public final String description;\n");
-        p.println();
+        p.print("\n");
         p.printf("   %s(String code, String description)\n", enumType.enumName);
         p.printf("   {\n");
         p.printf("      this.code = code;\n");
         p.printf("      this.description = description;\n");
         p.printf("   }\n");
 
-        p.println();
-        p.println("   @Override");
-        p.println("   public String getCode()");
-        p.println("   {");
-        p.println("      return code;");
-        p.println("   }");
-        p.println();
-        p.println("   @Override");
-        p.println("   public String getDescription()");
-        p.println("   {");
-        p.println("      return description;");
-        p.println("   }");
+        p.print("\n");
+        p.print("   @Override\n");
+        p.print("   public String getCode()\n");
+        p.print("   {\n");
+        p.print("      return code;\n");
+        p.print("   }\n");
+        p.print("\n");
+        p.print("   @Override\n");
+        p.print("   public String getDescription()\n");
+        p.print("   {\n");
+        p.print("      return description;\n");
+        p.print("   }\n");
 
         if (enumType.enumValues.size() < MIN_FOR_MAP) {
-            p.println();
+            p.print("\n");
             p.printf("   public static %s byCode(String code)\n", enumType.enumName);
             p.printf("   {\n");
             p.printf("      if (code == null || code.isEmpty())\n");
@@ -164,9 +164,9 @@ public class OnixEnumGen {
             p.printf("      return null;\n");
             p.printf("   }\n");
         } else {
-            p.println();
+            p.print("\n");
             p.printf("   private static volatile Map<String, %s> map;\n", enumType.enumName);
-            p.println();
+            p.print("\n");
             p.printf("   private static Map<String, %s> map()\n", enumType.enumName);
             p.printf("   {\n");
             p.printf("      Map<String, %s> result = map;\n", enumType.enumName);
@@ -186,7 +186,7 @@ public class OnixEnumGen {
             p.printf("      }\n");
             p.printf("      return result;\n");
             p.printf("   }\n");
-            p.println();
+            p.print("\n");
             p.printf("   public static %s byCode(String code)\n", enumType.enumName);
             p.printf("   {\n");
             p.printf("      if (code == null || code.isEmpty())\n");
@@ -195,7 +195,7 @@ public class OnixEnumGen {
             p.printf("   }\n");
         }
 
-        p.println("}");
+        p.print("}\n");
     }
 
     public String enumNameOf(String rawName) {

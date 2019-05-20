@@ -22,7 +22,7 @@ package com.tectonica.jonix.codegen.metadata;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder( {"name", "isSpaceable", "valueMember", "consts", "attributes"})
-public class OnixElementDef extends OnixClass {
+public class OnixElementDef extends OnixClassDef {
     public OnixElementMember valueMember;
     public boolean isSpaceable;
 
