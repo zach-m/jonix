@@ -47,11 +47,14 @@ import org.w3c.dom.Element;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Parser {
     private static final Logger LOGGER = LoggerFactory.getLogger(Parser.class);
@@ -797,39 +800,40 @@ public class Parser {
 
     public void postAnalysis(String specHtml) {
         // we're traversing all composites, looking for those that are data-composites, i.e. that contain ONLY elements
-        // and/or flags (no nested composites)
+        // and/or flags (no nested composites) - these data-composites will become Jonix structs
         for (OnixCompositeDef composite : meta.getComposites()) {
             boolean isDataComposite = true;
             OnixStruct struct = new OnixStruct(composite);
             for (OnixCompositeMember member : composite.members) {
                 member.onixClass = meta.classByName(member.className);
                 if (member.onixClass == null) {
-                    throw new NullPointerException("class " + member.className + " referenced by " + composite.name
-                        + " wasn't found");
+                    throw new NullPointerException(
+                        String.format("class %s referenced by %s wasn't found", member.className, composite.name));
                 }
 
-                if (member.onixClass instanceof OnixElementDef) {
-                    OnixSimpleType simpleType = ((OnixElementDef) member.onixClass).valueMember.simpleType;
+                if (isDataComposite) {
+                    if (member.onixClass instanceof OnixElementDef) {
+                        OnixSimpleType simpleType = ((OnixElementDef) member.onixClass).valueMember.simpleType;
 
-                    boolean isKey = false;
-                    if (simpleType.isEnum() && (member.cardinality == Cardinality.Required)) {
-                        if (simpleType.enumName.endsWith("Types") || simpleType.enumName.endsWith("Roles")) {
-                            if (struct.keyMember == null) {
-                                // in rare-cases (e.g. OtherText) where there are several candidates we take the first
-                                isKey = true;
+                        boolean isKey = false;
+                        if (simpleType.isEnum() && (member.cardinality == Cardinality.Required)) {
+                            if (simpleType.enumName.endsWith("Types") || simpleType.enumName.endsWith("Roles")) {
+                                if (struct.keyMember == null) {
+                                    // in rare-cases (e.g. OtherText) where there are several candidates we take the first
+                                    isKey = true;
+                                }
                             }
                         }
-                    }
-                    if (isKey) {
-                        struct.keyMember = new OnixStructMember(member);
-                    } else {
+                        if (isKey) {
+                            struct.keyMember = new OnixStructMember(member);
+                        } else {
+                            struct.members.add(new OnixStructMember(member));
+                        }
+                    } else if (member.onixClass instanceof OnixFlagDef) {
                         struct.members.add(new OnixStructMember(member));
+                    } else {
+                        isDataComposite = false;
                     }
-                } else if (member.onixClass instanceof OnixFlagDef) {
-                    struct.members.add(new OnixStructMember(member));
-                } else {
-                    isDataComposite = false;
-                    break;
                 }
             }
 
@@ -841,6 +845,14 @@ public class Parser {
             }
         }
 
+        // calculate the possible paths for each onixClass
+        for (OnixCompositeDef composite : meta.getComposites()) {
+            for (OnixCompositeMember member : composite.members) {
+                member.onixClass.add(composite);
+            }
+        }
+        meta.onixClasses().forEach(elem -> elem.paths = pathsOf(elem));
+
         // attach documentation
         if (!meta.isShort) {
             try {
@@ -850,18 +862,27 @@ public class Parser {
                     if (onixClass == null) {
                         LOGGER.warn("No class for onixDoc: '{}'", onixDoc.onixClassName);
                     } else {
-                        if (onixClass.onixDoc != null) {
-                            LOGGER.warn("OVERRIDING documentation for class {}: {} instead of {} ({} instead of {})",
-                                onixDoc.onixClassName,
-                                onixDoc.onixClassPath, onixClass.onixDoc.onixClassPath,
-                                onixDoc.groupMarker, onixClass.onixDoc.groupMarker);
+                        if (onixClass.onixDocs != null) {
+                            boolean match = onixClass.paths.stream().anyMatch(s -> s.equals(onixDoc.path));
+                            if (!match) {
+                                LOGGER.warn("documentation path not found for class {} ({}): {}", onixDoc.onixClassName,
+                                    onixDoc.groupMarker, onixDoc.path);
+                            }
                         }
-                        onixClass.onixDoc = onixDoc;
+                        onixClass.add(onixDoc);
                     }
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    private List<String> pathsOf(OnixClassDef onixClass) {
+        if (onixClass.parents == null) {
+            return Collections.singletonList(onixClass.name);
+        }
+        return onixClass.parents.stream().flatMap(parent -> pathsOf(parent).stream().map(s -> s + "/" + onixClass.name))
+            .collect(Collectors.toList());
     }
 }

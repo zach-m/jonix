@@ -88,7 +88,7 @@ public class OnixDoc {
      */
     public List<OnixDoc.Detail> details;
 
-    public List<String> onixClassPath;
+    public String path;
 
     public String toHtml() {
         StringBuilder sb = new StringBuilder();

@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.Collections;
 import java.util.List;
 
-@JsonPropertyOrder( {"name", "members", "consts", "attributes"})
+@JsonPropertyOrder( {"name", "members", "consts", "attributes", "paths"})
 public class OnixCompositeDef extends OnixClassDef {
     public List<OnixCompositeMember> members;
 

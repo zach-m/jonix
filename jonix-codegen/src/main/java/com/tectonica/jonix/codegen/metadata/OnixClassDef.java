@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codegen.metadata;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,7 +29,15 @@ public abstract class OnixClassDef implements Comparable<OnixClassDef> {
     public String name;
     public List<OnixConst> consts;
     public List<OnixAttribute> attributes;
-    public OnixDoc onixDoc;
+
+    // TODO: create a nice getter
+    @JsonIgnore
+    public List<OnixDoc> onixDocs;
+
+    @JsonIgnore
+    public List<OnixClassDef> parents;
+
+    public List<String> paths;
 
     public void add(OnixConst onixConst) {
         if (consts == null) {
@@ -50,6 +60,20 @@ public abstract class OnixClassDef implements Comparable<OnixClassDef> {
             attributes = new ArrayList<>();
         }
         attributes.add(onixAttribute);
+    }
+
+    public void add(OnixDoc onixDoc) {
+        if (onixDocs == null) {
+            onixDocs = new ArrayList<>();
+        }
+        onixDocs.add(onixDoc);
+    }
+
+    public void add(OnixClassDef parentOnixClass) {
+        if (parents == null) {
+            parents = new ArrayList<>();
+        }
+        parents.add(parentOnixClass);
     }
 
     public void sortInternally() {

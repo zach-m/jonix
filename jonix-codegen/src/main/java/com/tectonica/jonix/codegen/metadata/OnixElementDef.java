@@ -19,12 +19,18 @@
 
 package com.tectonica.jonix.codegen.metadata;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder( {"name", "isSpaceable", "valueMember", "consts", "attributes"})
+import java.util.List;
+
+@JsonPropertyOrder( {"name", "isSpaceable", "valueMember", "consts", "attributes", "paths"})
 public class OnixElementDef extends OnixClassDef {
     public OnixElementMember valueMember;
     public boolean isSpaceable;
+
+    @JsonIgnore
+    public List<OnixClassDef> parents;
 
     @Override
     public String toString() {

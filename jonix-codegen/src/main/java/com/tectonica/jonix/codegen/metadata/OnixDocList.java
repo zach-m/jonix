@@ -27,6 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -137,6 +138,8 @@ public class OnixDocList extends ArrayList<OnixDoc> {
                         throw new RuntimeException("inside <dl>, <dd> was encountered before <dt>");
                     }
                     String line = detail.text().trim();
+                    // TODO: in case of 'example' detail-type, there might be a <samp/> surrounded text, which should
+                    //  be interpreted as <pre/>
 
                     // if the value pertains to an ONIX class name, some extra handling is needed
                     boolean isOnixClassName = (onixDocDetail.detailType == OnixDoc.DetailType.referencename)
@@ -153,7 +156,7 @@ public class OnixDocList extends ArrayList<OnixDoc> {
 
                             // now is also a good opportunity to build the ancestry of composites, by checking the
                             // parent sections
-                            onixDoc.onixClassPath = new ArrayList<>();
+                            List<String> onixClassPath = new ArrayList<>();
                             Element s = section;
                             while (s.tagName().equals("section")) {
                                 if (isOnixCompositeOrElement(s)) {
@@ -163,10 +166,11 @@ public class OnixDocList extends ArrayList<OnixDoc> {
                                         throw new RuntimeException("expected <dd> after <dt.referencename>");
                                     }
                                     String parentClassName = refnameDD.text().replaceAll("[</>]", "");
-                                    onixDoc.onixClassPath.add(0, parentClassName); // built bottom-up
+                                    onixClassPath.add(0, parentClassName); // built bottom-up
                                 }
                                 s = s.parent();
                             }
+                            onixDoc.path = "ONIXMessage/" + String.join("/", onixClassPath);
                         }
                     } else {
                         // if the value pertains to an format, we must escape it

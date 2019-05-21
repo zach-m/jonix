@@ -26,6 +26,7 @@ import com.tectonica.jonix.codegen.util.OnixSpecs.OnixVersion;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 @JsonPropertyOrder(
     {"onixVersion", "isShort", "codelistIssue", "composites", "elements", "flags", "types", "enums", "structs"})
@@ -102,5 +103,14 @@ public class OnixMetadata {
             }
         }
         return onixClass;
+    }
+
+    public Stream<OnixClassDef> onixClasses() {
+        return Stream.concat(
+            Stream.concat(
+                onixComposites.values().stream(),
+                onixElements.values().stream()),
+            onixFlags.values().stream()
+        );
     }
 }

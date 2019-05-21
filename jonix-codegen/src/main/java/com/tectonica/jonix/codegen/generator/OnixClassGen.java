@@ -35,6 +35,7 @@ import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 
 import java.io.File;
 import java.io.PrintStream;
+import java.util.List;
 
 public class OnixClassGen {
     private final String packageName;
@@ -116,7 +117,7 @@ public class OnixClassGen {
         p.print("\n");
         p.printf("%s\n", Comments.AutoGen);
 
-        printOnixDoc(p, composite.onixDoc);
+        printOnixDocs(p, composite.onixDocs);
         p.printf("public class %s implements %s, Serializable\n", composite.name, markerInterfaceName);
         p.printf("{\n");
 
@@ -316,7 +317,7 @@ public class OnixClassGen {
         final TypeInfo ti = genUtil.typeInfoOf(element.valueMember.simpleType);
         String valueType = element.isSpaceable ? String.format("java.util.Set<%s>", ti.javaType) : ti.javaType;
 
-        printOnixDoc(p, element.onixDoc);
+        printOnixDocs(p, element.onixDocs);
         p.printf("public class %s implements OnixElement<%s>, Serializable\n", element.name, valueType);
         p.printf("{\n");
 
@@ -329,8 +330,11 @@ public class OnixClassGen {
         p.print("\n");
         if (ti.comment != null) {
             p.printf("   /**\n");
-            if (element.onixDoc != null && element.onixDoc.format != null && !element.onixDoc.format.isEmpty()) {
-                p.printf("   * Raw Format: %s<p>\n", element.onixDoc.format);
+            if (element.onixDocs != null) {
+                OnixDoc onixDoc = element.onixDocs.get(0); // TODO: first is arbitrary
+                if (onixDoc.format != null && !onixDoc.format.isEmpty()) {
+                    p.printf("   * Raw Format: %s<p>\n", onixDoc.format);
+                }
             }
             p.printf("   * %s\n", ti.comment);
             p.printf("   */\n");
@@ -408,7 +412,7 @@ public class OnixClassGen {
         p.print("\n");
         p.printf("%s\n", Comments.AutoGen);
 
-        printOnixDoc(p, flag.onixDoc);
+        printOnixDocs(p, flag.onixDocs);
         p.printf("public class %s implements OnixFlag, Serializable\n", flag.name);
         p.printf("{\n");
 
@@ -445,10 +449,10 @@ public class OnixClassGen {
         p.print("}\n");
     }
 
-    private void printOnixDoc(PrintStream p, OnixDoc onixDoc) {
-        if (onixDoc != null) {
+    private void printOnixDocs(PrintStream p, List<OnixDoc> onixDocs) {
+        if (onixDocs != null) {
             p.printf("/**\n");
-            p.printf(" * %s\n", onixDoc.toHtml());
+            p.printf(" * %s\n", onixDocs.get(0).toHtml()); // TODO: first is arbitrary
             p.printf(" */\n");
         }
     }

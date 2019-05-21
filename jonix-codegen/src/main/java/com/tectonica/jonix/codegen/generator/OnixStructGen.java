@@ -21,6 +21,7 @@ package com.tectonica.jonix.codegen.generator;
 
 import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
+import com.tectonica.jonix.codegen.metadata.OnixDoc;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
@@ -125,9 +126,11 @@ public class OnixStructGen {
                 comment = ti.comment;
                 boolean isEnum = memberClass.valueMember.simpleType.isEnum();
                 if (!isEnum) { // no need to provide format information on enums, they are parsed by the system
-                    if (memberClass.onixDoc != null && memberClass.onixDoc.format != null
-                        && !memberClass.onixDoc.format.isEmpty()) {
-                        comment = "Raw Format: " + memberClass.onixDoc.format + " <p> " + comment;
+                    if (memberClass.onixDocs != null) {
+                        OnixDoc onixDoc = memberClass.onixDocs.get(0); // TODO: first is arbitrary here
+                        if (onixDoc.format != null && !onixDoc.format.isEmpty()) {
+                            comment = "Raw Format: " + onixDoc.format + " <p> " + comment;
+                        }
                     }
                 }
             } else {
