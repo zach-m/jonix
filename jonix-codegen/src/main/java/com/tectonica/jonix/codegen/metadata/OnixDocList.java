@@ -39,99 +39,164 @@ public class OnixDocList extends ArrayList<OnixDoc> {
     public OnixDocList(Document doc) {
         super();
 
-        final Elements elems = doc.select("dt.referencename");
-        elems.remove(0);
+        // we generate our documentation by looking at all the elements in the spec-HTML that are part of a
+        // key-value table (technically a <dl> tag), where the key is "Reference Name" (hence the value is the ONIX
+        // class name of the element/composite)
+        final Elements dts = doc.select("dt.referencename");
 
-        for (Element elem : elems) {
-            final Element dl = elem.parent();
+        for (Element dt : dts) {
+            // each "referencename" dt should be a child of a <dl>, which in itself is a child of a <section>,
+            // containing the documentation for the ONIX class.
+            // so we start with some basic verifications
+
+            // verify that the <dt> is inside a <dl>
+            final Element dl = dt.parent();
             if (!"dl".equals(dl.tagName())) {
                 throw new RuntimeException("expected <dl>, found " + dl.outerHtml());
             }
 
+            // verify that the <dl> is inside a <section>
             final Element section = dl.parent();
             if (!"section".equals(section.tagName())) {
                 throw new RuntimeException("expected <section>, found " + section.outerHtml());
             }
 
-            try {
-                final OnixDoc onixDoc = new OnixDoc();
+            // verify that the <section> pertains to an ONIX composite/element
+            if (!isOnixCompositeOrElement(section)) {
+                throw new RuntimeException("section that is neither an element nor a composite found: "
+                    + section.outerHtml().substring(0, 200));
+            }
 
-                onixDoc.tags = section.classNames();
-                allTags.addAll(onixDoc.tags);
+            // we start constructing our documentation object
+            final OnixDoc onixDoc = new OnixDoc();
 
-                // extract the title and description from the elements preceding the <dl> in the <section>
-                StringBuilder descriptionHtml = new StringBuilder();
-                Element p = dl;
-                while ((p = p.previousElementSibling()) != null) {
+            Set<String> sectionTags = section.classNames();
+            onixDoc.tags = sectionTags;
+            allTags.addAll(sectionTags);
 
-                    String tag = p.tagName();
-                    boolean titleReached = "h5".equals(tag) || "h4".equals(tag) || "h3".equals(tag);
-                    if (!titleReached) {
-                        // as long as we haven't hit the heading tag with the title, we accumulate the description
-                        descriptionHtml.insert(0, p.outerHtml()); // we use insert, as we process tags backwards
+            // the content of the <section> preceding the <dl> starts with the title of the ONIX class, and continues
+            // with a free text description. We will read this content backwards, from the <dl> to the title.
+            StringBuilder descriptionHtml = new StringBuilder();
+            Element p = dl;
+            while ((p = p.previousElementSibling()) != null) {
 
+                String tag = p.tagName();
+                boolean titleReached = "h5".equals(tag) || "h4".equals(tag) || "h3".equals(tag);
+                if (!titleReached) {
+                    // as long as we haven't hit the heading tag with the title, we accumulate the description
+                    descriptionHtml.insert(0, p.outerHtml()); // we use insert, as we process contents backwards
+
+                } else {
+                    // title has been hit
+                    String title = p.text();
+
+                    // if exists, strip away preceding group markers (e.g. "PR.2.4" or "P.25.11f")
+                    if (title.startsWith("PR.") || title.startsWith("MH.")
+                        || title.startsWith("P.") || title.startsWith("H.")) {
+                        int i = title.indexOf(" ");
+                        onixDoc.title = title.substring(i + 1);
+                        onixDoc.groupMarker = title.substring(0, i);
                     } else {
-                        // title has been hit
-                        onixDoc.title = p.text();
-
-                        // if exists, strip away preceding paragraph markers (e.g. "PR.2.4" or "P.25.11f")
-                        if (onixDoc.title.startsWith("PR.") || onixDoc.title.startsWith("MH.")
-                            || onixDoc.title.startsWith("P.") || onixDoc.title.startsWith("H.")) {
-                            int i = onixDoc.title.indexOf(" ");
-                            onixDoc.title = onixDoc.title.substring(i + 1);
-                        }
-
-                        // nothing interesting above the title
-                        break;
+                        onixDoc.title = title;
                     }
-                }
-                onixDoc.descriptionHtml = descriptionHtml.toString();
 
-                // extract the details
-                onixDoc.details = new ArrayList<>();
-                OnixDoc.Detail onixDocDetail = null;
-                for (Element detail : dl.children()) {
-                    final String tag = detail.tagName();
-                    if (tag.equals("dt")) {
-                        // this is the 'key' part of the detail
-                        // we start by figuring out the type of the key (will be mapped to OnixDoc.DetailType)
-                        String detailName = detail.className();
-                        int spaceIndex = detailName.indexOf(" ");
-                        if (spaceIndex > 0) {
-                            LOGGER.warn("Ignoring secondary class '{}'", detailName.substring(spaceIndex + 1));
-                            detailName = detailName.substring(0, spaceIndex);
-                        }
-                        onixDocDetail = new OnixDoc.Detail(detailName);
-                        if (onixDocDetail.detailType == OnixDoc.DetailType.unknown) {
-                            LOGGER.warn("Unknown detailType: '{}' (of text '{}') in '{}'",
-                                detailName, detail.text(), onixDoc.title);
-                        }
-                        onixDoc.details.add(onixDocDetail);
-                    } else {
-                        assert onixDocDetail != null;
-                        // this is the 'value' part of the detail we've just created
-                        String line = detail.text().trim();
-                        if (onixDocDetail.detailType == OnixDoc.DetailType.referencename
-                            || onixDocDetail.detailType == OnixDoc.DetailType.shorttag) {
-                            // in onix3 documentation, the angle brackets are implemented as style, so we now trim
-                            // the explicit brackets in onix2 documentation, so that we can re-add them to both
-                            String onixClassName = line.replaceAll("[<>]", "");
-                            line = "<" + onixClassName + ">";
-                            if (onixDocDetail.detailType == OnixDoc.DetailType.referencename) {
-                                onixDoc.onixClassName = onixClassName;
+                    // nothing interesting above the title
+                    break;
+                }
+            }
+            onixDoc.descriptionHtml = descriptionHtml.toString();
+
+            // we're done with the free-text part, now we extract the <dl>, which is a key-value table with two types
+            // of elements for each 'detail': <dt> containing a key, and (one or more) <dd> containing values
+            onixDoc.details = new ArrayList<>();
+            OnixDoc.Detail onixDocDetail = null;
+            for (Element detail : dl.children()) {
+                final String tag = detail.tagName();
+                if (tag.equals("dt")) {
+                    // this is the 'key' part of the detail
+                    // we start by figuring out the type of the key (should be mapped to OnixDoc.DetailType)
+                    String detailName = detail.className();
+                    int spaceIndex = detailName.indexOf(" ");
+                    if (spaceIndex > 0) {
+                        LOGGER.warn("Ignoring secondary class(es): '{}'", detailName.substring(spaceIndex + 1));
+                        detailName = detailName.substring(0, spaceIndex);
+                    }
+                    onixDocDetail = new OnixDoc.Detail(detailName);
+                    if (onixDocDetail.detailType == OnixDoc.DetailType.unknown) {
+                        LOGGER.warn("Unknown detailType: '{}' (of text '{}') in '{}'",
+                            detailName, detail.text(), onixDoc.title);
+                    }
+                    // done processing the <dt> part
+                    onixDoc.details.add(onixDocDetail);
+                } else {
+                    // this is the 'value' part of the onixDocDetail we've just created (upon <dt> processing)
+                    if (!tag.equals("dd")) {
+                        throw new RuntimeException("expecting only <dt> or <dd> under the <dl>, found " + tag);
+                    }
+                    if (onixDocDetail == null) {
+                        throw new RuntimeException("inside <dl>, <dd> was encountered before <dt>");
+                    }
+                    String line = detail.text().trim();
+
+                    // if the value pertains to an ONIX class name, some extra handling is needed
+                    boolean isOnixClassName = (onixDocDetail.detailType == OnixDoc.DetailType.referencename)
+                        || (onixDocDetail.detailType == OnixDoc.DetailType.shorttag);
+                    if (isOnixClassName) {
+                        // in onix3 documentation, the angle brackets are implemented as style, so we now trim
+                        // the explicit brackets in onix2 documentation, so that we can re-add them to both
+                        String onixClassName = line.replaceAll("[</>]", "");
+                        line = "<" + onixClassName + ">";
+
+                        // specifically, we use the <dd> of the reference-name as our onixClassName, for future lookup
+                        if (onixDocDetail.detailType == OnixDoc.DetailType.referencename) {
+                            onixDoc.onixClassName = onixClassName;
+
+                            // now is also a good opportunity to build the ancestry of composites, by checking the
+                            // parent sections
+                            onixDoc.onixClassPath = new ArrayList<>();
+                            Element s = section;
+                            while (s.tagName().equals("section")) {
+                                if (isOnixCompositeOrElement(s)) {
+                                    Element refnameDT = s.selectFirst("dl > dt.referencename");
+                                    Element refnameDD = refnameDT.nextElementSibling();
+                                    if (!refnameDD.tagName().equals("dd")) {
+                                        throw new RuntimeException("expected <dd> after <dt.referencename>");
+                                    }
+                                    String parentClassName = refnameDD.text().replaceAll("[</>]", "");
+                                    onixDoc.onixClassPath.add(0, parentClassName); // built bottom-up
+                                }
+                                s = s.parent();
                             }
-                        } else if (onixDocDetail.detailType == OnixDoc.DetailType.format) {
+                        }
+                    } else {
+                        // if the value pertains to an format, we must escape it
+                        // TODO: why escaping?
+                        if (onixDocDetail.detailType == OnixDoc.DetailType.format) {
                             onixDoc.format = XML.escape(line);
                         }
-                        onixDocDetail.lines.add(line);
                     }
-                }
 
-                add(onixDoc);
-            } catch (Exception e) {
-                LOGGER.warn("Exception: {}\nIn section: {}\n", e.toString(), section.outerHtml());
+                    // done processing the <dd> (one or many) part
+                    onixDocDetail.lines.add(line);
+                }
             }
+
+            add(onixDoc);
         }
+
+    }
+
+    private boolean isOnixCompositeOrElement(Element section) {
+        Set<String> sectionClasses = section.classNames();
+        if (sectionClasses.contains("composite") || sectionClasses.contains("element")) {
+            return true;
+        }
+        if ("section3_pr13_subject".equals(section.id())) {
+            LOGGER.warn("Ignoring known error in Onix2 doc where section #section3_pr13_subject "
+                + "is not classified as 'composite'");
+            return true;
+        }
+        return false;
     }
 
     public String toHtml() {

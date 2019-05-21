@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-@JsonPropertyOrder( {"tags", "title", "descriptionHtml", "details"})
+@JsonPropertyOrder( {"tags", "title", "groupMarker", "descriptionHtml", "details", "onixClassPath"})
 public class OnixDoc {
     public enum DetailType {
         format("Format"), //
@@ -79,12 +79,16 @@ public class OnixDoc {
 
     public String title;
 
+    public String groupMarker;
+
     public String descriptionHtml;
 
     /**
      * key-value pairs, which will be added to the javadocs as a table
      */
     public List<OnixDoc.Detail> details;
+
+    public List<String> onixClassPath;
 
     public String toHtml() {
         StringBuilder sb = new StringBuilder();

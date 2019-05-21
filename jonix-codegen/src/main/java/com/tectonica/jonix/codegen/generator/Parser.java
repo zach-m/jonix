@@ -650,7 +650,7 @@ public class Parser {
                         // the broadest one.
                         Cardinality previousCardinality = existing.cardinality;
                         existing.cardinality = previousCardinality.mergeWith(cardinality);
-                        LOGGER.debug("merging cardinalities of member {} ({} + {} = {})",
+                        LOGGER.trace("merging cardinalities of member {} ({} + {} = {})",
                             className, previousCardinality, cardinality, existing.cardinality);
                         // TODO: when more than one xs:choice is given, a may require implicit merge.
                         //  For example, in the example above, AddresseeIdentifier should actually be regarded as
@@ -850,6 +850,12 @@ public class Parser {
                     if (onixClass == null) {
                         LOGGER.warn("No class for onixDoc: '{}'", onixDoc.onixClassName);
                     } else {
+                        if (onixClass.onixDoc != null) {
+                            LOGGER.warn("OVERRIDING documentation for class {}: {} instead of {} ({} instead of {})",
+                                onixDoc.onixClassName,
+                                onixDoc.onixClassPath, onixClass.onixDoc.onixClassPath,
+                                onixDoc.groupMarker, onixClass.onixDoc.groupMarker);
+                        }
                         onixClass.onixDoc = onixDoc;
                     }
                 }
