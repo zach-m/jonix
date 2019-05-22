@@ -35,9 +35,9 @@ public abstract class OnixClassDef implements Comparable<OnixClassDef> {
     public List<OnixDoc> onixDocs;
 
     @JsonIgnore
-    public List<OnixClassDef> parents;
+    public List<OnixClassDef> parents; // set on postAnalysis()
 
-    public List<String> paths;
+    public List<String> paths; // set on postAnalysis()
 
     public void add(OnixConst onixConst) {
         if (consts == null) {

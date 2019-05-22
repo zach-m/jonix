@@ -28,7 +28,7 @@ public class OnixCompositeMember implements Comparable<OnixCompositeMember> {
     public Cardinality cardinality;
 
     @JsonIgnore
-    public OnixClassDef onixClass; // added after parsing is over
+    public OnixClassDef onixClass; // set on postAnalysis()
 
     @Override
     public int compareTo(OnixCompositeMember other) {

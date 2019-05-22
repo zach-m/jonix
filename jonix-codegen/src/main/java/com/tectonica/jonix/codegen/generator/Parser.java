@@ -845,12 +845,13 @@ public class Parser {
             }
         }
 
-        // calculate the possible paths for each onixClass
+        // calculate the possible paths for each onixClass, starting with direct parents
         for (OnixCompositeDef composite : meta.getComposites()) {
             for (OnixCompositeMember member : composite.members) {
                 member.onixClass.add(composite);
             }
         }
+        // and then recursively construct paths of indirect parents
         meta.onixClasses().forEach(elem -> elem.paths = pathsOf(elem));
 
         // attach documentation

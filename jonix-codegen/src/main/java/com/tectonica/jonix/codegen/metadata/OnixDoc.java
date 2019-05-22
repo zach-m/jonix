@@ -68,7 +68,7 @@ public class OnixDoc {
     // ///////////////////////////////////////////////////////////////////////////////////////////
 
     @JsonIgnore
-    public String onixClassName;
+    public String onixClassName; // set on postAnalysis()
 
     @JsonIgnore
     public String format;

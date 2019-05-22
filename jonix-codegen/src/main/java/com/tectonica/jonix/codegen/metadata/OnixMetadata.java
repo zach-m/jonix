@@ -45,14 +45,15 @@ public class OnixMetadata {
     public Map<String, OnixSimpleType> onixTypes = new HashMap<>();
     @JsonIgnore
     public Map<String, OnixSimpleType> onixEnums = new HashMap<>();
+
     @JsonIgnore
-    public Map<String, OnixStruct> jonixStructs = new HashMap<>();
+    public Map<String, OnixStruct> jonixStructs = new HashMap<>(); // set on postAnalysis()
 
     // the following is to be filled during code-generation, not parsing
     @JsonIgnore
-    public Map<String, OnixSimpleType> unifiedCodelists = null;
+    public Map<String, OnixSimpleType> unifiedCodelists = null; // set on unifyCodelists()
     @JsonIgnore
-    public Map<String, OnixStruct> unifiedStructs = null;
+    public Map<String, OnixStruct> unifiedStructs = null; // set on unifyStructs
 
     public OnixMetadata(OnixVersion onixVersion, boolean isShort, String codelistIssue) {
         this.onixVersion = onixVersion;
