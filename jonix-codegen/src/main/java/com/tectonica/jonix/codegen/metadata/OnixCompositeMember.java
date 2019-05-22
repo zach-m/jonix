@@ -22,10 +22,17 @@ package com.tectonica.jonix.codegen.metadata;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder( {"className", "cardinality"})
+@JsonPropertyOrder( {"className", "cardinality", "onixDocPath"})
 public class OnixCompositeMember implements Comparable<OnixCompositeMember> {
     public String className;
     public Cardinality cardinality;
+
+    @JsonIgnore
+    public OnixDoc onixDoc; // set on postAnalysis()
+
+    public String getOnixDocPath() {
+        return onixDoc == null ? null : onixDoc.path;
+    }
 
     @JsonIgnore
     public OnixClassDef onixClass; // set on postAnalysis()

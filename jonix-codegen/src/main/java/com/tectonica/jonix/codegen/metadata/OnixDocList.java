@@ -77,7 +77,7 @@ public class OnixDocList extends ArrayList<OnixDoc> {
 
             // the content of the <section> preceding the <dl> starts with the title of the ONIX class, and continues
             // with a free text description. We will read this content backwards, from the <dl> to the title.
-            StringBuilder descriptionHtml = new StringBuilder();
+            StringBuilder escapedDescription = new StringBuilder();
             Element p = dl;
             while ((p = p.previousElementSibling()) != null) {
 
@@ -85,7 +85,7 @@ public class OnixDocList extends ArrayList<OnixDoc> {
                 boolean titleReached = "h5".equals(tag) || "h4".equals(tag) || "h3".equals(tag);
                 if (!titleReached) {
                     // as long as we haven't hit the heading tag with the title, we accumulate the description
-                    descriptionHtml.insert(0, p.outerHtml()); // we use insert, as we process contents backwards
+                    escapedDescription.insert(0, p.outerHtml()); // we use insert, as we process contents backwards
 
                 } else {
                     // title has been hit
@@ -105,7 +105,7 @@ public class OnixDocList extends ArrayList<OnixDoc> {
                     break;
                 }
             }
-            onixDoc.descriptionHtml = descriptionHtml.toString();
+            onixDoc.escapedDescription = escapedDescription.toString();
 
             // we're done with the free-text part, now we extract the <dl>, which is a key-value table with two types
             // of elements for each 'detail': <dt> containing a key, and (one or more) <dd> containing values
@@ -137,9 +137,15 @@ public class OnixDocList extends ArrayList<OnixDoc> {
                     if (onixDocDetail == null) {
                         throw new RuntimeException("inside <dl>, <dd> was encountered before <dt>");
                     }
+
+                    // we read and (re-) HTML-escape the value, adding <tt> where ONIX used <samp> (for code fragments)
                     String line = detail.text().trim();
-                    // TODO: in case of 'example' detail-type, there might be a <samp/> surrounded text, which should
-                    //  be interpreted as <pre/>
+                    Element samp = detail.selectFirst("samp");
+                    if (samp != null) {
+                        String text = samp.text();
+                        line = line.replace(text, "$TTs$" + text + "$TTe$");
+                    }
+                    String escapedLine = XML.escape(line).replace("$TTs$", "<tt>").replace("$TTe$", "</tt>");
 
                     // if the value pertains to an ONIX class name, some extra handling is needed
                     boolean isOnixClassName = (onixDocDetail.detailType == OnixDoc.DetailType.referencename)
@@ -148,7 +154,7 @@ public class OnixDocList extends ArrayList<OnixDoc> {
                         // in onix3 documentation, the angle brackets are implemented as style, so we now trim
                         // the explicit brackets in onix2 documentation, so that we can re-add them to both
                         String onixClassName = line.replaceAll("[</>]", "");
-                        line = "<" + onixClassName + ">";
+                        escapedLine = "<tt>" + XML.escape("<" + onixClassName + ">") + "</tt>";
 
                         // specifically, we use the <dd> of the reference-name as our onixClassName, for future lookup
                         if (onixDocDetail.detailType == OnixDoc.DetailType.referencename) {
@@ -173,15 +179,14 @@ public class OnixDocList extends ArrayList<OnixDoc> {
                             onixDoc.path = "ONIXMessage/" + String.join("/", onixClassPath);
                         }
                     } else {
-                        // if the value pertains to an format, we must escape it
-                        // TODO: why escaping?
+                        // like onixClassName, we keep the format in its own field (in addition to being in the details)
                         if (onixDocDetail.detailType == OnixDoc.DetailType.format) {
-                            onixDoc.format = XML.escape(line);
+                            onixDoc.escapedFormat = escapedLine;
                         }
                     }
 
                     // done processing the <dd> (one or many) part
-                    onixDocDetail.lines.add(line);
+                    onixDocDetail.escapedLines.add(escapedLine);
                 }
             }
 
@@ -207,7 +212,7 @@ public class OnixDocList extends ArrayList<OnixDoc> {
         StringBuilder sb = new StringBuilder("<html><body>\n");
         sb.append("<head><meta charset='UTF-8'></head>\n");
         for (OnixDoc onixDoc : this) {
-            sb.append(onixDoc.toHtml()).append("\n");
+            sb.append(onixDoc.toHtml(true)).append("\n");
         }
         sb.append("</body></html>");
         return sb.toString();

@@ -21,13 +21,12 @@ package com.tectonica.jonix.codegen.metadata;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.tectonica.jonix.codegen.util.XML;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-@JsonPropertyOrder( {"tags", "title", "groupMarker", "descriptionHtml", "details", "onixClassPath"})
+@JsonPropertyOrder( {"onixClassName", "tags", "title", "groupMarker", "escapedDescription", "details", "onixClassPath"})
 public class OnixDoc {
     public enum DetailType {
         format("Format"), //
@@ -47,10 +46,10 @@ public class OnixDoc {
         }
     }
 
-    @JsonPropertyOrder( {"detailType", "lines"})
+    @JsonPropertyOrder( {"detailType", "escapedLines"})
     public static class Detail {
         public DetailType detailType;
-        public List<String> lines;
+        public List<String> escapedLines = new ArrayList<>();
 
         public Detail() {
         }
@@ -61,17 +60,15 @@ public class OnixDoc {
             } catch (IllegalArgumentException e) {
                 detailType = DetailType.unknown;
             }
-            lines = new ArrayList<>();
         }
     }
 
     // ///////////////////////////////////////////////////////////////////////////////////////////
 
-    @JsonIgnore
-    public String onixClassName; // set on postAnalysis()
+    public String onixClassName;
 
     @JsonIgnore
-    public String format;
+    public String escapedFormat;
 
     // ONIX2: [composite, deprecated, element, new210, new211, new212, new213, new214]
     // ONIX3: [composite, deprecated, element, mod304, new301, new302, new303, new304, new305, new306]
@@ -81,7 +78,7 @@ public class OnixDoc {
 
     public String groupMarker;
 
-    public String descriptionHtml;
+    public String escapedDescription;
 
     /**
      * key-value pairs, which will be added to the javadocs as a table
@@ -90,19 +87,22 @@ public class OnixDoc {
 
     public String path;
 
-    public String toHtml() {
+    public String toHtml(boolean extended) {
         StringBuilder sb = new StringBuilder();
         sb.append("<h1>").append(title).append("</h1>");
-        //sb.append("<h2>").append(tags.toString()).append("</h2>");
-        sb.append(descriptionHtml);
+        if (extended) {
+            sb.append("<p><tt><b>&lt;").append(onixClassName).append("&gt;</b></tt>  ").append(tags).append("</p>");
+            sb.append("<p><tt><i>").append(path.replaceAll("/", " \u2bc8 ")).append("</i></tt></p>");
+        }
+        sb.append(escapedDescription);
         sb.append("<table border='1' cellpadding='3'>");
         for (OnixDoc.Detail detail : details) {
-            if (detail.lines.size() == 0) {
+            if (detail.escapedLines.size() == 0) {
                 continue;
             }
 
             boolean first = true;
-            for (String line : detail.lines) {
+            for (String line : detail.escapedLines) {
                 if (line.isEmpty()) {
                     continue;
                 }
@@ -119,7 +119,7 @@ public class OnixDoc {
 
                 // second column
                 sb.append("<td>");
-                sb.append(XML.escape(line));
+                sb.append(line);
                 sb.append("</td>");
 
                 sb.append("</tr>");

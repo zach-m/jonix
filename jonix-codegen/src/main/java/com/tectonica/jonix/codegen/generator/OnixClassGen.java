@@ -332,8 +332,8 @@ public class OnixClassGen {
             p.printf("   /**\n");
             if (element.onixDocs != null) {
                 OnixDoc onixDoc = element.onixDocs.get(0); // TODO: first is arbitrary
-                if (onixDoc.format != null && !onixDoc.format.isEmpty()) {
-                    p.printf("   * Raw Format: %s<p>\n", onixDoc.format);
+                if (onixDoc.escapedFormat != null && !onixDoc.escapedFormat.isEmpty()) {
+                    p.printf("   * Raw Format: %s<p>\n", onixDoc.escapedFormat);
                 }
             }
             p.printf("   * %s\n", ti.comment);
@@ -452,7 +452,7 @@ public class OnixClassGen {
     private void printOnixDocs(PrintStream p, List<OnixDoc> onixDocs) {
         if (onixDocs != null) {
             p.printf("/**\n");
-            p.printf(" * %s\n", onixDocs.get(0).toHtml()); // TODO: first is arbitrary
+            p.printf(" * %s\n", onixDocs.get(0).toHtml(false)); // TODO: first is arbitrary
             p.printf(" */\n");
         }
     }

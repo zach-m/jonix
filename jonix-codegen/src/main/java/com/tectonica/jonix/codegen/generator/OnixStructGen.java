@@ -128,8 +128,8 @@ public class OnixStructGen {
                 if (!isEnum) { // no need to provide format information on enums, they are parsed by the system
                     if (memberClass.onixDocs != null) {
                         OnixDoc onixDoc = memberClass.onixDocs.get(0); // TODO: first is arbitrary here
-                        if (onixDoc.format != null && !onixDoc.format.isEmpty()) {
-                            comment = "Raw Format: " + onixDoc.format + " <p> " + comment;
+                        if (onixDoc.escapedFormat != null && !onixDoc.escapedFormat.isEmpty()) {
+                            comment = "Raw Format: " + onixDoc.escapedFormat + " <p> " + comment;
                         }
                     }
                 }

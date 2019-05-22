@@ -34,8 +34,12 @@ import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_06_REF;
 public class OnixDocsParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(OnixDocsParser.class);
 
-    public static OnixDocList parse(String specHtml) throws IOException {
-        return new OnixDocList(Jsoup.parse(OnixDocsParser.class.getResourceAsStream(specHtml), "UTF-8", "file://"));
+    public static OnixDocList parse(String specHtml) {
+        try {
+            return new OnixDocList(Jsoup.parse(OnixDocsParser.class.getResourceAsStream(specHtml), "UTF-8", "file://"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

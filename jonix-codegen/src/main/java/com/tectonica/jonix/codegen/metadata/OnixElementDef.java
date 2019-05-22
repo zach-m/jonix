@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.List;
 
-@JsonPropertyOrder( {"name", "isSpaceable", "valueMember", "consts", "attributes", "paths"})
+@JsonPropertyOrder( {"name", "isSpaceable", "valueMember", "consts", "attributes", "parentClasses", "paths", "docPaths"})
 public class OnixElementDef extends OnixClassDef {
     public OnixElementMember valueMember;
     public boolean isSpaceable;

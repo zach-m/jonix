@@ -44,7 +44,6 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -53,6 +52,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -848,34 +848,52 @@ public class Parser {
         // calculate the possible paths for each onixClass, starting with direct parents
         for (OnixCompositeDef composite : meta.getComposites()) {
             for (OnixCompositeMember member : composite.members) {
-                member.onixClass.add(composite);
+                member.onixClass.add(composite); // adds a parent to the onixClass indicated by the member
             }
         }
         // and then recursively construct paths of indirect parents
         meta.onixClasses().forEach(elem -> elem.paths = pathsOf(elem));
 
         // attach documentation
-        if (!meta.isShort) {
-            try {
-                OnixDocList onixDocList = OnixDocsParser.parse(specHtml);
-                for (OnixDoc onixDoc : onixDocList) {
-                    OnixClassDef onixClass = meta.classByName(onixDoc.onixClassName);
-                    if (onixClass == null) {
-                        LOGGER.warn("No class for onixDoc: '{}'", onixDoc.onixClassName);
-                    } else {
-                        if (onixClass.onixDocs != null) {
-                            boolean match = onixClass.paths.stream().anyMatch(s -> s.equals(onixDoc.path));
-                            if (!match) {
-                                LOGGER.warn("documentation path not found for class {} ({}): {}", onixDoc.onixClassName,
-                                    onixDoc.groupMarker, onixDoc.path);
-                            }
-                        }
-                        onixClass.add(onixDoc);
+        if (!meta.isShort) { // onixDocs have onixClassName property, which is the ref-name of the class
+            //MultiMap<String, OnixDoc> mmap = new MultiMap<>();
+            OnixDocList onixDocList = OnixDocsParser.parse(specHtml);
+            for (OnixDoc onixDoc : onixDocList) {
+                OnixClassDef onixClass = meta.classByName(onixDoc.onixClassName);
+                if (onixClass == null) {
+                    LOGGER.warn("No class for onixDoc: '{}'", onixDoc.onixClassName);
+                } else {
+                    if (onixClass.paths.stream().noneMatch(s -> s.equals(onixDoc.path))) {
+                        LOGGER.warn("Documentation path not found for class {} ({}): {}", onixDoc.onixClassName,
+                            onixDoc.groupMarker, onixDoc.path);
                     }
+                    onixClass.add(onixDoc);
+                    //mmap.put(onixDoc.onixClassName, onixDoc);
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
+
+            // attach member-specific documentation
+            meta.onixClasses().forEach(elem -> {
+                Optional.ofNullable(elem.parents).ifPresent(parents -> parents.forEach(parent -> {
+                    Optional<OnixDoc> mathingOnixDoc = Optional.ofNullable(elem.onixDocs).flatMap(onixDocs ->
+                        onixDocs.stream()
+                            .filter(od -> ("/" + od.path).endsWith(String.format("/%s/%s", parent.name, elem.name)))
+                            .findFirst()
+                    );
+                    if (!mathingOnixDoc.isPresent()) {
+                        boolean singleton = (elem.onixDocs != null) && (elem.onixDocs.size() == 1);
+                        if (singleton) {
+                            mathingOnixDoc = Optional.of(elem.onixDocs.get(0));
+                        } else {
+                            LOGGER.warn("Couldn't find matching documentation for {}/{}: docPaths={}", parent.name,
+                                elem.name, elem.getDocPaths());
+                        }
+                    }
+                    mathingOnixDoc.ifPresent(onixDoc ->
+                        parent.members.stream().filter(m -> m.className.equals(elem.name)).findFirst()
+                            .ifPresent(m -> m.onixDoc = onixDoc));
+                }));
+            });
         }
     }
 
