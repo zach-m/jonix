@@ -34,12 +34,68 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Identifier type name</h1><p>A name which identifies a proprietary identifier type when, and only when, the code
- * in the &lt;AddresseeIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p><p
- * class="new214">The text is not limited to ASCII characters.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length ASCII text, suggested maximum 50
- * characters</td></tr><tr><td>Reference name</td><td>&lt;IDTypeName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b233&gt;</td></tr></table>
+ * <h1>Identifier type name</h1><p>A name which identifies a proprietary identifier scheme when, and only when, the code
+ * in the &lt;ProductIDType&gt; element indicates a proprietary scheme, <em>eg</em> a wholesaler’s own code. Optional
+ * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Free text, suggested maximum length 50
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;IDTypeName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b233&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b233&gt;KNO&lt;/b233&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;WorkIdentifier&gt;</li>
+ * <li>&lt;AgentIdentifier&gt;</li>
+ * <li>&lt;ConferenceSponsorIdentifier&gt;</li>
+ * <li>&lt;SeriesIdentifier&gt;</li>
+ * <li>&lt;ProductIdentifier&gt;</li>
+ * <li>&lt;LocationIdentifier&gt;</li>
+ * <li>&lt;SenderIdentifier&gt;</li>
+ * <li>&lt;CopyrightOwnerIdentifier&gt;</li>
+ * <li>&lt;TextItemIdentifier&gt;</li>
+ * <li>&lt;PersonNameIdentifier&gt;</li>
+ * <li>&lt;SupplierIdentifier&gt;</li>
+ * <li>&lt;SalesOutletIdentifier&gt;</li>
+ * <li>&lt;ParentIdentifier&gt;</li>
+ * <li>&lt;AddresseeIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ WorkIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ AgentIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceSponsor ⯈ ConferenceSponsorIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SeriesIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ SeriesIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ SeriesIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ ProductIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ ProductIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ LocationIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Header ⯈ SenderIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CopyrightOwnerIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ TextItemIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ ParentIdentifier ⯈ IDTypeName</li>
+ * <li>ONIXMessage ⯈ Header ⯈ AddresseeIdentifier ⯈ IDTypeName</li>
+ * </ul>
  */
 public class IDTypeName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -73,12 +129,12 @@ public class IDTypeName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length ASCII text, suggested maximum 50 characters<p> (type: NonEmptyString)
+     * Raw Format: Free text, suggested maximum length 50 characters<p> (type: NonEmptyString)
      */
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +165,9 @@ public class IDTypeName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;IDTypeName&gt; or &lt;b233&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

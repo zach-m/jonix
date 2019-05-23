@@ -35,10 +35,32 @@ import java.io.Serializable;
 
 /**
  * <h1>Professional position</h1><p>A professional position held by a contributor to the product at the time of its
- * creation. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;ProfessionalPosition&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b045&gt;</td></tr><tr><td>Example</td><td>&lt;b045&gt;Humboldt Professor of
- * Oceanography&lt;/b045&gt;</td></tr></table>
+ * creation. Optional and non-repeating. May only occur with a person name, not with a corporate name.</p><p><strong>The
+ * &lt;ProfessionalAffiliation&gt; composite below provides a more general method of handling positions and
+ * affiliations, and is to be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
+ * text, suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ProfessionalPosition&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b045&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b045&gt;Humboldt Professor of
+ * Oceanography&lt;/b045&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProfessionalAffiliation&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ ProfessionalPosition</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ ProfessionalPosition</li>
+ * </ul>
  */
 public class ProfessionalPosition implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +99,7 @@ public class ProfessionalPosition implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +130,9 @@ public class ProfessionalPosition implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ProfessionalPosition&gt; or &lt;b045&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

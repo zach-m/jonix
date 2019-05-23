@@ -34,14 +34,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Subject heading text</h1><p>The text of a subject heading taken from the scheme specified in the
- * &lt;SubjectSchemeIdentifier&gt; element, or of free language keywords if the scheme is specified as “keywords”; or
- * the text equivalent to the &lt;SubjectCode&gt; value, if both code and text are sent. Either &lt;SubjectCode&gt; or
- * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;Subject&gt; composite.
- * Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
- * length 100 characters.</td></tr><tr><td>Reference name</td><td>&lt;SubjectHeadingText&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b070&gt;</td></tr><tr><td>Example</td><td>&lt;b070&gt;Labor and industrial
- * relations&lt;/b070&gt;</td></tr></table>
+ * <h1>Subject heading text</h1><p>The text of a heading taken from the scheme specified in the
+ * &lt;MainSubjectSchemeIdentifier&gt; element; or the text equivalent to the &lt;SubjectCode&gt; value, if both code
+ * and text are sent. Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each
+ * occurrence of the &lt;MainSubject&gt; composite. Non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
+ * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;SubjectHeadingText&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b070&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b070&gt;Labor and industrial
+ * relations&lt;/b070&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MainSubject&gt;</li>
+ * <li>&lt;Subject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MainSubject ⯈ SubjectHeadingText</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Subject ⯈ SubjectHeadingText</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Subject ⯈ SubjectHeadingText</li>
+ * </ul>
  */
 public class SubjectHeadingText implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +93,7 @@ public class SubjectHeadingText implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +124,9 @@ public class SubjectHeadingText implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SubjectHeadingText&gt; or &lt;b070&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

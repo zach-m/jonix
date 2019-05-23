@@ -33,9 +33,21 @@ import java.io.Serializable;
 /**
  * <h1>Sales outlet name</h1><p>The name of a wholesale or retail sales outlet to which a sales restriction is linked.
  * Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum
- * length 200 characters</td></tr><tr><td>Reference name</td><td>&lt;SalesOutletName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b382&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;SalesOutletName&gt;Marks
- * &amp;amp; Spencer&lt;/SalesOutletName&gt; (note '&amp;' is a reserved character in XML)</td></tr></table>
+ * length 200 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;SalesOutletName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b382&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;SalesOutletName&gt;Marks
+ * &amp;amp; Spencer&lt;/SalesOutletName&gt;</tt> (note '&amp;' is a reserved character in XML)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SalesOutlet&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletName</li>
+ * </ul>
  */
 public class SalesOutletName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -71,7 +83,7 @@ public class SalesOutletName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -99,6 +111,9 @@ public class SalesOutletName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SalesOutletName&gt; or &lt;b382&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

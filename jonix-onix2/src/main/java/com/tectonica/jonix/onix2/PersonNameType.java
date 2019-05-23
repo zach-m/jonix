@@ -38,9 +38,25 @@ import java.io.Serializable;
  * <h1>Person name type</h1><p>An ONIX code indicating the type of the person name sent in an occurrence of the
  * &lt;Name&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 18</td></tr><tr><td>Reference name</td><td>&lt;PersonNameType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b250&gt;</td></tr><tr><td>Example</td><td>&lt;PersonNameType&gt;01&lt;/PersonNameType&gt;
+ * 18</td></tr><tr><td>Reference name</td><td><tt>&lt;PersonNameType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b250&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PersonNameType&gt;01&lt;/PersonNameType&gt;</tt>
  * Pseudonym</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Name&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PersonNameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PersonNameType</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameType</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PersonNameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameType</li>
+ * </ul>
  */
 public class PersonNameType implements OnixElement<PersonOrganizationNameTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +92,7 @@ public class PersonNameType implements OnixElement<PersonOrganizationNameTypes>,
     public PersonOrganizationNameTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PersonOrganizationNameTypes _value() {
@@ -107,6 +123,9 @@ public class PersonNameType implements OnixElement<PersonOrganizationNameTypes>,
         value = PersonOrganizationNameTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PersonNameType&gt; or &lt;b250&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

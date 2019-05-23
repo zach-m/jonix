@@ -271,7 +271,8 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
 
     /**
      * Person or organization responsible for performing research on which the work is based. For use in ONIX 3.0 only
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Research_by("A51", "Research by"), //
 
@@ -366,13 +367,17 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Scientific_editor("B29", "Scientific editor"), //
 
     /**
-     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Historical_advisor("B30", "Historical advisor"), //
 
     /**
      * Editor of the first edition (usually of a standard work) who is not an editor of the current edition. For use in
-     * ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Original_editor("B31", "Original editor"), //
 
@@ -416,7 +421,9 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Conductor("D03", "Conductor"), //
 
     /**
-     * Of a dance performance. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * Of a dance performance. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Choreographer("D04", "Choreographer"), //
 

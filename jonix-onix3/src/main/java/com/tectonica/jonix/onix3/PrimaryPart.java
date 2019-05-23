@@ -33,8 +33,18 @@ import java.io.Serializable;
  * <h1>‘Primary part’ indicator</h1><p>An empty element that allows a sender to identify a product part as the ‘primary’
  * part of a multiple-item product. For example, in a ‘book and toy’ or ‘book and DVD’ product, the book may be regarded
  * as the primary part. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML
- * empty element</td></tr><tr><td>Reference name</td><td>&lt;PrimaryPart&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x457&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PrimaryPart/&gt;</td></tr></table>
+ * empty element</td></tr><tr><td>Reference name</td><td><tt>&lt;PrimaryPart&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x457&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;PrimaryPart/&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductPart&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ PrimaryPart</li>
+ * </ul>
  */
 public class PrimaryPart implements OnixFlag, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,6 +86,9 @@ public class PrimaryPart implements OnixFlag, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
     }
 
+    /**
+     * @return whether this tag (&lt;PrimaryPart&gt; or &lt;x457&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

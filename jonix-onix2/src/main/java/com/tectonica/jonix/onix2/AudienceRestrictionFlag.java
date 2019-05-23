@@ -39,9 +39,19 @@ import java.io.Serializable;
  * is an additional restriction on sale, imposed either by the publisher (<em>eg</em> an answer book to be sold only to
  * bona fide teachers) or by another agency (<em>eg</em> “indexing” in the German market). Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Provisional: fixed-length, single
- * letter</td></tr><tr><td>Codelist</td><td>List 56</td></tr><tr><td>Reference name</td><td>&lt;AudienceRestrictionFlag&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j146&gt;</td></tr><tr><td>Example</td><td>&lt;AudienceRestrictionFlag&gt;R&lt;/AudienceRestrictionFlag&gt;
+ * letter</td></tr><tr><td>Codelist</td><td>List 56</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceRestrictionFlag&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j146&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;AudienceRestrictionFlag&gt;R&lt;/AudienceRestrictionFlag&gt;</tt>
  * Restrictions apply</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ AudienceRestrictionFlag</li>
+ * </ul>
  */
 public class AudienceRestrictionFlag implements OnixElement<AudienceRestrictionFlags>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class AudienceRestrictionFlag implements OnixElement<AudienceRestrictionF
     public AudienceRestrictionFlags value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public AudienceRestrictionFlags _value() {
@@ -108,6 +118,9 @@ public class AudienceRestrictionFlag implements OnixElement<AudienceRestrictionF
         value = AudienceRestrictionFlags.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;AudienceRestrictionFlag&gt; or &lt;j146&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

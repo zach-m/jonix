@@ -41,8 +41,20 @@ import java.io.Serializable;
  * cellpadding='3'><tr><td>Format</td><td>One or more fixed-length codes, each with two upper case letters, successive
  * codes being separated by spaces. Suggested maximum length 300 characters. [Note that ISO 3166-1 specifies that
  * country codes shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country
- * codes - List 91</td></tr><tr><td>Reference name</td><td>&lt;CountryExcluded&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j304&gt;</td></tr><tr><td>Example</td><td>&lt;j304&gt;US CA&lt;/j304&gt;</td></tr></table>
+ * codes - List 91</td></tr><tr><td>Reference name</td><td><tt>&lt;CountryExcluded&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j304&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j304&gt;US
+ * CA&lt;/j304&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ CountryExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ CountryExcluded</li>
+ * </ul>
  */
 public class CountryExcluded implements OnixElement<java.util.Set<Countrys>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +90,7 @@ public class CountryExcluded implements OnixElement<java.util.Set<Countrys>>, Se
     public java.util.Set<Countrys> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<Countrys> _value() {
@@ -112,6 +124,9 @@ public class CountryExcluded implements OnixElement<java.util.Set<Countrys>>, Se
         }
     }
 
+    /**
+     * @return whether this tag (&lt;CountryExcluded&gt; or &lt;j304&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

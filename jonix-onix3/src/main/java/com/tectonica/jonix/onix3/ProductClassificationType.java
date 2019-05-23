@@ -19,83 +19,90 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.ProductClassificationTypes;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-
-import java.io.Serializable;
+import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Product classification type code</h1><p>An ONIX code identifying the scheme from which the identifier in
- * &lt;ProductClassificationCode&gt; is taken. Mandatory in each occurrence of the &lt;ProductClassification&gt;
- * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 9</td></tr><tr><td>Reference name</td><td>&lt;ProductClassificationType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b274&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b274&gt;02&lt;/b063&gt;
- * (UNSPSC)</td></tr></table>
+ * <h1>Product classification type code</h1><p>An ONIX code identifying the scheme from which the identifier in &lt;ProductClassificationCode&gt; is taken. Mandatory in each occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List 9</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductClassificationType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b274&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b274&gt;02&lt;/b063&gt;</tt> (UNSPSC)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductClassification&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductClassification ⯈ ProductClassificationType</li>
+ * </ul>
  */
-public class ProductClassificationType implements OnixElement<ProductClassificationTypes>, Serializable {
-    private static final long serialVersionUID = 1L;
+public class ProductClassificationType implements OnixElement<ProductClassificationTypes>, Serializable
+{
+   private static final long serialVersionUID = 1L;
 
-    public static final String refname = "ProductClassificationType";
-    public static final String shortname = "b274";
+   public static final String refname = "ProductClassificationType";
+   public static final String shortname = "b274";
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // ATTRIBUTES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // ATTRIBUTES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * (type: dt.DateOrDateTime)
-     */
-    public String datestamp;
+   /**
+    * (type: dt.DateOrDateTime)
+    */
+   public String datestamp;
 
-    public RecordSourceTypes sourcetype;
+   public RecordSourceTypes sourcetype;
 
-    /**
-     * (type: dt.NonEmptyString)
-     */
-    public String sourcename;
+   /**
+    * (type: dt.NonEmptyString)
+    */
+   public String sourcename;
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // VALUE MEMBER
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // VALUE MEMBER
+   /////////////////////////////////////////////////////////////////////////////////
 
-    public ProductClassificationTypes value;
+   public ProductClassificationTypes value;
 
-    /**
-     * Internal API, use the {@link #value} field instead
-     */
-    @Override
-    public ProductClassificationTypes _value() {
-        return value;
-    }
+   /**
+   * Internal API, use the {@link #value()} method or the {@link #value} field instead
+   */
+   @Override
+   public ProductClassificationTypes _value() {
+      return value;
+   }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // SERVICES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // SERVICES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private final boolean exists;
-    public static final ProductClassificationType EMPTY = new ProductClassificationType();
+   private final boolean exists;
+   public static final ProductClassificationType EMPTY = new ProductClassificationType();
 
-    public ProductClassificationType() {
-        exists = false;
-    }
+   public ProductClassificationType() {
+      exists = false;
+   }
 
-    public ProductClassificationType(org.w3c.dom.Element element) {
-        exists = true;
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
+   public ProductClassificationType(org.w3c.dom.Element element) {
+      exists = true;
+      datestamp = JPU.getAttribute(element, "datestamp");
+      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+      sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = ProductClassificationTypes.byCode(JPU.getContentAsString(element));
-    }
+      value = ProductClassificationTypes.byCode(JPU.getContentAsString(element));
+   }
 
-    @Override
-    public boolean exists() {
-        return exists;
-    }
+   /**
+    * @return whether this tag (&lt;ProductClassificationType&gt; or &lt;b274&gt;) is explicitly provided in the ONIX XML
+    */
+   @Override
+   public boolean exists() {
+      return exists;
+   }
 }

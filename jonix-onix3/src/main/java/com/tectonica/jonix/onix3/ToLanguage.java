@@ -37,8 +37,20 @@ import java.io.Serializable;
  * Optional, and repeatable in the event that a single person has been responsible for translation to two or more
  * languages.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, three lower-case letters. Note
  * that ISO 639 specifies that these codes should always be in lower-case</td></tr><tr><td>Codelist</td><td>ISO 639-2/B
- * List 74</td></tr><tr><td>Reference name</td><td>&lt;ToLanguage&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x413&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;x413&gt;swe&lt;/x413&gt;</td></tr></table>
+ * List 74</td></tr><tr><td>Reference name</td><td><tt>&lt;ToLanguage&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x413&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;x413&gt;swe&lt;/x413&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ToLanguage</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ ToLanguage</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ ToLanguage</li>
+ * </ul>
  */
 public class ToLanguage implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +81,7 @@ public class ToLanguage implements OnixElement<Languages>, Serializable {
     public Languages value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Languages _value() {
@@ -96,6 +108,9 @@ public class ToLanguage implements OnixElement<Languages>, Serializable {
         value = Languages.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ToLanguage&gt; or &lt;x413&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

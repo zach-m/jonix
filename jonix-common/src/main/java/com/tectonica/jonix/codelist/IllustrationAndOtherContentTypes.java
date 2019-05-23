@@ -142,7 +142,9 @@ public enum IllustrationAndOtherContentTypes implements OnixCodelist, CodeList25
     Glossary("29", "Glossary"), //
 
     /**
-     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Table_of_contents("30", "Table of contents");
 

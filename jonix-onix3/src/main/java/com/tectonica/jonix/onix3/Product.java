@@ -40,18 +40,26 @@ import java.util.List;
  */
 
 /**
- * <h1>null</h1><h2>ONIX for Books Product record</h2><p>Every ONIX message must contain either one or more
- * &lt;Product&gt; composites or a single &lt;NoProduct/&gt; empty element.</p><h3 class="nobreak">Product
- * composite</h3><p>A product is described by a group of data elements beginning with an XML label &lt;Product&gt; and
- * ending with an XML label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two
- * labels constitutes an ONIX product record. The product record is the fundamental unit within an ONIX Product
- * Information message. In almost every case, each product record describes an individually tradable item; and in all
- * circumstances, each tradable item identified by a recognized product identifier should be described by one, and only
- * one, ONIX product record.</p><p>In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data
- * element Groups P.1 and P.2, and carrying data that identifies the record and the product to which it refers. This is
- * followed by up to six ‘blocks’, each optional, some of which are repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;Product&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;product&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Product composite</h1><p>A product is described by a group of data elements beginning with an XML label
+ * &lt;Product&gt; and ending with an XML label &lt;/Product&gt;. The entire group of data elements which is enclosed
+ * between these two labels constitutes an ONIX product record. The product record is the fundamental unit within an
+ * ONIX Product Information message. In almost every case, each product record describes an individually tradable item;
+ * and in all circumstances, each tradable item identified by a recognized product identifier should be described by
+ * one, and only one, ONIX product record.</p><p>In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’
+ * comprising data element Groups P.1 and P.2, and carrying data that identifies the record and the product to which it
+ * refers. This is followed by up to six ‘blocks’, each optional, some of which are repeatable.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Product&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;product&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ONIXMessage&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product</li>
+ * </ul>
  */
 public class Product implements OnixProduct, Serializable {
     private static final long serialVersionUID = 1L;
@@ -171,6 +179,9 @@ public class Product implements OnixProduct, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Product&gt; or &lt;product&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -183,7 +194,18 @@ public class Product implements OnixProduct, Serializable {
     private RecordReference recordReference = RecordReference.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>For every product, you must choose a single record reference which will uniquely identify the Information
+     * record which you send out about that product, and which will remain as its permanent identifier every time you
+     * send an update. It doesn’t matter what reference you choose, provided that it is unique and permanent. This
+     * record reference doesn’t identify the <em>product</em> – even though you may choose to use the ISBN or another
+     * product identifier as a part or the whole of your record reference – it identifies <em>your information record
+     * about the product</em>, so that the person to whom you are sending an update can match it with what you have
+     * previously sent. A good way of generating references which are not part of a recognized product identification
+     * scheme but which can be guaranteed to be unique is to prefix a product identifier or a meaningless row ID from
+     * your internal database with a reversed Internet domain name which is registered to your organization (reversal
+     * prevents the record reference appearing to be a resolvable URL). Alternatively, use a UUID.</p><p>This field is
+     * mandatory and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public RecordReference recordReference() {
         _initialize();
@@ -193,7 +215,9 @@ public class Product implements OnixProduct, Serializable {
     private NotificationType notificationType = NotificationType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which indicates the type of notification or update which you are sending. Mandatory and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public NotificationType notificationType() {
         _initialize();
@@ -203,7 +227,13 @@ public class Product implements OnixProduct, Serializable {
     private ListOfOnixElement<DeletionText, String> deletionTexts = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>Free text which indicates the reason why an ONIX record is being deleted. Optional and repeatable, and may
+     * occur only when the &lt;NotificationType&gt; element carries the code value 05. The <i>language</i> attribute is
+     * optional for a single instance of &lt;DeletionText&gt;, but must be included in each instance if
+     * &lt;DeletionText&gt; is repeated. Note that it refers to the reason why the <em>record</em> is being deleted, not
+     * the reason why a <em>product</em> has been ‘deleted’ (in industries which use this terminology when a product is
+     * withdrawn).</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<DeletionText, String> deletionTexts() {
         _initialize();
@@ -213,7 +243,9 @@ public class Product implements OnixProduct, Serializable {
     private RecordSourceType recordSourceType = RecordSourceType.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which indicates the type of source which has issued the ONIX record. Optional and non-repeating,
+     * independently of the occurrence of any other field.</p>
+     * Jonix-Comment: this field is optional
      */
     public RecordSourceType recordSourceType() {
         _initialize();
@@ -224,7 +256,9 @@ public class Product implements OnixProduct, Serializable {
         recordSourceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together define an identifier of the organization which is the source of the
+     * ONIX record. Optional, and repeatable in order to send multiple identifiers for the same organization.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes> recordSourceIdentifiers() {
         _initialize();
@@ -234,7 +268,9 @@ public class Product implements OnixProduct, Serializable {
     private RecordSourceName recordSourceName = RecordSourceName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
+     * occurrence of any other field.</p>
+     * Jonix-Comment: this field is optional
      */
     public RecordSourceName recordSourceName() {
         _initialize();
@@ -245,7 +281,22 @@ public class Product implements OnixProduct, Serializable {
         productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A group of data elements which together specify an identifier of a product in accordance with a particular
+     * scheme. Mandatory within &lt;Product&gt;, and repeatable with different identifiers for the same product. As well
+     * as standard identifiers, the composite allows proprietary identifiers (for example SKUs assigned by wholesalers
+     * or vendors) to be sent as part of the ONIX record.</p><p>ISBN-13 numbers in their unhyphenated form constitute a
+     * range of EAN.UCC&nbsp;GTIN-13 numbers that has been reserved for the international book trade. Effective from 1
+     * January 2007, it was agreed by ONIX national groups that it should be <em>mandatory</em> in an ONIX
+     * &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled as an EAN.UCC GTIN-13
+     * number (ProductIDType code 03), since this is how the ISBN-13 will be used in book trade transactions. For many
+     * ONIX applications this will also be sufficient.</p><p>For some ONIX applications, however, particularly when data
+     * is to be supplied to the library sector, there may be reasons why the ISBN-13 must <em>also</em> be sent labelled
+     * distinctively as an ISBN-13 (ProductIDType code 15). Users should consult ‘good practice’ guidelines and/or
+     * discuss with their trading partners.</p><p>Note that for some identifiers such as ISBN, punctuation (typically
+     * hyphens or spaces for ISBNs) is used to enhance readability when printed, but the punctuation is dropped when
+     * carried in ONIX data. But for other identifiers – for example DOI – the punctuation is an integral part of the
+     * identifier and must always be included.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
         _initialize();
@@ -255,7 +306,10 @@ public class Product implements OnixProduct, Serializable {
     private ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes = ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together specify a barcode type and its position on a product. Optional:
+     * expected to be used only in North America. Repeatable if more than one type of barcode is carried on a single
+     * product. The absence of this composite does <em>not</em> mean that a product is not bar-coded.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes() {
         _initialize();
@@ -265,7 +319,11 @@ public class Product implements OnixProduct, Serializable {
     private DescriptiveDetail descriptiveDetail = DescriptiveDetail.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The descriptive detail block covers data element Groups P.3 to P.13, all of which are essentially part of the
+     * factual description of the form and content of a product. The block as a whole is non-repeating. It is mandatory
+     * in any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is
+     * an update notice which carries only those blocks in which changes have occurred.</p>
+     * Jonix-Comment: this field is optional
      */
     public DescriptiveDetail descriptiveDetail() {
         _initialize();
@@ -275,7 +333,14 @@ public class Product implements OnixProduct, Serializable {
     private CollateralDetail collateralDetail = CollateralDetail.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The collateral detail block covers data element Groups P.14 to P.17, all of which are primarily concerned with
+     * information and/or resources which in one way or another support the marketing of the product. The block as a
+     * whole is non-repeating.</p><p>The block is not mandatory within the &lt;Product&gt; record, nor are any of the
+     * individual sections mandatory within an occurrence of the block. However, in most circumstances, the block should
+     * contain at least one instance of &lt;TextContent&gt;, &lt;CitedContent&gt;, &lt;SupportingResource&gt; or
+     * &lt;Prize&gt;. It may be empty <em>only</em> within a partial or ‘block update’ (Notification or update
+     * type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all previously-supplied collateral material.</p>
+     * Jonix-Comment: this field is optional
      */
     public CollateralDetail collateralDetail() {
         _initialize();
@@ -285,7 +350,14 @@ public class Product implements OnixProduct, Serializable {
     private ContentDetail contentDetail = ContentDetail.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The content detail block comprises the single data element Group&nbsp;P.18. The block as a whole is
+     * non-repeating. It is not mandatory within the &lt;Product&gt; record, and is used only when there is a
+     * requirement to describe individual chapters or parts within a product in a fully structured way. The more usual
+     * ONIX practice is to send a table of contents as text, possibly in XHTML, in Group&nbsp;P.14.</p><p>When used, the
+     * block should normally contain at least one instance of &lt;ContentItem&gt;. It may be empty <em>only</em> within
+     * a partial or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention is to
+     * remove all previously-supplied content detail.</p>
+     * Jonix-Comment: this field is optional
      */
     public ContentDetail contentDetail() {
         _initialize();
@@ -295,7 +367,11 @@ public class Product implements OnixProduct, Serializable {
     private PublishingDetail publishingDetail = PublishingDetail.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The publishing detail block covers data element Groups P.19 to P.21, carrying information on the publisher(s),
+     * ‘global’ publishing status, and rights attaching to a product. The block as a whole is non-repeating. It is
+     * mandatory in any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the
+     * record is an update notice which carries only those blocks in which changes have occurred.</p>
+     * Jonix-Comment: this field is optional
      */
     public PublishingDetail publishingDetail() {
         _initialize();
@@ -305,7 +381,13 @@ public class Product implements OnixProduct, Serializable {
     private RelatedMaterial relatedMaterial = RelatedMaterial.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The related material block covers data element Groups P.22 and P.23, providing links to related works and
+     * related products. The block as a whole is optional and non-repeating.</p><p>None of the individual sections are
+     * mandatory within an occurrence of the block. However, in most circumstances, the block should contain at least
+     * one instance of &lt;RelatedWork&gt; or &lt;RelatedProduct&gt;. It may be empty only within a partial or ‘block
+     * update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all
+     * previously-supplied information about related works and products.</p>
+     * Jonix-Comment: this field is optional
      */
     public RelatedMaterial relatedMaterial() {
         _initialize();
@@ -315,7 +397,12 @@ public class Product implements OnixProduct, Serializable {
     private List<ProductSupply> productSupplys = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>The product supply block covers data element Groups P.24 to P.26, specifying a market, the publishing status
+     * of the product in that market, and the supply arrangements for the product in that market. The block is
+     * repeatable to describe multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless
+     * the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a partial update notice which carries
+     * only those blocks in which changes have occurred.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<ProductSupply> productSupplys() {
         _initialize();

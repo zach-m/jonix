@@ -34,10 +34,26 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price amount</h1><p>The amount of a price. Mandatory in each occurrence of the &lt;Price&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length real number, with explicit
- * decimal point when required, suggested maximum length 12 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;PriceAmount&gt;</td></tr><tr><td>Short tag</td><td>&lt;j151&gt;</td></tr><tr><td>Example</td><td>&lt;PriceAmount&gt;18.99&lt;/PriceAmount&gt;</td></tr></table>
+ * <h1>Price amount</h1><p>The amount of a unit price. This price amount element, outside of the &lt;Price&gt;
+ * composite, may be used if and only if a default price type and currency have been specified in the message header,
+ * and only one price is to be given. <strong>The element is retained for purposes of upwards compatibility only, and
+ * all new implementations should use the &lt;Price&gt; composite.</strong></p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable length real number, with explicit decimal point when required,
+ * suggested maximum length 12 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PriceAmount&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j151&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j151&gt;18.99&lt;/j151&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ PriceAmount</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ PriceAmount</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceAmount</li>
+ * </ul>
  */
 public class PriceAmount implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +93,7 @@ public class PriceAmount implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +124,9 @@ public class PriceAmount implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PriceAmount&gt; or &lt;j151&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

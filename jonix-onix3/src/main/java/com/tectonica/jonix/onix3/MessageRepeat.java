@@ -33,8 +33,18 @@ import java.io.Serializable;
  * <h1>Message repeat number</h1><p>A number which distinguishes any repeat transmissions of a message. If this element
  * is used, the original is numbered 1 and repeats are numbered 2, 3 <i>etc</i>. Optional and non-repeating.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 4
- * digits</td></tr><tr><td>Reference name</td><td>&lt;MessageRepeat&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m181&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;m181&gt;2&lt;/m181&gt;</td></tr></table>
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;MessageRepeat&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m181&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;m181&gt;2&lt;/m181&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ MessageRepeat</li>
+ * </ul>
  */
 public class MessageRepeat implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +78,7 @@ public class MessageRepeat implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -95,6 +105,9 @@ public class MessageRepeat implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MessageRepeat&gt; or &lt;m181&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

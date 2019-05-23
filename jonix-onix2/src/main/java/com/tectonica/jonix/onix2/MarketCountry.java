@@ -42,8 +42,18 @@ import java.io.Serializable;
  * codes, each with two upper case letters, successive codes being separated by spaces. Suggested maximum length 600
  * characters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper case
  * only.]</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference
- * name</td><td>&lt;MarketCountry&gt;</td></tr><tr><td>Short tag</td><td>&lt;j403&gt;</td></tr><tr><td>Example</td><td>&lt;j403&gt;US
- * CA&lt;/j403&gt; USA and Canada</td></tr></table>
+ * name</td><td><tt>&lt;MarketCountry&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j403&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j403&gt;US
+ * CA&lt;/j403&gt;</tt> USA and Canada</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MarketRepresentation&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketCountry</li>
+ * </ul>
  */
 public class MarketCountry implements OnixElement<java.util.Set<String>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -84,7 +94,7 @@ public class MarketCountry implements OnixElement<java.util.Set<String>>, Serial
     public java.util.Set<String> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<String> _value() {
@@ -118,6 +128,9 @@ public class MarketCountry implements OnixElement<java.util.Set<String>>, Serial
         }
     }
 
+    /**
+     * @return whether this tag (&lt;MarketCountry&gt; or &lt;j403&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

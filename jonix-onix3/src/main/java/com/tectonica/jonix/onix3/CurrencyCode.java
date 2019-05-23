@@ -31,13 +31,30 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Currency code</h1><p>An ISO standard code identifying the currency in which the &lt;PriceAmount&gt; in an
- * occurrence of the &lt;ComparisonProductPrice&gt; composite is stated. Optional and non-repeating, but required if the
- * currency is not the default currency for the ONIX message. To avoid any possible ambiguity, it is strongly
- * recommended that the currency should be stated here.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, three letters</td></tr><tr><td>Codelist</td><td>ISO 4217 currency codes List 96</td></tr><tr><td>Reference
- * name</td><td>&lt;CurrencyCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;j152&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;j152&gt;GBP&lt;/j152&gt;
- * (UK Pound Sterling)</td></tr></table>
+ * <h1>Currency code</h1><p>An ISO standard code identifying the currency in which all monetary amounts in an occurrence
+ * of the &lt;Price&gt; composite are stated. Optional and non-repeating, but required if the currency is not the
+ * default currency for the message (which may be set in &lt;DefaultCurrencyCode&gt;). All ONIX messages must include an
+ * explicit statement of the currency used for any prices. To avoid any possible ambiguity, it is strongly recommended
+ * that the currency should be repeated here for each individual price.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, three letters</td></tr><tr><td>Codelist</td><td>ISO 4217
+ * currency codes List 96</td></tr><tr><td>Reference name</td><td><tt>&lt;CurrencyCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j152&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;j152&gt;ZAR&lt;/j152&gt;</tt>
+ * (South African Rand)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ComparisonProductPrice&gt;</li>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ ComparisonProductPrice ⯈
+ * CurrencyCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ ComparisonProductPrice ⯈ CurrencyCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ CurrencyCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ CurrencyCode</li>
+ * </ul>
  */
 public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +85,7 @@ public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
     public CurrencyCodes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public CurrencyCodes _value() {
@@ -95,6 +112,9 @@ public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
         value = CurrencyCodes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;CurrencyCode&gt; or &lt;j152&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -30,11 +30,28 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor sequence number</h1><p>A number which specifies a single overall sequence of contributor names.
- * Optional and non-repeating. It is strongly recommended that each occurrence of the &lt;Contributor&gt; composite
- * should carry a &lt;SequenceNumber&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer,
- * 1, 2, 3 etc, suggested maximum length 3 digits</td></tr><tr><td>Reference name</td><td>&lt;SequenceNumber&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b034&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b034&gt;3&lt;/b034&gt;</td></tr></table>
+ * <h1>Title element sequence number</h1><p>A number which specifies a single overall sequence of title elements, which
+ * is the preferred order for display of the various title elements when constructing a complete title. Optional and
+ * non-repeating. It is strongly recommended that each occurrence of the &lt;TitleElement&gt; composite should carry a
+ * &lt;SequenceNumber&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, 1, 2, 3 etc,
+ * suggested maximum length 3 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;SequenceNumber&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b034&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;b034&gt;2&lt;/b034&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TitleElement&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleElement ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail ⯈ TitleElement ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail ⯈ TitleElement ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ SequenceNumber</li>
+ * </ul>
  */
 public class SequenceNumber implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +85,7 @@ public class SequenceNumber implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -95,6 +112,9 @@ public class SequenceNumber implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SequenceNumber&gt; or &lt;b034&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

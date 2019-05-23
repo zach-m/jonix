@@ -26,8 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 95 (Default unit of weight &lt;p&gt;NOTE: Deprecated in
- * Onix3)
+ * marker interface to assist in IDE navigation to code-list 95 (Default unit of weight)
  */
 interface CodeList95 {
 }
@@ -35,7 +34,9 @@ interface CodeList95 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 95</b>
  * <p>
- * Description: Default unit of weight &lt;p&gt;NOTE: Deprecated in Onix3
+ * Description: Default unit of weight
+ * <p>
+ * Jonix-Comment: Deprecated in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist95">ONIX

@@ -38,9 +38,23 @@ import java.io.Serializable;
  * <h1>Person date role code</h1><p>An ONIX code indicating the significance of the date in relation to the contributor
  * name. Mandatory in each occurrence of the &lt;PersonDate&gt; composite.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 75</td></tr><tr><td>Reference name</td><td>&lt;PersonDateRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b305&gt;</td></tr><tr><td>Example</td><td>&lt;PersonDateRole&gt;007&lt;/PersonDateRole&gt; Date of
- * birth</td></tr></table>
+ * 75</td></tr><tr><td>Reference name</td><td><tt>&lt;PersonDateRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b305&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PersonDateRole&gt;007&lt;/PersonDateRole&gt;</tt>
+ * Date of birth</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PersonDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonDate ⯈ PersonDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonDate ⯈ PersonDateRole</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonDate ⯈ PersonDateRole</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonDate ⯈ PersonDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonDate ⯈ PersonDateRole</li>
+ * </ul>
  */
 public class PersonDateRole implements OnixElement<PersonDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +90,7 @@ public class PersonDateRole implements OnixElement<PersonDateRoles>, Serializabl
     public PersonDateRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PersonDateRoles _value() {
@@ -107,6 +121,9 @@ public class PersonDateRole implements OnixElement<PersonDateRoles>, Serializabl
         value = PersonDateRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PersonDateRole&gt; or &lt;b305&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

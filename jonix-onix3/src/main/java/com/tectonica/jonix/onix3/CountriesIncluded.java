@@ -32,14 +32,35 @@ import java.io.Serializable;
 
 /**
  * <h1>Countries included</h1><p>One or more ISO standard codes identifying countries included in the territory.
- * Successive codes must be separated by spaces. Optional and non-repeating, but <em>either</em>
- * &lt;CountriesIncluded&gt; <em>or</em> &lt;RegionsIncluded&gt; is mandatory in each occurrence of the
- * &lt;Territory&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>One or more fixed-length
- * codes, each consisting of two upper case letters, and with successive codes being separated by spaces. Suggested
- * maximum length 750 characters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case
- * only</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes List 91</td></tr><tr><td>Reference
- * name</td><td>&lt;CountriesIncluded&gt;</td></tr><tr><td>Short tag</td><td>&lt;x449&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;CountriesIncluded&gt;US
- * CA&lt;/CountriesIncluded&gt; (USA and Canada)</td></tr></table>
+ * Successive codes must be separated by spaces. Optional and non-repeating, but either &lt;CountriesIncluded&gt; or
+ * &lt;RegionsIncluded&gt; is mandatory in each occurrence of the &lt;Territory&gt; composite.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>One or more fixed-length codes, each consisting of two upper case letters, and
+ * with successive codes being separated by spaces. Suggested maximum length 750 characters. Note that ISO 3166-1
+ * specifies that country codes shall be sent as upper case only</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter
+ * country codes List 91</td></tr><tr><td>Reference name</td><td><tt>&lt;CountriesIncluded&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x449&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;CountriesIncluded&gt;US
+ * CA&lt;/CountriesIncluded&gt;</tt> (USA and Canada)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Territory&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ Territory ⯈
+ * CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Territory ⯈ CountriesIncluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ Territory ⯈ CountriesIncluded</li>
+ * </ul>
  */
 public class CountriesIncluded implements OnixElement<java.util.Set<Countrys>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -70,7 +91,7 @@ public class CountriesIncluded implements OnixElement<java.util.Set<Countrys>>, 
     public java.util.Set<Countrys> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<Countrys> _value() {
@@ -100,6 +121,9 @@ public class CountriesIncluded implements OnixElement<java.util.Set<Countrys>>, 
         }
     }
 
+    /**
+     * @return whether this tag (&lt;CountriesIncluded&gt; or &lt;x449&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

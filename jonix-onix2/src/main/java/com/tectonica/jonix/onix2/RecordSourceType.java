@@ -37,9 +37,23 @@ import java.io.Serializable;
  * <h1>Record source type code</h1><p>An ONIX code which indicates the type of source which has issued the ONIX record.
  * Optional and non-repeating, independently of the occurrence of any other field.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 3</td></tr><tr><td>Reference name</td><td>&lt;RecordSourceType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;a194&gt;</td></tr><tr><td>Example</td><td>&lt;RecordSourceType&gt;01&lt;/RecordSourceType&gt;
+ * 3</td></tr><tr><td>Reference name</td><td><tt>&lt;RecordSourceType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;a194&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;RecordSourceType&gt;01&lt;/RecordSourceType&gt;</tt>
  * Publisher</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;SubSeriesRecord&gt;</li>
+ * <li>&lt;MainSeriesRecord&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RecordSourceType</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ RecordSourceType</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ RecordSourceType</li>
+ * </ul>
  */
 public class RecordSourceType implements OnixElement<RecordSourceTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +89,7 @@ public class RecordSourceType implements OnixElement<RecordSourceTypes>, Seriali
     public RecordSourceTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public RecordSourceTypes _value() {
@@ -106,6 +120,9 @@ public class RecordSourceType implements OnixElement<RecordSourceTypes>, Seriali
         value = RecordSourceTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;RecordSourceType&gt; or &lt;a194&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

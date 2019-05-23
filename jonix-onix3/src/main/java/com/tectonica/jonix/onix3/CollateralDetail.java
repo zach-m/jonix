@@ -34,15 +34,25 @@ import java.util.List;
  */
 
 /**
- * <h1>null</h1><h4 class="nobreak">Collateral detail composite</h4><p>The collateral detail block covers data element
- * Groups P.14 to P.17, all of which are primarily concerned with information and/or resources which in one way or
- * another support the marketing of the product. The block as a whole is non-repeating.</p><p>The block is not mandatory
- * within the &lt;Product&gt; record, nor are any of the individual sections mandatory within an occurrence of the
- * block. However, in most circumstances, the block should contain at least one instance of &lt;TextContent&gt;,
- * &lt;CitedContent&gt;, &lt;SupportingResource&gt; or &lt;Prize&gt;. It may be empty <em>only</em> within a partial or
- * ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all
- * previously-supplied collateral material.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;CollateralDetail&gt;</td></tr><tr><td>Short tag</td><td>&lt;collateraldetail&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <h1>Collateral detail composite</h1><p>The collateral detail block covers data element Groups P.14 to P.17, all of
+ * which are primarily concerned with information and/or resources which in one way or another support the marketing of
+ * the product. The block as a whole is non-repeating.</p><p>The block is not mandatory within the &lt;Product&gt;
+ * record, nor are any of the individual sections mandatory within an occurrence of the block. However, in most
+ * circumstances, the block should contain at least one instance of &lt;TextContent&gt;, &lt;CitedContent&gt;,
+ * &lt;SupportingResource&gt; or &lt;Prize&gt;. It may be empty <em>only</em> within a partial or ‘block update’
+ * (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all previously-supplied
+ * collateral material.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CollateralDetail&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;collateraldetail&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail</li>
+ * </ul>
  */
 public class CollateralDetail implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -122,6 +132,10 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;CollateralDetail&gt; or &lt;collateraldetail&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -134,7 +148,10 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
     private List<TextContent> textContents = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together carry text related to the product, repeatable in order to
+     * deliver multiple texts (often of different types, though for some text types there many be multiple instances of
+     * that type).</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<TextContent> textContents() {
         _initialize();
@@ -144,7 +161,9 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
     private List<CitedContent> citedContents = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together describe a piece of cited content. The composite is
+     * repeatable to describe and link to multiple items of cited material.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<CitedContent> citedContents() {
         _initialize();
@@ -154,7 +173,11 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
     private List<SupportingResource> supportingResources = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together describe a supporting resource. The composite is repeatable
+     * to describe and link to multiple resources. Note that different forms of the <em>same</em> resource (for example
+     * a cover image in separate low and high resolution versions) should be specified in a single instance of the
+     * composite.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<SupportingResource> supportingResources() {
         _initialize();
@@ -164,7 +187,9 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together describe a prize or award won by the product or work, and
+     * repeatable where it has gained multiple prizes or awards.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
         _initialize();

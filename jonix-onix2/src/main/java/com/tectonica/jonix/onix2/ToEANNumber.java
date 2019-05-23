@@ -36,8 +36,18 @@ import java.io.Serializable;
 /**
  * <h1>Addressee EAN number</h1><p>An EAN location number which identifies the addressee of an ONIX message. Optional
  * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, thirteen numeric digits,
- * of which the last is a check digit.</td></tr><tr><td>Reference name</td><td>&lt;ToEANNumber&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m176&gt;</td></tr><tr><td>Example</td><td>&lt;m176&gt;5401234098123&lt;/m176&gt;</td></tr></table>
+ * of which the last is a check digit.</td></tr><tr><td>Reference name</td><td><tt>&lt;ToEANNumber&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m176&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m176&gt;5401234098123&lt;/m176&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ ToEANNumber</li>
+ * </ul>
  */
 public class ToEANNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class ToEANNumber implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,9 @@ public class ToEANNumber implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ToEANNumber&gt; or &lt;m176&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

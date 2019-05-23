@@ -38,9 +38,19 @@ import java.io.Serializable;
  * <h1>Supplier role</h1><p>An ONIX code identifying the role of a supplier in relation to the product, <em>eg</em>
  * Publisher, Publisher’s exclusive distributor, <em>etc</em>. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits.</td></tr><tr><td>Codelist</td><td>List
- * 93</td></tr><tr><td>Reference name</td><td>&lt;SupplierRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j292&gt;</td></tr><tr><td>Example</td><td>&lt;SupplierRole&gt;01&lt;/SupplierRole&gt;
+ * 93</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplierRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j292&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SupplierRole&gt;01&lt;/SupplierRole&gt;</tt>
  * Publisher</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierRole</li>
+ * </ul>
  */
 public class SupplierRole implements OnixElement<SupplierRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class SupplierRole implements OnixElement<SupplierRoles>, Serializable {
     public SupplierRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SupplierRoles _value() {
@@ -107,6 +117,9 @@ public class SupplierRole implements OnixElement<SupplierRoles>, Serializable {
         value = SupplierRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SupplierRole&gt; or &lt;j292&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

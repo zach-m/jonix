@@ -35,13 +35,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Country code</h1><p>A code identifying a country in which the price given in &lt;PriceAmount&gt; applies. This
- * allows a supplier to list different prices for specific countries by repeating the &lt;Price&gt; composite rather
- * than having to repeat the whole of the &lt;SupplyDetail&gt; composite. Optional, and repeatable if a single price
- * applies to multiple countries.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters.
- * [Note that ISO 3166-1 specifies that country codes shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO
- * 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference name</td><td>&lt;CountryCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b251&gt;</td></tr><tr><td>Example</td><td>&lt;b251&gt;GB&lt;/b251&gt;</td></tr></table>
+ * <h1>Country code</h1><p>A code identifying a country with which a contributor is particularly associated, when this
+ * is significant for the marketing of a product. Optional and repeatable.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters. [Note that ISO 3166-1 specifies that country codes
+ * shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes List
+ * 91</td></tr><tr><td>Reference name</td><td><tt>&lt;CountryCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b251&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;CountryCode&gt;US&lt;/CountryCode&gt;</tt>
+ * USA</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;Language&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Language ⯈ CountryCode</li>
+ * </ul>
  */
 public class CountryCode implements OnixElement<Countrys>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +96,7 @@ public class CountryCode implements OnixElement<Countrys>, Serializable {
     public Countrys value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Countrys _value() {
@@ -108,6 +127,9 @@ public class CountryCode implements OnixElement<Countrys>, Serializable {
         value = Countrys.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;CountryCode&gt; or &lt;b251&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

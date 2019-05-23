@@ -36,11 +36,24 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Media file composite</h1><p>An optional and repeatable group of data elements which together identify and provide
- * pointers to an image, audio or video file, used here to indicate that there is a new cover or jacket image for a
- * reissue. <strong>Please see Group&nbsp;PR.16 for details.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;MediaFile&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;mediafile&gt;</td></tr></table>
+ * <h1>Image/audio/video file link composite</h1><p>A repeatable group of data elements which together identify and
+ * provide pointers to, an image, audio or video file related to the product.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;MediaFile&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;mediafile&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;Reissue&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MediaFile</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile</li>
+ * </ul>
  */
 public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, ImageAudioVideoFileTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -157,6 +170,9 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
         });
     }
 
+    /**
+     * @return whether this tag (&lt;MediaFile&gt; or &lt;mediafile&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -169,7 +185,9 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private MediaFileTypeCode mediaFileTypeCode = MediaFileTypeCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the type of image/audio/video file which is linked by the &lt;MediaFileLink&gt;
+     * element. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public MediaFileTypeCode mediaFileTypeCode() {
         _initialize();
@@ -179,7 +197,9 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private MediaFileFormatCode mediaFileFormatCode = MediaFileFormatCode.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which identifies the format of the image/audio/video file which is linked by the
+     * &lt;MediaFileLink&gt; element. For image files, JPEG, GIF and TIF are supported. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public MediaFileFormatCode mediaFileFormatCode() {
         _initialize();
@@ -189,7 +209,9 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private ImageResolution imageResolution = ImageResolution.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The resolution of an image file which is linked by the &lt;MediaFileLink&gt; element, expressed as dots or
+     * pixels per inch. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public ImageResolution imageResolution() {
         _initialize();
@@ -199,7 +221,10 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private MediaFileLinkTypeCode mediaFileLinkTypeCode = MediaFileLinkTypeCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the type of link which is given in the &lt;MediaFileLink&gt; element, for
+     * example a URL, DOI, filename <em>etc</em>. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public MediaFileLinkTypeCode mediaFileLinkTypeCode() {
         _initialize();
@@ -209,7 +234,10 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private MediaFileLink mediaFileLink = MediaFileLink.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A link to the image/audio/video file specified by the &lt;MediaFileTypeCode&gt;, using the link type specified
+     * by the &lt;MediaFileLinkTypeCode&gt;. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public MediaFileLink mediaFileLink() {
         _initialize();
@@ -219,7 +247,11 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private TextWithDownload textWithDownload = TextWithDownload.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Unstructured text associated with a file which is available for download, and intended to be displayed
+     * whenever the file content is used. Optional and non-repeating. Text may include credits, copyright notice,
+     * <em>etc</em>. If this field is sent, the individual elements &lt;DownloadCaption&gt;, &lt;DownloadCredit&gt;, and
+     * &lt;DownloadCopyrightNotice&gt; must not be sent, and vice versa.</p>
+     * Jonix-Comment: this field is optional
      */
     public TextWithDownload textWithDownload() {
         _initialize();
@@ -229,7 +261,10 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private DownloadCaption downloadCaption = DownloadCaption.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>Text of a caption associated with a download file, and intended to be displayed whenever the file content is
+     * used. Optional and non-repeating. The &lt;DownloadCaption&gt; element may be sent together with either or both of
+     * fields &lt;DownloadCredit&gt;, or &lt;DownloadCopyrightNotice&gt;.</p>
+     * Jonix-Comment: this field is required
      */
     public DownloadCaption downloadCaption() {
         _initialize();
@@ -239,7 +274,9 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private DownloadCredit downloadCredit = DownloadCredit.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Text of a personal or corporate credit associated with a download file, and intended to be displayed whenever
+     * the file content is used. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public DownloadCredit downloadCredit() {
         _initialize();
@@ -249,7 +286,9 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private DownloadCopyrightNotice downloadCopyrightNotice = DownloadCopyrightNotice.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Text of a copyright notice associated with a download file, and intended to be displayed whenever the file
+     * content is used. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public DownloadCopyrightNotice downloadCopyrightNotice() {
         _initialize();
@@ -259,7 +298,10 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private DownloadTerms downloadTerms = DownloadTerms.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Text of any terms and conditions associated with a download file. Optional and non-repeating. This field may
+     * be sent alone, or with the &lt;TextWithDownload&gt; element, or with any combination of the
+     * &lt;DownloadCaption&gt;, &lt;DownloadCredit&gt;, and &lt;DownloadCopyrightNotice&gt; elements.</p>
+     * Jonix-Comment: this field is optional
      */
     public DownloadTerms downloadTerms() {
         _initialize();
@@ -269,7 +311,10 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     private MediaFileDate mediaFileDate = MediaFileDate.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The date when the image referenced by the &lt;MediaFileLink&gt; element was last changed. Optional and
+     * non-repeating. This element is intended to allow the receiver of an updated ONIX record to determine whether it
+     * is necessary to download a new copy of the file.</p>
+     * Jonix-Comment: this field is optional
      */
     public MediaFileDate mediaFileDate() {
         _initialize();

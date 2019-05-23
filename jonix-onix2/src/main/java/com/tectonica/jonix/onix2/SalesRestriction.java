@@ -38,8 +38,18 @@ import java.util.List;
 /**
  * <h1>Sales restriction composite</h1><p>A group of data elements which together identify a non-territorial sales
  * restriction which a publisher applies to a product. Optional and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesRestriction&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;salesrestriction&gt;</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SalesRestriction&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;salesrestriction&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRestriction</li>
+ * </ul>
  */
 public class SalesRestriction implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -124,6 +134,10 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SalesRestriction&gt; or &lt;salesrestriction&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -136,7 +150,9 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     private SalesRestrictionType salesRestrictionType = SalesRestrictionType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies a non-territorial sales restriction. Mandatory in each occurrence of the
+     * &lt;SalesRestriction&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SalesRestrictionType salesRestrictionType() {
         _initialize();
@@ -146,7 +162,10 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     private List<SalesOutlet> salesOutlets = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>An optional and repeatable group of data elements which together identify a sales outlet to which a
+     * restriction is linked. Each occurrence of the composite must include a &lt;SalesOutletIdentifier&gt; composite or
+     * a &lt;SalesOutletName&gt; or both.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<SalesOutlet> salesOutlets() {
         _initialize();
@@ -156,7 +175,9 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     private SalesRestrictionDetail salesRestrictionDetail = SalesRestrictionDetail.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A free text field describing an “unspecified” restriction, or giving more explanation of a coded restriction
+     * type. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public SalesRestrictionDetail salesRestrictionDetail() {
         _initialize();

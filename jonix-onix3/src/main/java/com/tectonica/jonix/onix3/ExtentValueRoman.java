@@ -33,8 +33,18 @@ import java.io.Serializable;
  * <h1>Extent value in Roman numerals</h1><p>The value of the extent expressed in Roman numerals. Optional, and
  * non-repeating. Used only for page runs which are numbered in Roman.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Letters forming a valid Roman numeral</td></tr><tr><td>Reference
- * name</td><td>&lt;ExtentValueRoman&gt;</td></tr><tr><td>Short tag</td><td>&lt;x421&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ExtentValueRoman&gt;xxiii&lt;/ExtentValueRoman&gt;
+ * name</td><td><tt>&lt;ExtentValueRoman&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x421&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;ExtentValueRoman&gt;xxiii&lt;/ExtentValueRoman&gt;</tt>
  * (23)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Extent&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Extent ⯈ ExtentValueRoman</li>
+ * </ul>
  */
 public class ExtentValueRoman implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +78,7 @@ public class ExtentValueRoman implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -95,6 +105,9 @@ public class ExtentValueRoman implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ExtentValueRoman&gt; or &lt;x421&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

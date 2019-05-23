@@ -38,9 +38,21 @@ import java.io.Serializable;
  * <h1>Product form feature type</h1><p>An ONIX code which specifies the feature described by an instance of the
  * &lt;ProductFormFeature&gt; composite, <em>eg</em> binding color. Mandatory in each occurrence of the composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 79</td></tr><tr><td>Reference name</td><td>&lt;ProductFormFeatureType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b334&gt;</td></tr><tr><td>Example</td><td>&lt;b334&gt;02&lt;/b334&gt; Page edge
- * color</td></tr></table>
+ * digits.</td></tr><tr><td>Codelist</td><td>List 79</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductFormFeatureType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b334&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ProductFormFeatureType&gt;02&lt;/ProductFormFeatureType&gt;</tt>
+ * Page edge color</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductFormFeature&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductFormFeature ⯈ ProductFormFeatureType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductFormFeature ⯈ ProductFormFeatureType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductFormFeature ⯈ ProductFormFeatureType</li>
+ * </ul>
  */
 public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +88,7 @@ public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTyp
     public ProductFormFeatureTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductFormFeatureTypes _value() {
@@ -107,6 +119,9 @@ public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTyp
         value = ProductFormFeatureTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductFormFeatureType&gt; or &lt;b334&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

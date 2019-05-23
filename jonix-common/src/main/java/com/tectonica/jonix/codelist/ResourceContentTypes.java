@@ -214,13 +214,14 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Instructional_material("39", "Instructional material"), //
 
     /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
+     * Jonix-Comment: Introduced in Onix3
      */
     Errata("40", "Errata"), //
 
     /**
-     * Introduction, preface or other preliminary material in a separate resource file &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * Introduction, preface or other preliminary material in a separate resource file
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Introduction("41", "Introduction"), //
 
@@ -228,12 +229,16 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * Descriptive material in a separate resource file, not in the ONIX record. Equivalent of code 17 in List 153. Use
      * the &lt;TextContent&gt; composite for collection descriptions carried in the ONIX record. Use &lt;Supporting
      * Resource&gt; for material (which need not be solely only) offered as a separate file resource for reproduction as
-     * part of promotional material for the product and collection &lt;p&gt;NOTE: Introduced in Onix3
+     * part of promotional material for the product and collection
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Collection_description("42", "Collection description"), //
 
     /**
-     * Complete list of books by the author(s), supplied as a separate resource file &lt;p&gt;NOTE: Introduced in Onix3
+     * Complete list of books by the author(s), supplied as a separate resource file
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Bibliography("43", "Bibliography"), //
 

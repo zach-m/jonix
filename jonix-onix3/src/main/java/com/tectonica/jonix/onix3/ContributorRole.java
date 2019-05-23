@@ -35,9 +35,21 @@ import java.io.Serializable;
  * the product. Mandatory in each occurrence of a &lt;Contributor&gt; composite, and may be repeated if the same person
  * or corporate body has more than one role in relation to the product.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, one letter and two digits</td></tr><tr><td>Codelist</td><td>List
- * 17</td></tr><tr><td>Reference name</td><td>&lt;ContributorRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b035&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td>&lt;b035&gt;A01&lt;/b035&gt;
+ * 17</td></tr><tr><td>Reference name</td><td><tt>&lt;ContributorRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b035&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;b035&gt;A01&lt;/b035&gt;</tt>
  * (Written by)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ContributorRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ ContributorRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ ContributorRole</li>
+ * </ul>
  */
 public class ContributorRole implements OnixElement<ContributorRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +80,7 @@ public class ContributorRole implements OnixElement<ContributorRoles>, Serializa
     public ContributorRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ContributorRoles _value() {
@@ -95,6 +107,9 @@ public class ContributorRole implements OnixElement<ContributorRoles>, Serializa
         value = ContributorRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ContributorRole&gt; or &lt;b035&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,8 +34,19 @@ import java.io.Serializable;
  * <h1>Supply contact identifier type</h1><p>An ONIX code identifying a scheme from which an identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;SupplyContactIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;SupplyContactIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x538&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplyContactIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x538&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyContactIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ SupplyContactIdentifier ⯈
+ * SupplyContactIDType</li>
+ * </ul>
  */
 public class SupplyContactIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +77,7 @@ public class SupplyContactIDType implements OnixElement<NameIdentifierTypes>, Se
     public NameIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public NameIdentifierTypes _value() {
@@ -93,6 +104,9 @@ public class SupplyContactIDType implements OnixElement<NameIdentifierTypes>, Se
         value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SupplyContactIDType&gt; or &lt;x538&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

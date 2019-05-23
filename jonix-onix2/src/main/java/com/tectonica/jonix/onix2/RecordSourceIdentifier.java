@@ -38,7 +38,21 @@ import java.io.Serializable;
  * &lt;RecordSourceIdentifierType&gt;. Optional and non-repeating, but &lt;RecordSourceIdentifierType&gt; must also be
  * present if this field is present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Defined by the
  * identifier scheme specified in &lt;RecordSourceIdentifierType&gt;</td></tr><tr><td>Reference
- * name</td><td>&lt;RecordSourceIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;a196&gt;</td></tr></table>
+ * name</td><td><tt>&lt;RecordSourceIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;a196&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;SubSeriesRecord&gt;</li>
+ * <li>&lt;MainSeriesRecord&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RecordSourceIdentifier</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ RecordSourceIdentifier</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ RecordSourceIdentifier</li>
+ * </ul>
  */
 public class RecordSourceIdentifier implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +92,7 @@ public class RecordSourceIdentifier implements OnixElement<String>, Serializable
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +123,9 @@ public class RecordSourceIdentifier implements OnixElement<String>, Serializable
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;RecordSourceIdentifier&gt; or &lt;a196&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

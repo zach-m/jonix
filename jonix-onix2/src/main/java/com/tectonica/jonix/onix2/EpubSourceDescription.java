@@ -37,9 +37,19 @@ import java.io.Serializable;
  * <h1>Epublication source file format description</h1><p>A free text description of an epublication source file format.
  * Optional and non-repeating, and can occur only if the &lt;EpubType&gt; field is present, but it does not require the
  * presence of the &lt;EpubSource&gt; field.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum 200 characters</td></tr><tr><td>Reference name</td><td>&lt;EpubSourceDescription&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b280&gt;</td></tr><tr><td>Example</td><td>&lt;b280&gt;Screen optimized PDF, with low-res
- * figures&lt;/b280&gt;</td></tr></table>
+ * text, suggested maximum 200 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubSourceDescription&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b280&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b280&gt;Screen optimized PDF, with low-res
+ * figures&lt;/b280&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ EpubSourceDescription</li>
+ * </ul>
  */
 public class EpubSourceDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +88,7 @@ public class EpubSourceDescription implements OnixElement<String>, Serializable 
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +119,9 @@ public class EpubSourceDescription implements OnixElement<String>, Serializable 
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;EpubSourceDescription&gt; or &lt;b280&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -30,11 +30,22 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Quantity in shipment</h1><p>The quantity of stock on order in a particular shipment. Mandatory in each occurrence
- * of the &lt;OnOrderDetail&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, here necessarily positive, suggested maximum length
- * 7 digits</td></tr><tr><td>Reference name</td><td>&lt;OnOrder&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j351&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;j351&gt;600&lt;/j351&gt;</td></tr></table>
+ * <h1>Quantity on order</h1><p>The quantity of stock on order. Optional and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, suggested maximum length 7
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;OnOrder&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j351&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;OnOrder&gt;600&lt;/OnOrder&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OnOrderDetail&gt;</li>
+ * <li>&lt;Stock&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ OnOrderDetail ⯈ OnOrder</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ OnOrder</li>
+ * </ul>
  */
 public class OnOrder implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -63,13 +74,12 @@ public class OnOrder implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer or zero, here necessarily positive, suggested maximum length 7 digits<p> (type:
-     * dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, suggested maximum length 7 digits<p> (type: dt.PositiveInteger)
      */
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -96,6 +106,9 @@ public class OnOrder implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;OnOrder&gt; or &lt;j351&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

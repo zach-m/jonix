@@ -38,10 +38,20 @@ import java.io.Serializable;
  * Universal time (UTC) &#8224; YYYYMMDDThhmm&#177;hhmm With time zone offset from UTC &#8224; YYYYMMDDThhmmss Date and
  * time (with seconds) YYYYMMDDThhmmssZ Universal time (with seconds) YYYYMMDDThhmmss&#177;hhmm With time zone offset
  * from UTC (with seconds) &#8224; indicates the preferred formats</td></tr><tr><td>Reference
- * name</td><td>&lt;SentDateTime&gt;</td></tr><tr><td>Short tag</td><td>&lt;x307&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x307&gt;20100522T1230Z&lt;/x307&gt;
+ * name</td><td><tt>&lt;SentDateTime&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x307&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x307&gt;20100522T1230Z&lt;/x307&gt;</tt>
  * (12.30pm UTC, 22 May 2010)</td></tr><tr><td>Notes</td><td>The calendar date must use the Gregorian calendar, even if
  * other dates within the message use a different calendar. For all practical purposes, UTC is the same as
  * GMT.</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ SentDateTime</li>
+ * </ul>
  */
 public class SentDateTime implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +90,7 @@ public class SentDateTime implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,9 @@ public class SentDateTime implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SentDateTime&gt; or &lt;x307&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

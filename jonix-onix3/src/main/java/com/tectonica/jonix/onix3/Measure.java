@@ -32,11 +32,23 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Measure composite (product part)</h1><p>An optional group of data elements which together identify a measurement
- * and the units in which it is expressed; used to specify the overall dimensions of a physical product part including
- * its inner packaging (if any). Repeatable to provide multiple combinations of dimension and unit.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;Measure&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;measure&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Measure composite</h1><p>An optional group of data elements which together identify a measurement and the units
+ * in which it is expressed; used to specify the overall dimensions of a physical product including its packaging (if
+ * any). Repeatable to provide multiple combinations of dimension and unit.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Measure&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;measure&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;ProductPart&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Measure</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ Measure</li>
+ * </ul>
  */
 public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -112,6 +124,9 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Measure&gt; or &lt;measure&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -124,7 +139,9 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
     private MeasureType measureType = MeasureType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the dimension which is specified by an occurrence of the measure composite. Mandatory
+     * in each occurrence of the &lt;Measure&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public MeasureType measureType() {
         _initialize();
@@ -134,7 +151,9 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
     private Measurement measurement = Measurement.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The number which represents the dimension specified in &lt;MeasureType&gt; in the measure units specified in
+     * &lt;MeasureUnitCode&gt;. Mandatory in each occurrence of the &lt;Measure&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public Measurement measurement() {
         _initialize();
@@ -144,7 +163,10 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
     private MeasureUnitCode measureUnitCode = MeasureUnitCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the measure unit in which dimensions are given. Mandatory in each occurrence of the
+     * &lt;Measure&gt; composite, and non-repeating. This element must follow the dimension to which the measure unit
+     * applies. See example below.</p>
+     * Jonix-Comment: this field is required
      */
     public MeasureUnitCode measureUnitCode() {
         _initialize();

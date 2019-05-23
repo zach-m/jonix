@@ -38,9 +38,32 @@ import java.io.Serializable;
  * <h1>Person name identifier type</h1><p>An ONIX code which identifies the scheme from which the value in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;PersonNameIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 101</td></tr><tr><td>Reference name</td><td>&lt;PersonNameIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b390&gt;</td></tr><tr><td>Example</td><td>&lt;PersonNameIDType&gt;02&lt;/PersonNameIDType&gt;
+ * digits.</td></tr><tr><td>Codelist</td><td>List 101</td></tr><tr><td>Reference name</td><td><tt>&lt;PersonNameIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b390&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PersonNameIDType&gt;02&lt;/PersonNameIDType&gt;</tt>
  * Personennamendatei</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PersonNameIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * </ul>
  */
 public class PersonNameIDType implements OnixElement<PersonNameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +99,7 @@ public class PersonNameIDType implements OnixElement<PersonNameIdentifierTypes>,
     public PersonNameIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PersonNameIdentifierTypes _value() {
@@ -107,6 +130,9 @@ public class PersonNameIDType implements OnixElement<PersonNameIdentifierTypes>,
         value = PersonNameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PersonNameIDType&gt; or &lt;b390&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

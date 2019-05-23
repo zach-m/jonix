@@ -43,9 +43,19 @@ import java.io.Serializable;
  * the element should carry a datestamp attribute to indicate its likely reliability. See <cite>ONIX for Books – Product
  * Information Message – XML Message Specification</cite>, Section 4, for details of the datestamp attribute.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits.</td></tr><tr><td>Codelist</td><td>List
- * 64</td></tr><tr><td>Reference name</td><td>&lt;PublishingStatus&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b394&gt;</td></tr><tr><td>Example</td><td>&lt;PublishingStatus&gt;02&lt;/PublishingStatus&gt;
+ * 64</td></tr><tr><td>Reference name</td><td><tt>&lt;PublishingStatus&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b394&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PublishingStatus&gt;02&lt;/PublishingStatus&gt;</tt>
  * Forthcoming</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingStatus</li>
+ * </ul>
  */
 public class PublishingStatus implements OnixElement<PublishingStatuss>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +91,7 @@ public class PublishingStatus implements OnixElement<PublishingStatuss>, Seriali
     public PublishingStatuss value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PublishingStatuss _value() {
@@ -112,6 +122,9 @@ public class PublishingStatus implements OnixElement<PublishingStatuss>, Seriali
         value = PublishingStatuss.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PublishingStatus&gt; or &lt;b394&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

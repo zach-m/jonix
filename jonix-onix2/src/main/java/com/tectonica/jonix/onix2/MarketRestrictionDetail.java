@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Market restriction detail</h1><p>A free text field describing a non-geographical restriction of the market
  * covered by a sales agent or local publisher. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 300
- * characters</td></tr><tr><td>Reference name</td><td>&lt;MarketRestrictionDetail&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j406&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;MarketRestrictionDetail&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j406&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MarketRepresentation&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketRestrictionDetail</li>
+ * </ul>
  */
 public class MarketRestrictionDetail implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class MarketRestrictionDetail implements OnixElement<String>, Serializabl
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class MarketRestrictionDetail implements OnixElement<String>, Serializabl
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MarketRestrictionDetail&gt; or &lt;j406&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

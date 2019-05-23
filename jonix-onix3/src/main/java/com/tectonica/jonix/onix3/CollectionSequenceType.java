@@ -19,83 +19,90 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CollectionSequenceTypes;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-
-import java.io.Serializable;
+import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Collection sequence type</h1><p>An ONIX code identifying the type of ordering used for the product’s sequence
- * number within the collection. Mandatory and non-repeating within the &lt;CollectionSequence&gt; composite.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 197</td></tr><tr><td>Reference name</td><td>&lt;CollectionSequenceType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x479&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x479&gt;03&lt;/x479&gt;
- * (Order of publication)</td></tr></table>
+ * <h1>Collection sequence type</h1><p>An ONIX code identifying the type of ordering used for the product’s sequence number within the collection. Mandatory and non-repeating within the &lt;CollectionSequence&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List 197</td></tr><tr><td>Reference name</td><td><tt>&lt;CollectionSequenceType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x479&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x479&gt;03&lt;/x479&gt;</tt> (Order of publication)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;CollectionSequence&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionSequence ⯈ CollectionSequenceType</li>
+ * </ul>
  */
-public class CollectionSequenceType implements OnixElement<CollectionSequenceTypes>, Serializable {
-    private static final long serialVersionUID = 1L;
+public class CollectionSequenceType implements OnixElement<CollectionSequenceTypes>, Serializable
+{
+   private static final long serialVersionUID = 1L;
 
-    public static final String refname = "CollectionSequenceType";
-    public static final String shortname = "x479";
+   public static final String refname = "CollectionSequenceType";
+   public static final String shortname = "x479";
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // ATTRIBUTES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // ATTRIBUTES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * (type: dt.DateOrDateTime)
-     */
-    public String datestamp;
+   /**
+    * (type: dt.DateOrDateTime)
+    */
+   public String datestamp;
 
-    public RecordSourceTypes sourcetype;
+   public RecordSourceTypes sourcetype;
 
-    /**
-     * (type: dt.NonEmptyString)
-     */
-    public String sourcename;
+   /**
+    * (type: dt.NonEmptyString)
+    */
+   public String sourcename;
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // VALUE MEMBER
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // VALUE MEMBER
+   /////////////////////////////////////////////////////////////////////////////////
 
-    public CollectionSequenceTypes value;
+   public CollectionSequenceTypes value;
 
-    /**
-     * Internal API, use the {@link #value} field instead
-     */
-    @Override
-    public CollectionSequenceTypes _value() {
-        return value;
-    }
+   /**
+   * Internal API, use the {@link #value()} method or the {@link #value} field instead
+   */
+   @Override
+   public CollectionSequenceTypes _value() {
+      return value;
+   }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // SERVICES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // SERVICES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private final boolean exists;
-    public static final CollectionSequenceType EMPTY = new CollectionSequenceType();
+   private final boolean exists;
+   public static final CollectionSequenceType EMPTY = new CollectionSequenceType();
 
-    public CollectionSequenceType() {
-        exists = false;
-    }
+   public CollectionSequenceType() {
+      exists = false;
+   }
 
-    public CollectionSequenceType(org.w3c.dom.Element element) {
-        exists = true;
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
+   public CollectionSequenceType(org.w3c.dom.Element element) {
+      exists = true;
+      datestamp = JPU.getAttribute(element, "datestamp");
+      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+      sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = CollectionSequenceTypes.byCode(JPU.getContentAsString(element));
-    }
+      value = CollectionSequenceTypes.byCode(JPU.getContentAsString(element));
+   }
 
-    @Override
-    public boolean exists() {
-        return exists;
-    }
+   /**
+    * @return whether this tag (&lt;CollectionSequenceType&gt; or &lt;x479&gt;) is explicitly provided in the ONIX XML
+    */
+   @Override
+   public boolean exists() {
+      return exists;
+   }
 }

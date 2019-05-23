@@ -32,12 +32,25 @@ import java.io.Serializable;
 
 /**
  * <h1>Position on product</h1><p>An ONIX code indicating a position on a product; in this case, the position in which a
- * price appears. Optional, but must be included if (and only if) the &lt;PrintedOnProduct&gt; element indicates that
- * the price appears on the product, even if the position is ‘unknown’. Non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 142</td></tr><tr><td>Reference name</td><td>&lt;PositionOnProduct&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x313&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x313&gt;01&lt;/x313&gt;
- * (Cover 4 [the back cover of a book])</td></tr></table>
+ * barcode appears. Required if the &lt;BarcodeType&gt; element indicates that the barcode appears on the product, even
+ * if the position is ‘unknown’. Omitted if the &lt;BarcodeType&gt; element specifies that the product does not carry a
+ * barcode. Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 142</td></tr><tr><td>Reference name</td><td><tt>&lt;PositionOnProduct&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x313&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x313&gt;01&lt;/x313&gt;</tt>
+ * (Cover 4 - the back cover of a book)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Barcode&gt;</li>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Barcode ⯈ PositionOnProduct</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PositionOnProduct</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PositionOnProduct</li>
+ * </ul>
  */
 public class PositionOnProduct implements OnixElement<PositionOnProducts>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +81,7 @@ public class PositionOnProduct implements OnixElement<PositionOnProducts>, Seria
     public PositionOnProducts value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PositionOnProducts _value() {
@@ -95,6 +108,9 @@ public class PositionOnProduct implements OnixElement<PositionOnProducts>, Seria
         value = PositionOnProducts.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PositionOnProduct&gt; or &lt;x313&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,13 +34,29 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Text case flag</h1><p>An ONIX code indicating the case in which the text elements in an occurrence of the
- * &lt;Title&gt; composite are sent. The default is “unspecified”. Optional and non-repeating. <strong>Text case can now
- * be indicated by an XML attribute on any text element, and this method is preferred. See <cite>ONIX for Books –
- * Product Information Message – XML Message Specification</cite>, Section 4.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 14</td></tr><tr><td>Reference name</td><td>&lt;TextCaseFlag&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b027&gt;</td></tr><tr><td>Example</td><td>&lt;b027&gt;01&lt;/b027&gt;</td></tr></table>
+ * <h1>Text case flag</h1><p>An ONIX code indicating the case in which the title elements are sent. The default is
+ * “unspecified”. Optional and non-repeating. <strong>Text case can now be indicated by an XML attribute on any text
+ * element, and this method is preferred. See <cite>ONIX for Books – Product Information Message – XML Message
+ * Specification</cite>, Section 4.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two numeric digits</td></tr><tr><td>Codelist</td><td>List 14</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;TextCaseFlag&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b027&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TextCaseFlag&gt;01&lt;/TextCaseFlag&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;Title&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ TextCaseFlag</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ TextCaseFlag</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ TextCaseFlag</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ TextCaseFlag</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ TextCaseFlag</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ TextCaseFlag</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ TextCaseFlag</li>
+ * </ul>
  */
 public class TextCaseFlag implements OnixElement<TextCaseFlags>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +92,7 @@ public class TextCaseFlag implements OnixElement<TextCaseFlags>, Serializable {
     public TextCaseFlags value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TextCaseFlags _value() {
@@ -107,6 +123,9 @@ public class TextCaseFlag implements OnixElement<TextCaseFlags>, Serializable {
         value = TextCaseFlags.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TextCaseFlag&gt; or &lt;b027&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

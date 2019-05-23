@@ -38,7 +38,7 @@ import java.io.Serializable;
  * <i>datestamp</i> attribute to indicate its likely reliability. See <a href="#message_attributes">Section 1</a> for
  * further details of the <i>datestamp</i> attribute.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, two digits</td></tr><tr><td>Codelist</td><td>List 64</td></tr><tr><td>Reference
- * name</td><td>&lt;PublishingStatus&gt;</td></tr><tr><td>Short tag</td><td>&lt;b394&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PublishingStatus&gt;02&lt;/PublishingStatus&gt;
+ * name</td><td><tt>&lt;PublishingStatus&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b394&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;PublishingStatus&gt;02&lt;/PublishingStatus&gt;</tt>
  * (Forthcoming)</td></tr><tr><td>Notes</td><td>Note the typical progression of publishing status, from announcement to
  * out-of-print, through the life cycle of a product. The pale shaded area shows when the product is 'orderable' from
  * the publisher or the publisher's distributor, though if the product is 'Forthcoming' (and is later postponed
@@ -59,6 +59,16 @@ import java.io.Serializable;
  * of print' even while there are many copies available in the supply chain - the OP decision would be reflected in
  * &lt;PublishingStatus&gt; while the continued availability of copies would be reflected in
  * &lt;ProductAvailability&gt;.</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PublishingDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ PublishingStatus</li>
+ * </ul>
  */
 public class PublishingStatus implements OnixElement<PublishingStatuss>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -89,7 +99,7 @@ public class PublishingStatus implements OnixElement<PublishingStatuss>, Seriali
     public PublishingStatuss value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PublishingStatuss _value() {
@@ -116,6 +126,9 @@ public class PublishingStatus implements OnixElement<PublishingStatuss>, Seriali
         value = PublishingStatuss.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PublishingStatus&gt; or &lt;b394&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

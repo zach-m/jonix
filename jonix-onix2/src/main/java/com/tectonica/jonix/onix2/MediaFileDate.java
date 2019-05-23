@@ -38,7 +38,19 @@ import java.io.Serializable;
  * Optional and non-repeating. This element is intended to allow the receiver of an updated ONIX record to determine
  * whether it is necessary to download a new copy of the file.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 8 numeric digits, YYYYMMDD</td></tr><tr><td>Reference
- * name</td><td>&lt;MediaFileDate&gt;</td></tr><tr><td>Short tag</td><td>&lt;f373&gt;</td></tr><tr><td>Example</td><td>&lt;f373&gt;20030504&lt;/f373&gt;</td></tr></table>
+ * name</td><td><tt>&lt;MediaFileDate&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;f373&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;f373&gt;20030504&lt;/f373&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MediaFile&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ MediaFileDate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ MediaFileDate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ MediaFileDate</li>
+ * </ul>
  */
 public class MediaFileDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +89,7 @@ public class MediaFileDate implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +120,9 @@ public class MediaFileDate implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MediaFileDate&gt; or &lt;f373&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

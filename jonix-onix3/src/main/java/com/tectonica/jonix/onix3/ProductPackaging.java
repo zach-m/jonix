@@ -31,11 +31,23 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product packaging type code (product part)</h1><p>An ONIX code which indicates the type of packaging used for the
- * product part. Optional, and not repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length,
- * two digits</td></tr><tr><td>Codelist</td><td>List 80</td></tr><tr><td>Reference
- * name</td><td>&lt;ProductPackaging&gt;</td></tr><tr><td>Short tag</td><td>&lt;b225&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b225&gt;05&lt;/b225&gt;
+ * <h1>Product packaging type code</h1><p>An ONIX code which indicates the type of outer packaging used for the product.
+ * Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 80</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductPackaging&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b225&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;ProductPackaging&gt;05&lt;/ProductPackaging&gt;</tt>
  * (Jewel case)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;ProductPart&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPackaging</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductPackaging</li>
+ * </ul>
  */
 public class ProductPackaging implements OnixElement<ProductPackagingTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +78,7 @@ public class ProductPackaging implements OnixElement<ProductPackagingTypes>, Ser
     public ProductPackagingTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductPackagingTypes _value() {
@@ -93,6 +105,9 @@ public class ProductPackaging implements OnixElement<ProductPackagingTypes>, Ser
         value = ProductPackagingTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductPackaging&gt; or &lt;b225&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

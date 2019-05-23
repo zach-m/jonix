@@ -38,8 +38,22 @@ import java.io.Serializable;
  * <h1>Series identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;SeriesIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 13</td></tr><tr><td>Reference name</td><td>&lt;SeriesIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b273&gt;</td></tr><tr><td>Example</td><td>&lt;b273&gt;01&lt;/b273&gt;</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 13</td></tr><tr><td>Reference name</td><td><tt>&lt;SeriesIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b273&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b273&gt;01&lt;/b273&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SeriesIdentifier&gt;</li>
+ * <li>&lt;ParentIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SeriesIdentifier ⯈ SeriesIDType</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ SeriesIdentifier ⯈ SeriesIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ SeriesIdentifier ⯈ SeriesIDType</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ ParentIdentifier ⯈ SeriesIDType</li>
+ * </ul>
  */
 public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +89,7 @@ public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Seriali
     public SeriesIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SeriesIdentifierTypes _value() {
@@ -106,6 +120,9 @@ public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Seriali
         value = SeriesIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SeriesIDType&gt; or &lt;b273&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

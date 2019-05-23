@@ -37,10 +37,20 @@ import java.io.Serializable;
  * <i>language</i> attribute is optional for a single instance of &lt;CopiesSold&gt;, but must be included in each
  * instance if &lt;CopiesSold&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
  * length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML
- * with ONIX text fields</td></tr><tr><td>Reference name</td><td>&lt;CopiesSold&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;k168&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr><tr><td>Example</td><td>&lt;CopiesSold&gt;6400 copies sold of this edition in
- * hardback&lt;/CopiesSold&gt;</td></tr></table>
+ * with ONIX text fields</td></tr><tr><td>Reference name</td><td><tt>&lt;CopiesSold&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;k168&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td><tt>&lt;CopiesSold&gt;6400 copies sold of this edition in
+ * hardback&lt;/CopiesSold&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MarketPublishingDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ CopiesSold</li>
+ * </ul>
  */
 public class CopiesSold implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class CopiesSold implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class CopiesSold implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;CopiesSold&gt; or &lt;k168&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

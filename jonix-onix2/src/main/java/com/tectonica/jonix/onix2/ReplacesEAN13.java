@@ -39,7 +39,17 @@ import java.io.Serializable;
  * Group&nbsp;PR.23 provides a more general method of handling this type of link. This is now the preferred ONIX
  * approach. The &lt;ReplacesISBN&gt; element is retained only for upwards compatibility.</strong></p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 13 numeric digits.</td></tr><tr><td>Reference
- * name</td><td>&lt;ReplacesEAN13&gt;</td></tr><tr><td>Short tag</td><td>&lt;b011&gt;</td></tr><tr><td>Example</td><td>&lt;b011&gt;9788474339796&lt;/b011&gt;</td></tr></table>
+ * name</td><td><tt>&lt;ReplacesEAN13&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b011&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b011&gt;9788474339796&lt;/b011&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReplacesEAN13</li>
+ * </ul>
  */
 public class ReplacesEAN13 implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +88,7 @@ public class ReplacesEAN13 implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +119,9 @@ public class ReplacesEAN13 implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ReplacesEAN13&gt; or &lt;b011&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

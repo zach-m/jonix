@@ -31,12 +31,25 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product content type code (product part)</h1><p>An ONIX code which indicates certain types of content which are
- * closely related to but not strictly an attribute of product form, <i>eg</i> audiobook. Optional and
- * repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length text, two
- * digits</td></tr><tr><td>Codelist</td><td>List 81</td></tr><tr><td>Reference name</td><td>&lt;ProductContentType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b385&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;ProductContentType&gt;01&lt;/ProductContentType&gt;
- * (Audiobook)</td></tr></table>
+ * <h1>Product content type code</h1><p>An ONIX code which indicates a content type included in a product. The element
+ * is intended to be used in particular for digital products, to specify content types other than the primary type, or
+ * to list content types when none is singled out as the primary type. Optional, and repeatable to list multiple content
+ * types.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 81</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductContentType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b385&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;ProductContentType&gt;11&lt;/ProductContentType&gt;</tt>
+ * (Musical notation)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;ProductPart&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductContentType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductContentType</li>
+ * </ul>
  */
 public class ProductContentType implements OnixElement<ProductContentTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +80,7 @@ public class ProductContentType implements OnixElement<ProductContentTypes>, Ser
     public ProductContentTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductContentTypes _value() {
@@ -94,6 +107,9 @@ public class ProductContentType implements OnixElement<ProductContentTypes>, Ser
         value = ProductContentTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductContentType&gt; or &lt;b385&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

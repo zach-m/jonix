@@ -35,7 +35,17 @@ import java.io.Serializable;
  * <h1>Funding identifier composite</h1><p>A group of data elements which together identify a particular grant or award.
  * At least one &lt;FundingIdentifier&gt; composite must occur in each instance of the &lt;Funding&gt; composite.
  * Repeatable when the grant or award has multiple identifiers.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;FundingIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;fundingidentifier&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;FundingIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;fundingidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Funding&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Funding ⯈ FundingIdentifier</li>
+ * </ul>
  */
 public class FundingIdentifier
     implements OnixDataCompositeWithKey<JonixFundingIdentifier, GrantIdentifierTypes>, Serializable {
@@ -112,6 +122,10 @@ public class FundingIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;FundingIdentifier&gt; or &lt;fundingidentifier&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -124,7 +138,9 @@ public class FundingIdentifier
     private FundingIDType fundingIDType = FundingIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;FundingIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public FundingIDType fundingIDType() {
         _initialize();
@@ -134,7 +150,11 @@ public class FundingIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;FundingIDType&gt; element indicates a proprietary scheme, <i>eg</i> a funder’s own code. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -144,7 +164,9 @@ public class FundingIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;FundingIDType&gt; element. Mandatory in each occurrence of the
+     * &lt;FundingIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

@@ -38,9 +38,20 @@ import java.io.Serializable;
  * <h1>Price type code</h1><p>An ONIX code indicating the type of the price in the &lt;PriceAmount&gt; field within the
  * &lt;Price&gt; composite. Optional, provided that a &lt;DefaultPriceTypeCode&gt; has been specified in the message
  * header, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 58</td></tr><tr><td>Reference name</td><td>&lt;PriceTypeCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j148&gt;</td></tr><tr><td>Example</td><td>&lt;PriceTypeCode&gt;21&lt;/PriceTypeCode&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 58</td></tr><tr><td>Reference name</td><td><tt>&lt;PriceTypeCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j148&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PriceTypeCode&gt;21&lt;/PriceTypeCode&gt;</tt>
  * Pre-publication RRP excluding tax</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ PriceTypeCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceTypeCode</li>
+ * </ul>
  */
 public class PriceTypeCode implements OnixElement<PriceTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +87,7 @@ public class PriceTypeCode implements OnixElement<PriceTypes>, Serializable {
     public PriceTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PriceTypes _value() {
@@ -107,6 +118,9 @@ public class PriceTypeCode implements OnixElement<PriceTypes>, Serializable {
         value = PriceTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PriceTypeCode&gt; or &lt;j148&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

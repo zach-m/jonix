@@ -38,8 +38,18 @@ import java.io.Serializable;
  * stated authorship. Intended to be used in an ONIX accreditation scheme to confirm that author information is being
  * consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no
  * other elements from Group&nbsp;PR.8.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty
- * element</td></tr><tr><td>Reference name</td><td>&lt;NoContributor&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;n339&gt;</td></tr><tr><td>Example</td><td>&lt;NoContributor/&gt;</td></tr></table>
+ * element</td></tr><tr><td>Reference name</td><td><tt>&lt;NoContributor&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;n339&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;NoContributor/&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ NoContributor</li>
+ * </ul>
  */
 public class NoContributor implements OnixFlag, Serializable {
     private static final long serialVersionUID = 1L;
@@ -90,6 +100,9 @@ public class NoContributor implements OnixFlag, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
     }
 
+    /**
+     * @return whether this tag (&lt;NoContributor&gt; or &lt;n339&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

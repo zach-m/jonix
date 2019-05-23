@@ -36,9 +36,30 @@ import java.io.Serializable;
  * the element used for alphabetical sorting placed first (‘inverted order’). Optional and non-repeating: see
  * Group&nbsp;P.7 introductory text for valid options.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
  * length text, suggested maximum length 100 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;PersonNameInverted&gt;</td></tr><tr><td>Short tag</td><td>&lt;b037&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
- * language, textscript</td></tr><tr><td>Example</td><td>&lt;b037&gt;Johnson, James J.,
- * III&lt;/b037&gt;</td></tr></table>
+ * name</td><td><tt>&lt;PersonNameInverted&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b037&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
+ * language, textscript</td></tr><tr><td>Example</td><td><tt>&lt;b037&gt;Johnson, James J.,
+ * III&lt;/b037&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AlternativeName&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;NameAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ AlternativeName ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ AlternativeName ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ AlternativeName ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ AlternativeName ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ PersonNameInverted</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ PersonNameInverted</li>
+ * </ul>
  */
 public class PersonNameInverted implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +102,7 @@ public class PersonNameInverted implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +132,9 @@ public class PersonNameInverted implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PersonNameInverted&gt; or &lt;b037&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

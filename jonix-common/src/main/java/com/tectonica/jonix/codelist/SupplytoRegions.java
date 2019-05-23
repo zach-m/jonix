@@ -26,8 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 52 (Supply-to region code &lt;p&gt;NOTE: Deprecated in
- * Onix3)
+ * marker interface to assist in IDE navigation to code-list 52 (Supply-to region code)
  */
 interface CodeList52 {
 }
@@ -35,7 +34,9 @@ interface CodeList52 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 52</b>
  * <p>
- * Description: Supply-to region code &lt;p&gt;NOTE: Deprecated in Onix3
+ * Description: Supply-to region code
+ * <p>
+ * Jonix-Comment: Deprecated in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist52">ONIX

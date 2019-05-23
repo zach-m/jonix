@@ -42,8 +42,19 @@ import java.io.Serializable;
  * consisting of upper case letters with or without a hyphen, successive codes being separated by spaces. Suggested
  * maximum length 100 characters.</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate, country
  * subdivision codes are derived from the UN LOCODE scheme based on ISO 3166.</td></tr><tr><td>Reference
- * name</td><td>&lt;TerritoryExcluded&gt;</td></tr><tr><td>Short tag</td><td>&lt;j308&gt;</td></tr><tr><td>Example</td><td>&lt;j308&gt;ES-CN&lt;/j308&gt;
+ * name</td><td><tt>&lt;TerritoryExcluded&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j308&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j308&gt;ES-CN&lt;/j308&gt;</tt>
  * Canary Islands</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ TerritoryExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ TerritoryExcluded</li>
+ * </ul>
  */
 public class TerritoryExcluded implements OnixElement<java.util.Set<Regions>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +90,7 @@ public class TerritoryExcluded implements OnixElement<java.util.Set<Regions>>, S
     public java.util.Set<Regions> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<Regions> _value() {
@@ -113,6 +124,9 @@ public class TerritoryExcluded implements OnixElement<java.util.Set<Regions>>, S
         }
     }
 
+    /**
+     * @return whether this tag (&lt;TerritoryExcluded&gt; or &lt;j308&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

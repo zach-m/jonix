@@ -39,9 +39,23 @@ import java.io.Serializable;
  * cellpadding='3'><tr><td>Format</td><td>Variable-length code, consisting of upper case letters with or without a
  * hyphen, successive codes being separated by spaces. Suggested maximum length 8 characters.</td></tr><tr><td>Codelist</td><td>List
  * 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on ISO
- * 3166.</td></tr><tr><td>Reference name</td><td>&lt;RegionCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b398&gt;</td></tr><tr><td>Example</td><td>&lt;b398&gt;CA-BC&lt;/b398&gt; British
+ * 3166.</td></tr><tr><td>Reference name</td><td><tt>&lt;RegionCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b398&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b398&gt;CA-BC&lt;/b398&gt;</tt> British
  * Columbia</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ RegionCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ RegionCode</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ RegionCode</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ RegionCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ RegionCode</li>
+ * </ul>
  */
 public class RegionCode implements OnixElement<java.util.Set<String>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +95,7 @@ public class RegionCode implements OnixElement<java.util.Set<String>>, Serializa
     public java.util.Set<String> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<String> _value() {
@@ -115,6 +129,9 @@ public class RegionCode implements OnixElement<java.util.Set<String>>, Serializa
         }
     }
 
+    /**
+     * @return whether this tag (&lt;RegionCode&gt; or &lt;b398&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

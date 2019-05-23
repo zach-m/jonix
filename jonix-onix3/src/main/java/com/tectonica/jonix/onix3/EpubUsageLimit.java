@@ -34,7 +34,17 @@ import java.io.Serializable;
  * <h1>Usage limit composite (digital products)</h1><p>An optional group of data elements which together specify a
  * quantitative limit on a particular type of usage of a digital product. Repeatable in order to specify two or more
  * limits on the usage type.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;EpubUsageLimit&gt;</td></tr><tr><td>Short tag</td><td>&lt;epubusagelimit&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;EpubUsageLimit&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;epubusagelimit&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;EpubUsageConstraint&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint ⯈ EpubUsageLimit</li>
+ * </ul>
  */
 public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -106,6 +116,10 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
         });
     }
 
+    /**
+     * @return whether this tag (&lt;EpubUsageLimit&gt; or &lt;epubusagelimit&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -118,7 +132,9 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
     private Quantity quantity = Quantity.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A numeric value representing the maximum permitted quantity of a particular type of usage. Mandatory in each
+     * occurrence of the &lt;EpubUsageLimit&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public Quantity quantity() {
         _initialize();
@@ -128,7 +144,9 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
     private EpubUsageUnit epubUsageUnit = EpubUsageUnit.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code for a unit in which a permitted usage quantity is stated. Mandatory in each occurrence of the
+     * &lt;EpubUsageLimit&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public EpubUsageUnit epubUsageUnit() {
         _initialize();

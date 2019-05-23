@@ -34,8 +34,20 @@ import java.io.Serializable;
  * <h1>Price condition type</h1><p>An ONIX code identifying a type of price condition. Mandatory in each occurrence of
  * the &lt;PriceCondition&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, two digits</td></tr><tr><td>Codelist</td><td>List 167</td></tr><tr><td>Reference
- * name</td><td>&lt;PriceConditionType&gt;</td></tr><tr><td>Short tag</td><td>&lt;x463&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x463&gt;02&lt;/x463&gt;
+ * name</td><td><tt>&lt;PriceConditionType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x463&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x463&gt;02&lt;/x463&gt;</tt>
  * (Must also purchase updates)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PriceCondition&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈
+ * PriceConditionType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ PriceConditionType</li>
+ * </ul>
  */
 public class PriceConditionType implements OnixElement<PriceConditionTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +78,7 @@ public class PriceConditionType implements OnixElement<PriceConditionTypes>, Ser
     public PriceConditionTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PriceConditionTypes _value() {
@@ -93,6 +105,9 @@ public class PriceConditionType implements OnixElement<PriceConditionTypes>, Ser
         value = PriceConditionTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PriceConditionType&gt; or &lt;x463&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

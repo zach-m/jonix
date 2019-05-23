@@ -155,8 +155,9 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     /**
      * For digital products that are available to end customers both as a download and streamed, the earliest date the
      * product can be made available on a stream, where the streamed version becomes available later than the download.
-     * For the download, see code 02 if it is embargoed or code 01 if there is no embargo &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * For the download, see code 02 if it is embargoed or code 01 if there is no embargo
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Streaming_embargo_date("30", "Streaming embargo date"), //
 
@@ -164,7 +165,9 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * For digital products that are available to end customers both as purchases and as part of a subscription package,
      * the earliest date the product can be made available by subscription, where the product may not be included in a
      * subscription package until shome while after publication. For ordinary sales, see code 02 if there is a sales
-     * embargo or code 01 if there is no embargo &lt;p&gt;NOTE: Introduced in Onix3
+     * embargo or code 01 if there is no embargo
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Subscription_embargo_date("31", "Subscription embargo date");
 

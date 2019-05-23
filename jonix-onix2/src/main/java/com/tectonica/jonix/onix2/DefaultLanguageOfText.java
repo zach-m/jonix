@@ -38,8 +38,18 @@ import java.io.Serializable;
  * text of products listed in the message, unless explicitly stated otherwise by sending a “language of text” element in
  * the product record. This default will be assumed for all product records which do not specify a language in Group
  * PR.11. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three
- * letters.</td></tr><tr><td>Codelist</td><td>List 74</td></tr><tr><td>Reference name</td><td>&lt;DefaultLanguageOfText&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m184&gt;</td></tr><tr><td>Example</td><td>&lt;m184&gt;eng&lt;/m184&gt;</td></tr></table>
+ * letters.</td></tr><tr><td>Codelist</td><td>List 74</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultLanguageOfText&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m184&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m184&gt;eng&lt;/m184&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ DefaultLanguageOfText</li>
+ * </ul>
  */
 public class DefaultLanguageOfText implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +85,7 @@ public class DefaultLanguageOfText implements OnixElement<Languages>, Serializab
     public Languages value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Languages _value() {
@@ -106,6 +116,9 @@ public class DefaultLanguageOfText implements OnixElement<Languages>, Serializab
         value = Languages.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;DefaultLanguageOfText&gt; or &lt;m184&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

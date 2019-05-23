@@ -38,8 +38,19 @@ import java.io.Serializable;
  * <h1>Measure type code</h1><p>An ONIX code indicating the dimension which is specified by an occurrence of the measure
  * composite. Mandatory in each occurrence of the &lt;Measure&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 48</td></tr><tr><td>Reference name</td><td>&lt;MeasureTypeCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;c093&gt;</td></tr><tr><td>Example</td><td>&lt;c093&gt;01&lt;/c093&gt; Height</td></tr></table>
+ * 48</td></tr><tr><td>Reference name</td><td><tt>&lt;MeasureTypeCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;c093&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;c093&gt;01&lt;/c093&gt;</tt>
+ * Height</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Measure&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Measure ⯈ MeasureTypeCode</li>
+ * </ul>
  */
 public class MeasureTypeCode implements OnixElement<MeasureTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +86,7 @@ public class MeasureTypeCode implements OnixElement<MeasureTypes>, Serializable 
     public MeasureTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public MeasureTypes _value() {
@@ -106,6 +117,9 @@ public class MeasureTypeCode implements OnixElement<MeasureTypes>, Serializable 
         value = MeasureTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;MeasureTypeCode&gt; or &lt;c093&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

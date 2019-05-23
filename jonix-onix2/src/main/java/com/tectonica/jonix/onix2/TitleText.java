@@ -38,9 +38,24 @@ import java.io.Serializable;
  * any. Optional and non-repeating: see text at the head of the &lt;Title&gt; composite for details of valid title text
  * options. The &lt;TitleText&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
  * transliteration, textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
- * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td>&lt;TitleText&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b203&gt;</td></tr><tr><td>Example</td><td>&lt;TitleText&gt;Nicholas
- * Nickleby&lt;/TitleText&gt;</td></tr></table>
+ * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleText&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b203&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TitleText&gt;Nicholas
+ * Nickleby&lt;/TitleText&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Title&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ TitleText</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ TitleText</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ TitleText</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ TitleText</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ TitleText</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ TitleText</li>
+ * </ul>
  */
 public class TitleText implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +94,7 @@ public class TitleText implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +125,9 @@ public class TitleText implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TitleText&gt; or &lt;b203&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

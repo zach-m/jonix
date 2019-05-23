@@ -34,13 +34,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title text without prefix</h1><p>Full text of a title, without abbreviation or abridgement, and without the title
- * prefix; and excluding the subtitle, if any. Optional and non-repeating; can only be used if the &lt;TitlePrefix&gt;
- * element is also present. The &lt;TitleWithoutPrefix&gt; element may carry any of the following ONIX attributes:
- * <i>textformat, language, transliteration, textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 300 characters</td></tr><tr><td>Reference name</td><td>&lt;TitleWithoutPrefix&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b031&gt;</td></tr><tr><td>Example</td><td>&lt;TitleWithoutPrefix textcase=&quot;01&quot;&gt;shameful
- * life of Salvador Dali&lt;/TitleWithoutPrefix&gt;</td></tr></table>
+ * <h1>Title text without prefix</h1><p>Full text of the distinctive title of the product, without abbreviation or
+ * abridgement, and without the title prefix. Optional and non-repeating; can only be used if the &lt;TitlePrefix&gt;
+ * element is also present. <strong>The &lt;Title&gt; composite on a later page provides a more general method of
+ * handling all forms of title, and is to be preferred.</strong></p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 300
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleWithoutPrefix&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b031&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b031&gt;shameful life of Salvador
+ * Dali&lt;/b031&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;Title&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ TitleWithoutPrefix</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ TitleWithoutPrefix</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ TitleWithoutPrefix</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ TitleWithoutPrefix</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ TitleWithoutPrefix</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ TitleWithoutPrefix</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ TitleWithoutPrefix</li>
+ * </ul>
  */
 public class TitleWithoutPrefix implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +97,7 @@ public class TitleWithoutPrefix implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +128,9 @@ public class TitleWithoutPrefix implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TitleWithoutPrefix&gt; or &lt;b031&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

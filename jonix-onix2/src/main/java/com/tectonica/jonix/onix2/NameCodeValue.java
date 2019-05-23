@@ -37,7 +37,22 @@ import java.io.Serializable;
  * <h1>Name code value</h1><p>A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and
  * only if &lt;NameCodeType&gt; is present, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Determined by the scheme specified in &lt;NameCodeType&gt;</td></tr><tr><td>Reference
- * name</td><td>&lt;NameCodeValue&gt;</td></tr><tr><td>Short tag</td><td>&lt;b243&gt;</td></tr></table>
+ * name</td><td><tt>&lt;NameCodeValue&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b243&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Publisher&gt;</li>
+ * <li>&lt;Imprint&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ NameCodeValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ NameCodeValue</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ NameCodeValue</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ NameCodeValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Imprint ⯈ NameCodeValue</li>
+ * </ul>
  */
 public class NameCodeValue implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +91,7 @@ public class NameCodeValue implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +122,9 @@ public class NameCodeValue implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;NameCodeValue&gt; or &lt;b243&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

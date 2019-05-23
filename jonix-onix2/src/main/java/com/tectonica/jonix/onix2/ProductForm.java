@@ -35,12 +35,25 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product form code</h1><p>An ONIX code which indicates the primary form of the product. Optional and
- * non-repeating; required in any occurrence of the &lt;RelatedProduct&gt; composite that does not carry a product
- * identifier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
- * letters.</td></tr><tr><td>Codelist</td><td>List 7</td></tr><tr><td>Reference name</td><td>&lt;ProductForm&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b012&gt;</td></tr><tr><td>Example</td><td>&lt;b012&gt;BB&lt;/b012&gt; Hardback
- * book</td></tr></table>
+ * <h1>Product form code</h1><p>An ONIX code which indicates the primary form of the product. Mandatory and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * letters.</td></tr><tr><td>Codelist</td><td>List 7</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductForm&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b012&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ProductForm&gt;BB&lt;/ProductForm&gt;</tt>
+ * Hardback book</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductForm</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductForm</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductForm</li>
+ * </ul>
  */
 public class ProductForm implements OnixElement<ProductFormsList7>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +89,7 @@ public class ProductForm implements OnixElement<ProductFormsList7>, Serializable
     public ProductFormsList7 value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductFormsList7 _value() {
@@ -107,6 +120,9 @@ public class ProductForm implements OnixElement<ProductFormsList7>, Serializable
         value = ProductFormsList7.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductForm&gt; or &lt;b012&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

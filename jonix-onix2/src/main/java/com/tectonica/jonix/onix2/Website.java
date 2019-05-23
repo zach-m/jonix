@@ -36,10 +36,41 @@ import java.util.Arrays;
  */
 
 /**
- * <h1>Website composite</h1><p>An optional and repeatable group of data elements which together identify and provide
- * pointers to a website which is related to the agent or local publisher identified in an occurrence of the
- * &lt;MarketRepresentation&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Website&gt;</td></tr><tr><td>Short tag</td><td>&lt;website&gt;</td></tr></table>
+ * <h1>Website composite</h1><p>A repeatable group of data elements which together identify and provide pointers to a
+ * website which is related to the work identified in an occurrence of the &lt;WorkIdentifier&gt; composite.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Website&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;website&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;Conference&gt;</li>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;MarketRepresentation&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;Publisher&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Website</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Website</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ Website</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ Website</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ Website</li>
+ * </ul>
  */
 public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -124,6 +155,9 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Website&gt; or &lt;website&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -136,7 +170,9 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which identifies the role or purpose of the website which is linked through the
+     * &lt;WebsiteLink&gt; element. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public WebsiteRole websiteRole() {
         _initialize();
@@ -146,7 +182,9 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private WebsiteDescription websiteDescription = WebsiteDescription.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Free text describing the nature of the website which is linked through the &lt;WebsiteLink&gt; element.
+     * Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public WebsiteDescription websiteDescription() {
         _initialize();
@@ -156,7 +194,9 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private WebsiteLink websiteLink = WebsiteLink.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite, and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public WebsiteLink websiteLink() {
         _initialize();

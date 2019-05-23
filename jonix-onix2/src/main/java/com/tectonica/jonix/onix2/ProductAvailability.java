@@ -44,9 +44,19 @@ import java.io.Serializable;
  * appropriate, to include the &lt;PublishingStatus&gt; element in PR.20. It is likely that the &lt;AvailabilityCode&gt;
  * element will be “deprecated” in due course in a future release.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 65</td></tr><tr><td>Reference name</td><td>&lt;ProductAvailability&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j396&gt;</td></tr><tr><td>Example</td><td>&lt;j396&gt;41&lt;/j396&gt; Replaced by new
- * product</td></tr></table>
+ * 65</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductAvailability&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j396&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j396&gt;41&lt;/j396&gt;</tt> Replaced by
+ * new product</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ ProductAvailability</li>
+ * </ul>
  */
 public class ProductAvailability implements OnixElement<ProductAvailabilitys>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -82,7 +92,7 @@ public class ProductAvailability implements OnixElement<ProductAvailabilitys>, S
     public ProductAvailabilitys value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductAvailabilitys _value() {
@@ -113,6 +123,9 @@ public class ProductAvailability implements OnixElement<ProductAvailabilitys>, S
         value = ProductAvailabilitys.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductAvailability&gt; or &lt;j396&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

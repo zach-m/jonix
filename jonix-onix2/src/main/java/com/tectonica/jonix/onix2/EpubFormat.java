@@ -39,9 +39,20 @@ import java.io.Serializable;
  * non-repeating, and can occur only if the &lt;EpubType&gt; field is present. Note that where the epublication type is
  * wholly defined by the delivery format, this element effectively duplicates the &lt;EpubType&gt; field.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 11</td></tr><tr><td>Reference name</td><td>&lt;EpubFormat&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b214&gt;</td></tr><tr><td>Example</td><td>&lt;EpubFormat&gt;02&lt;EpubFormat&gt;
- * PDF</td></tr></table>
+ * 11</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubFormat&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b214&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b214&gt;02&lt;/b214&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ EpubFormat</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ EpubFormat</li>
+ * </ul>
  */
 public class EpubFormat implements OnixElement<EpublicationFormats>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +88,7 @@ public class EpubFormat implements OnixElement<EpublicationFormats>, Serializabl
     public EpublicationFormats value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public EpublicationFormats _value() {
@@ -108,6 +119,9 @@ public class EpubFormat implements OnixElement<EpublicationFormats>, Serializabl
         value = EpublicationFormats.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;EpubFormat&gt; or &lt;b214&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

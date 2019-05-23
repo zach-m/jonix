@@ -42,9 +42,23 @@ import java.io.Serializable;
  * &lt;ContributorRole&gt; element must not be repeated. There must instead be separate occurrences of the
  * &lt;Contributor&gt; composite if the same person has two or more roles.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, one letter and two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 17</td></tr><tr><td>Reference name</td><td>&lt;ContributorRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b035&gt;</td></tr><tr><td>Example</td><td>&lt;ContributorRole&gt;A01&lt;/ContributorRole&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 17</td></tr><tr><td>Reference name</td><td><tt>&lt;ContributorRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b035&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ContributorRole&gt;A01&lt;/ContributorRole&gt;</tt>
  * Author</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ContributorRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ ContributorRole</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ ContributorRole</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ ContributorRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ ContributorRole</li>
+ * </ul>
  */
 public class ContributorRole implements OnixElement<ContributorRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +94,7 @@ public class ContributorRole implements OnixElement<ContributorRoles>, Serializa
     public ContributorRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ContributorRoles _value() {
@@ -111,6 +125,9 @@ public class ContributorRole implements OnixElement<ContributorRoles>, Serializa
         value = ContributorRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ContributorRole&gt; or &lt;b035&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

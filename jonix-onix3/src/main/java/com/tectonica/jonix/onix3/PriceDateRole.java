@@ -34,8 +34,19 @@ import java.io.Serializable;
  * <h1>Price date role code</h1><p>An ONIX code indicating the significance of the date. Mandatory in each occurrence of
  * the &lt;PriceDate&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, two digits</td></tr><tr><td>Codelist</td><td>List 173</td></tr><tr><td>Reference
- * name</td><td>&lt;PriceDateRole&gt;</td></tr><tr><td>Short tag</td><td>&lt;x476&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;PriceDateRole&gt;14&lt;/PriceDateRole&gt;
+ * name</td><td><tt>&lt;PriceDateRole&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x476&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;PriceDateRole&gt;14&lt;/PriceDateRole&gt;</tt>
  * (From date [date on which a price becomes effective])</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PriceDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceDate ⯈ PriceDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceDate ⯈ PriceDateRole</li>
+ * </ul>
  */
 public class PriceDateRole implements OnixElement<PriceDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +77,7 @@ public class PriceDateRole implements OnixElement<PriceDateRoles>, Serializable 
     public PriceDateRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PriceDateRoles _value() {
@@ -93,6 +104,9 @@ public class PriceDateRole implements OnixElement<PriceDateRoles>, Serializable 
         value = PriceDateRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PriceDateRole&gt; or &lt;x476&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

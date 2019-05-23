@@ -81,46 +81,60 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     Concurrent_users("07", "Concurrent users"), //
 
     /**
-     * Maximum number of licenced individual users, independent of concurrency of use &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * Maximum number of licenced individual users, independent of concurrency of use
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Users("15", "Users"), //
 
     /**
      * A 'class' is a group of learners attending a specific course or lesson and generally taught as a group
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Concurrent_classes("19", "Concurrent classes"), //
 
     /**
-     * Maximum number of classes of learners, independent of concurrency of use &lt;p&gt;NOTE: Introduced in Onix3
+     * Maximum number of classes of learners, independent of concurrency of use
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Classes("20", "Classes"), //
 
     /**
      * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
-     * specified as another EpubUsageQuantity &lt;p&gt;NOTE: Introduced in Onix3
+     * specified as another EpubUsageQuantity
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Percentage_per_time_period("08", "Percentage per time period"), //
 
     /**
-     * Maximum time period in days (beginning from product purchase or activation) &lt;p&gt;NOTE: Introduced in Onix3
+     * Maximum time period in days (beginning from product purchase or activation)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Days("09", "Days"), //
 
     /**
-     * Maximum time period in weeks &lt;p&gt;NOTE: Introduced in Onix3
+     * Maximum time period in weeks
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Weeks("13", "Weeks"), //
 
     /**
-     * Maximum time period in months &lt;p&gt;NOTE: Introduced in Onix3
+     * Maximum time period in months
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Months("14", "Months"), //
 
     /**
      * Maximum about of time in hours, minutes and seconds allowed in a permitted extract for a specified usage, in the
-     * format HHHMMSS (7 digits, with leading zeros if necessary) &lt;p&gt;NOTE: Introduced in Onix3
+     * format HHHMMSS (7 digits, with leading zeros if necessary)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Hours_minutes_and_seconds("16", "Hours minutes and seconds"), //
 
@@ -188,35 +202,47 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     /**
      * Time at which allowed usage begins. &lt;Quantity&gt; should contain an absolute time, counting from the beginning
      * of an audio or video product, in the format HHHMMSS or HHHMMSScc. Use with Time, Percentage of content, or End
-     * time to specify time-based extract allowed in Preview &lt;p&gt;NOTE: Introduced in Onix3
+     * time to specify time-based extract allowed in Preview
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Allowed_usage_start_time("17", "Allowed usage start time"), //
 
     /**
      * Time at which allowed usage ends. &lt;Quantity&gt; should contain an absolute time, counting from the beginning
      * of an audio or video product, in the format HHHMMSS or HHHMMSScc. Use with Start time to specify time-based
-     * extract allowed in Preview &lt;p&gt;NOTE: Introduced in Onix3
+     * extract allowed in Preview
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Allowed_usage_end_time("18", "Allowed usage end time"), //
 
     /**
      * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
-     * specified as another EpubUsageQuantity &lt;p&gt;NOTE: Deprecated in Onix3
+     * specified as another EpubUsageQuantity
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Percentage_per_time_period_("08", "Percentage per time period"), //
 
     /**
-     * Maximum time period in days (beginning from product purchase or activation) &lt;p&gt;NOTE: Deprecated in Onix3
+     * Maximum time period in days (beginning from product purchase or activation)
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Days_("09", "Days"), //
 
     /**
-     * Maximum time period in weeks &lt;p&gt;NOTE: Deprecated in Onix3
+     * Maximum time period in weeks
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Weeks_("13", "Weeks"), //
 
     /**
-     * Maximum time period in months &lt;p&gt;NOTE: Deprecated in Onix3
+     * Maximum time period in months
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Months_("14", "Months");
 

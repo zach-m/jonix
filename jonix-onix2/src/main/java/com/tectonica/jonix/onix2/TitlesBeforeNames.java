@@ -38,8 +38,34 @@ import java.io.Serializable;
  * the creation of the product: qualifications and/or titles preceding a person’s names, <em>eg</em> Professor or HRH
  * Prince or Saint. Optional and non-repeating: see Group&nbsp;PR.8 introductory text for valid options.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td>&lt;TitlesBeforeNames&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b038&gt;</td></tr><tr><td>Example</td><td>&lt;b038&gt;HRH Prince&lt;/b038&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitlesBeforeNames&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b038&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b038&gt;HRH
+ * Prince&lt;/b038&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Name&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;PersonAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ TitlesBeforeNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ TitlesBeforeNames</li>
+ * </ul>
  */
 public class TitlesBeforeNames implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +104,7 @@ public class TitlesBeforeNames implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +135,9 @@ public class TitlesBeforeNames implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TitlesBeforeNames&gt; or &lt;b038&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

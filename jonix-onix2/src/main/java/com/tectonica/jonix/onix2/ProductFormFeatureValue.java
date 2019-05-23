@@ -39,9 +39,26 @@ import java.io.Serializable;
  * index) do not require an accompanying value, while others (<em>eg</em> text font) require free text in
  * &lt;ProductFormFeatureDescription&gt;. Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Dependent
  * on the scheme specified in &lt;ProductFormFeatureType&gt;</td></tr><tr><td>Codelist</td><td>Dependent on the scheme
- * specified in &lt;ProductFormFeatureType&gt;</td></tr><tr><td>Reference name</td><td>&lt;ProductFormFeatureValue&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b335&gt;</td></tr><tr><td>Example</td><td>&lt;ProductFormFeatureValue&gt;BLK&lt;/ProductFormFeatureValue&gt;
+ * specified in &lt;ProductFormFeatureType&gt;</td></tr><tr><td></td><td>For binding color, see List
+ * 98</td></tr><tr><td></td><td>For page edge color, see List 98</td></tr><tr><td></td><td>For text font, use free text
+ * in &lt;ProductFormFeatureDescription&gt;, which may include font name and/or size</td></tr><tr><td></td><td>For
+ * special cover material, see List 99</td></tr><tr><td></td><td>For DVD region codes, see List
+ * 76</td></tr><tr><td></td><td>Further features with corresponding code lists may be added from time to time without a
+ * re-issue of this document: see the latest release of Code List 79.</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;ProductFormFeatureValue&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b335&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b335&gt;BLK&lt;/b335&gt;</tt>
  * Black (binding color)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductFormFeature&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductFormFeature ⯈ ProductFormFeatureValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductFormFeature ⯈ ProductFormFeatureValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductFormFeature ⯈ ProductFormFeatureValue</li>
+ * </ul>
  */
 public class ProductFormFeatureValue implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +97,7 @@ public class ProductFormFeatureValue implements OnixElement<String>, Serializabl
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +128,9 @@ public class ProductFormFeatureValue implements OnixElement<String>, Serializabl
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ProductFormFeatureValue&gt; or &lt;b335&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,9 +34,20 @@ import java.io.Serializable;
  * <h1>Work relation code</h1><p>An ONIX code which identifies the nature of the relationship between a product and a
  * work. Mandatory in each occurrence of the &lt;RelatedWork&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 164</td></tr><tr><td>Reference name</td><td>&lt;WorkRelationCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x454&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;WorkRelationCode&gt;01&lt;/WorkRelationCode&gt;
+ * 164</td></tr><tr><td>Reference name</td><td><tt>&lt;WorkRelationCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x454&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;WorkRelationCode&gt;01&lt;/WorkRelationCode&gt;</tt>
  * (Manifestation of)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;RelatedWork&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedWork ⯈ WorkRelationCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedWork ⯈ WorkRelationCode</li>
+ * </ul>
  */
 public class WorkRelationCode implements OnixElement<WorkRelations>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +78,7 @@ public class WorkRelationCode implements OnixElement<WorkRelations>, Serializabl
     public WorkRelations value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public WorkRelations _value() {
@@ -94,6 +105,9 @@ public class WorkRelationCode implements OnixElement<WorkRelations>, Serializabl
         value = WorkRelations.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;WorkRelationCode&gt; or &lt;x454&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

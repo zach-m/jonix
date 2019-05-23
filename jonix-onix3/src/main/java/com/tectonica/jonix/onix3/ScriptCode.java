@@ -35,8 +35,19 @@ import java.io.Serializable;
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, four letters. Note that ISO
  * 15924 specifies that script codes shall be sent as one upper case followed by three lower case
  * letters</td></tr><tr><td>Codelist</td><td>ISO 15924 four-letter script codes List 121</td></tr><tr><td>Reference
- * name</td><td>&lt;ScriptCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;x420&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ScriptCode&gt;Cyrl&lt;/ScriptCode&gt;
+ * name</td><td><tt>&lt;ScriptCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x420&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;ScriptCode&gt;Cyrl&lt;/ScriptCode&gt;</tt>
  * (Cyrillic)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Language&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Language ⯈ ScriptCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Language ⯈ ScriptCode</li>
+ * </ul>
  */
 public class ScriptCode implements OnixElement<TextScripts>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +78,7 @@ public class ScriptCode implements OnixElement<TextScripts>, Serializable {
     public TextScripts value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TextScripts _value() {
@@ -94,6 +105,9 @@ public class ScriptCode implements OnixElement<TextScripts>, Serializable {
         value = TextScripts.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ScriptCode&gt; or &lt;x420&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

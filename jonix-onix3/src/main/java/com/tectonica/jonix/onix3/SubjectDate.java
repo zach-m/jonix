@@ -35,8 +35,19 @@ import java.io.Serializable;
  * <h1>Subject date composite</h1><p>A group of data elements which together specify a date associated with the person
  * or organization identified in an occurrence of the &lt;NameAsSubject&gt; composite, <i>eg</i> birth or death.
  * Optional, and repeatable to provide multiple dates with their various roles.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SubjectDate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;subjectdate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SubjectDate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;subjectdate&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;NameAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ SubjectDate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ SubjectDate</li>
+ * </ul>
  */
 public class SubjectDate
     implements OnixDataCompositeWithKey<JonixSubjectDate, PersonOrganizationDateRoles>, Serializable {
@@ -113,6 +124,9 @@ public class SubjectDate
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SubjectDate&gt; or &lt;subjectdate&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -125,7 +139,9 @@ public class SubjectDate
     private SubjectDateRole subjectDateRole = SubjectDateRole.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the significance of the date in relation to the subject name. Mandatory in each
+     * occurrence of the &lt;SubjectDate&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SubjectDateRole subjectDateRole() {
         _initialize();
@@ -135,7 +151,9 @@ public class SubjectDate
     private DateFormat dateFormat = DateFormat.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and not repeatable.
+     * Deprecated – where possible, use the <i>dateformat</i> attribute instead.</p>
+     * Jonix-Comment: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();
@@ -145,7 +163,11 @@ public class SubjectDate
     private Date date = Date.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The date specified in the &lt;SubjectDateRole&gt; field. Mandatory in each occurrence of the
+     * &lt;SubjectDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the
+     * attribute is missing, then &lt;DateFormat&gt; indicates the format of the date; if both dateformat attribute and
+     * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.</p>
+     * Jonix-Comment: this field is required
      */
     public Date date() {
         _initialize();

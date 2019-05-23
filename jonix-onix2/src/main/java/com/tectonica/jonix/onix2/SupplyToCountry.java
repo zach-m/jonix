@@ -42,9 +42,19 @@ import java.io.Serializable;
  * repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>One or more fixed-length codes, each with two
  * upper case letters, successive codes being separated by spaces. Suggested maximum length 600 characters. [Note that
  * ISO 3166-1 specifies that country codes shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO
- * 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference name</td><td>&lt;SupplyToCountry&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j138&gt;</td></tr><tr><td>Example</td><td>&lt;j138&gt;US CA&lt;/j138&gt; USA and
+ * 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplyToCountry&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j138&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j138&gt;US CA&lt;/j138&gt;</tt> USA and
  * Canada</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplyToCountry</li>
+ * </ul>
  */
 public class SupplyToCountry implements OnixElement<java.util.Set<Countrys>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +90,7 @@ public class SupplyToCountry implements OnixElement<java.util.Set<Countrys>>, Se
     public java.util.Set<Countrys> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<Countrys> _value() {
@@ -114,6 +124,9 @@ public class SupplyToCountry implements OnixElement<java.util.Set<Countrys>>, Se
         }
     }
 
+    /**
+     * @return whether this tag (&lt;SupplyToCountry&gt; or &lt;j138&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

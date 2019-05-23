@@ -37,8 +37,23 @@ import java.io.Serializable;
 /**
  * <h1>Product packaging type code</h1><p>An ONIX code which indicates the type of packaging used for the product.
  * Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 80</td></tr><tr><td>Reference name</td><td>&lt;ProductPackaging&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b225&gt;</td></tr><tr><td>Example</td><td>&lt;b225&gt;05&lt;/b225&gt; Jewel case</td></tr></table>
+ * digits.</td></tr><tr><td>Codelist</td><td>List 80</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductPackaging&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b225&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b225&gt;05&lt;/b225&gt;</tt> Jewel
+ * case</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductPackaging</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductPackaging</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductPackaging</li>
+ * </ul>
  */
 public class ProductPackaging implements OnixElement<ProductPackagingTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -74,7 +89,7 @@ public class ProductPackaging implements OnixElement<ProductPackagingTypes>, Ser
     public ProductPackagingTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductPackagingTypes _value() {
@@ -105,6 +120,9 @@ public class ProductPackaging implements OnixElement<ProductPackagingTypes>, Ser
         value = ProductPackagingTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductPackaging&gt; or &lt;b225&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

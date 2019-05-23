@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Audience code type</h1><p>An ONIX code which identifies the scheme from which the code in
  * &lt;AudienceCodeValue&gt; is taken. Mandatory in each occurrence of the &lt;Audience&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 29</td></tr><tr><td>Reference name</td><td>&lt;AudienceCodeType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b204&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;AudienceCodeType&gt;02&lt;/AudienceCodeType&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 29</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceCodeType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b204&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;AudienceCodeType&gt;02&lt;/AudienceCodeType&gt;</tt>
  * (Proprietary)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Audience&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Audience ⯈ AudienceCodeType</li>
+ * </ul>
  */
 public class AudienceCodeType implements OnixElement<AudienceCodeTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class AudienceCodeType implements OnixElement<AudienceCodeTypes>, Seriali
     public AudienceCodeTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public AudienceCodeTypes _value() {
@@ -94,6 +104,9 @@ public class AudienceCodeType implements OnixElement<AudienceCodeTypes>, Seriali
         value = AudienceCodeTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;AudienceCodeType&gt; or &lt;b204&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

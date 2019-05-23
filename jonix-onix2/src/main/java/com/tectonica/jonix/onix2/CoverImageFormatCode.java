@@ -41,9 +41,19 @@ import java.io.Serializable;
  * elements is present, all three must be present.</p><p><strong>The &lt;MediaFile&gt; composite on the next page
  * provides a more general method of handling cover images, and is to be preferred.</strong></p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 36</td></tr><tr><td>Reference name</td><td>&lt;CoverImageFormatCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;f111&gt;</td></tr><tr><td>Example</td><td>&lt;CoverImageFormatCode&gt;03&lt;/CoverImageFormatCode&gt;
+ * 36</td></tr><tr><td>Reference name</td><td><tt>&lt;CoverImageFormatCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;f111&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;CoverImageFormatCode&gt;03&lt;/CoverImageFormatCode&gt;</tt>
  * JPEG</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ CoverImageFormatCode</li>
+ * </ul>
  */
 public class CoverImageFormatCode implements OnixElement<FrontCoverImageFileFormats>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class CoverImageFormatCode implements OnixElement<FrontCoverImageFileForm
     public FrontCoverImageFileFormats value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public FrontCoverImageFileFormats _value() {
@@ -110,6 +120,9 @@ public class CoverImageFormatCode implements OnixElement<FrontCoverImageFileForm
         value = FrontCoverImageFileFormats.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;CoverImageFormatCode&gt; or &lt;f111&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

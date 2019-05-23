@@ -40,7 +40,19 @@ import java.io.Serializable;
  * supporting resource, for example a particular format of a cover image. At least one instance is mandatory in each
  * occurrence of the &lt;SupportingResource&gt; composite, and the composite should be repeated as necessary if the
  * resource is offered in multiple versions.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;ResourceVersion&gt;</td></tr><tr><td>Short tag</td><td>&lt;resourceversion&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;ResourceVersion&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;resourceversion&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupportingResource&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion</li>
+ * </ul>
  */
 public class ResourceVersion implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -120,6 +132,10 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ResourceVersion&gt; or &lt;resourceversion&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -132,7 +148,9 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
     private ResourceForm resourceForm = ResourceForm.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the form of a version of a supporting resource. Mandatory in each occurrence of the
+     * &lt;ResourceVersion&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ResourceForm resourceForm() {
         _initialize();
@@ -143,7 +161,11 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         resourceVersionFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together describe a feature of a supporting resource which is specific to a
+     * particular version in which the resource is offered. Formally optional, but it is unlikely that a supporting
+     * resource version could be adequately described without specifying some of its features. Repeatable in order to
+     * specify multiple features of the version of the resource.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes> resourceVersionFeatures() {
         _initialize();
@@ -153,7 +175,11 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A URL which provides a link to a supporting resource. Mandatory in each occurrence of the
+     * &lt;ResourceVersion&gt; composite, and repeatable if the resource can be linked in more than one way, <i>eg</i>
+     * by URL or DOI, or where a supporting resource is available in multiple parallel languages. Where multiple
+     * languages are used, all repeats must carry the <i>language</i> attribute.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<ResourceLink, String> resourceLinks() {
         _initialize();
@@ -164,7 +190,10 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together specify a date associated with a supporting resource
+     * version, <i>eg</i> the date until which the resource version will be available for download. Repeatable to
+     * specify different dates with their various roles.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
         _initialize();

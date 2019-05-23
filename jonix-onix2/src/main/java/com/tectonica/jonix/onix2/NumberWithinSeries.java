@@ -36,9 +36,21 @@ import java.io.Serializable;
 /**
  * <h1>Number within series</h1><p>The distinctive enumeration of a product within a series. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
- * length 20 characters</td></tr><tr><td>Reference name</td><td>&lt;NumberWithinSeries&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b019&gt;</td></tr><tr><td>Example</td><td>&lt;NumberWithinSeries&gt;Volume
- * 14&lt;/NumberWithinSeries&gt;</td></tr></table>
+ * length 20 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;NumberWithinSeries&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b019&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;NumberWithinSeries&gt;Volume
+ * 14&lt;/NumberWithinSeries&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SubSeriesRecord&gt;</li>
+ * <li>&lt;Series&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ NumberWithinSeries</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ NumberWithinSeries</li>
+ * </ul>
  */
 public class NumberWithinSeries implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +89,7 @@ public class NumberWithinSeries implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +120,9 @@ public class NumberWithinSeries implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;NumberWithinSeries&gt; or &lt;b019&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

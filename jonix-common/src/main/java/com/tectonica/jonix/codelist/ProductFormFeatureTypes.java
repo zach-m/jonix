@@ -141,32 +141,41 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * printed on the page, or the whole page image, to identify the book and page position. Scanning can trigger
      * display of (for example) an augmented reality view of the page. The name of the compatible app or device (or
      * range of apps/devices) should be given in &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     _Point_and_watch_device_app_compatibility("17", "‘Point and watch’ device/app compatibility"), //
 
     /**
      * Requirement for user authentication prior to use, with detail of authentication method (user enrolment, and login
      * passwords, location- or device-based recognition, authentication via third-party identity service etc) given in
-     * &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     E_publication_authentication_and_access_control("18", "E-publication authentication and access control"), //
 
     /**
      * Use to describe battery requirements, hazards and safety warnings. &lt;ProductFormFeatureValue&gt; is a code from
-     * List 242. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * List 242. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Battery_type("19", "Battery type"), //
 
     /**
      * Total capacity (of batteries in the product) in Watt hours. &lt;ProductFormFeatureValue&gt; is an integer or
-     * decimal number (eg '45', not '45Wh'). For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * decimal number (eg '45', not '45Wh'). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Battery_capacity("20", "Battery capacity"), //
 
     /**
      * Use to describe regulation of the product for various purposes. &lt;ProductFormFeatureValue&gt; is a code from
-     * List 243. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * List 243. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Dangerous_goods("21", "Dangerous goods"), //
 
@@ -253,7 +262,9 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Paper_produced_by_green_technology("40", "Paper produced by ‘green’ technology"), //
 
     /**
-     * DEPRECATED - use code 12 and List 143 &lt;p&gt;NOTE: Deprecated in Onix3
+     * DEPRECATED - use code 12 and List 143
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     CPSIA_choking_hazard_warning_("11", "CPSIA choking hazard warning");
 

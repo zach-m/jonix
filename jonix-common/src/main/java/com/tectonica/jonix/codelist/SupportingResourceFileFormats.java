@@ -150,22 +150,30 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     TIFF("D504", "TIFF"), //
 
     /**
-     * Windows Bitmap format &lt;p&gt;NOTE: Introduced in Onix3
+     * Windows Bitmap format
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     BMP("D505", "BMP"), //
 
     /**
-     * JPEG 2000, improved Joint Photographic Experts Group format &lt;p&gt;NOTE: Introduced in Onix3
+     * JPEG 2000, improved Joint Photographic Experts Group format
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     JP2("D506", "JP2"), //
 
     /**
-     * Adobe Photoshop native file format, PSD or PSB &lt;p&gt;NOTE: Introduced in Onix3
+     * Adobe Photoshop native file format, PSD or PSB
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     PSD("D507", "PSD"), //
 
     /**
-     * Image as Postscript or Encapsulated Postscript file (.ps or .eps) &lt;p&gt;NOTE: Introduced in Onix3
+     * Image as Postscript or Encapsulated Postscript file (.ps or .eps)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     EPS("D508", "EPS"), //
 

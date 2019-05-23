@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Usage type (digital products)</h1><p>An ONIX code specifying a usage of a digital product. Mandatory in each
  * occurrence of the &lt;EpubUsageConstraint&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 145</td></tr><tr><td>Reference name</td><td>&lt;EpubUsageType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x318&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x318&gt;05&lt;/x318&gt;
+ * 145</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubUsageType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x318&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x318&gt;05&lt;/x318&gt;</tt>
  * (Text-to-speech)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;EpubUsageConstraint&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint ⯈ EpubUsageType</li>
+ * </ul>
  */
 public class EpubUsageType implements OnixElement<UsageTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class EpubUsageType implements OnixElement<UsageTypes>, Serializable {
     public UsageTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public UsageTypes _value() {
@@ -94,6 +104,9 @@ public class EpubUsageType implements OnixElement<UsageTypes>, Serializable {
         value = UsageTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;EpubUsageType&gt; or &lt;x318&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -40,8 +40,18 @@ import java.util.List;
  * product is not for sale, the publisher and product ID for an edition which is available in the specified territory
  * can optionally be included. (In previous releases, this functionality was provided in a &lt;NotForSale&gt; composite,
  * which is now redundant and has been deleted.) See examples at the end of the sales rights composite.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesRights&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;salesrights&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SalesRights&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;salesrights&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PublishingDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights</li>
+ * </ul>
  */
 public class SalesRights implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -125,6 +135,9 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SalesRights&gt; or &lt;salesrights&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -137,7 +150,10 @@ public class SalesRights implements OnixSuperComposite, Serializable {
     private SalesRightsType salesRightsType = SalesRightsType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the type of sales right or exclusion which applies in the territories which are
+     * associated with it. Mandatory in each occurrence of the &lt;SalesRights&gt; composite, and non-repeating. Values
+     * include: for sale with exclusive rights, for sale with non-exclusive rights, not for sale.</p>
+     * Jonix-Comment: this field is required
      */
     public SalesRightsType salesRightsType() {
         _initialize();
@@ -147,7 +163,10 @@ public class SalesRights implements OnixSuperComposite, Serializable {
     private Territory territory = Territory.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A group of data elements which together identify a territory in which the rights specified in
+     * &lt;SalesRightsType&gt; are applicable. Mandatory in each occurrence of the &lt;SalesRights&gt; composite, and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public Territory territory() {
         _initialize();
@@ -157,7 +176,10 @@ public class SalesRights implements OnixSuperComposite, Serializable {
     private List<SalesRestriction> salesRestrictions = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together identify a non-territorial sales restriction which a publisher applies
+     * to a product within a particular territory. Optional, and repeatable if more than a single restriction
+     * applies.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<SalesRestriction> salesRestrictions() {
         _initialize();
@@ -168,7 +190,11 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together define the identifier of a product in accordance with a
+     * specified scheme. Used here only if &lt;SalesRightsType&gt; has a value indicating ‘not for sale’, in order to
+     * specify an equivalent product which <em>is</em> available to be sold in the territory in question. Repeatable
+     * with different identifiers for the same product.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
         _initialize();
@@ -178,7 +204,11 @@ public class SalesRights implements OnixSuperComposite, Serializable {
     private PublisherName publisherName = PublisherName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of the publisher of an equivalent product which is available in the territory specified in the
+     * &lt;SalesRights&gt; composite, used only when &lt;SalesRightsType&gt; has a value indicating ‘not for sale’.
+     * Optional and non-repeating. Except where they are essential to the recognized form of the name, it is recommended
+     * that suffixes denoting incorporation (‘Co’, ‘Inc’, ‘Ltd’, ‘SA’, ‘GmbH’ <i>etc</i>) should be omitted.</p>
+     * Jonix-Comment: this field is optional
      */
     public PublisherName publisherName() {
         _initialize();

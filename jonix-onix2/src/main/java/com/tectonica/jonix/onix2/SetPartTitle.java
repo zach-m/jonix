@@ -40,8 +40,19 @@ import java.io.Serializable;
  * subset. Optional and non-repeating. Note that this element is used for the first subdivision of a set which has two
  * levels, regardless of the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 300
- * characters</td></tr><tr><td>Reference name</td><td>&lt;SetPartTitle&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b025&gt;</td></tr><tr><td>Example</td><td>&lt;b025&gt;The Dark Ages&lt;/b025&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;SetPartTitle&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b025&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b025&gt;The Dark
+ * Ages&lt;/b025&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Set&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ SetPartTitle</li>
+ * </ul>
  */
 public class SetPartTitle implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +91,7 @@ public class SetPartTitle implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +122,9 @@ public class SetPartTitle implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SetPartTitle&gt; or &lt;b025&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

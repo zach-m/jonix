@@ -37,7 +37,17 @@ import java.io.Serializable;
  * <h1>Order time</h1><p>The expected average number of days from receipt of order to despatch (for items “manufactured
  * on demand” or “only to order”). Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, one or two digits only</td></tr><tr><td>Reference
- * name</td><td>&lt;OrderTime&gt;</td></tr><tr><td>Short tag</td><td>&lt;j144&gt;</td></tr><tr><td>Example</td><td>&lt;OrderTime&gt;7&lt;/OrderTime&gt;</td></tr></table>
+ * name</td><td><tt>&lt;OrderTime&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j144&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;OrderTime&gt;7&lt;/OrderTime&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ OrderTime</li>
+ * </ul>
  */
 public class OrderTime implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class OrderTime implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,9 @@ public class OrderTime implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;OrderTime&gt; or &lt;j144&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

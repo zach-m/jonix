@@ -37,8 +37,18 @@ import java.io.Serializable;
 /**
  * <h1>Main subject composite</h1><p>An optional and repeatable group of data elements which together describe a main
  * subject classification or subject heading which is taken from a recognized scheme other than BISAC or BIC.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;MainSubject&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;mainsubject&gt;</td></tr></table>
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;MainSubject&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;mainsubject&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MainSubject</li>
+ * </ul>
  */
 public class MainSubject implements OnixDataComposite<JonixMainSubject>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -127,6 +137,9 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
         });
     }
 
+    /**
+     * @return whether this tag (&lt;MainSubject&gt; or &lt;mainsubject&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -139,7 +152,13 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
     private MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier = MainSubjectSchemeIdentifier.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies a subject scheme which is designated for use in a &lt;MainSubject&gt; composite.
+     * Mandatory in each occurrence of the composite, and non-repeating.</p><p>When the scheme listed in the code list
+     * display is annotated “Code”, use the associated &lt;SubjectCode&gt; element to carry the value (if so required,
+     * the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the text equivalent of the code). When
+     * the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to carry the text of the subject
+     * heading.</p>
+     * Jonix-Comment: this field is required
      */
     public MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier() {
         _initialize();
@@ -149,7 +168,9 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
     private SubjectSchemeVersion subjectSchemeVersion = SubjectSchemeVersion.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A number which identifies a version or edition of the subject scheme specified in the associated
+     * &lt;MainSubjectSchemeIdentifier&gt; element. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public SubjectSchemeVersion subjectSchemeVersion() {
         _initialize();
@@ -159,7 +180,10 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
     private SubjectCode subjectCode = SubjectCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A subject class or category code from the scheme specified in the &lt;MainSubjectSchemeIdentifier&gt; element.
+     * Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
+     * &lt;MainSubject&gt; composite. Non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SubjectCode subjectCode() {
         _initialize();
@@ -169,7 +193,11 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
     private SubjectHeadingText subjectHeadingText = SubjectHeadingText.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The text of a heading taken from the scheme specified in the &lt;MainSubjectSchemeIdentifier&gt; element; or
+     * the text equivalent to the &lt;SubjectCode&gt; value, if both code and text are sent. Either &lt;SubjectCode&gt;
+     * or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;MainSubject&gt; composite.
+     * Non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public SubjectHeadingText subjectHeadingText() {
         _initialize();

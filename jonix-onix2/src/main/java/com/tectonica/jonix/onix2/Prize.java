@@ -37,8 +37,18 @@ import java.util.Arrays;
 
 /**
  * <h1>Prize or award composite</h1><p>A repeatable group of data elements which together describe a prize or award won
- * by the product.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Prize&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;prize&gt;</td></tr></table>
+ * by the product.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Prize&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;prize&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Prize</li>
+ * </ul>
  */
 public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -131,6 +141,9 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Prize&gt; or &lt;prize&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -143,7 +156,9 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private PrizeName prizeName = PrizeName.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The name of a prize or award which the product has received. Mandatory in each occurrence of the &lt;Prize&gt;
+     * composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public PrizeName prizeName() {
         _initialize();
@@ -153,7 +168,8 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private PrizeYear prizeYear = PrizeYear.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The year in which a prize or award was given. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PrizeYear prizeYear() {
         _initialize();
@@ -163,7 +179,9 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private PrizeCountry prizeCountry = PrizeCountry.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ISO standard code identifying the country in which a prize or award is given. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PrizeCountry prizeCountry() {
         _initialize();
@@ -173,7 +191,9 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private PrizeCode prizeCode = PrizeCode.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code indicating the achievement of the product in relation to a prize or award, <em>eg</em> winner,
+     * runner-up, shortlisted. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PrizeCode prizeCode() {
         _initialize();
@@ -183,7 +203,8 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private PrizeJury prizeJury = PrizeJury.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Free text listing members of the jury that awarded the prize. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PrizeJury prizeJury() {
         _initialize();

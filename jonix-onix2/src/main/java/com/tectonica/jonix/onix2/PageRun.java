@@ -37,8 +37,18 @@ import java.io.Serializable;
 /**
  * <h1>Page run composite</h1><p>A repeatable group of data elements which together define a run of contiguous pages on
  * which a text item appears. The composite is optional, but may be repeated where the text item covers two or more
- * separate page runs.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;PageRun&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;pagerun&gt;</td></tr></table>
+ * separate page runs.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PageRun&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;pagerun&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TextItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ PageRun</li>
+ * </ul>
  */
 public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -119,6 +129,9 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;PageRun&gt; or &lt;pagerun&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -131,7 +144,10 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
     private FirstPageNumber firstPageNumber = FirstPageNumber.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The number of the first page of a sequence of contiguous pages. Mandatory in each occurrence of the
+     * &lt;PageRun&gt; composite, and non-repeating. Note that here and in the &lt;LastPageNumber&gt; element a page
+     * “number” may be arabic, roman, or an alphanumeric string (<em>eg</em> L123).</p>
+     * Jonix-Comment: this field is required
      */
     public FirstPageNumber firstPageNumber() {
         _initialize();
@@ -141,7 +157,10 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
     private LastPageNumber lastPageNumber = LastPageNumber.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The number of the last page of a sequence of contiguous pages (ignoring any blank verso which is left after
+     * the last text page). This element is omitted if an item begins and ends on the same page; otherwise it should
+     * occur once and only once in each occurrence of the &lt;PageRun&gt; composite.</p>
+     * Jonix-Comment: this field is optional
      */
     public LastPageNumber lastPageNumber() {
         _initialize();

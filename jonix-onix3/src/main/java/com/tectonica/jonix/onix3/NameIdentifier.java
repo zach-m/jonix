@@ -36,7 +36,28 @@ import java.io.Serializable;
  * carry an identifier for a person or organization name given in an occurrence of the &lt;Contributor&gt; composite.
  * Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable to specify name identifiers of different
  * types for the same person or organization name.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;NameIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;nameidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;NameIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;nameidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AlternativeName&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;NameAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ AlternativeName ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ AlternativeName ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ AlternativeName ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ AlternativeName ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ NameIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ NameIdentifier</li>
+ * </ul>
  */
 public class NameIdentifier
     implements OnixDataCompositeWithKey<JonixNameIdentifier, NameIdentifierTypes>, Serializable {
@@ -113,6 +134,10 @@ public class NameIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;NameIdentifier&gt; or &lt;nameidentifier&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -125,7 +150,9 @@ public class NameIdentifier
     private NameIDType nameIDType = NameIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;NameIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public NameIDType nameIDType() {
         _initialize();
@@ -135,7 +162,10 @@ public class NameIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;NameIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -145,7 +175,9 @@ public class NameIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A code value taken from the scheme specified in the &lt;NameIDType&gt; element. Mandatory in each occurrence
+     * of the composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

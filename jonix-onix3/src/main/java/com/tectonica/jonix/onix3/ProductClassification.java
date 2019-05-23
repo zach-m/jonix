@@ -37,8 +37,18 @@ import java.io.Serializable;
  * international trade classifications (also known as commodity codes) to be carried in an ONIX record. The composite is
  * repeatable if parts of the product are classified differently within a single product classification scheme, or to
  * provide classification codes from multiple classification schemes.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductClassification&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;productclassification&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ProductClassification&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;productclassification&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductClassification</li>
+ * </ul>
  */
 public class ProductClassification
     implements OnixDataCompositeWithKey<JonixProductClassification, ProductClassificationTypes>, Serializable {
@@ -115,6 +125,10 @@ public class ProductClassification
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ProductClassification&gt; or &lt;productclassification&gt;) is explicitly provided
+     * in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -127,7 +141,9 @@ public class ProductClassification
     private ProductClassificationType productClassificationType = ProductClassificationType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the scheme from which the identifier in &lt;ProductClassificationCode&gt; is taken.
+     * Mandatory in each occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ProductClassificationType productClassificationType() {
         _initialize();
@@ -137,7 +153,9 @@ public class ProductClassification
     private ProductClassificationCode productClassificationCode = ProductClassificationCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A classification code from the scheme specified in &lt;ProductClassificationType&gt;. Mandatory in each
+     * occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ProductClassificationCode productClassificationCode() {
         _initialize();
@@ -147,7 +165,11 @@ public class ProductClassification
     private Percent percent = Percent.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The percentage of the unit value of the product that is assignable to a designated product classification.
+     * Optional and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two or more
+     * product classes within a particular scheme. If omitted, the product classification code applies to 100% of the
+     * product.</p>
+     * Jonix-Comment: this field is optional
      */
     public Percent percent() {
         _initialize();

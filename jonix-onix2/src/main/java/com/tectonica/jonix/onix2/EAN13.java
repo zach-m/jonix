@@ -34,11 +34,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>EAN.UCC-13 article number</h1><p>EAN.UCC-13 number of the related product. Optional and non-repeating.
- * <strong>The &lt;ProductIdentifier&gt; composite provides a more general method of handling identifiers, and is to be
- * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 13 numeric
- * digits.</td></tr><tr><td>Reference name</td><td>&lt;EAN13&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b005&gt;</td></tr><tr><td>Example</td><td>&lt;b005&gt;9788474339796&lt;/b005&gt;</td></tr></table>
+ * <h1>EAN.UCC-13 article number</h1><p>The cross-industry product code administered by EAN International and its member
+ * agencies worldwide, in association with UCC in the US. Optional and non-repeating. For books, an EAN number can be
+ * derived from a ten-character ISBN by (a) prefixing it with the three digits 978, (b) deleting the ISBN check
+ * character, and (c) attaching a new check digit calculated according to EAN rules. <strong>The
+ * &lt;ProductIdentifier&gt; composite on a later page provides a more general method of handling this and other product
+ * codes, and is to be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 13
+ * numeric digits. The last digit is a modulus-10 check digit calculated in accordance with the rules given at
+ * http://www.ean-int.org/cdcalcul.html</td></tr><tr><td>Reference name</td><td><tt>&lt;EAN13&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b005&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b005&gt;9788474339796&lt;/b005&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;NotForSale&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ EAN13</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ EAN13</li>
+ * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ EAN13</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ EAN13</li>
+ * </ul>
  */
 public class EAN13 implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,12 +92,13 @@ public class EAN13 implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, 13 numeric digits.<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, 13 numeric digits. The last digit is a modulus-10 check digit calculated in accordance
+     * with the rules given at http://www.ean-int.org/cdcalcul.html<p> (type: NonEmptyString)
      */
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +129,9 @@ public class EAN13 implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;EAN13&gt; or &lt;b005&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

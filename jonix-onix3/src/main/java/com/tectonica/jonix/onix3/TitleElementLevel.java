@@ -33,10 +33,22 @@ import java.io.Serializable;
 /**
  * <h1>Title element level</h1><p>An ONIX code indicating the level of a title element: collection level, subcollection
  * level, or product level. Mandatory in each occurrence of the &lt;TitleElement&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 149</td></tr><tr><td>Reference name</td><td>&lt;TitleElementLevel&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x409&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x409&gt;02&lt;/x409&gt;
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length text, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 149</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleElementLevel&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x409&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x409&gt;02&lt;/x409&gt;</tt>
  * (Collection level)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TitleElement&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleElement ⯈ TitleElementLevel</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail ⯈ TitleElement ⯈ TitleElementLevel</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail ⯈ TitleElement ⯈ TitleElementLevel</li>
+ * </ul>
  */
 public class TitleElementLevel implements OnixElement<TitleElementLevels>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +79,7 @@ public class TitleElementLevel implements OnixElement<TitleElementLevels>, Seria
     public TitleElementLevels value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TitleElementLevels _value() {
@@ -94,6 +106,9 @@ public class TitleElementLevel implements OnixElement<TitleElementLevels>, Seria
         value = TitleElementLevels.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TitleElementLevel&gt; or &lt;x409&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

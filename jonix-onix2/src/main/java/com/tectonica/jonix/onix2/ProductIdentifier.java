@@ -37,11 +37,39 @@ import java.io.Serializable;
 
 /**
  * <h1>Product identifier composite</h1><p>A repeatable group of data elements which together define the identifier of a
- * product in accordance with a specified scheme, and allowing other types of product identifier for a related product
- * to be included without defining additional data elements. <strong>See notes on the &lt;ProductIdentifier&gt;
- * composite in section&nbsp;PR.2 for details of the handling of ISBN-13.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;productidentifier&gt;</td></tr></table>
+ * product in accordance with a specified scheme, allowing new types of product identifier to be included without
+ * defining additional data elements. In particular, the composite allows proprietary identifiers (SKUs) assigned by
+ * wholesalers or vendors to be sent as part of the ONIX record.</p><p>To support the transition from ten-character
+ * ISBNs to 13-digit ISBNs, effective from 1 January 2007, there are distinct &lt;ProductIDType&gt; codes for ISBN-10
+ * and ISBN-13, as well as for EAN.UCC-13.</p><p>ISBN-13 numbers in their unhyphenated form constitute a range of
+ * EAN.UCC-13 numbers that has been reserved for the international book trade. It has been agreed by ONIX national
+ * groups that it will be mandatory in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the
+ * ISBN-13 labelled as an EAN.UCC number (ProductIDType code 03), since this is how the ISBN-13 will be universally used
+ * in trading transactions. For many ONIX applications this will also be sufficient.</p><p>For some ONIX applications,
+ * however, particularly when data is to be supplied to the library sector, there may be reasons why the ISBN-13 must
+ * also be sent labelled distinctively as an ISBN-13 (ProductIDType code 15); or, if the item also has an ISBN-10, why
+ * it may still be desirable to send the ISBN-10 even after the end of 2006. Users should consult national “good
+ * practice” guidelines and/or discuss with their trading partners.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ProductIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;productidentifier&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;NotForSale&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;Set&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ ProductIdentifier</li>
+ * </ul>
  */
 public class ProductIdentifier
     implements OnixDataCompositeWithKey<JonixProductIdentifier, ProductIdentifierTypes>, Serializable {
@@ -127,6 +155,10 @@ public class ProductIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ProductIdentifier&gt; or &lt;productidentifier&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -139,7 +171,9 @@ public class ProductIdentifier
     private ProductIDType productIDType = ProductIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ProductIDType productIDType() {
         _initialize();
@@ -149,7 +183,10 @@ public class ProductIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme when, and only when, the code in the
+     * &lt;ProductIDType&gt; element indicates a proprietary scheme, <em>eg</em> a wholesaler’s own code. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -159,7 +196,9 @@ public class ProductIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in each occurrence of the
+     * &lt;ProductIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

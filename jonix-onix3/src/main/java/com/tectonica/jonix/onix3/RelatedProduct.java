@@ -36,11 +36,21 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Related product composite</h1><p>An optional group of data elements which together describe a product which has a
- * specified relationship to the product described in the ONIX record. The composite is repeatable in order to specify
- * different products which each have a relationship to the product described.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;RelatedProduct&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;relatedproduct&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Related product composite</h1><p>A group of data elements which together describe a product which has a specified
+ * relationship to a content item. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td><tt>&lt;RelatedProduct&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;relatedproduct&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;RelatedMaterial&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedProduct</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedProduct</li>
+ * </ul>
  */
 public class RelatedProduct implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -120,6 +130,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;RelatedProduct&gt; or &lt;relatedproduct&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -132,7 +146,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes = ListOfOnixElement.empty();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>An ONIX code which identifies the nature of the relationship between two products, <i>eg</i> ‘replaced-by’.
+     * Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite, and repeatable where the related product
+     * has multiple types of relationship to the product described.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes() {
         _initialize();
@@ -143,7 +160,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A group of data elements which together define an identifier of a product in accordance with a specified
+     * scheme. Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite. Repeatable only if two or more
+     * identifiers for the same product are sent using different identifier schemes.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
         _initialize();
@@ -153,7 +173,13 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     private ProductForm productForm = ProductForm.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which indicates the primary form of a related product. Optional in an occurrence of
+     * &lt;RelatedProduct&gt;, and non-repeating. If supplied, should be identical to the &lt;ProductForm&gt; element
+     * supplied in the &lt;DescriptiveDetail&gt; block of the full ONIX record describing the related product
+     * itself.</p><p>Since this and the following element provide data about a related product, ONIX suppliers are
+     * cautioned of the risk of contradictory data in separate data feeds. <em>This and the following element should not
+     * be supplied unless specifically requested by a particular recipient.</em></p>
+     * Jonix-Comment: this field is optional
      */
     public ProductForm productForm() {
         _initialize();
@@ -163,7 +189,9 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An ONIX code which provides added detail of the medium and/or format of a related product. Optional and
+     * repeatable.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();

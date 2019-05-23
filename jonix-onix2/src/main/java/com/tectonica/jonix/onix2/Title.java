@@ -36,10 +36,30 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title composite</h1><p>A repeatable group of data elements which together give the text of a title of a content
- * item and specify its type, used here to give alternate forms of title for a content item. <strong>Please see
- * Group&nbsp;PR.7 for details.</strong></p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Title&gt;</td></tr><tr><td>Short tag</td><td>&lt;title&gt;</td></tr></table>
+ * <h1>Title composite</h1><p>A repeatable group of data elements which together give the text of a title, including a
+ * subtitle where applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong></p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Title&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;title&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;Set&gt;</li>
+ * <li>&lt;SubSeriesRecord&gt;</li>
+ * <li>&lt;MainSeriesRecord&gt;</li>
+ * <li>&lt;Series&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Title</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title</li>
+ * </ul>
  */
 public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -140,6 +160,9 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Title&gt; or &lt;title&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -152,7 +175,10 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     private TitleType titleType = TitleType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the type of a title. Mandatory in each occurrence of the &lt;Title&gt; composite, and
+     * non-repeating. Additional types of title can now be defined by adding code values without requiring a new ONIX
+     * release.</p>
+     * Jonix-Comment: this field is required
      */
     public TitleType titleType() {
         _initialize();
@@ -162,7 +188,14 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     private AbbreviatedLength abbreviatedLength = AbbreviatedLength.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>If the &lt;Title&gt; composite is used to carry an abbreviated title, the length to which the title is
+     * abbreviated may be indicated by giving the maximum number of characters (regardless of whether in each specific
+     * instance abbreviation has been required in order to meet this limit). The &lt;TitleType&gt; code should indicate
+     * the form of the title that has been abbreviated. Optional and non-repeating. If this element is present, the
+     * &lt;TitleText&gt; element must be used to carry the abbreviated form. [The option also exists to send an
+     * abbreviated title as a separate &lt;TitleType&gt; without using &lt;AbbreviatedLength&gt;, which is simpler, but
+     * less informative.]</p>
+     * Jonix-Comment: this field is optional
      */
     public AbbreviatedLength abbreviatedLength() {
         _initialize();
@@ -172,7 +205,11 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     private TextCaseFlag textCaseFlag = TextCaseFlag.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code indicating the case in which the text elements in an occurrence of the &lt;Title&gt; composite
+     * are sent. The default is “unspecified”. Optional and non-repeating. <strong>Text case can now be indicated by an
+     * XML attribute on any text element, and this method is preferred. See <cite>ONIX for Books – Product Information
+     * Message – XML Message Specification</cite>, Section 4.</strong></p>
+     * Jonix-Comment: this field is optional
      */
     public TextCaseFlag textCaseFlag() {
         _initialize();
@@ -182,7 +219,11 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     private TitleText titleText = TitleText.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The text of the title specified by the &lt;TitleType&gt; code; and excluding the subtitle, if any. Optional
+     * and non-repeating: see text at the head of the &lt;Title&gt; composite for details of valid title text options.
+     * The &lt;TitleText&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
+     * transliteration, textcase</i>.</p>
+     * Jonix-Comment: this field is required
      */
     public TitleText titleText() {
         _initialize();
@@ -192,7 +233,13 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     private TitlePrefix titlePrefix = TitlePrefix.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Text at the beginning of a title which is to be ignored for alphabetical sorting. Optional and non-repeating;
+     * can only be used if the &lt;TitleWithoutPrefix&gt; element is also present. These two elements may be used in
+     * combination in applications where it is necessary to distinguish an initial word or character string which is to
+     * be ignored for filing purposes, <em>eg</em> in library systems and in some bookshop databases. The
+     * &lt;TitlePrefix&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
+     * transliteration, textcase</i>.</p>
+     * Jonix-Comment: this field is optional
      */
     public TitlePrefix titlePrefix() {
         _initialize();
@@ -202,7 +249,11 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     private TitleWithoutPrefix titleWithoutPrefix = TitleWithoutPrefix.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Full text of a title, without abbreviation or abridgement, and without the title prefix; and excluding the
+     * subtitle, if any. Optional and non-repeating; can only be used if the &lt;TitlePrefix&gt; element is also
+     * present. The &lt;TitleWithoutPrefix&gt; element may carry any of the following ONIX attributes: <i>textformat,
+     * language, transliteration, textcase</i>.</p>
+     * Jonix-Comment: this field is optional
      */
     public TitleWithoutPrefix titleWithoutPrefix() {
         _initialize();
@@ -212,7 +263,11 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     private Subtitle subtitle = Subtitle.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The full text of a subtitle, if any. “Subtitle” means any added words which appear with the title given in an
+     * occurrence of the &lt;Title&gt; composite, and which amplify and explain the title, but which are not considered
+     * to be part of the title itself. Optional and non-repeating. The &lt;Subtitle&gt; element may carry any of the
+     * following ONIX attributes: <i>textformat, language, transliteration, textcase</i>.</p>
+     * Jonix-Comment: this field is optional
      */
     public Subtitle subtitle() {
         _initialize();

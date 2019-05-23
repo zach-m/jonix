@@ -35,8 +35,18 @@ import java.io.Serializable;
  * <i>eg</i> permitted without limit, permitted with limit, prohibited. Mandatory in each occurrence of the
  * &lt;EpubUsageConstraint&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, two digits</td></tr><tr><td>Codelist</td><td>List 146</td></tr><tr><td>Reference
- * name</td><td>&lt;EpubUsageStatus&gt;</td></tr><tr><td>Short tag</td><td>&lt;x319&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x319&gt;03&lt;/x318&gt;
+ * name</td><td><tt>&lt;EpubUsageStatus&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x319&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x319&gt;03&lt;/x318&gt;</tt>
  * (Prohibited)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;EpubUsageConstraint&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint ⯈ EpubUsageStatus</li>
+ * </ul>
  */
 public class EpubUsageStatus implements OnixElement<UsageStatuss>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class EpubUsageStatus implements OnixElement<UsageStatuss>, Serializable 
     public UsageStatuss value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public UsageStatuss _value() {
@@ -94,6 +104,9 @@ public class EpubUsageStatus implements OnixElement<UsageStatuss>, Serializable 
         value = UsageStatuss.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;EpubUsageStatus&gt; or &lt;x319&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

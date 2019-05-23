@@ -40,8 +40,18 @@ import java.io.Serializable;
  * composite on a previous page provides a more general method of handling measurements, and is to be
  * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an
  * explicit decimal point when required, suggested maximum length 6 characters including a decimal
- * point.</td></tr><tr><td>Reference name</td><td>&lt;Thickness&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;c098&gt;</td></tr><tr><td>Example</td><td>&lt;Thickness&gt;1.2&lt;/Thickness&gt;</td></tr></table>
+ * point.</td></tr><tr><td>Reference name</td><td><tt>&lt;Thickness&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;c098&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;Thickness&gt;1.2&lt;/Thickness&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Thickness</li>
+ * </ul>
  */
 public class Thickness implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +91,7 @@ public class Thickness implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -112,6 +122,9 @@ public class Thickness implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Thickness&gt; or &lt;c098&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

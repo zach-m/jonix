@@ -37,8 +37,18 @@ import java.io.Serializable;
 
 /**
  * <h1>Audience composite</h1><p>A repeatable group of data elements which together describe an audience to which the
- * product is directed.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Audience&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;audience&gt;</td></tr></table>
+ * product is directed.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Audience&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;audience&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Audience</li>
+ * </ul>
  */
 public class Audience implements OnixDataCompositeWithKey<JonixAudience, AudienceCodeTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -123,6 +133,9 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Audience&gt; or &lt;audience&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -135,7 +148,9 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     private AudienceCodeType audienceCodeType = AudienceCodeType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the scheme from which the code in &lt;AudienceCodeValue&gt; is taken. Mandatory
+     * in each occurrence of the &lt;Audience&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public AudienceCodeType audienceCodeType() {
         _initialize();
@@ -145,7 +160,9 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     private AudienceCodeTypeName audienceCodeTypeName = AudienceCodeTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary audience code when the code in &lt;AudienceCodeType&gt; indicates a
+     * proprietary scheme, <em>eg</em> a vendor’s own code. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public AudienceCodeTypeName audienceCodeTypeName() {
         _initialize();
@@ -155,7 +172,9 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     private AudienceCodeValue audienceCodeValue = AudienceCodeValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Mandatory in each occurrence of the
+     * &lt;Audience&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public AudienceCodeValue audienceCodeValue() {
         _initialize();

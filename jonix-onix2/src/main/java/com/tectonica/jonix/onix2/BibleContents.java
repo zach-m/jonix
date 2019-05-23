@@ -39,9 +39,19 @@ import java.io.Serializable;
  * for example New Testament, Apocrypha, Pentateuch. Mandatory in each occurrence of the &lt;Bible&gt; composite, and
  * repeatable so that a list such as Old Testament and Apocrypha can be expressed.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters</td></tr><tr><td>Codelist</td><td>List
- * 82</td></tr><tr><td>Reference name</td><td>&lt;BibleContents&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b352&gt;</td></tr><tr><td>Example</td><td>&lt;b352&gt;OT&lt;/b352&gt; Old
+ * 82</td></tr><tr><td>Reference name</td><td><tt>&lt;BibleContents&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b352&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b352&gt;OT&lt;/b352&gt;</tt> Old
  * Testament</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Bible&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ Bible ⯈ BibleContents</li>
+ * </ul>
  */
 public class BibleContents implements OnixElement<BibleContentss>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class BibleContents implements OnixElement<BibleContentss>, Serializable 
     public BibleContentss value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public BibleContentss _value() {
@@ -108,6 +118,9 @@ public class BibleContents implements OnixElement<BibleContentss>, Serializable 
         value = BibleContentss.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;BibleContents&gt; or &lt;b352&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

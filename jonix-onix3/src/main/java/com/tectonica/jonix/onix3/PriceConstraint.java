@@ -39,8 +39,19 @@ import java.io.Serializable;
  * product, whether or not they are enforced by technical protection measures (DRM). Use &lt;PriceConstraint&gt; where a
  * single product is available under multiple terms and conditions (<i>ie</i> multiple commercial offers for the same
  * product which differ in their Price constraints, and whether or not they are enforced by DRM).</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;PriceConstraint&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;priceconstraint&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PriceConstraint&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;priceconstraint&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint</li>
+ * </ul>
  */
 public class PriceConstraint implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -116,6 +127,10 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;PriceConstraint&gt; or &lt;priceconstraint&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -128,7 +143,9 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
     private PriceConstraintType priceConstraintType = PriceConstraintType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code specifying a type of commercial term or constraint forming part of the commercial offer for a
+     * digital product. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public PriceConstraintType priceConstraintType() {
         _initialize();
@@ -138,7 +155,10 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
     private PriceConstraintStatus priceConstraintStatus = PriceConstraintStatus.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code specifying the status of a contractual term or constraint, <i>eg</i> permitted without limit,
+     * permitted with limit, prohibited. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public PriceConstraintStatus priceConstraintStatus() {
         _initialize();
@@ -149,7 +169,9 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
         ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An optional and repeatable group of data elements which together specify a quantitative limit on a particular
+     * type of contractual term or constraint.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<PriceConstraintLimit, JonixPriceConstraintLimit> priceConstraintLimits() {
         _initialize();

@@ -38,8 +38,18 @@ import java.io.Serializable;
  * <h1>Market date role code</h1><p>An ONIX code indicating the significance of the date. Mandatory in each occurrence
  * of the &lt;MarketDate&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
  * numeric digits</td></tr><tr><td>Codelist</td><td>List 67</td></tr><tr><td>Reference
- * name</td><td>&lt;MarketDateRole&gt;</td></tr><tr><td>Short tag</td><td>&lt;j408&gt;</td></tr><tr><td>Example</td><td>&lt;MarketDateRole&gt;01&lt;/MarketDateRole&gt;
+ * name</td><td><tt>&lt;MarketDateRole&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j408&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;MarketDateRole&gt;01&lt;/MarketDateRole&gt;</tt>
  * Local publication date</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MarketDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketDate ⯈ MarketDateRole</li>
+ * </ul>
  */
 public class MarketDateRole implements OnixElement<PublishingDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +85,7 @@ public class MarketDateRole implements OnixElement<PublishingDateRoles>, Seriali
     public PublishingDateRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PublishingDateRoles _value() {
@@ -106,6 +116,9 @@ public class MarketDateRole implements OnixElement<PublishingDateRoles>, Seriali
         value = PublishingDateRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;MarketDateRole&gt; or &lt;j408&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

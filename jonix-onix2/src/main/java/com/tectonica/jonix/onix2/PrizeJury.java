@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Prize or award jury</h1><p>Free text listing members of the jury that awarded the prize. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
  * length 500 characters (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML
- * Message Specification, Section 7)</td></tr><tr><td>Reference name</td><td>&lt;PrizeJury&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;g343&gt;</td></tr></table>
+ * Message Specification, Section 7)</td></tr><tr><td>Reference name</td><td><tt>&lt;PrizeJury&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;g343&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Prize&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Prize ⯈ PrizeJury</li>
+ * </ul>
  */
 public class PrizeJury implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +88,7 @@ public class PrizeJury implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +119,9 @@ public class PrizeJury implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;PrizeJury&gt; or &lt;g343&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

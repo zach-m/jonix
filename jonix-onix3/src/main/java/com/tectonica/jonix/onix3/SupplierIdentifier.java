@@ -32,12 +32,24 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>New supplier identifier composite</h1><p>A group of data elements which together define the identity of a
+ * <h1>Supplier identifier composite</h1><p>A group of data elements which together specify an identifier of the
  * supplier in accordance with a specified scheme, and repeatable to allow different types of supplier identifier to be
- * included without defining additional data elements. Optional, but each occurrence of the &lt;NewSupplier&gt;
- * composite must carry <em>either</em> at least one supplier identifier, <em>or</em> a &lt;SupplierName&gt;,
- * <em>or</em> both.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SupplierIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;supplieridentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * included without defining additional data elements. Optional, but each occurrence of the &lt;Supplier&gt; composite
+ * must carry <em>either</em> at least one supplier identifier, <em>or</em> a &lt;SupplierName&gt;, <em>or</em>
+ * both.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SupplierIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;supplieridentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;NewSupplier&gt;</li>
+ * <li>&lt;Supplier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ SupplierIdentifier</li>
+ * </ul>
  */
 public class SupplierIdentifier
     implements OnixDataCompositeWithKey<JonixSupplierIdentifier, SupplierIdentifierTypes>, Serializable {
@@ -114,6 +126,10 @@ public class SupplierIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SupplierIdentifier&gt; or &lt;supplieridentifier&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -126,7 +142,9 @@ public class SupplierIdentifier
     private SupplierIDType supplierIDType = SupplierIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;SupplierIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SupplierIDType supplierIDType() {
         _initialize();
@@ -136,7 +154,11 @@ public class SupplierIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;SupplierIDType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -146,7 +168,9 @@ public class SupplierIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;SupplierIDType&gt; element. Mandatory in each occurrence of the
+     * &lt;SupplierIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

@@ -38,9 +38,19 @@ import java.io.Serializable;
  * the sender organization who is responsible for the content of the message. Optional and non-repeating.</p><p
  * class="new214">The text is not limited to ASCII characters.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length ASCII text, suggested maximum 300
- * characters</td></tr><tr><td>Reference name</td><td>&lt;FromPerson&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m175&gt;</td></tr><tr><td>Example</td><td>&lt;m175&gt;Jackie Brown, 020 7979
- * 6444&lt;/m175&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;FromPerson&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m175&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m175&gt;Jackie Brown, 020 7979
+ * 6444&lt;/m175&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ FromPerson</li>
+ * </ul>
  */
 public class FromPerson implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class FromPerson implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +120,9 @@ public class FromPerson implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;FromPerson&gt; or &lt;m175&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

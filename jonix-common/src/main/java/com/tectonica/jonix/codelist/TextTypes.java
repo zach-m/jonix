@@ -177,31 +177,38 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     schema_org_snippet("24", "schema.org snippet"), //
 
     /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
+     * Jonix-Comment: Introduced in Onix3
      */
     Errata("25", "Errata"), //
 
     /**
      * Introduction, preface or the text of other preliminary material, sent as a single text field, which may be
-     * structured using XHTML &lt;p&gt;NOTE: Introduced in Onix3
+     * structured using XHTML
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Introduction("26", "Introduction"), //
 
     /**
      * Secondary descriptive blurb taken from the back cover and/or flaps, used only when there are two separate texts
-     * and the primary text is included using code 05 &lt;p&gt;NOTE: Introduced in Onix3
+     * and the primary text is included using code 05
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Secondary_flap_cover_copy("27", "Secondary flap / cover copy"), //
 
     /**
      * For use with dramatized audiobooks, filmed entertainment etc, for a cast list sent as a single text field, which
-     * may or may not carry structure expressed using XHTML &lt;p&gt;NOTE: Introduced in Onix3
+     * may or may not carry structure expressed using XHTML
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Full_cast_and_credit_list("28", "Full cast and credit list"), //
 
     /**
      * Complete list of books by the author(s), supplied as a single text field, which may be structured using (X)HTML
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Bibliography("29", "Bibliography");
 

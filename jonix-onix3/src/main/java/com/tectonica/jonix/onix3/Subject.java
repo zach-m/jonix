@@ -32,9 +32,21 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Subject composite</h1><p>A group of data elements which together specify a subject classification or a subject
- * heading relating to a content item. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Subject&gt;</td></tr><tr><td>Short tag</td><td>&lt;subject&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Subject composite</h1><p>An optional and repeatable group of data elements which together specify a subject
+ * classification or subject heading.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td><tt>&lt;Subject&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;subject&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Subject</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Subject</li>
+ * </ul>
  */
 public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -122,6 +134,9 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Subject&gt; or &lt;subject&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -134,7 +149,12 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     private MainSubject mainSubject = MainSubject.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An empty element that identifies an instance of the &lt;Subject&gt; composite as representing the main subject
+     * category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i> there may
+     * be two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
+     * &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em>. Optional and
+     * non-repeating in each occurrence of the &lt;Subject&gt; composite.</p>
+     * Jonix-Comment: this field is optional
      */
     public MainSubject mainSubject() {
         _initialize();
@@ -148,7 +168,13 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     private SubjectSchemeIdentifier subjectSchemeIdentifier = SubjectSchemeIdentifier.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the category scheme which is used in an occurrence of the &lt;Subject&gt;
+     * composite. Mandatory in each occurrence of the composite, and non-repeating.</p><p>For category schemes that use
+     * code values, use the associated &lt;SubjectCode&gt; element to carry the value (if so required, the
+     * &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the text equivalent of the code). For
+     * schemes that use text headings, use the &lt;SubjectHeadingText&gt; element to carry the text of the category
+     * heading.</p>
+     * Jonix-Comment: this field is required
      */
     public SubjectSchemeIdentifier subjectSchemeIdentifier() {
         _initialize();
@@ -158,7 +184,10 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     private SubjectSchemeName subjectSchemeName = SubjectSchemeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name identifying a proprietary subject scheme (<i>ie</i> a scheme which is not a standard and for which
+     * there is no individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded ‘24’. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public SubjectSchemeName subjectSchemeName() {
         _initialize();
@@ -168,7 +197,9 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     private SubjectSchemeVersion subjectSchemeVersion = SubjectSchemeVersion.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A number which identifies a version or edition of the subject scheme specified in the associated
+     * &lt;SubjectSchemeIdentifier&gt; element. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public SubjectSchemeVersion subjectSchemeVersion() {
         _initialize();
@@ -178,7 +209,10 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     private SubjectCode subjectCode = SubjectCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element.
+     * Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
+     * &lt;Subject&gt; composite. Non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SubjectCode subjectCode() {
         _initialize();
@@ -188,7 +222,14 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     private ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>The text of a subject heading taken from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element,
+     * or of free language keywords if the scheme is specified as ‘keywords’; or the text equivalent to the
+     * &lt;SubjectCode&gt; value, if both code and text are sent. Either &lt;SubjectCode&gt; or
+     * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;Subject&gt;
+     * composite.</p><p>Optional, and repeatable if the text is sent in multiple languages. The <i>language</i>
+     * attribute is optional for a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance
+     * if &lt;SubjectHeadingText&gt; is repeated.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts() {
         _initialize();

@@ -62,8 +62,9 @@ public enum TaxRateTypes implements OnixCodelist, CodeList62 {
 
     /**
      * Specifies that tax is applied at a rate lower than the Lower rate(s). In the EU, use code T for 'Super-reduced
-     * rates', and for Reduced rates (5% or above) use code R (Lower rate). For use in ONIX 3.0 only &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * rates', and for Reduced rates (5% or above) use code R (Lower rate). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Super_low_rate("T", "Super-low rate"), //
 

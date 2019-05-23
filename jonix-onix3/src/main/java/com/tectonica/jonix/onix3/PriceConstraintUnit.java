@@ -34,9 +34,22 @@ import java.io.Serializable;
  * <h1>Usage unit</h1><p>An ONIX code for a unit in which a maximum permitted quantity or limit is stated. Mandatory in
  * each occurrence of the &lt;PriceConstraintLimit&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 147</td></tr><tr><td>Reference name</td><td>&lt;PriceConstraintUnit&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x531&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x531&gt;07&lt;/x531&gt;
+ * 147</td></tr><tr><td>Reference name</td><td><tt>&lt;PriceConstraintUnit&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x531&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x531&gt;07&lt;/x531&gt;</tt>
  * (Concurrent users)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PriceConstraintLimit&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
+ * PriceConstraintUnit</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
+ * PriceConstraintUnit</li>
+ * </ul>
  */
 public class PriceConstraintUnit implements OnixElement<UnitOfUsages>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +80,7 @@ public class PriceConstraintUnit implements OnixElement<UnitOfUsages>, Serializa
     public UnitOfUsages value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public UnitOfUsages _value() {
@@ -94,6 +107,9 @@ public class PriceConstraintUnit implements OnixElement<UnitOfUsages>, Serializa
         value = UnitOfUsages.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PriceConstraintUnit&gt; or &lt;x531&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

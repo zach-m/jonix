@@ -39,9 +39,19 @@ import java.io.Serializable;
  * should be used to indicate where sales rights are genuinely unknown, or are unstated for any reason – in this case,
  * data recipients must not assume anything about the rights that are applicable.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 46</td></tr><tr><td>Reference name</td><td>&lt;ROWSalesRightsType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x456&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x456&gt;00&lt;/x456&gt;
+ * 46</td></tr><tr><td>Reference name</td><td><tt>&lt;ROWSalesRightsType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x456&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x456&gt;00&lt;/x456&gt;</tt>
  * (Unknown or unstated)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PublishingDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ROWSalesRightsType</li>
+ * </ul>
  */
 public class ROWSalesRightsType implements OnixElement<SalesRightsTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,7 +82,7 @@ public class ROWSalesRightsType implements OnixElement<SalesRightsTypes>, Serial
     public SalesRightsTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SalesRightsTypes _value() {
@@ -99,6 +109,9 @@ public class ROWSalesRightsType implements OnixElement<SalesRightsTypes>, Serial
         value = SalesRightsTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ROWSalesRightsType&gt; or &lt;x456&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

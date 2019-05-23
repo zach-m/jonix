@@ -37,7 +37,17 @@ import java.io.Serializable;
 /**
  * <h1>Complexity composite</h1><p>An optional and repeatable group of data elements which together describe the level
  * of complexity of a text.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Complexity&gt;</td></tr><tr><td>Short tag</td><td>&lt;complexity&gt;</td></tr></table>
+ * name</td><td><tt>&lt;Complexity&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;complexity&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Complexity</li>
+ * </ul>
  */
 public class Complexity implements OnixDataComposite<JonixComplexity>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -118,6 +128,9 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Complexity&gt; or &lt;complexity&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -130,7 +143,8 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
     private ComplexitySchemeIdentifier complexitySchemeIdentifier = ComplexitySchemeIdentifier.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken.</p>
+     * Jonix-Comment: this field is required
      */
     public ComplexitySchemeIdentifier complexitySchemeIdentifier() {
         _initialize();
@@ -140,7 +154,8 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
     private ComplexityCode complexityCode = ComplexityCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A code specifying the level of complexity of a text.</p>
+     * Jonix-Comment: this field is required
      */
     public ComplexityCode complexityCode() {
         _initialize();

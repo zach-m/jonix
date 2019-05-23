@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Thesis type code</h1><p>An ONIX code identifying a thesis type, when the ONIX record describes an item which was
  * originally presented as an academic thesis or dissertation. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 72</td></tr><tr><td>Reference name</td><td>&lt;ThesisType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b368&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b368&gt;01&lt;/b368&gt;
+ * 72</td></tr><tr><td>Reference name</td><td><tt>&lt;ThesisType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b368&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;b368&gt;01&lt;/b368&gt;</tt>
  * (Habilitationsschrift, post-doctoral dissertation)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ThesisType</li>
+ * </ul>
  */
 public class ThesisType implements OnixElement<ThesisTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class ThesisType implements OnixElement<ThesisTypes>, Serializable {
     public ThesisTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ThesisTypes _value() {
@@ -94,6 +104,9 @@ public class ThesisType implements OnixElement<ThesisTypes>, Serializable {
         value = ThesisTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ThesisType&gt; or &lt;b368&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

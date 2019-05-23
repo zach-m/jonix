@@ -55,7 +55,9 @@ public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
      * Use with Price condition type 06 and a Quantity of units. Price is valid when purchased with a specific number of
      * products from a list of product identifiers provided in the associated &lt;ProductIdentifier&gt; composites. Use
      * for example when describing a price for this product which is valid if it is purchased along with any two from a
-     * list of other products &lt;p&gt;NOTE: Introduced in Onix3
+     * list of other products
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Number_of_linked_products("03", "Number of linked products");
 

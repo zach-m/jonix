@@ -37,9 +37,21 @@ import java.io.Serializable;
  * <h1>Epublication type note</h1><p>A free text description of features of a product which are specific to its
  * appearance as a particular epublication type. Optional and non-repeatable, and can occur only if the &lt;EpubType&gt;
  * field is present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
- * 200 characters</td></tr><tr><td>Reference name</td><td>&lt;EpubTypeNote&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b277&gt;</td></tr><tr><td>Example</td><td>&lt;b277&gt;First appearance of this title in Microsoft
- * Reader format&lt;/b277&gt;</td></tr></table>
+ * 200 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubTypeNote&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b277&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b277&gt;First appearance of this title in
+ * Microsoft Reader format&lt;/b277&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ EpubTypeNote</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ EpubTypeNote</li>
+ * </ul>
  */
 public class EpubTypeNote implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +90,7 @@ public class EpubTypeNote implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +121,9 @@ public class EpubTypeNote implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;EpubTypeNote&gt; or &lt;b277&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -36,10 +36,23 @@ import java.io.Serializable;
 
 /**
  * <h1>Conference role</h1><p>An ONIX code which indicates the relationship between the product and a conference to
- * which it is related, <em>eg</em> Proceedings of / Selected papers from / Developed from. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 20</td></tr><tr><td>Reference name</td><td>&lt;ConferenceRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b051&gt;</td></tr></table>
+ * which it is related, <em>eg</em> Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
+ * <strong>The &lt;Conference&gt; composite on a later page provides a more general method of handling conference
+ * detail, and is to be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two numeric digits</td></tr><tr><td>Codelist</td><td>List 20</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;ConferenceRole&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b051&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;Conference&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ConferenceRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceRole</li>
+ * </ul>
  */
 public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +88,7 @@ public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
     public EventRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public EventRoles _value() {
@@ -106,6 +119,9 @@ public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
         value = EventRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ConferenceRole&gt; or &lt;b051&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

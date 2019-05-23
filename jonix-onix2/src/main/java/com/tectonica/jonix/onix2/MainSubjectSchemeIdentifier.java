@@ -41,9 +41,19 @@ import java.io.Serializable;
  * the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the text
  * equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to carry the
  * text of the subject heading.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 26</td></tr><tr><td>Reference name</td><td>&lt;MainSubjectSchemeIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b191&gt;</td></tr><tr><td>Example</td><td>&lt;b191&gt;25&lt;/b191&gt; Latin American Tabla de
- * materias ISBN</td></tr></table>
+ * digits.</td></tr><tr><td>Codelist</td><td>List 26</td></tr><tr><td>Reference name</td><td><tt>&lt;MainSubjectSchemeIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b191&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b191&gt;25&lt;/b191&gt;</tt> Latin
+ * American Tabla de materias ISBN</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MainSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MainSubject ⯈ MainSubjectSchemeIdentifier</li>
+ * </ul>
  */
 public class MainSubjectSchemeIdentifier implements OnixElement<MainSubjectSchemeIdentifiers>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class MainSubjectSchemeIdentifier implements OnixElement<MainSubjectSchem
     public MainSubjectSchemeIdentifiers value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public MainSubjectSchemeIdentifiers _value() {
@@ -110,6 +120,10 @@ public class MainSubjectSchemeIdentifier implements OnixElement<MainSubjectSchem
         value = MainSubjectSchemeIdentifiers.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;MainSubjectSchemeIdentifier&gt; or &lt;b191&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;

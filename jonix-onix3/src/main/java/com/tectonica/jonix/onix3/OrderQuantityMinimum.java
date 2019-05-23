@@ -30,12 +30,23 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Minimum initial order quantity</h1><p>The minimum quantity of the product that may be ordered in the very first
- * order placed for a new product with the supplier, where it is different from the Minimum order quantity for
- * subsequent orders. Optional, but when supplied, it must be preceded by a Minimum order quantity that applies to
- * second and subsequent orders.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested
- * maximum length 4 digits</td></tr><tr><td>Reference name</td><td>&lt;OrderQuantityMinimum&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x532&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x532&gt;12&lt;/x532&gt;</td></tr></table>
+ * <h1>Minimum order quantity</h1><p>The minimum quantity of the product that may be ordered in a single order placed
+ * with the supplier. Optional. If omitted, any number may be ordered.</p><p>If supplied without a succeeding Minimum
+ * initial order quantity, the Minimum order quantity applies to all orders for the product. If followed by a Minimum
+ * initial order quantity, the Minimum order quantity applies to the second and subsequent orders for the
+ * product.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 4
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;OrderQuantityMinimum&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x532&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x532&gt;6&lt;/x532&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ OrderQuantityMinimum</li>
+ * </ul>
  */
 public class OrderQuantityMinimum implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +80,7 @@ public class OrderQuantityMinimum implements OnixElement<Integer>, Serializable 
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -96,6 +107,9 @@ public class OrderQuantityMinimum implements OnixElement<Integer>, Serializable 
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;OrderQuantityMinimum&gt; or &lt;x532&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

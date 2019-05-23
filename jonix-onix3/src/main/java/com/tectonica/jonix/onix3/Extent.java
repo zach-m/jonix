@@ -36,7 +36,17 @@ import java.io.Serializable;
  * Optional, but in practice required for most products, <i>eg</i> to give the number of pages in a printed book or
  * paginated <span class="nobreak">e-book</span>, or to give the running time of an audiobook. Repeatable to specify
  * different extent types or units.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Extent&gt;</td></tr><tr><td>Short tag</td><td>&lt;extent&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;Extent&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;extent&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Extent</li>
+ * </ul>
  */
 public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -116,6 +126,9 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Extent&gt; or &lt;extent&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -128,7 +141,11 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     private ExtentType extentType = ExtentType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the type of extent carried in the composite, <i>eg</i> running time for an audio
+     * or video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating. From Issue 9
+     * of the code lists, an extended set of values for &lt;ExtentType&gt; has been defined to allow more accurate
+     * description of pagination.</p>
+     * Jonix-Comment: this field is required
      */
     public ExtentType extentType() {
         _initialize();
@@ -138,7 +155,11 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     private ExtentValue extentValue = ExtentValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The numeric value of the extent specified in &lt;ExtentType&gt;. Optional, and non-repeating. However, either
+     * &lt;ExtentValue&gt; or &lt;ExtentValueRoman&gt;, or both, must be present in each occurrence of the
+     * &lt;Extent&gt; composite; and it is very strongly recommended that &lt;ExtentValue&gt; should <em>always</em> be
+     * included, even when the original product uses Roman numerals.</p>
+     * Jonix-Comment: this field is required
      */
     public ExtentValue extentValue() {
         _initialize();
@@ -148,7 +169,9 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     private ExtentValueRoman extentValueRoman = ExtentValueRoman.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The value of the extent expressed in Roman numerals. Optional, and non-repeating. Used only for page runs
+     * which are numbered in Roman.</p>
+     * Jonix-Comment: this field is optional
      */
     public ExtentValueRoman extentValueRoman() {
         _initialize();
@@ -158,7 +181,9 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     private ExtentUnit extentUnit = ExtentUnit.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the unit used for the &lt;ExtentValue&gt; and the format in which the value is
+     * presented. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ExtentUnit extentUnit() {
         _initialize();

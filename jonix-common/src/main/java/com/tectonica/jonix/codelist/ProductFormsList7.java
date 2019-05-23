@@ -29,7 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 7 (Product form code &lt;p&gt;NOTE: Deprecated in Onix3)
+ * marker interface to assist in IDE navigation to code-list 7 (Product form code)
  */
 interface CodeList7 {
 }
@@ -37,7 +37,9 @@ interface CodeList7 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 7</b>
  * <p>
- * Description: Product form code &lt;p&gt;NOTE: Deprecated in Onix3
+ * Description: Product form code
+ * <p>
+ * Jonix-Comment: Deprecated in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist7">ONIX
@@ -654,9 +656,9 @@ public enum ProductFormsList7 implements OnixCodelist, CodeList7 {
                 result = map;
                 if (result == null) {
                     result = new HashMap<>();
-                   for (ProductFormsList7 e : values()) {
-                      result.put(e.code, e);
-                   }
+                    for (ProductFormsList7 e : values()) {
+                        result.put(e.code, e);
+                    }
                     map = result;
                 }
             }
@@ -665,9 +667,9 @@ public enum ProductFormsList7 implements OnixCodelist, CodeList7 {
     }
 
     public static ProductFormsList7 byCode(String code) {
-       if (code == null || code.isEmpty()) {
-          return null;
-       }
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
         return map().get(code);
     }
 }

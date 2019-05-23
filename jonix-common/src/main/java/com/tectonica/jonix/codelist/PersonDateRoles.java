@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 75 (Person date role &lt;p&gt;NOTE: Deprecated in Onix3)
+ * marker interface to assist in IDE navigation to code-list 75 (Person date role)
  */
 interface CodeList75 {
 }
@@ -34,7 +34,9 @@ interface CodeList75 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 75</b>
  * <p>
- * Description: Person date role &lt;p&gt;NOTE: Deprecated in Onix3
+ * Description: Person date role
+ * <p>
+ * Jonix-Comment: Deprecated in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist75">ONIX

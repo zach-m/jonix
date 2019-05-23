@@ -34,8 +34,18 @@ import java.io.Serializable;
  * <h1>Supply date role code</h1><p>An ONIX code indicating the significance of the date. Mandatory in each occurrence
  * of the &lt;SupplyDate&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, two digits</td></tr><tr><td>Codelist</td><td>List 166</td></tr><tr><td>Reference
- * name</td><td>&lt;SupplyDateRole&gt;</td></tr><tr><td>Short tag</td><td>&lt;x461&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;SupplyDateRole&gt;02&lt;/SupplyDateRole&gt;
+ * name</td><td><tt>&lt;SupplyDateRole&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x461&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;SupplyDateRole&gt;02&lt;/SupplyDateRole&gt;</tt>
  * (Embargo date)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyDate ⯈ SupplyDateRole</li>
+ * </ul>
  */
 public class SupplyDateRole implements OnixElement<SupplyDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +76,7 @@ public class SupplyDateRole implements OnixElement<SupplyDateRoles>, Serializabl
     public SupplyDateRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SupplyDateRoles _value() {
@@ -93,6 +103,9 @@ public class SupplyDateRole implements OnixElement<SupplyDateRoles>, Serializabl
         value = SupplyDateRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SupplyDateRole&gt; or &lt;x461&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

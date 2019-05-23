@@ -40,8 +40,18 @@ import java.io.Serializable;
  * &lt;ProductIdentifier&gt;; but in exceptional circumstances, if the sender’s system is unable to provide an
  * identifier at this level, it may be sent with product form coding and without an ID.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 4 digits</td></tr><tr><td>Reference
- * name</td><td>&lt;NumberOfCopies&gt;</td></tr><tr><td>Short tag</td><td>&lt;x323&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x323&gt;24&lt;/x323&gt;
+ * name</td><td><tt>&lt;NumberOfCopies&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x323&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x323&gt;24&lt;/x323&gt;</tt>
  * (24 copies of a single item in eg a classroom pack of textbooks)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductPart&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ NumberOfCopies</li>
+ * </ul>
  */
 public class NumberOfCopies implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +85,7 @@ public class NumberOfCopies implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -102,6 +112,9 @@ public class NumberOfCopies implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;NumberOfCopies&gt; or &lt;x323&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

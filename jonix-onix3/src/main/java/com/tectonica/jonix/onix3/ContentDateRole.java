@@ -31,12 +31,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Content date role code</h1><p>An ONIX code indicating the significance of the date in relation to the supporting
- * resource. Mandatory in each occurrence of the &lt;ContentDate&gt; composite, and non-repeating.</p><table border='1'
+ * <h1>Content date role code</h1><p>An ONIX code indicating the significance of the date in relation to the text
+ * content. Mandatory in each occurrence of the &lt;ContentDate&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 155</td></tr><tr><td>Reference name</td><td>&lt;ContentDateRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x429&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x429&gt;15&lt;/x429&gt;
- * ([Resource available] Until)</td></tr></table>
+ * 155</td></tr><tr><td>Reference name</td><td><tt>&lt;ContentDateRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x429&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;ContentDateRole&gt;01&lt;/ContentDateRole&gt;</tt>
+ * (Publication date)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ContentDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ ContentDate ⯈ ContentDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ ContentDate ⯈ ContentDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ContentDate ⯈ ContentDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ ContentDate ⯈ ContentDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈ ContentDate ⯈
+ * ContentDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ContentDate ⯈
+ * ContentDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ContentDate ⯈ ContentDateRole</li>
+ * </ul>
  */
 public class ContentDateRole implements OnixElement<ContentDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +86,7 @@ public class ContentDateRole implements OnixElement<ContentDateRoles>, Serializa
     public ContentDateRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ContentDateRoles _value() {
@@ -94,6 +113,9 @@ public class ContentDateRole implements OnixElement<ContentDateRoles>, Serializa
         value = ContentDateRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ContentDateRole&gt; or &lt;x429&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -30,11 +30,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price amount</h1><p>The amount of the comparison product price. Mandatory and non-repeating within any occurrence
- * of the &lt;ComparisonProductPrice&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive
- * real number, with explicit decimal point when required, suggested maximum length 12
- * characters</td></tr><tr><td>Reference name</td><td>&lt;PriceAmount&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j151&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;PriceAmount&gt;18.99&lt;/PriceAmount&gt;</td></tr></table>
+ * <h1>Price amount</h1><p>The amount of a price. Optional and non-repeating, but each occurrence of the &lt;Price&gt;
+ * composite must include either a &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional tax details, or
+ * an &lt;UnpricedItemType&gt; element. Note that free-of-charge products must use &lt;UnpricedItemType&gt; rather than
+ * a zero price.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit decimal
+ * point when required, suggested maximum length 12 characters</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;PriceAmount&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j151&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;j151&gt;18.99&lt;/j151&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ComparisonProductPrice&gt;</li>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ ComparisonProductPrice ⯈
+ * PriceAmount</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ ComparisonProductPrice ⯈ PriceAmount</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceAmount</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceAmount</li>
+ * </ul>
  */
 public class PriceAmount implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +85,7 @@ public class PriceAmount implements OnixElement<Double>, Serializable {
     public Double value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Double _value() {
@@ -96,6 +112,9 @@ public class PriceAmount implements OnixElement<Double>, Serializable {
         value = JPU.getContentAsDouble(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PriceAmount&gt; or &lt;j151&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -40,7 +40,18 @@ import java.io.Serializable;
  * carry local availability status, but will be replaced on completion of the revised code lists. The element will be
  * withdrawn from the ONIX format in a future release.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * two numeric digits</td></tr><tr><td>Codelist</td><td>List 63</td></tr><tr><td>Reference
- * name</td><td>&lt;IntermediaryAvailabilityCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;j348&gt;</td></tr></table>
+ * name</td><td><tt>&lt;IntermediaryAvailabilityCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j348&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ IntermediaryAvailabilityCode</li>
+ * </ul>
  */
 public class IntermediaryAvailabilityCode implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +90,7 @@ public class IntermediaryAvailabilityCode implements OnixElement<String>, Serial
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +121,10 @@ public class IntermediaryAvailabilityCode implements OnixElement<String>, Serial
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;IntermediaryAvailabilityCode&gt; or &lt;j348&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

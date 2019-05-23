@@ -34,12 +34,24 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>EAN location number</h1><p>An EAN-13 location number identifying a supplier. Now also known as an “EAN-UCC Global
- * Location Number” or GLN. Optional and non-repeating, but each occurrence of the &lt;NewSupplier&gt; composite must
- * carry either at least one supplier identifier, or a &lt;SupplierName&gt;.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, thirteen numeric digits, of which the last is a check
- * digit.</td></tr><tr><td>Reference name</td><td>&lt;SupplierEANLocationNumber&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j135&gt;</td></tr><tr><td>Example</td><td>&lt;j135&gt;5012340098745&lt;/j135&gt;</td></tr></table>
+ * <h1>Supplier EAN location number</h1><p>An EAN-13 location number identifying a supply source from which the product
+ * may be ordered by a trade customer. Now also known as an “EAN-UCC Global Location Number” or GLN. Optional, but each
+ * occurrence of the &lt;SupplyDetail&gt; composite must carry either at least one supplier identifier, or a
+ * &lt;SupplierName&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, thirteen numeric
+ * digits, of which the last is a check digit.</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplierEANLocationNumber&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j135&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SupplierEANLocationNumber&gt;5012340098745&lt;/SupplierEANLocationNumber&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;NewSupplier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierEANLocationNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierEANLocationNumber</li>
+ * </ul>
  */
 public class SupplierEANLocationNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +90,7 @@ public class SupplierEANLocationNumber implements OnixElement<String>, Serializa
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +121,10 @@ public class SupplierEANLocationNumber implements OnixElement<String>, Serializa
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SupplierEANLocationNumber&gt; or &lt;j135&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;

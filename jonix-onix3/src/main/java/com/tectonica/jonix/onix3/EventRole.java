@@ -35,8 +35,18 @@ import java.io.Serializable;
  * related, <i>eg</i> Proceedings of conference / Selected papers from conference / Programme for sporting event / Guide
  * for art exhibition. Mandatory and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, two digits</td></tr><tr><td>Codelist</td><td>List 20</td></tr><tr><td>Reference
- * name</td><td>&lt;EventRole&gt;</td></tr><tr><td>Short tag</td><td>&lt;x515&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x515&gt;03&lt;/x515&gt;
+ * name</td><td><tt>&lt;EventRole&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x515&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x515&gt;03&lt;/x515&gt;</tt>
  * (Selected papers from conference)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Event&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventRole</li>
+ * </ul>
  */
 public class EventRole implements OnixElement<EventRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class EventRole implements OnixElement<EventRoles>, Serializable {
     public EventRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public EventRoles _value() {
@@ -94,6 +104,9 @@ public class EventRole implements OnixElement<EventRoles>, Serializable {
         value = EventRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;EventRole&gt; or &lt;x515&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

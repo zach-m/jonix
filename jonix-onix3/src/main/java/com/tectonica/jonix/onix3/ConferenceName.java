@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Conference name</h1><p>The name of a conference or conference series to which the product is related. This
  * element is mandatory in each occurrence of the &lt;Conference&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 200
- * characters</td></tr><tr><td>Reference name</td><td>&lt;ConferenceName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b052&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;b052&gt;United
- * Nations Climate Change Conference&lt;/b052&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ConferenceName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b052&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;b052&gt;United
+ * Nations Climate Change Conference&lt;/b052&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Conference&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceName</li>
+ * </ul>
  */
 public class ConferenceName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,7 +82,7 @@ public class ConferenceName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -100,6 +110,9 @@ public class ConferenceName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ConferenceName&gt; or &lt;b052&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

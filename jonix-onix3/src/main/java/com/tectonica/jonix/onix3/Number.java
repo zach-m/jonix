@@ -33,8 +33,18 @@ import java.io.Serializable;
  * <h1>Number of illustrations or other content items</h1><p>The number of illustrations or other content items of the
  * type specified in &lt;AncillaryContentType&gt;. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, suggested maximum length 6
- * digits</td></tr><tr><td>Reference name</td><td>&lt;Number&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b257&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Number&gt;12&lt;/Number&gt;</td></tr></table>
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;Number&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b257&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;Number&gt;12&lt;/Number&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AncillaryContent&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AncillaryContent ⯈ Number</li>
+ * </ul>
  */
 public class Number implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +78,7 @@ public class Number implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -95,6 +105,9 @@ public class Number implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Number&gt; or &lt;b257&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

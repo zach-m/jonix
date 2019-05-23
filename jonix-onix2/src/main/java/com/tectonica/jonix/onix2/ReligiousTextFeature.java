@@ -39,7 +39,17 @@ import java.util.Arrays;
 /**
  * <h1>Religious text feature composite</h1><p>A repeatable group of data elements which together specify and describe a
  * feature of a religious text.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;ReligiousTextFeature&gt;</td></tr><tr><td>Short tag</td><td>&lt;religioustextfeature&gt;</td></tr></table>
+ * name</td><td><tt>&lt;ReligiousTextFeature&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;religioustextfeature&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ReligiousText&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ ReligiousTextFeature</li>
+ * </ul>
  */
 public class ReligiousTextFeature
     implements OnixDataCompositeWithKey<JonixReligiousTextFeature, ReligiousTextFeatureTypes>, Serializable {
@@ -125,6 +135,10 @@ public class ReligiousTextFeature
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ReligiousTextFeature&gt; or &lt;religioustextfeature&gt;) is explicitly provided in
+     * the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -137,7 +151,9 @@ public class ReligiousTextFeature
     private ReligiousTextFeatureType religiousTextFeatureType = ReligiousTextFeatureType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code specifying a feature described in the associated &lt;ReligiousTextFeatureCode&gt; element.
+     * Mandatory in each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ReligiousTextFeatureType religiousTextFeatureType() {
         _initialize();
@@ -147,7 +163,9 @@ public class ReligiousTextFeature
     private ReligiousTextFeatureCode religiousTextFeatureCode = ReligiousTextFeatureCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code describing a feature specified in the associated &lt;ReligiousTextFeatureType&gt; element.
+     * Mandatory in each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ReligiousTextFeatureCode religiousTextFeatureCode() {
         _initialize();
@@ -157,7 +175,9 @@ public class ReligiousTextFeature
     private ReligiousTextFeatureDescription religiousTextFeatureDescription = ReligiousTextFeatureDescription.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Free text describing a feature that is not adequately defined by code values alone. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public ReligiousTextFeatureDescription religiousTextFeatureDescription() {
         _initialize();

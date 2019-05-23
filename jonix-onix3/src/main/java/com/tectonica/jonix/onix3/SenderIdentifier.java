@@ -35,8 +35,18 @@ import java.io.Serializable;
  * <h1>Sender identifier composite</h1><p>A group of data elements which together define an identifier of the sender.
  * The composite is optional, and repeatable if more than one identifier of different types is sent; but <em>either</em>
  * a &lt;SenderName&gt; <em>or</em> a &lt;SenderIdentifier&gt; <em>must</em> be included.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SenderIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;senderidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SenderIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;senderidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Sender&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ Sender ⯈ SenderIdentifier</li>
+ * </ul>
  */
 public class SenderIdentifier
     implements OnixDataCompositeWithKey<JonixSenderIdentifier, NameIdentifierTypes>, Serializable {
@@ -113,6 +123,10 @@ public class SenderIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SenderIdentifier&gt; or &lt;senderidentifier&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -125,7 +139,9 @@ public class SenderIdentifier
     private SenderIDType senderIDType = SenderIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory
+     * in each occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SenderIDType senderIDType() {
         _initialize();
@@ -135,7 +151,10 @@ public class SenderIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;SenderIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -145,7 +164,9 @@ public class SenderIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;SenderIDType&gt; element. Mandatory in each occurrence of the
+     * &lt;SenderIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

@@ -37,8 +37,22 @@ import java.io.Serializable;
  * <h1>Corporate source of other text</h1><p>The name of a company or corporate body responsible for the text sent in
  * the &lt;Text&gt; element, or referenced in the &lt;TextLink&gt; element, <em>eg</em> if it is part of a Reading Group
  * Guide. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
- * suggested maximum length 200 characters</td></tr><tr><td>Reference name</td><td>&lt;TextSourceCorporate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b374&gt;</td></tr><tr><td>Example</td><td>&lt;b374&gt;Random House&lt;/b374&gt;</td></tr></table>
+ * suggested maximum length 200 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TextSourceCorporate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b374&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b374&gt;Random
+ * House&lt;/b374&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OtherText&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextSourceCorporate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ TextSourceCorporate</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ TextSourceCorporate</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ TextSourceCorporate</li>
+ * </ul>
  */
 public class TextSourceCorporate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +91,7 @@ public class TextSourceCorporate implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +122,9 @@ public class TextSourceCorporate implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TextSourceCorporate&gt; or &lt;b374&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

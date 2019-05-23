@@ -37,7 +37,17 @@ import java.io.Serializable;
  * <h1>Thesis presented to</h1><p>The name of an academic institution to which a thesis was presented. Optional and
  * non-repeating, but if this element is present, &lt;ThesisType&gt; must also be present.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Free text, suggested maximum length 300 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;ThesisPresentedTo&gt;</td></tr><tr><td>Short tag</td><td>&lt;b369&gt;</td></tr></table>
+ * name</td><td><tt>&lt;ThesisPresentedTo&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b369&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ThesisPresentedTo</li>
+ * </ul>
  */
 public class ThesisPresentedTo implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class ThesisPresentedTo implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,9 @@ public class ThesisPresentedTo implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ThesisPresentedTo&gt; or &lt;b369&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

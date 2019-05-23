@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Sales outlet composite</h1><p>An optional and repeatable group of data elements which together identify a sales
  * outlet to which a restriction is linked. Each occurrence of the composite must include a
  * &lt;SalesOutletIdentifier&gt; composite or a &lt;SalesOutletName&gt; or both.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesOutlet&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;salesoutlet&gt;</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SalesOutlet&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;salesoutlet&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SalesRestriction&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRestriction ⯈ SalesOutlet</li>
+ * </ul>
  */
 public class SalesOutlet implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -119,6 +129,9 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SalesOutlet&gt; or &lt;salesoutlet&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -131,7 +144,9 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
     private SalesOutletIdentifier salesOutletIdentifier = SalesOutletIdentifier.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A group of data elements which together represent a coded identification of a person or organization, used
+     * here to identify a sales outlet. Non-repeating in this context.</p>
+     * Jonix-Comment: this field is required
      */
     public SalesOutletIdentifier salesOutletIdentifier() {
         _initialize();
@@ -141,7 +156,8 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
     private SalesOutletName salesOutletName = SalesOutletName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of a wholesale or retail sales outlet to which a sales restriction is linked. Non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public SalesOutletName salesOutletName() {
         _initialize();

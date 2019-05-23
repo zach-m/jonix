@@ -37,9 +37,34 @@ import java.io.Serializable;
  * <h1>Person name part 2: names before key name</h1><p>The second part of a structured name of a person who contributed
  * to the creation of the product: name(s) and/or initial(s) preceding a person’s key name(s), <em>eg</em> James J.
  * Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
- * suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;NamesBeforeKey&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b039&gt;</td></tr><tr><td>Example</td><td>&lt;NamesBeforeKey&gt;James
- * J.&lt;/NamesBeforeKey&gt;</td></tr></table>
+ * suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;NamesBeforeKey&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b039&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;NamesBeforeKey&gt;James
+ * J.&lt;/NamesBeforeKey&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Name&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;PersonAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ NamesBeforeKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ NamesBeforeKey</li>
+ * </ul>
  */
 public class NamesBeforeKey implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +103,7 @@ public class NamesBeforeKey implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +134,9 @@ public class NamesBeforeKey implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;NamesBeforeKey&gt; or &lt;b039&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

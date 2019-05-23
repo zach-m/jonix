@@ -33,13 +33,34 @@ import java.io.Serializable;
 /**
  * <h1>Countries excluded</h1><p>One or more ISO standard codes identifying countries excluded from the territory.
  * Successive codes must be separated by spaces. Optional and non-repeating, and can only occur if the
- * &lt;RegionsIncluded&gt; element is also present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>One or
- * more fixed-length codes, each consisting of two upper case letters, and with successive codes being separated by
- * spaces. Suggested maximum length 750 characters. Note that ISO 3166-1 specifies that country codes shall be sent as
- * upper case only</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes List
- * 91</td></tr><tr><td>Reference name</td><td>&lt;CountriesExcluded&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x451&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;CountriesExcluded&gt;US
- * CA&lt;/CountriesExcluded&gt; (Excludes USA and Canada)</td></tr></table>
+ * &lt;RegionsIncluded&gt; element is also present and includes a supra-national region code (such as
+ * ‘World’).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>One or more fixed-length codes, each consisting
+ * of two upper case letters, and with successive codes being separated by spaces. Suggested maximum length 750
+ * characters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case
+ * only</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes List 91</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;CountriesExcluded&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x451&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;CountriesExcluded&gt;US
+ * CA&lt;/CountriesExcluded&gt;</tt> (Excludes USA and Canada)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Territory&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ Territory ⯈
+ * CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ Territory ⯈ CountriesExcluded</li>
+ * </ul>
  */
 public class CountriesExcluded implements OnixElement<java.util.Set<Countrys>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -70,7 +91,7 @@ public class CountriesExcluded implements OnixElement<java.util.Set<Countrys>>, 
     public java.util.Set<Countrys> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<Countrys> _value() {
@@ -100,6 +121,9 @@ public class CountriesExcluded implements OnixElement<java.util.Set<Countrys>>, 
         }
     }
 
+    /**
+     * @return whether this tag (&lt;CountriesExcluded&gt; or &lt;x451&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -29,8 +29,7 @@ import java.util.Map;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 242 (Battery type and safety &lt;p&gt;NOTE: Introduced in
- * Onix3)
+ * marker interface to assist in IDE navigation to code-list 242 (Battery type and safety)
  */
 interface CodeList242 {
 }
@@ -38,7 +37,9 @@ interface CodeList242 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 242</b>
  * <p>
- * Description: Battery type and safety &lt;p&gt;NOTE: Introduced in Onix3
+ * Description: Battery type and safety
+ * <p>
+ * Jonix-Comment: Introduced in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist242">ONIX

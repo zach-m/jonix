@@ -109,26 +109,34 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
 
     /**
      * As height, but of the product without packaging (use only for products supplied in retail packaging, must also
-     * supply overall size when packaged using code 01). For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * supply overall size when packaged using code 01). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Unpackaged_height("14", "Unpackaged height"), //
 
     /**
      * As width, but of the product without packaging (use only for products supplied in retail packaging, must also
-     * supply overall size when packaged using code 02). For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * supply overall size when packaged using code 02). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Unpackaged_width("15", "Unpackaged width"), //
 
     /**
      * As thickness, but of the product without packaging (use only for products supplied in retail packaging, must also
-     * supply overall size when packaged using code 03). For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * supply overall size when packaged using code 03). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Unpackaged_thickness("16", "Unpackaged thickness"), //
 
     /**
      * Weight of batteries built-in, pre-installed or supplied with the product. Details of the batteries should be
      * provided using &lt;ProductFormFeature&gt;. A per-battery unit weight may be calculated from the number of
-     * batteries if required. Use only with ONIX 3.0 &lt;p&gt;NOTE: Introduced in Onix3
+     * batteries if required. Use only with ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Total_battery_weight("17", "Total battery weight"), //
 
@@ -136,8 +144,9 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * Mass or equivalent mass of elemental Lithium within the batteries built-in, pre-installed or supplied with the
      * product (eg a Lithium Iron phosphate battery with 160g of cathode material would have a total of around 7g of
      * Lithium). Details of the batteries must be provided using ProductFormFeature. A per-battery unit mass of Lithium
-     * may be calculated from the number of batteries if required. Use only with ONIX 3.0 &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * may be calculated from the number of batteries if required. Use only with ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Total_weight_of_Lithium("18", "Total weight of Lithium");
 

@@ -34,11 +34,21 @@ import java.io.Serializable;
  * <h1>Imprint identifier type</h1><p>An ONIX code which identifies the scheme from which the value in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;ImprintIdentifier&gt; composite.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 44</td></tr><tr><td>Reference name</td><td>&lt;ImprintIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x445&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x445&gt;01&lt;/x445&gt;
+ * 44</td></tr><tr><td>Reference name</td><td><tt>&lt;ImprintIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x445&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x445&gt;01&lt;/x445&gt;</tt>
  * (Proprietary)</td></tr><tr><td>Notes</td><td>'Proprietary' in this context indicates the code list from which
  * &lt;IDValue&gt; is drawn is proprietary; it is not an indicator of trademark or proprietary rights held over the
  * brand or imprint name itself.</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ImprintIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint ⯈ ImprintIdentifier ⯈ ImprintIDType</li>
+ * </ul>
  */
 public class ImprintIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +79,7 @@ public class ImprintIDType implements OnixElement<NameIdentifierTypes>, Serializ
     public NameIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public NameIdentifierTypes _value() {
@@ -96,6 +106,9 @@ public class ImprintIDType implements OnixElement<NameIdentifierTypes>, Serializ
         value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ImprintIDType&gt; or &lt;x445&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Supply contact role</h1><p>An ONIX code which identifies the role played by the supply contact in relation to the
  * product – for example answering enquiries related to orders or to returns.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 239</td></tr><tr><td>Reference name</td><td>&lt;SupplyContactRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x537&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;SupplyContactRole&gt;07&lt;/SupplyContactRole&gt;
+ * 239</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplyContactRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x537&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;SupplyContactRole&gt;07&lt;/SupplyContactRole&gt;</tt>
  * (Returns authorization contact)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyContact&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ SupplyContactRole</li>
+ * </ul>
  */
 public class SupplyContactRole implements OnixElement<SupplyContactRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class SupplyContactRole implements OnixElement<SupplyContactRoles>, Seria
     public SupplyContactRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SupplyContactRoles _value() {
@@ -94,6 +104,9 @@ public class SupplyContactRole implements OnixElement<SupplyContactRoles>, Seria
         value = SupplyContactRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SupplyContactRole&gt; or &lt;x537&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

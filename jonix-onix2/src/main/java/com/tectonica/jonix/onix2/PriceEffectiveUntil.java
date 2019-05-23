@@ -36,8 +36,19 @@ import java.io.Serializable;
 /**
  * <h1>Price effective until</h1><p>The date until which a price remains effective. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as year, month, day
- * (YYYYMMDD)</td></tr><tr><td>Reference name</td><td>&lt;PriceEffectiveUntil&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j162&gt;</td></tr><tr><td>Example</td><td>&lt;PriceEffectiveUntil&gt;20000615&lt;/PriceEffectiveUntil&gt;</td></tr></table>
+ * (YYYYMMDD)</td></tr><tr><td>Reference name</td><td><tt>&lt;PriceEffectiveUntil&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j162&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PriceEffectiveUntil&gt;20000615&lt;/PriceEffectiveUntil&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ PriceEffectiveUntil</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceEffectiveUntil</li>
+ * </ul>
  */
 public class PriceEffectiveUntil implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +87,7 @@ public class PriceEffectiveUntil implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +118,9 @@ public class PriceEffectiveUntil implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PriceEffectiveUntil&gt; or &lt;j162&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

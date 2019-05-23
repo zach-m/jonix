@@ -31,14 +31,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Source title</h1><p>The title, name or short description of a publication, broadcast, website or other source of
- * cited content. Optional, and repeatable; required unless the cited content refers to a bestseller list, and
- * &lt;ListName&gt; is present. &lt;SourceTitle&gt; may be repeated to provide the title in multiple languages. The
+ * <h1>Source title</h1><p>The title of a publication from which the text sent in the &lt;Text&gt; element was taken,
+ * <i>eg</i> if it is a review quote. Optional, and repeatable to provide the title in multiple languages. The
  * <i>language</i> attribute is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each
  * instance if &lt;SourceTitle&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
  * length text, suggested maximum length 300 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;SourceTitle&gt;</td></tr><tr><td>Short tag</td><td>&lt;x428&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;SourceTitle&gt;New
- * York Times&lt;/SourceTitle&gt;</td></tr></table>
+ * name</td><td><tt>&lt;SourceTitle&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x428&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;x428&gt;New
+ * York Times&lt;/x428&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TextContent&gt;</li>
+ * <li>&lt;CitedContent&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ SourceTitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ SourceTitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ SourceTitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ SourceTitle</li>
+ * </ul>
  */
 public class SourceTitle implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -74,7 +87,7 @@ public class SourceTitle implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -102,6 +115,9 @@ public class SourceTitle implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SourceTitle&gt; or &lt;x428&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

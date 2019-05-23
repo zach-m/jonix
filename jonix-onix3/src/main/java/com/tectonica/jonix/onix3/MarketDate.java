@@ -36,8 +36,18 @@ import java.io.Serializable;
  * publishing status of the product in a specified market, <i>eg</i> ‘local publication date’. Optional, but if known, a
  * date of publication <em>must</em> be specified either here as a ‘local pubdate’ or in P.20. Other dates relating to
  * the publication of the product in the specific market may be sent in further repeats of the composite.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;MarketDate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;marketdate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;MarketDate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;marketdate&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MarketPublishingDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ MarketDate</li>
+ * </ul>
  */
 public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, PublishingDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -113,6 +123,9 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
         });
     }
 
+    /**
+     * @return whether this tag (&lt;MarketDate&gt; or &lt;marketdate&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -125,7 +138,9 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
     private MarketDateRole marketDateRole = MarketDateRole.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
+     * composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public MarketDateRole marketDateRole() {
         _initialize();
@@ -135,7 +150,10 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
     private DateFormat dateFormat = DateFormat.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of
+     * the &lt;MarketDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
+     * attribute instead.</p>
+     * Jonix-Comment: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();
@@ -145,7 +163,11 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
     private Date date = Date.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The date specified in the &lt;MarketDateRole&gt; field. Mandatory in each occurrence of the &lt;MarketDate&gt;
+     * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
+     * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
+     * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.</p>
+     * Jonix-Comment: this field is required
      */
     public Date date() {
         _initialize();

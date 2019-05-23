@@ -31,12 +31,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Alternative name type</h1><p>An ONIX code indicating the type of the name sent in an occurrence of the
- * &lt;AlternativeName&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 18</td></tr><tr><td>Reference name</td><td>&lt;NameType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x414&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x414&gt;01&lt;/x414&gt;
+ * <h1>Primary name type</h1><p>An ONIX code indicating the type of a primary name. Optional, and non-repeating. If
+ * omitted, the default is ‘unspecified’.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 18</td></tr><tr><td>Reference name</td><td><tt>&lt;NameType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x414&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;NameType&gt;01&lt;/NameType&gt;</tt>
  * (Pseudonym)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AlternativeName&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;NameAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ AlternativeName ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ AlternativeName ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ AlternativeName ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ AlternativeName ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ NameType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ NameType</li>
+ * </ul>
  */
 public class NameType implements OnixElement<PersonOrganizationNameTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +87,7 @@ public class NameType implements OnixElement<PersonOrganizationNameTypes>, Seria
     public PersonOrganizationNameTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PersonOrganizationNameTypes _value() {
@@ -94,6 +114,9 @@ public class NameType implements OnixElement<PersonOrganizationNameTypes>, Seria
         value = PersonOrganizationNameTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;NameType&gt; or &lt;x414&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

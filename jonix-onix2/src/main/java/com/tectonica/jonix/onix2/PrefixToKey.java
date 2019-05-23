@@ -38,8 +38,33 @@ import java.io.Serializable;
  * the creation of the product: a prefix which precedes the key name(s) but which is not to be treated as part of the
  * key name, <em>eg</em> van in Ludwig van Beethoven. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td>&lt;PrefixToKey&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b247&gt;</td></tr><tr><td>Example</td><td>&lt;b247&gt;van&lt;/b247&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PrefixToKey&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b247&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b247&gt;van&lt;/b247&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Name&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;PersonAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ PrefixToKey</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ PrefixToKey</li>
+ * </ul>
  */
 public class PrefixToKey implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +103,7 @@ public class PrefixToKey implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +134,9 @@ public class PrefixToKey implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PrefixToKey&gt; or &lt;b247&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

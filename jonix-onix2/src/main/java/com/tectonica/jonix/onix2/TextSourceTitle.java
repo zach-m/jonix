@@ -37,9 +37,22 @@ import java.io.Serializable;
  * <h1>Title of source of other text</h1><p>The title of a publication from which the text sent in the &lt;Text&gt;
  * element, or referenced in the &lt;TextLink&gt; element, was taken, <em>eg</em> if it is a review quote. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
- * length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;TextSourceTitle&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;d108&gt;</td></tr><tr><td>Example</td><td>&lt;TextSourceTitle&gt;New York
- * Times&lt;/TextSourceTitle&gt;</td></tr></table>
+ * length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TextSourceTitle&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;d108&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TextSourceTitle&gt;New York
+ * Times&lt;/TextSourceTitle&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OtherText&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextSourceTitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ TextSourceTitle</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ TextSourceTitle</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ TextSourceTitle</li>
+ * </ul>
  */
 public class TextSourceTitle implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +91,7 @@ public class TextSourceTitle implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +122,9 @@ public class TextSourceTitle implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TextSourceTitle&gt; or &lt;d108&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

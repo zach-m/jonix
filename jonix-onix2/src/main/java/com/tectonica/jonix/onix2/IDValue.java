@@ -34,11 +34,68 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Identifier value</h1><p>An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in
- * any occurrence of the &lt;AddresseeIdentifier&gt; composite, and non-repeating.</p><table border='1'
+ * <h1>Identifier value</h1><p>An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in
+ * each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>According to the identifier type specified in
- * &lt;AddresseeIDType&gt;</td></tr><tr><td>Reference name</td><td>&lt;IDValue&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b244&gt;</td></tr></table>
+ * &lt;ProductIDType&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;IDValue&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b244&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;IDValue&gt;8474339790&lt;/IDValue&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;WorkIdentifier&gt;</li>
+ * <li>&lt;AgentIdentifier&gt;</li>
+ * <li>&lt;ConferenceSponsorIdentifier&gt;</li>
+ * <li>&lt;SeriesIdentifier&gt;</li>
+ * <li>&lt;ProductIdentifier&gt;</li>
+ * <li>&lt;LocationIdentifier&gt;</li>
+ * <li>&lt;SenderIdentifier&gt;</li>
+ * <li>&lt;CopyrightOwnerIdentifier&gt;</li>
+ * <li>&lt;TextItemIdentifier&gt;</li>
+ * <li>&lt;PersonNameIdentifier&gt;</li>
+ * <li>&lt;SupplierIdentifier&gt;</li>
+ * <li>&lt;SalesOutletIdentifier&gt;</li>
+ * <li>&lt;ParentIdentifier&gt;</li>
+ * <li>&lt;AddresseeIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ WorkIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ AgentIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceSponsor ⯈ ConferenceSponsorIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SeriesIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ SeriesIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ SeriesIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ ProductIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ ProductIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ LocationIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Header ⯈ SenderIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CopyrightOwnerIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ TextItemIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ ParentIdentifier ⯈ IDValue</li>
+ * <li>ONIXMessage ⯈ Header ⯈ AddresseeIdentifier ⯈ IDValue</li>
+ * </ul>
  */
 public class IDValue implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,12 +129,12 @@ public class IDValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt;<p> (type: NonEmptyString)
+     * Raw Format: According to the identifier type specified in &lt;ProductIDType&gt;<p> (type: NonEmptyString)
      */
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +165,9 @@ public class IDValue implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;IDValue&gt; or &lt;b244&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

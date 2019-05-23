@@ -39,8 +39,19 @@ import java.io.Serializable;
  * unit price before tax, if the item carries tax at the same rate on the whole price; or part of the unit price in the
  * case of a mixed tax rate product. See notes on &lt;TaxRateCode1&gt;.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an explicit decimal point where
- * required.</td></tr><tr><td>Reference name</td><td>&lt;TaxableAmount1&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j155&gt;</td></tr><tr><td>Example</td><td>&lt;j155&gt;10.64&lt;/j155&gt;</td></tr></table>
+ * required.</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxableAmount1&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j155&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j155&gt;10.64&lt;/j155&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ TaxableAmount1</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ TaxableAmount1</li>
+ * </ul>
  */
 public class TaxableAmount1 implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +91,7 @@ public class TaxableAmount1 implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +122,9 @@ public class TaxableAmount1 implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TaxableAmount1&gt; or &lt;j155&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

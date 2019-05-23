@@ -60,7 +60,9 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
 
     /**
      * For example a 'best books of the year' or '25 books you should have read' list, without regard to their
-     * bestseller status &lt;p&gt;NOTE: Introduced in Onix3
+     * bestseller status
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Curated_list("05", "Curated list");
 

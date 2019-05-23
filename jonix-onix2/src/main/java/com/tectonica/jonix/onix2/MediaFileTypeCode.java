@@ -39,8 +39,20 @@ import java.io.Serializable;
  * linked by the &lt;MediaFileLink&gt; element. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two characters (initially
  * allocated as 01, 02 etc)</td></tr><tr><td>Codelist</td><td>List 38</td></tr><tr><td>Reference
- * name</td><td>&lt;MediaFileTypeCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;f114&gt;</td></tr><tr><td>Example</td><td>&lt;MediaFileTypeCode&gt;17&lt;/MediaFileTypeCode&gt;
+ * name</td><td><tt>&lt;MediaFileTypeCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;f114&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;MediaFileTypeCode&gt;17&lt;/MediaFileTypeCode&gt;</tt>
  * Publisher's logo</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MediaFile&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ MediaFileTypeCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ MediaFileTypeCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ MediaFileTypeCode</li>
+ * </ul>
  */
 public class MediaFileTypeCode implements OnixElement<ImageAudioVideoFileTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +88,7 @@ public class MediaFileTypeCode implements OnixElement<ImageAudioVideoFileTypes>,
     public ImageAudioVideoFileTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ImageAudioVideoFileTypes _value() {
@@ -107,6 +119,9 @@ public class MediaFileTypeCode implements OnixElement<ImageAudioVideoFileTypes>,
         value = ImageAudioVideoFileTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;MediaFileTypeCode&gt; or &lt;f114&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -36,8 +36,32 @@ import java.io.Serializable;
 /**
  * <h1>Link to website</h1><p>The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite,
  * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested
- * maximum length 300 characters</td></tr><tr><td>Reference name</td><td>&lt;WebsiteLink&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b295&gt;</td></tr><tr><td>Example</td><td>&lt;b295&gt;http://xyzbooks.com&lt;/b295&gt;</td></tr></table>
+ * maximum length 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;WebsiteLink&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b295&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b295&gt;http://xyzbooks.com/ISTC123456789.htm&lt;/b295&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Website&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ Website ⯈ WebsiteLink</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ Website ⯈ WebsiteLink</li>
+ * </ul>
  */
 public class WebsiteLink implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +100,7 @@ public class WebsiteLink implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +131,9 @@ public class WebsiteLink implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;WebsiteLink&gt; or &lt;b295&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

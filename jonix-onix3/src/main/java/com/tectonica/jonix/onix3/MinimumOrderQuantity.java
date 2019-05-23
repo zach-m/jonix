@@ -37,8 +37,19 @@ import java.io.Serializable;
  * and &lt;OrderQuantityMinimum&gt; in P.26.41b: only &lt;MinimumOrderQuantity&gt; has an effect on the specification of
  * &lt;Price&gt;. Use of &lt;MinimumOrderQuantity&gt; is close in effect to a multi-item trade pack (see
  * &lt;ProductComposition&gt;).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested
- * maximum length 4 digits</td></tr><tr><td>Reference name</td><td>&lt;MinimumOrderQuantity&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j263&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;MinimumOrderQuantity&gt;50&lt;/MinimumOrderQuantity&gt;</td></tr></table>
+ * maximum length 4 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;MinimumOrderQuantity&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j263&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;MinimumOrderQuantity&gt;50&lt;/MinimumOrderQuantity&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ MinimumOrderQuantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ MinimumOrderQuantity</li>
+ * </ul>
  */
 public class MinimumOrderQuantity implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,7 +83,7 @@ public class MinimumOrderQuantity implements OnixElement<Integer>, Serializable 
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -99,6 +110,9 @@ public class MinimumOrderQuantity implements OnixElement<Integer>, Serializable 
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MinimumOrderQuantity&gt; or &lt;j263&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

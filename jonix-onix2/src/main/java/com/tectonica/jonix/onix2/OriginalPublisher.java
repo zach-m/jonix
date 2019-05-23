@@ -40,9 +40,19 @@ import java.io.Serializable;
  * non-repeating.</p><p><strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of
  * handling publisher identities, and is to be preferred.</strong></p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters.</td></tr><tr><td>Reference name</td><td>&lt;OriginalPublisher&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b240&gt;</td></tr><tr><td>Example</td><td>&lt;OriginalPublisher&gt;Springer
- * Verlag&lt;/OriginalPublisher&gt;</td></tr></table>
+ * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;OriginalPublisher&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b240&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;OriginalPublisher&gt;Springer
+ * Verlag&lt;/OriginalPublisher&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OriginalPublisher</li>
+ * </ul>
  */
 public class OriginalPublisher implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +91,7 @@ public class OriginalPublisher implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -112,6 +122,9 @@ public class OriginalPublisher implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;OriginalPublisher&gt; or &lt;b240&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

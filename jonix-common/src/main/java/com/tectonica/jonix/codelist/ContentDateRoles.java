@@ -91,13 +91,17 @@ public enum ContentDateRoles implements OnixCodelist, CodeList155 {
 
     /**
      * Start date referenced by the supporting resource, for example, the 'earliest exam date' for an official
-     * recommendation &lt;p&gt;NOTE: Introduced in Onix3
+     * recommendation
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Associated_start_date("31", "Associated start date"), //
 
     /**
      * End date referenced by the supporting resource, for example, the 'latest exam date' for an official
-     * recommendation &lt;p&gt;NOTE: Introduced in Onix3
+     * recommendation
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Associated_end_date("32", "Associated end date");
 

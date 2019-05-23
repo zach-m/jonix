@@ -32,18 +32,28 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title statement</h1><p>Free text showing how the overall title (including any collection level title, if the
- * collection title is treated as part of the product title and included in P.6) should be presented in any display,
- * particularly when a standard concatenation of individual title elements from Group&nbsp;P.6 (in the order specified
+ * <h1>Collection title statement</h1><p>Free text showing how the collection title should be presented in any display,
+ * particularly when a standard concatenation of individual title elements from Group&nbsp;P.5 (in the order specified
  * by the &lt;SequenceNumber&gt; data elements) would not give a satisfactory result. Optional and non-repeating. When
- * this field is sent, the recipient should use it to replace all title detail sent in Group&nbsp;P.6 <em>for display
- * purposes only</em>. The individual title element detail <em>must</em> also be sent, for indexing and retrieval
- * purposes.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length
- * 1000 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
- * fields</td></tr><tr><td>Reference name</td><td>&lt;TitleStatement&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x478&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr><tr><td>Example</td><td>&lt;TitleStatement&gt;Granta - the magazine of new writing: The Best of
- * Young Spanish Language Novelists&lt;/TitleStatement&gt;</td></tr></table>
+ * this field is sent, the recipient should use it to replace all collection title detail sent in Group&nbsp;P.5 for
+ * display purposes only. The individual collection title element detail <em>must</em> also be sent, for indexing and
+ * retrieval purposes.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested
+ * maximum length 1000 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
+ * fields</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleStatement&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x478&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TitleDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleStatement</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail ⯈ TitleStatement</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail ⯈ TitleStatement</li>
+ * </ul>
  */
 public class TitleStatement implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -82,7 +92,7 @@ public class TitleStatement implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +121,9 @@ public class TitleStatement implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;TitleStatement&gt; or &lt;x478&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

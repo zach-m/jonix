@@ -38,8 +38,18 @@ import java.io.Serializable;
  * environment. See <a href="http://www.doi.org/" target="_blank">http://www.doi.org/</a> Optional and non-repeating.
  * <strong>The &lt;ProductIdentifier&gt; composite below provides a more general method of handling this and other
  * product codes, and is to be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 300 characters.</td></tr><tr><td>Reference name</td><td>&lt;DOI&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b009&gt;</td></tr><tr><td>Example</td><td>&lt;DOI&gt;10.1006/jmbi.1998.2354&lt;/DOI&gt;</td></tr></table>
+ * text, suggested maximum length 300 characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;DOI&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b009&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;DOI&gt;10.1006/jmbi.1998.2354&lt;/DOI&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DOI</li>
+ * </ul>
  */
 public class DOI implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +88,7 @@ public class DOI implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +119,9 @@ public class DOI implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;DOI&gt; or &lt;b009&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

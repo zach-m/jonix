@@ -30,12 +30,29 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contact name</h1><p>Free text giving the name, department, phone number, <i>etc</i> for a contact person in the
- * supply contact organization who is responsible for the product. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum 300
- * characters</td></tr><tr><td>Reference name</td><td>&lt;ContactName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x299&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x299&gt;Jackie
- * Brown, tel +44 20 7946 0921&lt;/x299&gt;</td></tr></table>
+ * <h1>Sender contact name</h1><p>Free text giving the name, department, phone number, <i>etc</i> for a contact person
+ * in the sender organization who is responsible for the content of the message. Optional and non-repeating.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum 300
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ContactName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x299&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x299&gt;Jackie
+ * Brown, tel. +44 20 7946 0921&lt;/x299&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyContact&gt;</li>
+ * <li>&lt;Sender&gt;</li>
+ * <li>&lt;ProductContact&gt;</li>
+ * <li>&lt;Addressee&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ ContactName</li>
+ * <li>ONIXMessage ⯈ Header ⯈ Sender ⯈ ContactName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ ContactName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact ⯈ ContactName</li>
+ * <li>ONIXMessage ⯈ Header ⯈ Addressee ⯈ ContactName</li>
+ * </ul>
  */
 public class ContactName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +86,7 @@ public class ContactName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -96,6 +113,9 @@ public class ContactName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ContactName&gt; or &lt;x299&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

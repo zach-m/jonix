@@ -34,10 +34,26 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Date</h1><p>The date specified in the &lt;MarketDateRole&gt; field. Mandatory in each occurrence of the
- * &lt;MarketDate&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>As specified by the value
- * in &lt;DateFormat&gt;: default YYYYMMDD</td></tr><tr><td>Reference name</td><td>&lt;Date&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b306&gt;</td></tr><tr><td>Example</td><td>&lt;b306&gt;20010106&lt;/b306&gt;</td></tr></table>
+ * <h1>Date</h1><p>The date specified in the &lt;PersonDateRole&gt; field. Mandatory in each occurrence of the
+ * &lt;PersonDate&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>As specified by the value
+ * in &lt;DateFormat&gt;: default YYYYMMDD</td></tr><tr><td>Reference name</td><td><tt>&lt;Date&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b306&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;Date&gt;20010106&lt;/Date&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MarketDate&gt;</li>
+ * <li>&lt;PersonDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketDate ⯈ Date</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonDate ⯈ Date</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonDate ⯈ Date</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonDate ⯈ Date</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonDate ⯈ Date</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonDate ⯈ Date</li>
+ * </ul>
  */
 public class Date implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +92,7 @@ public class Date implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +123,9 @@ public class Date implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Date&gt; or &lt;b306&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

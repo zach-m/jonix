@@ -32,10 +32,22 @@ import java.io.Serializable;
 
 /**
  * <h1>Title type code</h1><p>An ONIX code indicating the type of a title. Mandatory in each occurrence of the
- * &lt;TitleDetail&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, two digits</td></tr><tr><td>Codelist</td><td>List 15</td></tr><tr><td>Reference
- * name</td><td>&lt;TitleType&gt;</td></tr><tr><td>Short tag</td><td>&lt;b202&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;TitleType&gt;01&lt;TitleType&gt;
+ * &lt;TitleDetail&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length
+ * text, two digits</td></tr><tr><td>Codelist</td><td>List 15</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;TitleType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b202&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;TitleType&gt;01&lt;/TitleType&gt;</tt>
  * (Distinctive title)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TitleDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail ⯈ TitleType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail ⯈ TitleType</li>
+ * </ul>
  */
 public class TitleType implements OnixElement<TitleTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +78,7 @@ public class TitleType implements OnixElement<TitleTypes>, Serializable {
     public TitleTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TitleTypes _value() {
@@ -93,6 +105,9 @@ public class TitleType implements OnixElement<TitleTypes>, Serializable {
         value = TitleTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TitleType&gt; or &lt;b202&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

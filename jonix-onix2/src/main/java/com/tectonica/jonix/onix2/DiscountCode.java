@@ -37,7 +37,18 @@ import java.io.Serializable;
  * <h1>Discount code value</h1><p>A discount code from the scheme specified in the &lt;DiscountCodeType&gt; element.
  * Mandatory in each occurrence of the &lt;DiscountCoded&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>According to the scheme specified in &lt;DiscountCodeType&gt;</td></tr><tr><td>Reference
- * name</td><td>&lt;DiscountCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;j364&gt;</td></tr><tr><td>Example</td><td>&lt;j364&gt;12345678&lt;/j364&gt;</td></tr></table>
+ * name</td><td><tt>&lt;DiscountCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j364&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j364&gt;12345678&lt;/j364&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DiscountCoded&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ DiscountCoded ⯈ DiscountCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ DiscountCoded ⯈ DiscountCode</li>
+ * </ul>
  */
 public class DiscountCode implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +87,7 @@ public class DiscountCode implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +118,9 @@ public class DiscountCode implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;DiscountCode&gt; or &lt;j364&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -40,8 +40,18 @@ import java.util.List;
 /**
  * <h1>Collection composite</h1><p>An optional group of data elements which carry attributes of a collection of which
  * the product is part. The composite is repeatable, to provide details when the product belongs to multiple
- * collections.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Collection&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;collection&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * collections.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Collection&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;collection&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection</li>
+ * </ul>
  */
 public class Collection implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -137,6 +147,9 @@ public class Collection implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Collection&gt; or &lt;collection&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -149,7 +162,9 @@ public class Collection implements OnixSuperComposite, Serializable {
     private CollectionType collectionType = CollectionType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the type of a collection: publisher collection, ascribed collection, or unspecified.
+     * Mandatory in each occurrence of the &lt;Collection&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public CollectionType collectionType() {
         _initialize();
@@ -159,7 +174,10 @@ public class Collection implements OnixSuperComposite, Serializable {
     private SourceName sourceName = SourceName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>If the &lt;CollectionType&gt; code indicates an ascribed collection (<i>ie</i> a collection which has been
+     * identified and described by a supply chain organization other than the publisher), this element may be used to
+     * carry the name of the organization responsible. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public SourceName sourceName() {
         _initialize();
@@ -170,7 +188,10 @@ public class Collection implements OnixSuperComposite, Serializable {
         collectionIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together specify an identifier of a bibliographic collection. The
+     * composite is optional, and may only repeat if two or more identifiers of different types are sent for the same
+     * collection. It is not permissible to have two identifiers of the same type.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, SeriesIdentifierTypes> collectionIdentifiers() {
         _initialize();
@@ -181,7 +202,10 @@ public class Collection implements OnixSuperComposite, Serializable {
         collectionSequences = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>An optional and repeatable group of data elements which indicates some ordinal position of a product within a
+     * collection. Different ordinal positions may be specified using separate repeats of the composite – for example, a
+     * product may be published first while also being third in narrative order within a collection.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence, CollectionSequenceTypes> collectionSequences() {
         _initialize();
@@ -191,7 +215,11 @@ public class Collection implements OnixSuperComposite, Serializable {
     private List<TitleDetail> titleDetails = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together give the text of a collection title and specify its type. Optional,
+     * but the composite is required unless the only collection title is carried in full, and word-for-word, as an
+     * integral part of the product title in P.6, in which case it should not be repeated in&nbsp;P.5. The composite is
+     * repeatable with different title types.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<TitleDetail> titleDetails() {
         _initialize();
@@ -201,7 +229,12 @@ public class Collection implements OnixSuperComposite, Serializable {
     private List<Contributor> contributors = Collections.emptyList();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A group of data elements which together describe a personal or corporate contributor to a collection.
+     * Optional, and repeatable to describe multiple contributors. <strong>The &lt;Contributor&gt; composite is included
+     * here for use only by those ONIX communities whose national practice requires contributors to be identified at
+     * collection level. In many countries, including the UK, USA, Canada and Spain, the required practice is to
+     * identify all contributors at product level in Group&nbsp;P.7.</strong></p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public List<Contributor> contributors() {
         _initialize();
@@ -211,7 +244,19 @@ public class Collection implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>Free text showing how the collection authorship should be described in an online display, when a standard
+     * concatenation of individual collection contributor elements would not give a satisfactory presentation. Optional,
+     * and repeatable where parallel text is provided in multiple languages. The <i>language</i> attribute is optional
+     * for a single instance of &lt;ContributorStatement&gt;, but must be included in each instance if
+     * &lt;ContributorStatement&gt; is repeated. When the &lt;ContributorStatement&gt; element is sent, the recipient
+     * should use it to replace all name detail sent in the &lt;Contributor&gt; composites within &lt;Collection&gt;
+     * <em>for display purposes only</em>. It does not replace the &lt;BiographicalNote&gt; element (or any other
+     * element) for individual contributors. The individual name detail <em>must</em> also be sent in one or more
+     * &lt;Contributor&gt; composites for indexing and retrieval purposes.</p><p><strong>The
+     * &lt;ContributorStatement&gt; element is provided here for use only by those ONIX communities whose national
+     * practice requires contributors to be identified at collection level.</strong> It should not be sent in a context
+     * where collection contributors are normally identified in Group&nbsp;P.6.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
@@ -221,7 +266,12 @@ public class Collection implements OnixSuperComposite, Serializable {
     private NoContributor noContributor = NoContributor.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An empty element that provides a positive indication that a collection has no stated authorship. Optional and
+     * non-repeating. Must only be sent in a record that has no &lt;Contributor&gt; data in Group P.5.</p><p><strong>The
+     * &lt;NoContributor/&gt; element is provided here for use only by those ONIX communities whose national practice
+     * requires contributors to be identified at collection level.</strong> It should not be sent in a context where
+     * collection contributors are normally identified in Group&nbsp;P.6.</p>
+     * Jonix-Comment: this field is optional
      */
     public NoContributor noContributor() {
         _initialize();

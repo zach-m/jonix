@@ -34,12 +34,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Person name</h1><p>The name of a person, used here for a personal copyright owner. Optional and non-repeating.
- * Each occurrence of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an
- * identifier, or both a name and an identifier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;PersonName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b036&gt;</td></tr><tr><td>Example</td><td>&lt;b036&gt;James J. Johnson
- * III&lt;/b036&gt;</td></tr></table>
+ * <h1>Person name</h1><p>The name of a person who contributed to the creation of the product, unstructured, and
+ * presented in normal order. Optional and non-repeating: see Group&nbsp;PR.8 introductory text for valid
+ * options.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length
+ * 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PersonName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b036&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PersonName&gt;James J. Johnson
+ * III&lt;/PersonName&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Name&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;CopyrightOwner&gt;</li>
+ * <li>&lt;ConferenceSponsor&gt;</li>
+ * <li>&lt;PersonAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceSponsor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ PersonName</li>
+ * </ul>
  */
 public class PersonName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +107,7 @@ public class PersonName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +138,9 @@ public class PersonName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PersonName&gt; or &lt;b036&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

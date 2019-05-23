@@ -34,9 +34,20 @@ import java.io.Serializable;
  * <h1>Subject date role code</h1><p>An ONIX code indicating the significance of the date in relation to the subject
  * name. Mandatory in each occurrence of the &lt;SubjectDate&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 177</td></tr><tr><td>Reference name</td><td>&lt;SubjectDateRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x534&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x534&gt;50&lt;/x534&gt;
+ * 177</td></tr><tr><td>Reference name</td><td><tt>&lt;SubjectDateRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x534&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x534&gt;50&lt;/x534&gt;</tt>
  * (Date of birth)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SubjectDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ SubjectDate ⯈ SubjectDateRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ SubjectDate ⯈ SubjectDateRole</li>
+ * </ul>
  */
 public class SubjectDateRole implements OnixElement<PersonOrganizationDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +78,7 @@ public class SubjectDateRole implements OnixElement<PersonOrganizationDateRoles>
     public PersonOrganizationDateRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PersonOrganizationDateRoles _value() {
@@ -94,6 +105,9 @@ public class SubjectDateRole implements OnixElement<PersonOrganizationDateRoles>
         value = PersonOrganizationDateRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SubjectDateRole&gt; or &lt;x534&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -33,8 +33,18 @@ import java.io.Serializable;
  * <h1>Quantity reserved</h1><p>The quantity of stock on hand but unavailable to fulfil new orders for any reason – for
  * example because the stock is reserved to fulfill existing orders or frozen to prevent dispatch. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, suggested
- * maximum length 7 digits.</td></tr><tr><td>Reference name</td><td>&lt;Reserved&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x536&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Reserved&gt;500&lt;/Reserved&gt;</td></tr></table>
+ * maximum length 7 digits.</td></tr><tr><td>Reference name</td><td><tt>&lt;Reserved&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x536&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;Reserved&gt;500&lt;/Reserved&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Stock&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Reserved</li>
+ * </ul>
  */
 public class Reserved implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +78,7 @@ public class Reserved implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -95,6 +105,9 @@ public class Reserved implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Reserved&gt; or &lt;x536&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

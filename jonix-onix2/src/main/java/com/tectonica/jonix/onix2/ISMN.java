@@ -39,7 +39,17 @@ import java.io.Serializable;
  * handling this and other product codes, and is to be preferred.</strong></p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, letter M followed by nine numeric digits, the last of which is a
  * check character calculated according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html</td></tr><tr><td>Reference
- * name</td><td>&lt;ISMN&gt;</td></tr><tr><td>Short tag</td><td>&lt;b008&gt;</td></tr><tr><td>Example</td><td>&lt;ISMN&gt;M345246805&lt;/ISMN&gt;</td></tr></table>
+ * name</td><td><tt>&lt;ISMN&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b008&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ISMN&gt;M345246805&lt;/ISMN&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ISMN</li>
+ * </ul>
  */
 public class ISMN implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class ISMN implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +120,9 @@ public class ISMN implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ISMN&gt; or &lt;b008&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

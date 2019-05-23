@@ -38,8 +38,22 @@ import java.io.Serializable;
  * <h1>Product form detail</h1><p>An ONIX code which provides added detail of the medium and/or format of the product.
  * Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, four characters:
  * one letter followed by three numeric digits</td></tr><tr><td>Codelist</td><td>List 78</td></tr><tr><td>Reference
- * name</td><td>&lt;ProductFormDetail&gt;</td></tr><tr><td>Short tag</td><td>&lt;b333&gt;</td></tr><tr><td>Example</td><td>&lt;ProductFormDetail&gt;B206&lt;/ProductFormDetail&gt;
+ * name</td><td><tt>&lt;ProductFormDetail&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b333&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b333&gt;B206&lt;/b333&gt;</tt>
  * Pop-up book</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductFormDetail</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductFormDetail</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductFormDetail</li>
+ * </ul>
  */
 public class ProductFormDetail implements OnixElement<ProductFormDetailsList78>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +89,7 @@ public class ProductFormDetail implements OnixElement<ProductFormDetailsList78>,
     public ProductFormDetailsList78 value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductFormDetailsList78 _value() {
@@ -106,6 +120,9 @@ public class ProductFormDetail implements OnixElement<ProductFormDetailsList78>,
         value = ProductFormDetailsList78.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductFormDetail&gt; or &lt;b333&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

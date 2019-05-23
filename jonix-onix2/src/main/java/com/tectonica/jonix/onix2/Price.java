@@ -41,10 +41,21 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price composite</h1><p>A optional and repeatable group of data elements which together specify a unit price, used
- * here to indicate a price that will apply when the product is reissued. <strong>Please see above, within
- * Group&nbsp;PR.24, for details.</strong></p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Price&gt;</td></tr><tr><td>Short tag</td><td>&lt;price&gt;</td></tr></table>
+ * <h1>Price composite</h1><p>A repeatable group of data elements which together specify a unit price.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Price&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;price&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;Reissue&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price</li>
+ * </ul>
  */
 public class Price implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -225,6 +236,9 @@ public class Price implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Price&gt; or &lt;price&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -237,7 +251,10 @@ public class Price implements OnixSuperComposite, Serializable {
     private PriceTypeCode priceTypeCode = PriceTypeCode.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code indicating the type of the price in the &lt;PriceAmount&gt; field within the &lt;Price&gt;
+     * composite. Optional, provided that a &lt;DefaultPriceTypeCode&gt; has been specified in the message header, and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PriceTypeCode priceTypeCode() {
         _initialize();
@@ -247,7 +264,9 @@ public class Price implements OnixSuperComposite, Serializable {
     private PriceQualifier priceQualifier = PriceQualifier.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which further specifies the type of price, <em>eg</em> member price, reduced price when purchased
+     * as part of a set. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PriceQualifier priceQualifier() {
         _initialize();
@@ -257,7 +276,10 @@ public class Price implements OnixSuperComposite, Serializable {
     private PriceTypeDescription priceTypeDescription = PriceTypeDescription.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Free text which further describes the price type. Optional and non-repeating. In the Netherlands, when the
+     * &lt;PriceQualifier&gt; code identifies a “voucher price”, the &lt;PriceTypeDescription&gt; should give the “EAN
+     * action number” that identifies the offer.</p>
+     * Jonix-Comment: this field is optional
      */
     public PriceTypeDescription priceTypeDescription() {
         _initialize();
@@ -267,7 +289,10 @@ public class Price implements OnixSuperComposite, Serializable {
     private PricePer pricePer = PricePer.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code indicating the unit of product which is the basis for the price carried in an occurrence of the
+     * &lt;Price&gt; composite. Optional and non-repeating. Where the price applies to a copy of the whole product, this
+     * field is normally omitted.</p>
+     * Jonix-Comment: this field is optional
      */
     public PricePer pricePer() {
         _initialize();
@@ -277,7 +302,10 @@ public class Price implements OnixSuperComposite, Serializable {
     private MinimumOrderQuantity minimumOrderQuantity = MinimumOrderQuantity.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The minimum number of copies which must be ordered to obtain the price carried in an occurrence of the
+     * &lt;Price&gt; composite. Optional and non-repeating. If the field is present, the price is a quantity price. If
+     * the field is omitted, the price applies to a single unit.</p>
+     * Jonix-Comment: this field is optional
      */
     public MinimumOrderQuantity minimumOrderQuantity() {
         _initialize();
@@ -287,7 +315,9 @@ public class Price implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss = ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together specify a batch bonus, <em>ie</em> a quantity of free
+     * copies which are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss() {
         _initialize();
@@ -297,7 +327,12 @@ public class Price implements OnixSuperComposite, Serializable {
     private ClassOfTrade classOfTrade = ClassOfTrade.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Text indicating the class of trade to which the price carried in an occurrence of the &lt;Price&gt; composite
+     * is applicable, <em>eg</em> Institutional, General trade, Wholesale distributor, which may be represented by a
+     * suitable code or abbreviation agreed between trading partners. This element should be used only in the absence of
+     * a “Default class of trade” &lt;m193&gt; in the message header, or when the class of trade is other than the
+     * default.</p>
+     * Jonix-Comment: this field is optional
      */
     public ClassOfTrade classOfTrade() {
         _initialize();
@@ -307,7 +342,11 @@ public class Price implements OnixSuperComposite, Serializable {
     private BICDiscountGroupCode bicDiscountGroupCode = BICDiscountGroupCode.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A BIC code indicating the supplier’s discount group to which the price carried in an occurrence of the
+     * &lt;Price&gt; composite belongs. This code does not identify an absolute rate of discount, but it allows a
+     * bookseller to derive the actual discount by reference to a look-up table provided separately by the
+     * supplier.</p>
+     * Jonix-Comment: this field is optional
      */
     public BICDiscountGroupCode bicDiscountGroupCode() {
         _initialize();
@@ -318,7 +357,10 @@ public class Price implements OnixSuperComposite, Serializable {
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together define a discount code from a specified scheme, and
+     * allowing different discount code schemes to be supported without defining additional data elements.
+     * Optional.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds() {
         _initialize();
@@ -328,7 +370,10 @@ public class Price implements OnixSuperComposite, Serializable {
     private DiscountPercent discountPercent = DiscountPercent.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The supplier’s discount percentage applicable to the price carried in an occurrence of the &lt;Price&gt;
+     * composite. Optional and non-repeating. Use only when an ONIX message is sent within the context of a specific
+     * trading relationship.</p>
+     * Jonix-Comment: this field is optional
      */
     public DiscountPercent discountPercent() {
         _initialize();
@@ -338,7 +383,9 @@ public class Price implements OnixSuperComposite, Serializable {
     private PriceStatus priceStatus = PriceStatus.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which specifies the status of a price. Optional and non-repeating. If the field is omitted, the
+     * default “unspecified” will apply.</p>
+     * Jonix-Comment: this field is optional
      */
     public PriceStatus priceStatus() {
         _initialize();
@@ -348,7 +395,8 @@ public class Price implements OnixSuperComposite, Serializable {
     private PriceAmount priceAmount = PriceAmount.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The amount of a price. Mandatory in each occurrence of the &lt;Price&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public PriceAmount priceAmount() {
         _initialize();
@@ -358,7 +406,9 @@ public class Price implements OnixSuperComposite, Serializable {
     private CurrencyCode currencyCode = CurrencyCode.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ISO standard code identifying the currency in which a price is given in &lt;PriceAmount&gt;, unless it is
+     * the default currency for the exchange. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public CurrencyCode currencyCode() {
         _initialize();
@@ -368,7 +418,11 @@ public class Price implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<CountryCode, Countrys> countryCodes = ListOfOnixElement.empty();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A code identifying a country in which the price given in &lt;PriceAmount&gt; applies. This allows a supplier
+     * to list different prices for specific countries by repeating the &lt;Price&gt; composite rather than having to
+     * repeat the whole of the &lt;SupplyDetail&gt; composite. Optional, and repeatable if a single price applies to
+     * multiple countries.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<CountryCode, Countrys> countryCodes() {
         _initialize();
@@ -378,7 +432,10 @@ public class Price implements OnixSuperComposite, Serializable {
     private Territory territory = Territory.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>One or more ONIX codes identifying a territory, other than a country, in which the price given in
+     * &lt;PriceAmount&gt; applies. Successive codes may be separated by spaces. Thus the element can carry an unlimited
+     * number of territory codes. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public Territory territory() {
         _initialize();
@@ -388,7 +445,10 @@ public class Price implements OnixSuperComposite, Serializable {
     private CountryExcluded countryExcluded = CountryExcluded.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>One or more ISO standard codes identifying a country which is excluded from a territory specified in
+     * &lt;Territory&gt;. Successive codes may be separated by spaces. Thus, a single occurrence of the element can
+     * carry an unlimited number of country codes. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public CountryExcluded countryExcluded() {
         _initialize();
@@ -398,7 +458,10 @@ public class Price implements OnixSuperComposite, Serializable {
     private TerritoryExcluded territoryExcluded = TerritoryExcluded.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>One or more ONIX codes identifying a territory, which is excluded from a country specified in
+     * &lt;CountryCode&gt; or from a territory specified in &lt;Territory&gt;. Successive codes may be separated by
+     * spaces. Thus the element can carry an unlimited number of territory codes. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public TerritoryExcluded territoryExcluded() {
         _initialize();
@@ -408,7 +471,15 @@ public class Price implements OnixSuperComposite, Serializable {
     private TaxRateCode1 taxRateCode1 = TaxRateCode1.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A code which specifies a value added tax rate applying to the whole of the price, or to the amount of the
+     * price which is specified in &lt;TaxableAmount1&gt; if present. Optional and non-repeating.</p><p>If the product
+     * is taxable at a single rate, or is wholly exempt or zero-rated, &lt;TaxRateCode1&gt; may be sent on its own, or
+     * with any combination of &lt;TaxRatePercent1&gt;, &lt;TaxableAmount1&gt; and &lt;TaxAmount1&gt;, although it is
+     * best practise to send all these three elements.</p><p>If the product carries mixed tax rates, the minimum
+     * requirement is to send &lt;TaxRateCode1&gt;, &lt;TaxRateCode2&gt;, &lt;TaxableAmount1&gt; and
+     * &lt;TaxableAmount2&gt;, though again best practise would be to send all eight tax elements so that the tax
+     * calculation is made entirely explicit.</p>
+     * Jonix-Comment: this field is optional
      */
     public TaxRateCode1 taxRateCode1() {
         _initialize();
@@ -418,7 +489,8 @@ public class Price implements OnixSuperComposite, Serializable {
     private TaxRatePercent1 taxRatePercent1 = TaxRatePercent1.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A tax rate expressed numerically as a percentage. See notes on &lt;TaxRateCode1&gt;.</p>
+     * Jonix-Comment: this field is optional
      */
     public TaxRatePercent1 taxRatePercent1() {
         _initialize();
@@ -428,7 +500,11 @@ public class Price implements OnixSuperComposite, Serializable {
     private TaxableAmount1 taxableAmount1 = TaxableAmount1.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The amount of the unit price of the product, excluding tax, which is taxable at the rate specified by
+     * &lt;TaxRateCode1&gt; and/or &lt;TaxRatePercent1&gt;. This may be the whole of the unit price before tax, if the
+     * item carries tax at the same rate on the whole price; or part of the unit price in the case of a mixed tax rate
+     * product. See notes on &lt;TaxRateCode1&gt;.</p>
+     * Jonix-Comment: this field is optional
      */
     public TaxableAmount1 taxableAmount1() {
         _initialize();
@@ -438,7 +514,9 @@ public class Price implements OnixSuperComposite, Serializable {
     private TaxAmount1 taxAmount1 = TaxAmount1.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The amount of tax chargeable at the rate specified by &lt;TaxRateCode1&gt; and/or &lt;TaxRatePercent1&gt;. See
+     * notes on &lt;TaxRateCode1&gt;.</p>
+     * Jonix-Comment: this field is optional
      */
     public TaxAmount1 taxAmount1() {
         _initialize();
@@ -448,7 +526,9 @@ public class Price implements OnixSuperComposite, Serializable {
     private TaxRateCode2 taxRateCode2 = TaxRateCode2.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A code which specifies a value added tax rate applying to the amount of the price which is specified in
+     * &lt;TaxableAmount2&gt;. See notes on &lt;TaxRateCode1&gt;.</p>
+     * Jonix-Comment: this field is optional
      */
     public TaxRateCode2 taxRateCode2() {
         _initialize();
@@ -458,7 +538,8 @@ public class Price implements OnixSuperComposite, Serializable {
     private TaxRatePercent2 taxRatePercent2 = TaxRatePercent2.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A tax rate expressed numerically as a percentage. See notes on &lt;TaxRateCode1&gt;.</p>
+     * Jonix-Comment: this field is optional
      */
     public TaxRatePercent2 taxRatePercent2() {
         _initialize();
@@ -468,7 +549,11 @@ public class Price implements OnixSuperComposite, Serializable {
     private TaxableAmount2 taxableAmount2 = TaxableAmount2.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The amount of the unit price of the product, excluding tax, which is taxable at the rate specified by
+     * &lt;TaxRateCode2&gt; and/or &lt;TaxRatePercent2&gt;. This may be the whole of the unit price before tax, if the
+     * item carries tax at the same rate on the whole price; or part of the unit price in the case of a mixed tax rate
+     * product. See notes on &lt;TaxRateCode1&gt;.</p>
+     * Jonix-Comment: this field is optional
      */
     public TaxableAmount2 taxableAmount2() {
         _initialize();
@@ -478,7 +563,9 @@ public class Price implements OnixSuperComposite, Serializable {
     private TaxAmount2 taxAmount2 = TaxAmount2.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The amount of tax chargeable at the rate specified by &lt;TaxRateCode2&gt; and/or &lt;TaxRatePercent2&gt;. See
+     * notes on &lt;TaxRateCode1&gt;.</p>
+     * Jonix-Comment: this field is optional
      */
     public TaxAmount2 taxAmount2() {
         _initialize();
@@ -488,7 +575,8 @@ public class Price implements OnixSuperComposite, Serializable {
     private PriceEffectiveFrom priceEffectiveFrom = PriceEffectiveFrom.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The date from which a price becomes effective. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PriceEffectiveFrom priceEffectiveFrom() {
         _initialize();
@@ -498,7 +586,8 @@ public class Price implements OnixSuperComposite, Serializable {
     private PriceEffectiveUntil priceEffectiveUntil = PriceEffectiveUntil.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The date until which a price remains effective. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PriceEffectiveUntil priceEffectiveUntil() {
         _initialize();

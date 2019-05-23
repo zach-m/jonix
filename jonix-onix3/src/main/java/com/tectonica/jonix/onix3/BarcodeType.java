@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Barcode type</h1><p>An ONIX code indicating whether, and in what form, a barcode is carried on a product.
  * Mandatory in any instance of the &lt;Barcode&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 141</td></tr><tr><td>Reference name</td><td>&lt;BarcodeType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x312&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x312&gt;03&lt;/x312&gt;
+ * 141</td></tr><tr><td>Reference name</td><td><tt>&lt;BarcodeType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x312&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x312&gt;03&lt;/x312&gt;</tt>
  * (GTIN-13+5 - US dollar price encoded)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Barcode&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Barcode ⯈ BarcodeType</li>
+ * </ul>
  */
 public class BarcodeType implements OnixElement<BarcodeIndicators>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class BarcodeType implements OnixElement<BarcodeIndicators>, Serializable
     public BarcodeIndicators value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public BarcodeIndicators _value() {
@@ -94,6 +104,9 @@ public class BarcodeType implements OnixElement<BarcodeIndicators>, Serializable
         value = BarcodeIndicators.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;BarcodeType&gt; or &lt;x312&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

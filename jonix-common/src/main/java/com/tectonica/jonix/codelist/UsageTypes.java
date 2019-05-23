@@ -103,7 +103,9 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
      * Preview locally before purchase. Allows a retail customer, account holder or patron to view a proportion of the
      * book (or the whole book, if no proportion is specified) before purchase, but ONLY while located physically in the
      * retailer's store (eg while logged on to the store or library wifi). Also applies to patrons making use of
-     * 'acquisition on demand' models in libraries &lt;p&gt;NOTE: Introduced in Onix3
+     * 'acquisition on demand' models in libraries
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Preview_on_premises("10", "Preview on premises");
 

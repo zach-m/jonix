@@ -33,8 +33,19 @@ import java.io.Serializable;
  * <h1>Position on list</h1><p>The position that a product has reached on a bestseller list specified in
  * &lt;ListName&gt;. Optional and non-repeating. The &lt;ListName&gt; element must also be present if
  * &lt;PositionOnList&gt; is included.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer,
- * suggested maximum length 3 digits</td></tr><tr><td>Reference name</td><td>&lt;PositionOnList&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x433&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PositionOnList&gt;1&lt;/PositionOnList&gt;</td></tr></table>
+ * suggested maximum length 3 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;PositionOnList&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x433&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;PositionOnList&gt;1&lt;/PositionOnList&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;CitedContent&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ PositionOnList</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ PositionOnList</li>
+ * </ul>
  */
 public class PositionOnList implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +79,7 @@ public class PositionOnList implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -95,6 +106,9 @@ public class PositionOnList implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PositionOnList&gt; or &lt;x433&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

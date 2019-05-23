@@ -19,12 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
+
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
-
-import java.io.Serializable;
+import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -34,9 +33,19 @@ import java.io.Serializable;
  * <h1>Stock quantity code type</h1><p>An ONIX code identifying the scheme from which the value in the
  * &lt;StockQuantityCode&gt; element is taken. Mandatory in each occurrence of the &lt;StockQuantityCoded&gt; composite,
  * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 70</td></tr><tr><td>Reference name</td><td>&lt;StockQuantityCodeType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j293&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;StockQuantityCodeType&gt;02&lt;/StockQuantityCodeType&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 70</td></tr><tr><td>Reference name</td><td><tt>&lt;StockQuantityCodeType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j293&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;StockQuantityCodeType&gt;02&lt;/StockQuantityCodeType&gt;</tt>
  * (APA stock quantity code)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;StockQuantityCoded&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ StockQuantityCoded ⯈ StockQuantityCodeType</li>
+ * </ul>
  */
 public class StockQuantityCodeType implements OnixElement<StockQuantityCodeTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +76,7 @@ public class StockQuantityCodeType implements OnixElement<StockQuantityCodeTypes
     public StockQuantityCodeTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public StockQuantityCodeTypes _value() {
@@ -94,6 +103,9 @@ public class StockQuantityCodeType implements OnixElement<StockQuantityCodeTypes
         value = StockQuantityCodeTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;StockQuantityCodeType&gt; or &lt;j293&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -39,9 +39,23 @@ import java.io.Serializable;
  * anonymous, or when as a matter of editorial policy only a limited number of contributors are named. Optional and
  * non-repeating: see Group&nbsp;PR.8 introductory text for valid options.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 19</td></tr><tr><td>Reference name</td><td>&lt;UnnamedPersons&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b249&gt;</td></tr><tr><td>Example</td><td>&lt;UnnamedPersons&gt;02&lt;/UnnamedPersons&gt;
+ * 19</td></tr><tr><td>Reference name</td><td><tt>&lt;UnnamedPersons&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b249&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;UnnamedPersons&gt;02&lt;/UnnamedPersons&gt;</tt>
  * Anonymous</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ UnnamedPersons</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ UnnamedPersons</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ UnnamedPersons</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ UnnamedPersons</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ UnnamedPersons</li>
+ * </ul>
  */
 public class UnnamedPersons implements OnixElement<UnnamedPersonss>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +91,7 @@ public class UnnamedPersons implements OnixElement<UnnamedPersonss>, Serializabl
     public UnnamedPersonss value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public UnnamedPersonss _value() {
@@ -108,6 +122,9 @@ public class UnnamedPersons implements OnixElement<UnnamedPersonss>, Serializabl
         value = UnnamedPersonss.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;UnnamedPersons&gt; or &lt;b249&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

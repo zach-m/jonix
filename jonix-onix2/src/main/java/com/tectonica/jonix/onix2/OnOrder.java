@@ -34,10 +34,22 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Quantity in shipment</h1><p>The quantity of stock on order. Mandatory in each occurrence of the
- * &lt;OnOrderDetail&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * integer, suggested maximum length 7 digits</td></tr><tr><td>Reference name</td><td>&lt;OnOrder&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j351&gt;</td></tr><tr><td>Example</td><td>&lt;OnOrder&gt;600&lt;/OnOrder&gt;</td></tr></table>
+ * <h1>Quantity on order</h1><p>The quantity of stock on order. Optional and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum length 7
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;OnOrder&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j351&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j351&gt;600&lt;/j351&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OnOrderDetail&gt;</li>
+ * <li>&lt;Stock&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ OnOrderDetail ⯈ OnOrder</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ OnOrder</li>
+ * </ul>
  */
 public class OnOrder implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +88,7 @@ public class OnOrder implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +119,9 @@ public class OnOrder implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;OnOrder&gt; or &lt;j351&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

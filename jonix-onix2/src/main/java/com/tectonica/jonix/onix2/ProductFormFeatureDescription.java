@@ -34,11 +34,24 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product form feature description</h1><p>If the code in &lt;ProductFormFeatureValue&gt; does not adequately
- * describe the feature, a short text description may be added. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
- * characters.</td></tr><tr><td>Reference name</td><td>&lt;ProductFormFeatureDescription&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b336&gt;</td></tr><tr><td>Example</td><td>&lt;b336&gt;11pt Helvetia&lt;/b336&gt;</td></tr></table>
+ * <h1>Product form feature description</h1><p>If the &lt;ProductFormFeatureType&gt; requires free text rather than a
+ * code value, or if the code in &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text
+ * description may be added. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
+ * text, suggested maximum length 100 characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductFormFeatureDescription&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b336&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b336&gt;11pt
+ * Helvetia&lt;/b336&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductFormFeature&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductFormFeature ⯈ ProductFormFeatureDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductFormFeature ⯈ ProductFormFeatureDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductFormFeature ⯈ ProductFormFeatureDescription</li>
+ * </ul>
  */
 public class ProductFormFeatureDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +90,7 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +121,10 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ProductFormFeatureDescription&gt; or &lt;b336&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

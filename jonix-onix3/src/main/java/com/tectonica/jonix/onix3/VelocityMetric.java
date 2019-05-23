@@ -34,8 +34,18 @@ import java.io.Serializable;
  * <h1>Velocity metric</h1><p>An ONIX code that specifies how the rate of stock depletion is measured. Mandatory within
  * the &lt;Velocity&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, two digits</td></tr><tr><td>Codelist</td><td>List 216</td></tr><tr><td>Reference
- * name</td><td>&lt;VelocityMetric&gt;</td></tr><tr><td>Short tag</td><td>&lt;x504&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x504&gt;02&lt;/x504&gt;
+ * name</td><td><tt>&lt;VelocityMetric&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x504&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x504&gt;02&lt;/x504&gt;</tt>
  * (Mean daily sale)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Velocity&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Velocity ⯈ VelocityMetric</li>
+ * </ul>
  */
 public class VelocityMetric implements OnixElement<VelocityMetrics>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +76,7 @@ public class VelocityMetric implements OnixElement<VelocityMetrics>, Serializabl
     public VelocityMetrics value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public VelocityMetrics _value() {
@@ -93,6 +103,9 @@ public class VelocityMetric implements OnixElement<VelocityMetrics>, Serializabl
         value = VelocityMetrics.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;VelocityMetric&gt; or &lt;x504&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

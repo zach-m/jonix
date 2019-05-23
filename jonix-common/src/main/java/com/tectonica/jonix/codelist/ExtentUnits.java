@@ -69,8 +69,9 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
      * Of an audiobook on multiple Red Book audio CDs. Conventionally, each disc is 60-70 minutes of running time, and
      * disc counts are misleading and inappropriate if the average disc duration is significantly more or less than this
      * (for example if the discs are Yellow Book CDs containing mp3 files). Note that disc breaks are not necessarily
-     * aligned with structural breaks in the text (eg chapter breaks). For use in ONIX 3.0 only &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * aligned with structural breaks in the text (eg chapter breaks). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Discs("12", "Discs"), //
 

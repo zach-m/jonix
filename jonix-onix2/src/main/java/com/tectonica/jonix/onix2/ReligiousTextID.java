@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Religious text identifier</h1><p>An ONIX code indicating a religious text other than the Bible. Mandatory in each
  * occurrence of the &lt;ReligiousText&gt; composite that does not include a &lt;Bible&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 88</td></tr><tr><td>Reference name</td><td>&lt;ReligiousTextID&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b376&gt;</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 88</td></tr><tr><td>Reference name</td><td><tt>&lt;ReligiousTextID&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b376&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ReligiousText&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ ReligiousTextID</li>
+ * </ul>
  */
 public class ReligiousTextID implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class ReligiousTextID implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class ReligiousTextID implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ReligiousTextID&gt; or &lt;b376&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

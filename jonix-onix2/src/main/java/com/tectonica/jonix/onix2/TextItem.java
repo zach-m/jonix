@@ -42,8 +42,18 @@ import java.io.Serializable;
  * <h1>Text item composite</h1><p>A group of data elements which are specific to text content. The composite must occur
  * once and only once in a &lt;ContentItem&gt; composite which describes a text content item. (Similar composites are
  * being defined for other media, and the occurrence of one of them will be mandatory in any &lt;ContentItem&gt;
- * composite.)</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;TextItem&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;textitem&gt;</td></tr></table>
+ * composite.)</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;TextItem&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;textitem&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ContentItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem</li>
+ * </ul>
  */
 public class TextItem implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -140,6 +150,9 @@ public class TextItem implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;TextItem&gt; or &lt;textitem&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -152,7 +165,9 @@ public class TextItem implements OnixSuperComposite, Serializable {
     private TextItemType textItemType = TextItemType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the nature of a text item. Mandatory in each occurrence of the &lt;TextItem&gt;
+     * composite, and non-repeatable.</p>
+     * Jonix-Comment: this field is required
      */
     public TextItemType textItemType() {
         _initialize();
@@ -163,7 +178,9 @@ public class TextItem implements OnixSuperComposite, Serializable {
         textItemIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together define an identifier of a text item in accordance with a
+     * specified scheme. The composite is optional.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers() {
         _initialize();
@@ -173,7 +190,9 @@ public class TextItem implements OnixSuperComposite, Serializable {
     private FirstPageNumber firstPageNumber = FirstPageNumber.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The number of the page on which a text item begins in a paginated product. Optional and non-repeating;
+     * required when the text item is being referenced as part of a structured table of contents.</p>
+     * Jonix-Comment: this field is required
      */
     public FirstPageNumber firstPageNumber() {
         _initialize();
@@ -183,7 +202,9 @@ public class TextItem implements OnixSuperComposite, Serializable {
     private LastPageNumber lastPageNumber = LastPageNumber.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The number of the page on which a text item ends in a paginated product. Optional and non-repeating, and can
+     * occur only when &lt;FirstPageNumber&gt; is also present.</p>
+     * Jonix-Comment: this field is optional
      */
     public LastPageNumber lastPageNumber() {
         _initialize();
@@ -193,7 +214,10 @@ public class TextItem implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns = ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together define a run of contiguous pages on which a text item
+     * appears. The composite is optional, but may be repeated where the text item covers two or more separate page
+     * runs.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns() {
         _initialize();
@@ -203,7 +227,9 @@ public class TextItem implements OnixSuperComposite, Serializable {
     private NumberOfPages numberOfPages = NumberOfPages.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The page extent of a text item within a paginated product. Optional and non-repeating, but normally expected
+     * when the text item is being referenced as part of a structured table of contents.</p>
+     * Jonix-Comment: this field is optional
      */
     public NumberOfPages numberOfPages() {
         _initialize();

@@ -19,150 +19,164 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.NameIdentifierTypes;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.JonixRecordSourceIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+import com.tectonica.jonix.*;
+import com.tectonica.jonix.OnixComposite.*;
+import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Record source identifier composite</h1><p>A group of data elements which together define an identifier of the
- * organization which is the source of the ONIX record. Optional, and repeatable in order to send multiple identifiers
- * for the same organization.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;RecordSourceIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;recordsourceidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Record source identifier composite</h1><p>A group of data elements which together define an identifier of the organization which is the source of the ONIX record. Optional, and repeatable in order to send multiple identifiers for the same organization.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;RecordSourceIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;recordsourceidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RecordSourceIdentifier</li>
+ * </ul>
  */
-public class RecordSourceIdentifier
-    implements OnixDataCompositeWithKey<JonixRecordSourceIdentifier, NameIdentifierTypes>, Serializable {
-    private static final long serialVersionUID = 1L;
+public class RecordSourceIdentifier implements OnixDataCompositeWithKey<JonixRecordSourceIdentifier,NameIdentifierTypes>, Serializable
+{
+   private static final long serialVersionUID = 1L;
 
-    public static final String refname = "RecordSourceIdentifier";
-    public static final String shortname = "recordsourceidentifier";
+   public static final String refname = "RecordSourceIdentifier";
+   public static final String shortname = "recordsourceidentifier";
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // ATTRIBUTES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // ATTRIBUTES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * (type: dt.DateOrDateTime)
-     */
-    public String datestamp;
+   /**
+    * (type: dt.DateOrDateTime)
+    */
+   public String datestamp;
 
-    public RecordSourceTypes sourcetype;
+   public RecordSourceTypes sourcetype;
 
-    /**
-     * (type: dt.NonEmptyString)
-     */
-    public String sourcename;
+   /**
+    * (type: dt.NonEmptyString)
+    */
+   public String sourcename;
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // CONSTRUCTION
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // CONSTRUCTION
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private boolean initialized;
-    private final boolean exists;
-    private final org.w3c.dom.Element element;
-    public static final RecordSourceIdentifier EMPTY = new RecordSourceIdentifier();
+   private boolean initialized;
+   private final boolean exists;
+   private final org.w3c.dom.Element element;
+   public static final RecordSourceIdentifier EMPTY = new RecordSourceIdentifier();
 
-    public RecordSourceIdentifier() {
-        exists = false;
-        element = null;
-        initialized = true; // so that no further processing will be done on this intentionally-empty object
-    }
+   public RecordSourceIdentifier() {
+      exists = false;
+      element = null;
+      initialized = true; // so that no further processing will be done on this intentionally-empty object
+   }
 
-    public RecordSourceIdentifier(org.w3c.dom.Element element) {
-        exists = true;
-        initialized = false;
-        this.element = element;
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
-    }
+   public RecordSourceIdentifier(org.w3c.dom.Element element) {
+      exists = true;
+      initialized = false;
+      this.element = element;
+      datestamp = JPU.getAttribute(element, "datestamp");
+      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+      sourcename = JPU.getAttribute(element, "sourcename");
+   }
 
-    @Override
-    public void _initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
+   @Override
+   public void _initialize() {
+      if (initialized) return;
+      initialized = true;
 
-        JPU.forElementsOf(element, e -> {
-            final String name = e.getNodeName();
-            switch (name) {
-                case RecordSourceIDType.refname:
-                case RecordSourceIDType.shortname:
-                    recordSourceIDType = new RecordSourceIDType(e);
-                    break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
-                case IDValue.refname:
-                case IDValue.shortname:
-                    idValue = new IDValue(e);
-                    break;
-                default:
-                    break;
-            }
-        });
-    }
+      JPU.forElementsOf(element, e -> {
+         final String name = e.getNodeName();
+         switch (name) {
+            case RecordSourceIDType.refname:
+            case RecordSourceIDType.shortname:
+               recordSourceIDType = new RecordSourceIDType(e);
+               break;
+            case IDTypeName.refname:
+            case IDTypeName.shortname:
+               idTypeName = new IDTypeName(e);
+               break;
+            case IDValue.refname:
+            case IDValue.shortname:
+               idValue = new IDValue(e);
+               break;
+            default:
+               break;
+         }
+      });
+   }
 
-    @Override
-    public boolean exists() {
-        return exists;
-    }
+   /**
+    * @return whether this tag (&lt;RecordSourceIdentifier&gt; or &lt;recordsourceidentifier&gt;) is explicitly provided in the ONIX XML
+    */
+   @Override
+   public boolean exists() {
+      return exists;
+   }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // MEMBERS
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // MEMBERS
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private RecordSourceIDType recordSourceIDType = RecordSourceIDType.EMPTY;
+   private RecordSourceIDType recordSourceIDType = RecordSourceIDType.EMPTY;
 
-    /**
-     * (this field is required)
-     */
-    public RecordSourceIDType recordSourceIDType() {
-        _initialize();
-        return recordSourceIDType;
-    }
+   /**
+    * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;RecordSourceIdentifier&gt; composite, and non-repeating.</p>
+    * Jonix-Comment: this field is required
+    */
+   public RecordSourceIDType recordSourceIDType() {
+      _initialize();
+      return recordSourceIDType;
+   }
 
-    private IDTypeName idTypeName = IDTypeName.EMPTY;
+   private IDTypeName idTypeName = IDTypeName.EMPTY;
 
-    /**
-     * (this field is optional)
-     */
-    public IDTypeName idTypeName() {
-        _initialize();
-        return idTypeName;
-    }
+   /**
+    * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which there is no individual ID type code). Used when, and only when, the code in the &lt;RecordSourceIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p>
+    * Jonix-Comment: this field is optional
+    */
+   public IDTypeName idTypeName() {
+      _initialize();
+      return idTypeName;
+   }
 
-    private IDValue idValue = IDValue.EMPTY;
+   private IDValue idValue = IDValue.EMPTY;
 
-    /**
-     * (this field is required)
-     */
-    public IDValue idValue() {
-        _initialize();
-        return idValue;
-    }
+   /**
+    * <p>An identifier of the type specified in the &lt;RecordSourceIDType&gt; element. Mandatory in each occurrence of the &lt;RecordSourceIdentifier&gt; composite, and non-repeating.</p>
+    * Jonix-Comment: this field is required
+    */
+   public IDValue idValue() {
+      _initialize();
+      return idValue;
+   }
 
-    @Override
-    public JonixRecordSourceIdentifier asStruct() {
-        _initialize();
-        JonixRecordSourceIdentifier struct = new JonixRecordSourceIdentifier();
-        struct.recordSourceIDType = recordSourceIDType.value;
-        struct.idTypeName = idTypeName.value;
-        struct.idValue = idValue.value;
-        return struct;
-    }
+   @Override
+   public JonixRecordSourceIdentifier asStruct() {
+      _initialize();
+      JonixRecordSourceIdentifier struct = new JonixRecordSourceIdentifier();
+      struct.recordSourceIDType = recordSourceIDType.value;
+      struct.idTypeName = idTypeName.value;
+      struct.idValue = idValue.value;
+      return struct;
+   }
 
-    @Override
-    public NameIdentifierTypes structKey() {
-        return recordSourceIDType().value;
-    }
+   @Override
+   public NameIdentifierTypes structKey() {
+      return recordSourceIDType().value;
+   }
 }

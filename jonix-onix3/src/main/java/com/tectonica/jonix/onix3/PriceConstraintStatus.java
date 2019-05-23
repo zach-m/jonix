@@ -35,8 +35,20 @@ import java.io.Serializable;
  * permitted without limit, permitted with limit, prohibited. Mandatory in each occurrence of the
  * &lt;PriceConstraint&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
  * length, two digits</td></tr><tr><td>Codelist</td><td>List 146</td></tr><tr><td>Reference
- * name</td><td>&lt;PriceConstraintStatus&gt;</td></tr><tr><td>Short tag</td><td>&lt;x530&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;PriceConstraintStatus&gt;02&lt;/PriceConstraintStatus&gt;
+ * name</td><td><tt>&lt;PriceConstraintStatus&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x530&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;PriceConstraintStatus&gt;02&lt;/PriceConstraintStatus&gt;</tt>
  * (Allowed with limits)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PriceConstraint&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈
+ * PriceConstraintStatus</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintStatus</li>
+ * </ul>
  */
 public class PriceConstraintStatus implements OnixElement<UsageStatuss>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +79,7 @@ public class PriceConstraintStatus implements OnixElement<UsageStatuss>, Seriali
     public UsageStatuss value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public UsageStatuss _value() {
@@ -94,6 +106,9 @@ public class PriceConstraintStatus implements OnixElement<UsageStatuss>, Seriali
         value = UsageStatuss.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PriceConstraintStatus&gt; or &lt;x530&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

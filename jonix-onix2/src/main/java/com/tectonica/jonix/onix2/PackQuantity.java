@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Pack or carton quantity</h1><p>The quantity in each carton or binder’s pack in stock currently held by the
  * supplier. (This element is placed in Group&nbsp;PR.24 since it cannot be assumed that pack quantities will be the
  * same for stock held at different suppliers.)</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * integer, suggested maximum length four digits</td></tr><tr><td>Reference name</td><td>&lt;PackQuantity&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j145&gt;</td></tr><tr><td>Example</td><td>&lt;j145&gt;24&lt;/j145&gt;</td></tr></table>
+ * integer, suggested maximum length four digits</td></tr><tr><td>Reference name</td><td><tt>&lt;PackQuantity&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j145&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j145&gt;24&lt;/j145&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ PackQuantity</li>
+ * </ul>
  */
 public class PackQuantity implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class PackQuantity implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class PackQuantity implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PackQuantity&gt; or &lt;j145&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -36,10 +36,27 @@ import java.io.Serializable;
 
 /**
  * <h1>Epublication type code</h1><p>An ONIX code identifying the type of an epublication. This element is mandatory if
- * and only if the &lt;ProductForm&gt; code for the product is DG.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 3 numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 10</td></tr><tr><td>Reference name</td><td>&lt;EpubType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b211&gt;</td></tr><tr><td>Example</td><td>&lt;EpubType&gt;002&lt;/EpubType&gt; PDF</td></tr></table>
+ * and only if the &lt;ProductForm&gt; code for the product is DG; and non-repeating.</p><p>In general, an
+ * &lt;EpubType&gt; code identifies a particular form in which an epublication is traded. The exception to this is that
+ * code 000 identifies a “content package” which is published electronically in a number of different forms. This value
+ * is used when the ONIX record describes and identifies the content package independently of the forms in which it is
+ * made available. Each available form can then be described by using the &lt;RelatedProduct&gt; composite in
+ * Group&nbsp;PR.23.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 3 numeric
+ * digits</td></tr><tr><td>Codelist</td><td>List 10</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b211&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;EpubType&gt;004&lt;/EpubType&gt;</tt>
+ * Adobe Ebook Reader</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ EpubType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ EpubType</li>
+ * </ul>
  */
 public class EpubType implements OnixElement<EpublicationTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +92,7 @@ public class EpubType implements OnixElement<EpublicationTypes>, Serializable {
     public EpublicationTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public EpublicationTypes _value() {
@@ -106,6 +123,9 @@ public class EpubType implements OnixElement<EpublicationTypes>, Serializable {
         value = EpublicationTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;EpubType&gt; or &lt;b211&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

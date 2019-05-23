@@ -39,7 +39,18 @@ import java.io.Serializable;
  * occurrence of the &lt;Price&gt; composite. Optional and non-repeating. Where the price applies to a copy of the whole
  * product, this field is normally omitted.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * two numeric digits</td></tr><tr><td>Codelist</td><td>List 60</td></tr><tr><td>Reference
- * name</td><td>&lt;PricePer&gt;</td></tr><tr><td>Short tag</td><td>&lt;j239&gt;</td></tr><tr><td>Example</td><td>&lt;PricePer&gt;01&lt;/PricePer&gt;</td></tr></table>
+ * name</td><td><tt>&lt;PricePer&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j239&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PricePer&gt;01&lt;/PricePer&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ PricePer</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PricePer</li>
+ * </ul>
  */
 public class PricePer implements OnixElement<UnitOfPricings>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +86,7 @@ public class PricePer implements OnixElement<UnitOfPricings>, Serializable {
     public UnitOfPricings value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public UnitOfPricings _value() {
@@ -106,6 +117,9 @@ public class PricePer implements OnixElement<UnitOfPricings>, Serializable {
         value = UnitOfPricings.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PricePer&gt; or &lt;j239&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

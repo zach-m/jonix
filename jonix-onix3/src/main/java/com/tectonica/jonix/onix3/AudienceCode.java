@@ -35,9 +35,19 @@ import java.io.Serializable;
  * audience or readership for which a product is intended. Optional, and repeatable if the product is intended for two
  * or more groups. Deprecated, in favor of providing the same information within the &lt;Audience&gt; composite using
  * code 01 from List 29.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 28</td></tr><tr><td>Reference name</td><td>&lt;AudienceCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b073&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;AudienceCode&gt;04&lt;/AudienceCode&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 28</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b073&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;AudienceCode&gt;04&lt;/AudienceCode&gt;</tt>
  * (Primary and secondary/elementary and high school)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AudienceCode</li>
+ * </ul>
  */
 public class AudienceCode implements OnixElement<AudienceTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +78,7 @@ public class AudienceCode implements OnixElement<AudienceTypes>, Serializable {
     public AudienceTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public AudienceTypes _value() {
@@ -95,6 +105,9 @@ public class AudienceCode implements OnixElement<AudienceTypes>, Serializable {
         value = AudienceTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;AudienceCode&gt; or &lt;b073&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

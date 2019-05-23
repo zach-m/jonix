@@ -36,7 +36,17 @@ import java.io.Serializable;
 /**
  * <h1>Location name</h1><p>The name of a stock location. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Free text, suggested maximum length 100 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;LocationName&gt;</td></tr><tr><td>Short tag</td><td>&lt;j349&gt;</td></tr><tr><td>Example</td><td>&lt;j349&gt;Momence&lt;/j349&gt;</td></tr></table>
+ * name</td><td><tt>&lt;LocationName&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j349&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j349&gt;Momence&lt;/j349&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Stock&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ LocationName</li>
+ * </ul>
  */
 public class LocationName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +85,7 @@ public class LocationName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -106,6 +116,9 @@ public class LocationName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;LocationName&gt; or &lt;j349&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

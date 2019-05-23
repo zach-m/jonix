@@ -35,13 +35,22 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience range precision (2)</h1><p>An ONIX code specifying the “precision” of the value in
- * &lt;AudienceRangeValue&gt; element which follows. Optional and non-repeating. This second occurrence of the two
- * elements &lt;AudienceRangePrecision&gt; and &lt;AudienceRangeValue&gt; is required only when a “From … to …” range is
- * specified.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 31 The only value which is valid in this element is 04
- * (&#8220;To&#8221;)</td></tr><tr><td>Reference name</td><td>&lt;AudienceRangePrecision&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b075&gt;</td></tr><tr><td>Example</td><td>&lt;b075&gt;04&lt;/b075&gt; To</td></tr></table>
+ * <h1>Audience range precision (1)</h1><p>An ONIX code specifying the “precision” of the value in the
+ * &lt;AudienceRangeValue&gt; element which follows (From, To, Exact). Mandatory in each occurrence of the
+ * &lt;AudienceRange&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two numeric digits.</td></tr><tr><td>Codelist</td><td>List 31</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;AudienceRangePrecision&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b075&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;AudienceRangePrecision&gt;03&lt;/AudienceRangePrecision&gt;</tt>
+ * From</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AudienceRange&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ AudienceRange ⯈ AudienceRangePrecision</li>
+ * </ul>
  */
 public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisions>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +86,7 @@ public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisio
     public AudienceRangePrecisions value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public AudienceRangePrecisions _value() {
@@ -108,6 +117,9 @@ public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisio
         value = AudienceRangePrecisions.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;AudienceRangePrecision&gt; or &lt;b075&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

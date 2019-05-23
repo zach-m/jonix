@@ -66,7 +66,8 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
 
     /**
      * Purchase at this price requires commitment to purchase specified other product, not included in price
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Linked_subsequent_purchase_price("04", "Linked subsequent purchase price"), //
 

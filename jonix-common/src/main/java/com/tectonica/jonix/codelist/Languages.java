@@ -303,7 +303,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Cheyenne("chy", "Cheyenne"), //
 
     /**
-     * ONIX local code, equivalent to ckb in ISO 639-3. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * ONIX local code, equivalent to ckb in ISO 639-3. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Central_Kurdish_Sorani("ckb", "Central Kurdish (Sorani)"), //
 
@@ -318,7 +320,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Mandarin("cmn", "Mandarin"), //
 
     /**
-     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Montenegrin("cnr", "Montenegrin"), //
 
@@ -914,7 +918,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Creek("mus", "Creek"), //
 
     /**
-     * ONIX local code, equivalent to mwf in ISO 639-3. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * ONIX local code, equivalent to mwf in ISO 639-3. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Murrinh_Patha("mwf", "Murrinh-Patha"), //
 
@@ -1069,7 +1075,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Persian_Farsi("per", "Persian; Farsi"), //
 
     /**
-     * ONIX local code, equivalent to pes in ISO 639-3. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * ONIX local code, equivalent to pes in ISO 639-3. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Iranian_Persian_Parsi("pes", "Iranian Persian; Parsi"), //
 
@@ -1096,7 +1104,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Proven_al_Old_to_1500("pro", "Provençal, Old (to 1500); Occitan, Old (to 1500)"), //
 
     /**
-     * ONIX local code, equivalent to prs in ISO 639-3. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * ONIX local code, equivalent to prs in ISO 639-3. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Dari_Afghan_Persian("prs", "Dari; Afghan Persian"), //
 
@@ -1116,8 +1126,10 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Valencian("qav", "Valencian"), //
 
     /**
-     * ONIX local code, distinct dialect of of Rusyn (not distinguished from rue by ISO 639-3). For use in ONIX 3.0 only
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * ONIX local code, distinct dialect of of Rusyn (not distinguished from rue by ISO 639-3). For use in ONIX 3.0
+     * only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Lemko("qlk", "Lemko"), //
 
@@ -1127,8 +1139,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
      * 'country code' for Latin America - but prefer spa plus the relevant country code for specifically Mexican
      * Spanish, Argentine (Rioplatense) Spanish, Puerto Rican Spanish etc. Neutral Latin American Spanish must only be
      * used with audio material (including the audio tracks of TV, video and film) to indicate use of accent, vocabulary
-     * and construction suitable for broad use across Latin America. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced
-     * in Onix3
+     * and construction suitable for broad use across Latin America. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Neutral_Latin_American_Spanish("qls", "Neutral Latin American Spanish"), //
 
@@ -1475,7 +1488,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Yoruba("yor", "Yoruba"), //
 
     /**
-     * Collective name &lt;p&gt;NOTE: Introduced in Onix3
+     * Collective name
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Yupik_languages("ypk", "Yupik languages"), //
 
@@ -1520,7 +1535,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Zaza_Dimili_Dimli_Kirdki_Kirmanjki_Zazaki("zza", "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"), //
 
     /**
-     * Collective name &lt;p&gt;NOTE: Deprecated in Onix3
+     * Collective name
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Yupik_languages_("ypk", "Yupik languages");
 

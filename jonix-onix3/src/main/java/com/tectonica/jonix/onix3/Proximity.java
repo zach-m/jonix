@@ -31,11 +31,26 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Velocity rate proximity</h1><p>An ONIX code which specifies the precision of the rate of stock depletion.
- * Optional, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 215</td></tr><tr><td>Reference name</td><td>&lt;Proximity&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x502&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Proximity&gt;06&lt;/Proximity&gt;
- * (More than)</td></tr></table>
+ * <h1>Quantity on hand proximity</h1><p>An ONIX code which specifies the precision of the stock quantity on hand.
+ * Optional, non-repeating and may only be used if an &lt;OnHand&gt; value is specified.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * 215</td></tr><tr><td>Reference name</td><td><tt>&lt;Proximity&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x502&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;Proximity&gt;05&lt;/Proximity&gt;</tt>
+ * (About - generally interpreted as 'within a factor of two')</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OnOrderDetail&gt;</li>
+ * <li>&lt;Stock&gt;</li>
+ * <li>&lt;Velocity&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ OnOrderDetail ⯈ Proximity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Proximity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Velocity ⯈ Proximity</li>
+ * </ul>
  */
 public class Proximity implements OnixElement<Proximitys>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +81,7 @@ public class Proximity implements OnixElement<Proximitys>, Serializable {
     public Proximitys value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Proximitys _value() {
@@ -93,6 +108,9 @@ public class Proximity implements OnixElement<Proximitys>, Serializable {
         value = Proximitys.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;Proximity&gt; or &lt;x502&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -32,15 +32,49 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product identifier composite</h1><p>A group of data elements which together define an identifier for a comparison
- * product in accordance with a specified scheme. At least one &lt;ProductIdentifier&gt; composite is mandatory within
- * an occurrence of &lt;ComparisonProductPrice&gt;, to identify the product to which the comparison price applies.
- * Repeatable with different identifiers for the same product.</p><p>It is strongly advised that the relationship
- * between the comparison product and the product described in the &lt;Product&gt; record is defined in a
- * &lt;RelatedProduct&gt; composite in P.23 – typically this might be &lt;ProductRelationCode&gt; 06 (related product is
- * alternative format with same content as product) and may in many circumstances also be 13 (product is e-publication
- * based on related product).</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;ProductIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;productidentifier&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * <h1>Product identifier composite</h1><p>A group of data elements which together specify an identifier of a product in
+ * accordance with a particular scheme. Mandatory within &lt;Product&gt;, and repeatable with different identifiers for
+ * the same product. As well as standard identifiers, the composite allows proprietary identifiers (for example SKUs
+ * assigned by wholesalers or vendors) to be sent as part of the ONIX record.</p><p>ISBN-13 numbers in their
+ * unhyphenated form constitute a range of EAN.UCC&nbsp;GTIN-13 numbers that has been reserved for the international
+ * book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should be <em>mandatory</em>
+ * in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled as an EAN.UCC
+ * GTIN-13 number (ProductIDType code 03), since this is how the ISBN-13 will be used in book trade transactions. For
+ * many ONIX applications this will also be sufficient.</p><p>For some ONIX applications, however, particularly when
+ * data is to be supplied to the library sector, there may be reasons why the ISBN-13 must <em>also</em> be sent
+ * labelled distinctively as an ISBN-13 (ProductIDType code 15). Users should consult ‘good practice’ guidelines and/or
+ * discuss with their trading partners.</p><p>Note that for some identifiers such as ISBN, punctuation (typically
+ * hyphens or spaces for ISBNs) is used to enhance readability when printed, but the punctuation is dropped when carried
+ * in ONIX data. But for other identifiers – for example DOI – the punctuation is an integral part of the identifier and
+ * must always be included.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td><tt>&lt;ProductIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;productidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ProductPart&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;Tax&gt;</li>
+ * <li>&lt;ComparisonProductPrice&gt;</li>
+ * <li>&lt;SalesRights&gt;</li>
+ * <li>&lt;PriceCondition&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedProduct ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedProduct ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Tax ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Tax ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ ComparisonProductPrice ⯈
+ * ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ ComparisonProductPrice ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈ ProductIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ ProductIdentifier</li>
+ * </ul>
  */
 public class ProductIdentifier
     implements OnixDataCompositeWithKey<JonixProductIdentifier, ProductIdentifierTypes>, Serializable {
@@ -117,6 +151,10 @@ public class ProductIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ProductIdentifier&gt; or &lt;productidentifier&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -129,7 +167,9 @@ public class ProductIdentifier
     private ProductIDType productIDType = ProductIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ProductIDType productIDType() {
         _initialize();
@@ -139,7 +179,11 @@ public class ProductIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;ProductIDType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -149,7 +193,9 @@ public class ProductIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in each occurrence of the
+     * &lt;ProductIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

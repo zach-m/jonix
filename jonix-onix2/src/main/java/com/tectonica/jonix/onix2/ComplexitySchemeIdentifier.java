@@ -38,7 +38,18 @@ import java.io.Serializable;
  * <h1>Complexity scheme identifier</h1><p>An ONIX code specifying the scheme from which the value in
  * &lt;ComplexityCode&gt; is taken.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
  * numeric digits.</td></tr><tr><td>Codelist</td><td>List 32</td></tr><tr><td>Reference
- * name</td><td>&lt;ComplexitySchemeIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;b077&gt;</td></tr></table>
+ * name</td><td><tt>&lt;ComplexitySchemeIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b077&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Complexity&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Complexity ⯈ ComplexitySchemeIdentifier</li>
+ * </ul>
  */
 public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeIdentifiers>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -74,7 +85,7 @@ public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeI
     public ComplexitySchemeIdentifiers value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ComplexitySchemeIdentifiers _value() {
@@ -105,6 +116,10 @@ public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeI
         value = ComplexitySchemeIdentifiers.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ComplexitySchemeIdentifier&gt; or &lt;b077&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;

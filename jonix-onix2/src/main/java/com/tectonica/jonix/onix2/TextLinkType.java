@@ -37,9 +37,22 @@ import java.io.Serializable;
 /**
  * <h1>Other text link type</h1><p>An ONIX code which identifies the type of link which is given in the &lt;TextLink&gt;
  * element.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 35</td></tr><tr><td>Reference name</td><td>&lt;TextLinkType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;d105&gt;</td></tr><tr><td>Example</td><td>&lt;TextLinkType&gt;05&lt;/TextLinkType&gt; FTP
- * address</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 35</td></tr><tr><td>Reference name</td><td><tt>&lt;TextLinkType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;d105&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TextLinkType&gt;05&lt;/TextLinkType&gt;</tt>
+ * FTP address</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OtherText&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextLinkType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ TextLinkType</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ TextLinkType</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ TextLinkType</li>
+ * </ul>
  */
 public class TextLinkType implements OnixElement<TextLinkTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +88,7 @@ public class TextLinkType implements OnixElement<TextLinkTypes>, Serializable {
     public TextLinkTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TextLinkTypes _value() {
@@ -106,6 +119,9 @@ public class TextLinkType implements OnixElement<TextLinkTypes>, Serializable {
         value = TextLinkTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TextLinkType&gt; or &lt;d105&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

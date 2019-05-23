@@ -34,10 +34,23 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Digital product license composite (Price)</h1><p>An optional and non-repeatable composite carrying the name or
- * title of the usage license forming part of the commercial offer for the product, and a link to the license terms in
- * eye-readable or machine-readable form.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;EpubLicense&gt;</td></tr><tr><td>Short tag</td><td>&lt;epublicense&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <h1>Digital product license</h1><p>An optional and non-repeatable composite carrying the name or title of the license
+ * governing use of the product, and a link to the license terms in eye-readable or machine-readable form.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;EpubLicense&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;epublicense&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubLicense</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ EpubLicense</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ EpubLicense</li>
+ * </ul>
  */
 public class EpubLicense implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -109,6 +122,9 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;EpubLicense&gt; or &lt;epublicense&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -121,7 +137,10 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames = ListOfOnixElement.empty();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>The name or title of the license. Mandatory in any &lt;EpubLicense&gt; composite, and repeatable to provide
+     * the license name in multiple languages. The <i>language</i> attribute is optional for a single instance of
+     * &lt;EpubLicenseName&gt;, but must be included in each instance if &lt;EpubLicenseName&gt; is repeated.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<EpubLicenseName, String> epubLicenseNames() {
         _initialize();
@@ -132,7 +151,9 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
         epubLicenseExpressions = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>An optional composite that carries details of a link to an expression of the license terms, which may be in
+     * human-readable or machine-readable form. Repeatable when there is more than one expression of the license.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes> epubLicenseExpressions() {
         _initialize();

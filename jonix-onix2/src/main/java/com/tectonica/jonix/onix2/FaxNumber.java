@@ -34,11 +34,25 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Agent fax number</h1><p>A fax number of an agent or local publisher. Optional and repeatable.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 20
- * characters</td></tr><tr><td>Reference name</td><td>&lt;FaxNumber&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j271&gt;</td></tr><tr><td>Example</td><td>&lt;FaxNumber&gt;+44 20 8843
- * 8744&lt;/FaxNumber&gt;</td></tr></table>
+ * <h1>Supplier fax number</h1><p>A fax number of a supply source from which the product may be ordered by a trade
+ * customer. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
+ * suggested maximum length 20 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;FaxNumber&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j271&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;FaxNumber&gt;+44 20 8843
+ * 8744&lt;/FaxNumber&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;MarketRepresentation&gt;</li>
+ * <li>&lt;NewSupplier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ FaxNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ FaxNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ FaxNumber</li>
+ * </ul>
  */
 public class FaxNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +91,7 @@ public class FaxNumber implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +122,9 @@ public class FaxNumber implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;FaxNumber&gt; or &lt;j271&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

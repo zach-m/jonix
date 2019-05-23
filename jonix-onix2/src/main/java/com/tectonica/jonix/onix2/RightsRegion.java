@@ -41,8 +41,18 @@ import java.io.Serializable;
  * purposes of upwards compatibility.</strong> See note on “Open Market” and “Airport” or “Airside” editions in the
  * introduction to Group&nbsp;PR.21.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three
  * numeric digits.</td></tr><tr><td>Codelist</td><td>List 47</td></tr><tr><td>Reference
- * name</td><td>&lt;RightsRegion&gt;</td></tr><tr><td>Short tag</td><td>&lt;b091&gt;</td></tr><tr><td>Example</td><td>&lt;RightsRegion&gt;000&lt;/RightsRegion&gt;
+ * name</td><td><tt>&lt;RightsRegion&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b091&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;RightsRegion&gt;000&lt;/RightsRegion&gt;</tt>
  * Entire world</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SalesRights&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRights ⯈ RightsRegion</li>
+ * </ul>
  */
 public class RightsRegion implements OnixElement<RightsRegions>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +88,7 @@ public class RightsRegion implements OnixElement<RightsRegions>, Serializable {
     public RightsRegions value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public RightsRegions _value() {
@@ -109,6 +119,9 @@ public class RightsRegion implements OnixElement<RightsRegions>, Serializable {
         value = RightsRegions.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;RightsRegion&gt; or &lt;b091&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

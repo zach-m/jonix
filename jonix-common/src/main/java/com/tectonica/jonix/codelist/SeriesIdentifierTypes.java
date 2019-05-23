@@ -97,7 +97,9 @@ public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
 
     /**
      * International Standard Serial Number 'linking ISSN', used when distinct from the serial ISSN. Unhyphenated, 8
-     * digits. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * digits. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     ISSN_L("38", "ISSN-L");
 

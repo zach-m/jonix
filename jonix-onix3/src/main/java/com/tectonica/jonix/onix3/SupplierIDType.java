@@ -34,9 +34,20 @@ import java.io.Serializable;
  * <h1>Supplier identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;SupplierIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 92</td></tr><tr><td>Reference name</td><td>&lt;SupplierIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j345&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;j345&gt;12&lt;/j345&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 92</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplierIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j345&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;j345&gt;12&lt;/j345&gt;</tt>
  * (Distributeurscode Boekenbank, Flemish supplier code)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplierIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierIdentifier ⯈ SupplierIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ SupplierIdentifier ⯈ SupplierIDType</li>
+ * </ul>
  */
 public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +78,7 @@ public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Ser
     public SupplierIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SupplierIdentifierTypes _value() {
@@ -94,6 +105,9 @@ public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Ser
         value = SupplierIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SupplierIDType&gt; or &lt;j345&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

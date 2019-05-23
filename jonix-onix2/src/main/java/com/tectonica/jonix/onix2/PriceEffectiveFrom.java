@@ -36,7 +36,18 @@ import java.io.Serializable;
 /**
  * <h1>Price effective from</h1><p>The date from which a price becomes effective. Optional and non-repeating.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Date as year, month, day (YYYYMMDD)</td></tr><tr><td>Reference
- * name</td><td>&lt;PriceEffectiveFrom&gt;</td></tr><tr><td>Short tag</td><td>&lt;j161&gt;</td></tr><tr><td>Example</td><td>&lt;PriceEffectiveFrom&gt;20000616&lt;/PriceEffectiveFrom&gt;</td></tr></table>
+ * name</td><td><tt>&lt;PriceEffectiveFrom&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j161&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PriceEffectiveFrom&gt;20000616&lt;/PriceEffectiveFrom&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ PriceEffectiveFrom</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceEffectiveFrom</li>
+ * </ul>
  */
 public class PriceEffectiveFrom implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +86,7 @@ public class PriceEffectiveFrom implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -106,6 +117,9 @@ public class PriceEffectiveFrom implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PriceEffectiveFrom&gt; or &lt;j161&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

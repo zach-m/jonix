@@ -31,12 +31,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Country code</h1><p>A code identifying the country when this specifies a variant of the language, <i>eg</i> US
- * English. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * letters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case
+ * <h1>Country code</h1><p>A code identifying a country with which a contributor is particularly associated. Optional
+ * and non-repeatable. There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt; elements
+ * in each occurrence of &lt;ContributorPlace&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
+ * length, two letters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case
  * only</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes List 91</td></tr><tr><td>Reference
- * name</td><td>&lt;CountryCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;b251&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;CountryCode&gt;US&lt;/CountryCode&gt;
- * (US [English])</td></tr></table>
+ * name</td><td><tt>&lt;CountryCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b251&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;CountryCode&gt;US&lt;/CountryCode&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ContributorPlace&gt;</li>
+ * <li>&lt;Language&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ContributorPlace ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ ContributorPlace ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ ContributorPlace ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Language ⯈ CountryCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Language ⯈ CountryCode</li>
+ * </ul>
  */
 public class CountryCode implements OnixElement<Countrys>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +82,7 @@ public class CountryCode implements OnixElement<Countrys>, Serializable {
     public Countrys value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Countrys _value() {
@@ -94,6 +109,9 @@ public class CountryCode implements OnixElement<Countrys>, Serializable {
         value = Countrys.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;CountryCode&gt; or &lt;b251&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

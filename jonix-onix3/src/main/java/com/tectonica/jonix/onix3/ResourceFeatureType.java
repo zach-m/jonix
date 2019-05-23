@@ -34,9 +34,23 @@ import java.io.Serializable;
  * <h1>Resource feature type</h1><p>An ONIX code which specifies the feature described by an instance of the
  * &lt;ResourceFeature&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 160</td></tr><tr><td>Reference name</td><td>&lt;ResourceFeatureType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x438&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x438&gt;01&lt;/x438&gt;
+ * 160</td></tr><tr><td>Reference name</td><td><tt>&lt;ResourceFeatureType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x438&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x438&gt;01&lt;/x438&gt;</tt>
  * (Required credit)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ResourceFeature&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceFeature ⯈
+ * ResourceFeatureType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceFeature ⯈ ResourceFeatureType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceFeature ⯈
+ * ResourceFeatureType</li>
+ * </ul>
  */
 public class ResourceFeatureType implements OnixElement<ResourceFeatureTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +81,7 @@ public class ResourceFeatureType implements OnixElement<ResourceFeatureTypes>, S
     public ResourceFeatureTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ResourceFeatureTypes _value() {
@@ -94,6 +108,9 @@ public class ResourceFeatureType implements OnixElement<ResourceFeatureTypes>, S
         value = ResourceFeatureTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ResourceFeatureType&gt; or &lt;x438&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

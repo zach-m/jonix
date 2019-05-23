@@ -38,9 +38,23 @@ import java.io.Serializable;
  * <h1>Product identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;ProductIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 5</td></tr><tr><td>Reference name</td><td>&lt;ProductIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b221&gt;</td></tr><tr><td>Example</td><td>&lt;ProductIDType&gt;02&lt;/ProductIDType&gt;
- * ISBN</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 5</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b221&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ProductIDType&gt;02&lt;/ProductIDType&gt;</tt>
+ * ISBN-10</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier ⯈ ProductIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductIdentifier ⯈ ProductIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ ProductIdentifier ⯈ ProductIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductIdentifier ⯈ ProductIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ ProductIdentifier ⯈ ProductIDType</li>
+ * </ul>
  */
 public class ProductIDType implements OnixElement<ProductIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +90,7 @@ public class ProductIDType implements OnixElement<ProductIdentifierTypes>, Seria
     public ProductIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductIdentifierTypes _value() {
@@ -107,6 +121,9 @@ public class ProductIDType implements OnixElement<ProductIdentifierTypes>, Seria
         value = ProductIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductIDType&gt; or &lt;b221&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

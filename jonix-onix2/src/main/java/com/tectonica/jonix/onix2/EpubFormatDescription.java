@@ -37,9 +37,21 @@ import java.io.Serializable;
  * <h1>Epublication format description</h1><p>A free text description of an epublication format. Optional and
  * non-repeating, and can occur only if the &lt;EpubType&gt; field is present, but it does not require the presence of
  * the &lt;EpubFormat&gt; field.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
- * suggested maximum 200 characters</td></tr><tr><td>Reference name</td><td>&lt;EpubFormatDescription&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b216&gt;</td></tr><tr><td>Example</td><td>&lt;b216&gt;Screen optimized PDF, with low-res
- * figures&lt;/b216&gt;</td></tr></table>
+ * suggested maximum 200 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubFormatDescription&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b216&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b216&gt;Screen optimized PDF, with low-res
+ * figures&lt;/b216&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ EpubFormatDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ EpubFormatDescription</li>
+ * </ul>
  */
 public class EpubFormatDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +90,7 @@ public class EpubFormatDescription implements OnixElement<String>, Serializable 
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +121,9 @@ public class EpubFormatDescription implements OnixElement<String>, Serializable 
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;EpubFormatDescription&gt; or &lt;b216&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

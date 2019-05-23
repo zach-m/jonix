@@ -38,8 +38,7 @@ public class JonixOnOrderDetail implements JonixStruct, Serializable {
     public String expectedDate;
 
     /**
-     * Raw Format: Positive integer or zero, here necessarily positive, suggested maximum length 7 digits <p> (type:
-     * dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, suggested maximum length 7 digits <p> (type: dt.PositiveInteger)
      */
     public Integer onOrder;
 }

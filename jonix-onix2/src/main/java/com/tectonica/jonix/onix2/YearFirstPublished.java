@@ -36,8 +36,18 @@ import java.io.Serializable;
 /**
  * <h1>Year first published</h1><p>The year when the work first appeared in any language or edition, if different from
  * the copyright year. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as
- * year only (YYYY)</td></tr><tr><td>Reference name</td><td>&lt;YearFirstPublished&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b088&gt;</td></tr><tr><td>Example</td><td>&lt;YearFirstPublished&gt;1845&lt;/YearFirstPublished&gt;</td></tr></table>
+ * year only (YYYY)</td></tr><tr><td>Reference name</td><td><tt>&lt;YearFirstPublished&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b088&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;YearFirstPublished&gt;1845&lt;/YearFirstPublished&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ YearFirstPublished</li>
+ * </ul>
  */
 public class YearFirstPublished implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class YearFirstPublished implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,9 @@ public class YearFirstPublished implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;YearFirstPublished&gt; or &lt;b088&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

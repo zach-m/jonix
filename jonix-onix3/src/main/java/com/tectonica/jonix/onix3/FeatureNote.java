@@ -32,15 +32,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource version feature note</h1><p>If the &lt;ResourceVersionFeatureType&gt; requires free text rather than a
- * code value, or if the code in &lt;FeatureValue&gt; does not adequately describe the feature, a short text note may be
- * added. Optional, and repeatable when parallel notes are provided in multiple languages. The <i>language</i> attribute
- * is optional for a single instance of &lt;FeatureNote&gt;, but must be included in each instance if
- * &lt;FeatureNote&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text,
- * suggested maximum length 300 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX
- * text fields</td></tr><tr><td>Reference name</td><td>&lt;FeatureNote&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x440&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr></table>
+ * <h1>Resource feature note</h1><p>If the &lt;ResourceFeatureType&gt; requires free text rather than a code value, or
+ * if the code in &lt;FeatureValue&gt; does not adequately describe the feature, a short text note may be added.
+ * Optional, and repeatable when parallel notes are provided in multiple languages. The <i>language</i> attribute is
+ * optional for a single instance of &lt;FeatureNote&gt;, but must be included in each instance if &lt;FeatureNote&gt;
+ * is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum
+ * length 300 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
+ * fields</td></tr><tr><td>Reference name</td><td><tt>&lt;FeatureNote&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x440&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td><tt>&lt;FeatureNote&gt;Photo by Jerry
+ * Bauer&lt;/FeatureNote&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ResourceVersionFeature&gt;</li>
+ * <li>&lt;ResourceFeature&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ResourceVersionFeature ⯈ FeatureNote</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceVersionFeature ⯈
+ * FeatureNote</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ResourceVersionFeature ⯈ FeatureNote</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceFeature ⯈ FeatureNote</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceFeature ⯈ FeatureNote</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceFeature ⯈
+ * FeatureNote</li>
+ * </ul>
  */
 public class FeatureNote implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +100,7 @@ public class FeatureNote implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +129,9 @@ public class FeatureNote implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;FeatureNote&gt; or &lt;x440&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

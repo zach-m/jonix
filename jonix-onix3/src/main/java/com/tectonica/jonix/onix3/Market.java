@@ -39,7 +39,17 @@ import java.util.List;
  * is required. It may be repeated if a non-geographical sales restriction applies only to a <em>part</em> of a
  * geographically-defined market – for example where a product is sold throughout the European Union, but exclusive to a
  * single retailer in France.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Market&gt;</td></tr><tr><td>Short tag</td><td>&lt;market&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;Market&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;market&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductSupply&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market</li>
+ * </ul>
  */
 public class Market implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -111,6 +121,9 @@ public class Market implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Market&gt; or &lt;market&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -123,7 +136,9 @@ public class Market implements OnixSuperComposite, Serializable {
     private Territory territory = Territory.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A group of data elements which together identify a territory forming part or all of a market for which supply
+     * detail is given. Mandatory in each occurrence of the &lt;Market&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public Territory territory() {
         _initialize();
@@ -133,7 +148,9 @@ public class Market implements OnixSuperComposite, Serializable {
     private List<SalesRestriction> salesRestrictions = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together identify a non-territorial sales restriction which applies within a
+     * geographical market. Optional, and repeatable if more than a single restriction applies.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<SalesRestriction> salesRestrictions() {
         _initialize();

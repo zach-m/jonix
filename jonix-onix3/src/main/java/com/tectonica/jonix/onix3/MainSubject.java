@@ -36,7 +36,18 @@ import java.io.Serializable;
  * carrying the &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em>. Optional and
  * non-repeating in each occurrence of the &lt;Subject&gt; composite.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>XML empty element</td></tr><tr><td>Reference
- * name</td><td>&lt;MainSubject&gt;</td></tr><tr><td>Short tag</td><td>&lt;x425&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;MainSubject/&gt;</td></tr></table>
+ * name</td><td><tt>&lt;MainSubject&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x425&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;MainSubject/&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Subject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Subject ⯈ MainSubject</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Subject ⯈ MainSubject</li>
+ * </ul>
  */
 public class MainSubject implements OnixFlag, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,6 +89,9 @@ public class MainSubject implements OnixFlag, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
     }
 
+    /**
+     * @return whether this tag (&lt;MainSubject&gt; or &lt;x425&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

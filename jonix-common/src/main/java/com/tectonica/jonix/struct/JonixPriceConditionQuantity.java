@@ -39,8 +39,8 @@ public class JonixPriceConditionQuantity implements JonixKeyedStruct<PriceCondit
     public PriceConditionQuantityTypes priceConditionQuantityType;
 
     /**
-     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits <p> (type:
-     * dt.PositiveDecimal)
+     * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the
+     * units specified in &lt;EpubUsageUnit&gt; <p> (type: dt.PositiveDecimal)
      */
     public Double quantity;
 

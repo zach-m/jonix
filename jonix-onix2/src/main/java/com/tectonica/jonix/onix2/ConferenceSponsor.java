@@ -35,8 +35,18 @@ import java.io.Serializable;
 
 /**
  * <h1>Conference sponsor composite</h1><p>A repeatable group of data elements which together identify a sponsor of a
- * conference.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ConferenceSponsor&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;conferencesponsor&gt;</td></tr></table>
+ * conference.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ConferenceSponsor&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;conferencesponsor&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Conference&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceSponsor</li>
+ * </ul>
  */
 public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -121,6 +131,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ConferenceSponsor&gt; or &lt;conferencesponsor&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -133,7 +147,9 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private ConferenceSponsorIdentifier conferenceSponsorIdentifier = ConferenceSponsorIdentifier.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A repeatable group of data elements which together carry a coded identifier for a sponsor of a
+     * conference.</p>
+     * Jonix-Comment: this field is required
      */
     public ConferenceSponsorIdentifier conferenceSponsorIdentifier() {
         _initialize();
@@ -143,7 +159,8 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private PersonName personName = PersonName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of a person, used here for a personal sponsor of a conference.</p>
+     * Jonix-Comment: this field is optional
      */
     public PersonName personName() {
         _initialize();
@@ -153,7 +170,8 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private CorporateName corporateName = CorporateName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of a corporate body, used here for a corporate sponsor of a conference.</p>
+     * Jonix-Comment: this field is optional
      */
     public CorporateName corporateName() {
         _initialize();

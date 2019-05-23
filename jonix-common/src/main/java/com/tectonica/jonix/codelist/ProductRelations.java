@@ -270,34 +270,43 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
 
     /**
      * &lt;Product&gt; is an adapted (dramatized, abridged, novelized etc) version of &lt;RelatedProduct&gt; (inverse of
-     * code 44). For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * code 44). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Adapted_from("43", "Adapted from"), //
 
     /**
      * &lt;Product&gt; is the original from which &lt;RelatedProduct&gt; is adapted (dramatized etc) (inverse of code
-     * 43), For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * 43), For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Adapted_as("44", "Adapted as"), //
 
     /**
      * &lt;Product&gt; is an epublication 'rendered' as &lt;RelatedProduct&gt;: use in ONIX 2.1 only when the
      * &lt;Product&gt; record describes a package of electronic content which is available in multiple 'renderings'
-     * (coded 000 in &lt;EpubTypeCode&gt;): NOT USED in ONIX 3.0 &lt;p&gt;NOTE: Deprecated in Onix3
+     * (coded 000 in &lt;EpubTypeCode&gt;): NOT USED in ONIX 3.0
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Epublication_is_distributed_as("14", "Epublication is distributed as"), //
 
     /**
      * &lt;Product&gt; is a 'rendering' of an epublication &lt;RelatedProduct&gt;: use in ONIX 2.1 only when the
      * &lt;Product&gt; record describes a specific rendering of an epublication content package, to identify the
-     * package: NOT USED in ONIX 3.0 &lt;p&gt;NOTE: Deprecated in Onix3
+     * package: NOT USED in ONIX 3.0
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Epublication_is_a_rendering_of("15", "Epublication is a rendering of"), //
 
     /**
      * Use to give the ISBN of another book that had sales (both in terms of copy numbers and customer profile)
-     * comparable to that the publisher or distributor estimates for the product. Use in ONIX 2.1 ONLY &lt;p&gt;NOTE:
-     * Deprecated in Onix3
+     * comparable to that the publisher or distributor estimates for the product. Use in ONIX 2.1 ONLY
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Sales_expectation("36", "Sales expectation");
 

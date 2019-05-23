@@ -41,8 +41,23 @@ import java.io.Serializable;
  * present, the &lt;TitleText&gt; element must be used to carry the abbreviated form. [The option also exists to send an
  * abbreviated title as a separate &lt;TitleType&gt; without using &lt;AbbreviatedLength&gt;, which is simpler, but less
  * informative.]</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum
- * 3 digits</td></tr><tr><td>Reference name</td><td>&lt;AbbreviatedLength&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b276&gt;</td></tr><tr><td>Example</td><td>&lt;b276&gt;40&lt;/b276&gt;</td></tr></table>
+ * 3 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;AbbreviatedLength&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b276&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b276&gt;40&lt;/b276&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Title&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ AbbreviatedLength</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ AbbreviatedLength</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ AbbreviatedLength</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ AbbreviatedLength</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ AbbreviatedLength</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ AbbreviatedLength</li>
+ * </ul>
  */
 public class AbbreviatedLength implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +96,7 @@ public class AbbreviatedLength implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -112,6 +127,9 @@ public class AbbreviatedLength implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;AbbreviatedLength&gt; or &lt;b276&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

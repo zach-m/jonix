@@ -39,9 +39,19 @@ import java.io.Serializable;
  * James, Jerusalem, New American Standard, Reina Valera. Mandatory in each occurrence of the &lt;Bible&gt; composite,
  * and repeatable if a work includes text in two or more versions.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three letters</td></tr><tr><td>Codelist</td><td>List
- * 83</td></tr><tr><td>Reference name</td><td>&lt;BibleVersion&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b353&gt;</td></tr><tr><td>Example</td><td>&lt;BibleVersion&gt;JER&lt;/BibleVersion&gt;
+ * 83</td></tr><tr><td>Reference name</td><td><tt>&lt;BibleVersion&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b353&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;BibleVersion&gt;JER&lt;/BibleVersion&gt;</tt>
  * Jerusalem</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Bible&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ Bible ⯈ BibleVersion</li>
+ * </ul>
  */
 public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
     public BibleVersions value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public BibleVersions _value() {
@@ -108,6 +118,9 @@ public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
         value = BibleVersions.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;BibleVersion&gt; or &lt;b353&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

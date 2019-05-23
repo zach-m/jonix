@@ -30,12 +30,22 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience range value (2)</h1><p>A value indicating the upper end of a range.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length string, suggested maximum 10 characters, according to the
- * scheme specified in &lt;AudienceRangeQualifier&gt;. (This element was originally defined as a variable-length
- * integer, but its definition was extended in ONIX 2.1 to enable non-numeric values to be carried. For values that
- * BISAC has defined for US school grades and pre-school levels, see List 77)</td></tr><tr><td>Reference
- * name</td><td>&lt;AudienceRangeValue&gt;</td></tr><tr><td>Short tag</td><td>&lt;b076&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;AudienceRangeValue&gt;11&lt;/AudienceRangeValue&gt;</td></tr></table>
+ * <h1>Audience range value (1)</h1><p>A value indicating an exact position within a range, or the upper or lower end of
+ * a range.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length string, suggested maximum 10
+ * characters, according to the scheme specified in &lt;AudienceRangeQualifier&gt;. (This element was originally defined
+ * as a variable-length integer, but its definition was extended in ONIX 2.1 to enable non-numeric values to be carried.
+ * For values that BISAC has defined for US school grades and pre-school levels, see List 77)</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;AudienceRangeValue&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b076&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;AudienceRangeValue&gt;10&lt;/AudienceRangeValue&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AudienceRange&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AudienceRange ⯈ AudienceRangeValue</li>
+ * </ul>
  */
 public class AudienceRangeValue implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,7 +82,7 @@ public class AudienceRangeValue implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -99,6 +109,9 @@ public class AudienceRangeValue implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;AudienceRangeValue&gt; or &lt;b076&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

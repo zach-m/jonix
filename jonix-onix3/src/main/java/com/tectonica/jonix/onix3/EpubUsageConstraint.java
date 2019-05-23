@@ -36,7 +36,17 @@ import java.io.Serializable;
  * usage constraint on a digital product (or the absence of such a constraint), whether enforced by DRM technical
  * protection, inherent in the platform used, or specified by license agreement. Repeatable in order to describe
  * multiple constraints on usage.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;EpubUsageConstraint&gt;</td></tr><tr><td>Short tag</td><td>&lt;epubusageconstraint&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;EpubUsageConstraint&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;epubusageconstraint&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint</li>
+ * </ul>
  */
 public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -112,6 +122,10 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;EpubUsageConstraint&gt; or &lt;epubusageconstraint&gt;) is explicitly provided in
+     * the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -124,7 +138,9 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
     private EpubUsageType epubUsageType = EpubUsageType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code specifying a usage of a digital product. Mandatory in each occurrence of the
+     * &lt;EpubUsageConstraint&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public EpubUsageType epubUsageType() {
         _initialize();
@@ -134,7 +150,10 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
     private EpubUsageStatus epubUsageStatus = EpubUsageStatus.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code specifying the status of a usage of a digital product, <i>eg</i> permitted without limit,
+     * permitted with limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public EpubUsageStatus epubUsageStatus() {
         _initialize();
@@ -145,7 +164,9 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
         ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together specify a quantitative limit on a particular type of usage
+     * of a digital product. Repeatable in order to specify two or more limits on the usage type.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits() {
         _initialize();

@@ -38,8 +38,21 @@ import java.io.Serializable;
  * <h1>Image/audio/video file format code</h1><p>An ONIX code which identifies the format of the image/audio/video file
  * which is linked by the &lt;MediaFileLink&gt; element. For image files, JPEG, GIF and TIF are supported. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 39</td></tr><tr><td>Reference name</td><td>&lt;MediaFileFormatCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;f115&gt;</td></tr><tr><td>Example</td><td>&lt;f115&gt;02&lt;/f115&gt; GIF</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 39</td></tr><tr><td>Reference name</td><td><tt>&lt;MediaFileFormatCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;f115&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;f115&gt;02&lt;/f115&gt;</tt>
+ * GIF</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MediaFile&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ MediaFileFormatCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ MediaFileFormatCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ MediaFileFormatCode</li>
+ * </ul>
  */
 public class MediaFileFormatCode implements OnixElement<ImageAudioVideoFileFormats>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +88,7 @@ public class MediaFileFormatCode implements OnixElement<ImageAudioVideoFileForma
     public ImageAudioVideoFileFormats value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ImageAudioVideoFileFormats _value() {
@@ -106,6 +119,9 @@ public class MediaFileFormatCode implements OnixElement<ImageAudioVideoFileForma
         value = ImageAudioVideoFileFormats.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;MediaFileFormatCode&gt; or &lt;f115&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

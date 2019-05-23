@@ -35,12 +35,28 @@ import java.io.Serializable;
 
 /**
  * <h1>Product form description</h1><p>If product form codes do not adequately describe the product, a short text
- * description may be added. The text may include the number and type of pieces contained in a multiple product, and/or
- * a more detailed specification of the product form. The field is optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 200
- * characters.</td></tr><tr><td>Reference name</td><td>&lt;ProductFormDescription&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b014&gt;</td></tr><tr><td>Example</td><td>&lt;b014&gt;3 volumes with 2
- * audiocassettes&lt;/b014&gt;</td></tr></table>
+ * description may be added to give a more detailed specification of the product form. The field is optional and
+ * non-repeating. <strong>Although this element was originally included to allow the number and type of pieces contained
+ * in a multiple product to be stated, as in the example below, the correct method of describing mixed media products in
+ * Release 2.1 is to use two or more occurrences of the &lt;ContainedItem&gt; composite to give a properly structured
+ * specification of each media type.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
+ * text, suggested maximum length 200 characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductFormDescription&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b014&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b014&gt;3 volumes with 2
+ * audiocassettes&lt;/b014&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductFormDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductFormDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductFormDescription</li>
+ * </ul>
  */
 public class ProductFormDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +95,7 @@ public class ProductFormDescription implements OnixElement<String>, Serializable
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +126,9 @@ public class ProductFormDescription implements OnixElement<String>, Serializable
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ProductFormDescription&gt; or &lt;b014&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

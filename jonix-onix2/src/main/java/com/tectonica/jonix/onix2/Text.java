@@ -40,7 +40,8 @@ import java.io.Serializable;
  * element may carry any of the following ONIX attributes: <i>textformat, language, transliteration,
  * textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text (XHTML is enabled in
  * this element - see ONIX for Books - Product Information Message - XML Message Specification, Section
- * 7)</td></tr><tr><td>Reference name</td><td>&lt;Text&gt;</td></tr><tr><td>Short tag</td><td>&lt;d104&gt;</td></tr><tr><td>Example</td><td>&lt;Text
+ * 7)</td></tr><tr><td>Reference name</td><td><tt>&lt;Text&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;d104&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;Text
  * textformat=&quot;06&quot;&gt;Introduction: aesthetics and modernity; aesthetics and post-modernity. Part 1 Modern
  * philosophy and the emergence of aesthetic theory - Kant: self-consciousness, knowledge and freedom; the unity of the
  * subject; the unification of nature; the purpose of beauty; the limits of beauty. Part 2 German idealism and early
@@ -56,7 +57,20 @@ import java.io.Serializable;
  * of art and reason: Schopenhauer - the world as embodied music; Marx, myth and art; art, myth and music in &#8220;The
  * Birth of Tragedy&#8221;; myth, music and language; the illusion of truth; music and metaphysics; aesthetics,
  * interpretation and subjectivity. Appendix: the so-called &#8220;oldest system-programme of German idealism&#8221;
- * (1796).&lt;/Text&gt;</td></tr></table>
+ * (1796).&lt;/Text&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OtherText&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ Text</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ Text</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ Text</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ Text</li>
+ * </ul>
  */
 public class Text implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -96,7 +110,7 @@ public class Text implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -127,6 +141,9 @@ public class Text implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;Text&gt; or &lt;d104&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

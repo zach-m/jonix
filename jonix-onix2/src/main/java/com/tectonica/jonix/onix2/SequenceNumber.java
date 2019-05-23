@@ -41,8 +41,22 @@ import java.io.Serializable;
  * require this more precise sequencing. Where it is not required, it is strongly recommended that each occurrence of
  * the &lt;Contributor&gt; composite should carry an overall &lt;SequenceNumber&gt;.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, 1, 2, 3 etc, suggested maximum length 3
- * digits</td></tr><tr><td>Reference name</td><td>&lt;SequenceNumber&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b034&gt;</td></tr><tr><td>Example</td><td>&lt;SequenceNumber&gt;3&lt;/SequenceNumber&gt;</td></tr></table>
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;SequenceNumber&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b034&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SequenceNumber&gt;3&lt;/SequenceNumber&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ SequenceNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ SequenceNumber</li>
+ * </ul>
  */
 public class SequenceNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +95,7 @@ public class SequenceNumber implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -112,6 +126,9 @@ public class SequenceNumber implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SequenceNumber&gt; or &lt;b034&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

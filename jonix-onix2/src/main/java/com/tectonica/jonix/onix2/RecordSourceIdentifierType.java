@@ -39,8 +39,23 @@ import java.io.Serializable;
  * &lt;RecordSourceIdentifier&gt; element is taken. Optional and non-repeating, but &lt;RecordSourceIdentifier&gt; must
  * also be present if this field is present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * two numeric digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference
- * name</td><td>&lt;RecordSourceIdentifierType&gt;</td></tr><tr><td>Short tag</td><td>&lt;a195&gt;</td></tr><tr><td>Example</td><td>&lt;a195&gt;03&lt;/a195&gt;
- * Deutsche Bibliothek publisher identifier</td></tr></table>
+ * name</td><td><tt>&lt;RecordSourceIdentifierType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;a195&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;a195&gt;03&lt;/a195&gt;</tt> Deutsche
+ * Bibliothek publisher identifier</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;SubSeriesRecord&gt;</li>
+ * <li>&lt;MainSeriesRecord&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RecordSourceIdentifierType</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ RecordSourceIdentifierType</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ RecordSourceIdentifierType</li>
+ * </ul>
  */
 public class RecordSourceIdentifierType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +91,7 @@ public class RecordSourceIdentifierType implements OnixElement<NameIdentifierTyp
     public NameIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public NameIdentifierTypes _value() {
@@ -107,6 +122,10 @@ public class RecordSourceIdentifierType implements OnixElement<NameIdentifierTyp
         value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;RecordSourceIdentifierType&gt; or &lt;a195&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;

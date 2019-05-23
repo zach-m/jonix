@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Funding identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;FundingIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 228</td></tr><tr><td>Reference name</td><td>&lt;FundingIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x523&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;FundingIDType&gt;01&lt;/FundingIDType&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 228</td></tr><tr><td>Reference name</td><td><tt>&lt;FundingIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x523&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;FundingIDType&gt;01&lt;/FundingIDType&gt;</tt>
  * (proprietary)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;FundingIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Funding ⯈ FundingIdentifier ⯈ FundingIDType</li>
+ * </ul>
  */
 public class FundingIDType implements OnixElement<GrantIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class FundingIDType implements OnixElement<GrantIdentifierTypes>, Seriali
     public GrantIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public GrantIdentifierTypes _value() {
@@ -94,6 +104,9 @@ public class FundingIDType implements OnixElement<GrantIdentifierTypes>, Seriali
         value = GrantIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;FundingIDType&gt; or &lt;x523&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

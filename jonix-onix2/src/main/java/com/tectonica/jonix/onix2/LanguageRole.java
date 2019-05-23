@@ -38,8 +38,18 @@ import java.io.Serializable;
  * <h1>Language role</h1><p>An ONIX code indicating the “role” of a language in the context of the ONIX record.
  * Mandatory in each occurrence of the &lt;Language&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 22</td></tr><tr><td>Reference name</td><td>&lt;LanguageRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b253&gt;</td></tr><tr><td>Example</td><td>&lt;LanguageRole&gt;01&lt;/LanguageRole&gt;</td></tr></table>
+ * 22</td></tr><tr><td>Reference name</td><td><tt>&lt;LanguageRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b253&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;LanguageRole&gt;01&lt;/LanguageRole&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Language&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Language ⯈ LanguageRole</li>
+ * </ul>
  */
 public class LanguageRole implements OnixElement<LanguageRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +85,7 @@ public class LanguageRole implements OnixElement<LanguageRoles>, Serializable {
     public LanguageRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public LanguageRoles _value() {
@@ -106,6 +116,9 @@ public class LanguageRole implements OnixElement<LanguageRoles>, Serializable {
         value = LanguageRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;LanguageRole&gt; or &lt;b253&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Publishing role code</h1><p>An ONIX code which identifies a role played by an entity in the publishing of a
  * product. Mandatory in each occurrence of the &lt;Publisher&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 45</td></tr><tr><td>Reference name</td><td>&lt;PublishingRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b291&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;PublishingRole&gt;02&lt;/PublishingRole&gt;
+ * 45</td></tr><tr><td>Reference name</td><td><tt>&lt;PublishingRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b291&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;PublishingRole&gt;02&lt;/PublishingRole&gt;</tt>
  * (Co-publisher)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Publisher&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ PublishingRole</li>
+ * </ul>
  */
 public class PublishingRole implements OnixElement<PublishingRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class PublishingRole implements OnixElement<PublishingRoles>, Serializabl
     public PublishingRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PublishingRoles _value() {
@@ -94,6 +104,9 @@ public class PublishingRole implements OnixElement<PublishingRoles>, Serializabl
         value = PublishingRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PublishingRole&gt; or &lt;b291&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

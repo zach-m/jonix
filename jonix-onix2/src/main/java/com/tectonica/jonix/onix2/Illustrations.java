@@ -39,7 +39,17 @@ import java.io.Serializable;
  * <h1>Illustrations and other content composite</h1><p>A repeatable group of data elements which together specify the
  * number of illustrations or other content items of a stated type which the product carries. Use of the
  * &lt;Illustrations&gt; composite is optional.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Illustrations&gt;</td></tr><tr><td>Short tag</td><td>&lt;illustrations&gt;</td></tr></table>
+ * name</td><td><tt>&lt;Illustrations&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;illustrations&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Illustrations</li>
+ * </ul>
  */
 public class Illustrations
     implements OnixDataCompositeWithKey<JonixIllustrations, IllustrationAndOtherContentTypes>, Serializable {
@@ -125,6 +135,9 @@ public class Illustrations
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Illustrations&gt; or &lt;illustrations&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -137,7 +150,9 @@ public class Illustrations
     private IllustrationType illustrationType = IllustrationType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the type of illustration or other content to which an occurrence of the
+     * composite refers. Mandatory in each occurrence of the &lt;Illustrations&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IllustrationType illustrationType() {
         _initialize();
@@ -147,7 +162,10 @@ public class Illustrations
     private IllustrationTypeDescription illustrationTypeDescription = IllustrationTypeDescription.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Text describing the type of illustration or other content to which an occurrence of the composite refers, when
+     * a code is insufficient. Optional and non-repeating. Required when &lt;IllustrationType&gt; carries the value
+     * 00.</p>
+     * Jonix-Comment: this field is optional
      */
     public IllustrationTypeDescription illustrationTypeDescription() {
         _initialize();
@@ -157,7 +175,9 @@ public class Illustrations
     private Number number = Number.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The number of illustrations or other content items of the type specified in &lt;IllustrationType&gt;. Optional
+     * and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public Number number() {
         _initialize();

@@ -36,8 +36,18 @@ import java.io.Serializable;
  * <h1>Conference sponsor composite</h1><p>An optional and repeatable group of data elements which together identify a
  * sponsor of a conference. <em>Either</em> an identifier, <em>or</em> one or other of &lt;PersonName&gt; or
  * &lt;CorporateName&gt;, <em>or</em> both an identifier and a name, must be present in each occurrence of the
- * composite.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ConferenceSponsor&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;conferencesponsor&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * composite.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ConferenceSponsor&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;conferencesponsor&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Conference&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceSponsor</li>
+ * </ul>
  */
 public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -114,6 +124,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ConferenceSponsor&gt; or &lt;conferencesponsor&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -127,7 +141,9 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
         conferenceSponsorIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>An optional and repeatable group of data elements which together carry a coded identifier for a sponsor of a
+     * conference.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameIdentifierTypes> conferenceSponsorIdentifiers() {
         _initialize();
@@ -137,7 +153,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private PersonName personName = PersonName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of a person, used here for a personal sponsor of a conference. Optional and non-repeating. Only one
+     * of &lt;PersonName&gt; and &lt;CorporateName&gt; can be sent in each occurrence of the &lt;ConferenceSponsor&gt;
+     * composite.</p>
+     * Jonix-Comment: this field is optional
      */
     public PersonName personName() {
         _initialize();
@@ -147,7 +166,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private CorporateName corporateName = CorporateName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of a corporate body, used here for a corporate sponsor of a conference. Optional and non-repeating.
+     * Only one of &lt;PersonName&gt; and &lt;CorporateName&gt; can be sent in each occurrence of the
+     * &lt;ConferenceSponsor&gt; composite.</p>
+     * Jonix-Comment: this field is optional
      */
     public CorporateName corporateName() {
         _initialize();

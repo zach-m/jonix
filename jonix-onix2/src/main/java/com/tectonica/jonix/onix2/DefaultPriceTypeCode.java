@@ -38,8 +38,18 @@ import java.io.Serializable;
  * <h1>Default price type</h1><p>An ONIX code indicating the default price type which is assumed for prices listed in
  * the message, unless explicitly stated otherwise in a &lt;Price&gt; composite in the product record. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 58</td></tr><tr><td>Reference name</td><td>&lt;DefaultPriceTypeCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m185&gt;</td></tr><tr><td>Example</td><td>&lt;DefaultPriceTypeCode&gt;01&lt;/DefaultPriceTypeCode&gt;</td></tr></table>
+ * digits.</td></tr><tr><td>Codelist</td><td>List 58</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultPriceTypeCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m185&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;DefaultPriceTypeCode&gt;01&lt;/DefaultPriceTypeCode&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ DefaultPriceTypeCode</li>
+ * </ul>
  */
 public class DefaultPriceTypeCode implements OnixElement<PriceTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +85,7 @@ public class DefaultPriceTypeCode implements OnixElement<PriceTypes>, Serializab
     public PriceTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PriceTypes _value() {
@@ -106,6 +116,9 @@ public class DefaultPriceTypeCode implements OnixElement<PriceTypes>, Serializab
         value = PriceTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;DefaultPriceTypeCode&gt; or &lt;m185&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

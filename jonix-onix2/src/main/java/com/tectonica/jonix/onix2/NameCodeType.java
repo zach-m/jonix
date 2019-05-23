@@ -36,11 +36,26 @@ import java.io.Serializable;
 
 /**
  * <h1>Name code type</h1><p>An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt;
- * element is taken. Optional and non-repeating, but mandatory if the &lt;Publisher&gt; composite does not carry a
- * &lt;PublisherName&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;NameCodeType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b241&gt;</td></tr><tr><td>Example</td><td>&lt;b241&gt;03&lt;/b241&gt; Deutsche Bibliothek publisher
- * identifier</td></tr></table>
+ * element is taken. Optional and non-repeating, but mandatory if the &lt;Imprint&gt; composite does not carry an
+ * &lt;ImprintName&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits.</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td><tt>&lt;NameCodeType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b241&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;NameCodeType&gt;01&lt;/NameCodeType&gt;</tt>
+ * Proprietary</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Publisher&gt;</li>
+ * <li>&lt;Imprint&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ NameCodeType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ NameCodeType</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ NameCodeType</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ NameCodeType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Imprint ⯈ NameCodeType</li>
+ * </ul>
  */
 public class NameCodeType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +91,7 @@ public class NameCodeType implements OnixElement<NameIdentifierTypes>, Serializa
     public NameIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public NameIdentifierTypes _value() {
@@ -107,6 +122,9 @@ public class NameCodeType implements OnixElement<NameIdentifierTypes>, Serializa
         value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;NameCodeType&gt; or &lt;b241&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

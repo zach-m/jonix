@@ -33,9 +33,31 @@ import java.io.Serializable;
 
 /**
  * <h1>Website composite</h1><p>An optional group of data elements which together identify and provide a pointer to a
- * website which is related to the organization identified in an occurrence of the &lt;Supplier&gt; composite.
- * Repeatable in order to provide links to multiple websites.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Website&gt;</td></tr><tr><td>Short tag</td><td>&lt;website&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * website which is related to the person or organization identified in an occurrence of the &lt;Contributor&gt;
+ * composite. Repeatable to provide links to multiple websites.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td><tt>&lt;Website&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;website&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Conference&gt;</li>
+ * <li>&lt;Supplier&gt;</li>
+ * <li>&lt;Publisher&gt;</li>
+ * <li>&lt;Event&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;PublisherRepresentative&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Website</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ Website</li>
+ * </ul>
  */
 public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -111,6 +133,9 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Website&gt; or &lt;website&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -123,7 +148,9 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which identifies the role or purpose of the website which is linked through the
+     * &lt;WebsiteLink&gt; element. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public WebsiteRole websiteRole() {
         _initialize();
@@ -133,7 +160,11 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private ListOfOnixElement<WebsiteDescription, String> websiteDescriptions = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>Free text describing the nature of the website which is linked through the &lt;WebsiteLink&gt; element.
+     * Optional, and repeatable to provide parallel descriptive text in multiple languages. The <i>language</i>
+     * attribute is optional for a single instance of &lt;WebsiteDescription&gt;, but must be included in each instance
+     * if &lt;WebsiteDescription&gt; is repeated.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<WebsiteDescription, String> websiteDescriptions() {
         _initialize();
@@ -143,7 +174,11 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private ListOfOnixElement<WebsiteLink, String> websiteLinks = ListOfOnixElement.empty();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite, and repeatable to
+     * provide multiple URLs where the website content is available in multiple languages. The <i>language</i> attribute
+     * is optional for a single instance of &lt;WebsiteLink&gt;, but must be included in each instance if
+     * &lt;WebsiteLink&gt; is repeated.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<WebsiteLink, String> websiteLinks() {
         _initialize();

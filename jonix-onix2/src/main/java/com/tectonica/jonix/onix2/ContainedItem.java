@@ -51,8 +51,18 @@ import java.io.Serializable;
  * copies of the same item.</p><p>Each instance of the &lt;ContainedItem&gt; composite must carry at least either a
  * product identifier, or a product form code, or both. In other words, it is valid to send an instance of the composite
  * with an identifier and no product form code, or with a product form code and no identifier.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;ContainedItem&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;containeditem&gt;</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ContainedItem&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;containeditem&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem</li>
+ * </ul>
  */
 public class ContainedItem implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -177,6 +187,9 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ContainedItem&gt; or &lt;containeditem&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -189,7 +202,10 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private ISBN isbn = ISBN.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>10-character ISBN of the contained item. Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt;
+     * composite provides a more general method of handling product codes, and is preferred. The &lt;ISBN&gt; element is
+     * on no account to be used to carry a 13-digit ISBN.</strong></p>
+     * Jonix-Comment: this field is required
      */
     public ISBN isbn() {
         _initialize();
@@ -199,7 +215,9 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private EAN13 ean13 = EAN13.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>EAN.UCC-13 number of the contained item. Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt;
+     * composite provides a more general method of handling product codes, and is preferred.</strong></p>
+     * Jonix-Comment: this field is optional
      */
     public EAN13 ean13() {
         _initialize();
@@ -210,7 +228,10 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together define the identifier of a product in accordance with a
+     * specified scheme, used here to carry the product identifier of a contained item. <strong>See notes on the
+     * &lt;ProductIdentifier&gt; composite in section PR.2 for details of the handling of ISBN-13.</strong></p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
         _initialize();
@@ -220,7 +241,8 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private ProductForm productForm = ProductForm.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which indicates the primary form of the contained item. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public ProductForm productForm() {
         _initialize();
@@ -231,7 +253,9 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An ONIX code which provides added detail of the medium and/or format of the contained item. Optional and
+     * repeatable. This field can only occur if the &lt;ContainedItem&gt; composite has a &lt;ProductForm&gt; code.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
         _initialize();
@@ -242,7 +266,11 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together describe an aspect of product form that is too specific to
+     * be covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional. The
+     * &lt;ProductFormFeature&gt; composite can only occur if the &lt;ContainedItem&gt; composite has a
+     * &lt;ProductForm&gt; code.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
         _initialize();
@@ -252,7 +280,12 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An ONIX code specifying more detail of the contained item when the item is a book. Optional and repeatable,
+     * and must only be included when the &lt;ProductForm&gt; code for the contained item begins with letter B.
+     * <strong>This field will be superseded by the new element &lt;ProductFormDetail&gt;, and the code list will not be
+     * further developed. The field is retained only for purposes of upwards compatibility, and its use is now to be
+     * deprecated.</strong></p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
         _initialize();
@@ -262,7 +295,9 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private ProductPackaging productPackaging = ProductPackaging.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which indicates the type of packaging used for the contained item. Optional and non-repeating.
+     * This field can only occur if the &lt;ContainedItem&gt; composite has a &lt;ProductForm&gt; code.</p>
+     * Jonix-Comment: this field is optional
      */
     public ProductPackaging productPackaging() {
         _initialize();
@@ -272,7 +307,10 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private ProductFormDescription productFormDescription = ProductFormDescription.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>If product form codes do not adequately describe the contained item, a short text description may be added.
+     * Optional and non-repeating. This field can only occur if the &lt;ContainedItem&gt; composite has a
+     * &lt;ProductForm&gt; code.</p>
+     * Jonix-Comment: this field is optional
      */
     public ProductFormDescription productFormDescription() {
         _initialize();
@@ -282,7 +320,10 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private NumberOfPieces numberOfPieces = NumberOfPieces.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>If the contained item consists of a number of different pieces of the same form, the number may be included
+     * here. Optional and non-repeating. This field can only occur if the &lt;ContainedItem&gt; composite has a
+     * &lt;ProductForm&gt; code.</p>
+     * Jonix-Comment: this field is optional
      */
     public NumberOfPieces numberOfPieces() {
         _initialize();
@@ -292,7 +333,9 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private TradeCategory tradeCategory = TradeCategory.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which indicates a trade category which is somewhat related to but not properly an attribute of
+     * product form. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public TradeCategory tradeCategory() {
         _initialize();
@@ -302,7 +345,11 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An ONIX code which indicates certain types of content which are closely related to but not strictly an
+     * attribute of product form, <em>eg</em> audiobook. Optional and repeatable. The element is intended to be used
+     * with products where content is delivered in the form of a digital or analogue recording. It is not expected to be
+     * used for books.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
@@ -312,7 +359,12 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     private ItemQuantity itemQuantity = ItemQuantity.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>For filled dumpbins and counter packs, and for retail packs containing a number of copies of the same item,
+     * the number of copies of the specified item contained in the pack. &lt;ItemQuantity&gt; is used to state a
+     * quantity of identical items, when a pack contains either a quantity of a single item, or a quantity of each of
+     * two or more different items (<em>eg</em> a dumpbin carrying copies of two different books, or a classroom pack
+     * containing a teacher’s text and twenty student texts). Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public ItemQuantity itemQuantity() {
         _initialize();

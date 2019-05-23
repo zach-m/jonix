@@ -39,8 +39,22 @@ import java.util.Arrays;
 /**
  * <h1>Product form feature composite</h1><p>A repeatable group of data elements which together describe an aspect of
  * product form that is too specific to be covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements.
- * Optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductFormFeature&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;productformfeature&gt;</td></tr></table>
+ * Optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ProductFormFeature&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;productformfeature&gt;</tt></td></tr></table>
+ * <p/>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p/>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductFormFeature</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductFormFeature</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductFormFeature</li>
+ * </ul>
  */
 public class ProductFormFeature
     implements OnixDataCompositeWithKey<JonixProductFormFeature, ProductFormFeatureTypes>, Serializable {
@@ -126,6 +140,10 @@ public class ProductFormFeature
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ProductFormFeature&gt; or &lt;productformfeature&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -138,7 +156,9 @@ public class ProductFormFeature
     private ProductFormFeatureType productFormFeatureType = ProductFormFeatureType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which specifies the feature described by an instance of the &lt;ProductFormFeature&gt; composite,
+     * <em>eg</em> binding color. Mandatory in each occurrence of the composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ProductFormFeatureType productFormFeatureType() {
         _initialize();
@@ -148,7 +168,11 @@ public class ProductFormFeature
     private ProductFormFeatureValue productFormFeatureValue = ProductFormFeatureValue.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A controlled value that describes a product form feature. Presence or absence of this element depends on the
+     * &lt;ProductFormFeatureType&gt;, since some product form features (<em>eg</em> thumb index) do not require an
+     * accompanying value, while others (<em>eg</em> text font) require free text in
+     * &lt;ProductFormFeatureDescription&gt;. Non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public ProductFormFeatureValue productFormFeatureValue() {
         _initialize();
@@ -158,7 +182,10 @@ public class ProductFormFeature
     private ProductFormFeatureDescription productFormFeatureDescription = ProductFormFeatureDescription.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>If the &lt;ProductFormFeatureType&gt; requires free text rather than a code value, or if the code in
+     * &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text description may be added.
+     * Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public ProductFormFeatureDescription productFormFeatureDescription() {
         _initialize();

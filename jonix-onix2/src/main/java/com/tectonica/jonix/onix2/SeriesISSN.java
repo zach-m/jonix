@@ -41,8 +41,18 @@ import java.io.Serializable;
  * <strong>The &lt;SeriesIdentifier&gt; composite on the next page provides a more general method of handling this and
  * other series identifiers, and is to be preferred.</strong></p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, eight numeric digits, of which the last is a check digit; see
- * http://www.issn.org/</td></tr><tr><td>Reference name</td><td>&lt;SeriesISSN&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b016&gt;</td></tr><tr><td>Example</td><td>&lt;SeriesISSN&gt;13513737&lt;/SeriesISSN&gt;</td></tr></table>
+ * http://www.issn.org/</td></tr><tr><td>Reference name</td><td><tt>&lt;SeriesISSN&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b016&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SeriesISSN&gt;13513737&lt;/SeriesISSN&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Series&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ SeriesISSN</li>
+ * </ul>
  */
 public class SeriesISSN implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -82,7 +92,7 @@ public class SeriesISSN implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -113,6 +123,9 @@ public class SeriesISSN implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SeriesISSN&gt; or &lt;b016&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

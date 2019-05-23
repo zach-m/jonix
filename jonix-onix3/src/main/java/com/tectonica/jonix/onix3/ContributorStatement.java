@@ -32,19 +32,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor statement</h1><p>Free text showing how the authorship of a content item should be described in an
- * online display, when a standard concatenation of individual contributor elements would not give a satisfactory
- * presentation. Optional, and repeatable if parallel text is provided in multiple languages. The language attribute is
- * optional for a single instance of &lt;ContributorStatement&gt;, but must be included in each instance if
- * &lt;ContributorStatement&gt; is repeated. When the &lt;ContributorStatement&gt; field is sent, the receiver should
- * use it to replace all name detail (though not the biographical, date or place details) sent in the
- * &lt;Contributor&gt; composite for display purposes only. The individual name detail must also be sent in the
- * &lt;Contributor&gt; composite for indexing and retrieval.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see Using XHTML, HTML or
- * XML with ONIX text fields</td></tr><tr><td>Reference name</td><td>&lt;ContributorStatement&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b049&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr><tr><td>Example</td><td>&lt;b049&gt;Written and illustrated by Fred and Emily
- * Jackson&lt;/b049&gt;</td></tr></table>
+ * <h1>Collection contributor statement</h1><p>Free text showing how the collection authorship should be described in an
+ * online display, when a standard concatenation of individual collection contributor elements would not give a
+ * satisfactory presentation. Optional, and repeatable where parallel text is provided in multiple languages. The
+ * <i>language</i> attribute is optional for a single instance of &lt;ContributorStatement&gt;, but must be included in
+ * each instance if &lt;ContributorStatement&gt; is repeated. When the &lt;ContributorStatement&gt; element is sent, the
+ * recipient should use it to replace all name detail sent in the &lt;Contributor&gt; composites within
+ * &lt;Collection&gt; <em>for display purposes only</em>. It does not replace the &lt;BiographicalNote&gt; element (or
+ * any other element) for individual contributors. The individual name detail <em>must</em> also be sent in one or more
+ * &lt;Contributor&gt; composites for indexing and retrieval purposes.</p><p><strong>The &lt;ContributorStatement&gt;
+ * element is provided here for use only by those ONIX communities whose national practice requires contributors to be
+ * identified at collection level.</strong> It should not be sent in a context where collection contributors are
+ * normally identified in Group&nbsp;P.6.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length
+ * text, suggested maximum length 1000 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with
+ * ONIX text fields</td></tr><tr><td>Reference name</td><td><tt>&lt;ContributorStatement&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b049&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td><tt>&lt;b049&gt;Series conceived and edited by Samantha and Darrin
+ * Stephens&lt;/b049&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;Collection&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ContributorStatement</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ ContributorStatement</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ ContributorStatement</li>
+ * </ul>
  */
 public class ContributorStatement implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -83,7 +101,7 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -112,6 +130,9 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;ContributorStatement&gt; or &lt;b049&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

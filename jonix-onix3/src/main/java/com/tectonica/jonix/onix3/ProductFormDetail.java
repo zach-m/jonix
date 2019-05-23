@@ -31,12 +31,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Related product form detail</h1><p>An ONIX code which provides added detail of the medium and/or format of a
- * related product. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length,
- * four characters: one letter followed by three digits</td></tr><tr><td>Codelist</td><td>List
- * 175</td></tr><tr><td>Reference name</td><td>&lt;ProductFormDetail&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b333&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;b333&gt;B206&lt;/b333&gt;
+ * <h1>Product form detail</h1><p>An ONIX code which provides added detail of the medium and/or format of the product.
+ * Optional, and repeatable in order to provide multiple additional details.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, four characters: one letter followed by three
+ * digits</td></tr><tr><td>Codelist</td><td>List 175</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductFormDetail&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b333&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;b333&gt;B206&lt;/b333&gt;</tt>
  * (Pop-up book)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;ProductPart&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductFormDetail</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductFormDetail</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedProduct ⯈ ProductFormDetail</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedProduct ⯈ ProductFormDetail</li>
+ * </ul>
  */
 public class ProductFormDetail implements OnixElement<ProductFormDetails>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +82,7 @@ public class ProductFormDetail implements OnixElement<ProductFormDetails>, Seria
     public ProductFormDetails value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductFormDetails _value() {
@@ -94,6 +109,9 @@ public class ProductFormDetail implements OnixElement<ProductFormDetails>, Seria
         value = ProductFormDetails.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductFormDetail&gt; or &lt;b333&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

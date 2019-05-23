@@ -34,8 +34,18 @@ import java.io.Serializable;
  * product. Optional and non-repeating, but normally expected when the AV content item is being referenced as part of a
  * structured table of contents.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Hours, minutes and seconds
  * in the form HHHMMSS or HHHMMSScc (hundredths of a second)</td></tr><tr><td>Reference
- * name</td><td>&lt;AVDuration&gt;</td></tr><tr><td>Short tag</td><td>&lt;x544&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;AVDuration&gt;0002948&lt;/AVDuration&gt;
+ * name</td><td><tt>&lt;AVDuration&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x544&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;AVDuration&gt;0002948&lt;/AVDuration&gt;</tt>
  * (29 minutes and 48 seconds)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AVItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem ⯈ AVDuration</li>
+ * </ul>
  */
 public class AVDuration implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -70,7 +80,7 @@ public class AVDuration implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -97,6 +107,9 @@ public class AVDuration implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;AVDuration&gt; or &lt;x544&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

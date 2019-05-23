@@ -26,8 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 36 (Front cover image file format code &lt;p&gt;NOTE:
- * Deprecated in Onix3)
+ * marker interface to assist in IDE navigation to code-list 36 (Front cover image file format code)
  */
 interface CodeList36 {
 }
@@ -35,7 +34,9 @@ interface CodeList36 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 36</b>
  * <p>
- * Description: Front cover image file format code &lt;p&gt;NOTE: Deprecated in Onix3
+ * Description: Front cover image file format code
+ * <p>
+ * Jonix-Comment: Deprecated in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist36">ONIX

@@ -40,7 +40,17 @@ import java.io.Serializable;
  * approach. The &lt;ReplacesISBN&gt; element is retained only for upwards compatibility. This element is on no account
  * to be used to carry a 13-digit ISBN.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * 10 characters, all numeric except last character, which may be letter X.</td></tr><tr><td>Reference
- * name</td><td>&lt;ReplacesISBN&gt;</td></tr><tr><td>Short tag</td><td>&lt;b010&gt;</td></tr><tr><td>Example</td><td>&lt;b010&gt;8474339790&lt;/b010&gt;</td></tr></table>
+ * name</td><td><tt>&lt;ReplacesISBN&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b010&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b010&gt;8474339790&lt;/b010&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReplacesISBN</li>
+ * </ul>
  */
 public class ReplacesISBN implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +90,7 @@ public class ReplacesISBN implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +121,9 @@ public class ReplacesISBN implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ReplacesISBN&gt; or &lt;b010&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

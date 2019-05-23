@@ -33,9 +33,21 @@ import java.io.Serializable;
 /**
  * <h1>End date</h1><p>The date until which a sales restriction is effective. Optional and non-repeating.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>As specified by the value in the dateformat attribute, or the
- * default of YYYYMMDD if the attribute is missing</td></tr><tr><td>Reference name</td><td>&lt;EndDate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b325&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td>&lt;EndDate
- * dateformat=&quot;00&quot;&gt;20090930&lt;/EndDate&gt;</td></tr></table>
+ * default of YYYYMMDD if the attribute is missing</td></tr><tr><td>Reference name</td><td><tt>&lt;EndDate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b325&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td><tt>&lt;b325
+ * dateformat=&quot;00&quot;&gt;20090930&lt;/b325&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SalesRestriction&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction ⯈ EndDate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ SalesRestriction ⯈ EndDate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ EndDate</li>
+ * </ul>
  */
 public class EndDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,7 +84,7 @@ public class EndDate implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -100,6 +112,9 @@ public class EndDate implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;EndDate&gt; or &lt;b325&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

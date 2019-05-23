@@ -49,7 +49,9 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * consistent with the more specific conformance and feature details provided. The summary should note both the
      * accessibility features provided and any potential deficiencies. More detailed information may be provided using
      * codes 94-96. For use in ONIX 3.0 only. See also code 00 for a summary of the accessibility features of the
-     * product itself &lt;p&gt;NOTE: Introduced in Onix3
+     * product itself
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Accessibility_summary("00", "Accessibility summary"), //
 
@@ -72,8 +74,9 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Accessibility_Specification_1_0_AA("03", "Accessibility Specification 1.0 AA"), //
 
     /**
-     * Known to lack significant features required for broad accessibility. For use in ONIX 3.0 only &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * Known to lack significant features required for broad accessibility. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Inaccessible("09", "Inaccessible"), //
 

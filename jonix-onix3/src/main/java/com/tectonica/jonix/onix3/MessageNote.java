@@ -35,9 +35,19 @@ import java.io.Serializable;
  * to provide a note in multiple languages. The <i>language</i> attribute is optional for a single instance of
  * &lt;MessageNote&gt;, but must be included in each instance if &lt;MessageNote&gt; is repeated.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum 500
- * characters</td></tr><tr><td>Reference name</td><td>&lt;MessageNote&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m183&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;MessageNote&gt;Updates
- * for titles to be published September 2009&lt;/MessageNote&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;MessageNote&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m183&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;MessageNote&gt;Updates
+ * for titles to be published September 2009&lt;/MessageNote&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ MessageNote</li>
+ * </ul>
  */
 public class MessageNote implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -73,7 +83,7 @@ public class MessageNote implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -101,6 +111,9 @@ public class MessageNote implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MessageNote&gt; or &lt;m183&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

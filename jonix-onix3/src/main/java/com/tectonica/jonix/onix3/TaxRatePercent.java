@@ -34,7 +34,18 @@ import java.io.Serializable;
  * &lt;TaxRatePercent&gt; or &lt;TaxAmount&gt; or both must be present in each occurrence of the &lt;Tax&gt;
  * composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Real number between zero and 100 (inclusive),
  * with explicit decimal point when required, suggested maximum length 7 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;TaxRatePercent&gt;</td></tr><tr><td>Short tag</td><td>&lt;x472&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;TaxRatePercent&gt;17.5&lt;/TaxRatePercent&gt;</td></tr></table>
+ * name</td><td><tt>&lt;TaxRatePercent&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x472&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;TaxRatePercent&gt;17.5&lt;/TaxRatePercent&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Tax&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Tax ⯈ TaxRatePercent</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Tax ⯈ TaxRatePercent</li>
+ * </ul>
  */
 public class TaxRatePercent implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +80,7 @@ public class TaxRatePercent implements OnixElement<Double>, Serializable {
     public Double value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Double _value() {
@@ -96,6 +107,9 @@ public class TaxRatePercent implements OnixElement<Double>, Serializable {
         value = JPU.getContentAsDouble(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TaxRatePercent&gt; or &lt;x472&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

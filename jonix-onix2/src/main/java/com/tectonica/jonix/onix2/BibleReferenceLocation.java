@@ -38,9 +38,19 @@ import java.io.Serializable;
  * <h1>Bible reference location</h1><p>An ONIX code indicating where references are located as part of the content of a
  * Bible or selected Biblical text, for example Center column. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three letters</td></tr><tr><td>Codelist</td><td>List
- * 87</td></tr><tr><td>Reference name</td><td>&lt;BibleReferenceLocation&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b356&gt;</td></tr><tr><td>Example</td><td>&lt;BibleReferenceLocation&gt;CCL&lt;/BibleReferenceLocation&gt;
+ * 87</td></tr><tr><td>Reference name</td><td><tt>&lt;BibleReferenceLocation&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b356&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;BibleReferenceLocation&gt;CCL&lt;/BibleReferenceLocation&gt;</tt>
  * Center column</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Bible&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ Bible ⯈ BibleReferenceLocation</li>
+ * </ul>
  */
 public class BibleReferenceLocation implements OnixElement<BibleReferenceLocations>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class BibleReferenceLocation implements OnixElement<BibleReferenceLocatio
     public BibleReferenceLocations value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public BibleReferenceLocations _value() {
@@ -107,6 +117,9 @@ public class BibleReferenceLocation implements OnixElement<BibleReferenceLocatio
         value = BibleReferenceLocations.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;BibleReferenceLocation&gt; or &lt;b356&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

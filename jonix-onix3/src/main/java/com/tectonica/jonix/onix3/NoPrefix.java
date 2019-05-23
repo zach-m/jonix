@@ -34,7 +34,19 @@ import java.io.Serializable;
  * include any prefix that is ignored for sorting purposes. Optional and non-repeating, and must only be used when
  * &lt;TitleWithoutPrefix&gt; is used and no &lt;TitlePrefix&gt; element is present.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>XML empty element</td></tr><tr><td>Reference
- * name</td><td>&lt;NoPrefix&gt;</td></tr><tr><td>Short tag</td><td>&lt;x501&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;NoPrefix/&gt;</td></tr></table>
+ * name</td><td><tt>&lt;NoPrefix&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x501&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;NoPrefix/&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TitleElement&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleElement ⯈ NoPrefix</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail ⯈ TitleElement ⯈ NoPrefix</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail ⯈ TitleElement ⯈ NoPrefix</li>
+ * </ul>
  */
 public class NoPrefix implements OnixFlag, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,6 +88,9 @@ public class NoPrefix implements OnixFlag, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
     }
 
+    /**
+     * @return whether this tag (&lt;NoPrefix&gt; or &lt;x501&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -37,8 +37,22 @@ import java.io.Serializable;
  * <h1>Contributor sequence number within role</h1><p>A number which specifies the sequence of contributor names within
  * a specified role, for applications which require this form of numbering. Optional and non-repeating.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, 1, 2, 3 etc, suggested maximum length 3
- * digits</td></tr><tr><td>Reference name</td><td>&lt;SequenceNumberWithinRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b340&gt;</td></tr><tr><td>Example</td><td>&lt;SequenceNumberWithinRole&gt;3&lt;/SequenceNumberWithinRole&gt;</td></tr></table>
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;SequenceNumberWithinRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b340&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SequenceNumberWithinRole&gt;3&lt;/SequenceNumberWithinRole&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
+ * </ul>
  */
 public class SequenceNumberWithinRole implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +91,7 @@ public class SequenceNumberWithinRole implements OnixElement<String>, Serializab
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +122,10 @@ public class SequenceNumberWithinRole implements OnixElement<String>, Serializab
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SequenceNumberWithinRole&gt; or &lt;b340&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;

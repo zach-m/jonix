@@ -40,8 +40,22 @@ import java.io.Serializable;
  * intended to be used with products where content is delivered in the form of a digital or analogue recording. It is
  * not expected to be used for books.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
  * numeric digits.</td></tr><tr><td>Codelist</td><td>List 81</td></tr><tr><td>Reference
- * name</td><td>&lt;ProductContentType&gt;</td></tr><tr><td>Short tag</td><td>&lt;b385&gt;</td></tr><tr><td>Example</td><td>&lt;ProductContentType&gt;01&lt;/ProductContentType&gt;
+ * name</td><td><tt>&lt;ProductContentType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b385&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b385&gt;01&lt;/b385&gt;</tt>
  * Audiobook</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductContentType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductContentType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductContentType</li>
+ * </ul>
  */
 public class ProductContentType implements OnixElement<ProductContentTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +91,7 @@ public class ProductContentType implements OnixElement<ProductContentTypes>, Ser
     public ProductContentTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductContentTypes _value() {
@@ -108,6 +122,9 @@ public class ProductContentType implements OnixElement<ProductContentTypes>, Ser
         value = ProductContentTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductContentType&gt; or &lt;b385&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

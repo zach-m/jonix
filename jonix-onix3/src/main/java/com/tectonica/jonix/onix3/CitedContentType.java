@@ -34,9 +34,20 @@ import java.io.Serializable;
  * <h1>Cited content type code</h1><p>An ONIX code indicating the type of content which is being cited. Mandatory in
  * each occurrence of the &lt;CitedContent&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 156</td></tr><tr><td>Reference name</td><td>&lt;CitedContentType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x430&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;CitedContentType&gt;01&lt;/CitedContentType&gt;
+ * 156</td></tr><tr><td>Reference name</td><td><tt>&lt;CitedContentType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x430&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;CitedContentType&gt;01&lt;/CitedContentType&gt;</tt>
  * (Full text of review)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;CitedContent&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ CitedContentType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ CitedContentType</li>
+ * </ul>
  */
 public class CitedContentType implements OnixElement<CitedContentTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +78,7 @@ public class CitedContentType implements OnixElement<CitedContentTypes>, Seriali
     public CitedContentTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public CitedContentTypes _value() {
@@ -94,6 +105,9 @@ public class CitedContentType implements OnixElement<CitedContentTypes>, Seriali
         value = CitedContentTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;CitedContentType&gt; or &lt;x430&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

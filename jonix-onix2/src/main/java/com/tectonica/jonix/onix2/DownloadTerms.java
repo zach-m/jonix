@@ -39,8 +39,20 @@ import java.io.Serializable;
  * the &lt;DownloadCaption&gt;, &lt;DownloadCredit&gt;, and &lt;DownloadCopyrightNotice&gt; elements.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 500 characters
  * (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML Message Specification,
- * Section 7)</td></tr><tr><td>Reference name</td><td>&lt;DownloadTerms&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;f122&gt;</td></tr></table>
+ * Section 7)</td></tr><tr><td>Reference name</td><td><tt>&lt;DownloadTerms&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;f122&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MediaFile&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ DownloadTerms</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ DownloadTerms</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ DownloadTerms</li>
+ * </ul>
  */
 public class DownloadTerms implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +92,7 @@ public class DownloadTerms implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +123,9 @@ public class DownloadTerms implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;DownloadTerms&gt; or &lt;f122&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

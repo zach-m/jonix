@@ -37,8 +37,21 @@ import java.io.Serializable;
  * <h1>Publication date of other text</h1><p>The date on which text sent in the &lt;Text&gt; element, or referenced in
  * the &lt;TextLink&gt; element, was published. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Date as four, six or eight digits (YYYY, YYYYMM,
- * YYYYMMDD)</td></tr><tr><td>Reference name</td><td>&lt;TextPublicationDate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;d109&gt;</td></tr><tr><td>Example</td><td>&lt;d109&gt;20000504&lt;/d109&gt;</td></tr></table>
+ * YYYYMMDD)</td></tr><tr><td>Reference name</td><td><tt>&lt;TextPublicationDate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;d109&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;d109&gt;20000504&lt;/d109&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OtherText&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextPublicationDate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ TextPublicationDate</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ TextPublicationDate</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ TextPublicationDate</li>
+ * </ul>
  */
 public class TextPublicationDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +90,7 @@ public class TextPublicationDate implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +121,9 @@ public class TextPublicationDate implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TextPublicationDate&gt; or &lt;d109&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

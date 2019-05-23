@@ -40,8 +40,18 @@ import java.io.Serializable;
  * <h1>Sales rights composite</h1><p>A repeatable group of data elements which together identify territorial sales
  * rights which a publisher chooses to exercise in a product. The &lt;SalesRights&gt; composite may occur once for each
  * value of &lt;b089&gt;. See examples at the end of Group&nbsp;PR.21.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesRights&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;salesrights&gt;</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SalesRights&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;salesrights&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRights</li>
+ * </ul>
  */
 public class SalesRights implements OnixDataCompositeUncommon, Serializable {
     private static final long serialVersionUID = 1L;
@@ -130,6 +140,9 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SalesRights&gt; or &lt;salesrights&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -142,7 +155,9 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
     private SalesRightsType salesRightsType = SalesRightsType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the type of sales right or exclusion which applies in the territories which are
+     * associated with it. Mandatory in each occurrence of the &lt;SalesRights&gt;composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SalesRightsType salesRightsType() {
         _initialize();
@@ -152,7 +167,13 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
     private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys = ListOfOnixElement.empty();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>One or more ISO standard codes identifying a country. Successive codes may be separated by spaces. Thus, a
+     * single occurrence of the element can carry an unlimited number of country codes, for countries that share the
+     * sales rights specified in &lt;SalesRightsType&gt;. For upwards compatibility, the element remains repeatable, so
+     * that multiple countries can also be listed as multiple occurrences of the whole element. At least one occurrence
+     * of &lt;RightsCountry&gt; or &lt;RightsTerritory&gt; or &lt;RightsRegion&gt; is mandatory in any occurrence of
+     * the&lt;SalesRights&gt; composite.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys() {
         _initialize();
@@ -162,7 +183,11 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
     private RightsTerritory rightsTerritory = RightsTerritory.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in
+     * geographical terms, <em>eg</em> World, Northern Ireland, Australian National Territory. Successive codes are
+     * separated by spaces, so that the element can carry an unlimited number of territory codes, for territories that
+     * share the sales rights specified in &lt;SalesRightsType&gt;. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public RightsTerritory rightsTerritory() {
         _initialize();
@@ -172,7 +197,12 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
     private ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An ONIX code identifying a territorial market which cannot be described in terms of ISO country codes.
+     * Optional, and repeatable for as many regions as share the sales rights specified in &lt;SalesRightsType&gt;.
+     * <strong>Superseded by the new element &lt;RightsTerritory&gt; above, but retained for purposes of upwards
+     * compatibility.</strong> See note on “Open Market” and “Airport” or “Airside” editions in the introduction to
+     * Group&nbsp;PR.21.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions() {
         _initialize();

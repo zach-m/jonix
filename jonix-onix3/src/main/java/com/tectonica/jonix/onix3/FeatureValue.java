@@ -30,14 +30,33 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource version feature value</h1><p>A controlled value that describes a resource version feature. Presence or
- * absence of this element depends on the &lt;ResourceVersionFeatureType&gt;, since some features may not require an
- * accompanying value, while others may require free text in &lt;FeatureNote&gt;, and others may have both a value and
- * free text. Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Dependent on the feature
- * specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or may not be taken from a code
- * list</td></tr><tr><td>Codelist</td><td>Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;</td></tr><tr><td></td><td>For
- * file format, use List 178</td></tr><tr><td>Reference name</td><td>&lt;FeatureValue&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x439&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;FeatureValue&gt;250&lt;/FeatureValue&gt;</td></tr></table>
+ * <h1>Resource feature value</h1><p>A controlled value that describes a resource feature. Presence or absence of this
+ * element depends on the &lt;ResourceFeatureType&gt;, since some features may not require an accompanying value, while
+ * others may require free text in &lt;FeatureNote&gt;; and others may have both code and free text.
+ * Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Dependent on the scheme specified in
+ * &lt;ResourceFeatureType&gt;</td></tr><tr><td>Codelist</td><td>Dependent on the scheme specified in
+ * &lt;ResourceFeatureType&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;FeatureValue&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x439&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;FeatureValue&gt;4&lt;/FeatureValue&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ResourceVersionFeature&gt;</li>
+ * <li>&lt;ResourceFeature&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ResourceVersionFeature ⯈ FeatureValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceVersionFeature ⯈
+ * FeatureValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ResourceVersionFeature ⯈ FeatureValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceFeature ⯈ FeatureValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceFeature ⯈ FeatureValue</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceFeature ⯈
+ * FeatureValue</li>
+ * </ul>
  */
 public class FeatureValue implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,13 +85,12 @@ public class FeatureValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or
-     * may not be taken from a code list<p> (type: dt.NonEmptyString)
+     * Raw Format: Dependent on the scheme specified in &lt;ResourceFeatureType&gt;<p> (type: dt.NonEmptyString)
      */
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -99,6 +117,9 @@ public class FeatureValue implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;FeatureValue&gt; or &lt;x439&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

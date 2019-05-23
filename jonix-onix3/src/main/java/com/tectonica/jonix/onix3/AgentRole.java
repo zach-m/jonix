@@ -35,8 +35,18 @@ import java.io.Serializable;
  * market, <i>eg</i> Exclusive sales agent, Local publisher, <i>etc</i>. Mandatory in each occurrence of the
  * &lt;PublisherRepresentative&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length,
  * two digits</td></tr><tr><td>Codelist</td><td>List 69</td></tr><tr><td>Reference
- * name</td><td>&lt;AgentRole&gt;</td></tr><tr><td>Short tag</td><td>&lt;j402&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;AgentRole&gt;07&lt;/AgentRole&gt;
+ * name</td><td><tt>&lt;AgentRole&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j402&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;AgentRole&gt;07&lt;/AgentRole&gt;</tt>
  * (Local publisher)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PublisherRepresentative&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ AgentRole</li>
+ * </ul>
  */
 public class AgentRole implements OnixElement<AgentRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class AgentRole implements OnixElement<AgentRoles>, Serializable {
     public AgentRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public AgentRoles _value() {
@@ -94,6 +104,9 @@ public class AgentRole implements OnixElement<AgentRoles>, Serializable {
         value = AgentRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;AgentRole&gt; or &lt;j402&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

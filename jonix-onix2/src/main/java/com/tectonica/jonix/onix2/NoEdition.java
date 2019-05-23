@@ -39,7 +39,17 @@ import java.io.Serializable;
  * being consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that
  * has no instances of any of the four preceding Edition elements.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>XML empty element</td></tr><tr><td>Reference
- * name</td><td>&lt;NoEdition&gt;</td></tr><tr><td>Short tag</td><td>&lt;n386&gt;</td></tr><tr><td>Example</td><td>&lt;NoEdition/&gt;</td></tr></table>
+ * name</td><td><tt>&lt;NoEdition&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;n386&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;NoEdition/&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ NoEdition</li>
+ * </ul>
  */
 public class NoEdition implements OnixFlag, Serializable {
     private static final long serialVersionUID = 1L;
@@ -90,6 +100,9 @@ public class NoEdition implements OnixFlag, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
     }
 
+    /**
+     * @return whether this tag (&lt;NoEdition&gt; or &lt;n386&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

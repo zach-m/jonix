@@ -43,8 +43,18 @@ import java.io.Serializable;
  * when the product will first be available in a territory other than the publisher’s home market. See the
  * &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; composites, Groups PR.24 and PR.25, for other market-specific
  * detail.</p><p>Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Four, six or
- * eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).</td></tr><tr><td>Reference name</td><td>&lt;PublicationDate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b003&gt;</td></tr><tr><td>Example</td><td>&lt;b003&gt;20010315&lt;/b003&gt;</td></tr></table>
+ * eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).</td></tr><tr><td>Reference name</td><td><tt>&lt;PublicationDate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b003&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b003&gt;20010315&lt;/b003&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublicationDate</li>
+ * </ul>
  */
 public class PublicationDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -83,7 +93,7 @@ public class PublicationDate implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -114,6 +124,9 @@ public class PublicationDate implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PublicationDate&gt; or &lt;b003&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

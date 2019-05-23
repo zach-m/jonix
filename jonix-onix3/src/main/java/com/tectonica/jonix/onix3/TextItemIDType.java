@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Text item identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in
  * &lt;IDValue&gt; is taken. Mandatory in each occurrence of the &lt;TextItemIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 43</td></tr><tr><td>Reference name</td><td>&lt;TextItemIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b285&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;TextItemIDType&gt;01&lt;/TextItemIDType&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 43</td></tr><tr><td>Reference name</td><td><tt>&lt;TextItemIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b285&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;TextItemIDType&gt;01&lt;/TextItemIDType&gt;</tt>
  * (Proprietary)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TextItemIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextItem ⯈ TextItemIdentifier ⯈ TextItemIDType</li>
+ * </ul>
  */
 public class TextItemIDType implements OnixElement<TextItemIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class TextItemIDType implements OnixElement<TextItemIdentifierTypes>, Ser
     public TextItemIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TextItemIdentifierTypes _value() {
@@ -94,6 +104,9 @@ public class TextItemIDType implements OnixElement<TextItemIdentifierTypes>, Ser
         value = TextItemIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TextItemIDType&gt; or &lt;b285&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

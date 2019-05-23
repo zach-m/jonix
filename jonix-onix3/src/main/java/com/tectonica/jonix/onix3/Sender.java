@@ -35,7 +35,17 @@ import java.io.Serializable;
 /**
  * <h1>Sender composite</h1><p>A group of data elements which together specify the sender of an ONIX for Books message.
  * Mandatory in any ONIX for Books message, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Sender&gt;</td></tr><tr><td>Short tag</td><td>&lt;sender&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr></table>
+ * name</td><td><tt>&lt;Sender&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;sender&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ Sender</li>
+ * </ul>
  */
 public class Sender implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -115,6 +125,9 @@ public class Sender implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Sender&gt; or &lt;sender&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -128,7 +141,10 @@ public class Sender implements OnixSuperComposite, Serializable {
         senderIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A group of data elements which together define an identifier of the sender. The composite is optional, and
+     * repeatable if more than one identifier of different types is sent; but <em>either</em> a &lt;SenderName&gt;
+     * <em>or</em> a &lt;SenderIdentifier&gt; <em>must</em> be included.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes> senderIdentifiers() {
         _initialize();
@@ -138,7 +154,10 @@ public class Sender implements OnixSuperComposite, Serializable {
     private SenderName senderName = SenderName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of the sender organization, which should always be stated in a standard form agreed with the
+     * addressee. Optional and non-repeating; but <em>either</em> a &lt;SenderName&gt; element <em>or</em> a
+     * &lt;SenderIdentifier&gt; composite <em>must</em> be included.</p>
+     * Jonix-Comment: this field is optional
      */
     public SenderName senderName() {
         _initialize();
@@ -148,7 +167,9 @@ public class Sender implements OnixSuperComposite, Serializable {
     private ContactName contactName = ContactName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>Free text giving the name, department, phone number, <i>etc</i> for a contact person in the sender
+     * organization who is responsible for the content of the message. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public ContactName contactName() {
         _initialize();
@@ -158,7 +179,9 @@ public class Sender implements OnixSuperComposite, Serializable {
     private EmailAddress emailAddress = EmailAddress.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A text field giving the e-mail address for a contact person in the sender organization who is responsible for
+     * the content of the message. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public EmailAddress emailAddress() {
         _initialize();

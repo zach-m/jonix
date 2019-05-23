@@ -35,8 +35,19 @@ import java.io.Serializable;
  * &lt;Discount&gt; composite. Note that when both are present, they represent two different expressions of the same
  * discount – the discounts are not cumulative.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive
  * real number, with explicit decimal point when required, or zero, suggested maximum length 12
- * characters</td></tr><tr><td>Reference name</td><td>&lt;DiscountAmount&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x469&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;DiscountAmount&gt;4.59&lt;/DiscountAmount&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;DiscountAmount&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x469&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;DiscountAmount&gt;4.59&lt;/DiscountAmount&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Discount&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Discount ⯈ DiscountAmount</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Discount ⯈ DiscountAmount</li>
+ * </ul>
  */
 public class DiscountAmount implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -71,7 +82,7 @@ public class DiscountAmount implements OnixElement<Double>, Serializable {
     public Double value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Double _value() {
@@ -98,6 +109,9 @@ public class DiscountAmount implements OnixElement<Double>, Serializable {
         value = JPU.getContentAsDouble(element);
     }
 
+    /**
+     * @return whether this tag (&lt;DiscountAmount&gt; or &lt;x469&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Supplier code type</h1><p>An ONIX code identifying the type of a supplier own code. Mandatory in each occurrence
  * of the &lt;SupplierOwnCoding&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 165</td></tr><tr><td>Reference name</td><td>&lt;SupplierCodeType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x458&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;SupplierCodeType&gt;01&lt;/SupplierCodeType&gt;
+ * 165</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplierCodeType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x458&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;SupplierCodeType&gt;01&lt;/SupplierCodeType&gt;</tt>
  * (Supplier's sales classification)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplierOwnCoding&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplierOwnCoding ⯈ SupplierCodeType</li>
+ * </ul>
  */
 public class SupplierCodeType implements OnixElement<SupplierOwnCodeTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class SupplierCodeType implements OnixElement<SupplierOwnCodeTypes>, Seri
     public SupplierOwnCodeTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SupplierOwnCodeTypes _value() {
@@ -94,6 +104,9 @@ public class SupplierCodeType implements OnixElement<SupplierOwnCodeTypes>, Seri
         value = SupplierOwnCodeTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SupplierCodeType&gt; or &lt;x458&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -32,10 +32,24 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Prize or award composite</h1><p>An optional group of data elements which together describe a prize or award won
- * by the product or work, and repeatable where it has gained multiple prizes or awards.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;Prize&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;prize&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Prize composite</h1><p>An optional group of data elements which together describe a prize or award won by the
+ * contributor for a body of work (rather than for this or other specific works or products). Repeatable to describe
+ * multiple prizes or awards.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td><tt>&lt;Prize&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;prize&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;CollateralDetail&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ Prize</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Prize</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Prize</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Prize</li>
+ * </ul>
  */
 public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -123,6 +137,9 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Prize&gt; or &lt;prize&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -135,7 +152,11 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private ListOfOnixElement<PrizeName, String> prizeNames = ListOfOnixElement.empty();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>The name of a prize or award which the product or work has received. Mandatory in each occurrence of the
+     * &lt;Prize&gt; composite, and repeatable to provide a parallel award name in multiple languages. The
+     * <i>language</i> attribute is optional for a single instance of &lt;PrizeName&gt;, but must be included in each
+     * instance if &lt;PrizeName&gt; is repeated.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<PrizeName, String> prizeNames() {
         _initialize();
@@ -145,7 +166,8 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private PrizeYear prizeYear = PrizeYear.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The year in which a prize or award was given. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PrizeYear prizeYear() {
         _initialize();
@@ -155,7 +177,9 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private PrizeCountry prizeCountry = PrizeCountry.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ISO standard code identifying the country in which a prize or award is given. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PrizeCountry prizeCountry() {
         _initialize();
@@ -165,7 +189,9 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private PrizeCode prizeCode = PrizeCode.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code indicating the achievement of the product in relation to a prize or award, <i>eg</i> winner,
+     * runner-up, shortlisted. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PrizeCode prizeCode() {
         _initialize();
@@ -175,7 +201,15 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private ListOfOnixElement<PrizeStatement, String> prizeStatements = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>A short free-text description of the prize or award, intended primarily for display. Optional, and repeatable
+     * if the text is provided in more than one language. The <i>language</i> attribute is optional for a single
+     * instance of &lt;PrizeStatement&gt;, but must be included in each instance if &lt;PrizeStatement&gt; is
+     * repeated.</p><p>&lt;PrizeStatement&gt; is intended for display purposes only. When used, a &lt;PrizeStatement&gt;
+     * must be complete in itself, <i>ie</i> it should not be treated as merely supplementary to other elements within
+     * the &lt;Prize&gt; composite. Nor should &lt;PrizeStatement&gt; be supplied <em>instead</em> of those other
+     * elements – at minimum, the &lt;PrizeCode&gt; element, and whenever appropriate the &lt;PrizeYear&gt; element
+     * should be supplied.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<PrizeStatement, String> prizeStatements() {
         _initialize();
@@ -185,7 +219,10 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     private ListOfOnixElement<PrizeJury, String> prizeJurys = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>Free text listing members of the jury that awarded the prize. Optional, and repeatable if the text is provided
+     * in more than one language. The <i>language</i> attribute is optional for a single instance of &lt;PrizeJury&gt;,
+     * but must be included in each instance if &lt;PrizeJury&gt; is repeated.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<PrizeJury, String> prizeJurys() {
         _initialize();

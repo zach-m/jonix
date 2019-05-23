@@ -38,12 +38,12 @@ public class JonixAVItemIdentifier implements JonixKeyedStruct<AvItemIdentifierT
     public AvItemIdentifierTypes avItemIDType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 50 characters <p> (type: dt.NonEmptyString)
      */
     public String idTypeName;
 
     /**
-     * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt; <p> (type: dt.NonEmptyString)
+     * Raw Format: According to the identifier type specified in &lt;SenderIDType&gt; <p> (type: dt.NonEmptyString)
      */
     public String idValue;
 

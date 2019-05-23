@@ -34,9 +34,21 @@ import java.io.Serializable;
  * <h1>Sales restriction type code</h1><p>An ONIX code which identifies a non-territorial sales restriction. Mandatory
  * in each occurrence of the &lt;SalesRestriction&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 71</td></tr><tr><td>Reference name</td><td>&lt;SalesRestrictionType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b381&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b381&gt;07&lt;/b381&gt;
- * (Schools-only edition)</td></tr></table>
+ * 71</td></tr><tr><td>Reference name</td><td><tt>&lt;SalesRestrictionType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b381&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b381&gt;04&lt;/b381&gt;</tt>
+ * (Retailer exclusive)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SalesRestriction&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction ⯈ SalesRestrictionType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ SalesRestriction ⯈ SalesRestrictionType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ SalesRestrictionType</li>
+ * </ul>
  */
 public class SalesRestrictionType implements OnixElement<SalesRestrictionTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +79,7 @@ public class SalesRestrictionType implements OnixElement<SalesRestrictionTypes>,
     public SalesRestrictionTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SalesRestrictionTypes _value() {
@@ -94,6 +106,9 @@ public class SalesRestrictionType implements OnixElement<SalesRestrictionTypes>,
         value = SalesRestrictionTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SalesRestrictionType&gt; or &lt;b381&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

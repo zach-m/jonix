@@ -68,62 +68,84 @@ public enum TextItemTypes implements OnixCodelist, CodeList42 {
     Back_matter("04", "Back matter"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Serial_item_miscellaneous_or_unspecified("10", "Serial item, miscellaneous or unspecified"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Research_article("11", "Research article"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Review_article("12", "Review article"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Letter("13", "Letter"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Short_communication("14", "Short communication"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Erratum("15", "Erratum"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Abstract("16", "Abstract"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Book_review_or_review_of_other_publication("17", "Book review (or review of other publication)"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Editorial("18", "Editorial"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Product_review("19", "Product review"), //
 
     /**
-     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     * Jonix-Comment: Deprecated in Onix3
      */
     Index("20", "Index"), //
 
     /**
-     * For journals &lt;p&gt;NOTE: Deprecated in Onix3
+     * For journals
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Obituary("21", "Obituary");
 

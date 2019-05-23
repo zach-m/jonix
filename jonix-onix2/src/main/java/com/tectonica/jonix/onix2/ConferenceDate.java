@@ -34,10 +34,23 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Conference date</h1><p>The date of a conference to which the product is related. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as year (YYYY) or month and year
- * (YYYYMM).</td></tr><tr><td>Reference name</td><td>&lt;ConferenceDate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b054&gt;</td></tr><tr><td>Example</td><td>&lt;ConferenceDate&gt;1998&lt;/ConferenceDate&gt;</td></tr></table>
+ * <h1>Conference date</h1><p>The date of a conference to which the product is related. Optional and non-repeating.
+ * <strong>The &lt;Conference&gt; composite below provides a more general method of handling conference detail, and is
+ * to be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as year (YYYY) or month
+ * and year (YYYYMM).</td></tr><tr><td>Reference name</td><td><tt>&lt;ConferenceDate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b054&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b054&gt;1998&lt;/b054&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;Conference&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ConferenceDate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceDate</li>
+ * </ul>
  */
 public class ConferenceDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +89,7 @@ public class ConferenceDate implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +120,9 @@ public class ConferenceDate implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ConferenceDate&gt; or &lt;b054&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

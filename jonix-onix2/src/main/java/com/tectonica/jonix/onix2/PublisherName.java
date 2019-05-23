@@ -34,13 +34,33 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publisher name</h1><p>The full name of the publisher of the equivalent product which is available in the
- * country/ies specified in &lt;RightsCountry&gt;. Optional and non-repeating. Except where they are essential to the
- * recognized form of the name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”,
- * “GmbH”) should be omitted.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text,
- * suggested maximum length 100 characters.</td></tr><tr><td>Reference name</td><td>&lt;PublisherName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b081&gt;</td></tr><tr><td>Example</td><td>&lt;PublisherName&gt;Reed International
- * Books&lt;/PublisherName&gt;</td></tr></table>
+ * <h1>Publisher name</h1><p>The full name of the publisher who issues the product, in the form in which the publisher
+ * wishes to be identified, and controlled by the publisher to maintain consistency across products. Optional and
+ * non-repeating; and should not be used if the &lt;Publisher&gt; composite is used. Except where they are essential to
+ * the recognized form of the name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”,
+ * “GmbH”) should be omitted.</p><p><strong>The &lt;Publisher&gt; composite below provides a more general method of
+ * handling publisher identities, and is to be preferred.</strong></p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
+ * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;PublisherName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b081&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PublisherName&gt;Reed International
+ * Books&lt;/PublisherName&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;NotForSale&gt;</li>
+ * <li>&lt;Publisher&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublisherName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ PublisherName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ PublisherName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ PublisherName</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ PublisherName</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ PublisherName</li>
+ * </ul>
  */
 public class PublisherName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +99,7 @@ public class PublisherName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +130,9 @@ public class PublisherName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PublisherName&gt; or &lt;b081&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -31,13 +31,29 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource link</h1><p>A URL which provides a link to a supporting resource. Mandatory in each occurrence of the
- * &lt;ResourceVersion&gt; composite, and repeatable if the resource can be linked in more than one way, <i>eg</i> by
- * URL or DOI, or where a supporting resource is available in multiple parallel languages. Where multiple languages are
- * used, all repeats must carry the <i>language</i> attribute.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C
- * standards, suggested maximum length 300 characters</td></tr><tr><td>Reference name</td><td>&lt;ResourceLink&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x435&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;x435&gt;https://www.zzzzzzzz.com/resource.jpg&lt;/x435&gt;</td></tr></table>
+ * <h1>Resource link</h1><p>A URL which provides a link to cited content which is accessible in digital form. Optional,
+ * and repeatable if the resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a cited resource
+ * is available in multiple parallel languages. Where multiple languages are used, all repeats must carry the
+ * <i>language</i> attribute.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Uniform Resource Locator,
+ * expressed in full URI syntax in accordance with W3C standards, suggested maximum length 300
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ResourceLink&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x435&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;x435&gt;https://www.zzzzzzzz.com/resource.htm&lt;/x435&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;CitedContent&gt;</li>
+ * <li>&lt;ResourceVersion&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ResourceLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ ResourceLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ResourceLink</li>
+ * </ul>
  */
 public class ResourceLink implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -74,7 +90,7 @@ public class ResourceLink implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -102,6 +118,9 @@ public class ResourceLink implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ResourceLink&gt; or &lt;x435&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

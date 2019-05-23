@@ -40,8 +40,18 @@ import java.io.Serializable;
  * addressee within a specified namespace, used here to allow different party identifiers to be included without
  * defining additional data elements. In particular the composite allows a proprietary identifier to be used by mutual
  * agreement between parties to an exchange. The composite is optional and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;AddresseeIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;addresseeidentifier&gt;</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;AddresseeIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;addresseeidentifier&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ AddresseeIdentifier</li>
+ * </ul>
  */
 public class AddresseeIdentifier
     implements OnixDataCompositeWithKey<JonixAddresseeIdentifier, NameIdentifierTypes>, Serializable {
@@ -127,6 +137,10 @@ public class AddresseeIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;AddresseeIdentifier&gt; or &lt;addresseeidentifier&gt;) is explicitly provided in
+     * the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -139,7 +153,9 @@ public class AddresseeIdentifier
     private AddresseeIDType addresseeIDType = AddresseeIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in any occurrence of the &lt;AddresseeIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public AddresseeIDType addresseeIDType() {
         _initialize();
@@ -149,7 +165,10 @@ public class AddresseeIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier type when, and only when, the code in the
+     * &lt;AddresseeIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p><p
+     * class="new214">The text is not limited to ASCII characters.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -159,7 +178,9 @@ public class AddresseeIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in any occurrence of the
+     * &lt;AddresseeIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

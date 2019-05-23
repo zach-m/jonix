@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Percentage</h1><p>The percentage of the unit value of the product that is assignable to a designated product
  * classification. Optional and non-repeating. Used when a mixed product (<em>eg</em> book and CD) belongs partly to two
  * or more product classifications.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Real decimal number in
- * the range 0 to 100</td></tr><tr><td>Reference name</td><td>&lt;Percent&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b337&gt;</td></tr><tr><td>Example</td><td>&lt;b337&gt;66.67&lt;/b337&gt;</td></tr></table>
+ * the range 0 to 100</td></tr><tr><td>Reference name</td><td><tt>&lt;Percent&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b337&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b337&gt;66.67&lt;/b337&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductClassification&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductClassification ⯈ Percent</li>
+ * </ul>
  */
 public class Percent implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class Percent implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class Percent implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Percent&gt; or &lt;b337&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

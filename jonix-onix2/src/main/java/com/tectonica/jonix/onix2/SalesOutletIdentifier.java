@@ -38,8 +38,18 @@ import java.io.Serializable;
 /**
  * <h1>Sales outlet identifier composite</h1><p>A group of data elements which together represent a coded identification
  * of a person or organization, used here to identify a sales outlet. Non-repeating in this context.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesOutletIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;salesoutletidentifier&gt;</td></tr></table>
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SalesOutletIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;salesoutletidentifier&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SalesOutlet&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier</li>
+ * </ul>
  */
 public class SalesOutletIdentifier
     implements OnixDataCompositeWithKey<JonixSalesOutletIdentifier, SalesOutletIdentifierTypes>, Serializable {
@@ -125,6 +135,10 @@ public class SalesOutletIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SalesOutletIdentifier&gt; or &lt;salesoutletidentifier&gt;) is explicitly provided
+     * in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -137,7 +151,9 @@ public class SalesOutletIdentifier
     private SalesOutletIDType salesOutletIDType = SalesOutletIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SalesOutletIDType salesOutletIDType() {
         _initialize();
@@ -147,7 +163,9 @@ public class SalesOutletIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme when, and only when, the code in the
+     * &lt;SalesOutletIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -157,7 +175,9 @@ public class SalesOutletIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>A code value taken from the scheme specified in the &lt;SalesOutletIDType&gt; element. Mandatory in each
+     * occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

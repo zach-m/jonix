@@ -37,8 +37,20 @@ import java.io.Serializable;
  * <h1>Image resolution</h1><p>The resolution of an image file which is linked by the &lt;MediaFileLink&gt; element,
  * expressed as dots or pixels per inch. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum length 6
- * digits</td></tr><tr><td>Reference name</td><td>&lt;ImageResolution&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;f259&gt;</td></tr><tr><td>Example</td><td>&lt;ImageResolution&gt;600&lt;/ImageResolution&gt;</td></tr></table>
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;ImageResolution&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;f259&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ImageResolution&gt;600&lt;/ImageResolution&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MediaFile&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ ImageResolution</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ ImageResolution</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ ImageResolution</li>
+ * </ul>
  */
 public class ImageResolution implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +89,7 @@ public class ImageResolution implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +120,9 @@ public class ImageResolution implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ImageResolution&gt; or &lt;f259&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

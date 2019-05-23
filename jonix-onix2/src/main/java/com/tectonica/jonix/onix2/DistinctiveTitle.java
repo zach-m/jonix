@@ -34,13 +34,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Component title</h1><p>The distinctive title of a content item. Optional and non-repeating; but either this field
- * (or a title in a &lt;Title&gt;composite) or a &lt;ComponentTypeName&gt; must be present in any occurrence of the
- * &lt;ContentItem&gt; composite. <strong>The &lt;Title&gt; composite provides a more general method of handling all
+ * <h1>Distinctive title of product</h1><p>The full text of the distinctive title of the product, without abbreviation
+ * or abridgement, but excluding the subtitle (if any). Where the title alone is not distinctive, elements may be taken
+ * from a set or series title and part number <em>etc</em> to create a distinctive title. Where the product is an
+ * omnibus edition containing two or more works by the same author, and there is no separate product title, a product
+ * title may be constructed by concatenating the individual titles, with suitable punctuation, as in the second example
+ * below. (If, however, there is a separate product title, or if more description of each individual work is required,
+ * the &lt;ContentItem&gt; composite can be used for the individual works – see Group&nbsp;PR.18.) Optional and
+ * non-repeating. <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all
  * forms of title, and is to be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * alphanumeric, suggested maximum length 300 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;DistinctiveTitle&gt;</td></tr><tr><td>Short tag</td><td>&lt;b028&gt;</td></tr><tr><td>Example</td><td>&lt;DistinctiveTitle&gt;Introducing
- * XML&lt;/DistinctiveTitle&gt;</td></tr></table>
+ * text, suggested maximum length 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;DistinctiveTitle&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b028&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;DistinctiveTitle&gt;A People's
+ * Tragedy&lt;/DistinctiveTitle&gt;</tt></td></tr><tr><td></td><td><tt>&lt;b028&gt;Pride and prejudice / Sense and
+ * sensibility / Northanger Abbey&lt;/b028&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DistinctiveTitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ DistinctiveTitle</li>
+ * </ul>
  */
 public class DistinctiveTitle implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -74,12 +92,12 @@ public class DistinctiveTitle implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 300 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 300 characters<p> (type: NonEmptyString)
      */
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +128,9 @@ public class DistinctiveTitle implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;DistinctiveTitle&gt; or &lt;b028&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -33,8 +33,19 @@ import java.io.Serializable;
  * <h1>Subject scheme version number</h1><p>A number which identifies a version or edition of the subject scheme
  * specified in the associated &lt;SubjectSchemeIdentifier&gt; element. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested maximum length 10 characters for
- * consistency with other version number elements</td></tr><tr><td>Reference name</td><td>&lt;SubjectSchemeVersion&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b068&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;SubjectSchemeVersion&gt;2.1&lt;/SubjectSchemeVersion&gt;</td></tr></table>
+ * consistency with other version number elements</td></tr><tr><td>Reference name</td><td><tt>&lt;SubjectSchemeVersion&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b068&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;SubjectSchemeVersion&gt;2.1&lt;/SubjectSchemeVersion&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Subject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Subject ⯈ SubjectSchemeVersion</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Subject ⯈ SubjectSchemeVersion</li>
+ * </ul>
  */
 public class SubjectSchemeVersion implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +80,7 @@ public class SubjectSchemeVersion implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -96,6 +107,9 @@ public class SubjectSchemeVersion implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SubjectSchemeVersion&gt; or &lt;b068&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

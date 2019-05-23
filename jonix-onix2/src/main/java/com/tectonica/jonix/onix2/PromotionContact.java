@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Promotion contact details</h1><p>Free text giving the name, department, phone number, email address <em>etc</em>
  * for a promotional contact person for the product. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 300
- * characters</td></tr><tr><td>Reference name</td><td>&lt;PromotionContact&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;k166&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PromotionContact&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;k166&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PromotionContact</li>
+ * </ul>
  */
 public class PromotionContact implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class PromotionContact implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class PromotionContact implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PromotionContact&gt; or &lt;k166&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -40,8 +40,18 @@ import java.io.Serializable;
  * language of the title carried in the ONIX record. If this criterion does not apply, use the form that appears first.
  * Alternatively, some ONIX applications may follow their own “house style”.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Free text, suggested maximum length 50 characters.</td></tr><tr><td>Reference
- * name</td><td>&lt;CityOfPublication&gt;</td></tr><tr><td>Short tag</td><td>&lt;b209&gt;</td></tr><tr><td>Example</td><td>&lt;CityOfPublication&gt;New
- * York&lt;/CityOfPublication&gt;</td></tr></table>
+ * name</td><td><tt>&lt;CityOfPublication&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b209&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;CityOfPublication&gt;New
+ * York&lt;/CityOfPublication&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ CityOfPublication</li>
+ * </ul>
  */
 public class CityOfPublication implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -80,7 +90,7 @@ public class CityOfPublication implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +121,9 @@ public class CityOfPublication implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;CityOfPublication&gt; or &lt;b209&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

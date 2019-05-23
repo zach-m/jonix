@@ -77,12 +77,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Barnes_and_Noble("BNO", "Barnes and Noble"), //
 
     /**
-     * www.bdbuzz.net, for use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * www.bdbuzz.net, for use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     BDBuzz("BDZ", "BDBuzz"), //
 
     /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
+     * Jonix-Comment: Introduced in Onix3
      */
     Bed_Bath_and_Beyond("BBB", "Bed Bath and Beyond"), //
 
@@ -109,7 +111,9 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Book_Club_Associates("BCA", "Book Club Associates"), //
 
     /**
-     * https://www.bolinda.com, for use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * https://www.bolinda.com, for use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Bolinda("BLD", "Bolinda"), //
 
@@ -219,7 +223,9 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Indigo_Chapters("IND", "Indigo-Chapters"), //
 
     /**
-     * www.ibs.it, for use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * www.ibs.it, for use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Internet_Bookshop_Italia("IBS", "Internet Bookshop Italia"), //
 
@@ -263,17 +269,19 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Microcenter("MCR", "Microcenter"), //
 
     /**
-     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Microsoft("MSF", "Microsoft"), //
 
     /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
+     * Jonix-Comment: Introduced in Onix3
      */
     Mofibo("MOF", "Mofibo"), //
 
     /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
+     * Jonix-Comment: Introduced in Onix3
      */
     Morrisons("MRR", "Morrisons"), //
 
@@ -389,17 +397,17 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Other("ZZZ", "Other"), //
 
     /**
-     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     * Jonix-Comment: Deprecated in Onix3
      */
     Bed_Bath_and_Beyond_("BBB", "Bed Bath and Beyond"), //
 
     /**
-     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     * Jonix-Comment: Deprecated in Onix3
      */
     Mofibo_("MOF", "Mofibo"), //
 
     /**
-     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     * Jonix-Comment: Deprecated in Onix3
      */
     Morrisons_("MRR", "Morrisons");
 

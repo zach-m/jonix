@@ -37,8 +37,19 @@ import java.io.Serializable;
  * <h1>Addressee contact</h1><p>Free text giving the name, department <em>etc</em> for a contact person in the addressee
  * organization to whom the message is to be directed. Optional and non-repeating.</p><p class="new214">The text is not
  * limited to ASCII characters.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length ASCII text,
- * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td>&lt;ToPerson&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m179&gt;</td></tr><tr><td>Example</td><td>&lt;ToPerson&gt;Mel Carter&lt;/ToPerson&gt;</td></tr></table>
+ * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ToPerson&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m179&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ToPerson&gt;Mel
+ * Carter&lt;/ToPerson&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ ToPerson</li>
+ * </ul>
  */
 public class ToPerson implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +88,7 @@ public class ToPerson implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +119,9 @@ public class ToPerson implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ToPerson&gt; or &lt;m179&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -37,9 +37,28 @@ import java.io.Serializable;
  * <i>language</i> attribute is optional for a single instance of &lt;WebsiteDescription&gt;, but must be included in
  * each instance if &lt;WebsiteDescription&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
  * length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML
- * with ONIX text fields</td></tr><tr><td>Reference name</td><td>&lt;WebsiteDescription&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b294&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr></table>
+ * with ONIX text fields</td></tr><tr><td>Reference name</td><td><tt>&lt;WebsiteDescription&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b294&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td><tt>&lt;b294&gt;Includes author bio, gallery of photos, interview,
+ * complete bibliography and links to download book covers as mobile phone wallpapers&lt;/b294&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Website&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ Website ⯈ WebsiteDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ Website ⯈ WebsiteDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Website ⯈ WebsiteDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ Website ⯈ WebsiteDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ Website ⯈
+ * WebsiteDescription</li>
+ * </ul>
  */
 public class WebsiteDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +97,7 @@ public class WebsiteDescription implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +126,9 @@ public class WebsiteDescription implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;WebsiteDescription&gt; or &lt;b294&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

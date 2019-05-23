@@ -33,8 +33,19 @@ import java.io.Serializable;
 /**
  * <h1>Batch bonus composite</h1><p>A repeatable group of data elements which together specify a batch bonus, <i>ie</i>
  * a quantity of free copies which are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is
- * optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;BatchBonus&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;batchbonus&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;BatchBonus&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;batchbonus&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ BatchBonus</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ BatchBonus</li>
+ * </ul>
  */
 public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -106,6 +117,9 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
         });
     }
 
+    /**
+     * @return whether this tag (&lt;BatchBonus&gt; or &lt;batchbonus&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -118,7 +132,9 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
     private BatchQuantity batchQuantity = BatchQuantity.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The number of copies which must be ordered to obtain the free copies specified in &lt;FreeQuantity&gt;.
+     * Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public BatchQuantity batchQuantity() {
         _initialize();
@@ -128,7 +144,10 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
     private FreeQuantity freeQuantity = FreeQuantity.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The number of free copies which will be supplied with an order for the batch quantity specified in the
+     * &lt;BatchQuantity&gt; field. Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public FreeQuantity freeQuantity() {
         _initialize();

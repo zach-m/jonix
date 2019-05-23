@@ -34,11 +34,22 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Copyright year</h1><p>The copyright year as it appears in a copyright statement on the product. If several years
- * are listed, use the most recent. Optional and non-repeating, and may not occur if the &lt;CopyrightStatement&gt;
- * composite is present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as year only
- * (YYYY)</td></tr><tr><td>Reference name</td><td>&lt;CopyrightYear&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b087&gt;</td></tr><tr><td>Example</td><td>&lt;CopyrightYear&gt;1976&lt;/CopyrightYear&gt;</td></tr></table>
+ * <h1>Copyright year</h1><p>The copyright year as it appears in a copyright statement on the product. Mandatory in each
+ * occurrence of the &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Date as year only (YYYY)</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;CopyrightYear&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b087&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b087&gt;2003&lt;/b087&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;CopyrightStatement&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ CopyrightYear</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightYear</li>
+ * </ul>
  */
 public class CopyrightYear implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +88,7 @@ public class CopyrightYear implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +119,9 @@ public class CopyrightYear implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;CopyrightYear&gt; or &lt;b087&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

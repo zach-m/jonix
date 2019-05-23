@@ -40,8 +40,18 @@ import java.io.Serializable;
  * <!-- provided for use at Level 1 -->. For most implementations, explicit coding of units with each occurrence of a
  * weight is to be preferred.</strong> Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters.</td></tr><tr><td>Codelist</td><td>List
- * 95</td></tr><tr><td>Reference name</td><td>&lt;DefaultWeightUnit&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m188&gt;</td></tr><tr><td>Example</td><td>&lt;m188&gt;oz&lt;/m188&gt;</td></tr></table>
+ * 95</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultWeightUnit&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m188&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m188&gt;oz&lt;/m188&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ DefaultWeightUnit</li>
+ * </ul>
  */
 public class DefaultWeightUnit implements OnixElement<DefaultUnitOfWeights>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class DefaultWeightUnit implements OnixElement<DefaultUnitOfWeights>, Ser
     public DefaultUnitOfWeights value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public DefaultUnitOfWeights _value() {
@@ -108,6 +118,9 @@ public class DefaultWeightUnit implements OnixElement<DefaultUnitOfWeights>, Ser
         value = DefaultUnitOfWeights.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;DefaultWeightUnit&gt; or &lt;m188&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

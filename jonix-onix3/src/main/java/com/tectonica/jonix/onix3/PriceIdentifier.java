@@ -39,8 +39,19 @@ import java.io.Serializable;
  * unique across multiple pricing options for one product, but need not be unique across all products, nor need it be
  * the same across all products offered at the same price point or under the same terms.</p><p>The composite is
  * repeatable in order to provide multiple identifiers for the same price.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;PriceIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;priceidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PriceIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;priceidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceIdentifier</li>
+ * </ul>
  */
 public class PriceIdentifier
     implements OnixDataCompositeWithKey<JonixPriceIdentifier, PriceIdentifierTypes>, Serializable {
@@ -117,6 +128,10 @@ public class PriceIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;PriceIdentifier&gt; or &lt;priceidentifier&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -129,7 +144,11 @@ public class PriceIdentifier
     private PriceIDType priceIDType = PriceIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;PriceIdentifier&gt; composite, and non-repeating.</p><p>There is no
+     * particular public ‘standard’ for price identifiers, so at present only proprietary identifiers may be
+     * specified.</p>
+     * Jonix-Comment: this field is required
      */
     public PriceIDType priceIDType() {
         _initialize();
@@ -139,7 +158,11 @@ public class PriceIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;PriceIDType&gt; element indicates a proprietary scheme, <i>eg</i> a publisher’s own identifier scheme.
+     * Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -149,7 +172,9 @@ public class PriceIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;PriceIDType&gt; element. Mandatory in each occurrence of the
+     * &lt;PriceIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

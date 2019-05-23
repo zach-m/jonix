@@ -38,8 +38,18 @@ import java.io.Serializable;
  * not guaranteed to be unique). Optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt; composite on the next
  * page provides a more general method of handling this and other series identifiers, and is to be
  * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested
- * maximum length 20 characters</td></tr><tr><td>Reference name</td><td>&lt;PublisherSeriesCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b017&gt;</td></tr><tr><td>Example</td><td>&lt;PublisherSeriesCode&gt;ANNBP&lt;/PublisherSeriesCode&gt;</td></tr></table>
+ * maximum length 20 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PublisherSeriesCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b017&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PublisherSeriesCode&gt;ANNBP&lt;/PublisherSeriesCode&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Series&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ PublisherSeriesCode</li>
+ * </ul>
  */
 public class PublisherSeriesCode implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +88,7 @@ public class PublisherSeriesCode implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +119,9 @@ public class PublisherSeriesCode implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PublisherSeriesCode&gt; or &lt;b017&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

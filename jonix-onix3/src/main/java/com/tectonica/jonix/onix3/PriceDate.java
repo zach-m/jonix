@@ -34,8 +34,19 @@ import java.io.Serializable;
 /**
  * <h1>Price date composite</h1><p>An optional group of data elements which together specify a date associated with a
  * price, repeatable in order to specify multiple associated dates.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;PriceDate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;pricedate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PriceDate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;pricedate&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceDate</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceDate</li>
+ * </ul>
  */
 public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, PriceDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -111,6 +122,9 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
         });
     }
 
+    /**
+     * @return whether this tag (&lt;PriceDate&gt; or &lt;pricedate&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -123,7 +137,9 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
     private PriceDateRole priceDateRole = PriceDateRole.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;PriceDate&gt;
+     * composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public PriceDateRole priceDateRole() {
         _initialize();
@@ -133,7 +149,10 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
     private DateFormat dateFormat = DateFormat.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of
+     * the &lt;PriceDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
+     * attribute instead.</p>
+     * Jonix-Comment: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();
@@ -143,7 +162,11 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
     private Date date = Date.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The date specified in the &lt;PriceDateRole&gt; field. Mandatory in each occurrence of the &lt;PriceDate&gt;
+     * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
+     * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
+     * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.</p>
+     * Jonix-Comment: this field is required
      */
     public Date date() {
         _initialize();

@@ -35,9 +35,20 @@ import java.io.Serializable;
  * <i>eg</i> ‘replaced-by’. Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite, and repeatable where
  * the related product has multiple types of relationship to the product described.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 51</td></tr><tr><td>Reference name</td><td>&lt;ProductRelationCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x455&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td>&lt;x455&gt;06&lt;/x455&gt;
+ * 51</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductRelationCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x455&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;x455&gt;06&lt;/x455&gt;</tt>
  * (Alternative format)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedProduct ⯈ ProductRelationCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedProduct ⯈ ProductRelationCode</li>
+ * </ul>
  */
 public class ProductRelationCode implements OnixElement<ProductRelations>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +79,7 @@ public class ProductRelationCode implements OnixElement<ProductRelations>, Seria
     public ProductRelations value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductRelations _value() {
@@ -95,6 +106,9 @@ public class ProductRelationCode implements OnixElement<ProductRelations>, Seria
         value = ProductRelations.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductRelationCode&gt; or &lt;x455&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

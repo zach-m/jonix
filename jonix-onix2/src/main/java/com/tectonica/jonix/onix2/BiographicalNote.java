@@ -43,10 +43,24 @@ import java.io.Serializable;
  * &lt;BiographicalNote&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
  * transliteration, textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
  * suggested maximum length 500 characters (XHTML is enabled in this element - see ONIX for Books - Product Information
- * Message - XML Message Specification, Section 7)</td></tr><tr><td>Reference name</td><td>&lt;BiographicalNote&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b044&gt;</td></tr><tr><td>Example</td><td>&lt;BiographicalNote&gt;Umberto Eco, professor of semiotics
- * at the University of Bologna, and author of &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's Pendulum&#8221;,
- * is one of the world's bestselling novelists.&lt;/BiographicalNote&gt;</td></tr></table>
+ * Message - XML Message Specification, Section 7)</td></tr><tr><td>Reference name</td><td><tt>&lt;BiographicalNote&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b044&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;BiographicalNote&gt;Umberto Eco, professor
+ * of semiotics at the University of Bologna, and author of &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's
+ * Pendulum&#8221;, is one of the world's bestselling novelists.&lt;/BiographicalNote&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Contributor&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ BiographicalNote</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ BiographicalNote</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ BiographicalNote</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ BiographicalNote</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ BiographicalNote</li>
+ * </ul>
  */
 public class BiographicalNote implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -86,7 +100,7 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -117,6 +131,9 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;BiographicalNote&gt; or &lt;b044&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

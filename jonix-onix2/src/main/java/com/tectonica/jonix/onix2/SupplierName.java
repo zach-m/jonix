@@ -34,12 +34,24 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supplier name</h1><p>The name of a supplier. Optional and non-repeating; required if no supplier identifier is
- * sent in an occurrence of the &lt;NewSupplier&gt; composite.</p><table border='1'
+ * <h1>Supplier name</h1><p>The name of a supply source from which the product may be ordered by a trade customer.
+ * Optional and non-repeating; required if no supplier identifier is sent.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td>&lt;SupplierName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j137&gt;</td></tr><tr><td>Example</td><td>&lt;SupplierName&gt;Littlehampton Book
- * Services&lt;/SupplierName&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplierName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j137&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j137&gt;Littlehampton Book
+ * Services&lt;/j137&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;NewSupplier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierName</li>
+ * </ul>
  */
 public class SupplierName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +90,7 @@ public class SupplierName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +121,9 @@ public class SupplierName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SupplierName&gt; or &lt;j137&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

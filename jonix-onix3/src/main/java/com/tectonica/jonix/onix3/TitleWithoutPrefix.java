@@ -33,14 +33,25 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title without prefix</h1><p>The text of a title element without the title prefix; and excluding any subtitle.
- * Optional and non-repeating; can only be used if one of the &lt;NoPrefix/&gt; or &lt;TitlePrefix&gt; elements is also
- * present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum 300
- * characters</td></tr><tr><td>Reference name</td><td>&lt;TitleWithoutPrefix&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b031&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
- * language, textscript, textcase</td></tr><tr><td>Example</td><td>&lt;TitleWithoutPrefix
- * textcase=&quot;01&quot;&gt;shameful life of Salvador Dali&lt;/TitleWithoutPrefix&gt; (text is in sentence
- * case)</td></tr></table>
+ * <h1>Title text without prefix</h1><p>The text of a title element without the title prefix; and excluding any
+ * subtitle. Optional and non-repeating; can only be used if one of the &lt;NoPrefix/&gt; or &lt;TitlePrefix&gt;
+ * elements is also present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested
+ * maximum 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleWithoutPrefix&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b031&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
+ * language, textscript, textcase</td></tr><tr><td>Example</td><td><tt>&lt;TitleWithoutPrefix language=&quot;eng&quot;
+ * textcase=&quot;01&quot;&gt;shameful life of Salvador Dali&lt;/TitleWithoutPrefix&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TitleElement&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleElement ⯈ TitleWithoutPrefix</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail ⯈ TitleElement ⯈ TitleWithoutPrefix</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail ⯈ TitleElement ⯈ TitleWithoutPrefix</li>
+ * </ul>
  */
 public class TitleWithoutPrefix implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -85,7 +96,7 @@ public class TitleWithoutPrefix implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -116,6 +127,9 @@ public class TitleWithoutPrefix implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;TitleWithoutPrefix&gt; or &lt;b031&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

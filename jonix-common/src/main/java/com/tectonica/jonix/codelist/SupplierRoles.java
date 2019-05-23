@@ -104,21 +104,27 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
 
     /**
      * Intermediary as exclusive distributor to retailers and direct to consumers and/or institutional customers. For
-     * use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Exclusive_distributor_to_retailers_and_end_customers("13",
         "Exclusive distributor to retailers and end-customers"), //
 
     /**
      * Intermediary as non-exclusive distributor to retailers and direct to consumers and/or institutional customers.
-     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Non_exclusive_distributor_to_retailers_and_end_customers("14",
         "Non-exclusive distributor to retailers and end-customers"), //
 
     /**
      * Use only where exclusive/non-exclusive status is not known. Prefer codes 13 or 14 as appropriate whenever
-     * possible. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * possible. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Distributor_to_retailers_and_end_customers("15", "Distributor to retailers and end-customers");
 

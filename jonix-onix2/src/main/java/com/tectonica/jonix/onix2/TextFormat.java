@@ -40,8 +40,22 @@ import java.io.Serializable;
  * text is sent in the ONIX record. The &lt;TextFormat&gt; element may still be used when the text is held outside the
  * ONIX record, and referenced by the &lt;TextLink&gt; element.</strong></p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 34</td></tr><tr><td>Reference name</td><td>&lt;TextFormat&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;d103&gt;</td></tr><tr><td>Example</td><td>&lt;d103&gt;02&lt;/d103&gt; HTML</td></tr></table>
+ * 34</td></tr><tr><td>Reference name</td><td><tt>&lt;TextFormat&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;d103&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;d103&gt;02&lt;/d103&gt;</tt>
+ * HTML</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;OtherText&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextFormat</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ TextFormat</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ TextFormat</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ TextFormat</li>
+ * </ul>
  */
 public class TextFormat implements OnixElement<TextFormats>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +91,7 @@ public class TextFormat implements OnixElement<TextFormats>, Serializable {
     public TextFormats value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TextFormats _value() {
@@ -108,6 +122,9 @@ public class TextFormat implements OnixElement<TextFormats>, Serializable {
         value = TextFormats.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TextFormat&gt; or &lt;d103&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,8 +34,20 @@ import java.io.Serializable;
  * <h1>Product contact identifier type</h1><p>An ONIX code identifying a scheme from which an identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;ProductContactIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;ProductContactIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x483&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductContactIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x483&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt></tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductContactIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ ProductContactIdentifier ⯈ ProductContactIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact ⯈ ProductContactIdentifier ⯈
+ * ProductContactIDType</li>
+ * </ul>
  */
 public class ProductContactIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +78,7 @@ public class ProductContactIDType implements OnixElement<NameIdentifierTypes>, S
     public NameIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public NameIdentifierTypes _value() {
@@ -93,6 +105,9 @@ public class ProductContactIDType implements OnixElement<NameIdentifierTypes>, S
         value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductContactIDType&gt; or &lt;x483&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

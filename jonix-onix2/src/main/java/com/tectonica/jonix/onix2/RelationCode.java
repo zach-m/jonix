@@ -38,9 +38,19 @@ import java.io.Serializable;
  * <h1>Relation code</h1><p>An ONIX code which identifies the nature of the relationship between two products,
  * <em>eg</em> “replaced-by”. Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 51</td></tr><tr><td>Reference name</td><td>&lt;RelationCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;h208&gt;</td></tr><tr><td>Example</td><td>&lt;RelationCode&gt;06&lt;/RelationCode&gt; Alternative
- * format</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 51</td></tr><tr><td>Reference name</td><td><tt>&lt;RelationCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;h208&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;RelationCode&gt;06&lt;/RelationCode&gt;</tt>
+ * Alternative format</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ RelationCode</li>
+ * </ul>
  */
 public class RelationCode implements OnixElement<ProductRelations>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class RelationCode implements OnixElement<ProductRelations>, Serializable
     public ProductRelations value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductRelations _value() {
@@ -107,6 +117,9 @@ public class RelationCode implements OnixElement<ProductRelations>, Serializable
         value = ProductRelations.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;RelationCode&gt; or &lt;h208&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

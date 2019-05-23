@@ -38,8 +38,18 @@ import java.io.Serializable;
  * was translated. Optional and non-repeating. <strong>The &lt;Language&gt; composite on the next page provides a more
  * general method of handling language detail, and is to be preferred.</strong></p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three lower-case letters.</td></tr><tr><td>Codelist</td><td>ISO
- * 639-2/B List 74</td></tr><tr><td>Reference name</td><td>&lt;OriginalLanguage&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b060&gt;</td></tr><tr><td>Example</td><td>&lt;b060&gt;spa&lt;/b060&gt;</td></tr></table>
+ * 639-2/B List 74</td></tr><tr><td>Reference name</td><td><tt>&lt;OriginalLanguage&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b060&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b060&gt;spa&lt;/b060&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OriginalLanguage</li>
+ * </ul>
  */
 public class OriginalLanguage implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +85,7 @@ public class OriginalLanguage implements OnixElement<Languages>, Serializable {
     public Languages value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Languages _value() {
@@ -106,6 +116,9 @@ public class OriginalLanguage implements OnixElement<Languages>, Serializable {
         value = Languages.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;OriginalLanguage&gt; or &lt;b060&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

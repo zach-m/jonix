@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Conference thematic title</h1><p>The thematic title of an individual conference in a series that has a series
  * name in the &lt;ConferenceName&gt; element. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 200
- * characters</td></tr><tr><td>Reference name</td><td>&lt;ConferenceTheme&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b342&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ConferenceTheme&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b342&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Conference&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceTheme</li>
+ * </ul>
  */
 public class ConferenceTheme implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class ConferenceTheme implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class ConferenceTheme implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ConferenceTheme&gt; or &lt;b342&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

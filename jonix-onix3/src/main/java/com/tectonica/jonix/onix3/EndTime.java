@@ -33,9 +33,19 @@ import java.io.Serializable;
  * <h1>End time</h1><p>The time (relative to the beginning of the product’s audio or audiovisual content) of the end of
  * a continuous sequence of audio or audiovisual content. Optional in each occurrence of the &lt;TimeRun&gt; composite,
  * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Hours, minutes and seconds in the form
- * HHHMMSS or HHHMMSScc (hundredths of a second)</td></tr><tr><td>Reference name</td><td>&lt;EndTime&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;543&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x543&gt;0014154&lt;/x543&gt;
+ * HHHMMSS or HHHMMSScc (hundredths of a second)</td></tr><tr><td>Reference name</td><td><tt>&lt;EndTime&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;543&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x543&gt;0014154&lt;/x543&gt;</tt>
  * (One hour, 41 minutes and 54 seconds)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;TimeRun&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem ⯈ TimeRun ⯈ EndTime</li>
+ * </ul>
  */
 public class EndTime implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -70,7 +80,7 @@ public class EndTime implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -97,6 +107,9 @@ public class EndTime implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;EndTime&gt; or &lt;x543&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

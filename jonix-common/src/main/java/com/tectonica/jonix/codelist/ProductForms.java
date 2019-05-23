@@ -108,19 +108,24 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Pre_recorded_SD_card("AL", "Pre-recorded SD card"), //
 
     /**
-     * Vinyl disc (analogue). &lt;p&gt;NOTE: Introduced in Onix3
+     * Vinyl disc (analogue).
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     LP("AM", "LP"), //
 
     /**
      * Digital audio recording available both by download to the purchaser's own device(s) and by online (eg streamed)
-     * access &lt;p&gt;NOTE: Introduced in Onix3
+     * access
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Downloadable_and_online_audio_file("AN", "Downloadable and online audio file"), //
 
     /**
      * Digital audio recording available online (eg streamed), not downloadable to the purchaser's own device(s)
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Online_audio_file("AO", "Online audio file"), //
 
@@ -451,7 +456,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Bookmark("PT", "Bookmark"), //
 
     /**
-     * Folded but unbound &lt;p&gt;NOTE: Introduced in Onix3
+     * Folded but unbound
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Leaflet("PU", "Leaflet"), //
 
@@ -665,12 +672,15 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
 
     /**
      * For example, branded, promotional or tie-in plates, bowls etc (note for mugs and cups, use code ZK)
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Tableware("ZM", "Tableware"), //
 
     /**
-     * For example, branded, promotional or tie-in umbrella &lt;p&gt;NOTE: Introduced in Onix3
+     * For example, branded, promotional or tie-in umbrella
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Umbrella("ZN", "Umbrella"), //
 

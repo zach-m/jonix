@@ -30,13 +30,26 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Review rating</h1><p>An optional ‘star rating’ awarded as part of a review of the publication. Mandatory within
- * an occurrence of the &lt;ReviewRating&gt; composite, and non-repeating.</p><table border='1'
+ * <h1>Review rating</h1><p>The ‘star rating’ awarded as part of a review of the publication. Mandatory within an
+ * occurrence of the &lt;ReviewRating&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit decimal point when required, or zero, as
  * appropriate for the limit specified in &lt;RatingLimit&gt;. Suggested maximum length 7
- * characters</td></tr><tr><td>Reference name</td><td>&lt;Rating&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x525&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;Rating&gt;4.5&lt;/Rating&gt;
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;Rating&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x525&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;Rating&gt;4.5&lt;/Rating&gt;</tt>
  * (4.5 out of 5 stars)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ReviewRating&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ ReviewRating ⯈ Rating</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ ReviewRating ⯈ Rating</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ReviewRating ⯈ Rating</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ ReviewRating ⯈ Rating</li>
+ * </ul>
  */
 public class Rating implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -71,7 +84,7 @@ public class Rating implements OnixElement<Double>, Serializable {
     public Double value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Double _value() {
@@ -98,6 +111,9 @@ public class Rating implements OnixElement<Double>, Serializable {
         value = JPU.getContentAsDouble(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Rating&gt; or &lt;x525&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

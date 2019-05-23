@@ -35,8 +35,18 @@ import java.io.Serializable;
  * <h1>Collection identifier composite</h1><p>A repeatable group of data elements which together specify an identifier
  * of a bibliographic collection. The composite is optional, and may only repeat if two or more identifiers of different
  * types are sent for the same collection. It is not permissible to have two identifiers of the same type.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;CollectionIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;collectionidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CollectionIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;collectionidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Collection&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionIdentifier</li>
+ * </ul>
  */
 public class CollectionIdentifier
     implements OnixDataCompositeWithKey<JonixCollectionIdentifier, SeriesIdentifierTypes>, Serializable {
@@ -113,6 +123,10 @@ public class CollectionIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;CollectionIdentifier&gt; or &lt;collectionidentifier&gt;) is explicitly provided in
+     * the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -125,7 +139,9 @@ public class CollectionIdentifier
     private CollectionIDType collectionIDType = CollectionIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory
+     * in each occurrence of the &lt;CollectionIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public CollectionIDType collectionIDType() {
         _initialize();
@@ -135,7 +151,11 @@ public class CollectionIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in
+     * &lt;CollectionIDType&gt; indicates a proprietary scheme, <i>eg</i> a publisher’s own code. Optional and
+     * non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -145,7 +165,9 @@ public class CollectionIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;CollectionIDType&gt; field. Mandatory in each occurrence of the
+     * &lt;CollectionIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

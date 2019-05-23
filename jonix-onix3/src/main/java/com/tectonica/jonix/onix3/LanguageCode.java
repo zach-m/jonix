@@ -35,8 +35,19 @@ import java.io.Serializable;
  * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, three
  * lower-case letters. Note that ISO 639 specifies that these codes should always be in
  * lower-case</td></tr><tr><td>Codelist</td><td>ISO 639-2/B List 74</td></tr><tr><td>Reference
- * name</td><td>&lt;LanguageCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;b252&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b252&gt;eng&lt;/b252&gt;
+ * name</td><td><tt>&lt;LanguageCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b252&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b252&gt;eng&lt;/b252&gt;</tt>
  * (English)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Language&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Language ⯈ LanguageCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Language ⯈ LanguageCode</li>
+ * </ul>
  */
 public class LanguageCode implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +78,7 @@ public class LanguageCode implements OnixElement<Languages>, Serializable {
     public Languages value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Languages _value() {
@@ -94,6 +105,9 @@ public class LanguageCode implements OnixElement<Languages>, Serializable {
         value = Languages.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;LanguageCode&gt; or &lt;b252&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

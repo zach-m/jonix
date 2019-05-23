@@ -40,8 +40,18 @@ import java.util.List;
  * <h1>Copyright statement composite</h1><p>An optional and repeatable group of data elements which together represent a
  * structured copyright statement for the product. Either a structured copyright statement or statements, or a copyright
  * year in the separate &lt;CopyrightYear&gt; element which follows the composite, but not both, may be sent.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;CopyrightStatement&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;copyrightstatement&gt;</td></tr></table>
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CopyrightStatement&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;copyrightstatement&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement</li>
+ * </ul>
  */
 public class CopyrightStatement implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -122,6 +132,10 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;CopyrightStatement&gt; or &lt;copyrightstatement&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -134,7 +148,9 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<CopyrightYear, String> copyrightYears = ListOfOnixElement.empty();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>The copyright year as it appears in a copyright statement on the product. Mandatory in each occurrence of the
+     * &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<CopyrightYear, String> copyrightYears() {
         _initialize();
@@ -144,7 +160,11 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
     private List<CopyrightOwner> copyrightOwners = Collections.emptyList();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A repeatable group of data elements which together name a copyright owner. At least one occurrence is
+     * mandatory in each occurrence of the &lt;CopyrightStatement&gt; composite. Each occurrence of the
+     * &lt;CopyrightOwner&gt; composite must carry a single name (personal or corporate), or an identifier, or
+     * both.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public List<CopyrightOwner> copyrightOwners() {
         _initialize();

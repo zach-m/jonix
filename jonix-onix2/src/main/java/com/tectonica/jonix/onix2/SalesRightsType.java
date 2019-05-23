@@ -38,9 +38,19 @@ import java.io.Serializable;
  * <h1>Sales rights type code</h1><p>An ONIX code which identifies the type of sales right or exclusion which applies in
  * the territories which are associated with it. Mandatory in each occurrence of the &lt;SalesRights&gt;composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 46</td></tr><tr><td>Reference name</td><td>&lt;SalesRightsType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b089&gt;</td></tr><tr><td>Example</td><td>&lt;SalesRightsType&gt;02&lt;/SalesRightsType&gt; For sale,
- * non-exclusive</td></tr></table>
+ * digits.</td></tr><tr><td>Codelist</td><td>List 46</td></tr><tr><td>Reference name</td><td><tt>&lt;SalesRightsType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b089&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SalesRightsType&gt;02&lt;/SalesRightsType&gt;</tt>
+ * For sale, non-exclusive</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SalesRights&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRights ⯈ SalesRightsType</li>
+ * </ul>
  */
 public class SalesRightsType implements OnixElement<SalesRightsTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class SalesRightsType implements OnixElement<SalesRightsTypes>, Serializa
     public SalesRightsTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SalesRightsTypes _value() {
@@ -107,6 +117,9 @@ public class SalesRightsType implements OnixElement<SalesRightsTypes>, Serializa
         value = SalesRightsTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;SalesRightsType&gt; or &lt;b089&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

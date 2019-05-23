@@ -34,9 +34,22 @@ import java.io.Serializable;
  * <h1>Resource form</h1><p>An ONIX code indicating the form of a version of a supporting resource. Mandatory in each
  * occurrence of the &lt;ResourceVersion&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 161</td></tr><tr><td>Reference name</td><td>&lt;ResourceForm&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x441&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;ResourceForm&gt;02&lt;/ResourceForm&gt;
+ * 161</td></tr><tr><td>Reference name</td><td><tt>&lt;ResourceForm&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x441&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;ResourceForm&gt;02&lt;/ResourceForm&gt;</tt>
  * (Downloadable file)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ResourceVersion&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceForm</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceForm</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ResourceForm</li>
+ * </ul>
  */
 public class ResourceForm implements OnixElement<ResourceForms>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +80,7 @@ public class ResourceForm implements OnixElement<ResourceForms>, Serializable {
     public ResourceForms value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ResourceForms _value() {
@@ -94,6 +107,9 @@ public class ResourceForm implements OnixElement<ResourceForms>, Serializable {
         value = ResourceForms.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ResourceForm&gt; or &lt;x441&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

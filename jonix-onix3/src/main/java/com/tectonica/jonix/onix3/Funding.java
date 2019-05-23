@@ -37,7 +37,17 @@ import java.io.Serializable;
  * the entity specified as a funder in an occurence of the &lt;Publisher&gt; composite, to subsidise research or
  * publication. Repeatable when the funder provides multiple grants or awards. Used only when &lt;PublishingRole&gt;
  * indicates the role of a funder.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;Funding&gt;</td></tr><tr><td>Short tag</td><td>&lt;funding&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;Funding&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;funding&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Publisher&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Funding</li>
+ * </ul>
  */
 public class Funding implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -105,6 +115,9 @@ public class Funding implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Funding&gt; or &lt;funding&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -118,7 +131,10 @@ public class Funding implements OnixSuperComposite, Serializable {
         fundingIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A group of data elements which together identify a particular grant or award. At least one
+     * &lt;FundingIdentifier&gt; composite must occur in each instance of the &lt;Funding&gt; composite. Repeatable when
+     * the grant or award has multiple identifiers.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier, GrantIdentifierTypes> fundingIdentifiers() {
         _initialize();

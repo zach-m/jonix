@@ -51,7 +51,17 @@ import java.io.Serializable;
  * &lt;NumberOfCopies&gt;, normally accompanied by a &lt;ProductIdentifier&gt;. If the composite refers to a number of
  * <em>different</em> items of the same form, without identifying them individually, the quantity must be sent as
  * &lt;NumberOfItemsOfThisForm&gt;.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;ProductPart&gt;</td></tr><tr><td>Short tag</td><td>&lt;productpart&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;ProductPart&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;productpart&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart</li>
+ * </ul>
  */
 public class ProductPart implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -163,6 +173,9 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ProductPart&gt; or &lt;productpart&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -175,7 +188,10 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private PrimaryPart primaryPart = PrimaryPart.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An empty element that allows a sender to identify a product part as the ‘primary’ part of a multiple-item
+     * product. For example, in a ‘book and toy’ or ‘book and DVD’ product, the book may be regarded as the primary
+     * part. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public PrimaryPart primaryPart() {
         _initialize();
@@ -190,7 +206,11 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together define an identifier of a product in accordance with a specified
+     * scheme, used here to carry the product identifier of a product part. Optional, but required when an occurrence of
+     * &lt;ProductPart&gt; specifies an individual item with its own identifier, and repeatable with different
+     * identifiers for the same item.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
         _initialize();
@@ -200,7 +220,9 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private ProductForm productForm = ProductForm.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which indicates the primary form of a product part. Mandatory in each occurrence of
+     * &lt;ProductPart&gt;, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ProductForm productForm() {
         _initialize();
@@ -210,7 +232,9 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An ONIX code which provides added detail of the medium and/or format of a product part. Optional, and
+     * repeatable in order to provide multiple additional details.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
@@ -221,7 +245,11 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together describe an aspect of product form that is too specific to
+     * be covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Repeatable in order to describe
+     * different aspects of the form of the product part. The composite is included here so that it can for example be
+     * used to carry consumer protection data related to a product part.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
         _initialize();
@@ -231,7 +259,9 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private ProductPackaging productPackaging = ProductPackaging.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which indicates the type of packaging used for the product part. Optional, and not
+     * repeatable.</p>
+     * Jonix-Comment: this field is optional
      */
     public ProductPackaging productPackaging() {
         _initialize();
@@ -241,7 +271,11 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>If product form codes do not adequately describe the contained item, a short text description may be added.
+     * Optional and repeatable. The <i>language</i> attribute is optional for a single instance of
+     * &lt;ProductFormDescription&gt;, but must be included in each instance if &lt;ProductFormDescription&gt; is
+     * repeated.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ProductFormDescription, String> productFormDescriptions() {
         _initialize();
@@ -251,7 +285,9 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An ONIX code which indicates certain types of content which are closely related to but not strictly an
+     * attribute of product form, <i>eg</i> audiobook. Optional and repeatable.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
@@ -262,7 +298,10 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together identify a measurement and the units in which it is
+     * expressed; used to specify the overall dimensions of a physical product part including its inner packaging (if
+     * any). Repeatable to provide multiple combinations of dimension and unit.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
         _initialize();
@@ -272,7 +311,12 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private NumberOfItemsOfThisForm numberOfItemsOfThisForm = NumberOfItemsOfThisForm.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>When product parts are listed as a specified number of <em>different</em> items in a specified form, without
+     * identifying the individual items, &lt;NumberOfItemsOfThisForm&gt; must be used to carry the quantity, even if the
+     * number is ‘1’. Consequently the element is mandatory and non-repeating in an occurrence of the
+     * &lt;ProductPart&gt; composite if &lt;NumberOfCopies&gt; is not present; and it must not be used if
+     * &lt;ProductIdentifier&gt; is present.</p>
+     * Jonix-Comment: this field is required
      */
     public NumberOfItemsOfThisForm numberOfItemsOfThisForm() {
         _initialize();
@@ -282,7 +326,16 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private NumberOfCopies numberOfCopies = NumberOfCopies.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>When product parts are listed as a specified number of copies of a single item, usually identified by a
+     * &lt;ProductIdentifier&gt;, &lt;NumberOfCopies&gt; must be used to specify the quantity, even if the number is
+     * ‘1’. It must be used when a multiple-item product or pack contains (a) a quantity of a single item; or (b) one of
+     * each of several different items (as in a multi-volume set); or (c) one or more of each of several different items
+     * (as in a dumpbin carrying copies of two different books, or a classroom pack containing a teacher’s text and
+     * twenty student texts). Consequently the element is mandatory, and non-repeating, in an occurrence of the
+     * &lt;ProductPart&gt; composite if &lt;NumberOfItemsOfThisForm&gt; is not present. It is normally accompanied by a
+     * &lt;ProductIdentifier&gt;; but in exceptional circumstances, if the sender’s system is unable to provide an
+     * identifier at this level, it may be sent with product form coding and without an ID.</p>
+     * Jonix-Comment: this field is optional
      */
     public NumberOfCopies numberOfCopies() {
         _initialize();
@@ -292,7 +345,10 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     private CountryOfManufacture countryOfManufacture = CountryOfManufacture.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A code identifying the country in which a product part was manufactured, if different product parts were
+     * manufactured in different countries. This information is needed in some countries to meet regulatory
+     * requirements. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public CountryOfManufacture countryOfManufacture() {
         _initialize();

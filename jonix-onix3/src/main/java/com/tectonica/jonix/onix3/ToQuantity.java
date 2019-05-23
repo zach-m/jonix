@@ -35,8 +35,19 @@ import java.io.Serializable;
  * that minimum is 1). For the special case where there is no maximum (<i>ie</i> in the repeat of the &lt;Discount&gt;
  * composite that specifies the highest progressive discount), use zero.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Positive number, here necessarily an integer, or zero. Suggested maximum
- * length 7 digits</td></tr><tr><td>Reference name</td><td>&lt;ToQuantity&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x514&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ToQuantity&gt;25&lt;/ToQuantity&gt;</td></tr></table>
+ * length 7 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;ToQuantity&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x514&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;ToQuantity&gt;25&lt;/ToQuantity&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Discount&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Discount ⯈ ToQuantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Discount ⯈ ToQuantity</li>
+ * </ul>
  */
 public class ToQuantity implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -71,7 +82,7 @@ public class ToQuantity implements OnixElement<Double>, Serializable {
     public Double value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Double _value() {
@@ -98,6 +109,9 @@ public class ToQuantity implements OnixElement<Double>, Serializable {
         value = JPU.getContentAsDouble(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ToQuantity&gt; or &lt;x514&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -43,8 +43,18 @@ import java.io.Serializable;
  * repeatable where a supplier has more than one warehouse or supplier location.</p><p>Within a single instance of the
  * &lt;Stock&gt; composite, the location name and identifier are both optional. If &lt;Stock&gt; is repeated, at least
  * one identifier or a location name must be included in each instance.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;Stock&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;stock&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Stock&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;stock&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock</li>
+ * </ul>
  */
 public class Stock implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -148,6 +158,9 @@ public class Stock implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Stock&gt; or &lt;stock&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -161,7 +174,10 @@ public class Stock implements OnixSuperComposite, Serializable {
         locationIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together define the identifier of a stock location in accordance with
+     * a specified scheme, and repeatable to allow different types of location identifier to be supported without
+     * defining additional data elements..</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier, SupplierIdentifierTypes> locationIdentifiers() {
         _initialize();
@@ -171,7 +187,11 @@ public class Stock implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>The name of a stock location. Optional, and repeatable to provide parallel names for a single location in
+     * multiple languages (<i>eg</i> Baile Átha Cliath and Dublin, or Bruxelles and Brussel). The <i>language</i>
+     * attribute is optional for a single instance of &lt;LocationName&gt;, but must be included in each instance if
+     * &lt;LocationName&gt; is repeated.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<LocationName, String> locationNames() {
         _initialize();
@@ -182,7 +202,11 @@ public class Stock implements OnixSuperComposite, Serializable {
         stockQuantityCodeds = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together specify a stock level in a coded way without stating the exact
+     * quantity of stock. Either &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of the
+     * &lt;Stock&gt; composite, even if the quantity on hand is zero. Repeatable, so that it is possible to provide
+     * coded quantities on hand, quantities on order <i>etc</i> separately.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes> stockQuantityCodeds() {
         _initialize();
@@ -192,7 +216,10 @@ public class Stock implements OnixSuperComposite, Serializable {
     private OnHand onHand = OnHand.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The quantity of stock on hand and available to fulfill new orders. Either &lt;StockQuantityCoded&gt; or
+     * &lt;OnHand&gt; is mandatory in each occurrence of the &lt;Stock&gt; composite, even if the quantity on hand is
+     * zero. Non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public OnHand onHand() {
         _initialize();
@@ -202,7 +229,9 @@ public class Stock implements OnixSuperComposite, Serializable {
     private Proximity proximity = Proximity.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which specifies the precision of the stock quantity on hand. Optional, non-repeating and may only
+     * be used if an &lt;OnHand&gt; value is specified.</p>
+     * Jonix-Comment: this field is optional
      */
     public Proximity proximity() {
         _initialize();
@@ -212,7 +241,9 @@ public class Stock implements OnixSuperComposite, Serializable {
     private Reserved reserved = Reserved.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The quantity of stock on hand but unavailable to fulfil new orders for any reason – for example because the
+     * stock is reserved to fulfill existing orders or frozen to prevent dispatch. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public Reserved reserved() {
         _initialize();
@@ -222,7 +253,8 @@ public class Stock implements OnixSuperComposite, Serializable {
     private OnOrder onOrder = OnOrder.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The quantity of stock on order. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public OnOrder onOrder() {
         _initialize();
@@ -232,7 +264,8 @@ public class Stock implements OnixSuperComposite, Serializable {
     private CBO cbo = CBO.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The quantity of stock on order which is already committed to meet backorders. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public CBO cbo() {
         _initialize();
@@ -242,7 +275,13 @@ public class Stock implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails = ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together specify details of a stock shipment currently awaited,
+     * normally from overseas. Optional and repeatable if more than a single shipment is outstanding.</p><p>Note that
+     * quantities in the &lt;OnOrderDetail&gt; composite must be included in any total quantity on order given in
+     * P.26.37 &lt;OnOrder&gt;, and detail need not be given for all outstanding shipments (<i>ie</i> the P.26.37
+     * &lt;OnOrder&gt; must be greater than or equal to the total of the &lt;OnOrder&gt; elements in repeats of the
+     * composite).</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails() {
         _initialize();
@@ -252,7 +291,10 @@ public class Stock implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<Velocity, JonixVelocity> velocitys = ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>An optional group of data elements which together specify the rate of stock depletion – or equally, a rate of
+     * accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric
+     * (<i>eg</i> specifying both a minimum and maximum daily sale).</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<Velocity, JonixVelocity> velocitys() {
         _initialize();

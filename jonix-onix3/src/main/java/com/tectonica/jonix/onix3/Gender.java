@@ -36,8 +36,29 @@ import java.io.Serializable;
  * designations used in ISO 5218, rather than the gender identity, biological sex or sexuality of a natural
  * person.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, single
  * character</td></tr><tr><td>Codelist</td><td>List 229</td></tr><tr><td>Reference
- * name</td><td>&lt;Gender&gt;</td></tr><tr><td>Short tag</td><td>&lt;x524&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x524&gt;f&lt;/x524&gt;
+ * name</td><td><tt>&lt;Gender&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x524&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x524&gt;f&lt;/x524&gt;</tt>
  * (public identity is female)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AlternativeName&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;NameAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ AlternativeName ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ AlternativeName ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ AlternativeName ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ AlternativeName ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ Gender</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ Gender</li>
+ * </ul>
  */
 public class Gender implements OnixElement<Genders>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +89,7 @@ public class Gender implements OnixElement<Genders>, Serializable {
     public Genders value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Genders _value() {
@@ -95,6 +116,9 @@ public class Gender implements OnixElement<Genders>, Serializable {
         value = Genders.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;Gender&gt; or &lt;x524&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -33,9 +33,19 @@ import java.io.Serializable;
 /**
  * <h1>Conference place</h1><p>The place of a conference to which the product is related. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum
- * length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;ConferencePlace&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b055&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;ConferencePlace&gt;Aix-les-Bains,
- * France&lt;/ConferencePlace&gt;</td></tr></table>
+ * length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ConferencePlace&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b055&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;ConferencePlace&gt;Aix-les-Bains,
+ * France&lt;/ConferencePlace&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Conference&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferencePlace</li>
+ * </ul>
  */
 public class ConferencePlace implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -71,7 +81,7 @@ public class ConferencePlace implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -99,6 +109,9 @@ public class ConferencePlace implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ConferencePlace&gt; or &lt;b055&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

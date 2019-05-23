@@ -19,253 +19,269 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.PublishingDateRoles;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.JonixMarketDate;
-
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+import com.tectonica.jonix.*;
+import com.tectonica.jonix.OnixComposite.*;
+import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Market publishing detail composite</h1><p>A group of data elements which together give details of the publishing
- * status of a product within a specified market. Optional and non-repeating within an occurrence of the
- * &lt;ProductSupply&gt; block.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;MarketPublishingDetail&gt;</td></tr><tr><td>Short tag</td><td>&lt;marketpublishingdetail&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <h1>Market publishing detail composite</h1><p>A group of data elements which together give details of the publishing status of a product within a specified market. Optional and non-repeating within an occurrence of the &lt;ProductSupply&gt; block.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;MarketPublishingDetail&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;marketpublishingdetail&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductSupply&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail</li>
+ * </ul>
  */
-public class MarketPublishingDetail implements OnixSuperComposite, Serializable {
-    private static final long serialVersionUID = 1L;
+public class MarketPublishingDetail implements OnixSuperComposite, Serializable
+{
+   private static final long serialVersionUID = 1L;
 
-    public static final String refname = "MarketPublishingDetail";
-    public static final String shortname = "marketpublishingdetail";
+   public static final String refname = "MarketPublishingDetail";
+   public static final String shortname = "marketpublishingdetail";
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // ATTRIBUTES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // ATTRIBUTES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * (type: dt.DateOrDateTime)
-     */
-    public String datestamp;
+   /**
+    * (type: dt.DateOrDateTime)
+    */
+   public String datestamp;
 
-    public RecordSourceTypes sourcetype;
+   public RecordSourceTypes sourcetype;
 
-    /**
-     * (type: dt.NonEmptyString)
-     */
-    public String sourcename;
+   /**
+    * (type: dt.NonEmptyString)
+    */
+   public String sourcename;
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // CONSTRUCTION
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // CONSTRUCTION
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private boolean initialized;
-    private final boolean exists;
-    private final org.w3c.dom.Element element;
-    public static final MarketPublishingDetail EMPTY = new MarketPublishingDetail();
+   private boolean initialized;
+   private final boolean exists;
+   private final org.w3c.dom.Element element;
+   public static final MarketPublishingDetail EMPTY = new MarketPublishingDetail();
 
-    public MarketPublishingDetail() {
-        exists = false;
-        element = null;
-        initialized = true; // so that no further processing will be done on this intentionally-empty object
-    }
+   public MarketPublishingDetail() {
+      exists = false;
+      element = null;
+      initialized = true; // so that no further processing will be done on this intentionally-empty object
+   }
 
-    public MarketPublishingDetail(org.w3c.dom.Element element) {
-        exists = true;
-        initialized = false;
-        this.element = element;
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
-    }
+   public MarketPublishingDetail(org.w3c.dom.Element element) {
+      exists = true;
+      initialized = false;
+      this.element = element;
+      datestamp = JPU.getAttribute(element, "datestamp");
+      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+      sourcename = JPU.getAttribute(element, "sourcename");
+   }
 
-    @Override
-    public void _initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
+   @Override
+   public void _initialize() {
+      if (initialized) return;
+      initialized = true;
 
-        JPU.forElementsOf(element, e -> {
-            final String name = e.getNodeName();
-            switch (name) {
-                case PublisherRepresentative.refname:
-                case PublisherRepresentative.shortname:
-                    publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(e));
-                    break;
-                case ProductContact.refname:
-                case ProductContact.shortname:
-                    productContacts = JPU.addToList(productContacts, new ProductContact(e));
-                    break;
-                case MarketPublishingStatus.refname:
-                case MarketPublishingStatus.shortname:
-                    marketPublishingStatus = new MarketPublishingStatus(e);
-                    break;
-                case MarketPublishingStatusNote.refname:
-                case MarketPublishingStatusNote.shortname:
-                    marketPublishingStatusNotes =
-                        JPU.addToList(marketPublishingStatusNotes, new MarketPublishingStatusNote(e));
-                    break;
-                case MarketDate.refname:
-                case MarketDate.shortname:
-                    marketDates = JPU.addToList(marketDates, new MarketDate(e));
-                    break;
-                case PromotionCampaign.refname:
-                case PromotionCampaign.shortname:
-                    promotionCampaigns = JPU.addToList(promotionCampaigns, new PromotionCampaign(e));
-                    break;
-                case PromotionContact.refname:
-                case PromotionContact.shortname:
-                    promotionContact = new PromotionContact(e);
-                    break;
-                case InitialPrintRun.refname:
-                case InitialPrintRun.shortname:
-                    initialPrintRuns = JPU.addToList(initialPrintRuns, new InitialPrintRun(e));
-                    break;
-                case ReprintDetail.refname:
-                case ReprintDetail.shortname:
-                    reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
-                    break;
-                case CopiesSold.refname:
-                case CopiesSold.shortname:
-                    copiesSolds = JPU.addToList(copiesSolds, new CopiesSold(e));
-                    break;
-                case BookClubAdoption.refname:
-                case BookClubAdoption.shortname:
-                    bookClubAdoptions = JPU.addToList(bookClubAdoptions, new BookClubAdoption(e));
-                    break;
-                default:
-                    break;
-            }
-        });
-    }
+      JPU.forElementsOf(element, e -> {
+         final String name = e.getNodeName();
+         switch (name) {
+            case PublisherRepresentative.refname:
+            case PublisherRepresentative.shortname:
+               publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(e));
+               break;
+            case ProductContact.refname:
+            case ProductContact.shortname:
+               productContacts = JPU.addToList(productContacts, new ProductContact(e));
+               break;
+            case MarketPublishingStatus.refname:
+            case MarketPublishingStatus.shortname:
+               marketPublishingStatus = new MarketPublishingStatus(e);
+               break;
+            case MarketPublishingStatusNote.refname:
+            case MarketPublishingStatusNote.shortname:
+               marketPublishingStatusNotes = JPU.addToList(marketPublishingStatusNotes, new MarketPublishingStatusNote(e));
+               break;
+            case MarketDate.refname:
+            case MarketDate.shortname:
+               marketDates = JPU.addToList(marketDates, new MarketDate(e));
+               break;
+            case PromotionCampaign.refname:
+            case PromotionCampaign.shortname:
+               promotionCampaigns = JPU.addToList(promotionCampaigns, new PromotionCampaign(e));
+               break;
+            case PromotionContact.refname:
+            case PromotionContact.shortname:
+               promotionContact = new PromotionContact(e);
+               break;
+            case InitialPrintRun.refname:
+            case InitialPrintRun.shortname:
+               initialPrintRuns = JPU.addToList(initialPrintRuns, new InitialPrintRun(e));
+               break;
+            case ReprintDetail.refname:
+            case ReprintDetail.shortname:
+               reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
+               break;
+            case CopiesSold.refname:
+            case CopiesSold.shortname:
+               copiesSolds = JPU.addToList(copiesSolds, new CopiesSold(e));
+               break;
+            case BookClubAdoption.refname:
+            case BookClubAdoption.shortname:
+               bookClubAdoptions = JPU.addToList(bookClubAdoptions, new BookClubAdoption(e));
+               break;
+            default:
+               break;
+         }
+      });
+   }
 
-    @Override
-    public boolean exists() {
-        return exists;
-    }
+   /**
+    * @return whether this tag (&lt;MarketPublishingDetail&gt; or &lt;marketpublishingdetail&gt;) is explicitly provided in the ONIX XML
+    */
+   @Override
+   public boolean exists() {
+      return exists;
+   }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // MEMBERS
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // MEMBERS
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private List<PublisherRepresentative> publisherRepresentatives = Collections.emptyList();
+   private List<PublisherRepresentative> publisherRepresentatives = Collections.emptyList();
 
-    /**
-     * (this list may be empty)
-     */
-    public List<PublisherRepresentative> publisherRepresentatives() {
-        _initialize();
-        return publisherRepresentatives;
-    }
+   /**
+    * <p>A repeatable group of data elements which together identify a publisher representative in a specified market. Optional, and repeated only if the publisher has two or more representatives.</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public List<PublisherRepresentative> publisherRepresentatives() {
+      _initialize();
+      return publisherRepresentatives;
+   }
 
-    private List<ProductContact> productContacts = Collections.emptyList();
+   private List<ProductContact> productContacts = Collections.emptyList();
 
-    /**
-     * (this list may be empty)
-     */
-    public List<ProductContact> productContacts() {
-        _initialize();
-        return productContacts;
-    }
+   /**
+    * <p>A group of data elements which together specify an organization (which may or may not be the publisher’s representative) responsible for dealing with enquiries related to the product in the market. Optional, and repeatable in order to specify multiple contacts.</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public List<ProductContact> productContacts() {
+      _initialize();
+      return productContacts;
+   }
 
-    private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
+   private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
 
-    /**
-     * (this field is required)
-     */
-    public MarketPublishingStatus marketPublishingStatus() {
-        _initialize();
-        return marketPublishingStatus;
-    }
+   /**
+    * <p>An ONIX code which identifies the status of a published product in a specified market. Mandatory in each occurrence of the &lt;MarketPublishingDetail&gt; composite, and non-repeating.</p>
+    * Jonix-Comment: this field is required
+    */
+   public MarketPublishingStatus marketPublishingStatus() {
+      _initialize();
+      return marketPublishingStatus;
+   }
 
-    private ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes =
-        ListOfOnixElement.empty();
+   private ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes = ListOfOnixElement.empty();
 
-    /**
-     * (this list may be empty)
-     */
-    public ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes() {
-        _initialize();
-        return marketPublishingStatusNotes;
-    }
+   /**
+    * <p>Free text that describes the status of a product in a specified market, when the code in &lt;MarketPublishingStatus&gt; is insufficient. Optional, but when used, must be accompanied by the &lt;MarketPublishingStatus&gt; element. Repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;MarketPublishingStatusNote&gt;, but must be included in each instance if &lt;MarketPublishingStatusNote&gt; is repeated.</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes() {
+      _initialize();
+      return marketPublishingStatusNotes;
+   }
 
-    private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+   private ListOfOnixDataCompositeWithKey<MarketDate,JonixMarketDate,PublishingDateRoles> marketDates = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-    /**
-     * (this list may be empty)
-     */
-    public ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates() {
-        _initialize();
-        return marketDates;
-    }
+   /**
+    * <p>A group of data elements which together specify a date associated with the publishing status of the product in a specified market, <i>eg</i> ‘local publication date’. Optional, but if known, a date of publication <em>must</em> be specified either here as a ‘local pubdate’ or in P.20. Other dates relating to the publication of the product in the specific market may be sent in further repeats of the composite.</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public ListOfOnixDataCompositeWithKey<MarketDate,JonixMarketDate,PublishingDateRoles> marketDates() {
+      _initialize();
+      return marketDates;
+   }
 
-    private ListOfOnixElement<PromotionCampaign, String> promotionCampaigns = ListOfOnixElement.empty();
+   private ListOfOnixElement<PromotionCampaign, String> promotionCampaigns = ListOfOnixElement.empty();
 
-    /**
-     * (this list may be empty)
-     */
-    public ListOfOnixElement<PromotionCampaign, String> promotionCampaigns() {
-        _initialize();
-        return promotionCampaigns;
-    }
+   /**
+    * <p>Free text describing the promotion and adverting campaign for the product. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;PromotionCampaign&gt;, but must be included in each instance if &lt;PromotionCampaign&gt; is repeated.</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public ListOfOnixElement<PromotionCampaign, String> promotionCampaigns() {
+      _initialize();
+      return promotionCampaigns;
+   }
 
-    private PromotionContact promotionContact = PromotionContact.EMPTY;
+   private PromotionContact promotionContact = PromotionContact.EMPTY;
 
-    /**
-     * (this field is optional)
-     */
-    public PromotionContact promotionContact() {
-        _initialize();
-        return promotionContact;
-    }
+   /**
+    * <p>Free text giving the name, department, phone number, e-mail address etc for a promotional contact person for the product. Optional and non-repeating. Deprecated, in favor of providing this information via the &lt;ProductContact&gt; composite.</p>
+    * Jonix-Comment: this field is optional
+    */
+   public PromotionContact promotionContact() {
+      _initialize();
+      return promotionContact;
+   }
 
-    private ListOfOnixElement<InitialPrintRun, String> initialPrintRuns = ListOfOnixElement.empty();
+   private ListOfOnixElement<InitialPrintRun, String> initialPrintRuns = ListOfOnixElement.empty();
 
-    /**
-     * (this list may be empty)
-     */
-    public ListOfOnixElement<InitialPrintRun, String> initialPrintRuns() {
-        _initialize();
-        return initialPrintRuns;
-    }
+   /**
+    * <p>In advance information about a new book, free text detailing the number of copies which will be printed and any related aspects of the initial publishing effort. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;InitialPrintRun&gt;, but must be included in each instance if &lt;InitialPrintRun&gt; is repeated.</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public ListOfOnixElement<InitialPrintRun, String> initialPrintRuns() {
+      _initialize();
+      return initialPrintRuns;
+   }
 
-    private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
+   private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
 
-    /**
-     * (this list may be empty)
-     */
-    public ListOfOnixElement<ReprintDetail, String> reprintDetails() {
-        _initialize();
-        return reprintDetails;
-    }
+   /**
+    * <p>Free text used to give details of the reprint history as part of the promotion of a book. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;ReprintDetail&gt;, but must be included in each instance if &lt;ReprintDetail&gt; is repeated.</p><p>(For compatibility purposes, &lt;ReprintDetail&gt; is also repeatable – without the <i>language</i> attribute, or with the same <i>language</i> attribute – to give information about successive reprintings, but this is deprecated in favor of a single &lt;ReprintDetail&gt; instance [or a single instance per language] and use of the XHTML &lt;dl&gt; list structure.)</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public ListOfOnixElement<ReprintDetail, String> reprintDetails() {
+      _initialize();
+      return reprintDetails;
+   }
 
-    private ListOfOnixElement<CopiesSold, String> copiesSolds = ListOfOnixElement.empty();
+   private ListOfOnixElement<CopiesSold, String> copiesSolds = ListOfOnixElement.empty();
 
-    /**
-     * (this list may be empty)
-     */
-    public ListOfOnixElement<CopiesSold, String> copiesSolds() {
-        _initialize();
-        return copiesSolds;
-    }
+   /**
+    * <p>Free text detailing the number of copies already sold, <i>eg</i> for a new paperback, the copies sold in hardback. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;CopiesSold&gt;, but must be included in each instance if &lt;CopiesSold&gt; is repeated.</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public ListOfOnixElement<CopiesSold, String> copiesSolds() {
+      _initialize();
+      return copiesSolds;
+   }
 
-    private ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions = ListOfOnixElement.empty();
+   private ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions = ListOfOnixElement.empty();
 
-    /**
-     * (this list may be empty)
-     */
-    public ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions() {
-        _initialize();
-        return bookClubAdoptions;
-    }
+   /**
+    * <p>Free text describing the adoption of the product as a book club selection. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;BookClubAdoption&gt;, but must be included in each instance if &lt;BookClubAdoption&gt; is repeated.</p>
+    * Jonix-Comment: this list may be empty
+    */
+   public ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions() {
+      _initialize();
+      return bookClubAdoptions;
+   }
 }

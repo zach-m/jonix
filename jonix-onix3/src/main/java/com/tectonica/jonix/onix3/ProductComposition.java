@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Product composition</h1><p>An ONIX code which indicates whether a product consists of a single item or multiple
  * items. Mandatory in an occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 2</td></tr><tr><td>Reference name</td><td>&lt;ProductComposition&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x314&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x314&gt;00&lt;/x314&gt;
+ * 2</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductComposition&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x314&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x314&gt;00&lt;/x314&gt;</tt>
  * (Single-item product)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductComposition</li>
+ * </ul>
  */
 public class ProductComposition implements OnixElement<ProductCompositions>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class ProductComposition implements OnixElement<ProductCompositions>, Ser
     public ProductCompositions value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductCompositions _value() {
@@ -94,6 +104,9 @@ public class ProductComposition implements OnixElement<ProductCompositions>, Ser
         value = ProductCompositions.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductComposition&gt; or &lt;x314&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,14 +34,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Subtitle</h1><p>The full text of a subtitle, if any. “Subtitle” means any added words which appear with the title
- * given in an occurrence of the &lt;Title&gt; composite, and which amplify and explain the title, but which are not
- * considered to be part of the title itself. Optional and non-repeating. The &lt;Subtitle&gt; element may carry any of
- * the following ONIX attributes: <i>textformat, language, transliteration, textcase</i>.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum 300
- * characters</td></tr><tr><td>Reference name</td><td>&lt;Subtitle&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b029&gt;</td></tr><tr><td>Example</td><td>&lt;b029&gt;The Russian Revolution
- * 1891&amp;ndash;1924&lt;/b029&gt;</td></tr></table>
+ * <h1>Subtitle of product</h1><p>The full text of the subtitle of the product, if any. “Subtitle” means any added words
+ * which appear with the title of the product and which amplify and explain the title, but which are not considered to
+ * be part of the distinctive title. Optional and non-repeating. <strong>The &lt;Title&gt; composite on a later page
+ * provides a more general method of handling all forms of title, and is to be preferred.</strong></p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 300
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;Subtitle&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b029&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;Subtitle&gt;The Russian Revolution
+ * 1891-1924&lt;/Subtitle&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;Title&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Subtitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ Subtitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ Subtitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ Subtitle</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ Subtitle</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ Subtitle</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ Subtitle</li>
+ * </ul>
  */
 public class Subtitle implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,12 +92,12 @@ public class Subtitle implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum 300 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 300 characters<p> (type: NonEmptyString)
      */
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +128,9 @@ public class Subtitle implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Subtitle&gt; or &lt;b029&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -42,8 +42,18 @@ import java.io.Serializable;
  * publishers and booksellers. The &lt;ReligiousText&gt; composite may carry either a &lt;Bible&gt; composite or a
  * &lt;ReligiousTextID&gt; element accompanied by multiple repeats of the &lt;ReligiousTextFeature&gt; composite. This
  * approach is adopted to enable other devotional texts to be included if need arises without requiring a new ONIX
- * release.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ReligiousText&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;religioustext&gt;</td></tr></table>
+ * release.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ReligiousText&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;religioustext&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReligiousText</li>
+ * </ul>
  */
 public class ReligiousText implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -128,6 +138,9 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ReligiousText&gt; or &lt;religioustext&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -140,7 +153,10 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
     private Bible bible = Bible.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A group of data elements which together describe features of an edition of the Bible or of a selected Biblical
+     * text. Mandatory in each occurrence of the &lt;ReligiousText&gt; composite that does not include a
+     * &lt;ReligiousTextID&gt; element, and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public Bible bible() {
         _initialize();
@@ -150,7 +166,9 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
     private ReligiousTextID religiousTextID = ReligiousTextID.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating a religious text other than the Bible. Mandatory in each occurrence of the
+     * &lt;ReligiousText&gt; composite that does not include a &lt;Bible&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ReligiousTextID religiousTextID() {
         _initialize();
@@ -161,7 +179,8 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         religiousTextFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A repeatable group of data elements which together specify and describe a feature of a religious text.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures() {
         _initialize();

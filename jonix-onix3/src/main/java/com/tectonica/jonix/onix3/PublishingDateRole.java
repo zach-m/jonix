@@ -34,10 +34,20 @@ import java.io.Serializable;
  * <h1>Publishing date role code</h1><p>An ONIX code indicating the significance of the date, <i>eg</i> publication
  * date, announcement date, latest reprint date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite,
  * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 163</td></tr><tr><td>Reference name</td><td>&lt;PublishingDateRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x448&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x448&gt;01&lt;/x448&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 163</td></tr><tr><td>Reference name</td><td><tt>&lt;PublishingDateRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x448&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x448&gt;01&lt;/x448&gt;</tt>
  * (Publication date)</td></tr><tr><td>Notes</td><td>Note a date such as a publication date should be interpreted as the
  * 'global' publication date.</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PublishingDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ PublishingDate ⯈ PublishingDateRole</li>
+ * </ul>
  */
 public class PublishingDateRole implements OnixElement<PublishingDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +78,7 @@ public class PublishingDateRole implements OnixElement<PublishingDateRoles>, Ser
     public PublishingDateRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PublishingDateRoles _value() {
@@ -95,6 +105,9 @@ public class PublishingDateRole implements OnixElement<PublishingDateRoles>, Ser
         value = PublishingDateRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PublishingDateRole&gt; or &lt;x448&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

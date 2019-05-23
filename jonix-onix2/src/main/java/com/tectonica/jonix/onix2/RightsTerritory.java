@@ -38,14 +38,26 @@ import java.io.Serializable;
  * <h1>Rights territory</h1><p>One or more ONIX codes identifying a territory which is not a country, but which is
  * precisely defined in geographical terms, <em>eg</em> World, Northern Ireland, Australian National Territory.
  * Successive codes are separated by spaces, so that the element can carry an unlimited number of territory codes, for
- * territories for which details of another publisher’s product are given. Optional and non-repeating.</p><table
+ * territories that share the sales rights specified in &lt;SalesRightsType&gt;. Optional and non-repeating.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>One or more variable-length codes, each consisting of upper case
  * letters with or without a hyphen, successive codes being separated by spaces. Suggested maximum length 100
  * characters.</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate, country subdivision codes are
  * derived from the UN LOCODE scheme based on ISO 3166.</td></tr><tr><td>Reference
- * name</td><td>&lt;RightsTerritory&gt;</td></tr><tr><td>Short tag</td><td>&lt;b388&gt;</td></tr><tr><td>Example</td><td>&lt;RightsTerritory&gt;WORLD&lt;/RightsTerritory&gt;
- * Whole world</td></tr><tr><td></td><td>&lt;b388&gt;GB-EWS&lt;/b388&gt; UK excluding Northern
+ * name</td><td><tt>&lt;RightsTerritory&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b388&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;RightsTerritory&gt;WORLD&lt;/RightsTerritory&gt;</tt>
+ * Whole world</td></tr><tr><td></td><td><tt>&lt;b388&gt;GB-EWS&lt;/b388&gt;</tt> UK excluding Northern
  * Ireland</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;NotForSale&gt;</li>
+ * <li>&lt;SalesRights&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ RightsTerritory</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SalesRights ⯈ RightsTerritory</li>
+ * </ul>
  */
 public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +93,7 @@ public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Ser
     public java.util.Set<Regions> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<Regions> _value() {
@@ -115,6 +127,9 @@ public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Ser
         }
     }
 
+    /**
+     * @return whether this tag (&lt;RightsTerritory&gt; or &lt;b388&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -38,9 +38,20 @@ import java.io.Serializable;
  * <h1>Currency code</h1><p>An ISO standard code identifying the currency in which a price is given in
  * &lt;PriceAmount&gt;, unless it is the default currency for the exchange. Optional and non-repeating.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three letters</td></tr><tr><td>Codelist</td><td>ISO
- * 4217 currency codes - List 96</td></tr><tr><td>Reference name</td><td>&lt;CurrencyCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j152&gt;</td></tr><tr><td>Example</td><td>&lt;j152&gt;NLG&lt;/j152&gt; Netherlands
+ * 4217 currency codes - List 96</td></tr><tr><td>Reference name</td><td><tt>&lt;CurrencyCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j152&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j152&gt;NLG&lt;/j152&gt;</tt> Netherlands
  * Guilder</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ CurrencyCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ CurrencyCode</li>
+ * </ul>
  */
 public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +87,7 @@ public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
     public CurrencyCodes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public CurrencyCodes _value() {
@@ -107,6 +118,9 @@ public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
         value = CurrencyCodes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;CurrencyCode&gt; or &lt;j152&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -36,9 +36,19 @@ import java.io.Serializable;
  * clear that one of a number of content types (<i>eg</i> text, audio, video) is the primary type for the product. Other
  * content types may be specified in the &lt;ProductContentType&gt;. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 81</td></tr><tr><td>Reference name</td><td>&lt;PrimaryContentType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x416&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x416&gt;10&lt;/x416&gt;
+ * 81</td></tr><tr><td>Reference name</td><td><tt>&lt;PrimaryContentType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x416&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x416&gt;10&lt;/x416&gt;</tt>
  * (Eye-readable text)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ PrimaryContentType</li>
+ * </ul>
  */
 public class PrimaryContentType implements OnixElement<ProductContentTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +79,7 @@ public class PrimaryContentType implements OnixElement<ProductContentTypes>, Ser
     public ProductContentTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductContentTypes _value() {
@@ -96,6 +106,9 @@ public class PrimaryContentType implements OnixElement<ProductContentTypes>, Ser
         value = ProductContentTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PrimaryContentType&gt; or &lt;x416&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

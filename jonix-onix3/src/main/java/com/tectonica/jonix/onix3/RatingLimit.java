@@ -33,9 +33,22 @@ import java.io.Serializable;
  * <h1>Review rating limit</h1><p>The maximum possible rating that may be awarded as part of a review of the
  * publication. Optional, but where used, it must be greater than or equal to the specified &lt;Rating&gt;.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer number, suggested maximum length 4
- * digits</td></tr><tr><td>Reference name</td><td>&lt;RatingLimit&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x526&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;RatingLimit&gt;5&lt;/RatingLimit&gt;
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;RatingLimit&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x526&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;RatingLimit&gt;5&lt;/RatingLimit&gt;</tt>
  * (4.5 out of 5 stars)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ReviewRating&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ ReviewRating ⯈ RatingLimit</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ ReviewRating ⯈ RatingLimit</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ReviewRating ⯈ RatingLimit</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ ReviewRating ⯈ RatingLimit</li>
+ * </ul>
  */
 public class RatingLimit implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +82,7 @@ public class RatingLimit implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -96,6 +109,9 @@ public class RatingLimit implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;RatingLimit&gt; or &lt;x526&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

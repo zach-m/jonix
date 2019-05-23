@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Illustration or other content type code</h1><p>An ONIX code which identifies the type of illustration or other
  * content to which an occurrence of the composite refers. Mandatory in each occurrence of the &lt;AncillaryContent&gt;
  * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 25</td></tr><tr><td>Reference name</td><td>&lt;AncillaryContentType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x423&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x423&gt;09&lt;/x423&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 25</td></tr><tr><td>Reference name</td><td><tt>&lt;AncillaryContentType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x423&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x423&gt;09&lt;/x423&gt;</tt>
  * (Illustrations, unspecified)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AncillaryContent&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AncillaryContent ⯈ AncillaryContentType</li>
+ * </ul>
  */
 public class AncillaryContentType implements OnixElement<IllustrationAndOtherContentTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class AncillaryContentType implements OnixElement<IllustrationAndOtherCon
     public IllustrationAndOtherContentTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public IllustrationAndOtherContentTypes _value() {
@@ -94,6 +104,9 @@ public class AncillaryContentType implements OnixElement<IllustrationAndOtherCon
         value = IllustrationAndOtherContentTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;AncillaryContentType&gt; or &lt;x423&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

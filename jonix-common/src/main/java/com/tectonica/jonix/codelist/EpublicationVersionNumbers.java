@@ -72,7 +72,9 @@ public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
     Kindle_KF8("116B", "Kindle KF8"), //
 
     /**
-     * Use only with &lt;ProductFormDetail&gt; code E116 &lt;p&gt;NOTE: Introduced in Onix3
+     * Use only with &lt;ProductFormDetail&gt; code E116
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Kindle_KFX("116C", "Kindle KFX");
 

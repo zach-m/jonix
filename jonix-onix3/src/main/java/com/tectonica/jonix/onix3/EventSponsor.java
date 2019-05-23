@@ -37,8 +37,18 @@ import java.io.Serializable;
  * of an event. <em>Either</em> an identifier, <em>or</em> one or other of &lt;PersonName&gt; or &lt;CorporateName&gt;,
  * <em>or</em> both an identifier and a name, must be present in each occurrence of the composite. The composite is
  * repeatable in order to specify multiple organizers and sponsors.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;EventSponsor&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;eventsponsor&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;EventSponsor&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;eventsponsor&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Event&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventSponsor</li>
+ * </ul>
  */
 public class EventSponsor implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -114,6 +124,9 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;EventSponsor&gt; or &lt;eventsponsor&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -127,7 +140,9 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
         eventSponsorIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>An optional and repeatable group of data elements which together carry a coded identifier for an organizer or
+     * sponsor of an event.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<EventSponsorIdentifier, JonixEventSponsorIdentifier, NameIdentifierTypes> eventSponsorIdentifiers() {
         _initialize();
@@ -137,7 +152,10 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
     private PersonName personName = PersonName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of a person, used here for a personal organizer or sponsor of an event. Optional and non-repeating.
+     * Only one of &lt;PersonName&gt; or &lt;CorporateName&gt; can be sent in each occurrence of the
+     * &lt;EventSponsor&gt; composite.</p>
+     * Jonix-Comment: this field is optional
      */
     public PersonName personName() {
         _initialize();
@@ -147,7 +165,10 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
     private CorporateName corporateName = CorporateName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The name of a corporate body, used here for a corporate organizer or sponsor of an event. Optional and
+     * non-repeating. Only one of &lt;PersonName&gt; or &lt;CorporateName&gt; can be sent in each occurrence of the
+     * &lt;EventSponsor&gt; composite.</p>
+     * Jonix-Comment: this field is optional
      */
     public CorporateName corporateName() {
         _initialize();

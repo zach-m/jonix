@@ -34,9 +34,22 @@ import java.io.Serializable;
  * <h1>Quantity unit code</h1><p>An ONIX code value specifying the unit in which a price condition quantity is stated.
  * Mandatory in each occurrence of the &lt;PriceConditionQuantity&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 169</td></tr><tr><td>Reference name</td><td>&lt;QuantityUnit&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x466&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;QuantityUnit&gt;09&lt;/QuantityUnit&gt;
+ * 169</td></tr><tr><td>Reference name</td><td><tt>&lt;QuantityUnit&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x466&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;QuantityUnit&gt;09&lt;/QuantityUnit&gt;</tt>
  * (Months)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PriceConditionQuantity&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity
+ * ⯈ QuantityUnit</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity ⯈
+ * QuantityUnit</li>
+ * </ul>
  */
 public class QuantityUnit implements OnixElement<QuantityUnits>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +80,7 @@ public class QuantityUnit implements OnixElement<QuantityUnits>, Serializable {
     public QuantityUnits value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public QuantityUnits _value() {
@@ -94,6 +107,9 @@ public class QuantityUnit implements OnixElement<QuantityUnits>, Serializable {
         value = QuantityUnits.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;QuantityUnit&gt; or &lt;x466&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

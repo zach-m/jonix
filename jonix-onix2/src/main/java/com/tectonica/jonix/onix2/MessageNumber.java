@@ -37,7 +37,17 @@ import java.io.Serializable;
  * <h1>Message sequence number</h1><p>A sequence number of the messages in a series sent between trading partners, to
  * enable the receiver to check against gaps and duplicates. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length integer,</td></tr><tr><td>Reference
- * name</td><td>&lt;MessageNumber&gt;</td></tr><tr><td>Short tag</td><td>&lt;m180&gt;</td></tr><tr><td>Example</td><td>&lt;m180&gt;1234&lt;/m180&gt;</td></tr></table>
+ * name</td><td><tt>&lt;MessageNumber&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;m180&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m180&gt;1234&lt;/m180&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ MessageNumber</li>
+ * </ul>
  */
 public class MessageNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class MessageNumber implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,9 @@ public class MessageNumber implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MessageNumber&gt; or &lt;m180&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

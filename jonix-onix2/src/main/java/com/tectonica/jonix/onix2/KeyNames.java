@@ -38,8 +38,33 @@ import java.io.Serializable;
  * creation of the product: key name(s), <em>ie</em> the name elements normally used to open an entry in an alphabetical
  * list, <em>eg</em> Smith or Garcia Marquez or Madonna or Francis de Sales (in Saint Francis de Sales). Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
- * length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;KeyNames&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b040&gt;</td></tr><tr><td>Example</td><td>&lt;KeyNames&gt;Beethoven&lt;/KeyNames&gt;</td></tr></table>
+ * length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;KeyNames&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b040&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;KeyNames&gt;Beethoven&lt;/KeyNames&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Name&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;PersonAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ KeyNames</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ KeyNames</li>
+ * </ul>
  */
 public class KeyNames implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +103,7 @@ public class KeyNames implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +134,9 @@ public class KeyNames implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;KeyNames&gt; or &lt;b040&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

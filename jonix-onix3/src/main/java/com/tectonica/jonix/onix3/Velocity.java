@@ -34,8 +34,18 @@ import java.io.Serializable;
  * <h1>Velocity composite</h1><p>An optional group of data elements which together specify the rate of stock depletion –
  * or equally, a rate of accumulation of backorders. Repeatable if the rate of depletion is specified using more than
  * one metric (<i>eg</i> specifying both a minimum and maximum daily sale).</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;Velocity&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;velocity&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Velocity&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;velocity&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Stock&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Velocity</li>
+ * </ul>
  */
 public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -111,6 +121,9 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Velocity&gt; or &lt;velocity&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -123,7 +136,9 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
     private VelocityMetric velocityMetric = VelocityMetric.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code that specifies how the rate of stock depletion is measured. Mandatory within the &lt;Velocity&gt;
+     * composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public VelocityMetric velocityMetric() {
         _initialize();
@@ -133,7 +148,9 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
     private Rate rate = Rate.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The stock depletion rate (as a number of copies, rounded to the nearest integer), measured according to the
+     * metric in &lt;VelocityMetric&gt;.</p>
+     * Jonix-Comment: this field is required
      */
     public Rate rate() {
         _initialize();
@@ -143,7 +160,8 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
     private Proximity proximity = Proximity.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An ONIX code which specifies the precision of the rate of stock depletion. Optional, and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public Proximity proximity() {
         _initialize();

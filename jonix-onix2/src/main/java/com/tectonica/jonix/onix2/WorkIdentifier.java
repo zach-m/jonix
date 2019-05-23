@@ -37,9 +37,21 @@ import java.io.Serializable;
 
 /**
  * <h1>Work identifier composite</h1><p>A group of data elements which together define the identifier of a work which is
- * manifested in the content item. Optional and repeatable. <strong>Please see Group&nbsp;PR.7 for
- * details.</strong></p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;WorkIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;workidentifier&gt;</td></tr></table>
+ * manifested in the product described by an ONIX &lt;Product&gt; record. Optional and repeatable.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;WorkIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;workidentifier&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ WorkIdentifier</li>
+ * </ul>
  */
 public class WorkIdentifier
     implements OnixDataCompositeWithKey<JonixWorkIdentifier, WorkIdentifierTypes>, Serializable {
@@ -125,6 +137,10 @@ public class WorkIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;WorkIdentifier&gt; or &lt;workidentifier&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -137,7 +153,9 @@ public class WorkIdentifier
     private WorkIDType workIDType = WorkIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt; is taken. Mandatory in each
+     * occurrence of the &lt;WorkIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public WorkIDType workIDType() {
         _initialize();
@@ -147,7 +165,9 @@ public class WorkIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier scheme when, and only when, the code in &lt;WorkIDType&gt;
+     * indicates a proprietary scheme, <em>eg</em> a bibliographic agency’s own code. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -157,7 +177,9 @@ public class WorkIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in &lt;WorkIDType&gt;. Mandatory in each occurrence of the
+     * &lt;WorkIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

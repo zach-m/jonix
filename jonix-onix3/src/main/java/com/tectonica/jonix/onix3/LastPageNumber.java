@@ -34,8 +34,18 @@ import java.io.Serializable;
  * which is left after the last text page). This element is omitted if an item begins and ends on the same page;
  * otherwise it should occur once and only once in each occurrence of the &lt;PageRun&gt; composite.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested maximum length 20
- * characters</td></tr><tr><td>Reference name</td><td>&lt;LastPageNumber&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b287&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b287&gt;35&lt;/b287&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;LastPageNumber&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b287&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;b287&gt;35&lt;/b287&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;PageRun&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextItem ⯈ PageRun ⯈ LastPageNumber</li>
+ * </ul>
  */
 public class LastPageNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +79,7 @@ public class LastPageNumber implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -96,6 +106,9 @@ public class LastPageNumber implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;LastPageNumber&gt; or &lt;b287&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

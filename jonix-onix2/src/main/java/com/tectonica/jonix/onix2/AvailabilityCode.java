@@ -46,9 +46,19 @@ import java.io.Serializable;
  * <li>Identifier of alternative or successor product – &lt;RelatedProduct&gt;, Group&nbsp;PR.23</li>
  * <li>New supplier – &lt;NewSupplier&gt;</li>
  * </ul><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
- * letters</td></tr><tr><td>Codelist</td><td>List 54</td></tr><tr><td>Reference name</td><td>&lt;AvailabilityCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j141&gt;</td></tr><tr><td>Example</td><td>&lt;AvailabilityCode&gt;OP&lt;/AvailabilityCode&gt; Out of
- * print</td></tr></table>
+ * letters</td></tr><tr><td>Codelist</td><td>List 54</td></tr><tr><td>Reference name</td><td><tt>&lt;AvailabilityCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j141&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;AvailabilityCode&gt;OP&lt;/AvailabilityCode&gt;</tt>
+ * Out of print</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ AvailabilityCode</li>
+ * </ul>
  */
 public class AvailabilityCode implements OnixElement<AvailabilityStatuss>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -84,7 +94,7 @@ public class AvailabilityCode implements OnixElement<AvailabilityStatuss>, Seria
     public AvailabilityStatuss value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public AvailabilityStatuss _value() {
@@ -115,6 +125,9 @@ public class AvailabilityCode implements OnixElement<AvailabilityStatuss>, Seria
         value = AvailabilityStatuss.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;AvailabilityCode&gt; or &lt;j141&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

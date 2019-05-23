@@ -102,20 +102,23 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
     Test_record("89", "Test record"), //
 
     /**
-     * ONIX Books 2.1 supply update - &lt;SupplyDetail&gt; only (not used in ONIX 3.0) &lt;p&gt;NOTE: Deprecated in
-     * Onix3
+     * ONIX Books 2.1 supply update - &lt;SupplyDetail&gt; only (not used in ONIX 3.0)
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Update_SupplyDetail_only("12", "Update – SupplyDetail only"), //
 
     /**
-     * ONIX Books 2.1 supply update - &lt;MarketRepresentation&gt; only (not used in ONIX 3.0) &lt;p&gt;NOTE: Deprecated
-     * in Onix3
+     * ONIX Books 2.1 supply update - &lt;MarketRepresentation&gt; only (not used in ONIX 3.0)
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Update_MarketRepresentation_only("13", "Update – MarketRepresentation only"), //
 
     /**
      * ONIX Books 2.1 supply update - both &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; (not used in ONIX 3.0)
-     * &lt;p&gt;NOTE: Deprecated in Onix3
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Update_SupplyDetail_and_MarketRepresentation("14", "Update – SupplyDetail and MarketRepresentation");
 

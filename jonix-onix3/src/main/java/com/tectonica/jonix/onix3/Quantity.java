@@ -30,11 +30,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Quantity</h1><p>A minimum order quantity required to qualify for a specified discount. Optional, and
- * non-repeating. Where omitted, the discount applies regardless of the order quantity (<i>ie</i> the minimum qualifying
- * order quantity is 1).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive number, here necessarily
- * an integer, or zero. Suggested maximum length 7 digits</td></tr><tr><td>Reference
- * name</td><td>&lt;Quantity&gt;</td></tr><tr><td>Short tag</td><td>&lt;x320&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Quantity&gt;12&lt;/Quantity&gt;</td></tr></table>
+ * <h1>Usage quantity (digital products)</h1><p>A numeric value representing the maximum permitted quantity of a
+ * particular type of usage. Mandatory in each occurrence of the &lt;EpubUsageLimit&gt; composite, and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit
+ * decimal point when required, or zero, as appropriate for the units specified in
+ * &lt;EpubUsageUnit&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;Quantity&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x320&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;Quantity&gt;10&lt;/Quantity&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Discount&gt;</li>
+ * <li>&lt;PriceConstraintLimit&gt;</li>
+ * <li>&lt;PriceConditionQuantity&gt;</li>
+ * <li>&lt;EpubUsageLimit&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Discount ⯈ Quantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Discount ⯈ Quantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
+ * Quantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
+ * Quantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity
+ * ⯈ Quantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity ⯈
+ * Quantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint ⯈ EpubUsageLimit ⯈ Quantity</li>
+ * </ul>
  */
 public class Quantity implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -63,13 +87,13 @@ public class Quantity implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits<p> (type:
-     * dt.PositiveDecimal)
+     * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the
+     * units specified in &lt;EpubUsageUnit&gt;<p> (type: dt.PositiveDecimal)
      */
     public Double value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Double _value() {
@@ -96,6 +120,9 @@ public class Quantity implements OnixElement<Double>, Serializable {
         value = JPU.getContentAsDouble(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Quantity&gt; or &lt;x320&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

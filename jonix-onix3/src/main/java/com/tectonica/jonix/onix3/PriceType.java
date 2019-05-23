@@ -31,13 +31,26 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price type code</h1><p>An ONIX code indicating the type of the comparison price in the &lt;PriceAmount&gt;
- * element within the &lt;ComparisonProductPrice&gt; composite. Optional if a &lt;DefaultPriceType&gt; has been
- * specified in the message header, otherwise mandatory. Non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 58</td></tr><tr><td>Reference name</td><td>&lt;PriceType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x462&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PriceType&gt;01&lt;/PriceType&gt;
- * (RRP excluding tax)</td></tr></table>
+ * <h1>Price type code</h1><p>An ONIX code indicating the type of the price in the &lt;PriceAmount&gt; field within the
+ * &lt;Price&gt; composite. Optional, provided that a &lt;DefaultPriceType&gt; has been specified in the message header,
+ * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 58</td></tr><tr><td>Reference name</td><td><tt>&lt;PriceType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x462&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;PriceType&gt;21&lt;/PriceType&gt;</tt>
+ * (Pre-publication RRP excluding tax)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ComparisonProductPrice&gt;</li>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ ComparisonProductPrice ⯈ PriceType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ ComparisonProductPrice ⯈ PriceType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceType</li>
+ * </ul>
  */
 public class PriceType implements OnixElement<PriceTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +81,7 @@ public class PriceType implements OnixElement<PriceTypes>, Serializable {
     public PriceTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PriceTypes _value() {
@@ -95,6 +108,9 @@ public class PriceType implements OnixElement<PriceTypes>, Serializable {
         value = PriceTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PriceType&gt; or &lt;x462&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -34,9 +34,22 @@ import java.io.Serializable;
  * <h1>Prize or award achievement code</h1><p>An ONIX code indicating the achievement of the product in relation to a
  * prize or award, <i>eg</i> winner, runner-up, shortlisted. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 41</td></tr><tr><td>Reference name</td><td>&lt;PrizeCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;g129&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PrizeCode&gt;02&lt;/PrizeCode&gt;
+ * 41</td></tr><tr><td>Reference name</td><td><tt>&lt;PrizeCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;g129&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;PrizeCode&gt;02&lt;/PrizeCode&gt;</tt>
  * (Runner up)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Prize&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ Prize ⯈ PrizeCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Prize ⯈ PrizeCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Prize ⯈ PrizeCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Prize ⯈ PrizeCode</li>
+ * </ul>
  */
 public class PrizeCode implements OnixElement<PrizeOrAwardAchievements>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +80,7 @@ public class PrizeCode implements OnixElement<PrizeOrAwardAchievements>, Seriali
     public PrizeOrAwardAchievements value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public PrizeOrAwardAchievements _value() {
@@ -94,6 +107,9 @@ public class PrizeCode implements OnixElement<PrizeOrAwardAchievements>, Seriali
         value = PrizeOrAwardAchievements.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;PrizeCode&gt; or &lt;g129&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

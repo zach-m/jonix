@@ -36,8 +36,18 @@ import java.io.Serializable;
 /**
  * <h1>Religious text feature description</h1><p>Free text describing a feature that is not adequately defined by code
  * values alone. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum 100 characters</td></tr><tr><td>Reference name</td><td>&lt;ReligiousTextFeatureDescription&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b360&gt;</td></tr></table>
+ * text, suggested maximum 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ReligiousTextFeatureDescription&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b360&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ReligiousTextFeature&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ ReligiousTextFeature ⯈ ReligiousTextFeatureDescription</li>
+ * </ul>
  */
 public class ReligiousTextFeatureDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class ReligiousTextFeatureDescription implements OnixElement<String>, Ser
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,10 @@ public class ReligiousTextFeatureDescription implements OnixElement<String>, Ser
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ReligiousTextFeatureDescription&gt; or &lt;b360&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

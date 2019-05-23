@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Collection identifier type code</h1><p>An ONIX code identifying a scheme from which an identifier in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;CollectionIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length text, two
- * digits</td></tr><tr><td>Codelist</td><td>List 13</td></tr><tr><td>Reference name</td><td>&lt;CollectionIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x344&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x344&gt;02&lt;/x344&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 13</td></tr><tr><td>Reference name</td><td><tt>&lt;CollectionIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x344&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x344&gt;02&lt;/x344&gt;</tt>
  * (ISSN)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;CollectionIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionIdentifier ⯈ CollectionIDType</li>
+ * </ul>
  */
 public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Ser
     public SeriesIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public SeriesIdentifierTypes _value() {
@@ -94,6 +104,9 @@ public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Ser
         value = SeriesIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;CollectionIDType&gt; or &lt;x344&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

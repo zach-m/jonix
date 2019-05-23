@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Product contact role</h1><p>An ONIX code which identifies the role played by the product contact in relation to
  * the product – for example answering enquiries related to sales or to promotion.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 198</td></tr><tr><td>Reference name</td><td>&lt;ProductContactRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x482&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x482&gt;01&lt;/x482&gt;
- * (Accessibility request)</td></tr></table>
+ * 198</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductContactRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x482&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt></tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductContact&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ ProductContactRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact ⯈ ProductContactRole</li>
+ * </ul>
  */
 public class ProductContactRole implements OnixElement<ProductContactRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class ProductContactRole implements OnixElement<ProductContactRoles>, Ser
     public ProductContactRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductContactRoles _value() {
@@ -94,6 +104,9 @@ public class ProductContactRole implements OnixElement<ProductContactRoles>, Ser
         value = ProductContactRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductContactRole&gt; or &lt;x482&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

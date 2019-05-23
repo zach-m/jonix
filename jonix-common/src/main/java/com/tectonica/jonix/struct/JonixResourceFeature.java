@@ -39,8 +39,7 @@ public class JonixResourceFeature implements JonixKeyedStruct<ResourceFeatureTyp
     public ResourceFeatureTypes resourceFeatureType;
 
     /**
-     * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or
-     * may not be taken from a code list <p> (type: dt.NonEmptyString)
+     * Raw Format: Dependent on the scheme specified in &lt;ResourceFeatureType&gt; <p> (type: dt.NonEmptyString)
      */
     public String featureValue;
 

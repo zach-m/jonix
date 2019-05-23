@@ -19,83 +19,90 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.ComplexitySchemeIdentifiers;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-
-import java.io.Serializable;
+import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Complexity scheme identifier</h1><p>An ONIX code specifying the scheme from which the value in
- * &lt;ComplexityCode&gt; is taken. Mandatory in each occurrence of the &lt;Complexity&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 32</td></tr><tr><td>Reference name</td><td>&lt;ComplexitySchemeIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b077&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b077&gt;06&lt;/b077&gt;
- * (Lexile measure)</td></tr></table>
+ * <h1>Complexity scheme identifier</h1><p>An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken. Mandatory in each occurrence of the &lt;Complexity&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List 32</td></tr><tr><td>Reference name</td><td><tt>&lt;ComplexitySchemeIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b077&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b077&gt;06&lt;/b077&gt;</tt> (Lexile measure)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Complexity&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Complexity ⯈ ComplexitySchemeIdentifier</li>
+ * </ul>
  */
-public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeIdentifiers>, Serializable {
-    private static final long serialVersionUID = 1L;
+public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeIdentifiers>, Serializable
+{
+   private static final long serialVersionUID = 1L;
 
-    public static final String refname = "ComplexitySchemeIdentifier";
-    public static final String shortname = "b077";
+   public static final String refname = "ComplexitySchemeIdentifier";
+   public static final String shortname = "b077";
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // ATTRIBUTES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // ATTRIBUTES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * (type: dt.DateOrDateTime)
-     */
-    public String datestamp;
+   /**
+    * (type: dt.DateOrDateTime)
+    */
+   public String datestamp;
 
-    public RecordSourceTypes sourcetype;
+   public RecordSourceTypes sourcetype;
 
-    /**
-     * (type: dt.NonEmptyString)
-     */
-    public String sourcename;
+   /**
+    * (type: dt.NonEmptyString)
+    */
+   public String sourcename;
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // VALUE MEMBER
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // VALUE MEMBER
+   /////////////////////////////////////////////////////////////////////////////////
 
-    public ComplexitySchemeIdentifiers value;
+   public ComplexitySchemeIdentifiers value;
 
-    /**
-     * Internal API, use the {@link #value} field instead
-     */
-    @Override
-    public ComplexitySchemeIdentifiers _value() {
-        return value;
-    }
+   /**
+   * Internal API, use the {@link #value()} method or the {@link #value} field instead
+   */
+   @Override
+   public ComplexitySchemeIdentifiers _value() {
+      return value;
+   }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // SERVICES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // SERVICES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private final boolean exists;
-    public static final ComplexitySchemeIdentifier EMPTY = new ComplexitySchemeIdentifier();
+   private final boolean exists;
+   public static final ComplexitySchemeIdentifier EMPTY = new ComplexitySchemeIdentifier();
 
-    public ComplexitySchemeIdentifier() {
-        exists = false;
-    }
+   public ComplexitySchemeIdentifier() {
+      exists = false;
+   }
 
-    public ComplexitySchemeIdentifier(org.w3c.dom.Element element) {
-        exists = true;
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
+   public ComplexitySchemeIdentifier(org.w3c.dom.Element element) {
+      exists = true;
+      datestamp = JPU.getAttribute(element, "datestamp");
+      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+      sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = ComplexitySchemeIdentifiers.byCode(JPU.getContentAsString(element));
-    }
+      value = ComplexitySchemeIdentifiers.byCode(JPU.getContentAsString(element));
+   }
 
-    @Override
-    public boolean exists() {
-        return exists;
-    }
+   /**
+    * @return whether this tag (&lt;ComplexitySchemeIdentifier&gt; or &lt;b077&gt;) is explicitly provided in the ONIX XML
+    */
+   @Override
+   public boolean exists() {
+      return exists;
+   }
 }

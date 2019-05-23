@@ -33,9 +33,19 @@ import java.io.Serializable;
  * <h1>Map scale</h1><p>The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data
  * element, without spaces or punctuation. Optional, and repeatable if a product comprises maps with two or more
  * different scales.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum
- * length 8 digits</td></tr><tr><td>Reference name</td><td>&lt;MapScale&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b063&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;b063&gt;50000&lt;/b063&gt;
+ * length 8 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;MapScale&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b063&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;b063&gt;50000&lt;/b063&gt;</tt>
  * (One to 50,000, 2cm = 1km)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ MapScale</li>
+ * </ul>
  */
 public class MapScale implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +79,7 @@ public class MapScale implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -96,6 +106,9 @@ public class MapScale implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MapScale&gt; or &lt;b063&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

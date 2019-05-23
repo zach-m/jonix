@@ -42,8 +42,18 @@ import java.util.List;
  * Optional in any occurrence of the &lt;ContentDetail&gt; composite, but it may be omitted only within a partial or
  * ‘block update’ (Notification or update type 04, see P.1.2) when the intention is to remove all previously supplied
  * content detail. When used normally, it is repeatable for each content item within the product.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;ContentItem&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;contentitem&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ContentItem&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;contentitem&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ContentDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem</li>
+ * </ul>
  */
 public class ContentItem implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -175,6 +185,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ContentItem&gt; or &lt;contentitem&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -187,7 +200,16 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A number which specifies the position of a content item in a multi-level hierarchy of such items. Numbering
+     * starts at the top level in the hierarchy, which may represent (<i>eg</i>) chapters in a printed book, and the
+     * first item at the top level is numbered 1. Numbers should be assigned solely with a view to the logic of the ONIX
+     * description and not in relation to any other characteristics of the items being numbered (such as their actual
+     * numbering or their typographical layout in a printed table of contents). So for example, Chapter&nbsp;2 could
+     * have a level sequence number of&nbsp;3, and the second sub-section within Chapter&nbsp;2 could be
+     * numbered&nbsp;3.2. &lt;LevelSequenceNumber&gt; is <em>not</em> a required field, but it is strongly recommended
+     * for structured tables of contents. If used, it must occur once and only once in each occurrence of the
+     * &lt;ContentItem&gt; composite.</p>
+     * Jonix-Comment: this field is optional
      */
     public LevelSequenceNumber levelSequenceNumber() {
         _initialize();
@@ -197,7 +219,11 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private TextItem textItem = TextItem.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A group of data elements which are specific to text content. Optional, but exactly one of either the
+     * &lt;TextItem&gt; composite or the similar &lt;AVItem&gt; composite must occur in a &lt;ContentItem&gt; composite
+     * which describes a particular content item. (Similar composites may be defined for other media, and the occurrence
+     * of one of them will be mandatory in any &lt;ContentItem&gt; composite.)</p>
+     * Jonix-Comment: this field is optional
      */
     public TextItem textItem() {
         _initialize();
@@ -207,7 +233,10 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private AVItem avItem = AVItem.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An optional group of data elements which are specific to audio or audiovisual (<i>ie</i> time-based) content.
+     * Exactly one of either the &lt;AVItem&gt; composite or the similar &lt;TextItem&gt; composite must occur in a
+     * &lt;ContentItem&gt; composite which describes a content item.</p>
+     * Jonix-Comment: this field is optional
      */
     public AVItem avItem() {
         _initialize();
@@ -217,7 +246,10 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The generic name (if any) which is given in the product to the type of section which the content item
+     * represents, <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
+     * &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the &lt;ContentItem&gt;.</p>
+     * Jonix-Comment: this field is required
      */
     public ComponentTypeName componentTypeName() {
         _initialize();
@@ -227,7 +259,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private ComponentNumber componentNumber = ComponentNumber.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The number (if any) which is given to the content item in the product, in the form (<i>eg</i> Arabic or Roman)
+     * in which it is given in the product. Optional and non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public ComponentNumber componentNumber() {
         _initialize();
@@ -237,7 +271,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<TitleDetail> titleDetails = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together give the text of a title of a content item and specify its
+     * type. Optional.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<TitleDetail> titleDetails() {
         _initialize();
@@ -247,7 +283,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<Contributor> contributors = Collections.emptyList();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A group of data elements which together describe a personal or corporate contributor to a content item.
+     * Optional and repeatable.</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public List<Contributor> contributors() {
         _initialize();
@@ -257,7 +295,15 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>Free text showing how the authorship of a content item should be described in an online display, when a
+     * standard concatenation of individual contributor elements would not give a satisfactory presentation. Optional,
+     * and repeatable if parallel text is provided in multiple languages. The language attribute is optional for a
+     * single instance of &lt;ContributorStatement&gt;, but must be included in each instance if
+     * &lt;ContributorStatement&gt; is repeated. When the &lt;ContributorStatement&gt; field is sent, the receiver
+     * should use it to replace all name detail (though not the biographical, date or place details) sent in the
+     * &lt;Contributor&gt; composite for display purposes only. The individual name detail must also be sent in the
+     * &lt;Contributor&gt; composite for indexing and retrieval.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
@@ -267,7 +313,10 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private NoContributor noContributor = NoContributor.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>An empty element that provides a positive indication that a content item has no stated authorship. Optional
+     * and non-repeating. Must only be sent in a &lt;ContentItem&gt; composite that has no &lt;Contributor&gt;
+     * elements.</p>
+     * Jonix-Comment: this field is optional
      */
     public NoContributor noContributor() {
         _initialize();
@@ -282,7 +331,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>An optional and repeatable group of data elements which together represent a language, and specify its role
+     * and, where required, whether it is a country variant.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
         _initialize();
@@ -292,7 +343,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together specify a subject classification or a subject heading relating to a
+     * content item. Optional and repeatable.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
         _initialize();
@@ -302,7 +355,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<NameAsSubject> nameAsSubjects = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>An optional and repeatable group of data elements which together represent the name of a person or
+     * organization – real or fictional – that is part of the subject of a content item.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<NameAsSubject> nameAsSubjects() {
         _initialize();
@@ -312,7 +367,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<TextContent> textContents = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together carry text related to a content item. Optional and repeatable.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<TextContent> textContents() {
         _initialize();
@@ -322,7 +378,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<CitedContent> citedContents = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together describe a piece of cited content. Optional and repeatable.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<CitedContent> citedContents() {
         _initialize();
@@ -332,7 +389,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<SupportingResource> supportingResources = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together describe a supporting resource. Optional and repeatable.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<SupportingResource> supportingResources() {
         _initialize();
@@ -342,7 +400,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<RelatedWork> relatedWorks = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together describe a work which has a specified relationship to a content item.
+     * Optional and repeatable.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<RelatedWork> relatedWorks() {
         _initialize();
@@ -352,7 +412,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     private List<RelatedProduct> relatedProducts = Collections.emptyList();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together describe a product which has a specified relationship to a content
+     * item. Optional and repeatable.</p>
+     * Jonix-Comment: this list may be empty
      */
     public List<RelatedProduct> relatedProducts() {
         _initialize();

@@ -38,9 +38,19 @@ import java.io.Serializable;
  * <h1>Barcode indicator</h1><p>An ONIX code indicating whether a product is bar-coded. Optional, and repeatable if the
  * product carries two or more barcodes from different schemes. The absence of this field does NOT mean that a product
  * is not bar-coded.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 6</td></tr><tr><td>Reference name</td><td>&lt;Barcode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b246&gt;</td></tr><tr><td>Example</td><td>&lt;Barcode&gt;01&lt;/Barcode&gt; Barcoded, scheme
- * unspecified</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 6</td></tr><tr><td>Reference name</td><td><tt>&lt;Barcode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b246&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;Barcode&gt;01&lt;/Barcode&gt;</tt>
+ * Barcoded, scheme unspecified</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Barcode</li>
+ * </ul>
  */
 public class Barcode implements OnixElement<BarcodeIndicatorsList6>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class Barcode implements OnixElement<BarcodeIndicatorsList6>, Serializabl
     public BarcodeIndicatorsList6 value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public BarcodeIndicatorsList6 _value() {
@@ -107,6 +117,9 @@ public class Barcode implements OnixElement<BarcodeIndicatorsList6>, Serializabl
         value = BarcodeIndicatorsList6.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;Barcode&gt; or &lt;b246&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

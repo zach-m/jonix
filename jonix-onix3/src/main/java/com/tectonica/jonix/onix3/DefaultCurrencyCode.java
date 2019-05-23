@@ -36,8 +36,18 @@ import java.io.Serializable;
  * non-repeating. All ONIX messages must include an explicit statement of the currency used for any prices. To avoid any
  * possible ambiguity, it is strongly recommended that the currency should be repeated in the &lt;Price&gt; composite
  * for each individual price.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, three
- * letters</td></tr><tr><td>Codelist</td><td>List 96</td></tr><tr><td>Reference name</td><td>&lt;DefaultCurrencyCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;m186&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;DefaultCurrencyCode&gt;USD&lt;/DefaultCurrencyCode&gt;</td></tr></table>
+ * letters</td></tr><tr><td>Codelist</td><td>List 96</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultCurrencyCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;m186&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;DefaultCurrencyCode&gt;USD&lt;/DefaultCurrencyCode&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ DefaultCurrencyCode</li>
+ * </ul>
  */
 public class DefaultCurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -68,7 +78,7 @@ public class DefaultCurrencyCode implements OnixElement<CurrencyCodes>, Serializ
     public CurrencyCodes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public CurrencyCodes _value() {
@@ -95,6 +105,9 @@ public class DefaultCurrencyCode implements OnixElement<CurrencyCodes>, Serializ
         value = CurrencyCodes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;DefaultCurrencyCode&gt; or &lt;m186&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

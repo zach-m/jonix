@@ -38,8 +38,18 @@ import java.io.Serializable;
  * <h1>AV item composite</h1><p>An optional group of data elements which are specific to audio or audiovisual (<i>ie</i>
  * time-based) content. Exactly one of either the &lt;AVItem&gt; composite or the similar &lt;TextItem&gt; composite
  * must occur in a &lt;ContentItem&gt; composite which describes a content item.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;AVItem&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;avitem&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;AVItem&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;avitem&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ContentItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem</li>
+ * </ul>
  */
 public class AVItem implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -119,6 +129,9 @@ public class AVItem implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;AVItem&gt; or &lt;avitem&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -131,7 +144,9 @@ public class AVItem implements OnixSuperComposite, Serializable {
     private AVItemType avItemType = AVItemType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the nature of an audio or audiovisual content item. Mandatory in each occurrence
+     * of the &lt;AVItem&gt; composite, and non-repeatable.</p>
+     * Jonix-Comment: this field is required
      */
     public AVItemType avItemType() {
         _initialize();
@@ -142,7 +157,10 @@ public class AVItem implements OnixSuperComposite, Serializable {
         avItemIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list may be empty)
+     * <p>A group of data elements which together define an identifier of an audio or audiovisual content item in
+     * accordance with a specified identifier scheme. The composite is optional, and repeatable in order to provide
+     * multiple identifiers for the content item.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<AVItemIdentifier, JonixAVItemIdentifier, AvItemIdentifierTypes> avItemIdentifiers() {
         _initialize();
@@ -152,7 +170,9 @@ public class AVItem implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<TimeRun, JonixTimeRun> timeRuns = ListOfOnixDataComposite.empty();
 
     /**
-     * (this list may be empty)
+     * <p>A repeatable group of data elements which together define the time period which an AV item takes up. The
+     * composite is optional, but may be repeated where the AV item covers two or more separate periods of time.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<TimeRun, JonixTimeRun> timeRuns() {
         _initialize();
@@ -162,7 +182,10 @@ public class AVItem implements OnixSuperComposite, Serializable {
     private AVDuration avDuration = AVDuration.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>The duration of an audio or audiovisual item within the time-based content of a product. Optional and
+     * non-repeating, but normally expected when the AV content item is being referenced as part of a structured table
+     * of contents.</p>
+     * Jonix-Comment: this field is optional
      */
     public AVDuration avDuration() {
         _initialize();

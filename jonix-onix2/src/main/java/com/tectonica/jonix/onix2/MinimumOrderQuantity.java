@@ -38,8 +38,19 @@ import java.io.Serializable;
  * an occurrence of the &lt;Price&gt; composite. Optional and non-repeating. If the field is present, the price is a
  * quantity price. If the field is omitted, the price applies to a single unit.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum length 4
- * digits</td></tr><tr><td>Reference name</td><td>&lt;MinimumOrderQuantity&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j263&gt;</td></tr><tr><td>Example</td><td>&lt;MinimumOrderQuantity&gt;50&lt;/MinimumOrderQuantity&gt;</td></tr></table>
+ * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;MinimumOrderQuantity&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j263&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;MinimumOrderQuantity&gt;50&lt;/MinimumOrderQuantity&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ MinimumOrderQuantity</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ MinimumOrderQuantity</li>
+ * </ul>
  */
 public class MinimumOrderQuantity implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +89,7 @@ public class MinimumOrderQuantity implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +120,9 @@ public class MinimumOrderQuantity implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MinimumOrderQuantity&gt; or &lt;j263&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

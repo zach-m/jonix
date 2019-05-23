@@ -34,9 +34,27 @@ import java.io.Serializable;
  * <h1>Website purpose</h1><p>An ONIX code which identifies the role or purpose of the website which is linked through
  * the &lt;WebsiteLink&gt; element. Optional and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 73</td></tr><tr><td>Reference name</td><td>&lt;WebsiteRole&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b367&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b367&gt;34&lt;/b367&gt;
- * (Supplier's B2B website)</td></tr></table>
+ * 73</td></tr><tr><td>Reference name</td><td><tt>&lt;WebsiteRole&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b367&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;b367&gt;07&lt;/b367&gt;</tt>
+ * (Publisher's website relating to specified contributor)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Website&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ Website ⯈ WebsiteRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ Website ⯈ WebsiteRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Website ⯈ WebsiteRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ Website ⯈ WebsiteRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ Website ⯈
+ * WebsiteRole</li>
+ * </ul>
  */
 public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +85,7 @@ public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {
     public WebsiteRoles value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public WebsiteRoles _value() {
@@ -94,6 +112,9 @@ public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {
         value = WebsiteRoles.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;WebsiteRole&gt; or &lt;b367&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

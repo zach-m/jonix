@@ -606,7 +606,9 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * For fiction and non-fiction, one or more key names, provded - like keywords - for indexing and search purposes.
      * Where multiple place names are sent, this should in a single instance of &lt;SubjectHeadingText&gt;, and multiple
-     * names should be separated by semi-colons. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * names should be separated by semi-colons. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Key_place_names("B5", "Key place names");
 

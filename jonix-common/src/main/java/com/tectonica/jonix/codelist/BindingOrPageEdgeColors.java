@@ -53,7 +53,7 @@ public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
     Burgundy_Maroon("BUR", "Burgundy/Maroon"), //
 
     /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
+     * Jonix-Comment: Introduced in Onix3
      */
     Celadon_Pale_green("CEL", "Celadon/Pale green"), //
 

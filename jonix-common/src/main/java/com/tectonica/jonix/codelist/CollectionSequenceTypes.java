@@ -69,14 +69,16 @@ public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
     Original_publication_order("05", "Original publication order"), //
 
     /**
-     * Where it is different from the title order, publication order, narrative order etc &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * Where it is different from the title order, publication order, narrative order etc
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Suggested_reading_order("06", "Suggested reading order"), //
 
     /**
-     * Where it is different from the title order, publication order, narrative order, reading order etc &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * Where it is different from the title order, publication order, narrative order, reading order etc
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Suggested_display_order("07", "Suggested display order");
 

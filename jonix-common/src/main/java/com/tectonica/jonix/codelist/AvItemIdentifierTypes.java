@@ -26,8 +26,7 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 241 (AV Item Identifier type &lt;p&gt;NOTE: Introduced in
- * Onix3)
+ * marker interface to assist in IDE navigation to code-list 241 (AV Item Identifier type)
  */
 interface CodeList241 {
 }
@@ -35,7 +34,9 @@ interface CodeList241 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 241</b>
  * <p>
- * Description: AV Item Identifier type &lt;p&gt;NOTE: Introduced in Onix3
+ * Description: AV Item Identifier type
+ * <p>
+ * Jonix-Comment: Introduced in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist241">ONIX

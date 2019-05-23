@@ -34,16 +34,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Level sequence number</h1><p>A number which specifies the position of a content item in a multi-level hierarchy
- * of such items. Numbering starts at the top level in the hierarchy, which may represent (eg) chapters in a printed
- * book, and the first item at the top level is numbered 1. Numbers should be assigned solely with a view to the logic
- * of the ONIX description and not in relation to any other characteristics of the items being numbered (such as their
- * typographical layout in a printed table of contents). &lt;LevelSequenceNumber&gt; is not a required field, but it is
- * strongly recommended for structured tables of contents. If used, it must occur once and only once in each occurrence
- * of the &lt;ContentItem&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * string of integers, each successive integer being separated by a full stop, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td>&lt;LevelSequenceNumber&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b284&gt;</td></tr><tr><td>Example</td><td>&lt;LevelSequenceNumber&gt;2.24.1.7&lt;/LevelSequenceNumber&gt;</td></tr></table>
+ * <h1>Level sequence number</h1><p>A number which specifies the position of an item in a set within a multi-level
+ * hierarchy of such items. Numbering starts at the top level in the hierarchy, and the first item at the top level is
+ * numbered 1. Optional and non-repeating. The purpose of this element is to make it possible to describe structured
+ * sets in a normalized way, since enumeration carried as &lt;ItemNumberWithinSet&gt; may take a wide variety of
+ * forms.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length string of integers, each
+ * successive integer being separated by a full stop, suggested maximum length 100 characters</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;LevelSequenceNumber&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b284&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b284&gt;2.7&lt;/b284&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;Set&gt;</li>
+ * <li>&lt;SubSeriesRecord&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ LevelSequenceNumber</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ LevelSequenceNumber</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ LevelSequenceNumber</li>
+ * </ul>
  */
 public class LevelSequenceNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -83,7 +94,7 @@ public class LevelSequenceNumber implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -114,6 +125,9 @@ public class LevelSequenceNumber implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;LevelSequenceNumber&gt; or &lt;b284&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

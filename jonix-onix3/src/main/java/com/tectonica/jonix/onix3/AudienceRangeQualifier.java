@@ -19,83 +19,90 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-
-import java.io.Serializable;
+import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Audience range qualifier</h1><p>An ONIX code specifying the attribute (age, school grade <i>etc</i>) which is
- * measured by the value in the &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the
- * &lt;AudienceRange&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, two digits</td></tr><tr><td>Codelist</td><td>List 30</td></tr><tr><td>Reference
- * name</td><td>&lt;AudienceRangeQualifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;b074&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;b074&gt;11&lt;/b074&gt;
- * (US school grade)</td></tr></table>
+ * <h1>Audience range qualifier</h1><p>An ONIX code specifying the attribute (age, school grade <i>etc</i>) which is measured by the value in the &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List 30</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceRangeQualifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b074&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b074&gt;11&lt;/b074&gt;</tt> (US school grade)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AudienceRange&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AudienceRange ⯈ AudienceRangeQualifier</li>
+ * </ul>
  */
-public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifiers>, Serializable {
-    private static final long serialVersionUID = 1L;
+public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifiers>, Serializable
+{
+   private static final long serialVersionUID = 1L;
 
-    public static final String refname = "AudienceRangeQualifier";
-    public static final String shortname = "b074";
+   public static final String refname = "AudienceRangeQualifier";
+   public static final String shortname = "b074";
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // ATTRIBUTES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // ATTRIBUTES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * (type: dt.DateOrDateTime)
-     */
-    public String datestamp;
+   /**
+    * (type: dt.DateOrDateTime)
+    */
+   public String datestamp;
 
-    public RecordSourceTypes sourcetype;
+   public RecordSourceTypes sourcetype;
 
-    /**
-     * (type: dt.NonEmptyString)
-     */
-    public String sourcename;
+   /**
+    * (type: dt.NonEmptyString)
+    */
+   public String sourcename;
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // VALUE MEMBER
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // VALUE MEMBER
+   /////////////////////////////////////////////////////////////////////////////////
 
-    public AudienceRangeQualifiers value;
+   public AudienceRangeQualifiers value;
 
-    /**
-     * Internal API, use the {@link #value} field instead
-     */
-    @Override
-    public AudienceRangeQualifiers _value() {
-        return value;
-    }
+   /**
+   * Internal API, use the {@link #value()} method or the {@link #value} field instead
+   */
+   @Override
+   public AudienceRangeQualifiers _value() {
+      return value;
+   }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // SERVICES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // SERVICES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private final boolean exists;
-    public static final AudienceRangeQualifier EMPTY = new AudienceRangeQualifier();
+   private final boolean exists;
+   public static final AudienceRangeQualifier EMPTY = new AudienceRangeQualifier();
 
-    public AudienceRangeQualifier() {
-        exists = false;
-    }
+   public AudienceRangeQualifier() {
+      exists = false;
+   }
 
-    public AudienceRangeQualifier(org.w3c.dom.Element element) {
-        exists = true;
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
+   public AudienceRangeQualifier(org.w3c.dom.Element element) {
+      exists = true;
+      datestamp = JPU.getAttribute(element, "datestamp");
+      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+      sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = AudienceRangeQualifiers.byCode(JPU.getContentAsString(element));
-    }
+      value = AudienceRangeQualifiers.byCode(JPU.getContentAsString(element));
+   }
 
-    @Override
-    public boolean exists() {
-        return exists;
-    }
+   /**
+    * @return whether this tag (&lt;AudienceRangeQualifier&gt; or &lt;b074&gt;) is explicitly provided in the ONIX XML
+    */
+   @Override
+   public boolean exists() {
+      return exists;
+   }
 }

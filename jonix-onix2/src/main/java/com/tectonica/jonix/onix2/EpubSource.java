@@ -39,8 +39,18 @@ import java.io.Serializable;
  * when shipped by a publisher to an intermediary for conversion to one or more forms of deliverable. Optional and
  * non-repeating, and can occur only if the &lt;EpubType&gt; field is present.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 11</td></tr><tr><td>Reference name</td><td>&lt;EpubSource&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b278&gt;</td></tr><tr><td>Example</td><td>&lt;EpubSource&gt;02&lt;/EpubSource&gt;</td></tr></table>
+ * 11</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubSource&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b278&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;EpubSource&gt;02&lt;/EpubSource&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ EpubSource</li>
+ * </ul>
  */
 public class EpubSource implements OnixElement<EpublicationFormats>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class EpubSource implements OnixElement<EpublicationFormats>, Serializabl
     public EpublicationFormats value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public EpublicationFormats _value() {
@@ -107,6 +117,9 @@ public class EpubSource implements OnixElement<EpublicationFormats>, Serializabl
         value = EpublicationFormats.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;EpubSource&gt; or &lt;b278&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

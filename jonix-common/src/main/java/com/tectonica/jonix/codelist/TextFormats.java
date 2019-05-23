@@ -71,59 +71,72 @@ public enum TextFormats implements OnixCodelist, CodeList34 {
     Basic_ASCII_text("07", "Basic ASCII text"), //
 
     /**
-     * DEPRECATED: use code 06 or 07 as appropriate &lt;p&gt;NOTE: Deprecated in Onix3
+     * DEPRECATED: use code 06 or 07 as appropriate
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     ASCII_text("00", "ASCII text"), //
 
     /**
-     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     * Jonix-Comment: Deprecated in Onix3
      */
     SGML("01", "SGML"), //
 
     /**
-     * DEPRECATED: was formerly assigned both to PDF and to XHTML &lt;p&gt;NOTE: Deprecated in Onix3
+     * DEPRECATED: was formerly assigned both to PDF and to XHTML
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     PDF("04", "PDF"), //
 
     /**
      * Replaces 04 for the &lt;TextFormat&gt; element, but cannot of course be used as a textformat attribute
-     * &lt;p&gt;NOTE: Deprecated in Onix3
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     PDF_("08", "PDF"), //
 
     /**
-     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     * Jonix-Comment: Deprecated in Onix3
      */
     Microsoft_rich_text_format_RTF("09", "Microsoft rich text format (RTF)"), //
 
     /**
-     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     * Jonix-Comment: Deprecated in Onix3
      */
     Microsoft_Word_binary_format_DOC("10", "Microsoft Word binary format (DOC)"), //
 
     /**
-     * Office Open XML file format / OOXML / DOCX &lt;p&gt;NOTE: Deprecated in Onix3
+     * Office Open XML file format / OOXML / DOCX
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     ECMA_376_WordprocessingML("11", "ECMA 376 WordprocessingML"), //
 
     /**
-     * ISO Open Document Format &lt;p&gt;NOTE: Deprecated in Onix3
+     * ISO Open Document Format
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     ISO_26300_ODF("12", "ISO 26300 ODF"), //
 
     /**
-     * null &lt;p&gt;NOTE: Deprecated in Onix3
+     * Jonix-Comment: Deprecated in Onix3
      */
     Corel_Wordperfect_binary_format_DOC("13", "Corel Wordperfect binary format (DOC)"), //
 
     /**
      * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
-     * (IDPF) [File extension .epub] &lt;p&gt;NOTE: Deprecated in Onix3
+     * (IDPF) [File extension .epub]
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     EPUB("14", "EPUB"), //
 
     /**
-     * XML Paper Specification &lt;p&gt;NOTE: Deprecated in Onix3
+     * XML Paper Specification
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     XPS("15", "XPS");
 

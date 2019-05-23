@@ -38,9 +38,19 @@ import java.io.Serializable;
  * <h1>Illustration or other content type code</h1><p>An ONIX code which identifies the type of illustration or other
  * content to which an occurrence of the composite refers. Mandatory in each occurrence of the &lt;Illustrations&gt;
  * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 25</td></tr><tr><td>Reference name</td><td>&lt;IllustrationType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b256&gt;</td></tr><tr><td>Example</td><td>&lt;b256&gt;09&lt;/b256&gt; Illustrations
+ * digits.</td></tr><tr><td>Codelist</td><td>List 25</td></tr><tr><td>Reference name</td><td><tt>&lt;IllustrationType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b256&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b256&gt;09&lt;/b256&gt;</tt> Illustrations
  * (unspecified)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Illustrations&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Illustrations ⯈ IllustrationType</li>
+ * </ul>
  */
 public class IllustrationType implements OnixElement<IllustrationAndOtherContentTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class IllustrationType implements OnixElement<IllustrationAndOtherContent
     public IllustrationAndOtherContentTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public IllustrationAndOtherContentTypes _value() {
@@ -107,6 +117,9 @@ public class IllustrationType implements OnixElement<IllustrationAndOtherContent
         value = IllustrationAndOtherContentTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;IllustrationType&gt; or &lt;b256&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

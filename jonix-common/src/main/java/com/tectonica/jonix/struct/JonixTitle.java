@@ -61,7 +61,7 @@ public class JonixTitle implements JonixKeyedStruct<TitleTypes>, Serializable {
     public String titleWithoutPrefix;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum 300 characters <p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: NonEmptyString)
      */
     public String subtitle;
 

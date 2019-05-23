@@ -33,9 +33,20 @@ import java.io.Serializable;
 /**
  * <h1>Tax type</h1><p>An ONIX code identifying a tax type, <i>eg</i> VAT. Optional, and non-repeating.</p><table
  * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 171</td></tr><tr><td>Reference name</td><td>&lt;TaxType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x470&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;TaxType&gt;01&lt;/TaxType&gt;
+ * 171</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x470&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;TaxType&gt;01&lt;/TaxType&gt;</tt>
  * (VAT)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Tax&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Tax ⯈ TaxType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Tax ⯈ TaxType</li>
+ * </ul>
  */
 public class TaxType implements OnixElement<TaxTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +77,7 @@ public class TaxType implements OnixElement<TaxTypes>, Serializable {
     public TaxTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TaxTypes _value() {
@@ -93,6 +104,9 @@ public class TaxType implements OnixElement<TaxTypes>, Serializable {
         value = TaxTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TaxType&gt; or &lt;x470&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

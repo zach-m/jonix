@@ -38,9 +38,27 @@ import java.io.Serializable;
  * <h1>Date format</h1><p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and
  * non-repeating. When omitted, the format is assumed to be YYYYMMDD.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 55</td></tr><tr><td>Reference name</td><td>&lt;DateFormat&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j260&gt;</td></tr><tr><td>Example</td><td>&lt;DateFormat&gt;05&lt;/DateFormat&gt;
+ * 55</td></tr><tr><td>Reference name</td><td><tt>&lt;DateFormat&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j260&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;DateFormat&gt;05&lt;/DateFormat&gt;</tt>
  * YYYY</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;MarketDate&gt;</li>
+ * <li>&lt;PersonDate&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ DateFormat</li>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketDate ⯈ DateFormat</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
+ * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
+ * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
+ * </ul>
  */
 public class DateFormat implements OnixElement<DateFormats>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +94,7 @@ public class DateFormat implements OnixElement<DateFormats>, Serializable {
     public DateFormats value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public DateFormats _value() {
@@ -107,6 +125,9 @@ public class DateFormat implements OnixElement<DateFormats>, Serializable {
         value = DateFormats.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;DateFormat&gt; or &lt;j260&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

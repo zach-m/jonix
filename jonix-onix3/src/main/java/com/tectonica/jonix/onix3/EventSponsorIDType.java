@@ -34,9 +34,20 @@ import java.io.Serializable;
  * <h1>Event sponsor identifier type</h1><p>An ONIX code which identifies the scheme from which the value in the
  * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;EventSponsorIdentifier&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;EventSponsorIDType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x522&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x522&gt;01&lt;/x522&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td><tt>&lt;EventSponsorIDType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x522&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x522&gt;01&lt;/x522&gt;</tt>
  * (Proprietary)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;EventSponsorIdentifier&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventSponsor ⯈ EventSponsorIdentifier ⯈
+ * EventSponsorIDType</li>
+ * </ul>
  */
 public class EventSponsorIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +78,7 @@ public class EventSponsorIDType implements OnixElement<NameIdentifierTypes>, Ser
     public NameIdentifierTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public NameIdentifierTypes _value() {
@@ -94,6 +105,9 @@ public class EventSponsorIDType implements OnixElement<NameIdentifierTypes>, Ser
         value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;EventSponsorIDType&gt; or &lt;x522&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -43,9 +43,20 @@ import java.io.Serializable;
  * requirement is to send &lt;TaxRateCode1&gt;, &lt;TaxRateCode2&gt;, &lt;TaxableAmount1&gt; and &lt;TaxableAmount2&gt;,
  * though again best practise would be to send all eight tax elements so that the tax calculation is made entirely
  * explicit.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, one
- * letter.</td></tr><tr><td>Codelist</td><td>List 62</td></tr><tr><td>Reference name</td><td>&lt;TaxRateCode1&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j153&gt;</td></tr><tr><td>Example</td><td>&lt;TaxRateCode1&gt;Z&lt;/TaxRateCode1&gt;
+ * letter.</td></tr><tr><td>Codelist</td><td>List 62</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxRateCode1&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j153&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TaxRateCode1&gt;Z&lt;/TaxRateCode1&gt;</tt>
  * Zero-rated</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ TaxRateCode1</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ TaxRateCode1</li>
+ * </ul>
  */
 public class TaxRateCode1 implements OnixElement<TaxRateTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +92,7 @@ public class TaxRateCode1 implements OnixElement<TaxRateTypes>, Serializable {
     public TaxRateTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TaxRateTypes _value() {
@@ -112,6 +123,9 @@ public class TaxRateCode1 implements OnixElement<TaxRateTypes>, Serializable {
         value = TaxRateTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TaxRateCode1&gt; or &lt;j153&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

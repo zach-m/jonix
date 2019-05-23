@@ -35,6 +35,17 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SubSeriesRecord&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ ParentIdentifier</li>
+ * </ul>
+ */
 public class ParentIdentifier
     implements OnixDataCompositeWithKey<JonixParentIdentifier, SeriesIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -119,6 +130,10 @@ public class ParentIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ParentIdentifier&gt; or &lt;parentidentifier&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -131,7 +146,9 @@ public class ParentIdentifier
     private SeriesIDType seriesIDType = SeriesIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;SeriesIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SeriesIDType seriesIDType() {
         _initialize();
@@ -141,7 +158,7 @@ public class ParentIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -151,7 +168,7 @@ public class ParentIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

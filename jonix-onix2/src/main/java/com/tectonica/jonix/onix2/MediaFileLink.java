@@ -38,8 +38,20 @@ import java.io.Serializable;
  * &lt;MediaFileTypeCode&gt;, using the link type specified by the &lt;MediaFileLinkTypeCode&gt;. Mandatory in each
  * occurrence of the &lt;MediaFile&gt; composite, and non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 300
- * characters</td></tr><tr><td>Reference name</td><td>&lt;MediaFileLink&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;f117&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;MediaFileLink&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;f117&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MediaFile&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ MediaFileLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ MediaFileLink</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ MediaFileLink</li>
+ * </ul>
  */
 public class MediaFileLink implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -78,7 +90,7 @@ public class MediaFileLink implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -109,6 +121,9 @@ public class MediaFileLink implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;MediaFileLink&gt; or &lt;f117&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

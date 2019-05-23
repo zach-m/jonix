@@ -39,8 +39,18 @@ import java.io.Serializable;
  * measured by the value in the &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the
  * &lt;AudienceRange&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * two numeric digits.</td></tr><tr><td>Codelist</td><td>List 30</td></tr><tr><td>Reference
- * name</td><td>&lt;AudienceRangeQualifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;b074&gt;</td></tr><tr><td>Example</td><td>&lt;b074&gt;11&lt;/b074&gt;
+ * name</td><td><tt>&lt;AudienceRangeQualifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b074&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b074&gt;11&lt;/b074&gt;</tt>
  * US School Grade range</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AudienceRange&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ AudienceRange ⯈ AudienceRangeQualifier</li>
+ * </ul>
  */
 public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifiers>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifie
     public AudienceRangeQualifiers value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public AudienceRangeQualifiers _value() {
@@ -107,6 +117,9 @@ public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifie
         value = AudienceRangeQualifiers.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;AudienceRangeQualifier&gt; or &lt;b074&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

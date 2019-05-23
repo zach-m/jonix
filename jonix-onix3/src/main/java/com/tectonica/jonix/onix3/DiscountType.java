@@ -34,8 +34,19 @@ import java.io.Serializable;
  * <h1>Discount type</h1><p>An ONIX code identifying a discount type or reason. Optional, and non-repeating. When
  * omitted, the default is a simple or rising discount (the discount is applied to all units in a qualifying
  * order).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 170</td></tr><tr><td>Reference name</td><td>&lt;DiscountType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x467&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * digits</td></tr><tr><td>Codelist</td><td>List 170</td></tr><tr><td>Reference name</td><td><tt>&lt;DiscountType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x467&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Discount&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Discount ⯈ DiscountType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Discount ⯈ DiscountType</li>
+ * </ul>
  */
 public class DiscountType implements OnixElement<DiscountTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -66,7 +77,7 @@ public class DiscountType implements OnixElement<DiscountTypes>, Serializable {
     public DiscountTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public DiscountTypes _value() {
@@ -93,6 +104,9 @@ public class DiscountType implements OnixElement<DiscountTypes>, Serializable {
         value = DiscountTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;DiscountType&gt; or &lt;x467&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

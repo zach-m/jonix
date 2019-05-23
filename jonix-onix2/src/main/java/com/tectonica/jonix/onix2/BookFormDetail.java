@@ -37,13 +37,27 @@ import java.io.Serializable;
 /**
  * <h1>Book form detail</h1><p>An ONIX code specifying more detail of the product format when the product is a book.
  * Repeatable when two or more coded characteristics apply. This field is optional, but must only be included when the
- * code in the &lt;ProductForm&gt; element begins with letter B. <strong>Note that this field has been superseded by the
- * new element &lt;ProductFormDetail&gt;, and the code list will not be further developed. The field is retained only
- * for purposes of upwards compatibility, and its use is now to be deprecated.</strong></p><table border='1'
+ * code in the &lt;ProductForm&gt; element begins with letter B. <strong>This field will be superseded by the new
+ * element &lt;ProductFormDetail&gt;, and the code list will not be further developed. The field is retained only for
+ * purposes of upwards compatibility, and its use is now to be deprecated.</strong></p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 8</td></tr><tr><td>Reference name</td><td>&lt;BookFormDetail&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b013&gt;</td></tr><tr><td>Example</td><td>&lt;BookFormDetail&gt;04&lt;/BookFormDetail&gt; Paper over
- * boards</td></tr></table>
+ * 8</td></tr><tr><td>Reference name</td><td><tt>&lt;BookFormDetail&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b013&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;BookFormDetail&gt;04&lt;/BookFormDetail&gt;</tt>
+ * Paper over boards</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * <li>&lt;ContainedItem&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ BookFormDetail</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ BookFormDetail</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ BookFormDetail</li>
+ * </ul>
  */
 public class BookFormDetail implements OnixElement<BookFormDetails>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +93,7 @@ public class BookFormDetail implements OnixElement<BookFormDetails>, Serializabl
     public BookFormDetails value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public BookFormDetails _value() {
@@ -110,6 +124,9 @@ public class BookFormDetail implements OnixElement<BookFormDetails>, Serializabl
         value = BookFormDetails.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;BookFormDetail&gt; or &lt;b013&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

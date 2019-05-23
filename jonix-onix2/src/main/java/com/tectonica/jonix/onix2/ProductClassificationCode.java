@@ -37,9 +37,19 @@ import java.io.Serializable;
  * <h1>Product classification code</h1><p>A classification code from the scheme specified in
  * &lt;ProductClassificationType&gt;. Mandatory in any instance of the &lt;ProductClassification&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>According to the identifier type specified
- * in &lt;ProductClassificationType&gt;</td></tr><tr><td>Reference name</td><td>&lt;ProductClassificationCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b275&gt;</td></tr><tr><td>Example</td><td>&lt;b275&gt;55101514&lt;/b275&gt; Sheet music (in
- * UNSPSC)</td></tr></table>
+ * in &lt;ProductClassificationType&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductClassificationCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b275&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b275&gt;55101514&lt;/b275&gt;</tt> Sheet
+ * music (in UNSPSC)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ProductClassification&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductClassification ⯈ ProductClassificationCode</li>
+ * </ul>
  */
 public class ProductClassificationCode implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class ProductClassificationCode implements OnixElement<String>, Serializa
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +120,10 @@ public class ProductClassificationCode implements OnixElement<String>, Serializa
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ProductClassificationCode&gt; or &lt;b275&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;

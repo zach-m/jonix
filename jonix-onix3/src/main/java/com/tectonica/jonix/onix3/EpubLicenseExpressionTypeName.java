@@ -19,90 +19,99 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.Languages;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-
-import java.io.Serializable;
+import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>License expression type name</h1><p>A short free-text name for a license expression type, when the code in
- * &lt;EpubLicenseExpressionType&gt; provides insufficient detail – for example when a machine-readable license is
- * expressed using a particular proprietary encoding scheme. Optional and non-repeating, and must be included when (and
- * only when) the &lt;EpubLicenseExpressionType&gt; element indicates the expression is encoded in a proprietary
- * way.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 50
- * characters</td></tr><tr><td>Reference name</td><td>&lt;EpubLicenseExpressionTypeName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x509&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;x509&gt;ABC-XML&lt;/x509&gt;</td></tr></table>
+ * <h1>License expression type name</h1><p>A short free-text name for a license expression type, when the code in &lt;EpubLicenseExpressionType&gt; provides insufficient detail – for example when a machine-readable license is expressed using a particular proprietary encoding scheme. Optional and non-repeating, and must be included when (and only when) the &lt;EpubLicenseExpressionType&gt; element indicates the expression is encoded in a proprietary way.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 50 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubLicenseExpressionTypeName&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x509&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;x509&gt;ABC-XML&lt;/x509&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;EpubLicenseExpression&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubLicense ⯈ EpubLicenseExpression ⯈ EpubLicenseExpressionTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ EpubLicense ⯈ EpubLicenseExpression ⯈ EpubLicenseExpressionTypeName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ EpubLicense ⯈ EpubLicenseExpression ⯈ EpubLicenseExpressionTypeName</li>
+ * </ul>
  */
-public class EpubLicenseExpressionTypeName implements OnixElement<String>, Serializable {
-    private static final long serialVersionUID = 1L;
+public class EpubLicenseExpressionTypeName implements OnixElement<String>, Serializable
+{
+   private static final long serialVersionUID = 1L;
 
-    public static final String refname = "EpubLicenseExpressionTypeName";
-    public static final String shortname = "x509";
+   public static final String refname = "EpubLicenseExpressionTypeName";
+   public static final String shortname = "x509";
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // ATTRIBUTES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // ATTRIBUTES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * (type: dt.DateOrDateTime)
-     */
-    public String datestamp;
+   /**
+    * (type: dt.DateOrDateTime)
+    */
+   public String datestamp;
 
-    public RecordSourceTypes sourcetype;
+   public RecordSourceTypes sourcetype;
 
-    /**
-     * (type: dt.NonEmptyString)
-     */
-    public String sourcename;
+   /**
+    * (type: dt.NonEmptyString)
+    */
+   public String sourcename;
 
-    public Languages language;
+   public Languages language;
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // VALUE MEMBER
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // VALUE MEMBER
+   /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * Raw Format: Variable length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
-     */
-    public String value;
+   /**
+   * Raw Format: Variable length text, suggested maximum length 50 characters<p>
+   * (type: dt.NonEmptyString)
+   */
+   public String value;
 
-    /**
-     * Internal API, use the {@link #value} field instead
-     */
-    @Override
-    public String _value() {
-        return value;
-    }
+   /**
+   * Internal API, use the {@link #value()} method or the {@link #value} field instead
+   */
+   @Override
+   public String _value() {
+      return value;
+   }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // SERVICES
-    /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////
+   // SERVICES
+   /////////////////////////////////////////////////////////////////////////////////
 
-    private final boolean exists;
-    public static final EpubLicenseExpressionTypeName EMPTY = new EpubLicenseExpressionTypeName();
+   private final boolean exists;
+   public static final EpubLicenseExpressionTypeName EMPTY = new EpubLicenseExpressionTypeName();
 
-    public EpubLicenseExpressionTypeName() {
-        exists = false;
-    }
+   public EpubLicenseExpressionTypeName() {
+      exists = false;
+   }
 
-    public EpubLicenseExpressionTypeName(org.w3c.dom.Element element) {
-        exists = true;
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
-        language = Languages.byCode(JPU.getAttribute(element, "language"));
+   public EpubLicenseExpressionTypeName(org.w3c.dom.Element element) {
+      exists = true;
+      datestamp = JPU.getAttribute(element, "datestamp");
+      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+      sourcename = JPU.getAttribute(element, "sourcename");
+      language = Languages.byCode(JPU.getAttribute(element, "language"));
 
-        value = JPU.getContentAsString(element);
-    }
+      value = JPU.getContentAsString(element);
+   }
 
-    @Override
-    public boolean exists() {
-        return exists;
-    }
+   /**
+    * @return whether this tag (&lt;EpubLicenseExpressionTypeName&gt; or &lt;x509&gt;) is explicitly provided in the ONIX XML
+    */
+   @Override
+   public boolean exists() {
+      return exists;
+   }
 }

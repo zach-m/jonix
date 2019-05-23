@@ -364,12 +364,16 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * German ,Taschenbuch', Italian &#171;Tascabile / Supertascabile&#187; pocket-sized format, usually less than about
-     * 205mm high. Use with Product form code BB or BC &lt;p&gt;NOTE: Introduced in Onix3
+     * 205mm high. Use with Product form code BB or BC
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Pocket_sized("B133", "Pocket-sized"), //
 
     /**
-     * 210 x 148mm &lt;p&gt;NOTE: Introduced in Onix3
+     * 210 x 148mm
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     A5("B134", "A5"), //
 
@@ -423,7 +427,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * A book containing pages with die-cut or press-out pieces that can be used as a jigsaw, puzzle pieces, etc
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Press_out_puzzle_pieces("B216", "Press-out puzzle pieces"), //
 
@@ -613,7 +618,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Card_cover("B416", "Card cover"), //
 
     /**
-     * Printed both inside and outside the front and/or back cover &lt;p&gt;NOTE: Introduced in Onix3
+     * Printed both inside and outside the front and/or back cover
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Duplex_printed_cover("B417", "Duplex-printed cover"), //
 
@@ -690,19 +697,24 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Archival_paper("B516", "Archival paper"), //
 
     /**
-     * Strap acts as closure or as page marker &lt;p&gt;NOTE: Introduced in Onix3
+     * Strap acts as closure or as page marker
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     With_elasticated_strap("B517", "With elasticated strap"), //
 
     /**
-     * For example, holographic sticker such as the banderol used in the Turkish book trade &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * For example, holographic sticker such as the banderol used in the Turkish book trade
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     With_serialized_authenticity_token("B518", "With serialized authenticity token"), //
 
     /**
      * Jacket in the form of a pamphlet or poster, specifically intended to be removed and read or used separately from
-     * the book &lt;p&gt;NOTE: Introduced in Onix3
+     * the book
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     With_dust_jacket_poster("B519", "With dust jacket poster"), //
 
@@ -721,7 +733,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * A book in which half the content is printed so as to be read from the other cover. All content is printed the
      * same way up. Also known as 'dos-&#224;-dos' (Fr) binding, it has two front covers and two spines. Usually an
-     * omnibus of two works &lt;p&gt;NOTE: Introduced in Onix3
+     * omnibus of two works
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Back_to_back_book("B603", "Back-to-back book"), //
 
@@ -1119,13 +1133,16 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Page_Perfect("E145", "Page Perfect"), //
 
     /**
-     * Electronic Braille file &lt;p&gt;NOTE: Introduced in Onix3
+     * Electronic Braille file
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     BRF("E146", "BRF"), //
 
     /**
      * Proprietary XML format for articles, see for example https://www.cairn.info/services-aux-editeurs.php
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Erudit("E147", "Erudit"), //
 
@@ -1322,17 +1339,23 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     SECAM("V203", "SECAM"), //
 
     /**
-     * Up to 2K resolution (1920 or 2048 pixels wide) eg for Blu-Ray &lt;p&gt;NOTE: Introduced in Onix3
+     * Up to 2K resolution (1920 or 2048 pixels wide) eg for Blu-Ray
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     HD("V205", "HD"), //
 
     /**
-     * Up to 4K resolution (3840 or 4096 pixels wide) eg for Ultra HD Blu-Ray &lt;p&gt;NOTE: Introduced in Onix3
+     * Up to 4K resolution (3840 or 4096 pixels wide) eg for Ultra HD Blu-Ray
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     UHD("V206", "UHD"), //
 
     /**
-     * Eg for Blu-ray 3D &lt;p&gt;NOTE: Introduced in Onix3
+     * Eg for Blu-ray 3D
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     _3D_video("V207", "3D video"), //
 

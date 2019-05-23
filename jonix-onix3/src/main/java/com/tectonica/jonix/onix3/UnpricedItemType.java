@@ -31,15 +31,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Unpriced item type</h1><p>An ONIX code which specifies that the product is free of charge, or a reason why a
- * price amount or price code is not sent. <em>If code value 02 is used to send advance information without giving a
- * price, the price must be confirmed as soon as possible.</em> Optional and non-repeating, but required if the
- * &lt;Price&gt; composite does not carry a price amount or price code.</p><p>Use here in preference to P.26.42 when the
- * product is available under a variety of priced and unpriced terms from the same supplier.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 57</td></tr><tr><td>Reference name</td><td>&lt;UnpricedItemType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j192&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;UnpricedItemType&gt;01&lt;/UnpricedItemType&gt;
+ * <h1>Unpriced item type</h1><p>An ONIX code which specifies the product is free of charge, or a reason why a price is
+ * not sent. <em>If code value 02 is used to send advance information without giving a price, the price must be
+ * confirmed as soon as possible.</em> Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite
+ * does not carry a price.</p><p>Use here in preference to P.26.70a when the product is available <em>only</em> under
+ * free of charge or unpriced terms from the supplier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
+ * length, two digits</td></tr><tr><td>Codelist</td><td>List 57</td></tr><tr><td>Reference
+ * name</td><td><tt>&lt;UnpricedItemType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j192&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;j192&gt;01&lt;/j192&gt;</tt>
  * (Free of charge)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ UnpricedItemType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ UnpricedItemType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ UnpricedItemType</li>
+ * </ul>
  */
 public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -70,7 +82,7 @@ public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Seriali
     public UnpricedItemTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public UnpricedItemTypes _value() {
@@ -97,6 +109,9 @@ public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Seriali
         value = UnpricedItemTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;UnpricedItemType&gt; or &lt;j192&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

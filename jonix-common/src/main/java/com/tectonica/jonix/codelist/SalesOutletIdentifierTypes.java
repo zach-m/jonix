@@ -53,17 +53,23 @@ public enum SalesOutletIdentifierTypes implements OnixCodelist, CodeList102 {
     ONIX_retail_sales_outlet_ID_code("03", "ONIX retail sales outlet ID code"), //
 
     /**
-     * 13-digit GS1 global location number (formerly EAN location number) &lt;p&gt;NOTE: Introduced in Onix3
+     * 13-digit GS1 global location number (formerly EAN location number)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Retail_sales_outlet_GLN("04", "Retail sales outlet GLN"), //
 
     /**
-     * 7-digit Book trade Standard Address Number (US, UK etc) &lt;p&gt;NOTE: Introduced in Onix3
+     * 7-digit Book trade Standard Address Number (US, UK etc)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Retail_sales_outlet_SAN("05", "Retail sales outlet SAN"), //
 
     /**
-     * DEPRECATED - use code 03 &lt;p&gt;NOTE: Deprecated in Onix3
+     * DEPRECATED - use code 03
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     BIC_sales_outlet_ID_code("02", "BIC sales outlet ID code");
 

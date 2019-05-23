@@ -34,8 +34,18 @@ import java.io.Serializable;
  * <h1>Returns code type name</h1><p>A name which identifies a proprietary returns code scheme. Must be used when, and
  * only when, the code in the &lt;ReturnsCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s
  * own code. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length
- * text, suggested maximum length 50 characters</td></tr><tr><td>Reference name</td><td>&lt;ReturnsCodeTypeName&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x460&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;ReturnsCodeTypeName&gt;KNO&lt;/ReturnsCodeTypeName&gt;</td></tr></table>
+ * text, suggested maximum length 50 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ReturnsCodeTypeName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x460&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;ReturnsCodeTypeName&gt;KNO&lt;/ReturnsCodeTypeName&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ReturnsConditions&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ ReturnsConditions ⯈ ReturnsCodeTypeName</li>
+ * </ul>
  */
 public class ReturnsCodeTypeName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -71,7 +81,7 @@ public class ReturnsCodeTypeName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -99,6 +109,9 @@ public class ReturnsCodeTypeName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ReturnsCodeTypeName&gt; or &lt;x460&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -38,8 +38,20 @@ import java.io.Serializable;
  * <h1>Tax rate 2, coded</h1><p>A code which specifies a value added tax rate applying to the amount of the price which
  * is specified in &lt;TaxableAmount2&gt;. See notes on &lt;TaxRateCode1&gt;.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed-length, one letter.</td></tr><tr><td>Codelist</td><td>List
- * 62</td></tr><tr><td>Reference name</td><td>&lt;TaxRateCode2&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j157&gt;</td></tr><tr><td>Example</td><td>&lt;j157&gt;Z&lt;/j157&gt; Zero-rated</td></tr></table>
+ * 62</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxRateCode2&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j157&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j157&gt;Z&lt;/j157&gt;</tt>
+ * Zero-rated</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Price&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ TaxRateCode2</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ TaxRateCode2</li>
+ * </ul>
  */
 public class TaxRateCode2 implements OnixElement<TaxRateTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -75,7 +87,7 @@ public class TaxRateCode2 implements OnixElement<TaxRateTypes>, Serializable {
     public TaxRateTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public TaxRateTypes _value() {
@@ -106,6 +118,9 @@ public class TaxRateCode2 implements OnixElement<TaxRateTypes>, Serializable {
         value = TaxRateTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;TaxRateCode2&gt; or &lt;j157&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -32,14 +32,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Corporate name</h1><p>The name of a corporate body, used here for a corporate copyright owner. Optional and non-
- * repeating. Each occurrence of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate),
- * or an identifier, or both a name and an identifier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length text, suggested maximum length 200 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;CorporateName&gt;</td></tr><tr><td>Short tag</td><td>&lt;b047&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
- * language, textscript</td></tr><tr><td>Example</td><td>&lt;CorporateName&gt;Johnson &amp;amp; Johnson
- * Inc&lt;/CorporateName&gt; (note this is represented as 'Johnson &amp;amp; Johnson Inc', since &amp; is a reserved
- * character in XML)</td></tr></table>
+ * <h1>Corporate contributor name</h1><p>The name of a corporate body which contributed to the creation of the product,
+ * unstructured. Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 200
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;CorporateName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b047&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
+ * language, textscript</td></tr><tr><td>Example</td><td><tt>&lt;CorporateName&gt;Good Housekeeping
+ * Institute&lt;/CorporateName&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AlternativeName&gt;</li>
+ * <li>&lt;CopyrightOwner&gt;</li>
+ * <li>&lt;ConferenceSponsor&gt;</li>
+ * <li>&lt;EventSponsor&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;NameAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ AlternativeName ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ AlternativeName ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ AlternativeName ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ AlternativeName ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceSponsor ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventSponsor ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ CorporateName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ CorporateName</li>
+ * </ul>
  */
 public class CorporateName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -82,7 +108,7 @@ public class CorporateName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -112,6 +138,9 @@ public class CorporateName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;CorporateName&gt; or &lt;b047&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -43,9 +43,19 @@ import java.io.Serializable;
  * consisting of upper case letters with or without a hyphen, successive codes being separated by spaces. Suggested
  * maximum length 100 characters.</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate, country
  * subdivision codes are derived from the UN LOCODE scheme based on ISO 3166.</td></tr><tr><td>Reference
- * name</td><td>&lt;MarketTerritory&gt;</td></tr><tr><td>Short tag</td><td>&lt;j404&gt;</td></tr><tr><td>Example</td><td>&lt;MarketTerritory&gt;WORLD&lt;/MarketTerritory&gt;
- * Whole world</td></tr><tr><td></td><td>&lt;MarketTerritory&gt;GB-EWS&lt;/MarketTerritory&gt; UK excluding Northern
- * Ireland</td></tr></table>
+ * name</td><td><tt>&lt;MarketTerritory&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j404&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;MarketTerritory&gt;WORLD&lt;/MarketTerritory&gt;</tt>
+ * Whole world</td></tr><tr><td></td><td><tt>&lt;MarketTerritory&gt;GB-EWS&lt;/MarketTerritory&gt;</tt> UK excluding
+ * Northern Ireland</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MarketRepresentation&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketTerritory</li>
+ * </ul>
  */
 public class MarketTerritory implements OnixElement<java.util.Set<String>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -85,7 +95,7 @@ public class MarketTerritory implements OnixElement<java.util.Set<String>>, Seri
     public java.util.Set<String> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<String> _value() {
@@ -119,6 +129,9 @@ public class MarketTerritory implements OnixElement<java.util.Set<String>>, Seri
         }
     }
 
+    /**
+     * @return whether this tag (&lt;MarketTerritory&gt; or &lt;j404&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

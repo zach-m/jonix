@@ -33,9 +33,19 @@ import java.io.Serializable;
  * <h1>Edition number</h1><p>The number of a numbered edition. Optional and non-repeating. Normally sent only for the
  * second and subsequent editions of a work, but by agreement between parties to an ONIX exchange a first edition may be
  * explicitly numbered.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum
- * length 4 digits</td></tr><tr><td>Reference name</td><td>&lt;EditionNumber&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b057&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b057&gt;3&lt;/b057&gt;
+ * length 4 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;EditionNumber&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b057&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;b057&gt;3&lt;/b057&gt;</tt>
  * (Third edition)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EditionNumber</li>
+ * </ul>
  */
 public class EditionNumber implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -69,7 +79,7 @@ public class EditionNumber implements OnixElement<Integer>, Serializable {
     public Integer value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Integer _value() {
@@ -96,6 +106,9 @@ public class EditionNumber implements OnixElement<Integer>, Serializable {
         value = JPU.getContentAsInteger(element);
     }
 
+    /**
+     * @return whether this tag (&lt;EditionNumber&gt; or &lt;b057&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -32,13 +32,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Person name</h1><p>The name of a person, used here for a personal copyright owner. Optional and non-repeating.
- * Each occurrence of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an
- * identifier, or both a name and an identifier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length text, suggested maximum length 100 characters</td></tr><tr><td>Reference
- * name</td><td>&lt;PersonName&gt;</td></tr><tr><td>Short tag</td><td>&lt;b036&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
- * language, textscript</td></tr><tr><td>Example</td><td>&lt;PersonName&gt;James J. Johnson
- * III&lt;/PersonName&gt;</td></tr></table>
+ * <h1>Person name</h1><p>The name of a person who contributed to the creation of the product, unstructured, and
+ * presented in normal order. Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid
+ * options.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length
+ * 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PersonName&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b036&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
+ * language, textscript</td></tr><tr><td>Example</td><td><tt>&lt;PersonName&gt;James J. Johnson
+ * III&lt;/PersonName&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;AlternativeName&gt;</li>
+ * <li>&lt;CopyrightOwner&gt;</li>
+ * <li>&lt;ConferenceSponsor&gt;</li>
+ * <li>&lt;EventSponsor&gt;</li>
+ * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;NameAsSubject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ AlternativeName ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ AlternativeName ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ AlternativeName ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ AlternativeName ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceSponsor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventSponsor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ PersonName</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ PersonName</li>
+ * </ul>
  */
 public class PersonName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +108,7 @@ public class PersonName implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -111,6 +138,9 @@ public class PersonName implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;PersonName&gt; or &lt;b036&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -251,8 +251,9 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
         "Publisher’s or third party website for permissions requests"), //
 
     /**
-     * For example, a page providing details related to GDPR. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * For example, a page providing details related to GDPR. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Publisher_s_or_third_party_website_for_privacy_statement("46",
         "Publisher’s or third party website for privacy statement");

@@ -41,8 +41,18 @@ import java.io.Serializable;
  * additional data elements. In particular the composite allows a proprietary identifier to be used by mutual agreement
  * between parties to an exchange. The composite is optional and repeatable; but either the &lt;FromCompany&gt; element
  * or a sender identifier using one or more elements from MH.1 to MH.5 must be included.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td>&lt;SenderIdentifier&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;senderidentifier&gt;</td></tr></table>
+ * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SenderIdentifier&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;senderidentifier&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Header&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Header ⯈ SenderIdentifier</li>
+ * </ul>
  */
 public class SenderIdentifier
     implements OnixDataCompositeWithKey<JonixSenderIdentifier, NameIdentifierTypes>, Serializable {
@@ -128,6 +138,10 @@ public class SenderIdentifier
         });
     }
 
+    /**
+     * @return whether this tag (&lt;SenderIdentifier&gt; or &lt;senderidentifier&gt;) is explicitly provided in the
+     * ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -140,7 +154,9 @@ public class SenderIdentifier
     private SenderIDType senderIDType = SenderIDType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in any occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public SenderIDType senderIDType() {
         _initialize();
@@ -150,7 +166,10 @@ public class SenderIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A name which identifies a proprietary identifier type when, and only when, the code in the
+     * &lt;SenderIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p><p class="new214">The
+     * text is not limited to ASCII characters.</p>
+     * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();
@@ -160,7 +179,9 @@ public class SenderIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An identifier of the type specified in the &lt;SenderIDType&gt; element. Mandatory in any occurrence of the
+     * &lt;SenderIdentifier&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public IDValue idValue() {
         _initialize();

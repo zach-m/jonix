@@ -43,9 +43,19 @@ import java.io.Serializable;
  * or without a hyphen, successive codes being separated by spaces. Suggested maximum length 100
  * characters.</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate, country subdivision codes are
  * derived from the UN LOCODE scheme based on ISO 3166.</td></tr><tr><td>Reference
- * name</td><td>&lt;SupplyToTerritory&gt;</td></tr><tr><td>Short tag</td><td>&lt;j397&gt;</td></tr><tr><td>Example</td><td>&lt;j397&gt;WORLD&lt;/j397&gt;
- * Whole world</td></tr><tr><td></td><td>&lt;SupplyToTerritory&gt;GB-EWS&lt;/SupplyToTerritory&gt; UK excluding Northern
- * Ireland</td></tr></table>
+ * name</td><td><tt>&lt;SupplyToTerritory&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j397&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j397&gt;WORLD&lt;/j397&gt;</tt>
+ * Whole world</td></tr><tr><td></td><td><tt>&lt;SupplyToTerritory&gt;GB-EWS&lt;/SupplyToTerritory&gt;</tt> UK excluding
+ * Northern Ireland</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupplyDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplyToTerritory</li>
+ * </ul>
  */
 public class SupplyToTerritory implements OnixElement<java.util.Set<Regions>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -81,7 +91,7 @@ public class SupplyToTerritory implements OnixElement<java.util.Set<Regions>>, S
     public java.util.Set<Regions> value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public java.util.Set<Regions> _value() {
@@ -115,6 +125,9 @@ public class SupplyToTerritory implements OnixElement<java.util.Set<Regions>>, S
         }
     }
 
+    /**
+     * @return whether this tag (&lt;SupplyToTerritory&gt; or &lt;j397&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

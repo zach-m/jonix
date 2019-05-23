@@ -37,8 +37,18 @@ import java.io.Serializable;
  * <h1>Complexity code</h1><p>A code specifying the level of complexity of a text.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable-length, alphanumeric, suggested maximum length 20
  * characters.</td></tr><tr><td>Codelist</td><td>The scheme specified in the &lt;ComplexitySchemeIdentifier&gt;
- * element</td></tr><tr><td>Reference name</td><td>&lt;ComplexityCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b078&gt;</td></tr></table>
+ * element</td></tr><tr><td>Reference name</td><td><tt>&lt;ComplexityCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b078&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Complexity&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Complexity ⯈ ComplexityCode</li>
+ * </ul>
  */
 public class ComplexityCode implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -77,7 +87,7 @@ public class ComplexityCode implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class ComplexityCode implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ComplexityCode&gt; or &lt;b078&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

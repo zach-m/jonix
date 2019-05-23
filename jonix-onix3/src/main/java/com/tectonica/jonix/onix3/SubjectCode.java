@@ -35,8 +35,19 @@ import java.io.Serializable;
  * present in each occurrence of the &lt;Subject&gt; composite. Non-repeating.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested maximum length 20
  * characters</td></tr><tr><td>Codelist</td><td>The scheme specified in the associated &lt;SubjectSchemeIdentifier&gt;
- * element</td></tr><tr><td>Reference name</td><td>&lt;SubjectCode&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b069&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;SubjectCode&gt;623.95&lt;/SubjectCode&gt;</td></tr></table>
+ * element</td></tr><tr><td>Reference name</td><td><tt>&lt;SubjectCode&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b069&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;SubjectCode&gt;623.95&lt;/SubjectCode&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Subject&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Subject ⯈ SubjectCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Subject ⯈ SubjectCode</li>
+ * </ul>
  */
 public class SubjectCode implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -70,7 +81,7 @@ public class SubjectCode implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -97,6 +108,9 @@ public class SubjectCode implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;SubjectCode&gt; or &lt;b069&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

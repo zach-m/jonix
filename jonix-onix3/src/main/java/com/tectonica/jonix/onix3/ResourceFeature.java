@@ -36,7 +36,19 @@ import java.io.Serializable;
  * <h1>Resource feature composite</h1><p>A group of data elements which together describe a feature of a supporting
  * resource which is common to all versions in which the resource is offered. Optional, and repeatable in order to
  * describe multiple features of the resource.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;ResourceFeature&gt;</td></tr><tr><td>Short tag</td><td>&lt;resourcefeature&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * name</td><td><tt>&lt;ResourceFeature&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;resourcefeature&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;SupportingResource&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceFeature</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceFeature</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceFeature</li>
+ * </ul>
  */
 public class ResourceFeature
     implements OnixDataCompositeWithKey<JonixResourceFeature, ResourceFeatureTypes>, Serializable {
@@ -113,6 +125,10 @@ public class ResourceFeature
         });
     }
 
+    /**
+     * @return whether this tag (&lt;ResourceFeature&gt; or &lt;resourcefeature&gt;) is explicitly provided in the ONIX
+     * XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -125,7 +141,9 @@ public class ResourceFeature
     private ResourceFeatureType resourceFeatureType = ResourceFeatureType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which specifies the feature described by an instance of the &lt;ResourceFeature&gt; composite.
+     * Mandatory in each occurrence of the composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ResourceFeatureType resourceFeatureType() {
         _initialize();
@@ -135,7 +153,10 @@ public class ResourceFeature
     private FeatureValue featureValue = FeatureValue.EMPTY;
 
     /**
-     * (this field is optional)
+     * <p>A controlled value that describes a resource feature. Presence or absence of this element depends on the
+     * &lt;ResourceFeatureType&gt;, since some features may not require an accompanying value, while others may require
+     * free text in &lt;FeatureNote&gt;; and others may have both code and free text. Non-repeating.</p>
+     * Jonix-Comment: this field is optional
      */
     public FeatureValue featureValue() {
         _initialize();
@@ -145,7 +166,12 @@ public class ResourceFeature
     private ListOfOnixElement<FeatureNote, String> featureNotes = ListOfOnixElement.empty();
 
     /**
-     * (this list may be empty)
+     * <p>If the &lt;ResourceFeatureType&gt; requires free text rather than a code value, or if the code in
+     * &lt;FeatureValue&gt; does not adequately describe the feature, a short text note may be added. Optional, and
+     * repeatable when parallel notes are provided in multiple languages. The <i>language</i> attribute is optional for
+     * a single instance of &lt;FeatureNote&gt;, but must be included in each instance if &lt;FeatureNote&gt; is
+     * repeated.</p>
+     * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<FeatureNote, String> featureNotes() {
         _initialize();

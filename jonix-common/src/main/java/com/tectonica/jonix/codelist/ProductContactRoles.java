@@ -45,7 +45,9 @@ interface CodeList198 {
  */
 public enum ProductContactRoles implements OnixCodelist, CodeList198 {
     /**
-     * For queries and feedback concerning the metadata record itself &lt;p&gt;NOTE: Introduced in Onix3
+     * For queries and feedback concerning the metadata record itself
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Metadata_contact("00", "Metadata contact"), //
 
@@ -81,12 +83,13 @@ public enum ProductContactRoles implements OnixCodelist, CodeList198 {
 
     /**
      * Eg for use where authorisation must be gained from the publisher rather than the distributor or wholesaler
-     * &lt;p&gt;NOTE: Introduced in Onix3
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Return_authorisation_contact("07", "Return authorisation contact"), //
 
     /**
-     * null &lt;p&gt;NOTE: Introduced in Onix3
+     * Jonix-Comment: Introduced in Onix3
      */
     CIP_Legal_deposit_contact("08", "CIP / Legal deposit contact");
 

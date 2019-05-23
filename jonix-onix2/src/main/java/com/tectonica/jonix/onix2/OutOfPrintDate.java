@@ -36,8 +36,18 @@ import java.io.Serializable;
 /**
  * <h1>Out-of-print date</h1><p>The date on which the publisher put the current product out-of-print. Optional and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as year, month, day
- * (YYYYMMDD)</td></tr><tr><td>Reference name</td><td>&lt;OutOfPrintDate&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;h134&gt;</td></tr><tr><td>Example</td><td>&lt;OutOfPrintDate&gt;20000614&lt;/OutOfPrintDate&gt;</td></tr></table>
+ * (YYYYMMDD)</td></tr><tr><td>Reference name</td><td><tt>&lt;OutOfPrintDate&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;h134&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;OutOfPrintDate&gt;20000614&lt;/OutOfPrintDate&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ OutOfPrintDate</li>
+ * </ul>
  */
 public class OutOfPrintDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class OutOfPrintDate implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,9 @@ public class OutOfPrintDate implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;OutOfPrintDate&gt; or &lt;h134&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -38,8 +38,18 @@ import java.io.Serializable;
  * units specified in &lt;MeasureUnitCode&gt;. Mandatory in each occurrence of the &lt;Measure&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an
  * explicit decimal point when required, suggested maximum length 6 characters including a decimal
- * point.</td></tr><tr><td>Reference name</td><td>&lt;Measurement&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;c094&gt;</td></tr><tr><td>Example</td><td>&lt;Measurement&gt;8.25&lt;/Measurement&gt;</td></tr></table>
+ * point.</td></tr><tr><td>Reference name</td><td><tt>&lt;Measurement&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;c094&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;Measurement&gt;8.25&lt;/Measurement&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Measure&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Measure ⯈ Measurement</li>
+ * </ul>
  */
 public class Measurement implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class Measurement implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +120,9 @@ public class Measurement implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;Measurement&gt; or &lt;c094&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

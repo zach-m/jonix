@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Edition type code</h1><p>An ONIX code, indicating the type of a version or edition. Optional, and repeatable if
  * the product has characteristics of two or more types (<i>eg</i> ‘revised’ and ‘annotated’).</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, three upper-case letters</td></tr><tr><td>Codelist</td><td>List
- * 21</td></tr><tr><td>Reference name</td><td>&lt;EditionType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;x419&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;EditionType&gt;ILL&lt;/EditionType&gt;
+ * 21</td></tr><tr><td>Reference name</td><td><tt>&lt;EditionType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;x419&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;EditionType&gt;ILL&lt;/EditionType&gt;</tt>
  * (Illustrated edition)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EditionType</li>
+ * </ul>
  */
 public class EditionType implements OnixElement<EditionTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class EditionType implements OnixElement<EditionTypes>, Serializable {
     public EditionTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public EditionTypes _value() {
@@ -94,6 +104,9 @@ public class EditionType implements OnixElement<EditionTypes>, Serializable {
         value = EditionTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;EditionType&gt; or &lt;x419&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

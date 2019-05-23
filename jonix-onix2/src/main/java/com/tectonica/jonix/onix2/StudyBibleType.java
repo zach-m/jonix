@@ -38,9 +38,19 @@ import java.io.Serializable;
  * <h1>Study Bible type</h1><p>An ONIX code identifying a particular study version of a Bible or selected Biblical text,
  * for example Life Application. Optional and non-repeating. Some study Bibles are available in different editions based
  * on different text versions.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three
- * letters</td></tr><tr><td>Codelist</td><td>List 84</td></tr><tr><td>Reference name</td><td>&lt;StudyBibleType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b389&gt;</td></tr><tr><td>Example</td><td>&lt;b389&gt;OXF&lt;/b389&gt; Oxford
+ * letters</td></tr><tr><td>Codelist</td><td>List 84</td></tr><tr><td>Reference name</td><td><tt>&lt;StudyBibleType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b389&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b389&gt;OXF&lt;/b389&gt;</tt> Oxford
  * Annotated</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Bible&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ Bible ⯈ StudyBibleType</li>
+ * </ul>
  */
 public class StudyBibleType implements OnixElement<StudyBibleTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class StudyBibleType implements OnixElement<StudyBibleTypes>, Serializabl
     public StudyBibleTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public StudyBibleTypes _value() {
@@ -107,6 +117,9 @@ public class StudyBibleType implements OnixElement<StudyBibleTypes>, Serializabl
         value = StudyBibleTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;StudyBibleType&gt; or &lt;b389&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

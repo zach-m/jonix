@@ -129,26 +129,34 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
 
     /**
      * In countries where recognised as a distinct trade category, eg Italy &#171;supertascabile&#187;. For use in ONIX
-     * 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Superpocket_book("15", "Superpocket book"), //
 
     /**
      * Category of books, usually hardcover and of a large format (A4 or larger) and printed on high-quality paper,
      * where the primary features are illustrations, and these are more important than text. Sometimes called
-     * 'coffee-table books' or 'art books' in English. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * 'coffee-table books' or 'art books' in English. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Beau_livre("16", "Beau-livre"), //
 
     /**
      * Category of audio products typically distinguished by being free of charge (but which may be monetised through
-     * advertising content) and episodic. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * advertising content) and episodic. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Podcast("17", "Podcast"), //
 
     /**
      * Category of books or e-books which are single issues of a periodical publication, sold as independent products.
-     * For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Periodical("18", "Periodical");
 

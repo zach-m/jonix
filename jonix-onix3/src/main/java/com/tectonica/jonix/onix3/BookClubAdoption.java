@@ -37,10 +37,20 @@ import java.io.Serializable;
  * single instance of &lt;BookClubAdoption&gt;, but must be included in each instance if &lt;BookClubAdoption&gt; is
  * repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length
  * 200 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
- * fields</td></tr><tr><td>Reference name</td><td>&lt;BookClubAdoption&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;k169&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr><tr><td>Example</td><td>&lt;k169&gt;Book-Of-The-Month Club selection for May
- * 2000&lt;/k169&gt;</td></tr></table>
+ * fields</td></tr><tr><td>Reference name</td><td><tt>&lt;BookClubAdoption&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;k169&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td><tt>&lt;k169&gt;Book-Of-The-Month Club selection for May
+ * 2000&lt;/k169&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MarketPublishingDetail&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ BookClubAdoption</li>
+ * </ul>
  */
 public class BookClubAdoption implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class BookClubAdoption implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -108,6 +118,9 @@ public class BookClubAdoption implements OnixElement<String>, Serializable {
         value = JPU.getChildXHTML(element, true);
     }
 
+    /**
+     * @return whether this tag (&lt;BookClubAdoption&gt; or &lt;k169&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

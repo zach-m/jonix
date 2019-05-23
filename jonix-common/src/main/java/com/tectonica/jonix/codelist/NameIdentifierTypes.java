@@ -209,13 +209,16 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
 
     /**
      * Nasjonalt autoritetsregister for navn - Norwegian national authority file for personal and corporate names. For
-     * use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Nasjonalt_autoritetsregister("36", "Nasjonalt autoritetsregister"), //
 
     /**
-     * Global Research Identifier Database ID (see https://www.grid.ac). For use in ONIX 3.0 only &lt;p&gt;NOTE:
-     * Introduced in Onix3
+     * Global Research Identifier Database ID (see https://www.grid.ac). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     GRID("37", "GRID");
 

@@ -33,10 +33,21 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Related work composite</h1><p>An optional group of data elements which together describe a work which has a
- * specified relationship to the product described in the ONIX record. Repeatable in order to specify multiple works and
- * their various relationships to the product.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td>&lt;RelatedWork&gt;</td></tr><tr><td>Short tag</td><td>&lt;relatedwork&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <h1>Related work composite</h1><p>A group of data elements which together describe a work which has a specified
+ * relationship to a content item. Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td><tt>&lt;RelatedWork&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;relatedwork&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;RelatedMaterial&gt;</li>
+ * <li>&lt;ContentItem&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedWork</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedWork</li>
+ * </ul>
  */
 public class RelatedWork implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -108,6 +119,9 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
         });
     }
 
+    /**
+     * @return whether this tag (&lt;RelatedWork&gt; or &lt;relatedwork&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -120,7 +134,9 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
     private WorkRelationCode workRelationCode = WorkRelationCode.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the nature of the relationship between a product and a work. Mandatory in each
+     * occurrence of the &lt;RelatedWork&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public WorkRelationCode workRelationCode() {
         _initialize();
@@ -131,7 +147,10 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * (this list is required to contain at least one item)
+     * <p>A group of data elements which together define an identifier of a work in accordance with a specified scheme.
+     * Mandatory in each occurrence of the &lt;RelatedWork&gt; composite, and repeatable if two or more identifiers for
+     * the same work are sent using different identifier schemes (<i>eg</i> ISTC and DOI).</p>
+     * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
         _initialize();

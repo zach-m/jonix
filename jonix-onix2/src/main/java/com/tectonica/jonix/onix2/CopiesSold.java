@@ -36,8 +36,18 @@ import java.io.Serializable;
 /**
  * <h1>Copies sold</h1><p>Free text detailing the number of copies already sold, <em>eg</em> for a new paperback, the
  * copies sold in hardback. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 200 characters</td></tr><tr><td>Reference name</td><td>&lt;CopiesSold&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;k168&gt;</td></tr></table>
+ * text, suggested maximum length 200 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;CopiesSold&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;k168&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ CopiesSold</li>
+ * </ul>
  */
 public class CopiesSold implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +86,7 @@ public class CopiesSold implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -107,6 +117,9 @@ public class CopiesSold implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;CopiesSold&gt; or &lt;k168&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

@@ -37,8 +37,18 @@ import java.io.Serializable;
 
 /**
  * <h1>Extent composite</h1><p>A repeatable group of data elements which together describe an extent pertaining to the
- * product.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Extent&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;extent&gt;</td></tr></table>
+ * product.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Extent&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;extent&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ Extent</li>
+ * </ul>
  */
 public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -123,6 +133,9 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
         });
     }
 
+    /**
+     * @return whether this tag (&lt;Extent&gt; or &lt;extent&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
@@ -135,7 +148,9 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     private ExtentType extentType = ExtentType.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code which identifies the type of extent carried in the composite, <em>eg</em> running time for an
+     * audio or video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ExtentType extentType() {
         _initialize();
@@ -145,7 +160,9 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     private ExtentValue extentValue = ExtentValue.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>The numeric value of the extent specified in &lt;ExtentType&gt;. Mandatory in each occurrence of the
+     * &lt;Extent&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ExtentValue extentValue() {
         _initialize();
@@ -155,7 +172,9 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     private ExtentUnit extentUnit = ExtentUnit.EMPTY;
 
     /**
-     * (this field is required)
+     * <p>An ONIX code indicating the unit used for the &lt;ExtentValue&gt; and the format in which the value is
+     * presented. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.</p>
+     * Jonix-Comment: this field is required
      */
     public ExtentUnit extentUnit() {
         _initialize();

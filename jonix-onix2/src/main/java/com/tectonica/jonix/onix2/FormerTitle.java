@@ -38,9 +38,19 @@ import java.io.Serializable;
  * abridgement. Optional, and repeatable if the work has had more than one former title. <strong>The &lt;Title&gt;
  * composite below provides a more general method of handling all forms of title, and is to be
  * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested
- * maximum length 300 characters</td></tr><tr><td>Reference name</td><td>&lt;FormerTitle&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b033&gt;</td></tr><tr><td>Example</td><td>&lt;FormerTitle&gt;English
- * English&lt;/FormerTitle&gt;</td></tr></table>
+ * maximum length 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;FormerTitle&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b033&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;FormerTitle&gt;English
+ * English&lt;/FormerTitle&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Product&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ FormerTitle</li>
+ * </ul>
  */
 public class FormerTitle implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -79,7 +89,7 @@ public class FormerTitle implements OnixElement<String>, Serializable {
     public String value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public String _value() {
@@ -110,6 +120,9 @@ public class FormerTitle implements OnixElement<String>, Serializable {
         value = JPU.getContentAsString(element);
     }
 
+    /**
+     * @return whether this tag (&lt;FormerTitle&gt; or &lt;b033&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

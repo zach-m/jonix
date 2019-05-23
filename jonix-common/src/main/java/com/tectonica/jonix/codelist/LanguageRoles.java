@@ -97,12 +97,16 @@ public enum LanguageRoles implements OnixCodelist, CodeList22 {
     Language_of_notes("12", "Language of notes"), //
 
     /**
-     * Language to which specified rights apply &lt;p&gt;NOTE: Deprecated in Onix3
+     * Language to which specified rights apply
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Rights_language("04", "Rights language"), //
 
     /**
-     * Language to which specified rights do not apply &lt;p&gt;NOTE: Deprecated in Onix3
+     * Language to which specified rights do not apply
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Rights_excluded_language("05", "Rights-excluded language");
 

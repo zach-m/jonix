@@ -31,16 +31,30 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Related product form code</h1><p>An ONIX code which indicates the primary form of a related product. Optional in
- * an occurrence of &lt;RelatedProduct&gt;, and non-repeating. If supplied, should be identical to the
- * &lt;ProductForm&gt; element supplied in the &lt;DescriptiveDetail&gt; block of the full ONIX record describing the
- * related product itself.</p><p>Since this and the following element provide data about a related product, ONIX
- * suppliers are cautioned of the risk of contradictory data in separate data feeds. <em>This and the following element
- * should not be supplied unless specifically requested by a particular recipient.</em></p><table border='1'
+ * <h1>Product form code</h1><p>An ONIX code which indicates the primary form of a product. Mandatory in an occurrence
+ * of &lt;DescriptiveDetail&gt;, and non-repeating. In ONIX&nbsp;3.0, the handling of multiple-item products has been
+ * changed so that the form of the contained items is now specified only in the &lt;ProductPart&gt; composite
+ * (equivalent to &lt;Contained Item&gt; in ONIX&nbsp;2.1, and now forming Group&nbsp;P.4), which <em>must</em> be
+ * included for full description of any multiple-item product.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Fixed length, two letters (or the digits
- * 00)</td></tr><tr><td>Codelist</td><td>List 150</td></tr><tr><td>Reference name</td><td>&lt;ProductForm&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b012&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ProductForm&gt;BC&lt;/ProductForm&gt;
- * (Paperback book)</td></tr></table>
+ * 00)</td></tr><tr><td>Codelist</td><td>List 150</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductForm&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b012&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;ProductForm&gt;BB&lt;/ProductForm&gt;</tt>
+ * (Hardback book)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;ProductPart&gt;</li>
+ * <li>&lt;RelatedProduct&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductForm</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductForm</li>
+ * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedProduct ⯈ ProductForm</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedProduct ⯈ ProductForm</li>
+ * </ul>
  */
 public class ProductForm implements OnixElement<ProductForms>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -71,7 +85,7 @@ public class ProductForm implements OnixElement<ProductForms>, Serializable {
     public ProductForms value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ProductForms _value() {
@@ -98,6 +112,9 @@ public class ProductForm implements OnixElement<ProductForms>, Serializable {
         value = ProductForms.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ProductForm&gt; or &lt;b012&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

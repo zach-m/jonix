@@ -36,8 +36,18 @@ import java.io.Serializable;
  * included, even when the original product uses Roman numerals.</p><table border='1'
  * cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit decimal point when required, as
  * appropriate for the units specified in &lt;ExtentUnit&gt;. Suggested maximum length 8
- * characters</td></tr><tr><td>Reference name</td><td>&lt;ExtentValue&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;b219&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;b219&gt;2.5&lt;/b219&gt;</td></tr></table>
+ * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ExtentValue&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;b219&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;b219&gt;2.5&lt;/b219&gt;</tt></td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;Extent&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Extent ⯈ ExtentValue</li>
+ * </ul>
  */
 public class ExtentValue implements OnixElement<Double>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -72,7 +82,7 @@ public class ExtentValue implements OnixElement<Double>, Serializable {
     public Double value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public Double _value() {
@@ -99,6 +109,9 @@ public class ExtentValue implements OnixElement<Double>, Serializable {
         value = JPU.getContentAsDouble(element);
     }
 
+    /**
+     * @return whether this tag (&lt;ExtentValue&gt; or &lt;b219&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

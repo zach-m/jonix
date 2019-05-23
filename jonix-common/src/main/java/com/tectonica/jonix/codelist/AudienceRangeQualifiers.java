@@ -129,8 +129,9 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     Nomenclature_niveaux("30", "Nomenclature niveaux"), //
 
     /**
-     * N&#237;vel de Educa&#231;&#227;o do Brasil, see List 238. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in
-     * Onix3
+     * N&#237;vel de Educa&#231;&#227;o do Brasil, see List 238. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Brazil_Education_level("31", "Brazil Education level");
 

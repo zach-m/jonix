@@ -39,8 +39,20 @@ import java.io.Serializable;
  * &lt;MediaFileLink&gt; element, for example a URL, DOI, filename <em>etc</em>. Mandatory in each occurrence of the
  * &lt;MediaFile&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
  * two numeric digits</td></tr><tr><td>Codelist</td><td>List 40</td></tr><tr><td>Reference
- * name</td><td>&lt;MediaFileLinkTypeCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;f116&gt;</td></tr><tr><td>Example</td><td>&lt;MediaFileLinkTypeCode&gt;05&lt;/MediaFileLinkTypeCode&gt;
+ * name</td><td><tt>&lt;MediaFileLinkTypeCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;f116&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;MediaFileLinkTypeCode&gt;05&lt;/MediaFileLinkTypeCode&gt;</tt>
  * FTP address</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;MediaFile&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ MediaFileLinkTypeCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ MediaFileLinkTypeCode</li>
+ * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ MediaFileLinkTypeCode</li>
+ * </ul>
  */
 public class MediaFileLinkTypeCode implements OnixElement<ImageAudioVideoFileLinkTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -76,7 +88,7 @@ public class MediaFileLinkTypeCode implements OnixElement<ImageAudioVideoFileLin
     public ImageAudioVideoFileLinkTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ImageAudioVideoFileLinkTypes _value() {
@@ -107,6 +119,9 @@ public class MediaFileLinkTypeCode implements OnixElement<ImageAudioVideoFileLin
         value = ImageAudioVideoFileLinkTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;MediaFileLinkTypeCode&gt; or &lt;f116&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;

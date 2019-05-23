@@ -52,7 +52,9 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     /**
      * Not yet available, publisher indicates that it has been postponed indefinitely. Should be used in preference to
      * code 10 where the publisher has indicated that a previously-announced publication date is no longer correct, and
-     * no new date has yet been announced. For use in ONIX 3.0 only &lt;p&gt;NOTE: Introduced in Onix3
+     * no new date has yet been announced. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Not_yet_available_postponed_indefinitely("09", "Not yet available, postponed indefinitely"), //
 

@@ -34,9 +34,19 @@ import java.io.Serializable;
  * <h1>Returns code type</h1><p>An ONIX code identifying the scheme from which the returns conditions code in
  * &lt;ReturnsCode&gt; is taken. Mandatory in each occurrence of the &lt;ReturnsConditions&gt; composite, and
  * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 53</td></tr><tr><td>Reference name</td><td>&lt;ReturnsCodeType&gt;</td></tr><tr><td>Short
- * tag</td><td>&lt;j268&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;ReturnsCodeType&gt;01&lt;/ReturnsCodeType&gt;
+ * digits</td></tr><tr><td>Codelist</td><td>List 53</td></tr><tr><td>Reference name</td><td><tt>&lt;ReturnsCodeType&gt;</tt></td></tr><tr><td>Short
+ * tag</td><td><tt>&lt;j268&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;ReturnsCodeType&gt;01&lt;/ReturnsCodeType&gt;</tt>
  * (CLIL French book trade returns conditions code)</td></tr></table>
+ * <p>&nbsp;</p>
+ * This tag may be included in the following composites:
+ * <ul>
+ * <li>&lt;ReturnsConditions&gt;</li>
+ * </ul>
+ * <p>&nbsp;</p>
+ * Possible placements within ONIX message:
+ * <ul>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ ReturnsConditions ⯈ ReturnsCodeType</li>
+ * </ul>
  */
 public class ReturnsCodeType implements OnixElement<ReturnsConditionsCodeTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -67,7 +77,7 @@ public class ReturnsCodeType implements OnixElement<ReturnsConditionsCodeTypes>,
     public ReturnsConditionsCodeTypes value;
 
     /**
-     * Internal API, use the {@link #value} field instead
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
     public ReturnsConditionsCodeTypes _value() {
@@ -94,6 +104,9 @@ public class ReturnsCodeType implements OnixElement<ReturnsConditionsCodeTypes>,
         value = ReturnsConditionsCodeTypes.byCode(JPU.getContentAsString(element));
     }
 
+    /**
+     * @return whether this tag (&lt;ReturnsCodeType&gt; or &lt;j268&gt;) is explicitly provided in the ONIX XML
+     */
     @Override
     public boolean exists() {
         return exists;
