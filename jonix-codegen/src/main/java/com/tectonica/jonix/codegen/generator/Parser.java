@@ -872,28 +872,33 @@ public class Parser {
                 }
             }
 
-            // attach member-specific documentation
-            meta.onixClasses().forEach(elem -> {
-                Optional.ofNullable(elem.parents).ifPresent(parents -> parents.forEach(parent -> {
-                    Optional<OnixDoc> mathingOnixDoc = Optional.ofNullable(elem.onixDocs).flatMap(onixDocs ->
+            // attach member-specific documentation (for members of composites)
+            meta.onixClasses().forEach(child ->
+                // go through each parent (composite) of the child (either a composite, element or flag)
+                Optional.ofNullable(child.parents).ifPresent(parents -> parents.forEach(parent -> {
+                    // of all the onixDocs in the child, find the one whose path pertains to the current parent
+                    Optional.ofNullable(child.onixDocs).map(onixDocs ->
                         onixDocs.stream()
-                            .filter(od -> ("/" + od.path).endsWith(String.format("/%s/%s", parent.name, elem.name)))
+                            .filter(od -> ("/" + od.path).endsWith(String.format("/%s/%s", parent.name, child.name)))
                             .findFirst()
-                    );
-                    if (!mathingOnixDoc.isPresent()) {
-                        boolean singleton = (elem.onixDocs != null) && (elem.onixDocs.size() == 1);
-                        if (singleton) {
-                            mathingOnixDoc = Optional.of(elem.onixDocs.get(0));
-                        } else {
-                            LOGGER.warn("Couldn't find matching documentation for {}/{}: docPaths={}", parent.name,
-                                elem.name, elem.getDocPaths());
-                        }
-                    }
-                    mathingOnixDoc.ifPresent(onixDoc ->
-                        parent.members.stream().filter(m -> m.className.equals(elem.name)).findFirst()
-                            .ifPresent(m -> m.onixDoc = onixDoc));
-                }));
-            });
+                            .orElse(manuallyMatchedOnixDoc(onixDocList, child, parent)))
+                        // if found, attach them to the member of the parent that pertains to the child
+                        .map(onixDoc -> {
+                            parent.members.stream().filter(m -> m.className.equals(child.name)).findFirst()
+                                .ifPresent(m -> m.onixDoc = onixDoc);
+                            return onixDoc;
+                        })
+                        // if not found, issue a warning
+                        .orElseGet(() -> {
+                            if (child.onixDocs == null) {
+                                LOGGER.warn("No documentation for {}.{}", parent.name, child.name);
+                            } else {
+                                LOGGER.info("Ambiguous documentation for {}.{}: docPaths={}", parent.name, child.name,
+                                    child.getDocPaths());
+                            }
+                            return null;
+                        });
+                })));
         }
     }
 
@@ -903,5 +908,50 @@ public class Parser {
         }
         return onixClass.parents.stream().flatMap(parent -> pathsOf(parent).stream().map(s -> s + "/" + onixClass.name))
             .collect(Collectors.toList());
+    }
+
+    /**
+     * In ONIX specs, repetitions of elements descriptions are avoided by putting a reference to another occurrence of
+     * the same element in some other place in the spec-HTML. For example, in Onix3, readers of the NameAsSubject
+     * composite are referred to the composite NameIdentifier, which has the same elements, hence the same per-element
+     * documentation.
+     * <p>
+     * We currently don't parse these textual references in the specs-HTML. Instead, we use two techniques to overcome
+     * missing descriptions (due to cross reference in the specs-HTML):
+     * <ul>
+     * <li>if there's only one description of an element, we assume it holds for all its occurrences</li>
+     * <li>if there are multiple descriptions, we use try to pick the right one in this method</li>
+     * </ul>
+     *
+     * @param elem   the element for which documentation is sought for
+     * @param parent the composite that contains this element, which may be needed to disambiguate the choice of doc
+     * @return the manually matched {@link OnixDoc}, or null if not found
+     */
+    private OnixDoc manuallyMatchedOnixDoc(OnixDocList onixDocList, OnixClassDef elem, OnixCompositeDef parent) {
+        boolean singleton = (elem.onixDocs != null) && (elem.onixDocs.size() == 1);
+        if (singleton) {
+            return elem.onixDocs.get(0);
+        }
+
+        if (meta.onixVersion == OnixSpecs.OnixVersion.Onix3) {
+            // From ONIX docs for <AlternativeName> : P.7.22 to P.7.36  -> P.7.6 to P.7.20
+            // From ONIX docs for <NameAsSubject>   : P.12.7 to P.12.22 -> P.7.5 to P.7.20
+            switch (String.format("%s/%s", parent.name, elem.name)) {
+                case "AlternativeName/PersonName":
+                case "NameAsSubject/PersonName":
+                    return onixDocList.findByGroupMarker("P.7.9");
+
+                case "AlternativeName/CorporateName":
+                case "NameAsSubject/CorporateName":
+                    return onixDocList.findByGroupMarker("P.7.19");
+
+                case "NameAsSubject/NameType":
+                    return onixDocList.findByGroupMarker("P.7.5");
+
+                default:
+                    return null;
+            }
+        }
+        return null; // TODO: support manual lookup for Onix2 too
     }
 }

@@ -45,7 +45,9 @@ public abstract class OnixClassDef implements Comparable<OnixClassDef> {
     public List<String> paths; // set on postAnalysis()
 
     public List<String> getDocPaths() {
-        return onixDocs == null ? null : onixDocs.stream().map(od -> od.path).collect(Collectors.toList());
+        return onixDocs == null ? null : onixDocs.stream()
+            .map(od -> String.format("%s: %s", od.groupMarker, od.path))
+            .collect(Collectors.toList());
     }
 
     public void add(OnixConst onixConst) {

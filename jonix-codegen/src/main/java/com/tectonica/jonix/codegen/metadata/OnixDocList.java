@@ -208,6 +208,15 @@ public class OnixDocList extends ArrayList<OnixDoc> {
         return false;
     }
 
+    public OnixDoc findByGroupMarker(String groupMarker) {
+        for (OnixDoc onixDoc : this) {
+            if (groupMarker.equals(onixDoc.groupMarker)) {
+                return onixDoc;
+            }
+        }
+        return null;
+    }
+
     public String toHtml() {
         StringBuilder sb = new StringBuilder("<html><body>\n");
         sb.append("<head><meta charset='UTF-8'></head>\n");
@@ -215,6 +224,16 @@ public class OnixDocList extends ArrayList<OnixDoc> {
             sb.append(onixDoc.toHtml(true)).append("\n");
         }
         sb.append("</body></html>");
+        return sb.toString();
+    }
+
+    public String toGroupCsv() {
+        StringBuilder sb = new StringBuilder("group,path\n");
+        for (OnixDoc onixDoc : this) {
+            if (onixDoc.groupMarker != null) {
+                sb.append(onixDoc.groupMarker).append(',').append(onixDoc.path).append('\n');
+            }
+        }
         return sb.toString();
     }
 }

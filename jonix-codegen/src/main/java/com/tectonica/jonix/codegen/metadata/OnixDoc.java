@@ -91,7 +91,8 @@ public class OnixDoc {
         StringBuilder sb = new StringBuilder();
         sb.append("<h1>").append(title).append("</h1>");
         if (extended) {
-            sb.append("<p><tt><b>&lt;").append(onixClassName).append("&gt;</b></tt>  ").append(tags).append("</p>");
+            sb.append("<p><tt><b>&lt;").append(onixClassName).append("&gt;</b></tt>  ")
+                .append(tags).append(" (").append(groupMarker).append(")").append("</p>");
             sb.append("<p><tt><i>").append(path.replaceAll("/", " \u2bc8 ")).append("</i></tt></p>");
         }
         sb.append(escapedDescription);
