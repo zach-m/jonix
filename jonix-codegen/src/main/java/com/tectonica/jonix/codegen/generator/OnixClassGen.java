@@ -117,7 +117,7 @@ public class OnixClassGen {
         p.print("\n");
         p.printf("%s\n", Comments.AutoGen);
 
-        printOnixDocs(p, composite.onixDocs);
+        printOnixDocs(p, composite);
         p.printf("public class %s implements %s, Serializable\n", composite.name, markerInterfaceName);
         p.printf("{\n");
 
@@ -188,6 +188,10 @@ public class OnixClassGen {
         p.printf("   }\n");
 
         p.print("\n");
+        p.printf("   /**\n");
+        p.printf("    * @return whether this tag (&lt;%s&gt; or &lt;%s&gt;) is explicitly provided in the ONIX XML\n",
+            composite.name, composite.constValue("shortname"));
+        p.printf("    */\n");
         p.printf("   @Override\n");
         p.printf("   public boolean exists() {\n");
         p.printf("      return exists;\n");
@@ -210,7 +214,10 @@ public class OnixClassGen {
             // declare public accessor to the member
             p.print("\n");
             p.printf("   /**\n");
-            p.printf("    * %s\n", fi.comment);
+            if (member.onixDoc != null) {
+                p.printf("    * %s\n", member.onixDoc.escapedDescription);
+            }
+            p.printf("    * Jonix-Comment: %s\n", fi.comment);
             p.printf("    */\n");
             p.printf("   public %s %s() {\n", fi.type, fi.name);
             p.printf("      _initialize();\n");
@@ -317,7 +324,7 @@ public class OnixClassGen {
         final TypeInfo ti = genUtil.typeInfoOf(element.valueMember.simpleType);
         String valueType = element.isSpaceable ? String.format("java.util.Set<%s>", ti.javaType) : ti.javaType;
 
-        printOnixDocs(p, element.onixDocs);
+        printOnixDocs(p, element);
         p.printf("public class %s implements OnixElement<%s>, Serializable\n", element.name, valueType);
         p.printf("{\n");
 
@@ -344,7 +351,7 @@ public class OnixClassGen {
         // declare internal accessor to value
         p.print("\n");
         p.printf("   /**\n");
-        p.printf("   * Internal API, use the {@link #value} field instead\n");
+        p.printf("   * Internal API, use the {@link #value()} method or the {@link #value} field instead\n");
         p.printf("   */\n");
         p.printf("   @Override\n");
         p.printf("   public %s _value() {\n", valueType);
@@ -393,6 +400,10 @@ public class OnixClassGen {
         p.printf("   }\n");
 
         p.print("\n");
+        p.printf("   /**\n");
+        p.printf("    * @return whether this tag (&lt;%s&gt; or &lt;%s&gt;) is explicitly provided in the ONIX XML\n",
+            element.name, element.constValue("shortname"));
+        p.printf("    */\n");
         p.printf("   @Override\n");
         p.printf("   public boolean exists() {\n");
         p.printf("      return exists;\n");
@@ -412,7 +423,7 @@ public class OnixClassGen {
         p.print("\n");
         p.printf("%s\n", Comments.AutoGen);
 
-        printOnixDocs(p, flag.onixDocs);
+        printOnixDocs(p, flag);
         p.printf("public class %s implements OnixFlag, Serializable\n", flag.name);
         p.printf("{\n");
 
@@ -441,6 +452,10 @@ public class OnixClassGen {
         p.printf("   }\n");
 
         p.print("\n");
+        p.printf("   /**\n");
+        p.printf("    * @return whether this tag (&lt;%s&gt; or &lt;%s&gt;) is explicitly provided in the ONIX XML\n",
+            flag.name, flag.constValue("shortname"));
+        p.printf("    */\n");
         p.printf("   @Override\n");
         p.printf("   public boolean exists() {\n");
         p.printf("      return exists;\n");
@@ -449,12 +464,30 @@ public class OnixClassGen {
         p.print("}\n");
     }
 
-    private void printOnixDocs(PrintStream p, List<OnixDoc> onixDocs) {
+    private void printOnixDocs(PrintStream p, OnixClassDef onixClass) {
+        p.printf("/**\n");
+        List<OnixDoc> onixDocs = onixClass.onixDocs;
         if (onixDocs != null) {
-            p.printf("/**\n");
             p.printf(" * %s\n", onixDocs.get(0).toHtml(false)); // TODO: first is arbitrary
-            p.printf(" */\n");
+            p.printf(" * <p/>\n");
         }
+
+        if (onixClass.parents != null) { // should only happen in "ONIXMessage"
+            p.printf(" * This tag may be included in the following composites:\n");
+            p.printf(" * <ul>\n");
+            onixClass.parents.forEach(parent -> p.printf(" * <li>&lt;%s&gt;</li>\n", parent.name));
+            p.printf(" * </ul>\n");
+            p.printf(" * <p/>\n");
+        }
+
+        p.printf(" * Possible placements within ONIX message:\n");
+        p.printf(" * <ul>\n");
+        onixClass.paths.stream()
+            .map(path -> path.replaceAll("/", " \u2bc8 "))
+            .forEach(path -> p.printf(" * <li>%s</li>\n", path));
+        p.printf(" * </ul>\n");
+
+        p.printf(" */\n");
     }
 
     private void declareConstsAndAttributes(PrintStream p, OnixClassDef clz) {

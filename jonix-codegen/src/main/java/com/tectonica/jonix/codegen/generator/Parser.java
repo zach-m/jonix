@@ -854,6 +854,12 @@ public class Parser {
         // and then recursively construct paths of indirect parents
         meta.onixClasses().forEach(elem -> elem.paths = pathsOf(elem));
 
+        meta.onixClasses().filter(oc -> !oc.name.equalsIgnoreCase("ONIXMessage")).forEach(oc -> {
+            if (oc.parents == null) {
+                throw new RuntimeException("no parent composite(s) were found for " + oc.name);
+            }
+        });
+
         // attach documentation
         if (!meta.isShort) { // onixDocs have onixClassName property, which is the ref-name of the class
             //MultiMap<String, OnixDoc> mmap = new MultiMap<>();

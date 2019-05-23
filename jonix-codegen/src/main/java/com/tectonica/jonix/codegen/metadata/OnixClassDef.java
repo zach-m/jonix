@@ -36,13 +36,13 @@ public abstract class OnixClassDef implements Comparable<OnixClassDef> {
     public List<OnixDoc> onixDocs; // set on postAnalysis()
 
     @JsonIgnore
-    public List<OnixCompositeDef> parents; // set on postAnalysis()
+    public List<OnixCompositeDef> parents; // set on postAnalysis(), null only on ONIXMessage
 
     public List<String> getParentClasses() {
         return parents == null ? null : parents.stream().map(oc -> oc.name).collect(Collectors.toList());
     }
 
-    public List<String> paths; // set on postAnalysis()
+    public List<String> paths; // set on postAnalysis(), never null
 
     public List<String> getDocPaths() {
         return onixDocs == null ? null : onixDocs.stream()

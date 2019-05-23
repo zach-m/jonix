@@ -180,13 +180,13 @@ public class GenUtil {
     private String commentFor(Cardinality cardinality) {
         switch (cardinality) {
             case Required:
-                return "(this field is required)";
+                return "this field is required";
             case Optional:
-                return "(this field is optional)";
+                return "this field is optional";
             case OneOrMore:
-                return "(this list is required to contain at least one item)";
+                return "this list is required to contain at least one item";
             case ZeroOrMore:
-                return "(this list may be empty)";
+                return "this list may be empty";
             default:
                 throw new RuntimeException();
         }
