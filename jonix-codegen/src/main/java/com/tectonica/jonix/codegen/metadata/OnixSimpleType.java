@@ -34,8 +34,8 @@ import java.util.List;
  * Given instance of this class, use {@link #isEnum()} to tell which group it belongs to.
  */
 @JsonPropertyOrder(
-    {"name", "primitiveType", "comment", "isList", "enum", "enumName", "enumCodelistIssue", "enumAliasFor",
-        "enumValues"})
+    {"name", "primitiveType", "description", "comment", "isList", "enum", "enumName", "enumCodelistIssue",
+        "enumAliasFor", "enumValues"})
 public class OnixSimpleType implements Comparable<OnixSimpleType> {
     public static final OnixSimpleType XHTML =
         new OnixSimpleType("XHTML", Primitive.String, "Free XHTML content", null);
@@ -52,6 +52,11 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
 
     /**
      * description of the simpleType (aka annotation)
+     */
+    public String description;
+
+    /**
+     * additional comment for Javadocs
      */
     public String comment;
 
@@ -87,18 +92,18 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
 
     @JsonIgnore
     public boolean isEmpty() {
-        return (primitiveType == null) && (comment == null) && (enumName == null) && (enumCodelistIssue == null) &&
-            (enumAliasFor == null) && !isList;
+        return (primitiveType == null) && (description == null) && (comment == null) && (enumName == null) &&
+            (enumCodelistIssue == null) && (enumAliasFor == null) && !isList;
     }
 
     public OnixSimpleType(String name) {
         this.name = name;
     }
 
-    private OnixSimpleType(String name, Primitive dataType, String comment, List<OnixEnumValue> enumValues) {
+    private OnixSimpleType(String name, Primitive dataType, String description, List<OnixEnumValue> enumValues) {
         this.name = name;
         this.primitiveType = dataType;
-        this.comment = comment;
+        this.description = description;
         this.enumValues = enumValues;
     }
 
@@ -112,6 +117,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
         }
 
         primitiveType = enumType.primitiveType;
+        description = enumType.description;
         comment = enumType.comment;
         isList = enumType.isList;
         enumName = enumType.enumName;
@@ -123,6 +129,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
     public static OnixSimpleType cloneFrom(OnixSimpleType other) {
         OnixSimpleType ost = new OnixSimpleType(other.name);
         ost.primitiveType = other.primitiveType;
+        ost.description = other.description;
         ost.comment = other.comment;
         ost.isList = other.isList;
         ost.enumName = other.enumName;
@@ -141,7 +148,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
 
     @Override
     public String toString() {
-        return name + " (" + primitiveType + ") = '" + comment + "', values=" + enumValues + "'";
+        return String.format("%s (%s) = '%s', values=%s'", name, primitiveType, description, enumValues);
     }
 
     /**

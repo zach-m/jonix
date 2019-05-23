@@ -174,13 +174,13 @@ public class GenerateCode {
             } else if (enum2 != null) {
                 // enum from Onix2 exists, with no match on Onix3, we add it as is (with a deprecation comment)
                 LOGGER.debug("unifyCodelists: [onix2] " + enum2.enumName);
-                enum2.comment += "\n<p>" + "NOTE: Deprecated in Onix3"; // TODO: <p> goes through URL-encofing
+                enum2.comment = "Deprecated in Onix3";
                 unifiedCodelists.put(enum2.name, enum2);
             } else {
                 assert enum3 != null;
                 // enum from Onix3 exists, with no match on Onix2, we add it as is
                 LOGGER.debug("unifyCodelists: {} {} [onix3] {}", SPACER, SPACER, enum3.enumName);
-                enum3.comment += "\n<p>" + "NOTE: Introduced in Onix3"; // TODO: <p> goes through URL-encofing
+                enum3.comment = "Introduced in Onix3";
                 unifiedCodelists.put(enum3.name, enum3);
             }
             return true;
@@ -232,11 +232,11 @@ public class GenerateCode {
                 //}
             } else if (enumValue2 != null) {
                 //LOGGER.debug("unifyCodelists: Unique to Onix2: " + enum2.enumName + "." + enumValue2);
-                enumValue2.description += "\n<p>" + "NOTE: Deprecated in Onix3"; // TODO: <p> goes through URL-encofing
+                enumValue2.comment = "Deprecated in Onix3";
                 result.add(enumValue2);
             } else {
                 //LOGGER.debug("unifyCodelists: Unique to Onix3: " + enum3.enumName + "." + enumValue3);
-                enumValue3.description += "\n<p>" + "NOTE: Introduced in Onix3"; // TODO: <p> goes through URL-encofing
+                enumValue3.comment = "Introduced in Onix3";
             }
             return true;
         });

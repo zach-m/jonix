@@ -80,22 +80,27 @@ public class OnixEnumGen {
         p.printf("%s\n", Comments.AutoGen);
 
         String codelistNum = enumType.name.substring("List".length());
-        String codelistDescription = XML.escape(enumType.comment);
+        String codelistDescription = XML.escape(enumType.description);
 
         p.printf("/**\n");
         p.printf(" * marker interface to assist in IDE navigation to code-list %s (%s)\n", codelistNum,
             codelistDescription);
         p.printf(" */\n");
-        p.printf("interface CodeList%s\n", codelistNum);
-        p.printf("{}\n");
+        p.printf("interface CodeList%s {\n", codelistNum);
+        p.printf("}\n");
 
         p.print("\n");
         p.printf("/**\n");
         p.printf(" * <code>Enum</code> that corresponds to ONIX <b>Codelist %s</b>\n", codelistNum);
-        if (enumType.comment != null) {
+        if (enumType.description != null) {
             p.printf(" * <p>\n");
             p.printf(" * Description: %s\n", codelistDescription);
         }
+        if (enumType.comment != null) {
+            p.printf(" * <p>\n");
+            p.printf(" * Jonix-Comment: %s\n", XML.escape(enumType.comment));
+        }
+        // TODO: instead of the following link, we need to parse the Codelist spec-HTML, and unify it
         String linkGeneral = "https://www.editeur.org/14/Code-Lists/";
         String link = "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/"
             + "ONIX_BookProduct_Codelists_Issue_" + enumType.enumCodelistIssue + ".html#codelist" + codelistNum;
@@ -120,9 +125,17 @@ public class OnixEnumGen {
             } else {
                 p.print(", //\n\n");
             }
-            if (ev.description != null) {
+            if (ev.description != null || ev.comment != null) {
                 p.printf("   /**\n");
-                p.printf("    * %s\n", XML.escape(ev.description));
+                if (ev.description != null) {
+                    p.printf("    * %s\n", XML.escape(ev.description));
+                }
+                if (ev.comment != null && ev.description != null) {
+                    p.printf("    * <p>\n");
+                }
+                if (ev.comment != null) {
+                    p.printf("    * Jonix-Comment: %s\n", XML.escape(ev.comment));
+                }
                 p.printf("    */\n");
             }
             p.printf("   %s(\"%s\", \"%s\")", token, ev.value, ev.name);

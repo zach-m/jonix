@@ -21,11 +21,12 @@ package com.tectonica.jonix.codegen.metadata;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder( {"name", "value", "description"})
+@JsonPropertyOrder( {"name", "value", "description", "comment"})
 public class OnixEnumValue implements Comparable<OnixEnumValue> {
     public String name;
     public String value;
     public String description;
+    public String comment; // additional comment for Javadocs
 
     public static OnixEnumValue create(String name, String value, String description) {
         OnixEnumValue oev = new OnixEnumValue();

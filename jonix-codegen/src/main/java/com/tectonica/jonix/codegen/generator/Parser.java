@@ -164,7 +164,7 @@ public class Parser {
 
                 switch (simpleTypeDefName) {
                     case "xs:annotation":
-                        simpleType.comment = extractAnnotationText(simpleTypeDefElem);
+                        simpleType.description = extractAnnotationText(simpleTypeDefElem);
                         break;
                     case "xs:restriction":
                         handleRestriction(simpleTypeDefElem);
@@ -224,7 +224,7 @@ public class Parser {
                             final Element patternElem = DOM.firstElemChild(restrictionElem, "xs:pattern");
                             if (patternElem != null) {
                                 // NOTE: currently this only happens in Elements XSD
-                                simpleType.comment = patternElem.getAttribute("value");
+                                simpleType.description = patternElem.getAttribute("value");
                                 if (DOM.nextElemChild(patternElem, "xs:pattern") != null) {
                                     LOGGER.info("ignoring alternative xs:patterns in {}", simpleType.name);
                                 }
@@ -351,7 +351,7 @@ public class Parser {
         }
 
         // otherwise we set the enumName based on the enum's comment + make sure it's unique
-        String enumName = enumJavaName(enumType.comment);
+        String enumName = enumJavaName(enumType.description);
         if (!context.enumNames.add(enumName)) {
             String enumNameBefore = enumName;
             enumName += enumType.name; // new code-list with the same name, we have to differentiate
