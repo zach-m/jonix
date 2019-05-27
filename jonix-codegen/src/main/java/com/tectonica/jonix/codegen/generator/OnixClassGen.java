@@ -157,7 +157,7 @@ public class OnixClassGen {
         p.print("\n");
         p.printf("   @Override\n");
         p.printf("   public void _initialize() {\n");
-        p.printf("      if (initialized) return;\n");
+        p.printf("      if (initialized) { return; }\n");
         p.printf("      initialized = true;\n");
 
         p.print("\n");

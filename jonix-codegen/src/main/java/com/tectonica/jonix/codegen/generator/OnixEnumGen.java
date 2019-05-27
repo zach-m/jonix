@@ -169,11 +169,14 @@ public class OnixEnumGen {
             p.print("\n");
             p.printf("   public static %s byCode(String code)\n", enumType.enumName);
             p.printf("   {\n");
-            p.printf("      if (code == null || code.isEmpty())\n");
+            p.printf("      if (code == null || code.isEmpty()) {\n");
             p.printf("         return null;\n");
-            p.printf("      for (%s e : values())\n", enumType.enumName);
-            p.printf("         if (e.code.equals(code))\n");
+            p.printf("      }\n");
+            p.printf("      for (%s e : values()) {\n", enumType.enumName);
+            p.printf("         if (e.code.equals(code)) {\n");
             p.printf("            return e;\n");
+            p.printf("         }\n");
+            p.printf("      }\n");
             p.printf("      return null;\n");
             p.printf("   }\n");
         } else {
@@ -191,8 +194,9 @@ public class OnixEnumGen {
             p.printf("            if (result == null)\n");
             p.printf("            {\n");
             p.printf("               result = new HashMap<>();\n");
-            p.printf("               for (%s e : values())\n", enumType.enumName);
+            p.printf("               for (%s e : values()) {\n", enumType.enumName);
             p.printf("                  result.put(e.code, e);\n");
+            p.printf("               }\n");
             p.printf("               map = result;\n");
             p.printf("            }\n");
             p.printf("         }\n");
@@ -202,8 +206,9 @@ public class OnixEnumGen {
             p.print("\n");
             p.printf("   public static %s byCode(String code)\n", enumType.enumName);
             p.printf("   {\n");
-            p.printf("      if (code == null || code.isEmpty())\n");
+            p.printf("      if (code == null || code.isEmpty()) {\n");
             p.printf("         return null;\n");
+            p.printf("      }\n");
             p.printf("      return map().get(code);\n");
             p.printf("   }\n");
         }
