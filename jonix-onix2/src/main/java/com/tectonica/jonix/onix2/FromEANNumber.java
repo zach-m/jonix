@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sender EAN number</h1><p>An EAN location number which identifies the sender of an ONIX message. Optional and
- * non-repeating; but either the &lt;FromCompany&gt; element or a sender identifier using one or more elements from MH.1
- * to MH.5 must be included.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, thirteen numeric
- * digits, of which the last is a check digit.</td></tr><tr><td>Reference name</td><td><tt>&lt;FromEANNumber&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m172&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;FromEANNumber&gt;5401234098123&lt;/FromEANNumber&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sender EAN number</h1>
+ * <p>
+ * An EAN location number which identifies the sender of an ONIX message. Optional and non-repeating; but either the
+ * &lt;FromCompany&gt; element or a sender identifier using one or more elements from MH.1 to MH.5 must be included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, thirteen numeric digits, of which the last is a check digit.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;FromEANNumber&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m172&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;FromEANNumber&gt;5401234098123&lt;/FromEANNumber&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ FromEANNumber</li>
@@ -82,7 +100,9 @@ public class FromEANNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Barcode indicator</h1><p>An ONIX code indicating whether a product is bar-coded. Optional, and repeatable if the
- * product carries two or more barcodes from different schemes. The absence of this field does NOT mean that a product
- * is not bar-coded.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 6</td></tr><tr><td>Reference name</td><td><tt>&lt;Barcode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b246&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;Barcode&gt;01&lt;/Barcode&gt;</tt>
- * Barcoded, scheme unspecified</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Barcode indicator</h1>
+ * <p>
+ * An ONIX code indicating whether a product is bar-coded. Optional, and repeatable if the product carries two or more
+ * barcodes from different schemes. The absence of this field does NOT mean that a product is not bar-coded.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 6</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Barcode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b246&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;Barcode&gt;01&lt;/Barcode&gt;</tt> Barcoded, scheme unspecified</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Barcode</li>

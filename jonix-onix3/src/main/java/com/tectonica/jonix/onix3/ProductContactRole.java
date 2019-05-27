@@ -31,17 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product contact role</h1><p>An ONIX code which identifies the role played by the product contact in relation to
- * the product – for example answering enquiries related to sales or to promotion.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 198</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductContactRole&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x482&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt></tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product contact role</h1>
+ * <p>
+ * An ONIX code which identifies the role played by the product contact in relation to the product – for example
+ * answering enquiries related to sales or to promotion.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 198</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductContactRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x482&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt></tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductContact&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ ProductContactRole</li>

@@ -43,7 +43,9 @@ public class JonixReligiousTextFeature implements JonixKeyedStruct<ReligiousText
 
     /**
      * Raw Format: Variable length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
-     * XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+     * XHTML, HTML or XML with ONIX text fields
+     * <p>
+     * (type: XHTML)
      */
     public List<String> religiousTextFeatureDescriptions;
 

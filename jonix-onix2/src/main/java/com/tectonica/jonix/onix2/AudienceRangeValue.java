@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience range value (1)</h1><p>A value indicating an exact position within a range, or the upper or lower end of
- * a range.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length string, suggested maximum 10
- * characters. (This element was previously defined as a variable-length integer, but its definition is extended in ONIX
- * 2.1 to enable certain non-numeric values to be carried. For values that BISAC has defined for US school grades and
- * pre-school levels, see List 77.)</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceRangeValue&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b076&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b076&gt;10&lt;/b076&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Audience range value (1)</h1>
+ * <p>
+ * A value indicating an exact position within a range, or the upper or lower end of a range.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length string, suggested maximum 10 characters. (This element was previously defined as a
+ * variable-length integer, but its definition is extended in ONIX 2.1 to enable certain non-numeric values to be
+ * carried. For values that BISAC has defined for US school grades and pre-school levels, see List 77.)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AudienceRangeValue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b076&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b076&gt;10&lt;/b076&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AudienceRange&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ AudienceRange ⯈ AudienceRangeValue</li>
@@ -85,8 +103,9 @@ public class AudienceRangeValue implements OnixElement<String>, Serializable {
     /**
      * Raw Format: Variable-length string, suggested maximum 10 characters. (This element was previously defined as a
      * variable-length integer, but its definition is extended in ONIX 2.1 to enable certain non-numeric values to be
-     * carried. For values that BISAC has defined for US school grades and pre-school levels, see List 77.)<p> (type:
-     * NonEmptyString)
+     * carried. For values that BISAC has defined for US school grades and pre-school levels, see List 77.)
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

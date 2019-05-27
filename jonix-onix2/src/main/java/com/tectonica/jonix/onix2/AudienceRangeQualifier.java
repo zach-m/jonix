@@ -35,18 +35,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience range qualifier</h1><p>An ONIX code specifying the attribute (age, school grade <em>etc</em>) which is
- * measured by the value in the &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the
- * &lt;AudienceRange&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
- * two numeric digits.</td></tr><tr><td>Codelist</td><td>List 30</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;AudienceRangeQualifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b074&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b074&gt;11&lt;/b074&gt;</tt>
- * US School Grade range</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Audience range qualifier</h1>
+ * <p>
+ * An ONIX code specifying the attribute (age, school grade <em>etc</em>) which is measured by the value in the
+ * &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 30</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AudienceRangeQualifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b074&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b074&gt;11&lt;/b074&gt;</tt> US School Grade range</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AudienceRange&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ AudienceRange ⯈ AudienceRangeQualifier</li>

@@ -34,18 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>ISMN</h1><p>International Standard Music Number, the recognized standard identifier for printed music. Optional
- * and non-repeating. <strong>The &lt;ProductIdentifier&gt; composite on a later page provides a more general method of
- * handling this and other product codes, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, letter M followed by nine numeric digits, the last of which is a
- * check character calculated according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;ISMN&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b008&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ISMN&gt;M345246805&lt;/ISMN&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>ISMN</h1>
+ * <p>
+ * International Standard Music Number, the recognized standard identifier for printed music. Optional and
+ * non-repeating. <strong>The &lt;ProductIdentifier&gt; composite on a later page provides a more general method of
+ * handling this and other product codes, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, letter M followed by nine numeric digits, the last of which is a check character calculated
+ * according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ISMN&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b008&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ISMN&gt;M345246805&lt;/ISMN&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ISMN</li>
@@ -84,7 +103,9 @@ public class ISMN implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character
-     * calculated according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html<p> (type: NonEmptyString)
+     * calculated according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

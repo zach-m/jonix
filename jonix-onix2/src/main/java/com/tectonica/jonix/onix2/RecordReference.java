@@ -34,25 +34,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Record reference number</h1><p>For every product, you must choose a single number which will uniquely identify
- * the Information record which you send out about that product, and which will remain as its permanent identifier every
- * time you send an update. It doesn’t matter what number you choose, provided that it is unique and permanent. This
- * number doesn’t really identify the product – even though you may choose to use the ISBN or another product identifier
- * – it identifies your information record about the product, so that the person to whom you are sending an update can
- * match it with what you have previously sent. A good way of generating numbers which are not part of a recognized
- * product identification scheme but which can be guaranteed to be unique is to preface the number with an Internet
- * domain name which is registered to your organisation.</p><p>This field is mandatory and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length, alphanumeric, suggested maximum length 32
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;RecordReference&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;a001&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;RecordReference&gt;8474339790&lt;/RecordReference&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Record reference number</h1>
+ * <p>
+ * For every product, you must choose a single number which will uniquely identify the Information record which you send
+ * out about that product, and which will remain as its permanent identifier every time you send an update. It doesn’t
+ * matter what number you choose, provided that it is unique and permanent. This number doesn’t really identify the
+ * product – even though you may choose to use the ISBN or another product identifier – it identifies your information
+ * record about the product, so that the person to whom you are sending an update can match it with what you have
+ * previously sent. A good way of generating numbers which are not part of a recognized product identification scheme
+ * but which can be guaranteed to be unique is to preface the number with an Internet domain name which is registered to
+ * your organisation.
+ * </p>
+ * <p>
+ * This field is mandatory and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length, alphanumeric, suggested maximum length 32 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RecordReference&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;a001&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;RecordReference&gt;8474339790&lt;/RecordReference&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;SubSeriesRecord&gt;</li>
  * <li>&lt;MainSeriesRecord&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ RecordReference</li>
@@ -92,7 +113,9 @@ public class RecordReference implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

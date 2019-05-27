@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Edition type code</h1><p>An ONIX code, indicating the type of a version or edition. Optional, and repeatable if
- * the product has characteristics of two or more types (<em>eg</em> revised and annotated).</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three upper-case letters</td></tr><tr><td>Codelist</td><td>List
- * 21</td></tr><tr><td>Reference name</td><td><tt>&lt;EditionTypeCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b056&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;EditionTypeCode&gt;ILL&lt;/EditionTypeCode&gt;</tt>
- * Illustrated</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Edition type code</h1>
+ * <p>
+ * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
+ * characteristics of two or more types (<em>eg</em> revised and annotated).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three upper-case letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 21</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EditionTypeCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b056&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;EditionTypeCode&gt;ILL&lt;/EditionTypeCode&gt;</tt> Illustrated</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ EditionTypeCode</li>

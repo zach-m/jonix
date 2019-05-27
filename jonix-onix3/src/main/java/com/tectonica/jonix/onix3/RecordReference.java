@@ -30,26 +30,51 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Record reference</h1><p>For every product, you must choose a single record reference which will uniquely identify
- * the Information record which you send out about that product, and which will remain as its permanent identifier every
- * time you send an update. It doesn’t matter what reference you choose, provided that it is unique and permanent. This
- * record reference doesn’t identify the <em>product</em> – even though you may choose to use the ISBN or another
- * product identifier as a part or the whole of your record reference – it identifies <em>your information record about
- * the product</em>, so that the person to whom you are sending an update can match it with what you have previously
- * sent. A good way of generating references which are not part of a recognized product identification scheme but which
- * can be guaranteed to be unique is to prefix a product identifier or a meaningless row ID from your internal database
- * with a reversed Internet domain name which is registered to your organization (reversal prevents the record reference
- * appearing to be a resolvable URL). Alternatively, use a UUID.</p><p>This field is mandatory and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length alphanumeric, suggested
- * maximum length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;RecordReference&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;a001&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;a001&gt;com.xyzpublishers.onix.36036&lt;/a001&gt;</tt>
- * (36036 is row ID in an internal database that is the source of the data in the record)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Record reference</h1>
+ * <p>
+ * For every product, you must choose a single record reference which will uniquely identify the Information record
+ * which you send out about that product, and which will remain as its permanent identifier every time you send an
+ * update. It doesn’t matter what reference you choose, provided that it is unique and permanent. This record reference
+ * doesn’t identify the <em>product</em> – even though you may choose to use the ISBN or another product identifier as a
+ * part or the whole of your record reference – it identifies <em>your information record about the product</em>, so
+ * that the person to whom you are sending an update can match it with what you have previously sent. A good way of
+ * generating references which are not part of a recognized product identification scheme but which can be guaranteed to
+ * be unique is to prefix a product identifier or a meaningless row ID from your internal database with a reversed
+ * Internet domain name which is registered to your organization (reversal prevents the record reference appearing to be
+ * a resolvable URL). Alternatively, use a UUID.
+ * </p>
+ * <p>
+ * This field is mandatory and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length alphanumeric, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RecordReference&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;a001&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;a001&gt;com.xyzpublishers.onix.36036&lt;/a001&gt;</tt> (36036 is row ID in an internal database that is
+ * the source of the data in the record)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ RecordReference</li>
@@ -82,7 +107,9 @@ public class RecordReference implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length alphanumeric, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

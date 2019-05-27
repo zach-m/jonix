@@ -34,19 +34,33 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Record source identifier</h1><p>An identifier for the party which issued the record, from the scheme specified in
- * &lt;RecordSourceIdentifierType&gt;. Optional and non-repeating, but &lt;RecordSourceIdentifierType&gt; must also be
- * present if this field is present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Defined by the
- * identifier scheme specified in &lt;RecordSourceIdentifierType&gt;</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;RecordSourceIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;a196&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Record source identifier</h1>
+ * <p>
+ * An identifier for the party which issued the record, from the scheme specified in &lt;RecordSourceIdentifierType&gt;.
+ * Optional and non-repeating, but &lt;RecordSourceIdentifierType&gt; must also be present if this field is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RecordSourceIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;a196&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;SubSeriesRecord&gt;</li>
  * <li>&lt;MainSeriesRecord&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ RecordSourceIdentifier</li>
@@ -86,8 +100,9 @@ public class RecordSourceIdentifier implements OnixElement<String>, Serializable
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;<p> (type:
-     * NonEmptyString)
+     * Raw Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

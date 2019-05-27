@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Edition version number</h1><p>The number of a numbered revision within an edition number. To be used only where a
- * publisher uses such two-level numbering to indicate revisions which do not constitute a new edition under a new ISBN
- * or other distinctive product identifier. Optional and non-repeating. If this field is used, an &lt;EditionNumber&gt;
- * must also be present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Free form, suggested maximum length
- * 20 characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;EditionVersionNumber&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b217&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;EditionVersionNumber&gt;2&lt;/EditionVersionNumber&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Edition version number</h1>
+ * <p>
+ * The number of a numbered revision within an edition number. To be used only where a publisher uses such two-level
+ * numbering to indicate revisions which do not constitute a new edition under a new ISBN or other distinctive product
+ * identifier. Optional and non-repeating. If this field is used, an &lt;EditionNumber&gt; must also be present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Free form, suggested maximum length 20 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EditionVersionNumber&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b217&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;EditionVersionNumber&gt;2&lt;/EditionVersionNumber&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ EditionVersionNumber</li>
@@ -83,7 +101,9 @@ public class EditionVersionNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Free form, suggested maximum length 20 characters.<p> (type: NonEmptyString)
+     * Raw Format: Free form, suggested maximum length 20 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in the
- * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;ProductIdentifier&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 5</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductIDType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b221&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ProductIDType&gt;02&lt;/ProductIDType&gt;</tt>
- * ISBN-10</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product identifier type code</h1>
+ * <p>
+ * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory in
+ * each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 5</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductIDType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b221&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ProductIDType&gt;02&lt;/ProductIDType&gt;</tt> ISBN-10</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductIdentifier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier ⯈ ProductIDType</li>

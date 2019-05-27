@@ -36,18 +36,29 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Addressee identifier composite</h1><p>A group of data elements which together define the identifier of the
- * addressee within a specified namespace, used here to allow different party identifiers to be included without
- * defining additional data elements. In particular the composite allows a proprietary identifier to be used by mutual
- * agreement between parties to an exchange. The composite is optional and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;AddresseeIdentifier&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;addresseeidentifier&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Addressee identifier composite</h1>
+ * <p>
+ * A group of data elements which together define the identifier of the addressee within a specified namespace, used
+ * here to allow different party identifiers to be included without defining additional data elements. In particular the
+ * composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
+ * composite is optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AddresseeIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;addresseeidentifier&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ AddresseeIdentifier</li>
@@ -153,8 +164,10 @@ public class AddresseeIdentifier
     private AddresseeIDType addresseeIDType = AddresseeIDType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken.
-     * Mandatory in any occurrence of the &lt;AddresseeIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in any occurrence of the &lt;AddresseeIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public AddresseeIDType addresseeIDType() {
@@ -165,9 +178,13 @@ public class AddresseeIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary identifier type when, and only when, the code in the
-     * &lt;AddresseeIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p><p
-     * class="new214">The text is not limited to ASCII characters.</p>
+     * <p>
+     * A name which identifies a proprietary identifier type when, and only when, the code in the
+     * &lt;AddresseeIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
+     * </p>
+     * <p class="new214">
+     * The text is not limited to ASCII characters.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
@@ -178,8 +195,10 @@ public class AddresseeIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * <p>An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in any occurrence of the
-     * &lt;AddresseeIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in any occurrence of the
+     * &lt;AddresseeIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public IDValue idValue() {

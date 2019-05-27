@@ -31,16 +31,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Page run composite</h1><p>A repeatable group of data elements which together define a run of contiguous pages on
- * which a text item appears. The composite is optional, but may be repeated where the text item covers two or more
- * separate page runs.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PageRun&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;pagerun&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Page run composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define a run of contiguous pages on which a text item appears. The
+ * composite is optional, but may be repeated where the text item covers two or more separate page runs.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PageRun&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;pagerun&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;TextItem&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextItem ⯈ PageRun</li>
@@ -131,9 +146,11 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
     private FirstPageNumber firstPageNumber = FirstPageNumber.EMPTY;
 
     /**
-     * <p>The number of the first page of a sequence of contiguous pages. Mandatory in each occurrence of the
+     * <p>
+     * The number of the first page of a sequence of contiguous pages. Mandatory in each occurrence of the
      * &lt;PageRun&gt; composite, and non-repeating. Note that here and in the &lt;LastPageNumber&gt; element a page
-     * ‘number’ may be Arabic, Roman, or an alphanumeric string (<i>eg</i> L123).</p>
+     * ‘number’ may be Arabic, Roman, or an alphanumeric string (<i>eg</i> L123).
+     * </p>
      * Jonix-Comment: this field is required
      */
     public FirstPageNumber firstPageNumber() {
@@ -144,9 +161,11 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
     private LastPageNumber lastPageNumber = LastPageNumber.EMPTY;
 
     /**
-     * <p>The number of the last page of a sequence of contiguous pages (ignoring any blank verso which is left after
-     * the last text page). This element is omitted if an item begins and ends on the same page; otherwise it should
-     * occur once and only once in each occurrence of the &lt;PageRun&gt; composite.</p>
+     * <p>
+     * The number of the last page of a sequence of contiguous pages (ignoring any blank verso which is left after the
+     * last text page). This element is omitted if an item begins and ends on the same page; otherwise it should occur
+     * once and only once in each occurrence of the &lt;PageRun&gt; composite.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public LastPageNumber lastPageNumber() {

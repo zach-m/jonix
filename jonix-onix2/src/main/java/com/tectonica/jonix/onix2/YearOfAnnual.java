@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Year of annual</h1><p>The nominal year of an annual publication. May be entered as either a single year YYYY or a
- * span of two consecutive years YYYY-YYYY. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Either four numeric digits, or four numeric digits followed by hyphen followed
- * by four numeric digits</td></tr><tr><td>Reference name</td><td><tt>&lt;YearOfAnnual&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b020&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;YearOfAnnual&gt;1999&lt;/YearOfAnnual&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Year of annual</h1>
+ * <p>
+ * The nominal year of an annual publication. May be entered as either a single year YYYY or a span of two consecutive
+ * years YYYY-YYYY. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;YearOfAnnual&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b020&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;YearOfAnnual&gt;1999&lt;/YearOfAnnual&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Series&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ YearOfAnnual</li>
@@ -83,7 +101,9 @@ public class YearOfAnnual implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric
-     * digits<p> (type: NonEmptyString)
+     * digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -32,17 +32,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Imprint identifier composite</h1><p>A group of data elements which together define the identifier of an imprint
- * name. Optional, but mandatory if the &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite
- * is repeatable in order to specify multiple identifiers for the same imprint or brand.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ImprintIdentifier&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;imprintidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Imprint identifier composite</h1>
+ * <p>
+ * A group of data elements which together define the identifier of an imprint name. Optional, but mandatory if the
+ * &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite is repeatable in order to specify
+ * multiple identifiers for the same imprint or brand.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ImprintIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;imprintidentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Imprint&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint ⯈ ImprintIdentifier</li>
@@ -139,8 +154,10 @@ public class ImprintIdentifier
     private ImprintIDType imprintIDType = ImprintIDType.EMPTY;
 
     /**
-     * <p>An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken.
-     * Mandatory in each occurrence of the &lt;ImprintIdentifier&gt; composite.</p>
+     * <p>
+     * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
+     * in each occurrence of the &lt;ImprintIdentifier&gt; composite.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ImprintIDType imprintIDType() {
@@ -151,9 +168,11 @@ public class ImprintIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
-     * which there is no individual ID type code). Must be included when, and only when, the code in the
-     * &lt;ImprintIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p>
+     * <p>
+     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
+     * there is no individual ID type code). Must be included when, and only when, the code in the &lt;ImprintIDType&gt;
+     * element indicates a proprietary scheme. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
@@ -164,8 +183,10 @@ public class ImprintIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * <p>A code value taken from the scheme specified in the &lt;ImprintIDType&gt; element. Mandatory in each
-     * occurrence of the &lt;ImprintIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * A code value taken from the scheme specified in the &lt;ImprintIDType&gt; element. Mandatory in each occurrence
+     * of the &lt;ImprintIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public IDValue idValue() {

@@ -30,20 +30,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Extent value</h1><p>The numeric value of the extent specified in &lt;ExtentType&gt;. Optional, and non-repeating.
- * However, either &lt;ExtentValue&gt; or &lt;ExtentValueRoman&gt;, or both, must be present in each occurrence of the
- * &lt;Extent&gt; composite; and it is very strongly recommended that &lt;ExtentValue&gt; should <em>always</em> be
- * included, even when the original product uses Roman numerals.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit decimal point when required, as
- * appropriate for the units specified in &lt;ExtentUnit&gt;. Suggested maximum length 8
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ExtentValue&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b219&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;b219&gt;2.5&lt;/b219&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Extent value</h1>
+ * <p>
+ * The numeric value of the extent specified in &lt;ExtentType&gt;. Optional, and non-repeating. However, either
+ * &lt;ExtentValue&gt; or &lt;ExtentValueRoman&gt;, or both, must be present in each occurrence of the &lt;Extent&gt;
+ * composite; and it is very strongly recommended that &lt;ExtentValue&gt; should <em>always</em> be included, even when
+ * the original product uses Roman numerals.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive real number, with explicit decimal point when required, as appropriate for the units specified in
+ * &lt;ExtentUnit&gt;. Suggested maximum length 8 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ExtentValue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b219&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b219&gt;2.5&lt;/b219&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Extent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Extent ⯈ ExtentValue</li>
@@ -77,7 +99,9 @@ public class ExtentValue implements OnixElement<Double>, Serializable {
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, as appropriate for the units
-     * specified in &lt;ExtentUnit&gt;. Suggested maximum length 8 characters<p> (type: dt.StrictPositiveDecimal)
+     * specified in &lt;ExtentUnit&gt;. Suggested maximum length 8 characters
+     * <p>
+     * (type: dt.StrictPositiveDecimal)
      */
     public Double value;
 

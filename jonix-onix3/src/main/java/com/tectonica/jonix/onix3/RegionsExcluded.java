@@ -31,22 +31,48 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Regions excluded</h1><p>One or more ONIX codes identifying regions excluded from the territory. Successive codes
- * must be separated by spaces. Optional and non-repeating, and can only occur if the &lt;CountriesIncluded&gt; element
- * is also present (and specifies countries of which the excluded regions are a part), or if &lt;RegionsIncluded&gt; is
- * present and includes a supra-national region code (such as ‘World’).</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>One or more variable-length codes, each consisting of upper case letters, with
- * or without a hyphen and further upper case letters or digits, successive codes being separated by spaces. Suggested
- * maximum length 750 characters</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate, country
- * subdivision codes are derived from the UN LOCODE scheme based on ISO 3166-2</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;RegionsExcluded&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x452&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x452&gt;CA-QC&lt;/x452&gt;</tt>
- * (Excludes Quebec)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Regions excluded</h1>
+ * <p>
+ * One or more ONIX codes identifying regions excluded from the territory. Successive codes must be separated by spaces.
+ * Optional and non-repeating, and can only occur if the &lt;CountriesIncluded&gt; element is also present (and
+ * specifies countries of which the excluded regions are a part), or if &lt;RegionsIncluded&gt; is present and includes
+ * a supra-national region code (such as ‘World’).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more variable-length codes, each consisting of upper case letters, with or without a hyphen and further
+ * upper case letters or digits, successive codes being separated by spaces. Suggested maximum length 750
+ * characters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166-2</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RegionsExcluded&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x452&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x452&gt;CA-QC&lt;/x452&gt;</tt> (Excludes Quebec)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Territory&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ Territory ⯈ RegionsExcluded</li>

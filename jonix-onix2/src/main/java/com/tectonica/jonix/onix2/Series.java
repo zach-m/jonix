@@ -41,15 +41,26 @@ import java.util.List;
  */
 
 /**
- * <h1>Series composite</h1><p>A repeatable group of data elements which together describe a series of which the product
- * is part.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Series&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;series&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Series composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe a series of which the product is part.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Series&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;series&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Series</li>
@@ -173,12 +184,14 @@ public class Series implements OnixSuperComposite, Serializable {
     private SeriesISSN seriesISSN = SeriesISSN.EMPTY;
 
     /**
-     * <p>International Standard Serial Number identifying a series of which the product forms part. ISSNs are the
-     * standard numbering scheme for journals, and most publishers’ book series are not eligible to be identified by an
-     * ISSN. ISSNs may be used, however, for established scholarly series such as Annual Reviews of… or Methods in…
-     * which are shelved in libraries as if they were journals. The field is optional and non-repeating. <strong>The
+     * <p>
+     * International Standard Serial Number identifying a series of which the product forms part. ISSNs are the standard
+     * numbering scheme for journals, and most publishers’ book series are not eligible to be identified by an ISSN.
+     * ISSNs may be used, however, for established scholarly series such as Annual Reviews of… or Methods in… which are
+     * shelved in libraries as if they were journals. The field is optional and non-repeating. <strong>The
      * &lt;SeriesIdentifier&gt; composite on the next page provides a more general method of handling this and other
-     * series identifiers, and is to be preferred.</strong></p>
+     * series identifiers, and is to be preferred.</strong>
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public SeriesISSN seriesISSN() {
@@ -189,9 +202,11 @@ public class Series implements OnixSuperComposite, Serializable {
     private PublisherSeriesCode publisherSeriesCode = PublisherSeriesCode.EMPTY;
 
     /**
-     * <p>A code or mnemonic assigned by the publisher to designate a series (and therefore not guaranteed to be
-     * unique). Optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt; composite on the next page provides a
-     * more general method of handling this and other series identifiers, and is to be preferred.</strong></p>
+     * <p>
+     * A code or mnemonic assigned by the publisher to designate a series (and therefore not guaranteed to be unique).
+     * Optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt; composite on the next page provides a more
+     * general method of handling this and other series identifiers, and is to be preferred.</strong>
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public PublisherSeriesCode publisherSeriesCode() {
@@ -200,12 +215,15 @@ public class Series implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes>
-        seriesIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        seriesIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A repeatable group of data elements which together define an identifier of a series or subseries. The
-     * composite is optional, and may only repeat if two or more identifiers of different types are sent. It is not
-     * permissible to have two identifiers of the same type.</p>
+     * <p>
+     * A repeatable group of data elements which together define an identifier of a series or subseries. The composite
+     * is optional, and may only repeat if two or more identifiers of different types are sent. It is not permissible to
+     * have two identifiers of the same type.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
@@ -216,10 +234,12 @@ public class Series implements OnixSuperComposite, Serializable {
     private TitleOfSeries titleOfSeries = TitleOfSeries.EMPTY;
 
     /**
-     * <p>The full title of the series, without abbreviation or abridgement. Non-repeating. Either the
+     * <p>
+     * The full title of the series, without abbreviation or abridgement. Non-repeating. Either the
      * &lt;TitleOfSeries&gt; element or at least one occurrence of the &lt;Title&gt; composite must occur in each
      * occurrence of the &lt;Series&gt; composite. The &lt;Title&gt; composite provides a more comprehensive
-     * representation of a series title, and allows alternative forms to be sent.</p>
+     * representation of a series title, and allows alternative forms to be sent.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public TitleOfSeries titleOfSeries() {
@@ -227,12 +247,14 @@ public class Series implements OnixSuperComposite, Serializable {
         return titleOfSeries;
     }
 
-    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A repeatable group of data elements which together give the text of a title, including a subtitle where
-     * applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong></p>
+     * <p>
+     * A repeatable group of data elements which together give the text of a title, including a subtitle where
+     * applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong>
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
@@ -243,9 +265,11 @@ public class Series implements OnixSuperComposite, Serializable {
     private List<Contributor> contributors = Collections.emptyList();
 
     /**
-     * <p>A repeatable group of data elements which together describe a personal or corporate contributor to the series.
+     * <p>
+     * A repeatable group of data elements which together describe a personal or corporate contributor to the series.
      * The composite is optional in any occurrence of the &lt;Series&gt; composite. <strong>Please see Group&nbsp;PR.8
-     * for details.</strong></p>
+     * for details.</strong>
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<Contributor> contributors() {
@@ -256,7 +280,9 @@ public class Series implements OnixSuperComposite, Serializable {
     private NumberWithinSeries numberWithinSeries = NumberWithinSeries.EMPTY;
 
     /**
-     * <p>The distinctive enumeration of a product within a series. Optional and non-repeating.</p>
+     * <p>
+     * The distinctive enumeration of a product within a series. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public NumberWithinSeries numberWithinSeries() {
@@ -267,8 +293,10 @@ public class Series implements OnixSuperComposite, Serializable {
     private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
 
     /**
-     * <p>The nominal year of an annual publication. May be entered as either a single year YYYY or a span of two
-     * consecutive years YYYY-YYYY. Optional and non-repeating.</p>
+     * <p>
+     * The nominal year of an annual publication. May be entered as either a single year YYYY or a span of two
+     * consecutive years YYYY-YYYY. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public YearOfAnnual yearOfAnnual() {

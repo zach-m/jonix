@@ -35,19 +35,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Epublication format code</h1><p>An ONIX code identifying the underlying format of an epublication. Optional and
- * non-repeating, and can occur only if the &lt;EpubType&gt; field is present. Note that where the epublication type is
- * wholly defined by the delivery format, this element effectively duplicates the &lt;EpubType&gt; field.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 11</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubFormat&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b214&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b214&gt;02&lt;/b214&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Epublication format code</h1>
+ * <p>
+ * An ONIX code identifying the underlying format of an epublication. Optional and non-repeating, and can occur only if
+ * the &lt;EpubType&gt; field is present. Note that where the epublication type is wholly defined by the delivery
+ * format, this element effectively duplicates the &lt;EpubType&gt; field.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 11</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EpubFormat&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b214&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b214&gt;02&lt;/b214&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;RelatedProduct&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ EpubFormat</li>

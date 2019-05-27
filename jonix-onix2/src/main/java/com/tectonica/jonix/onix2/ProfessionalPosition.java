@@ -34,20 +34,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Professional position</h1><p>A professional position held by a contributor to the product at the time of its
- * creation. Optional and non-repeating. May only occur with a person name, not with a corporate name.</p><p><strong>The
- * &lt;ProfessionalAffiliation&gt; composite below provides a more general method of handling positions and
- * affiliations, and is to be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ProfessionalPosition&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b045&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b045&gt;Humboldt Professor of
- * Oceanography&lt;/b045&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Professional position</h1>
+ * <p>
+ * A professional position held by a contributor to the product at the time of its creation. Optional and non-repeating.
+ * May only occur with a person name, not with a corporate name.
+ * </p>
+ * <p>
+ * <strong>The &lt;ProfessionalAffiliation&gt; composite below provides a more general method of handling positions and
+ * affiliations, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProfessionalPosition&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b045&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b045&gt;Humboldt Professor of Oceanography&lt;/b045&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProfessionalAffiliation&gt;</li>
  * <li>&lt;Contributor&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
@@ -94,7 +114,9 @@ public class ProfessionalPosition implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

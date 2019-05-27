@@ -31,20 +31,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Primary content type code</h1><p>An ONIX code which indicates the primary or only content type included in a
- * product. The element is intended to be used in particular for digital products, when the sender wishes to make it
- * clear that one of a number of content types (<i>eg</i> text, audio, video) is the primary type for the product. Other
- * content types may be specified in the &lt;ProductContentType&gt;. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 81</td></tr><tr><td>Reference name</td><td><tt>&lt;PrimaryContentType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x416&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x416&gt;10&lt;/x416&gt;</tt>
- * (Eye-readable text)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Primary content type code</h1>
+ * <p>
+ * An ONIX code which indicates the primary or only content type included in a product. The element is intended to be
+ * used in particular for digital products, when the sender wishes to make it clear that one of a number of content
+ * types (<i>eg</i> text, audio, video) is the primary type for the product. Other content types may be specified in the
+ * &lt;ProductContentType&gt;. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 81</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PrimaryContentType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x416&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x416&gt;10&lt;/x416&gt;</tt> (Eye-readable text)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ PrimaryContentType</li>

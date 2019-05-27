@@ -32,17 +32,33 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price coded composite</h1><p>An optional group of data elements to carry a price that is expressed as one of a
- * discrete set of price points, tiers or bands, rather than actual currency amounts. Each occurrence of the
- * &lt;Price&gt; composite must include either a &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional
- * tax details, or an &lt;UnpricedItemType&gt; element.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;PriceCoded&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;pricecoded&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price coded composite</h1>
+ * <p>
+ * An optional group of data elements to carry a price that is expressed as one of a discrete set of price points, tiers
+ * or bands, rather than actual currency amounts. Each occurrence of the &lt;Price&gt; composite must include either a
+ * &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional tax details, or an &lt;UnpricedItemType&gt;
+ * element.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceCoded&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;pricecoded&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCoded</li>
@@ -138,8 +154,10 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
     private PriceCodeType priceCodeType = PriceCodeType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the scheme from which the value in the &lt;PriceCode&gt; element is taken. Mandatory
-     * in an occurrence of the &lt;PriceCoded&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the scheme from which the value in the &lt;PriceCode&gt; element is taken. Mandatory in
+     * an occurrence of the &lt;PriceCoded&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public PriceCodeType priceCodeType() {
@@ -150,9 +168,11 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
     private PriceCodeTypeName priceCodeTypeName = PriceCodeTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary price code type. Must be used when, and only when the code in the
+     * <p>
+     * A name which identifies a proprietary price code type. Must be used when, and only when the code in the
      * &lt;PriceCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a retailer’s price banding scheme.
-     * Optional and non-repeating.</p>
+     * Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public PriceCodeTypeName priceCodeTypeName() {
@@ -163,8 +183,10 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
     private PriceCode priceCode = PriceCode.EMPTY;
 
     /**
-     * <p>A price code from the scheme specified in the &lt;PriceCodeType&gt; element. Mandatory in each occurrence of
-     * the &lt;PriceCoded&gt; composite, and non-repeating.</p>
+     * <p>
+     * A price code from the scheme specified in the &lt;PriceCodeType&gt; element. Mandatory in each occurrence of the
+     * &lt;PriceCoded&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public PriceCode priceCode() {

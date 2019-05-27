@@ -37,10 +37,21 @@ import java.util.Arrays;
  */
 
 /**
- * <h1>Product form feature composite</h1><p>A repeatable group of data elements which together describe an aspect of
- * product form that is too specific to be covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements.
- * Optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ProductFormFeature&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;productformfeature&gt;</tt></td></tr></table>
+ * <h1>Product form feature composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
+ * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductFormFeature&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;productformfeature&gt;</tt></td>
+ * </tr>
+ * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
@@ -156,8 +167,10 @@ public class ProductFormFeature
     private ProductFormFeatureType productFormFeatureType = ProductFormFeatureType.EMPTY;
 
     /**
-     * <p>An ONIX code which specifies the feature described by an instance of the &lt;ProductFormFeature&gt; composite,
-     * <em>eg</em> binding color. Mandatory in each occurrence of the composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code which specifies the feature described by an instance of the &lt;ProductFormFeature&gt; composite,
+     * <em>eg</em> binding color. Mandatory in each occurrence of the composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ProductFormFeatureType productFormFeatureType() {
@@ -168,10 +181,12 @@ public class ProductFormFeature
     private ProductFormFeatureValue productFormFeatureValue = ProductFormFeatureValue.EMPTY;
 
     /**
-     * <p>A controlled value that describes a product form feature. Presence or absence of this element depends on the
+     * <p>
+     * A controlled value that describes a product form feature. Presence or absence of this element depends on the
      * &lt;ProductFormFeatureType&gt;, since some product form features (<em>eg</em> thumb index) do not require an
      * accompanying value, while others (<em>eg</em> text font) require free text in
-     * &lt;ProductFormFeatureDescription&gt;. Non-repeating.</p>
+     * &lt;ProductFormFeatureDescription&gt;. Non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ProductFormFeatureValue productFormFeatureValue() {
@@ -182,9 +197,11 @@ public class ProductFormFeature
     private ProductFormFeatureDescription productFormFeatureDescription = ProductFormFeatureDescription.EMPTY;
 
     /**
-     * <p>If the &lt;ProductFormFeatureType&gt; requires free text rather than a code value, or if the code in
+     * <p>
+     * If the &lt;ProductFormFeatureType&gt; requires free text rather than a code value, or if the code in
      * &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text description may be added.
-     * Optional and non-repeating.</p>
+     * Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ProductFormFeatureDescription productFormFeatureDescription() {

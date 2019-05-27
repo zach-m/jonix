@@ -36,17 +36,28 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Work identifier composite</h1><p>A group of data elements which together define the identifier of a work which is
- * manifested in the product described by an ONIX &lt;Product&gt; record. Optional and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;WorkIdentifier&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;workidentifier&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Work identifier composite</h1>
+ * <p>
+ * A group of data elements which together define the identifier of a work which is manifested in the product described
+ * by an ONIX &lt;Product&gt; record. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;WorkIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;workidentifier&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;ContentItem&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier</li>
@@ -153,8 +164,10 @@ public class WorkIdentifier
     private WorkIDType workIDType = WorkIDType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt; is taken. Mandatory in each
-     * occurrence of the &lt;WorkIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt; is taken. Mandatory in each
+     * occurrence of the &lt;WorkIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public WorkIDType workIDType() {
@@ -165,8 +178,10 @@ public class WorkIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary identifier scheme when, and only when, the code in &lt;WorkIDType&gt;
-     * indicates a proprietary scheme, <em>eg</em> a bibliographic agency’s own code. Optional and non-repeating.</p>
+     * <p>
+     * A name which identifies a proprietary identifier scheme when, and only when, the code in &lt;WorkIDType&gt;
+     * indicates a proprietary scheme, <em>eg</em> a bibliographic agency’s own code. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
@@ -177,8 +192,10 @@ public class WorkIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * <p>An identifier of the type specified in &lt;WorkIDType&gt;. Mandatory in each occurrence of the
-     * &lt;WorkIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An identifier of the type specified in &lt;WorkIDType&gt;. Mandatory in each occurrence of the
+     * &lt;WorkIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public IDValue idValue() {

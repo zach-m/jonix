@@ -19,92 +19,127 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.ResourceVersionFeatureTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Resource version feature type</h1><p>An ONIX code which specifies a feature described by an instance of the &lt;ResourceVersionFeature&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List 162</td></tr><tr><td>Reference name</td><td><tt>&lt;ResourceVersionFeatureType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x442&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x442&gt;03&lt;/x442&gt;</tt> (Image width in pixels)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Resource version feature type</h1>
+ * <p>
+ * An ONIX code which specifies a feature described by an instance of the &lt;ResourceVersionFeature&gt; composite.
+ * Mandatory in each occurrence of the composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 162</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ResourceVersionFeatureType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x442&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x442&gt;03&lt;/x442&gt;</tt> (Image width in pixels)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ResourceVersionFeature&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceVersionFeature ⯈ ResourceVersionFeatureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceVersionFeature ⯈ ResourceVersionFeatureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceVersionFeature ⯈ ResourceVersionFeatureType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ResourceVersionFeature ⯈ ResourceVersionFeatureType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceVersionFeature ⯈
+ * ResourceVersionFeatureType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
+ * ResourceVersionFeature ⯈ ResourceVersionFeatureType</li>
  * </ul>
  */
-public class ResourceVersionFeatureType implements OnixElement<ResourceVersionFeatureTypes>, Serializable
-{
-   private static final long serialVersionUID = 1L;
+public class ResourceVersionFeatureType implements OnixElement<ResourceVersionFeatureTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-   public static final String refname = "ResourceVersionFeatureType";
-   public static final String shortname = "x442";
+    public static final String refname = "ResourceVersionFeatureType";
+    public static final String shortname = "x442";
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // ATTRIBUTES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-    * (type: dt.DateOrDateTime)
-    */
-   public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-   public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-   /**
-    * (type: dt.NonEmptyString)
-    */
-   public String sourcename;
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String sourcename;
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // VALUE MEMBER
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-   public ResourceVersionFeatureTypes value;
+    public ResourceVersionFeatureTypes value;
 
-   /**
-   * Internal API, use the {@link #value()} method or the {@link #value} field instead
-   */
-   @Override
-   public ResourceVersionFeatureTypes _value() {
-      return value;
-   }
+    /**
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
+     */
+    @Override
+    public ResourceVersionFeatureTypes _value() {
+        return value;
+    }
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // SERVICES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private final boolean exists;
-   public static final ResourceVersionFeatureType EMPTY = new ResourceVersionFeatureType();
+    private final boolean exists;
+    public static final ResourceVersionFeatureType EMPTY = new ResourceVersionFeatureType();
 
-   public ResourceVersionFeatureType() {
-      exists = false;
-   }
+    public ResourceVersionFeatureType() {
+        exists = false;
+    }
 
-   public ResourceVersionFeatureType(org.w3c.dom.Element element) {
-      exists = true;
-      datestamp = JPU.getAttribute(element, "datestamp");
-      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-      sourcename = JPU.getAttribute(element, "sourcename");
+    public ResourceVersionFeatureType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-      value = ResourceVersionFeatureTypes.byCode(JPU.getContentAsString(element));
-   }
+        value = ResourceVersionFeatureTypes.byCode(JPU.getContentAsString(element));
+    }
 
-   /**
-    * @return whether this tag (&lt;ResourceVersionFeatureType&gt; or &lt;x442&gt;) is explicitly provided in the ONIX XML
-    */
-   @Override
-   public boolean exists() {
-      return exists;
-   }
+    /**
+     * @return whether this tag (&lt;ResourceVersionFeatureType&gt; or &lt;x442&gt;) is explicitly provided in the ONIX
+     * XML
+     */
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

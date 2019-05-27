@@ -35,17 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Default currency</h1><p>An ISO standard code indicating the currency which is assumed for prices listed in the
- * message, unless explicitly stated otherwise in a &lt;Price&gt; composite in the product record. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three
- * letters.</td></tr><tr><td>Codelist</td><td>List 96</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultCurrencyCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m186&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m186&gt;USD&lt;/m186&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Default currency</h1>
+ * <p>
+ * An ISO standard code indicating the currency which is assumed for prices listed in the message, unless explicitly
+ * stated otherwise in a &lt;Price&gt; composite in the product record. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three letters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 96</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DefaultCurrencyCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m186&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;m186&gt;USD&lt;/m186&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ DefaultCurrencyCode</li>

@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Extent type code</h1><p>An ONIX code which identifies the type of extent carried in the composite, <em>eg</em>
- * running time for an audio or video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 23</td></tr><tr><td>Reference name</td><td><tt>&lt;ExtentType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b218&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ExtentType&gt;09&lt;/ExtentType&gt;</tt>
- * Duration (running time)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Extent type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of extent carried in the composite, <em>eg</em> running time for an audio or
+ * video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 23</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ExtentType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b218&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ExtentType&gt;09&lt;/ExtentType&gt;</tt> Duration (running time)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Extent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Extent ⯈ ExtentType</li>

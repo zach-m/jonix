@@ -34,22 +34,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Annotation</h1><p>A brief descriptive paragraph about the product, length strictly limited to 350 characters.
- * Optional and non-repeating. <strong>The &lt;OtherText&gt; composite on the next page provides a more general method
- * of handling annotations, and is to be preferred.</strong></p><p>The &lt;Annotation&gt; element may carry any of the
- * following ONIX attributes: <i>textformat, language, transliteration, textcase</i>.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, maximum 350 characters (XHTML is enabled in this element
- * - see ONIX for Books - Product Information Message - XML Message Specification, Section 7)</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;Annotation&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;d100&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;d100&gt;Set
- * on the Greek island of Cephallonia during World War II, this is the story of a beautiful young woman and her two
- * suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head of the Italian garrison
- * on the island.&lt;/d100&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Annotation</h1>
+ * <p>
+ * A brief descriptive paragraph about the product, length strictly limited to 350 characters. Optional and
+ * non-repeating. <strong>The &lt;OtherText&gt; composite on the next page provides a more general method of handling
+ * annotations, and is to be preferred.</strong>
+ * </p>
+ * <p>
+ * The &lt;Annotation&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
+ * transliteration, textcase</i>.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, maximum 350 characters (XHTML is enabled in this element - see ONIX for Books - Product
+ * Information Message - XML Message Specification, Section 7)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Annotation&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;d100&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;d100&gt;Set on the Greek island of Cephallonia during World War II, this is the story of a beautiful
+ * young woman and her two suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head
+ * of the Italian garrison on the island.&lt;/d100&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Annotation</li>
@@ -88,7 +109,9 @@ public class Annotation implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Variable-length text, maximum 350 characters (XHTML is enabled in this element - see ONIX for Books -
-     * Product Information Message - XML Message Specification, Section 7)<p> (type: XHTML)
+     * Product Information Message - XML Message Specification, Section 7)
+     * <p>
+     * (type: XHTML)
      */
     public String value;
 

@@ -34,21 +34,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publisher of original-language version</h1><p>The name of the publisher of the original-language version of a
- * translated work. Except where they are essential to the recognized form of the name, it is recommended that suffixes
- * denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be omitted. Optional and
- * non-repeating.</p><p><strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of
- * handling publisher identities, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;OriginalPublisher&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b240&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;OriginalPublisher&gt;Springer
- * Verlag&lt;/OriginalPublisher&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publisher of original-language version</h1>
+ * <p>
+ * The name of the publisher of the original-language version of a translated work. Except where they are essential to
+ * the recognized form of the name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”,
+ * “GmbH”) should be omitted. Optional and non-repeating.
+ * </p>
+ * <p>
+ * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
+ * identities, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;OriginalPublisher&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b240&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;OriginalPublisher&gt;Springer Verlag&lt;/OriginalPublisher&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ OriginalPublisher</li>
@@ -86,7 +105,9 @@ public class OriginalPublisher implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

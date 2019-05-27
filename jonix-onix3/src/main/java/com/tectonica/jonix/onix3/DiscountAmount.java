@@ -30,19 +30,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Discount amount</h1><p>A discount expressed as an absolute amount per copy. Optional and non-repeating; but
- * either &lt;DiscountPercent&gt; or &lt;DiscountAmount&gt; or both must be present in each occurrence of the
- * &lt;Discount&gt; composite. Note that when both are present, they represent two different expressions of the same
- * discount – the discounts are not cumulative.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive
- * real number, with explicit decimal point when required, or zero, suggested maximum length 12
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;DiscountAmount&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x469&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;DiscountAmount&gt;4.59&lt;/DiscountAmount&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Discount amount</h1>
+ * <p>
+ * A discount expressed as an absolute amount per copy. Optional and non-repeating; but either &lt;DiscountPercent&gt;
+ * or &lt;DiscountAmount&gt; or both must be present in each occurrence of the &lt;Discount&gt; composite. Note that
+ * when both are present, they represent two different expressions of the same discount – the discounts are not
+ * cumulative.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive real number, with explicit decimal point when required, or zero, suggested maximum length 12
+ * characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DiscountAmount&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x469&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;DiscountAmount&gt;4.59&lt;/DiscountAmount&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Discount&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Discount ⯈ DiscountAmount</li>
@@ -77,7 +100,9 @@ public class DiscountAmount implements OnixElement<Double>, Serializable {
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, suggested maximum length 12
-     * characters<p> (type: dt.PositiveDecimal)
+     * characters
+     * <p>
+     * (type: dt.PositiveDecimal)
      */
     public Double value;
 

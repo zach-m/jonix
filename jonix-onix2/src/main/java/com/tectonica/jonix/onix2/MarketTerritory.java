@@ -34,24 +34,48 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Market territory</h1><p>One or more ONIX codes identifying a territory which is not a country, but which is
- * precisely defined in geographical terms, <em>eg</em> World, Northern Ireland, Australian Capital Territory.
- * Successive codes are separated by spaces. Thus the element can carry an unlimited number of territory codes.
- * Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite must carry either an occurrence of
- * &lt;MarketCountry&gt; or an occurrence of &lt;MarketTerritory&gt;, to specify the market concerned.
- * Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>One or more variable-length codes, each
- * consisting of upper case letters with or without a hyphen, successive codes being separated by spaces. Suggested
- * maximum length 100 characters.</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate, country
- * subdivision codes are derived from the UN LOCODE scheme based on ISO 3166.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;MarketTerritory&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j404&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;MarketTerritory&gt;WORLD&lt;/MarketTerritory&gt;</tt>
- * Whole world</td></tr><tr><td></td><td><tt>&lt;MarketTerritory&gt;GB-EWS&lt;/MarketTerritory&gt;</tt> UK excluding
- * Northern Ireland</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Market territory</h1>
+ * <p>
+ * One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in geographical
+ * terms, <em>eg</em> World, Northern Ireland, Australian Capital Territory. Successive codes are separated by spaces.
+ * Thus the element can carry an unlimited number of territory codes. Optional, but each occurrence of the
+ * &lt;MarketRepresentation&gt; composite must carry either an occurrence of &lt;MarketCountry&gt; or an occurrence of
+ * &lt;MarketTerritory&gt;, to specify the market concerned. Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more variable-length codes, each consisting of upper case letters with or without a hyphen, successive
+ * codes being separated by spaces. Suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MarketTerritory&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j404&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;MarketTerritory&gt;WORLD&lt;/MarketTerritory&gt;</tt> Whole world</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td><tt>&lt;MarketTerritory&gt;GB-EWS&lt;/MarketTerritory&gt;</tt> UK excluding Northern Ireland</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MarketRepresentation&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketTerritory</li>
@@ -90,7 +114,9 @@ public class MarketTerritory implements OnixElement<java.util.Set<String>>, Seri
 
     /**
      * Raw Format: One or more variable-length codes, each consisting of upper case letters with or without a hyphen,
-     * successive codes being separated by spaces. Suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     * successive codes being separated by spaces. Suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public java.util.Set<String> value;
 

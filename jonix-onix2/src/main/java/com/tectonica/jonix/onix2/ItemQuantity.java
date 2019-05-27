@@ -34,19 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contained item quantity</h1><p>For filled dumpbins and counter packs, and for retail packs containing a number of
- * copies of the same item, the number of copies of the specified item contained in the pack. &lt;ItemQuantity&gt; is
- * used to state a quantity of identical items, when a pack contains either a quantity of a single item, or a quantity
- * of each of two or more different items (<em>eg</em> a dumpbin carrying copies of two different books, or a classroom
- * pack containing a teacher’s text and twenty student texts). Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, maximum four digits</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;ItemQuantity&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b015&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ItemQuantity&gt;24&lt;/ItemQuantity&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Contained item quantity</h1>
+ * <p>
+ * For filled dumpbins and counter packs, and for retail packs containing a number of copies of the same item, the
+ * number of copies of the specified item contained in the pack. &lt;ItemQuantity&gt; is used to state a quantity of
+ * identical items, when a pack contains either a quantity of a single item, or a quantity of each of two or more
+ * different items (<em>eg</em> a dumpbin carrying copies of two different books, or a classroom pack containing a
+ * teacher’s text and twenty student texts). Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, maximum four digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ItemQuantity&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b015&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ItemQuantity&gt;24&lt;/ItemQuantity&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ContainedItem&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ItemQuantity</li>
@@ -84,7 +103,9 @@ public class ItemQuantity implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, maximum four digits<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, maximum four digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

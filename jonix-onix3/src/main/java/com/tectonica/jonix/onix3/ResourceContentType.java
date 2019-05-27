@@ -31,18 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource content type code</h1><p>An ONIX code indicating the type of content carried in a supporting resource.
- * Mandatory in each occurrence of the &lt;SupportingResource&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 158</td></tr><tr><td>Reference name</td><td><tt>&lt;ResourceContentType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x436&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;ResourceContentType&gt;01&lt;/ResourceContentType&gt;</tt>
- * (Front cover)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Resource content type code</h1>
+ * <p>
+ * An ONIX code indicating the type of content carried in a supporting resource. Mandatory in each occurrence of the
+ * &lt;SupportingResource&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 158</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ResourceContentType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x436&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ResourceContentType&gt;01&lt;/ResourceContentType&gt;</tt> (Front cover)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupportingResource&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceContentType</li>

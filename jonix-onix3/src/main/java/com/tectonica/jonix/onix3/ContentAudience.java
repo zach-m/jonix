@@ -31,20 +31,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Text audience</h1><p>An ONIX code which identifies the audience for which the text in the &lt;Text&gt; element is
- * intended. Mandatory in each occurrence of the &lt;TextContent&gt; composite, and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 154</td></tr><tr><td>Reference name</td><td><tt>&lt;ContentAudience&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x427&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;x427&gt;03&lt;/x427&gt;</tt>
- * (End customers)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Text audience</h1>
+ * <p>
+ * An ONIX code which identifies the audience for which the text in the &lt;Text&gt; element is intended. Mandatory in
+ * each occurrence of the &lt;TextContent&gt; composite, and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 154</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ContentAudience&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x427&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x427&gt;03&lt;/x427&gt;</tt> (End customers)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupportingResource&gt;</li>
  * <li>&lt;TextContent&gt;</li>
  * <li>&lt;CitedContent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ContentAudience</li>

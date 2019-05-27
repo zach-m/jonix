@@ -34,21 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Reason for deletion</h1><p>Free text which indicates the reason why an ONIX record is being deleted. Optional and
- * non-repeating; and may occur only when the &lt;NotificationType&gt; element carries the code value 05. Note that it
- * refers to the reason why the record is being deleted, not the reason why a product has been “deleted” (in industries
- * which use this terminology when a product is withdrawn).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;DeletionText&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;a199&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;a199&gt;Issued in
- * error&lt;/a199&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Reason for deletion</h1>
+ * <p>
+ * Free text which indicates the reason why an ONIX record is being deleted. Optional and non-repeating; and may occur
+ * only when the &lt;NotificationType&gt; element carries the code value 05. Note that it refers to the reason why the
+ * record is being deleted, not the reason why a product has been “deleted” (in industries which use this terminology
+ * when a product is withdrawn).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DeletionText&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;a199&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;a199&gt;Issued in error&lt;/a199&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;SubSeriesRecord&gt;</li>
  * <li>&lt;MainSeriesRecord&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DeletionText</li>
@@ -88,7 +106,9 @@ public class DeletionText implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

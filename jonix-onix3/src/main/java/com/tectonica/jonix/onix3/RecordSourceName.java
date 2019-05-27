@@ -30,20 +30,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Record source name</h1><p>The name of the party which issued the record, as free text. Optional and
- * non-repeating, independently of the occurrence of any other field.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;RecordSourceName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;a197&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;RecordSourceName&gt;Cambridge
- * University Press&lt;/RecordSourceName&gt;</tt></td></tr><tr><td>Notes</td><td>The record source need not be the same
- * as the &lt;Sender&gt; specified in the message header: an aggregator may be the sender of a message containing
- * records sourced from several different record suppliers.</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Record source name</h1>
+ * <p>
+ * The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
+ * occurrence of any other field.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RecordSourceName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;a197&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;RecordSourceName&gt;Cambridge University Press&lt;/RecordSourceName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Notes</td>
+ * <td>The record source need not be the same as the &lt;Sender&gt; specified in the message header: an aggregator may
+ * be the sender of a message containing records sourced from several different record suppliers.</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ RecordSourceName</li>
@@ -76,7 +100,9 @@ public class RecordSourceName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

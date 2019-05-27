@@ -30,19 +30,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Tax exempt flag</h1><p>An empty element that identifies a product price as being specifically exempted from tax.
- * Optional, and used only when &lt;PriceType&gt; indicates an exc-tax price.</p><p>Note that tax exempt status is rare:
- * it applies in only a very few countries. Tax exempt is distinct from the case where tax details are not specified (as
- * is the case with most North American Prices) and also distinct from the case where tax is levied at zero percent (as
- * is the case for physical books in the UK, for example).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML
- * empty element</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxExempt&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x546&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;TaxExempt/&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Tax exempt flag</h1>
+ * <p>
+ * An empty element that identifies a product price as being specifically exempted from tax. Optional, and used only
+ * when &lt;PriceType&gt; indicates an exc-tax price.
+ * </p>
+ * <p>
+ * Note that tax exempt status is rare: it applies in only a very few countries. Tax exempt is distinct from the case
+ * where tax details are not specified (as is the case with most North American Prices) and also distinct from the case
+ * where tax is levied at zero percent (as is the case for physical books in the UK, for example).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TaxExempt&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x546&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TaxExempt/&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ TaxExempt</li>

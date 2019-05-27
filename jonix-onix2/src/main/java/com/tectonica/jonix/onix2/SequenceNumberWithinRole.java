@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor sequence number within role</h1><p>A number which specifies the sequence of contributor names within
- * a specified role, for applications which require this form of numbering. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, 1, 2, 3 etc, suggested maximum length 3
- * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;SequenceNumberWithinRole&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b340&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SequenceNumberWithinRole&gt;3&lt;/SequenceNumberWithinRole&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Contributor sequence number within role</h1>
+ * <p>
+ * A number which specifies the sequence of contributor names within a specified role, for applications which require
+ * this form of numbering. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SequenceNumberWithinRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b340&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SequenceNumberWithinRole&gt;3&lt;/SequenceNumberWithinRole&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Contributor&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
@@ -86,7 +104,9 @@ public class SequenceNumberWithinRole implements OnixElement<String>, Serializab
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

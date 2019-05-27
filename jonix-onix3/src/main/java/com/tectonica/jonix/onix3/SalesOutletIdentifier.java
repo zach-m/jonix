@@ -32,16 +32,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sales outlet identifier composite</h1><p>An optional group of data elements which together represent a coded
- * identification of an organization, used here to identify a sales outlet. Repeatable in order to specify multiple
- * identifiers for the same sales outlet.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;SalesOutletIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;salesoutletidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sales outlet identifier composite</h1>
+ * <p>
+ * An optional group of data elements which together represent a coded identification of an organization, used here to
+ * identify a sales outlet. Repeatable in order to specify multiple identifiers for the same sales outlet.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SalesOutletIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;salesoutletidentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SalesOutlet&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier</li>
@@ -141,8 +156,10 @@ public class SalesOutletIdentifier
     private SalesOutletIDType salesOutletIDType = SalesOutletIDType.EMPTY;
 
     /**
-     * <p>An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken.
-     * Mandatory in each occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
+     * in each occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public SalesOutletIDType salesOutletIDType() {
@@ -153,9 +170,11 @@ public class SalesOutletIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
-     * which there is no individual ID type code). Must be included when, and only when, the code in the
-     * &lt;SalesOutletIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p>
+     * <p>
+     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
+     * there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;SalesOutletIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
@@ -166,8 +185,10 @@ public class SalesOutletIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * <p>A code value taken from the scheme specified in the &lt;SalesOutletIDType&gt; element. Mandatory in each
-     * occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * A code value taken from the scheme specified in the &lt;SalesOutletIDType&gt; element. Mandatory in each
+     * occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public IDValue idValue() {

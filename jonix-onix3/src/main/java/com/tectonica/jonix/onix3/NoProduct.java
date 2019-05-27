@@ -30,18 +30,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>“No product” indicator</h1><p>An empty element that provides a positive indication that a message does not carry
- * any Product records. Intended to be used only in empty ‘delta’ update messages to provide confirmation that there
- * have been no updates since the previous message. Optional and non-repeating, but must be used in an ONIX message that
- * contains no &lt;Product&gt; composites.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty
- * element</td></tr><tr><td>Reference name</td><td><tt>&lt;NoProduct&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x507&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x507/&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>“No product” indicator</h1>
+ * <p>
+ * An empty element that provides a positive indication that a message does not carry any Product records. Intended to
+ * be used only in empty ‘delta’ update messages to provide confirmation that there have been no updates since the
+ * previous message. Optional and non-repeating, but must be used in an ONIX message that contains no &lt;Product&gt;
+ * composites.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NoProduct&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x507&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x507/&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ONIXMessage&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ NoProduct</li>

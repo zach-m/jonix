@@ -34,16 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Year of thesis</h1><p>The year in which a thesis was presented. Optional and non-repeating, but if this element
- * is present, &lt;ThesisType&gt; must also be present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
- * four numeric digits</td></tr><tr><td>Reference name</td><td><tt>&lt;ThesisYear&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b370&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b370&gt;2002&lt;/b370&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Year of thesis</h1>
+ * <p>
+ * The year in which a thesis was presented. Optional and non-repeating, but if this element is present,
+ * &lt;ThesisType&gt; must also be present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, four numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ThesisYear&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b370&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b370&gt;2002&lt;/b370&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ThesisYear</li>
@@ -81,7 +100,9 @@ public class ThesisYear implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, four numeric digits<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, four numeric digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

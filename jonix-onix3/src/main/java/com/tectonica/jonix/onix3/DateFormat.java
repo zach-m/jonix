@@ -31,13 +31,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Date format</h1><p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and
- * not repeatable. Deprecated – where possible, use the <i>dateformat</i> attribute instead.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 55</td></tr><tr><td>Reference name</td><td><tt>&lt;DateFormat&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j260&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;DateFormat&gt;05&lt;/DateFormat&gt;</tt>
- * (YYYY)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Date format</h1>
+ * <p>
+ * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and not repeatable.
+ * Deprecated – where possible, use the <i>dateformat</i> attribute instead.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 55</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DateFormat&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j260&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;DateFormat&gt;05&lt;/DateFormat&gt;</tt> (YYYY)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PublishingDate&gt;</li>
@@ -48,7 +73,7 @@ import java.io.Serializable;
  * <li>&lt;SubjectDate&gt;</li>
  * <li>&lt;PriceDate&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ PublishingDate ⯈ DateFormat</li>

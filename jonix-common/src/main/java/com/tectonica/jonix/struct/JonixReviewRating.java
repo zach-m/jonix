@@ -34,17 +34,23 @@ public class JonixReviewRating implements JonixStruct, Serializable {
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the
-     * limit specified in &lt;RatingLimit&gt;. Suggested maximum length 7 characters <p> (type: dt.PositiveDecimal)
+     * limit specified in &lt;RatingLimit&gt;. Suggested maximum length 7 characters
+     * <p>
+     * (type: dt.PositiveDecimal)
      */
     public Double rating;
 
     /**
-     * Raw Format: Positive integer number, suggested maximum length 4 digits <p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer number, suggested maximum length 4 digits
+     * <p>
+     * (type: dt.PositiveInteger)
      */
     public Integer ratingLimit;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public List<String> ratingUnitss;
 }

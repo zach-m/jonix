@@ -34,18 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Number of pages, roman</h1><p>The number of pages numbered in roman numerals. The &lt;PagesRoman&gt; and
- * &lt;PagesArabic&gt; elements together represent an alternative to &lt;NumberOfPages&gt; where there is a requirement
- * to specify these numbering sequences separately. For most ONIX applications, however, &lt;NumberOfPages&gt; will be
- * preferred. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length
- * alphabetic, suggested maximum length 10 characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;PagesRoman&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b254&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PagesRoman&gt;xxiii&lt;/PagesRoman&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Number of pages, roman</h1>
+ * <p>
+ * The number of pages numbered in roman numerals. The &lt;PagesRoman&gt; and &lt;PagesArabic&gt; elements together
+ * represent an alternative to &lt;NumberOfPages&gt; where there is a requirement to specify these numbering sequences
+ * separately. For most ONIX applications, however, &lt;NumberOfPages&gt; will be preferred. Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length alphabetic, suggested maximum length 10 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PagesRoman&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b254&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PagesRoman&gt;xxiii&lt;/PagesRoman&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PagesRoman</li>
@@ -83,7 +102,9 @@ public class PagesRoman implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length alphabetic, suggested maximum length 10 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length alphabetic, suggested maximum length 10 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

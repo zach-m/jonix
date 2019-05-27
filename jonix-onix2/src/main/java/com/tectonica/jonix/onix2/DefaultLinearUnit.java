@@ -35,19 +35,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Default linear unit</h1><p>A code indicating the default unit which is assumed for linear measurements listed in
- * the message, unless otherwise specified in the product record. <strong>This element is deprecated
- * <!-- provided for use at Level 1 -->. For most implementations, explicit coding of measure units with each occurrence
- * of a measurement is to be preferred.</strong> Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters.</td></tr><tr><td>Codelist</td><td>List
- * 94</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultLinearUnit&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m187&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;DefaultLinearUnit&gt;mm&lt;/DefaultLinearUnit&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Default linear unit</h1>
+ * <p>
+ * A code indicating the default unit which is assumed for linear measurements listed in the message, unless otherwise
+ * specified in the product record. <strong>This element is deprecated <!-- provided for use at Level 1 -->. For most
+ * implementations, explicit coding of measure units with each occurrence of a measurement is to be preferred.</strong>
+ * Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 94</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DefaultLinearUnit&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m187&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;DefaultLinearUnit&gt;mm&lt;/DefaultLinearUnit&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ DefaultLinearUnit</li>

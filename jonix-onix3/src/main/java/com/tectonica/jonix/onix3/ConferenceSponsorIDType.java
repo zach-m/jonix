@@ -19,90 +19,122 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Conference sponsor identifier type</h1><p>An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;ConferenceSponsorIdentifier&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td><tt>&lt;ConferenceSponsorIDType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b391&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b391&gt;01&lt;/b391&gt;</tt> (Proprietary)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Conference sponsor identifier type</h1>
+ * <p>
+ * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory in
+ * each occurrence of the &lt;ConferenceSponsorIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 44</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ConferenceSponsorIDType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b391&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b391&gt;01&lt;/b391&gt;</tt> (Proprietary)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ConferenceSponsorIdentifier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceSponsor ⯈ ConferenceSponsorIdentifier ⯈ ConferenceSponsorIDType</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceSponsor ⯈ ConferenceSponsorIdentifier ⯈
+ * ConferenceSponsorIDType</li>
  * </ul>
  */
-public class ConferenceSponsorIDType implements OnixElement<NameIdentifierTypes>, Serializable
-{
-   private static final long serialVersionUID = 1L;
+public class ConferenceSponsorIDType implements OnixElement<NameIdentifierTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-   public static final String refname = "ConferenceSponsorIDType";
-   public static final String shortname = "b391";
+    public static final String refname = "ConferenceSponsorIDType";
+    public static final String shortname = "b391";
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // ATTRIBUTES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-    * (type: dt.DateOrDateTime)
-    */
-   public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-   public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-   /**
-    * (type: dt.NonEmptyString)
-    */
-   public String sourcename;
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String sourcename;
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // VALUE MEMBER
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-   public NameIdentifierTypes value;
+    public NameIdentifierTypes value;
 
-   /**
-   * Internal API, use the {@link #value()} method or the {@link #value} field instead
-   */
-   @Override
-   public NameIdentifierTypes _value() {
-      return value;
-   }
+    /**
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
+     */
+    @Override
+    public NameIdentifierTypes _value() {
+        return value;
+    }
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // SERVICES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private final boolean exists;
-   public static final ConferenceSponsorIDType EMPTY = new ConferenceSponsorIDType();
+    private final boolean exists;
+    public static final ConferenceSponsorIDType EMPTY = new ConferenceSponsorIDType();
 
-   public ConferenceSponsorIDType() {
-      exists = false;
-   }
+    public ConferenceSponsorIDType() {
+        exists = false;
+    }
 
-   public ConferenceSponsorIDType(org.w3c.dom.Element element) {
-      exists = true;
-      datestamp = JPU.getAttribute(element, "datestamp");
-      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-      sourcename = JPU.getAttribute(element, "sourcename");
+    public ConferenceSponsorIDType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-      value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
-   }
+        value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
+    }
 
-   /**
-    * @return whether this tag (&lt;ConferenceSponsorIDType&gt; or &lt;b391&gt;) is explicitly provided in the ONIX XML
-    */
-   @Override
-   public boolean exists() {
-      return exists;
-   }
+    /**
+     * @return whether this tag (&lt;ConferenceSponsorIDType&gt; or &lt;b391&gt;) is explicitly provided in the ONIX XML
+     */
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

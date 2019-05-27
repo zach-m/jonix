@@ -36,16 +36,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Copyright owner identifier composite</h1><p>A group of data elements which together represent a coded
- * identification of a copyright owner. Optional, and non-repeating. May be sent either instead of or as well as a
- * name.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CopyrightOwnerIdentifier&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;copyrightowneridentifier&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Copyright owner identifier composite</h1>
+ * <p>
+ * A group of data elements which together represent a coded identification of a copyright owner. Optional, and
+ * non-repeating. May be sent either instead of or as well as a name.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CopyrightOwnerIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;copyrightowneridentifier&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CopyrightOwner&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CopyrightOwnerIdentifier</li>
@@ -151,8 +162,10 @@ public class CopyrightOwnerIdentifier
     private CopyrightOwnerIDType copyrightOwnerIDType = CopyrightOwnerIDType.EMPTY;
 
     /**
-     * <p>An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken.
-     * Mandatory in each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
+     * in each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public CopyrightOwnerIDType copyrightOwnerIDType() {
@@ -163,8 +176,10 @@ public class CopyrightOwnerIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary identifier scheme when, and only when, the code in the
-     * &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p>
+     * <p>
+     * A name which identifies a proprietary identifier scheme when, and only when, the code in the
+     * &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
@@ -175,8 +190,10 @@ public class CopyrightOwnerIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * <p>A code value taken from the scheme specified in the &lt;CopyrightOwnerIDType&gt; element. Mandatory in each
-     * occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * A code value taken from the scheme specified in the &lt;CopyrightOwnerIDType&gt; element. Mandatory in each
+     * occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public IDValue idValue() {

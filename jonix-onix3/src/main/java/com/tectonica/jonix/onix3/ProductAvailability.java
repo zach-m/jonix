@@ -31,30 +31,58 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product availability</h1><p>An ONIX code indicating the availability of a product from a supplier. Mandatory in
- * each occurrence of the &lt;SupplyDetail&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 65</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductAvailability&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j396&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;j396
- * datestamp=&quot;20101029&quot;&gt;41&lt;/j396&gt;</tt> (Replaced by new product)</td></tr><tr><td>Notes</td><td>Note
- * the typical progression of product availability, from initial announcement to one of the forms of 'unavailable'. Not
- * all possible availability codes are shown, particularly within the 'Unavailable' group where there are many more
- * possible options: Temporarily unavailable (3x codes) Available (2x codes) Available (2x codes) Unavailable (4x, 5x
- * codes) OTO (22) POD (23) INS (21) AWS (11) [stock on order] [stock on order] [will not be stock item] ['published',
- * no stock yet] ['published', no stock yet] [publisher abandons] NYA (10) AB (01) [stock in warehouse] NYAD (12)
- * ['publish'] ['publish'] RI (33) RP (32) OS (31) [publisher abandons] RPL (41) NLS (43) ALT (42) [POD product]
- * ['Stock' product] Transitions within and between the shaded groups are greatly simplified - for example, it would be
- * unexpected if 'Reprinting' or 'Reissuing' statuses (32 and 33 on List 65) would be followed by anything other than
- * 'In stock' (21), but on occasion where the publisher changes plans, 'Available via POD' (23), 'Only to order' (22),
- * or an 'Unavailable' (4x) code are all possible. Ideally, 'Abandoned' (01) and the 'Unavailable' (4x) codes indicate
- * the end of the product's life, but as with &lt;PublishingStatus&gt;, cancelled or out of print products are
- * occasionally re-activated or re-announced.</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product availability</h1>
+ * <p>
+ * An ONIX code indicating the availability of a product from a supplier. Mandatory in each occurrence of the
+ * &lt;SupplyDetail&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 65</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductAvailability&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j396&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j396 datestamp=&quot;20101029&quot;&gt;41&lt;/j396&gt;</tt> (Replaced by new product)</td>
+ * </tr>
+ * <tr>
+ * <td>Notes</td>
+ * <td>Note the typical progression of product availability, from initial announcement to one of the forms of
+ * 'unavailable'. Not all possible availability codes are shown, particularly within the 'Unavailable' group where there
+ * are many more possible options: Temporarily unavailable (3x codes) Available (2x codes) Available (2x codes)
+ * Unavailable (4x, 5x codes) OTO (22) POD (23) INS (21) AWS (11) [stock on order] [stock on order] [will not be stock
+ * item] ['published', no stock yet] ['published', no stock yet] [publisher abandons] NYA (10) AB (01) [stock in
+ * warehouse] NYAD (12) ['publish'] ['publish'] RI (33) RP (32) OS (31) [publisher abandons] RPL (41) NLS (43) ALT (42)
+ * [POD product] ['Stock' product] Transitions within and between the shaded groups are greatly simplified - for
+ * example, it would be unexpected if 'Reprinting' or 'Reissuing' statuses (32 and 33 on List 65) would be followed by
+ * anything other than 'In stock' (21), but on occasion where the publisher changes plans, 'Available via POD' (23),
+ * 'Only to order' (22), or an 'Unavailable' (4x) code are all possible. Ideally, 'Abandoned' (01) and the 'Unavailable'
+ * (4x) codes indicate the end of the product's life, but as with &lt;PublishingStatus&gt;, cancelled or out of print
+ * products are occasionally re-activated or re-announced.</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ ProductAvailability</li>

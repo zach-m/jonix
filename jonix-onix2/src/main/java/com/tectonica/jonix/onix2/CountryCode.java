@@ -35,21 +35,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Country code</h1><p>A code identifying a country with which a contributor is particularly associated, when this
- * is significant for the marketing of a product. Optional and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters. [Note that ISO 3166-1 specifies that country codes
- * shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes List
- * 91</td></tr><tr><td>Reference name</td><td><tt>&lt;CountryCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b251&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;CountryCode&gt;US&lt;/CountryCode&gt;</tt>
- * USA</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Country code</h1>
+ * <p>
+ * A code identifying a country with which a contributor is particularly associated, when this is significant for the
+ * marketing of a product. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper case
+ * only.]</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CountryCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b251&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;CountryCode&gt;US&lt;/CountryCode&gt;</tt> USA</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * <li>&lt;Contributor&gt;</li>
  * <li>&lt;Language&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ CountryCode</li>

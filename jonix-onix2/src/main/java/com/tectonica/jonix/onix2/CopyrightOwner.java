@@ -34,17 +34,28 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Copyright owner composite</h1><p>A repeatable group of data elements which together name a copyright owner. At
- * least one occurrence is mandatory in each occurrence of the &lt;CopyrightStatement&gt; composite. Each occurrence of
- * the &lt;CopyrightOwner&gt; composite must carry a single name (personal or corporate), or an identifier, or
- * both.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CopyrightOwner&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;copyrightowner&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Copyright owner composite</h1>
+ * <p>
+ * A repeatable group of data elements which together name a copyright owner. At least one occurrence is mandatory in
+ * each occurrence of the &lt;CopyrightStatement&gt; composite. Each occurrence of the &lt;CopyrightOwner&gt; composite
+ * must carry a single name (personal or corporate), or an identifier, or both.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CopyrightOwner&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;copyrightowner&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CopyrightStatement&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner</li>
@@ -149,8 +160,10 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
     private CopyrightOwnerIdentifier copyrightOwnerIdentifier = CopyrightOwnerIdentifier.EMPTY;
 
     /**
-     * <p>A group of data elements which together represent a coded identification of a copyright owner. Optional, and
-     * non-repeating. May be sent either instead of or as well as a name.</p>
+     * <p>
+     * A group of data elements which together represent a coded identification of a copyright owner. Optional, and
+     * non-repeating. May be sent either instead of or as well as a name.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public CopyrightOwnerIdentifier copyrightOwnerIdentifier() {
@@ -161,9 +174,11 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
     private PersonName personName = PersonName.EMPTY;
 
     /**
-     * <p>The name of a person, used here for a personal copyright owner. Optional and non-repeating. Each occurrence of
+     * <p>
+     * The name of a person, used here for a personal copyright owner. Optional and non-repeating. Each occurrence of
      * the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an identifier, or both a
-     * name and an identifier.</p>
+     * name and an identifier.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public PersonName personName() {
@@ -174,9 +189,11 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
     private CorporateName corporateName = CorporateName.EMPTY;
 
     /**
-     * <p>The name of a corporate body, used here for a corporate copyright owner. Optional and non-repeating. Each
+     * <p>
+     * The name of a corporate body, used here for a corporate copyright owner. Optional and non-repeating. Each
      * occurrence of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an
-     * identifier, or both a name and an identifier.</p>
+     * identifier, or both a name and an identifier.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public CorporateName corporateName() {

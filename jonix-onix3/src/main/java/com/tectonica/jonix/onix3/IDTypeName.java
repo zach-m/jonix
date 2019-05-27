@@ -31,13 +31,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Identifier type name</h1><p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is
- * not a standard and for which there is no individual ID type code). Must be included when, and only when, the code in
- * the &lt;SenderIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum 50
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;IDTypeName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b233&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt></tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Identifier type name</h1>
+ * <p>
+ * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
+ * there is no individual ID type code). Must be included when, and only when, the code in the &lt;SenderIDType&gt;
+ * element indicates a proprietary scheme. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;IDTypeName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b233&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt></tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyContactIdentifier&gt;</li>
@@ -63,7 +89,7 @@ import java.io.Serializable;
  * <li>&lt;SupplierIdentifier&gt;</li>
  * <li>&lt;PriceIdentifier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ SupplyContactIdentifier ⯈ IDTypeName</li>
@@ -79,7 +105,8 @@ import java.io.Serializable;
  * IDTypeName</li>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈
  * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier
+ * ⯈
  * IDTypeName</li>
  * <li>ONIXMessage ⯈ Header ⯈ Addressee ⯈ AddresseeIdentifier ⯈ IDTypeName</li>
  * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedWork ⯈ WorkIdentifier ⯈ IDTypeName</li>
@@ -159,7 +186,9 @@ public class IDTypeName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum 50 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 50 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

@@ -34,19 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title text</h1><p>The text of the title specified by the &lt;TitleType&gt; code; and excluding the subtitle, if
- * any. Optional and non-repeating: see text at the head of the &lt;Title&gt; composite for details of valid title text
- * options. The &lt;TitleText&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
- * transliteration, textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
- * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleText&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b203&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TitleText&gt;Nicholas
- * Nickleby&lt;/TitleText&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Title text</h1>
+ * <p>
+ * The text of the title specified by the &lt;TitleType&gt; code; and excluding the subtitle, if any. Optional and
+ * non-repeating: see text at the head of the &lt;Title&gt; composite for details of valid title text options. The
+ * &lt;TitleText&gt; element may carry any of the following ONIX attributes: <i>textformat, language, transliteration,
+ * textcase</i>.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TitleText&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b203&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TitleText&gt;Nicholas Nickleby&lt;/TitleText&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Title&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ TitleText</li>
@@ -89,7 +107,9 @@ public class TitleText implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum 300 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum 300 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

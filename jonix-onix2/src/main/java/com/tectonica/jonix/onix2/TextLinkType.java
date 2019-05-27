@@ -35,17 +35,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Other text link type</h1><p>An ONIX code which identifies the type of link which is given in the &lt;TextLink&gt;
- * element.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 35</td></tr><tr><td>Reference name</td><td><tt>&lt;TextLinkType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;d105&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TextLinkType&gt;05&lt;/TextLinkType&gt;</tt>
- * FTP address</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Other text link type</h1>
+ * <p>
+ * An ONIX code which identifies the type of link which is given in the &lt;TextLink&gt; element.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 35</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TextLinkType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;d105&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TextLinkType&gt;05&lt;/TextLinkType&gt;</tt> FTP address</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;OtherText&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextLinkType</li>

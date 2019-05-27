@@ -30,17 +30,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Number of illustrations or other content items</h1><p>The number of illustrations or other content items of the
- * type specified in &lt;AncillaryContentType&gt;. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, suggested maximum length 6
- * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;Number&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b257&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;Number&gt;12&lt;/Number&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Number of illustrations or other content items</h1>
+ * <p>
+ * The number of illustrations or other content items of the type specified in &lt;AncillaryContentType&gt;. Optional
+ * and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive integer or zero, suggested maximum length 6 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Number&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b257&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;Number&gt;12&lt;/Number&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AncillaryContent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AncillaryContent ⯈ Number</li>
@@ -73,7 +95,9 @@ public class Number implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer or zero, suggested maximum length 6 digits<p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, suggested maximum length 6 digits
+     * <p>
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

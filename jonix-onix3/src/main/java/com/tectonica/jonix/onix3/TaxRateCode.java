@@ -31,17 +31,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Tax rate code</h1><p>An ONIX code which specifies a tax rate. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, one letter</td></tr><tr><td>Codelist</td><td>List
- * 62</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxRateCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x471&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x471&gt;Z&lt;/x471&gt;</tt>
- * (Zero-rated)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Tax rate code</h1>
+ * <p>
+ * An ONIX code which specifies a tax rate. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, one letter</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 62</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TaxRateCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x471&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x471&gt;Z&lt;/x471&gt;</tt> (Zero-rated)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Tax&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Tax ⯈ TaxRateCode</li>

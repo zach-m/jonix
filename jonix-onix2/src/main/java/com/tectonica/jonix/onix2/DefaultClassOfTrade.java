@@ -34,19 +34,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Default class of trade USA only</h1><p>Free text indicating the class of trade which is assumed for prices given
- * in the message, unless explicitly stated otherwise specified in &lt;j149&gt;. For example: Institutional, General
- * trade, Wholesale distributor, which may be represented by a suitable code or abbreviation agreed between trading
- * partners. otherwise specified in the product record. Optional and non-repeating.</p><p class="new214">The text is not
- * limited to ASCII characters.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length ASCII text,
- * suggested maximum length 50 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultClassOfTrade&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m193&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m193&gt;gen&lt;/m193&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Default class of trade USA only</h1>
+ * <p>
+ * Free text indicating the class of trade which is assumed for prices given in the message, unless explicitly stated
+ * otherwise specified in &lt;j149&gt;. For example: Institutional, General trade, Wholesale distributor, which may be
+ * represented by a suitable code or abbreviation agreed between trading partners. otherwise specified in the product
+ * record. Optional and non-repeating.
+ * </p>
+ * <p class="new214">
+ * The text is not limited to ASCII characters.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length ASCII text, suggested maximum length 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DefaultClassOfTrade&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m193&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;m193&gt;gen&lt;/m193&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ DefaultClassOfTrade</li>
@@ -84,7 +105,9 @@ public class DefaultClassOfTrade implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length ASCII text, suggested maximum length 50 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable length ASCII text, suggested maximum length 50 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

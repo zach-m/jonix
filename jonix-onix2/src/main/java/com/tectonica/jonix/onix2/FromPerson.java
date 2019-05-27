@@ -34,19 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sender contact</h1><p>Free text giving the name, department, phone number, <em>etc</em> for a contact person in
- * the sender organization who is responsible for the content of the message. Optional and non-repeating.</p><p
- * class="new214">The text is not limited to ASCII characters.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length ASCII text, suggested maximum 300
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;FromPerson&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m175&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m175&gt;Jackie Brown, 020 7979
- * 6444&lt;/m175&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sender contact</h1>
+ * <p>
+ * Free text giving the name, department, phone number, <em>etc</em> for a contact person in the sender organization who
+ * is responsible for the content of the message. Optional and non-repeating.
+ * </p>
+ * <p class="new214">
+ * The text is not limited to ASCII characters.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length ASCII text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;FromPerson&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m175&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;m175&gt;Jackie Brown, 020 7979 6444&lt;/m175&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ FromPerson</li>
@@ -84,7 +103,9 @@ public class FromPerson implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length ASCII text, suggested maximum 300 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length ASCII text, suggested maximum 300 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

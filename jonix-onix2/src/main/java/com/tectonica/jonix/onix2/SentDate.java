@@ -34,16 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Message creation date/time</h1><p>The date on which the message is sent. Optionally, the time may be added, using
- * the 24-hour clock. Mandatory and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Eight or
- * twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;SentDate&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;m182&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m182&gt;200005220230&lt;/m182&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Message creation date/time</h1>
+ * <p>
+ * The date on which the message is sent. Optionally, the time may be added, using the 24-hour clock. Mandatory and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SentDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m182&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;m182&gt;200005220230&lt;/m182&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ SentDate</li>
@@ -81,7 +100,9 @@ public class SentDate implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)<p> (type: NonEmptyString)
+     * Raw Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

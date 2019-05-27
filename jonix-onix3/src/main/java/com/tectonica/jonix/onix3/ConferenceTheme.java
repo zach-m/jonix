@@ -32,19 +32,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Conference thematic title</h1><p>The thematic title of an individual conference in a series that has a conference
- * series name in the &lt;ConferenceName&gt; element. Optional and non-repeating.</p><p></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 200 characters. XHTML is
- * enabled in this element - see Using XHTML, HTML or XML with ONIX text fields - but is strongly
- * discouraged</td></tr><tr><td>Reference name</td><td><tt>&lt;ConferenceTheme&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b342&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Conference thematic title</h1>
+ * <p>
+ * The thematic title of an individual conference in a series that has a conference series name in the
+ * &lt;ConferenceName&gt; element. Optional and non-repeating.
+ * </p>
+ * <p>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields - but is strongly discouraged</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ConferenceTheme&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b342&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Conference&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceTheme</li>
@@ -82,7 +105,9 @@ public class ConferenceTheme implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML or XML with ONIX text fields - but is strongly discouraged<p> (type: XHTML)
+     * Using XHTML, HTML or XML with ONIX text fields - but is strongly discouraged
+     * <p>
+     * (type: XHTML)
      */
     public String value;
 

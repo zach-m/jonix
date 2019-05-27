@@ -127,10 +127,12 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
     private Header header = Header.EMPTY;
 
     /**
-     * <p>A group of data elements which together constitute a message header. Mandatory in any ONIX for Books message,
-     * and non-repeating. In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and the Sender and
-     * Addressee structures and the name and format of the &lt;SentDateTime&gt; element have been made consistent with
-     * other current ONIX formats.</p>
+     * <p>
+     * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books message, and
+     * non-repeating. In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and the Sender and Addressee
+     * structures and the name and format of the &lt;SentDateTime&gt; element have been made consistent with other
+     * current ONIX formats.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public Header header() {
@@ -141,10 +143,12 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
     private NoProduct noProduct = NoProduct.EMPTY;
 
     /**
-     * <p>An empty element that provides a positive indication that a message does not carry any Product records.
-     * Intended to be used only in empty ‘delta’ update messages to provide confirmation that there have been no updates
-     * since the previous message. Optional and non-repeating, but must be used in an ONIX message that contains no
-     * &lt;Product&gt; composites.</p>
+     * <p>
+     * An empty element that provides a positive indication that a message does not carry any Product records. Intended
+     * to be used only in empty ‘delta’ update messages to provide confirmation that there have been no updates since
+     * the previous message. Optional and non-repeating, but must be used in an ONIX message that contains no
+     * &lt;Product&gt; composites.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public NoProduct noProduct() {
@@ -159,14 +163,19 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
     private List<Product> products = Collections.emptyList();
 
     /**
-     * <p>A product is described by a group of data elements beginning with an XML label &lt;Product&gt; and ending with
-     * an XML label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two labels
+     * <p>
+     * A product is described by a group of data elements beginning with an XML label &lt;Product&gt; and ending with an
+     * XML label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two labels
      * constitutes an ONIX product record. The product record is the fundamental unit within an ONIX Product Information
      * message. In almost every case, each product record describes an individually tradable item; and in all
      * circumstances, each tradable item identified by a recognized product identifier should be described by one, and
-     * only one, ONIX product record.</p><p>In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’
-     * comprising data element Groups P.1 and P.2, and carrying data that identifies the record and the product to which
-     * it refers. This is followed by up to six ‘blocks’, each optional, some of which are repeatable.</p>
+     * only one, ONIX product record.
+     * </p>
+     * <p>
+     * In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data element Groups P.1 and P.2,
+     * and carrying data that identifies the record and the product to which it refers. This is followed by up to six
+     * ‘blocks’, each optional, some of which are repeatable.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<Product> products() {

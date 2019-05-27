@@ -32,14 +32,23 @@ import java.util.List;
  */
 
 /**
- * <h1>Reissue composite</h1><p>An optional and non-repeating group of data elements which together specify that a
- * product is to be reissued within the market to which the &lt;SupplyDetail&gt; composite applies.</p><p>The entire
- * &lt;Reissue&gt; composite is deprecated. Suppliers should supply information about planned reissues in other parts of
- * the Product record – the date of a planned reissue in &lt;PublishingDate&gt; and/or in &lt;MarketDate&gt;, and new
- * collateral material alongside old collateral in <a href="#onixmessage_product_collateraldetail">Block&nbsp;2</a>
- * where collateral items may be associated with appropriate end and start dates using &lt;ContentDate&gt;. </p><p>The
- * &lt;Reissue&gt; composite was (prior to deprecation) used only when the publisher intended to re-launch the product
- * under the same ISBN. There are two possible cases:</p><ol>
+ * <h1>Reissue composite</h1>
+ * <p>
+ * An optional and non-repeating group of data elements which together specify that a product is to be reissued within
+ * the market to which the &lt;SupplyDetail&gt; composite applies.
+ * </p>
+ * <p>
+ * The entire &lt;Reissue&gt; composite is deprecated. Suppliers should supply information about planned reissues in
+ * other parts of the Product record – the date of a planned reissue in &lt;PublishingDate&gt; and/or in
+ * &lt;MarketDate&gt;, and new collateral material alongside old collateral in
+ * <a href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral items may be associated with
+ * appropriate end and start dates using &lt;ContentDate&gt;.
+ * </p>
+ * <p>
+ * The &lt;Reissue&gt; composite was (prior to deprecation) used only when the publisher intended to re-launch the
+ * product under the same ISBN. There are two possible cases:
+ * </p>
+ * <ol>
  * <li>When the product is unavailable during the period immediately before reissue. In this case,
  * &lt;ProductAvailability&gt; should carry the value 33 for ‘unavailable, awaiting reissue’, and the ONIX record can be
  * updated to describe the reissued product as soon as details can be made available;</li>
@@ -48,16 +57,31 @@ import java.util.List;
  * the product as ‘available’ (<i>eg</i> code 21) right up to the reissue date. At that date, the record should be
  * updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining
  * unchanged.</li>
- * </ol><p>After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record,
- * carrying only the &lt;ReissueDate&gt; element, which will then indicate ‘date last reissued’.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Reissue&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;reissue&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
- * <p>&nbsp;</p>
+ * </ol>
+ * <p>
+ * After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record, carrying only
+ * the &lt;ReissueDate&gt; element, which will then indicate ‘date last reissued’.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Reissue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;reissue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue</li>
@@ -156,8 +180,10 @@ public class Reissue implements OnixSuperComposite, Serializable {
     private ReissueDate reissueDate = ReissueDate.EMPTY;
 
     /**
-     * <p>The date on which the product will be reissued, or (after reissue) the date when it was last reissued.
-     * Mandatory in each occurrence of the &lt;Reissue&gt; composite, and non-repeating. Deprecated.</p>
+     * <p>
+     * The date on which the product will be reissued, or (after reissue) the date when it was last reissued. Mandatory
+     * in each occurrence of the &lt;Reissue&gt; composite, and non-repeating. Deprecated.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ReissueDate reissueDate() {
@@ -168,7 +194,9 @@ public class Reissue implements OnixSuperComposite, Serializable {
     private ReissueDescription reissueDescription = ReissueDescription.EMPTY;
 
     /**
-     * <p>Text explaining the nature of the reissue. Optional and non-repeating. Deprecated.</p>
+     * <p>
+     * Text explaining the nature of the reissue. Optional and non-repeating. Deprecated.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ReissueDescription reissueDescription() {
@@ -179,8 +207,10 @@ public class Reissue implements OnixSuperComposite, Serializable {
     private List<Price> prices = Collections.emptyList();
 
     /**
-     * <p>An optional and repeatable group of data elements which together specify a unit price, used here to indicate a
-     * price that will apply when the product is reissued. Deprecated in this context.</p>
+     * <p>
+     * An optional and repeatable group of data elements which together specify a unit price, used here to indicate a
+     * price that will apply when the product is reissued. Deprecated in this context.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<Price> prices() {
@@ -191,9 +221,11 @@ public class Reissue implements OnixSuperComposite, Serializable {
     private List<SupportingResource> supportingResources = Collections.emptyList();
 
     /**
-     * <p>An optional and repeatable group of data elements which together specify a supporting resource, used here to
+     * <p>
+     * An optional and repeatable group of data elements which together specify a supporting resource, used here to
      * indicate that there is a new cover or jacket image, or other supporting resource, for a forthcoming reissue.
-     * Deprecated in this context.</p>
+     * Deprecated in this context.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<SupportingResource> supportingResources() {

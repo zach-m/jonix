@@ -36,25 +36,32 @@ public class JonixDiscount implements JonixStruct, Serializable {
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the
-     * units specified in &lt;EpubUsageUnit&gt; <p> (type: dt.PositiveDecimal)
+     * units specified in &lt;EpubUsageUnit&gt;
+     * <p>
+     * (type: dt.PositiveDecimal)
      */
     public Double quantity;
 
     /**
-     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits <p> (type:
-     * dt.PositiveDecimal)
+     * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits
+     * <p>
+     * (type: dt.PositiveDecimal)
      */
     public Double toQuantity;
 
     /**
      * Raw Format: Real number between zero and 100 (inclusive), including explicit decimal point when required,
-     * suggested maximum length 6 characters <p> (type: dt.PercentDecimal)
+     * suggested maximum length 6 characters
+     * <p>
+     * (type: dt.PercentDecimal)
      */
     public Double discountPercent;
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, suggested maximum length 12
-     * characters <p> (type: dt.PositiveDecimal)
+     * characters
+     * <p>
+     * (type: dt.PositiveDecimal)
      */
     public Double discountAmount;
 }

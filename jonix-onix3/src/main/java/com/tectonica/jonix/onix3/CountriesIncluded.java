@@ -31,21 +31,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Countries included</h1><p>One or more ISO standard codes identifying countries included in the territory.
- * Successive codes must be separated by spaces. Optional and non-repeating, but either &lt;CountriesIncluded&gt; or
- * &lt;RegionsIncluded&gt; is mandatory in each occurrence of the &lt;Territory&gt; composite.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>One or more fixed-length codes, each consisting of two upper case letters, and
- * with successive codes being separated by spaces. Suggested maximum length 750 characters. Note that ISO 3166-1
- * specifies that country codes shall be sent as upper case only</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter
- * country codes List 91</td></tr><tr><td>Reference name</td><td><tt>&lt;CountriesIncluded&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x449&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;CountriesIncluded&gt;US
- * CA&lt;/CountriesIncluded&gt;</tt> (USA and Canada)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Countries included</h1>
+ * <p>
+ * One or more ISO standard codes identifying countries included in the territory. Successive codes must be separated by
+ * spaces. Optional and non-repeating, but either &lt;CountriesIncluded&gt; or &lt;RegionsIncluded&gt; is mandatory in
+ * each occurrence of the &lt;Territory&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more fixed-length codes, each consisting of two upper case letters, and with successive codes being
+ * separated by spaces. Suggested maximum length 750 characters. Note that ISO 3166-1 specifies that country codes shall
+ * be sent as upper case only</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CountriesIncluded&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x449&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;CountriesIncluded&gt;US CA&lt;/CountriesIncluded&gt;</tt> (USA and Canada)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Territory&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ Territory ⯈ CountriesIncluded</li>

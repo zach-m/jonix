@@ -34,16 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Message repeat number</h1><p>A number which distinguishes any repeat transmissions of a message. If this element
- * is used, the original is numbered 1 and repeats are numbered 2, 3 <em>etc</em>. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;MessageRepeat&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;m181&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;MessageRepeat&gt;2&lt;/MessageRepeat&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Message repeat number</h1>
+ * <p>
+ * A number which distinguishes any repeat transmissions of a message. If this element is used, the original is numbered
+ * 1 and repeats are numbered 2, 3 <em>etc</em>. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MessageRepeat&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m181&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;MessageRepeat&gt;2&lt;/MessageRepeat&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ MessageRepeat</li>
@@ -81,7 +100,9 @@ public class MessageRepeat implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

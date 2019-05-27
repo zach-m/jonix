@@ -34,18 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title of source of other text</h1><p>The title of a publication from which the text sent in the &lt;Text&gt;
- * element, or referenced in the &lt;TextLink&gt; element, was taken, <em>eg</em> if it is a review quote. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
- * length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TextSourceTitle&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;d108&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TextSourceTitle&gt;New York
- * Times&lt;/TextSourceTitle&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Title of source of other text</h1>
+ * <p>
+ * The title of a publication from which the text sent in the &lt;Text&gt; element, or referenced in the
+ * &lt;TextLink&gt; element, was taken, <em>eg</em> if it is a review quote. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TextSourceTitle&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;d108&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TextSourceTitle&gt;New York Times&lt;/TextSourceTitle&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;OtherText&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextSourceTitle</li>
@@ -86,7 +103,9 @@ public class TextSourceTitle implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -31,17 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price status</h1><p>An ONIX code which specifies the status of a price. Optional and non-repeating. If the field
- * is omitted, the default ‘unspecified’ will apply.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, two digits</td></tr><tr><td>Codelist</td><td>List 61</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PriceStatus&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j266&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;PriceStatus&gt;01&lt;/PriceStatus&gt;</tt>
- * (Provisional)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price status</h1>
+ * <p>
+ * An ONIX code which specifies the status of a price. Optional and non-repeating. If the field is omitted, the default
+ * ‘unspecified’ will apply.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 61</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceStatus&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j266&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PriceStatus&gt;01&lt;/PriceStatus&gt;</tt> (Provisional)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceStatus</li>

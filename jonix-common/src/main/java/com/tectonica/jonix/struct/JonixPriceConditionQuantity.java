@@ -40,7 +40,9 @@ public class JonixPriceConditionQuantity implements JonixKeyedStruct<PriceCondit
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the
-     * units specified in &lt;EpubUsageUnit&gt; <p> (type: dt.PositiveDecimal)
+     * units specified in &lt;EpubUsageUnit&gt;
+     * <p>
+     * (type: dt.PositiveDecimal)
      */
     public Double quantity;
 

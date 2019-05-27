@@ -30,17 +30,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Quantity reserved</h1><p>The quantity of stock on hand but unavailable to fulfil new orders for any reason – for
- * example because the stock is reserved to fulfill existing orders or frozen to prevent dispatch. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, suggested
- * maximum length 7 digits.</td></tr><tr><td>Reference name</td><td><tt>&lt;Reserved&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x536&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;Reserved&gt;500&lt;/Reserved&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Quantity reserved</h1>
+ * <p>
+ * The quantity of stock on hand but unavailable to fulfil new orders for any reason – for example because the stock is
+ * reserved to fulfill existing orders or frozen to prevent dispatch. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive integer or zero, suggested maximum length 7 digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Reserved&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x536&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;Reserved&gt;500&lt;/Reserved&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Stock&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Reserved</li>
@@ -73,7 +95,9 @@ public class Reserved implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer or zero, suggested maximum length 7 digits.<p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, suggested maximum length 7 digits.
+     * <p>
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

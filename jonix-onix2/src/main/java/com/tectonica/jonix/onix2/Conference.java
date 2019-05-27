@@ -38,16 +38,27 @@ import java.util.List;
  */
 
 /**
- * <h1>Conference composite</h1><p>A group of data elements which together describe a conference to which the product is
- * related. Repeatable if the product contains material from two or more conferences.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Conference&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;conference&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Conference composite</h1>
+ * <p>
+ * A group of data elements which together describe a conference to which the product is related. Repeatable if the
+ * product contains material from two or more conferences.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Conference&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;conference&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Conference</li>
@@ -175,8 +186,10 @@ public class Conference implements OnixSuperComposite, Serializable {
     private ConferenceRole conferenceRole = ConferenceRole.EMPTY;
 
     /**
-     * <p>An ONIX code which indicates the relationship between the product and a conference to which it is related,
-     * <em>eg</em> Proceedings of / Selected papers from / Developed from. Optional and non-repeating.</p>
+     * <p>
+     * An ONIX code which indicates the relationship between the product and a conference to which it is related,
+     * <em>eg</em> Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ConferenceRole conferenceRole() {
@@ -187,8 +200,10 @@ public class Conference implements OnixSuperComposite, Serializable {
     private ConferenceName conferenceName = ConferenceName.EMPTY;
 
     /**
-     * <p>The name of a conference or conference series to which the product is related. This element is mandatory in
-     * each occurrence of the &lt;Conference&gt; composite, and non-repeating.</p>
+     * <p>
+     * The name of a conference or conference series to which the product is related. This element is mandatory in each
+     * occurrence of the &lt;Conference&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ConferenceName conferenceName() {
@@ -199,8 +214,10 @@ public class Conference implements OnixSuperComposite, Serializable {
     private ConferenceAcronym conferenceAcronym = ConferenceAcronym.EMPTY;
 
     /**
-     * <p>An acronym used as a short form of the name of a conference or conference series given in the
-     * &lt;ConferenceName&gt; element. Optional and non-repeating.</p>
+     * <p>
+     * An acronym used as a short form of the name of a conference or conference series given in the
+     * &lt;ConferenceName&gt; element. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ConferenceAcronym conferenceAcronym() {
@@ -211,8 +228,10 @@ public class Conference implements OnixSuperComposite, Serializable {
     private ConferenceNumber conferenceNumber = ConferenceNumber.EMPTY;
 
     /**
-     * <p>The number of a conference to which the product is related, within a conference series. Optional and
-     * non-repeating.</p>
+     * <p>
+     * The number of a conference to which the product is related, within a conference series. Optional and
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ConferenceNumber conferenceNumber() {
@@ -223,8 +242,10 @@ public class Conference implements OnixSuperComposite, Serializable {
     private ConferenceTheme conferenceTheme = ConferenceTheme.EMPTY;
 
     /**
-     * <p>The thematic title of an individual conference in a series that has a series name in the
-     * &lt;ConferenceName&gt; element. Optional and non-repeating.</p>
+     * <p>
+     * The thematic title of an individual conference in a series that has a series name in the &lt;ConferenceName&gt;
+     * element. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ConferenceTheme conferenceTheme() {
@@ -235,7 +256,9 @@ public class Conference implements OnixSuperComposite, Serializable {
     private ConferenceDate conferenceDate = ConferenceDate.EMPTY;
 
     /**
-     * <p>The date of a conference to which the product is related. Optional and non-repeating.</p>
+     * <p>
+     * The date of a conference to which the product is related. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ConferenceDate conferenceDate() {
@@ -246,7 +269,9 @@ public class Conference implements OnixSuperComposite, Serializable {
     private ConferencePlace conferencePlace = ConferencePlace.EMPTY;
 
     /**
-     * <p>The place of a conference to which the product is related. Optional and non-repeating.</p>
+     * <p>
+     * The place of a conference to which the product is related. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ConferencePlace conferencePlace() {
@@ -257,7 +282,9 @@ public class Conference implements OnixSuperComposite, Serializable {
     private List<ConferenceSponsor> conferenceSponsors = Collections.emptyList();
 
     /**
-     * <p>A repeatable group of data elements which together identify a sponsor of a conference.</p>
+     * <p>
+     * A repeatable group of data elements which together identify a sponsor of a conference.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<ConferenceSponsor> conferenceSponsors() {
@@ -268,8 +295,10 @@ public class Conference implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
 
     /**
-     * <p>A repeatable group of data elements which together identify and provide pointers to a website which is related
-     * to the conference identified in an occurrence of the &lt;Conference&gt; composite.</p>
+     * <p>
+     * A repeatable group of data elements which together identify and provide pointers to a website which is related to
+     * the conference identified in an occurrence of the &lt;Conference&gt; composite.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {

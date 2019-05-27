@@ -31,18 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price printed on product</h1><p>An ONIX code indicating whether the price in a &lt;Price&gt; composite is printed
- * on the product. Optional and non-repeating. Omission of this element must <em>not</em> be interpreted as indicating
- * that the price is not printed on the product.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, two digits</td></tr><tr><td>Codelist</td><td>List 174</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PrintedOnProduct&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x301&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x301&gt;02&lt;/x301&gt;</tt>
- * (Price is printed on product)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price printed on product</h1>
+ * <p>
+ * An ONIX code indicating whether the price in a &lt;Price&gt; composite is printed on the product. Optional and
+ * non-repeating. Omission of this element must <em>not</em> be interpreted as indicating that the price is not printed
+ * on the product.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 174</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PrintedOnProduct&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x301&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x301&gt;02&lt;/x301&gt;</tt> (Price is printed on product)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PrintedOnProduct</li>

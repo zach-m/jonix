@@ -33,16 +33,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supply contact composite</h1><p>An optional group of data elements which together specify an organization (which
- * may or may not be the supplier) responsible for dealing with enquiries related to the product. Repeatable in order to
- * specify multiple contacts.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;SupplyContact&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;supplycontact&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supply contact composite</h1>
+ * <p>
+ * An optional group of data elements which together specify an organization (which may or may not be the supplier)
+ * responsible for dealing with enquiries related to the product. Repeatable in order to specify multiple contacts.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplyContact&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;supplycontact&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact</li>
@@ -145,8 +160,10 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
     private SupplyContactRole supplyContactRole = SupplyContactRole.EMPTY;
 
     /**
-     * <p>An ONIX code which identifies the role played by the supply contact in relation to the product – for example
-     * answering enquiries related to orders or to returns.</p>
+     * <p>
+     * An ONIX code which identifies the role played by the supply contact in relation to the product – for example
+     * answering enquiries related to orders or to returns.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public SupplyContactRole supplyContactRole() {
@@ -155,12 +172,15 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SupplyContactIdentifier, JonixSupplyContactIdentifier, NameIdentifierTypes>
-        supplyContactIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        supplyContactIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A group of data elements which together specify an identifier for the supply contact. The composite is
-     * optional, and repeatable if more than one identifier of different types is sent; but either a
-     * &lt;SupplyContactName&gt; or a &lt;SupplyContactIdentifier&gt; <em>must</em> be included.</p>
+     * <p>
+     * A group of data elements which together specify an identifier for the supply contact. The composite is optional,
+     * and repeatable if more than one identifier of different types is sent; but either a &lt;SupplyContactName&gt; or
+     * a &lt;SupplyContactIdentifier&gt; <em>must</em> be included.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SupplyContactIdentifier, JonixSupplyContactIdentifier, NameIdentifierTypes> supplyContactIdentifiers() {
@@ -171,9 +191,11 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
     private SupplyContactName supplyContactName = SupplyContactName.EMPTY;
 
     /**
-     * <p>The name of the supply contact organization, which should always be stated in a standard form. Optional and
+     * <p>
+     * The name of the supply contact organization, which should always be stated in a standard form. Optional and
      * non-repeating; but either a &lt;SupplyContactName&gt; element or a &lt;SupplyContactIdentifier&gt; composite must
-     * be included.</p>
+     * be included.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public SupplyContactName supplyContactName() {
@@ -184,8 +206,10 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
     private ContactName contactName = ContactName.EMPTY;
 
     /**
-     * <p>Free text giving the name, department, phone number, <i>etc</i> for a contact person in the supply contact
-     * organization who is responsible for the product. Optional and non-repeating.</p>
+     * <p>
+     * Free text giving the name, department, phone number, <i>etc</i> for a contact person in the supply contact
+     * organization who is responsible for the product. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ContactName contactName() {
@@ -196,8 +220,10 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
     private EmailAddress emailAddress = EmailAddress.EMPTY;
 
     /**
-     * <p>A text field giving the e-mail address for a contact person in the supply contact organization who is
-     * responsible for the product. Optional and non-repeating.</p>
+     * <p>
+     * A text field giving the e-mail address for a contact person in the supply contact organization who is responsible
+     * for the product. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public EmailAddress emailAddress() {

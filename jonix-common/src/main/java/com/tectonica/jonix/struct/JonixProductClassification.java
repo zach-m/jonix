@@ -39,13 +39,16 @@ public class JonixProductClassification implements JonixKeyedStruct<ProductClass
 
     /**
      * Raw Format: Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested
-     * maximum length 7 characters <p> (type: dt.PercentDecimal)
+     * maximum length 7 characters
+     * <p>
+     * (type: dt.PercentDecimal)
      */
     public Double percent;
 
     /**
-     * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt; <p> (type:
-     * dt.NonEmptyString)
+     * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String productClassificationCode;
 

@@ -35,17 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Text item type code</h1><p>An ONIX code which identifies the nature of a text item. Mandatory in each occurrence
- * of the &lt;TextItem&gt; composite, and non-repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, 2 numeric digits</td></tr><tr><td>Codelist</td><td>List 42</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;TextItemType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b290&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b290&gt;04&lt;/b290&gt;</tt>
- * Back matter</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Text item type code</h1>
+ * <p>
+ * An ONIX code which identifies the nature of a text item. Mandatory in each occurrence of the &lt;TextItem&gt;
+ * composite, and non-repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 42</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TextItemType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b290&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b290&gt;04&lt;/b290&gt;</tt> Back matter</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;TextItem&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ TextItemType</li>

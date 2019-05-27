@@ -38,7 +38,7 @@ import java.io.Serializable;
  * <ul>
  * <li>&lt;SubSeriesRecord&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SeriesPartName</li>

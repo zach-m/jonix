@@ -34,22 +34,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>US school grades</h1><p>A text element specifying a US school Grade or range of Grades, which should be entered
- * strictly according to the conventions defined below. Optional and non-repeating. <strong>The &lt;AudienceRange&gt;
- * composite on the next page provides a more general method of handling grade and other ranges, and is to be
- * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, maximum 15
- * characters.</td></tr><tr><td></td><td>from n1 to n2 Grade range from n1 to n2 from n From Grade n upwards to n Up to
- * Grade n n Grade n only where n is a grade number or one of the words Pre-school or Kindergarten, which may be
- * abbreviated to letters P or K</td></tr><tr><td>Reference name</td><td><tt>&lt;USSchoolGrade&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b189&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;USSchoolGrade&gt;from 6 to
- * 8&lt;/USSchoolGrade&gt;</tt></td></tr><tr><td></td><td><tt>&lt;b189&gt;P&lt;/b189&gt;</tt>
- * Pre-school</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>US school grades</h1>
+ * <p>
+ * A text element specifying a US school Grade or range of Grades, which should be entered strictly according to the
+ * conventions defined below. Optional and non-repeating. <strong>The &lt;AudienceRange&gt; composite on the next page
+ * provides a more general method of handling grade and other ranges, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, maximum 15 characters.</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>from n1 to n2 Grade range from n1 to n2 from n From Grade n upwards to n Up to Grade n n Grade n only where n is
+ * a grade number or one of the words Pre-school or Kindergarten, which may be abbreviated to letters P or K</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;USSchoolGrade&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b189&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;USSchoolGrade&gt;from 6 to 8&lt;/USSchoolGrade&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td><tt>&lt;b189&gt;P&lt;/b189&gt;</tt> Pre-school</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ USSchoolGrade</li>
@@ -87,7 +110,9 @@ public class USSchoolGrade implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, maximum 15 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length text, maximum 15 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

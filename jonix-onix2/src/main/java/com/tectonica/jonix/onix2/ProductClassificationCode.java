@@ -34,18 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product classification code</h1><p>A classification code from the scheme specified in
- * &lt;ProductClassificationType&gt;. Mandatory in any instance of the &lt;ProductClassification&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>According to the identifier type specified
- * in &lt;ProductClassificationType&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductClassificationCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b275&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b275&gt;55101514&lt;/b275&gt;</tt> Sheet
- * music (in UNSPSC)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product classification code</h1>
+ * <p>
+ * A classification code from the scheme specified in &lt;ProductClassificationType&gt;. Mandatory in any instance of
+ * the &lt;ProductClassification&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the identifier type specified in &lt;ProductClassificationType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductClassificationCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b275&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b275&gt;55101514&lt;/b275&gt;</tt> Sheet music (in UNSPSC)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductClassification&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductClassification ⯈ ProductClassificationCode</li>
@@ -83,8 +100,9 @@ public class ProductClassificationCode implements OnixElement<String>, Serializa
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt;<p> (type:
-     * NonEmptyString)
+     * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

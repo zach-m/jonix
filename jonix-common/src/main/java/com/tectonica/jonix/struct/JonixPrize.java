@@ -40,17 +40,23 @@ public class JonixPrize implements JonixStruct, Serializable {
 
     /**
      * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+     * Using XHTML, HTML or XML with ONIX text fields
+     * <p>
+     * (type: XHTML)
      */
     public List<String> prizeJurys;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public List<String> prizeNames;
 
     /**
-     * Raw Format: Four digits, YYYY <p> (type: dt.Year)
+     * Raw Format: Four digits, YYYY
+     * <p>
+     * (type: dt.Year)
      */
     public String prizeYear;
 }

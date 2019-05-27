@@ -19,90 +19,121 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.AudienceRangePrecisions;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Audience range precision (1)</h1><p>An ONIX code specifying the ‘precision’ of the value in the &lt;AudienceRangeValue&gt; element which follows (from, to, exact). Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List 31</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceRangePrecision&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b075&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b075&gt;03&lt;/b075&gt;</tt> (From)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Audience range precision (1)</h1>
+ * <p>
+ * An ONIX code specifying the ‘precision’ of the value in the &lt;AudienceRangeValue&gt; element which follows (from,
+ * to, exact). Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 31</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AudienceRangePrecision&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b075&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b075&gt;03&lt;/b075&gt;</tt> (From)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AudienceRange&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AudienceRange ⯈ AudienceRangePrecision</li>
  * </ul>
  */
-public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisions>, Serializable
-{
-   private static final long serialVersionUID = 1L;
+public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisions>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-   public static final String refname = "AudienceRangePrecision";
-   public static final String shortname = "b075";
+    public static final String refname = "AudienceRangePrecision";
+    public static final String shortname = "b075";
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // ATTRIBUTES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-    * (type: dt.DateOrDateTime)
-    */
-   public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-   public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-   /**
-    * (type: dt.NonEmptyString)
-    */
-   public String sourcename;
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String sourcename;
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // VALUE MEMBER
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-   public AudienceRangePrecisions value;
+    public AudienceRangePrecisions value;
 
-   /**
-   * Internal API, use the {@link #value()} method or the {@link #value} field instead
-   */
-   @Override
-   public AudienceRangePrecisions _value() {
-      return value;
-   }
+    /**
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
+     */
+    @Override
+    public AudienceRangePrecisions _value() {
+        return value;
+    }
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // SERVICES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private final boolean exists;
-   public static final AudienceRangePrecision EMPTY = new AudienceRangePrecision();
+    private final boolean exists;
+    public static final AudienceRangePrecision EMPTY = new AudienceRangePrecision();
 
-   public AudienceRangePrecision() {
-      exists = false;
-   }
+    public AudienceRangePrecision() {
+        exists = false;
+    }
 
-   public AudienceRangePrecision(org.w3c.dom.Element element) {
-      exists = true;
-      datestamp = JPU.getAttribute(element, "datestamp");
-      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-      sourcename = JPU.getAttribute(element, "sourcename");
+    public AudienceRangePrecision(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-      value = AudienceRangePrecisions.byCode(JPU.getContentAsString(element));
-   }
+        value = AudienceRangePrecisions.byCode(JPU.getContentAsString(element));
+    }
 
-   /**
-    * @return whether this tag (&lt;AudienceRangePrecision&gt; or &lt;b075&gt;) is explicitly provided in the ONIX XML
-    */
-   @Override
-   public boolean exists() {
-      return exists;
-   }
+    /**
+     * @return whether this tag (&lt;AudienceRangePrecision&gt; or &lt;b075&gt;) is explicitly provided in the ONIX XML
+     */
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

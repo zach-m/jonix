@@ -35,21 +35,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Main subject scheme identifier</h1><p>An ONIX code which identifies a subject scheme which is designated for use
- * in a &lt;MainSubject&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><p>When the
- * scheme listed in the code list display is annotated “Code”, use the associated &lt;SubjectCode&gt; element to carry
- * the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the text
- * equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to carry the
- * text of the subject heading.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 26</td></tr><tr><td>Reference name</td><td><tt>&lt;MainSubjectSchemeIdentifier&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b191&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b191&gt;25&lt;/b191&gt;</tt> Latin
- * American Tabla de materias ISBN</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Main subject scheme identifier</h1>
+ * <p>
+ * An ONIX code which identifies a subject scheme which is designated for use in a &lt;MainSubject&gt; composite.
+ * Mandatory in each occurrence of the composite, and non-repeating.
+ * </p>
+ * <p>
+ * When the scheme listed in the code list display is annotated “Code”, use the associated &lt;SubjectCode&gt; element
+ * to carry the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the
+ * text equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to
+ * carry the text of the subject heading.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 26</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MainSubjectSchemeIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b191&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b191&gt;25&lt;/b191&gt;</tt> Latin American Tabla de materias ISBN</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MainSubject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MainSubject ⯈ MainSubjectSchemeIdentifier</li>

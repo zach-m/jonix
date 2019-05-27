@@ -34,22 +34,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Market country</h1><p>One or more ISO standard codes identifying a country in which the agent or local publisher
- * markets the product. Successive codes are separated by spaces. Thus, a single occurrence of the element can carry an
- * unlimited number of country codes. Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite must
- * carry either an occurrence of &lt;MarketCountry&gt; or an occurrence of &lt;MarketTerritory&gt;, to specify the
- * market concerned. Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>One or more fixed-length
- * codes, each with two upper case letters, successive codes being separated by spaces. Suggested maximum length 600
- * characters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper case
- * only.]</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;MarketCountry&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j403&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j403&gt;US
- * CA&lt;/j403&gt;</tt> USA and Canada</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Market country</h1>
+ * <p>
+ * One or more ISO standard codes identifying a country in which the agent or local publisher markets the product.
+ * Successive codes are separated by spaces. Thus, a single occurrence of the element can carry an unlimited number of
+ * country codes. Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite must carry either an
+ * occurrence of &lt;MarketCountry&gt; or an occurrence of &lt;MarketTerritory&gt;, to specify the market concerned.
+ * Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more fixed-length codes, each with two upper case letters, successive codes being separated by spaces.
+ * Suggested maximum length 600 characters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper
+ * case only.]</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes - List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MarketCountry&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j403&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j403&gt;US CA&lt;/j403&gt;</tt> USA and Canada</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MarketRepresentation&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketCountry</li>
@@ -89,7 +111,9 @@ public class MarketCountry implements OnixElement<java.util.Set<String>>, Serial
     /**
      * Raw Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
      * spaces. Suggested maximum length 600 characters. [Note that ISO 3166-1 specifies that country codes shall be sent
-     * as upper case only.]<p> (type: NonEmptyString)
+     * as upper case only.]
+     * <p>
+     * (type: NonEmptyString)
      */
     public java.util.Set<String> value;
 

@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Thesis type code</h1><p>An ONIX code identifying a thesis type, when the ONIX record describes an item which was
- * originally presented as an academic thesis or dissertation. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 72</td></tr><tr><td>Reference name</td><td><tt>&lt;ThesisType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b368&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ThesisType&gt;01&lt;/ThesisType&gt;</tt>
- * Habilitationsschrift</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Thesis type code</h1>
+ * <p>
+ * An ONIX code identifying a thesis type, when the ONIX record describes an item which was originally presented as an
+ * academic thesis or dissertation. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 72</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ThesisType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b368&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ThesisType&gt;01&lt;/ThesisType&gt;</tt> Habilitationsschrift</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ThesisType</li>

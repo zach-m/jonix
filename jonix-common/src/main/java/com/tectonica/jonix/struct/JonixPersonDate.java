@@ -41,7 +41,9 @@ public class JonixPersonDate implements JonixKeyedStruct<PersonDateRoles>, Seria
     public DateFormats dateFormat;
 
     /**
-     * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD <p> (type: NonEmptyString)
+     * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
+     * <p>
+     * (type: NonEmptyString)
      */
     public String date;
 

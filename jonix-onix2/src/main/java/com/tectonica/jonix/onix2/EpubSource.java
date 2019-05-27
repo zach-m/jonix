@@ -35,18 +35,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Epublication source file format code</h1><p>An ONIX code identifying the source file format of an epublication
- * when shipped by a publisher to an intermediary for conversion to one or more forms of deliverable. Optional and
- * non-repeating, and can occur only if the &lt;EpubType&gt; field is present.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 11</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubSource&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b278&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;EpubSource&gt;02&lt;/EpubSource&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Epublication source file format code</h1>
+ * <p>
+ * An ONIX code identifying the source file format of an epublication when shipped by a publisher to an intermediary for
+ * conversion to one or more forms of deliverable. Optional and non-repeating, and can occur only if the
+ * &lt;EpubType&gt; field is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 11</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EpubSource&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b278&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;EpubSource&gt;02&lt;/EpubSource&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ EpubSource</li>

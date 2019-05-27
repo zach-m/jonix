@@ -33,22 +33,49 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title text</h1><p>The text of a title element, excluding any subtitle. Optional and non-repeating, may only be
- * used where &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.</p><p>This element is
- * intended to be used only when the sending system cannot reliably provide prefixes that are ignored for sorting
- * purposes in a separate data element. If the system <em>can</em> reliably separate prefixes, it should state whether a
- * prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
- * &lt;TitleWithoutPrefix&gt;).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text,
- * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleText&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b203&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
- * language, textscript, textcase</td></tr><tr><td>Example</td><td><tt>&lt;b203 language=&quot;eng&quot;
- * textcase=&quot;01&quot;&gt;Dickens classics&lt;/b203&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Title text</h1>
+ * <p>
+ * The text of a title element, excluding any subtitle. Optional and non-repeating, may only be used where
+ * &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.
+ * </p>
+ * <p>
+ * This element is intended to be used only when the sending system cannot reliably provide prefixes that are ignored
+ * for sorting purposes in a separate data element. If the system <em>can</em> reliably separate prefixes, it should
+ * state whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using
+ * &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TitleText&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b203&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript, textcase</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b203 language=&quot;eng&quot; textcase=&quot;01&quot;&gt;Dickens classics&lt;/b203&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;TitleElement&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleElement ⯈ TitleText</li>
@@ -94,7 +121,9 @@ public class TitleText implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum 300 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 300 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

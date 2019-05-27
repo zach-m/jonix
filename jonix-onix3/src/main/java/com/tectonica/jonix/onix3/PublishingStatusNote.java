@@ -32,21 +32,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publishing status note</h1><p>Free text that describes the status of a published product, when the code in
- * &lt;PublishingStatus&gt; is insufficient. Optional, but when used, must be accompanied by the
- * &lt;PublishingStatus&gt; element. Repeatable if parallel notes are provide in multiple languages. The <i>language</i>
- * attribute is optional for a single instance of &lt;PublishingStatusNote&gt;, but must be included in each instance if
- * &lt;PublishingStatusNote&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length
- * text, suggested maximum 300 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX
- * text fields</td></tr><tr><td>Reference name</td><td><tt>&lt;PublishingStatusNote&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b395&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr><tr><td>Example</td><td><tt>&lt;b395&gt;Lost contact with publisher&lt;/b395&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publishing status note</h1>
+ * <p>
+ * Free text that describes the status of a published product, when the code in &lt;PublishingStatus&gt; is
+ * insufficient. Optional, but when used, must be accompanied by the &lt;PublishingStatus&gt; element. Repeatable if
+ * parallel notes are provide in multiple languages. The <i>language</i> attribute is optional for a single instance of
+ * &lt;PublishingStatusNote&gt;, but must be included in each instance if &lt;PublishingStatusNote&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using XHTML, HTML
+ * or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublishingStatusNote&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b395&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b395&gt;Lost contact with publisher&lt;/b395&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PublishingDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ PublishingStatusNote</li>
@@ -84,7 +109,9 @@ public class PublishingStatusNote implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Variable length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
-     * XHTML, HTML or XML with ONIX text fields<p> (type: XHTML)
+     * XHTML, HTML or XML with ONIX text fields
+     * <p>
+     * (type: XHTML)
      */
     public String value;
 

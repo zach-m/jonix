@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Trade announcement date</h1><p>Date when information about the product can be issued to the book trade, while
- * remaining embargoed for the general public. (Some publishers issue advance information under embargo.) Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as year, month, day
- * (YYYYMMDD)</td></tr><tr><td>Reference name</td><td><tt>&lt;TradeAnnouncementDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b362&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TradeAnnouncementDate&gt;20000514&lt;/TradeAnnouncementDate&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Trade announcement date</h1>
+ * <p>
+ * Date when information about the product can be issued to the book trade, while remaining embargoed for the general
+ * public. (Some publishers issue advance information under embargo.) Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year, month, day (YYYYMMDD)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TradeAnnouncementDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b362&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TradeAnnouncementDate&gt;20000514&lt;/TradeAnnouncementDate&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ TradeAnnouncementDate</li>
@@ -82,7 +100,9 @@ public class TradeAnnouncementDate implements OnixElement<String>, Serializable 
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Date as year, month, day (YYYYMMDD)<p> (type: NonEmptyString)
+     * Raw Format: Date as year, month, day (YYYYMMDD)
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -31,17 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Year of thesis</h1><p>The year in which a thesis was presented. Optional and non-repeating, but if this element
- * is present, &lt;ThesisType&gt; must also be present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>As
- * specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
- * missing</td></tr><tr><td>Reference name</td><td><tt>&lt;ThesisYear&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b370&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td><tt>&lt;ThesisYear&gt;2002&lt;/ThesisYear&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Year of thesis</h1>
+ * <p>
+ * The year in which a thesis was presented. Optional and non-repeating, but if this element is present,
+ * &lt;ThesisType&gt; must also be present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is missing</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ThesisYear&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b370&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>dateformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ThesisYear&gt;2002&lt;/ThesisYear&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ThesisYear</li>
@@ -77,7 +103,9 @@ public class ThesisYear implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
-     * missing<p> (type: dt.NonEmptyString)
+     * missing
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

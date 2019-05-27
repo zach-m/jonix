@@ -34,17 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>EAN.UCC-13 number of set</h1><p>EAN.UCC-13 article number identifying a set of which the product forms part.
- * Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt; composite on the next page provides a more general
- * method of handling this and other product codes, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 13 numeric digits</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;EAN13OfSet&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b022&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;EAN13OfSet&gt;9788474339796&lt;/EAN13OfSet&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>EAN.UCC-13 number of set</h1>
+ * <p>
+ * EAN.UCC-13 article number identifying a set of which the product forms part. Optional and non-repeating. <strong>The
+ * &lt;ProductIdentifier&gt; composite on the next page provides a more general method of handling this and other
+ * product codes, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 13 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EAN13OfSet&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b022&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;EAN13OfSet&gt;9788474339796&lt;/EAN13OfSet&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Set&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ EAN13OfSet</li>
@@ -82,7 +101,9 @@ public class EAN13OfSet implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, 13 numeric digits<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, 13 numeric digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

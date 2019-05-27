@@ -35,19 +35,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Notification or update type code</h1><p>An ONIX code which indicates the type of notification or update which you
- * are sending. Mandatory and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
- * two numeric digits.</td></tr><tr><td>Codelist</td><td>List 1</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;NotificationType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;a002&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;a002&gt;02&lt;/a002&gt;</tt>
- * Advance notification</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Notification or update type code</h1>
+ * <p>
+ * An ONIX code which indicates the type of notification or update which you are sending. Mandatory and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 1</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NotificationType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;a002&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;a002&gt;02&lt;/a002&gt;</tt> Advance notification</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;SubSeriesRecord&gt;</li>
  * <li>&lt;MainSeriesRecord&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ NotificationType</li>

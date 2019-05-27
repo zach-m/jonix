@@ -34,20 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Intermediary availability code</h1><p>An ONIX code indicating the availability of a product from an intermediary
- * supplier. This element was added in preparation for an expected revision of availability status coding, but in the
- * event will not now be generally used. The element is being used as an interim measure by the Australian ONIX group to
- * carry local availability status, but will be replaced on completion of the revised code lists. The element will be
- * withdrawn from the ONIX format in a future release.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
- * two numeric digits</td></tr><tr><td>Codelist</td><td>List 63</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;IntermediaryAvailabilityCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j348&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Intermediary availability code</h1>
+ * <p>
+ * An ONIX code indicating the availability of a product from an intermediary supplier. This element was added in
+ * preparation for an expected revision of availability status coding, but in the event will not now be generally used.
+ * The element is being used as an interim measure by the Australian ONIX group to carry local availability status, but
+ * will be replaced on completion of the revised code lists. The element will be withdrawn from the ONIX format in a
+ * future release.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 63</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;IntermediaryAvailabilityCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j348&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ IntermediaryAvailabilityCode</li>
@@ -85,7 +103,9 @@ public class IntermediaryAvailabilityCode implements OnixElement<String>, Serial
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, two numeric digits<p> (type: List63)
+     * Raw Format: Fixed-length, two numeric digits
+     * <p>
+     * (type: List63)
      */
     public String value;
 

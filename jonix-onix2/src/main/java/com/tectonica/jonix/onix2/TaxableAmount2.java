@@ -34,19 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Amount of price taxable at tax rate 2</h1><p>The amount of the unit price of the product, excluding tax, which is
- * taxable at the rate specified by &lt;TaxRateCode2&gt; and/or &lt;TaxRatePercent2&gt;. This may be the whole of the
- * unit price before tax, if the item carries tax at the same rate on the whole price; or part of the unit price in the
- * case of a mixed tax rate product. See notes on &lt;TaxRateCode1&gt;.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an explicit decimal point where
- * required.</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxableAmount2&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j159&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TaxableAmount2&gt;10.64&lt;/TaxableAmount2&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Amount of price taxable at tax rate 2</h1>
+ * <p>
+ * The amount of the unit price of the product, excluding tax, which is taxable at the rate specified by
+ * &lt;TaxRateCode2&gt; and/or &lt;TaxRatePercent2&gt;. This may be the whole of the unit price before tax, if the item
+ * carries tax at the same rate on the whole price; or part of the unit price in the case of a mixed tax rate product.
+ * See notes on &lt;TaxRateCode1&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point where required.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TaxableAmount2&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j159&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TaxableAmount2&gt;10.64&lt;/TaxableAmount2&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ TaxableAmount2</li>
@@ -85,8 +103,9 @@ public class TaxableAmount2 implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length real number, with an explicit decimal point where required.<p> (type:
-     * NonEmptyString)
+     * Raw Format: Variable length real number, with an explicit decimal point where required.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

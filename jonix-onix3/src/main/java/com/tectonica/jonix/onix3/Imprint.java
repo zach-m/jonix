@@ -33,16 +33,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Imprint or brand composite</h1><p>An optional group of data elements which together identify an imprint or brand
- * under which the product is marketed. The composite must carry either a name identifier or a name or both, and is
- * repeatable to specify multiple imprints or brands.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;Imprint&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;imprint&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Imprint or brand composite</h1>
+ * <p>
+ * An optional group of data elements which together identify an imprint or brand under which the product is marketed.
+ * The composite must carry either a name identifier or a name or both, and is repeatable to specify multiple imprints
+ * or brands.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Imprint&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;imprint&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PublishingDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint</li>
@@ -131,12 +147,15 @@ public class Imprint implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameIdentifierTypes>
-        imprintIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        imprintIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A group of data elements which together define the identifier of an imprint name. Optional, but mandatory if
-     * the &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite is repeatable in order to
-     * specify multiple identifiers for the same imprint or brand.</p>
+     * <p>
+     * A group of data elements which together define the identifier of an imprint name. Optional, but mandatory if the
+     * &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite is repeatable in order to specify
+     * multiple identifiers for the same imprint or brand.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameIdentifierTypes> imprintIdentifiers() {
@@ -147,9 +166,11 @@ public class Imprint implements OnixSuperComposite, Serializable {
     private ImprintName imprintName = ImprintName.EMPTY;
 
     /**
-     * <p>The name of an imprint or brand under which the product is issued, as it appears on the product. Mandatory if
+     * <p>
+     * The name of an imprint or brand under which the product is issued, as it appears on the product. Mandatory if
      * there is no imprint identifier in an occurrence of the &lt;Imprint&gt; composite, and optional if an imprint
-     * identifier is included. Non-repeating.</p>
+     * identifier is included. Non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ImprintName imprintName() {

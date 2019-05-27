@@ -35,21 +35,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Front cover image file format code</h1><p>An ONIX code which specifies the image file format used for the front
- * cover image. JPEG, GIF and TIF are supported. The data element group consisting of &lt;CoverImageFormatCode&gt;,
- * &lt;CoverImageLinkTypeCode&gt;, and &lt;CoverImageLink&gt; is optional and non-repeating, but if any one of the three
- * elements is present, all three must be present.</p><p><strong>The &lt;MediaFile&gt; composite on the next page
- * provides a more general method of handling cover images, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 36</td></tr><tr><td>Reference name</td><td><tt>&lt;CoverImageFormatCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;f111&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;CoverImageFormatCode&gt;03&lt;/CoverImageFormatCode&gt;</tt>
- * JPEG</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Front cover image file format code</h1>
+ * <p>
+ * An ONIX code which specifies the image file format used for the front cover image. JPEG, GIF and TIF are supported.
+ * The data element group consisting of &lt;CoverImageFormatCode&gt;, &lt;CoverImageLinkTypeCode&gt;, and
+ * &lt;CoverImageLink&gt; is optional and non-repeating, but if any one of the three elements is present, all three must
+ * be present.
+ * </p>
+ * <p>
+ * <strong>The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover images,
+ * and
+ * is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 36</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CoverImageFormatCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;f111&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;CoverImageFormatCode&gt;03&lt;/CoverImageFormatCode&gt;</tt> JPEG</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ CoverImageFormatCode</li>

@@ -31,21 +31,47 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Usage unit</h1><p>An ONIX code for a unit in which a maximum permitted quantity or limit is stated. Mandatory in
- * each occurrence of the &lt;PriceConstraintLimit&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 147</td></tr><tr><td>Reference name</td><td><tt>&lt;PriceConstraintUnit&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x531&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x531&gt;07&lt;/x531&gt;</tt>
- * (Concurrent users)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Usage unit</h1>
+ * <p>
+ * An ONIX code for a unit in which a maximum permitted quantity or limit is stated. Mandatory in each occurrence of the
+ * &lt;PriceConstraintLimit&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 147</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceConstraintUnit&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x531&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x531&gt;07&lt;/x531&gt;</tt> (Concurrent users)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PriceConstraintLimit&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit
+ * ⯈
  * PriceConstraintUnit</li>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
  * PriceConstraintUnit</li>

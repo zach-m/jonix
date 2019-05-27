@@ -34,17 +34,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Reprint detail</h1><p>Free text used to give details of the reprint history as part of the promotion of a book.
- * Optional, and repeatable to give information about successive reprintings.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 200
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ReprintDetail&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;k309&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Reprint detail</h1>
+ * <p>
+ * Free text used to give details of the reprint history as part of the promotion of a book. Optional, and repeatable to
+ * give information about successive reprintings.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReprintDetail&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;k309&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ReprintDetail</li>
@@ -82,7 +96,9 @@ public class ReprintDetail implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 200 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 200 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

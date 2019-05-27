@@ -31,18 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Collection identifier type code</h1><p>An ONIX code identifying a scheme from which an identifier in the
- * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;CollectionIdentifier&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length text, two
- * digits</td></tr><tr><td>Codelist</td><td>List 13</td></tr><tr><td>Reference name</td><td><tt>&lt;CollectionIDType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x344&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x344&gt;02&lt;/x344&gt;</tt>
- * (ISSN)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Collection identifier type code</h1>
+ * <p>
+ * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in each
+ * occurrence of the &lt;CollectionIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length text, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 13</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CollectionIDType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x344&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x344&gt;02&lt;/x344&gt;</tt> (ISSN)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CollectionIdentifier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionIdentifier ⯈ CollectionIDType</li>

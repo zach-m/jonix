@@ -34,18 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Edition number</h1><p>The number of a numbered edition. Optional and non-repeating. Normally sent only for the
- * second and subsequent editions of a work, but by agreement between parties to an ONIX exchange a first edition may be
- * explicitly numbered.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested
- * maximum length 4 digits.</td></tr><tr><td>Reference name</td><td><tt>&lt;EditionNumber&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b057&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b057&gt;3&lt;/b057&gt;</tt> 3rd
- * edition</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Edition number</h1>
+ * <p>
+ * The number of a numbered edition. Optional and non-repeating. Normally sent only for the second and subsequent
+ * editions of a work, but by agreement between parties to an ONIX exchange a first edition may be explicitly numbered.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 4 digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EditionNumber&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b057&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b057&gt;3&lt;/b057&gt;</tt> 3rd edition</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ EditionNumber</li>
@@ -83,7 +100,9 @@ public class EditionNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 4 digits.<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, suggested maximum length 4 digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

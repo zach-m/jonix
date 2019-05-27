@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Epublication source file format version number</h1><p>A version number which applies to an epublication source
- * file format. Optional and non-repeating, and can occur only if the &lt;EpubSource&gt; field is present.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum 10
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubSourceVersion&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b279&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;EpubSourceVersion&gt;2.1&lt;/EpubSourceVersion&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Epublication source file format version number</h1>
+ * <p>
+ * A version number which applies to an epublication source file format. Optional and non-repeating, and can occur only
+ * if the &lt;EpubSource&gt; field is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 10 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EpubSourceVersion&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b279&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;EpubSourceVersion&gt;2.1&lt;/EpubSourceVersion&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ EpubSourceVersion</li>
@@ -82,7 +100,9 @@ public class EpubSourceVersion implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum 10 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum 10 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

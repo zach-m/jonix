@@ -34,21 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Number of pieces</h1><p>If the product is homogeneous (<em>ie</em> all items or pieces which constitute the
- * product have the same form), the number of items or pieces may be included here. If the product consists of a number
- * of items or pieces of different forms (<em>eg</em> books and audio cassettes), the &lt;ContainedItem&gt; composite
- * should be used – see below. This field is optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum length 4
- * digits.</td></tr><tr><td>Reference name</td><td><tt>&lt;NumberOfPieces&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b210&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;NumberOfPieces&gt;3&lt;/NumberOfPieces&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Number of pieces</h1>
+ * <p>
+ * If the product is homogeneous (<em>ie</em> all items or pieces which constitute the product have the same form), the
+ * number of items or pieces may be included here. If the product consists of a number of items or pieces of different
+ * forms (<em>eg</em> books and audio cassettes), the &lt;ContainedItem&gt; composite should be used – see below. This
+ * field is optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 4 digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NumberOfPieces&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b210&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;NumberOfPieces&gt;3&lt;/NumberOfPieces&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;ContainedItem&gt;</li>
  * <li>&lt;RelatedProduct&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ NumberOfPieces</li>
@@ -88,7 +106,9 @@ public class NumberOfPieces implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 4 digits.<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, suggested maximum length 4 digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

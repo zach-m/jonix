@@ -32,14 +32,16 @@ public class JonixTimeRun implements JonixStruct, Serializable {
     public static JonixTimeRun EMPTY = new JonixTimeRun();
 
     /**
-     * Raw Format: Hours, minutes and seconds in the form HHHMMSS or HHHMMSScc (hundredths of a second) <p> (type:
-     * dt.TimeOrDuration)
+     * Raw Format: Hours, minutes and seconds in the form HHHMMSS or HHHMMSScc (hundredths of a second)
+     * <p>
+     * (type: dt.TimeOrDuration)
      */
     public String startTime;
 
     /**
-     * Raw Format: Hours, minutes and seconds in the form HHHMMSS or HHHMMSScc (hundredths of a second) <p> (type:
-     * dt.TimeOrDuration)
+     * Raw Format: Hours, minutes and seconds in the form HHHMMSS or HHHMMSScc (hundredths of a second)
+     * <p>
+     * (type: dt.TimeOrDuration)
      */
     public String endTime;
 }

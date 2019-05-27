@@ -34,20 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>BIC discount group code UK only</h1><p>A BIC code indicating the supplier’s discount group to which the price
- * carried in an occurrence of the &lt;Price&gt; composite belongs. This code does not identify an absolute rate of
- * discount, but it allows a bookseller to derive the actual discount by reference to a look-up table provided
- * separately by the supplier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 8 characters
- * Position 1 A (identifying BIC as the source of the supplier code) Positions 2-5 Supplier code, alphabetical, assigned
- * by BIC Positions 6-8 Discount group code, alphanumeric, assigned by the supplier. If less than three characters, the
- * code is left justified and unused positions are sent as spaces.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;BICDiscountGroupCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j150&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j150&gt;APUBL122&lt;/j150&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>BIC discount group code UK only</h1>
+ * <p>
+ * A BIC code indicating the supplier’s discount group to which the price carried in an occurrence of the &lt;Price&gt;
+ * composite belongs. This code does not identify an absolute rate of discount, but it allows a bookseller to derive the
+ * actual discount by reference to a look-up table provided separately by the supplier.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 8 characters Position 1 A (identifying BIC as the source of the supplier code) Positions 2-5
+ * Supplier code, alphabetical, assigned by BIC Positions 6-8 Discount group code, alphanumeric, assigned by the
+ * supplier. If less than three characters, the code is left justified and unused positions are sent as spaces.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;BICDiscountGroupCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j150&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j150&gt;APUBL122&lt;/j150&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ BICDiscountGroupCode</li>
@@ -89,7 +107,9 @@ public class BICDiscountGroupCode implements OnixElement<String>, Serializable {
      * Raw Format: Fixed-length, 8 characters Position 1 A (identifying BIC as the source of the supplier code)
      * Positions 2-5 Supplier code, alphabetical, assigned by BIC Positions 6-8 Discount group code, alphanumeric,
      * assigned by the supplier. If less than three characters, the code is left justified and unused positions are sent
-     * as spaces.<p> (type: NonEmptyString)
+     * as spaces.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

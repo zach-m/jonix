@@ -34,17 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Addressee SAN</h1><p>A US book trade Standard Address Number which identifies the addressee of an ONIX message.
- * Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, seven
- * characters. The first six are numeric digits, and the seventh is a check character which may be a numeric digit or
- * letter X.</td></tr><tr><td>Reference name</td><td><tt>&lt;ToSAN&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m177&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ToSAN&gt;978847X&lt;/ToSAN&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Addressee SAN</h1>
+ * <p>
+ * A US book trade Standard Address Number which identifies the addressee of an ONIX message. Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character which may
+ * be a numeric digit or letter X.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ToSAN&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m177&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ToSAN&gt;978847X&lt;/ToSAN&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ ToSAN</li>
@@ -83,7 +102,9 @@ public class ToSAN implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
-     * character which may be a numeric digit or letter X.<p> (type: NonEmptyString)
+     * character which may be a numeric digit or letter X.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

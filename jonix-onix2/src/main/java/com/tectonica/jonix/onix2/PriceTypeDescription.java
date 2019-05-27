@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price type description</h1><p>Free text which further describes the price type. Optional and non-repeating. In
- * the Netherlands, when the &lt;PriceQualifier&gt; code identifies a “voucher price”, the &lt;PriceTypeDescription&gt;
- * should give the “EAN action number” that identifies the offer.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Text, suggested maximum length 200 characters</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PriceTypeDescription&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j262&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j262&gt;When
- * purchased as part of a three-item set with &#8230;&lt;/j262&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price type description</h1>
+ * <p>
+ * Free text which further describes the price type. Optional and non-repeating. In the Netherlands, when the
+ * &lt;PriceQualifier&gt; code identifies a “voucher price”, the &lt;PriceTypeDescription&gt; should give the “EAN
+ * action number” that identifies the offer.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceTypeDescription&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j262&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j262&gt;When purchased as part of a three-item set with &#8230;&lt;/j262&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ PriceTypeDescription</li>
@@ -84,7 +102,9 @@ public class PriceTypeDescription implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Text, suggested maximum length 200 characters<p> (type: NonEmptyString)
+     * Raw Format: Text, suggested maximum length 200 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Free quantity</h1><p>The number of free copies which will be supplied with an order for the batch quantity
- * specified in the &lt;BatchQuantity&gt; field. Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum
- * length 4 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;FreeQuantity&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j265&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j265&gt;1&lt;/j265&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Free quantity</h1>
+ * <p>
+ * The number of free copies which will be supplied with an order for the batch quantity specified in the
+ * &lt;BatchQuantity&gt; field. Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 4 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;FreeQuantity&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j265&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j265&gt;1&lt;/j265&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;BatchBonus&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ BatchBonus ⯈ FreeQuantity</li>
@@ -83,7 +101,9 @@ public class FreeQuantity implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 4 digits<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, suggested maximum length 4 digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

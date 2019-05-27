@@ -34,19 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Prizes or awards description</h1><p>Free text describing prizes or awards which the product has received.
- * Optional and non-repeating. If this field is used, the &lt;Prize&lt; composite must not be used; and vice
- * versa.</p><p><strong>The &lt;Prize&gt; composite below provides a more general method of handling prizes, and is to
- * be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested
- * maximum length 500 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PrizesDescription&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;g124&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;g124&gt;Shortlisted for the Booker Prize,
- * 1998&lt;/g124&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Prizes or awards description</h1>
+ * <p>
+ * Free text describing prizes or awards which the product has received. Optional and non-repeating. If this field is
+ * used, the &lt;Prize&lt; composite must not be used; and vice versa.
+ * </p>
+ * <p>
+ * <strong>The &lt;Prize&gt; composite below provides a more general method of handling prizes, and is to be
+ * preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 500 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PrizesDescription&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;g124&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;g124&gt;Shortlisted for the Booker Prize, 1998&lt;/g124&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PrizesDescription</li>
@@ -84,7 +104,9 @@ public class PrizesDescription implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 500 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 500 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

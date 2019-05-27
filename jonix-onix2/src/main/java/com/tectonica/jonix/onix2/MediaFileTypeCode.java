@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Image/audio/video file type code</h1><p>An ONIX code which identifies the type of image/audio/video file which is
- * linked by the &lt;MediaFileLink&gt; element. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two characters (initially
- * allocated as 01, 02 etc)</td></tr><tr><td>Codelist</td><td>List 38</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;MediaFileTypeCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;f114&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;MediaFileTypeCode&gt;17&lt;/MediaFileTypeCode&gt;</tt>
- * Publisher's logo</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Image/audio/video file type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of image/audio/video file which is linked by the &lt;MediaFileLink&gt;
+ * element. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two characters (initially allocated as 01, 02 etc)</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 38</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MediaFileTypeCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;f114&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;MediaFileTypeCode&gt;17&lt;/MediaFileTypeCode&gt;</tt> Publisher's logo</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MediaFile&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ MediaFileTypeCode</li>

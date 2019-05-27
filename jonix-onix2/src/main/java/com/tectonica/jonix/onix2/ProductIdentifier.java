@@ -36,23 +36,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product identifier composite</h1><p>A repeatable group of data elements which together define the identifier of a
- * product in accordance with a specified scheme, allowing new types of product identifier to be included without
- * defining additional data elements. In particular, the composite allows proprietary identifiers (SKUs) assigned by
- * wholesalers or vendors to be sent as part of the ONIX record.</p><p>To support the transition from ten-character
- * ISBNs to 13-digit ISBNs, effective from 1 January 2007, there are distinct &lt;ProductIDType&gt; codes for ISBN-10
- * and ISBN-13, as well as for EAN.UCC-13.</p><p>ISBN-13 numbers in their unhyphenated form constitute a range of
- * EAN.UCC-13 numbers that has been reserved for the international book trade. It has been agreed by ONIX national
- * groups that it will be mandatory in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the
- * ISBN-13 labelled as an EAN.UCC number (ProductIDType code 03), since this is how the ISBN-13 will be universally used
- * in trading transactions. For many ONIX applications this will also be sufficient.</p><p>For some ONIX applications,
- * however, particularly when data is to be supplied to the library sector, there may be reasons why the ISBN-13 must
- * also be sent labelled distinctively as an ISBN-13 (ProductIDType code 15); or, if the item also has an ISBN-10, why
- * it may still be desirable to send the ISBN-10 even after the end of 2006. Users should consult national “good
- * practice” guidelines and/or discuss with their trading partners.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ProductIdentifier&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;productidentifier&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product identifier composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define the identifier of a product in accordance with a specified
+ * scheme, allowing new types of product identifier to be included without defining additional data elements. In
+ * particular, the composite allows proprietary identifiers (SKUs) assigned by wholesalers or vendors to be sent as part
+ * of the ONIX record.
+ * </p>
+ * <p>
+ * To support the transition from ten-character ISBNs to 13-digit ISBNs, effective from 1 January 2007, there are
+ * distinct &lt;ProductIDType&gt; codes for ISBN-10 and ISBN-13, as well as for EAN.UCC-13.
+ * </p>
+ * <p>
+ * ISBN-13 numbers in their unhyphenated form constitute a range of EAN.UCC-13 numbers that has been reserved for the
+ * international book trade. It has been agreed by ONIX national groups that it will be mandatory in an ONIX
+ * &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled as an EAN.UCC number
+ * (ProductIDType code 03), since this is how the ISBN-13 will be universally used in trading transactions. For many
+ * ONIX applications this will also be sufficient.
+ * </p>
+ * <p>
+ * For some ONIX applications, however, particularly when data is to be supplied to the library sector, there may be
+ * reasons why the ISBN-13 must also be sent labelled distinctively as an ISBN-13 (ProductIDType code 15); or, if the
+ * item also has an ISBN-10, why it may still be desirable to send the ISBN-10 even after the end of 2006. Users should
+ * consult national “good practice” guidelines and/or discuss with their trading partners.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;productidentifier&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
@@ -61,7 +79,7 @@ import java.io.Serializable;
  * <li>&lt;RelatedProduct&gt;</li>
  * <li>&lt;Set&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier</li>
@@ -171,8 +189,10 @@ public class ProductIdentifier
     private ProductIDType productIDType = ProductIDType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken.
-     * Mandatory in each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
+     * in each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ProductIDType productIDType() {
@@ -183,9 +203,11 @@ public class ProductIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary identifier scheme when, and only when, the code in the
+     * <p>
+     * A name which identifies a proprietary identifier scheme when, and only when, the code in the
      * &lt;ProductIDType&gt; element indicates a proprietary scheme, <em>eg</em> a wholesaler’s own code. Optional and
-     * non-repeating.</p>
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
@@ -196,8 +218,10 @@ public class ProductIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * <p>An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in each occurrence of the
-     * &lt;ProductIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in each occurrence of the
+     * &lt;ProductIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public IDValue idValue() {

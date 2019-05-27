@@ -33,15 +33,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Returns conditions composite</h1><p>An optional and repeatable group of data elements which together allow the
- * supplier’s returns conditions to be specified in coded form.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;ReturnsConditions&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;returnsconditions&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Returns conditions composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together allow the supplier’s returns conditions to be
+ * specified in coded form.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReturnsConditions&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;returnsconditions&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ ReturnsConditions</li>
@@ -142,8 +158,10 @@ public class ReturnsConditions
     private ReturnsCodeType returnsCodeType = ReturnsCodeType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the scheme from which the returns conditions code in &lt;ReturnsCode&gt; is taken.
-     * Mandatory in each occurrence of the &lt;ReturnsConditions&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the scheme from which the returns conditions code in &lt;ReturnsCode&gt; is taken.
+     * Mandatory in each occurrence of the &lt;ReturnsConditions&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ReturnsCodeType returnsCodeType() {
@@ -154,9 +172,11 @@ public class ReturnsConditions
     private ReturnsCodeTypeName returnsCodeTypeName = ReturnsCodeTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary returns code scheme. Must be used when, and only when, the code in the
+     * <p>
+     * A name which identifies a proprietary returns code scheme. Must be used when, and only when, the code in the
      * &lt;ReturnsCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
-     * non-repeating.</p>
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ReturnsCodeTypeName returnsCodeTypeName() {
@@ -167,8 +187,10 @@ public class ReturnsConditions
     private ReturnsCode returnsCode = ReturnsCode.EMPTY;
 
     /**
-     * <p>A returns conditions code from the scheme specified in &lt;ReturnsCodeType&gt;. Mandatory in each occurrence
-     * of the &lt;ReturnsConditions&gt; composite, and non-repeating.</p>
+     * <p>
+     * A returns conditions code from the scheme specified in &lt;ReturnsCodeType&gt;. Mandatory in each occurrence of
+     * the &lt;ReturnsConditions&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ReturnsCode returnsCode() {
@@ -179,10 +201,12 @@ public class ReturnsConditions
     private ListOfOnixElement<ReturnsNote, String> returnsNotes = ListOfOnixElement.empty();
 
     /**
-     * <p>Free text note explaining the returns conditions or special returns instructions, where the code alone is not
+     * <p>
+     * Free text note explaining the returns conditions or special returns instructions, where the code alone is not
      * sufficient. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i>
      * attribute is optional for a single instance of &lt;ReturnsNote&gt;, but must be included in each instance if
-     * &lt;ReturnsNote&gt; is repeated.</p>
+     * &lt;ReturnsNote&gt; is repeated.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ReturnsNote, String> returnsNotes() {

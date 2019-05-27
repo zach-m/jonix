@@ -35,19 +35,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Name code type</h1><p>An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt;
- * element is taken. Optional and non-repeating, but mandatory if the &lt;Imprint&gt; composite does not carry an
- * &lt;ImprintName&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td><tt>&lt;NameCodeType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b241&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;NameCodeType&gt;01&lt;/NameCodeType&gt;</tt>
- * Proprietary</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Name code type</h1>
+ * <p>
+ * An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt; element is taken. Optional
+ * and non-repeating, but mandatory if the &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 44</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NameCodeType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b241&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;NameCodeType&gt;01&lt;/NameCodeType&gt;</tt> Proprietary</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Publisher&gt;</li>
  * <li>&lt;Imprint&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ NameCodeType</li>

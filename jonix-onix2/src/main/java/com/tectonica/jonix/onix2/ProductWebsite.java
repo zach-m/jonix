@@ -35,15 +35,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product website composite</h1><p>An optional and repeatable group of data elements which together identify and
- * provide pointers to a website which is related to the product.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;ProductWebsite&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;productwebsite&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product website composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together identify and provide pointers to a website which is
+ * related to the product.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductWebsite&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;productwebsite&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductWebsite</li>
@@ -148,8 +160,10 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
     private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
     /**
-     * <p>An ONIX code which identifies the role or purpose of the website which is linked through
-     * &lt;ProductWebsiteLink&gt;. Optional and non-repeating.</p>
+     * <p>
+     * An ONIX code which identifies the role or purpose of the website which is linked through
+     * &lt;ProductWebsiteLink&gt;. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public WebsiteRole websiteRole() {
@@ -160,8 +174,10 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
     private ProductWebsiteDescription productWebsiteDescription = ProductWebsiteDescription.EMPTY;
 
     /**
-     * <p>Free text describing the nature of the website which is linked through &lt;ProductWebsiteLink&gt;. Optional
-     * and non-repeating.</p>
+     * <p>
+     * Free text describing the nature of the website which is linked through &lt;ProductWebsiteLink&gt;. Optional and
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ProductWebsiteDescription productWebsiteDescription() {
@@ -172,9 +188,10 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
     private ProductWebsiteLink productWebsiteLink = ProductWebsiteLink.EMPTY;
 
     /**
-     * <p>A URL for a website carrying additional information related to the product, which is available to be viewed
-     * for promotional purposes. Mandatory in each occurrence of the &lt;ProductWebsite&gt; composite, and
-     * non-repeating.</p>
+     * <p>
+     * A URL for a website carrying additional information related to the product, which is available to be viewed for
+     * promotional purposes. Mandatory in each occurrence of the &lt;ProductWebsite&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ProductWebsiteLink productWebsiteLink() {

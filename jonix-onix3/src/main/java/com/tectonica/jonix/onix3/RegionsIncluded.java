@@ -31,23 +31,48 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Regions included</h1><p>One or more ONIX codes identifying regions included in the territory. A region is an area
- * which is not a country, but which is precisely defined in geographical terms, <i>eg</i> World, Northern Ireland,
- * Australian Capital Territory. Successive codes must be separated by spaces. Optional and non-repeating, but either
- * &lt;CountriesIncluded&gt; or &lt;RegionsIncluded&gt; is mandatory in each occurrence of the &lt;Territory&gt;
- * composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>One or more variable-length codes, each
- * consisting of upper case letters, with or without a hyphen and further upper case letters or digits, successive codes
- * being separated by spaces. Suggested maximum length 750 characters</td></tr><tr><td>Codelist</td><td>List 49 Where
- * possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on ISO
- * 3166-2</td></tr><tr><td>Reference name</td><td><tt>&lt;RegionsIncluded&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x450&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x450&gt;GB-SCT
- * GB-NIR GB-WLS&lt;/x450&gt;</tt> (Includes Scotland, Northern Ireland, Wales)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Regions included</h1>
+ * <p>
+ * One or more ONIX codes identifying regions included in the territory. A region is an area which is not a country, but
+ * which is precisely defined in geographical terms, <i>eg</i> World, Northern Ireland, Australian Capital Territory.
+ * Successive codes must be separated by spaces. Optional and non-repeating, but either &lt;CountriesIncluded&gt; or
+ * &lt;RegionsIncluded&gt; is mandatory in each occurrence of the &lt;Territory&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more variable-length codes, each consisting of upper case letters, with or without a hyphen and further
+ * upper case letters or digits, successive codes being separated by spaces. Suggested maximum length 750
+ * characters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166-2</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RegionsIncluded&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x450&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x450&gt;GB-SCT GB-NIR GB-WLS&lt;/x450&gt;</tt> (Includes Scotland, Northern Ireland, Wales)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Territory&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ Territory ⯈ RegionsIncluded</li>

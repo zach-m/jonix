@@ -34,18 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Market publishing status</h1><p>An ONIX code which identifies the status of a published product in the market
- * defined in an occurrence of the &lt;MarketRepresentation&gt; composite. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits.</td></tr><tr><td>Codelist</td><td>List
- * 68</td></tr><tr><td>Reference name</td><td><tt>&lt;MarketPublishingStatus&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j407&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j407&gt;02&lt;/j407&gt;</tt>
- * Forthcoming</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Market publishing status</h1>
+ * <p>
+ * An ONIX code which identifies the status of a published product in the market defined in an occurrence of the
+ * &lt;MarketRepresentation&gt; composite. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 68</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MarketPublishingStatus&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j407&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j407&gt;02&lt;/j407&gt;</tt> Forthcoming</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MarketRepresentation&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketPublishingStatus</li>
@@ -83,7 +104,9 @@ public class MarketPublishingStatus implements OnixElement<String>, Serializable
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, two numeric digits.<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, two numeric digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

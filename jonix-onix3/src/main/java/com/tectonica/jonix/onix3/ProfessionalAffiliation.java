@@ -19,30 +19,45 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
 
-import com.tectonica.jonix.*;
-import com.tectonica.jonix.OnixComposite.*;
-import com.tectonica.jonix.codelist.*;
-import com.tectonica.jonix.struct.*;
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Professional affiliation composite</h1><p>An optional group of data elements which together identify a contributor’s professional position and/or affiliation, repeatable to allow multiple positions and affiliations to be specified.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ProfessionalAffiliation&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;professionalaffiliation&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Professional affiliation composite</h1>
+ * <p>
+ * An optional group of data elements which together identify a contributor’s professional position and/or affiliation,
+ * repeatable to allow multiple positions and affiliations to be specified.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProfessionalAffiliation&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;professionalaffiliation&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Contributor&gt;</li>
  * <li>&lt;NameAsSubject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ProfessionalAffiliation</li>
@@ -52,115 +67,126 @@ import com.tectonica.jonix.struct.*;
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ ProfessionalAffiliation</li>
  * </ul>
  */
-public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessionalAffiliation>, Serializable
-{
-   private static final long serialVersionUID = 1L;
+public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessionalAffiliation>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-   public static final String refname = "ProfessionalAffiliation";
-   public static final String shortname = "professionalaffiliation";
+    public static final String refname = "ProfessionalAffiliation";
+    public static final String shortname = "professionalaffiliation";
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // ATTRIBUTES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-    * (type: dt.DateOrDateTime)
-    */
-   public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-   public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-   /**
-    * (type: dt.NonEmptyString)
-    */
-   public String sourcename;
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String sourcename;
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // CONSTRUCTION
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private boolean initialized;
-   private final boolean exists;
-   private final org.w3c.dom.Element element;
-   public static final ProfessionalAffiliation EMPTY = new ProfessionalAffiliation();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ProfessionalAffiliation EMPTY = new ProfessionalAffiliation();
 
-   public ProfessionalAffiliation() {
-      exists = false;
-      element = null;
-      initialized = true; // so that no further processing will be done on this intentionally-empty object
-   }
+    public ProfessionalAffiliation() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-   public ProfessionalAffiliation(org.w3c.dom.Element element) {
-      exists = true;
-      initialized = false;
-      this.element = element;
-      datestamp = JPU.getAttribute(element, "datestamp");
-      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-      sourcename = JPU.getAttribute(element, "sourcename");
-   }
+    public ProfessionalAffiliation(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+    }
 
-   @Override
-   public void _initialize() {
-      if (initialized) return;
-      initialized = true;
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-      JPU.forElementsOf(element, e -> {
-         final String name = e.getNodeName();
-         switch (name) {
-            case ProfessionalPosition.refname:
-            case ProfessionalPosition.shortname:
-               professionalPositions = JPU.addToList(professionalPositions, new ProfessionalPosition(e));
-               break;
-            case Affiliation.refname:
-            case Affiliation.shortname:
-               affiliation = new Affiliation(e);
-               break;
-            default:
-               break;
-         }
-      });
-   }
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            switch (name) {
+                case ProfessionalPosition.refname:
+                case ProfessionalPosition.shortname:
+                    professionalPositions = JPU.addToList(professionalPositions, new ProfessionalPosition(e));
+                    break;
+                case Affiliation.refname:
+                case Affiliation.shortname:
+                    affiliation = new Affiliation(e);
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
 
-   /**
-    * @return whether this tag (&lt;ProfessionalAffiliation&gt; or &lt;professionalaffiliation&gt;) is explicitly provided in the ONIX XML
-    */
-   @Override
-   public boolean exists() {
-      return exists;
-   }
+    /**
+     * @return whether this tag (&lt;ProfessionalAffiliation&gt; or &lt;professionalaffiliation&gt;) is explicitly
+     * provided in the ONIX XML
+     */
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // MEMBERS
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private ListOfOnixElement<ProfessionalPosition, String> professionalPositions = ListOfOnixElement.empty();
+    private ListOfOnixElement<ProfessionalPosition, String> professionalPositions = ListOfOnixElement.empty();
 
-   /**
-    * <p>A professional position held by a contributor to the product <em>at the time of its creation</em>. Optional, and repeatable to provide parallel text in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;ProfessionalPosition&gt;, but must be included in each instance if &lt;ProfessionalPosition&gt; is repeated.</p>
-    * Jonix-Comment: this list is required to contain at least one item
-    */
-   public ListOfOnixElement<ProfessionalPosition, String> professionalPositions() {
-      _initialize();
-      return professionalPositions;
-   }
+    /**
+     * <p>
+     * A professional position held by a contributor to the product <em>at the time of its creation</em>. Optional, and
+     * repeatable to provide parallel text in multiple languages. The <i>language</i> attribute is optional for a single
+     * instance of &lt;ProfessionalPosition&gt;, but must be included in each instance if &lt;ProfessionalPosition&gt;
+     * is repeated.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixElement<ProfessionalPosition, String> professionalPositions() {
+        _initialize();
+        return professionalPositions;
+    }
 
-   private Affiliation affiliation = Affiliation.EMPTY;
+    private Affiliation affiliation = Affiliation.EMPTY;
 
-   /**
-    * <p>An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>, and – if the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and non-repeating.</p>
-    * Jonix-Comment: this field is optional
-    */
-   public Affiliation affiliation() {
-      _initialize();
-      return affiliation;
-   }
+    /**
+     * <p>
+     * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>, and –
+     * if the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and
+     * non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public Affiliation affiliation() {
+        _initialize();
+        return affiliation;
+    }
 
-   @Override
-   public JonixProfessionalAffiliation asStruct() {
-      _initialize();
-      JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
-      struct.affiliation = affiliation.value;
-      struct.professionalPositions = professionalPositions.values();
-      return struct;
-   }
+    @Override
+    public JonixProfessionalAffiliation asStruct() {
+        _initialize();
+        JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
+        struct.affiliation = affiliation.value;
+        struct.professionalPositions = professionalPositions.values();
+        return struct;
+    }
 }

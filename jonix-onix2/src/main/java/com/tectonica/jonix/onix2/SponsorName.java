@@ -34,21 +34,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sponsor name</h1><p>The name of a sponsor of the product, in the form in which the sponsor wishes to be
- * identified. Except where they are essential to the recognized form of the name, it is recommended that suffixes
- * denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be omitted. Optional, and repeatable if there are
- * two or more sponsors.</p><p><strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method
- * of handling publisher identities, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;SponsorName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b085&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SponsorName&gt;Andersen
- * Consulting&lt;/SponsorName&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sponsor name</h1>
+ * <p>
+ * The name of a sponsor of the product, in the form in which the sponsor wishes to be identified. Except where they are
+ * essential to the recognized form of the name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”,
+ * “Ltd”, “SA”, “GmbH”) should be omitted. Optional, and repeatable if there are two or more sponsors.
+ * </p>
+ * <p>
+ * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
+ * identities, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SponsorName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b085&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SponsorName&gt;Andersen Consulting&lt;/SponsorName&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SponsorName</li>
@@ -86,7 +105,9 @@ public class SponsorName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

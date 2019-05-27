@@ -35,19 +35,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Unpriced item type</h1><p>An ONIX code which specifies a reason why a price amount is not sent. <strong>If code
- * value 02 is used to send advance information without giving a price, the price must be confirmed as soon as
- * possible.</strong> Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a
- * price.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 57</td></tr><tr><td>Reference name</td><td><tt>&lt;UnpricedItemType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j192&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;UnpricedItemType&gt;01&lt;/UnpricedItemType&gt;</tt>
- * Free of charge</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Unpriced item type</h1>
+ * <p>
+ * An ONIX code which specifies a reason why a price amount is not sent. <strong>If code value 02 is used to send
+ * advance information without giving a price, the price must be confirmed as soon as possible.</strong> Optional and
+ * non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a price.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 57</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;UnpricedItemType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j192&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;UnpricedItemType&gt;01&lt;/UnpricedItemType&gt;</tt> Free of charge</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ UnpricedItemType</li>

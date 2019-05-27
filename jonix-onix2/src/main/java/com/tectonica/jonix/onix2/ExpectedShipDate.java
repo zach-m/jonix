@@ -34,19 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Expected availability date (ship date)</h1><p>If the product is not currently available, the date on which
- * shipping from the supplier to retailers is expected to begin or resume. Optional and non-repeating; required with
- * certain code values in the &lt;AvailabilityCode&gt; element. The format is as specified in the &lt;DateFormat&gt;
- * field. The default format is YYYYMMDD, <em>ie</em> an exact year-month-day.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Date as year, month, day (YYYYMMDD) or as specified in
- * &lt;DateFormat&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;ExpectedShipDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j142&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j142&gt;200006&lt;/j142&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Expected availability date (ship date)</h1>
+ * <p>
+ * If the product is not currently available, the date on which shipping from the supplier to retailers is expected to
+ * begin or resume. Optional and non-repeating; required with certain code values in the &lt;AvailabilityCode&gt;
+ * element. The format is as specified in the &lt;DateFormat&gt; field. The default format is YYYYMMDD, <em>ie</em> an
+ * exact year-month-day.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ExpectedShipDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j142&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j142&gt;200006&lt;/j142&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ ExpectedShipDate</li>
@@ -84,7 +102,9 @@ public class ExpectedShipDate implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;<p> (type: NonEmptyString)
+     * Raw Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

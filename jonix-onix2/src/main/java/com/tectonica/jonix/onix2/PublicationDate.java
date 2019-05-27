@@ -34,23 +34,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publication date</h1><p>The date of first publication of this product in the home market of the publisher named
- * in PR.19 (that is, under the current ISBN or other identifier, as distinct from the date of first publication of the
- * work, which may be given in &lt;YearFirstPublished&gt; on the next page). In advance information, this will be an
- * expected date, which should be replaced by the actual date of publication when known. The date should be given as
- * precisely as possible, but in early notifications a month and year are sufficient; and for backlist titles the year
- * of publication is sufficient.</p><p>Note that in advance information this date must not be interpreted as the date
- * when the product will first be available in a territory other than the publisher’s home market. See the
- * &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; composites, Groups PR.24 and PR.25, for other market-specific
- * detail.</p><p>Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Four, six or
- * eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).</td></tr><tr><td>Reference name</td><td><tt>&lt;PublicationDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b003&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b003&gt;20010315&lt;/b003&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publication date</h1>
+ * <p>
+ * The date of first publication of this product in the home market of the publisher named in PR.19 (that is, under the
+ * current ISBN or other identifier, as distinct from the date of first publication of the work, which may be given in
+ * &lt;YearFirstPublished&gt; on the next page). In advance information, this will be an expected date, which should be
+ * replaced by the actual date of publication when known. The date should be given as precisely as possible, but in
+ * early notifications a month and year are sufficient; and for backlist titles the year of publication is sufficient.
+ * </p>
+ * <p>
+ * Note that in advance information this date must not be interpreted as the date when the product will first be
+ * available in a territory other than the publisher’s home market. See the &lt;SupplyDetail&gt; and
+ * &lt;MarketRepresentation&gt; composites, Groups PR.24 and PR.25, for other market-specific detail.
+ * </p>
+ * <p>
+ * Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublicationDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b003&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b003&gt;20010315&lt;/b003&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublicationDate</li>
@@ -88,7 +111,9 @@ public class PublicationDate implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).<p> (type: NonEmptyString)
+     * Raw Format: Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

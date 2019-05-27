@@ -31,18 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supplier role</h1><p>An ONIX code identifying the role of the supplier in relation to the product, <i>eg</i>
- * Publisher, Publisher’s exclusive distributor, <i>etc</i>. Mandatory in each occurrence of the &lt;Supplier&gt;
- * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 93</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplierRole&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j292&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;SupplierRole&gt;01&lt;/SupplierRole&gt;</tt>
- * (Publisher)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supplier role</h1>
+ * <p>
+ * An ONIX code identifying the role of the supplier in relation to the product, <i>eg</i> Publisher, Publisher’s
+ * exclusive distributor, <i>etc</i>. Mandatory in each occurrence of the &lt;Supplier&gt; composite, and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 93</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplierRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j292&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SupplierRole&gt;01&lt;/SupplierRole&gt;</tt> (Publisher)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Supplier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ SupplierRole</li>

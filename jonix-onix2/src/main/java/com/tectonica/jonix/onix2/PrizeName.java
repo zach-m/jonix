@@ -34,18 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Prize or award name</h1><p>The name of a prize or award which the product has received. Mandatory in each
- * occurrence of the &lt;Prize&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PrizeName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;g126&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;g126&gt;Booker
- * Prize&lt;/g126&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Prize or award name</h1>
+ * <p>
+ * The name of a prize or award which the product has received. Mandatory in each occurrence of the &lt;Prize&gt;
+ * composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PrizeName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;g126&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;g126&gt;Booker Prize&lt;/g126&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Prize&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Prize ⯈ PrizeName</li>
@@ -83,7 +100,9 @@ public class PrizeName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

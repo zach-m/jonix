@@ -30,17 +30,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Measurement</h1><p>The number which represents the dimension specified in &lt;MeasureType&gt; in the measure
- * units specified in &lt;MeasureUnitCode&gt;. Mandatory in each occurrence of the &lt;Measure&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit
- * decimal point when required, suggested maximum length 6 characters</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;Measurement&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;c094&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;c094&gt;8.25&lt;/c094&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Measurement</h1>
+ * <p>
+ * The number which represents the dimension specified in &lt;MeasureType&gt; in the measure units specified in
+ * &lt;MeasureUnitCode&gt;. Mandatory in each occurrence of the &lt;Measure&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive real number, with explicit decimal point when required, suggested maximum length 6 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Measurement&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;c094&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;c094&gt;8.25&lt;/c094&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Measure&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Measure ⯈ Measurement</li>
@@ -75,7 +97,9 @@ public class Measurement implements OnixElement<Double>, Serializable {
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 6
-     * characters<p> (type: dt.StrictPositiveDecimal)
+     * characters
+     * <p>
+     * (type: dt.StrictPositiveDecimal)
      */
     public Double value;
 

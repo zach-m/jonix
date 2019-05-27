@@ -34,17 +34,34 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Complexity code</h1><p>A code specifying the level of complexity of a text.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length, alphanumeric, suggested maximum length 20
- * characters.</td></tr><tr><td>Codelist</td><td>The scheme specified in the &lt;ComplexitySchemeIdentifier&gt;
- * element</td></tr><tr><td>Reference name</td><td><tt>&lt;ComplexityCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b078&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Complexity code</h1>
+ * <p>
+ * A code specifying the level of complexity of a text.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length, alphanumeric, suggested maximum length 20 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>The scheme specified in the &lt;ComplexitySchemeIdentifier&gt; element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ComplexityCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b078&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Complexity&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Complexity ⯈ ComplexityCode</li>
@@ -82,7 +99,9 @@ public class ComplexityCode implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

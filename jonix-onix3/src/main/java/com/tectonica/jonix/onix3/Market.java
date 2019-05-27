@@ -32,20 +32,38 @@ import java.util.List;
  */
 
 /**
- * <h1>Market composite</h1><p>A group of data elements which together give details of a geographical territory and any
- * non-geographical sales restrictions that apply within it. Optional in terms of the schema definitions, but required
- * in most ONIX applications. If omitted, the geographical extent of the market must be assumed to be the area defined
- * by the sales rights.</p><p>The &lt;Market&gt; composite is repeatable, but in almost all cases only a single instance
- * is required. It may be repeated if a non-geographical sales restriction applies only to a <em>part</em> of a
- * geographically-defined market – for example where a product is sold throughout the European Union, but exclusive to a
- * single retailer in France.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;Market&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;market&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Market composite</h1>
+ * <p>
+ * A group of data elements which together give details of a geographical territory and any non-geographical sales
+ * restrictions that apply within it. Optional in terms of the schema definitions, but required in most ONIX
+ * applications. If omitted, the geographical extent of the market must be assumed to be the area defined by the sales
+ * rights.
+ * </p>
+ * <p>
+ * The &lt;Market&gt; composite is repeatable, but in almost all cases only a single instance is required. It may be
+ * repeated if a non-geographical sales restriction applies only to a <em>part</em> of a geographically-defined market –
+ * for example where a product is sold throughout the European Union, but exclusive to a single retailer in France.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Market&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;market&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductSupply&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market</li>
@@ -136,8 +154,10 @@ public class Market implements OnixSuperComposite, Serializable {
     private Territory territory = Territory.EMPTY;
 
     /**
-     * <p>A group of data elements which together identify a territory forming part or all of a market for which supply
-     * detail is given. Mandatory in each occurrence of the &lt;Market&gt; composite, and non-repeating.</p>
+     * <p>
+     * A group of data elements which together identify a territory forming part or all of a market for which supply
+     * detail is given. Mandatory in each occurrence of the &lt;Market&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public Territory territory() {
@@ -148,8 +168,10 @@ public class Market implements OnixSuperComposite, Serializable {
     private List<SalesRestriction> salesRestrictions = Collections.emptyList();
 
     /**
-     * <p>A group of data elements which together identify a non-territorial sales restriction which applies within a
-     * geographical market. Optional, and repeatable if more than a single restriction applies.</p>
+     * <p>
+     * A group of data elements which together identify a non-territorial sales restriction which applies within a
+     * geographical market. Optional, and repeatable if more than a single restriction applies.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<SalesRestriction> salesRestrictions() {

@@ -30,19 +30,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Main subject flag</h1><p>An empty element that identifies an instance of the &lt;Subject&gt; composite as
- * representing the main subject category for the product. The main category may be expressed in more than one subject
- * scheme, <i>ie</i> there may be two or more instances of the &lt;Subject&gt; composite, using different schemes, each
- * carrying the &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em>. Optional and
- * non-repeating in each occurrence of the &lt;Subject&gt; composite.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>XML empty element</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;MainSubject&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x425&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;MainSubject/&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Main subject flag</h1>
+ * <p>
+ * An empty element that identifies an instance of the &lt;Subject&gt; composite as representing the main subject
+ * category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i> there may be
+ * two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
+ * &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em>. Optional and non-repeating
+ * in each occurrence of the &lt;Subject&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MainSubject&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x425&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;MainSubject/&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Subject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Subject ⯈ MainSubject</li>

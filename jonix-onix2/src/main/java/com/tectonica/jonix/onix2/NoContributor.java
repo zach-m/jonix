@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>“No authorship” indicator</h1><p>An empty element that provides a positive indication that a product has no
- * stated authorship. Intended to be used in an ONIX accreditation scheme to confirm that author information is being
- * consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no
- * other elements from Group&nbsp;PR.8.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty
- * element</td></tr><tr><td>Reference name</td><td><tt>&lt;NoContributor&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;n339&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;NoContributor/&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>“No authorship” indicator</h1>
+ * <p>
+ * An empty element that provides a positive indication that a product has no stated authorship. Intended to be used in
+ * an ONIX accreditation scheme to confirm that author information is being consistently supplied in publisher ONIX
+ * feeds. Optional and non-repeating. Must only be sent in a record that has no other elements from Group&nbsp;PR.8.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NoContributor&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;n339&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;NoContributor/&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ NoContributor</li>

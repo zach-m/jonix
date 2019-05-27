@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>BIC subject category version number</h1><p>A number identifying the version of the BIC subject category scheme
- * used in &lt;BICMainSubject&gt;. Optional and non-repeating, and may only occur when &lt;BICMainSubject&gt; is also
- * present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Free form - in practise expected to be an
- * integer. Suggested maximum length 10 characters, for consistency with other version number
- * elements.</td></tr><tr><td>Reference name</td><td><tt>&lt;BICVersion&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b066&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;BICVersion&gt;1&lt;/BICVersion&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>BIC subject category version number</h1>
+ * <p>
+ * A number identifying the version of the BIC subject category scheme used in &lt;BICMainSubject&gt;. Optional and
+ * non-repeating, and may only occur when &lt;BICMainSubject&gt; is also present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for consistency with
+ * other version number elements.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;BICVersion&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b066&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;BICVersion&gt;1&lt;/BICVersion&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ BICVersion</li>
@@ -84,7 +102,9 @@ public class BICVersion implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
-     * consistency with other version number elements.<p> (type: NonEmptyString)
+     * consistency with other version number elements.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

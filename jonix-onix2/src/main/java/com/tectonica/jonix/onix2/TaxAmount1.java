@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Tax amount at tax rate 1</h1><p>The amount of tax chargeable at the rate specified by &lt;TaxRateCode1&gt; and/or
- * &lt;TaxRatePercent1&gt;. See notes on &lt;TaxRateCode1&gt;.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an explicit decimal point where
- * required.</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxAmount1&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j156&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TaxAmount1&gt;1.86&lt;/TaxAmount1&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Tax amount at tax rate 1</h1>
+ * <p>
+ * The amount of tax chargeable at the rate specified by &lt;TaxRateCode1&gt; and/or &lt;TaxRatePercent1&gt;. See notes
+ * on &lt;TaxRateCode1&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point where required.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TaxAmount1&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j156&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TaxAmount1&gt;1.86&lt;/TaxAmount1&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ TaxAmount1</li>
@@ -83,8 +101,9 @@ public class TaxAmount1 implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length real number, with an explicit decimal point where required.<p> (type:
-     * NonEmptyString)
+     * Raw Format: Variable length real number, with an explicit decimal point where required.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

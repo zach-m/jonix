@@ -34,16 +34,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience code value</h1><p>A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Mandatory in
- * each occurrence of the &lt;Audience&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Determined by the scheme specified in &lt;AudienceCodeType&gt;.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;AudienceCodeValue&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b206&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Audience code value</h1>
+ * <p>
+ * A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Mandatory in each occurrence of the
+ * &lt;Audience&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Determined by the scheme specified in &lt;AudienceCodeType&gt;.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AudienceCodeValue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b206&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Audience&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Audience ⯈ AudienceCodeValue</li>
@@ -81,7 +96,9 @@ public class AudienceCodeValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;.<p> (type: NonEmptyString)
+     * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

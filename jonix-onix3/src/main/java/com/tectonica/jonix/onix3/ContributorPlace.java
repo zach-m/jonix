@@ -32,17 +32,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor place composite</h1><p>An optional group of data elements which together identify a geographical
- * location with which a contributor is associated, used to support ‘local interest’ promotions. Repeatable to identify
- * multiple geographical locations, each usually with a different relationship to the contributor.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ContributorPlace&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;contributorplace&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Contributor place composite</h1>
+ * <p>
+ * An optional group of data elements which together identify a geographical location with which a contributor is
+ * associated, used to support ‘local interest’ promotions. Repeatable to identify multiple geographical locations, each
+ * usually with a different relationship to the contributor.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ContributorPlace&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;contributorplace&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Contributor&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ContributorPlace</li>
@@ -144,8 +159,10 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
     private ContributorPlaceRelator contributorPlaceRelator = ContributorPlaceRelator.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the relationship between a contributor and a geographical location. Mandatory in each
-     * occurrence of &lt;ContributorPlace&gt; and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the relationship between a contributor and a geographical location. Mandatory in each
+     * occurrence of &lt;ContributorPlace&gt; and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ContributorPlaceRelator contributorPlaceRelator() {
@@ -156,9 +173,11 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
     private CountryCode countryCode = CountryCode.EMPTY;
 
     /**
-     * <p>A code identifying a country with which a contributor is particularly associated. Optional and non-repeatable.
+     * <p>
+     * A code identifying a country with which a contributor is particularly associated. Optional and non-repeatable.
      * There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt; elements in each
-     * occurrence of &lt;ContributorPlace&gt;.</p>
+     * occurrence of &lt;ContributorPlace&gt;.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public CountryCode countryCode() {
@@ -169,12 +188,14 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
     private RegionCode regionCode = RegionCode.EMPTY;
 
     /**
-     * <p>An ONIX code identifying a region with which a contributor is particularly associated. Optional and
+     * <p>
+     * An ONIX code identifying a region with which a contributor is particularly associated. Optional and
      * non-repeatable. There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt; elements
      * in each occurrence of &lt;ContributorPlace&gt;. A region is an area which is not a country, but which is
      * precisely defined in geographical terms, <i>eg</i> Northern Ireland, Australian Capital Territory. If both
      * country and region are specified, the region must be within the country. Note that US States have region codes,
-     * while US overseas territories have distinct ISO Country Codes.</p>
+     * while US overseas territories have distinct ISO Country Codes.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public RegionCode regionCode() {
@@ -185,11 +206,13 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
     private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
 
     /**
-     * <p>The name of a city or town location within the specified country or region with which a contributor is
+     * <p>
+     * The name of a city or town location within the specified country or region with which a contributor is
      * particularly associated. Optional, and repeatable to provide parallel names for a single location in multiple
      * languages (<i>eg</i> Baile Átha Cliath and Dublin, or Bruxelles and Brussel). The <i>language</i> attribute is
      * optional for a single instance of &lt;LocationName&gt;, but must be included in each instance if
-     * &lt;LocationName&gt; is repeated.</p>
+     * &lt;LocationName&gt; is repeated.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<LocationName, String> locationNames() {

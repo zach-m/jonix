@@ -31,23 +31,48 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product form code</h1><p>An ONIX code which indicates the primary form of a product. Mandatory in an occurrence
- * of &lt;DescriptiveDetail&gt;, and non-repeating. In ONIX&nbsp;3.0, the handling of multiple-item products has been
- * changed so that the form of the contained items is now specified only in the &lt;ProductPart&gt; composite
- * (equivalent to &lt;Contained Item&gt; in ONIX&nbsp;2.1, and now forming Group&nbsp;P.4), which <em>must</em> be
- * included for full description of any multiple-item product.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two letters (or the digits
- * 00)</td></tr><tr><td>Codelist</td><td>List 150</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductForm&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b012&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;ProductForm&gt;BB&lt;/ProductForm&gt;</tt>
- * (Hardback book)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product form code</h1>
+ * <p>
+ * An ONIX code which indicates the primary form of a product. Mandatory in an occurrence of &lt;DescriptiveDetail&gt;,
+ * and non-repeating. In ONIX&nbsp;3.0, the handling of multiple-item products has been changed so that the form of the
+ * contained items is now specified only in the &lt;ProductPart&gt; composite (equivalent to &lt;Contained Item&gt; in
+ * ONIX&nbsp;2.1, and now forming Group&nbsp;P.4), which <em>must</em> be included for full description of any
+ * multiple-item product.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two letters (or the digits 00)</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 150</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductForm&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b012&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ProductForm&gt;BB&lt;/ProductForm&gt;</tt> (Hardback book)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * <li>&lt;ProductPart&gt;</li>
  * <li>&lt;RelatedProduct&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductForm</li>

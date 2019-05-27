@@ -36,19 +36,30 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sender identifier composite</h1><p>A group of data elements which together define the identifier of the sender
- * within a specified namespace, used here to allow different party identifiers to be included without defining
- * additional data elements. In particular the composite allows a proprietary identifier to be used by mutual agreement
- * between parties to an exchange. The composite is optional and repeatable; but either the &lt;FromCompany&gt; element
- * or a sender identifier using one or more elements from MH.1 to MH.5 must be included.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SenderIdentifier&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;senderidentifier&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sender identifier composite</h1>
+ * <p>
+ * A group of data elements which together define the identifier of the sender within a specified namespace, used here
+ * to allow different party identifiers to be included without defining additional data elements. In particular the
+ * composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
+ * composite is optional and repeatable; but either the &lt;FromCompany&gt; element or a sender identifier using one or
+ * more elements from MH.1 to MH.5 must be included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SenderIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;senderidentifier&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ SenderIdentifier</li>
@@ -154,8 +165,10 @@ public class SenderIdentifier
     private SenderIDType senderIDType = SenderIDType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken.
-     * Mandatory in any occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken.
+     * Mandatory in any occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public SenderIDType senderIDType() {
@@ -166,9 +179,13 @@ public class SenderIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary identifier type when, and only when, the code in the
-     * &lt;SenderIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p><p class="new214">The
-     * text is not limited to ASCII characters.</p>
+     * <p>
+     * A name which identifies a proprietary identifier type when, and only when, the code in the &lt;SenderIDType&gt;
+     * element indicates a proprietary scheme. Optional and non-repeating.
+     * </p>
+     * <p class="new214">
+     * The text is not limited to ASCII characters.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
@@ -179,8 +196,10 @@ public class SenderIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * <p>An identifier of the type specified in the &lt;SenderIDType&gt; element. Mandatory in any occurrence of the
-     * &lt;SenderIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An identifier of the type specified in the &lt;SenderIDType&gt; element. Mandatory in any occurrence of the
+     * &lt;SenderIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public IDValue idValue() {

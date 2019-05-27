@@ -34,17 +34,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Returns conditions code</h1><p>A returns conditions code from the scheme specified in &lt;ReturnsCodeType&gt;.
- * Optional and non-repeating, but this field must be present if &lt;ReturnsCodeType&gt; is present.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>According to the scheme specified in &lt;ReturnsCodeType&gt;: for
- * values defined by BISAC for US use, see List 66</td></tr><tr><td>Reference name</td><td><tt>&lt;ReturnsCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j269&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Returns conditions code</h1>
+ * <p>
+ * A returns conditions code from the scheme specified in &lt;ReturnsCodeType&gt;. Optional and non-repeating, but this
+ * field must be present if &lt;ReturnsCodeType&gt; is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use, see List
+ * 66</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReturnsCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j269&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ ReturnsCode</li>
@@ -83,7 +98,9 @@ public class ReturnsCode implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use,
-     * see List 66<p> (type: NonEmptyString)
+     * see List 66
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

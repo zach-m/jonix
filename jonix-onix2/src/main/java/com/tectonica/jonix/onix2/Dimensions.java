@@ -34,18 +34,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Dimensions statement</h1><p>Where a legacy system has no structured data for product dimensions, but has a free
- * text statement, this field allows such a statement to be sent. However, this practise is deprecated: structured
- * information is always greatly to be preferred. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;Dimensions&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;c258&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Dimensions statement</h1>
+ * <p>
+ * Where a legacy system has no structured data for product dimensions, but has a free text statement, this field allows
+ * such a statement to be sent. However, this practise is deprecated: structured information is always greatly to be
+ * preferred. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Dimensions&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;c258&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Dimensions</li>
@@ -83,7 +97,9 @@ public class Dimensions implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

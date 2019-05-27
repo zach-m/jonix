@@ -34,21 +34,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Imprint or brand name</h1><p>The full name of the imprint or brand under which the product is issued, as it
- * appears on the title page of a book or in a corresponding position on a non-book product. Optional and non-repeating;
- * and should not be used if the &lt;Imprint&gt; composite is used.</p><p><strong>The &lt;Imprint&gt; composite below
- * provides a more general method of handling imprint identities, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;ImprintName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b079&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ImprintName&gt;Secker &amp;amp;
- * Warburg&lt;/ImprintName&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Imprint or brand name</h1>
+ * <p>
+ * The full name of the imprint or brand under which the product is issued, as it appears on the title page of a book or
+ * in a corresponding position on a non-book product. Optional and non-repeating; and should not be used if the
+ * &lt;Imprint&gt; composite is used.
+ * </p>
+ * <p>
+ * <strong>The &lt;Imprint&gt; composite below provides a more general method of handling imprint identities, and is to
+ * be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ImprintName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b079&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ImprintName&gt;Secker &amp;amp; Warburg&lt;/ImprintName&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;Imprint&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ImprintName</li>
@@ -87,7 +107,9 @@ public class ImprintName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

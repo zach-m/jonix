@@ -33,18 +33,33 @@ import java.util.List;
  */
 
 /**
- * <h1>Sales restriction composite</h1><p>A group of data elements which together identify a non-territorial sales
- * restriction which a publisher applies to a product within a particular territory. Optional, and repeatable if more
- * than a single restriction applies.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;SalesRestriction&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;salesrestriction&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sales restriction composite</h1>
+ * <p>
+ * A group of data elements which together identify a non-territorial sales restriction which a publisher applies to a
+ * product within a particular territory. Optional, and repeatable if more than a single restriction applies.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SalesRestriction&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;salesrestriction&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PublishingDetail&gt;</li>
  * <li>&lt;Market&gt;</li>
  * <li>&lt;SalesRights&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction</li>
@@ -150,8 +165,10 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     private SalesRestrictionType salesRestrictionType = SalesRestrictionType.EMPTY;
 
     /**
-     * <p>An ONIX code which identifies a non-territorial sales restriction. Mandatory in each occurrence of the
-     * &lt;SalesRestriction&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code which identifies a non-territorial sales restriction. Mandatory in each occurrence of the
+     * &lt;SalesRestriction&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public SalesRestrictionType salesRestrictionType() {
@@ -162,10 +179,11 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     private List<SalesOutlet> salesOutlets = Collections.emptyList();
 
     /**
-     * <p>An optional group of data elements which together identify a sales outlet to which a restriction is linked.
-     * Each occurrence of the composite must include a &lt;SalesOutletIdentifier&gt; composite or a
-     * &lt;SalesOutletName&gt; or both. Repeatable in order to identify multiple sales outlets subject to the
-     * restriction.</p>
+     * <p>
+     * An optional group of data elements which together identify a sales outlet to which a restriction is linked. Each
+     * occurrence of the composite must include a &lt;SalesOutletIdentifier&gt; composite or a &lt;SalesOutletName&gt;
+     * or both. Repeatable in order to identify multiple sales outlets subject to the restriction.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<SalesOutlet> salesOutlets() {
@@ -176,10 +194,12 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes = ListOfOnixElement.empty();
 
     /**
-     * <p>A free text field describing an ‘unspecified’ restriction, or giving more explanation of a coded restriction
+     * <p>
+     * A free text field describing an ‘unspecified’ restriction, or giving more explanation of a coded restriction
      * type. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute
      * is optional for a single instance of &lt;SalesRestrictionNote&gt;, but must be included in each instance if
-     * &lt;SalesRestrictionNote&gt; is repeated.</p>
+     * &lt;SalesRestrictionNote&gt; is repeated.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes() {
@@ -190,7 +210,9 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     private StartDate startDate = StartDate.EMPTY;
 
     /**
-     * <p>The date from which a sales restriction is effective. Optional and non-repeating.</p>
+     * <p>
+     * The date from which a sales restriction is effective. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public StartDate startDate() {
@@ -201,7 +223,9 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     private EndDate endDate = EndDate.EMPTY;
 
     /**
-     * <p>The date until which a sales restriction is effective. Optional and non-repeating.</p>
+     * <p>
+     * The date until which a sales restriction is effective. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public EndDate endDate() {

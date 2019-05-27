@@ -30,19 +30,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Number of illustrations</h1><p>The total number of illustrations in a book or other printed product. The more
- * informative free text field &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt; composite are strongly
- * preferred, but where a sender of product information maintains only a simple numeric field, the
- * &lt;NumberOfIllustrations&gt; element may be used. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Positive integer or zero, suggested maximum length 6
- * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;NumberOfIllustrations&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b125&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;NumberOfIllustrations&gt;64&lt;/NumberOfIllustrations&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Number of illustrations</h1>
+ * <p>
+ * The total number of illustrations in a book or other printed product. The more informative free text field
+ * &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt; composite are strongly preferred, but where a sender of
+ * product information maintains only a simple numeric field, the &lt;NumberOfIllustrations&gt; element may be used.
+ * Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive integer or zero, suggested maximum length 6 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NumberOfIllustrations&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b125&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;NumberOfIllustrations&gt;64&lt;/NumberOfIllustrations&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NumberOfIllustrations</li>
@@ -75,7 +97,9 @@ public class NumberOfIllustrations implements OnixElement<Integer>, Serializable
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer or zero, suggested maximum length 6 digits<p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer or zero, suggested maximum length 6 digits
+     * <p>
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

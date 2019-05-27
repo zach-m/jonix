@@ -34,19 +34,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Language of text</h1><p>A code indicating a language in which the text of the product is written: optional, and
- * repeatable if the text is in two or more languages. <strong>The &lt;Language&gt; composite on the next page provides
- * a more general method of handling language detail, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three lower-case letters. Note that ISO 639 specifies that these
- * codes should always be in lower-case.</td></tr><tr><td>Codelist</td><td>ISO 639-2/B List
- * 74</td></tr><tr><td>Reference name</td><td><tt>&lt;LanguageOfText&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b059&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;LanguageOfText&gt;eng&lt;/LanguageOfText&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Language of text</h1>
+ * <p>
+ * A code indicating a language in which the text of the product is written: optional, and repeatable if the text is in
+ * two or more languages. <strong>The &lt;Language&gt; composite on the next page provides a more general method of
+ * handling language detail, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
+ * lower-case.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 639-2/B List 74</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;LanguageOfText&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b059&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;LanguageOfText&gt;eng&lt;/LanguageOfText&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ LanguageOfText</li>

@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Currency code</h1><p>An ISO standard code identifying the currency in which a price is given in
- * &lt;PriceAmount&gt;, unless it is the default currency for the exchange. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three letters</td></tr><tr><td>Codelist</td><td>ISO
- * 4217 currency codes - List 96</td></tr><tr><td>Reference name</td><td><tt>&lt;CurrencyCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j152&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j152&gt;NLG&lt;/j152&gt;</tt> Netherlands
- * Guilder</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Currency code</h1>
+ * <p>
+ * An ISO standard code identifying the currency in which a price is given in &lt;PriceAmount&gt;, unless it is the
+ * default currency for the exchange. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 4217 currency codes - List 96</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CurrencyCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j152&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j152&gt;NLG&lt;/j152&gt;</tt> Netherlands Guilder</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ CurrencyCode</li>

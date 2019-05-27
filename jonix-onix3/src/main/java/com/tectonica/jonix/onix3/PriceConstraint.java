@@ -32,21 +32,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price constraint composite</h1><p>An optional group of data elements which together describe a contractual term
- * or constraint (or the absence of such a constraint) that forms part of the commercial offer for a product. Repeatable
- * in order to describe multiple constraints on usage.</p><p>The Price constraint composite has the same structure as
- * &lt;EpubUsageConstraint&gt;. Use &lt;EpubUsageConstraint&gt; for constraints that limit the user experience of the
- * product, whether or not they are enforced by technical protection measures (DRM). Use &lt;PriceConstraint&gt; where a
- * single product is available under multiple terms and conditions (<i>ie</i> multiple commercial offers for the same
- * product which differ in their Price constraints, and whether or not they are enforced by DRM).</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PriceConstraint&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;priceconstraint&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price constraint composite</h1>
+ * <p>
+ * An optional group of data elements which together describe a contractual term or constraint (or the absence of such a
+ * constraint) that forms part of the commercial offer for a product. Repeatable in order to describe multiple
+ * constraints on usage.
+ * </p>
+ * <p>
+ * The Price constraint composite has the same structure as &lt;EpubUsageConstraint&gt;. Use &lt;EpubUsageConstraint&gt;
+ * for constraints that limit the user experience of the product, whether or not they are enforced by technical
+ * protection measures (DRM). Use &lt;PriceConstraint&gt; where a single product is available under multiple terms and
+ * conditions (<i>ie</i> multiple commercial offers for the same product which differ in their Price constraints, and
+ * whether or not they are enforced by DRM).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceConstraint&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;priceconstraint&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint</li>
@@ -143,8 +161,10 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
     private PriceConstraintType priceConstraintType = PriceConstraintType.EMPTY;
 
     /**
-     * <p>An ONIX code specifying a type of commercial term or constraint forming part of the commercial offer for a
-     * digital product. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code specifying a type of commercial term or constraint forming part of the commercial offer for a
+     * digital product. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public PriceConstraintType priceConstraintType() {
@@ -155,9 +175,11 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
     private PriceConstraintStatus priceConstraintStatus = PriceConstraintStatus.EMPTY;
 
     /**
-     * <p>An ONIX code specifying the status of a contractual term or constraint, <i>eg</i> permitted without limit,
+     * <p>
+     * An ONIX code specifying the status of a contractual term or constraint, <i>eg</i> permitted without limit,
      * permitted with limit, prohibited. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and
-     * non-repeating.</p>
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public PriceConstraintStatus priceConstraintStatus() {
@@ -166,11 +188,14 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataComposite<PriceConstraintLimit, JonixPriceConstraintLimit> priceConstraintLimits =
-        ListOfOnixDataComposite.empty();
+        ListOfOnixDataComposite
+            .empty();
 
     /**
-     * <p>An optional and repeatable group of data elements which together specify a quantitative limit on a particular
-     * type of contractual term or constraint.</p>
+     * <p>
+     * An optional and repeatable group of data elements which together specify a quantitative limit on a particular
+     * type of contractual term or constraint.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<PriceConstraintLimit, JonixPriceConstraintLimit> priceConstraintLimits() {

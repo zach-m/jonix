@@ -32,19 +32,34 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product classification composite</h1><p>An optional group of data elements which together define a product
- * classification (<em>not</em> to be confused with a subject classification). The intended use is to enable national or
- * international trade classifications (also known as commodity codes) to be carried in an ONIX record. The composite is
- * repeatable if parts of the product are classified differently within a single product classification scheme, or to
- * provide classification codes from multiple classification schemes.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ProductClassification&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;productclassification&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product classification composite</h1>
+ * <p>
+ * An optional group of data elements which together define a product classification (<em>not</em> to be confused with a
+ * subject classification). The intended use is to enable national or international trade classifications (also known as
+ * commodity codes) to be carried in an ONIX record. The composite is repeatable if parts of the product are classified
+ * differently within a single product classification scheme, or to provide classification codes from multiple
+ * classification schemes.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductClassification&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;productclassification&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductClassification</li>
@@ -141,8 +156,10 @@ public class ProductClassification
     private ProductClassificationType productClassificationType = ProductClassificationType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the scheme from which the identifier in &lt;ProductClassificationCode&gt; is taken.
-     * Mandatory in each occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the scheme from which the identifier in &lt;ProductClassificationCode&gt; is taken.
+     * Mandatory in each occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ProductClassificationType productClassificationType() {
@@ -153,8 +170,10 @@ public class ProductClassification
     private ProductClassificationCode productClassificationCode = ProductClassificationCode.EMPTY;
 
     /**
-     * <p>A classification code from the scheme specified in &lt;ProductClassificationType&gt;. Mandatory in each
-     * occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.</p>
+     * <p>
+     * A classification code from the scheme specified in &lt;ProductClassificationType&gt;. Mandatory in each
+     * occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ProductClassificationCode productClassificationCode() {
@@ -165,10 +184,12 @@ public class ProductClassification
     private Percent percent = Percent.EMPTY;
 
     /**
-     * <p>The percentage of the unit value of the product that is assignable to a designated product classification.
+     * <p>
+     * The percentage of the unit value of the product that is assignable to a designated product classification.
      * Optional and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two or more
      * product classes within a particular scheme. If omitted, the product classification code applies to 100% of the
-     * product.</p>
+     * product.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public Percent percent() {

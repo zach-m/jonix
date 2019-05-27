@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Subject scheme version number</h1><p>A number which identifies a version or edition of the subject scheme
- * specified in the associated &lt;MainSubjectSchemeIdentifier&gt; element. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Free form. Suggested maximum length 10 characters, for consistency
- * with other version number elements.</td></tr><tr><td>Reference name</td><td><tt>&lt;SubjectSchemeVersion&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b068&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SubjectSchemeVersion&gt;21&lt;/SubjectSchemeVersion&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Subject scheme version number</h1>
+ * <p>
+ * A number which identifies a version or edition of the subject scheme specified in the associated
+ * &lt;MainSubjectSchemeIdentifier&gt; element. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Free form. Suggested maximum length 10 characters, for consistency with other version number elements.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SubjectSchemeVersion&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b068&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SubjectSchemeVersion&gt;21&lt;/SubjectSchemeVersion&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MainSubject&gt;</li>
  * <li>&lt;Subject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MainSubject ⯈ SubjectSchemeVersion</li>
@@ -86,7 +104,9 @@ public class SubjectSchemeVersion implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number
-     * elements.<p> (type: NonEmptyString)
+     * elements.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

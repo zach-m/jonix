@@ -38,12 +38,16 @@ public class JonixIllustrations implements JonixKeyedStruct<IllustrationAndOther
     public IllustrationAndOtherContentTypes illustrationType;
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters. <p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String illustrationTypeDescription;
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 6 digits. <p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, suggested maximum length 6 digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String number;
 

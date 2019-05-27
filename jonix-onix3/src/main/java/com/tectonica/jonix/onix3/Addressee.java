@@ -33,16 +33,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Addressee composite</h1><p>A group of data elements which together specify the addressee of an ONIX for Books
- * message. Optional, and repeatable if there are several addressees.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Addressee&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;addressee&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Addressee composite</h1>
+ * <p>
+ * A group of data elements which together specify the addressee of an ONIX for Books message. Optional, and repeatable
+ * if there are several addressees.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Addressee&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;addressee&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ Addressee</li>
@@ -139,12 +154,15 @@ public class Addressee implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes>
-        addresseeIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        addresseeIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A group of data elements which together define an identifier of the addressee. The composite is optional, and
+     * <p>
+     * A group of data elements which together define an identifier of the addressee. The composite is optional, and
      * repeatable if more than one identifier of different types for the same addressee is sent; but <em>either</em> an
-     * &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt; <em>must</em> be included.</p>
+     * &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt; <em>must</em> be included.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes> addresseeIdentifiers() {
@@ -155,9 +173,11 @@ public class Addressee implements OnixSuperComposite, Serializable {
     private AddresseeName addresseeName = AddresseeName.EMPTY;
 
     /**
-     * <p>The name of the addressee organization, which should always be stated in a standard form agreed with the
+     * <p>
+     * The name of the addressee organization, which should always be stated in a standard form agreed with the
      * addressee. Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element <em>or</em> a
-     * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.</p>
+     * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public AddresseeName addresseeName() {
@@ -168,8 +188,10 @@ public class Addressee implements OnixSuperComposite, Serializable {
     private ContactName contactName = ContactName.EMPTY;
 
     /**
-     * <p>Free text giving the name, department <i>etc</i> for a contact person in the addressee organization to whom
-     * the message is to be directed. Optional and non-repeating.</p>
+     * <p>
+     * Free text giving the name, department <i>etc</i> for a contact person in the addressee organization to whom the
+     * message is to be directed. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ContactName contactName() {
@@ -180,8 +202,10 @@ public class Addressee implements OnixSuperComposite, Serializable {
     private EmailAddress emailAddress = EmailAddress.EMPTY;
 
     /**
-     * <p>A text field giving the e-mail address for a contact person in the addressee organization. Optional and
-     * non-repeating.</p>
+     * <p>
+     * A text field giving the e-mail address for a contact person in the addressee organization. Optional and
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public EmailAddress emailAddress() {

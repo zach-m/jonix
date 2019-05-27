@@ -34,20 +34,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Interest age(s)</h1><p>A text element specifying a target interest age of range of ages. which should be entered
- * strictly according to the conventions defined below. Optional and non-repeating. <strong>The &lt;AudienceRange&gt;
- * composite on the next page provides a more general method of handling interest age and other ranges, and is to be
- * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, maximum 15
- * characters.</td></tr><tr><td></td><td>from n1 to n2 Age range from n1 to n2 from n From age n upwards to n Up to age
- * n n Age n only where n is an integer representing age in years</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;InterestAge&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b190&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;InterestAge&gt;from
- * 9 to 12&lt;/InterestAge&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Interest age(s)</h1>
+ * <p>
+ * A text element specifying a target interest age of range of ages. which should be entered strictly according to the
+ * conventions defined below. Optional and non-repeating. <strong>The &lt;AudienceRange&gt; composite on the next page
+ * provides a more general method of handling interest age and other ranges, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, maximum 15 characters.</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>from n1 to n2 Age range from n1 to n2 from n From age n upwards to n Up to age n n Age n only where n is an
+ * integer representing age in years</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;InterestAge&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b190&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;InterestAge&gt;from 9 to 12&lt;/InterestAge&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ InterestAge</li>
@@ -85,7 +106,9 @@ public class InterestAge implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, maximum 15 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length text, maximum 15 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -34,17 +34,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Conference thematic title</h1><p>The thematic title of an individual conference in a series that has a series
- * name in the &lt;ConferenceName&gt; element. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 200
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ConferenceTheme&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b342&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Conference thematic title</h1>
+ * <p>
+ * The thematic title of an individual conference in a series that has a series name in the &lt;ConferenceName&gt;
+ * element. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ConferenceTheme&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b342&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Conference&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceTheme</li>
@@ -82,7 +96,9 @@ public class ConferenceTheme implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 200 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 200 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

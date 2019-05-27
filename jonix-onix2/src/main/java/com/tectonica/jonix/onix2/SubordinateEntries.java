@@ -39,7 +39,7 @@ import java.io.Serializable;
  * <li>&lt;SubSeriesRecord&gt;</li>
  * <li>&lt;MainSeriesRecord&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SubordinateEntries</li>

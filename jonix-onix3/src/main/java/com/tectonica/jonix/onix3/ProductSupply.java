@@ -32,19 +32,34 @@ import java.util.List;
  */
 
 /**
- * <h1>Product supply composite</h1><p>The product supply block covers data element Groups P.24 to P.26, specifying a
- * market, the publishing status of the product in that market, and the supply arrangements for the product in that
- * market. The block is repeatable to describe multiple markets. At least one occurrence is expected in a
- * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a partial
- * update notice which carries only those blocks in which changes have occurred.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;ProductSupply&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;productsupply&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product supply composite</h1>
+ * <p>
+ * The product supply block covers data element Groups P.24 to P.26, specifying a market, the publishing status of the
+ * product in that market, and the supply arrangements for the product in that market. The block is repeatable to
+ * describe multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the
+ * &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a partial update notice which carries only
+ * those blocks in which changes have occurred.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductSupply&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;productsupply&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply</li>
@@ -139,13 +154,18 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
     private List<Market> markets = Collections.emptyList();
 
     /**
-     * <p>A group of data elements which together give details of a geographical territory and any non-geographical
-     * sales restrictions that apply within it. Optional in terms of the schema definitions, but required in most ONIX
+     * <p>
+     * A group of data elements which together give details of a geographical territory and any non-geographical sales
+     * restrictions that apply within it. Optional in terms of the schema definitions, but required in most ONIX
      * applications. If omitted, the geographical extent of the market must be assumed to be the area defined by the
-     * sales rights.</p><p>The &lt;Market&gt; composite is repeatable, but in almost all cases only a single instance is
-     * required. It may be repeated if a non-geographical sales restriction applies only to a <em>part</em> of a
-     * geographically-defined market – for example where a product is sold throughout the European Union, but exclusive
-     * to a single retailer in France.</p>
+     * sales rights.
+     * </p>
+     * <p>
+     * The &lt;Market&gt; composite is repeatable, but in almost all cases only a single instance is required. It may be
+     * repeated if a non-geographical sales restriction applies only to a <em>part</em> of a geographically-defined
+     * market – for example where a product is sold throughout the European Union, but exclusive to a single retailer in
+     * France.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<Market> markets() {
@@ -156,8 +176,10 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
     private MarketPublishingDetail marketPublishingDetail = MarketPublishingDetail.EMPTY;
 
     /**
-     * <p>A group of data elements which together give details of the publishing status of a product within a specified
-     * market. Optional and non-repeating within an occurrence of the &lt;ProductSupply&gt; block.</p>
+     * <p>
+     * A group of data elements which together give details of the publishing status of a product within a specified
+     * market. Optional and non-repeating within an occurrence of the &lt;ProductSupply&gt; block.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public MarketPublishingDetail marketPublishingDetail() {
@@ -168,9 +190,11 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
     private List<SupplyDetail> supplyDetails = Collections.emptyList();
 
     /**
-     * <p>A group of data elements which together give details of a supply source, and price and availability from that
+     * <p>
+     * A group of data elements which together give details of a supply source, and price and availability from that
      * source. Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to give details of
-     * multiple supply sources.</p>
+     * multiple supply sources.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public List<SupplyDetail> supplyDetails() {

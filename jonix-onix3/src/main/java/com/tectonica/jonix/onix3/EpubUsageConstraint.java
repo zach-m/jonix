@@ -32,17 +32,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Usage constraint composite (digital products)</h1><p>An optional group of data elements which together describe a
- * usage constraint on a digital product (or the absence of such a constraint), whether enforced by DRM technical
- * protection, inherent in the platform used, or specified by license agreement. Repeatable in order to describe
- * multiple constraints on usage.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;EpubUsageConstraint&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;epubusageconstraint&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Usage constraint composite (digital products)</h1>
+ * <p>
+ * An optional group of data elements which together describe a usage constraint on a digital product (or the absence of
+ * such a constraint), whether enforced by DRM technical protection, inherent in the platform used, or specified by
+ * license agreement. Repeatable in order to describe multiple constraints on usage.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EpubUsageConstraint&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;epubusageconstraint&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint</li>
@@ -138,8 +153,10 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
     private EpubUsageType epubUsageType = EpubUsageType.EMPTY;
 
     /**
-     * <p>An ONIX code specifying a usage of a digital product. Mandatory in each occurrence of the
-     * &lt;EpubUsageConstraint&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code specifying a usage of a digital product. Mandatory in each occurrence of the
+     * &lt;EpubUsageConstraint&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public EpubUsageType epubUsageType() {
@@ -150,9 +167,11 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
     private EpubUsageStatus epubUsageStatus = EpubUsageStatus.EMPTY;
 
     /**
-     * <p>An ONIX code specifying the status of a usage of a digital product, <i>eg</i> permitted without limit,
-     * permitted with limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and
-     * non-repeating.</p>
+     * <p>
+     * An ONIX code specifying the status of a usage of a digital product, <i>eg</i> permitted without limit, permitted
+     * with limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public EpubUsageStatus epubUsageStatus() {
@@ -160,12 +179,14 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
         return epubUsageStatus;
     }
 
-    private ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits =
-        ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits = ListOfOnixDataComposite
+        .empty();
 
     /**
-     * <p>An optional group of data elements which together specify a quantitative limit on a particular type of usage
-     * of a digital product. Repeatable in order to specify two or more limits on the usage type.</p>
+     * <p>
+     * An optional group of data elements which together specify a quantitative limit on a particular type of usage of a
+     * digital product. Repeatable in order to specify two or more limits on the usage type.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits() {

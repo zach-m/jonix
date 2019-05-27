@@ -34,24 +34,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publisher name</h1><p>The full name of the publisher who issues the product, in the form in which the publisher
- * wishes to be identified, and controlled by the publisher to maintain consistency across products. Optional and
- * non-repeating; and should not be used if the &lt;Publisher&gt; composite is used. Except where they are essential to
- * the recognized form of the name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”,
- * “GmbH”) should be omitted.</p><p><strong>The &lt;Publisher&gt; composite below provides a more general method of
- * handling publisher identities, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;PublisherName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b081&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PublisherName&gt;Reed International
- * Books&lt;/PublisherName&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publisher name</h1>
+ * <p>
+ * The full name of the publisher who issues the product, in the form in which the publisher wishes to be identified,
+ * and controlled by the publisher to maintain consistency across products. Optional and non-repeating; and should not
+ * be used if the &lt;Publisher&gt; composite is used. Except where they are essential to the recognized form of the
+ * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be omitted.
+ * </p>
+ * <p>
+ * <strong>The &lt;Publisher&gt; composite below provides a more general method of handling publisher identities, and
+ * is
+ * to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublisherName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b081&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PublisherName&gt;Reed International Books&lt;/PublisherName&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;NotForSale&gt;</li>
  * <li>&lt;Publisher&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublisherName</li>
@@ -94,7 +114,9 @@ public class PublisherName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

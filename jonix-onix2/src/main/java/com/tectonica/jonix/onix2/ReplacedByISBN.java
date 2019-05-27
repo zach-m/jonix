@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Replaced-by ISBN</h1><p>International Standard Book Number identifying a new product which replaces the current
- * product. Optional and non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more
- * general method of handling related items, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 10 characters, all numeric except last character, which may be
- * letter X.</td></tr><tr><td>Reference name</td><td><tt>&lt;ReplacedByISBN&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;h130&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ReplacedByISBN&gt;8474339790&lt;/ReplacedByISBN&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Replaced-by ISBN</h1>
+ * <p>
+ * International Standard Book Number identifying a new product which replaces the current product. Optional and
+ * non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more general method of
+ * handling related items, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 10 characters, all numeric except last character, which may be letter X.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReplacedByISBN&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;h130&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ReplacedByISBN&gt;8474339790&lt;/ReplacedByISBN&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ReplacedByISBN</li>
@@ -83,8 +101,9 @@ public class ReplacedByISBN implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.<p> (type:
-     * NonEmptyString)
+     * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

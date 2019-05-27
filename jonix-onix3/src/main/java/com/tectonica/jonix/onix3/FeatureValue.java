@@ -30,20 +30,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource feature value</h1><p>A controlled value that describes a resource feature. Presence or absence of this
- * element depends on the &lt;ResourceFeatureType&gt;, since some features may not require an accompanying value, while
- * others may require free text in &lt;FeatureNote&gt;; and others may have both code and free text.
- * Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Dependent on the scheme specified in
- * &lt;ResourceFeatureType&gt;</td></tr><tr><td>Codelist</td><td>Dependent on the scheme specified in
- * &lt;ResourceFeatureType&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;FeatureValue&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x439&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;FeatureValue&gt;4&lt;/FeatureValue&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Resource feature value</h1>
+ * <p>
+ * A controlled value that describes a resource feature. Presence or absence of this element depends on the
+ * &lt;ResourceFeatureType&gt;, since some features may not require an accompanying value, while others may require free
+ * text in &lt;FeatureNote&gt;; and others may have both code and free text. Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Dependent on the scheme specified in &lt;ResourceFeatureType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>Dependent on the scheme specified in &lt;ResourceFeatureType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;FeatureValue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x439&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;FeatureValue&gt;4&lt;/FeatureValue&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ResourceVersionFeature&gt;</li>
  * <li>&lt;ResourceFeature&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈
@@ -85,7 +110,9 @@ public class FeatureValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Dependent on the scheme specified in &lt;ResourceFeatureType&gt;<p> (type: dt.NonEmptyString)
+     * Raw Format: Dependent on the scheme specified in &lt;ResourceFeatureType&gt;
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

@@ -34,18 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Component type name</h1><p>The generic name (if any) which is given in the product to the type of section which
- * the content item represents, <em>eg</em> Chapter, Part, Track. Optional and non-repeating; but either this field or a
- * title (in &lt;DistinctiveTitle&gt; or in a &lt;Title&gt; composite) or both must be present in any occurrence of the
- * &lt;ContentItem&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * alphanumeric, suggested maximum length 20 characters</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;ComponentTypeName&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b288&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ComponentTypeName&gt;Chapter&lt;/ComponentTypeName&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Component type name</h1>
+ * <p>
+ * The generic name (if any) which is given in the product to the type of section which the content item represents,
+ * <em>eg</em> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in
+ * &lt;DistinctiveTitle&gt; or in a &lt;Title&gt; composite) or both must be present in any occurrence of the
+ * &lt;ContentItem&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length alphanumeric, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ComponentTypeName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b288&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ComponentTypeName&gt;Chapter&lt;/ComponentTypeName&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ContentItem&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ ComponentTypeName</li>
@@ -83,7 +102,9 @@ public class ComponentTypeName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

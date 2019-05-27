@@ -32,19 +32,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title detail composite</h1><p>A group of data elements which together give the text of a collection title and
- * specify its type. Optional, but the composite is required unless the only collection title is carried in full, and
- * word-for-word, as an integral part of the product title in P.6, in which case it should not be repeated in&nbsp;P.5.
- * The composite is repeatable with different title types.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;TitleDetail&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;titledetail&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Title detail composite</h1>
+ * <p>
+ * A group of data elements which together give the text of a collection title and specify its type. Optional, but the
+ * composite is required unless the only collection title is carried in full, and word-for-word, as an integral part of
+ * the product title in P.6, in which case it should not be repeated in&nbsp;P.5. The composite is repeatable with
+ * different title types.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TitleDetail&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;titledetail&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * <li>&lt;ContentItem&gt;</li>
  * <li>&lt;Collection&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail</li>
@@ -141,8 +157,10 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
     private TitleType titleType = TitleType.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the type of a title. Mandatory in each occurrence of the &lt;TitleDetail&gt;
-     * composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating the type of a title. Mandatory in each occurrence of the &lt;TitleDetail&gt; composite,
+     * and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public TitleType titleType() {
@@ -153,18 +171,25 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<TitleElement, JonixTitleElement> titleElements = ListOfOnixDataComposite.empty();
 
     /**
-     * <p>A group of data elements which together represent an element of a collection title. At least one title element
-     * is mandatory in each occurrence of the &lt;TitleDetail&gt; composite. The composite is repeatable with different
+     * <p>
+     * A group of data elements which together represent an element of a collection title. At least one title element is
+     * mandatory in each occurrence of the &lt;TitleDetail&gt; composite. The composite is repeatable with different
      * sequence numbers and/or title element levels. An instance of the &lt;TitleElement&gt; composite must include at
      * least one of: &lt;PartNumber&gt;; &lt;YearOfAnnual&gt;; &lt;TitleText&gt;, &lt;NoPrefix/&gt; together with
      * &lt;TitleWithoutPrefix&gt;, or &lt;TitlePrefix&gt; together with &lt;TitleWithoutPrefix&gt;. In other words, it
      * <em>must</em> carry <em>either</em> the text of a title element <em>or</em> a part or year designation, and it
-     * <em>may</em> carry both.</p><p>A title element must be designated as belonging to <em>product level</em>,
-     * <em>collection level</em>, or <em>subcollection level</em> (the first of these may not occur in a title element
-     * representing a <em>collective</em> identity, and the last-named may only occur in the case of a multi-level
-     * collection).</p><p>In the simplest case, title detail sent in a &lt;Collection&gt; composite will consist of a
-     * single title element, at collection level. However, the composite structure in ONIX&nbsp;3.0 allows more complex
-     * combinations of titles and part designations in multi-level collections to be correctly represented.</p>
+     * <em>may</em> carry both.
+     * </p>
+     * <p>
+     * A title element must be designated as belonging to <em>product level</em>, <em>collection level</em>, or
+     * <em>subcollection level</em> (the first of these may not occur in a title element representing a
+     * <em>collective</em> identity, and the last-named may only occur in the case of a multi-level collection).
+     * </p>
+     * <p>
+     * In the simplest case, title detail sent in a &lt;Collection&gt; composite will consist of a single title element,
+     * at collection level. However, the composite structure in ONIX&nbsp;3.0 allows more complex combinations of titles
+     * and part designations in multi-level collections to be correctly represented.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataComposite<TitleElement, JonixTitleElement> titleElements() {
@@ -175,12 +200,14 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
     private TitleStatement titleStatement = TitleStatement.EMPTY;
 
     /**
-     * <p>Free text showing how the collection title should be presented in any display, particularly when a standard
+     * <p>
+     * Free text showing how the collection title should be presented in any display, particularly when a standard
      * concatenation of individual title elements from Group&nbsp;P.5 (in the order specified by the
      * &lt;SequenceNumber&gt; data elements) would not give a satisfactory result. Optional and non-repeating. When this
      * field is sent, the recipient should use it to replace all collection title detail sent in Group&nbsp;P.5 for
      * display purposes only. The individual collection title element detail <em>must</em> also be sent, for indexing
-     * and retrieval purposes.</p>
+     * and retrieval purposes.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public TitleStatement titleStatement() {

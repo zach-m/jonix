@@ -31,17 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price date role code</h1><p>An ONIX code indicating the significance of the date. Mandatory in each occurrence of
- * the &lt;PriceDate&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, two digits</td></tr><tr><td>Codelist</td><td>List 173</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PriceDateRole&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x476&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;PriceDateRole&gt;14&lt;/PriceDateRole&gt;</tt>
- * (From date [date on which a price becomes effective])</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price date role code</h1>
+ * <p>
+ * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;PriceDate&gt;
+ * composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 173</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceDateRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x476&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PriceDateRole&gt;14&lt;/PriceDateRole&gt;</tt> (From date [date on which a price becomes
+ * effective])</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PriceDate&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceDate ⯈ PriceDateRole</li>

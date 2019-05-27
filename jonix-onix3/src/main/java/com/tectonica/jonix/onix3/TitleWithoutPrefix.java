@@ -33,19 +33,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title text without prefix</h1><p>The text of a title element without the title prefix; and excluding any
- * subtitle. Optional and non-repeating; can only be used if one of the &lt;NoPrefix/&gt; or &lt;TitlePrefix&gt;
- * elements is also present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested
- * maximum 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleWithoutPrefix&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b031&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
- * language, textscript, textcase</td></tr><tr><td>Example</td><td><tt>&lt;TitleWithoutPrefix language=&quot;eng&quot;
- * textcase=&quot;01&quot;&gt;shameful life of Salvador Dali&lt;/TitleWithoutPrefix&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Title text without prefix</h1>
+ * <p>
+ * The text of a title element without the title prefix; and excluding any subtitle. Optional and non-repeating; can
+ * only be used if one of the &lt;NoPrefix/&gt; or &lt;TitlePrefix&gt; elements is also present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TitleWithoutPrefix&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b031&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript, textcase</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TitleWithoutPrefix language=&quot;eng&quot; textcase=&quot;01&quot;&gt;shameful life of Salvador
+ * Dali&lt;/TitleWithoutPrefix&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;TitleElement&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleElement ⯈ TitleWithoutPrefix</li>
@@ -91,7 +116,9 @@ public class TitleWithoutPrefix implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum 300 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 300 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

@@ -34,19 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>UPC</h1><p>Universal Product Code, the cross-industry product numbering and bar-coding system administered in the
- * USA by the Uniform Code Council. Optional and non-repeating. In the US book trade, required for mass-market editions
- * sold in supermarkets and other non-book-trade outlets. <strong>The &lt;ProductIdentifier&gt; composite on a later
- * page provides a more general method of handling this and other product codes, and is to be
- * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 12 numeric digits. The
- * last digit is a modulus-10 check digit. For more information see http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;UPC&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b006&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b006&gt;071001005998&lt;/b006&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>UPC</h1>
+ * <p>
+ * Universal Product Code, the cross-industry product numbering and bar-coding system administered in the USA by the
+ * Uniform Code Council. Optional and non-repeating. In the US book trade, required for mass-market editions sold in
+ * supermarkets and other non-book-trade outlets. <strong>The &lt;ProductIdentifier&gt; composite on a later page
+ * provides a more general method of handling this and other product codes, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
+ * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;UPC&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b006&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b006&gt;071001005998&lt;/b006&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ UPC</li>
@@ -85,7 +104,9 @@ public class UPC implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
-     * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html<p> (type: NonEmptyString)
+     * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

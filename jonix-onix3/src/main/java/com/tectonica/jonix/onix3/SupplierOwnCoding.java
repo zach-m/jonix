@@ -32,16 +32,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supplier own coding composite</h1><p>An optional and repeatable group of data elements which together allow a
- * supplier to send coded data of a specified type, using its own coding schemes.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SupplierOwnCoding&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;supplierowncoding&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supplier own coding composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together allow a supplier to send coded data of a specified
+ * type, using its own coding schemes.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplierOwnCoding&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;supplierowncoding&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplierOwnCoding</li>
@@ -138,8 +153,10 @@ public class SupplierOwnCoding
     private SupplierCodeType supplierCodeType = SupplierCodeType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the type of a supplier own code. Mandatory in each occurrence of the
-     * &lt;SupplierOwnCoding&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the type of a supplier own code. Mandatory in each occurrence of the
+     * &lt;SupplierOwnCoding&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public SupplierCodeType supplierCodeType() {
@@ -150,7 +167,9 @@ public class SupplierOwnCoding
     private SupplierCodeTypeName supplierCodeTypeName = SupplierCodeTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies the proprietary coding scheme used. Optional and non-repeating.</p>
+     * <p>
+     * A name which identifies the proprietary coding scheme used. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public SupplierCodeTypeName supplierCodeTypeName() {
@@ -161,8 +180,10 @@ public class SupplierOwnCoding
     private SupplierCodeValue supplierCodeValue = SupplierCodeValue.EMPTY;
 
     /**
-     * <p>A supplier-defined code of the type specified in the &lt;SupplierCodeType&gt; element. Mandatory in each
-     * occurrence of the &lt;SupplierOwnCoding&gt; composite, and non-repeating.</p>
+     * <p>
+     * A supplier-defined code of the type specified in the &lt;SupplierCodeType&gt; element. Mandatory in each
+     * occurrence of the &lt;SupplierOwnCoding&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public SupplierCodeValue supplierCodeValue() {

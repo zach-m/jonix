@@ -31,16 +31,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Time run composite</h1><p>A repeatable group of data elements which together define the time period which an AV
- * item takes up. The composite is optional, but may be repeated where the AV item covers two or more separate periods
- * of time.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;TimeRun&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;timerun&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Time run composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define the time period which an AV item takes up. The composite is
+ * optional, but may be repeated where the AV item covers two or more separate periods of time.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TimeRun&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;timerun&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AVItem&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem ⯈ TimeRun</li>
@@ -131,9 +146,11 @@ public class TimeRun implements OnixDataComposite<JonixTimeRun>, Serializable {
     private StartTime startTime = StartTime.EMPTY;
 
     /**
-     * <p>The time (relative to the beginning of the product’s audio or audiovisual content) of the beginning of a
+     * <p>
+     * The time (relative to the beginning of the product’s audio or audiovisual content) of the beginning of a
      * continuous sequence of audiovisual content. Mandatory in each occurrence of the &lt;TimeRun&gt; composite, and
-     * non-repeating.</p>
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public StartTime startTime() {
@@ -144,9 +161,11 @@ public class TimeRun implements OnixDataComposite<JonixTimeRun>, Serializable {
     private EndTime endTime = EndTime.EMPTY;
 
     /**
-     * <p>The time (relative to the beginning of the product’s audio or audiovisual content) of the end of a continuous
+     * <p>
+     * The time (relative to the beginning of the product’s audio or audiovisual content) of the end of a continuous
      * sequence of audio or audiovisual content. Optional in each occurrence of the &lt;TimeRun&gt; composite, and
-     * non-repeating.</p>
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public EndTime endTime() {

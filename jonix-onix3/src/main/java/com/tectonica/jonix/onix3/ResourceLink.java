@@ -31,20 +31,48 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource link</h1><p>A URL which provides a link to cited content which is accessible in digital form. Optional,
- * and repeatable if the resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a cited resource
- * is available in multiple parallel languages. Where multiple languages are used, all repeats must carry the
- * <i>language</i> attribute.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Uniform Resource Locator,
- * expressed in full URI syntax in accordance with W3C standards, suggested maximum length 300
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ResourceLink&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x435&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;x435&gt;https://www.zzzzzzzz.com/resource.htm&lt;/x435&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Resource link</h1>
+ * <p>
+ * A URL which provides a link to cited content which is accessible in digital form. Optional, and repeatable if the
+ * resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a cited resource is available in
+ * multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i>
+ * attribute.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum
+ * length
+ * 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ResourceLink&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x435&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x435&gt;https://www.zzzzzzzz.com/resource.htm&lt;/x435&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CitedContent&gt;</li>
  * <li>&lt;ResourceVersion&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ResourceLink</li>
@@ -85,7 +113,9 @@ public class ResourceLink implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
-     * maximum length 300 characters<p> (type: dt.NonEmptyURI)
+     * maximum length 300 characters
+     * <p>
+     * (type: dt.NonEmptyURI)
      */
     public String value;
 

@@ -35,24 +35,50 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Subject scheme identifier</h1><p>An ONIX code which identifies the subject scheme which is used in an occurrence
- * of the &lt;Subject&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><p>When the
- * scheme listed in the code list display is annotated “Code”, use the associated &lt;SubjectCode&gt; element to carry
- * the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the text
- * equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to carry the
- * text of the subject heading.</p><p>Scheme code 23 may be used for a publisher’s own subject category code, by
- * agreement with trading partners to whom product information is sent. Scheme code 24, with a name in the
- * &lt;SubjectSchemeName&gt; element, may be used to identify a proprietary scheme, <em>eg</em> one used by a
- * bibliographic agency or wholesaler.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
- * numeric digits.</td></tr><tr><td>Codelist</td><td>List 27</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;SubjectSchemeIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b067&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b067&gt;03&lt;/b067&gt;</tt>
- * LC classification</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Subject scheme identifier</h1>
+ * <p>
+ * An ONIX code which identifies the subject scheme which is used in an occurrence of the &lt;Subject&gt; composite.
+ * Mandatory in each occurrence of the composite, and non-repeating.
+ * </p>
+ * <p>
+ * When the scheme listed in the code list display is annotated “Code”, use the associated &lt;SubjectCode&gt; element
+ * to carry the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the
+ * text equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to
+ * carry the text of the subject heading.
+ * </p>
+ * <p>
+ * Scheme code 23 may be used for a publisher’s own subject category code, by agreement with trading partners to whom
+ * product information is sent. Scheme code 24, with a name in the &lt;SubjectSchemeName&gt; element, may be used to
+ * identify a proprietary scheme, <em>eg</em> one used by a bibliographic agency or wholesaler.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 27</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SubjectSchemeIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b067&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b067&gt;03&lt;/b067&gt;</tt> LC classification</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Subject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Subject ⯈ SubjectSchemeIdentifier</li>

@@ -30,19 +30,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Addressee name</h1><p>The name of the addressee organization, which should always be stated in a standard form
- * agreed with the addressee. Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element
- * <em>or</em> a &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum 50
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;AddresseeName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x300&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x300&gt;BiblioAggregator
- * Ltd&lt;/x300&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Addressee name</h1>
+ * <p>
+ * The name of the addressee organization, which should always be stated in a standard form agreed with the addressee.
+ * Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element <em>or</em> a
+ * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AddresseeName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x300&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x300&gt;BiblioAggregator Ltd&lt;/x300&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Addressee&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ Addressee ⯈ AddresseeName</li>
@@ -75,7 +96,9 @@ public class AddresseeName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum 50 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 50 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

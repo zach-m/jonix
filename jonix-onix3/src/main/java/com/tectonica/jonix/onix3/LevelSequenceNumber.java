@@ -30,24 +30,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Level sequence number</h1><p>A number which specifies the position of a content item in a multi-level hierarchy
- * of such items. Numbering starts at the top level in the hierarchy, which may represent (<i>eg</i>) chapters in a
- * printed book, and the first item at the top level is numbered 1. Numbers should be assigned solely with a view to the
- * logic of the ONIX description and not in relation to any other characteristics of the items being numbered (such as
- * their actual numbering or their typographical layout in a printed table of contents). So for example, Chapter&nbsp;2
- * could have a level sequence number of&nbsp;3, and the second sub-section within Chapter&nbsp;2 could be
- * numbered&nbsp;3.2. &lt;LevelSequenceNumber&gt; is <em>not</em> a required field, but it is strongly recommended for
- * structured tables of contents. If used, it must occur once and only once in each occurrence of the
- * &lt;ContentItem&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length string of
- * positive integers, each successive integer being separated by a period character, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;LevelSequenceNumber&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b284&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;LevelSequenceNumber&gt;2.24.1&lt;/LevelSequenceNumber&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Level sequence number</h1>
+ * <p>
+ * A number which specifies the position of a content item in a multi-level hierarchy of such items. Numbering starts at
+ * the top level in the hierarchy, which may represent (<i>eg</i>) chapters in a printed book, and the first item at the
+ * top level is numbered 1. Numbers should be assigned solely with a view to the logic of the ONIX description and not
+ * in relation to any other characteristics of the items being numbered (such as their actual numbering or their
+ * typographical layout in a printed table of contents). So for example, Chapter&nbsp;2 could have a level sequence
+ * number of&nbsp;3, and the second sub-section within Chapter&nbsp;2 could be numbered&nbsp;3.2.
+ * &lt;LevelSequenceNumber&gt; is <em>not</em> a required field, but it is strongly recommended for structured tables of
+ * contents. If used, it must occur once and only once in each occurrence of the &lt;ContentItem&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length string of positive integers, each successive integer being separated by a period character,
+ * suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;LevelSequenceNumber&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b284&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;LevelSequenceNumber&gt;2.24.1&lt;/LevelSequenceNumber&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ContentItem&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ LevelSequenceNumber</li>
@@ -81,7 +103,9 @@ public class LevelSequenceNumber implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Variable length string of positive integers, each successive integer being separated by a period
-     * character, suggested maximum length 100 characters<p> (type: dt.MultiLevelNumber)
+     * character, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.MultiLevelNumber)
      */
     public String value;
 

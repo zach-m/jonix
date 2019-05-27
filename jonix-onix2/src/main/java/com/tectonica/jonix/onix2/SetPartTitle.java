@@ -34,21 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Set part (“subset”) title</h1><p>The title of a “subset” of which the product is a member, used only when a set
- * is itself divided into two levels, <em>eg</em> A History of Western Europe, Part II: The Dark Ages, Volume I: After
- * Rome. Use this field only for the section of the whole title which is shared by, and only by, the members of the
- * subset. Optional and non-repeating. Note that this element is used for the first subdivision of a set which has two
- * levels, regardless of the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 300
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;SetPartTitle&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b025&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b025&gt;The Dark
- * Ages&lt;/b025&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Set part (“subset”) title</h1>
+ * <p>
+ * The title of a “subset” of which the product is a member, used only when a set is itself divided into two levels,
+ * <em>eg</em> A History of Western Europe, Part II: The Dark Ages, Volume I: After Rome. Use this field only for the
+ * section of the whole title which is shared by, and only by, the members of the subset. Optional and non-repeating.
+ * Note that this element is used for the first subdivision of a set which has two levels, regardless of the
+ * nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SetPartTitle&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b025&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b025&gt;The Dark Ages&lt;/b025&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Set&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ SetPartTitle</li>
@@ -86,7 +103,9 @@ public class SetPartTitle implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 300 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 300 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

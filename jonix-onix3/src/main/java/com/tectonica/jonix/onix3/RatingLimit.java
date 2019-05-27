@@ -30,18 +30,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Review rating limit</h1><p>The maximum possible rating that may be awarded as part of a review of the
- * publication. Optional, but where used, it must be greater than or equal to the specified &lt;Rating&gt;.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer number, suggested maximum length 4
- * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;RatingLimit&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x526&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;RatingLimit&gt;5&lt;/RatingLimit&gt;</tt>
- * (4.5 out of 5 stars)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Review rating limit</h1>
+ * <p>
+ * The maximum possible rating that may be awarded as part of a review of the publication. Optional, but where used, it
+ * must be greater than or equal to the specified &lt;Rating&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive integer number, suggested maximum length 4 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RatingLimit&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x526&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;RatingLimit&gt;5&lt;/RatingLimit&gt;</tt> (4.5 out of 5 stars)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReviewRating&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ ReviewRating ⯈ RatingLimit</li>
@@ -77,7 +98,9 @@ public class RatingLimit implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer number, suggested maximum length 4 digits<p> (type: dt.PositiveInteger)
+     * Raw Format: Positive integer number, suggested maximum length 4 digits
+     * <p>
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

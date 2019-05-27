@@ -34,19 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Series title</h1><p>The full title of the series, without abbreviation or abridgement. Non-repeating. Either the
- * &lt;TitleOfSeries&gt; element or at least one occurrence of the &lt;Title&gt; composite must occur in each occurrence
- * of the &lt;Series&gt; composite. The &lt;Title&gt; composite provides a more comprehensive representation of a series
- * title, and allows alternative forms to be sent.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitleOfSeries&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b018&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TitleOfSeries&gt;Blue
- * Guides&lt;/TitleOfSeries&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Series title</h1>
+ * <p>
+ * The full title of the series, without abbreviation or abridgement. Non-repeating. Either the &lt;TitleOfSeries&gt;
+ * element or at least one occurrence of the &lt;Title&gt; composite must occur in each occurrence of the &lt;Series&gt;
+ * composite. The &lt;Title&gt; composite provides a more comprehensive representation of a series title, and allows
+ * alternative forms to be sent.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TitleOfSeries&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b018&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TitleOfSeries&gt;Blue Guides&lt;/TitleOfSeries&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Series&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ TitleOfSeries</li>
@@ -84,7 +102,9 @@ public class TitleOfSeries implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 300 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 300 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

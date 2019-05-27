@@ -36,17 +36,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Bible composite</h1><p>A group of data elements which together describe features of an edition of the Bible or of
- * a selected Biblical text. Mandatory in each occurrence of the &lt;ReligiousText&gt; composite that does <em>not</em>
- * include a &lt;ReligiousTextIdentifier&gt; element, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Bible&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;bible&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Bible composite</h1>
+ * <p>
+ * A group of data elements which together describe features of an edition of the Bible or of a selected Biblical text.
+ * Mandatory in each occurrence of the &lt;ReligiousText&gt; composite that does <em>not</em> include a
+ * &lt;ReligiousTextIdentifier&gt; element, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Bible&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;bible&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReligiousText&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ReligiousText ⯈ Bible</li>
@@ -157,9 +172,11 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     private ListOfOnixElement<BibleContents, BibleContentss> bibleContentss = ListOfOnixElement.empty();
 
     /**
-     * <p>An ONIX code indicating the content of an edition of the Bible or selected Biblical text, for example ‘New
+     * <p>
+     * An ONIX code indicating the content of an edition of the Bible or selected Biblical text, for example ‘New
      * Testament’, ‘Apocrypha’, ‘Pentateuch’. Mandatory in each occurrence of the &lt;Bible&gt; composite, and
-     * repeatable so that a list such as ‘Old Testament and Apocrypha’ can be expressed.</p>
+     * repeatable so that a list such as ‘Old Testament and Apocrypha’ can be expressed.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<BibleContents, BibleContentss> bibleContentss() {
@@ -170,9 +187,11 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     private ListOfOnixElement<BibleVersion, BibleVersions> bibleVersions = ListOfOnixElement.empty();
 
     /**
-     * <p>An ONIX code indicating the version of a Bible or selected Biblical text, for example ‘King James’,
-     * ‘Jerusalem’, ‘New American Standard’, ‘Reina Valera’. Mandatory in each occurrence of the &lt;Bible&gt;
-     * composite, and repeatable if a work includes text in two or more versions.</p>
+     * <p>
+     * An ONIX code indicating the version of a Bible or selected Biblical text, for example ‘King James’, ‘Jerusalem’,
+     * ‘New American Standard’, ‘Reina Valera’. Mandatory in each occurrence of the &lt;Bible&gt; composite, and
+     * repeatable if a work includes text in two or more versions.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<BibleVersion, BibleVersions> bibleVersions() {
@@ -183,9 +202,11 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     private StudyBibleType studyBibleType = StudyBibleType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying a particular study version of a Bible or selected Biblical text, for example ‘Life
+     * <p>
+     * An ONIX code identifying a particular study version of a Bible or selected Biblical text, for example ‘Life
      * Application’. Optional and non-repeating. Some study Bibles are available in different editions based on
-     * different text versions.</p>
+     * different text versions.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public StudyBibleType studyBibleType() {
@@ -196,8 +217,10 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     private ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes = ListOfOnixElement.empty();
 
     /**
-     * <p>An ONIX code indicating the purpose for which a Bible or selected Biblical text is intended, for example
-     * ‘Family’, ‘Lectern/pulpit’. Optional, and repeatable to list multiple purposes.</p>
+     * <p>
+     * An ONIX code indicating the purpose for which a Bible or selected Biblical text is intended, for example
+     * ‘Family’, ‘Lectern/pulpit’. Optional, and repeatable to list multiple purposes.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes() {
@@ -208,8 +231,10 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     private BibleTextOrganization bibleTextOrganization = BibleTextOrganization.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the way in which the content of a Bible or selected Biblical text is organized, for
-     * example ‘Chronological’, ‘Chain reference’. Optional and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating the way in which the content of a Bible or selected Biblical text is organized, for
+     * example ‘Chronological’, ‘Chain reference’. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public BibleTextOrganization bibleTextOrganization() {
@@ -220,8 +245,10 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     private BibleReferenceLocation bibleReferenceLocation = BibleReferenceLocation.EMPTY;
 
     /**
-     * <p>An ONIX code indicating where references are located as part of the content of a Bible or selected Biblical
-     * text, for example ‘Center column’. Optional and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating where references are located as part of the content of a Bible or selected Biblical text,
+     * for example ‘Center column’. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public BibleReferenceLocation bibleReferenceLocation() {
@@ -232,8 +259,10 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     private ListOfOnixElement<BibleTextFeature, BibleTextFeatures> bibleTextFeatures = ListOfOnixElement.empty();
 
     /**
-     * <p>An ONIX code specifying a feature of a Bible text not covered elsewhere, <i>eg</i> red letter. Optional, and
-     * repeatable to specify multiple features.</p>
+     * <p>
+     * An ONIX code specifying a feature of a Bible text not covered elsewhere, <i>eg</i> red letter. Optional, and
+     * repeatable to specify multiple features.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<BibleTextFeature, BibleTextFeatures> bibleTextFeatures() {

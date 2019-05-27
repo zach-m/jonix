@@ -34,22 +34,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title prefix</h1><p>Text at the beginning of the distinctive title of the product which is to be ignored for
- * alphabetical sorting. Optional and non-repeating; can only be used if the &lt;TitleWithoutPrefix&gt; element is also
- * present. These two elements may be used in combination in applications where it is necessary to distinguish an
- * initial word or character string which is to be ignored for filing purposes, <em>eg</em> in library systems and in
- * some bookshop databases. <strong>The &lt;Title&gt; composite on a later page provides a more general method of
- * handling all forms of title, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 20
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitlePrefix&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b030&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b030&gt;The&lt;/b030&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Title prefix</h1>
+ * <p>
+ * Text at the beginning of the distinctive title of the product which is to be ignored for alphabetical sorting.
+ * Optional and non-repeating; can only be used if the &lt;TitleWithoutPrefix&gt; element is also present. These two
+ * elements may be used in combination in applications where it is necessary to distinguish an initial word or character
+ * string which is to be ignored for filing purposes, <em>eg</em> in library systems and in some bookshop databases.
+ * <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all forms of title,
+ * and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TitlePrefix&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b030&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b030&gt;The&lt;/b030&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;Title&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ TitlePrefix</li>
@@ -93,7 +111,9 @@ public class TitlePrefix implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 20 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 20 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

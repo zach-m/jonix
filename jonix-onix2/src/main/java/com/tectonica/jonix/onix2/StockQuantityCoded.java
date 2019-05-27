@@ -36,17 +36,28 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Stock quantity coded composite</h1><p>A group of data elements which together specify coded stock level without
- * stating the exact quantity of stock. Either &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each
- * occurrence of the &lt;Stock&gt; composite, even if the onhand quantity is zero. Non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;StockQuantityCoded&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;stockquantitycoded&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Stock quantity coded composite</h1>
+ * <p>
+ * A group of data elements which together specify coded stock level without stating the exact quantity of stock. Either
+ * &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of the &lt;Stock&gt; composite, even if
+ * the onhand quantity is zero. Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;StockQuantityCoded&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;stockquantitycoded&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Stock&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ StockQuantityCoded</li>
@@ -152,8 +163,10 @@ public class StockQuantityCoded
     private StockQuantityCodeType stockQuantityCodeType = StockQuantityCodeType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the scheme from which the value in the &lt;StockQuantityCode&gt; element is taken.
-     * Mandatory in each occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the scheme from which the value in the &lt;StockQuantityCode&gt; element is taken.
+     * Mandatory in each occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public StockQuantityCodeType stockQuantityCodeType() {
@@ -164,9 +177,11 @@ public class StockQuantityCoded
     private StockQuantityCodeTypeName stockQuantityCodeTypeName = StockQuantityCodeTypeName.EMPTY;
 
     /**
-     * <p>A name that identifies a proprietary stock quantity coding scheme when the code in the
+     * <p>
+     * A name that identifies a proprietary stock quantity coding scheme when the code in the
      * &lt;StockQuantityCodeType&gt; element indicates a proprietary scheme, <em>eg</em> a wholesaler’s own code.
-     * Optional, and non-repeating.</p>
+     * Optional, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public StockQuantityCodeTypeName stockQuantityCodeTypeName() {
@@ -177,8 +192,10 @@ public class StockQuantityCoded
     private StockQuantityCode stockQuantityCode = StockQuantityCode.EMPTY;
 
     /**
-     * <p>A code value taken from the scheme specified in the &lt;StockQuantityCodeType&gt; element. Mandatory in each
-     * occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.</p>
+     * <p>
+     * A code value taken from the scheme specified in the &lt;StockQuantityCodeType&gt; element. Mandatory in each
+     * occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public StockQuantityCode stockQuantityCode() {

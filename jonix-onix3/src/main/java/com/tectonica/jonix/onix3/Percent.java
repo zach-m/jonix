@@ -30,19 +30,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Percentage</h1><p>The percentage of the unit value of the product that is assignable to a designated product
- * classification. Optional and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two
- * or more product classes within a particular scheme. If omitted, the product classification code applies to 100% of
- * the product.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Real number between zero and 100
- * (inclusive), with explicit decimal point when required, suggested maximum length 7
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;Percent&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b337&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;Percent&gt;66.67&lt;/Percent&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Percentage</h1>
+ * <p>
+ * The percentage of the unit value of the product that is assignable to a designated product classification. Optional
+ * and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two or more product classes
+ * within a particular scheme. If omitted, the product classification code applies to 100% of the product.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested maximum
+ * length
+ * 7 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Percent&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b337&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;Percent&gt;66.67&lt;/Percent&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductClassification&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductClassification ⯈ Percent</li>
@@ -76,7 +99,9 @@ public class Percent implements OnixElement<Double>, Serializable {
 
     /**
      * Raw Format: Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested
-     * maximum length 7 characters<p> (type: dt.PercentDecimal)
+     * maximum length 7 characters
+     * <p>
+     * (type: dt.PercentDecimal)
      */
     public Double value;
 

@@ -37,7 +37,9 @@ public class JonixVelocity implements JonixStruct, Serializable {
 
     /**
      * Raw Format: Positive or negative integer or zero, suggested maximum length 7 digits. Negative numbers indicate
-     * returns exceed the fulfillment rate <p> (type: dt.Integer)
+     * returns exceed the fulfillment rate
+     * <p>
+     * (type: dt.Integer)
      */
     public Integer rate;
 

@@ -31,20 +31,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Name of bestseller list</h1><p>The name of a bestseller list, when the &lt;CitedContent&gt; composite is used to
- * refer to a position which a product has reached on such a list. Optional, and repeatable to provide a parallel list
- * name in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;ListName&gt;, but
- * must be included in each instance if &lt;ListName&gt; is repeated.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ListName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x432&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;x432&gt;Sunday
- * Times Hardback Fiction&lt;/x432&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Name of bestseller list</h1>
+ * <p>
+ * The name of a bestseller list, when the &lt;CitedContent&gt; composite is used to refer to a position which a product
+ * has reached on such a list. Optional, and repeatable to provide a parallel list name in multiple languages. The
+ * <i>language</i> attribute is optional for a single instance of &lt;ListName&gt;, but must be included in each
+ * instance if &lt;ListName&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ListName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x432&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x432&gt;Sunday Times Hardback Fiction&lt;/x432&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CitedContent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ListName</li>
@@ -80,7 +105,9 @@ public class ListName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

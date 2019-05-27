@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Religious text identifier</h1><p>An ONIX code indicating a religious text other than the Bible. Mandatory in each
- * occurrence of the &lt;ReligiousText&gt; composite that does not include a &lt;Bible&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 88</td></tr><tr><td>Reference name</td><td><tt>&lt;ReligiousTextID&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b376&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Religious text identifier</h1>
+ * <p>
+ * An ONIX code indicating a religious text other than the Bible. Mandatory in each occurrence of the
+ * &lt;ReligiousText&gt; composite that does not include a &lt;Bible&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 88</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReligiousTextID&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b376&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReligiousText&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ ReligiousTextID</li>
@@ -82,7 +100,9 @@ public class ReligiousTextID implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, two numeric digits<p> (type: List88)
+     * Raw Format: Fixed-length, two numeric digits
+     * <p>
+     * (type: List88)
      */
     public String value;
 

@@ -34,21 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Abbreviated title length</h1><p>If the &lt;Title&gt; composite is used to carry an abbreviated title, the length
- * to which the title is abbreviated may be indicated by giving the maximum number of characters (regardless of whether
- * in each specific instance abbreviation has been required in order to meet this limit). The &lt;TitleType&gt; code
- * should indicate the form of the title that has been abbreviated. Optional and non-repeating. If this element is
- * present, the &lt;TitleText&gt; element must be used to carry the abbreviated form. [The option also exists to send an
- * abbreviated title as a separate &lt;TitleType&gt; without using &lt;AbbreviatedLength&gt;, which is simpler, but less
- * informative.]</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum
- * 3 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;AbbreviatedLength&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b276&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b276&gt;40&lt;/b276&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Abbreviated title length</h1>
+ * <p>
+ * If the &lt;Title&gt; composite is used to carry an abbreviated title, the length to which the title is abbreviated
+ * may be indicated by giving the maximum number of characters (regardless of whether in each specific instance
+ * abbreviation has been required in order to meet this limit). The &lt;TitleType&gt; code should indicate the form of
+ * the title that has been abbreviated. Optional and non-repeating. If this element is present, the &lt;TitleText&gt;
+ * element must be used to carry the abbreviated form. [The option also exists to send an abbreviated title as a
+ * separate &lt;TitleType&gt; without using &lt;AbbreviatedLength&gt;, which is simpler, but less informative.]
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum 3 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AbbreviatedLength&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b276&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b276&gt;40&lt;/b276&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Title&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ AbbreviatedLength</li>
@@ -91,7 +109,9 @@ public class AbbreviatedLength implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum 3 digits<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, suggested maximum 3 digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

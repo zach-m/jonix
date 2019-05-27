@@ -32,17 +32,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Collection sequence composite</h1><p>An optional and repeatable group of data elements which indicates some
- * ordinal position of a product within a collection. Different ordinal positions may be specified using separate
- * repeats of the composite – for example, a product may be published first while also being third in narrative order
- * within a collection.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CollectionSequence&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;collectionsequence&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Collection sequence composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which indicates some ordinal position of a product within a
+ * collection. Different ordinal positions may be specified using separate repeats of the composite – for example, a
+ * product may be published first while also being third in narrative order within a collection.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CollectionSequence&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;collectionsequence&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Collection&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionSequence</li>
@@ -139,8 +154,10 @@ public class CollectionSequence
     private CollectionSequenceType collectionSequenceType = CollectionSequenceType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the type of ordering used for the product’s sequence number within the collection.
-     * Mandatory and non-repeating within the &lt;CollectionSequence&gt; composite.</p>
+     * <p>
+     * An ONIX code identifying the type of ordering used for the product’s sequence number within the collection.
+     * Mandatory and non-repeating within the &lt;CollectionSequence&gt; composite.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public CollectionSequenceType collectionSequenceType() {
@@ -151,9 +168,11 @@ public class CollectionSequence
     private CollectionSequenceTypeName collectionSequenceTypeName = CollectionSequenceTypeName.EMPTY;
 
     /**
-     * <p>A name which describes a proprietary order used for the product’s sequence number within the collection. Must
-     * be included when, and only when, the code in the &lt;CollectionSequenceType&gt; field indicates a proprietary
-     * scheme. Optional and non-repeating.</p>
+     * <p>
+     * A name which describes a proprietary order used for the product’s sequence number within the collection. Must be
+     * included when, and only when, the code in the &lt;CollectionSequenceType&gt; field indicates a proprietary
+     * scheme. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public CollectionSequenceTypeName collectionSequenceTypeName() {
@@ -164,13 +183,17 @@ public class CollectionSequence
     private CollectionSequenceNumber collectionSequenceNumber = CollectionSequenceNumber.EMPTY;
 
     /**
-     * <p>A number which specifies the ordinal position of the product in a collection. The ordinal position may be a
+     * <p>
+     * A number which specifies the ordinal position of the product in a collection. The ordinal position may be a
      * simple number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level (<i>eg</i> 3.2) if the collection has a
      * multi-level structure (<i>ie</i> there are both collection and sub-collection title elements). Mandatory and
-     * non-repeating within the &lt;CollectionSequence&gt; composite.</p><p><span style="color: deeppink; font-weight:
-     * bold">New in 3.0.4</span> A hyphen may be used in place of an integer within a multi-level number, where a
-     * particular level of the hierarchy is unnumbered, for example -.3 where a product is the third in a
-     * sub-collection, and the sub-collection is unnumbered within the collection.</p>
+     * non-repeating within the &lt;CollectionSequence&gt; composite.
+     * </p>
+     * <p>
+     * <span style="color: deeppink; font-weight: bold">New in 3.0.4</span> A hyphen may be used in place of an integer
+     * within a multi-level number, where a particular level of the hierarchy is unnumbered, for example -.3 where a
+     * product is the third in a sub-collection, and the sub-collection is unnumbered within the collection.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public CollectionSequenceNumber collectionSequenceNumber() {

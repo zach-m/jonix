@@ -33,19 +33,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Religious text composite</h1><p>An optional, non-repeating, group of data elements which together describe
- * features of the content of an edition of a religious text, and intended to meet the special needs of religious
- * publishers and booksellers. The &lt;ReligiousText&gt; composite may carry <em>either</em> a &lt;Bible&gt; composite
- * <em>or</em> a &lt;ReligiousTextIdentifier&gt; element accompanied by multiple repeats of the
- * &lt;ReligiousTextFeature&gt; composite. This approach is adopted to enable other devotional texts to be included if
- * need arises without requiring a new ONIX release.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;ReligiousText&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;religioustext&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Religious text composite</h1>
+ * <p>
+ * An optional, non-repeating, group of data elements which together describe features of the content of an edition of a
+ * religious text, and intended to meet the special needs of religious publishers and booksellers. The
+ * &lt;ReligiousText&gt; composite may carry <em>either</em> a &lt;Bible&gt; composite <em>or</em> a
+ * &lt;ReligiousTextIdentifier&gt; element accompanied by multiple repeats of the &lt;ReligiousTextFeature&gt;
+ * composite. This approach is adopted to enable other devotional texts to be included if need arises without requiring
+ * a new ONIX release.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReligiousText&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;religioustext&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ReligiousText</li>
@@ -140,9 +156,11 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
     private Bible bible = Bible.EMPTY;
 
     /**
-     * <p>A group of data elements which together describe features of an edition of the Bible or of a selected Biblical
+     * <p>
+     * A group of data elements which together describe features of an edition of the Bible or of a selected Biblical
      * text. Mandatory in each occurrence of the &lt;ReligiousText&gt; composite that does <em>not</em> include a
-     * &lt;ReligiousTextIdentifier&gt; element, and non-repeating.</p>
+     * &lt;ReligiousTextIdentifier&gt; element, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public Bible bible() {
@@ -153,8 +171,10 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
     private ReligiousTextIdentifier religiousTextIdentifier = ReligiousTextIdentifier.EMPTY;
 
     /**
-     * <p>An ONIX code indicating a religious text other than the Bible. Mandatory in each occurrence of the
-     * &lt;ReligiousText&gt; composite that does <em>not</em> include a &lt;Bible&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating a religious text other than the Bible. Mandatory in each occurrence of the
+     * &lt;ReligiousText&gt; composite that does <em>not</em> include a &lt;Bible&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ReligiousTextIdentifier religiousTextIdentifier() {
@@ -163,11 +183,14 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes>
-        religiousTextFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        religiousTextFeatures = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A repeatable group of data elements which together specify and describe a feature of a religious text.
-     * Mandatory if and only if &lt;ReligiousTextIdentifier&gt; is present.</p>
+     * <p>
+     * A repeatable group of data elements which together specify and describe a feature of a religious text. Mandatory
+     * if and only if &lt;ReligiousTextIdentifier&gt; is present.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures() {

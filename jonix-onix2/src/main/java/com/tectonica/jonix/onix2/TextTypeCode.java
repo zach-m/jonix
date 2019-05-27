@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Other text type code</h1><p>An ONIX code which identifies the type of text which is sent in the &lt;Text&gt;
- * element, or referenced in the &lt;TextLink&gt; element. Mandatory in each occurrence of the &lt;OtherText&gt;
- * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
- * characters (initially allocated as 01, 02 etc)</td></tr><tr><td>Codelist</td><td>List 33</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;TextTypeCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;d102&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;d102&gt;33&lt;/d102&gt;</tt>
- * Introduction text</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Other text type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of text which is sent in the &lt;Text&gt; element, or referenced in the
+ * &lt;TextLink&gt; element. Mandatory in each occurrence of the &lt;OtherText&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two characters (initially allocated as 01, 02 etc)</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 33</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TextTypeCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;d102&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;d102&gt;33&lt;/d102&gt;</tt> Introduction text</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;OtherText&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextTypeCode</li>

@@ -34,21 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Subject heading text</h1><p>The text of a heading taken from the scheme specified in the
- * &lt;MainSubjectSchemeIdentifier&gt; element; or the text equivalent to the &lt;SubjectCode&gt; value, if both code
- * and text are sent. Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each
- * occurrence of the &lt;MainSubject&gt; composite. Non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;SubjectHeadingText&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b070&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b070&gt;Labor and industrial
- * relations&lt;/b070&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Subject heading text</h1>
+ * <p>
+ * The text of a heading taken from the scheme specified in the &lt;MainSubjectSchemeIdentifier&gt; element; or the text
+ * equivalent to the &lt;SubjectCode&gt; value, if both code and text are sent. Either &lt;SubjectCode&gt; or
+ * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;MainSubject&gt; composite.
+ * Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SubjectHeadingText&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b070&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b070&gt;Labor and industrial relations&lt;/b070&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MainSubject&gt;</li>
  * <li>&lt;Subject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MainSubject ⯈ SubjectHeadingText</li>
@@ -88,7 +105,9 @@ public class SubjectHeadingText implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

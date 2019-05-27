@@ -35,23 +35,47 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publishing status</h1><p>An ONIX code which identifies the status of a published product. Optional and
- * non-repeating, <strong>but it is very strongly recommended that this element should be included in all ONIX Books
- * Product records, and it is possible that it may be made mandatory in a future release, or that it will be treated as
- * mandatory in national ONIX accreditation schemes.</strong></p><p>Where the element is sent by a sender who is not the
- * publisher, based on information that has been previously supplied by the publisher, it is strongly recommended that
- * the element should carry a datestamp attribute to indicate its likely reliability. See <cite>ONIX for Books – Product
- * Information Message – XML Message Specification</cite>, Section 4, for details of the datestamp attribute.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits.</td></tr><tr><td>Codelist</td><td>List
- * 64</td></tr><tr><td>Reference name</td><td><tt>&lt;PublishingStatus&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b394&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PublishingStatus&gt;02&lt;/PublishingStatus&gt;</tt>
- * Forthcoming</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publishing status</h1>
+ * <p>
+ * An ONIX code which identifies the status of a published product. Optional and non-repeating, <strong>but it is very
+ * strongly recommended that this element should be included in all ONIX Books Product records, and it is possible that
+ * it may be made mandatory in a future release, or that it will be treated as mandatory in national ONIX accreditation
+ * schemes.</strong>
+ * </p>
+ * <p>
+ * Where the element is sent by a sender who is not the publisher, based on information that has been previously
+ * supplied by the publisher, it is strongly recommended that the element should carry a datestamp attribute to indicate
+ * its likely reliability. See <cite>ONIX for Books – Product Information Message – XML Message Specification</cite>,
+ * Section 4, for details of the datestamp attribute.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 64</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublishingStatus&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b394&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PublishingStatus&gt;02&lt;/PublishingStatus&gt;</tt> Forthcoming</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingStatus</li>

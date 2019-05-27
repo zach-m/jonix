@@ -31,18 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Affiliation</h1><p>An organization to which a contributor to the product was affiliated <em>at the time of its
- * creation</em>, and – if the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position.
- * Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text,
- * suggested maximum length 200 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;Affiliation&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b046&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;b046
- * language=&quot;spa&quot;&gt;Universidad de La Laguna&lt;/b046&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Affiliation</h1>
+ * <p>
+ * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>, and – if
+ * the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Affiliation&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b046&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b046 language=&quot;spa&quot;&gt;Universidad de La Laguna&lt;/b046&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProfessionalAffiliation&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
@@ -82,7 +108,9 @@ public class Affiliation implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 200 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 200 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

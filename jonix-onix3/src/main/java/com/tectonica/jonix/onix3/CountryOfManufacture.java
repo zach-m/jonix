@@ -31,20 +31,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Country of manufacture</h1><p>An ISO code identifying the country of manufacture of a single-item product, or of
- * a multiple-item product when all items are manufactured in the same country. This information is needed in some
- * countries to meet regulatory requirements. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two letters. Note that ISO 3166-1 specifies that country codes
- * shall be sent as upper case only</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country codes, see List
- * 91</td></tr><tr><td>Reference name</td><td><tt>&lt;CountryOfManufacture&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x316&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x316&gt;US&lt;/x316&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Country of manufacture</h1>
+ * <p>
+ * An ISO code identifying the country of manufacture of a single-item product, or of a multiple-item product when all
+ * items are manufactured in the same country. This information is needed in some countries to meet regulatory
+ * requirements. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two letters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case
+ * only</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes, see List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CountryOfManufacture&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x316&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x316&gt;US&lt;/x316&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * <li>&lt;ProductPart&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ CountryOfManufacture</li>

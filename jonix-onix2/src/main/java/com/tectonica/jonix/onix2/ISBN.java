@@ -34,15 +34,33 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>ISBN-10</h1><p>The 10-character International Standard Book Number, the recognized standard identifier for books
- * and certain other non-serial publications up to 31 December 2006. Optional and non-repeating. <strong>The
- * &lt;ProductIdentifier&gt; composite on a later page provides a more general method of handling this and other product
- * codes, and is to be preferred. The &lt;ISBN&gt; element is on no account to be used to carry a 13-digit
- * ISBN.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 10 characters, all numeric
- * except last character, which may be letter X. The last character is a check character calculated in accordance with
- * rules given at http://www.isbn.spk-berlin.de/html/userman.htm</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;ISBN&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b004&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ISBN&gt;8474339790&lt;/ISBN&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>ISBN-10</h1>
+ * <p>
+ * The 10-character International Standard Book Number, the recognized standard identifier for books and certain other
+ * non-serial publications up to 31 December 2006. Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt;
+ * composite on a later page provides a more general method of handling this and other product codes, and is to be
+ * preferred. The &lt;ISBN&gt; element is on no account to be used to carry a 13-digit ISBN.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 10 characters, all numeric except last character, which may be letter X. The last character is a
+ * check character calculated in accordance with rules given at http://www.isbn.spk-berlin.de/html/userman.htm</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ISBN&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b004&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ISBN&gt;8474339790&lt;/ISBN&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
@@ -50,7 +68,7 @@ import java.io.Serializable;
  * <li>&lt;NotForSale&gt;</li>
  * <li>&lt;RelatedProduct&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ISBN</li>
@@ -92,7 +110,8 @@ public class ISBN implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X. The last
-     * character is a check character calculated in accordance with rules given at http://www.isbn.spk-berlin.de/html/userman.htm<p>
+     * character is a check character calculated in accordance with rules given at http://www.isbn.spk-berlin.de/html/userman.htm
+     * <p>
      * (type: NonEmptyString)
      */
     public String value;

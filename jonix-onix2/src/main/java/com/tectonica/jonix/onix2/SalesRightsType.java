@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sales rights type code</h1><p>An ONIX code which identifies the type of sales right or exclusion which applies in
- * the territories which are associated with it. Mandatory in each occurrence of the &lt;SalesRights&gt;composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 46</td></tr><tr><td>Reference name</td><td><tt>&lt;SalesRightsType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b089&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SalesRightsType&gt;02&lt;/SalesRightsType&gt;</tt>
- * For sale, non-exclusive</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sales rights type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of sales right or exclusion which applies in the territories which are
+ * associated with it. Mandatory in each occurrence of the &lt;SalesRights&gt;composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 46</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SalesRightsType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b089&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SalesRightsType&gt;02&lt;/SalesRightsType&gt;</tt> For sale, non-exclusive</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SalesRights&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SalesRights ⯈ SalesRightsType</li>

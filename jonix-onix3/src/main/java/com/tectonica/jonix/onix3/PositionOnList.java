@@ -30,17 +30,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Position on list</h1><p>The position that a product has reached on a bestseller list specified in
- * &lt;ListName&gt;. Optional and non-repeating. The &lt;ListName&gt; element must also be present if
- * &lt;PositionOnList&gt; is included.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer,
- * suggested maximum length 3 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;PositionOnList&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x433&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;PositionOnList&gt;1&lt;/PositionOnList&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Position on list</h1>
+ * <p>
+ * The position that a product has reached on a bestseller list specified in &lt;ListName&gt;. Optional and
+ * non-repeating. The &lt;ListName&gt; element must also be present if &lt;PositionOnList&gt; is included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive integer, suggested maximum length 3 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PositionOnList&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x433&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PositionOnList&gt;1&lt;/PositionOnList&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CitedContent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ PositionOnList</li>
@@ -74,7 +96,9 @@ public class PositionOnList implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer, suggested maximum length 3 digits<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 3 digits
+     * <p>
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

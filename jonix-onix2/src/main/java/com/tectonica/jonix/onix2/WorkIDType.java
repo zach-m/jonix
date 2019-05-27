@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Work identifier type code</h1><p>An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt;
- * is taken. Mandatory in each occurrence of the &lt;WorkIdentifier&gt; composite, and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 16</td></tr><tr><td>Reference name</td><td><tt>&lt;WorkIDType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b201&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;WorkIDType&gt;01&lt;/WorkIDType&gt;</tt>
- * Proprietary</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Work identifier type code</h1>
+ * <p>
+ * An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt; is taken. Mandatory in each
+ * occurrence of the &lt;WorkIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 16</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;WorkIDType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b201&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;WorkIDType&gt;01&lt;/WorkIDType&gt;</tt> Proprietary</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;WorkIdentifier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier ⯈ WorkIDType</li>

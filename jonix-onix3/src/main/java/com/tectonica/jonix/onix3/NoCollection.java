@@ -30,19 +30,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>“No collection” indicator</h1><p>An empty element that provides a positive indication that a product does not
- * belong to a collection (a ‘set’ or ‘series’). This element is intended to be used in an ONIX accreditation scheme to
- * confirm that collection information is being consistently supplied in publisher ONIX feeds. Optional and
- * non-repeating. Must only be sent in a record that has no instances of the &lt;Collection&gt; composite <em>and</em>
- * has no collection level title elements in Group&nbsp;P.6.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML
- * empty element</td></tr><tr><td>Reference name</td><td><tt>&lt;NoCollection&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x411&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;NoCollection/&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>“No collection” indicator</h1>
+ * <p>
+ * An empty element that provides a positive indication that a product does not belong to a collection (a ‘set’ or
+ * ‘series’). This element is intended to be used in an ONIX accreditation scheme to confirm that collection information
+ * is being consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record
+ * that has no instances of the &lt;Collection&gt; composite <em>and</em> has no collection level title elements in
+ * Group&nbsp;P.6.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NoCollection&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x411&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;NoCollection/&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NoCollection</li>

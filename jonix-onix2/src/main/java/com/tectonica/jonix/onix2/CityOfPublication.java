@@ -34,20 +34,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>City or town of publication</h1><p>The name of a city or town associated with the imprint or publisher. Optional,
- * and repeatable if the imprint carries two or more cities of publication.</p><p>A place of publication is normally
- * given in the form in which it appears on the title page. If the place name appears in more than one language, use the
- * language of the title carried in the ONIX record. If this criterion does not apply, use the form that appears first.
- * Alternatively, some ONIX applications may follow their own “house style”.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Free text, suggested maximum length 50 characters.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;CityOfPublication&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b209&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;CityOfPublication&gt;New
- * York&lt;/CityOfPublication&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>City or town of publication</h1>
+ * <p>
+ * The name of a city or town associated with the imprint or publisher. Optional, and repeatable if the imprint carries
+ * two or more cities of publication.
+ * </p>
+ * <p>
+ * A place of publication is normally given in the form in which it appears on the title page. If the place name appears
+ * in more than one language, use the language of the title carried in the ONIX record. If this criterion does not
+ * apply, use the form that appears first. Alternatively, some ONIX applications may follow their own “house style”.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Free text, suggested maximum length 50 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CityOfPublication&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b209&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;CityOfPublication&gt;New York&lt;/CityOfPublication&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ CityOfPublication</li>
@@ -85,7 +105,9 @@ public class CityOfPublication implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Free text, suggested maximum length 50 characters.<p> (type: NonEmptyString)
+     * Raw Format: Free text, suggested maximum length 50 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

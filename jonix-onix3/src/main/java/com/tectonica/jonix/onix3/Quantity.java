@@ -30,13 +30,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Usage quantity (digital products)</h1><p>A numeric value representing the maximum permitted quantity of a
- * particular type of usage. Mandatory in each occurrence of the &lt;EpubUsageLimit&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit
- * decimal point when required, or zero, as appropriate for the units specified in
- * &lt;EpubUsageUnit&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;Quantity&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x320&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;Quantity&gt;10&lt;/Quantity&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Usage quantity (digital products)</h1>
+ * <p>
+ * A numeric value representing the maximum permitted quantity of a particular type of usage. Mandatory in each
+ * occurrence of the &lt;EpubUsageLimit&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive real number, with explicit decimal point when required, or zero, as appropriate for the units specified
+ * in &lt;EpubUsageUnit&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Quantity&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x320&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;Quantity&gt;10&lt;/Quantity&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Discount&gt;</li>
@@ -44,12 +66,13 @@ import java.io.Serializable;
  * <li>&lt;PriceConditionQuantity&gt;</li>
  * <li>&lt;EpubUsageLimit&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Discount ⯈ Quantity</li>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Discount ⯈ Quantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
+ * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit
+ * ⯈
  * Quantity</li>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
  * Quantity</li>
@@ -88,7 +111,9 @@ public class Quantity implements OnixElement<Double>, Serializable {
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the
-     * units specified in &lt;EpubUsageUnit&gt;<p> (type: dt.PositiveDecimal)
+     * units specified in &lt;EpubUsageUnit&gt;
+     * <p>
+     * (type: dt.PositiveDecimal)
      */
     public Double value;
 

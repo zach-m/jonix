@@ -31,14 +31,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Date</h1><p>The date specified in the &lt;ContributorDateRole&gt; field. Mandatory in each occurrence of the
+ * <h1>Date</h1>
+ * <p>
+ * The date specified in the &lt;ContributorDateRole&gt; field. Mandatory in each occurrence of the
  * &lt;ContributorDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the
  * attribute is missing, then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute
- * and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;,
- * or the default YYYYMMDD</td></tr><tr><td>Reference name</td><td><tt>&lt;Date&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b306&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td><tt>&lt;Date&gt;20010106&lt;/Date&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Date&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b306&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>dateformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;Date&gt;20010106&lt;/Date&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PublishingDate&gt;</li>
@@ -49,7 +75,7 @@ import java.io.Serializable;
  * <li>&lt;SubjectDate&gt;</li>
  * <li>&lt;PriceDate&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ PublishingDate ⯈ Date</li>
@@ -103,7 +129,9 @@ public class Date implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default
-     * YYYYMMDD<p> (type: dt.NonEmptyString)
+     * YYYYMMDD
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

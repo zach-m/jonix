@@ -19,209 +19,257 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
+import com.tectonica.jonix.struct.JonixAgentIdentifier;
+import com.tectonica.jonix.struct.JonixWebsite;
 
-import com.tectonica.jonix.*;
-import com.tectonica.jonix.OnixComposite.*;
-import com.tectonica.jonix.codelist.*;
-import com.tectonica.jonix.struct.*;
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Publisher representative composite</h1><p>A repeatable group of data elements which together identify a publisher representative in a specified market. Optional, and repeated only if the publisher has two or more representatives.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PublisherRepresentative&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;publisherrepresentative&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publisher representative composite</h1>
+ * <p>
+ * A repeatable group of data elements which together identify a publisher representative in a specified market.
+ * Optional, and repeated only if the publisher has two or more representatives.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublisherRepresentative&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;publisherrepresentative&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MarketPublishingDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative</li>
  * </ul>
  */
-public class PublisherRepresentative implements OnixSuperComposite, Serializable
-{
-   private static final long serialVersionUID = 1L;
+public class PublisherRepresentative implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-   public static final String refname = "PublisherRepresentative";
-   public static final String shortname = "publisherrepresentative";
+    public static final String refname = "PublisherRepresentative";
+    public static final String shortname = "publisherrepresentative";
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // ATTRIBUTES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-    * (type: dt.DateOrDateTime)
-    */
-   public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-   public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-   /**
-    * (type: dt.NonEmptyString)
-    */
-   public String sourcename;
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String sourcename;
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // CONSTRUCTION
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private boolean initialized;
-   private final boolean exists;
-   private final org.w3c.dom.Element element;
-   public static final PublisherRepresentative EMPTY = new PublisherRepresentative();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final PublisherRepresentative EMPTY = new PublisherRepresentative();
 
-   public PublisherRepresentative() {
-      exists = false;
-      element = null;
-      initialized = true; // so that no further processing will be done on this intentionally-empty object
-   }
+    public PublisherRepresentative() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-   public PublisherRepresentative(org.w3c.dom.Element element) {
-      exists = true;
-      initialized = false;
-      this.element = element;
-      datestamp = JPU.getAttribute(element, "datestamp");
-      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-      sourcename = JPU.getAttribute(element, "sourcename");
-   }
+    public PublisherRepresentative(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+    }
 
-   @Override
-   public void _initialize() {
-      if (initialized) return;
-      initialized = true;
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-      JPU.forElementsOf(element, e -> {
-         final String name = e.getNodeName();
-         switch (name) {
-            case AgentRole.refname:
-            case AgentRole.shortname:
-               agentRole = new AgentRole(e);
-               break;
-            case AgentIdentifier.refname:
-            case AgentIdentifier.shortname:
-               agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(e));
-               break;
-            case AgentName.refname:
-            case AgentName.shortname:
-               agentName = new AgentName(e);
-               break;
-            case TelephoneNumber.refname:
-            case TelephoneNumber.shortname:
-               telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
-               break;
-            case FaxNumber.refname:
-            case FaxNumber.shortname:
-               faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
-               break;
-            case EmailAddress.refname:
-            case EmailAddress.shortname:
-               emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
-               break;
-            case Website.refname:
-            case Website.shortname:
-               websites = JPU.addToList(websites, new Website(e));
-               break;
-            default:
-               break;
-         }
-      });
-   }
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            switch (name) {
+                case AgentRole.refname:
+                case AgentRole.shortname:
+                    agentRole = new AgentRole(e);
+                    break;
+                case AgentIdentifier.refname:
+                case AgentIdentifier.shortname:
+                    agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(e));
+                    break;
+                case AgentName.refname:
+                case AgentName.shortname:
+                    agentName = new AgentName(e);
+                    break;
+                case TelephoneNumber.refname:
+                case TelephoneNumber.shortname:
+                    telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+                    break;
+                case FaxNumber.refname:
+                case FaxNumber.shortname:
+                    faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
 
-   /**
-    * @return whether this tag (&lt;PublisherRepresentative&gt; or &lt;publisherrepresentative&gt;) is explicitly provided in the ONIX XML
-    */
-   @Override
-   public boolean exists() {
-      return exists;
-   }
+    /**
+     * @return whether this tag (&lt;PublisherRepresentative&gt; or &lt;publisherrepresentative&gt;) is explicitly
+     * provided in the ONIX XML
+     */
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // MEMBERS
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private AgentRole agentRole = AgentRole.EMPTY;
+    private AgentRole agentRole = AgentRole.EMPTY;
 
-   /**
-    * <p>An ONIX code identifying the role of an agent in relation to the product in the specified market, <i>eg</i> Exclusive sales agent, Local publisher, <i>etc</i>. Mandatory in each occurrence of the &lt;PublisherRepresentative&gt; composite.</p>
-    * Jonix-Comment: this field is required
-    */
-   public AgentRole agentRole() {
-      _initialize();
-      return agentRole;
-   }
+    /**
+     * <p>
+     * An ONIX code identifying the role of an agent in relation to the product in the specified market, <i>eg</i>
+     * Exclusive sales agent, Local publisher, <i>etc</i>. Mandatory in each occurrence of the
+     * &lt;PublisherRepresentative&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public AgentRole agentRole() {
+        _initialize();
+        return agentRole;
+    }
 
-   private ListOfOnixDataCompositeWithKey<AgentIdentifier,JonixAgentIdentifier,SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes>
+        agentIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
-   /**
-    * <p>A group of data elements together defining the identifier of an agent or local publisher in accordance with a specified scheme. Optional, but each occurrence of the &lt;PublisherRepresentative&gt; composite must carry either at least one agent identifier, or an &lt;AgentName&gt;. Repeatable only if two or more identifiers are sent using different schemes.</p>
-    * Jonix-Comment: this list is required to contain at least one item
-    */
-   public ListOfOnixDataCompositeWithKey<AgentIdentifier,JonixAgentIdentifier,SupplierIdentifierTypes> agentIdentifiers() {
-      _initialize();
-      return agentIdentifiers;
-   }
+    /**
+     * <p>
+     * A group of data elements together defining the identifier of an agent or local publisher in accordance with a
+     * specified scheme. Optional, but each occurrence of the &lt;PublisherRepresentative&gt; composite must carry
+     * either at least one agent identifier, or an &lt;AgentName&gt;. Repeatable only if two or more identifiers are
+     * sent using different schemes.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers() {
+        _initialize();
+        return agentIdentifiers;
+    }
 
-   private AgentName agentName = AgentName.EMPTY;
+    private AgentName agentName = AgentName.EMPTY;
 
-   /**
-    * <p>The name of an agent or local publisher. Optional and non-repeating; required if no agent identifier is sent in an occurrence of the &lt;PublisherRepresentative&gt; composite.</p>
-    * Jonix-Comment: this field is optional
-    */
-   public AgentName agentName() {
-      _initialize();
-      return agentName;
-   }
+    /**
+     * <p>
+     * The name of an agent or local publisher. Optional and non-repeating; required if no agent identifier is sent in
+     * an occurrence of the &lt;PublisherRepresentative&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public AgentName agentName() {
+        _initialize();
+        return agentName;
+    }
 
-   private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
-   /**
-    * <p>A telephone number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of providing contact details in the &lt;ProductContact&gt; composite.</p>
-    * Jonix-Comment: this list may be empty
-    */
-   public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
-      _initialize();
-      return telephoneNumbers;
-   }
+    /**
+     * <p>
+     * A telephone number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor
+     * of providing contact details in the &lt;ProductContact&gt; composite.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
+        _initialize();
+        return telephoneNumbers;
+    }
 
-   private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
 
-   /**
-    * <p>A fax number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of providing contact details in the &lt;ProductContact&gt; composite.</p>
-    * Jonix-Comment: this list may be empty
-    */
-   public ListOfOnixElement<FaxNumber, String> faxNumbers() {
-      _initialize();
-      return faxNumbers;
-   }
+    /**
+     * <p>
+     * A fax number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of
+     * providing contact details in the &lt;ProductContact&gt; composite.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<FaxNumber, String> faxNumbers() {
+        _initialize();
+        return faxNumbers;
+    }
 
-   private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
 
-   /**
-    * <p>An e-mail address for an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of providing contact details in the &lt;ProductContact&gt; composite.</p>
-    * Jonix-Comment: this list may be empty
-    */
-   public ListOfOnixElement<EmailAddress, String> emailAddresss() {
-      _initialize();
-      return emailAddresss;
-   }
+    /**
+     * <p>
+     * An e-mail address for an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor
+     * of providing contact details in the &lt;ProductContact&gt; composite.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<EmailAddress, String> emailAddresss() {
+        _initialize();
+        return emailAddresss;
+    }
 
-   private ListOfOnixDataComposite<Website,JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
 
-   /**
-    * <p>An optional group of data elements which together identify and provides pointer to a website which is related to the agent or local publisher identified in an occurrence of the &lt;PublisherRepresentative&gt; composite. Repeatable in order to provide links to multiple websites.</p>
-    * Jonix-Comment: this list may be empty
-    */
-   public ListOfOnixDataComposite<Website,JonixWebsite> websites() {
-      _initialize();
-      return websites;
-   }
+    /**
+     * <p>
+     * An optional group of data elements which together identify and provides pointer to a website which is related to
+     * the agent or local publisher identified in an occurrence of the &lt;PublisherRepresentative&gt; composite.
+     * Repeatable in order to provide links to multiple websites.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
+        _initialize();
+        return websites;
+    }
 }

@@ -34,23 +34,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Approximate number of pages</h1><p>An indication of the total number of pages in a book or other printed product.
- * This is not intended to represent a precise count of numbered and unnumbered pages. It is usually sufficient to take
- * the number from the last numbered page. If there are two or more separate numbering sequences (<em>eg</em> xviii +
- * 344), the numbers in each sequence may be added together to make an overall total (in this case 362), but do not
- * count unnumbered pages except if the book does not have numbered pages at all.</p><p>For multi-volume books, enter
- * the total for all the volumes combined.</p><p>This field is optional, but it is normally required for a printed book
- * unless the &lt;PagesRoman&gt; and &lt;PagesArabic&gt; elements are used, and is non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length integer, suggested maximum length 6
- * digits.</td></tr><tr><td>Reference name</td><td><tt>&lt;NumberOfPages&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b061&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b061&gt;442&lt;/b061&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Approximate number of pages</h1>
+ * <p>
+ * An indication of the total number of pages in a book or other printed product. This is not intended to represent a
+ * precise count of numbered and unnumbered pages. It is usually sufficient to take the number from the last numbered
+ * page. If there are two or more separate numbering sequences (<em>eg</em> xviii + 344), the numbers in each sequence
+ * may be added together to make an overall total (in this case 362), but do not count unnumbered pages except if the
+ * book does not have numbered pages at all.
+ * </p>
+ * <p>
+ * For multi-volume books, enter the total for all the volumes combined.
+ * </p>
+ * <p>
+ * This field is optional, but it is normally required for a printed book unless the &lt;PagesRoman&gt; and
+ * &lt;PagesArabic&gt; elements are used, and is non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length integer, suggested maximum length 6 digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NumberOfPages&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b061&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b061&gt;442&lt;/b061&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;TextItem&gt;</li>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ NumberOfPages</li>
@@ -89,7 +112,9 @@ public class NumberOfPages implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length integer, suggested maximum length 6 digits.<p> (type: NonEmptyString)
+     * Raw Format: Variable length integer, suggested maximum length 6 digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

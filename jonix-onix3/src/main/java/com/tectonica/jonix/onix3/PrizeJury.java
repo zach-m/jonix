@@ -32,20 +32,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Prize or award jury</h1><p>Free text listing members of the jury that awarded the prize. Optional, and repeatable
- * if the text is provided in more than one language. The <i>language</i> attribute is optional for a single instance of
- * &lt;PrizeJury&gt;, but must be included in each instance if &lt;PrizeJury&gt; is repeated.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 500 characters. XHTML is
- * enabled in this element - see Using XHTML, HTML or XML with ONIX text fields</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PrizeJury&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;g343&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr><tr><td>Example</td><td><tt>&lt;g343&gt;Russell Banks, Victoria Glendinning and Alistair
- * MacLeod&lt;/g343&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Prize or award jury</h1>
+ * <p>
+ * Free text listing members of the jury that awarded the prize. Optional, and repeatable if the text is provided in
+ * more than one language. The <i>language</i> attribute is optional for a single instance of &lt;PrizeJury&gt;, but
+ * must be included in each instance if &lt;PrizeJury&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PrizeJury&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;g343&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;g343&gt;Russell Banks, Victoria Glendinning and Alistair MacLeod&lt;/g343&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Prize&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ Prize ⯈ PrizeJury</li>
@@ -86,7 +111,9 @@ public class PrizeJury implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML or XML with ONIX text fields<p> (type: XHTML)
+     * Using XHTML, HTML or XML with ONIX text fields
+     * <p>
+     * (type: XHTML)
      */
     public String value;
 

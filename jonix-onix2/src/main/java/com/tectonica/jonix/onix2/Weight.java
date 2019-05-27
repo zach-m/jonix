@@ -34,19 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Unit weight</h1><p>The weight of a single unit of the product, in the units specified in the message header,
- * &lt;DefaultWeightUnit&gt; field, defined in the <cite>ONIX for Books – Product Information Message – XML Message
- * Specification</cite>. Optional and non-repeating. <strong>The &lt;Measure&gt; composite on a previous page provides a
- * more general method of handling weights, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an explicit decimal point when required,
- * suggested maximum length 6 characters including a decimal point.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;Weight&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;c099&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;c099&gt;180&lt;/c099&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Unit weight</h1>
+ * <p>
+ * The weight of a single unit of the product, in the units specified in the message header, &lt;DefaultWeightUnit&gt;
+ * field, defined in the <cite>ONIX for Books – Product Information Message – XML Message Specification</cite>. Optional
+ * and non-repeating. <strong>The &lt;Measure&gt; composite on a previous page provides a more general method of
+ * handling weights, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point when required, suggested maximum length 6 characters
+ * including a decimal point.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Weight&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;c099&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;c099&gt;180&lt;/c099&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Weight</li>
@@ -85,7 +104,9 @@ public class Weight implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-     * characters including a decimal point.<p> (type: NonEmptyString)
+     * characters including a decimal point.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

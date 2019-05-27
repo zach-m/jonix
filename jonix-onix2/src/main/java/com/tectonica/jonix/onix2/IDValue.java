@@ -34,12 +34,30 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Identifier value</h1><p>An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in
- * each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>According to the identifier type specified in
- * &lt;ProductIDType&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;IDValue&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b244&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;IDValue&gt;8474339790&lt;/IDValue&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Identifier value</h1>
+ * <p>
+ * An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in each occurrence of the
+ * &lt;ProductIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the identifier type specified in &lt;ProductIDType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;IDValue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b244&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;IDValue&gt;8474339790&lt;/IDValue&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;WorkIdentifier&gt;</li>
@@ -57,7 +75,7 @@ import java.io.Serializable;
  * <li>&lt;ParentIdentifier&gt;</li>
  * <li>&lt;AddresseeIdentifier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier ⯈ IDValue</li>
@@ -129,7 +147,9 @@ public class IDValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: According to the identifier type specified in &lt;ProductIDType&gt;<p> (type: NonEmptyString)
+     * Raw Format: According to the identifier type specified in &lt;ProductIDType&gt;
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

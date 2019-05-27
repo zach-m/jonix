@@ -30,19 +30,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Order quantity multiple</h1><p>The order quantity multiple that must be used in any order for the product placed
- * with the supplier. Optional, but where supplied, must be preceded by at least one &lt;OrderQuantityMinimum&gt;
- * element. For example with a minimum order quantity of 6 and a multiple of 4, orders for 6, 10 or 14 copies are
- * acceptable, but orders for fewer than 6, or for 7, 8, 9 or 11 copies are not. If omitted, the minimum or any larger
- * quantity may be ordered.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested
- * maximum length 4 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;OrderQuantityMultiple&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x533&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;OrderQuantityMultiple&gt;4&lt;/OrderQuantityMultiple&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Order quantity multiple</h1>
+ * <p>
+ * The order quantity multiple that must be used in any order for the product placed with the supplier. Optional, but
+ * where supplied, must be preceded by at least one &lt;OrderQuantityMinimum&gt; element. For example with a minimum
+ * order quantity of 6 and a multiple of 4, orders for 6, 10 or 14 copies are acceptable, but orders for fewer than 6,
+ * or for 7, 8, 9 or 11 copies are not. If omitted, the minimum or any larger quantity may be ordered.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive integer, suggested maximum length 4 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;OrderQuantityMultiple&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x533&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;OrderQuantityMultiple&gt;4&lt;/OrderQuantityMultiple&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ OrderQuantityMultiple</li>
@@ -75,7 +97,9 @@ public class OrderQuantityMultiple implements OnixElement<Integer>, Serializable
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer, suggested maximum length 4 digits<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 4 digits
+     * <p>
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

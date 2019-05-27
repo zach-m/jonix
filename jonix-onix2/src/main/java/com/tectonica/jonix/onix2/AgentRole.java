@@ -34,18 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Agent role</h1><p>An ONIX code identifying the role of an agent in relation to the product in the specified
- * market, <em>eg</em> Exclusive sales agent, Local publisher, <em>etc</em>. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits.</td></tr><tr><td>Codelist</td><td>List
- * 69</td></tr><tr><td>Reference name</td><td><tt>&lt;AgentRole&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j402&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;AgentRole&gt;07&lt;/AgentRole&gt;</tt>
- * Local publisher</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Agent role</h1>
+ * <p>
+ * An ONIX code identifying the role of an agent in relation to the product in the specified market, <em>eg</em>
+ * Exclusive sales agent, Local publisher, <em>etc</em>. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 69</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AgentRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j402&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;AgentRole&gt;07&lt;/AgentRole&gt;</tt> Local publisher</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MarketRepresentation&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ AgentRole</li>
@@ -83,7 +104,9 @@ public class AgentRole implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, two numeric digits.<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, two numeric digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

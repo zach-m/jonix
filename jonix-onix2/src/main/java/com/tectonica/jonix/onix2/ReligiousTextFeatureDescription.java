@@ -34,16 +34,30 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Religious text feature description</h1><p>Free text describing a feature that is not adequately defined by code
- * values alone. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ReligiousTextFeatureDescription&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b360&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Religious text feature description</h1>
+ * <p>
+ * Free text describing a feature that is not adequately defined by code values alone. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReligiousTextFeatureDescription&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b360&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReligiousTextFeature&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ ReligiousTextFeature ⯈ ReligiousTextFeatureDescription</li>
@@ -81,7 +95,9 @@ public class ReligiousTextFeatureDescription implements OnixElement<String>, Ser
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum 100 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum 100 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

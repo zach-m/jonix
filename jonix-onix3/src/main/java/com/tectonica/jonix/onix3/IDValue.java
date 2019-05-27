@@ -30,12 +30,34 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Identifier value</h1><p>An identifier of the type specified in the &lt;SenderIDType&gt; element. Mandatory in
- * each occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>According to the identifier type specified in
- * &lt;SenderIDType&gt;</td></tr><tr><td>Reference name</td><td><tt>&lt;IDValue&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b244&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt></tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Identifier value</h1>
+ * <p>
+ * An identifier of the type specified in the &lt;SenderIDType&gt; element. Mandatory in each occurrence of the
+ * &lt;SenderIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the identifier type specified in &lt;SenderIDType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;IDValue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b244&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt></tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyContactIdentifier&gt;</li>
@@ -61,7 +83,7 @@ import java.io.Serializable;
  * <li>&lt;SupplierIdentifier&gt;</li>
  * <li>&lt;PriceIdentifier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ SupplyContactIdentifier ⯈ IDValue</li>
@@ -76,7 +98,8 @@ import java.io.Serializable;
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈ IDValue</li>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈
  * IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈
+ * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier
+ * ⯈
  * IDValue</li>
  * <li>ONIXMessage ⯈ Header ⯈ Addressee ⯈ AddresseeIdentifier ⯈ IDValue</li>
  * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedWork ⯈ WorkIdentifier ⯈ IDValue</li>
@@ -152,7 +175,9 @@ public class IDValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: According to the identifier type specified in &lt;SenderIDType&gt;<p> (type: dt.NonEmptyString)
+     * Raw Format: According to the identifier type specified in &lt;SenderIDType&gt;
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

@@ -31,19 +31,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Imprint or brand name</h1><p>The name of an imprint or brand under which the product is issued, as it appears on
- * the product. Mandatory if there is no imprint identifier in an occurrence of the &lt;Imprint&gt; composite, and
- * optional if an imprint identifier is included. Non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ImprintName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b079&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;ImprintName&gt;Secker
- * &amp;amp; Warburg&lt;/ImprintName&gt;</tt> (note '&amp;' is a reserved character in XML)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Imprint or brand name</h1>
+ * <p>
+ * The name of an imprint or brand under which the product is issued, as it appears on the product. Mandatory if there
+ * is no imprint identifier in an occurrence of the &lt;Imprint&gt; composite, and optional if an imprint identifier is
+ * included. Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ImprintName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b079&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ImprintName&gt;Secker &amp;amp; Warburg&lt;/ImprintName&gt;</tt> (note '&amp;' is a reserved character
+ * in
+ * XML)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Imprint&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint ⯈ ImprintName</li>
@@ -78,7 +105,9 @@ public class ImprintName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

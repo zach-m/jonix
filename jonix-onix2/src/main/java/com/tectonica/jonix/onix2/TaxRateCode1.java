@@ -35,23 +35,49 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Tax rate 1, coded</h1><p>A code which specifies a value added tax rate applying to the whole of the price, or to
- * the amount of the price which is specified in &lt;TaxableAmount1&gt; if present. Optional and non-repeating.</p><p>If
- * the product is taxable at a single rate, or is wholly exempt or zero-rated, &lt;TaxRateCode1&gt; may be sent on its
- * own, or with any combination of &lt;TaxRatePercent1&gt;, &lt;TaxableAmount1&gt; and &lt;TaxAmount1&gt;, although it
- * is best practise to send all these three elements.</p><p>If the product carries mixed tax rates, the minimum
- * requirement is to send &lt;TaxRateCode1&gt;, &lt;TaxRateCode2&gt;, &lt;TaxableAmount1&gt; and &lt;TaxableAmount2&gt;,
- * though again best practise would be to send all eight tax elements so that the tax calculation is made entirely
- * explicit.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, one
- * letter.</td></tr><tr><td>Codelist</td><td>List 62</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxRateCode1&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j153&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TaxRateCode1&gt;Z&lt;/TaxRateCode1&gt;</tt>
- * Zero-rated</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Tax rate 1, coded</h1>
+ * <p>
+ * A code which specifies a value added tax rate applying to the whole of the price, or to the amount of the price which
+ * is specified in &lt;TaxableAmount1&gt; if present. Optional and non-repeating.
+ * </p>
+ * <p>
+ * If the product is taxable at a single rate, or is wholly exempt or zero-rated, &lt;TaxRateCode1&gt; may be sent on
+ * its own, or with any combination of &lt;TaxRatePercent1&gt;, &lt;TaxableAmount1&gt; and &lt;TaxAmount1&gt;, although
+ * it is best practise to send all these three elements.
+ * </p>
+ * <p>
+ * If the product carries mixed tax rates, the minimum requirement is to send &lt;TaxRateCode1&gt;,
+ * &lt;TaxRateCode2&gt;, &lt;TaxableAmount1&gt; and &lt;TaxableAmount2&gt;, though again best practise would be to send
+ * all eight tax elements so that the tax calculation is made entirely explicit.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, one letter.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 62</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TaxRateCode1&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j153&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TaxRateCode1&gt;Z&lt;/TaxRateCode1&gt;</tt> Zero-rated</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ TaxRateCode1</li>

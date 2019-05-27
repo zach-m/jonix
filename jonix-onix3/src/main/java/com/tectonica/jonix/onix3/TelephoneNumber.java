@@ -30,20 +30,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Agent telephone number</h1><p>A telephone number of an agent or local publisher. Optional and repeatable.
- * Deprecated in this context, in favor of providing contact details in the &lt;ProductContact&gt; composite.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 20
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TelephoneNumber&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j270&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;j270&gt;+44
- * 20 8843 8607&lt;/j270&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Agent telephone number</h1>
+ * <p>
+ * A telephone number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of
+ * providing contact details in the &lt;ProductContact&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TelephoneNumber&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j270&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j270&gt;+44 20 8843 8607&lt;/j270&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;NewSupplier&gt;</li>
  * <li>&lt;Supplier&gt;</li>
  * <li>&lt;PublisherRepresentative&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ NewSupplier ⯈ TelephoneNumber</li>
@@ -78,7 +99,9 @@ public class TelephoneNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 20 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

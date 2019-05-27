@@ -34,19 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supplier SAN</h1><p>The book trade Standard Address Number that identifies the supplier with whom trade orders
- * for the product should be placed. Used in the US and UK. Optional, but each occurrence of the &lt;SupplyDetail&gt;
- * composite must carry either at least one supplier identifier, or a &lt;SupplierName&gt;.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, seven characters. The first six are numeric digits, and the
- * seventh is a check character which may be a numeric digit or letter X.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;SupplierSAN&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j136&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j136&gt;978847X&lt;/j136&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supplier SAN</h1>
+ * <p>
+ * The book trade Standard Address Number that identifies the supplier with whom trade orders for the product should be
+ * placed. Used in the US and UK. Optional, but each occurrence of the &lt;SupplyDetail&gt; composite must carry either
+ * at least one supplier identifier, or a &lt;SupplierName&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character which may
+ * be a numeric digit or letter X.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplierSAN&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j136&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j136&gt;978847X&lt;/j136&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * <li>&lt;NewSupplier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierSAN</li>
@@ -86,7 +105,9 @@ public class SupplierSAN implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
-     * character which may be a numeric digit or letter X.<p> (type: NonEmptyString)
+     * character which may be a numeric digit or letter X.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

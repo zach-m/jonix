@@ -41,8 +41,10 @@ public class JonixContentDate implements JonixKeyedStruct<ContentDateRoles>, Ser
     public DateFormats dateFormat;
 
     /**
-     * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
-     * <p> (type: dt.NonEmptyString)
+     * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default
+     * YYYYMMDD
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String date;
 

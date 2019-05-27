@@ -35,22 +35,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supply-to country</h1><p>One or more ISO standard codes identifying a country for which the supplier holds
- * distribution rights for the product. Successive codes may be separated by spaces. Thus, a single occurrence of the
- * element can carry an unlimited number of country codes. For upwards compatibility, the element remains repeatable, so
- * that multiple countries can be listed as multiple occurrences of the whole element. Optional and
- * repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>One or more fixed-length codes, each with two
- * upper case letters, successive codes being separated by spaces. Suggested maximum length 600 characters. [Note that
- * ISO 3166-1 specifies that country codes shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO
- * 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplyToCountry&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j138&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j138&gt;US CA&lt;/j138&gt;</tt> USA and
- * Canada</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supply-to country</h1>
+ * <p>
+ * One or more ISO standard codes identifying a country for which the supplier holds distribution rights for the
+ * product. Successive codes may be separated by spaces. Thus, a single occurrence of the element can carry an unlimited
+ * number of country codes. For upwards compatibility, the element remains repeatable, so that multiple countries can be
+ * listed as multiple occurrences of the whole element. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more fixed-length codes, each with two upper case letters, successive codes being separated by spaces.
+ * Suggested maximum length 600 characters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper
+ * case only.]</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes - List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplyToCountry&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j138&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j138&gt;US CA&lt;/j138&gt;</tt> USA and Canada</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplyToCountry</li>

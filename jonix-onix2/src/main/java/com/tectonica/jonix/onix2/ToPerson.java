@@ -34,18 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Addressee contact</h1><p>Free text giving the name, department <em>etc</em> for a contact person in the addressee
- * organization to whom the message is to be directed. Optional and non-repeating.</p><p class="new214">The text is not
- * limited to ASCII characters.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length ASCII text,
- * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ToPerson&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m179&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ToPerson&gt;Mel
- * Carter&lt;/ToPerson&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Addressee contact</h1>
+ * <p>
+ * Free text giving the name, department <em>etc</em> for a contact person in the addressee organization to whom the
+ * message is to be directed. Optional and non-repeating.
+ * </p>
+ * <p class="new214">
+ * The text is not limited to ASCII characters.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length ASCII text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ToPerson&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m179&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ToPerson&gt;Mel Carter&lt;/ToPerson&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ ToPerson</li>
@@ -83,7 +103,9 @@ public class ToPerson implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length ASCII text, suggested maximum 300 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length ASCII text, suggested maximum 300 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

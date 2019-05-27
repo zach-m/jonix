@@ -31,19 +31,47 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Link to website</h1><p>The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite,
- * and repeatable to provide multiple URLs where the website content is available in multiple languages. The
- * <i>language</i> attribute is optional for a single instance of &lt;WebsiteLink&gt;, but must be included in each
- * instance if &lt;WebsiteLink&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Uniform
- * Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum length 300
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;WebsiteLink&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b295&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;b295&gt;https://xyzbooks.com/joe_bloggs.htm&lt;/b295&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Link to website</h1>
+ * <p>
+ * The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite, and repeatable to provide
+ * multiple URLs where the website content is available in multiple languages. The <i>language</i> attribute is optional
+ * for a single instance of &lt;WebsiteLink&gt;, but must be included in each instance if &lt;WebsiteLink&gt; is
+ * repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum
+ * length
+ * 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;WebsiteLink&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b295&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b295&gt;https://xyzbooks.com/joe_bloggs.htm&lt;/b295&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Website&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ Website ⯈ WebsiteLink</li>
@@ -87,7 +115,9 @@ public class WebsiteLink implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
-     * maximum length 300 characters<p> (type: dt.NonEmptyURI)
+     * maximum length 300 characters
+     * <p>
+     * (type: dt.NonEmptyURI)
      */
     public String value;
 

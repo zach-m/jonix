@@ -34,17 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Replaced-by EAN-13 article number</h1><p>The EAN-13 article number of a new product which replaces the current
- * product. Optional and non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more
- * general method of handling related items, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 13 numeric digits.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;ReplacedByEAN13&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;h131&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;h131&gt;9788474339796&lt;/h131&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Replaced-by EAN-13 article number</h1>
+ * <p>
+ * The EAN-13 article number of a new product which replaces the current product. Optional and non-repeating.
+ * <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more general method of handling related
+ * items, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 13 numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReplacedByEAN13&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;h131&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;h131&gt;9788474339796&lt;/h131&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ReplacedByEAN13</li>
@@ -82,7 +101,9 @@ public class ReplacedByEAN13 implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, 13 numeric digits.<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, 13 numeric digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

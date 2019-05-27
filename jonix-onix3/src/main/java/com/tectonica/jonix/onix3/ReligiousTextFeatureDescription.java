@@ -19,100 +19,135 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.TextFormats;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Religious text feature description</h1><p>Free text describing a feature that is not adequately defined by code values alone. Optional, and repeatable if parallel descriptive text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;ReligiousTextFeatureDescription&gt;, but must be included in each instance if &lt;ReligiousTextFeatureDescription&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields</td></tr><tr><td>Reference name</td><td><tt>&lt;ReligiousTextFeatureDescription&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b360&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language, textformat</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Religious text feature description</h1>
+ * <p>
+ * Free text describing a feature that is not adequately defined by code values alone. Optional, and repeatable if
+ * parallel descriptive text is provided in multiple languages. The <i>language</i> attribute is optional for a single
+ * instance of &lt;ReligiousTextFeatureDescription&gt;, but must be included in each instance if
+ * &lt;ReligiousTextFeatureDescription&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using XHTML, HTML
+ * or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReligiousTextFeatureDescription&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b360&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReligiousTextFeature&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ReligiousText ⯈ ReligiousTextFeature ⯈ ReligiousTextFeatureDescription</li>
+ * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ReligiousText ⯈ ReligiousTextFeature ⯈
+ * ReligiousTextFeatureDescription</li>
  * </ul>
  */
-public class ReligiousTextFeatureDescription implements OnixElement<String>, Serializable
-{
-   private static final long serialVersionUID = 1L;
+public class ReligiousTextFeatureDescription implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-   public static final String refname = "ReligiousTextFeatureDescription";
-   public static final String shortname = "b360";
+    public static final String refname = "ReligiousTextFeatureDescription";
+    public static final String shortname = "b360";
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // ATTRIBUTES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-    * (type: dt.DateOrDateTime)
-    */
-   public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-   public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-   /**
-    * (type: dt.NonEmptyString)
-    */
-   public String sourcename;
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String sourcename;
 
-   public Languages language;
+    public Languages language;
 
-   public TextFormats textformat;
+    public TextFormats textformat;
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // VALUE MEMBER
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-   * Raw Format: Variable length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields<p>
-   * (type: XHTML)
-   */
-   public String value;
+    /**
+     * Raw Format: Variable length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
+     * XHTML, HTML or XML with ONIX text fields
+     * <p>
+     * (type: XHTML)
+     */
+    public String value;
 
-   /**
-   * Internal API, use the {@link #value()} method or the {@link #value} field instead
-   */
-   @Override
-   public String _value() {
-      return value;
-   }
+    /**
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // SERVICES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private final boolean exists;
-   public static final ReligiousTextFeatureDescription EMPTY = new ReligiousTextFeatureDescription();
+    private final boolean exists;
+    public static final ReligiousTextFeatureDescription EMPTY = new ReligiousTextFeatureDescription();
 
-   public ReligiousTextFeatureDescription() {
-      exists = false;
-   }
+    public ReligiousTextFeatureDescription() {
+        exists = false;
+    }
 
-   public ReligiousTextFeatureDescription(org.w3c.dom.Element element) {
-      exists = true;
-      datestamp = JPU.getAttribute(element, "datestamp");
-      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-      sourcename = JPU.getAttribute(element, "sourcename");
-      language = Languages.byCode(JPU.getAttribute(element, "language"));
-      textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+    public ReligiousTextFeatureDescription(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
-      value = JPU.getChildXHTML(element, true);
-   }
+        value = JPU.getChildXHTML(element, true);
+    }
 
-   /**
-    * @return whether this tag (&lt;ReligiousTextFeatureDescription&gt; or &lt;b360&gt;) is explicitly provided in the ONIX XML
-    */
-   @Override
-   public boolean exists() {
-      return exists;
-   }
+    /**
+     * @return whether this tag (&lt;ReligiousTextFeatureDescription&gt; or &lt;b360&gt;) is explicitly provided in the
+     * ONIX XML
+     */
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

@@ -32,18 +32,33 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publishing date composite</h1><p>A group of data elements which together specify a date associated with the
- * publishing of the product. Optional, but where known, at least a date of publication <em>must</em> be specified
- * <em>either</em> here (as a ‘global’ pub date) <em>or</em> in &lt;MarketPublishingDetail&gt; (P.25). Other dates
- * related to the publishing of a product can be sent in further repeats of the composite.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PublishingDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;publishingdate&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publishing date composite</h1>
+ * <p>
+ * A group of data elements which together specify a date associated with the publishing of the product. Optional, but
+ * where known, at least a date of publication <em>must</em> be specified <em>either</em> here (as a ‘global’ pub date)
+ * <em>or</em> in &lt;MarketPublishingDetail&gt; (P.25). Other dates related to the publishing of a product can be sent
+ * in further repeats of the composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublishingDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;publishingdate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PublishingDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ PublishingDate</li>
@@ -140,8 +155,10 @@ public class PublishingDate
     private PublishingDateRole publishingDateRole = PublishingDateRole.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the significance of the date, <i>eg</i> publication date, announcement date, latest
-     * reprint date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating the significance of the date, <i>eg</i> publication date, announcement date, latest
+     * reprint date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public PublishingDateRole publishingDateRole() {
@@ -152,9 +169,11 @@ public class PublishingDate
     private DateFormat dateFormat = DateFormat.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of
-     * the &lt;PublishingDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
-     * attribute instead.</p>
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of the
+     * &lt;PublishingDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
+     * attribute instead.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public DateFormat dateFormat() {
@@ -165,10 +184,12 @@ public class PublishingDate
     private Date date = Date.EMPTY;
 
     /**
-     * <p>The date specified in the &lt;PublishingDateRole&gt; field. Mandatory in each occurrence of the
+     * <p>
+     * The date specified in the &lt;PublishingDateRole&gt; field. Mandatory in each occurrence of the
      * &lt;PublishingDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the
      * attribute is missing, then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i>
-     * attribute and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.</p>
+     * attribute and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public Date date() {

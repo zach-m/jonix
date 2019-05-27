@@ -35,20 +35,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Trade category code</h1><p>An ONIX code which indicates a trade category which is somewhat related to but not
- * properly an attribute of product form. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits.</td></tr><tr><td>Codelist</td><td>List
- * 12</td></tr><tr><td>Reference name</td><td><tt>&lt;TradeCategory&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b384&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TradeCategory&gt;03&lt;/TradeCategory&gt;</tt>
- * Sonderausgabe (Germany)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Trade category code</h1>
+ * <p>
+ * An ONIX code which indicates a trade category which is somewhat related to but not properly an attribute of product
+ * form. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 12</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TradeCategory&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b384&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TradeCategory&gt;03&lt;/TradeCategory&gt;</tt> Sonderausgabe (Germany)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;ContainedItem&gt;</li>
  * <li>&lt;RelatedProduct&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ TradeCategory</li>

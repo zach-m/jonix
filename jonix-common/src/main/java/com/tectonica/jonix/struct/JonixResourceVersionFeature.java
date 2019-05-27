@@ -39,13 +39,17 @@ public class JonixResourceVersionFeature implements JonixKeyedStruct<ResourceVer
     public ResourceVersionFeatureTypes resourceVersionFeatureType;
 
     /**
-     * Raw Format: Dependent on the scheme specified in &lt;ResourceFeatureType&gt; <p> (type: dt.NonEmptyString)
+     * Raw Format: Dependent on the scheme specified in &lt;ResourceFeatureType&gt;
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String featureValue;
 
     /**
      * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+     * Using XHTML, HTML or XML with ONIX text fields
+     * <p>
+     * (type: XHTML)
      */
     public List<String> featureNotes;
 

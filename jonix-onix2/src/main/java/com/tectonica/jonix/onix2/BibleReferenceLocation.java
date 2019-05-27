@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Bible reference location</h1><p>An ONIX code indicating where references are located as part of the content of a
- * Bible or selected Biblical text, for example Center column. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three letters</td></tr><tr><td>Codelist</td><td>List
- * 87</td></tr><tr><td>Reference name</td><td><tt>&lt;BibleReferenceLocation&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b356&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;BibleReferenceLocation&gt;CCL&lt;/BibleReferenceLocation&gt;</tt>
- * Center column</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Bible reference location</h1>
+ * <p>
+ * An ONIX code indicating where references are located as part of the content of a Bible or selected Biblical text, for
+ * example Center column. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 87</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;BibleReferenceLocation&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b356&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;BibleReferenceLocation&gt;CCL&lt;/BibleReferenceLocation&gt;</tt> Center column</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Bible&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ Bible ⯈ BibleReferenceLocation</li>

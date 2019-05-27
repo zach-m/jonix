@@ -32,20 +32,37 @@ import java.util.List;
  */
 
 /**
- * <h1>Related material composite</h1><p>The related material block covers data element Groups P.22 and P.23, providing
- * links to related works and related products. The block as a whole is optional and non-repeating.</p><p>None of the
- * individual sections are mandatory within an occurrence of the block. However, in most circumstances, the block should
- * contain at least one instance of &lt;RelatedWork&gt; or &lt;RelatedProduct&gt;. It may be empty only within a partial
- * or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all
- * previously-supplied information about related works and products.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;RelatedMaterial&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;relatedmaterial&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Related material composite</h1>
+ * <p>
+ * The related material block covers data element Groups P.22 and P.23, providing links to related works and related
+ * products. The block as a whole is optional and non-repeating.
+ * </p>
+ * <p>
+ * None of the individual sections are mandatory within an occurrence of the block. However, in most circumstances, the
+ * block should contain at least one instance of &lt;RelatedWork&gt; or &lt;RelatedProduct&gt;. It may be empty only
+ * within a partial or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention is to
+ * remove all previously-supplied information about related works and products.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RelatedMaterial&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;relatedmaterial&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial</li>
@@ -137,9 +154,11 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
     private List<RelatedWork> relatedWorks = Collections.emptyList();
 
     /**
-     * <p>An optional group of data elements which together describe a work which has a specified relationship to the
+     * <p>
+     * An optional group of data elements which together describe a work which has a specified relationship to the
      * product described in the ONIX record. Repeatable in order to specify multiple works and their various
-     * relationships to the product.</p>
+     * relationships to the product.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<RelatedWork> relatedWorks() {
@@ -150,9 +169,11 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
     private List<RelatedProduct> relatedProducts = Collections.emptyList();
 
     /**
-     * <p>An optional group of data elements which together describe a product which has a specified relationship to the
+     * <p>
+     * An optional group of data elements which together describe a product which has a specified relationship to the
      * product described in the ONIX record. The composite is repeatable in order to specify different products which
-     * each have a relationship to the product described.</p>
+     * each have a relationship to the product described.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<RelatedProduct> relatedProducts() {

@@ -35,15 +35,26 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Complexity composite</h1><p>An optional and repeatable group of data elements which together describe the level
- * of complexity of a text.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;Complexity&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;complexity&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Complexity composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together describe the level of complexity of a text.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Complexity&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;complexity&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Complexity</li>
@@ -143,7 +154,9 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
     private ComplexitySchemeIdentifier complexitySchemeIdentifier = ComplexitySchemeIdentifier.EMPTY;
 
     /**
-     * <p>An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken.</p>
+     * <p>
+     * An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ComplexitySchemeIdentifier complexitySchemeIdentifier() {
@@ -154,7 +167,9 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
     private ComplexityCode complexityCode = ComplexityCode.EMPTY;
 
     /**
-     * <p>A code specifying the level of complexity of a text.</p>
+     * <p>
+     * A code specifying the level of complexity of a text.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ComplexityCode complexityCode() {

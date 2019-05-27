@@ -19,90 +19,122 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Religious text feature type</h1><p>An ONIX code specifying a feature described in the associated &lt;ReligiousTextFeatureCode&gt; element. Mandatory in each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List 89</td></tr><tr><td>Reference name</td><td><tt>&lt;ReligiousTextFeatureType&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b358&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b358&gt;01&lt;/b358&gt;</tt> (Church season or activity)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Religious text feature type</h1>
+ * <p>
+ * An ONIX code specifying a feature described in the associated &lt;ReligiousTextFeatureCode&gt; element. Mandatory in
+ * each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 89</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReligiousTextFeatureType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b358&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b358&gt;01&lt;/b358&gt;</tt> (Church season or activity)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReligiousTextFeature&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ReligiousText ⯈ ReligiousTextFeature ⯈ ReligiousTextFeatureType</li>
  * </ul>
  */
-public class ReligiousTextFeatureType implements OnixElement<ReligiousTextFeatureTypes>, Serializable
-{
-   private static final long serialVersionUID = 1L;
+public class ReligiousTextFeatureType implements OnixElement<ReligiousTextFeatureTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-   public static final String refname = "ReligiousTextFeatureType";
-   public static final String shortname = "b358";
+    public static final String refname = "ReligiousTextFeatureType";
+    public static final String shortname = "b358";
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // ATTRIBUTES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-    * (type: dt.DateOrDateTime)
-    */
-   public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-   public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-   /**
-    * (type: dt.NonEmptyString)
-    */
-   public String sourcename;
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String sourcename;
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // VALUE MEMBER
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-   public ReligiousTextFeatureTypes value;
+    public ReligiousTextFeatureTypes value;
 
-   /**
-   * Internal API, use the {@link #value()} method or the {@link #value} field instead
-   */
-   @Override
-   public ReligiousTextFeatureTypes _value() {
-      return value;
-   }
+    /**
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
+     */
+    @Override
+    public ReligiousTextFeatureTypes _value() {
+        return value;
+    }
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // SERVICES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private final boolean exists;
-   public static final ReligiousTextFeatureType EMPTY = new ReligiousTextFeatureType();
+    private final boolean exists;
+    public static final ReligiousTextFeatureType EMPTY = new ReligiousTextFeatureType();
 
-   public ReligiousTextFeatureType() {
-      exists = false;
-   }
+    public ReligiousTextFeatureType() {
+        exists = false;
+    }
 
-   public ReligiousTextFeatureType(org.w3c.dom.Element element) {
-      exists = true;
-      datestamp = JPU.getAttribute(element, "datestamp");
-      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-      sourcename = JPU.getAttribute(element, "sourcename");
+    public ReligiousTextFeatureType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-      value = ReligiousTextFeatureTypes.byCode(JPU.getContentAsString(element));
-   }
+        value = ReligiousTextFeatureTypes.byCode(JPU.getContentAsString(element));
+    }
 
-   /**
-    * @return whether this tag (&lt;ReligiousTextFeatureType&gt; or &lt;b358&gt;) is explicitly provided in the ONIX XML
-    */
-   @Override
-   public boolean exists() {
-      return exists;
-   }
+    /**
+     * @return whether this tag (&lt;ReligiousTextFeatureType&gt; or &lt;b358&gt;) is explicitly provided in the ONIX
+     * XML
+     */
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

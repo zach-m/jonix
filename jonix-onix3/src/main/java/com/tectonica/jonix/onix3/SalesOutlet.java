@@ -33,17 +33,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sales outlet composite</h1><p>An optional group of data elements which together identify a sales outlet to which
- * a restriction is linked. Each occurrence of the composite must include a &lt;SalesOutletIdentifier&gt; composite or a
- * &lt;SalesOutletName&gt; or both. Repeatable in order to identify multiple sales outlets subject to the
- * restriction.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;SalesOutlet&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;salesoutlet&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sales outlet composite</h1>
+ * <p>
+ * An optional group of data elements which together identify a sales outlet to which a restriction is linked. Each
+ * occurrence of the composite must include a &lt;SalesOutletIdentifier&gt; composite or a &lt;SalesOutletName&gt; or
+ * both. Repeatable in order to identify multiple sales outlets subject to the restriction.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SalesOutlet&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;salesoutlet&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SalesRestriction&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction ⯈ SalesOutlet</li>
@@ -134,12 +149,14 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier, SalesOutletIdentifierTypes>
-        salesOutletIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        salesOutletIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>An optional group of data elements which together represent a coded identification of an organization, used
-     * here to identify a sales outlet. Repeatable in order to specify multiple identifiers for the same sales
-     * outlet.</p>
+     * <p>
+     * An optional group of data elements which together represent a coded identification of an organization, used here
+     * to identify a sales outlet. Repeatable in order to specify multiple identifiers for the same sales outlet.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier, SalesOutletIdentifierTypes> salesOutletIdentifiers() {
@@ -150,7 +167,9 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
     private SalesOutletName salesOutletName = SalesOutletName.EMPTY;
 
     /**
-     * <p>The name of a wholesale or retail sales outlet to which a sales restriction is linked. Non-repeating.</p>
+     * <p>
+     * The name of a wholesale or retail sales outlet to which a sales restriction is linked. Non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public SalesOutletName salesOutletName() {

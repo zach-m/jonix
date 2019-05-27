@@ -39,15 +39,26 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Set composite</h1><p>A repeatable group of data elements which together describe a set of which the product is
- * part.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Set&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;set&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Set composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe a set of which the product is part.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Set&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;set&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Set</li>
@@ -179,9 +190,11 @@ public class Set implements OnixSuperComposite, Serializable {
     private ISBNOfSet isbnOfSet = ISBNOfSet.EMPTY;
 
     /**
-     * <p>A 10-character ISBN identifying a set of which the product forms part. Optional and non-repeating. <strong>The
+     * <p>
+     * A 10-character ISBN identifying a set of which the product forms part. Optional and non-repeating. <strong>The
      * &lt;ProductIdentifier&gt; composite on the next page provides a more general method of handling this and other
-     * product codes, and is to be preferred.</strong></p>
+     * product codes, and is to be preferred.</strong>
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ISBNOfSet isbnOfSet() {
@@ -192,9 +205,11 @@ public class Set implements OnixSuperComposite, Serializable {
     private EAN13OfSet ean13OfSet = EAN13OfSet.EMPTY;
 
     /**
-     * <p>EAN.UCC-13 article number identifying a set of which the product forms part. Optional and non-repeating.
+     * <p>
+     * EAN.UCC-13 article number identifying a set of which the product forms part. Optional and non-repeating.
      * <strong>The &lt;ProductIdentifier&gt; composite on the next page provides a more general method of handling this
-     * and other product codes, and is to be preferred.</strong></p>
+     * and other product codes, and is to be preferred.</strong>
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public EAN13OfSet ean13OfSet() {
@@ -203,12 +218,15 @@ public class Set implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        productIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A repeatable group of data elements which together define the identifier of a product in accordance with a
+     * <p>
+     * A repeatable group of data elements which together define the identifier of a product in accordance with a
      * specified scheme, used here to carry the product identifier for a set. <strong>See notes on the
-     * &lt;ProductIdentifier&gt; composite in section PR.2 for details of the handling of ISBN-13.</strong></p>
+     * &lt;ProductIdentifier&gt; composite in section PR.2 for details of the handling of ISBN-13.</strong>
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
@@ -219,10 +237,12 @@ public class Set implements OnixSuperComposite, Serializable {
     private TitleOfSet titleOfSet = TitleOfSet.EMPTY;
 
     /**
-     * <p>The full title of the set, without abbreviation or abridgement. Non-repeating. Either the &lt;TitleOfSet&gt;
+     * <p>
+     * The full title of the set, without abbreviation or abridgement. Non-repeating. Either the &lt;TitleOfSet&gt;
      * element or at least one occurrence of the &lt;Title&gt; composite must occur in each occurrence of the
      * &lt;Set&gt; composite. The &lt;Title&gt; composite provides a more comprehensive representation of a set title,
-     * and allows alternative forms to be sent.</p>
+     * and allows alternative forms to be sent.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public TitleOfSet titleOfSet() {
@@ -230,12 +250,14 @@ public class Set implements OnixSuperComposite, Serializable {
         return titleOfSet;
     }
 
-    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A repeatable group of data elements which together give the text of a title, including a subtitle where
-     * applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong></p>
+     * <p>
+     * A repeatable group of data elements which together give the text of a title, including a subtitle where
+     * applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong>
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
@@ -246,10 +268,12 @@ public class Set implements OnixSuperComposite, Serializable {
     private SetPartNumber setPartNumber = SetPartNumber.EMPTY;
 
     /**
-     * <p> The distinctive enumeration of a “subset” of which the product is a member, used only when a set is itself
+     * <p>
+     * The distinctive enumeration of a “subset” of which the product is a member, used only when a set is itself
      * divided into two levels, <em>eg</em> A History of Western Europe, Part II: The Dark Ages, Volume I: After Rome.
      * Optional and non-repeating. Note that this element is used for the first subdivision of a set which has two
-     * levels, regardless of the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.</p>
+     * levels, regardless of the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public SetPartNumber setPartNumber() {
@@ -260,11 +284,14 @@ public class Set implements OnixSuperComposite, Serializable {
     private SetPartTitle setPartTitle = SetPartTitle.EMPTY;
 
     /**
-     * <p>The title of a “subset” of which the product is a member, used only when a set is itself divided into two
-     * levels, <em>eg</em> A History of Western Europe, Part II: The Dark Ages, Volume I: After Rome. Use this field
-     * only for the section of the whole title which is shared by, and only by, the members of the subset. Optional and
+     * <p>
+     * The title of a “subset” of which the product is a member, used only when a set is itself divided into two
+     * levels,
+     * <em>eg</em> A History of Western Europe, Part II: The Dark Ages, Volume I: After Rome. Use this field only for
+     * the section of the whole title which is shared by, and only by, the members of the subset. Optional and
      * non-repeating. Note that this element is used for the first subdivision of a set which has two levels, regardless
-     * of the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.</p>
+     * of the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public SetPartTitle setPartTitle() {
@@ -275,8 +302,10 @@ public class Set implements OnixSuperComposite, Serializable {
     private ItemNumberWithinSet itemNumberWithinSet = ItemNumberWithinSet.EMPTY;
 
     /**
-     * <p>The distinctive enumeration of the product as an item within a set (or within a part of a set). Optional and
-     * non-repeating.</p>
+     * <p>
+     * The distinctive enumeration of the product as an item within a set (or within a part of a set). Optional and
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ItemNumberWithinSet itemNumberWithinSet() {
@@ -287,10 +316,12 @@ public class Set implements OnixSuperComposite, Serializable {
     private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
 
     /**
-     * <p>A number which specifies the position of an item in a set within a multi-level hierarchy of such items.
-     * Numbering starts at the top level in the hierarchy, and the first item at the top level is numbered 1. Optional
-     * and non-repeating. The purpose of this element is to make it possible to describe structured sets in a normalized
-     * way, since enumeration carried as &lt;ItemNumberWithinSet&gt; may take a wide variety of forms.</p>
+     * <p>
+     * A number which specifies the position of an item in a set within a multi-level hierarchy of such items. Numbering
+     * starts at the top level in the hierarchy, and the first item at the top level is numbered 1. Optional and
+     * non-repeating. The purpose of this element is to make it possible to describe structured sets in a normalized
+     * way, since enumeration carried as &lt;ItemNumberWithinSet&gt; may take a wide variety of forms.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public LevelSequenceNumber levelSequenceNumber() {
@@ -301,10 +332,12 @@ public class Set implements OnixSuperComposite, Serializable {
     private SetItemTitle setItemTitle = SetItemTitle.EMPTY;
 
     /**
-     * <p>The title which the product carries as an item within a set, <em>eg</em> <cite>After Rome in A History of
-     * Western Europe, Part II: The Dark Ages, Volume I: After Rome</cite>. This will invariably duplicate at least part
-     * of the product title in Group&nbsp;PR.7, but by entering it in this group it is possible to assure a correctly
-     * structured entry for the set. Optional and non-repeating.</p>
+     * <p>
+     * The title which the product carries as an item within a set, <em>eg</em> <cite>After Rome in A History of Western
+     * Europe, Part II: The Dark Ages, Volume I: After Rome</cite>. This will invariably duplicate at least part of the
+     * product title in Group&nbsp;PR.7, but by entering it in this group it is possible to assure a correctly
+     * structured entry for the set. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public SetItemTitle setItemTitle() {

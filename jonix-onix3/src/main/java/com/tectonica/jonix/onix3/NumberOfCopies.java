@@ -30,24 +30,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Number of copies (product part)</h1><p>When product parts are listed as a specified number of copies of a single
- * item, usually identified by a &lt;ProductIdentifier&gt;, &lt;NumberOfCopies&gt; must be used to specify the quantity,
- * even if the number is ‘1’. It must be used when a multiple-item product or pack contains (a) a quantity of a single
- * item; or (b) one of each of several different items (as in a multi-volume set); or (c) one or more of each of several
- * different items (as in a dumpbin carrying copies of two different books, or a classroom pack containing a teacher’s
- * text and twenty student texts). Consequently the element is mandatory, and non-repeating, in an occurrence of the
- * &lt;ProductPart&gt; composite if &lt;NumberOfItemsOfThisForm&gt; is not present. It is normally accompanied by a
+ * <h1>Number of copies (product part)</h1>
+ * <p>
+ * When product parts are listed as a specified number of copies of a single item, usually identified by a
+ * &lt;ProductIdentifier&gt;, &lt;NumberOfCopies&gt; must be used to specify the quantity, even if the number is ‘1’. It
+ * must be used when a multiple-item product or pack contains (a) a quantity of a single item; or (b) one of each of
+ * several different items (as in a multi-volume set); or (c) one or more of each of several different items (as in a
+ * dumpbin carrying copies of two different books, or a classroom pack containing a teacher’s text and twenty student
+ * texts). Consequently the element is mandatory, and non-repeating, in an occurrence of the &lt;ProductPart&gt;
+ * composite if &lt;NumberOfItemsOfThisForm&gt; is not present. It is normally accompanied by a
  * &lt;ProductIdentifier&gt;; but in exceptional circumstances, if the sender’s system is unable to provide an
- * identifier at this level, it may be sent with product form coding and without an ID.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 4 digits</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;NumberOfCopies&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x323&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x323&gt;24&lt;/x323&gt;</tt>
- * (24 copies of a single item in eg a classroom pack of textbooks)</td></tr></table>
- * <p>&nbsp;</p>
+ * identifier at this level, it may be sent with product form coding and without an ID.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive integer, suggested maximum length 4 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NumberOfCopies&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x323&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x323&gt;24&lt;/x323&gt;</tt> (24 copies of a single item in eg a classroom pack of textbooks)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductPart&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ NumberOfCopies</li>
@@ -80,7 +102,9 @@ public class NumberOfCopies implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer, suggested maximum length 4 digits<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 4 digits
+     * <p>
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

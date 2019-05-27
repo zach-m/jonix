@@ -32,18 +32,33 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Market date composite</h1><p>A group of data elements which together specify a date associated with the
- * publishing status of the product in a specified market, <i>eg</i> ‘local publication date’. Optional, but if known, a
- * date of publication <em>must</em> be specified either here as a ‘local pubdate’ or in P.20. Other dates relating to
- * the publication of the product in the specific market may be sent in further repeats of the composite.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;MarketDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;marketdate&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Market date composite</h1>
+ * <p>
+ * A group of data elements which together specify a date associated with the publishing status of the product in a
+ * specified market, <i>eg</i> ‘local publication date’. Optional, but if known, a date of publication <em>must</em> be
+ * specified either here as a ‘local pubdate’ or in P.20. Other dates relating to the publication of the product in the
+ * specific market may be sent in further repeats of the composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MarketDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;marketdate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MarketPublishingDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ MarketDate</li>
@@ -138,8 +153,10 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
     private MarketDateRole marketDateRole = MarketDateRole.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
-     * composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
+     * composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public MarketDateRole marketDateRole() {
@@ -150,9 +167,11 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
     private DateFormat dateFormat = DateFormat.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of
-     * the &lt;MarketDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
-     * attribute instead.</p>
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of the
+     * &lt;MarketDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i> attribute
+     * instead.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public DateFormat dateFormat() {
@@ -163,10 +182,12 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
     private Date date = Date.EMPTY;
 
     /**
-     * <p>The date specified in the &lt;MarketDateRole&gt; field. Mandatory in each occurrence of the &lt;MarketDate&gt;
+     * <p>
+     * The date specified in the &lt;MarketDateRole&gt; field. Mandatory in each occurrence of the &lt;MarketDate&gt;
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
      * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
-     * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.</p>
+     * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public Date date() {

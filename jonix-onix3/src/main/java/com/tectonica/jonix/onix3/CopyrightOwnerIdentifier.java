@@ -19,164 +19,193 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
+import com.tectonica.jonix.codelist.NameIdentifierTypes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixCopyrightOwnerIdentifier;
 
-import com.tectonica.jonix.*;
-import com.tectonica.jonix.OnixComposite.*;
-import com.tectonica.jonix.codelist.*;
-import com.tectonica.jonix.struct.*;
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Copyright owner identifier composite</h1><p>A group of data elements which together represent a coded identification of a copyright owner. Optional, and repeatable if sending more than one identifier of different types. May be sent either instead of or as well as a name.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CopyrightOwnerIdentifier&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;copyrightowneridentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Copyright owner identifier composite</h1>
+ * <p>
+ * A group of data elements which together represent a coded identification of a copyright owner. Optional, and
+ * repeatable if sending more than one identifier of different types. May be sent either instead of or as well as a
+ * name.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CopyrightOwnerIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;copyrightowneridentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CopyrightOwner&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CopyrightOwnerIdentifier</li>
  * </ul>
  */
-public class CopyrightOwnerIdentifier implements OnixDataCompositeWithKey<JonixCopyrightOwnerIdentifier,NameIdentifierTypes>, Serializable
-{
-   private static final long serialVersionUID = 1L;
+public class CopyrightOwnerIdentifier
+    implements OnixDataCompositeWithKey<JonixCopyrightOwnerIdentifier, NameIdentifierTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-   public static final String refname = "CopyrightOwnerIdentifier";
-   public static final String shortname = "copyrightowneridentifier";
+    public static final String refname = "CopyrightOwnerIdentifier";
+    public static final String shortname = "copyrightowneridentifier";
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // ATTRIBUTES
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-   /**
-    * (type: dt.DateOrDateTime)
-    */
-   public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-   public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-   /**
-    * (type: dt.NonEmptyString)
-    */
-   public String sourcename;
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String sourcename;
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // CONSTRUCTION
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private boolean initialized;
-   private final boolean exists;
-   private final org.w3c.dom.Element element;
-   public static final CopyrightOwnerIdentifier EMPTY = new CopyrightOwnerIdentifier();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final CopyrightOwnerIdentifier EMPTY = new CopyrightOwnerIdentifier();
 
-   public CopyrightOwnerIdentifier() {
-      exists = false;
-      element = null;
-      initialized = true; // so that no further processing will be done on this intentionally-empty object
-   }
+    public CopyrightOwnerIdentifier() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-   public CopyrightOwnerIdentifier(org.w3c.dom.Element element) {
-      exists = true;
-      initialized = false;
-      this.element = element;
-      datestamp = JPU.getAttribute(element, "datestamp");
-      sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-      sourcename = JPU.getAttribute(element, "sourcename");
-   }
+    public CopyrightOwnerIdentifier(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+    }
 
-   @Override
-   public void _initialize() {
-      if (initialized) return;
-      initialized = true;
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-      JPU.forElementsOf(element, e -> {
-         final String name = e.getNodeName();
-         switch (name) {
-            case CopyrightOwnerIDType.refname:
-            case CopyrightOwnerIDType.shortname:
-               copyrightOwnerIDType = new CopyrightOwnerIDType(e);
-               break;
-            case IDTypeName.refname:
-            case IDTypeName.shortname:
-               idTypeName = new IDTypeName(e);
-               break;
-            case IDValue.refname:
-            case IDValue.shortname:
-               idValue = new IDValue(e);
-               break;
-            default:
-               break;
-         }
-      });
-   }
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            switch (name) {
+                case CopyrightOwnerIDType.refname:
+                case CopyrightOwnerIDType.shortname:
+                    copyrightOwnerIDType = new CopyrightOwnerIDType(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
+                    break;
+                case IDValue.refname:
+                case IDValue.shortname:
+                    idValue = new IDValue(e);
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
 
-   /**
-    * @return whether this tag (&lt;CopyrightOwnerIdentifier&gt; or &lt;copyrightowneridentifier&gt;) is explicitly provided in the ONIX XML
-    */
-   @Override
-   public boolean exists() {
-      return exists;
-   }
+    /**
+     * @return whether this tag (&lt;CopyrightOwnerIdentifier&gt; or &lt;copyrightowneridentifier&gt;) is explicitly
+     * provided in the ONIX XML
+     */
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-   /////////////////////////////////////////////////////////////////////////////////
-   // MEMBERS
-   /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-   private CopyrightOwnerIDType copyrightOwnerIDType = CopyrightOwnerIDType.EMPTY;
+    private CopyrightOwnerIDType copyrightOwnerIDType = CopyrightOwnerIDType.EMPTY;
 
-   /**
-    * <p>An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.</p>
-    * Jonix-Comment: this field is required
-    */
-   public CopyrightOwnerIDType copyrightOwnerIDType() {
-      _initialize();
-      return copyrightOwnerIDType;
-   }
+    /**
+     * <p>
+     * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
+     * in each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public CopyrightOwnerIDType copyrightOwnerIDType() {
+        _initialize();
+        return copyrightOwnerIDType;
+    }
 
-   private IDTypeName idTypeName = IDTypeName.EMPTY;
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
 
-   /**
-    * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which there is no individual ID type code). Must be included when, and only when, the code in the &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.</p>
-    * Jonix-Comment: this field is optional
-    */
-   public IDTypeName idTypeName() {
-      _initialize();
-      return idTypeName;
-   }
+    /**
+     * <p>
+     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
+     * there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public IDTypeName idTypeName() {
+        _initialize();
+        return idTypeName;
+    }
 
-   private IDValue idValue = IDValue.EMPTY;
+    private IDValue idValue = IDValue.EMPTY;
 
-   /**
-    * <p>A code value taken from the scheme specified in the &lt;CopyrightOwnerIDType&gt; element. Mandatory in each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.</p>
-    * Jonix-Comment: this field is required
-    */
-   public IDValue idValue() {
-      _initialize();
-      return idValue;
-   }
+    /**
+     * <p>
+     * A code value taken from the scheme specified in the &lt;CopyrightOwnerIDType&gt; element. Mandatory in each
+     * occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public IDValue idValue() {
+        _initialize();
+        return idValue;
+    }
 
-   @Override
-   public JonixCopyrightOwnerIdentifier asStruct() {
-      _initialize();
-      JonixCopyrightOwnerIdentifier struct = new JonixCopyrightOwnerIdentifier();
-      struct.copyrightOwnerIDType = copyrightOwnerIDType.value;
-      struct.idTypeName = idTypeName.value;
-      struct.idValue = idValue.value;
-      return struct;
-   }
+    @Override
+    public JonixCopyrightOwnerIdentifier asStruct() {
+        _initialize();
+        JonixCopyrightOwnerIdentifier struct = new JonixCopyrightOwnerIdentifier();
+        struct.copyrightOwnerIDType = copyrightOwnerIDType.value;
+        struct.idTypeName = idTypeName.value;
+        struct.idValue = idValue.value;
+        return struct;
+    }
 
-   @Override
-   public NameIdentifierTypes structKey() {
-      return copyrightOwnerIDType().value;
-   }
+    @Override
+    public NameIdentifierTypes structKey() {
+        return copyrightOwnerIDType().value;
+    }
 }

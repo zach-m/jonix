@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Quantity on hand</h1><p>The quantity of stock on hand. Either &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is
- * mandatory in each occurrence of the &lt;Stock&gt; composite, even if the onhand quantity is zero.
- * Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum
- * length 7 digits</td></tr><tr><td>Reference name</td><td><tt>&lt;OnHand&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j350&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;OnHand&gt;4259&lt;/OnHand&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Quantity on hand</h1>
+ * <p>
+ * The quantity of stock on hand. Either &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of
+ * the &lt;Stock&gt; composite, even if the onhand quantity is zero. Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 7 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;OnHand&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j350&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;OnHand&gt;4259&lt;/OnHand&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Stock&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ OnHand</li>
@@ -82,7 +100,9 @@ public class OnHand implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 7 digits<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, suggested maximum length 7 digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

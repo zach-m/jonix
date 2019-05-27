@@ -32,20 +32,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Person name part 7: qualifications and honors after names</h1><p>The seventh part of a structured name of a
- * person who contributed to the creation of the product: qualifications and honors following a person’s names,
- * <i>eg</i> ‘CBE FRS’. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length text, suggested maximum length 100 characters</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;LettersAfterNames&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b042&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
- * language, textscript</td></tr><tr><td>Example</td><td><tt>&lt;b042&gt;MB FRCS&lt;/b042&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Person name part 7: qualifications and honors after names</h1>
+ * <p>
+ * The seventh part of a structured name of a person who contributed to the creation of the product: qualifications and
+ * honors following a person’s names, <i>eg</i> ‘CBE FRS’. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;LettersAfterNames&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b042&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b042&gt;MB FRCS&lt;/b042&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AlternativeName&gt;</li>
  * <li>&lt;Contributor&gt;</li>
  * <li>&lt;NameAsSubject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ LettersAfterNames</li>
@@ -96,7 +121,9 @@ public class LettersAfterNames implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

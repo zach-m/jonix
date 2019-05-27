@@ -34,19 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>On sale date</h1><p>The date when a new product can be placed on sale by retailers in the market served by the
- * supplier. Optional and non-repeating. <strong>If the &lt;OnSaleDate&gt; element is used, it means that there is an
- * embargo on sales to consumers before the stated date. Otherwise, sales to consumers are permitted as soon as stocks
- * reach retailers.</strong> In the UK, publishers who are following the PA/BA Launch Dates Code of Practice should use
- * this element for the Launch Date.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as year, month,
- * day (YYYYMMDD)</td></tr><tr><td>Reference name</td><td><tt>&lt;OnSaleDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j143&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;OnSaleDate&gt;20000616&lt;/OnSaleDate&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>On sale date</h1>
+ * <p>
+ * The date when a new product can be placed on sale by retailers in the market served by the supplier. Optional and
+ * non-repeating. <strong>If the &lt;OnSaleDate&gt; element is used, it means that there is an embargo on sales to
+ * consumers before the stated date. Otherwise, sales to consumers are permitted as soon as stocks reach
+ * retailers.</strong> In the UK, publishers who are following the PA/BA Launch Dates Code of Practice should use this
+ * element for the Launch Date.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year, month, day (YYYYMMDD)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;OnSaleDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j143&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;OnSaleDate&gt;20000616&lt;/OnSaleDate&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ OnSaleDate</li>
@@ -84,7 +103,9 @@ public class OnSaleDate implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Date as year, month, day (YYYYMMDD)<p> (type: NonEmptyString)
+     * Raw Format: Date as year, month, day (YYYYMMDD)
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

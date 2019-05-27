@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publisher’s series code</h1><p>A code or mnemonic assigned by the publisher to designate a series (and therefore
- * not guaranteed to be unique). Optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt; composite on the next
- * page provides a more general method of handling this and other series identifiers, and is to be
- * preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested
- * maximum length 20 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PublisherSeriesCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b017&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PublisherSeriesCode&gt;ANNBP&lt;/PublisherSeriesCode&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publisher’s series code</h1>
+ * <p>
+ * A code or mnemonic assigned by the publisher to designate a series (and therefore not guaranteed to be unique).
+ * Optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt; composite on the next page provides a more general
+ * method of handling this and other series identifiers, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublisherSeriesCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b017&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PublisherSeriesCode&gt;ANNBP&lt;/PublisherSeriesCode&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Series&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ PublisherSeriesCode</li>
@@ -83,7 +101,9 @@ public class PublisherSeriesCode implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 20 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 20 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

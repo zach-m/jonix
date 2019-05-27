@@ -34,20 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Person name part 8: titles after names</h1><p>The eighth part of a structured name of a person who contributed to
- * the creation of the product: titles following a person’s names, <em>eg</em> Duke of Edinburgh. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
- * length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitlesAfterNames&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b043&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;TitlesAfterNames&gt;Duke of
- * Edinburgh&lt;/TitlesAfterNames&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Person name part 8: titles after names</h1>
+ * <p>
+ * The eighth part of a structured name of a person who contributed to the creation of the product: titles following a
+ * person’s names, <em>eg</em> Duke of Edinburgh. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TitlesAfterNames&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b043&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TitlesAfterNames&gt;Duke of Edinburgh&lt;/TitlesAfterNames&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Name&gt;</li>
  * <li>&lt;Contributor&gt;</li>
  * <li>&lt;PersonAsSubject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ TitlesAfterNames</li>
@@ -98,7 +115,9 @@ public class TitlesAfterNames implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -35,20 +35,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Rights region</h1><p>An ONIX code identifying a territorial market which cannot be described in terms of ISO
- * country codes. Optional, and repeatable for as many regions as share the sales rights specified in
- * &lt;SalesRightsType&gt;. <strong>Superseded by the new element &lt;RightsTerritory&gt; above, but retained for
- * purposes of upwards compatibility.</strong> See note on “Open Market” and “Airport” or “Airside” editions in the
- * introduction to Group&nbsp;PR.21.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, three
- * numeric digits.</td></tr><tr><td>Codelist</td><td>List 47</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;RightsRegion&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b091&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;RightsRegion&gt;000&lt;/RightsRegion&gt;</tt>
- * Entire world</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Rights region</h1>
+ * <p>
+ * An ONIX code identifying a territorial market which cannot be described in terms of ISO country codes. Optional, and
+ * repeatable for as many regions as share the sales rights specified in &lt;SalesRightsType&gt;. <strong>Superseded by
+ * the new element &lt;RightsTerritory&gt; above, but retained for purposes of upwards compatibility.</strong> See note
+ * on “Open Market” and “Airport” or “Airside” editions in the introduction to Group&nbsp;PR.21.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 47</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RightsRegion&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b091&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;RightsRegion&gt;000&lt;/RightsRegion&gt;</tt> Entire world</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SalesRights&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SalesRights ⯈ RightsRegion</li>

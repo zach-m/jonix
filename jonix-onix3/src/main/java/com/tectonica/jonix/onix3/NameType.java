@@ -31,19 +31,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Primary name type</h1><p>An ONIX code indicating the type of a primary name. Optional, and non-repeating. If
- * omitted, the default is ‘unspecified’.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 18</td></tr><tr><td>Reference name</td><td><tt>&lt;NameType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x414&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;NameType&gt;01&lt;/NameType&gt;</tt>
- * (Pseudonym)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Primary name type</h1>
+ * <p>
+ * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
+ * ‘unspecified’.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 18</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NameType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x414&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;NameType&gt;01&lt;/NameType&gt;</tt> (Pseudonym)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AlternativeName&gt;</li>
  * <li>&lt;Contributor&gt;</li>
  * <li>&lt;NameAsSubject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ NameType</li>

@@ -34,18 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Replaces EAN.UCC-13 article number</h1><p>The EAN.UCC-13 article number of a former product which the current
- * product replaces. Optional and non-repeating. <strong>Note, however, that the &lt;RelatedProduct&gt; composite in
- * Group&nbsp;PR.23 provides a more general method of handling this type of link. This is now the preferred ONIX
- * approach. The &lt;ReplacesISBN&gt; element is retained only for upwards compatibility.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, 13 numeric digits.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;ReplacesEAN13&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b011&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b011&gt;9788474339796&lt;/b011&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Replaces EAN.UCC-13 article number</h1>
+ * <p>
+ * The EAN.UCC-13 article number of a former product which the current product replaces. Optional and non-repeating.
+ * <strong>Note, however, that the &lt;RelatedProduct&gt; composite in Group&nbsp;PR.23 provides a more general method
+ * of handling this type of link. This is now the preferred ONIX approach. The &lt;ReplacesISBN&gt; element is retained
+ * only for upwards compatibility.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 13 numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReplacesEAN13&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b011&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b011&gt;9788474339796&lt;/b011&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ReplacesEAN13</li>
@@ -83,7 +102,9 @@ public class ReplacesEAN13 implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, 13 numeric digits.<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, 13 numeric digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

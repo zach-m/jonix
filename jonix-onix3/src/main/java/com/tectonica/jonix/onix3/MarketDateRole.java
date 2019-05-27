@@ -31,19 +31,48 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Market date role code</h1><p>An ONIX code indicating the significance of the date. Mandatory in each occurrence
- * of the &lt;MarketDate&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, two digits</td></tr><tr><td>Codelist</td><td>List 163</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;MarketDateRole&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j408&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;j408&gt;01&lt;/j408&gt;</tt>
- * (Publication date)</td></tr><tr><td>Notes</td><td>A date such as a publication date should be interpreted as the
- * 'publication' or first availability date within the market, and not as a 'global' publication
- * date.</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Market date role code</h1>
+ * <p>
+ * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
+ * composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 163</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MarketDateRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j408&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j408&gt;01&lt;/j408&gt;</tt> (Publication date)</td>
+ * </tr>
+ * <tr>
+ * <td>Notes</td>
+ * <td>A date such as a publication date should be interpreted as the 'publication' or first availability date within
+ * the market, and not as a 'global' publication date.</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MarketDate&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ MarketDate ⯈ MarketDateRole</li>

@@ -47,7 +47,7 @@ import java.util.List;
  * <ul>
  * <li>&lt;ONIXMessage&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ SubSeriesRecord</li>
@@ -212,14 +212,19 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private RecordReference recordReference = RecordReference.EMPTY;
 
     /**
-     * <p>For every product, you must choose a single number which will uniquely identify the Information record which
-     * you send out about that product, and which will remain as its permanent identifier every time you send an update.
-     * It doesn’t matter what number you choose, provided that it is unique and permanent. This number doesn’t really
+     * <p>
+     * For every product, you must choose a single number which will uniquely identify the Information record which you
+     * send out about that product, and which will remain as its permanent identifier every time you send an update. It
+     * doesn’t matter what number you choose, provided that it is unique and permanent. This number doesn’t really
      * identify the product – even though you may choose to use the ISBN or another product identifier – it identifies
      * your information record about the product, so that the person to whom you are sending an update can match it with
      * what you have previously sent. A good way of generating numbers which are not part of a recognized product
      * identification scheme but which can be guaranteed to be unique is to preface the number with an Internet domain
-     * name which is registered to your organisation.</p><p>This field is mandatory and non-repeating.</p>
+     * name which is registered to your organisation.
+     * </p>
+     * <p>
+     * This field is mandatory and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public RecordReference recordReference() {
@@ -230,8 +235,10 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private NotificationType notificationType = NotificationType.EMPTY;
 
     /**
-     * <p>An ONIX code which indicates the type of notification or update which you are sending. Mandatory and
-     * non-repeating.</p>
+     * <p>
+     * An ONIX code which indicates the type of notification or update which you are sending. Mandatory and
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public NotificationType notificationType() {
@@ -242,10 +249,12 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private DeletionCode deletionCode = DeletionCode.EMPTY;
 
     /**
-     * <p>An ONIX code which indicates the reason why an ONIX record is being deleted. Optional and non-repeating; and
-     * may occur only when the &lt;NotificationType&gt; element carries the code value 05. Note that it refers to the
-     * reason why the record is being deleted, not the reason why a product has been “deleted” (in industries which use
-     * this terminology when a product is withdrawn).</p>
+     * <p>
+     * An ONIX code which indicates the reason why an ONIX record is being deleted. Optional and non-repeating; and may
+     * occur only when the &lt;NotificationType&gt; element carries the code value 05. Note that it refers to the reason
+     * why the record is being deleted, not the reason why a product has been “deleted” (in industries which use this
+     * terminology when a product is withdrawn).
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public DeletionCode deletionCode() {
@@ -256,10 +265,12 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private DeletionText deletionText = DeletionText.EMPTY;
 
     /**
-     * <p>Free text which indicates the reason why an ONIX record is being deleted. Optional and non-repeating; and may
+     * <p>
+     * Free text which indicates the reason why an ONIX record is being deleted. Optional and non-repeating; and may
      * occur only when the &lt;NotificationType&gt; element carries the code value 05. Note that it refers to the reason
      * why the record is being deleted, not the reason why a product has been “deleted” (in industries which use this
-     * terminology when a product is withdrawn).</p>
+     * terminology when a product is withdrawn).
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public DeletionText deletionText() {
@@ -270,8 +281,10 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private RecordSourceType recordSourceType = RecordSourceType.EMPTY;
 
     /**
-     * <p>An ONIX code which indicates the type of source which has issued the ONIX record. Optional and non-repeating,
-     * independently of the occurrence of any other field.</p>
+     * <p>
+     * An ONIX code which indicates the type of source which has issued the ONIX record. Optional and non-repeating,
+     * independently of the occurrence of any other field.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public RecordSourceType recordSourceType() {
@@ -282,9 +295,11 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private RecordSourceIdentifierType recordSourceIdentifierType = RecordSourceIdentifierType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;RecordSourceIdentifier&gt; element is
+     * <p>
+     * An ONIX code identifying the scheme from which the identifier in the &lt;RecordSourceIdentifier&gt; element is
      * taken. Optional and non-repeating, but &lt;RecordSourceIdentifier&gt; must also be present if this field is
-     * present.</p>
+     * present.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public RecordSourceIdentifierType recordSourceIdentifierType() {
@@ -295,9 +310,11 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private RecordSourceIdentifier recordSourceIdentifier = RecordSourceIdentifier.EMPTY;
 
     /**
-     * <p>An identifier for the party which issued the record, from the scheme specified in
+     * <p>
+     * An identifier for the party which issued the record, from the scheme specified in
      * &lt;RecordSourceIdentifierType&gt;. Optional and non-repeating, but &lt;RecordSourceIdentifierType&gt; must also
-     * be present if this field is present.</p>
+     * be present if this field is present.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public RecordSourceIdentifier recordSourceIdentifier() {
@@ -308,8 +325,10 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private RecordSourceName recordSourceName = RecordSourceName.EMPTY;
 
     /**
-     * <p>The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
-     * occurrence of any other field.</p>
+     * <p>
+     * The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
+     * occurrence of any other field.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public RecordSourceName recordSourceName() {
@@ -318,12 +337,15 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes>
-        seriesIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        seriesIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A repeatable group of data elements which together define an identifier of a series or subseries. The
-     * composite is optional, and may only repeat if two or more identifiers of different types are sent. It is not
-     * permissible to have two identifiers of the same type.</p>
+     * <p>
+     * A repeatable group of data elements which together define an identifier of a series or subseries. The composite
+     * is optional, and may only repeat if two or more identifiers of different types are sent. It is not permissible to
+     * have two identifiers of the same type.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
@@ -364,7 +386,9 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     private NumberWithinSeries numberWithinSeries = NumberWithinSeries.EMPTY;
 
     /**
-     * <p>The distinctive enumeration of a product within a series. Optional and non-repeating.</p>
+     * <p>
+     * The distinctive enumeration of a product within a series. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public NumberWithinSeries numberWithinSeries() {
@@ -372,8 +396,8 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
         return numberWithinSeries;
     }
 
-    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * Jonix-Comment: this list is required to contain at least one item
@@ -394,7 +418,8 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ListOfOnixDataCompositeWithKey
+            .emptyKeyed();
 
     /**
      * Jonix-Comment: this list may be empty

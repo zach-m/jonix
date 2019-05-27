@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience code</h1><p>An ONIX code, derived from BISAC and BIC lists, which identifies the broad audience or
- * readership for whom a product is intended. Optional, and repeatable if the product is intended for two or more
- * groups.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 28</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b073&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;AudienceCode&gt;04&lt;/AudienceCode&gt;</tt>
- * K-12 school</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Audience code</h1>
+ * <p>
+ * An ONIX code, derived from BISAC and BIC lists, which identifies the broad audience or readership for whom a product
+ * is intended. Optional, and repeatable if the product is intended for two or more groups.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 28</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AudienceCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b073&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;AudienceCode&gt;04&lt;/AudienceCode&gt;</tt> K-12 school</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ AudienceCode</li>

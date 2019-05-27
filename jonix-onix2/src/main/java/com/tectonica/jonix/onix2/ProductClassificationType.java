@@ -35,18 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product classification type code</h1><p>An ONIX code identifying the scheme from which the identifier in
- * &lt;ProductClassificationCode&gt; is taken. Mandatory in any instance of the &lt;ProductClassification&gt; composite,
- * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 2 numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 9</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductClassificationType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b274&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ProductClassificationType&gt;02&lt;/ProductClassificationType&gt;</tt>
- * UNSPSC</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product classification type code</h1>
+ * <p>
+ * An ONIX code identifying the scheme from which the identifier in &lt;ProductClassificationCode&gt; is taken.
+ * Mandatory in any instance of the &lt;ProductClassification&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 9</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductClassificationType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b274&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ProductClassificationType&gt;02&lt;/ProductClassificationType&gt;</tt> UNSPSC</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductClassification&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductClassification ⯈ ProductClassificationType</li>

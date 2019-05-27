@@ -31,17 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Reissue date</h1><p>The date on which the product will be reissued, or (after reissue) the date when it was last
- * reissued. Mandatory in each occurrence of the &lt;Reissue&gt; composite, and non-repeating. Deprecated.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>As specified by the value in the dateformat attribute, or the
- * default of YYYYMMDD if the attribute is missing</td></tr><tr><td>Reference name</td><td><tt>&lt;ReissueDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j365&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td><tt>&lt;j365&gt;20030616&lt;/j365&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Reissue date</h1>
+ * <p>
+ * The date on which the product will be reissued, or (after reissue) the date when it was last reissued. Mandatory in
+ * each occurrence of the &lt;Reissue&gt; composite, and non-repeating. Deprecated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+ * missing</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReissueDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j365&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>dateformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j365&gt;20030616&lt;/j365&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Reissue&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ ReissueDate</li>
@@ -77,7 +104,9 @@ public class ReissueDate implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
-     * missing<p> (type: dt.NonEmptyString)
+     * missing
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

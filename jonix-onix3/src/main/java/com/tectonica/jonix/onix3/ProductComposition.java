@@ -31,18 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product composition</h1><p>An ONIX code which indicates whether a product consists of a single item or multiple
- * items. Mandatory in an occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 2</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductComposition&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x314&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x314&gt;00&lt;/x314&gt;</tt>
- * (Single-item product)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product composition</h1>
+ * <p>
+ * An ONIX code which indicates whether a product consists of a single item or multiple items. Mandatory in an
+ * occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 2</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductComposition&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x314&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x314&gt;00&lt;/x314&gt;</tt> (Single-item product)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductComposition</li>

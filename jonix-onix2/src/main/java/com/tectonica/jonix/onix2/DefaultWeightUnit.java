@@ -35,19 +35,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Default unit of weight</h1><p>A code indicating the default unit which is assumed for weights listed in the
- * message, unless otherwise specified in the product record. <strong>This element is deprecated
- * <!-- provided for use at Level 1 -->. For most implementations, explicit coding of units with each occurrence of a
- * weight is to be preferred.</strong> Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters.</td></tr><tr><td>Codelist</td><td>List
- * 95</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultWeightUnit&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m188&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m188&gt;oz&lt;/m188&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Default unit of weight</h1>
+ * <p>
+ * A code indicating the default unit which is assumed for weights listed in the message, unless otherwise specified in
+ * the product record. <strong>This element is deprecated <!-- provided for use at Level 1 -->. For most
+ * implementations, explicit coding of units with each occurrence of a weight is to be preferred.</strong> Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 95</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DefaultWeightUnit&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m188&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;m188&gt;oz&lt;/m188&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ DefaultWeightUnit</li>

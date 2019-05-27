@@ -34,19 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Other alternative product EAN-13</h1><p>EAN-13 article number identifying another product which is available and
- * which the publisher suggests as an alternative. This element is used when the suggested alternative is neither a
- * direct successor (new edition) nor the same product in an alternative format. Optional and non-repeating. <strong>The
- * &lt;RelatedProduct&gt; composite on a later page provides a more general method of handling related items, and is to
- * be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, 13 numeric
- * digits.</td></tr><tr><td>Reference name</td><td><tt>&lt;AlternativeProductEAN13&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;h164&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;h164&gt;9788474339796&lt;/h164&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Other alternative product EAN-13</h1>
+ * <p>
+ * EAN-13 article number identifying another product which is available and which the publisher suggests as an
+ * alternative. This element is used when the suggested alternative is neither a direct successor (new edition) nor the
+ * same product in an alternative format. Optional and non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a
+ * later page provides a more general method of handling related items, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 13 numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AlternativeProductEAN13&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;h164&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;h164&gt;9788474339796&lt;/h164&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ AlternativeProductEAN13</li>
@@ -84,7 +102,9 @@ public class AlternativeProductEAN13 implements OnixElement<String>, Serializabl
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, 13 numeric digits.<p> (type: NonEmptyString)
+     * Raw Format: Fixed-length, 13 numeric digits.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

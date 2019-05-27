@@ -34,21 +34,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Other text format</h1><p>An ONIX code which identifies the format of text which is sent in the &lt;Text&gt;
- * element, or referenced in the &lt;TextLink&gt; element. Optional and non-repeating. <strong>It is now possible to use
- * a “textformat” attribute in the &lt;Text&gt; element for this purpose, and this is the recommended practise when the
- * text is sent in the ONIX record. The &lt;TextFormat&gt; element may still be used when the text is held outside the
- * ONIX record, and referenced by the &lt;TextLink&gt; element.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 34</td></tr><tr><td>Reference name</td><td><tt>&lt;TextFormat&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;d103&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;d103&gt;02&lt;/d103&gt;</tt>
- * HTML</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Other text format</h1>
+ * <p>
+ * An ONIX code which identifies the format of text which is sent in the &lt;Text&gt; element, or referenced in the
+ * &lt;TextLink&gt; element. Optional and non-repeating. <strong>It is now possible to use a “textformat” attribute in
+ * the &lt;Text&gt; element for this purpose, and this is the recommended practise when the text is sent in the ONIX
+ * record. The &lt;TextFormat&gt; element may still be used when the text is held outside the ONIX record, and
+ * referenced by the &lt;TextLink&gt; element.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 34</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TextFormat&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;d103&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;d103&gt;02&lt;/d103&gt;</tt> HTML</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;OtherText&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextFormat</li>

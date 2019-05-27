@@ -31,18 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Resource feature type</h1><p>An ONIX code which specifies the feature described by an instance of the
- * &lt;ResourceFeature&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 160</td></tr><tr><td>Reference name</td><td><tt>&lt;ResourceFeatureType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x438&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x438&gt;01&lt;/x438&gt;</tt>
- * (Required credit)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Resource feature type</h1>
+ * <p>
+ * An ONIX code which specifies the feature described by an instance of the &lt;ResourceFeature&gt; composite. Mandatory
+ * in each occurrence of the composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 160</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ResourceFeatureType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x438&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x438&gt;01&lt;/x438&gt;</tt> (Required credit)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ResourceFeature&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceFeature ⯈

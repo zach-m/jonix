@@ -34,18 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>BIC main subject category</h1><p>A BIC subject category code which identifies the main subject of the product.
- * Optional and non-repeating. Additional BIC subject category codes may be sent using the &lt;Subject&gt;
- * composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length alphanumeric, suggested
- * maximum length 10 characters to allow for expansion.</td></tr><tr><td>Codelist</td><td>BIC Subject Category Codes.
- * Available for downloading from http://www.bic.org.uk/</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;BICMainSubject&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b065&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b065&gt;WDMG1&lt;/b065&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>BIC main subject category</h1>
+ * <p>
+ * A BIC subject category code which identifies the main subject of the product. Optional and non-repeating. Additional
+ * BIC subject category codes may be sent using the &lt;Subject&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>BIC Subject Category Codes. Available for downloading from http://www.bic.org.uk/</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;BICMainSubject&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b065&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b065&gt;WDMG1&lt;/b065&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ BICMainSubject</li>
@@ -83,7 +104,8 @@ public class BICMainSubject implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.<p>
+     * Raw Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.
+     * <p>
      * (type: NonEmptyString)
      */
     public String value;

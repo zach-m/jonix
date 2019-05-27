@@ -39,17 +39,23 @@ public class JonixReturnsConditions implements JonixKeyedStruct<ReturnsCondition
     public ReturnsConditionsCodeTypes returnsCodeType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String returnsCodeTypeName;
 
     /**
-     * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt; <p> (type: dt.NonEmptyString)
+     * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String returnsCode;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 200 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 200 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public List<String> returnsNotes;
 

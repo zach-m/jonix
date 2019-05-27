@@ -31,19 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Review rating units</h1><p>The ‘units’ used by a rating, <i>eg</i> stars, tomatoes <i>etc</i>. Optional, and
- * repeatable to provide the units in multiple languages. The <i>language</i> attribute is optional for a single
- * instance of &lt;RatingUnits&gt;, but must be included in each instance if &lt;RatingUnits&gt; is repeated.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 50
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;RatingUnits&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x527&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;RatingUnits&gt;stars&lt;/RatingUnits&gt;</tt>
- * (4.5 out of 5 stars)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Review rating units</h1>
+ * <p>
+ * The ‘units’ used by a rating, <i>eg</i> stars, tomatoes <i>etc</i>. Optional, and repeatable to provide the units in
+ * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;RatingUnits&gt;, but must
+ * be included in each instance if &lt;RatingUnits&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RatingUnits&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x527&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;RatingUnits&gt;stars&lt;/RatingUnits&gt;</tt> (4.5 out of 5 stars)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReviewRating&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ ReviewRating ⯈ RatingUnits</li>
@@ -81,7 +106,9 @@ public class RatingUnits implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

@@ -31,20 +31,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Source title</h1><p>The title of a publication from which the text sent in the &lt;Text&gt; element was taken,
- * <i>eg</i> if it is a review quote. Optional, and repeatable to provide the title in multiple languages. The
- * <i>language</i> attribute is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each
- * instance if &lt;SourceTitle&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length text, suggested maximum length 300 characters</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;SourceTitle&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x428&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;x428&gt;New
- * York Times&lt;/x428&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Source title</h1>
+ * <p>
+ * The title of a publication from which the text sent in the &lt;Text&gt; element was taken, <i>eg</i> if it is a
+ * review quote. Optional, and repeatable to provide the title in multiple languages. The <i>language</i> attribute is
+ * optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if &lt;SourceTitle&gt;
+ * is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SourceTitle&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x428&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x428&gt;New York Times&lt;/x428&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;TextContent&gt;</li>
  * <li>&lt;CitedContent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ SourceTitle</li>
@@ -82,7 +108,9 @@ public class SourceTitle implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 300 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 300 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

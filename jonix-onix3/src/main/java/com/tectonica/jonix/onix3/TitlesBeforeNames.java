@@ -32,22 +32,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Person name part 1: titles before names</h1><p>The first part of a structured name of a person who contributed to
- * the creation of the product: qualifications and/or titles preceding a person’s names, <i>eg</i> ‘Professor’ or ‘HRH
- * Prince’ or ‘Saint’. Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TitlesBeforeNames&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b038&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
- * language, textscript</td></tr><tr><td>Example</td><td><tt>&lt;TitlesBeforeNames&gt;HRH
- * Prince&lt;/TitlesBeforeNames&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Person name part 1: titles before names</h1>
+ * <p>
+ * The first part of a structured name of a person who contributed to the creation of the product: qualifications and/or
+ * titles preceding a person’s names, <i>eg</i> ‘Professor’ or ‘HRH Prince’ or ‘Saint’. Optional and non-repeating: see
+ * Group&nbsp;P.7 introductory text for valid options.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TitlesBeforeNames&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b038&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TitlesBeforeNames&gt;HRH Prince&lt;/TitlesBeforeNames&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AlternativeName&gt;</li>
  * <li>&lt;Contributor&gt;</li>
  * <li>&lt;NameAsSubject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ TitlesBeforeNames</li>
@@ -98,7 +122,9 @@ public class TitlesBeforeNames implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

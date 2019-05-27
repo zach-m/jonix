@@ -31,18 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publishing role code</h1><p>An ONIX code which identifies a role played by an entity in the publishing of a
- * product. Mandatory in each occurrence of the &lt;Publisher&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
- * 45</td></tr><tr><td>Reference name</td><td><tt>&lt;PublishingRole&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b291&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;PublishingRole&gt;02&lt;/PublishingRole&gt;</tt>
- * (Co-publisher)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publishing role code</h1>
+ * <p>
+ * An ONIX code which identifies a role played by an entity in the publishing of a product. Mandatory in each occurrence
+ * of the &lt;Publisher&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 45</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublishingRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b291&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PublishingRole&gt;02&lt;/PublishingRole&gt;</tt> (Co-publisher)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Publisher&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ PublishingRole</li>

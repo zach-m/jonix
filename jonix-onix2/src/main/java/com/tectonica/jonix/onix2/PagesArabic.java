@@ -34,16 +34,34 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Number of pages, Arabic</h1><p>The number of pages numbered in Arabic numerals. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length numeric, suggested maximum
- * length 6 characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;PagesArabic&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b255&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b255&gt;442&lt;/b255&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Number of pages, Arabic</h1>
+ * <p>
+ * The number of pages numbered in Arabic numerals. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length numeric, suggested maximum length 6 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PagesArabic&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b255&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b255&gt;442&lt;/b255&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PagesArabic</li>
@@ -81,7 +99,9 @@ public class PagesArabic implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length numeric, suggested maximum length 6 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length numeric, suggested maximum length 6 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

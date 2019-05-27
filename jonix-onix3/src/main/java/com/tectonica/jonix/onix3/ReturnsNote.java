@@ -31,19 +31,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Returns conditions note</h1><p>Free text note explaining the returns conditions or special returns instructions,
- * where the code alone is not sufficient. Optional, and repeatable if parallel text is provided in multiple languages.
- * The <i>language</i> attribute is optional for a single instance of &lt;ReturnsNote&gt;, but must be included in each
- * instance if &lt;ReturnsNote&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length text, suggested maximum length 200 characters</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;ReturnsNote&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x528&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;x528
- * language=&quot;eng&quot;&gt;Obtain return authorization in advance&lt;/x528&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Returns conditions note</h1>
+ * <p>
+ * Free text note explaining the returns conditions or special returns instructions, where the code alone is not
+ * sufficient. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i>
+ * attribute is optional for a single instance of &lt;ReturnsNote&gt;, but must be included in each instance if
+ * &lt;ReturnsNote&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReturnsNote&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x528&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x528 language=&quot;eng&quot;&gt;Obtain return authorization in advance&lt;/x528&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReturnsConditions&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ ReturnsConditions ⯈ ReturnsNote</li>
@@ -78,7 +104,9 @@ public class ReturnsNote implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 200 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 200 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

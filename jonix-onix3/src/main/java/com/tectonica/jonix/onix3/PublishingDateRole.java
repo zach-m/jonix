@@ -31,19 +31,47 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publishing date role code</h1><p>An ONIX code indicating the significance of the date, <i>eg</i> publication
- * date, announcement date, latest reprint date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite,
- * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 163</td></tr><tr><td>Reference name</td><td><tt>&lt;PublishingDateRole&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x448&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;x448&gt;01&lt;/x448&gt;</tt>
- * (Publication date)</td></tr><tr><td>Notes</td><td>Note a date such as a publication date should be interpreted as the
- * 'global' publication date.</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publishing date role code</h1>
+ * <p>
+ * An ONIX code indicating the significance of the date, <i>eg</i> publication date, announcement date, latest reprint
+ * date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 163</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublishingDateRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x448&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x448&gt;01&lt;/x448&gt;</tt> (Publication date)</td>
+ * </tr>
+ * <tr>
+ * <td>Notes</td>
+ * <td>Note a date such as a publication date should be interpreted as the 'global' publication date.</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PublishingDate&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ PublishingDate ⯈ PublishingDateRole</li>

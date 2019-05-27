@@ -40,16 +40,32 @@ import java.util.List;
  */
 
 /**
- * <h1>Supply detail composite</h1><p>A group of data elements which together give details of a supply source, and price
- * and availability from that source. Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to
- * give details of multiple supply sources.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;SupplyDetail&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;supplydetail&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supply detail composite</h1>
+ * <p>
+ * A group of data elements which together give details of a supply source, and price and availability from that source.
+ * Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to give details of multiple supply
+ * sources.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplyDetail&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;supplydetail&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductSupply&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail</li>
@@ -196,8 +212,10 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private Supplier supplier = Supplier.EMPTY;
 
     /**
-     * <p>A group of data elements which together identify a specific supplier. Mandatory in each occurrence of the
-     * &lt;SupplyDetail&gt; composite, and not repeatable.</p>
+     * <p>
+     * A group of data elements which together identify a specific supplier. Mandatory in each occurrence of the
+     * &lt;SupplyDetail&gt; composite, and not repeatable.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public Supplier supplier() {
@@ -208,9 +226,10 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private List<SupplyContact> supplyContacts = Collections.emptyList();
 
     /**
-     * <p>An optional group of data elements which together specify an organization (which may or may not be the
-     * supplier) responsible for dealing with enquiries related to the product. Repeatable in order to specify multiple
-     * contacts.</p>
+     * <p>
+     * An optional group of data elements which together specify an organization (which may or may not be the supplier)
+     * responsible for dealing with enquiries related to the product. Repeatable in order to specify multiple contacts.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<SupplyContact> supplyContacts() {
@@ -219,11 +238,14 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes>
-        supplierOwnCodings = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        supplierOwnCodings = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>An optional and repeatable group of data elements which together allow a supplier to send coded data of a
-     * specified type, using its own coding schemes.</p>
+     * <p>
+     * An optional and repeatable group of data elements which together allow a supplier to send coded data of a
+     * specified type, using its own coding schemes.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes> supplierOwnCodings() {
@@ -232,11 +254,14 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions, ReturnsConditionsCodeTypes>
-        returnsConditionss = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        returnsConditionss = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>An optional and repeatable group of data elements which together allow the supplier’s returns conditions to be
-     * specified in coded form.</p>
+     * <p>
+     * An optional and repeatable group of data elements which together allow the supplier’s returns conditions to be
+     * specified in coded form.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions, ReturnsConditionsCodeTypes> returnsConditionss() {
@@ -247,8 +272,10 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private ProductAvailability productAvailability = ProductAvailability.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the availability of a product from a supplier. Mandatory in each occurrence of the
-     * &lt;SupplyDetail&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating the availability of a product from a supplier. Mandatory in each occurrence of the
+     * &lt;SupplyDetail&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ProductAvailability productAvailability() {
@@ -257,11 +284,14 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ListOfOnixDataCompositeWithKey
+            .emptyKeyed();
 
     /**
-     * <p>An optional group of data elements which together specify a date associated with the supply status of the
-     * product, <i>eg</i> expected ship date. Repeatable in order to specify multiple dates.</p>
+     * <p>
+     * An optional group of data elements which together specify a date associated with the supply status of the
+     * product, <i>eg</i> expected ship date. Repeatable in order to specify multiple dates.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates() {
@@ -272,8 +302,10 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private OrderTime orderTime = OrderTime.EMPTY;
 
     /**
-     * <p>The expected average number of days from receipt of order to despatch (for items ‘manufactured on demand’ or
-     * ‘only to order’). Optional and non-repeating.</p>
+     * <p>
+     * The expected average number of days from receipt of order to despatch (for items ‘manufactured on demand’ or
+     * ‘only to order’). Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public OrderTime orderTime() {
@@ -284,9 +316,11 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private NewSupplier newSupplier = NewSupplier.EMPTY;
 
     /**
-     * <p>An optional group of data elements which together specify a new supply source to which orders are referred.
-     * Use only when the code in &lt;ProductAvailability&gt; indicates ‘no longer available from us, refer to new
-     * supplier’. Only one occurrence of the composite is permitted in this context.</p>
+     * <p>
+     * An optional group of data elements which together specify a new supply source to which orders are referred. Use
+     * only when the code in &lt;ProductAvailability&gt; indicates ‘no longer available from us, refer to new supplier’.
+     * Only one occurrence of the composite is permitted in this context.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public NewSupplier newSupplier() {
@@ -297,10 +331,14 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private List<Stock> stocks = Collections.emptyList();
 
     /**
-     * <p>An optional group of data elements which together specify a quantity of stock, repeatable where a supplier has
-     * more than one warehouse or supplier location.</p><p>Within a single instance of the &lt;Stock&gt; composite, the
-     * location name and identifier are both optional. If &lt;Stock&gt; is repeated, at least one identifier or a
-     * location name must be included in each instance.</p>
+     * <p>
+     * An optional group of data elements which together specify a quantity of stock, repeatable where a supplier has
+     * more than one warehouse or supplier location.
+     * </p>
+     * <p>
+     * Within a single instance of the &lt;Stock&gt; composite, the location name and identifier are both optional. If
+     * &lt;Stock&gt; is repeated, at least one identifier or a location name must be included in each instance.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<Stock> stocks() {
@@ -311,9 +349,14 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private PackQuantity packQuantity = PackQuantity.EMPTY;
 
     /**
-     * <p>The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and
-     * non-repeating.</p><p>Note that orders do not <em>have</em> to be aligned with multiples of the pack size, but
-     * such orders may be more convenient to handle.</p>
+     * <p>
+     * The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and
+     * non-repeating.
+     * </p>
+     * <p>
+     * Note that orders do not <em>have</em> to be aligned with multiples of the pack size, but such orders may be more
+     * convenient to handle.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public PackQuantity packQuantity() {
@@ -324,9 +367,11 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private PalletQuantity palletQuantity = PalletQuantity.EMPTY;
 
     /**
-     * <p>The quantity (number of copies) on each complete pallet in stock currently held by the supplier. Optional and
+     * <p>
+     * The quantity (number of copies) on each complete pallet in stock currently held by the supplier. Optional and
      * non-repeating. Of course, orders do not have to be aligned to the pallet quantity, but for bulk orders, it may be
-     * useful to know how many pallets will be required for a delivery.</p>
+     * useful to know how many pallets will be required for a delivery.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public PalletQuantity palletQuantity() {
@@ -337,10 +382,15 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums = ListOfOnixElement.empty();
 
     /**
-     * <p>The minimum quantity of the product that may be ordered in a single order placed with the supplier. Optional.
-     * If omitted, any number may be ordered.</p><p>If supplied without a succeeding Minimum initial order quantity, the
-     * Minimum order quantity applies to all orders for the product. If followed by a Minimum initial order quantity,
-     * the Minimum order quantity applies to the second and subsequent orders for the product.</p>
+     * <p>
+     * The minimum quantity of the product that may be ordered in a single order placed with the supplier. Optional. If
+     * omitted, any number may be ordered.
+     * </p>
+     * <p>
+     * If supplied without a succeeding Minimum initial order quantity, the Minimum order quantity applies to all orders
+     * for the product. If followed by a Minimum initial order quantity, the Minimum order quantity applies to the
+     * second and subsequent orders for the product.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums() {
@@ -351,11 +401,13 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private OrderQuantityMultiple orderQuantityMultiple = OrderQuantityMultiple.EMPTY;
 
     /**
-     * <p>The order quantity multiple that must be used in any order for the product placed with the supplier. Optional,
+     * <p>
+     * The order quantity multiple that must be used in any order for the product placed with the supplier. Optional,
      * but where supplied, must be preceded by at least one &lt;OrderQuantityMinimum&gt; element. For example with a
      * minimum order quantity of 6 and a multiple of 4, orders for 6, 10 or 14 copies are acceptable, but orders for
      * fewer than 6, or for 7, 8, 9 or 11 copies are not. If omitted, the minimum or any larger quantity may be
-     * ordered.</p>
+     * ordered.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public OrderQuantityMultiple orderQuantityMultiple() {
@@ -366,11 +418,16 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private UnpricedItemType unpricedItemType = UnpricedItemType.EMPTY;
 
     /**
-     * <p>An ONIX code which specifies the product is free of charge, or a reason why a price is not sent. <em>If code
+     * <p>
+     * An ONIX code which specifies the product is free of charge, or a reason why a price is not sent. <em>If code
      * value 02 is used to send advance information without giving a price, the price must be confirmed as soon as
      * possible.</em> Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a
-     * price.</p><p>Use here in preference to P.26.70a when the product is available <em>only</em> under free of charge
-     * or unpriced terms from the supplier.</p>
+     * price.
+     * </p>
+     * <p>
+     * Use here in preference to P.26.70a when the product is available <em>only</em> under free of charge or unpriced
+     * terms from the supplier.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public UnpricedItemType unpricedItemType() {
@@ -381,15 +438,19 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private List<Price> prices = Collections.emptyList();
 
     /**
-     * <p>An optional group of data elements which together specify a unit price, repeatable in order to specify
-     * multiple prices. Each &lt;SupplyDetail&gt; composite must include <em>either</em> one or more prices, <em>or</em>
-     * a single &lt;UnpricedItemType&gt; element (see&nbsp;P.26.42).</p><p>Where multiple prices are specified for a
-     * product, each price option should specify a distinct combination of its terms of trade and the group of end
-     * customers it is applicable to, any relevant price conditions, periods of time, currency and territory <i>etc</i>,
-     * so that the data recipient can clearly select the correct pricing option. If, under a particular combination, the
-     * product is free of charge or its price is not yet set, an &lt;UnpricedItemType&gt; element (P.26.70a) must be
-     * used in place of a &lt;PriceAmount&gt;. Each pricing option may optionally be given an identifier for use in
-     * subsequent revenue reporting or for other internal purposes.</p>
+     * <p>
+     * An optional group of data elements which together specify a unit price, repeatable in order to specify multiple
+     * prices. Each &lt;SupplyDetail&gt; composite must include <em>either</em> one or more prices, <em>or</em> a single
+     * &lt;UnpricedItemType&gt; element (see&nbsp;P.26.42).
+     * </p>
+     * <p>
+     * Where multiple prices are specified for a product, each price option should specify a distinct combination of its
+     * terms of trade and the group of end customers it is applicable to, any relevant price conditions, periods of
+     * time, currency and territory <i>etc</i>, so that the data recipient can clearly select the correct pricing
+     * option. If, under a particular combination, the product is free of charge or its price is not yet set, an
+     * &lt;UnpricedItemType&gt; element (P.26.70a) must be used in place of a &lt;PriceAmount&gt;. Each pricing option
+     * may optionally be given an identifier for use in subsequent revenue reporting or for other internal purposes.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<Price> prices() {
@@ -400,14 +461,22 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     private Reissue reissue = Reissue.EMPTY;
 
     /**
-     * <p>An optional and non-repeating group of data elements which together specify that a product is to be reissued
-     * within the market to which the &lt;SupplyDetail&gt; composite applies.</p><p>The entire &lt;Reissue&gt; composite
-     * is deprecated. Suppliers should supply information about planned reissues in other parts of the Product record –
-     * the date of a planned reissue in &lt;PublishingDate&gt; and/or in &lt;MarketDate&gt;, and new collateral material
-     * alongside old collateral in <a href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral
-     * items may be associated with appropriate end and start dates using &lt;ContentDate&gt;. </p><p>The
-     * &lt;Reissue&gt; composite was (prior to deprecation) used only when the publisher intended to re-launch the
-     * product under the same ISBN. There are two possible cases:</p><ol>
+     * <p>
+     * An optional and non-repeating group of data elements which together specify that a product is to be reissued
+     * within the market to which the &lt;SupplyDetail&gt; composite applies.
+     * </p>
+     * <p>
+     * The entire &lt;Reissue&gt; composite is deprecated. Suppliers should supply information about planned reissues in
+     * other parts of the Product record – the date of a planned reissue in &lt;PublishingDate&gt; and/or in
+     * &lt;MarketDate&gt;, and new collateral material alongside old collateral in
+     * <a href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral items may be associated with
+     * appropriate end and start dates using &lt;ContentDate&gt;.
+     * </p>
+     * <p>
+     * The &lt;Reissue&gt; composite was (prior to deprecation) used only when the publisher intended to re-launch the
+     * product under the same ISBN. There are two possible cases:
+     * </p>
+     * <ol>
      * <li>When the product is unavailable during the period immediately before reissue. In this case,
      * &lt;ProductAvailability&gt; should carry the value 33 for ‘unavailable, awaiting reissue’, and the ONIX record
      * can be updated to describe the reissued product as soon as details can be made available;</li>
@@ -416,8 +485,11 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * record the product as ‘available’ (<i>eg</i> code 21) right up to the reissue date. At that date, the record
      * should be updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining
      * unchanged.</li>
-     * </ol><p>After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record,
-     * carrying only the &lt;ReissueDate&gt; element, which will then indicate ‘date last reissued’.</p>
+     * </ol>
+     * <p>
+     * After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record, carrying
+     * only the &lt;ReissueDate&gt; element, which will then indicate ‘date last reissued’.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public Reissue reissue() {

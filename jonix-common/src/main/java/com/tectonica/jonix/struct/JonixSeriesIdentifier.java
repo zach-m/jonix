@@ -38,12 +38,16 @@ public class JonixSeriesIdentifier implements JonixKeyedStruct<SeriesIdentifierT
     public SeriesIdentifierTypes seriesIDType;
 
     /**
-     * Raw Format: Free text, suggested maximum length 50 characters <p> (type: NonEmptyString)
+     * Raw Format: Free text, suggested maximum length 50 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String idTypeName;
 
     /**
-     * Raw Format: According to the identifier type specified in &lt;ProductIDType&gt; <p> (type: NonEmptyString)
+     * Raw Format: According to the identifier type specified in &lt;ProductIDType&gt;
+     * <p>
+     * (type: NonEmptyString)
      */
     public String idValue;
 

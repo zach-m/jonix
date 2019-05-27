@@ -34,19 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Illustrations and other contents note</h1><p>For books or other text media only, this data element carries text
- * stating the number and type of illustrations. The text may also include other content items, <em>eg</em> maps,
- * bibliography, tables, index <em>etc</em>. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 200
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;IllustrationsNote&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b062&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;IllustrationsNote&gt;500 illustrations,
- * 210 in full color&lt;/IllustrationsNote&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Illustrations and other contents note</h1>
+ * <p>
+ * For books or other text media only, this data element carries text stating the number and type of illustrations. The
+ * text may also include other content items, <em>eg</em> maps, bibliography, tables, index <em>etc</em>. Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 200 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;IllustrationsNote&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b062&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;IllustrationsNote&gt;500 illustrations, 210 in full color&lt;/IllustrationsNote&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ IllustrationsNote</li>
@@ -84,7 +101,9 @@ public class IllustrationsNote implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 200 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 200 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

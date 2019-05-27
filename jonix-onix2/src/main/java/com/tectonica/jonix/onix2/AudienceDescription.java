@@ -34,16 +34,30 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience description</h1><p>Free text describing the audience for which a product is intended. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Free text, suggested maximum length 1000
- * characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceDescription&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b207&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Audience description</h1>
+ * <p>
+ * Free text describing the audience for which a product is intended. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Free text, suggested maximum length 1000 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AudienceDescription&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b207&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ AudienceDescription</li>
@@ -81,7 +95,9 @@ public class AudienceDescription implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Free text, suggested maximum length 1000 characters.<p> (type: NonEmptyString)
+     * Raw Format: Free text, suggested maximum length 1000 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

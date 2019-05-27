@@ -31,19 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publisher name</h1><p>The name of an entity associated with the publishing of a product. Mandatory if there is no
- * publisher identifier in an occurrence of the &lt;Publisher&gt; composite, and optional if a publisher identifier is
- * included. Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested
- * maximum length 100 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;PublisherName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b081&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;b081&gt;Reed
- * International Books&lt;/b081&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publisher name</h1>
+ * <p>
+ * The name of an entity associated with the publishing of a product. Mandatory if there is no publisher identifier in
+ * an occurrence of the &lt;Publisher&gt; composite, and optional if a publisher identifier is included. Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PublisherName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b081&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b081&gt;Reed International Books&lt;/b081&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Publisher&gt;</li>
  * <li>&lt;SalesRights&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ PublisherName</li>
@@ -79,7 +104,9 @@ public class PublisherName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

@@ -30,16 +30,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price code</h1><p>A price code from the scheme specified in the &lt;PriceCodeType&gt; element. Mandatory in each
- * occurrence of the &lt;PriceCoded&gt; composite, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>According to the scheme specified in &lt;PriceCodeType&gt;</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PriceCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x468&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;PriceCode&gt;07a&lt;/PriceCode&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price code</h1>
+ * <p>
+ * A price code from the scheme specified in the &lt;PriceCodeType&gt; element. Mandatory in each occurrence of the
+ * &lt;PriceCoded&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the scheme specified in &lt;PriceCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x468&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PriceCode&gt;07a&lt;/PriceCode&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PriceCoded&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCoded ⯈ PriceCode</li>
@@ -73,7 +96,9 @@ public class PriceCode implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: According to the scheme specified in &lt;PriceCodeType&gt;<p> (type: dt.NonEmptyString)
+     * Raw Format: According to the scheme specified in &lt;PriceCodeType&gt;
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

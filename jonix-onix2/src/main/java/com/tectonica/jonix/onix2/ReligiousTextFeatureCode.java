@@ -35,17 +35,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Religious text feature code</h1><p>An ONIX code describing a feature specified in the associated
- * &lt;ReligiousTextFeatureType&gt; element. Mandatory in each occurrence of the &lt;ReligiousTextFeature&gt; composite,
- * and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, to be
- * confirmed</td></tr><tr><td>Codelist</td><td>List 90</td></tr><tr><td>Reference name</td><td><tt>&lt;ReligiousTextFeatureCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b359&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Religious text feature code</h1>
+ * <p>
+ * An ONIX code describing a feature specified in the associated &lt;ReligiousTextFeatureType&gt; element. Mandatory in
+ * each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, to be confirmed</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 90</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ReligiousTextFeatureCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b359&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ReligiousTextFeature&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ ReligiousTextFeature ⯈ ReligiousTextFeatureCode</li>

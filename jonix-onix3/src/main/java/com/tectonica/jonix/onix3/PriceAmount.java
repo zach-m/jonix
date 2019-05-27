@@ -30,19 +30,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price amount</h1><p>The amount of a price. Optional and non-repeating, but each occurrence of the &lt;Price&gt;
- * composite must include either a &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional tax details, or
- * an &lt;UnpricedItemType&gt; element. Note that free-of-charge products must use &lt;UnpricedItemType&gt; rather than
- * a zero price.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Positive real number, with explicit decimal
- * point when required, suggested maximum length 12 characters</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PriceAmount&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j151&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;j151&gt;18.99&lt;/j151&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price amount</h1>
+ * <p>
+ * The amount of a price. Optional and non-repeating, but each occurrence of the &lt;Price&gt; composite must include
+ * either a &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional tax details, or an
+ * &lt;UnpricedItemType&gt; element. Note that free-of-charge products must use &lt;UnpricedItemType&gt; rather than a
+ * zero price.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive real number, with explicit decimal point when required, suggested maximum length 12 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceAmount&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j151&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j151&gt;18.99&lt;/j151&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ComparisonProductPrice&gt;</li>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ ComparisonProductPrice ⯈
@@ -80,7 +103,9 @@ public class PriceAmount implements OnixElement<Double>, Serializable {
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 12
-     * characters<p> (type: dt.StrictPositiveDecimal)
+     * characters
+     * <p>
+     * (type: dt.StrictPositiveDecimal)
      */
     public Double value;
 

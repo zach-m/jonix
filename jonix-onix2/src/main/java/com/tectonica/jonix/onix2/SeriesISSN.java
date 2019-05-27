@@ -34,21 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>ISSN of series</h1><p>International Standard Serial Number identifying a series of which the product forms part.
- * ISSNs are the standard numbering scheme for journals, and most publishers’ book series are not eligible to be
- * identified by an ISSN. ISSNs may be used, however, for established scholarly series such as Annual Reviews of… or
- * Methods in… which are shelved in libraries as if they were journals. The field is optional and non-repeating.
- * <strong>The &lt;SeriesIdentifier&gt; composite on the next page provides a more general method of handling this and
- * other series identifiers, and is to be preferred.</strong></p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, eight numeric digits, of which the last is a check digit; see
- * http://www.issn.org/</td></tr><tr><td>Reference name</td><td><tt>&lt;SeriesISSN&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b016&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SeriesISSN&gt;13513737&lt;/SeriesISSN&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>ISSN of series</h1>
+ * <p>
+ * International Standard Serial Number identifying a series of which the product forms part. ISSNs are the standard
+ * numbering scheme for journals, and most publishers’ book series are not eligible to be identified by an ISSN. ISSNs
+ * may be used, however, for established scholarly series such as Annual Reviews of… or Methods in… which are shelved in
+ * libraries as if they were journals. The field is optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt;
+ * composite on the next page provides a more general method of handling this and other series identifiers, and is to be
+ * preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SeriesISSN&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b016&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SeriesISSN&gt;13513737&lt;/SeriesISSN&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Series&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ SeriesISSN</li>
@@ -86,7 +104,8 @@ public class SeriesISSN implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/<p>
+     * Raw Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/
+     * <p>
      * (type: NonEmptyString)
      */
     public String value;

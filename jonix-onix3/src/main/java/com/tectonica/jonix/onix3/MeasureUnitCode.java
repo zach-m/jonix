@@ -31,17 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Measure unit code</h1><p>An ONIX code indicating the measure unit in which dimensions are given. Mandatory in
- * each occurrence of the &lt;Measure&gt; composite, and non-repeating. This element must follow the dimension to which
- * the measure unit applies. See example below.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed
- * length, two letters</td></tr><tr><td>Codelist</td><td>List 50</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;MeasureUnitCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;c095&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;c095&gt;mm&lt;/c095&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Measure unit code</h1>
+ * <p>
+ * An ONIX code indicating the measure unit in which dimensions are given. Mandatory in each occurrence of the
+ * &lt;Measure&gt; composite, and non-repeating. This element must follow the dimension to which the measure unit
+ * applies. See example below.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 50</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MeasureUnitCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;c095&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;c095&gt;mm&lt;/c095&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Measure&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Measure ⯈ MeasureUnitCode</li>

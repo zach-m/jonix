@@ -35,17 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Default price type</h1><p>An ONIX code indicating the default price type which is assumed for prices listed in
- * the message, unless explicitly stated otherwise in a &lt;Price&gt; composite in the product record. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits.</td></tr><tr><td>Codelist</td><td>List 58</td></tr><tr><td>Reference name</td><td><tt>&lt;DefaultPriceTypeCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m185&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;DefaultPriceTypeCode&gt;01&lt;/DefaultPriceTypeCode&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Default price type</h1>
+ * <p>
+ * An ONIX code indicating the default price type which is assumed for prices listed in the message, unless explicitly
+ * stated otherwise in a &lt;Price&gt; composite in the product record. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 58</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DefaultPriceTypeCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m185&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;DefaultPriceTypeCode&gt;01&lt;/DefaultPriceTypeCode&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ DefaultPriceTypeCode</li>

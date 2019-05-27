@@ -31,19 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience code</h1><p>An ONIX code, originally derived from BISAC and BIC lists, which identifies the broad
- * audience or readership for which a product is intended. Optional, and repeatable if the product is intended for two
- * or more groups. Deprecated, in favor of providing the same information within the &lt;Audience&gt; composite using
- * code 01 from List 29.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 28</td></tr><tr><td>Reference name</td><td><tt>&lt;AudienceCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b073&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td><tt>&lt;AudienceCode&gt;04&lt;/AudienceCode&gt;</tt>
- * (Primary and secondary/elementary and high school)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Audience code</h1>
+ * <p>
+ * An ONIX code, originally derived from BISAC and BIC lists, which identifies the broad audience or readership for
+ * which a product is intended. Optional, and repeatable if the product is intended for two or more groups. Deprecated,
+ * in favor of providing the same information within the &lt;Audience&gt; composite using code 01 from List 29.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 28</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AudienceCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b073&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;AudienceCode&gt;04&lt;/AudienceCode&gt;</tt> (Primary and secondary/elementary and high school)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AudienceCode</li>

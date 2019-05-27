@@ -37,17 +37,28 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Audience range composite</h1><p>An optional and repeatable group of data elements which together describe an
- * audience or readership range for which a product is intended. The composite can carry a single value from, to, or
- * exact, or a pair of values with an explicit from and to. See examples below.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;AudienceRange&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;audiencerange&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Audience range composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together describe an audience or readership range for which a
+ * product is intended. The composite can carry a single value from, to, or exact, or a pair of values with an explicit
+ * from and to. See examples below.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AudienceRange&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;audiencerange&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ AudienceRange</li>
@@ -151,9 +162,11 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
     private AudienceRangeQualifier audienceRangeQualifier = AudienceRangeQualifier.EMPTY;
 
     /**
-     * <p>An ONIX code specifying the attribute (age, school grade <em>etc</em>) which is measured by the value in the
+     * <p>
+     * An ONIX code specifying the attribute (age, school grade <em>etc</em>) which is measured by the value in the
      * &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and
-     * non-repeating.</p>
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public AudienceRangeQualifier audienceRangeQualifier() {
@@ -162,11 +175,14 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
     }
 
     private ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions =
-        ListOfOnixElement.empty();
+        ListOfOnixElement
+            .empty();
 
     /**
-     * <p>An ONIX code specifying the “precision” of the value in the &lt;AudienceRangeValue&gt; element which follows
-     * (From, To, Exact). Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code specifying the “precision” of the value in the &lt;AudienceRangeValue&gt; element which follows
+     * (From, To, Exact). Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions() {
@@ -177,7 +193,9 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
     private ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues = ListOfOnixElement.empty();
 
     /**
-     * <p>A value indicating an exact position within a range, or the upper or lower end of a range.</p>
+     * <p>
+     * A value indicating an exact position within a range, or the upper or lower end of a range.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues() {

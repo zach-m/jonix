@@ -30,17 +30,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Tax rate percent</h1><p>A tax rate expressed numerically as a percentage. Optional and non-repeating; but either
- * &lt;TaxRatePercent&gt; or &lt;TaxAmount&gt; or both must be present in each occurrence of the &lt;Tax&gt;
- * composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Real number between zero and 100 (inclusive),
- * with explicit decimal point when required, suggested maximum length 7 characters</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;TaxRatePercent&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x472&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;TaxRatePercent&gt;17.5&lt;/TaxRatePercent&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Tax rate percent</h1>
+ * <p>
+ * A tax rate expressed numerically as a percentage. Optional and non-repeating; but either &lt;TaxRatePercent&gt; or
+ * &lt;TaxAmount&gt; or both must be present in each occurrence of the &lt;Tax&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested maximum
+ * length
+ * 7 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TaxRatePercent&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x472&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;TaxRatePercent&gt;17.5&lt;/TaxRatePercent&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Tax&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Tax ⯈ TaxRatePercent</li>
@@ -75,7 +99,9 @@ public class TaxRatePercent implements OnixElement<Double>, Serializable {
 
     /**
      * Raw Format: Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested
-     * maximum length 7 characters<p> (type: dt.PercentDecimal)
+     * maximum length 7 characters
+     * <p>
+     * (type: dt.PercentDecimal)
      */
     public Double value;
 

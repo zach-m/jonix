@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Epublication type version number</h1><p>A version number which applies to a specific epublication type. Optional
- * and non-repeating, and can occur only if the &lt;EpubType&gt; field is present.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum 10
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;EpubTypeVersion&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b212&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b212&gt;2.1&lt;/b212&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Epublication type version number</h1>
+ * <p>
+ * A version number which applies to a specific epublication type. Optional and non-repeating, and can occur only if the
+ * &lt;EpubType&gt; field is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 10 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EpubTypeVersion&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b212&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b212&gt;2.1&lt;/b212&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;RelatedProduct&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ EpubTypeVersion</li>
@@ -84,7 +102,9 @@ public class EpubTypeVersion implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum 10 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum 10 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

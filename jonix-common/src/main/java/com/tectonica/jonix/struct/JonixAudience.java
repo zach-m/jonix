@@ -38,12 +38,16 @@ public class JonixAudience implements JonixKeyedStruct<AudienceCodeTypes>, Seria
     public AudienceCodeTypes audienceCodeType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String audienceCodeTypeName;
 
     /**
-     * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt; <p> (type: dt.NonEmptyString)
+     * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String audienceCodeValue;
 

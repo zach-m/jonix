@@ -31,18 +31,44 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Language code</h1><p>An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt;
- * composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, three
- * lower-case letters. Note that ISO 639 specifies that these codes should always be in
- * lower-case</td></tr><tr><td>Codelist</td><td>ISO 639-2/B List 74</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;LanguageCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b252&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;b252&gt;eng&lt;/b252&gt;</tt>
- * (English)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Language code</h1>
+ * <p>
+ * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
+ * lower-case</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 639-2/B List 74</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;LanguageCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b252&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b252&gt;eng&lt;/b252&gt;</tt> (English)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Language&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Language ⯈ LanguageCode</li>

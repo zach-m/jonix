@@ -32,12 +32,16 @@ public class JonixBatchBonus implements JonixStruct, Serializable {
     public static JonixBatchBonus EMPTY = new JonixBatchBonus();
 
     /**
-     * Raw Format: Positive integer, suggested maximum length 4 digits <p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 4 digits
+     * <p>
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer batchQuantity;
 
     /**
-     * Raw Format: Positive integer, suggested maximum length 4 digits <p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 4 digits
+     * <p>
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer freeQuantity;
 }

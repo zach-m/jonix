@@ -34,25 +34,67 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product form feature value</h1><p>A controlled value that describes a product form feature. Presence or absence
- * of this element depends on the &lt;ProductFormFeatureType&gt;, since some product form features (<em>eg</em> thumb
- * index) do not require an accompanying value, while others (<em>eg</em> text font) require free text in
- * &lt;ProductFormFeatureDescription&gt;. Non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Dependent
- * on the scheme specified in &lt;ProductFormFeatureType&gt;</td></tr><tr><td>Codelist</td><td>Dependent on the scheme
- * specified in &lt;ProductFormFeatureType&gt;</td></tr><tr><td></td><td>For binding color, see List
- * 98</td></tr><tr><td></td><td>For page edge color, see List 98</td></tr><tr><td></td><td>For text font, use free text
- * in &lt;ProductFormFeatureDescription&gt;, which may include font name and/or size</td></tr><tr><td></td><td>For
- * special cover material, see List 99</td></tr><tr><td></td><td>For DVD region codes, see List
- * 76</td></tr><tr><td></td><td>Further features with corresponding code lists may be added from time to time without a
- * re-issue of this document: see the latest release of Code List 79.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;ProductFormFeatureValue&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b335&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b335&gt;BLK&lt;/b335&gt;</tt>
- * Black (binding color)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product form feature value</h1>
+ * <p>
+ * A controlled value that describes a product form feature. Presence or absence of this element depends on the
+ * &lt;ProductFormFeatureType&gt;, since some product form features (<em>eg</em> thumb index) do not require an
+ * accompanying value, while others (<em>eg</em> text font) require free text in &lt;ProductFormFeatureDescription&gt;.
+ * Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>For binding color, see List 98</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>For page edge color, see List 98</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>For text font, use free text in &lt;ProductFormFeatureDescription&gt;, which may include font name and/or
+ * size</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>For special cover material, see List 99</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>For DVD region codes, see List 76</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>Further features with corresponding code lists may be added from time to time without a re-issue of this
+ * document: see the latest release of Code List 79.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductFormFeatureValue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b335&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b335&gt;BLK&lt;/b335&gt;</tt> Black (binding color)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ProductFormFeature&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductFormFeature ⯈ ProductFormFeatureValue</li>
@@ -92,7 +134,9 @@ public class ProductFormFeatureValue implements OnixElement<String>, Serializabl
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;<p> (type: NonEmptyString)
+     * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

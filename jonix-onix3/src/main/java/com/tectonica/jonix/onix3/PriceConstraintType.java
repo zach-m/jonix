@@ -31,18 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Price constraint type</h1><p>An ONIX code specifying a type of commercial term or constraint forming part of the
- * commercial offer for a digital product. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 230</td></tr><tr><td>Reference name</td><td><tt>&lt;PriceConstraintType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x529&gt;</tt></td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td><tt>&lt;PriceConstraintType&gt;06&lt;/PriceConstraintType&gt;</tt>
- * (lend to library patrons)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Price constraint type</h1>
+ * <p>
+ * An ONIX code specifying a type of commercial term or constraint forming part of the commercial offer for a digital
+ * product. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 230</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PriceConstraintType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x529&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PriceConstraintType&gt;06&lt;/PriceConstraintType&gt;</tt> (lend to library patrons)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;PriceConstraint&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈

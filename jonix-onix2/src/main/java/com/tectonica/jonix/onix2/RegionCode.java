@@ -34,20 +34,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Region code</h1><p>An ONIX code identifying a region with which a contributor is particularly associated, when
- * this is significant for the marketing of a product. Optional and repeatable.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length code, consisting of upper case letters with or without a
- * hyphen, successive codes being separated by spaces. Suggested maximum length 8 characters.</td></tr><tr><td>Codelist</td><td>List
- * 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on ISO
- * 3166.</td></tr><tr><td>Reference name</td><td><tt>&lt;RegionCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b398&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b398&gt;CA-BC&lt;/b398&gt;</tt> British
- * Columbia</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Region code</h1>
+ * <p>
+ * An ONIX code identifying a region with which a contributor is particularly associated, when this is significant for
+ * the marketing of a product. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length code, consisting of upper case letters with or without a hyphen, successive codes being
+ * separated
+ * by spaces. Suggested maximum length 8 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RegionCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b398&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b398&gt;CA-BC&lt;/b398&gt;</tt> British Columbia</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Contributor&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ RegionCode</li>
@@ -90,7 +112,9 @@ public class RegionCode implements OnixElement<java.util.Set<String>>, Serializa
 
     /**
      * Raw Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes
-     * being separated by spaces. Suggested maximum length 8 characters.<p> (type: NonEmptyString)
+     * being separated by spaces. Suggested maximum length 8 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public java.util.Set<String> value;
 

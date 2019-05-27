@@ -34,17 +34,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Name code value</h1><p>A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and
- * only if &lt;NameCodeType&gt; is present, and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Determined by the scheme specified in &lt;NameCodeType&gt;</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;NameCodeValue&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b243&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Name code value</h1>
+ * <p>
+ * A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and only if &lt;NameCodeType&gt;
+ * is present, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Determined by the scheme specified in &lt;NameCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NameCodeValue&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b243&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Publisher&gt;</li>
  * <li>&lt;Imprint&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ NameCodeValue</li>
@@ -86,7 +101,9 @@ public class NameCodeValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Determined by the scheme specified in &lt;NameCodeType&gt;<p> (type: NonEmptyString)
+     * Raw Format: Determined by the scheme specified in &lt;NameCodeType&gt;
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

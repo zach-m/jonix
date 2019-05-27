@@ -33,17 +33,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Funding composite</h1><p>An optional group of data elements which together identify a grant or award provided by
- * the entity specified as a funder in an occurence of the &lt;Publisher&gt; composite, to subsidise research or
- * publication. Repeatable when the funder provides multiple grants or awards. Used only when &lt;PublishingRole&gt;
- * indicates the role of a funder.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;Funding&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;funding&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Funding composite</h1>
+ * <p>
+ * An optional group of data elements which together identify a grant or award provided by the entity specified as a
+ * funder in an occurence of the &lt;Publisher&gt; composite, to subsidise research or publication. Repeatable when the
+ * funder provides multiple grants or awards. Used only when &lt;PublishingRole&gt; indicates the role of a funder.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Funding&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;funding&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Publisher&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Funding</li>
@@ -128,12 +143,15 @@ public class Funding implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier, GrantIdentifierTypes>
-        fundingIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        fundingIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A group of data elements which together identify a particular grant or award. At least one
+     * <p>
+     * A group of data elements which together identify a particular grant or award. At least one
      * &lt;FundingIdentifier&gt; composite must occur in each instance of the &lt;Funding&gt; composite. Repeatable when
-     * the grant or award has multiple identifiers.</p>
+     * the grant or award has multiple identifiers.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier, GrantIdentifierTypes> fundingIdentifiers() {

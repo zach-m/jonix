@@ -35,23 +35,47 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supply-to territory</h1><p>One or more ONIX codes identifying a territory which is not a country, but which is
- * precisely defined in geographical terms, <em>eg</em> World, Northern Ireland, Australian Capital Territory.
- * Successive codes may be separated by spaces. Thus the element can carry an unlimited number of territory codes, for
- * territories for which the supplier has distribution rights. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>One or more variable-length codes, each consisting of upper case letters with
- * or without a hyphen, successive codes being separated by spaces. Suggested maximum length 100
- * characters.</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate, country subdivision codes are
- * derived from the UN LOCODE scheme based on ISO 3166.</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;SupplyToTerritory&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j397&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j397&gt;WORLD&lt;/j397&gt;</tt>
- * Whole world</td></tr><tr><td></td><td><tt>&lt;SupplyToTerritory&gt;GB-EWS&lt;/SupplyToTerritory&gt;</tt> UK excluding
- * Northern Ireland</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supply-to territory</h1>
+ * <p>
+ * One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in geographical
+ * terms, <em>eg</em> World, Northern Ireland, Australian Capital Territory. Successive codes may be separated by
+ * spaces. Thus the element can carry an unlimited number of territory codes, for territories for which the supplier has
+ * distribution rights. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more variable-length codes, each consisting of upper case letters with or without a hyphen, successive
+ * codes being separated by spaces. Suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplyToTerritory&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j397&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j397&gt;WORLD&lt;/j397&gt;</tt> Whole world</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td><tt>&lt;SupplyToTerritory&gt;GB-EWS&lt;/SupplyToTerritory&gt;</tt> UK excluding Northern Ireland</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplyToTerritory</li>

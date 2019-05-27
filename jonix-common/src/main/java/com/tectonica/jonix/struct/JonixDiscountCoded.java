@@ -38,12 +38,16 @@ public class JonixDiscountCoded implements JonixKeyedStruct<DiscountCodeTypes>, 
     public DiscountCodeTypes discountCodeType;
 
     /**
-     * Raw Format: According to the scheme specified in &lt;DiscountCodeType&gt; <p> (type: dt.NonEmptyString)
+     * Raw Format: According to the scheme specified in &lt;DiscountCodeType&gt;
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String discountCode;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 50 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String discountCodeTypeName;
 

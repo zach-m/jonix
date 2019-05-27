@@ -31,17 +31,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Discount type</h1><p>An ONIX code identifying a discount type or reason. Optional, and non-repeating. When
- * omitted, the default is a simple or rising discount (the discount is applied to all units in a qualifying
- * order).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 170</td></tr><tr><td>Reference name</td><td><tt>&lt;DiscountType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x467&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Discount type</h1>
+ * <p>
+ * An ONIX code identifying a discount type or reason. Optional, and non-repeating. When omitted, the default is a
+ * simple or rising discount (the discount is applied to all units in a qualifying order).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 170</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;DiscountType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x467&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Discount&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Discount ⯈ DiscountType</li>

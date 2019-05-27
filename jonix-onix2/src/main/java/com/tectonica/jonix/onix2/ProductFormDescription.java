@@ -34,23 +34,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product form description</h1><p>If product form codes do not adequately describe the product, a short text
- * description may be added to give a more detailed specification of the product form. The field is optional and
- * non-repeating. <strong>Although this element was originally included to allow the number and type of pieces contained
- * in a multiple product to be stated, as in the example below, the correct method of describing mixed media products in
- * Release 2.1 is to use two or more occurrences of the &lt;ContainedItem&gt; composite to give a properly structured
- * specification of each media type.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * text, suggested maximum length 200 characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductFormDescription&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b014&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b014&gt;3 volumes with 2
- * audiocassettes&lt;/b014&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product form description</h1>
+ * <p>
+ * If product form codes do not adequately describe the product, a short text description may be added to give a more
+ * detailed specification of the product form. The field is optional and non-repeating. <strong>Although this element
+ * was originally included to allow the number and type of pieces contained in a multiple product to be stated, as in
+ * the example below, the correct method of describing mixed media products in Release 2.1 is to use two or more
+ * occurrences of the &lt;ContainedItem&gt; composite to give a properly structured specification of each media
+ * type.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductFormDescription&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b014&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b014&gt;3 volumes with 2 audiocassettes&lt;/b014&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;ContainedItem&gt;</li>
  * <li>&lt;RelatedProduct&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductFormDescription</li>
@@ -90,7 +108,9 @@ public class ProductFormDescription implements OnixElement<String>, Serializable
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 200 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 200 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

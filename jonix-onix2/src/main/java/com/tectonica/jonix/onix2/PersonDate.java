@@ -36,16 +36,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Person date composite</h1><p>A repeatable group of data elements which together specify a date associated with
- * the person identified in an occurrence of the &lt;Contributor&gt; composite, <em>eg</em> birth or death.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;PersonDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;persondate&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Person date composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify a date associated with the person identified in an
+ * occurrence of the &lt;Contributor&gt; composite, <em>eg</em> birth or death.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PersonDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;persondate&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Contributor&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonDate</li>
@@ -153,8 +164,10 @@ public class PersonDate implements OnixDataCompositeWithKey<JonixPersonDate, Per
     private PersonDateRole personDateRole = PersonDateRole.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the significance of the date in relation to the contributor name. Mandatory in each
-     * occurrence of the &lt;PersonDate&gt; composite.</p>
+     * <p>
+     * An ONIX code indicating the significance of the date in relation to the contributor name. Mandatory in each
+     * occurrence of the &lt;PersonDate&gt; composite.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public PersonDateRole personDateRole() {
@@ -165,8 +178,10 @@ public class PersonDate implements OnixDataCompositeWithKey<JonixPersonDate, Per
     private DateFormat dateFormat = DateFormat.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and non-repeating.
-     * When omitted, the format is assumed to be YYYYMMDD.</p>
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and non-repeating. When
+     * omitted, the format is assumed to be YYYYMMDD.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public DateFormat dateFormat() {
@@ -177,8 +192,10 @@ public class PersonDate implements OnixDataCompositeWithKey<JonixPersonDate, Per
     private Date date = Date.EMPTY;
 
     /**
-     * <p>The date specified in the &lt;PersonDateRole&gt; field. Mandatory in each occurrence of the &lt;PersonDate&gt;
-     * composite.</p>
+     * <p>
+     * The date specified in the &lt;PersonDateRole&gt; field. Mandatory in each occurrence of the &lt;PersonDate&gt;
+     * composite.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public Date date() {

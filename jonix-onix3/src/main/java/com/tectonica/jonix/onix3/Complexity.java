@@ -31,16 +31,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Complexity composite</h1><p>An optional group of data elements which together describe the level of complexity of
- * a text. Repeatable to specify the complexity using different schemes.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;Complexity&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;complexity&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Complexity composite</h1>
+ * <p>
+ * An optional group of data elements which together describe the level of complexity of a text. Repeatable to specify
+ * the complexity using different schemes.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Complexity&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;complexity&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Complexity</li>
@@ -131,8 +146,10 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
     private ComplexitySchemeIdentifier complexitySchemeIdentifier = ComplexitySchemeIdentifier.EMPTY;
 
     /**
-     * <p>An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken. Mandatory in each
-     * occurrence of the &lt;Complexity&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken. Mandatory in each
+     * occurrence of the &lt;Complexity&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ComplexitySchemeIdentifier complexitySchemeIdentifier() {
@@ -143,8 +160,10 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
     private ComplexityCode complexityCode = ComplexityCode.EMPTY;
 
     /**
-     * <p>A code specifying the level of complexity of a text. Mandatory in each occurrence of the &lt;Complexity&gt;
-     * composite, and non-repeating.</p>
+     * <p>
+     * A code specifying the level of complexity of a text. Mandatory in each occurrence of the &lt;Complexity&gt;
+     * composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ComplexityCode complexityCode() {

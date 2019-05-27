@@ -42,16 +42,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Market representation composite</h1><p>A group of data elements which together specify a territorial market and
- * the identity of a sales agent or local publisher responsible for marketing the product therein. Optional and
- * repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;MarketRepresentation&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;marketrepresentation&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Market representation composite</h1>
+ * <p>
+ * A group of data elements which together specify a territorial market and the identity of a sales agent or local
+ * publisher responsible for marketing the product therein. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;MarketRepresentation&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;marketrepresentation&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation</li>
@@ -194,13 +205,16 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes>
-        agentIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        agentIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A group of data elements together defining the identifier of an agent or local publisher in accordance with a
+     * <p>
+     * A group of data elements together defining the identifier of an agent or local publisher in accordance with a
      * specified scheme. Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite must carry either
      * at least one agent identifier, or an &lt;AgentName&gt;. Repeatable only if two or more identifiers are sent using
-     * different schemes.</p>
+     * different schemes.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers() {
@@ -211,8 +225,10 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private AgentName agentName = AgentName.EMPTY;
 
     /**
-     * <p>The name of an agent or local publisher. Optional and non-repeating; required if no agent identifier is sent
-     * in an occurrence of the &lt;MarketRepresentation&gt; composite.</p>
+     * <p>
+     * The name of an agent or local publisher. Optional and non-repeating; required if no agent identifier is sent in
+     * an occurrence of the &lt;MarketRepresentation&gt; composite.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public AgentName agentName() {
@@ -223,7 +239,9 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
     /**
-     * <p>A telephone number of an agent or local publisher. Optional and repeatable.</p>
+     * <p>
+     * A telephone number of an agent or local publisher. Optional and repeatable.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
@@ -234,7 +252,9 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
 
     /**
-     * <p>A fax number of an agent or local publisher. Optional and repeatable.</p>
+     * <p>
+     * A fax number of an agent or local publisher. Optional and repeatable.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
@@ -245,7 +265,9 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
 
     /**
-     * <p>An email address for an agent or local publisher. Optional and repeatable.</p>
+     * <p>
+     * An email address for an agent or local publisher. Optional and repeatable.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
@@ -256,9 +278,11 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
 
     /**
-     * <p>An optional and repeatable group of data elements which together identify and provide pointers to a website
-     * which is related to the agent or local publisher identified in an occurrence of the &lt;MarketRepresentation&gt;
-     * composite.</p>
+     * <p>
+     * An optional and repeatable group of data elements which together identify and provide pointers to a website which
+     * is related to the agent or local publisher identified in an occurrence of the &lt;MarketRepresentation&gt;
+     * composite.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
@@ -269,8 +293,10 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private AgentRole agentRole = AgentRole.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the role of an agent in relation to the product in the specified market, <em>eg</em>
-     * Exclusive sales agent, Local publisher, <em>etc</em>. Optional and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the role of an agent in relation to the product in the specified market, <em>eg</em>
+     * Exclusive sales agent, Local publisher, <em>etc</em>. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public AgentRole agentRole() {
@@ -281,11 +307,13 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private MarketCountry marketCountry = MarketCountry.EMPTY;
 
     /**
-     * <p>One or more ISO standard codes identifying a country in which the agent or local publisher markets the
-     * product. Successive codes are separated by spaces. Thus, a single occurrence of the element can carry an
-     * unlimited number of country codes. Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite
-     * must carry either an occurrence of &lt;MarketCountry&gt; or an occurrence of &lt;MarketTerritory&gt;, to specify
-     * the market concerned. Non-repeating.</p>
+     * <p>
+     * One or more ISO standard codes identifying a country in which the agent or local publisher markets the product.
+     * Successive codes are separated by spaces. Thus, a single occurrence of the element can carry an unlimited number
+     * of country codes. Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite must carry either
+     * an occurrence of &lt;MarketCountry&gt; or an occurrence of &lt;MarketTerritory&gt;, to specify the market
+     * concerned. Non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public MarketCountry marketCountry() {
@@ -296,11 +324,13 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private MarketTerritory marketTerritory = MarketTerritory.EMPTY;
 
     /**
-     * <p>One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in
+     * <p>
+     * One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in
      * geographical terms, <em>eg</em> World, Northern Ireland, Australian Capital Territory. Successive codes are
      * separated by spaces. Thus the element can carry an unlimited number of territory codes. Optional, but each
      * occurrence of the &lt;MarketRepresentation&gt; composite must carry either an occurrence of &lt;MarketCountry&gt;
-     * or an occurrence of &lt;MarketTerritory&gt;, to specify the market concerned. Non-repeating.</p>
+     * or an occurrence of &lt;MarketTerritory&gt;, to specify the market concerned. Non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public MarketTerritory marketTerritory() {
@@ -311,9 +341,11 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private MarketCountryExcluded marketCountryExcluded = MarketCountryExcluded.EMPTY;
 
     /**
-     * <p>One or more ISO standard codes identifying a country which is excluded from a territory specified in
+     * <p>
+     * One or more ISO standard codes identifying a country which is excluded from a territory specified in
      * &lt;MarketTerritory&gt;. Successive codes are separated by spaces. Thus, a single occurrence of the element can
-     * carry an unlimited number of country codes. Optional and non-repeating.</p>
+     * carry an unlimited number of country codes. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public MarketCountryExcluded marketCountryExcluded() {
@@ -324,8 +356,10 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private MarketRestrictionDetail marketRestrictionDetail = MarketRestrictionDetail.EMPTY;
 
     /**
-     * <p>A free text field describing a non-geographical restriction of the market covered by a sales agent or local
-     * publisher. Optional and non-repeating.</p>
+     * <p>
+     * A free text field describing a non-geographical restriction of the market covered by a sales agent or local
+     * publisher. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public MarketRestrictionDetail marketRestrictionDetail() {
@@ -336,8 +370,10 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
 
     /**
-     * <p>An ONIX code which identifies the status of a published product in the market defined in an occurrence of the
-     * &lt;MarketRepresentation&gt; composite. Optional and non-repeating.</p>
+     * <p>
+     * An ONIX code which identifies the status of a published product in the market defined in an occurrence of the
+     * &lt;MarketRepresentation&gt; composite. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public MarketPublishingStatus marketPublishingStatus() {
@@ -346,12 +382,15 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ListOfOnixDataCompositeWithKey
+            .emptyKeyed();
 
     /**
-     * <p>A repeatable group of data elements which together specify a date associated with the publishing status of the
+     * <p>
+     * A repeatable group of data elements which together specify a date associated with the publishing status of the
      * product in the market identified in an occurrence of the &lt;MarketRepresentation&gt; composite, <em>eg</em>
-     * local publication date.</p>
+     * local publication date.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates() {

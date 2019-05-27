@@ -34,19 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supplier name</h1><p>The name of a supply source from which the product may be ordered by a trade customer.
- * Optional and non-repeating; required if no supplier identifier is sent.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 100
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;SupplierName&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j137&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j137&gt;Littlehampton Book
- * Services&lt;/j137&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supplier name</h1>
+ * <p>
+ * The name of a supply source from which the product may be ordered by a trade customer. Optional and non-repeating;
+ * required if no supplier identifier is sent.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplierName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j137&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j137&gt;Littlehampton Book Services&lt;/j137&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * <li>&lt;NewSupplier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierName</li>
@@ -85,7 +102,9 @@ public class SupplierName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

@@ -42,7 +42,9 @@ public class JonixMeasure implements JonixKeyedStruct<MeasureTypes>, Serializabl
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 6
-     * characters <p> (type: dt.StrictPositiveDecimal)
+     * characters
+     * <p>
+     * (type: dt.StrictPositiveDecimal)
      */
     public Double measurement;
 

@@ -36,15 +36,27 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Language composite</h1><p>A repeatable group of data elements which together represent a language, and specify
- * its role and, where required, whether it is a country variant.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;Language&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;language&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Language composite</h1>
+ * <p>
+ * A repeatable group of data elements which together represent a language, and specify its role and, where required,
+ * whether it is a country variant.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Language&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;language&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Language</li>
@@ -148,8 +160,10 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
     private LanguageRole languageRole = LanguageRole.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the “role” of a language in the context of the ONIX record. Mandatory in each
-     * occurrence of the &lt;Language&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating the “role” of a language in the context of the ONIX record. Mandatory in each occurrence
+     * of the &lt;Language&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public LanguageRole languageRole() {
@@ -160,8 +174,10 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
     private LanguageCode languageCode = LanguageCode.EMPTY;
 
     /**
-     * <p>An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
-     * non-repeating.</p>
+     * <p>
+     * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public LanguageCode languageCode() {
@@ -172,8 +188,10 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
     private CountryCode countryCode = CountryCode.EMPTY;
 
     /**
-     * <p>A code identifying the country when this specifies a variant of the language, <em>eg</em> US English. Optional
-     * and non-repeating.</p>
+     * <p>
+     * A code identifying the country when this specifies a variant of the language, <em>eg</em> US English. Optional
+     * and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public CountryCode countryCode() {

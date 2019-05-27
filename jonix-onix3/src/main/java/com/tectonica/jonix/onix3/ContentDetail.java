@@ -32,20 +32,38 @@ import java.util.List;
  */
 
 /**
- * <h1>Content detail composite</h1><p>The content detail block comprises the single data element Group&nbsp;P.18. The
- * block as a whole is non-repeating. It is not mandatory within the &lt;Product&gt; record, and is used only when there
- * is a requirement to describe individual chapters or parts within a product in a fully structured way. The more usual
- * ONIX practice is to send a table of contents as text, possibly in XHTML, in Group&nbsp;P.14.</p><p>When used, the
- * block should normally contain at least one instance of &lt;ContentItem&gt;. It may be empty <em>only</em> within a
- * partial or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all
- * previously-supplied content detail.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;ContentDetail&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;contentdetail&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Content detail composite</h1>
+ * <p>
+ * The content detail block comprises the single data element Group&nbsp;P.18. The block as a whole is non-repeating. It
+ * is not mandatory within the &lt;Product&gt; record, and is used only when there is a requirement to describe
+ * individual chapters or parts within a product in a fully structured way. The more usual ONIX practice is to send a
+ * table of contents as text, possibly in XHTML, in Group&nbsp;P.14.
+ * </p>
+ * <p>
+ * When used, the block should normally contain at least one instance of &lt;ContentItem&gt;. It may be empty
+ * <em>only</em> within a partial or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the
+ * intention is to remove all previously-supplied content detail.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ContentDetail&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;contentdetail&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail</li>
@@ -132,10 +150,12 @@ public class ContentDetail implements OnixSuperComposite, Serializable {
     private List<ContentItem> contentItems = Collections.emptyList();
 
     /**
-     * <p>A group of data elements which together describe a content item within a product. Optional in any occurrence
-     * of the &lt;ContentDetail&gt; composite, but it may be omitted only within a partial or ‘block update’
-     * (Notification or update type 04, see P.1.2) when the intention is to remove all previously supplied content
-     * detail. When used normally, it is repeatable for each content item within the product.</p>
+     * <p>
+     * A group of data elements which together describe a content item within a product. Optional in any occurrence of
+     * the &lt;ContentDetail&gt; composite, but it may be omitted only within a partial or ‘block update’ (Notification
+     * or update type 04, see P.1.2) when the intention is to remove all previously supplied content detail. When used
+     * normally, it is repeatable for each content item within the product.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<ContentItem> contentItems() {

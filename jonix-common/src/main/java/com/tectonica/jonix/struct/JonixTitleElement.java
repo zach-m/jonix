@@ -33,25 +33,32 @@ public class JonixTitleElement implements JonixStruct, Serializable {
     public static JonixTitleElement EMPTY = new JonixTitleElement();
 
     /**
-     * Raw Format: Positive integer, 1, 2, 3 etc, suggested maximum length 3 digits <p> (type:
-     * dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, 1, 2, 3 etc, suggested maximum length 3 digits
+     * <p>
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer sequenceNumber;
 
     public TitleElementLevels titleElementLevel;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 20 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 20 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String partNumber;
 
     /**
-     * Raw Format: Year or range of years, in the format YYYY or YYYY-YYYY <p> (type: dt.YearOrYearRange)
+     * Raw Format: Year or range of years, in the format YYYY or YYYY-YYYY
+     * <p>
+     * (type: dt.YearOrYearRange)
      */
     public String yearOfAnnual;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 20 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 20 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String titlePrefix;
 
@@ -61,17 +68,23 @@ public class JonixTitleElement implements JonixStruct, Serializable {
     public boolean isNoPrefix;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 300 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 300 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String titleWithoutPrefix;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 300 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 300 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String titleText;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 300 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum 300 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String subtitle;
 }

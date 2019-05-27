@@ -32,17 +32,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Collection identifier composite</h1><p>A repeatable group of data elements which together specify an identifier
- * of a bibliographic collection. The composite is optional, and may only repeat if two or more identifiers of different
- * types are sent for the same collection. It is not permissible to have two identifiers of the same type.</p><table
- * border='1' cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CollectionIdentifier&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;collectionidentifier&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Collection identifier composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify an identifier of a bibliographic collection. The composite
+ * is optional, and may only repeat if two or more identifiers of different types are sent for the same collection. It
+ * is not permissible to have two identifiers of the same type.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CollectionIdentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;collectionidentifier&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Collection&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionIdentifier</li>
@@ -139,8 +154,10 @@ public class CollectionIdentifier
     private CollectionIDType collectionIDType = CollectionIDType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory
-     * in each occurrence of the &lt;CollectionIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in
+     * each occurrence of the &lt;CollectionIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public CollectionIDType collectionIDType() {
@@ -151,10 +168,11 @@ public class CollectionIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * <p>A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for
-     * which there is no individual ID type code). Must be included when, and only when, the code in
-     * &lt;CollectionIDType&gt; indicates a proprietary scheme, <i>eg</i> a publisher’s own code. Optional and
-     * non-repeating.</p>
+     * <p>
+     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
+     * there is no individual ID type code). Must be included when, and only when, the code in &lt;CollectionIDType&gt;
+     * indicates a proprietary scheme, <i>eg</i> a publisher’s own code. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public IDTypeName idTypeName() {
@@ -165,8 +183,10 @@ public class CollectionIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * <p>An identifier of the type specified in the &lt;CollectionIDType&gt; field. Mandatory in each occurrence of the
-     * &lt;CollectionIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An identifier of the type specified in the &lt;CollectionIDType&gt; field. Mandatory in each occurrence of the
+     * &lt;CollectionIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public IDValue idValue() {

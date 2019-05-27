@@ -40,7 +40,7 @@ import java.io.Serializable;
  * <ul>
  * <li>&lt;SubSeriesRecord&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ ParentIdentifier</li>
@@ -146,8 +146,10 @@ public class ParentIdentifier
     private SeriesIDType seriesIDType = SeriesIDType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken.
-     * Mandatory in each occurrence of the &lt;SeriesIdentifier&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
+     * in each occurrence of the &lt;SeriesIdentifier&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public SeriesIDType seriesIDType() {

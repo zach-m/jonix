@@ -35,24 +35,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Product availability</h1><p>An ONIX code indicating the availability of a product from a supplier. This element
- * has been added as a preferred successor to the &lt;AvailabilityCode&gt; element, and is intended to be used both by
- * publishers (who should also include the new &lt;PublishingStatus&gt; element in PR.20) and by intermediary suppliers
- * (who may also include &lt;PublishingStatus&gt; if they are in a position to do so. Each occurrence of the
- * &lt;SupplyDetail&gt; composite must carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both.
- * The element is non-repeating. Recommended practise is in future to use this new element, and, where possible and
- * appropriate, to include the &lt;PublishingStatus&gt; element in PR.20. It is likely that the &lt;AvailabilityCode&gt;
- * element will be “deprecated” in due course in a future release.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
- * 65</td></tr><tr><td>Reference name</td><td><tt>&lt;ProductAvailability&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j396&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j396&gt;41&lt;/j396&gt;</tt> Replaced by
- * new product</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Product availability</h1>
+ * <p>
+ * An ONIX code indicating the availability of a product from a supplier. This element has been added as a preferred
+ * successor to the &lt;AvailabilityCode&gt; element, and is intended to be used both by publishers (who should also
+ * include the new &lt;PublishingStatus&gt; element in PR.20) and by intermediary suppliers (who may also include
+ * &lt;PublishingStatus&gt; if they are in a position to do so. Each occurrence of the &lt;SupplyDetail&gt; composite
+ * must carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both. The element is non-repeating.
+ * Recommended practise is in future to use this new element, and, where possible and appropriate, to include the
+ * &lt;PublishingStatus&gt; element in PR.20. It is likely that the &lt;AvailabilityCode&gt; element will be
+ * “deprecated” in due course in a future release.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 65</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ProductAvailability&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j396&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j396&gt;41&lt;/j396&gt;</tt> Replaced by new product</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ ProductAvailability</li>

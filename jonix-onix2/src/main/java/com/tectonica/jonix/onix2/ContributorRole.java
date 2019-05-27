@@ -35,22 +35,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor role</h1><p>An ONIX code indicating the role played by a person or corporate body in the creation of
- * the product. Mandatory in each occurrence of a &lt;Contributor&gt; composite, and may be repeated if the same person
- * or corporate body has more than one role in relation to the product. Note, however, that if the
- * &lt;SequenceNumberWithinRole&gt; element is used to establish individual sequences of contributor names by role, the
- * &lt;ContributorRole&gt; element must not be repeated. There must instead be separate occurrences of the
- * &lt;Contributor&gt; composite if the same person has two or more roles.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed-length, one letter and two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 17</td></tr><tr><td>Reference name</td><td><tt>&lt;ContributorRole&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b035&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;ContributorRole&gt;A01&lt;/ContributorRole&gt;</tt>
- * Author</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Contributor role</h1>
+ * <p>
+ * An ONIX code indicating the role played by a person or corporate body in the creation of the product. Mandatory in
+ * each occurrence of a &lt;Contributor&gt; composite, and may be repeated if the same person or corporate body has more
+ * than one role in relation to the product. Note, however, that if the &lt;SequenceNumberWithinRole&gt; element is used
+ * to establish individual sequences of contributor names by role, the &lt;ContributorRole&gt; element must not be
+ * repeated. There must instead be separate occurrences of the &lt;Contributor&gt; composite if the same person has two
+ * or more roles.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, one letter and two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 17</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ContributorRole&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b035&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ContributorRole&gt;A01&lt;/ContributorRole&gt;</tt> Author</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Contributor&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ContributorRole</li>

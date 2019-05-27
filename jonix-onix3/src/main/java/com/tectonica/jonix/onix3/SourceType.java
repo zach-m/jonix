@@ -31,17 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Source type</h1><p>An ONIX code indicating the type of source from which the cited material originated, <i>eg</i>
- * radio, TV. Optional, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 157</td></tr><tr><td>Reference name</td><td><tt>&lt;SourceType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x431&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;SourceType&gt;03&lt;/SourceType&gt;</tt>
- * (Radio)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Source type</h1>
+ * <p>
+ * An ONIX code indicating the type of source from which the cited material originated, <i>eg</i> radio, TV. Optional,
+ * and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 157</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SourceType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x431&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SourceType&gt;03&lt;/SourceType&gt;</tt> (Radio)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CitedContent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ SourceType</li>

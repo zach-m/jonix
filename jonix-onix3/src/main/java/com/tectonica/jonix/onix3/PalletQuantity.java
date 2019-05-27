@@ -30,17 +30,40 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Pallet quantity</h1><p>The quantity (number of copies) on each complete pallet in stock currently held by the
- * supplier. Optional and non-repeating. Of course, orders do not have to be aligned to the pallet quantity, but for
- * bulk orders, it may be useful to know how many pallets will be required for a delivery.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Positive integer, suggested maximum length 7 digits</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PalletQuantity&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x545&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;PalletQuantity&gt;960&lt;/PalletQuantity&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Pallet quantity</h1>
+ * <p>
+ * The quantity (number of copies) on each complete pallet in stock currently held by the supplier. Optional and
+ * non-repeating. Of course, orders do not have to be aligned to the pallet quantity, but for bulk orders, it may be
+ * useful to know how many pallets will be required for a delivery.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Positive integer, suggested maximum length 7 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PalletQuantity&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x545&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PalletQuantity&gt;960&lt;/PalletQuantity&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ PalletQuantity</li>
@@ -73,7 +96,9 @@ public class PalletQuantity implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Positive integer, suggested maximum length 7 digits<p> (type: dt.StrictPositiveInteger)
+     * Raw Format: Positive integer, suggested maximum length 7 digits
+     * <p>
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

@@ -35,20 +35,42 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Supply-to region</h1><p>An ONIX code for a region to which the supplier is able to supply. A full code list is
- * yet to be defined. A provisional coding, for UK use only, is given for Open Market supply. <strong>This element will
- * not be further developed, and is superseded by &lt;SupplyToTerritory&gt; above. It is retained for purposes of
- * upwards compatibility only. Note that Open Market distribution rights should be specified, like any others, by
- * listing countries and territories.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
- * three numeric digits</td></tr><tr><td>Codelist</td><td>List 52</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;SupplyToRegion&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;j139&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SupplyToRegion&gt;004&lt;/SupplyToRegion&gt;</tt>
- * UK 'open market'</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Supply-to region</h1>
+ * <p>
+ * An ONIX code for a region to which the supplier is able to supply. A full code list is yet to be defined. A
+ * provisional coding, for UK use only, is given for Open Market supply. <strong>This element will not be further
+ * developed, and is superseded by &lt;SupplyToTerritory&gt; above. It is retained for purposes of upwards compatibility
+ * only. Note that Open Market distribution rights should be specified, like any others, by listing countries and
+ * territories.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 52</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SupplyToRegion&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j139&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SupplyToRegion&gt;004&lt;/SupplyToRegion&gt;</tt> UK 'open market'</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplyToRegion</li>

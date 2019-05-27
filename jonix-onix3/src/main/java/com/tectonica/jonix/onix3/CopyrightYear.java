@@ -31,18 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Copyright year</h1><p>The copyright year as it appears in a copyright statement on the product. Mandatory in each
- * occurrence of the &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>As specified by the value in the dateformat attribute, or the
- * default of YYYY if the attribute is missing)</td></tr><tr><td>Reference name</td><td><tt>&lt;CopyrightYear&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b087&gt;</tt></td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td><tt>&lt;b087
- * dateformat=&quot;11&quot;&gt;20032008&lt;/b087&gt;</tt> (2003-2008)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Copyright year</h1>
+ * <p>
+ * The copyright year as it appears in a copyright statement on the product. Mandatory in each occurrence of the
+ * &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is missing)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CopyrightYear&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b087&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>dateformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b087 dateformat=&quot;11&quot;&gt;20032008&lt;/b087&gt;</tt> (2003-2008)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;CopyrightStatement&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ CopyrightStatement ⯈ CopyrightYear</li>
@@ -78,7 +103,9 @@ public class CopyrightYear implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
-     * missing)<p> (type: dt.NonEmptyString)
+     * missing)
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

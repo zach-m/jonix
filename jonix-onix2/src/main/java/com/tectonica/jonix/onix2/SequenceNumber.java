@@ -34,21 +34,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor sequence number</h1><p>A number which specifies a single overall sequence of contributor names.
- * Optional and non-repeating. There are two ways of approaching the sequencing of contributor names: by defining a
- * single sequence across all contributors, which is the general ONIX practise; or by defining an individual sequence
- * for each contributor role, using the element &lt;SequenceNumberWithinRole&gt; on the next page. Some applications
- * require this more precise sequencing. Where it is not required, it is strongly recommended that each occurrence of
- * the &lt;Contributor&gt; composite should carry an overall &lt;SequenceNumber&gt;.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length integer, 1, 2, 3 etc, suggested maximum length 3
- * digits</td></tr><tr><td>Reference name</td><td><tt>&lt;SequenceNumber&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b034&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SequenceNumber&gt;3&lt;/SequenceNumber&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Contributor sequence number</h1>
+ * <p>
+ * A number which specifies a single overall sequence of contributor names. Optional and non-repeating. There are two
+ * ways of approaching the sequencing of contributor names: by defining a single sequence across all contributors, which
+ * is the general ONIX practise; or by defining an individual sequence for each contributor role, using the element
+ * &lt;SequenceNumberWithinRole&gt; on the next page. Some applications require this more precise sequencing. Where it
+ * is not required, it is strongly recommended that each occurrence of the &lt;Contributor&gt; composite should carry an
+ * overall &lt;SequenceNumber&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SequenceNumber&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b034&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SequenceNumber&gt;3&lt;/SequenceNumber&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Contributor&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ SequenceNumber</li>
@@ -90,7 +108,9 @@ public class SequenceNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

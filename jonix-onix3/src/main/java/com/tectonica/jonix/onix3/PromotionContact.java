@@ -32,19 +32,41 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Promotion contact details</h1><p>Free text giving the name, department, phone number, e-mail address etc for a
- * promotional contact person for the product. Optional and non-repeating. Deprecated, in favor of providing this
- * information via the &lt;ProductContact&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML
- * with ONIX text fields</td></tr><tr><td>Reference name</td><td><tt>&lt;PromotionContact&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;k166&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language,
- * textformat</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Promotion contact details</h1>
+ * <p>
+ * Free text giving the name, department, phone number, e-mail address etc for a promotional contact person for the
+ * product. Optional and non-repeating. Deprecated, in favor of providing this information via the
+ * &lt;ProductContact&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PromotionContact&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;k166&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;MarketPublishingDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PromotionContact</li>
@@ -82,7 +104,9 @@ public class PromotionContact implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML or XML with ONIX text fields<p> (type: XHTML)
+     * Using XHTML, HTML or XML with ONIX text fields
+     * <p>
+     * (type: XHTML)
      */
     public String value;
 

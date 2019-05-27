@@ -34,25 +34,33 @@ public class JonixSubject implements JonixStruct, Serializable {
     public static JonixSubject EMPTY = new JonixSubject();
 
     /**
-     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String subjectCode;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 500 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 500 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public List<String> subjectHeadingTexts;
 
     public SubjectSchemeIdentifiers subjectSchemeIdentifier;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String subjectSchemeName;
 
     /**
      * Raw Format: Variable length alphanumeric, suggested maximum length 10 characters for consistency with other
-     * version number elements <p> (type: dt.NonEmptyString)
+     * version number elements
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String subjectSchemeVersion;
 }

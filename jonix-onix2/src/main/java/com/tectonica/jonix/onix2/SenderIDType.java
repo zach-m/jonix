@@ -35,17 +35,39 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Sender identifier type</h1><p>An ONIX code identifying the namespace from which the identifier in the
- * &lt;IDValue&gt; element is taken. Mandatory in any occurrence of the &lt;SenderIdentifier&gt; composite, and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
- * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td><tt>&lt;SenderIDType&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m379&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;SenderIDType&gt;01&lt;/SenderIDType&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Sender identifier type</h1>
+ * <p>
+ * An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
+ * in any occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 44</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;SenderIDType&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m379&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;SenderIDType&gt;01&lt;/SenderIDType&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SenderIdentifier&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ SenderIdentifier ⯈ SenderIDType</li>

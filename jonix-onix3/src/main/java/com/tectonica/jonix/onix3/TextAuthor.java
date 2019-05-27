@@ -31,18 +31,43 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Author of text</h1><p>The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i> if it is a review
- * or promotional quote. Optional, and repeatable if the text is jointly authored.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 300
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;TextAuthor&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;d107&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td><tt>&lt;d107&gt;Martin
- * Amis&lt;/d107&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Author of text</h1>
+ * <p>
+ * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i> if it is a review or promotional quote.
+ * Optional, and repeatable if the text is jointly authored.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TextAuthor&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;d107&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;d107&gt;Martin Amis&lt;/d107&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;TextContent&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ TextAuthor</li>
@@ -78,7 +103,9 @@ public class TextAuthor implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 300 characters<p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 300 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public String value;
 

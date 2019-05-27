@@ -34,21 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Edition statement</h1><p>A short free-text description of a version or edition. Optional and non-repeating. When
- * used, the &lt;EditionStatement&gt; must carry a complete description of the nature of the edition, <em>ie</em> it
- * should not be treated as merely supplementary to an &lt;EditionTypeCode&gt; or an &lt;EditionNumber&gt;. The
+ * <h1>Edition statement</h1>
+ * <p>
+ * A short free-text description of a version or edition. Optional and non-repeating. When used, the
+ * &lt;EditionStatement&gt; must carry a complete description of the nature of the edition, <em>ie</em> it should not be
+ * treated as merely supplementary to an &lt;EditionTypeCode&gt; or an &lt;EditionNumber&gt;. The
  * &lt;EditionStatement&gt; should be strictly limited to describing features of the content of the edition, and should
- * not include aspects such as rights or market restrictions which are properly covered elsewhere in the ONIX
- * record.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length
- * 100 characters.</td></tr><tr><td>Reference name</td><td><tt>&lt;EditionStatement&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b058&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b058&gt;3rd edition, revised with an
- * introduction and notes&lt;/b058&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * not include aspects such as rights or market restrictions which are properly covered elsewhere in the ONIX record.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EditionStatement&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b058&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b058&gt;3rd edition, revised with an introduction and notes&lt;/b058&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ EditionStatement</li>
@@ -86,7 +103,9 @@ public class EditionStatement implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length text, suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     * Raw Format: Variable-length text, suggested maximum length 100 characters.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

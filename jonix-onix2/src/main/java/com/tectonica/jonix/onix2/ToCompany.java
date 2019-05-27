@@ -34,18 +34,38 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Addressee company name</h1><p>The name of the addressee organization, which should always be stated in a standard
- * form agreed with the addressee. Optional and non-repeating.</p><p class="new214">The text is not limited to ASCII
- * characters.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length ASCII text, suggested maximum
- * 30 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ToCompany&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;m178&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;m178&gt;Book
- * Data&lt;/m178&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Addressee company name</h1>
+ * <p>
+ * The name of the addressee organization, which should always be stated in a standard form agreed with the addressee.
+ * Optional and non-repeating.
+ * </p>
+ * <p class="new214">
+ * The text is not limited to ASCII characters.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length ASCII text, suggested maximum 30 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ToCompany&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;m178&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;m178&gt;Book Data&lt;/m178&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Header&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Header ⯈ ToCompany</li>
@@ -83,7 +103,9 @@ public class ToCompany implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length ASCII text, suggested maximum 30 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length ASCII text, suggested maximum 30 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

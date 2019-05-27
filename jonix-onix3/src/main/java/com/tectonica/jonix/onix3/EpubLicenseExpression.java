@@ -32,16 +32,31 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Digital product license expression</h1><p>An optional composite that carries details of a link to an expression
- * of the license terms, which may be in human-readable or machine-readable form. Repeatable when there is more than one
- * expression of the license.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;EpubLicenseExpression&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;epublicenseexpression&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Digital product license expression</h1>
+ * <p>
+ * An optional composite that carries details of a link to an expression of the license terms, which may be in
+ * human-readable or machine-readable form. Repeatable when there is more than one expression of the license.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;EpubLicenseExpression&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;epublicenseexpression&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;EpubLicense&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubLicense ⯈ EpubLicenseExpression</li>
@@ -141,9 +156,11 @@ public class EpubLicenseExpression
     private EpubLicenseExpressionType epubLicenseExpressionType = EpubLicenseExpressionType.EMPTY;
 
     /**
-     * <p>An ONIX code identifying the nature or format of the license expression specified in the
+     * <p>
+     * An ONIX code identifying the nature or format of the license expression specified in the
      * &lt;EpubLicenseExpressionLink&gt; element. Mandatory within the &lt;EpubLicenseExpression&gt; composite, and
-     * non-repeating.</p>
+     * non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public EpubLicenseExpressionType epubLicenseExpressionType() {
@@ -154,10 +171,12 @@ public class EpubLicenseExpression
     private EpubLicenseExpressionTypeName epubLicenseExpressionTypeName = EpubLicenseExpressionTypeName.EMPTY;
 
     /**
-     * <p>A short free-text name for a license expression type, when the code in &lt;EpubLicenseExpressionType&gt;
-     * provides insufficient detail – for example when a machine-readable license is expressed using a particular
-     * proprietary encoding scheme. Optional and non-repeating, and must be included when (and only when) the
-     * &lt;EpubLicenseExpressionType&gt; element indicates the expression is encoded in a proprietary way.</p>
+     * <p>
+     * A short free-text name for a license expression type, when the code in &lt;EpubLicenseExpressionType&gt; provides
+     * insufficient detail – for example when a machine-readable license is expressed using a particular proprietary
+     * encoding scheme. Optional and non-repeating, and must be included when (and only when) the
+     * &lt;EpubLicenseExpressionType&gt; element indicates the expression is encoded in a proprietary way.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName() {
@@ -168,8 +187,10 @@ public class EpubLicenseExpression
     private EpubLicenseExpressionLink epubLicenseExpressionLink = EpubLicenseExpressionLink.EMPTY;
 
     /**
-     * <p>The URI for the license expression. Mandatory in each instance of the &lt;EpubLicenseExpression&gt; composite,
-     * and non-repeating.</p>
+     * <p>
+     * The URI for the license expression. Mandatory in each instance of the &lt;EpubLicenseExpression&gt; composite,
+     * and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public EpubLicenseExpressionLink epubLicenseExpressionLink() {

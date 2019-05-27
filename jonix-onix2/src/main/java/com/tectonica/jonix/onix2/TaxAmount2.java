@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Tax amount at tax rate 2</h1><p>The amount of tax chargeable at the rate specified by &lt;TaxRateCode2&gt; and/or
- * &lt;TaxRatePercent2&gt;. See notes on &lt;TaxRateCode1&gt;.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an explicit decimal point where
- * required.</td></tr><tr><td>Reference name</td><td><tt>&lt;TaxAmount2&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j160&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;j160&gt;1.86&lt;/j160&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Tax amount at tax rate 2</h1>
+ * <p>
+ * The amount of tax chargeable at the rate specified by &lt;TaxRateCode2&gt; and/or &lt;TaxRatePercent2&gt;. See notes
+ * on &lt;TaxRateCode1&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point where required.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TaxAmount2&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j160&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j160&gt;1.86&lt;/j160&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ TaxAmount2</li>
@@ -83,8 +101,9 @@ public class TaxAmount2 implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length real number, with an explicit decimal point where required.<p> (type:
-     * NonEmptyString)
+     * Raw Format: Variable length real number, with an explicit decimal point where required.
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

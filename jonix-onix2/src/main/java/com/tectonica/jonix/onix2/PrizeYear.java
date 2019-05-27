@@ -34,15 +34,34 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Prize or award year</h1><p>The year in which a prize or award was given. Optional and non-repeating.</p><table
- * border='1' cellpadding='3'><tr><td>Format</td><td>Four digits, YYYY</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;PrizeYear&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;g127&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;PrizeYear&gt;1999&lt;/PrizeYear&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Prize or award year</h1>
+ * <p>
+ * The year in which a prize or award was given. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Four digits, YYYY</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;PrizeYear&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;g127&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;PrizeYear&gt;1999&lt;/PrizeYear&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Prize&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Prize ⯈ PrizeYear</li>
@@ -80,7 +99,9 @@ public class PrizeYear implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Four digits, YYYY<p> (type: NonEmptyString)
+     * Raw Format: Four digits, YYYY
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

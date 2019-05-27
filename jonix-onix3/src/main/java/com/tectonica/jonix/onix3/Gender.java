@@ -31,21 +31,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor gender</h1><p>An optional ONIX code specifying the gender of a personal contributor. Not repeatable.
- * Note that this indicates the gender of the contributor’s public identity (which may be pseudonymous) based on
- * designations used in ISO 5218, rather than the gender identity, biological sex or sexuality of a natural
- * person.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, single
- * character</td></tr><tr><td>Codelist</td><td>List 229</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;Gender&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;x524&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;x524&gt;f&lt;/x524&gt;</tt>
- * (public identity is female)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Contributor gender</h1>
+ * <p>
+ * An optional ONIX code specifying the gender of a personal contributor. Not repeatable. Note that this indicates the
+ * gender of the contributor’s public identity (which may be pseudonymous) based on designations used in ISO 5218,
+ * rather than the gender identity, biological sex or sexuality of a natural person.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, single character</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 229</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Gender&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x524&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x524&gt;f&lt;/x524&gt;</tt> (public identity is female)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;AlternativeName&gt;</li>
  * <li>&lt;Contributor&gt;</li>
  * <li>&lt;NameAsSubject&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ Gender</li>

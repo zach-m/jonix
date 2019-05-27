@@ -31,20 +31,45 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Illustrated yes/no</h1><p>An ONIX code indicating whether a book or other textual (usually printed) product has
- * illustrations. The more informative free text field &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt;
- * composite are strongly preferred. This element has been added specifically to cater for a situation where a sender of
- * product information maintains only a yes/no flag, and it should not otherwise be used. Optional and
- * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
- * digits</td></tr><tr><td>Codelist</td><td>List 152</td></tr><tr><td>Reference name</td><td><tt>&lt;Illustrated&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;x422&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;Illustrated&gt;01&lt;/Illustrated&gt;</tt>
- * (No)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Illustrated yes/no</h1>
+ * <p>
+ * An ONIX code indicating whether a book or other textual (usually printed) product has illustrations. The more
+ * informative free text field &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt; composite are strongly
+ * preferred. This element has been added specifically to cater for a situation where a sender of product information
+ * maintains only a yes/no flag, and it should not otherwise be used. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 152</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;Illustrated&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;x422&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;Illustrated&gt;01&lt;/Illustrated&gt;</tt> (No)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;DescriptiveDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Illustrated</li>

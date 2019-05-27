@@ -34,17 +34,35 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Publication date of other text</h1><p>The date on which text sent in the &lt;Text&gt; element, or referenced in
- * the &lt;TextLink&gt; element, was published. Optional and non-repeating.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Date as four, six or eight digits (YYYY, YYYYMM,
- * YYYYMMDD)</td></tr><tr><td>Reference name</td><td><tt>&lt;TextPublicationDate&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;d109&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;d109&gt;20000504&lt;/d109&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Publication date of other text</h1>
+ * <p>
+ * The date on which text sent in the &lt;Text&gt; element, or referenced in the &lt;TextLink&gt; element, was
+ * published. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;TextPublicationDate&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;d109&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;d109&gt;20000504&lt;/d109&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;OtherText&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextPublicationDate</li>
@@ -85,7 +103,9 @@ public class TextPublicationDate implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)<p> (type: NonEmptyString)
+     * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

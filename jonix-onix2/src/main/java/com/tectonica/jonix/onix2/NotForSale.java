@@ -39,16 +39,28 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Not for sale composite</h1><p>A repeatable group of data elements which together identify a country or countries
- * in which the product is not for sale, together with the ISBN and/or other product identifier and/or the name of the
- * publisher of the same work in the specified country/ies.</p><table border='1' cellpadding='3'><tr><td>Reference
- * name</td><td><tt>&lt;NotForSale&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;notforsale&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Not for sale composite</h1>
+ * <p>
+ * A repeatable group of data elements which together identify a country or countries in which the product is not for
+ * sale, together with the ISBN and/or other product identifier and/or the name of the publisher of the same work in the
+ * specified country/ies.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;NotForSale&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;notforsale&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ NotForSale</li>
@@ -164,12 +176,14 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys = ListOfOnixElement.empty();
 
     /**
-     * <p>One or more ISO standard codes identifying a country. Successive codes may be separated by spaces. Thus, a
-     * single occurrence of the element can carry an unlimited number of country codes, for countries for which details
-     * of another publisher’s product are given. For upwards compatibility, the element remains repeatable, so that
+     * <p>
+     * One or more ISO standard codes identifying a country. Successive codes may be separated by spaces. Thus, a single
+     * occurrence of the element can carry an unlimited number of country codes, for countries for which details of
+     * another publisher’s product are given. For upwards compatibility, the element remains repeatable, so that
      * multiple countries can also be listed as multiple occurrences of the whole element. At least one occurrence of
      * &lt;RightsCountry&gt; or &lt;RightsTerritory&gt; is mandatory in each occurrence of the&lt;NotForSale&gt;
-     * composite.</p>
+     * composite.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys() {
@@ -180,10 +194,12 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     private RightsTerritory rightsTerritory = RightsTerritory.EMPTY;
 
     /**
-     * <p>One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in
+     * <p>
+     * One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in
      * geographical terms, <em>eg</em> World, Northern Ireland, Australian National Territory. Successive codes are
      * separated by spaces, so that the element can carry an unlimited number of territory codes, for territories for
-     * which details of another publisher’s product are given. Optional and non-repeating.</p>
+     * which details of another publisher’s product are given. Optional and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public RightsTerritory rightsTerritory() {
@@ -194,10 +210,12 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     private ISBN isbn = ISBN.EMPTY;
 
     /**
-     * <p>10-character ISBN of the equivalent product which is available in the country/ies specified in
+     * <p>
+     * 10-character ISBN of the equivalent product which is available in the country/ies specified in
      * &lt;RightsCountry&gt;. Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt; composite provides a
      * more general method of handling this and other product codes, and is to be preferred. The &lt;ISBN&gt; element is
-     * on no account to be used to carry a 13-digit ISBN.</strong></p>
+     * on no account to be used to carry a 13-digit ISBN.</strong>
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public ISBN isbn() {
@@ -208,9 +226,11 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     private EAN13 ean13 = EAN13.EMPTY;
 
     /**
-     * <p>EAN.UCC-13 number of the equivalent product available in the country/ies specified in &lt;RightsCountry&gt;.
+     * <p>
+     * EAN.UCC-13 number of the equivalent product available in the country/ies specified in &lt;RightsCountry&gt;.
      * Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt; composite provides a more general method of
-     * handling this and other product codes, and is to be preferred.</strong></p>
+     * handling this and other product codes, and is to be preferred.</strong>
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public EAN13 ean13() {
@@ -219,13 +239,16 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        productIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
-     * <p>A repeatable group of data elements which together define the identifier of a product in accordance with a
+     * <p>
+     * A repeatable group of data elements which together define the identifier of a product in accordance with a
      * specified scheme, and allowing new types of product identifier to be included without defining additional data
      * elements. <strong>See notes on the &lt;ProductIdentifier&gt; composite in section PR.2 for details of the
-     * handling of ISBN-13.</strong></p>
+     * handling of ISBN-13.</strong>
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
@@ -236,10 +259,12 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     private PublisherName publisherName = PublisherName.EMPTY;
 
     /**
-     * <p>The full name of the publisher of the equivalent product which is available in the country/ies specified in
+     * <p>
+     * The full name of the publisher of the equivalent product which is available in the country/ies specified in
      * &lt;RightsCountry&gt;. Optional and non-repeating. Except where they are essential to the recognized form of the
      * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be
-     * omitted.</p>
+     * omitted.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public PublisherName publisherName() {

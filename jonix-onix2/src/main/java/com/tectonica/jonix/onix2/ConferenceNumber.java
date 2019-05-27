@@ -34,18 +34,37 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Conference number</h1><p>The number of a conference to which the product is related, within a conference series.
- * Optional and non-repeating. <strong>The &lt;Conference&gt; composite below provides a more general method of handling
- * conference detail, and is to be preferred.</strong></p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
- * integer, suggested maximum length 4 characters</td></tr><tr><td>Reference name</td><td><tt>&lt;ConferenceNumber&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b053&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;b053&gt;22&lt;/b053&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Conference number</h1>
+ * <p>
+ * The number of a conference to which the product is related, within a conference series. Optional and non-repeating.
+ * <strong>The &lt;Conference&gt; composite below provides a more general method of handling conference detail, and is
+ * to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 4 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;ConferenceNumber&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b053&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;b053&gt;22&lt;/b053&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Product&gt;</li>
  * <li>&lt;Conference&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ConferenceNumber</li>
@@ -84,7 +103,9 @@ public class ConferenceNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length integer, suggested maximum length 4 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length integer, suggested maximum length 4 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

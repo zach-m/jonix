@@ -34,18 +34,36 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Last page number</h1><p>The number of the page on which a text item ends in a paginated product. Optional and
- * non-repeating, and can occur only when &lt;FirstPageNumber&gt; is also present.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Variable-length alphanumeric, suggested maximum length 20
- * characters</td></tr><tr><td>Reference name</td><td><tt>&lt;LastPageNumber&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b287&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;LastPageNumber&gt;254&lt;/LastPageNumber&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Last page number</h1>
+ * <p>
+ * The number of the page on which a text item ends in a paginated product. Optional and non-repeating, and can occur
+ * only when &lt;FirstPageNumber&gt; is also present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length alphanumeric, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;LastPageNumber&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b287&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;LastPageNumber&gt;254&lt;/LastPageNumber&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;TextItem&gt;</li>
  * <li>&lt;PageRun&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ LastPageNumber</li>
@@ -84,7 +102,9 @@ public class LastPageNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters<p> (type: NonEmptyString)
+     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+     * <p>
+     * (type: NonEmptyString)
      */
     public String value;
 

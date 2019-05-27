@@ -34,25 +34,46 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Biographical note</h1><p>A biographical note about a contributor to the product. (See the &lt;OtherText&gt;
- * composite in Group&nbsp;PR.15 for a biographical note covering all contributors to a product in a single text.)
- * Optional and non-repeating. May occur with a person name or with a corporate name. A biographical note in ONIX should
- * always contain the name of the person or body concerned, and it should always be presented as a piece of continuous
- * text consisting of full sentences. Some recipients of ONIX data feeds will not accept text which has embedded URLs. A
- * contributor website link can be sent using the &lt;Website&gt; composite on the next page.</p><p>The
- * &lt;BiographicalNote&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
- * transliteration, textcase</i>.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
- * suggested maximum length 500 characters (XHTML is enabled in this element - see ONIX for Books - Product Information
- * Message - XML Message Specification, Section 7)</td></tr><tr><td>Reference name</td><td><tt>&lt;BiographicalNote&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;b044&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;BiographicalNote&gt;Umberto Eco, professor
- * of semiotics at the University of Bologna, and author of &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's
- * Pendulum&#8221;, is one of the world's bestselling novelists.&lt;/BiographicalNote&gt;</tt></td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Biographical note</h1>
+ * <p>
+ * A biographical note about a contributor to the product. (See the &lt;OtherText&gt; composite in Group&nbsp;PR.15 for
+ * a biographical note covering all contributors to a product in a single text.) Optional and non-repeating. May occur
+ * with a person name or with a corporate name. A biographical note in ONIX should always contain the name of the person
+ * or body concerned, and it should always be presented as a piece of continuous text consisting of full sentences. Some
+ * recipients of ONIX data feeds will not accept text which has embedded URLs. A contributor website link can be sent
+ * using the &lt;Website&gt; composite on the next page.
+ * </p>
+ * <p>
+ * The &lt;BiographicalNote&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
+ * transliteration, textcase</i>.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see ONIX for
+ * Books - Product Information Message - XML Message Specification, Section 7)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;BiographicalNote&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b044&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;BiographicalNote&gt;Umberto Eco, professor of semiotics at the University of Bologna, and author of
+ * &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's Pendulum&#8221;, is one of the world's bestselling
+ * novelists.&lt;/BiographicalNote&gt;</tt></td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;Contributor&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ BiographicalNote</li>
@@ -95,7 +116,9 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
-     * ONIX for Books - Product Information Message - XML Message Specification, Section 7)<p> (type: XHTML)
+     * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+     * <p>
+     * (type: XHTML)
      */
     public String value;
 

@@ -42,7 +42,9 @@ public class JonixContributorPlace implements JonixStruct, Serializable {
     public Regions regionCode;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
      */
     public List<String> locationNames;
 }

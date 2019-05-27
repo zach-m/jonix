@@ -35,26 +35,51 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Availability status code</h1><p>An ONIX code indicating the availability of a product. Each occurrence of the
- * &lt;SupplyDetail&gt; composite must carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both,
- * but &lt;ProductAvailability&gt; is now strongly preferred. Non-repeating.</p><p>Some code values require other
- * accompanying data. Where the code lists state that one of the following is required or may optionally be sent, use
- * the element indicated below:</p><ul>
+ * <h1>Availability status code</h1>
+ * <p>
+ * An ONIX code indicating the availability of a product. Each occurrence of the &lt;SupplyDetail&gt; composite must
+ * carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both, but &lt;ProductAvailability&gt; is now
+ * strongly preferred. Non-repeating.
+ * </p>
+ * <p>
+ * Some code values require other accompanying data. Where the code lists state that one of the following is required or
+ * may optionally be sent, use the element indicated below:
+ * </p>
+ * <ul>
  * <li>Expected availability date – use &lt;ExpectedShipDate&gt;</li>
  * <li>Remainder date – &lt;ExpectedShipDate&gt; is again used</li>
  * <li>Estimated time to supply – &lt;OrderTime&gt;</li>
  * <li>Identifier of alternative or successor product – &lt;RelatedProduct&gt;, Group&nbsp;PR.23</li>
  * <li>New supplier – &lt;NewSupplier&gt;</li>
- * </ul><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
- * letters</td></tr><tr><td>Codelist</td><td>List 54</td></tr><tr><td>Reference name</td><td><tt>&lt;AvailabilityCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j141&gt;</tt></td></tr><tr><td>Example</td><td><tt>&lt;AvailabilityCode&gt;OP&lt;/AvailabilityCode&gt;</tt>
- * Out of print</td></tr></table>
- * <p>&nbsp;</p>
+ * </ul>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 54</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;AvailabilityCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j141&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;AvailabilityCode&gt;OP&lt;/AvailabilityCode&gt;</tt> Out of print</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;SupplyDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ AvailabilityCode</li>

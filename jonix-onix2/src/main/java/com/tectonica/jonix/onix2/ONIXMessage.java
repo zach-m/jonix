@@ -144,11 +144,13 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
     private Header header = Header.EMPTY;
 
     /**
-     * <p>A group of data elements which together constitute a message header. The elements may alternatively be sent
+     * <p>
+     * A group of data elements which together constitute a message header. The elements may alternatively be sent
      * without being grouped into a composite, but the composite approach is recommended since it makes it easier to
      * maintain a standard header “package” to drop into any new ONIX Product Information Message. <strong>Note that the
      * Sender and Addressee Identifier composites can only be used within the Header composite, and future extensions to
-     * the Header will be defined only within the composite.</strong></p>
+     * the Header will be defined only within the composite.</strong>
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public Header header() {
@@ -159,10 +161,12 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
     private List<Product> products = Collections.emptyList();
 
     /**
-     * <p>A product is described by a group of data elements beginning with an XML label &lt;Product&gt; and ending with
-     * an XML label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two labels
+     * <p>
+     * A product is described by a group of data elements beginning with an XML label &lt;Product&gt; and ending with an
+     * XML label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two labels
      * constitutes an ONIX product record. The product record is the fundamental unit within an ONIX Product Information
-     * message. In almost every case, each product record describes an individually tradable item.</p>
+     * message. In almost every case, each product record describes an individually tradable item.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public List<Product> products() {

@@ -31,22 +31,47 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Currency code</h1><p>An ISO standard code identifying the currency in which all monetary amounts in an occurrence
- * of the &lt;Price&gt; composite are stated. Optional and non-repeating, but required if the currency is not the
- * default currency for the message (which may be set in &lt;DefaultCurrencyCode&gt;). All ONIX messages must include an
- * explicit statement of the currency used for any prices. To avoid any possible ambiguity, it is strongly recommended
- * that the currency should be repeated here for each individual price.</p><table border='1'
- * cellpadding='3'><tr><td>Format</td><td>Fixed length, three letters</td></tr><tr><td>Codelist</td><td>ISO 4217
- * currency codes List 96</td></tr><tr><td>Reference name</td><td><tt>&lt;CurrencyCode&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;j152&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;j152&gt;ZAR&lt;/j152&gt;</tt>
- * (South African Rand)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Currency code</h1>
+ * <p>
+ * An ISO standard code identifying the currency in which all monetary amounts in an occurrence of the &lt;Price&gt;
+ * composite are stated. Optional and non-repeating, but required if the currency is not the default currency for the
+ * message (which may be set in &lt;DefaultCurrencyCode&gt;). All ONIX messages must include an explicit statement of
+ * the currency used for any prices. To avoid any possible ambiguity, it is strongly recommended that the currency
+ * should be repeated here for each individual price.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, three letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 4217 currency codes List 96</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CurrencyCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;j152&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;j152&gt;ZAR&lt;/j152&gt;</tt> (South African Rand)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ComparisonProductPrice&gt;</li>
  * <li>&lt;Price&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ ComparisonProductPrice ⯈

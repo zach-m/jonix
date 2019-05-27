@@ -35,17 +35,32 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Cited content composite</h1><p>An optional group of data elements which together describe a piece of cited
- * content. The composite is repeatable to describe and link to multiple items of cited material.</p><table border='1'
- * cellpadding='3'><tr><td>Reference name</td><td><tt>&lt;CitedContent&gt;</tt></td></tr><tr><td>Short
- * tag</td><td><tt>&lt;citedcontent&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Cited content composite</h1>
+ * <p>
+ * An optional group of data elements which together describe a piece of cited content. The composite is repeatable to
+ * describe and link to multiple items of cited material.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;CitedContent&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;citedcontent&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ContentItem&gt;</li>
  * <li>&lt;CollateralDetail&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent</li>
@@ -173,8 +188,10 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private CitedContentType citedContentType = CitedContentType.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the type of content which is being cited. Mandatory in each occurrence of the
-     * &lt;CitedContent&gt; composite, and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating the type of content which is being cited. Mandatory in each occurrence of the
+     * &lt;CitedContent&gt; composite, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public CitedContentType citedContentType() {
@@ -185,8 +202,10 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
 
     /**
-     * <p>An ONIX code which identifies the audience for which a piece of cited content is intended. Optional and
-     * repeatable.</p>
+     * <p>
+     * An ONIX code which identifies the audience for which a piece of cited content is intended. Optional and
+     * repeatable.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
@@ -197,17 +216,22 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private Territory territory = Territory.EMPTY;
 
     /**
-     * <p>A group of data elements which together define a territory for which the cited content is specifically
-     * intended. Optional in each occurrence of the &lt;CitedContent&gt; composite, and non-repeating. If omitted, the
-     * content is intended to be cited (linked to) wherever the product may be sold (see <a
-     * href="#onixmessage_product_publishingdetail_p21">Group&nbsp;P.21</a>). If included, the content should be cited
-     * by recipients in the specified territory in preference to any cited content that lacks a specified
-     * territory.</p><p>Care should be taken to avoid ambiguities (for example two different citations of the same type
-     * marked for use in the same country or region), and to ensure that appropriate citations are supplied for all
-     * countries and regions where the product may be sold. The simplest way to accomplish the latter is to ensure at
-     * least one version of the citation does not have a territory specified. Where multiple citations of the same type
-     * are provided, those without specific &lt;Territory&gt; composites are intended for use only where no appropriate
-     * targeted citation is present.</p>
+     * <p>
+     * A group of data elements which together define a territory for which the cited content is specifically intended.
+     * Optional in each occurrence of the &lt;CitedContent&gt; composite, and non-repeating. If omitted, the content is
+     * intended to be cited (linked to) wherever the product may be sold (see
+     * <a href="#onixmessage_product_publishingdetail_p21">Group&nbsp;P.21</a>). If included, the content should be
+     * cited by recipients in the specified territory in preference to any cited content that lacks a specified
+     * territory.
+     * </p>
+     * <p>
+     * Care should be taken to avoid ambiguities (for example two different citations of the same type marked for use in
+     * the same country or region), and to ensure that appropriate citations are supplied for all countries and regions
+     * where the product may be sold. The simplest way to accomplish the latter is to ensure at least one version of the
+     * citation does not have a territory specified. Where multiple citations of the same type are provided, those
+     * without specific &lt;Territory&gt; composites are intended for use only where no appropriate targeted citation is
+     * present.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public Territory territory() {
@@ -218,8 +242,10 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private SourceType sourceType = SourceType.EMPTY;
 
     /**
-     * <p>An ONIX code indicating the type of source from which the cited material originated, <i>eg</i> radio, TV.
-     * Optional, and non-repeating.</p>
+     * <p>
+     * An ONIX code indicating the type of source from which the cited material originated, <i>eg</i> radio, TV.
+     * Optional, and non-repeating.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public SourceType sourceType() {
@@ -230,8 +256,10 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private ReviewRating reviewRating = ReviewRating.EMPTY;
 
     /**
-     * <p>An optional group of data elements which together specify a ‘star rating’ awarded as part of a review of the
-     * publication, used where &lt;CitedContentType&gt; indicates the cited content is a review. Not repeatable.</p>
+     * <p>
+     * An optional group of data elements which together specify a ‘star rating’ awarded as part of a review of the
+     * publication, used where &lt;CitedContentType&gt; indicates the cited content is a review. Not repeatable.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public ReviewRating reviewRating() {
@@ -242,11 +270,13 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
 
     /**
-     * <p>The title, name or short description of a publication, broadcast, website or other source of cited content.
+     * <p>
+     * The title, name or short description of a publication, broadcast, website or other source of cited content.
      * Optional, and repeatable; required unless the cited content refers to a bestseller list, and &lt;ListName&gt; is
      * present. &lt;SourceTitle&gt; may be repeated to provide the title in multiple languages. The <i>language</i>
      * attribute is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if
-     * &lt;SourceTitle&gt; is repeated.</p>
+     * &lt;SourceTitle&gt; is repeated.
+     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixElement<SourceTitle, String> sourceTitles() {
@@ -257,10 +287,12 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ListName, String> listNames = ListOfOnixElement.empty();
 
     /**
-     * <p>The name of a bestseller list, when the &lt;CitedContent&gt; composite is used to refer to a position which a
+     * <p>
+     * The name of a bestseller list, when the &lt;CitedContent&gt; composite is used to refer to a position which a
      * product has reached on such a list. Optional, and repeatable to provide a parallel list name in multiple
      * languages. The <i>language</i> attribute is optional for a single instance of &lt;ListName&gt;, but must be
-     * included in each instance if &lt;ListName&gt; is repeated.</p>
+     * included in each instance if &lt;ListName&gt; is repeated.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ListName, String> listNames() {
@@ -271,8 +303,10 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private PositionOnList positionOnList = PositionOnList.EMPTY;
 
     /**
-     * <p>The position that a product has reached on a bestseller list specified in &lt;ListName&gt;. Optional and
-     * non-repeating. The &lt;ListName&gt; element must also be present if &lt;PositionOnList&gt; is included.</p>
+     * <p>
+     * The position that a product has reached on a bestseller list specified in &lt;ListName&gt;. Optional and
+     * non-repeating. The &lt;ListName&gt; element must also be present if &lt;PositionOnList&gt; is included.
+     * </p>
      * Jonix-Comment: this field is optional
      */
     public PositionOnList positionOnList() {
@@ -283,10 +317,12 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<CitationNote, String> citationNotes = ListOfOnixElement.empty();
 
     /**
-     * <p>A free text note giving any additional information about cited content, for example a detailed volume, issue
-     * and page reference to content cited from a periodical. Optional, and repeatable when parallel text is provided in
+     * <p>
+     * A free text note giving any additional information about cited content, for example a detailed volume, issue and
+     * page reference to content cited from a periodical. Optional, and repeatable when parallel text is provided in
      * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;CitationNote&gt;, but
-     * must be included in each instance if &lt;CitationNote&gt; is repeated.</p>
+     * must be included in each instance if &lt;CitationNote&gt; is repeated.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<CitationNote, String> citationNotes() {
@@ -297,10 +333,12 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
 
     /**
-     * <p>A URL which provides a link to cited content which is accessible in digital form. Optional, and repeatable if
-     * the resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a cited resource is available
-     * in multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i>
-     * attribute.</p>
+     * <p>
+     * A URL which provides a link to cited content which is accessible in digital form. Optional, and repeatable if the
+     * resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a cited resource is available in
+     * multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i>
+     * attribute.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<ResourceLink, String> resourceLinks() {
@@ -309,11 +347,14 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ListOfOnixDataCompositeWithKey
+            .emptyKeyed();
 
     /**
-     * <p>An optional and repeatable group of data elements which together specify a date associated with cited content,
-     * <i>eg</i> date on which it was published or broadcast.</p>
+     * <p>
+     * An optional and repeatable group of data elements which together specify a date associated with cited content,
+     * <i>eg</i> date on which it was published or broadcast.
+     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {

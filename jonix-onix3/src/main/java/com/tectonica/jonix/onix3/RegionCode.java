@@ -31,23 +31,49 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Region code</h1><p>An ONIX code identifying a region with which a contributor is particularly associated.
- * Optional and non-repeatable. There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt;
- * elements in each occurrence of &lt;ContributorPlace&gt;. A region is an area which is not a country, but which is
- * precisely defined in geographical terms, <i>eg</i> Northern Ireland, Australian Capital Territory. If both country
- * and region are specified, the region must be within the country. Note that US States have region codes, while US
- * overseas territories have distinct ISO Country Codes.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
- * length code, consisting of upper case letters, with or without a hyphen and further upper case letters or digits.
- * Suggested maximum length 8 characters</td></tr><tr><td>Codelist</td><td>List 49 Where possible and appropriate,
- * country subdivision codes are derived from the UN LOCODE scheme based on ISO 3166-2</td></tr><tr><td>Reference
- * name</td><td><tt>&lt;RegionCode&gt;</tt></td></tr><tr><td>Short tag</td><td><tt>&lt;b398&gt;</tt></td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td><tt>&lt;RegionCode&gt;CA-NL&lt;/RegionCode&gt;</tt>
- * (Newfoundland and Labrador)</td></tr></table>
- * <p>&nbsp;</p>
+ * <h1>Region code</h1>
+ * <p>
+ * An ONIX code identifying a region with which a contributor is particularly associated. Optional and non-repeatable.
+ * There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt; elements in each occurrence
+ * of &lt;ContributorPlace&gt;. A region is an area which is not a country, but which is precisely defined in
+ * geographical terms, <i>eg</i> Northern Ireland, Australian Capital Territory. If both country and region are
+ * specified, the region must be within the country. Note that US States have region codes, while US overseas
+ * territories have distinct ISO Country Codes.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length code, consisting of upper case letters, with or without a hyphen and further upper case letters
+ * or digits. Suggested maximum length 8 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166-2</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td><tt>&lt;RegionCode&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td><tt>&lt;b398&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;RegionCode&gt;CA-NL&lt;/RegionCode&gt;</tt> (Newfoundland and Labrador)</td>
+ * </tr>
+ * </table>
+ * <p/>
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;ContributorPlace&gt;</li>
  * </ul>
- * <p>&nbsp;</p>
+ * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ContributorPlace ⯈ RegionCode</li>
