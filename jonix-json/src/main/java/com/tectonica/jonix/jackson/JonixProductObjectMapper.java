@@ -24,7 +24,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
-import com.tectonica.jonix.OnixTag;
+import com.tectonica.jonix.common.OnixTag;
 
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;

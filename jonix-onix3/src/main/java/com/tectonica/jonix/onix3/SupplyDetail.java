@@ -19,17 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
-import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
-import com.tectonica.jonix.codelist.SupplyDateRoles;
-import com.tectonica.jonix.struct.JonixReturnsConditions;
-import com.tectonica.jonix.struct.JonixSupplierOwnCoding;
-import com.tectonica.jonix.struct.JonixSupplyDate;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.ReturnsConditionsCodeTypes;
+import com.tectonica.jonix.common.codelist.SupplierOwnCodeTypes;
+import com.tectonica.jonix.common.codelist.SupplyDateRoles;
+import com.tectonica.jonix.common.struct.JonixReturnsConditions;
+import com.tectonica.jonix.common.struct.JonixSupplierOwnCoding;
+import com.tectonica.jonix.common.struct.JonixSupplyDate;
 
 import java.io.Serializable;
 import java.util.Collections;

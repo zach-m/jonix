@@ -19,19 +19,19 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.BibleContentss;
-import com.tectonica.jonix.codelist.BiblePurposes;
-import com.tectonica.jonix.codelist.BibleTextFeatures;
-import com.tectonica.jonix.codelist.BibleVersions;
-import com.tectonica.jonix.codelist.Languages;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.JonixBible;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.common.codelist.BibleContentss;
+import com.tectonica.jonix.common.codelist.BiblePurposes;
+import com.tectonica.jonix.common.codelist.BibleTextFeatures;
+import com.tectonica.jonix.common.codelist.BibleVersions;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextCaseFlags;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TransliterationSchemes;
+import com.tectonica.jonix.common.struct.JonixBible;
 
 import java.io.Serializable;
 

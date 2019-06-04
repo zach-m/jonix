@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix2;
 
-import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+import com.tectonica.jonix.common.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix2.Subject;
 import com.tectonica.jonix.unify.base.BaseSubject;
 

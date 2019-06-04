@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.ContributorRoles;
+import com.tectonica.jonix.common.codelist.ContributorRoles;
 import com.tectonica.jonix.util.JonixUtil;
 
 import java.io.Serializable;

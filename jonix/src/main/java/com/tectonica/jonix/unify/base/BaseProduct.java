@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.OnixProduct;
+import com.tectonica.jonix.common.OnixProduct;
 
 import java.io.Serializable;
 import java.util.stream.Collectors;

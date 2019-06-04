@@ -19,15 +19,15 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
-import com.tectonica.jonix.codelist.Languages;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.JonixIllustrations;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeWithKey;
+import com.tectonica.jonix.common.codelist.IllustrationAndOtherContentTypes;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextCaseFlags;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TransliterationSchemes;
+import com.tectonica.jonix.common.struct.JonixIllustrations;
 
 import java.io.Serializable;
 

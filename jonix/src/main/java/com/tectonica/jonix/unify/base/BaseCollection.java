@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.struct.JonixCollectionIdentifier;
+import com.tectonica.jonix.common.struct.JonixCollectionIdentifier;
 
 import java.io.Serializable;
 import java.util.List;

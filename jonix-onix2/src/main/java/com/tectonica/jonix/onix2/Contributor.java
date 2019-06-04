@@ -19,24 +19,24 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixDataComposite;
-import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.Countrys;
-import com.tectonica.jonix.codelist.Languages;
-import com.tectonica.jonix.codelist.PersonDateRoles;
-import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.JonixPersonDate;
-import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
-import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
-import com.tectonica.jonix.struct.JonixWebsite;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.ContributorRoles;
+import com.tectonica.jonix.common.codelist.Countrys;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.PersonDateRoles;
+import com.tectonica.jonix.common.codelist.PersonNameIdentifierTypes;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextCaseFlags;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TransliterationSchemes;
+import com.tectonica.jonix.common.struct.JonixPersonDate;
+import com.tectonica.jonix.common.struct.JonixPersonNameIdentifier;
+import com.tectonica.jonix.common.struct.JonixProfessionalAffiliation;
+import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
 import java.util.Collections;

@@ -19,9 +19,9 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
-import com.tectonica.jonix.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.common.codelist.NotificationOrUpdateTypes;
+import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
 import java.util.List;

@@ -19,9 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixFlag;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixFlag;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
 

@@ -32,7 +32,7 @@ import java.io.PrintStream;
 import java.util.Map;
 
 public class OnixStructGen {
-    private static final String COMMON_PACKAGE = "com.tectonica.jonix";
+    private static final String COMMON_PACKAGE = "com.tectonica.jonix.common";
 
     private final String packageName;
     private final File folder;

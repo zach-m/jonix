@@ -19,21 +19,22 @@
 
 package com.tectonica.jonix.experimental;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.codelist.AudienceRangePrecisions;
-import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
-import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.CurrencyCodes;
-import com.tectonica.jonix.codelist.LanguageRoles;
-import com.tectonica.jonix.codelist.MeasureTypes;
-import com.tectonica.jonix.codelist.MeasureUnits;
-import com.tectonica.jonix.codelist.OtherTextTypes;
-import com.tectonica.jonix.codelist.PriceTypes;
-import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
-import com.tectonica.jonix.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.codelist.PublishingRoles;
-import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TitleTypes;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.codelist.AudienceRangePrecisions;
+import com.tectonica.jonix.common.codelist.AudienceRangeQualifiers;
+import com.tectonica.jonix.common.codelist.ContributorRoles;
+import com.tectonica.jonix.common.codelist.CurrencyCodes;
+import com.tectonica.jonix.common.codelist.LanguageRoles;
+import com.tectonica.jonix.common.codelist.MeasureTypes;
+import com.tectonica.jonix.common.codelist.MeasureUnits;
+import com.tectonica.jonix.common.codelist.OtherTextTypes;
+import com.tectonica.jonix.common.codelist.PriceTypes;
+import com.tectonica.jonix.common.codelist.ProductFormFeatureTypes;
+import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.common.codelist.PublishingRoles;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TitleTypes;
+import com.tectonica.jonix.common.struct.JonixOtherText;
 import com.tectonica.jonix.onix2.AudienceRange;
 import com.tectonica.jonix.onix2.Contributor;
 import com.tectonica.jonix.onix2.ContributorRole;
@@ -44,7 +45,6 @@ import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Publisher;
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.onix2.SupplyDetail;
-import com.tectonica.jonix.struct.JonixOtherText;
 import com.tectonica.jonix.util.JonixUtil;
 
 import javax.xml.stream.XMLInputFactory;

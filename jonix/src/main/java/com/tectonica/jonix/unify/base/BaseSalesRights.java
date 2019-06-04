@@ -19,10 +19,10 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.Countrys;
-import com.tectonica.jonix.codelist.Regions;
-import com.tectonica.jonix.codelist.RightsRegions;
-import com.tectonica.jonix.codelist.SalesRightsTypes;
+import com.tectonica.jonix.common.codelist.Countrys;
+import com.tectonica.jonix.common.codelist.Regions;
+import com.tectonica.jonix.common.codelist.RightsRegions;
+import com.tectonica.jonix.common.codelist.SalesRightsTypes;
 
 import java.io.Serializable;
 import java.util.List;

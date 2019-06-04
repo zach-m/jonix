@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.common.OnixHeader;
+import com.tectonica.jonix.common.OnixProduct;
 import org.w3c.dom.Element;
 
 /**

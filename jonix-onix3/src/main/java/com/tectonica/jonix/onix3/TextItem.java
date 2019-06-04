@@ -19,14 +19,14 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixDataComposite;
-import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
-import com.tectonica.jonix.struct.JonixPageRun;
-import com.tectonica.jonix.struct.JonixTextItemIdentifier;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextItemIdentifierTypes;
+import com.tectonica.jonix.common.struct.JonixPageRun;
+import com.tectonica.jonix.common.struct.JonixTextItemIdentifier;
 
 import java.io.Serializable;
 

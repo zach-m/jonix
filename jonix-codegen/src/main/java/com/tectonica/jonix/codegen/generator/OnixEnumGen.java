@@ -69,7 +69,7 @@ public class OnixEnumGen {
         p.printf("package %s;\n", packageName);
 
         p.print("\n");
-        p.print("import com.tectonica.jonix.OnixCodelist;\n");
+        p.print("import com.tectonica.jonix.common.OnixCodelist;\n");
         if (enumType.enumValues.size() >= MIN_FOR_MAP) {
             p.print("\n");
             p.print("import java.util.Map;\n");

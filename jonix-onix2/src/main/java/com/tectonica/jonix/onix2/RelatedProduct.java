@@ -19,24 +19,24 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixDataComposite;
-import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.BookFormDetails;
-import com.tectonica.jonix.codelist.Languages;
-import com.tectonica.jonix.codelist.ProductContentTypes;
-import com.tectonica.jonix.codelist.ProductFormDetailsList78;
-import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
-import com.tectonica.jonix.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.JonixProductFormFeature;
-import com.tectonica.jonix.struct.JonixProductIdentifier;
-import com.tectonica.jonix.struct.JonixWebsite;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.BookFormDetails;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.ProductContentTypes;
+import com.tectonica.jonix.common.codelist.ProductFormDetailsList78;
+import com.tectonica.jonix.common.codelist.ProductFormFeatureTypes;
+import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextCaseFlags;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TransliterationSchemes;
+import com.tectonica.jonix.common.struct.JonixProductFormFeature;
+import com.tectonica.jonix.common.struct.JonixProductIdentifier;
+import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
 import java.util.Collections;

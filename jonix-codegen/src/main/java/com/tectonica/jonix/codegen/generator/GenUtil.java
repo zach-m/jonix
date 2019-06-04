@@ -31,7 +31,8 @@ import java.io.File;
 import java.util.Map;
 
 public class GenUtil {
-    public static final String COMMON_PACKAGE = "com.tectonica.jonix";
+    public static final String BASE_PACKAGE = "com.tectonica.jonix";
+    public static final String COMMON_PACKAGE = "com.tectonica.jonix.common";
 
     public static class TypeInfo {
         String javaType;

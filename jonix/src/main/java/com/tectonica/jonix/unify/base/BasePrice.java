@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.CurrencyCodes;
-import com.tectonica.jonix.codelist.PriceTypes;
+import com.tectonica.jonix.common.codelist.CurrencyCodes;
+import com.tectonica.jonix.common.codelist.PriceTypes;
 
 import java.io.Serializable;
 

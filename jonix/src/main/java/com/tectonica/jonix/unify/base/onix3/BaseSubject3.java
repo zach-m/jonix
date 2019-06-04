@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.codelist.Languages;
-import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix3.Subject;
 import com.tectonica.jonix.onix3.SubjectHeadingText;
 import com.tectonica.jonix.unify.base.BaseSubject;

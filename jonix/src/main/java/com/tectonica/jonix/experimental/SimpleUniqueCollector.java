@@ -20,7 +20,7 @@
 package com.tectonica.jonix.experimental;
 
 import com.tectonica.jonix.JonixRecords;
-import com.tectonica.jonix.OnixProduct;
+import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.tabulate.FieldTabulator;
 import com.tectonica.jonix.util.Comparators;
 import com.tectonica.jonix.util.TimestampParser;

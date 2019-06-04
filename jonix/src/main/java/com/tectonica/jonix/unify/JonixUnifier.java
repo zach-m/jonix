@@ -20,8 +20,8 @@
 package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.JonixRecord;
-import com.tectonica.jonix.OnixHeader;
-import com.tectonica.jonix.OnixProduct;
+import com.tectonica.jonix.common.OnixHeader;
+import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.unify.base.BaseHeader;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix2.BaseHeader2;

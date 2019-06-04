@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix2;
 
-import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.onix2.CityOfPublication;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.unify.base.BasePublishingDetails;

@@ -19,15 +19,15 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.ContentDateRoles;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.ResourceVersionFeatureTypes;
-import com.tectonica.jonix.struct.JonixContentDate;
-import com.tectonica.jonix.struct.JonixResourceVersionFeature;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.ContentDateRoles;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.ResourceVersionFeatureTypes;
+import com.tectonica.jonix.common.struct.JonixContentDate;
+import com.tectonica.jonix.common.struct.JonixResourceVersionFeature;
 
 import java.io.Serializable;
 

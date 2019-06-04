@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.codelist.TitleTypes;
+import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.common.codelist.TitleTypes;
+import com.tectonica.jonix.json.JonixJson;
 import com.tectonica.jonix.onix2.Product;
-import com.tectonica.jonix.struct.JonixTitle;
+import com.tectonica.jonix.common.struct.JonixTitle;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.Ignore;
 import org.junit.Test;

@@ -19,18 +19,18 @@
 
 package com.tectonica.jonix.unify;
 
-import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.Countrys;
-import com.tectonica.jonix.codelist.LanguageRoles;
-import com.tectonica.jonix.codelist.PriceTypes;
-import com.tectonica.jonix.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.codelist.RightsRegions;
-import com.tectonica.jonix.codelist.SalesRightsTypes;
-import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
-import com.tectonica.jonix.codelist.TextTypes;
-import com.tectonica.jonix.codelist.TitleTypes;
-import com.tectonica.jonix.struct.JonixLanguage;
-import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.common.codelist.ContributorRoles;
+import com.tectonica.jonix.common.codelist.Countrys;
+import com.tectonica.jonix.common.codelist.LanguageRoles;
+import com.tectonica.jonix.common.codelist.PriceTypes;
+import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.common.codelist.RightsRegions;
+import com.tectonica.jonix.common.codelist.SalesRightsTypes;
+import com.tectonica.jonix.common.codelist.SubjectSchemeIdentifiers;
+import com.tectonica.jonix.common.codelist.TextTypes;
+import com.tectonica.jonix.common.codelist.TitleTypes;
+import com.tectonica.jonix.common.struct.JonixLanguage;
+import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 import com.tectonica.jonix.tabulate.FieldTabulatorFactory;
 import com.tectonica.jonix.unify.base.BaseContributor;
 import com.tectonica.jonix.unify.base.BasePrice;

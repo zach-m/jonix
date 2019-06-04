@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+import com.tectonica.jonix.common.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.unify.base.util.LazyMap;
 
 import java.util.ArrayList;

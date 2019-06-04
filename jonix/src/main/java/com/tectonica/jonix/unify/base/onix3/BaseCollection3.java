@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
+import com.tectonica.jonix.common.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.onix3.Collection;
-import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.unify.base.BaseCollection;
 import com.tectonica.jonix.unify.base.util.LazyList;
 

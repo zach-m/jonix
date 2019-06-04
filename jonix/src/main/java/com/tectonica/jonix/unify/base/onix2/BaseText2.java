@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.unify.base.onix2;
 
-import com.tectonica.jonix.codelist.OtherTextTypes;
-import com.tectonica.jonix.codelist.TextTypes;
+import com.tectonica.jonix.common.codelist.OtherTextTypes;
+import com.tectonica.jonix.common.codelist.TextTypes;
 import com.tectonica.jonix.onix2.OtherText;
 import com.tectonica.jonix.unify.base.BaseText;
 

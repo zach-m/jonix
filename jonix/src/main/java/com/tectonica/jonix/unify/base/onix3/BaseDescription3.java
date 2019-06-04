@@ -19,12 +19,12 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.codelist.ExtentTypes;
-import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.common.codelist.ExtentTypes;
+import com.tectonica.jonix.common.codelist.ProductForms;
+import com.tectonica.jonix.common.struct.JonixExtent;
 import com.tectonica.jonix.onix3.AudienceRange;
 import com.tectonica.jonix.onix3.DescriptiveDetail;
 import com.tectonica.jonix.onix3.Product;
-import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.unify.base.BaseDescription;
 
 /**

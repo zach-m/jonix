@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.common.OnixHeader;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

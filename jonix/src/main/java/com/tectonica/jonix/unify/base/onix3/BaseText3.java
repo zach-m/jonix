@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.codelist.Languages;
+import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.onix3.Text;
 import com.tectonica.jonix.onix3.TextContent;
 import com.tectonica.jonix.unify.base.BaseText;

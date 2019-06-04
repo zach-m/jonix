@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.json.JonixJson;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix2.BaseProduct2;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;

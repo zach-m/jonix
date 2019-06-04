@@ -54,9 +54,11 @@ public class GenerateCode {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenerateCode.class);
 
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
-        final String basePackage = GenUtil.COMMON_PACKAGE;
+        final String basePackage = GenUtil.BASE_PACKAGE;
+        final String commonPackage = GenUtil.COMMON_PACKAGE;
         final String basePath = new File(".").getAbsolutePath();
-        final String relativePath = "/src/main/java/com/tectonica/jonix";
+        final String relativeBasePath = "/src/main/java/com/tectonica/jonix";
+        final String relativeCommonPath = "/src/main/java/com/tectonica/jonix/common";
 
         if (!new File(basePath).exists()) {
             throw new RuntimeException("couldn't find base folder for projects at " + basePath);
@@ -70,10 +72,10 @@ public class GenerateCode {
         //unifyInterfaces(ref2, ref3);
 
         // Generate source code
-        generateCodelists(basePackage, basePath, relativePath, unifiedCodelists.values());
-        generateStructs(basePackage, basePath, relativePath, unifiedCodelists, unifiedStructs.values());
-        generateOnix2(basePackage, basePath, relativePath, ref2);
-        generateOnix3(basePackage, basePath, relativePath, ref3);
+        generateCodelists(commonPackage, basePath, relativeCommonPath, unifiedCodelists.values());
+        generateStructs(commonPackage, basePath, relativeCommonPath, unifiedCodelists, unifiedStructs.values());
+        generateOnix2(basePackage, basePath, relativeBasePath, ref2);
+        generateOnix3(basePackage, basePath, relativeBasePath, ref3);
 
         LOGGER.info("DONE");
     }

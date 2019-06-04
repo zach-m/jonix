@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix2;
 
-import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.unify.base.BasePrice;
 

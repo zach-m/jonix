@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.common.OnixProduct;
+import com.tectonica.jonix.json.JonixJson;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;

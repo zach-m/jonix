@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.introspect.AnnotatedField;
 import com.fasterxml.jackson.databind.introspect.AnnotatedMember;
 import com.fasterxml.jackson.databind.introspect.AnnotatedMethod;
 import com.fasterxml.jackson.databind.introspect.VisibilityChecker;
-import com.tectonica.jonix.OnixTag;
+import com.tectonica.jonix.common.OnixTag;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Member;

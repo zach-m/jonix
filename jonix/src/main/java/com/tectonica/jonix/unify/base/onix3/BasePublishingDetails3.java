@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.codelist.Languages;
-import com.tectonica.jonix.codelist.PublishingDateRoles;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.PublishingDateRoles;
 import com.tectonica.jonix.onix3.CityOfPublication;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.PublishingDetail;

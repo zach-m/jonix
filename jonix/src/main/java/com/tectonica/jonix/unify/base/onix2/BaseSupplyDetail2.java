@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix2;
 
-import com.tectonica.jonix.codelist.AvailabilityStatuss;
+import com.tectonica.jonix.common.codelist.AvailabilityStatuss;
 import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.unify.base.BaseSupplyDetail;
 

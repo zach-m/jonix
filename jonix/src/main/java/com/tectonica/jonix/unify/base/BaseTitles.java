@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.TitleTypes;
+import com.tectonica.jonix.common.codelist.TitleTypes;
 import com.tectonica.jonix.unify.base.util.LazyList;
 
 import java.util.List;

@@ -19,21 +19,21 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixDataComposite;
-import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.DiscountCodeTypes;
-import com.tectonica.jonix.codelist.EpublicationTechnicalProtections;
-import com.tectonica.jonix.codelist.PriceDateRoles;
-import com.tectonica.jonix.codelist.PriceIdentifierTypes;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.JonixBatchBonus;
-import com.tectonica.jonix.struct.JonixDiscount;
-import com.tectonica.jonix.struct.JonixDiscountCoded;
-import com.tectonica.jonix.struct.JonixPriceDate;
-import com.tectonica.jonix.struct.JonixPriceIdentifier;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.DiscountCodeTypes;
+import com.tectonica.jonix.common.codelist.EpublicationTechnicalProtections;
+import com.tectonica.jonix.common.codelist.PriceDateRoles;
+import com.tectonica.jonix.common.codelist.PriceIdentifierTypes;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.struct.JonixBatchBonus;
+import com.tectonica.jonix.common.struct.JonixDiscount;
+import com.tectonica.jonix.common.struct.JonixDiscountCoded;
+import com.tectonica.jonix.common.struct.JonixPriceDate;
+import com.tectonica.jonix.common.struct.JonixPriceIdentifier;
 
 import java.io.Serializable;
 import java.util.Collections;

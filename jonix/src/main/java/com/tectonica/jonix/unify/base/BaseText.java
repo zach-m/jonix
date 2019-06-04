@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TextTypes;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TextTypes;
 import com.tectonica.xmlchunk.XmlUtil;
 
 import javax.xml.stream.XMLStreamException;

@@ -19,26 +19,26 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.ListOfOnixDataComposite;
-import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
-import com.tectonica.jonix.codelist.Languages;
-import com.tectonica.jonix.codelist.OtherTextTypes;
-import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TitleTypes;
-import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.codelist.WorkIdentifierTypes;
-import com.tectonica.jonix.struct.JonixMediaFile;
-import com.tectonica.jonix.struct.JonixOtherText;
-import com.tectonica.jonix.struct.JonixSubject;
-import com.tectonica.jonix.struct.JonixTitle;
-import com.tectonica.jonix.struct.JonixWebsite;
-import com.tectonica.jonix.struct.JonixWorkIdentifier;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.ImageAudioVideoFileTypes;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.OtherTextTypes;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextCaseFlags;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TitleTypes;
+import com.tectonica.jonix.common.codelist.TransliterationSchemes;
+import com.tectonica.jonix.common.codelist.WorkIdentifierTypes;
+import com.tectonica.jonix.common.struct.JonixMediaFile;
+import com.tectonica.jonix.common.struct.JonixOtherText;
+import com.tectonica.jonix.common.struct.JonixSubject;
+import com.tectonica.jonix.common.struct.JonixTitle;
+import com.tectonica.jonix.common.struct.JonixWebsite;
+import com.tectonica.jonix.common.struct.JonixWorkIdentifier;
 
 import java.io.Serializable;
 import java.util.Collections;
