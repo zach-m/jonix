@@ -17,8 +17,11 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.external;
 
+import com.tectonica.jonix.Jonix;
+import com.tectonica.jonix.JonixRecord;
+import com.tectonica.jonix.OnixVersion;
 import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.json.JonixJson;
 import org.junit.Assert;
@@ -59,7 +62,7 @@ public class TestSingleOnix {
         for (JonixRecord record : Jonix.source(source)) {
             Assert.assertFalse(entered); // there should be exactly one product in the file
             entered = true;
-            assertEquals(expectedOnixVersion, record.source.onixVersion);
+            assertEquals(expectedOnixVersion, record.source.onixVersion());
 
             String json = JonixJson.productToJson(record.product, false);
             LOGGER.debug("API: {}", json); // or: JonixJson.productToJson(record.product);

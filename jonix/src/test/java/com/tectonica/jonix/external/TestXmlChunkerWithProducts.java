@@ -17,13 +17,13 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.external;
 
 import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.common.codelist.TitleTypes;
+import com.tectonica.jonix.common.struct.JonixTitle;
 import com.tectonica.jonix.json.JonixJson;
 import com.tectonica.jonix.onix2.Product;
-import com.tectonica.jonix.common.struct.JonixTitle;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.Ignore;
 import org.junit.Test;

@@ -17,8 +17,10 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.external;
 
+import com.tectonica.jonix.Jonix;
+import com.tectonica.jonix.JonixRecords;
 import com.tectonica.jonix.unify.BaseTabulation;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -58,7 +60,7 @@ public class TestTabDelimited {
             .source(new File(samples, "onix-3"), "*.onix", false)
             .source(new File(samples, "onix-3"), "*.xml", true)
             .source(new File(samples, "onix-2"), "*.xml", true)
-            .onSourceStart(src -> LOGGER.debug("Opening {} file: {}", src.onixVersion, src.sourceName()))
+            .onSourceStart(src -> LOGGER.debug("Opening {} file: {}", src.onixVersion(), src.sourceName()))
             .onSourceEnd(src -> {
                 totalCount[0] += src.productsProcessedCount();
                 LOGGER.debug(" .. Read {} records", src.productsProcessedCount());

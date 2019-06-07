@@ -17,8 +17,9 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.external;
 
+import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.json.JonixJson;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix2.BaseProduct2;

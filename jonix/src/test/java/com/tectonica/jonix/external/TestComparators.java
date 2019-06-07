@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.external;
 
 import com.tectonica.jonix.util.Comparators;
 import org.junit.Assert;
