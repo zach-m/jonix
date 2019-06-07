@@ -19,14 +19,41 @@
 
 package com.tectonica.jonix.util;
 
+import com.tectonica.jonix.common.OnixProduct;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JonixUtil {
+
+    // TODO: test heavily
+    private String productToString(OnixProduct product) {
+        if (product instanceof com.tectonica.jonix.onix2.Product) {
+            com.tectonica.jonix.onix2.Product p2 = (com.tectonica.jonix.onix2.Product) product;
+            return Stream.concat(
+                p2.titles().findAll().stream()
+                    .map(title -> String.format("%s='%s'", title.titleType(), title.titleText())),
+                p2.productIdentifiers().findAll().stream()
+                    .map(pid -> String.format("%s=%s", pid.productIDType().value, pid.idValue().value))
+            ).collect(Collectors.joining(", ", "[", "]"));
+        } else if (product instanceof com.tectonica.jonix.onix3.Product) {
+            com.tectonica.jonix.onix3.Product p3 = (com.tectonica.jonix.onix3.Product) product;
+            return Stream.concat(
+                p3.descriptiveDetail().titleDetails().stream().map(td -> String
+                    .format("%s='%s'", td.titleType(), td.titleElements().first().map(te -> te.titleText().value))),
+                p3.productIdentifiers().findAll().stream()
+                    .map(pid -> String.format("%s=%s", pid.productIDType().value, pid.idValue().value))
+            ).collect(Collectors.joining(", ", "[", "]"));
+        } else {
+            return product.getClass().getName();
+        }
+    }
 
     /**
      * simple auxiliary function to be statically imported into your code when calling lookup services in the various
