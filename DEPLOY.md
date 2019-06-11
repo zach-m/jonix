@@ -44,7 +44,8 @@ Edit `~/.m2/settings.xml`
 ## Set Version
 
     cd /path/to/jonix/home
-    mvn versions:set -DnewVersion=8.1
+    mvn -P versioning versions:set -DnewVersion=8.1.0
+    # manually set <project.parent.version> in jonix-codegen
 
 ## Generate JavaDocs
 
@@ -62,4 +63,4 @@ Edit `~/.m2/settings.xml`
 ## Deploy
 
     cd /path/to/jonix/home
-    mvn clean install deploy -P release
+    mvn -P java9,release clean install deploy
