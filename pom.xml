@@ -147,6 +147,7 @@
                 </dependencies>
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
+					<excludes>**/module-info.java</excludes>
                 </configuration>
                 <executions>
                     <execution>
