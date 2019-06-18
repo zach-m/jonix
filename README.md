@@ -1,42 +1,64 @@
-![jonix](JONIX.png)
-=
+# ![jonix](JONIX.png)
 
-Commercial-grade library for extracting data from [ONIX](http://www.editeur.org/11/Books) sources.
+Commercial-grade library for extracting data from [ONIX for Books](https://www.editeur.org/11/Books) sources.
 
 #### Release History:
-- Version 8.x is the latest generation of Jonix, released on Jan 23, 2018, relying on Java 8 support and offers completely overhauled fluent APIs
-- Version 3.0 has been released on June 26, 2015. It supports ONIX versions 2.1.03 and 3.0.02.
-- Version 3.1-rc1 has been released on May 17, 2016.
+- Version 8.0.x (January 2018) starts relying on Java 8 support and offers completely overhauled fluent APIs
+- Version 3.0 (June 2015) supports ONIX versions 2.1.03 and 3.0.02
+- Version 3.1-rc1 (May 2016).
 
 #### JavaDocs
 API documentation can be found [here](http://zach-m.github.io/jonix).
 
-Table of contents
--
+# Usage
 
-* [Introduction](#introduction)
-    * [Low-Level APIs: XML-to-Java](#low-level-apis)
-    * [High-Level APIs: Scan, Stream, Extract, Unify, Export](#high-level-apis)
-    * [Quick Start](#quick-start)
-        * [Setup](#setup)
-        * [Code Snippets](#code-snippets)
-            * [Preparation](#preparation)
-            * [Low-level iteration](#low-level-iteration)
-            * [From iteration to streaming](#from-iteration-to-streaming)
-            * [High-level processing with Unification](#high-level-processing-with-unification)
-            * [Tabulation](#tabulation)
+## 1. Stable Release (from Central repository)
+Maven
+```xml
+<dependency>
+    <groupId>com.tectonica</groupId>
+    <artifactId>jonix</artifactId>
+    <version>8.0.1</version>
+</dependency>
+```
+Gradle
+```
+compile group: 'com.tectonica', name: 'jonix', version: '8.0.1'
+```
+For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/8.0.1>
+
+## 2. Latest Release (from latest source code)
+
+```bash
+mvn -version # REQUIRED: Maven-version >= 3.3.9  &&  JDK-version >= 9
+git clone git@github.com:zach-m/jonix.git # or https://github.com/zach-m/jonix.git
+cd jonix
+mvn clean install
+# in your project, use version 8.1.0-SNAPSHOT 
+```
+
+# Table of contents
+
+- [Introduction](#introduction)
+  - [Low-Level APIs](#low-level-apis)
+  - [High-Level APIs](#high-level-apis)
+- [Examples](#examples)
+  - [Preparation](#preparation)
+  - [Low-level iteration](#low-level-iteration)
+  - [From iteration to streaming](#from-iteration-to-streaming)
+  - [High-level processing with Unification](#high-level-processing-with-unification)
+  - [Tabulation](#tabulation)
   
 # Introduction
 
-For many years, Jonix has been the only free Java library supporting ONIX extensively and reliably. Only lately, however, 
-it was truly adapted for ONIX 3, and it will continue to adapt as the standard evolves. 
+For many years, Jonix has been the only free Java library supporting ONIX extensively and reliably. Only lately, however, it was truly adapted for ONIX 3, and it will continue to adapt as the standard evolves. 
 Jonix was designed with the following goals in mind:
 * **Run fast**. Jonix 8 is more performant and memory efficient than even, taking lazy approach whenever possible
 * **Simplify XML Processing**. Even though superficially ONIX is nothing more than an XML source, using it as-is to 
 answer even basic questions (such as _What is the ISBN of the book whose title is ABC_) isn't something that XML 
 frameworks are designed to do. ONIX is organized in a key-value fashion (mapping, for instance, ID-types to ID-values 
 in each record), so finding out answers usually requires lookup operations. More on how Jonix simplifies XML can be 
-found in later sections.
+found in following sections.
 * **Modular**. Use only the parts of Jonix you need, not necessarily all modules.
 * **Extensible**. The major classes in Jonix object model were designed for sub-classing and overriding.
 
@@ -53,21 +75,20 @@ With ONIX, dealing directly with the XML content could be quite complicated, for
 
 * the size of the source may be huge (ONIX files may contain thousands of records, easily weighing tens of MBs) 
 * there are two major versions, generally known as _ONIX-2_ (deprecated) and _ONIX-3_ (current)
-* each version has two sub-schemas - _Reference_ and _Short_ - see [here](http://www.editeur.org/74/faqs/#q10)
-* there are many [Codelists](http://www.editeur.org/14/Code-Lists), whose exact spelling and meaning is crucial for data extraction 
+* each version has two sub-schemas - _Reference_ and _Short_ - see [here](https://www.editeur.org/74/faqs/#q10)
+* there are many [Codelists](https://www.editeur.org/14/Code-Lists), whose exact spelling and meaning is crucial for data extraction 
 * there are syntax rules, governing which tags are repeatable, which are mandatory, what's the relationship between them, etc.
 
 Jonix provides solutions for all the above:
 
-* **Source size** - Jonix is using [XmlChunker](http://zach-m.github.io/jonix/com/tectonica/xmlchunk/XmlChunker.html), 
-which is an internal service capable of processing infinitely large ONIX sources by reading them chunk-by-chunk.
+* **Source size** - Jonix is using [XmlChunker](http://zach-m.github.io/jonix/com/tectonica/xmlchunk/XmlChunker.html) internally, which is a service capable of processing infinitely large ONIX sources by reading them chunk-by-chunk.
 * **ONIX Versions** - All versions and all sub-schemas of ONIX are mapped to a corresponding set of Java classes.
 * **Codelists** - Each ONIX Codelist is mapped to a Jonix `Enum`, all listed [here](http://zach-m.github.io/jonix/com/tectonica/jonix/codelist/package-summary.html). 
 Note that even though each ONIX version defines its own set of Codelists, the corresponding `Enum`s in Jonix were unified 
 to avoid confusion.
 * **Schema Rules** - These are accounted for in Jonix in several ways:
-	* Tags that can be repeated are represented as Java `Set`s or `List`s
-	* Tags with special traits (is-mandatory, data format, etc.) have a corresponding comment in their definition
+	* ONIX Tags that can be repeated are represented as Java `Set`s or `List`s
+	* Tags with special traits (is-mandatory, data format, etc.) have a corresponding Java-doc comment in their definition
 	* Coherent and descriptive [data model](http://zach-m.github.io/jonix/com/tectonica/jonix/package-summary.html#package.description) 
 	with several interfaces used to categorize ONIX tags as either 
 	[Composite](http://zach-m.github.io/jonix/com/tectonica/jonix/OnixComposite.html), 
@@ -75,13 +96,13 @@ to avoid confusion.
 	[Flag](http://zach-m.github.io/jonix/com/tectonica/jonix/OnixFlag.html). 
 
 > Classes in Jonix that represent ONIX tags are generated automatically from the official schema 
-([here](http://www.editeur.org/93/Release-3.0-Downloads/#Schema%20defs) 
-and [here](http://www.editeur.org/15/Archived-Previous-Releases/#2.1%20Downloads)). 
+([here](https://www.editeur.org/93/Release-3.0-Downloads/#Schema%20defs) 
+and [here](https://www.editeur.org/15/Archived-Previous-Releases/#2.1%20Downloads)). 
 There are over 400 classes behind each ONIX version (2 and 3) and almost 200 enumerators representing the Codelists.
 
 ## High-Level APIs
 
-On top of the low-level functions, Jonix offers assorted services for data manipulation, including:
+On top of the low-level functions, Jonix offers array of services for data manipulation, including:
 
 * **Unification**. This is one of the most powerful features in Jonix, which enables processing of **mixed** sources, 
 i.e. a group of sources, where each may have a different ONIX version (2 or 3) and sub-schema (_Reference_ or _Short_). 
@@ -94,31 +115,17 @@ tabulation scheme, which you can customize to your needs. For more information s
 [Tabulation](http://zach-m.github.io/jonix/com/tectonica/jonix/tabulate/Tabulation.html)  
 * **Bulk Processing**. Jonix provides methods for handling multiple ONIX sources, scattered in the file system.
 
-# Quick Start
+# Examples
 
-## Setup
-
-Add the following to your `pom.xml`: 
-
-```xml
-<dependency>
-    <groupId>com.tectonica</groupId>
-    <artifactId>jonix</artifactId>
-    <version>8.0.1</version>
-</dependency>
-```
-
-## Code Snippets
-
-### Preparation
+## Preparation
 
 The main entry-point for processing ONIX content is [JonixRecords](http://zach-m.github.io/jonix/com/tectonica/jonix/JonixRecords.html) class.
 
 The typical preparation steps for reading ONIX content are as follows:
 1. Add one or more ONIX sources
-1. Set the expected encoding of the sources (default is UTF-8)
-1. Optionally, set event handlers to be fired during processing
-1. Optionally, set key-value pairs, which will be accessible conveniently during processing
+2. Set the expected encoding of the sources (default is UTF-8)
+3. Optionally, set event handlers to be fired during processing
+4. Optionally, set key-value pairs, which will be accessible conveniently during processing
 
 You can mix up sources of diverse versions and types:
 
@@ -138,7 +145,7 @@ JonixRecords records = Jonix
      .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
 ```
  
-### Low-level iteration
+## Low-level iteration
  
 `JonixRecords` is first and foremost an `Iterable` of [JonixRecord](http://zach-m.github.io/jonix/com/tectonica/jonix/JonixRecord.html) items.
 Each of these items contain an ONIX Product and a link to the ONIX source from which it was read.
@@ -199,7 +206,7 @@ for (JonixRecord record : records) {
 }
 ```
 
-### From iteration to streaming
+## From iteration to streaming
  
 It is sometime useful to invoke `stream()` and use the resulting `Stream` along with Java 8 Streaming APIs to achieve greater readability. The following examples retrieves the Onix3 Products from their sources and stores them in an in-memory List:
 
@@ -212,7 +219,7 @@ List<Product> products3 = records.stream()
     .collect(Collectors.toList());
 ```
 
-### High-level processing with Unification
+## High-level processing with Unification
  
 One of Jonix's best facilities is the Unification framework, allowing to simplify the treatment in varied sources 
 (Onix2 mixed with Onix3, _Reference_ mixed with _Short_) and eliminate some of the intricacies of XML handling. 
@@ -266,12 +273,14 @@ records.onSourceStart(src -> {
 })
 ```
 
-### Tabulation
+## Tabulation
 
 Jonix provides generic framework to allow flattening and outputting ONIX Products into a table-like structure (suitable
 for CSV or database export). Jonix offers a `Collector` that saves a stream into a CSV file:
 
 ```java
+import static com.tectonica.jonix.tabulate.JonixDelimitedWriter.toDelimitedFile;
+
 // prepare to read from various sources
 JonixRecords records = Jonix
     .source(...)
