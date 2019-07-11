@@ -61,12 +61,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PageRun&gt;</li>
+ * <li>&lt;{@link PageRun}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextItem ⯈ PageRun ⯈ LastPageNumber</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈
+ * {@link PageRun} ⯈ {@link LastPageNumber}</li>
  * </ul>
  */
 public class LastPageNumber implements OnixElement<String>, Serializable {

@@ -57,14 +57,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;CollateralDetail&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link CollateralDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent}</li>
  * </ul>
  */
 public class CitedContent implements OnixSuperComposite, Serializable {
@@ -347,8 +347,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

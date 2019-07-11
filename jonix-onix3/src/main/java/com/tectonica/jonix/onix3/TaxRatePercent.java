@@ -38,8 +38,7 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested maximum
- * length
+ * <td>Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested maximum length
  * 7 characters</td>
  * </tr>
  * <tr>
@@ -62,13 +61,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Tax&gt;</li>
+ * <li>&lt;{@link Tax}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Tax ⯈ TaxRatePercent</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Tax ⯈ TaxRatePercent</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link Tax} ⯈ {@link TaxRatePercent}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link Tax} ⯈ {@link TaxRatePercent}</li>
  * </ul>
  */
 public class TaxRatePercent implements OnixElement<Double>, Serializable {

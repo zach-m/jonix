@@ -38,12 +38,12 @@ import java.io.Serializable;
 /**
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SubSeriesRecord&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ ParentIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link ParentIdentifier}</li>
  * </ul>
  */
 public class ParentIdentifier
@@ -132,7 +132,7 @@ public class ParentIdentifier
 
     /**
      * @return whether this tag (&lt;ParentIdentifier&gt; or &lt;parentidentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

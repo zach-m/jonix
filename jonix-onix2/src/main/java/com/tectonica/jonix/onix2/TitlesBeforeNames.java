@@ -61,27 +61,34 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Name&gt;</li>
- * <li>&lt;Contributor&gt;</li>
- * <li>&lt;PersonAsSubject&gt;</li>
+ * <li>&lt;{@link Name}&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link PersonAsSubject}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ TitlesBeforeNames</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ TitlesBeforeNames</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈
+ * {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link TitlesBeforeNames}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈
+ * {@link TitlesBeforeNames}</li>
  * </ul>
  */
 public class TitlesBeforeNames implements OnixElement<String>, Serializable {

@@ -34,8 +34,7 @@ import java.io.Serializable;
 /**
  * <h1>Subject composite</h1>
  * <p>
- * An optional and repeatable group of data elements which together specify a subject classification or subject
- * heading.
+ * An optional and repeatable group of data elements which together specify a subject classification or subject heading.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -54,14 +53,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Subject</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Subject</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Subject}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Subject}</li>
  * </ul>
  */
 public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
@@ -208,8 +207,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     /**
      * <p>
      * A name identifying a proprietary subject scheme (<i>ie</i> a scheme which is not a standard and for which there
-     * is no individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded ‘24’. Optional and
-     * non-repeating.
+     * is no individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded ‘24’. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */

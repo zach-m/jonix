@@ -59,12 +59,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ReligiousText</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText}</li>
  * </ul>
  */
 public class ReligiousText implements OnixSuperComposite, Serializable {
@@ -182,9 +182,8 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         return religiousTextIdentifier;
     }
 
-    private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes>
-        religiousTextFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature,
+        ReligiousTextFeatureTypes> religiousTextFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -193,7 +192,8 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures() {
+    public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes>
+        religiousTextFeatures() {
         _initialize();
         return religiousTextFeatures;
     }

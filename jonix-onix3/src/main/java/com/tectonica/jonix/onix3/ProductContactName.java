@@ -61,14 +61,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductContact&gt;</li>
+ * <li>&lt;{@link ProductContact}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ ProductContactName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact ⯈ ProductContactName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈
+ * {@link ProductContactName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link ProductContact} ⯈ {@link ProductContactName}</li>
  * </ul>
+ *
+ * @since Onix-3.01
  */
 public class ProductContactName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

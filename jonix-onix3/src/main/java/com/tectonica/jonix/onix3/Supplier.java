@@ -58,12 +58,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier}</li>
  * </ul>
  */
 public class Supplier implements OnixSuperComposite, Serializable {
@@ -183,9 +183,8 @@ public class Supplier implements OnixSuperComposite, Serializable {
         return supplierRole;
     }
 
-    private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes>
-        supplierIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier,
+        SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -196,7 +195,8 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes>
+        supplierIdentifiers() {
         _initialize();
         return supplierIdentifiers;
     }

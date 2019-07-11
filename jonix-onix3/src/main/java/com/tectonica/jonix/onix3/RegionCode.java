@@ -71,14 +71,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContributorPlace&gt;</li>
+ * <li>&lt;{@link ContributorPlace}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ContributorPlace ⯈ RegionCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ ContributorPlace ⯈ RegionCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ ContributorPlace ⯈ RegionCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
+ * {@link ContributorPlace} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ContributorPlace} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link ContributorPlace} ⯈ {@link RegionCode}</li>
  * </ul>
  */
 public class RegionCode implements OnixElement<Regions>, Serializable {

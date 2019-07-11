@@ -56,12 +56,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Header&gt;</li>
+ * <li>&lt;{@link Header}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header ⯈ AddresseeIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link AddresseeIdentifier}</li>
  * </ul>
  */
 public class AddresseeIdentifier
@@ -150,7 +150,7 @@ public class AddresseeIdentifier
 
     /**
      * @return whether this tag (&lt;AddresseeIdentifier&gt; or &lt;addresseeidentifier&gt;) is explicitly provided in
-     * the ONIX XML
+     *         the ONIX XML
      */
     @Override
     public boolean exists() {

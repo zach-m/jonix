@@ -54,14 +54,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PriceCondition&gt;</li>
+ * <li>&lt;{@link PriceCondition}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈
- * PriceConditionQuantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceCondition} ⯈ {@link PriceConditionQuantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceCondition} ⯈ {@link PriceConditionQuantity}</li>
  * </ul>
  */
 public class PriceConditionQuantity
@@ -141,7 +142,7 @@ public class PriceConditionQuantity
 
     /**
      * @return whether this tag (&lt;PriceConditionQuantity&gt; or &lt;priceconditionquantity&gt;) is explicitly
-     * provided in the ONIX XML
+     *         provided in the ONIX XML
      */
     @Override
     public boolean exists() {

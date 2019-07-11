@@ -60,20 +60,19 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ImprintName&gt;Secker &amp;amp; Warburg&lt;/ImprintName&gt;</tt> (note '&amp;' is a reserved character
- * in
+ * <td><tt>&lt;ImprintName&gt;Secker &amp;amp; Warburg&lt;/ImprintName&gt;</tt> (note '&amp;' is a reserved character in
  * XML)</td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Imprint&gt;</li>
+ * <li>&lt;{@link Imprint}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint ⯈ ImprintName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈ {@link ImprintName}</li>
  * </ul>
  */
 public class ImprintName implements OnixElement<String>, Serializable {

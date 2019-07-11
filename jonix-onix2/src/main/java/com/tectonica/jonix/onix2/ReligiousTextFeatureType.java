@@ -61,13 +61,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ReligiousTextFeature&gt;</li>
+ * <li>&lt;{@link ReligiousTextFeature}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ ReligiousTextFeature ⯈ ReligiousTextFeatureType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ReligiousText} ⯈ {@link ReligiousTextFeature} ⯈
+ * {@link ReligiousTextFeatureType}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ReligiousTextFeatureType implements OnixElement<ReligiousTextFeatureTypes>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -136,7 +139,7 @@ public class ReligiousTextFeatureType implements OnixElement<ReligiousTextFeatur
 
     /**
      * @return whether this tag (&lt;ReligiousTextFeatureType&gt; or &lt;b358&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

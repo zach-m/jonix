@@ -61,13 +61,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Conference&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
+ * {@link ConferenceRole}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
     private static final long serialVersionUID = 1L;

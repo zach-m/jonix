@@ -73,12 +73,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart}</li>
  * </ul>
  */
 public class ProductPart implements OnixSuperComposite, Serializable {
@@ -222,9 +222,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         return (primaryPart().exists());
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
+        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -235,7 +234,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers() {
         _initialize();
         return productIdentifiers;
     }
@@ -268,9 +268,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         return productFormDetails;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
-        productFormFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature,
+        ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -281,7 +280,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
+    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
+        productFormFeatures() {
         _initialize();
         return productFormFeatures;
     }
@@ -330,8 +330,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

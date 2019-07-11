@@ -38,8 +38,7 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length alphanumeric, suggested maximum length 20 characters, according to the code type specified in
- * the
+ * <td>Variable length alphanumeric, suggested maximum length 20 characters, according to the code type specified in the
  * &lt;ComplexitySchemeIdentifier&gt; element</td>
  * </tr>
  * <tr>
@@ -62,12 +61,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Complexity&gt;</li>
+ * <li>&lt;{@link Complexity}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Complexity ⯈ ComplexityCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Complexity} ⯈
+ * {@link ComplexityCode}</li>
  * </ul>
  */
 public class ComplexityCode implements OnixElement<String>, Serializable {

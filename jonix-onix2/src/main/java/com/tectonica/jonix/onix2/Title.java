@@ -54,23 +54,25 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;Set&gt;</li>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;MainSeriesRecord&gt;</li>
- * <li>&lt;Series&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link Set}&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link MainSeriesRecord}&gt;</li>
+ * <li>&lt;{@link Series}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Title</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Title}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Title}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link Title}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Title}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Title}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Title}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, Serializable {
     private static final long serialVersionUID = 1L;

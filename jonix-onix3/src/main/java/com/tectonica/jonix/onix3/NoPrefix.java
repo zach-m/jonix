@@ -61,15 +61,20 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;TitleElement&gt;</li>
+ * <li>&lt;{@link TitleElement}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleElement ⯈ NoPrefix</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail ⯈ TitleElement ⯈ NoPrefix</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail ⯈ TitleElement ⯈ NoPrefix</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail} ⯈ {@link TitleElement} ⯈
+ * {@link NoPrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TitleDetail} ⯈
+ * {@link TitleElement} ⯈ {@link NoPrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link TitleDetail} ⯈
+ * {@link TitleElement} ⯈ {@link NoPrefix}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class NoPrefix implements OnixFlag, Serializable {
     private static final long serialVersionUID = 1L;

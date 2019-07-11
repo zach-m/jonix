@@ -63,19 +63,21 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContainedItem&gt;</li>
- * <li>&lt;NotForSale&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContainedItem}&gt;</li>
+ * <li>&lt;{@link NotForSale}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ISBN</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ISBN</li>
- * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ ISBN</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ISBN</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ISBN}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ISBN}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link ISBN}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ISBN}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ISBN implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -110,7 +112,8 @@ public class ISBN implements OnixElement<String>, Serializable {
 
     /**
      * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X. The last
-     * character is a check character calculated in accordance with rules given at http://www.isbn.spk-berlin.de/html/userman.htm
+     * character is a check character calculated in accordance with rules given at
+     * http://www.isbn.spk-berlin.de/html/userman.htm
      * <p>
      * (type: NonEmptyString)
      */

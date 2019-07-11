@@ -67,13 +67,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Event&gt;</li>
+ * <li>&lt;{@link Event}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventTheme</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventTheme}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class EventTheme implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

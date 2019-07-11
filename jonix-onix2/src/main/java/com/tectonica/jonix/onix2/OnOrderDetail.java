@@ -53,13 +53,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Stock&gt;</li>
+ * <li>&lt;{@link Stock}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ OnOrderDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link OnOrderDetail}</li>
  * </ul>
+ *
+ * @since Onix-2.13
  */
 public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Serializable {
     private static final long serialVersionUID = 1L;

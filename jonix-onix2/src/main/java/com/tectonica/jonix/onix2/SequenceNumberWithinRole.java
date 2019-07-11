@@ -60,17 +60,21 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ SequenceNumberWithinRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link SequenceNumberWithinRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link SequenceNumberWithinRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link SequenceNumberWithinRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link SequenceNumberWithinRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈
+ * {@link SequenceNumberWithinRole}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class SequenceNumberWithinRole implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -144,7 +148,7 @@ public class SequenceNumberWithinRole implements OnixElement<String>, Serializab
 
     /**
      * @return whether this tag (&lt;SequenceNumberWithinRole&gt; or &lt;b340&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

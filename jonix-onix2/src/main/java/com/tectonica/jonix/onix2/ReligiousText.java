@@ -58,13 +58,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ReligiousText</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ReligiousText}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ReligiousText implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -190,8 +192,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         return religiousTextID;
     }
 
-    private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes>
-        religiousTextFeatures = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**

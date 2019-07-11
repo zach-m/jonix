@@ -60,25 +60,31 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyContact&gt;</li>
- * <li>&lt;Sender&gt;</li>
- * <li>&lt;NewSupplier&gt;</li>
- * <li>&lt;ProductContact&gt;</li>
- * <li>&lt;Supplier&gt;</li>
- * <li>&lt;Addressee&gt;</li>
- * <li>&lt;PublisherRepresentative&gt;</li>
+ * <li>&lt;{@link SupplyContact}&gt;</li>
+ * <li>&lt;{@link Sender}&gt;</li>
+ * <li>&lt;{@link NewSupplier}&gt;</li>
+ * <li>&lt;{@link ProductContact}&gt;</li>
+ * <li>&lt;{@link Supplier}&gt;</li>
+ * <li>&lt;{@link Addressee}&gt;</li>
+ * <li>&lt;{@link PublisherRepresentative}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ EmailAddress</li>
- * <li>ONIXMessage ⯈ Header ⯈ Sender ⯈ EmailAddress</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ NewSupplier ⯈ EmailAddress</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ EmailAddress</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact ⯈ EmailAddress</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ EmailAddress</li>
- * <li>ONIXMessage ⯈ Header ⯈ Addressee ⯈ EmailAddress</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ EmailAddress</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈
+ * {@link EmailAddress}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link EmailAddress}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈
+ * {@link EmailAddress}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈
+ * {@link EmailAddress}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link ProductContact} ⯈ {@link EmailAddress}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
+ * {@link EmailAddress}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Addressee} ⯈ {@link EmailAddress}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link PublisherRepresentative} ⯈ {@link EmailAddress}</li>
  * </ul>
  */
 public class EmailAddress implements OnixElement<String>, Serializable {

@@ -40,8 +40,9 @@ interface CodeList93 {
  * Description: Supplier role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist93">ONIX
- * Codelist 93 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist93">ONIX
+ *      Codelist 93 in Reference Guide</a>
  */
 public enum SupplierRoles implements OnixCodelist, CodeList93 {
     /**
@@ -108,8 +109,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Exclusive_distributor_to_retailers_and_end_customers("13",
-        "Exclusive distributor to retailers and end-customers"), //
+    Exclusive_distributor_to_retailers_and_end_customers("13", "Exclusive distributor to retailers and end-customers"), //
 
     /**
      * Intermediary as non-exclusive distributor to retailers and direct to consumers and/or institutional customers.

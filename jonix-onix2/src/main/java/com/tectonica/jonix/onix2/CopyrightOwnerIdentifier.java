@@ -54,13 +54,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;CopyrightOwner&gt;</li>
+ * <li>&lt;{@link CopyrightOwner}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CopyrightOwnerIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner} ⯈
+ * {@link CopyrightOwnerIdentifier}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class CopyrightOwnerIdentifier
     implements OnixDataCompositeWithKey<JonixCopyrightOwnerIdentifier, NameIdentifierTypes>, Serializable {
@@ -148,7 +151,7 @@ public class CopyrightOwnerIdentifier
 
     /**
      * @return whether this tag (&lt;CopyrightOwnerIdentifier&gt; or &lt;copyrightowneridentifier&gt;) is explicitly
-     * provided in the ONIX XML
+     *         provided in the ONIX XML
      */
     @Override
     public boolean exists() {

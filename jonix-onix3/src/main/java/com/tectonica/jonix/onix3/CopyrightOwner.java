@@ -56,12 +56,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;CopyrightStatement&gt;</li>
+ * <li>&lt;{@link CopyrightStatement}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ CopyrightStatement ⯈ CopyrightOwner</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈
+ * {@link CopyrightOwner}</li>
  * </ul>
  */
 public class CopyrightOwner implements OnixSuperComposite, Serializable {
@@ -122,8 +123,8 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
             switch (name) {
                 case CopyrightOwnerIdentifier.refname:
                 case CopyrightOwnerIdentifier.shortname:
-                    copyrightOwnerIdentifiers = JPU.addToList(copyrightOwnerIdentifiers,
-                        new CopyrightOwnerIdentifier(e));
+                    copyrightOwnerIdentifiers =
+                        JPU.addToList(copyrightOwnerIdentifiers, new CopyrightOwnerIdentifier(e));
                     break;
                 case PersonName.refname:
                 case PersonName.shortname:
@@ -141,7 +142,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;CopyrightOwner&gt; or &lt;copyrightowner&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -152,9 +153,8 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameIdentifierTypes>
-        copyrightOwnerIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier,
+        NameIdentifierTypes> copyrightOwnerIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -164,7 +164,8 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameIdentifierTypes> copyrightOwnerIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameIdentifierTypes>
+        copyrightOwnerIdentifiers() {
         _initialize();
         return copyrightOwnerIdentifiers;
     }

@@ -40,8 +40,9 @@ interface CodeList150 {
  * Description: Product form
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist150">ONIX
- * Codelist 150 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist150">ONIX
+ *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
     Undefined("00", "Undefined"), //
@@ -568,8 +569,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Dumpbin_empty("XB", "Dumpbin – empty"), //
 
     /**
-     * Dumpbin with contents. ISBN (where applicable) and format of contained items must be given in
-     * &lt;ProductPart&gt;
+     * Dumpbin with contents. ISBN (where applicable) and format of contained items must be given in &lt;ProductPart&gt;
      */
     Dumpbin_filled("XC", "Dumpbin – filled"), //
 
@@ -685,8 +685,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Umbrella("ZN", "Umbrella"), //
 
     /**
-     * Other apparel items not specified by ZB to ZJ, including branded, promotional or tie-in scarves, caps, aprons
-     * etc
+     * Other apparel items not specified by ZB to ZJ, including branded, promotional or tie-in scarves, caps, aprons etc
      */
     Other_apparel("ZY", "Other apparel"), //
 

@@ -67,12 +67,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ LevelSequenceNumber</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈
+ * {@link LevelSequenceNumber}</li>
  * </ul>
  */
 public class LevelSequenceNumber implements OnixElement<String>, Serializable {

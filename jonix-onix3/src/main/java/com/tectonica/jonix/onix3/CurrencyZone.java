@@ -65,14 +65,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Price&gt;</li>
+ * <li>&lt;{@link Price}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ CurrencyZone</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ CurrencyZone</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link CurrencyZone}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link CurrencyZone}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class CurrencyZone implements OnixElement<CurrencyZones>, Serializable {
     private static final long serialVersionUID = 1L;

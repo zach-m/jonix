@@ -60,14 +60,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ EpubTypeVersion</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ EpubTypeVersion</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link EpubTypeVersion}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link EpubTypeVersion}</li>
  * </ul>
  */
 public class EpubTypeVersion implements OnixElement<String>, Serializable {

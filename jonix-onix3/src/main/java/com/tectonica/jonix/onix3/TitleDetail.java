@@ -56,16 +56,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;Collection&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TitleDetail}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link TitleDetail}</li>
  * </ul>
  */
 public class TitleDetail implements OnixSuperComposite, Serializable {

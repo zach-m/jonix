@@ -66,15 +66,20 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;EpubLicense&gt;</li>
+ * <li>&lt;{@link EpubLicense}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubLicense ⯈ EpubLicenseName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ EpubLicense ⯈ EpubLicenseName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ EpubLicense ⯈ EpubLicenseName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense} ⯈
+ * {@link EpubLicenseName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link EpubLicense} ⯈ {@link EpubLicenseName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link EpubLicense} ⯈ {@link EpubLicenseName}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class EpubLicenseName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

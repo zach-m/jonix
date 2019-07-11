@@ -55,24 +55,28 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Conference&gt;</li>
- * <li>&lt;Supplier&gt;</li>
- * <li>&lt;Publisher&gt;</li>
- * <li>&lt;Event&gt;</li>
- * <li>&lt;Contributor&gt;</li>
- * <li>&lt;PublisherRepresentative&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
+ * <li>&lt;{@link Supplier}&gt;</li>
+ * <li>&lt;{@link Publisher}&gt;</li>
+ * <li>&lt;{@link Event}&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link PublisherRepresentative}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ Website</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
+ * {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link PublisherRepresentative} ⯈ {@link Website}</li>
  * </ul>
  */
 public class Website implements OnixDataComposite<JonixWebsite>, Serializable {

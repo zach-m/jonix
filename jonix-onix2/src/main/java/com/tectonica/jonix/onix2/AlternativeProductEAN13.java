@@ -62,13 +62,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ AlternativeProductEAN13</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link AlternativeProductEAN13}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class AlternativeProductEAN13 implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

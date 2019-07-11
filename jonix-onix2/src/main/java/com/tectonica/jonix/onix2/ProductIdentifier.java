@@ -73,20 +73,20 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContainedItem&gt;</li>
- * <li>&lt;NotForSale&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
- * <li>&lt;Set&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContainedItem}&gt;</li>
+ * <li>&lt;{@link NotForSale}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
+ * <li>&lt;{@link Set}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ ProductIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link ProductIdentifier}</li>
  * </ul>
  */
 public class ProductIdentifier
@@ -175,7 +175,7 @@ public class ProductIdentifier
 
     /**
      * @return whether this tag (&lt;ProductIdentifier&gt; or &lt;productidentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

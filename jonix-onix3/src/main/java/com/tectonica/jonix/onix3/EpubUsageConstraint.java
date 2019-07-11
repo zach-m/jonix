@@ -55,12 +55,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint}</li>
  * </ul>
  */
 public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
@@ -139,7 +139,7 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;EpubUsageConstraint&gt; or &lt;epubusageconstraint&gt;) is explicitly provided in
-     * the ONIX XML
+     *         the ONIX XML
      */
     @Override
     public boolean exists() {
@@ -179,8 +179,8 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
         return epubUsageStatus;
     }
 
-    private ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits = ListOfOnixDataComposite
-        .empty();
+    private ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits =
+        ListOfOnixDataComposite.empty();
 
     /**
      * <p>

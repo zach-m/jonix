@@ -60,27 +60,30 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Name&gt;</li>
- * <li>&lt;Contributor&gt;</li>
- * <li>&lt;PersonAsSubject&gt;</li>
+ * <li>&lt;{@link Name}&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link PersonAsSubject}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ SuffixToKey</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ SuffixToKey</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈
+ * {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link SuffixToKey}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link SuffixToKey}</li>
  * </ul>
  */
 public class SuffixToKey implements OnixElement<String>, Serializable {

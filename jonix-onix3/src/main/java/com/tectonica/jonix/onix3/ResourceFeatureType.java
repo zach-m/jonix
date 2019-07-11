@@ -65,16 +65,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ResourceFeature&gt;</li>
+ * <li>&lt;{@link ResourceFeature}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceFeature ⯈
- * ResourceFeatureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceFeature ⯈ ResourceFeatureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceFeature ⯈
- * ResourceFeatureType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}
+ * ⯈ {@link ResourceFeature} ⯈ {@link ResourceFeatureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceFeature} ⯈ {@link ResourceFeatureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceFeature} ⯈ {@link ResourceFeatureType}</li>
  * </ul>
  */
 public class ResourceFeatureType implements OnixElement<ResourceFeatureTypes>, Serializable {

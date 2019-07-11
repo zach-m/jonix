@@ -40,8 +40,9 @@ interface CodeList121 {
  * Description: Text script - based on ISO 15924
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist121">ONIX
- * Codelist 121 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist121">ONIX
+ *      Codelist 121 in Reference Guide</a>
  */
 public enum TextScripts implements OnixCodelist, CodeList121 {
     /**

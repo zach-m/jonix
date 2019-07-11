@@ -65,20 +65,27 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Website&gt;</li>
+ * <li>&lt;{@link Website}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ Website ⯈
- * WebsiteRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link Website} ⯈
+ * {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
+ * {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
+ * {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link Website} ⯈
+ * {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Website} ⯈
+ * {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link PublisherRepresentative} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
  * </ul>
  */
 public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {

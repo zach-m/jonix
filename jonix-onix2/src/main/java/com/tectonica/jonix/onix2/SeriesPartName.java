@@ -36,12 +36,12 @@ import java.io.Serializable;
 /**
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SubSeriesRecord&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SeriesPartName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link SeriesPartName}</li>
  * </ul>
  */
 public class SeriesPartName implements OnixElement<String>, Serializable {

@@ -73,29 +73,38 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ProductPart&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
- * <li>&lt;Tax&gt;</li>
- * <li>&lt;ComparisonProductPrice&gt;</li>
- * <li>&lt;SalesRights&gt;</li>
- * <li>&lt;PriceCondition&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ProductPart}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
+ * <li>&lt;{@link Tax}&gt;</li>
+ * <li>&lt;{@link ComparisonProductPrice}&gt;</li>
+ * <li>&lt;{@link SalesRights}&gt;</li>
+ * <li>&lt;{@link PriceCondition}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedProduct ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedProduct ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Tax ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Tax ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ ComparisonProductPrice ⯈
- * ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ ComparisonProductPrice ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈ ProductIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ ProductIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
+ * {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedProduct} ⯈
+ * {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedProduct} ⯈
+ * {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link Tax} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link Tax} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈
+ * {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceCondition} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceCondition} ⯈ {@link ProductIdentifier}</li>
  * </ul>
  */
 public class ProductIdentifier
@@ -175,7 +184,7 @@ public class ProductIdentifier
 
     /**
      * @return whether this tag (&lt;ProductIdentifier&gt; or &lt;productidentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

@@ -40,8 +40,9 @@ interface CodeList196 {
  * Description: E-publication Accessibility Details
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist196">ONIX
- * Codelist 196 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist196">ONIX
+ *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
     /**
@@ -136,8 +137,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * Where data visualisations are provided (eg graphs and charts), the underlying data is also available in
      * non-graphical (usually tabular, textual) form
      */
-    Visualised_data_also_available_as_non_graphical_data("16",
-        "Visualised data also available as non-graphical data"), //
+    Visualised_data_also_available_as_non_graphical_data("16", "Visualised data also available as non-graphical data"), //
 
     /**
      * Mathematical content such as equations is usable with assistive technology, eg through use of MathML. Semantic

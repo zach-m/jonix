@@ -61,14 +61,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyContactIdentifier&gt;</li>
+ * <li>&lt;{@link SupplyContactIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ SupplyContactIdentifier ⯈
- * SupplyContactIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈
+ * {@link SupplyContactIdentifier} ⯈ {@link SupplyContactIDType}</li>
  * </ul>
+ *
+ * @since Onix-3.04
  */
 public class SupplyContactIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

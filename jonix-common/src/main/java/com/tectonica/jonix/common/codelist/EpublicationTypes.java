@@ -42,8 +42,9 @@ interface CodeList10 {
  * Jonix-Comment: Deprecated in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist10">ONIX
- * Codelist 10 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist10">ONIX
+ *      Codelist 10 in Reference Guide</a>
  */
 public enum EpublicationTypes implements OnixCodelist, CodeList10 {
     /**
@@ -236,8 +237,7 @@ public enum EpublicationTypes implements OnixCodelist, CodeList10 {
     MyiLibrary("030", "MyiLibrary"), //
 
     /**
-     * Amazon proprietary file format derived from Mobipocket format, used for Kindle devices and Kindle reader
-     * software
+     * Amazon proprietary file format derived from Mobipocket format, used for Kindle devices and Kindle reader software
      */
     Kindle("031", "Kindle"), //
 

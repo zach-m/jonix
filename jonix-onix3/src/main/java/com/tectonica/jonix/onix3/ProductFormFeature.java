@@ -56,14 +56,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
- * <li>&lt;ProductPart&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
+ * <li>&lt;{@link ProductPart}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductFormFeature</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductFormFeature</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
+ * {@link ProductFormFeature}</li>
  * </ul>
  */
 public class ProductFormFeature
@@ -133,8 +134,8 @@ public class ProductFormFeature
                     break;
                 case ProductFormFeatureDescription.refname:
                 case ProductFormFeatureDescription.shortname:
-                    productFormFeatureDescriptions = JPU.addToList(productFormFeatureDescriptions,
-                        new ProductFormFeatureDescription(e));
+                    productFormFeatureDescriptions =
+                        JPU.addToList(productFormFeatureDescriptions, new ProductFormFeatureDescription(e));
                     break;
                 default:
                     break;
@@ -144,7 +145,7 @@ public class ProductFormFeature
 
     /**
      * @return whether this tag (&lt;ProductFormFeature&gt; or &lt;productformfeature&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {
@@ -175,8 +176,8 @@ public class ProductFormFeature
      * <p>
      * A controlled value that describes a product form feature. Presence or absence of this element depends on the
      * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i> thumb index) do not require an
-     * accompanying value, while others (<i>eg</i> text font) require free text in &lt;ProductFormFeatureDescription&gt;;
-     * and others may have both code and free text. Non-repeating.
+     * accompanying value, while others (<i>eg</i> text font) require free text in
+     * &lt;ProductFormFeatureDescription&gt;; and others may have both code and free text. Non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -185,8 +186,8 @@ public class ProductFormFeature
         return productFormFeatureValue;
     }
 
-    private ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions = ListOfOnixElement
-        .empty();
+    private ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions =
+        ListOfOnixElement.empty();
 
     /**
      * <p>

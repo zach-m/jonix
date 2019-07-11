@@ -70,16 +70,16 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;Collection&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor}</li>
  * </ul>
  */
 public class Contributor implements OnixSuperComposite, Serializable {
@@ -345,8 +345,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -574,8 +573,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * A group of data elements which together represent an alternative name of a contributor, and specify its type. The
      * &lt;AlternativeName&gt; composite is optional, and is repeatable to give multiple alternative names for the
      * contributor. It may be used to send a pseudonym as well as a real name, where both names are on the product,
-     * <i>eg</i> to handle such cases as ‘Ian Rankin writing as Jack Harvey’; or to send an authority-controlled form
-     * of
+     * <i>eg</i> to handle such cases as ‘Ian Rankin writing as Jack Harvey’; or to send an authority-controlled form of
      * a name; or to identify the real name of the contributor where the book is written under a pseudonym (and the real
      * identity need not be kept private) or is anonymous. Note that in all cases, the primary name is that used on the
      * product, and the alternative name merely provides additional information.
@@ -597,9 +595,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return alternativeNames;
     }
 
-    private ListOfOnixDataCompositeWithKey<ContributorDate, JonixContributorDate, PersonOrganizationDateRoles>
-        contributorDates = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ContributorDate, JonixContributorDate,
+        PersonOrganizationDateRoles> contributorDates = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -609,14 +606,14 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ContributorDate, JonixContributorDate, PersonOrganizationDateRoles> contributorDates() {
+    public ListOfOnixDataCompositeWithKey<ContributorDate, JonixContributorDate, PersonOrganizationDateRoles>
+        contributorDates() {
         _initialize();
         return contributorDates;
     }
 
     private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations =
-        ListOfOnixDataComposite
-            .empty();
+        ListOfOnixDataComposite.empty();
 
     /**
      * <p>
@@ -654,8 +651,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * provide parallel biographical notes in multiple languages. The <i>language</i> attribute is optional for a single
      * instance of &lt;BiographicalNote&gt;, but must be included in each instance if &lt;BiographicalNote&gt; is
      * repeated. May occur with a person name or with a corporate name. A biographical note in ONIX should
-     * <em>always</em> contain the name of the person or body concerned, and it should <em>always</em> be presented as
-     * a
+     * <em>always</em> contain the name of the person or body concerned, and it should <em>always</em> be presented as a
      * piece of continuous text consisting of full sentences. Some recipients of ONIX data feeds will not accept text
      * which has embedded URLs. A contributor website link can be sent using the &lt;Website&gt; composite below.
      * </p>
@@ -698,8 +694,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return contributorDescriptions;
     }
 
-    private ListOfOnixDataComposite<ContributorPlace, JonixContributorPlace> contributorPlaces = ListOfOnixDataComposite
-        .empty();
+    private ListOfOnixDataComposite<ContributorPlace, JonixContributorPlace> contributorPlaces =
+        ListOfOnixDataComposite.empty();
 
     /**
      * <p>

@@ -65,17 +65,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PriceConstraintLimit&gt;</li>
+ * <li>&lt;{@link PriceConstraintLimit}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit
- * ⯈
- * PriceConstraintUnit</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
- * PriceConstraintUnit</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceConstraint} ⯈ {@link PriceConstraintLimit} ⯈ {@link PriceConstraintUnit}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceConstraint} ⯈ {@link PriceConstraintLimit} ⯈ {@link PriceConstraintUnit}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class PriceConstraintUnit implements OnixElement<UnitOfUsages>, Serializable {
     private static final long serialVersionUID = 1L;

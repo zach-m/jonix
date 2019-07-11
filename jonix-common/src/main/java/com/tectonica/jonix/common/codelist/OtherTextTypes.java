@@ -42,8 +42,9 @@ interface CodeList33 {
  * Jonix-Comment: Deprecated in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist33">ONIX
- * Codelist 33 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist33">ONIX
+ *      Codelist 33 in Reference Guide</a>
  */
 public enum OtherTextTypes implements OnixCodelist, CodeList33 {
     Main_description("01", "Main description"), //

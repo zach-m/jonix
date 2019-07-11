@@ -66,17 +66,19 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContainedItem&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContainedItem}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductContentType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductContentType</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductContentType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductContentType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductContentType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductContentType}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ProductContentType implements OnixElement<ProductContentTypes>, Serializable {
     private static final long serialVersionUID = 1L;

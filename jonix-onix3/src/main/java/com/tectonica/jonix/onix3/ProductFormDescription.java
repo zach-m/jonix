@@ -62,21 +62,21 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ProductFormDescription language=&quot;eng&quot;&gt;Hardback book die-cut into car shape, with wheels
- * attached to front and back covers&lt;/ProductFormDescription&gt;</tt></td>
+ * <td><tt>&lt;ProductFormDescription language=&quot;eng&quot;&gt;Hardback book die-cut into car shape, with wheels attached to front and back covers&lt;/ProductFormDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
- * <li>&lt;ProductPart&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
+ * <li>&lt;{@link ProductPart}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductFormDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductFormDescription</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
+ * {@link ProductFormDescription}</li>
  * </ul>
  */
 public class ProductFormDescription implements OnixElement<String>, Serializable {

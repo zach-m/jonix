@@ -65,13 +65,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Measure&gt;</li>
+ * <li>&lt;{@link Measure}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Measure ⯈ MeasureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ Measure ⯈ MeasureType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Measure} ⯈ {@link MeasureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link Measure} ⯈
+ * {@link MeasureType}</li>
  * </ul>
  */
 public class MeasureType implements OnixElement<MeasureTypes>, Serializable {

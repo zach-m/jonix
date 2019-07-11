@@ -60,14 +60,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PlaceAsSubject</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PlaceAsSubject</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PlaceAsSubject}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PlaceAsSubject}</li>
  * </ul>
  */
 public class PlaceAsSubject implements OnixElement<String>, Serializable {

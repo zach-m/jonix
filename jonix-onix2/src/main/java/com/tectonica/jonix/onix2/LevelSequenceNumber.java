@@ -63,17 +63,19 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;Set&gt;</li>
- * <li>&lt;SubSeriesRecord&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link Set}&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ LevelSequenceNumber</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ LevelSequenceNumber</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ LevelSequenceNumber</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link LevelSequenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link LevelSequenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link LevelSequenceNumber}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class LevelSequenceNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

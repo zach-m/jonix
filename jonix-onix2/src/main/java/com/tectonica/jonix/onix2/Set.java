@@ -56,12 +56,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Set</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set}</li>
  * </ul>
  */
 public class Set implements OnixSuperComposite, Serializable {
@@ -217,8 +217,7 @@ public class Set implements OnixSuperComposite, Serializable {
         return ean13OfSet;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -285,8 +284,7 @@ public class Set implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The title of a “subset” of which the product is a member, used only when a set is itself divided into two
-     * levels,
+     * The title of a “subset” of which the product is a member, used only when a set is itself divided into two levels,
      * <em>eg</em> A History of Western Europe, Part II: The Dark Ages, Volume I: After Rome. Use this field only for
      * the section of the whole title which is shared by, and only by, the members of the subset. Optional and
      * non-repeating. Note that this element is used for the first subdivision of a set which has two levels, regardless

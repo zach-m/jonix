@@ -55,21 +55,26 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;TextContent&gt;</li>
- * <li>&lt;CitedContent&gt;</li>
- * <li>&lt;ResourceVersion&gt;</li>
+ * <li>&lt;{@link TextContent}&gt;</li>
+ * <li>&lt;{@link CitedContent}&gt;</li>
+ * <li>&lt;{@link ResourceVersion}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ ContentDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ ContentDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ContentDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ ContentDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈ ContentDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ContentDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
- * ContentDate</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
+ * {@link ContentDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link ContentDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
+ * {@link ContentDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈
+ * {@link ContentDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}
+ * ⯈ {@link ResourceVersion} ⯈ {@link ContentDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link ContentDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ContentDate}</li>
  * </ul>
  */
 public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, ContentDateRoles>, Serializable {

@@ -61,12 +61,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PublishingDetail&gt;</li>
+ * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher}</li>
  * </ul>
  */
 public class Publisher implements OnixSuperComposite, Serializable {
@@ -177,9 +177,8 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return publishingRole;
     }
 
-    private ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameIdentifierTypes>
-        publisherIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier,
+        NameIdentifierTypes> publisherIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -189,7 +188,8 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameIdentifierTypes> publisherIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameIdentifierTypes>
+        publisherIdentifiers() {
         _initialize();
         return publisherIdentifiers;
     }

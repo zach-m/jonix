@@ -56,13 +56,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MarketRepresentation&gt;</li>
+ * <li>&lt;{@link MarketRepresentation}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ AgentIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link AgentIdentifier}</li>
  * </ul>
+ *
+ * @since Onix-2.12
  */
 public class AgentIdentifier
     implements OnixDataCompositeWithKey<JonixAgentIdentifier, SupplierIdentifierTypes>, Serializable {
@@ -150,7 +152,7 @@ public class AgentIdentifier
 
     /**
      * @return whether this tag (&lt;AgentIdentifier&gt; or &lt;agentidentifier&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

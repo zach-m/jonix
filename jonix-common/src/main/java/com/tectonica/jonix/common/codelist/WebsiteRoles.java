@@ -40,8 +40,9 @@ interface CodeList73 {
  * Description: Website role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist73">ONIX
- * Codelist 73 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist73">ONIX
+ *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     Unspecified_see_website_description("00", "Unspecified, see website description"), //
@@ -106,8 +107,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * A webpage devoted to an individual work, and maintained by a publisher other than the publisher of the item
      * described in the ONIX record
      */
-    Other_publisher_s_website_relating_to_specified_work("11",
-        "Other publisher’s website relating to specified work"), //
+    Other_publisher_s_website_relating_to_specified_work("11", "Other publisher’s website relating to specified work"), //
 
     /**
      * A webpage devoted to an individual work, and maintained by a third party (eg a fan site)

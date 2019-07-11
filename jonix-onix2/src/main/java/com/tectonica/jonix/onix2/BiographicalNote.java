@@ -63,24 +63,22 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;BiographicalNote&gt;Umberto Eco, professor of semiotics at the University of Bologna, and author of
- * &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's Pendulum&#8221;, is one of the world's bestselling
- * novelists.&lt;/BiographicalNote&gt;</tt></td>
+ * <td><tt>&lt;BiographicalNote&gt;Umberto Eco, professor of semiotics at the University of Bologna, and author of &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's Pendulum&#8221;, is one of the world's bestselling novelists.&lt;/BiographicalNote&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ BiographicalNote</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ BiographicalNote</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ BiographicalNote</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ BiographicalNote</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ BiographicalNote</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link BiographicalNote}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link BiographicalNote}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link BiographicalNote}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link BiographicalNote}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link BiographicalNote}</li>
  * </ul>
  */
 public class BiographicalNote implements OnixElement<String>, Serializable {

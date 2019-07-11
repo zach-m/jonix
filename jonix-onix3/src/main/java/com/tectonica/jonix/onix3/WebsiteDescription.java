@@ -63,27 +63,33 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b294&gt;Includes author bio, gallery of photos, interview, complete bibliography and links to download
- * book covers as mobile phone wallpapers&lt;/b294&gt;</tt></td>
+ * <td><tt>&lt;b294&gt;Includes author bio, gallery of photos, interview, complete bibliography and links to download book covers as mobile phone wallpapers&lt;/b294&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Website&gt;</li>
+ * <li>&lt;{@link Website}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ Website ⯈
- * WebsiteDescription</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
+ * {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link PublisherRepresentative} ⯈ {@link Website} ⯈ {@link WebsiteDescription}</li>
  * </ul>
  */
 public class WebsiteDescription implements OnixElement<String>, Serializable {

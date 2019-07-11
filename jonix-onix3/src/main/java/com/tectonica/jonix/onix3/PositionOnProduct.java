@@ -66,15 +66,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Barcode&gt;</li>
- * <li>&lt;Price&gt;</li>
+ * <li>&lt;{@link Barcode}&gt;</li>
+ * <li>&lt;{@link Price}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Barcode ⯈ PositionOnProduct</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PositionOnProduct</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PositionOnProduct</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Barcode} ⯈ {@link PositionOnProduct}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PositionOnProduct}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PositionOnProduct}</li>
  * </ul>
  */
 public class PositionOnProduct implements OnixElement<PositionOnProducts>, Serializable {

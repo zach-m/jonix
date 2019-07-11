@@ -53,13 +53,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;CopyrightStatement&gt;</li>
+ * <li>&lt;{@link CopyrightStatement}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class CopyrightOwner implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -146,7 +148,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;CopyrightOwner&gt; or &lt;copyrightowner&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

@@ -56,16 +56,20 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
- * <li>&lt;Price&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
+ * <li>&lt;{@link Price}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubLicense</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ EpubLicense</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ EpubLicense</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link EpubLicense}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link EpubLicense}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class EpubLicense implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -164,9 +168,8 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
         return epubLicenseNames;
     }
 
-    private ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes>
-        epubLicenseExpressions = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression,
+        LicenseExpressionTypes> epubLicenseExpressions = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -175,7 +178,8 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes> epubLicenseExpressions() {
+    public ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes>
+        epubLicenseExpressions() {
         _initialize();
         return epubLicenseExpressions;
     }

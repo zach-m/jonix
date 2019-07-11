@@ -59,20 +59,21 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;PriceDateRole&gt;14&lt;/PriceDateRole&gt;</tt> (From date [date on which a price becomes
- * effective])</td>
+ * <td><tt>&lt;PriceDateRole&gt;14&lt;/PriceDateRole&gt;</tt> (From date [date on which a price becomes effective])</td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PriceDate&gt;</li>
+ * <li>&lt;{@link PriceDate}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceDate ⯈ PriceDateRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceDate ⯈ PriceDateRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceDate} ⯈ {@link PriceDateRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceDate} ⯈ {@link PriceDateRole}</li>
  * </ul>
  */
 public class PriceDateRole implements OnixElement<PriceDateRoles>, Serializable {

@@ -65,26 +65,42 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PersonNameIdentifier&gt;</li>
+ * <li>&lt;{@link PersonNameIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ PersonNameIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier}
+ * ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier}
+ * ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class PersonNameIDType implements OnixElement<PersonNameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

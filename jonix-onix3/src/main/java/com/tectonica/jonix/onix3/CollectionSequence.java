@@ -55,13 +55,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Collection&gt;</li>
+ * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionSequence</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
+ * {@link CollectionSequence}</li>
  * </ul>
+ *
+ * @since Onix-3.01
  */
 public class CollectionSequence
     implements OnixDataCompositeWithKey<JonixCollectionSequence, CollectionSequenceTypes>, Serializable {
@@ -140,7 +143,7 @@ public class CollectionSequence
 
     /**
      * @return whether this tag (&lt;CollectionSequence&gt; or &lt;collectionsequence&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

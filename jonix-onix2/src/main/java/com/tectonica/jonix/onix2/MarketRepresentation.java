@@ -60,13 +60,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation}</li>
  * </ul>
+ *
+ * @since Onix-2.12
  */
 public class MarketRepresentation implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -193,7 +195,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;MarketRepresentation&gt; or &lt;marketrepresentation&gt;) is explicitly provided in
-     * the ONIX XML
+     *         the ONIX XML
      */
     @Override
     public boolean exists() {
@@ -204,8 +206,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes>
-        agentIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -381,9 +382,8 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return marketPublishingStatus;
     }
 
-    private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>

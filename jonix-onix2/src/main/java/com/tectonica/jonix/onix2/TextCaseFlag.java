@@ -66,20 +66,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;Title&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link Title}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ TextCaseFlag</li>
- * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ TextCaseFlag</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ TextCaseFlag</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ TextCaseFlag</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ TextCaseFlag</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ TextCaseFlag</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ TextCaseFlag</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link TextCaseFlag}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Title} ⯈ {@link TextCaseFlag}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Title} ⯈ {@link TextCaseFlag}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link Title} ⯈ {@link TextCaseFlag}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Title} ⯈ {@link TextCaseFlag}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Title} ⯈ {@link TextCaseFlag}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Title} ⯈ {@link TextCaseFlag}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class TextCaseFlag implements OnixElement<TextCaseFlags>, Serializable {
     private static final long serialVersionUID = 1L;

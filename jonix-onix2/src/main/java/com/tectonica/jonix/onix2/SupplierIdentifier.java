@@ -56,15 +56,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
- * <li>&lt;NewSupplier&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
+ * <li>&lt;{@link NewSupplier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link SupplierIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈
+ * {@link SupplierIdentifier}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class SupplierIdentifier
     implements OnixDataCompositeWithKey<JonixSupplierIdentifier, SupplierIdentifierTypes>, Serializable {
@@ -152,7 +155,7 @@ public class SupplierIdentifier
 
     /**
      * @return whether this tag (&lt;SupplierIdentifier&gt; or &lt;supplieridentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

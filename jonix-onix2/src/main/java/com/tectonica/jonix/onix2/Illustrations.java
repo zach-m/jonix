@@ -54,12 +54,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Illustrations</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Illustrations}</li>
  * </ul>
  */
 public class Illustrations

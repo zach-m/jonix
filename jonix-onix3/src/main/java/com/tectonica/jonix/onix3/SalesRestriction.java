@@ -55,17 +55,20 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PublishingDetail&gt;</li>
- * <li>&lt;Market&gt;</li>
- * <li>&lt;SalesRights&gt;</li>
+ * <li>&lt;{@link PublishingDetail}&gt;</li>
+ * <li>&lt;{@link Market}&gt;</li>
+ * <li>&lt;{@link SalesRights}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ SalesRestriction</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRestriction}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈
+ * {@link SalesRestriction}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class SalesRestriction implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -151,7 +154,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;SalesRestriction&gt; or &lt;salesrestriction&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

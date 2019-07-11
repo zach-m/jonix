@@ -60,19 +60,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyContact&gt;</li>
- * <li>&lt;Sender&gt;</li>
- * <li>&lt;ProductContact&gt;</li>
- * <li>&lt;Addressee&gt;</li>
+ * <li>&lt;{@link SupplyContact}&gt;</li>
+ * <li>&lt;{@link Sender}&gt;</li>
+ * <li>&lt;{@link ProductContact}&gt;</li>
+ * <li>&lt;{@link Addressee}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ ContactName</li>
- * <li>ONIXMessage ⯈ Header ⯈ Sender ⯈ ContactName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ ContactName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact ⯈ ContactName</li>
- * <li>ONIXMessage ⯈ Header ⯈ Addressee ⯈ ContactName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈
+ * {@link ContactName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link ContactName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈
+ * {@link ContactName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link ProductContact} ⯈ {@link ContactName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Addressee} ⯈ {@link ContactName}</li>
  * </ul>
  */
 public class ContactName implements OnixElement<String>, Serializable {

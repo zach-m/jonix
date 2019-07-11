@@ -60,12 +60,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Series&gt;</li>
+ * <li>&lt;{@link Series}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ YearOfAnnual</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link YearOfAnnual}</li>
  * </ul>
  */
 public class YearOfAnnual implements OnixElement<String>, Serializable {
@@ -100,8 +100,7 @@ public class YearOfAnnual implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric
-     * digits
+     * Raw Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
      * <p>
      * (type: NonEmptyString)
      */

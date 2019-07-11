@@ -57,27 +57,38 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Website&gt;</li>
+ * <li>&lt;{@link Website}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ Website ⯈ WebsiteDescription</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ Website ⯈ WebsiteDescription</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link Website} ⯈ {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
+ * {@link WebsiteDescription}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class WebsiteDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

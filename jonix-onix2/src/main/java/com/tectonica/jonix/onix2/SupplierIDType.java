@@ -65,14 +65,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplierIdentifier&gt;</li>
+ * <li>&lt;{@link SupplierIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierIdentifier ⯈ SupplierIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierIdentifier ⯈ SupplierIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link SupplierIdentifier} ⯈
+ * {@link SupplierIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link SupplierIdentifier} ⯈
+ * {@link SupplierIDType}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

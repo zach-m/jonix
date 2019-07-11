@@ -68,17 +68,19 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContainedItem&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContainedItem}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ BookFormDetail</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ BookFormDetail</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ BookFormDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link BookFormDetail}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link BookFormDetail}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link BookFormDetail}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class BookFormDetail implements OnixElement<BookFormDetails>, Serializable {
     private static final long serialVersionUID = 1L;

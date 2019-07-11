@@ -60,15 +60,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;OtherText&gt;</li>
+ * <li>&lt;{@link OtherText}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextAuthor</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ TextAuthor</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ TextAuthor</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ TextAuthor</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link OtherText} ⯈ {@link TextAuthor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText} ⯈ {@link TextAuthor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextAuthor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextAuthor}</li>
  * </ul>
  */
 public class TextAuthor implements OnixElement<String>, Serializable {

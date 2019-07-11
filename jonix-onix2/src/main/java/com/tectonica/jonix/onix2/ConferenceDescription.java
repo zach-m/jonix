@@ -55,20 +55,21 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ConferenceDescription&gt;Proceedings of the 1996 International Computer Typesetting
- * Conference&lt;/ConferenceDescription&gt;</tt></td>
+ * <td><tt>&lt;ConferenceDescription&gt;Proceedings of the 1996 International Computer Typesetting Conference&lt;/ConferenceDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ConferenceDescription</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ConferenceDescription}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ConferenceDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

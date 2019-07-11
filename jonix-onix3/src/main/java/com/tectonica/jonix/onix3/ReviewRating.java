@@ -54,17 +54,23 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;TextContent&gt;</li>
- * <li>&lt;CitedContent&gt;</li>
+ * <li>&lt;{@link TextContent}&gt;</li>
+ * <li>&lt;{@link CitedContent}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ ReviewRating</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ ReviewRating</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ReviewRating</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ ReviewRating</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
+ * {@link ReviewRating}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈
+ * {@link ReviewRating}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
+ * {@link ReviewRating}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈
+ * {@link ReviewRating}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class ReviewRating implements OnixDataComposite<JonixReviewRating>, Serializable {
     private static final long serialVersionUID = 1L;

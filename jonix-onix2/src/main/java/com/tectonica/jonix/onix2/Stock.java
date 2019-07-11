@@ -54,13 +54,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Stock}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class Stock implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;

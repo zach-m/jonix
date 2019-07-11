@@ -59,12 +59,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ReligiousText&gt;</li>
+ * <li>&lt;{@link ReligiousText}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ReligiousText ⯈ Bible</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText} ⯈ {@link Bible}</li>
  * </ul>
  */
 public class Bible implements OnixDataComposite<JonixBible>, Serializable {

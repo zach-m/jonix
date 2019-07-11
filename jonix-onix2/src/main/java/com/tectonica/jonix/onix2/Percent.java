@@ -61,13 +61,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductClassification&gt;</li>
+ * <li>&lt;{@link ProductClassification}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductClassification ⯈ Percent</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductClassification} ⯈ {@link Percent}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class Percent implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

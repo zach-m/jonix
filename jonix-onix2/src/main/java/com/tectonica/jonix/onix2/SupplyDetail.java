@@ -62,12 +62,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail}</li>
  * </ul>
  */
 public class SupplyDetail implements OnixSuperComposite, Serializable {
@@ -285,8 +285,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes>
-        supplierIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -466,9 +465,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplyToRegions;
     }
 
-    private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds =
-        ListOfOnixElement
-            .empty();
+    private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds = ListOfOnixElement
+        .empty();
 
     /**
      * <p>

@@ -56,13 +56,15 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CopyrightStatement}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class CopyrightStatement implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -145,7 +147,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;CopyrightStatement&gt; or &lt;copyrightstatement&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

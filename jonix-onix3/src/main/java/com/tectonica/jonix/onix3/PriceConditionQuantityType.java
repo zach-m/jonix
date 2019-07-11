@@ -65,15 +65,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PriceConditionQuantity&gt;</li>
+ * <li>&lt;{@link PriceConditionQuantity}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity
- * ⯈ PriceConditionQuantityType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity ⯈
- * PriceConditionQuantityType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link PriceConditionQuantityType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link PriceConditionQuantityType}</li>
  * </ul>
  */
 public class PriceConditionQuantityType implements OnixElement<PriceConditionQuantityTypes>, Serializable {
@@ -134,7 +134,7 @@ public class PriceConditionQuantityType implements OnixElement<PriceConditionQua
 
     /**
      * @return whether this tag (&lt;PriceConditionQuantityType&gt; or &lt;x464&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

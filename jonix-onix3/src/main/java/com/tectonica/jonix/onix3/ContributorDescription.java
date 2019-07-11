@@ -64,21 +64,23 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ContributorDescription&gt;Skipper of the winning crew in the Americas Cup,
- * 1998&lt;/ContributorDescription&gt;</tt></td>
+ * <td><tt>&lt;ContributorDescription&gt;Skipper of the winning crew in the Americas Cup, 1998&lt;/ContributorDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ContributorDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ ContributorDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ ContributorDescription</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
+ * {@link ContributorDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ContributorDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link ContributorDescription}</li>
  * </ul>
  */
 public class ContributorDescription implements OnixElement<String>, Serializable {

@@ -65,13 +65,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;WorkIdentifier&gt;</li>
+ * <li>&lt;{@link WorkIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier ⯈ WorkIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ WorkIdentifier ⯈ WorkIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link WorkIdentifier} ⯈ {@link WorkIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link WorkIdentifier} ⯈ {@link WorkIDType}</li>
  * </ul>
  */
 public class WorkIDType implements OnixElement<WorkIdentifierTypes>, Serializable {

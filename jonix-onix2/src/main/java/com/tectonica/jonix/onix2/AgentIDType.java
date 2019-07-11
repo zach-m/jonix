@@ -65,13 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;AgentIdentifier&gt;</li>
+ * <li>&lt;{@link AgentIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ AgentIdentifier ⯈ AgentIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link AgentIdentifier} ⯈
+ * {@link AgentIDType}</li>
  * </ul>
+ *
+ * @since Onix-2.12
  */
 public class AgentIDType implements OnixElement<SupplierIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

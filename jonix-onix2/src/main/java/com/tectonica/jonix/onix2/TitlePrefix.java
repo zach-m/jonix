@@ -64,20 +64,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;Title&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link Title}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ TitlePrefix</li>
- * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ TitlePrefix</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ TitlePrefix</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ TitlePrefix</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ TitlePrefix</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ TitlePrefix</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ TitlePrefix</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link TitlePrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Title} ⯈ {@link TitlePrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Title} ⯈ {@link TitlePrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link Title} ⯈ {@link TitlePrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Title} ⯈ {@link TitlePrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Title} ⯈ {@link TitlePrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Title} ⯈ {@link TitlePrefix}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class TitlePrefix implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

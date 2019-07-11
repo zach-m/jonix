@@ -55,12 +55,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Imprint&gt;</li>
+ * <li>&lt;{@link Imprint}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint ⯈ ImprintIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈
+ * {@link ImprintIdentifier}</li>
  * </ul>
  */
 public class ImprintIdentifier
@@ -140,7 +141,7 @@ public class ImprintIdentifier
 
     /**
      * @return whether this tag (&lt;ImprintIdentifier&gt; or &lt;imprintidentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

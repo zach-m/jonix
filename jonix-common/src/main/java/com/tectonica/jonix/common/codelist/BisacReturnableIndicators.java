@@ -37,8 +37,9 @@ interface CodeList66 {
  * Description: BISAC returnable indicator
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist66">ONIX
- * Codelist 66 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist66">ONIX
+ *      Codelist 66 in Reference Guide</a>
  */
 public enum BisacReturnableIndicators implements OnixCodelist, CodeList66 {
     No_not_returnable("N", "No, not returnable"), //

@@ -56,13 +56,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Publisher&gt;</li>
+ * <li>&lt;{@link Publisher}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Funding</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Funding}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class Funding implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -142,9 +144,8 @@ public class Funding implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier, GrantIdentifierTypes>
-        fundingIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier,
+        GrantIdentifierTypes> fundingIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -154,7 +155,8 @@ public class Funding implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier, GrantIdentifierTypes> fundingIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier, GrantIdentifierTypes>
+        fundingIdentifiers() {
         _initialize();
         return fundingIdentifiers;
     }

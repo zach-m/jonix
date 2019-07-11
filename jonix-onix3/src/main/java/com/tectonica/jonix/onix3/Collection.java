@@ -60,12 +60,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection}</li>
  * </ul>
  */
 public class Collection implements OnixSuperComposite, Serializable {
@@ -203,9 +203,8 @@ public class Collection implements OnixSuperComposite, Serializable {
         return sourceName;
     }
 
-    private ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, SeriesIdentifierTypes>
-        collectionIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier,
+        SeriesIdentifierTypes> collectionIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -215,14 +214,14 @@ public class Collection implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, SeriesIdentifierTypes> collectionIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, SeriesIdentifierTypes>
+        collectionIdentifiers() {
         _initialize();
         return collectionIdentifiers;
     }
 
-    private ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence, CollectionSequenceTypes>
-        collectionSequences = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence,
+        CollectionSequenceTypes> collectionSequences = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -232,7 +231,8 @@ public class Collection implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence, CollectionSequenceTypes> collectionSequences() {
+    public ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence, CollectionSequenceTypes>
+        collectionSequences() {
         _initialize();
         return collectionSequences;
     }
@@ -304,8 +304,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * non-repeating. Must only be sent in a record that has no &lt;Contributor&gt; data in Group P.5.
      * </p>
      * <p>
-     * <strong>The &lt;NoContributor/&gt; element is provided here for use only by those ONIX communities whose
-     * national
+     * <strong>The &lt;NoContributor/&gt; element is provided here for use only by those ONIX communities whose national
      * practice requires contributors to be identified at collection level.</strong> It should not be sent in a context
      * where collection contributors are normally identified in Group&nbsp;P.6.
      * </p>

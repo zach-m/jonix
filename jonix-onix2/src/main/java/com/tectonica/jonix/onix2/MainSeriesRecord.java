@@ -45,12 +45,12 @@ import java.util.List;
 /**
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ONIXMessage&gt;</li>
+ * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ MainSeriesRecord</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord}</li>
  * </ul>
  */
 public class MainSeriesRecord implements OnixSuperComposite, Serializable {
@@ -182,7 +182,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;MainSeriesRecord&gt; or &lt;mainseriesrecord&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {
@@ -320,8 +320,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
         return recordSourceName;
     }
 
-    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes>
-        seriesIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -358,9 +357,8 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
         return contributors;
     }
 
-    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * Jonix-Comment: this list may be empty

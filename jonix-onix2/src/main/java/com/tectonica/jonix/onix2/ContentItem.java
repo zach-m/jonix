@@ -66,12 +66,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem}</li>
  * </ul>
  */
 public class ContentItem implements OnixSuperComposite, Serializable {
@@ -273,8 +273,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The generic name (if any) which is given in the product to the type of section which the content item
-     * represents,
+     * The generic name (if any) which is given in the product to the type of section which the content item represents,
      * <em>eg</em> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in
      * &lt;DistinctiveTitle&gt; or in a &lt;Title&gt; composite) or both must be present in any occurrence of the
      * &lt;ContentItem&gt; composite.
@@ -332,9 +331,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return titles;
     }
 
-    private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>
@@ -435,9 +433,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return placeAsSubjects;
     }
 
-    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>
@@ -451,9 +448,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return otherTexts;
     }
 
-    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>

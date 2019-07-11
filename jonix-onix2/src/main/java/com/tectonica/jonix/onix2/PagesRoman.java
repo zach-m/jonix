@@ -38,8 +38,7 @@ import java.io.Serializable;
  * <p>
  * The number of pages numbered in roman numerals. The &lt;PagesRoman&gt; and &lt;PagesArabic&gt; elements together
  * represent an alternative to &lt;NumberOfPages&gt; where there is a requirement to specify these numbering sequences
- * separately. For most ONIX applications, however, &lt;NumberOfPages&gt; will be preferred. Optional and
- * non-repeating.
+ * separately. For most ONIX applications, however, &lt;NumberOfPages&gt; will be preferred. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -62,12 +61,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PagesRoman</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PagesRoman}</li>
  * </ul>
  */
 public class PagesRoman implements OnixElement<String>, Serializable {

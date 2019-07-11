@@ -61,13 +61,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;TimeRun&gt;</li>
+ * <li>&lt;{@link TimeRun}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem ⯈ TimeRun ⯈ EndTime</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈
+ * {@link TimeRun} ⯈ {@link EndTime}</li>
  * </ul>
+ *
+ * @since Onix-3.05
  */
 public class EndTime implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

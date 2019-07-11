@@ -65,17 +65,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ResourceVersionFeature&gt;</li>
+ * <li>&lt;{@link ResourceVersionFeature}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈
- * ResourceVersionFeature ⯈ ResourceVersionFeatureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceVersionFeature ⯈
- * ResourceVersionFeatureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
- * ResourceVersionFeature ⯈ ResourceVersionFeatureType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}
+ * ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈ {@link ResourceVersionFeatureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈ {@link ResourceVersionFeatureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈
+ * {@link ResourceVersionFeatureType}</li>
  * </ul>
  */
 public class ResourceVersionFeatureType implements OnixElement<ResourceVersionFeatureTypes>, Serializable {
@@ -136,7 +137,7 @@ public class ResourceVersionFeatureType implements OnixElement<ResourceVersionFe
 
     /**
      * @return whether this tag (&lt;ResourceVersionFeatureType&gt; or &lt;x442&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

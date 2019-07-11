@@ -55,12 +55,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Header&gt;</li>
+ * <li>&lt;{@link Header}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header ⯈ Sender</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender}</li>
  * </ul>
  */
 public class Sender implements OnixSuperComposite, Serializable {
@@ -153,9 +153,8 @@ public class Sender implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes>
-        senderIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier,
+        NameIdentifierTypes> senderIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -165,7 +164,8 @@ public class Sender implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes> senderIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes>
+        senderIdentifiers() {
         _initialize();
         return senderIdentifiers;
     }

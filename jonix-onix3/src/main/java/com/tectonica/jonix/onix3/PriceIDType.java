@@ -69,14 +69,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PriceIdentifier&gt;</li>
+ * <li>&lt;{@link PriceIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceIdentifier ⯈ PriceIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceIdentifier ⯈ PriceIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceIdentifier} ⯈ {@link PriceIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceIdentifier} ⯈ {@link PriceIDType}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class PriceIDType implements OnixElement<PriceIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

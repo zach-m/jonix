@@ -60,12 +60,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedMaterial}</li>
  * </ul>
  */
 public class RelatedMaterial implements OnixSuperComposite, Serializable {
@@ -140,7 +140,7 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;RelatedMaterial&gt; or &lt;relatedmaterial&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

@@ -65,21 +65,28 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
- * <li>&lt;MarketDate&gt;</li>
- * <li>&lt;PersonDate&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
+ * <li>&lt;{@link MarketDate}&gt;</li>
+ * <li>&lt;{@link PersonDate}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ DateFormat</li>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketDate ⯈ DateFormat</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonDate ⯈ DateFormat</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link DateFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link MarketDate} ⯈
+ * {@link DateFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link PersonDate} ⯈ {@link DateFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link PersonDate} ⯈
+ * {@link DateFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonDate} ⯈
+ * {@link DateFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonDate} ⯈
+ * {@link DateFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link PersonDate} ⯈
+ * {@link DateFormat}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class DateFormat implements OnixElement<DateFormats>, Serializable {
     private static final long serialVersionUID = 1L;

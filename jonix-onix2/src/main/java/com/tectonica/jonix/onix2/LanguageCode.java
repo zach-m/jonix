@@ -67,18 +67,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
- * <li>&lt;Language&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link Language}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ LanguageCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ LanguageCode</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ LanguageCode</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ LanguageCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ LanguageCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ Language ⯈ LanguageCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link LanguageCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link LanguageCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link LanguageCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link LanguageCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link LanguageCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Language} ⯈ {@link LanguageCode}</li>
  * </ul>
  */
 public class LanguageCode implements OnixElement<Languages>, Serializable {

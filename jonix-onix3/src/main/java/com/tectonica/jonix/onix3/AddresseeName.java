@@ -61,12 +61,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Addressee&gt;</li>
+ * <li>&lt;{@link Addressee}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header ⯈ Addressee ⯈ AddresseeName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeName}</li>
  * </ul>
  */
 public class AddresseeName implements OnixElement<String>, Serializable {

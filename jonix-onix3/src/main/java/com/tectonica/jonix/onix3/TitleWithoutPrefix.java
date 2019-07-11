@@ -61,21 +61,23 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;TitleWithoutPrefix language=&quot;eng&quot; textcase=&quot;01&quot;&gt;shameful life of Salvador
- * Dali&lt;/TitleWithoutPrefix&gt;</tt></td>
+ * <td><tt>&lt;TitleWithoutPrefix language=&quot;eng&quot; textcase=&quot;01&quot;&gt;shameful life of Salvador Dali&lt;/TitleWithoutPrefix&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;TitleElement&gt;</li>
+ * <li>&lt;{@link TitleElement}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ TitleDetail ⯈ TitleElement ⯈ TitleWithoutPrefix</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TitleDetail ⯈ TitleElement ⯈ TitleWithoutPrefix</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ TitleDetail ⯈ TitleElement ⯈ TitleWithoutPrefix</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail} ⯈ {@link TitleElement} ⯈
+ * {@link TitleWithoutPrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TitleDetail} ⯈
+ * {@link TitleElement} ⯈ {@link TitleWithoutPrefix}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link TitleDetail} ⯈
+ * {@link TitleElement} ⯈ {@link TitleWithoutPrefix}</li>
  * </ul>
  */
 public class TitleWithoutPrefix implements OnixElement<String>, Serializable {

@@ -66,22 +66,25 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Price&gt;</li>
- * <li>&lt;Contributor&gt;</li>
- * <li>&lt;Language&gt;</li>
+ * <li>&lt;{@link Price}&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link Language}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ Language ⯈ CountryCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Language} ⯈ {@link CountryCode}</li>
  * </ul>
+ *
+ * @since Onix-2.12
  */
 public class CountryCode implements OnixElement<Countrys>, Serializable {
     private static final long serialVersionUID = 1L;

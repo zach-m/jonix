@@ -55,12 +55,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Sender&gt;</li>
+ * <li>&lt;{@link Sender}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header ⯈ Sender ⯈ SenderIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier}</li>
  * </ul>
  */
 public class SenderIdentifier
@@ -140,7 +140,7 @@ public class SenderIdentifier
 
     /**
      * @return whether this tag (&lt;SenderIdentifier&gt; or &lt;senderidentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

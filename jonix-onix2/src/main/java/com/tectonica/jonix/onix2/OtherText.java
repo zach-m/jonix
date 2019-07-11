@@ -54,18 +54,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;MainSeriesRecord&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ OtherText</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link OtherText}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link OtherText}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link OtherText}</li>
  * </ul>
  */
 public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, OtherTextTypes>, Serializable {

@@ -55,13 +55,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;AVItem&gt;</li>
+ * <li>&lt;{@link AVItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem ⯈ AVItemIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈
+ * {@link AVItemIdentifier}</li>
  * </ul>
+ *
+ * @since Onix-3.05
  */
 public class AVItemIdentifier
     implements OnixDataCompositeWithKey<JonixAVItemIdentifier, AvItemIdentifierTypes>, Serializable {
@@ -140,7 +143,7 @@ public class AVItemIdentifier
 
     /**
      * @return whether this tag (&lt;AVItemIdentifier&gt; or &lt;avitemidentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

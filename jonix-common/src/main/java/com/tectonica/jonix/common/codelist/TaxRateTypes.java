@@ -37,8 +37,9 @@ interface CodeList62 {
  * Description: Tax rate type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist62">ONIX
- * Codelist 62 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist62">ONIX
+ *      Codelist 62 in Reference Guide</a>
  */
 public enum TaxRateTypes implements OnixCodelist, CodeList62 {
     /**

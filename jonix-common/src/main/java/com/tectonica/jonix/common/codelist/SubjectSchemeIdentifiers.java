@@ -40,8 +40,9 @@ interface CodeList27 {
  * Description: Subject scheme identifier
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist27">ONIX
- * Codelist 27 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist27">ONIX
+ *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
@@ -115,8 +116,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Used for German National Bibliography since 2004 (100 subjects). Is different from value 30. See
-     * http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or http://www.d-nb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf
-     * (English)
+     * http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or
+     * http://www.d-nb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf (English)
      */
     DDC_Sachgruppen_der_Deutschen_Nationalbibliografie("18", "DDC-Sachgruppen der Deutschen Nationalbibliografie"), //
 
@@ -160,8 +161,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Schlagwortnormdatei - Subject Headings Authority File in the German-speaking countries. See
-     * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm
-     * (English). DEPRECATED in favor of the GND
+     * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and
+     * http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm (English). DEPRECATED in favor of the GND
      */
     SWD("27", "SWD"), //
 
@@ -547,7 +548,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Rameau("A5", "Rameau"), //
 
     /**
-     * French educational subject classification scolomfr-voc-015. See https://www.reseau-canope.fr/scolomfr/accueil.html
+     * French educational subject classification scolomfr-voc-015. See
+     * https://www.reseau-canope.fr/scolomfr/accueil.html
      */
     Nomenclature_discipline_scolaire("A6", "Nomenclature discipline scolaire"), //
 

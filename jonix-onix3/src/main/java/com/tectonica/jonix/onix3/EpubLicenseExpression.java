@@ -54,16 +54,20 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;EpubLicense&gt;</li>
+ * <li>&lt;{@link EpubLicense}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubLicense ⯈ EpubLicenseExpression</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ EpubLicense ⯈
- * EpubLicenseExpression</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ EpubLicense ⯈ EpubLicenseExpression</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense} ⯈
+ * {@link EpubLicenseExpression}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link EpubLicense} ⯈ {@link EpubLicenseExpression}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link EpubLicense} ⯈ {@link EpubLicenseExpression}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class EpubLicenseExpression
     implements OnixDataCompositeWithKey<JonixEpubLicenseExpression, LicenseExpressionTypes>, Serializable {
@@ -142,7 +146,7 @@ public class EpubLicenseExpression
 
     /**
      * @return whether this tag (&lt;EpubLicenseExpression&gt; or &lt;epublicenseexpression&gt;) is explicitly provided
-     * in the ONIX XML
+     *         in the ONIX XML
      */
     @Override
     public boolean exists() {

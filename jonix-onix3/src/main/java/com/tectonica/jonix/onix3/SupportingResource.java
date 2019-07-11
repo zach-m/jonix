@@ -60,16 +60,18 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;CollateralDetail&gt;</li>
- * <li>&lt;Reissue&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link CollateralDetail}&gt;</li>
+ * <li>&lt;{@link Reissue}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈
+ * {@link SupportingResource}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource}</li>
  * </ul>
  */
 public class SupportingResource implements OnixSuperComposite, Serializable {
@@ -160,7 +162,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;SupportingResource&gt; or &lt;supportingresource&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {
@@ -239,9 +241,8 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return resourceMode;
     }
 
-    private ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes>
-        resourceFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature,
+        ResourceFeatureTypes> resourceFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -251,7 +252,8 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes> resourceFeatures() {
+    public ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes>
+        resourceFeatures() {
         _initialize();
         return resourceFeatures;
     }

@@ -57,12 +57,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ONIXMessage&gt;</li>
+ * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header}</li>
  * </ul>
  */
 public class Header implements OnixHeader, Serializable {

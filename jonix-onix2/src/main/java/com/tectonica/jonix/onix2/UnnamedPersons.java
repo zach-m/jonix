@@ -66,16 +66,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ UnnamedPersons</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ UnnamedPersons</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ UnnamedPersons</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ UnnamedPersons</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ UnnamedPersons</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link UnnamedPersons}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link UnnamedPersons}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link UnnamedPersons}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link UnnamedPersons}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link UnnamedPersons}</li>
  * </ul>
  */
 public class UnnamedPersons implements OnixElement<UnnamedPersonss>, Serializable {

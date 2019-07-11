@@ -62,16 +62,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;MainSeriesRecord&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DeletionText</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ DeletionText</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ DeletionText</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DeletionText}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link DeletionText}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link DeletionText}</li>
  * </ul>
  */
 public class DeletionText implements OnixElement<String>, Serializable {

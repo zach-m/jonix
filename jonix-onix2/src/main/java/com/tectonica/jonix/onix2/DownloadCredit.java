@@ -57,14 +57,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MediaFile&gt;</li>
+ * <li>&lt;{@link MediaFile}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ DownloadCredit</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ DownloadCredit</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ DownloadCredit</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MediaFile} ⯈ {@link DownloadCredit}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link MediaFile} ⯈ {@link DownloadCredit}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link MediaFile} ⯈
+ * {@link DownloadCredit}</li>
  * </ul>
  */
 public class DownloadCredit implements OnixElement<String>, Serializable {

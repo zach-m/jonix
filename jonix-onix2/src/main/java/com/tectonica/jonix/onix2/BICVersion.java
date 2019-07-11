@@ -61,12 +61,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ BICVersion</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link BICVersion}</li>
  * </ul>
  */
 public class BICVersion implements OnixElement<String>, Serializable {

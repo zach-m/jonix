@@ -65,13 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyContact&gt;</li>
+ * <li>&lt;{@link SupplyContact}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ SupplyContactRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈
+ * {@link SupplyContactRole}</li>
  * </ul>
+ *
+ * @since Onix-3.04
  */
 public class SupplyContactRole implements OnixElement<SupplyContactRoles>, Serializable {
     private static final long serialVersionUID = 1L;

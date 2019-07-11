@@ -40,8 +40,9 @@ interface CodeList32 {
  * Description: Complexity scheme identifier
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist32">ONIX
- * Codelist 32 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist32">ONIX
+ *      Codelist 32 in Reference Guide</a>
  */
 public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
     /**
@@ -67,7 +68,8 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
     IoE_Book_Band("04", "IoE Book Band"), //
 
     /**
-     * &lt;ComplexityCode&gt; is a code from 'A' to Z+'. See http://www.fountasandpinnellleveledbooks.com/aboutLeveledTexts.aspx
+     * &lt;ComplexityCode&gt; is a code from 'A' to Z+'. See
+     * http://www.fountasandpinnellleveledbooks.com/aboutLeveledTexts.aspx
      */
     Fountas_Pinnell_Text_Level_Gradient("05", "Fountas & Pinnell Text Level Gradient"), //
 

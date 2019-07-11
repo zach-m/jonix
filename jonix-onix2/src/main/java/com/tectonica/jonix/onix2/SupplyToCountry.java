@@ -69,12 +69,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplyToCountry</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link SupplyToCountry}</li>
  * </ul>
  */
 public class SupplyToCountry implements OnixElement<java.util.Set<Countrys>>, Serializable {
@@ -140,9 +140,8 @@ public class SupplyToCountry implements OnixElement<java.util.Set<Countrys>>, Se
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +")) {
+        for (String split : JPU.getContentAsString(element).trim().split(" +"))
             value.add(Countrys.byCode(split));
-        }
     }
 
     /**

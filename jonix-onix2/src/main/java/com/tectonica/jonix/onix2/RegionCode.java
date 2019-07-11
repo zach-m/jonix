@@ -42,8 +42,7 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable-length code, consisting of upper case letters with or without a hyphen, successive codes being
- * separated
+ * <td>Variable-length code, consisting of upper case letters with or without a hyphen, successive codes being separated
  * by spaces. Suggested maximum length 8 characters.</td>
  * </tr>
  * <tr>
@@ -67,17 +66,19 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ RegionCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ RegionCode</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ RegionCode</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ RegionCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ RegionCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link RegionCode}</li>
  * </ul>
+ *
+ * @since Onix-2.12
  */
 public class RegionCode implements OnixElement<java.util.Set<String>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -148,9 +149,8 @@ public class RegionCode implements OnixElement<java.util.Set<String>>, Serializa
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +")) {
+        for (String split : JPU.getContentAsString(element).trim().split(" +"))
             value.add(String.valueOf(split));
-        }
     }
 
     /**

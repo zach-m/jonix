@@ -60,15 +60,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;Conference&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ConferencePlace</li>
- * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferencePlace</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ConferencePlace}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link ConferencePlace}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ConferencePlace implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

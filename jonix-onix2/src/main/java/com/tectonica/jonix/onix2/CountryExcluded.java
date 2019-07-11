@@ -68,14 +68,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Price&gt;</li>
+ * <li>&lt;{@link Price}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ CountryExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ CountryExcluded</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link CountryExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link CountryExcluded}</li>
  * </ul>
+ *
+ * @since Onix-2.13
  */
 public class CountryExcluded implements OnixElement<java.util.Set<Countrys>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -140,9 +143,8 @@ public class CountryExcluded implements OnixElement<java.util.Set<Countrys>>, Se
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +")) {
+        for (String split : JPU.getContentAsString(element).trim().split(" +"))
             value.add(Countrys.byCode(split));
-        }
     }
 
     /**

@@ -61,12 +61,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductPart&gt;</li>
+ * <li>&lt;{@link ProductPart}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ PrimaryPart</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
+ * {@link PrimaryPart}</li>
  * </ul>
  */
 public class PrimaryPart implements OnixFlag, Serializable {

@@ -36,8 +36,7 @@ import java.io.Serializable;
 /**
  * <h1>Name code type name</h1>
  * <p>
- * A name which identifies a proprietary name code when the code in &lt;NameCodeType&gt; indicates a proprietary
- * scheme,
+ * A name which identifies a proprietary name code when the code in &lt;NameCodeType&gt; indicates a proprietary scheme,
  * <em>eg</em> a bibliographic agency’s own code. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -57,17 +56,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Publisher&gt;</li>
- * <li>&lt;Imprint&gt;</li>
+ * <li>&lt;{@link Publisher}&gt;</li>
+ * <li>&lt;{@link Imprint}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ NameCodeTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ NameCodeTypeName</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ NameCodeTypeName</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ NameCodeTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ Imprint ⯈ NameCodeTypeName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link NameCodeTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈
+ * {@link NameCodeTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link NameCodeTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link NameCodeTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Imprint} ⯈ {@link NameCodeTypeName}</li>
  * </ul>
  */
 public class NameCodeTypeName implements OnixElement<String>, Serializable {

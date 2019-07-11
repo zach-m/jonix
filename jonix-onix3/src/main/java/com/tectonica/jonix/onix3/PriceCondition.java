@@ -57,13 +57,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Price&gt;</li>
+ * <li>&lt;{@link Price}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceCondition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceCondition}</li>
  * </ul>
  */
 public class PriceCondition implements OnixSuperComposite, Serializable {
@@ -142,7 +144,7 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;PriceCondition&gt; or &lt;pricecondition&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -167,9 +169,8 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
         return priceConditionType;
     }
 
-    private ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes>
-        priceConditionQuantitys = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity,
+        PriceConditionQuantityTypes> priceConditionQuantitys = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -178,14 +179,15 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes> priceConditionQuantitys() {
+    public
+        ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes>
+        priceConditionQuantitys() {
         _initialize();
         return priceConditionQuantitys;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
+        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -195,7 +197,8 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers() {
         _initialize();
         return productIdentifiers;
     }

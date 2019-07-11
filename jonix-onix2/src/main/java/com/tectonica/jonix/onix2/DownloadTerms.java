@@ -58,14 +58,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MediaFile&gt;</li>
+ * <li>&lt;{@link MediaFile}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ DownloadTerms</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ DownloadTerms</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ DownloadTerms</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MediaFile} ⯈ {@link DownloadTerms}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link MediaFile} ⯈ {@link DownloadTerms}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link MediaFile} ⯈
+ * {@link DownloadTerms}</li>
  * </ul>
  */
 public class DownloadTerms implements OnixElement<String>, Serializable {

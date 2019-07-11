@@ -65,14 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MediaFile&gt;</li>
+ * <li>&lt;{@link MediaFile}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ MediaFileLinkTypeCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ MediaFileLinkTypeCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ MediaFileLinkTypeCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MediaFile} ⯈ {@link MediaFileLinkTypeCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link MediaFile} ⯈
+ * {@link MediaFileLinkTypeCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link MediaFile} ⯈
+ * {@link MediaFileLinkTypeCode}</li>
  * </ul>
  */
 public class MediaFileLinkTypeCode implements OnixElement<ImageAudioVideoFileLinkTypes>, Serializable {

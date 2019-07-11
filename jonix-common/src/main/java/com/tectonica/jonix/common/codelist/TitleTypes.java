@@ -40,8 +40,9 @@ interface CodeList15 {
  * Description: Title type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist15">ONIX
- * Codelist 15 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist15">ONIX
+ *      Codelist 15 in Reference Guide</a>
  */
 public enum TitleTypes implements OnixCodelist, CodeList15 {
     Undefined("00", "Undefined"), //

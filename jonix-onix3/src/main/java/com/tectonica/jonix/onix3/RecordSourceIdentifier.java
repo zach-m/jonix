@@ -54,12 +54,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ RecordSourceIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RecordSourceIdentifier}</li>
  * </ul>
  */
 public class RecordSourceIdentifier
@@ -139,7 +139,7 @@ public class RecordSourceIdentifier
 
     /**
      * @return whether this tag (&lt;RecordSourceIdentifier&gt; or &lt;recordsourceidentifier&gt;) is explicitly
-     * provided in the ONIX XML
+     *         provided in the ONIX XML
      */
     @Override
     public boolean exists() {

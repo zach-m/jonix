@@ -60,17 +60,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;NewSupplier&gt;</li>
- * <li>&lt;Supplier&gt;</li>
- * <li>&lt;PublisherRepresentative&gt;</li>
+ * <li>&lt;{@link NewSupplier}&gt;</li>
+ * <li>&lt;{@link Supplier}&gt;</li>
+ * <li>&lt;{@link PublisherRepresentative}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ NewSupplier ⯈ FaxNumber</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ FaxNumber</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ FaxNumber</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈
+ * {@link FaxNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
+ * {@link FaxNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link PublisherRepresentative} ⯈ {@link FaxNumber}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class FaxNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

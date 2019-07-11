@@ -71,15 +71,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DistinctiveTitle</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ DistinctiveTitle</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DistinctiveTitle}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link DistinctiveTitle}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class DistinctiveTitle implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -65,14 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ConferenceSponsorIdentifier&gt;</li>
+ * <li>&lt;{@link ConferenceSponsorIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceSponsor ⯈ ConferenceSponsorIdentifier ⯈
- * ConferenceSponsorIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor} ⯈
+ * {@link ConferenceSponsorIdentifier} ⯈ {@link ConferenceSponsorIDType}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ConferenceSponsorIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -65,15 +65,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PriceConstraint&gt;</li>
+ * <li>&lt;{@link PriceConstraint}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈
- * PriceConstraintStatus</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintStatus</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceConstraint} ⯈ {@link PriceConstraintStatus}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceConstraint} ⯈ {@link PriceConstraintStatus}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class PriceConstraintStatus implements OnixElement<UsageStatuss>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -42,8 +42,7 @@ import java.io.Serializable;
  * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be omitted.
  * </p>
  * <p>
- * <strong>The &lt;Publisher&gt; composite below provides a more general method of handling publisher identities, and
- * is
+ * <strong>The &lt;Publisher&gt; composite below provides a more general method of handling publisher identities, and is
  * to be preferred.</strong>
  * </p>
  * <table border='1' cellpadding='3'>
@@ -67,20 +66,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;NotForSale&gt;</li>
- * <li>&lt;Publisher&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link NotForSale}&gt;</li>
+ * <li>&lt;{@link Publisher}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublisherName</li>
- * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ PublisherName</li>
- * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ PublisherName</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ PublisherName</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ PublisherName</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ PublisherName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublisherName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link PublisherName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link PublisherName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link PublisherName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link PublisherName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link PublisherName}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class PublisherName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -65,29 +65,34 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductWebsite&gt;</li>
- * <li>&lt;Website&gt;</li>
+ * <li>&lt;{@link ProductWebsite}&gt;</li>
+ * <li>&lt;{@link Website}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductWebsite ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ Website ⯈ WebsiteRole</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ Website ⯈ WebsiteRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductWebsite} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Website} ⯈
+ * {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Website} ⯈
+ * {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
+ * {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website} ⯈ {@link WebsiteRole}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {
     private static final long serialVersionUID = 1L;

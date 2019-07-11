@@ -75,14 +75,15 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Reissue&gt;</li>
- * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;{@link Reissue}&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price}</li>
  * </ul>
  */
 public class Price implements OnixSuperComposite, Serializable {
@@ -263,9 +264,8 @@ public class Price implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<PriceIdentifier, JonixPriceIdentifier, PriceIdentifierTypes>
-        priceIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<PriceIdentifier, JonixPriceIdentifier,
+        PriceIdentifierTypes> priceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -284,7 +284,8 @@ public class Price implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<PriceIdentifier, JonixPriceIdentifier, PriceIdentifierTypes> priceIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<PriceIdentifier, JonixPriceIdentifier, PriceIdentifierTypes>
+        priceIdentifiers() {
         _initialize();
         return priceIdentifiers;
     }
@@ -319,8 +320,7 @@ public class Price implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
-        ListOfOnixElement
-            .empty();
+        ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -459,8 +459,7 @@ public class Price implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -693,8 +692,7 @@ public class Price implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<PriceDate, JonixPriceDate, PriceDateRoles> priceDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

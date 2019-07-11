@@ -60,14 +60,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;TextItem&gt;</li>
- * <li>&lt;PageRun&gt;</li>
+ * <li>&lt;{@link TextItem}&gt;</li>
+ * <li>&lt;{@link PageRun}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ FirstPageNumber</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ PageRun ⯈ FirstPageNumber</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link FirstPageNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link PageRun} ⯈
+ * {@link FirstPageNumber}</li>
  * </ul>
  */
 public class FirstPageNumber implements OnixElement<String>, Serializable {

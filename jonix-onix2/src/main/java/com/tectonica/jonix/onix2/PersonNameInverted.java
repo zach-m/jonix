@@ -61,27 +61,34 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Name&gt;</li>
- * <li>&lt;Contributor&gt;</li>
- * <li>&lt;PersonAsSubject&gt;</li>
+ * <li>&lt;{@link Name}&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link PersonAsSubject}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ PersonNameInverted</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ PersonNameInverted</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈
+ * {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link PersonNameInverted}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈
+ * {@link PersonNameInverted}</li>
  * </ul>
  */
 public class PersonNameInverted implements OnixElement<String>, Serializable {

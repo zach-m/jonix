@@ -66,16 +66,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ReviewRating&gt;</li>
+ * <li>&lt;{@link ReviewRating}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ ReviewRating ⯈ RatingUnits</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ ReviewRating ⯈ RatingUnits</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ReviewRating ⯈ RatingUnits</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ ReviewRating ⯈ RatingUnits</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
+ * {@link ReviewRating} ⯈ {@link RatingUnits}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link ReviewRating} ⯈
+ * {@link RatingUnits}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
+ * {@link ReviewRating} ⯈ {@link RatingUnits}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈ {@link ReviewRating} ⯈
+ * {@link RatingUnits}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class RatingUnits implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

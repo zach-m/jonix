@@ -65,12 +65,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Language&gt;</li>
+ * <li>&lt;{@link Language}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Language ⯈ LanguageRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Language} ⯈ {@link LanguageRole}</li>
  * </ul>
  */
 public class LanguageRole implements OnixElement<LanguageRoles>, Serializable {

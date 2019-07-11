@@ -40,8 +40,9 @@ interface CodeList51 {
  * Description: Product relation
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist51">ONIX
- * Codelist 51 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist51">ONIX
+ *      Codelist 51 in Reference Guide</a>
  */
 public enum ProductRelations implements OnixCodelist, CodeList51 {
     /**
@@ -146,8 +147,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
     Is_prebound_edition_of("20", "Is prebound edition of"), //
 
     /**
-     * &lt;Product&gt; is the regular edition of which &lt;RelatedProduct&gt; is a prebound edition (inverse of code
-     * 20)
+     * &lt;Product&gt; is the regular edition of which &lt;RelatedProduct&gt; is a prebound edition (inverse of code 20)
      */
     Is_original_of_prebound_edition("21", "Is original of prebound edition"), //
 

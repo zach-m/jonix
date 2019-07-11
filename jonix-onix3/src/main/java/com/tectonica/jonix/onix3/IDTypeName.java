@@ -66,95 +66,122 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyContactIdentifier&gt;</li>
- * <li>&lt;EventSponsorIdentifier&gt;</li>
- * <li>&lt;FundingIdentifier&gt;</li>
- * <li>&lt;ConferenceSponsorIdentifier&gt;</li>
- * <li>&lt;ImprintIdentifier&gt;</li>
- * <li>&lt;LocationIdentifier&gt;</li>
- * <li>&lt;PublisherIdentifier&gt;</li>
- * <li>&lt;SenderIdentifier&gt;</li>
- * <li>&lt;SalesOutletIdentifier&gt;</li>
- * <li>&lt;AddresseeIdentifier&gt;</li>
- * <li>&lt;WorkIdentifier&gt;</li>
- * <li>&lt;AgentIdentifier&gt;</li>
- * <li>&lt;AVItemIdentifier&gt;</li>
- * <li>&lt;ProductIdentifier&gt;</li>
- * <li>&lt;CollectionIdentifier&gt;</li>
- * <li>&lt;NameIdentifier&gt;</li>
- * <li>&lt;ProductContactIdentifier&gt;</li>
- * <li>&lt;CopyrightOwnerIdentifier&gt;</li>
- * <li>&lt;TextItemIdentifier&gt;</li>
- * <li>&lt;RecordSourceIdentifier&gt;</li>
- * <li>&lt;SupplierIdentifier&gt;</li>
- * <li>&lt;PriceIdentifier&gt;</li>
+ * <li>&lt;{@link SupplyContactIdentifier}&gt;</li>
+ * <li>&lt;{@link EventSponsorIdentifier}&gt;</li>
+ * <li>&lt;{@link FundingIdentifier}&gt;</li>
+ * <li>&lt;{@link ConferenceSponsorIdentifier}&gt;</li>
+ * <li>&lt;{@link ImprintIdentifier}&gt;</li>
+ * <li>&lt;{@link LocationIdentifier}&gt;</li>
+ * <li>&lt;{@link PublisherIdentifier}&gt;</li>
+ * <li>&lt;{@link SenderIdentifier}&gt;</li>
+ * <li>&lt;{@link SalesOutletIdentifier}&gt;</li>
+ * <li>&lt;{@link AddresseeIdentifier}&gt;</li>
+ * <li>&lt;{@link WorkIdentifier}&gt;</li>
+ * <li>&lt;{@link AgentIdentifier}&gt;</li>
+ * <li>&lt;{@link AVItemIdentifier}&gt;</li>
+ * <li>&lt;{@link ProductIdentifier}&gt;</li>
+ * <li>&lt;{@link CollectionIdentifier}&gt;</li>
+ * <li>&lt;{@link NameIdentifier}&gt;</li>
+ * <li>&lt;{@link ProductContactIdentifier}&gt;</li>
+ * <li>&lt;{@link CopyrightOwnerIdentifier}&gt;</li>
+ * <li>&lt;{@link TextItemIdentifier}&gt;</li>
+ * <li>&lt;{@link RecordSourceIdentifier}&gt;</li>
+ * <li>&lt;{@link SupplierIdentifier}&gt;</li>
+ * <li>&lt;{@link PriceIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplyContact ⯈ SupplyContactIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventSponsor ⯈ EventSponsorIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Funding ⯈ FundingIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceSponsor ⯈ ConferenceSponsorIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint ⯈ ImprintIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ LocationIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ PublisherIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Header ⯈ Sender ⯈ SenderIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier
- * ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Header ⯈ Addressee ⯈ AddresseeIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedWork ⯈ WorkIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedWork ⯈ WorkIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative ⯈ AgentIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem ⯈ AVItemIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedProduct ⯈ ProductIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedProduct ⯈ ProductIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Tax ⯈ ProductIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Tax ⯈ ProductIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ ComparisonProductPrice ⯈
- * ProductIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ ComparisonProductPrice ⯈ ProductIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ ProductIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈ ProductIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ ProductIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ AlternativeName ⯈ NameIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ AlternativeName ⯈ NameIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ AlternativeName ⯈ NameIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ AlternativeName ⯈ NameIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ AlternativeName ⯈ NameIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ NameIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ NameIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ NameIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ NameIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ NameIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ ProductContactIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact ⯈ ProductContactIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CopyrightOwnerIdentifier ⯈
- * IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextItem ⯈ TextItemIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ RecordSourceIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Supplier ⯈ SupplierIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceIdentifier ⯈ IDTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceIdentifier ⯈ IDTypeName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈
+ * {@link SupplyContactIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventSponsor} ⯈
+ * {@link EventSponsorIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Funding} ⯈
+ * {@link FundingIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
+ * {@link ConferenceSponsor} ⯈ {@link ConferenceSponsorIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈ {@link ImprintIdentifier} ⯈
+ * {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
+ * {@link LocationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈
+ * {@link PublisherIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet}
+ * ⯈ {@link SalesOutletIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction} ⯈
+ * {@link SalesOutlet} ⯈ {@link SalesOutletIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRestriction}
+ * ⯈ {@link SalesOutlet} ⯈ {@link SalesOutletIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedWork} ⯈ {@link WorkIdentifier} ⯈
+ * {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedWork} ⯈
+ * {@link WorkIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link PublisherRepresentative} ⯈ {@link AgentIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈
+ * {@link AVItemIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
+ * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedProduct} ⯈
+ * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedProduct} ⯈
+ * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link Tax} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link Tax} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈
+ * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceCondition} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceCondition} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
+ * {@link CollectionIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName}
+ * ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
+ * {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
+ * {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link NameIdentifier}
+ * ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
+ * {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
+ * {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈
+ * {@link ProductContactIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link ProductContact} ⯈ {@link ProductContactIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈
+ * {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈
+ * {@link TextItemIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RecordSourceIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈
+ * {@link SupplierIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
+ * {@link SupplierIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceIdentifier} ⯈ {@link IDTypeName}</li>
  * </ul>
  */
 public class IDTypeName implements OnixElement<String>, Serializable {

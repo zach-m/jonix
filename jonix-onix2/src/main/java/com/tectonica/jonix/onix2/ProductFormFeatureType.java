@@ -65,15 +65,19 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductFormFeature&gt;</li>
+ * <li>&lt;{@link ProductFormFeature}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductFormFeature ⯈ ProductFormFeatureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductFormFeature ⯈ ProductFormFeatureType</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductFormFeature ⯈ ProductFormFeatureType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductFormFeature} ⯈ {@link ProductFormFeatureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductFormFeature} ⯈
+ * {@link ProductFormFeatureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductFormFeature} ⯈
+ * {@link ProductFormFeatureType}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTypes>, Serializable {
     private static final long serialVersionUID = 1L;

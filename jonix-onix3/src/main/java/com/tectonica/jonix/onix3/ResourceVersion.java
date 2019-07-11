@@ -59,14 +59,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupportingResource&gt;</li>
+ * <li>&lt;{@link SupportingResource}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}
+ * ⯈ {@link ResourceVersion}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceVersion}</li>
  * </ul>
  */
 public class ResourceVersion implements OnixSuperComposite, Serializable {
@@ -149,7 +152,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;ResourceVersion&gt; or &lt;resourceversion&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -174,9 +177,8 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         return resourceForm;
     }
 
-    private ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes>
-        resourceVersionFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature,
+        ResourceVersionFeatureTypes> resourceVersionFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -187,7 +189,9 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes> resourceVersionFeatures() {
+    public
+        ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes>
+        resourceVersionFeatures() {
         _initialize();
         return resourceVersionFeatures;
     }
@@ -209,8 +213,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

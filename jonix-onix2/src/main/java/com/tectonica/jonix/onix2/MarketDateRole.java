@@ -65,13 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MarketDate&gt;</li>
+ * <li>&lt;{@link MarketDate}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketDate ⯈ MarketDateRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link MarketDate} ⯈
+ * {@link MarketDateRole}</li>
  * </ul>
+ *
+ * @since Onix-2.12
  */
 public class MarketDateRole implements OnixElement<PublishingDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;

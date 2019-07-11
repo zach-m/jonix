@@ -62,12 +62,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Series&gt;</li>
+ * <li>&lt;{@link Series}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ TitleOfSeries</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link TitleOfSeries}</li>
  * </ul>
  */
 public class TitleOfSeries implements OnixElement<String>, Serializable {

@@ -34,8 +34,7 @@ import java.io.Serializable;
  * <h1>Affiliation</h1>
  * <p>
  * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>, and – if
- * the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and
- * non-repeating.
+ * the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -66,17 +65,21 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProfessionalAffiliation&gt;</li>
+ * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ ProfessionalAffiliation ⯈
- * Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>
  * </ul>
  */
 public class Affiliation implements OnixElement<String>, Serializable {

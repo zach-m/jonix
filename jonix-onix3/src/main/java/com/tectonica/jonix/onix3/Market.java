@@ -61,12 +61,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductSupply&gt;</li>
+ * <li>&lt;{@link ProductSupply}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market}</li>
  * </ul>
  */
 public class Market implements OnixSuperComposite, Serializable {

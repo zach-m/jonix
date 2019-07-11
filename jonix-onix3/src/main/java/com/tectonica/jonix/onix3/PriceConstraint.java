@@ -62,14 +62,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Price&gt;</li>
+ * <li>&lt;{@link Price}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceConstraint}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceConstraint}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class PriceConstraint implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -147,7 +151,7 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;PriceConstraint&gt; or &lt;priceconstraint&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -188,8 +192,7 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataComposite<PriceConstraintLimit, JonixPriceConstraintLimit> priceConstraintLimits =
-        ListOfOnixDataComposite
-            .empty();
+        ListOfOnixDataComposite.empty();
 
     /**
      * <p>

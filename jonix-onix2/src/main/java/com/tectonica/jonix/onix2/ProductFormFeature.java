@@ -55,17 +55,19 @@ import java.util.Arrays;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContainedItem&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContainedItem}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductFormFeature</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductFormFeature</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductFormFeature</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductFormFeature}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductFormFeature}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductFormFeature}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ProductFormFeature
     implements OnixDataCompositeWithKey<JonixProductFormFeature, ProductFormFeatureTypes>, Serializable {
@@ -153,7 +155,7 @@ public class ProductFormFeature
 
     /**
      * @return whether this tag (&lt;ProductFormFeature&gt; or &lt;productformfeature&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

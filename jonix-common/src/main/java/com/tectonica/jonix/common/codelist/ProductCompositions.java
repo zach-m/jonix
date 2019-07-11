@@ -37,8 +37,9 @@ interface CodeList2 {
  * Description: Product composition
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist2">ONIX
- * Codelist 2 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist2">ONIX
+ *      Codelist 2 in Reference Guide</a>
  */
 public enum ProductCompositions implements OnixCodelist, CodeList2 {
     Single_component_retail_product("00", "Single-component retail product"), //
@@ -52,8 +53,7 @@ public enum ProductCompositions implements OnixCodelist, CodeList2 {
      * Used only when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed
      * as such
      */
-    Multiple_item_collection_retailed_as_separate_parts("11",
-        "Multiple-item collection, retailed as separate parts"), //
+    Multiple_item_collection_retailed_as_separate_parts("11", "Multiple-item collection, retailed as separate parts"), //
 
     /**
      * Product available to the book trade, but not for retail sale, and not carrying retail items, eg empty dumpbin,

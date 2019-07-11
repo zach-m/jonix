@@ -56,12 +56,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PublishingDetail&gt;</li>
+ * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint}</li>
  * </ul>
  */
 public class Imprint implements OnixSuperComposite, Serializable {
@@ -146,9 +146,8 @@ public class Imprint implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameIdentifierTypes>
-        imprintIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier,
+        NameIdentifierTypes> imprintIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -158,7 +157,8 @@ public class Imprint implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameIdentifierTypes> imprintIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameIdentifierTypes>
+        imprintIdentifiers() {
         _initialize();
         return imprintIdentifiers;
     }

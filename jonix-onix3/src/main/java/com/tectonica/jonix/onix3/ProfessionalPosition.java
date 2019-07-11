@@ -67,19 +67,21 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProfessionalAffiliation&gt;</li>
+ * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ ProfessionalAffiliation ⯈
- * ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ ProfessionalAffiliation ⯈
- * ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ ProfessionalAffiliation ⯈
- * ProfessionalPosition</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
  * </ul>
  */
 public class ProfessionalPosition implements OnixElement<String>, Serializable {

@@ -65,13 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;FundingIdentifier&gt;</li>
+ * <li>&lt;{@link FundingIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Funding ⯈ FundingIdentifier ⯈ FundingIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Funding} ⯈
+ * {@link FundingIdentifier} ⯈ {@link FundingIDType}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class FundingIDType implements OnixElement<GrantIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

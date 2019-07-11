@@ -37,8 +37,9 @@ interface CodeList217 {
  * Description: Price identifier type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist217">ONIX
- * Codelist 217 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist217">ONIX
+ *      Codelist 217 in Reference Guide</a>
  */
 public enum PriceIdentifierTypes implements OnixCodelist, CodeList217 {
     /**
@@ -54,8 +55,7 @@ public enum PriceIdentifierTypes implements OnixCodelist, CodeList217 {
 
     /**
      * Proprietary identifier uniquely identifies price type, qualifier and any constraints and conditions. Two
-     * unrelated products with the same price type carry the same identifier, though their price points may be
-     * different
+     * unrelated products with the same price type carry the same identifier, though their price points may be different
      */
     Proprietary_price_type_identifier("03", "Proprietary price type identifier"), //
 

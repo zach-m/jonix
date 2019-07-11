@@ -55,12 +55,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Collection&gt;</li>
+ * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
+ * {@link CollectionIdentifier}</li>
  * </ul>
  */
 public class CollectionIdentifier
@@ -140,7 +141,7 @@ public class CollectionIdentifier
 
     /**
      * @return whether this tag (&lt;CollectionIdentifier&gt; or &lt;collectionidentifier&gt;) is explicitly provided in
-     * the ONIX XML
+     *         the ONIX XML
      */
     @Override
     public boolean exists() {

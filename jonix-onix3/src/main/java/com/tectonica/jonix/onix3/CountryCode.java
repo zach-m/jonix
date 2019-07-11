@@ -67,17 +67,21 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContributorPlace&gt;</li>
- * <li>&lt;Language&gt;</li>
+ * <li>&lt;{@link ContributorPlace}&gt;</li>
+ * <li>&lt;{@link Language}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ ContributorPlace ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ ContributorPlace ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ ContributorPlace ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Language ⯈ CountryCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Language ⯈ CountryCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
+ * {@link ContributorPlace} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ContributorPlace} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link ContributorPlace} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Language} ⯈ {@link CountryCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Language} ⯈
+ * {@link CountryCode}</li>
  * </ul>
  */
 public class CountryCode implements OnixElement<Countrys>, Serializable {

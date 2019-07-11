@@ -58,14 +58,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
- * <li>&lt;Reissue&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
+ * <li>&lt;{@link Reissue}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price}</li>
  * </ul>
  */
 public class Price implements OnixSuperComposite, Serializable {
@@ -379,9 +379,8 @@ public class Price implements OnixSuperComposite, Serializable {
         return bicDiscountGroupCode;
     }
 
-    private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>

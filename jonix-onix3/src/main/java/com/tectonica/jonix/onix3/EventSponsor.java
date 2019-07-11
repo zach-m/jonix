@@ -57,13 +57,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Event&gt;</li>
+ * <li>&lt;{@link Event}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventSponsor</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventSponsor}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class EventSponsor implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -151,9 +153,8 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<EventSponsorIdentifier, JonixEventSponsorIdentifier, NameIdentifierTypes>
-        eventSponsorIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<EventSponsorIdentifier, JonixEventSponsorIdentifier,
+        NameIdentifierTypes> eventSponsorIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -162,7 +163,8 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<EventSponsorIdentifier, JonixEventSponsorIdentifier, NameIdentifierTypes> eventSponsorIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<EventSponsorIdentifier, JonixEventSponsorIdentifier, NameIdentifierTypes>
+        eventSponsorIdentifiers() {
         _initialize();
         return eventSponsorIdentifiers;
     }

@@ -59,22 +59,21 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ReviewQuote&gt;Norman Schur is without doubt the outstanding authority on the similarities and
- * differences between British and American English. BRITISH ENGLISH, A TO ZED attests not only to his expertise, but
- * also to his undiminished powers to inform, amuse and entertain. - Laurence Urdang, Editor, VERBATIM, The Language
- * Quarterly, Spring 1992&lt;/ReviewQuote&gt;</tt></td>
+ * <td><tt>&lt;ReviewQuote&gt;Norman Schur is without doubt the outstanding authority on the similarities and differences between British and American English. BRITISH ENGLISH, A TO ZED attests not only to his expertise, but also to his undiminished powers to inform, amuse and entertain. - Laurence Urdang, Editor, VERBATIM, The Language Quarterly, Spring 1992&lt;/ReviewQuote&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ReviewQuote</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ReviewQuote}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ReviewQuote implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

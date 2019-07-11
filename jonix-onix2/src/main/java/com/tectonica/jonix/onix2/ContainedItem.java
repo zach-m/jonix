@@ -69,12 +69,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem}</li>
  * </ul>
  */
 public class ContainedItem implements OnixSuperComposite, Serializable {
@@ -241,8 +241,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return ean13;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -286,8 +285,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return productFormDetails;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
-        productFormFeatures = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**

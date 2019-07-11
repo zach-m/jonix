@@ -51,13 +51,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Conference&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceSponsor</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -144,7 +146,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;ConferenceSponsor&gt; or &lt;conferencesponsor&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

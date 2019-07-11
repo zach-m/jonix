@@ -62,20 +62,21 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x516 language=&quot;fre&quot;&gt;Conf&#233;rences des Nations unies sur les changements
- * climatiques&lt;/x516&gt; (United Nations Climate Change Conference)</tt></td>
+ * <td><tt>&lt;x516 language=&quot;fre&quot;&gt;Conf&#233;rences des Nations unies sur les changements climatiques&lt;/x516&gt; (United Nations Climate Change Conference)</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Event&gt;</li>
+ * <li>&lt;{@link Event}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventName}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class EventName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -65,16 +65,19 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductIdentifier&gt;</li>
+ * <li>&lt;{@link ProductIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier ⯈ ProductIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductIdentifier ⯈ ProductIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ ProductIdentifier ⯈ ProductIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductIdentifier ⯈ ProductIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ ProductIdentifier ⯈ ProductIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductIdentifier} ⯈
+ * {@link ProductIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link ProductIdentifier} ⯈
+ * {@link ProductIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductIdentifier} ⯈
+ * {@link ProductIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
  * </ul>
  */
 public class ProductIDType implements OnixElement<ProductIdentifierTypes>, Serializable {

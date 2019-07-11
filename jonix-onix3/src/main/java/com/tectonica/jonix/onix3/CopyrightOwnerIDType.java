@@ -65,13 +65,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;CopyrightOwnerIdentifier&gt;</li>
+ * <li>&lt;{@link CopyrightOwnerIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CopyrightOwnerIdentifier ⯈
- * CopyrightOwnerIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈
+ * {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier} ⯈ {@link CopyrightOwnerIDType}</li>
  * </ul>
  */
 public class CopyrightOwnerIDType implements OnixElement<NameIdentifierTypes>, Serializable {

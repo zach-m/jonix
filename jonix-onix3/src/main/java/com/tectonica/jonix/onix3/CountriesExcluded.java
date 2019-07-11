@@ -68,24 +68,36 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Territory&gt;</li>
+ * <li>&lt;{@link Territory}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ Territory ⯈
- * CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Territory ⯈ CountriesExcluded</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ Territory ⯈ CountriesExcluded</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}
+ * ⯈ {@link Territory} ⯈ {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link Territory}
+ * ⯈ {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
+ * {@link Territory} ⯈ {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link Territory} ⯈
+ * {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
+ * {@link Territory} ⯈ {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈ {@link Territory} ⯈
+ * {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link Territory} ⯈
+ * {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link Territory} ⯈ {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link Territory} ⯈ {@link CountriesExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link Territory} ⯈
+ * {@link CountriesExcluded}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class CountriesExcluded implements OnixElement<java.util.Set<Countrys>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -141,9 +153,8 @@ public class CountriesExcluded implements OnixElement<java.util.Set<Countrys>>, 
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +")) {
+        for (String split : JPU.getContentAsString(element).trim().split(" +"))
             value.add(Countrys.byCode(split));
-        }
     }
 
     /**

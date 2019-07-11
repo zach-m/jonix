@@ -39,8 +39,9 @@ interface CodeList243 {
  * Jonix-Comment: Introduced in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist243">ONIX
- * Codelist 243 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist243">ONIX
+ *      Codelist 243 in Reference Guide</a>
  */
 public enum DangerousGoodsRegulationss implements OnixCodelist, CodeList243 {
     /**

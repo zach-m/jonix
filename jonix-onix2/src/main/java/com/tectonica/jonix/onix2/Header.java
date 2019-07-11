@@ -59,12 +59,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ONIXMessage&gt;</li>
+ * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header}</li>
  * </ul>
  */
 public class Header implements OnixHeader, Serializable {
@@ -239,8 +239,7 @@ public class Header implements OnixHeader, Serializable {
     /**
      * <p>
      * An EAN location number which identifies the sender of an ONIX message. Optional and non-repeating; but either the
-     * &lt;FromCompany&gt; element or a sender identifier using one or more elements from MH.1 to MH.5 must be
-     * included.
+     * &lt;FromCompany&gt; element or a sender identifier using one or more elements from MH.1 to MH.5 must be included.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -264,8 +263,7 @@ public class Header implements OnixHeader, Serializable {
         return fromSAN;
     }
 
-    private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes>
-        senderIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes> senderIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -362,8 +360,7 @@ public class Header implements OnixHeader, Serializable {
         return toSAN;
     }
 
-    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes>
-        addresseeIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes> addresseeIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**

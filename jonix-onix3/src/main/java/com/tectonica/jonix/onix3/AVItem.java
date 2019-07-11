@@ -58,13 +58,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem}</li>
  * </ul>
+ *
+ * @since Onix-3.05
  */
 public class AVItem implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -170,9 +172,8 @@ public class AVItem implements OnixSuperComposite, Serializable {
         return avItemType;
     }
 
-    private ListOfOnixDataCompositeWithKey<AVItemIdentifier, JonixAVItemIdentifier, AvItemIdentifierTypes>
-        avItemIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<AVItemIdentifier, JonixAVItemIdentifier,
+        AvItemIdentifierTypes> avItemIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -182,7 +183,8 @@ public class AVItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<AVItemIdentifier, JonixAVItemIdentifier, AvItemIdentifierTypes> avItemIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<AVItemIdentifier, JonixAVItemIdentifier, AvItemIdentifierTypes>
+        avItemIdentifiers() {
         _initialize();
         return avItemIdentifiers;
     }

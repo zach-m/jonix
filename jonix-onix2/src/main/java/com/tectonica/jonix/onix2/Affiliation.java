@@ -64,23 +64,30 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProfessionalAffiliation&gt;</li>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Affiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Affiliation</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
+ * {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
+ * {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
+ * {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
+ * {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Affiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Affiliation}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class Affiliation implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

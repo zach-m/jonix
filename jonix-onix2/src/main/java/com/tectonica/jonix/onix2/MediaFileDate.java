@@ -61,15 +61,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MediaFile&gt;</li>
+ * <li>&lt;{@link MediaFile}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MediaFile ⯈ MediaFileDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ MediaFile ⯈ MediaFileDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ MediaFile ⯈ MediaFileDate</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MediaFile} ⯈ {@link MediaFileDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link MediaFile} ⯈ {@link MediaFileDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link MediaFile} ⯈
+ * {@link MediaFileDate}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class MediaFileDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -55,16 +55,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;MainSeriesRecord&gt;</li>
- * <li>&lt;Series&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link MainSeriesRecord}&gt;</li>
+ * <li>&lt;{@link Series}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SeriesIdentifier</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ SeriesIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ SeriesIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link SeriesIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link SeriesIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link SeriesIdentifier}</li>
  * </ul>
  */
 public class SeriesIdentifier
@@ -153,7 +153,7 @@ public class SeriesIdentifier
 
     /**
      * @return whether this tag (&lt;SeriesIdentifier&gt; or &lt;seriesidentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

@@ -54,12 +54,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplierOwnCoding</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈
+ * {@link SupplierOwnCoding}</li>
  * </ul>
  */
 public class SupplierOwnCoding
@@ -139,7 +140,7 @@ public class SupplierOwnCoding
 
     /**
      * @return whether this tag (&lt;SupplierOwnCoding&gt; or &lt;supplierowncoding&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

@@ -39,8 +39,7 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested maximum
- * length
+ * <td>Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested maximum length
  * 7 characters</td>
  * </tr>
  * <tr>
@@ -63,12 +62,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductClassification&gt;</li>
+ * <li>&lt;{@link ProductClassification}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductClassification ⯈ Percent</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductClassification} ⯈
+ * {@link Percent}</li>
  * </ul>
  */
 public class Percent implements OnixElement<Double>, Serializable {

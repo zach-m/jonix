@@ -65,12 +65,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock}</li>
  * </ul>
  */
 public class Stock implements OnixSuperComposite, Serializable {
@@ -187,9 +187,8 @@ public class Stock implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier, SupplierIdentifierTypes>
-        locationIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier,
+        SupplierIdentifierTypes> locationIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -199,7 +198,8 @@ public class Stock implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier, SupplierIdentifierTypes> locationIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier, SupplierIdentifierTypes>
+        locationIdentifiers() {
         _initialize();
         return locationIdentifiers;
     }
@@ -220,9 +220,8 @@ public class Stock implements OnixSuperComposite, Serializable {
         return locationNames;
     }
 
-    private ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes>
-        stockQuantityCodeds = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded,
+        StockQuantityCodeTypes> stockQuantityCodeds = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -233,7 +232,8 @@ public class Stock implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes> stockQuantityCodeds() {
+    public ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes>
+        stockQuantityCodeds() {
         _initialize();
         return stockQuantityCodeds;
     }

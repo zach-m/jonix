@@ -64,16 +64,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ SequenceNumber</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ SequenceNumber</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ SequenceNumber</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ SequenceNumber</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ SequenceNumber</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link SequenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link SequenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link SequenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link SequenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link SequenceNumber}</li>
  * </ul>
  */
 public class SequenceNumber implements OnixElement<String>, Serializable {

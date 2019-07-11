@@ -52,12 +52,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Imprint</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Imprint}</li>
  * </ul>
  */
 public class Imprint implements OnixDataCompositeUncommon, Serializable {
@@ -179,8 +179,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
     /**
      * <p>
      * An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt; element is taken.
-     * Optional and non-repeating, but mandatory if the &lt;Imprint&gt; composite does not carry an
-     * &lt;ImprintName&gt;.
+     * Optional and non-repeating, but mandatory if the &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;.
      * </p>
      * Jonix-Comment: this field is required
      */

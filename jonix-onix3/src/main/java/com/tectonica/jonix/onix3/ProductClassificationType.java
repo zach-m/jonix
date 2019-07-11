@@ -65,12 +65,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductClassification&gt;</li>
+ * <li>&lt;{@link ProductClassification}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductClassification ⯈ ProductClassificationType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductClassification} ⯈
+ * {@link ProductClassificationType}</li>
  * </ul>
  */
 public class ProductClassificationType implements OnixElement<ProductClassificationTypes>, Serializable {
@@ -131,7 +132,7 @@ public class ProductClassificationType implements OnixElement<ProductClassificat
 
     /**
      * @return whether this tag (&lt;ProductClassificationType&gt; or &lt;b274&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

@@ -37,8 +37,9 @@ interface CodeList157 {
  * Description: Content source type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist157">ONIX
- * Codelist 157 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist157">ONIX
+ *      Codelist 157 in Reference Guide</a>
  */
 public enum ContentSourceTypes implements OnixCodelist, CodeList157 {
     Printed_media("01", "Printed media"), //

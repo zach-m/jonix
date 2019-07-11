@@ -55,18 +55,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;MainSeriesRecord&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Publisher</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher}</li>
  * </ul>
  */
 public class Publisher implements OnixSuperComposite, Serializable {

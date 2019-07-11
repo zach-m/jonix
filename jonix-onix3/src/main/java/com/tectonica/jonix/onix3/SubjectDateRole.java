@@ -65,14 +65,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SubjectDate&gt;</li>
+ * <li>&lt;{@link SubjectDate}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject ⯈ SubjectDate ⯈ SubjectDateRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject ⯈ SubjectDate ⯈ SubjectDateRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈ {@link SubjectDate} ⯈
+ * {@link SubjectDateRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
+ * {@link SubjectDate} ⯈ {@link SubjectDateRole}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class SubjectDateRole implements OnixElement<PersonOrganizationDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;

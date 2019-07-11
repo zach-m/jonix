@@ -70,12 +70,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ONIXMessage&gt;</li>
+ * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product}</li>
  * </ul>
  */
 public class Product implements OnixProduct, Serializable {
@@ -279,9 +279,8 @@ public class Product implements OnixProduct, Serializable {
         return recordSourceType;
     }
 
-    private ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes>
-        recordSourceIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier,
+        NameIdentifierTypes> recordSourceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -290,7 +289,8 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes> recordSourceIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes>
+        recordSourceIdentifiers() {
         _initialize();
         return recordSourceIdentifiers;
     }
@@ -309,9 +309,8 @@ public class Product implements OnixProduct, Serializable {
         return recordSourceName;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
+        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -340,7 +339,8 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers() {
         _initialize();
         return productIdentifiers;
     }

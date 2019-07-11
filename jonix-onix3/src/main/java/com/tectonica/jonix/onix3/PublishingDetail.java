@@ -60,12 +60,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail}</li>
  * </ul>
  */
 public class PublishingDetail implements OnixSuperComposite, Serializable {
@@ -184,7 +184,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;PublishingDetail&gt; or &lt;publishingdetail&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {
@@ -313,8 +313,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<PublishingDate, JonixPublishingDate, PublishingDateRoles> publishingDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

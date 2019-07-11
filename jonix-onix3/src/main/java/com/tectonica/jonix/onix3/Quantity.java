@@ -61,26 +61,28 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Discount&gt;</li>
- * <li>&lt;PriceConstraintLimit&gt;</li>
- * <li>&lt;PriceConditionQuantity&gt;</li>
- * <li>&lt;EpubUsageLimit&gt;</li>
+ * <li>&lt;{@link Discount}&gt;</li>
+ * <li>&lt;{@link PriceConstraintLimit}&gt;</li>
+ * <li>&lt;{@link PriceConditionQuantity}&gt;</li>
+ * <li>&lt;{@link EpubUsageLimit}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ Discount ⯈ Quantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ Discount ⯈ Quantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit
- * ⯈
- * Quantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceConstraint ⯈ PriceConstraintLimit ⯈
- * Quantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity
- * ⯈ Quantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ PriceCondition ⯈ PriceConditionQuantity ⯈
- * Quantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint ⯈ EpubUsageLimit ⯈ Quantity</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link Discount} ⯈ {@link Quantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link Discount} ⯈ {@link Quantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceConstraint} ⯈ {@link PriceConstraintLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceConstraint} ⯈ {@link PriceConstraintLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link Quantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link Quantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈
+ * {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
  * </ul>
  */
 public class Quantity implements OnixElement<Double>, Serializable {

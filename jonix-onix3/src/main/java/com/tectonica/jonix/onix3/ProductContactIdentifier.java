@@ -55,14 +55,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductContact&gt;</li>
+ * <li>&lt;{@link ProductContact}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact ⯈ ProductContactIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact ⯈ ProductContactIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈
+ * {@link ProductContactIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link ProductContact} ⯈ {@link ProductContactIdentifier}</li>
  * </ul>
+ *
+ * @since Onix-3.01
  */
 public class ProductContactIdentifier
     implements OnixDataCompositeWithKey<JonixProductContactIdentifier, NameIdentifierTypes>, Serializable {
@@ -141,7 +145,7 @@ public class ProductContactIdentifier
 
     /**
      * @return whether this tag (&lt;ProductContactIdentifier&gt; or &lt;productcontactidentifier&gt;) is explicitly
-     * provided in the ONIX XML
+     *         provided in the ONIX XML
      */
     @Override
     public boolean exists() {

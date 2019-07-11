@@ -53,13 +53,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Price&gt;</li>
+ * <li>&lt;{@link Price}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ BatchBonus</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ BatchBonus</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link BatchBonus}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link BatchBonus}</li>
  * </ul>
  */
 public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializable {
@@ -163,8 +165,7 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
     /**
      * <p>
      * The number of free copies which will be supplied with an order for the batch quantity specified in the
-     * &lt;BatchQuantity&gt; field. Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and
-     * non-repeating.
+     * &lt;BatchQuantity&gt; field. Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and non-repeating.
      * </p>
      * Jonix-Comment: this field is required
      */

@@ -55,13 +55,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Stock&gt;</li>
+ * <li>&lt;{@link Stock}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ StockQuantityCoded</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link StockQuantityCoded}</li>
  * </ul>
+ *
+ * @since Onix-2.13
  */
 public class StockQuantityCoded
     implements OnixDataCompositeWithKey<JonixStockQuantityCoded, StockQuantityCodeTypes>, Serializable {
@@ -149,7 +151,7 @@ public class StockQuantityCoded
 
     /**
      * @return whether this tag (&lt;StockQuantityCoded&gt; or &lt;stockquantitycoded&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

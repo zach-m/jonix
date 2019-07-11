@@ -65,12 +65,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;RecordSourceIdentifier&gt;</li>
+ * <li>&lt;{@link RecordSourceIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ RecordSourceIdentifier ⯈ RecordSourceIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RecordSourceIdentifier} ⯈ {@link RecordSourceIDType}</li>
  * </ul>
  */
 public class RecordSourceIDType implements OnixElement<NameIdentifierTypes>, Serializable {

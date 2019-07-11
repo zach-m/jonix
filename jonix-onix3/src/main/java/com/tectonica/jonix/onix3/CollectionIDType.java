@@ -65,12 +65,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;CollectionIdentifier&gt;</li>
+ * <li>&lt;{@link CollectionIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionIdentifier ⯈ CollectionIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
+ * {@link CollectionIdentifier} ⯈ {@link CollectionIDType}</li>
  * </ul>
  */
 public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {

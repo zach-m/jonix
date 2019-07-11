@@ -56,12 +56,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AudienceRange</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AudienceRange}</li>
  * </ul>
  */
 public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Serializable {
@@ -166,8 +166,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
     }
 
     private ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions =
-        ListOfOnixElement
-            .empty();
+        ListOfOnixElement.empty();
 
     /**
      * <p>

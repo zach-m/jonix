@@ -37,8 +37,9 @@ interface CodeList215 {
  * Description: Proximity
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist215">ONIX
- * Codelist 215 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist215">ONIX
+ *      Codelist 215 in Reference Guide</a>
  */
 public enum Proximitys implements OnixCodelist, CodeList215 {
     Less_than("01", "Less than"), //

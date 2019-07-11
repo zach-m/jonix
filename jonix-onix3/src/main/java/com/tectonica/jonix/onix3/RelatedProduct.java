@@ -58,15 +58,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;RelatedMaterial&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link RelatedMaterial}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedMaterial ⯈ RelatedProduct</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ RelatedProduct</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedProduct}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedProduct}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class RelatedProduct implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -148,7 +150,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;RelatedProduct&gt; or &lt;relatedproduct&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -174,9 +176,8 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return productRelationCodes;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
+        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -186,7 +187,8 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers() {
         _initialize();
         return productIdentifiers;
     }

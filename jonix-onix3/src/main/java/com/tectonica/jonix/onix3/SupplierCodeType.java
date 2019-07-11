@@ -65,12 +65,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplierOwnCoding&gt;</li>
+ * <li>&lt;{@link SupplierOwnCoding}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplierOwnCoding ⯈ SupplierCodeType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplierOwnCoding}
+ * ⯈ {@link SupplierCodeType}</li>
  * </ul>
  */
 public class SupplierCodeType implements OnixElement<SupplierOwnCodeTypes>, Serializable {

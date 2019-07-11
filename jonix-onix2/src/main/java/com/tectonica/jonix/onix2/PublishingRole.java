@@ -65,15 +65,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Publisher&gt;</li>
+ * <li>&lt;{@link Publisher}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ PublishingRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ PublishingRole</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ PublishingRole</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ PublishingRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link PublishingRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link PublishingRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link PublishingRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link PublishingRole}</li>
  * </ul>
  */
 public class PublishingRole implements OnixElement<PublishingRoles>, Serializable {

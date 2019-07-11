@@ -57,14 +57,14 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject}</li>
  * </ul>
  */
 public class PersonAsSubject implements OnixSuperComposite, Serializable {
@@ -188,7 +188,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;PersonAsSubject&gt; or &lt;personassubject&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -273,8 +273,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
-     * <em>ie</em> the name elements normally used to open an entry in an alphabetical list, <em>eg</em> Smith or
-     * Garcia
+     * <em>ie</em> the name elements normally used to open an entry in an alphabetical list, <em>eg</em> Smith or Garcia
      * Marquez or Madonna or Francis de Sales (in Saint Francis de Sales). Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
@@ -355,8 +354,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
         return names;
     }
 
-    private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes>
-        personNameIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**

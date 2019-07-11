@@ -65,13 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Velocity&gt;</li>
+ * <li>&lt;{@link Velocity}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Velocity ⯈ VelocityMetric</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
+ * {@link Velocity} ⯈ {@link VelocityMetric}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class VelocityMetric implements OnixElement<VelocityMetrics>, Serializable {
     private static final long serialVersionUID = 1L;

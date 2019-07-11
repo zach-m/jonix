@@ -73,15 +73,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;NotForSale&gt;</li>
- * <li>&lt;SalesRights&gt;</li>
+ * <li>&lt;{@link NotForSale}&gt;</li>
+ * <li>&lt;{@link SalesRights}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ RightsTerritory</li>
- * <li>ONIXMessage ⯈ Product ⯈ SalesRights ⯈ RightsTerritory</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link RightsTerritory}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SalesRights} ⯈ {@link RightsTerritory}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -146,9 +148,8 @@ public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Ser
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +")) {
+        for (String split : JPU.getContentAsString(element).trim().split(" +"))
             value.add(Regions.byCode(split));
-        }
     }
 
     /**

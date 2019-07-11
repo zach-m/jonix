@@ -58,12 +58,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MarketPublishingDetail&gt;</li>
+ * <li>&lt;{@link MarketPublishingDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ PublisherRepresentative</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link PublisherRepresentative}</li>
  * </ul>
  */
 public class PublisherRepresentative implements OnixSuperComposite, Serializable {
@@ -158,7 +159,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
     /**
      * @return whether this tag (&lt;PublisherRepresentative&gt; or &lt;publisherrepresentative&gt;) is explicitly
-     * provided in the ONIX XML
+     *         provided in the ONIX XML
      */
     @Override
     public boolean exists() {
@@ -184,9 +185,8 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
         return agentRole;
     }
 
-    private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes>
-        agentIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier,
+        SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -197,7 +197,8 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes>
+        agentIdentifiers() {
         _initialize();
         return agentIdentifiers;
     }

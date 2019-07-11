@@ -67,15 +67,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;OtherText&gt;</li>
+ * <li>&lt;{@link OtherText}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextFormat</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ TextFormat</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ TextFormat</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ TextFormat</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link OtherText} ⯈ {@link TextFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText} ⯈ {@link TextFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextFormat}</li>
  * </ul>
  */
 public class TextFormat implements OnixElement<TextFormats>, Serializable {

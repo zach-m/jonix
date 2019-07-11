@@ -35,14 +35,12 @@ import java.io.Serializable;
  * <p>
  * A URL which provides a link to cited content which is accessible in digital form. Optional, and repeatable if the
  * resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a cited resource is available in
- * multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i>
- * attribute.
+ * multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i> attribute.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum
- * length
+ * <td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum length
  * 300 characters</td>
  * </tr>
  * <tr>
@@ -69,18 +67,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;CitedContent&gt;</li>
- * <li>&lt;ResourceVersion&gt;</li>
+ * <li>&lt;{@link CitedContent}&gt;</li>
+ * <li>&lt;{@link ResourceVersion}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ CitedContent ⯈ ResourceLink</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ CitedContent ⯈ ResourceLink</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceLink</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ SupportingResource ⯈ ResourceVersion ⯈ ResourceLink</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ SupportingResource ⯈ ResourceVersion ⯈
- * ResourceLink</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
+ * {@link ResourceLink}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈
+ * {@link ResourceLink}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}
+ * ⯈ {@link ResourceVersion} ⯈ {@link ResourceLink}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link ResourceLink}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ResourceLink}</li>
  * </ul>
  */
 public class ResourceLink implements OnixElement<String>, Serializable {

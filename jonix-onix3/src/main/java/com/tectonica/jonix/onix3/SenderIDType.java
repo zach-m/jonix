@@ -65,12 +65,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SenderIdentifier&gt;</li>
+ * <li>&lt;{@link SenderIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header ⯈ Sender ⯈ SenderIdentifier ⯈ SenderIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier} ⯈ {@link SenderIDType}</li>
  * </ul>
  */
 public class SenderIDType implements OnixElement<NameIdentifierTypes>, Serializable {

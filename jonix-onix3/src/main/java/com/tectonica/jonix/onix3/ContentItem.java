@@ -62,12 +62,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContentDetail&gt;</li>
+ * <li>&lt;{@link ContentDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem}</li>
  * </ul>
  */
 public class ContentItem implements OnixSuperComposite, Serializable {
@@ -268,8 +268,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The generic name (if any) which is given in the product to the type of section which the content item
-     * represents,
+     * The generic name (if any) which is given in the product to the type of section which the content item represents,
      * <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
      * &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the &lt;ContentItem&gt;.
      * </p>
@@ -361,8 +360,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

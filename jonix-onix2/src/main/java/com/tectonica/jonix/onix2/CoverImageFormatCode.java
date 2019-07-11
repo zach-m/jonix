@@ -43,8 +43,7 @@ import java.io.Serializable;
  * be present.
  * </p>
  * <p>
- * <strong>The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover images,
- * and
+ * <strong>The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover images, and
  * is to be preferred.</strong>
  * </p>
  * <table border='1' cellpadding='3'>
@@ -72,13 +71,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ CoverImageFormatCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CoverImageFormatCode}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class CoverImageFormatCode implements OnixElement<FrontCoverImageFileFormats>, Serializable {
     private static final long serialVersionUID = 1L;

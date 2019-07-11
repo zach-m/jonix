@@ -38,8 +38,7 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Permitted formats, where 'T' and 'Z' represent themselves (ie the letters T and Z), and where the symbol
- * '&#177;'
+ * <td>Permitted formats, where 'T' and 'Z' represent themselves (ie the letters T and Z), and where the symbol '&#177;'
  * represents either '+' or '-' to indicate a timezone offset from UTC. YYYYMMDD Date only YYYYMMDDThhmm Date and time
  * (local time of sender) YYYYMMDDThhmmZ Universal time (UTC) &#8224; YYYYMMDDThhmm&#177;hhmm With time zone offset from
  * UTC &#8224; YYYYMMDDThhmmss Date and time (with seconds) YYYYMMDDThhmmssZ Universal time (with seconds)
@@ -70,12 +69,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Header&gt;</li>
+ * <li>&lt;{@link Header}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header ⯈ SentDateTime</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link SentDateTime}</li>
  * </ul>
  */
 public class SentDateTime implements OnixElement<String>, Serializable {

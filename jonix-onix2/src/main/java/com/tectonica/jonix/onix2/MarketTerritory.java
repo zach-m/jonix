@@ -73,13 +73,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MarketRepresentation&gt;</li>
+ * <li>&lt;{@link MarketRepresentation}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketTerritory</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link MarketTerritory}</li>
  * </ul>
+ *
+ * @since Onix-2.12
  */
 public class MarketTerritory implements OnixElement<java.util.Set<String>>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -150,9 +152,8 @@ public class MarketTerritory implements OnixElement<java.util.Set<String>>, Seri
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +")) {
+        for (String split : JPU.getContentAsString(element).trim().split(" +"))
             value.add(String.valueOf(split));
-        }
     }
 
     /**

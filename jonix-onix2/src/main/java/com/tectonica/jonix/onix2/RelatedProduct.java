@@ -72,12 +72,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct}</li>
  * </ul>
  */
 public class RelatedProduct implements OnixSuperComposite, Serializable {
@@ -241,7 +241,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;RelatedProduct&gt; or &lt;relatedproduct&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -295,8 +295,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return ean13;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -355,8 +354,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return productFormDetails;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
-        productFormFeatures = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**

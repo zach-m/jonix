@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage</li>
+ * <li>{@link ONIXMessage}</li>
  * </ul>
  */
 public class ONIXMessage implements OnixSuperComposite, Serializable {

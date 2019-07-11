@@ -38,8 +38,7 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Positive or negative integer or zero, suggested maximum length 7 digits. Negative numbers indicate returns
- * exceed
+ * <td>Positive or negative integer or zero, suggested maximum length 7 digits. Negative numbers indicate returns exceed
  * the fulfillment rate</td>
  * </tr>
  * <tr>
@@ -62,13 +61,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Velocity&gt;</li>
+ * <li>&lt;{@link Velocity}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Velocity ⯈ Rate</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
+ * {@link Velocity} ⯈ {@link Rate}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class Rate implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;

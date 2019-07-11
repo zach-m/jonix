@@ -55,13 +55,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Funding&gt;</li>
+ * <li>&lt;{@link Funding}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Publisher ⯈ Funding ⯈ FundingIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Funding} ⯈
+ * {@link FundingIdentifier}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class FundingIdentifier
     implements OnixDataCompositeWithKey<JonixFundingIdentifier, GrantIdentifierTypes>, Serializable {
@@ -140,7 +143,7 @@ public class FundingIdentifier
 
     /**
      * @return whether this tag (&lt;FundingIdentifier&gt; or &lt;fundingidentifier&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

@@ -64,17 +64,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Title&gt;</li>
+ * <li>&lt;{@link Title}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ AbbreviatedLength</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ AbbreviatedLength</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ AbbreviatedLength</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ AbbreviatedLength</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ AbbreviatedLength</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ AbbreviatedLength</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Title} ⯈ {@link AbbreviatedLength}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Title} ⯈ {@link AbbreviatedLength}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link Title} ⯈ {@link AbbreviatedLength}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Title} ⯈ {@link AbbreviatedLength}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Title} ⯈ {@link AbbreviatedLength}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Title} ⯈ {@link AbbreviatedLength}</li>
  * </ul>
  */
 public class AbbreviatedLength implements OnixElement<String>, Serializable {

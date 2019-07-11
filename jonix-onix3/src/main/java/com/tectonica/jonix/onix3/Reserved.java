@@ -60,13 +60,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Stock&gt;</li>
+ * <li>&lt;{@link Stock}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Reserved</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
+ * {@link Reserved}</li>
  * </ul>
+ *
+ * @since Onix-3.04
  */
 public class Reserved implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;

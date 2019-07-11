@@ -59,14 +59,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;Series&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link Series}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ NumberWithinSeries</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ NumberWithinSeries</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link NumberWithinSeries}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link NumberWithinSeries}</li>
  * </ul>
  */
 public class NumberWithinSeries implements OnixElement<String>, Serializable {

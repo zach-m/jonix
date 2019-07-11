@@ -71,12 +71,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MainSubject&gt;</li>
+ * <li>&lt;{@link MainSubject}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MainSubject ⯈ MainSubjectSchemeIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MainSubject} ⯈ {@link MainSubjectSchemeIdentifier}</li>
  * </ul>
  */
 public class MainSubjectSchemeIdentifier implements OnixElement<MainSubjectSchemeIdentifiers>, Serializable {
@@ -146,7 +146,7 @@ public class MainSubjectSchemeIdentifier implements OnixElement<MainSubjectSchem
 
     /**
      * @return whether this tag (&lt;MainSubjectSchemeIdentifier&gt; or &lt;b191&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

@@ -69,16 +69,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ContributorRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ ContributorRole</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ ContributorRole</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ ContributorRole</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ ContributorRole</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link ContributorRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link ContributorRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ContributorRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ContributorRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link ContributorRole}</li>
  * </ul>
  */
 public class ContributorRole implements OnixElement<ContributorRoles>, Serializable {

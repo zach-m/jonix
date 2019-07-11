@@ -71,14 +71,14 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ NameAsSubject</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ NameAsSubject</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject}</li>
  * </ul>
  */
 public class NameAsSubject implements OnixSuperComposite, Serializable {
@@ -242,8 +242,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -464,8 +463,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SubjectDate, JonixSubjectDate, PersonOrganizationDateRoles> subjectDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -481,8 +479,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations =
-        ListOfOnixDataComposite
-            .empty();
+        ListOfOnixDataComposite.empty();
 
     /**
      * <p>

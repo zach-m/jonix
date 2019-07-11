@@ -67,13 +67,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Header&gt;</li>
+ * <li>&lt;{@link Header}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header ⯈ DefaultWeightUnit</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link DefaultWeightUnit}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class DefaultWeightUnit implements OnixElement<DefaultUnitOfWeights>, Serializable {
     private static final long serialVersionUID = 1L;

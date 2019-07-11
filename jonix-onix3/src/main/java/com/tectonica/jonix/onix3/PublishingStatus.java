@@ -69,8 +69,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Notes</td>
- * <td>Note the typical progression of publishing status, from announcement to out-of-print, through the life cycle of
- * a
+ * <td>Note the typical progression of publishing status, from announcement to out-of-print, through the life cycle of a
  * product. The pale shaded area shows when the product is 'orderable' from the publisher or the publisher's
  * distributor, though if the product is 'Forthcoming' (and is later postponed indefinitely or cancelled) or the product
  * 'Out of stock indefinitely', the order may not be fulfilled. Statuses 'Withdrawn', 'Recalled' are not shown on the
@@ -94,12 +93,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PublishingDetail&gt;</li>
+ * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ PublishingStatus</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingStatus}</li>
  * </ul>
  */
 public class PublishingStatus implements OnixElement<PublishingStatuss>, Serializable {

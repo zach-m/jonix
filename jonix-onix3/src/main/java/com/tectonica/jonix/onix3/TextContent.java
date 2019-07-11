@@ -57,14 +57,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;CollateralDetail&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link CollateralDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ TextContent</li>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ TextContent</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent}</li>
  * </ul>
  */
 public class TextContent implements OnixSuperComposite, Serializable {
@@ -212,8 +212,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * A group of data elements which together define a territory for which the text in the &lt;Text&gt; element is
      * specifically intended. Optional in each occurrence of the &lt;TextContent&gt; composite, and non-repeating. If
      * omitted, the text is intended for use wherever the product may be sold (see
-     * <a href="#onixmessage_product_publishingdetail_p21">Group&nbsp;P.21</a>). If included, the text should be used
-     * by
+     * <a href="#onixmessage_product_publishingdetail_p21">Group&nbsp;P.21</a>). If included, the text should be used by
      * recipients in the specified territory in preference to any text that lacks a specified territory.
      * </p>
      * <p>
@@ -307,8 +306,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

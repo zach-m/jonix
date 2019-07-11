@@ -54,34 +54,36 @@ import java.util.Arrays;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;Conference&gt;</li>
- * <li>&lt;SupplyDetail&gt;</li>
- * <li>&lt;MarketRepresentation&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;Contributor&gt;</li>
- * <li>&lt;Publisher&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
+ * <li>&lt;{@link MarketRepresentation}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link Publisher}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Website</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Website</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ Website</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ Website</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ Website</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ Website</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     private static final long serialVersionUID = 1L;

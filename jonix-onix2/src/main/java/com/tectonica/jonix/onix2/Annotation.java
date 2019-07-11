@@ -60,21 +60,21 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;d100&gt;Set on the Greek island of Cephallonia during World War II, this is the story of a beautiful
- * young woman and her two suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head
- * of the Italian garrison on the island.&lt;/d100&gt;</tt></td>
+ * <td><tt>&lt;d100&gt;Set on the Greek island of Cephallonia during World War II, this is the story of a beautiful young woman and her two suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head of the Italian garrison on the island.&lt;/d100&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Annotation</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Annotation}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class Annotation implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

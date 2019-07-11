@@ -70,14 +70,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;TextItem&gt;</li>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link TextItem}&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ NumberOfPages</li>
- * <li>ONIXMessage ⯈ Product ⯈ NumberOfPages</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link NumberOfPages}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NumberOfPages}</li>
  * </ul>
  */
 public class NumberOfPages implements OnixElement<String>, Serializable {

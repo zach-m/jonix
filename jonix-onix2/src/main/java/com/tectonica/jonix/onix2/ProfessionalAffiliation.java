@@ -54,17 +54,21 @@ import java.util.Arrays;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ProfessionalAffiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ ProfessionalAffiliation</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ ProfessionalAffiliation</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ ProfessionalAffiliation</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ ProfessionalAffiliation</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessionalAffiliation>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -147,7 +151,7 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
 
     /**
      * @return whether this tag (&lt;ProfessionalAffiliation&gt; or &lt;professionalaffiliation&gt;) is explicitly
-     * provided in the ONIX XML
+     *         provided in the ONIX XML
      */
     @Override
     public boolean exists() {
@@ -177,8 +181,7 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
     /**
      * <p>
      * An organisation to which a contributor to the product was affiliated at the time of its creation, and – if the
-     * &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and
-     * non-repeating.
+     * &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */

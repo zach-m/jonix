@@ -54,14 +54,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ WorkIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link WorkIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link WorkIdentifier}</li>
  * </ul>
  */
 public class WorkIdentifier
@@ -150,7 +150,7 @@ public class WorkIdentifier
 
     /**
      * @return whether this tag (&lt;WorkIdentifier&gt; or &lt;workidentifier&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

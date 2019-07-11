@@ -40,8 +40,9 @@ interface CodeList82 {
  * Description: Bible contents
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist82">ONIX
- * Codelist 82 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist82">ONIX
+ *      Codelist 82 in Reference Guide</a>
  */
 public enum BibleContentss implements OnixCodelist, CodeList82 {
     /**
@@ -65,8 +66,7 @@ public enum BibleContentss implements OnixCodelist, CodeList82 {
     /**
      * I and II Esdras; Prayer of Manasseh; Psalm 151; III and IV Maccabees
      */
-    Additional_Apocryphal_texts_Slavonic_Orthodox_canon("AY",
-        "Additional Apocryphal texts: Slavonic Orthodox canon"), //
+    Additional_Apocryphal_texts_Slavonic_Orthodox_canon("AY", "Additional Apocryphal texts: Slavonic Orthodox canon"), //
 
     /**
      * Additional Apocryphal texts included in some Bible versions: I and II Esdras; Prayer of Manasseh

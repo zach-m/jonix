@@ -65,13 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;AVItem&gt;</li>
+ * <li>&lt;{@link AVItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ AVItem ⯈ AVItemType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈
+ * {@link AVItemType}</li>
  * </ul>
+ *
+ * @since Onix-3.05
  */
 public class AVItemType implements OnixElement<AvItemTypes>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -65,13 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;LocationIdentifier&gt;</li>
+ * <li>&lt;{@link LocationIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ LocationIdentifier ⯈ LocationIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link LocationIdentifier} ⯈
+ * {@link LocationIDType}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class LocationIDType implements OnixElement<SupplierIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

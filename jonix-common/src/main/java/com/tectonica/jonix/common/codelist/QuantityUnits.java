@@ -37,8 +37,9 @@ interface CodeList169 {
  * Description: Quantity unit
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist169">ONIX
- * Codelist 169 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist169">ONIX
+ *      Codelist 169 in Reference Guide</a>
  */
 public enum QuantityUnits implements OnixCodelist, CodeList169 {
     /**

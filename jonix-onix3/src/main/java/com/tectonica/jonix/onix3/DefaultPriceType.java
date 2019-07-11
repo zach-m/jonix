@@ -65,12 +65,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Header&gt;</li>
+ * <li>&lt;{@link Header}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Header ⯈ DefaultPriceType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link DefaultPriceType}</li>
  * </ul>
  */
 public class DefaultPriceType implements OnixElement<PriceTypes>, Serializable {

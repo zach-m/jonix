@@ -65,12 +65,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;EpubUsageLimit&gt;</li>
+ * <li>&lt;{@link EpubUsageLimit}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubUsageConstraint ⯈ EpubUsageLimit ⯈ EpubUsageUnit</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈
+ * {@link EpubUsageLimit} ⯈ {@link EpubUsageUnit}</li>
  * </ul>
  */
 public class EpubUsageUnit implements OnixElement<UnitOfUsages>, Serializable {

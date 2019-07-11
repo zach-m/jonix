@@ -56,13 +56,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Conference&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Conference ⯈ ConferenceSponsor</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
+ * {@link ConferenceSponsor}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -122,8 +125,8 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
             switch (name) {
                 case ConferenceSponsorIdentifier.refname:
                 case ConferenceSponsorIdentifier.shortname:
-                    conferenceSponsorIdentifiers = JPU.addToList(conferenceSponsorIdentifiers,
-                        new ConferenceSponsorIdentifier(e));
+                    conferenceSponsorIdentifiers =
+                        JPU.addToList(conferenceSponsorIdentifiers, new ConferenceSponsorIdentifier(e));
                     break;
                 case PersonName.refname:
                 case PersonName.shortname:
@@ -141,7 +144,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;ConferenceSponsor&gt; or &lt;conferencesponsor&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {
@@ -152,9 +155,8 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameIdentifierTypes>
-        conferenceSponsorIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier,
+        NameIdentifierTypes> conferenceSponsorIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -163,7 +165,8 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameIdentifierTypes> conferenceSponsorIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier,
+        NameIdentifierTypes> conferenceSponsorIdentifiers() {
         _initialize();
         return conferenceSponsorIdentifiers;
     }

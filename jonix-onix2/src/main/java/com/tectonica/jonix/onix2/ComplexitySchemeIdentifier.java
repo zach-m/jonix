@@ -60,12 +60,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Complexity&gt;</li>
+ * <li>&lt;{@link Complexity}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Complexity ⯈ ComplexitySchemeIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Complexity} ⯈ {@link ComplexitySchemeIdentifier}</li>
  * </ul>
  */
 public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeIdentifiers>, Serializable {
@@ -135,7 +135,7 @@ public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeI
 
     /**
      * @return whether this tag (&lt;ComplexitySchemeIdentifier&gt; or &lt;b077&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

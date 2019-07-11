@@ -65,17 +65,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;OnOrderDetail&gt;</li>
- * <li>&lt;Stock&gt;</li>
- * <li>&lt;Velocity&gt;</li>
+ * <li>&lt;{@link OnOrderDetail}&gt;</li>
+ * <li>&lt;{@link Stock}&gt;</li>
+ * <li>&lt;{@link Velocity}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ OnOrderDetail ⯈ Proximity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Proximity</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ Velocity ⯈ Proximity</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
+ * {@link OnOrderDetail} ⯈ {@link Proximity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
+ * {@link Proximity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
+ * {@link Velocity} ⯈ {@link Proximity}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class Proximity implements OnixElement<Proximitys>, Serializable {
     private static final long serialVersionUID = 1L;

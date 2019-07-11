@@ -65,15 +65,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;Imprint&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link Imprint}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ImprintName</li>
- * <li>ONIXMessage ⯈ Product ⯈ Imprint ⯈ ImprintName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ImprintName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Imprint} ⯈ {@link ImprintName}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ImprintName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

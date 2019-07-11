@@ -71,14 +71,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;NotForSale&gt;</li>
- * <li>&lt;SalesRights&gt;</li>
+ * <li>&lt;{@link NotForSale}&gt;</li>
+ * <li>&lt;{@link SalesRights}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ RightsCountry</li>
- * <li>ONIXMessage ⯈ Product ⯈ SalesRights ⯈ RightsCountry</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link RightsCountry}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SalesRights} ⯈ {@link RightsCountry}</li>
  * </ul>
  */
 public class RightsCountry implements OnixElement<java.util.Set<Countrys>>, Serializable {
@@ -144,9 +144,8 @@ public class RightsCountry implements OnixElement<java.util.Set<Countrys>>, Seri
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +")) {
+        for (String split : JPU.getContentAsString(element).trim().split(" +"))
             value.add(Countrys.byCode(split));
-        }
     }
 
     /**

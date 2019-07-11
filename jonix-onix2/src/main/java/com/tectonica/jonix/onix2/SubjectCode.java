@@ -65,15 +65,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MainSubject&gt;</li>
- * <li>&lt;Subject&gt;</li>
+ * <li>&lt;{@link MainSubject}&gt;</li>
+ * <li>&lt;{@link Subject}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MainSubject ⯈ SubjectCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ Subject ⯈ SubjectCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Subject ⯈ SubjectCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MainSubject} ⯈ {@link SubjectCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Subject} ⯈ {@link SubjectCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Subject} ⯈ {@link SubjectCode}</li>
  * </ul>
  */
 public class SubjectCode implements OnixElement<String>, Serializable {

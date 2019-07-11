@@ -55,12 +55,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ReligiousText&gt;</li>
+ * <li>&lt;{@link ReligiousText}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ReligiousText ⯈ ReligiousTextFeature</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText} ⯈
+ * {@link ReligiousTextFeature}</li>
  * </ul>
  */
 public class ReligiousTextFeature
@@ -130,8 +131,8 @@ public class ReligiousTextFeature
                     break;
                 case ReligiousTextFeatureDescription.refname:
                 case ReligiousTextFeatureDescription.shortname:
-                    religiousTextFeatureDescriptions = JPU.addToList(religiousTextFeatureDescriptions,
-                        new ReligiousTextFeatureDescription(e));
+                    religiousTextFeatureDescriptions =
+                        JPU.addToList(religiousTextFeatureDescriptions, new ReligiousTextFeatureDescription(e));
                     break;
                 default:
                     break;
@@ -141,7 +142,7 @@ public class ReligiousTextFeature
 
     /**
      * @return whether this tag (&lt;ReligiousTextFeature&gt; or &lt;religioustextfeature&gt;) is explicitly provided in
-     * the ONIX XML
+     *         the ONIX XML
      */
     @Override
     public boolean exists() {
@@ -181,8 +182,7 @@ public class ReligiousTextFeature
     }
 
     private ListOfOnixElement<ReligiousTextFeatureDescription, String> religiousTextFeatureDescriptions =
-        ListOfOnixElement
-            .empty();
+        ListOfOnixElement.empty();
 
     /**
      * <p>

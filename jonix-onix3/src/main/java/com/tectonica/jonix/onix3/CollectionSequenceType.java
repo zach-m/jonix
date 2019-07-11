@@ -65,13 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;CollectionSequence&gt;</li>
+ * <li>&lt;{@link CollectionSequence}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionSequence ⯈ CollectionSequenceType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
+ * {@link CollectionSequence} ⯈ {@link CollectionSequenceType}</li>
  * </ul>
+ *
+ * @since Onix-3.01
  */
 public class CollectionSequenceType implements OnixElement<CollectionSequenceTypes>, Serializable {
     private static final long serialVersionUID = 1L;

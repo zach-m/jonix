@@ -81,12 +81,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail}</li>
  * </ul>
  */
 public class DescriptiveDetail implements OnixSuperComposite, Serializable {
@@ -341,7 +341,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;DescriptiveDetail&gt; or &lt;descriptivedetail&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {
@@ -397,9 +397,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return productFormDetails;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
-        productFormFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature,
+        ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -409,7 +408,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
+    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
+        productFormFeatures() {
         _initialize();
         return productFormFeatures;
     }
@@ -490,8 +490,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -522,8 +521,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
-        ListOfOnixElement
-            .empty();
+        ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -581,9 +579,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return mapScales;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes>
-        productClassifications = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification,
+        ProductClassificationTypes> productClassifications = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -595,7 +592,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications() {
+    public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes>
+        productClassifications() {
         _initialize();
         return productClassifications;
     }
@@ -907,8 +905,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -922,15 +919,14 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return languages;
     }
 
-    private ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
      * A group of data elements which together describe an extent pertaining to the product. Optional, but in practice
      * required for most products, <i>eg</i> to give the number of pages in a printed book or paginated
-     * <span class="nobreak">e-book</span>, or to give the running time of an audiobook. Repeatable to specify
-     * different
+     * <span class="nobreak">e-book</span>, or to give the running time of an audiobook. Repeatable to specify different
      * extent types or units.
      * </p>
      * Jonix-Comment: this list may be empty
@@ -989,9 +985,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return illustrationsNotes;
     }
 
-    private ListOfOnixDataCompositeWithKey<AncillaryContent, JonixAncillaryContent, IllustrationAndOtherContentTypes>
-        ancillaryContents = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<AncillaryContent, JonixAncillaryContent,
+        IllustrationAndOtherContentTypes> ancillaryContents = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -1001,7 +996,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<AncillaryContent, JonixAncillaryContent, IllustrationAndOtherContentTypes> ancillaryContents() {
+    public ListOfOnixDataCompositeWithKey<AncillaryContent, JonixAncillaryContent, IllustrationAndOtherContentTypes>
+        ancillaryContents() {
         _initialize();
         return ancillaryContents;
     }
@@ -1062,8 +1058,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

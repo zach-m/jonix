@@ -54,14 +54,14 @@ import java.util.Arrays;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Subject</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Subject</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Subject}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Subject}</li>
  * </ul>
  */
 public class Subject implements OnixDataComposite<JonixSubject>, Serializable {

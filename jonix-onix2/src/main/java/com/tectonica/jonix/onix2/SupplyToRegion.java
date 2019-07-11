@@ -68,13 +68,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplyToRegion</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link SupplyToRegion}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class SupplyToRegion implements OnixElement<SupplytoRegions>, Serializable {
     private static final long serialVersionUID = 1L;

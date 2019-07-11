@@ -62,20 +62,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;Title&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link Title}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Subtitle</li>
- * <li>ONIXMessage ⯈ Product ⯈ Title ⯈ Subtitle</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Title ⯈ Subtitle</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ Title ⯈ Subtitle</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Title ⯈ Subtitle</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Title ⯈ Subtitle</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Title ⯈ Subtitle</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Subtitle}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Title} ⯈ {@link Subtitle}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Title} ⯈ {@link Subtitle}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link Title} ⯈ {@link Subtitle}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Title} ⯈ {@link Subtitle}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Title} ⯈ {@link Subtitle}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Title} ⯈ {@link Subtitle}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class Subtitle implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

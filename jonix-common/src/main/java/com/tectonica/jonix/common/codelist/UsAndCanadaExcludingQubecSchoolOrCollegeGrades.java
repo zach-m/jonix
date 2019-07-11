@@ -41,8 +41,9 @@ interface CodeList77 {
  * Description: US and Canada (excluding Qu&#233;bec) school or college grade
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist77">ONIX
- * Codelist 77 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist77">ONIX
+ *      Codelist 77 in Reference Guide</a>
  */
 public enum UsAndCanadaExcludingQubecSchoolOrCollegeGrades implements OnixCodelist, CodeList77 {
     /**

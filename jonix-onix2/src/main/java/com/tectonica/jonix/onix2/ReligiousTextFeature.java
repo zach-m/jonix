@@ -54,13 +54,15 @@ import java.util.Arrays;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ReligiousText&gt;</li>
+ * <li>&lt;{@link ReligiousText}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ ReligiousTextFeature</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ReligiousText} ⯈ {@link ReligiousTextFeature}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class ReligiousTextFeature
     implements OnixDataCompositeWithKey<JonixReligiousTextFeature, ReligiousTextFeatureTypes>, Serializable {
@@ -148,7 +150,7 @@ public class ReligiousTextFeature
 
     /**
      * @return whether this tag (&lt;ReligiousTextFeature&gt; or &lt;religioustextfeature&gt;) is explicitly provided in
-     * the ONIX XML
+     *         the ONIX XML
      */
     @Override
     public boolean exists() {

@@ -57,13 +57,15 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class Event implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -213,8 +215,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * <p>
      * An acronym used as a short form of the name of an event or series of events given in the &lt;EventName&gt;
      * element. Optional, and repeatable to provide parallel acronyms for a single event in multiple languages. The
-     * <i>language</i> attribute is optional for a single instance of &lt;EventAcronym&gt;, but must be included in
-     * each
+     * <i>language</i> attribute is optional for a single instance of &lt;EventAcronym&gt;, but must be included in each
      * instance if &lt;EventAcronym&gt; is repeated.
      * </p>
      * Jonix-Comment: this list may be empty

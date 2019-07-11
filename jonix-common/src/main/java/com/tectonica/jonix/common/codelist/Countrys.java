@@ -40,8 +40,9 @@ interface CodeList91 {
  * Description: Country - based on ISO 3166-1
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist91">ONIX
- * Codelist 91 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist91">ONIX
+ *      Codelist 91 in Reference Guide</a>
  */
 public enum Countrys implements OnixCodelist, CodeList91 {
     /**

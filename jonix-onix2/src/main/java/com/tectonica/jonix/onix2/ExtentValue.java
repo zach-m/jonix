@@ -60,12 +60,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Extent&gt;</li>
+ * <li>&lt;{@link Extent}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Extent ⯈ ExtentValue</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Extent} ⯈ {@link ExtentValue}</li>
  * </ul>
  */
 public class ExtentValue implements OnixElement<String>, Serializable {

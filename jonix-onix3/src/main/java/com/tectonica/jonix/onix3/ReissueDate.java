@@ -66,13 +66,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Reissue&gt;</li>
+ * <li>&lt;{@link Reissue}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ ReissueDate</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link ReissueDate}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ReissueDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

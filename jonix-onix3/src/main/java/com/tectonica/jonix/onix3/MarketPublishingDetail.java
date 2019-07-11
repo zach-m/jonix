@@ -58,12 +58,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductSupply&gt;</li>
+ * <li>&lt;{@link ProductSupply}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail}</li>
  * </ul>
  */
 public class MarketPublishingDetail implements OnixSuperComposite, Serializable {
@@ -136,8 +136,8 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
                     break;
                 case MarketPublishingStatusNote.refname:
                 case MarketPublishingStatusNote.shortname:
-                    marketPublishingStatusNotes = JPU.addToList(marketPublishingStatusNotes,
-                        new MarketPublishingStatusNote(e));
+                    marketPublishingStatusNotes =
+                        JPU.addToList(marketPublishingStatusNotes, new MarketPublishingStatusNote(e));
                     break;
                 case MarketDate.refname:
                 case MarketDate.shortname:
@@ -175,7 +175,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
 
     /**
      * @return whether this tag (&lt;MarketPublishingDetail&gt; or &lt;marketpublishingdetail&gt;) is explicitly
-     * provided in the ONIX XML
+     *         provided in the ONIX XML
      */
     @Override
     public boolean exists() {
@@ -229,8 +229,8 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         return marketPublishingStatus;
     }
 
-    private ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes = ListOfOnixElement
-        .empty();
+    private ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes =
+        ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -248,8 +248,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
     }
 
     private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

@@ -60,20 +60,22 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Contributor&gt;</li>
- * <li>&lt;CopyrightOwner&gt;</li>
- * <li>&lt;ConferenceSponsor&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link CopyrightOwner}&gt;</li>
+ * <li>&lt;{@link ConferenceSponsor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ CorporateName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ CorporateName</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ CorporateName</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ CorporateName</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ CorporateName</li>
- * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CorporateName</li>
- * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceSponsor ⯈ CorporateName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link CorporateName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link CorporateName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link CorporateName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link CorporateName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link CorporateName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner} ⯈
+ * {@link CorporateName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor} ⯈
+ * {@link CorporateName}</li>
  * </ul>
  */
 public class CorporateName implements OnixElement<String>, Serializable {

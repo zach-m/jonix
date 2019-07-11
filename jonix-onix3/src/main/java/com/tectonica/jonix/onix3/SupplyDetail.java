@@ -63,12 +63,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductSupply&gt;</li>
+ * <li>&lt;{@link ProductSupply}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail}</li>
  * </ul>
  */
 public class SupplyDetail implements OnixSuperComposite, Serializable {
@@ -237,9 +237,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplyContacts;
     }
 
-    private ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes>
-        supplierOwnCodings = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding,
+        SupplierOwnCodeTypes> supplierOwnCodings = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -248,14 +247,14 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes> supplierOwnCodings() {
+    public ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes>
+        supplierOwnCodings() {
         _initialize();
         return supplierOwnCodings;
     }
 
-    private ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions, ReturnsConditionsCodeTypes>
-        returnsConditionss = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions,
+        ReturnsConditionsCodeTypes> returnsConditionss = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -264,7 +263,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions, ReturnsConditionsCodeTypes> returnsConditionss() {
+    public ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions, ReturnsConditionsCodeTypes>
+        returnsConditionss() {
         _initialize();
         return returnsConditionss;
     }
@@ -284,8 +284,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -350,8 +349,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and
-     * non-repeating.
+     * The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and non-repeating.
      * </p>
      * <p>
      * Note that orders do not <em>have</em> to be aligned with multiples of the pack size, but such orders may be more
@@ -405,8 +403,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * The order quantity multiple that must be used in any order for the product placed with the supplier. Optional,
      * but where supplied, must be preceded by at least one &lt;OrderQuantityMinimum&gt; element. For example with a
      * minimum order quantity of 6 and a multiple of 4, orders for 6, 10 or 14 copies are acceptable, but orders for
-     * fewer than 6, or for 7, 8, 9 or 11 copies are not. If omitted, the minimum or any larger quantity may be
-     * ordered.
+     * fewer than 6, or for 7, 8, 9 or 11 copies are not. If omitted, the minimum or any larger quantity may be ordered.
      * </p>
      * Jonix-Comment: this field is optional
      */

@@ -40,8 +40,9 @@ interface CodeList175 {
  * Description: Product form detail
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist175">ONIX
- * Codelist 175 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist175">ONIX
+ *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
@@ -102,16 +103,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     DAISY_2_full_audio_with_navigation_no_text("A202", "DAISY 2: full audio with navigation (no text)"), //
 
-    DAISY_2_full_audio_with_navigation_and_partial_text("A203",
-        "DAISY 2: full audio with navigation and partial text"), //
+    DAISY_2_full_audio_with_navigation_and_partial_text("A203", "DAISY 2: full audio with navigation and partial text"), //
 
     DAISY_2_full_audio_with_navigation_and_full_text("A204", "DAISY 2: full audio with navigation and full text"), //
 
     /**
      * Reading systems may provide full audio via text-to-speech
      */
-    DAISY_2_full_text_with_navigation_and_partial_audio("A205",
-        "DAISY 2: full text with navigation and partial audio"), //
+    DAISY_2_full_text_with_navigation_and_partial_audio("A205", "DAISY 2: full text with navigation and partial audio"), //
 
     /**
      * Reading systems may provide full audio via text-to-speech
@@ -125,16 +124,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     DAISY_3_full_audio_with_navigation_no_text("A208", "DAISY 3: full audio with navigation (no text)"), //
 
-    DAISY_3_full_audio_with_navigation_and_partial_text("A209",
-        "DAISY 3: full audio with navigation and partial text"), //
+    DAISY_3_full_audio_with_navigation_and_partial_text("A209", "DAISY 3: full audio with navigation and partial text"), //
 
     DAISY_3_full_audio_with_navigation_and_full_text("A210", "DAISY 3: full audio with navigation and full text"), //
 
     /**
      * Reading systems may provide full audio via text-to-speech
      */
-    DAISY_3_full_text_with_navigation_and_partial_audio("A211",
-        "DAISY 3: full text with navigation and partial audio"), //
+    DAISY_3_full_text_with_navigation_and_partial_audio("A211", "DAISY 3: full text with navigation and partial audio"), //
 
     /**
      * Reading systems may provide full audio via text-to-speech
@@ -205,8 +202,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * In North America, a category of paperback characterized by page size (typically 7 x 5 inches) and generally used
-     * for children's books; use with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue
-     * 3
+     * for children's books; use with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3
      */
     Digest_format_paperback("B103", "Digest format paperback"), //
 
@@ -1205,8 +1201,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     _3_2("E223", "3:2"), //
 
     /**
-     * Use for fixed-format e-books optimised for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600 pixels
-     * etc)
+     * Use for fixed-format e-books optimised for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600 pixels etc)
      */
     _16_10("E224", "16:10"), //
 

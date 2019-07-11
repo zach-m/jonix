@@ -54,13 +54,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;EventSponsor&gt;</li>
+ * <li>&lt;{@link EventSponsor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Event ⯈ EventSponsor ⯈ EventSponsorIdentifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventSponsor} ⯈
+ * {@link EventSponsorIdentifier}</li>
  * </ul>
+ *
+ * @since Onix-3.03
  */
 public class EventSponsorIdentifier
     implements OnixDataCompositeWithKey<JonixEventSponsorIdentifier, NameIdentifierTypes>, Serializable {
@@ -139,7 +142,7 @@ public class EventSponsorIdentifier
 
     /**
      * @return whether this tag (&lt;EventSponsorIdentifier&gt; or &lt;eventsponsoridentifier&gt;) is explicitly
-     * provided in the ONIX XML
+     *         provided in the ONIX XML
      */
     @Override
     public boolean exists() {

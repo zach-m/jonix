@@ -55,12 +55,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ ReturnsConditions</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈
+ * {@link ReturnsConditions}</li>
  * </ul>
  */
 public class ReturnsConditions
@@ -144,7 +145,7 @@ public class ReturnsConditions
 
     /**
      * @return whether this tag (&lt;ReturnsConditions&gt; or &lt;returnsconditions&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

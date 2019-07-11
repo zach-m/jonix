@@ -68,13 +68,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;CollectionSequence&gt;</li>
+ * <li>&lt;{@link CollectionSequence}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ CollectionSequence ⯈ CollectionSequenceNumber</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
+ * {@link CollectionSequence} ⯈ {@link CollectionSequenceNumber}</li>
  * </ul>
+ *
+ * @since Onix-3.01
  */
 public class CollectionSequenceNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -140,7 +143,7 @@ public class CollectionSequenceNumber implements OnixElement<String>, Serializab
 
     /**
      * @return whether this tag (&lt;CollectionSequenceNumber&gt; or &lt;x481&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

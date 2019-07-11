@@ -70,12 +70,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ImprintIdentifier&gt;</li>
+ * <li>&lt;{@link ImprintIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ Imprint ⯈ ImprintIdentifier ⯈ ImprintIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈ {@link ImprintIdentifier} ⯈
+ * {@link ImprintIDType}</li>
  * </ul>
  */
 public class ImprintIDType implements OnixElement<NameIdentifierTypes>, Serializable {

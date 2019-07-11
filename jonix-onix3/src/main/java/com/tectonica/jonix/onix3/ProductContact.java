@@ -56,15 +56,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;PublishingDetail&gt;</li>
- * <li>&lt;MarketPublishingDetail&gt;</li>
+ * <li>&lt;{@link PublishingDetail}&gt;</li>
+ * <li>&lt;{@link MarketPublishingDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ ProductContact</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ MarketPublishingDetail ⯈ ProductContact</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link ProductContact}</li>
  * </ul>
+ *
+ * @since Onix-3.01
  */
 public class ProductContact implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -128,8 +131,8 @@ public class ProductContact implements OnixSuperComposite, Serializable {
                     break;
                 case ProductContactIdentifier.refname:
                 case ProductContactIdentifier.shortname:
-                    productContactIdentifiers = JPU.addToList(productContactIdentifiers,
-                        new ProductContactIdentifier(e));
+                    productContactIdentifiers =
+                        JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(e));
                     break;
                 case ProductContactName.refname:
                 case ProductContactName.shortname:
@@ -151,7 +154,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;ProductContact&gt; or &lt;productcontact&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -176,9 +179,8 @@ public class ProductContact implements OnixSuperComposite, Serializable {
         return productContactRole;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameIdentifierTypes>
-        productContactIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier,
+        NameIdentifierTypes> productContactIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -188,7 +190,8 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameIdentifierTypes> productContactIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameIdentifierTypes>
+        productContactIdentifiers() {
         _initialize();
         return productContactIdentifiers;
     }

@@ -56,12 +56,12 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DescriptiveDetail&gt;</li>
+ * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AncillaryContent</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AncillaryContent}</li>
  * </ul>
  */
 public class AncillaryContent
@@ -127,8 +127,8 @@ public class AncillaryContent
                     break;
                 case AncillaryContentDescription.refname:
                 case AncillaryContentDescription.shortname:
-                    ancillaryContentDescriptions = JPU.addToList(ancillaryContentDescriptions,
-                        new AncillaryContentDescription(e));
+                    ancillaryContentDescriptions =
+                        JPU.addToList(ancillaryContentDescriptions, new AncillaryContentDescription(e));
                     break;
                 case Number.refname:
                 case Number.shortname:
@@ -142,7 +142,7 @@ public class AncillaryContent
 
     /**
      * @return whether this tag (&lt;AncillaryContent&gt; or &lt;ancillarycontent&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {
@@ -167,8 +167,8 @@ public class AncillaryContent
         return ancillaryContentType;
     }
 
-    private ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions = ListOfOnixElement
-        .empty();
+    private ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions =
+        ListOfOnixElement.empty();
 
     /**
      * <p>

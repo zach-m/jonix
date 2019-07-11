@@ -60,13 +60,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;BatchBonus&gt;</li>
+ * <li>&lt;{@link BatchBonus}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ BatchBonus ⯈ FreeQuantity</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ BatchBonus ⯈ FreeQuantity</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link BatchBonus} ⯈
+ * {@link FreeQuantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link BatchBonus} ⯈ {@link FreeQuantity}</li>
  * </ul>
  */
 public class FreeQuantity implements OnixElement<String>, Serializable {

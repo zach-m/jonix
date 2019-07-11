@@ -40,8 +40,9 @@ interface CodeList29 {
  * Description: Audience code type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist29">ONIX
- * Codelist 29 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist29">ONIX
+ *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     /**
@@ -116,7 +117,8 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
 
     /**
      * Occupation: codelist for vocational training materials, maintained by VdS Bildungsmedien eV, the German
-     * association of educational media publishers. See http://www.bildungsmedien.de/service/onixlisten/ausbildungsberufe_onix_codelist29_value14_0408.pdf
+     * association of educational media publishers. See
+     * http://www.bildungsmedien.de/service/onixlisten/ausbildungsberufe_onix_codelist29_value14_0408.pdf
      */
     Ausbildungsberuf("14", "Ausbildungsberuf"), //
 
@@ -126,8 +128,7 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     Suomalainen_kouluasteluokitus("15", "Suomalainen kouluasteluokitus"), //
 
     /**
-     * UK Publishers Association, Children's Book Group, coded indication of intended reader age, carried on book
-     * covers
+     * UK Publishers Association, Children's Book Group, coded indication of intended reader age, carried on book covers
      */
     CBG_age_guidance("16", "CBG age guidance"), //
 

@@ -67,18 +67,20 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;EpubLicenseExpression&gt;</li>
+ * <li>&lt;{@link EpubLicenseExpression}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ EpubLicense ⯈ EpubLicenseExpression ⯈
- * EpubLicenseExpressionTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ EpubLicense ⯈ EpubLicenseExpression ⯈
- * EpubLicenseExpressionTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Price ⯈ EpubLicense ⯈ EpubLicenseExpression ⯈
- * EpubLicenseExpressionTypeName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense} ⯈
+ * {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link Price} ⯈ {@link EpubLicense} ⯈ {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * {@link EpubLicense} ⯈ {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionTypeName}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class EpubLicenseExpressionTypeName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -146,7 +148,7 @@ public class EpubLicenseExpressionTypeName implements OnixElement<String>, Seria
 
     /**
      * @return whether this tag (&lt;EpubLicenseExpressionTypeName&gt; or &lt;x509&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

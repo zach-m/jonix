@@ -68,14 +68,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductFormFeature&gt;</li>
+ * <li>&lt;{@link ProductFormFeature}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductFormFeature ⯈ ProductFormFeatureDescription</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductFormFeature ⯈
- * ProductFormFeatureDescription</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature} ⯈
+ * {@link ProductFormFeatureDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
+ * {@link ProductFormFeature} ⯈ {@link ProductFormFeatureDescription}</li>
  * </ul>
  */
 public class ProductFormFeatureDescription implements OnixElement<String>, Serializable {
@@ -144,7 +145,7 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
 
     /**
      * @return whether this tag (&lt;ProductFormFeatureDescription&gt; or &lt;b336&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

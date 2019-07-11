@@ -41,8 +41,7 @@ public class JonixPriceDate implements JonixKeyedStruct<PriceDateRoles>, Seriali
     public DateFormats dateFormat;
 
     /**
-     * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default
-     * YYYYMMDD
+     * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
      * <p>
      * (type: dt.NonEmptyString)
      */

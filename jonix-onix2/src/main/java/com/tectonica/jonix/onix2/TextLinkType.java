@@ -64,15 +64,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;OtherText&gt;</li>
+ * <li>&lt;{@link OtherText}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ TextLinkType</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ TextLinkType</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ TextLinkType</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ TextLinkType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link OtherText} ⯈ {@link TextLinkType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText} ⯈ {@link TextLinkType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextLinkType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextLinkType}</li>
  * </ul>
  */
 public class TextLinkType implements OnixElement<TextLinkTypes>, Serializable {

@@ -65,16 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SeriesIdentifier&gt;</li>
- * <li>&lt;ParentIdentifier&gt;</li>
+ * <li>&lt;{@link SeriesIdentifier}&gt;</li>
+ * <li>&lt;{@link ParentIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SeriesIdentifier ⯈ SeriesIDType</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ SeriesIdentifier ⯈ SeriesIDType</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ SeriesIdentifier ⯈ SeriesIDType</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ ParentIdentifier ⯈ SeriesIDType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link ParentIdentifier} ⯈ {@link SeriesIDType}</li>
  * </ul>
  */
 public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {

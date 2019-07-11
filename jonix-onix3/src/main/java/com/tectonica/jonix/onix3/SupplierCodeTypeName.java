@@ -64,13 +64,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplierOwnCoding&gt;</li>
+ * <li>&lt;{@link SupplierOwnCoding}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ SupplierOwnCoding ⯈ SupplierCodeTypeName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplierOwnCoding}
+ * ⯈ {@link SupplierCodeTypeName}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class SupplierCodeTypeName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

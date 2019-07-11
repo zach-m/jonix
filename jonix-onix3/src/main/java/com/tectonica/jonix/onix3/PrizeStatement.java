@@ -66,23 +66,27 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;PrizeStatement language=&quot;eng&quot;&gt;Joint winner of the Mao Dun Literature Prize,
- * 2000&lt;/PrizeStatement&gt;</tt></td>
+ * <td><tt>&lt;PrizeStatement language=&quot;eng&quot;&gt;Joint winner of the Mao Dun Literature Prize, 2000&lt;/PrizeStatement&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Prize&gt;</li>
+ * <li>&lt;{@link Prize}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail ⯈ Prize ⯈ PrizeStatement</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Contributor ⯈ Prize ⯈ PrizeStatement</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Contributor ⯈ Prize ⯈ PrizeStatement</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Collection ⯈ Contributor ⯈ Prize ⯈ PrizeStatement</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeStatement}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeStatement}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link Prize} ⯈ {@link PrizeStatement}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link Prize} ⯈ {@link PrizeStatement}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class PrizeStatement implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

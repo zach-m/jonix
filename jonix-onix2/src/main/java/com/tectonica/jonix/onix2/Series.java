@@ -58,12 +58,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Series</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series}</li>
  * </ul>
  */
 public class Series implements OnixSuperComposite, Serializable {
@@ -214,8 +214,7 @@ public class Series implements OnixSuperComposite, Serializable {
         return publisherSeriesCode;
     }
 
-    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes>
-        seriesIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**

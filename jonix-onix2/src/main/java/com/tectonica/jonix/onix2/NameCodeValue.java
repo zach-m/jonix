@@ -56,17 +56,17 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Publisher&gt;</li>
- * <li>&lt;Imprint&gt;</li>
+ * <li>&lt;{@link Publisher}&gt;</li>
+ * <li>&lt;{@link Imprint}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Publisher ⯈ NameCodeValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ Publisher ⯈ NameCodeValue</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Publisher ⯈ NameCodeValue</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Publisher ⯈ NameCodeValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ Imprint ⯈ NameCodeValue</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link NameCodeValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link NameCodeValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link NameCodeValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link NameCodeValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Imprint} ⯈ {@link NameCodeValue}</li>
  * </ul>
  */
 public class NameCodeValue implements OnixElement<String>, Serializable {

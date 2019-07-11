@@ -56,13 +56,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;MarketRepresentation&gt;</li>
+ * <li>&lt;{@link MarketRepresentation}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ MarketRestrictionDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link MarketRestrictionDetail}</li>
  * </ul>
+ *
+ * @since Onix-2.12
  */
 public class MarketRestrictionDetail implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

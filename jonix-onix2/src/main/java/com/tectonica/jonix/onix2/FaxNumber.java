@@ -59,16 +59,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SupplyDetail&gt;</li>
- * <li>&lt;MarketRepresentation&gt;</li>
- * <li>&lt;NewSupplier&gt;</li>
+ * <li>&lt;{@link SupplyDetail}&gt;</li>
+ * <li>&lt;{@link MarketRepresentation}&gt;</li>
+ * <li>&lt;{@link NewSupplier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ FaxNumber</li>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ FaxNumber</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ FaxNumber</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link FaxNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link FaxNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link FaxNumber}</li>
  * </ul>
  */
 public class FaxNumber implements OnixElement<String>, Serializable {

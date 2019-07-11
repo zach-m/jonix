@@ -66,13 +66,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Bible&gt;</li>
+ * <li>&lt;{@link Bible}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ReligiousText ⯈ Bible ⯈ StudyBibleType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ReligiousText} ⯈ {@link Bible} ⯈ {@link StudyBibleType}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class StudyBibleType implements OnixElement<StudyBibleTypes>, Serializable {
     private static final long serialVersionUID = 1L;

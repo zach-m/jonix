@@ -64,23 +64,31 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProfessionalAffiliation&gt;</li>
- * <li>&lt;Contributor&gt;</li>
+ * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>
+ * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ ProfessionalAffiliation ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ ProfessionalPosition</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ ProfessionalPosition</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
+ * {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
+ * {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
+ * {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
+ * {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link ProfessionalPosition}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class ProfessionalPosition implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -64,19 +64,21 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContainedItem&gt;</li>
- * <li>&lt;NotForSale&gt;</li>
- * <li>&lt;RelatedProduct&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContainedItem}&gt;</li>
+ * <li>&lt;{@link NotForSale}&gt;</li>
+ * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ EAN13</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ EAN13</li>
- * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ EAN13</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ EAN13</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link EAN13}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link EAN13}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link EAN13}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link EAN13}</li>
  * </ul>
+ *
+ * @deprecated
  */
 public class EAN13 implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

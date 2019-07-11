@@ -42,8 +42,9 @@ interface CodeList26 {
  * Jonix-Comment: Deprecated in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist26">ONIX
- * Codelist 26 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_36.html#codelist26">ONIX
+ *      Codelist 26 in Reference Guide</a>
  */
 public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     /**
@@ -117,8 +118,8 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
 
     /**
      * Used for German National Bibliography since 2004 (100 subjects). Is different from value 30. See
-     * http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or http://www.d-nb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf
-     * (English)
+     * http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or
+     * http://www.d-nb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf (English)
      */
     DDC_Sachgruppen_der_Deutschen_Nationalbibliografie("18", "DDC-Sachgruppen der Deutschen Nationalbibliografie"), //
 
@@ -162,8 +163,8 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
 
     /**
      * Schlagwortnormdatei - Subject Headings Authority File in the German-speaking countries. See
-     * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm
-     * (English). DEPRECATED in favour of the GND
+     * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and
+     * http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm (English). DEPRECATED in favour of the GND
      */
     SWD("27", "SWD"), //
 

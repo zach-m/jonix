@@ -53,12 +53,12 @@ import java.util.Arrays;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Prize</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Prize}</li>
  * </ul>
  */
 public class Prize implements OnixDataComposite<JonixPrize>, Serializable {

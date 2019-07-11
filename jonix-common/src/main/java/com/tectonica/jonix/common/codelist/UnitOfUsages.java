@@ -40,8 +40,9 @@ interface CodeList147 {
  * Description: Unit of usage
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
- * @see <a href="https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist147">ONIX
- * Codelist 147 in Reference Guide</a>
+ * @see <a href=
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist147">ONIX
+ *      Codelist 147 in Reference Guide</a>
  */
 public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     /**

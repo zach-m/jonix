@@ -60,14 +60,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;DiscountCoded&gt;</li>
+ * <li>&lt;{@link DiscountCoded}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Price ⯈ DiscountCoded ⯈ DiscountCodeTypeName</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Reissue ⯈ Price ⯈ DiscountCoded ⯈ DiscountCodeTypeName</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link DiscountCoded} ⯈
+ * {@link DiscountCodeTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link DiscountCoded} ⯈ {@link DiscountCodeTypeName}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class DiscountCodeTypeName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

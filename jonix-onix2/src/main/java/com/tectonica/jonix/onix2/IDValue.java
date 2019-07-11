@@ -60,59 +60,79 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;WorkIdentifier&gt;</li>
- * <li>&lt;AgentIdentifier&gt;</li>
- * <li>&lt;ConferenceSponsorIdentifier&gt;</li>
- * <li>&lt;SeriesIdentifier&gt;</li>
- * <li>&lt;ProductIdentifier&gt;</li>
- * <li>&lt;LocationIdentifier&gt;</li>
- * <li>&lt;SenderIdentifier&gt;</li>
- * <li>&lt;CopyrightOwnerIdentifier&gt;</li>
- * <li>&lt;TextItemIdentifier&gt;</li>
- * <li>&lt;PersonNameIdentifier&gt;</li>
- * <li>&lt;SupplierIdentifier&gt;</li>
- * <li>&lt;SalesOutletIdentifier&gt;</li>
- * <li>&lt;ParentIdentifier&gt;</li>
- * <li>&lt;AddresseeIdentifier&gt;</li>
+ * <li>&lt;{@link WorkIdentifier}&gt;</li>
+ * <li>&lt;{@link AgentIdentifier}&gt;</li>
+ * <li>&lt;{@link ConferenceSponsorIdentifier}&gt;</li>
+ * <li>&lt;{@link SeriesIdentifier}&gt;</li>
+ * <li>&lt;{@link ProductIdentifier}&gt;</li>
+ * <li>&lt;{@link LocationIdentifier}&gt;</li>
+ * <li>&lt;{@link SenderIdentifier}&gt;</li>
+ * <li>&lt;{@link CopyrightOwnerIdentifier}&gt;</li>
+ * <li>&lt;{@link TextItemIdentifier}&gt;</li>
+ * <li>&lt;{@link PersonNameIdentifier}&gt;</li>
+ * <li>&lt;{@link SupplierIdentifier}&gt;</li>
+ * <li>&lt;{@link SalesOutletIdentifier}&gt;</li>
+ * <li>&lt;{@link ParentIdentifier}&gt;</li>
+ * <li>&lt;{@link AddresseeIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ WorkIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ WorkIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ MarketRepresentation ⯈ AgentIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ Conference ⯈ ConferenceSponsor ⯈ ConferenceSponsorIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ SeriesIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ SeriesIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ SeriesIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContainedItem ⯈ ProductIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ NotForSale ⯈ ProductIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ RelatedProduct ⯈ ProductIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ Set ⯈ ProductIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ Stock ⯈ LocationIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Header ⯈ SenderIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ CopyrightStatement ⯈ CopyrightOwner ⯈ CopyrightOwnerIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ TextItem ⯈ TextItemIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ Name ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ PersonAsSubject ⯈ PersonNameIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ SupplierIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ SupplyDetail ⯈ NewSupplier ⯈ SupplierIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ SalesRestriction ⯈ SalesOutlet ⯈ SalesOutletIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ ParentIdentifier ⯈ IDValue</li>
- * <li>ONIXMessage ⯈ Header ⯈ AddresseeIdentifier ⯈ IDValue</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link WorkIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link WorkIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link AgentIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor} ⯈
+ * {@link ConferenceSponsorIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link SeriesIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link ProductIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link ProductIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link LocationIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link SenderIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner} ⯈
+ * {@link CopyrightOwnerIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link TextItemIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier}
+ * ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier}
+ * ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈
+ * {@link PersonNameIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link SupplierIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link SupplierIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet} ⯈
+ * {@link SalesOutletIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link ParentIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link AddresseeIdentifier} ⯈ {@link IDValue}</li>
  * </ul>
  */
 public class IDValue implements OnixElement<String>, Serializable {

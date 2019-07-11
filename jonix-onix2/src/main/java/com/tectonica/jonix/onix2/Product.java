@@ -96,12 +96,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ONIXMessage&gt;</li>
+ * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product}</li>
  * </ul>
  */
 public class Product implements OnixProduct, Serializable {
@@ -1009,8 +1009,7 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * Digital Object Identifier. The international identifier for intellectual property in the digital environment.
-     * See
+     * Digital Object Identifier. The international identifier for intellectual property in the digital environment. See
      * <a href="http://www.doi.org/" target="_blank">http://www.doi.org/</a> Optional and non-repeating. <strong>The
      * &lt;ProductIdentifier&gt; composite below provides a more general method of handling this and other product
      * codes, and is to be preferred.</strong>
@@ -1022,8 +1021,7 @@ public class Product implements OnixProduct, Serializable {
         return doi;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
-        productIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -1092,8 +1090,7 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * The EAN.UCC-13 article number of a former product which the current product replaces. Optional and
-     * non-repeating.
+     * The EAN.UCC-13 article number of a former product which the current product replaces. Optional and non-repeating.
      * <strong>Note, however, that the &lt;RelatedProduct&gt; composite in Group&nbsp;PR.23 provides a more general
      * method of handling this type of link. This is now the preferred ONIX approach. The &lt;ReplacesISBN&gt; element
      * is retained only for upwards compatibility.</strong>
@@ -1132,8 +1129,7 @@ public class Product implements OnixProduct, Serializable {
         return productFormDetails;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
-        productFormFeatures = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -1265,8 +1261,7 @@ public class Product implements OnixProduct, Serializable {
         return containedItems;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes>
-        productClassifications = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -1615,9 +1610,8 @@ public class Product implements OnixProduct, Serializable {
         return titles;
     }
 
-    private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>
@@ -1973,9 +1967,8 @@ public class Product implements OnixProduct, Serializable {
         return originalLanguage;
     }
 
-    private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>
@@ -2087,8 +2080,7 @@ public class Product implements OnixProduct, Serializable {
         return illustrationsNote;
     }
 
-    private ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes>
-        illustrationss = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -2260,9 +2252,8 @@ public class Product implements OnixProduct, Serializable {
         return audienceCodes;
     }
 
-    private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>
@@ -2373,8 +2364,7 @@ public class Product implements OnixProduct, Serializable {
      * Descriptive text about the product, audience unspecified. Optional and non-repeating.
      * </p>
      * <p>
-     * <strong>The &lt;OtherText&gt; composite on the next page provides a more general method of handling
-     * descriptions,
+     * <strong>The &lt;OtherText&gt; composite on the next page provides a more general method of handling descriptions,
      * and is to be preferred.</strong>
      * </p>
      * <p>
@@ -2388,9 +2378,8 @@ public class Product implements OnixProduct, Serializable {
         return mainDescription;
     }
 
-    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>
@@ -2432,8 +2421,7 @@ public class Product implements OnixProduct, Serializable {
      * must be present.
      * </p>
      * <p>
-     * <strong>The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover
-     * images,
+     * <strong>The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover images,
      * and is to be preferred.</strong>
      * </p>
      * Jonix-Comment: this field is optional
@@ -2473,9 +2461,8 @@ public class Product implements OnixProduct, Serializable {
         return coverImageLink;
     }
 
-    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>
@@ -2557,8 +2544,7 @@ public class Product implements OnixProduct, Serializable {
      * the &lt;Imprint&gt; composite is used.
      * </p>
      * <p>
-     * <strong>The &lt;Imprint&gt; composite below provides a more general method of handling imprint identities, and
-     * is
+     * <strong>The &lt;Imprint&gt; composite below provides a more general method of handling imprint identities, and is
      * to be preferred.</strong>
      * </p>
      * Jonix-Comment: this field is required
@@ -2952,9 +2938,8 @@ public class Product implements OnixProduct, Serializable {
         return weight;
     }
 
-    private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>

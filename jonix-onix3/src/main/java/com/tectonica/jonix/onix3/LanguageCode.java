@@ -33,8 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Language code</h1>
  * <p>
- * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
- * non-repeating.
+ * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -66,13 +65,14 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Language&gt;</li>
+ * <li>&lt;{@link Language}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ Language ⯈ LanguageCode</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentDetail ⯈ ContentItem ⯈ Language ⯈ LanguageCode</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Language} ⯈ {@link LanguageCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Language} ⯈
+ * {@link LanguageCode}</li>
  * </ul>
  */
 public class LanguageCode implements OnixElement<Languages>, Serializable {

@@ -64,12 +64,12 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ CollateralDetail</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail}</li>
  * </ul>
  */
 public class CollateralDetail implements OnixSuperComposite, Serializable {
@@ -152,7 +152,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
 
     /**
      * @return whether this tag (&lt;CollateralDetail&gt; or &lt;collateraldetail&gt;) is explicitly provided in the
-     * ONIX XML
+     *         ONIX XML
      */
     @Override
     public boolean exists() {

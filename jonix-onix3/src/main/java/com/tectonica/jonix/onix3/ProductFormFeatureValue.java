@@ -103,8 +103,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td></td>
- * <td>Further features with corresponding code lists may be added from time to time without a re-issue of this
- * document
+ * <td>Further features with corresponding code lists may be added from time to time without a re-issue of this document
  * - see the latest release of List 79</td>
  * </tr>
  * <tr>
@@ -127,13 +126,15 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;ProductFormFeature&gt;</li>
+ * <li>&lt;{@link ProductFormFeature}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductFormFeature ⯈ ProductFormFeatureValue</li>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ ProductPart ⯈ ProductFormFeature ⯈ ProductFormFeatureValue</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature} ⯈
+ * {@link ProductFormFeatureValue}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
+ * {@link ProductFormFeature} ⯈ {@link ProductFormFeatureValue}</li>
  * </ul>
  */
 public class ProductFormFeatureValue implements OnixElement<String>, Serializable {

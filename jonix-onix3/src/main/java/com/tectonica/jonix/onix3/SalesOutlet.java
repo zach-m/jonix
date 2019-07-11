@@ -56,15 +56,20 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;SalesRestriction&gt;</li>
+ * <li>&lt;{@link SalesRestriction}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRestriction ⯈ SalesOutlet</li>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ Market ⯈ SalesRestriction ⯈ SalesOutlet</li>
- * <li>ONIXMessage ⯈ Product ⯈ PublishingDetail ⯈ SalesRights ⯈ SalesRestriction ⯈ SalesOutlet</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRestriction} ⯈
+ * {@link SalesOutlet}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction} ⯈
+ * {@link SalesOutlet}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRestriction}
+ * ⯈ {@link SalesOutlet}</li>
  * </ul>
+ *
+ * @since Onix-3.02
  */
 public class SalesOutlet implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -148,9 +153,8 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier, SalesOutletIdentifierTypes>
-        salesOutletIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier,
+        SalesOutletIdentifierTypes> salesOutletIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -159,7 +163,8 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier, SalesOutletIdentifierTypes> salesOutletIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier, SalesOutletIdentifierTypes>
+        salesOutletIdentifiers() {
         _initialize();
         return salesOutletIdentifiers;
     }

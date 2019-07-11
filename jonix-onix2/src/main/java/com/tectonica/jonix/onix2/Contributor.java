@@ -66,20 +66,20 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;ContentItem&gt;</li>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;MainSeriesRecord&gt;</li>
- * <li>&lt;Series&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link MainSeriesRecord}&gt;</li>
+ * <li>&lt;{@link Series}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ Contributor</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ Contributor</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ Contributor</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ Contributor</li>
- * <li>ONIXMessage ⯈ Product ⯈ Series ⯈ Contributor</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor}</li>
  * </ul>
  */
 public class Contributor implements OnixSuperComposite, Serializable {
@@ -417,8 +417,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
-     * <em>ie</em> the name elements normally used to open an entry in an alphabetical list, <em>eg</em> Smith or
-     * Garcia
+     * <em>ie</em> the name elements normally used to open an entry in an alphabetical list, <em>eg</em> Smith or Garcia
      * Marquez or Madonna or Francis de Sales (in Saint Francis de Sales). Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
@@ -499,8 +498,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return names;
     }
 
-    private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes>
-        personNameIdentifiers = ListOfOnixDataCompositeWithKey
+    private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
     /**
@@ -516,9 +514,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return personNameIdentifiers;
     }
 
-    private ListOfOnixDataCompositeWithKey<PersonDate, JonixPersonDate, PersonDateRoles> personDates =
-        ListOfOnixDataCompositeWithKey
-            .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<PersonDate, JonixPersonDate, PersonDateRoles> personDates = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
 
     /**
      * <p>
@@ -532,9 +529,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return personDates;
     }
 
-    private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations =
-        ListOfOnixDataComposite
-            .empty();
+    private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations = ListOfOnixDataComposite
+        .empty();
 
     /**
      * <p>

@@ -61,16 +61,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;OtherText&gt;</li>
+ * <li>&lt;{@link OtherText}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ OtherText ⯈ StartDate</li>
- * <li>ONIXMessage ⯈ Product ⯈ ContentItem ⯈ OtherText ⯈ StartDate</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ OtherText ⯈ StartDate</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ OtherText ⯈ StartDate</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link OtherText} ⯈ {@link StartDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText} ⯈ {@link StartDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link OtherText} ⯈ {@link StartDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link OtherText} ⯈ {@link StartDate}</li>
  * </ul>
+ *
+ * @since Onix-2.1
  */
 public class StartDate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;

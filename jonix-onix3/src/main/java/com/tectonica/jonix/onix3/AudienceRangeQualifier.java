@@ -66,12 +66,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;AudienceRange&gt;</li>
+ * <li>&lt;{@link AudienceRange}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AudienceRange ⯈ AudienceRangeQualifier</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AudienceRange} ⯈
+ * {@link AudienceRangeQualifier}</li>
  * </ul>
  */
 public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifiers>, Serializable {

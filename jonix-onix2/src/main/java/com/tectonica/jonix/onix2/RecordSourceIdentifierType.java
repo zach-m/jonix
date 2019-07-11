@@ -65,16 +65,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;MainSeriesRecord&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ RecordSourceIdentifierType</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ RecordSourceIdentifierType</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ RecordSourceIdentifierType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RecordSourceIdentifierType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link RecordSourceIdentifierType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link RecordSourceIdentifierType}</li>
  * </ul>
  */
 public class RecordSourceIdentifierType implements OnixElement<NameIdentifierTypes>, Serializable {
@@ -144,7 +144,7 @@ public class RecordSourceIdentifierType implements OnixElement<NameIdentifierTyp
 
     /**
      * @return whether this tag (&lt;RecordSourceIdentifierType&gt; or &lt;a195&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {

@@ -64,16 +64,16 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;Product&gt;</li>
- * <li>&lt;SubSeriesRecord&gt;</li>
- * <li>&lt;MainSeriesRecord&gt;</li>
+ * <li>&lt;{@link Product}&gt;</li>
+ * <li>&lt;{@link SubSeriesRecord}&gt;</li>
+ * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ NotificationType</li>
- * <li>ONIXMessage ⯈ SubSeriesRecord ⯈ NotificationType</li>
- * <li>ONIXMessage ⯈ MainSeriesRecord ⯈ NotificationType</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotificationType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link NotificationType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link NotificationType}</li>
  * </ul>
  */
 public class NotificationType implements OnixElement<NotificationOrUpdateTypes>, Serializable {

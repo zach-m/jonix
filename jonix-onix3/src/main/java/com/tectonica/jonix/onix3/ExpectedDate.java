@@ -66,12 +66,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;OnOrderDetail&gt;</li>
+ * <li>&lt;{@link OnOrderDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ ProductSupply ⯈ SupplyDetail ⯈ Stock ⯈ OnOrderDetail ⯈ ExpectedDate</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
+ * {@link OnOrderDetail} ⯈ {@link ExpectedDate}</li>
  * </ul>
  */
 public class ExpectedDate implements OnixElement<String>, Serializable {

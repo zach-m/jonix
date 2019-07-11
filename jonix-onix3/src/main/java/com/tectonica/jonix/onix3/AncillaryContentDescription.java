@@ -70,12 +70,13 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;AncillaryContent&gt;</li>
+ * <li>&lt;{@link AncillaryContent}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>ONIXMessage ⯈ Product ⯈ DescriptiveDetail ⯈ AncillaryContent ⯈ AncillaryContentDescription</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AncillaryContent} ⯈
+ * {@link AncillaryContentDescription}</li>
  * </ul>
  */
 public class AncillaryContentDescription implements OnixElement<String>, Serializable {
@@ -148,7 +149,7 @@ public class AncillaryContentDescription implements OnixElement<String>, Seriali
 
     /**
      * @return whether this tag (&lt;AncillaryContentDescription&gt; or &lt;x424&gt;) is explicitly provided in the ONIX
-     * XML
+     *         XML
      */
     @Override
     public boolean exists() {
