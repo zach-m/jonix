@@ -29,14 +29,18 @@ import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Iterator;
+import java.util.stream.Stream;
 
 import static com.tectonica.jonix.codegen.GenerateCode.unifyCodelists;
 import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_2_1_03_REF;
@@ -62,7 +66,7 @@ public class MetadataDump {
         parse3();
 
         LOGGER.info("Parsing Onix3 History..");
-        parse3_all_ref();
+        parse3_unified_all_rev();
 
         LOGGER.info("DONE");
     }
@@ -79,7 +83,7 @@ public class MetadataDump {
         saveMetadata(SPECS_3_0_06_SHORT, new File(parent, "short"));
     }
 
-    private static void parse3_all_ref() throws IOException, ParserConfigurationException, SAXException {
+    private static void parse3_unified_all_rev() throws IOException, ParserConfigurationException, SAXException {
         File parent = new File(DUMP_FOLDER, "onix3-history");
         saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_01_REF, new File(parent, "3.0.1"));
         saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_02_REF, new File(parent, "3.0.2"));
@@ -134,12 +138,10 @@ public class MetadataDump {
         metadata.getStructs()
             .forEach(os -> saveAsJson(folder + "/structs/" + os.containingComposite.name + ".txt", os));
 
-        List<OnixSimpleType> codelists = enums.stream()
+        Stream<OnixSimpleType> sortedCodelists = enums.stream()
             .filter(ost -> ost.enumAliasFor == null)
-            .map(OnixSimpleType::cloneFrom)
-            .peek(ost -> ost.enumValues = null) // for cleaner presentation in a single file
-            .collect(Collectors.toList());
-        saveAsJson(folder + "/codelists.txt", codelists);
+            .sorted(Comparator.comparingInt(OnixSimpleType::extractCodeList));
+        saveCodelistCsv(folder + "/codelists.csv", sortedCodelists);
 
         LOGGER.info("saved results to " + folder);
     }
@@ -166,5 +168,33 @@ public class MetadataDump {
 
     private static void saveAsJson(final String fileName, final Object obj) {
         JSON.saveAsJson(new File(fileName), obj);
+    }
+
+    private static void saveCodelistCsv(final String fileName, Stream<OnixSimpleType> codelists) {
+        try (BufferedWriter out = new BufferedWriter(
+            new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8))) {
+            out.write('\ufeff');
+            out.write("CodeList");
+            out.write(",");
+            out.write("EnumName");
+            out.write(",");
+            out.write("Description");
+            out.write(",");
+            out.write("EnumCodelistIssue");
+            out.write('\n');
+            for (Iterator<OnixSimpleType> iter = codelists.iterator(); iter.hasNext(); ) {
+                OnixSimpleType ost = iter.next();
+                out.write(ost.extractCodeList().toString());
+                out.write(",");
+                out.write(ost.enumName);
+                out.write(",\"");
+                out.write(ost.description.replaceAll("\"", "\"\""));
+                out.write(",");
+                out.write(ost.enumCodelistIssue);
+                out.write('\n');
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

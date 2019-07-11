@@ -86,6 +86,13 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
      */
     public List<OnixEnumValue> enumValues;
 
+    public Integer extractCodeList() {
+        if (name.startsWith("List")) {
+            return Integer.parseInt(name.substring(4));
+        }
+        return null;
+    }
+
     public boolean isEnum() {
         return (enumValues != null);
     }
