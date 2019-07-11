@@ -1,8 +1,9 @@
 module jonix {
-    requires jonix.common;
-    requires jonix.onix2;
-    requires jonix.onix3;
-    requires jonix.xml;
+    requires transitive jonix.common;
+    requires transitive jonix.onix2;
+    requires transitive jonix.onix3;
+    requires transitive jonix.xml;
+
     requires java.xml;
     requires slf4j.api;
 
