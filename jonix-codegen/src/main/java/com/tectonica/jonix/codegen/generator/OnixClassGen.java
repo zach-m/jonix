@@ -36,6 +36,7 @@ import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 import java.io.File;
 import java.io.PrintStream;
 import java.util.List;
+import java.util.Set;
 
 public class OnixClassGen {
     private final String packageName;
@@ -475,7 +476,7 @@ public class OnixClassGen {
         if (onixClass.parents != null) { // should only happen in "ONIXMessage"
             p.printf(" * This tag may be included in the following composites:\n");
             p.printf(" * <ul>\n");
-            onixClass.parents.forEach(parent -> p.printf(" * <li>&lt;%s&gt;</li>\n", parent.name));
+            onixClass.parents.forEach(parent -> p.printf(" * <li>&lt;{@link %s}&gt;</li>\n", parent.name));
             p.printf(" * </ul>\n");
             p.printf(" * <p/>\n");
         }
@@ -483,9 +484,28 @@ public class OnixClassGen {
         p.printf(" * Possible placements within ONIX message:\n");
         p.printf(" * <ul>\n");
         onixClass.paths.stream()
-            .map(path -> path.replaceAll("/", " \u2bc8 "))
+            .map(path -> "{@link " + path.replaceAll("/", "} \u2BC8 {@link ") + "}")
             .forEach(path -> p.printf(" * <li>%s</li>\n", path));
         p.printf(" * </ul>\n");
+
+        if (onixDocs != null) {
+            Set<String> tags = onixDocs.get(0).tags; // TODO: first is arbitrary
+            String since = tags.stream().filter(tag -> tag.startsWith("new")).findFirst().map(
+                tag -> "Onix-" + tag.substring(3, 4) + "." + tag.substring(4)).orElse(null);
+            boolean deprecated = tags.contains("deprecated");
+            if ((since != null) || deprecated) {
+                p.printf(" *\n");
+            }
+            if (since != null) {
+                if (since.equals("Onix-2.10")) {
+                    since = "Onix-2.1";
+                }
+                p.printf(" * @since %s\n", since);
+            }
+            if (deprecated) {
+                p.printf(" * @deprecated\n");
+            }
+        }
 
         p.printf(" */\n");
     }

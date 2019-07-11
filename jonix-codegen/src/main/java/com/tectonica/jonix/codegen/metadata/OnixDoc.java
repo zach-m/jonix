@@ -70,8 +70,13 @@ public class OnixDoc {
     @JsonIgnore
     public String escapedFormat;
 
-    // ONIX2: [composite, deprecated, element, new210, new211, new212, new213, new214]
-    // ONIX3: [composite, deprecated, element, mod304, new301, new302, new303, new304, new305, new306]
+    /**
+     * Possible values as of Onix-3.06:
+     * <ul>
+     * <li>ONIX2: [composite, deprecated, element, new210, new211, new212, new213, new214]
+     * <li>ONIX3: [composite, deprecated, element, mod304, new301, new302, new303, new304, new305, new306]
+     * </ul>
+     */
     public Set<String> tags;
 
     public String title;

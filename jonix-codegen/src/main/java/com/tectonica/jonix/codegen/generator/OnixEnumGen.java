@@ -104,7 +104,7 @@ public class OnixEnumGen {
         String linkGeneral = "https://www.editeur.org/14/Code-Lists/";
         String link = "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/"
             + "ONIX_BookProduct_Codelists_Issue_" + enumType.enumCodelistIssue + ".html#codelist" + codelistNum;
-        p.printf(" * \n");
+        p.printf(" *\n");
         p.printf(" * @see <a href=\"%s\">About ONIX Codelists</a>\n", linkGeneral);
         p.printf(" * @see <a href=\"%s\">ONIX Codelist %s in Reference Guide</a>\n", link, codelistNum);
         p.printf(" */\n");
