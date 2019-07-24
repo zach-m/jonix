@@ -148,13 +148,21 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
                 case NameType.shortname:
                     nameType = new NameType(e);
                     break;
-                case NameIdentifier.refname:
-                case NameIdentifier.shortname:
-                    nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
-                    break;
                 case PersonName.refname:
                 case PersonName.shortname:
                     personName = new PersonName(e);
+                    break;
+                case KeyNames.refname:
+                case KeyNames.shortname:
+                    keyNames = new KeyNames(e);
+                    break;
+                case CorporateName.refname:
+                case CorporateName.shortname:
+                    corporateName = new CorporateName(e);
+                    break;
+                case NameIdentifier.refname:
+                case NameIdentifier.shortname:
+                    nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
                     break;
                 case PersonNameInverted.refname:
                 case PersonNameInverted.shortname:
@@ -171,10 +179,6 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
                 case PrefixToKey.refname:
                 case PrefixToKey.shortname:
                     prefixToKey = new PrefixToKey(e);
-                    break;
-                case KeyNames.refname:
-                case KeyNames.shortname:
-                    keyNames = new KeyNames(e);
                     break;
                 case NamesAfterKey.refname:
                 case NamesAfterKey.shortname:
@@ -195,10 +199,6 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
                 case Gender.refname:
                 case Gender.shortname:
                     gender = new Gender(e);
-                    break;
-                case CorporateName.refname:
-                case CorporateName.shortname:
-                    corporateName = new CorporateName(e);
                     break;
                 case CorporateNameInverted.refname:
                 case CorporateNameInverted.shortname:
@@ -237,6 +237,50 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         return nameType;
     }
 
+    private PersonName personName = PersonName.EMPTY;
+
+    /**
+     * <p>
+     * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
+     * Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public PersonName personName() {
+        _initialize();
+        return personName;
+    }
+
+    private KeyNames keyNames = KeyNames.EMPTY;
+
+    /**
+     * <p>
+     * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
+     * <i>ie</i> the name elements normally used to open an entry in an alphabetical list, <i>eg</i> ‘Smith’ or ‘Garcia
+     * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
+     * elements P.7.11 to P.7.18 are used.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public KeyNames keyNames() {
+        _initialize();
+        return keyNames;
+    }
+
+    private CorporateName corporateName = CorporateName.EMPTY;
+
+    /**
+     * <p>
+     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
+     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public CorporateName corporateName() {
+        _initialize();
+        return corporateName;
+    }
+
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -252,20 +296,6 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
     public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {
         _initialize();
         return nameIdentifiers;
-    }
-
-    private PersonName personName = PersonName.EMPTY;
-
-    /**
-     * <p>
-     * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
-     * Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public PersonName personName() {
-        _initialize();
-        return personName;
     }
 
     private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
@@ -326,22 +356,6 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
     public PrefixToKey prefixToKey() {
         _initialize();
         return prefixToKey;
-    }
-
-    private KeyNames keyNames = KeyNames.EMPTY;
-
-    /**
-     * <p>
-     * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
-     * <i>ie</i> the name elements normally used to open an entry in an alphabetical list, <i>eg</i> ‘Smith’ or ‘Garcia
-     * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
-     * elements P.7.11 to P.7.18 are used.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public KeyNames keyNames() {
-        _initialize();
-        return keyNames;
     }
 
     private NamesAfterKey namesAfterKey = NamesAfterKey.EMPTY;
@@ -413,20 +427,6 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
     public Gender gender() {
         _initialize();
         return gender;
-    }
-
-    private CorporateName corporateName = CorporateName.EMPTY;
-
-    /**
-     * <p>
-     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
-     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public CorporateName corporateName() {
-        _initialize();
-        return corporateName;
     }
 
     private CorporateNameInverted corporateNameInverted = CorporateNameInverted.EMPTY;

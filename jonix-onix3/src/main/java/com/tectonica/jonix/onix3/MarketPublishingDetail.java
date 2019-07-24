@@ -122,6 +122,14 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case MarketPublishingStatus.refname:
+                case MarketPublishingStatus.shortname:
+                    marketPublishingStatus = new MarketPublishingStatus(e);
+                    break;
+                case PromotionContact.refname:
+                case PromotionContact.shortname:
+                    promotionContact = new PromotionContact(e);
+                    break;
                 case PublisherRepresentative.refname:
                 case PublisherRepresentative.shortname:
                     publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(e));
@@ -129,10 +137,6 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
                 case ProductContact.refname:
                 case ProductContact.shortname:
                     productContacts = JPU.addToList(productContacts, new ProductContact(e));
-                    break;
-                case MarketPublishingStatus.refname:
-                case MarketPublishingStatus.shortname:
-                    marketPublishingStatus = new MarketPublishingStatus(e);
                     break;
                 case MarketPublishingStatusNote.refname:
                 case MarketPublishingStatusNote.shortname:
@@ -146,10 +150,6 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
                 case PromotionCampaign.refname:
                 case PromotionCampaign.shortname:
                     promotionCampaigns = JPU.addToList(promotionCampaigns, new PromotionCampaign(e));
-                    break;
-                case PromotionContact.refname:
-                case PromotionContact.shortname:
-                    promotionContact = new PromotionContact(e);
                     break;
                 case InitialPrintRun.refname:
                 case InitialPrintRun.shortname:
@@ -186,6 +186,35 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
+    private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which identifies the status of a published product in a specified market. Mandatory in each
+     * occurrence of the &lt;MarketPublishingDetail&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public MarketPublishingStatus marketPublishingStatus() {
+        _initialize();
+        return marketPublishingStatus;
+    }
+
+    private PromotionContact promotionContact = PromotionContact.EMPTY;
+
+    /**
+     * <p>
+     * Free text giving the name, department, phone number, e-mail address etc for a promotional contact person for the
+     * product. Optional and non-repeating. Deprecated, in favor of providing this information via the
+     * &lt;ProductContact&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PromotionContact promotionContact() {
+        _initialize();
+        return promotionContact;
+    }
+
     private List<PublisherRepresentative> publisherRepresentatives = Collections.emptyList();
 
     /**
@@ -213,20 +242,6 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
     public List<ProductContact> productContacts() {
         _initialize();
         return productContacts;
-    }
-
-    private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which identifies the status of a published product in a specified market. Mandatory in each
-     * occurrence of the &lt;MarketPublishingDetail&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public MarketPublishingStatus marketPublishingStatus() {
-        _initialize();
-        return marketPublishingStatus;
     }
 
     private ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes =
@@ -277,21 +292,6 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
     public ListOfOnixElement<PromotionCampaign, String> promotionCampaigns() {
         _initialize();
         return promotionCampaigns;
-    }
-
-    private PromotionContact promotionContact = PromotionContact.EMPTY;
-
-    /**
-     * <p>
-     * Free text giving the name, department, phone number, e-mail address etc for a promotional contact person for the
-     * product. Optional and non-repeating. Deprecated, in favor of providing this information via the
-     * &lt;ProductContact&gt; composite.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PromotionContact promotionContact() {
-        _initialize();
-        return promotionContact;
     }
 
     private ListOfOnixElement<InitialPrintRun, String> initialPrintRuns = ListOfOnixElement.empty();

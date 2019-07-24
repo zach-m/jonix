@@ -137,13 +137,13 @@ public class SeriesIdentifier
                 case SeriesIDType.shortname:
                     seriesIDType = new SeriesIDType(e);
                     break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
                 case IDValue.refname:
                 case IDValue.shortname:
                     idValue = new IDValue(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
                     break;
                 default:
                     break;
@@ -178,20 +178,6 @@ public class SeriesIdentifier
         return seriesIDType;
     }
 
-    private IDTypeName idTypeName = IDTypeName.EMPTY;
-
-    /**
-     * <p>
-     * A name which identifies a proprietary identifier scheme when, and only when, the code in the &lt;SeriesIDType&gt;
-     * field indicates a proprietary scheme, <em>eg</em> a publisher’s own code. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public IDTypeName idTypeName() {
-        _initialize();
-        return idTypeName;
-    }
-
     private IDValue idValue = IDValue.EMPTY;
 
     /**
@@ -204,6 +190,20 @@ public class SeriesIdentifier
     public IDValue idValue() {
         _initialize();
         return idValue;
+    }
+
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
+
+    /**
+     * <p>
+     * A name which identifies a proprietary identifier scheme when, and only when, the code in the &lt;SeriesIDType&gt;
+     * field indicates a proprietary scheme, <em>eg</em> a publisher’s own code. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public IDTypeName idTypeName() {
+        _initialize();
+        return idTypeName;
     }
 
     @Override

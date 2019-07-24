@@ -130,13 +130,13 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
                 case AudienceCodeType.shortname:
                     audienceCodeType = new AudienceCodeType(e);
                     break;
-                case AudienceCodeTypeName.refname:
-                case AudienceCodeTypeName.shortname:
-                    audienceCodeTypeName = new AudienceCodeTypeName(e);
-                    break;
                 case AudienceCodeValue.refname:
                 case AudienceCodeValue.shortname:
                     audienceCodeValue = new AudienceCodeValue(e);
+                    break;
+                case AudienceCodeTypeName.refname:
+                case AudienceCodeTypeName.shortname:
+                    audienceCodeTypeName = new AudienceCodeTypeName(e);
                     break;
                 default:
                     break;
@@ -170,20 +170,6 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
         return audienceCodeType;
     }
 
-    private AudienceCodeTypeName audienceCodeTypeName = AudienceCodeTypeName.EMPTY;
-
-    /**
-     * <p>
-     * A name which identifies a proprietary audience code when the code in &lt;AudienceCodeType&gt; indicates a
-     * proprietary scheme, <em>eg</em> a vendor’s own code. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public AudienceCodeTypeName audienceCodeTypeName() {
-        _initialize();
-        return audienceCodeTypeName;
-    }
-
     private AudienceCodeValue audienceCodeValue = AudienceCodeValue.EMPTY;
 
     /**
@@ -196,6 +182,20 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     public AudienceCodeValue audienceCodeValue() {
         _initialize();
         return audienceCodeValue;
+    }
+
+    private AudienceCodeTypeName audienceCodeTypeName = AudienceCodeTypeName.EMPTY;
+
+    /**
+     * <p>
+     * A name which identifies a proprietary audience code when the code in &lt;AudienceCodeType&gt; indicates a
+     * proprietary scheme, <em>eg</em> a vendor’s own code. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public AudienceCodeTypeName audienceCodeTypeName() {
+        _initialize();
+        return audienceCodeTypeName;
     }
 
     @Override

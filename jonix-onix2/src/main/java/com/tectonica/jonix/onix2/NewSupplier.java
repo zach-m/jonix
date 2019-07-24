@@ -130,21 +130,21 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case SupplierIdentifier.refname:
-                case SupplierIdentifier.shortname:
-                    supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
+                case SupplierEANLocationNumber.refname:
+                case SupplierEANLocationNumber.shortname:
+                    supplierEANLocationNumber = new SupplierEANLocationNumber(e);
                     break;
                 case SupplierSAN.refname:
                 case SupplierSAN.shortname:
                     supplierSAN = new SupplierSAN(e);
                     break;
-                case SupplierEANLocationNumber.refname:
-                case SupplierEANLocationNumber.shortname:
-                    supplierEANLocationNumber = new SupplierEANLocationNumber(e);
-                    break;
                 case SupplierName.refname:
                 case SupplierName.shortname:
                     supplierName = new SupplierName(e);
+                    break;
+                case SupplierIdentifier.refname:
+                case SupplierIdentifier.shortname:
+                    supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
                     break;
                 case TelephoneNumber.refname:
                 case TelephoneNumber.shortname:
@@ -176,21 +176,19 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private SupplierEANLocationNumber supplierEANLocationNumber = SupplierEANLocationNumber.EMPTY;
 
     /**
      * <p>
-     * A repeatable group of data elements which together define the identifier of a supplier in accordance with a
-     * specified scheme, and allowing different types of supplier identifier to be included without defining additional
-     * data elements. Optional, but each occurrence of the &lt;NewSupplier&gt; composite must carry either at least one
-     * supplier identifier, or a &lt;SupplierName&gt;.
+     * An EAN-13 location number identifying a supplier. Now also known as an “EAN-UCC Global Location Number” or GLN.
+     * Optional and non-repeating, but each occurrence of the &lt;NewSupplier&gt; composite must carry either at least
+     * one supplier identifier, or a &lt;SupplierName&gt;.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * Jonix-Comment: this field is required
      */
-    public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers() {
+    public SupplierEANLocationNumber supplierEANLocationNumber() {
         _initialize();
-        return supplierIdentifiers;
+        return supplierEANLocationNumber;
     }
 
     private SupplierSAN supplierSAN = SupplierSAN.EMPTY;
@@ -208,21 +206,6 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
         return supplierSAN;
     }
 
-    private SupplierEANLocationNumber supplierEANLocationNumber = SupplierEANLocationNumber.EMPTY;
-
-    /**
-     * <p>
-     * An EAN-13 location number identifying a supplier. Now also known as an “EAN-UCC Global Location Number” or GLN.
-     * Optional and non-repeating, but each occurrence of the &lt;NewSupplier&gt; composite must carry either at least
-     * one supplier identifier, or a &lt;SupplierName&gt;.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public SupplierEANLocationNumber supplierEANLocationNumber() {
-        _initialize();
-        return supplierEANLocationNumber;
-    }
-
     private SupplierName supplierName = SupplierName.EMPTY;
 
     /**
@@ -235,6 +218,23 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
     public SupplierName supplierName() {
         _initialize();
         return supplierName;
+    }
+
+    private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define the identifier of a supplier in accordance with a
+     * specified scheme, and allowing different types of supplier identifier to be included without defining additional
+     * data elements. Optional, but each occurrence of the &lt;NewSupplier&gt; composite must carry either at least one
+     * supplier identifier, or a &lt;SupplierName&gt;.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers() {
+        _initialize();
+        return supplierIdentifiers;
     }
 
     private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();

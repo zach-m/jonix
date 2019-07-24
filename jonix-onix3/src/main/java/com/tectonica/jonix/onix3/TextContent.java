@@ -131,25 +131,25 @@ public class TextContent implements OnixSuperComposite, Serializable {
                 case ContentAudience.shortname:
                     contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
                     break;
-                case Territory.refname:
-                case Territory.shortname:
-                    territory = new Territory(e);
-                    break;
                 case Text.refname:
                 case Text.shortname:
                     texts = JPU.addToList(texts, new Text(e));
+                    break;
+                case Territory.refname:
+                case Territory.shortname:
+                    territory = new Territory(e);
                     break;
                 case ReviewRating.refname:
                 case ReviewRating.shortname:
                     reviewRating = new ReviewRating(e);
                     break;
-                case TextAuthor.refname:
-                case TextAuthor.shortname:
-                    textAuthors = JPU.addToList(textAuthors, new TextAuthor(e));
-                    break;
                 case TextSourceCorporate.refname:
                 case TextSourceCorporate.shortname:
                     textSourceCorporate = new TextSourceCorporate(e);
+                    break;
+                case TextAuthor.refname:
+                case TextAuthor.shortname:
+                    textAuthors = JPU.addToList(textAuthors, new TextAuthor(e));
                     break;
                 case SourceTitle.refname:
                 case SourceTitle.shortname:
@@ -205,6 +205,22 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
+    private ListOfOnixElement<Text, String> texts = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The text specified in the &lt;TextType&gt; element. Mandatory in each occurrence of the &lt;TextContent&gt;
+     * composite, and repeatable when essentially identical text is supplied in multiple languages. The <i>language</i>
+     * attribute is optional for a single instance of &lt;Text&gt;, but must be included in each instance if
+     * &lt;Text&gt; is repeated.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixElement<Text, String> texts() {
+        _initialize();
+        return texts;
+    }
+
     private Territory territory = Territory.EMPTY;
 
     /**
@@ -231,22 +247,6 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return territory;
     }
 
-    private ListOfOnixElement<Text, String> texts = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The text specified in the &lt;TextType&gt; element. Mandatory in each occurrence of the &lt;TextContent&gt;
-     * composite, and repeatable when essentially identical text is supplied in multiple languages. The <i>language</i>
-     * attribute is optional for a single instance of &lt;Text&gt;, but must be included in each instance if
-     * &lt;Text&gt; is repeated.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public ListOfOnixElement<Text, String> texts() {
-        _initialize();
-        return texts;
-    }
-
     private ReviewRating reviewRating = ReviewRating.EMPTY;
 
     /**
@@ -261,20 +261,6 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return reviewRating;
     }
 
-    private ListOfOnixElement<TextAuthor, String> textAuthors = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i> if it is a review or promotional quote.
-     * Optional, and repeatable if the text is jointly authored.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<TextAuthor, String> textAuthors() {
-        _initialize();
-        return textAuthors;
-    }
-
     private TextSourceCorporate textSourceCorporate = TextSourceCorporate.EMPTY;
 
     /**
@@ -287,6 +273,20 @@ public class TextContent implements OnixSuperComposite, Serializable {
     public TextSourceCorporate textSourceCorporate() {
         _initialize();
         return textSourceCorporate;
+    }
+
+    private ListOfOnixElement<TextAuthor, String> textAuthors = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i> if it is a review or promotional quote.
+     * Optional, and repeatable if the text is jointly authored.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<TextAuthor, String> textAuthors() {
+        _initialize();
+        return textAuthors;
     }
 
     private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();

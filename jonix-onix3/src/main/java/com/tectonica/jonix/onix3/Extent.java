@@ -128,13 +128,13 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
                 case ExtentValue.shortname:
                     extentValue = new ExtentValue(e);
                     break;
-                case ExtentValueRoman.refname:
-                case ExtentValueRoman.shortname:
-                    extentValueRoman = new ExtentValueRoman(e);
-                    break;
                 case ExtentUnit.refname:
                 case ExtentUnit.shortname:
                     extentUnit = new ExtentUnit(e);
+                    break;
+                case ExtentValueRoman.refname:
+                case ExtentValueRoman.shortname:
+                    extentValueRoman = new ExtentValueRoman(e);
                     break;
                 default:
                     break;
@@ -186,20 +186,6 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
         return extentValue;
     }
 
-    private ExtentValueRoman extentValueRoman = ExtentValueRoman.EMPTY;
-
-    /**
-     * <p>
-     * The value of the extent expressed in Roman numerals. Optional, and non-repeating. Used only for page runs which
-     * are numbered in Roman.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ExtentValueRoman extentValueRoman() {
-        _initialize();
-        return extentValueRoman;
-    }
-
     private ExtentUnit extentUnit = ExtentUnit.EMPTY;
 
     /**
@@ -212,6 +198,20 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     public ExtentUnit extentUnit() {
         _initialize();
         return extentUnit;
+    }
+
+    private ExtentValueRoman extentValueRoman = ExtentValueRoman.EMPTY;
+
+    /**
+     * <p>
+     * The value of the extent expressed in Roman numerals. Optional, and non-repeating. Used only for page runs which
+     * are numbered in Roman.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ExtentValueRoman extentValueRoman() {
+        _initialize();
+        return extentValueRoman;
     }
 
     @Override

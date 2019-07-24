@@ -150,25 +150,9 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
                 case EAN13.shortname:
                     ean13 = new EAN13(e);
                     break;
-                case ProductIdentifier.refname:
-                case ProductIdentifier.shortname:
-                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-                    break;
                 case ProductForm.refname:
                 case ProductForm.shortname:
                     productForm = new ProductForm(e);
-                    break;
-                case ProductFormDetail.refname:
-                case ProductFormDetail.shortname:
-                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
-                    break;
-                case ProductFormFeature.refname:
-                case ProductFormFeature.shortname:
-                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
-                    break;
-                case BookFormDetail.refname:
-                case BookFormDetail.shortname:
-                    bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
                     break;
                 case ProductPackaging.refname:
                 case ProductPackaging.shortname:
@@ -186,13 +170,29 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
                 case TradeCategory.shortname:
                     tradeCategory = new TradeCategory(e);
                     break;
-                case ProductContentType.refname:
-                case ProductContentType.shortname:
-                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
-                    break;
                 case ItemQuantity.refname:
                 case ItemQuantity.shortname:
                     itemQuantity = new ItemQuantity(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case ProductFormDetail.refname:
+                case ProductFormDetail.shortname:
+                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                    break;
+                case ProductFormFeature.refname:
+                case ProductFormFeature.shortname:
+                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                    break;
+                case BookFormDetail.refname:
+                case BookFormDetail.shortname:
+                    bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
+                    break;
+                case ProductContentType.refname:
+                case ProductContentType.shortname:
+                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
                     break;
                 default:
                     break;
@@ -241,22 +241,6 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return ean13;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together define the identifier of a product in accordance with a
-     * specified scheme, used here to carry the product identifier of a contained item. <strong>See notes on the
-     * &lt;ProductIdentifier&gt; composite in section PR.2 for details of the handling of ISBN-13.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        _initialize();
-        return productIdentifiers;
-    }
-
     private ProductForm productForm = ProductForm.EMPTY;
 
     /**
@@ -268,55 +252,6 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     public ProductForm productForm() {
         _initialize();
         return productForm;
-    }
-
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails = ListOfOnixElement
-        .empty();
-
-    /**
-     * <p>
-     * An ONIX code which provides added detail of the medium and/or format of the contained item. Optional and
-     * repeatable. This field can only occur if the &lt;ContainedItem&gt; composite has a &lt;ProductForm&gt; code.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
-        _initialize();
-        return productFormDetails;
-    }
-
-    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
-     * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional. The
-     * &lt;ProductFormFeature&gt; composite can only occur if the &lt;ContainedItem&gt; composite has a
-     * &lt;ProductForm&gt; code.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
-        _initialize();
-        return productFormFeatures;
-    }
-
-    private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code specifying more detail of the contained item when the item is a book. Optional and repeatable, and
-     * must only be included when the &lt;ProductForm&gt; code for the contained item begins with letter B. <strong>This
-     * field will be superseded by the new element &lt;ProductFormDetail&gt;, and the code list will not be further
-     * developed. The field is retained only for purposes of upwards compatibility, and its use is now to be
-     * deprecated.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
-        _initialize();
-        return bookFormDetails;
     }
 
     private ProductPackaging productPackaging = ProductPackaging.EMPTY;
@@ -377,22 +312,6 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return tradeCategory;
     }
 
-    private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code which indicates certain types of content which are closely related to but not strictly an attribute
-     * of product form, <em>eg</em> audiobook. Optional and repeatable. The element is intended to be used with products
-     * where content is delivered in the form of a digital or analogue recording. It is not expected to be used for
-     * books.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
-        _initialize();
-        return productContentTypes;
-    }
-
     private ItemQuantity itemQuantity = ItemQuantity.EMPTY;
 
     /**
@@ -408,5 +327,86 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     public ItemQuantity itemQuantity() {
         _initialize();
         return itemQuantity;
+    }
+
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define the identifier of a product in accordance with a
+     * specified scheme, used here to carry the product identifier of a contained item. <strong>See notes on the
+     * &lt;ProductIdentifier&gt; composite in section PR.2 for details of the handling of ISBN-13.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+        _initialize();
+        return productIdentifiers;
+    }
+
+    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails = ListOfOnixElement
+        .empty();
+
+    /**
+     * <p>
+     * An ONIX code which provides added detail of the medium and/or format of the contained item. Optional and
+     * repeatable. This field can only occur if the &lt;ContainedItem&gt; composite has a &lt;ProductForm&gt; code.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
+        _initialize();
+        return productFormDetails;
+    }
+
+    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
+     * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional. The
+     * &lt;ProductFormFeature&gt; composite can only occur if the &lt;ContainedItem&gt; composite has a
+     * &lt;ProductForm&gt; code.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
+        _initialize();
+        return productFormFeatures;
+    }
+
+    private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code specifying more detail of the contained item when the item is a book. Optional and repeatable, and
+     * must only be included when the &lt;ProductForm&gt; code for the contained item begins with letter B. <strong>This
+     * field will be superseded by the new element &lt;ProductFormDetail&gt;, and the code list will not be further
+     * developed. The field is retained only for purposes of upwards compatibility, and its use is now to be
+     * deprecated.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
+        _initialize();
+        return bookFormDetails;
+    }
+
+    private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code which indicates certain types of content which are closely related to but not strictly an attribute
+     * of product form, <em>eg</em> audiobook. Optional and repeatable. The element is intended to be used with products
+     * where content is delivered in the form of a digital or analogue recording. It is not expected to be used for
+     * books.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
+        _initialize();
+        return productContentTypes;
     }
 }

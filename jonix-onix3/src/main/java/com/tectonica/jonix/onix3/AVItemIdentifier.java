@@ -127,13 +127,13 @@ public class AVItemIdentifier
                 case AVItemIDType.shortname:
                     avItemIDType = new AVItemIDType(e);
                     break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
                 case IDValue.refname:
                 case IDValue.shortname:
                     idValue = new IDValue(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
                     break;
                 default:
                     break;
@@ -168,6 +168,20 @@ public class AVItemIdentifier
         return avItemIDType;
     }
 
+    private IDValue idValue = IDValue.EMPTY;
+
+    /**
+     * <p>
+     * An identifier of the type specified in &lt;AVItemIDType&gt;. Mandatory in each occurrence of the
+     * &lt;AVItemIdentifier&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public IDValue idValue() {
+        _initialize();
+        return idValue;
+    }
+
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
@@ -181,20 +195,6 @@ public class AVItemIdentifier
     public IDTypeName idTypeName() {
         _initialize();
         return idTypeName;
-    }
-
-    private IDValue idValue = IDValue.EMPTY;
-
-    /**
-     * <p>
-     * An identifier of the type specified in &lt;AVItemIDType&gt;. Mandatory in each occurrence of the
-     * &lt;AVItemIdentifier&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public IDValue idValue() {
-        _initialize();
-        return idValue;
     }
 
     @Override

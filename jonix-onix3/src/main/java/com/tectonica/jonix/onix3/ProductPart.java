@@ -137,17 +137,33 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case ProductForm.refname:
+                case ProductForm.shortname:
+                    productForm = new ProductForm(e);
+                    break;
+                case NumberOfItemsOfThisForm.refname:
+                case NumberOfItemsOfThisForm.shortname:
+                    numberOfItemsOfThisForm = new NumberOfItemsOfThisForm(e);
+                    break;
                 case PrimaryPart.refname:
                 case PrimaryPart.shortname:
                     primaryPart = new PrimaryPart(e);
                     break;
+                case ProductPackaging.refname:
+                case ProductPackaging.shortname:
+                    productPackaging = new ProductPackaging(e);
+                    break;
+                case NumberOfCopies.refname:
+                case NumberOfCopies.shortname:
+                    numberOfCopies = new NumberOfCopies(e);
+                    break;
+                case CountryOfManufacture.refname:
+                case CountryOfManufacture.shortname:
+                    countryOfManufacture = new CountryOfManufacture(e);
+                    break;
                 case ProductIdentifier.refname:
                 case ProductIdentifier.shortname:
                     productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-                    break;
-                case ProductForm.refname:
-                case ProductForm.shortname:
-                    productForm = new ProductForm(e);
                     break;
                 case ProductFormDetail.refname:
                 case ProductFormDetail.shortname:
@@ -156,10 +172,6 @@ public class ProductPart implements OnixSuperComposite, Serializable {
                 case ProductFormFeature.refname:
                 case ProductFormFeature.shortname:
                     productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
-                    break;
-                case ProductPackaging.refname:
-                case ProductPackaging.shortname:
-                    productPackaging = new ProductPackaging(e);
                     break;
                 case ProductFormDescription.refname:
                 case ProductFormDescription.shortname:
@@ -172,18 +184,6 @@ public class ProductPart implements OnixSuperComposite, Serializable {
                 case Measure.refname:
                 case Measure.shortname:
                     measures = JPU.addToList(measures, new Measure(e));
-                    break;
-                case NumberOfItemsOfThisForm.refname:
-                case NumberOfItemsOfThisForm.shortname:
-                    numberOfItemsOfThisForm = new NumberOfItemsOfThisForm(e);
-                    break;
-                case NumberOfCopies.refname:
-                case NumberOfCopies.shortname:
-                    numberOfCopies = new NumberOfCopies(e);
-                    break;
-                case CountryOfManufacture.refname:
-                case CountryOfManufacture.shortname:
-                    countryOfManufacture = new CountryOfManufacture(e);
                     break;
                 default:
                     break;
@@ -202,6 +202,37 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private ProductForm productForm = ProductForm.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which indicates the primary form of a product part. Mandatory in each occurrence of
+     * &lt;ProductPart&gt;, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ProductForm productForm() {
+        _initialize();
+        return productForm;
+    }
+
+    private NumberOfItemsOfThisForm numberOfItemsOfThisForm = NumberOfItemsOfThisForm.EMPTY;
+
+    /**
+     * <p>
+     * When product parts are listed as a specified number of <em>different</em> items in a specified form, without
+     * identifying the individual items, &lt;NumberOfItemsOfThisForm&gt; must be used to carry the quantity, even if the
+     * number is ‘1’. Consequently the element is mandatory and non-repeating in an occurrence of the
+     * &lt;ProductPart&gt; composite if &lt;NumberOfCopies&gt; is not present; and it must not be used if
+     * &lt;ProductIdentifier&gt; is present.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public NumberOfItemsOfThisForm numberOfItemsOfThisForm() {
+        _initialize();
+        return numberOfItemsOfThisForm;
+    }
 
     private PrimaryPart primaryPart = PrimaryPart.EMPTY;
 
@@ -222,6 +253,55 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         return (primaryPart().exists());
     }
 
+    private ProductPackaging productPackaging = ProductPackaging.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which indicates the type of packaging used for the product part. Optional, and not repeatable.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ProductPackaging productPackaging() {
+        _initialize();
+        return productPackaging;
+    }
+
+    private NumberOfCopies numberOfCopies = NumberOfCopies.EMPTY;
+
+    /**
+     * <p>
+     * When product parts are listed as a specified number of copies of a single item, usually identified by a
+     * &lt;ProductIdentifier&gt;, &lt;NumberOfCopies&gt; must be used to specify the quantity, even if the number is
+     * ‘1’. It must be used when a multiple-item product or pack contains (a) a quantity of a single item; or (b) one of
+     * each of several different items (as in a multi-volume set); or (c) one or more of each of several different items
+     * (as in a dumpbin carrying copies of two different books, or a classroom pack containing a teacher’s text and
+     * twenty student texts). Consequently the element is mandatory, and non-repeating, in an occurrence of the
+     * &lt;ProductPart&gt; composite if &lt;NumberOfItemsOfThisForm&gt; is not present. It is normally accompanied by a
+     * &lt;ProductIdentifier&gt;; but in exceptional circumstances, if the sender’s system is unable to provide an
+     * identifier at this level, it may be sent with product form coding and without an ID.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NumberOfCopies numberOfCopies() {
+        _initialize();
+        return numberOfCopies;
+    }
+
+    private CountryOfManufacture countryOfManufacture = CountryOfManufacture.EMPTY;
+
+    /**
+     * <p>
+     * A code identifying the country in which a product part was manufactured, if different product parts were
+     * manufactured in different countries. This information is needed in some countries to meet regulatory
+     * requirements. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public CountryOfManufacture countryOfManufacture() {
+        _initialize();
+        return countryOfManufacture;
+    }
+
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
         ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -238,20 +318,6 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         productIdentifiers() {
         _initialize();
         return productIdentifiers;
-    }
-
-    private ProductForm productForm = ProductForm.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which indicates the primary form of a product part. Mandatory in each occurrence of
-     * &lt;ProductPart&gt;, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ProductForm productForm() {
-        _initialize();
-        return productForm;
     }
 
     private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
@@ -284,19 +350,6 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         productFormFeatures() {
         _initialize();
         return productFormFeatures;
-    }
-
-    private ProductPackaging productPackaging = ProductPackaging.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which indicates the type of packaging used for the product part. Optional, and not repeatable.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ProductPackaging productPackaging() {
-        _initialize();
-        return productPackaging;
     }
 
     private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
@@ -343,58 +396,5 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
         _initialize();
         return measures;
-    }
-
-    private NumberOfItemsOfThisForm numberOfItemsOfThisForm = NumberOfItemsOfThisForm.EMPTY;
-
-    /**
-     * <p>
-     * When product parts are listed as a specified number of <em>different</em> items in a specified form, without
-     * identifying the individual items, &lt;NumberOfItemsOfThisForm&gt; must be used to carry the quantity, even if the
-     * number is ‘1’. Consequently the element is mandatory and non-repeating in an occurrence of the
-     * &lt;ProductPart&gt; composite if &lt;NumberOfCopies&gt; is not present; and it must not be used if
-     * &lt;ProductIdentifier&gt; is present.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public NumberOfItemsOfThisForm numberOfItemsOfThisForm() {
-        _initialize();
-        return numberOfItemsOfThisForm;
-    }
-
-    private NumberOfCopies numberOfCopies = NumberOfCopies.EMPTY;
-
-    /**
-     * <p>
-     * When product parts are listed as a specified number of copies of a single item, usually identified by a
-     * &lt;ProductIdentifier&gt;, &lt;NumberOfCopies&gt; must be used to specify the quantity, even if the number is
-     * ‘1’. It must be used when a multiple-item product or pack contains (a) a quantity of a single item; or (b) one of
-     * each of several different items (as in a multi-volume set); or (c) one or more of each of several different items
-     * (as in a dumpbin carrying copies of two different books, or a classroom pack containing a teacher’s text and
-     * twenty student texts). Consequently the element is mandatory, and non-repeating, in an occurrence of the
-     * &lt;ProductPart&gt; composite if &lt;NumberOfItemsOfThisForm&gt; is not present. It is normally accompanied by a
-     * &lt;ProductIdentifier&gt;; but in exceptional circumstances, if the sender’s system is unable to provide an
-     * identifier at this level, it may be sent with product form coding and without an ID.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NumberOfCopies numberOfCopies() {
-        _initialize();
-        return numberOfCopies;
-    }
-
-    private CountryOfManufacture countryOfManufacture = CountryOfManufacture.EMPTY;
-
-    /**
-     * <p>
-     * A code identifying the country in which a product part was manufactured, if different product parts were
-     * manufactured in different countries. This information is needed in some countries to meet regulatory
-     * requirements. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public CountryOfManufacture countryOfManufacture() {
-        _initialize();
-        return countryOfManufacture;
     }
 }

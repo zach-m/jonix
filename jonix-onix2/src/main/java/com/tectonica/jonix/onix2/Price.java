@@ -133,6 +133,14 @@ public class Price implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case PriceAmount.refname:
+                case PriceAmount.shortname:
+                    priceAmount = new PriceAmount(e);
+                    break;
+                case CountryCode.refname:
+                case CountryCode.shortname:
+                    countryCodes = JPU.addToList(countryCodes, new CountryCode(e));
+                    break;
                 case PriceTypeCode.refname:
                 case PriceTypeCode.shortname:
                     priceTypeCode = new PriceTypeCode(e);
@@ -153,10 +161,6 @@ public class Price implements OnixSuperComposite, Serializable {
                 case MinimumOrderQuantity.shortname:
                     minimumOrderQuantity = new MinimumOrderQuantity(e);
                     break;
-                case BatchBonus.refname:
-                case BatchBonus.shortname:
-                    batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(e));
-                    break;
                 case ClassOfTrade.refname:
                 case ClassOfTrade.shortname:
                     classOfTrade = new ClassOfTrade(e);
@@ -164,10 +168,6 @@ public class Price implements OnixSuperComposite, Serializable {
                 case BICDiscountGroupCode.refname:
                 case BICDiscountGroupCode.shortname:
                     bicDiscountGroupCode = new BICDiscountGroupCode(e);
-                    break;
-                case DiscountCoded.refname:
-                case DiscountCoded.shortname:
-                    discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(e));
                     break;
                 case DiscountPercent.refname:
                 case DiscountPercent.shortname:
@@ -177,17 +177,9 @@ public class Price implements OnixSuperComposite, Serializable {
                 case PriceStatus.shortname:
                     priceStatus = new PriceStatus(e);
                     break;
-                case PriceAmount.refname:
-                case PriceAmount.shortname:
-                    priceAmount = new PriceAmount(e);
-                    break;
                 case CurrencyCode.refname:
                 case CurrencyCode.shortname:
                     currencyCode = new CurrencyCode(e);
-                    break;
-                case CountryCode.refname:
-                case CountryCode.shortname:
-                    countryCodes = JPU.addToList(countryCodes, new CountryCode(e));
                     break;
                 case Territory.refname:
                 case Territory.shortname:
@@ -241,6 +233,14 @@ public class Price implements OnixSuperComposite, Serializable {
                 case PriceEffectiveUntil.shortname:
                     priceEffectiveUntil = new PriceEffectiveUntil(e);
                     break;
+                case BatchBonus.refname:
+                case BatchBonus.shortname:
+                    batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(e));
+                    break;
+                case DiscountCoded.refname:
+                case DiscountCoded.shortname:
+                    discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(e));
+                    break;
                 default:
                     break;
             }
@@ -258,6 +258,35 @@ public class Price implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private PriceAmount priceAmount = PriceAmount.EMPTY;
+
+    /**
+     * <p>
+     * The amount of a price. Mandatory in each occurrence of the &lt;Price&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public PriceAmount priceAmount() {
+        _initialize();
+        return priceAmount;
+    }
+
+    private ListOfOnixElement<CountryCode, Countrys> countryCodes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A code identifying a country in which the price given in &lt;PriceAmount&gt; applies. This allows a supplier to
+     * list different prices for specific countries by repeating the &lt;Price&gt; composite rather than having to
+     * repeat the whole of the &lt;SupplyDetail&gt; composite. Optional, and repeatable if a single price applies to
+     * multiple countries.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixElement<CountryCode, Countrys> countryCodes() {
+        _initialize();
+        return countryCodes;
+    }
 
     private PriceTypeCode priceTypeCode = PriceTypeCode.EMPTY;
 
@@ -333,20 +362,6 @@ public class Price implements OnixSuperComposite, Serializable {
         return minimumOrderQuantity;
     }
 
-    private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together specify a batch bonus, <em>ie</em> a quantity of free copies
-     * which are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss() {
-        _initialize();
-        return batchBonuss;
-    }
-
     private ClassOfTrade classOfTrade = ClassOfTrade.EMPTY;
 
     /**
@@ -379,21 +394,6 @@ public class Price implements OnixSuperComposite, Serializable {
         return bicDiscountGroupCode;
     }
 
-    private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together define a discount code from a specified scheme, and allowing
-     * different discount code schemes to be supported without defining additional data elements. Optional.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds() {
-        _initialize();
-        return discountCodeds;
-    }
-
     private DiscountPercent discountPercent = DiscountPercent.EMPTY;
 
     /**
@@ -423,19 +423,6 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceStatus;
     }
 
-    private PriceAmount priceAmount = PriceAmount.EMPTY;
-
-    /**
-     * <p>
-     * The amount of a price. Mandatory in each occurrence of the &lt;Price&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public PriceAmount priceAmount() {
-        _initialize();
-        return priceAmount;
-    }
-
     private CurrencyCode currencyCode = CurrencyCode.EMPTY;
 
     /**
@@ -448,22 +435,6 @@ public class Price implements OnixSuperComposite, Serializable {
     public CurrencyCode currencyCode() {
         _initialize();
         return currencyCode;
-    }
-
-    private ListOfOnixElement<CountryCode, Countrys> countryCodes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * A code identifying a country in which the price given in &lt;PriceAmount&gt; applies. This allows a supplier to
-     * list different prices for specific countries by repeating the &lt;Price&gt; composite rather than having to
-     * repeat the whole of the &lt;SupplyDetail&gt; composite. Optional, and repeatable if a single price applies to
-     * multiple countries.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public ListOfOnixElement<CountryCode, Countrys> countryCodes() {
-        _initialize();
-        return countryCodes;
     }
 
     private Territory territory = Territory.EMPTY;
@@ -659,5 +630,34 @@ public class Price implements OnixSuperComposite, Serializable {
     public PriceEffectiveUntil priceEffectiveUntil() {
         _initialize();
         return priceEffectiveUntil;
+    }
+
+    private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together specify a batch bonus, <em>ie</em> a quantity of free copies
+     * which are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss() {
+        _initialize();
+        return batchBonuss;
+    }
+
+    private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define a discount code from a specified scheme, and allowing
+     * different discount code schemes to be supported without defining additional data elements. Optional.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds() {
+        _initialize();
+        return discountCodeds;
     }
 }

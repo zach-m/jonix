@@ -134,25 +134,25 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
                 case ResourceContentType.shortname:
                     resourceContentType = new ResourceContentType(e);
                     break;
+                case ResourceMode.refname:
+                case ResourceMode.shortname:
+                    resourceMode = new ResourceMode(e);
+                    break;
                 case ContentAudience.refname:
                 case ContentAudience.shortname:
                     contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+                    break;
+                case ResourceVersion.refname:
+                case ResourceVersion.shortname:
+                    resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(e));
                     break;
                 case Territory.refname:
                 case Territory.shortname:
                     territory = new Territory(e);
                     break;
-                case ResourceMode.refname:
-                case ResourceMode.shortname:
-                    resourceMode = new ResourceMode(e);
-                    break;
                 case ResourceFeature.refname:
                 case ResourceFeature.shortname:
                     resourceFeatures = JPU.addToList(resourceFeatures, new ResourceFeature(e));
-                    break;
-                case ResourceVersion.refname:
-                case ResourceVersion.shortname:
-                    resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(e));
                     break;
                 default:
                     break;
@@ -187,6 +187,20 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return resourceContentType;
     }
 
+    private ResourceMode resourceMode = ResourceMode.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the mode of the supporting resource, <i>eg</i> audio, video. Mandatory in each occurrence
+     * of the &lt;SupportingResource&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ResourceMode resourceMode() {
+        _initialize();
+        return resourceMode;
+    }
+
     private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
 
     /**
@@ -199,6 +213,22 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
         return contentAudiences;
+    }
+
+    private List<ResourceVersion> resourceVersions = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together describe a single version of a supporting resource, for example a
+     * particular format of a cover image. At least one instance is mandatory in each occurrence of the
+     * &lt;SupportingResource&gt; composite, and the composite should be repeated as necessary if the resource is
+     * offered in multiple versions.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public List<ResourceVersion> resourceVersions() {
+        _initialize();
+        return resourceVersions;
     }
 
     private Territory territory = Territory.EMPTY;
@@ -227,20 +257,6 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return territory;
     }
 
-    private ResourceMode resourceMode = ResourceMode.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the mode of the supporting resource, <i>eg</i> audio, video. Mandatory in each occurrence
-     * of the &lt;SupportingResource&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ResourceMode resourceMode() {
-        _initialize();
-        return resourceMode;
-    }
-
     private ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature,
         ResourceFeatureTypes> resourceFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -256,21 +272,5 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         resourceFeatures() {
         _initialize();
         return resourceFeatures;
-    }
-
-    private List<ResourceVersion> resourceVersions = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together describe a single version of a supporting resource, for example a
-     * particular format of a cover image. At least one instance is mandatory in each occurrence of the
-     * &lt;SupportingResource&gt; composite, and the composite should be repeated as necessary if the resource is
-     * offered in multiple versions.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public List<ResourceVersion> resourceVersions() {
-        _initialize();
-        return resourceVersions;
     }
 }

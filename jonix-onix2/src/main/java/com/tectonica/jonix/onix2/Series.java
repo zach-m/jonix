@@ -131,6 +131,10 @@ public class Series implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case TitleOfSeries.refname:
+                case TitleOfSeries.shortname:
+                    titleOfSeries = new TitleOfSeries(e);
+                    break;
                 case SeriesISSN.refname:
                 case SeriesISSN.shortname:
                     seriesISSN = new SeriesISSN(e);
@@ -139,13 +143,17 @@ public class Series implements OnixSuperComposite, Serializable {
                 case PublisherSeriesCode.shortname:
                     publisherSeriesCode = new PublisherSeriesCode(e);
                     break;
+                case NumberWithinSeries.refname:
+                case NumberWithinSeries.shortname:
+                    numberWithinSeries = new NumberWithinSeries(e);
+                    break;
+                case YearOfAnnual.refname:
+                case YearOfAnnual.shortname:
+                    yearOfAnnual = new YearOfAnnual(e);
+                    break;
                 case SeriesIdentifier.refname:
                 case SeriesIdentifier.shortname:
                     seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
-                    break;
-                case TitleOfSeries.refname:
-                case TitleOfSeries.shortname:
-                    titleOfSeries = new TitleOfSeries(e);
                     break;
                 case Title.refname:
                 case Title.shortname:
@@ -154,14 +162,6 @@ public class Series implements OnixSuperComposite, Serializable {
                 case Contributor.refname:
                 case Contributor.shortname:
                     contributors = JPU.addToList(contributors, new Contributor(e));
-                    break;
-                case NumberWithinSeries.refname:
-                case NumberWithinSeries.shortname:
-                    numberWithinSeries = new NumberWithinSeries(e);
-                    break;
-                case YearOfAnnual.refname:
-                case YearOfAnnual.shortname:
-                    yearOfAnnual = new YearOfAnnual(e);
                     break;
                 default:
                     break;
@@ -180,6 +180,22 @@ public class Series implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private TitleOfSeries titleOfSeries = TitleOfSeries.EMPTY;
+
+    /**
+     * <p>
+     * The full title of the series, without abbreviation or abridgement. Non-repeating. Either the
+     * &lt;TitleOfSeries&gt; element or at least one occurrence of the &lt;Title&gt; composite must occur in each
+     * occurrence of the &lt;Series&gt; composite. The &lt;Title&gt; composite provides a more comprehensive
+     * representation of a series title, and allows alternative forms to be sent.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public TitleOfSeries titleOfSeries() {
+        _initialize();
+        return titleOfSeries;
+    }
 
     private SeriesISSN seriesISSN = SeriesISSN.EMPTY;
 
@@ -214,6 +230,33 @@ public class Series implements OnixSuperComposite, Serializable {
         return publisherSeriesCode;
     }
 
+    private NumberWithinSeries numberWithinSeries = NumberWithinSeries.EMPTY;
+
+    /**
+     * <p>
+     * The distinctive enumeration of a product within a series. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NumberWithinSeries numberWithinSeries() {
+        _initialize();
+        return numberWithinSeries;
+    }
+
+    private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
+
+    /**
+     * <p>
+     * The nominal year of an annual publication. May be entered as either a single year YYYY or a span of two
+     * consecutive years YYYY-YYYY. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public YearOfAnnual yearOfAnnual() {
+        _initialize();
+        return yearOfAnnual;
+    }
+
     private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
@@ -228,22 +271,6 @@ public class Series implements OnixSuperComposite, Serializable {
     public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
         _initialize();
         return seriesIdentifiers;
-    }
-
-    private TitleOfSeries titleOfSeries = TitleOfSeries.EMPTY;
-
-    /**
-     * <p>
-     * The full title of the series, without abbreviation or abridgement. Non-repeating. Either the
-     * &lt;TitleOfSeries&gt; element or at least one occurrence of the &lt;Title&gt; composite must occur in each
-     * occurrence of the &lt;Series&gt; composite. The &lt;Title&gt; composite provides a more comprehensive
-     * representation of a series title, and allows alternative forms to be sent.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public TitleOfSeries titleOfSeries() {
-        _initialize();
-        return titleOfSeries;
     }
 
     private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
@@ -274,32 +301,5 @@ public class Series implements OnixSuperComposite, Serializable {
     public List<Contributor> contributors() {
         _initialize();
         return contributors;
-    }
-
-    private NumberWithinSeries numberWithinSeries = NumberWithinSeries.EMPTY;
-
-    /**
-     * <p>
-     * The distinctive enumeration of a product within a series. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NumberWithinSeries numberWithinSeries() {
-        _initialize();
-        return numberWithinSeries;
-    }
-
-    private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
-
-    /**
-     * <p>
-     * The nominal year of an annual publication. May be entered as either a single year YYYY or a span of two
-     * consecutive years YYYY-YYYY. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public YearOfAnnual yearOfAnnual() {
-        _initialize();
-        return yearOfAnnual;
     }
 }

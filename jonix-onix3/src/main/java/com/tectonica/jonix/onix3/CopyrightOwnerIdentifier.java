@@ -125,13 +125,13 @@ public class CopyrightOwnerIdentifier
                 case CopyrightOwnerIDType.shortname:
                     copyrightOwnerIDType = new CopyrightOwnerIDType(e);
                     break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
                 case IDValue.refname:
                 case IDValue.shortname:
                     idValue = new IDValue(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
                     break;
                 default:
                     break;
@@ -166,6 +166,20 @@ public class CopyrightOwnerIdentifier
         return copyrightOwnerIDType;
     }
 
+    private IDValue idValue = IDValue.EMPTY;
+
+    /**
+     * <p>
+     * A code value taken from the scheme specified in the &lt;CopyrightOwnerIDType&gt; element. Mandatory in each
+     * occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public IDValue idValue() {
+        _initialize();
+        return idValue;
+    }
+
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
@@ -179,20 +193,6 @@ public class CopyrightOwnerIdentifier
     public IDTypeName idTypeName() {
         _initialize();
         return idTypeName;
-    }
-
-    private IDValue idValue = IDValue.EMPTY;
-
-    /**
-     * <p>
-     * A code value taken from the scheme specified in the &lt;CopyrightOwnerIDType&gt; element. Mandatory in each
-     * occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public IDValue idValue() {
-        _initialize();
-        return idValue;
     }
 
     @Override

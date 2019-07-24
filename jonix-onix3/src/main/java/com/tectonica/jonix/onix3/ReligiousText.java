@@ -123,10 +123,6 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case Bible.refname:
-                case Bible.shortname:
-                    bible = new Bible(e);
-                    break;
                 case ReligiousTextIdentifier.refname:
                 case ReligiousTextIdentifier.shortname:
                     religiousTextIdentifier = new ReligiousTextIdentifier(e);
@@ -134,6 +130,10 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
                 case ReligiousTextFeature.refname:
                 case ReligiousTextFeature.shortname:
                     religiousTextFeatures = JPU.addToList(religiousTextFeatures, new ReligiousTextFeature(e));
+                    break;
+                case Bible.refname:
+                case Bible.shortname:
+                    bible = new Bible(e);
                     break;
                 default:
                     break;
@@ -152,21 +152,6 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
-
-    private Bible bible = Bible.EMPTY;
-
-    /**
-     * <p>
-     * A group of data elements which together describe features of an edition of the Bible or of a selected Biblical
-     * text. Mandatory in each occurrence of the &lt;ReligiousText&gt; composite that does <em>not</em> include a
-     * &lt;ReligiousTextIdentifier&gt; element, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public Bible bible() {
-        _initialize();
-        return bible;
-    }
 
     private ReligiousTextIdentifier religiousTextIdentifier = ReligiousTextIdentifier.EMPTY;
 
@@ -196,5 +181,20 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         religiousTextFeatures() {
         _initialize();
         return religiousTextFeatures;
+    }
+
+    private Bible bible = Bible.EMPTY;
+
+    /**
+     * <p>
+     * A group of data elements which together describe features of an edition of the Bible or of a selected Biblical
+     * text. Mandatory in each occurrence of the &lt;ReligiousText&gt; composite that does <em>not</em> include a
+     * &lt;ReligiousTextIdentifier&gt; element, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public Bible bible() {
+        _initialize();
+        return bible;
     }
 }

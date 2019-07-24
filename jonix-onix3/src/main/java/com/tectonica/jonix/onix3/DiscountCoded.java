@@ -131,13 +131,13 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
                 case DiscountCodeType.shortname:
                     discountCodeType = new DiscountCodeType(e);
                     break;
-                case DiscountCodeTypeName.refname:
-                case DiscountCodeTypeName.shortname:
-                    discountCodeTypeName = new DiscountCodeTypeName(e);
-                    break;
                 case DiscountCode.refname:
                 case DiscountCode.shortname:
                     discountCode = new DiscountCode(e);
+                    break;
+                case DiscountCodeTypeName.refname:
+                case DiscountCodeTypeName.shortname:
+                    discountCodeTypeName = new DiscountCodeTypeName(e);
                     break;
                 default:
                     break;
@@ -171,6 +171,20 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
         return discountCodeType;
     }
 
+    private DiscountCode discountCode = DiscountCode.EMPTY;
+
+    /**
+     * <p>
+     * A discount code from the scheme specified in the &lt;DiscountCodeType&gt; element. Mandatory in each occurrence
+     * of the &lt;DiscountCoded&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public DiscountCode discountCode() {
+        _initialize();
+        return discountCode;
+    }
+
     private DiscountCodeTypeName discountCodeTypeName = DiscountCodeTypeName.EMPTY;
 
     /**
@@ -184,20 +198,6 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
     public DiscountCodeTypeName discountCodeTypeName() {
         _initialize();
         return discountCodeTypeName;
-    }
-
-    private DiscountCode discountCode = DiscountCode.EMPTY;
-
-    /**
-     * <p>
-     * A discount code from the scheme specified in the &lt;DiscountCodeType&gt; element. Mandatory in each occurrence
-     * of the &lt;DiscountCoded&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public DiscountCode discountCode() {
-        _initialize();
-        return discountCode;
     }
 
     @Override

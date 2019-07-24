@@ -138,33 +138,33 @@ public class Contributor implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case SequenceNumber.refname:
-                case SequenceNumber.shortname:
-                    sequenceNumber = new SequenceNumber(e);
+                case PersonName.refname:
+                case PersonName.shortname:
+                    personName = new PersonName(e);
+                    break;
+                case KeyNames.refname:
+                case KeyNames.shortname:
+                    keyNames = new KeyNames(e);
+                    break;
+                case CorporateName.refname:
+                case CorporateName.shortname:
+                    corporateName = new CorporateName(e);
                     break;
                 case ContributorRole.refname:
                 case ContributorRole.shortname:
                     contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(e));
                     break;
-                case FromLanguage.refname:
-                case FromLanguage.shortname:
-                    fromLanguages = JPU.addToList(fromLanguages, new FromLanguage(e));
-                    break;
-                case ToLanguage.refname:
-                case ToLanguage.shortname:
-                    toLanguages = JPU.addToList(toLanguages, new ToLanguage(e));
-                    break;
-                case NameType.refname:
-                case NameType.shortname:
-                    nameType = new NameType(e);
-                    break;
                 case NameIdentifier.refname:
                 case NameIdentifier.shortname:
                     nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
                     break;
-                case PersonName.refname:
-                case PersonName.shortname:
-                    personName = new PersonName(e);
+                case SequenceNumber.refname:
+                case SequenceNumber.shortname:
+                    sequenceNumber = new SequenceNumber(e);
+                    break;
+                case NameType.refname:
+                case NameType.shortname:
+                    nameType = new NameType(e);
                     break;
                 case PersonNameInverted.refname:
                 case PersonNameInverted.shortname:
@@ -181,10 +181,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case PrefixToKey.refname:
                 case PrefixToKey.shortname:
                     prefixToKey = new PrefixToKey(e);
-                    break;
-                case KeyNames.refname:
-                case KeyNames.shortname:
-                    keyNames = new KeyNames(e);
                     break;
                 case NamesAfterKey.refname:
                 case NamesAfterKey.shortname:
@@ -206,10 +202,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case Gender.shortname:
                     gender = new Gender(e);
                     break;
-                case CorporateName.refname:
-                case CorporateName.shortname:
-                    corporateName = new CorporateName(e);
-                    break;
                 case CorporateNameInverted.refname:
                 case CorporateNameInverted.shortname:
                     corporateNameInverted = new CorporateNameInverted(e);
@@ -217,6 +209,14 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case UnnamedPersons.refname:
                 case UnnamedPersons.shortname:
                     unnamedPersons = new UnnamedPersons(e);
+                    break;
+                case FromLanguage.refname:
+                case FromLanguage.shortname:
+                    fromLanguages = JPU.addToList(fromLanguages, new FromLanguage(e));
+                    break;
+                case ToLanguage.refname:
+                case ToLanguage.shortname:
+                    toLanguages = JPU.addToList(toLanguages, new ToLanguage(e));
                     break;
                 case AlternativeName.refname:
                 case AlternativeName.shortname:
@@ -268,19 +268,48 @@ public class Contributor implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
+    private PersonName personName = PersonName.EMPTY;
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of contributor names. Optional and non-repeating. It is
-     * strongly recommended that each occurrence of the &lt;Contributor&gt; composite should carry a
-     * &lt;SequenceNumber&gt;.
+     * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
+     * Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * Jonix-Comment: this field is required
      */
-    public SequenceNumber sequenceNumber() {
+    public PersonName personName() {
         _initialize();
-        return sequenceNumber;
+        return personName;
+    }
+
+    private KeyNames keyNames = KeyNames.EMPTY;
+
+    /**
+     * <p>
+     * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
+     * <i>ie</i> the name elements normally used to open an entry in an alphabetical list, <i>eg</i> ‘Smith’ or ‘Garcia
+     * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
+     * elements P.7.11 to P.7.18 are used.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public KeyNames keyNames() {
+        _initialize();
+        return keyNames;
+    }
+
+    private CorporateName corporateName = CorporateName.EMPTY;
+
+    /**
+     * <p>
+     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
+     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public CorporateName corporateName() {
+        _initialize();
+        return corporateName;
     }
 
     private ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixElement.empty();
@@ -296,52 +325,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles() {
         _initialize();
         return contributorRoles;
-    }
-
-    private ListOfOnixElement<FromLanguage, Languages> fromLanguages = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * Used only when the &lt;ContributorRole&gt; code value is B06, B08 or B10 indicating a translator, to specify the
-     * source language from which the translation was made. This element makes it possible to specify a translator’s
-     * exact responsibility when a work involves translation from two or more languages. Optional, and repeatable in the
-     * event that a single person has been responsible for translation from two or more languages.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<FromLanguage, Languages> fromLanguages() {
-        _initialize();
-        return fromLanguages;
-    }
-
-    private ListOfOnixElement<ToLanguage, Languages> toLanguages = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * Used only when the &lt;ContributorRole&gt; code value is B06, B08 or B10 indicating a translator, to specify the
-     * target language into which the translation was made. This element makes it possible to specify a translator’s
-     * exact responsibility when a work involves translation into two or more languages. Optional, and repeatable in the
-     * event that a single person has been responsible for translation to two or more languages.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<ToLanguage, Languages> toLanguages() {
-        _initialize();
-        return toLanguages;
-    }
-
-    private NameType nameType = NameType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
-     * ‘unspecified’.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NameType nameType() {
-        _initialize();
-        return nameType;
     }
 
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
@@ -361,18 +344,33 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private PersonName personName = PersonName.EMPTY;
+    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
 
     /**
      * <p>
-     * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
-     * Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
+     * A number which specifies a single overall sequence of contributor names. Optional and non-repeating. It is
+     * strongly recommended that each occurrence of the &lt;Contributor&gt; composite should carry a
+     * &lt;SequenceNumber&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * Jonix-Comment: this field is optional
      */
-    public PersonName personName() {
+    public SequenceNumber sequenceNumber() {
         _initialize();
-        return personName;
+        return sequenceNumber;
+    }
+
+    private NameType nameType = NameType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
+     * ‘unspecified’.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NameType nameType() {
+        _initialize();
+        return nameType;
     }
 
     private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
@@ -433,22 +431,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
     public PrefixToKey prefixToKey() {
         _initialize();
         return prefixToKey;
-    }
-
-    private KeyNames keyNames = KeyNames.EMPTY;
-
-    /**
-     * <p>
-     * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
-     * <i>ie</i> the name elements normally used to open an entry in an alphabetical list, <i>eg</i> ‘Smith’ or ‘Garcia
-     * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
-     * elements P.7.11 to P.7.18 are used.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public KeyNames keyNames() {
-        _initialize();
-        return keyNames;
     }
 
     private NamesAfterKey namesAfterKey = NamesAfterKey.EMPTY;
@@ -522,20 +504,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return gender;
     }
 
-    private CorporateName corporateName = CorporateName.EMPTY;
-
-    /**
-     * <p>
-     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
-     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public CorporateName corporateName() {
-        _initialize();
-        return corporateName;
-    }
-
     private CorporateNameInverted corporateNameInverted = CorporateNameInverted.EMPTY;
 
     /**
@@ -564,6 +532,38 @@ public class Contributor implements OnixSuperComposite, Serializable {
     public UnnamedPersons unnamedPersons() {
         _initialize();
         return unnamedPersons;
+    }
+
+    private ListOfOnixElement<FromLanguage, Languages> fromLanguages = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Used only when the &lt;ContributorRole&gt; code value is B06, B08 or B10 indicating a translator, to specify the
+     * source language from which the translation was made. This element makes it possible to specify a translator’s
+     * exact responsibility when a work involves translation from two or more languages. Optional, and repeatable in the
+     * event that a single person has been responsible for translation from two or more languages.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<FromLanguage, Languages> fromLanguages() {
+        _initialize();
+        return fromLanguages;
+    }
+
+    private ListOfOnixElement<ToLanguage, Languages> toLanguages = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Used only when the &lt;ContributorRole&gt; code value is B06, B08 or B10 indicating a translator, to specify the
+     * target language into which the translation was made. This element makes it possible to specify a translator’s
+     * exact responsibility when a work involves translation into two or more languages. Optional, and repeatable in the
+     * event that a single person has been responsible for translation to two or more languages.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<ToLanguage, Languages> toLanguages() {
+        _initialize();
+        return toLanguages;
     }
 
     private List<AlternativeName> alternativeNames = Collections.emptyList();

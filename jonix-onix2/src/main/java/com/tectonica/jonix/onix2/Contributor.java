@@ -147,25 +147,21 @@ public class Contributor implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case SequenceNumber.refname:
-                case SequenceNumber.shortname:
-                    sequenceNumber = new SequenceNumber(e);
+                case PersonName.refname:
+                case PersonName.shortname:
+                    personName = new PersonName(e);
                     break;
                 case ContributorRole.refname:
                 case ContributorRole.shortname:
                     contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(e));
                     break;
-                case LanguageCode.refname:
-                case LanguageCode.shortname:
-                    languageCodes = JPU.addToList(languageCodes, new LanguageCode(e));
+                case SequenceNumber.refname:
+                case SequenceNumber.shortname:
+                    sequenceNumber = new SequenceNumber(e);
                     break;
                 case SequenceNumberWithinRole.refname:
                 case SequenceNumberWithinRole.shortname:
                     sequenceNumberWithinRole = new SequenceNumberWithinRole(e);
-                    break;
-                case PersonName.refname:
-                case PersonName.shortname:
-                    personName = new PersonName(e);
                     break;
                 case PersonNameInverted.refname:
                 case PersonNameInverted.shortname:
@@ -203,22 +199,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case TitlesAfterNames.shortname:
                     titlesAfterNames = new TitlesAfterNames(e);
                     break;
-                case Name.refname:
-                case Name.shortname:
-                    names = JPU.addToList(names, new Name(e));
-                    break;
-                case PersonNameIdentifier.refname:
-                case PersonNameIdentifier.shortname:
-                    personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(e));
-                    break;
-                case PersonDate.refname:
-                case PersonDate.shortname:
-                    personDates = JPU.addToList(personDates, new PersonDate(e));
-                    break;
-                case ProfessionalAffiliation.refname:
-                case ProfessionalAffiliation.shortname:
-                    professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(e));
-                    break;
                 case CorporateName.refname:
                 case CorporateName.shortname:
                     corporateName = new CorporateName(e);
@@ -226,10 +206,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case BiographicalNote.refname:
                 case BiographicalNote.shortname:
                     biographicalNote = new BiographicalNote(e);
-                    break;
-                case Website.refname:
-                case Website.shortname:
-                    websites = JPU.addToList(websites, new Website(e));
                     break;
                 case ProfessionalPosition.refname:
                 case ProfessionalPosition.shortname:
@@ -246,6 +222,30 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case UnnamedPersons.refname:
                 case UnnamedPersons.shortname:
                     unnamedPersons = new UnnamedPersons(e);
+                    break;
+                case LanguageCode.refname:
+                case LanguageCode.shortname:
+                    languageCodes = JPU.addToList(languageCodes, new LanguageCode(e));
+                    break;
+                case Name.refname:
+                case Name.shortname:
+                    names = JPU.addToList(names, new Name(e));
+                    break;
+                case PersonNameIdentifier.refname:
+                case PersonNameIdentifier.shortname:
+                    personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(e));
+                    break;
+                case PersonDate.refname:
+                case PersonDate.shortname:
+                    personDates = JPU.addToList(personDates, new PersonDate(e));
+                    break;
+                case ProfessionalAffiliation.refname:
+                case ProfessionalAffiliation.shortname:
+                    professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
                     break;
                 case CountryCode.refname:
                 case CountryCode.shortname:
@@ -273,22 +273,18 @@ public class Contributor implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
+    private PersonName personName = PersonName.EMPTY;
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of contributor names. Optional and non-repeating. There are
-     * two ways of approaching the sequencing of contributor names: by defining a single sequence across all
-     * contributors, which is the general ONIX practise; or by defining an individual sequence for each contributor
-     * role, using the element &lt;SequenceNumberWithinRole&gt; on the next page. Some applications require this more
-     * precise sequencing. Where it is not required, it is strongly recommended that each occurrence of the
-     * &lt;Contributor&gt; composite should carry an overall &lt;SequenceNumber&gt;.
+     * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
+     * Optional and non-repeating: see Group&nbsp;PR.8 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * Jonix-Comment: this field is required
      */
-    public SequenceNumber sequenceNumber() {
+    public PersonName personName() {
         _initialize();
-        return sequenceNumber;
+        return personName;
     }
 
     private ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixElement.empty();
@@ -309,20 +305,22 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return contributorRoles;
     }
 
-    private ListOfOnixElement<LanguageCode, Languages> languageCodes = ListOfOnixElement.empty();
+    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
 
     /**
      * <p>
-     * Used only when the &lt;ContributorRole&gt; code value is B06, B08 or B10 indicating a translator, to specify the
-     * language from which the translation was made. This makes it possible to specify a translator’s exact
-     * responsibility when a work involved translation from two or more languages. Optional and repeatable in the
-     * unlikely event that a single person has been responsible for translation from two or more languages.
+     * A number which specifies a single overall sequence of contributor names. Optional and non-repeating. There are
+     * two ways of approaching the sequencing of contributor names: by defining a single sequence across all
+     * contributors, which is the general ONIX practise; or by defining an individual sequence for each contributor
+     * role, using the element &lt;SequenceNumberWithinRole&gt; on the next page. Some applications require this more
+     * precise sequencing. Where it is not required, it is strongly recommended that each occurrence of the
+     * &lt;Contributor&gt; composite should carry an overall &lt;SequenceNumber&gt;.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * Jonix-Comment: this field is optional
      */
-    public ListOfOnixElement<LanguageCode, Languages> languageCodes() {
+    public SequenceNumber sequenceNumber() {
         _initialize();
-        return languageCodes;
+        return sequenceNumber;
     }
 
     private SequenceNumberWithinRole sequenceNumberWithinRole = SequenceNumberWithinRole.EMPTY;
@@ -337,20 +335,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
     public SequenceNumberWithinRole sequenceNumberWithinRole() {
         _initialize();
         return sequenceNumberWithinRole;
-    }
-
-    private PersonName personName = PersonName.EMPTY;
-
-    /**
-     * <p>
-     * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
-     * Optional and non-repeating: see Group&nbsp;PR.8 introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public PersonName personName() {
-        _initialize();
-        return personName;
     }
 
     private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
@@ -483,67 +467,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private List<Name> names = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together represent a personal name, and specify its type. The
-     * &lt;Name&gt; composite may be used to send alternate names for the same person, <em>eg</em> to handle such cases
-     * as Ian Rankin writing as Jack Harvey.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<Name> names() {
-        _initialize();
-        return names;
-    }
-
-    private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together specify a party name identifier, used here to carry an
-     * identifier for a name given in an occurrence of the &lt;Contributor&gt; composite. Optional: see Group&nbsp;PR.8
-     * introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers() {
-        _initialize();
-        return personNameIdentifiers;
-    }
-
-    private ListOfOnixDataCompositeWithKey<PersonDate, JonixPersonDate, PersonDateRoles> personDates = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together specify a date associated with the person identified in an
-     * occurrence of the &lt;Contributor&gt; composite, <em>eg</em> birth or death.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<PersonDate, JonixPersonDate, PersonDateRoles> personDates() {
-        _initialize();
-        return personDates;
-    }
-
-    private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations = ListOfOnixDataComposite
-        .empty();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify a contributor’s professional position and/or
-     * affiliation, allowing multiple positions and affiliations to be specified.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations() {
-        _initialize();
-        return professionalAffiliations;
-    }
-
     private CorporateName corporateName = CorporateName.EMPTY;
 
     /**
@@ -578,20 +501,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
     public BiographicalNote biographicalNote() {
         _initialize();
         return biographicalNote;
-    }
-
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify and provide pointers to a website which is related to
-     * the party identified in an occurrence of the &lt;Contributor&gt; composite.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        _initialize();
-        return websites;
     }
 
     private ProfessionalPosition professionalPosition = ProfessionalPosition.EMPTY;
@@ -658,6 +567,97 @@ public class Contributor implements OnixSuperComposite, Serializable {
     public UnnamedPersons unnamedPersons() {
         _initialize();
         return unnamedPersons;
+    }
+
+    private ListOfOnixElement<LanguageCode, Languages> languageCodes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Used only when the &lt;ContributorRole&gt; code value is B06, B08 or B10 indicating a translator, to specify the
+     * language from which the translation was made. This makes it possible to specify a translator’s exact
+     * responsibility when a work involved translation from two or more languages. Optional and repeatable in the
+     * unlikely event that a single person has been responsible for translation from two or more languages.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<LanguageCode, Languages> languageCodes() {
+        _initialize();
+        return languageCodes;
+    }
+
+    private List<Name> names = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together represent a personal name, and specify its type. The
+     * &lt;Name&gt; composite may be used to send alternate names for the same person, <em>eg</em> to handle such cases
+     * as Ian Rankin writing as Jack Harvey.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Name> names() {
+        _initialize();
+        return names;
+    }
+
+    private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together specify a party name identifier, used here to carry an
+     * identifier for a name given in an occurrence of the &lt;Contributor&gt; composite. Optional: see Group&nbsp;PR.8
+     * introductory text for valid options.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers() {
+        _initialize();
+        return personNameIdentifiers;
+    }
+
+    private ListOfOnixDataCompositeWithKey<PersonDate, JonixPersonDate, PersonDateRoles> personDates = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together specify a date associated with the person identified in an
+     * occurrence of the &lt;Contributor&gt; composite, <em>eg</em> birth or death.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<PersonDate, JonixPersonDate, PersonDateRoles> personDates() {
+        _initialize();
+        return personDates;
+    }
+
+    private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations = ListOfOnixDataComposite
+        .empty();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify a contributor’s professional position and/or
+     * affiliation, allowing multiple positions and affiliations to be specified.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations() {
+        _initialize();
+        return professionalAffiliations;
+    }
+
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify and provide pointers to a website which is related to
+     * the party identified in an occurrence of the &lt;Contributor&gt; composite.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
+        _initialize();
+        return websites;
     }
 
     private ListOfOnixElement<CountryCode, Countrys> countryCodes = ListOfOnixElement.empty();

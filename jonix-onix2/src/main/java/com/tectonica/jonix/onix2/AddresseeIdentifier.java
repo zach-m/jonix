@@ -134,13 +134,13 @@ public class AddresseeIdentifier
                 case AddresseeIDType.shortname:
                     addresseeIDType = new AddresseeIDType(e);
                     break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
                 case IDValue.refname:
                 case IDValue.shortname:
                     idValue = new IDValue(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
                     break;
                 default:
                     break;
@@ -175,6 +175,20 @@ public class AddresseeIdentifier
         return addresseeIDType;
     }
 
+    private IDValue idValue = IDValue.EMPTY;
+
+    /**
+     * <p>
+     * An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in any occurrence of the
+     * &lt;AddresseeIdentifier&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public IDValue idValue() {
+        _initialize();
+        return idValue;
+    }
+
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
@@ -190,20 +204,6 @@ public class AddresseeIdentifier
     public IDTypeName idTypeName() {
         _initialize();
         return idTypeName;
-    }
-
-    private IDValue idValue = IDValue.EMPTY;
-
-    /**
-     * <p>
-     * An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in any occurrence of the
-     * &lt;AddresseeIdentifier&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public IDValue idValue() {
-        _initialize();
-        return idValue;
     }
 
     @Override

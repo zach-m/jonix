@@ -127,13 +127,13 @@ public class CollectionSequence
                 case CollectionSequenceType.shortname:
                     collectionSequenceType = new CollectionSequenceType(e);
                     break;
-                case CollectionSequenceTypeName.refname:
-                case CollectionSequenceTypeName.shortname:
-                    collectionSequenceTypeName = new CollectionSequenceTypeName(e);
-                    break;
                 case CollectionSequenceNumber.refname:
                 case CollectionSequenceNumber.shortname:
                     collectionSequenceNumber = new CollectionSequenceNumber(e);
+                    break;
+                case CollectionSequenceTypeName.refname:
+                case CollectionSequenceTypeName.shortname:
+                    collectionSequenceTypeName = new CollectionSequenceTypeName(e);
                     break;
                 default:
                     break;
@@ -168,21 +168,6 @@ public class CollectionSequence
         return collectionSequenceType;
     }
 
-    private CollectionSequenceTypeName collectionSequenceTypeName = CollectionSequenceTypeName.EMPTY;
-
-    /**
-     * <p>
-     * A name which describes a proprietary order used for the product’s sequence number within the collection. Must be
-     * included when, and only when, the code in the &lt;CollectionSequenceType&gt; field indicates a proprietary
-     * scheme. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public CollectionSequenceTypeName collectionSequenceTypeName() {
-        _initialize();
-        return collectionSequenceTypeName;
-    }
-
     private CollectionSequenceNumber collectionSequenceNumber = CollectionSequenceNumber.EMPTY;
 
     /**
@@ -202,6 +187,21 @@ public class CollectionSequence
     public CollectionSequenceNumber collectionSequenceNumber() {
         _initialize();
         return collectionSequenceNumber;
+    }
+
+    private CollectionSequenceTypeName collectionSequenceTypeName = CollectionSequenceTypeName.EMPTY;
+
+    /**
+     * <p>
+     * A name which describes a proprietary order used for the product’s sequence number within the collection. Must be
+     * included when, and only when, the code in the &lt;CollectionSequenceType&gt; field indicates a proprietary
+     * scheme. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public CollectionSequenceTypeName collectionSequenceTypeName() {
+        _initialize();
+        return collectionSequenceTypeName;
     }
 
     @Override

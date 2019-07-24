@@ -142,29 +142,17 @@ public class Product implements OnixProduct, Serializable {
                 case NotificationType.shortname:
                     notificationType = new NotificationType(e);
                     break;
-                case DeletionText.refname:
-                case DeletionText.shortname:
-                    deletionTexts = JPU.addToList(deletionTexts, new DeletionText(e));
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
                     break;
                 case RecordSourceType.refname:
                 case RecordSourceType.shortname:
                     recordSourceType = new RecordSourceType(e);
                     break;
-                case RecordSourceIdentifier.refname:
-                case RecordSourceIdentifier.shortname:
-                    recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers, new RecordSourceIdentifier(e));
-                    break;
                 case RecordSourceName.refname:
                 case RecordSourceName.shortname:
                     recordSourceName = new RecordSourceName(e);
-                    break;
-                case ProductIdentifier.refname:
-                case ProductIdentifier.shortname:
-                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-                    break;
-                case Barcode.refname:
-                case Barcode.shortname:
-                    barcodes = JPU.addToList(barcodes, new Barcode(e));
                     break;
                 case DescriptiveDetail.refname:
                 case DescriptiveDetail.shortname:
@@ -185,6 +173,18 @@ public class Product implements OnixProduct, Serializable {
                 case RelatedMaterial.refname:
                 case RelatedMaterial.shortname:
                     relatedMaterial = new RelatedMaterial(e);
+                    break;
+                case DeletionText.refname:
+                case DeletionText.shortname:
+                    deletionTexts = JPU.addToList(deletionTexts, new DeletionText(e));
+                    break;
+                case RecordSourceIdentifier.refname:
+                case RecordSourceIdentifier.shortname:
+                    recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers, new RecordSourceIdentifier(e));
+                    break;
+                case Barcode.refname:
+                case Barcode.shortname:
+                    barcodes = JPU.addToList(barcodes, new Barcode(e));
                     break;
                 case ProductSupply.refname:
                 case ProductSupply.shortname:
@@ -247,68 +247,6 @@ public class Product implements OnixProduct, Serializable {
         return notificationType;
     }
 
-    private ListOfOnixElement<DeletionText, String> deletionTexts = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * Free text which indicates the reason why an ONIX record is being deleted. Optional and repeatable, and may occur
-     * only when the &lt;NotificationType&gt; element carries the code value 05. The <i>language</i> attribute is
-     * optional for a single instance of &lt;DeletionText&gt;, but must be included in each instance if
-     * &lt;DeletionText&gt; is repeated. Note that it refers to the reason why the <em>record</em> is being deleted, not
-     * the reason why a <em>product</em> has been ‘deleted’ (in industries which use this terminology when a product is
-     * withdrawn).
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<DeletionText, String> deletionTexts() {
-        _initialize();
-        return deletionTexts;
-    }
-
-    private RecordSourceType recordSourceType = RecordSourceType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which indicates the type of source which has issued the ONIX record. Optional and non-repeating,
-     * independently of the occurrence of any other field.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public RecordSourceType recordSourceType() {
-        _initialize();
-        return recordSourceType;
-    }
-
-    private ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier,
-        NameIdentifierTypes> recordSourceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
-
-    /**
-     * <p>
-     * A group of data elements which together define an identifier of the organization which is the source of the ONIX
-     * record. Optional, and repeatable in order to send multiple identifiers for the same organization.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes>
-        recordSourceIdentifiers() {
-        _initialize();
-        return recordSourceIdentifiers;
-    }
-
-    private RecordSourceName recordSourceName = RecordSourceName.EMPTY;
-
-    /**
-     * <p>
-     * The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
-     * occurrence of any other field.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public RecordSourceName recordSourceName() {
-        _initialize();
-        return recordSourceName;
-    }
-
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
         ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -345,19 +283,32 @@ public class Product implements OnixProduct, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes = ListOfOnixDataComposite.empty();
+    private RecordSourceType recordSourceType = RecordSourceType.EMPTY;
 
     /**
      * <p>
-     * A group of data elements which together specify a barcode type and its position on a product. Optional: expected
-     * to be used only in North America. Repeatable if more than one type of barcode is carried on a single product. The
-     * absence of this composite does <em>not</em> mean that a product is not bar-coded.
+     * An ONIX code which indicates the type of source which has issued the ONIX record. Optional and non-repeating,
+     * independently of the occurrence of any other field.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * Jonix-Comment: this field is optional
      */
-    public ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes() {
+    public RecordSourceType recordSourceType() {
         _initialize();
-        return barcodes;
+        return recordSourceType;
+    }
+
+    private RecordSourceName recordSourceName = RecordSourceName.EMPTY;
+
+    /**
+     * <p>
+     * The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
+     * occurrence of any other field.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public RecordSourceName recordSourceName() {
+        _initialize();
+        return recordSourceName;
     }
 
     private DescriptiveDetail descriptiveDetail = DescriptiveDetail.EMPTY;
@@ -453,6 +404,55 @@ public class Product implements OnixProduct, Serializable {
     public RelatedMaterial relatedMaterial() {
         _initialize();
         return relatedMaterial;
+    }
+
+    private ListOfOnixElement<DeletionText, String> deletionTexts = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Free text which indicates the reason why an ONIX record is being deleted. Optional and repeatable, and may occur
+     * only when the &lt;NotificationType&gt; element carries the code value 05. The <i>language</i> attribute is
+     * optional for a single instance of &lt;DeletionText&gt;, but must be included in each instance if
+     * &lt;DeletionText&gt; is repeated. Note that it refers to the reason why the <em>record</em> is being deleted, not
+     * the reason why a <em>product</em> has been ‘deleted’ (in industries which use this terminology when a product is
+     * withdrawn).
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<DeletionText, String> deletionTexts() {
+        _initialize();
+        return deletionTexts;
+    }
+
+    private ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier,
+        NameIdentifierTypes> recordSourceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+
+    /**
+     * <p>
+     * A group of data elements which together define an identifier of the organization which is the source of the ONIX
+     * record. Optional, and repeatable in order to send multiple identifiers for the same organization.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes>
+        recordSourceIdentifiers() {
+        _initialize();
+        return recordSourceIdentifiers;
+    }
+
+    private ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * A group of data elements which together specify a barcode type and its position on a product. Optional: expected
+     * to be used only in North America. Repeatable if more than one type of barcode is carried on a single product. The
+     * absence of this composite does <em>not</em> mean that a product is not bar-coded.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes() {
+        _initialize();
+        return barcodes;
     }
 
     private List<ProductSupply> productSupplys = Collections.emptyList();

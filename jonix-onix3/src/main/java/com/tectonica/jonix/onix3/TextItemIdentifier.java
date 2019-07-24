@@ -124,13 +124,13 @@ public class TextItemIdentifier
                 case TextItemIDType.shortname:
                     textItemIDType = new TextItemIDType(e);
                     break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
                 case IDValue.refname:
                 case IDValue.shortname:
                     idValue = new IDValue(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
                     break;
                 default:
                     break;
@@ -165,6 +165,20 @@ public class TextItemIdentifier
         return textItemIDType;
     }
 
+    private IDValue idValue = IDValue.EMPTY;
+
+    /**
+     * <p>
+     * An identifier of the type specified in &lt;TextItemIDType&gt;. Mandatory in each occurrence of the
+     * &lt;TextItemIdentifier&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public IDValue idValue() {
+        _initialize();
+        return idValue;
+    }
+
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
@@ -178,20 +192,6 @@ public class TextItemIdentifier
     public IDTypeName idTypeName() {
         _initialize();
         return idTypeName;
-    }
-
-    private IDValue idValue = IDValue.EMPTY;
-
-    /**
-     * <p>
-     * An identifier of the type specified in &lt;TextItemIDType&gt;. Mandatory in each occurrence of the
-     * &lt;TextItemIdentifier&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public IDValue idValue() {
-        _initialize();
-        return idValue;
     }
 
     @Override

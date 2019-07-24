@@ -131,21 +131,21 @@ public class Event implements OnixSuperComposite, Serializable {
                 case EventName.shortname:
                     eventNames = JPU.addToList(eventNames, new EventName(e));
                     break;
-                case EventAcronym.refname:
-                case EventAcronym.shortname:
-                    eventAcronyms = JPU.addToList(eventAcronyms, new EventAcronym(e));
-                    break;
                 case EventNumber.refname:
                 case EventNumber.shortname:
                     eventNumber = new EventNumber(e);
                     break;
-                case EventTheme.refname:
-                case EventTheme.shortname:
-                    eventThemes = JPU.addToList(eventThemes, new EventTheme(e));
-                    break;
                 case EventDate.refname:
                 case EventDate.shortname:
                     eventDate = new EventDate(e);
+                    break;
+                case EventAcronym.refname:
+                case EventAcronym.shortname:
+                    eventAcronyms = JPU.addToList(eventAcronyms, new EventAcronym(e));
+                    break;
+                case EventTheme.refname:
+                case EventTheme.shortname:
+                    eventThemes = JPU.addToList(eventThemes, new EventTheme(e));
                     break;
                 case EventPlace.refname:
                 case EventPlace.shortname:
@@ -209,6 +209,32 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventNames;
     }
 
+    private EventNumber eventNumber = EventNumber.EMPTY;
+
+    /**
+     * <p>
+     * The number of an event to which the product is related, within a series of events. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public EventNumber eventNumber() {
+        _initialize();
+        return eventNumber;
+    }
+
+    private EventDate eventDate = EventDate.EMPTY;
+
+    /**
+     * <p>
+     * The date of an event to which the product is related. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public EventDate eventDate() {
+        _initialize();
+        return eventDate;
+    }
+
     private ListOfOnixElement<EventAcronym, String> eventAcronyms = ListOfOnixElement.empty();
 
     /**
@@ -225,19 +251,6 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventAcronyms;
     }
 
-    private EventNumber eventNumber = EventNumber.EMPTY;
-
-    /**
-     * <p>
-     * The number of an event to which the product is related, within a series of events. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public EventNumber eventNumber() {
-        _initialize();
-        return eventNumber;
-    }
-
     private ListOfOnixElement<EventTheme, String> eventThemes = ListOfOnixElement.empty();
 
     /**
@@ -252,19 +265,6 @@ public class Event implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<EventTheme, String> eventThemes() {
         _initialize();
         return eventThemes;
-    }
-
-    private EventDate eventDate = EventDate.EMPTY;
-
-    /**
-     * <p>
-     * The date of an event to which the product is related. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public EventDate eventDate() {
-        _initialize();
-        return eventDate;
     }
 
     private ListOfOnixElement<EventPlace, String> eventPlaces = ListOfOnixElement.empty();

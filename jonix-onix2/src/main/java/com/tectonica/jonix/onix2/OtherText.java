@@ -137,14 +137,6 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
                 case TextTypeCode.shortname:
                     textTypeCode = new TextTypeCode(e);
                     break;
-                case TextFormat.refname:
-                case TextFormat.shortname:
-                    textFormat = new TextFormat(e);
-                    break;
-                case Text.refname:
-                case Text.shortname:
-                    text = new Text(e);
-                    break;
                 case TextLinkType.refname:
                 case TextLinkType.shortname:
                     textLinkType = new TextLinkType(e);
@@ -152,6 +144,14 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
                 case TextLink.refname:
                 case TextLink.shortname:
                     textLink = new TextLink(e);
+                    break;
+                case TextFormat.refname:
+                case TextFormat.shortname:
+                    textFormat = new TextFormat(e);
+                    break;
+                case Text.refname:
+                case Text.shortname:
+                    text = new Text(e);
                     break;
                 case TextAuthor.refname:
                 case TextAuthor.shortname:
@@ -209,6 +209,33 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
         return textTypeCode;
     }
 
+    private TextLinkType textLinkType = TextLinkType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which identifies the type of link which is given in the &lt;TextLink&gt; element.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public TextLinkType textLinkType() {
+        _initialize();
+        return textLinkType;
+    }
+
+    private TextLink textLink = TextLink.EMPTY;
+
+    /**
+     * <p>
+     * A link to the text item specified in the &lt;TextTypeCode&gt; element, using the link type specified in
+     * &lt;TextLinkType&gt;.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public TextLink textLink() {
+        _initialize();
+        return textLink;
+    }
+
     private TextFormat textFormat = TextFormat.EMPTY;
 
     /**
@@ -243,33 +270,6 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
     public Text text() {
         _initialize();
         return text;
-    }
-
-    private TextLinkType textLinkType = TextLinkType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which identifies the type of link which is given in the &lt;TextLink&gt; element.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public TextLinkType textLinkType() {
-        _initialize();
-        return textLinkType;
-    }
-
-    private TextLink textLink = TextLink.EMPTY;
-
-    /**
-     * <p>
-     * A link to the text item specified in the &lt;TextTypeCode&gt; element, using the link type specified in
-     * &lt;TextLinkType&gt;.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public TextLink textLink() {
-        _initialize();
-        return textLink;
     }
 
     private TextAuthor textAuthor = TextAuthor.EMPTY;

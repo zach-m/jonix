@@ -130,13 +130,13 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
                 case MainSubjectSchemeIdentifier.shortname:
                     mainSubjectSchemeIdentifier = new MainSubjectSchemeIdentifier(e);
                     break;
-                case SubjectSchemeVersion.refname:
-                case SubjectSchemeVersion.shortname:
-                    subjectSchemeVersion = new SubjectSchemeVersion(e);
-                    break;
                 case SubjectCode.refname:
                 case SubjectCode.shortname:
                     subjectCode = new SubjectCode(e);
+                    break;
+                case SubjectSchemeVersion.refname:
+                case SubjectSchemeVersion.shortname:
+                    subjectSchemeVersion = new SubjectSchemeVersion(e);
                     break;
                 case SubjectHeadingText.refname:
                 case SubjectHeadingText.shortname:
@@ -180,20 +180,6 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
         return mainSubjectSchemeIdentifier;
     }
 
-    private SubjectSchemeVersion subjectSchemeVersion = SubjectSchemeVersion.EMPTY;
-
-    /**
-     * <p>
-     * A number which identifies a version or edition of the subject scheme specified in the associated
-     * &lt;MainSubjectSchemeIdentifier&gt; element. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SubjectSchemeVersion subjectSchemeVersion() {
-        _initialize();
-        return subjectSchemeVersion;
-    }
-
     private SubjectCode subjectCode = SubjectCode.EMPTY;
 
     /**
@@ -207,6 +193,20 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
     public SubjectCode subjectCode() {
         _initialize();
         return subjectCode;
+    }
+
+    private SubjectSchemeVersion subjectSchemeVersion = SubjectSchemeVersion.EMPTY;
+
+    /**
+     * <p>
+     * A number which identifies a version or edition of the subject scheme specified in the associated
+     * &lt;MainSubjectSchemeIdentifier&gt; element. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SubjectSchemeVersion subjectSchemeVersion() {
+        _initialize();
+        return subjectSchemeVersion;
     }
 
     private SubjectHeadingText subjectHeadingText = SubjectHeadingText.EMPTY;

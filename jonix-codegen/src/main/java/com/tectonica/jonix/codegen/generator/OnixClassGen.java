@@ -21,6 +21,7 @@ package com.tectonica.jonix.codegen.generator;
 
 import com.tectonica.jonix.codegen.generator.GenUtil.FieldInfo;
 import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
+import com.tectonica.jonix.codegen.metadata.Cardinality;
 import com.tectonica.jonix.codegen.metadata.OnixAttribute;
 import com.tectonica.jonix.codegen.metadata.OnixClassDef;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
@@ -35,6 +36,8 @@ import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 
 import java.io.File;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
@@ -102,6 +105,9 @@ public class OnixClassGen {
             }
         }
 
+        List<OnixCompositeMember> sortedMembers = new ArrayList<>(composite.members);
+        sortedMembers.sort((o1, o2) -> Cardinality.displayOrderComparator.compare(o1.cardinality, o2.cardinality));
+
         p.printf("%s\n", Comments.Copyright);
         p.printf("package %s;\n", packageName);
         p.print("\n");
@@ -165,7 +171,7 @@ public class OnixClassGen {
         p.printf("      JPU.forElementsOf(element, e -> {\n");
         p.printf("         final String name = e.getNodeName();\n");
         p.printf("         switch (name) {\n");
-        for (OnixCompositeMember m : composite.members) {
+        for (OnixCompositeMember m : sortedMembers) {
             final String className = m.className;
             String field = genUtil.fieldNameFor(className);
             if (!m.cardinality.singular) {
@@ -205,7 +211,7 @@ public class OnixClassGen {
         p.print("\n");
         printCaptionComment(p, "MEMBERS");
 
-        for (OnixCompositeMember member : composite.members) {
+        for (OnixCompositeMember member : sortedMembers) {
             final FieldInfo fi = genUtil.fieldInfoOf(member, ref);
 
             // declare member in a private field

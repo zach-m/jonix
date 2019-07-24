@@ -133,13 +133,13 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
                 case SalesRestrictionType.shortname:
                     salesRestrictionType = new SalesRestrictionType(e);
                     break;
-                case SalesOutlet.refname:
-                case SalesOutlet.shortname:
-                    salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
-                    break;
                 case SalesRestrictionDetail.refname:
                 case SalesRestrictionDetail.shortname:
                     salesRestrictionDetail = new SalesRestrictionDetail(e);
+                    break;
+                case SalesOutlet.refname:
+                case SalesOutlet.shortname:
+                    salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
                     break;
                 default:
                     break;
@@ -174,6 +174,20 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         return salesRestrictionType;
     }
 
+    private SalesRestrictionDetail salesRestrictionDetail = SalesRestrictionDetail.EMPTY;
+
+    /**
+     * <p>
+     * A free text field describing an “unspecified” restriction, or giving more explanation of a coded restriction
+     * type. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SalesRestrictionDetail salesRestrictionDetail() {
+        _initialize();
+        return salesRestrictionDetail;
+    }
+
     private List<SalesOutlet> salesOutlets = Collections.emptyList();
 
     /**
@@ -187,19 +201,5 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     public List<SalesOutlet> salesOutlets() {
         _initialize();
         return salesOutlets;
-    }
-
-    private SalesRestrictionDetail salesRestrictionDetail = SalesRestrictionDetail.EMPTY;
-
-    /**
-     * <p>
-     * A free text field describing an “unspecified” restriction, or giving more explanation of a coded restriction
-     * type. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SalesRestrictionDetail salesRestrictionDetail() {
-        _initialize();
-        return salesRestrictionDetail;
     }
 }

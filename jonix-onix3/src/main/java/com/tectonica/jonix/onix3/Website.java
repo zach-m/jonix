@@ -135,6 +135,10 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case WebsiteLink.refname:
+                case WebsiteLink.shortname:
+                    websiteLinks = JPU.addToList(websiteLinks, new WebsiteLink(e));
+                    break;
                 case WebsiteRole.refname:
                 case WebsiteRole.shortname:
                     websiteRole = new WebsiteRole(e);
@@ -142,10 +146,6 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
                 case WebsiteDescription.refname:
                 case WebsiteDescription.shortname:
                     websiteDescriptions = JPU.addToList(websiteDescriptions, new WebsiteDescription(e));
-                    break;
-                case WebsiteLink.refname:
-                case WebsiteLink.shortname:
-                    websiteLinks = JPU.addToList(websiteLinks, new WebsiteLink(e));
                     break;
                 default:
                     break;
@@ -164,6 +164,22 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private ListOfOnixElement<WebsiteLink, String> websiteLinks = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite, and repeatable to provide
+     * multiple URLs where the website content is available in multiple languages. The <i>language</i> attribute is
+     * optional for a single instance of &lt;WebsiteLink&gt;, but must be included in each instance if
+     * &lt;WebsiteLink&gt; is repeated.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixElement<WebsiteLink, String> websiteLinks() {
+        _initialize();
+        return websiteLinks;
+    }
 
     private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
@@ -193,22 +209,6 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     public ListOfOnixElement<WebsiteDescription, String> websiteDescriptions() {
         _initialize();
         return websiteDescriptions;
-    }
-
-    private ListOfOnixElement<WebsiteLink, String> websiteLinks = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite, and repeatable to provide
-     * multiple URLs where the website content is available in multiple languages. The <i>language</i> attribute is
-     * optional for a single instance of &lt;WebsiteLink&gt;, but must be included in each instance if
-     * &lt;WebsiteLink&gt; is repeated.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public ListOfOnixElement<WebsiteLink, String> websiteLinks() {
-        _initialize();
-        return websiteLinks;
     }
 
     @Override

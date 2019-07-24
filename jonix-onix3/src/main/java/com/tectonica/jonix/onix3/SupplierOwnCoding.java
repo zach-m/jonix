@@ -124,13 +124,13 @@ public class SupplierOwnCoding
                 case SupplierCodeType.shortname:
                     supplierCodeType = new SupplierCodeType(e);
                     break;
-                case SupplierCodeTypeName.refname:
-                case SupplierCodeTypeName.shortname:
-                    supplierCodeTypeName = new SupplierCodeTypeName(e);
-                    break;
                 case SupplierCodeValue.refname:
                 case SupplierCodeValue.shortname:
                     supplierCodeValue = new SupplierCodeValue(e);
+                    break;
+                case SupplierCodeTypeName.refname:
+                case SupplierCodeTypeName.shortname:
+                    supplierCodeTypeName = new SupplierCodeTypeName(e);
                     break;
                 default:
                     break;
@@ -165,19 +165,6 @@ public class SupplierOwnCoding
         return supplierCodeType;
     }
 
-    private SupplierCodeTypeName supplierCodeTypeName = SupplierCodeTypeName.EMPTY;
-
-    /**
-     * <p>
-     * A name which identifies the proprietary coding scheme used. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SupplierCodeTypeName supplierCodeTypeName() {
-        _initialize();
-        return supplierCodeTypeName;
-    }
-
     private SupplierCodeValue supplierCodeValue = SupplierCodeValue.EMPTY;
 
     /**
@@ -190,6 +177,19 @@ public class SupplierOwnCoding
     public SupplierCodeValue supplierCodeValue() {
         _initialize();
         return supplierCodeValue;
+    }
+
+    private SupplierCodeTypeName supplierCodeTypeName = SupplierCodeTypeName.EMPTY;
+
+    /**
+     * <p>
+     * A name which identifies the proprietary coding scheme used. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SupplierCodeTypeName supplierCodeTypeName() {
+        _initialize();
+        return supplierCodeTypeName;
     }
 
     @Override

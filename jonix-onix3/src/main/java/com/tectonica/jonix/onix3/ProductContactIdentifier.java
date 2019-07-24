@@ -129,13 +129,13 @@ public class ProductContactIdentifier
                 case ProductContactIDType.shortname:
                     productContactIDType = new ProductContactIDType(e);
                     break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
                 case IDValue.refname:
                 case IDValue.shortname:
                     idValue = new IDValue(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
                     break;
                 default:
                     break;
@@ -170,6 +170,20 @@ public class ProductContactIdentifier
         return productContactIDType;
     }
 
+    private IDValue idValue = IDValue.EMPTY;
+
+    /**
+     * <p>
+     * An identifier of the type specified in the &lt;ProductContactIDType&gt; element. Mandatory in each occurrence of
+     * the &lt;ProductContactIdentifier&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public IDValue idValue() {
+        _initialize();
+        return idValue;
+    }
+
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
@@ -183,20 +197,6 @@ public class ProductContactIdentifier
     public IDTypeName idTypeName() {
         _initialize();
         return idTypeName;
-    }
-
-    private IDValue idValue = IDValue.EMPTY;
-
-    /**
-     * <p>
-     * An identifier of the type specified in the &lt;ProductContactIDType&gt; element. Mandatory in each occurrence of
-     * the &lt;ProductContactIdentifier&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public IDValue idValue() {
-        _initialize();
-        return idValue;
     }
 
     @Override

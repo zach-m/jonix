@@ -126,13 +126,13 @@ public class StockQuantityCoded
                 case StockQuantityCodeType.shortname:
                     stockQuantityCodeType = new StockQuantityCodeType(e);
                     break;
-                case StockQuantityCodeTypeName.refname:
-                case StockQuantityCodeTypeName.shortname:
-                    stockQuantityCodeTypeName = new StockQuantityCodeTypeName(e);
-                    break;
                 case StockQuantityCode.refname:
                 case StockQuantityCode.shortname:
                     stockQuantityCode = new StockQuantityCode(e);
+                    break;
+                case StockQuantityCodeTypeName.refname:
+                case StockQuantityCodeTypeName.shortname:
+                    stockQuantityCodeTypeName = new StockQuantityCodeTypeName(e);
                     break;
                 default:
                     break;
@@ -167,6 +167,20 @@ public class StockQuantityCoded
         return stockQuantityCodeType;
     }
 
+    private StockQuantityCode stockQuantityCode = StockQuantityCode.EMPTY;
+
+    /**
+     * <p>
+     * A code value taken from the scheme specified in the &lt;StockQuantityCodeType&gt; element. Mandatory in each
+     * occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public StockQuantityCode stockQuantityCode() {
+        _initialize();
+        return stockQuantityCode;
+    }
+
     private StockQuantityCodeTypeName stockQuantityCodeTypeName = StockQuantityCodeTypeName.EMPTY;
 
     /**
@@ -181,20 +195,6 @@ public class StockQuantityCoded
     public StockQuantityCodeTypeName stockQuantityCodeTypeName() {
         _initialize();
         return stockQuantityCodeTypeName;
-    }
-
-    private StockQuantityCode stockQuantityCode = StockQuantityCode.EMPTY;
-
-    /**
-     * <p>
-     * A code value taken from the scheme specified in the &lt;StockQuantityCodeType&gt; element. Mandatory in each
-     * occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public StockQuantityCode stockQuantityCode() {
-        _initialize();
-        return stockQuantityCode;
     }
 
     @Override

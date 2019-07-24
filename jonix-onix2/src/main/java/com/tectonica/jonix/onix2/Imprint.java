@@ -125,21 +125,21 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case ImprintName.refname:
-                case ImprintName.shortname:
-                    imprintName = new ImprintName(e);
-                    break;
                 case NameCodeType.refname:
                 case NameCodeType.shortname:
                     nameCodeType = new NameCodeType(e);
                     break;
-                case NameCodeTypeName.refname:
-                case NameCodeTypeName.shortname:
-                    nameCodeTypeName = new NameCodeTypeName(e);
-                    break;
                 case NameCodeValue.refname:
                 case NameCodeValue.shortname:
                     nameCodeValue = new NameCodeValue(e);
+                    break;
+                case ImprintName.refname:
+                case ImprintName.shortname:
+                    imprintName = new ImprintName(e);
+                    break;
+                case NameCodeTypeName.refname:
+                case NameCodeTypeName.shortname:
+                    nameCodeTypeName = new NameCodeTypeName(e);
                     break;
                 default:
                     break;
@@ -159,6 +159,34 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
+    private NameCodeType nameCodeType = NameCodeType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt; element is taken.
+     * Optional and non-repeating, but mandatory if the &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public NameCodeType nameCodeType() {
+        _initialize();
+        return nameCodeType;
+    }
+
+    private NameCodeValue nameCodeValue = NameCodeValue.EMPTY;
+
+    /**
+     * <p>
+     * A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and only if
+     * &lt;NameCodeType&gt; is present, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public NameCodeValue nameCodeValue() {
+        _initialize();
+        return nameCodeValue;
+    }
+
     private ImprintName imprintName = ImprintName.EMPTY;
 
     /**
@@ -174,20 +202,6 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
         return imprintName;
     }
 
-    private NameCodeType nameCodeType = NameCodeType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt; element is taken.
-     * Optional and non-repeating, but mandatory if the &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public NameCodeType nameCodeType() {
-        _initialize();
-        return nameCodeType;
-    }
-
     private NameCodeTypeName nameCodeTypeName = NameCodeTypeName.EMPTY;
 
     /**
@@ -200,19 +214,5 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
     public NameCodeTypeName nameCodeTypeName() {
         _initialize();
         return nameCodeTypeName;
-    }
-
-    private NameCodeValue nameCodeValue = NameCodeValue.EMPTY;
-
-    /**
-     * <p>
-     * A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and only if
-     * &lt;NameCodeType&gt; is present, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public NameCodeValue nameCodeValue() {
-        _initialize();
-        return nameCodeValue;
     }
 }

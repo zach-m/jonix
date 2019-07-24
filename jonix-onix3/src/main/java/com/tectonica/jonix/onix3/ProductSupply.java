@@ -121,17 +121,17 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case Market.refname:
-                case Market.shortname:
-                    markets = JPU.addToList(markets, new Market(e));
+                case SupplyDetail.refname:
+                case SupplyDetail.shortname:
+                    supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
                     break;
                 case MarketPublishingDetail.refname:
                 case MarketPublishingDetail.shortname:
                     marketPublishingDetail = new MarketPublishingDetail(e);
                     break;
-                case SupplyDetail.refname:
-                case SupplyDetail.shortname:
-                    supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
+                case Market.refname:
+                case Market.shortname:
+                    markets = JPU.addToList(markets, new Market(e));
                     break;
                 default:
                     break;
@@ -150,6 +150,35 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private List<SupplyDetail> supplyDetails = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together give details of a supply source, and price and availability from that
+     * source. Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to give details of
+     * multiple supply sources.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public List<SupplyDetail> supplyDetails() {
+        _initialize();
+        return supplyDetails;
+    }
+
+    private MarketPublishingDetail marketPublishingDetail = MarketPublishingDetail.EMPTY;
+
+    /**
+     * <p>
+     * A group of data elements which together give details of the publishing status of a product within a specified
+     * market. Optional and non-repeating within an occurrence of the &lt;ProductSupply&gt; block.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public MarketPublishingDetail marketPublishingDetail() {
+        _initialize();
+        return marketPublishingDetail;
+    }
 
     private List<Market> markets = Collections.emptyList();
 
@@ -171,34 +200,5 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
     public List<Market> markets() {
         _initialize();
         return markets;
-    }
-
-    private MarketPublishingDetail marketPublishingDetail = MarketPublishingDetail.EMPTY;
-
-    /**
-     * <p>
-     * A group of data elements which together give details of the publishing status of a product within a specified
-     * market. Optional and non-repeating within an occurrence of the &lt;ProductSupply&gt; block.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public MarketPublishingDetail marketPublishingDetail() {
-        _initialize();
-        return marketPublishingDetail;
-    }
-
-    private List<SupplyDetail> supplyDetails = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together give details of a supply source, and price and availability from that
-     * source. Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to give details of
-     * multiple supply sources.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public List<SupplyDetail> supplyDetails() {
-        _initialize();
-        return supplyDetails;
     }
 }

@@ -137,10 +137,6 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case SequenceNumber.refname:
-                case SequenceNumber.shortname:
-                    sequenceNumber = new SequenceNumber(e);
-                    break;
                 case TitleElementLevel.refname:
                 case TitleElementLevel.shortname:
                     titleElementLevel = new TitleElementLevel(e);
@@ -148,6 +144,14 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
                 case PartNumber.refname:
                 case PartNumber.shortname:
                     partNumber = new PartNumber(e);
+                    break;
+                case TitleWithoutPrefix.refname:
+                case TitleWithoutPrefix.shortname:
+                    titleWithoutPrefix = new TitleWithoutPrefix(e);
+                    break;
+                case SequenceNumber.refname:
+                case SequenceNumber.shortname:
+                    sequenceNumber = new SequenceNumber(e);
                     break;
                 case YearOfAnnual.refname:
                 case YearOfAnnual.shortname:
@@ -160,10 +164,6 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
                 case NoPrefix.refname:
                 case NoPrefix.shortname:
                     noPrefix = new NoPrefix(e);
-                    break;
-                case TitleWithoutPrefix.refname:
-                case TitleWithoutPrefix.shortname:
-                    titleWithoutPrefix = new TitleWithoutPrefix(e);
                     break;
                 case TitleText.refname:
                 case TitleText.shortname:
@@ -191,21 +191,6 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
-
-    /**
-     * <p>
-     * A number which specifies a single overall sequence of title elements, which is the preferred order for display of
-     * the various title elements when constructing a complete title. Optional and non-repeating. It is strongly
-     * recommended that each occurrence of the &lt;TitleElement&gt; composite should carry a &lt;SequenceNumber&gt;.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SequenceNumber sequenceNumber() {
-        _initialize();
-        return sequenceNumber;
-    }
-
     private TitleElementLevel titleElementLevel = TitleElementLevel.EMPTY;
 
     /**
@@ -232,6 +217,35 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
     public PartNumber partNumber() {
         _initialize();
         return partNumber;
+    }
+
+    private TitleWithoutPrefix titleWithoutPrefix = TitleWithoutPrefix.EMPTY;
+
+    /**
+     * <p>
+     * The text of a title element without the title prefix; and excluding any subtitle. Optional and non-repeating; can
+     * only be used if one of the &lt;NoPrefix/&gt; or &lt;TitlePrefix&gt; elements is also present.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public TitleWithoutPrefix titleWithoutPrefix() {
+        _initialize();
+        return titleWithoutPrefix;
+    }
+
+    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
+
+    /**
+     * <p>
+     * A number which specifies a single overall sequence of title elements, which is the preferred order for display of
+     * the various title elements when constructing a complete title. Optional and non-repeating. It is strongly
+     * recommended that each occurrence of the &lt;TitleElement&gt; composite should carry a &lt;SequenceNumber&gt;.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SequenceNumber sequenceNumber() {
+        _initialize();
+        return sequenceNumber;
     }
 
     private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
@@ -282,20 +296,6 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
 
     public boolean isNoPrefix() {
         return (noPrefix().exists());
-    }
-
-    private TitleWithoutPrefix titleWithoutPrefix = TitleWithoutPrefix.EMPTY;
-
-    /**
-     * <p>
-     * The text of a title element without the title prefix; and excluding any subtitle. Optional and non-repeating; can
-     * only be used if one of the &lt;NoPrefix/&gt; or &lt;TitlePrefix&gt; elements is also present.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public TitleWithoutPrefix titleWithoutPrefix() {
-        _initialize();
-        return titleWithoutPrefix;
     }
 
     private TitleText titleText = TitleText.EMPTY;

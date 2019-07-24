@@ -129,13 +129,13 @@ public class SubjectDate
                 case SubjectDateRole.shortname:
                     subjectDateRole = new SubjectDateRole(e);
                     break;
-                case DateFormat.refname:
-                case DateFormat.shortname:
-                    dateFormat = new DateFormat(e);
-                    break;
                 case Date.refname:
                 case Date.shortname:
                     date = new Date(e);
+                    break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
                     break;
                 default:
                     break;
@@ -169,20 +169,6 @@ public class SubjectDate
         return subjectDateRole;
     }
 
-    private DateFormat dateFormat = DateFormat.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and not repeatable.
-     * Deprecated – where possible, use the <i>dateformat</i> attribute instead.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public DateFormat dateFormat() {
-        _initialize();
-        return dateFormat;
-    }
-
     private Date date = Date.EMPTY;
 
     /**
@@ -197,6 +183,20 @@ public class SubjectDate
     public Date date() {
         _initialize();
         return date;
+    }
+
+    private DateFormat dateFormat = DateFormat.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and not repeatable.
+     * Deprecated – where possible, use the <i>dateformat</i> attribute instead.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public DateFormat dateFormat() {
+        _initialize();
+        return dateFormat;
     }
 
     @Override

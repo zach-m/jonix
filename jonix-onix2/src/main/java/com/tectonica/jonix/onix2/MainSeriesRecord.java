@@ -126,6 +126,14 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
                 case NotificationType.shortname:
                     notificationType = new NotificationType(e);
                     break;
+                case SeriesIdentifier.refname:
+                case SeriesIdentifier.shortname:
+                    seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
+                    break;
+                case Title.refname:
+                case Title.shortname:
+                    titles = JPU.addToList(titles, new Title(e));
+                    break;
                 case DeletionCode.refname:
                 case DeletionCode.shortname:
                     deletionCode = new DeletionCode(e);
@@ -150,13 +158,9 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
                 case RecordSourceName.shortname:
                     recordSourceName = new RecordSourceName(e);
                     break;
-                case SeriesIdentifier.refname:
-                case SeriesIdentifier.shortname:
-                    seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
-                    break;
-                case Title.refname:
-                case Title.shortname:
-                    titles = JPU.addToList(titles, new Title(e));
+                case SubordinateEntries.refname:
+                case SubordinateEntries.shortname:
+                    subordinateEntries = new SubordinateEntries(e);
                     break;
                 case Contributor.refname:
                 case Contributor.shortname:
@@ -169,10 +173,6 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
                 case Publisher.refname:
                 case Publisher.shortname:
                     publishers = JPU.addToList(publishers, new Publisher(e));
-                    break;
-                case SubordinateEntries.refname:
-                case SubordinateEntries.shortname:
-                    subordinateEntries = new SubordinateEntries(e);
                     break;
                 default:
                     break;
@@ -228,6 +228,33 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
     public NotificationType notificationType() {
         _initialize();
         return notificationType;
+    }
+
+    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define an identifier of a series or subseries. The composite
+     * is optional, and may only repeat if two or more identifiers of different types are sent. It is not permissible to
+     * have two identifiers of the same type.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
+        _initialize();
+        return seriesIdentifiers;
+    }
+
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
+        _initialize();
+        return titles;
     }
 
     private DeletionCode deletionCode = DeletionCode.EMPTY;
@@ -320,31 +347,14 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
         return recordSourceName;
     }
 
-    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private SubordinateEntries subordinateEntries = SubordinateEntries.EMPTY;
 
     /**
-     * <p>
-     * A repeatable group of data elements which together define an identifier of a series or subseries. The composite
-     * is optional, and may only repeat if two or more identifiers of different types are sent. It is not permissible to
-     * have two identifiers of the same type.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * Jonix-Comment: this field is optional
      */
-    public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
+    public SubordinateEntries subordinateEntries() {
         _initialize();
-        return seriesIdentifiers;
-    }
-
-    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
-        _initialize();
-        return titles;
+        return subordinateEntries;
     }
 
     private List<Contributor> contributors = Collections.emptyList();
@@ -376,15 +386,5 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
     public List<Publisher> publishers() {
         _initialize();
         return publishers;
-    }
-
-    private SubordinateEntries subordinateEntries = SubordinateEntries.EMPTY;
-
-    /**
-     * Jonix-Comment: this field is optional
-     */
-    public SubordinateEntries subordinateEntries() {
-        _initialize();
-        return subordinateEntries;
     }
 }

@@ -129,18 +129,6 @@ public class Stock implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case LocationIdentifier.refname:
-                case LocationIdentifier.shortname:
-                    locationIdentifiers = JPU.addToList(locationIdentifiers, new LocationIdentifier(e));
-                    break;
-                case LocationName.refname:
-                case LocationName.shortname:
-                    locationNames = JPU.addToList(locationNames, new LocationName(e));
-                    break;
-                case StockQuantityCoded.refname:
-                case StockQuantityCoded.shortname:
-                    stockQuantityCodeds = JPU.addToList(stockQuantityCodeds, new StockQuantityCoded(e));
-                    break;
                 case OnHand.refname:
                 case OnHand.shortname:
                     onHand = new OnHand(e);
@@ -160,6 +148,18 @@ public class Stock implements OnixSuperComposite, Serializable {
                 case CBO.refname:
                 case CBO.shortname:
                     cbo = new CBO(e);
+                    break;
+                case LocationIdentifier.refname:
+                case LocationIdentifier.shortname:
+                    locationIdentifiers = JPU.addToList(locationIdentifiers, new LocationIdentifier(e));
+                    break;
+                case LocationName.refname:
+                case LocationName.shortname:
+                    locationNames = JPU.addToList(locationNames, new LocationName(e));
+                    break;
+                case StockQuantityCoded.refname:
+                case StockQuantityCoded.shortname:
+                    stockQuantityCodeds = JPU.addToList(stockQuantityCodeds, new StockQuantityCoded(e));
                     break;
                 case OnOrderDetail.refname:
                 case OnOrderDetail.shortname:
@@ -186,57 +186,6 @@ public class Stock implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
-
-    private ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier,
-        SupplierIdentifierTypes> locationIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
-
-    /**
-     * <p>
-     * An optional group of data elements which together define the identifier of a stock location in accordance with a
-     * specified scheme, and repeatable to allow different types of location identifier to be supported without defining
-     * additional data elements..
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier, SupplierIdentifierTypes>
-        locationIdentifiers() {
-        _initialize();
-        return locationIdentifiers;
-    }
-
-    private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The name of a stock location. Optional, and repeatable to provide parallel names for a single location in
-     * multiple languages (<i>eg</i> Baile Átha Cliath and Dublin, or Bruxelles and Brussel). The <i>language</i>
-     * attribute is optional for a single instance of &lt;LocationName&gt;, but must be included in each instance if
-     * &lt;LocationName&gt; is repeated.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<LocationName, String> locationNames() {
-        _initialize();
-        return locationNames;
-    }
-
-    private ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded,
-        StockQuantityCodeTypes> stockQuantityCodeds = ListOfOnixDataCompositeWithKey.emptyKeyed();
-
-    /**
-     * <p>
-     * A group of data elements which together specify a stock level in a coded way without stating the exact quantity
-     * of stock. Either &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of the
-     * &lt;Stock&gt; composite, even if the quantity on hand is zero. Repeatable, so that it is possible to provide
-     * coded quantities on hand, quantities on order <i>etc</i> separately.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes>
-        stockQuantityCodeds() {
-        _initialize();
-        return stockQuantityCodeds;
-    }
 
     private OnHand onHand = OnHand.EMPTY;
 
@@ -305,6 +254,57 @@ public class Stock implements OnixSuperComposite, Serializable {
     public CBO cbo() {
         _initialize();
         return cbo;
+    }
+
+    private ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier,
+        SupplierIdentifierTypes> locationIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+
+    /**
+     * <p>
+     * An optional group of data elements which together define the identifier of a stock location in accordance with a
+     * specified scheme, and repeatable to allow different types of location identifier to be supported without defining
+     * additional data elements..
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier, SupplierIdentifierTypes>
+        locationIdentifiers() {
+        _initialize();
+        return locationIdentifiers;
+    }
+
+    private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a stock location. Optional, and repeatable to provide parallel names for a single location in
+     * multiple languages (<i>eg</i> Baile Átha Cliath and Dublin, or Bruxelles and Brussel). The <i>language</i>
+     * attribute is optional for a single instance of &lt;LocationName&gt;, but must be included in each instance if
+     * &lt;LocationName&gt; is repeated.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<LocationName, String> locationNames() {
+        _initialize();
+        return locationNames;
+    }
+
+    private ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded,
+        StockQuantityCodeTypes> stockQuantityCodeds = ListOfOnixDataCompositeWithKey.emptyKeyed();
+
+    /**
+     * <p>
+     * A group of data elements which together specify a stock level in a coded way without stating the exact quantity
+     * of stock. Either &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of the
+     * &lt;Stock&gt; composite, even if the quantity on hand is zero. Repeatable, so that it is possible to provide
+     * coded quantities on hand, quantities on order <i>etc</i> separately.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes>
+        stockQuantityCodeds() {
+        _initialize();
+        return stockQuantityCodeds;
     }
 
     private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails = ListOfOnixDataComposite.empty();

@@ -127,6 +127,10 @@ public class TextItem implements OnixSuperComposite, Serializable {
                 case TextItemType.shortname:
                     textItemType = new TextItemType(e);
                     break;
+                case NumberOfPages.refname:
+                case NumberOfPages.shortname:
+                    numberOfPages = new NumberOfPages(e);
+                    break;
                 case TextItemIdentifier.refname:
                 case TextItemIdentifier.shortname:
                     textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(e));
@@ -134,10 +138,6 @@ public class TextItem implements OnixSuperComposite, Serializable {
                 case PageRun.refname:
                 case PageRun.shortname:
                     pageRuns = JPU.addToList(pageRuns, new PageRun(e));
-                    break;
-                case NumberOfPages.refname:
-                case NumberOfPages.shortname:
-                    numberOfPages = new NumberOfPages(e);
                     break;
                 default:
                     break;
@@ -171,6 +171,20 @@ public class TextItem implements OnixSuperComposite, Serializable {
         return textItemType;
     }
 
+    private NumberOfPages numberOfPages = NumberOfPages.EMPTY;
+
+    /**
+     * <p>
+     * The page extent of a text item within a paginated product. Optional and non-repeating, but normally expected when
+     * the text item is being referenced as part of a structured table of contents.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NumberOfPages numberOfPages() {
+        _initialize();
+        return numberOfPages;
+    }
+
     private ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier,
         TextItemIdentifierTypes> textItemIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -199,19 +213,5 @@ public class TextItem implements OnixSuperComposite, Serializable {
     public ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns() {
         _initialize();
         return pageRuns;
-    }
-
-    private NumberOfPages numberOfPages = NumberOfPages.EMPTY;
-
-    /**
-     * <p>
-     * The page extent of a text item within a paginated product. Optional and non-repeating, but normally expected when
-     * the text item is being referenced as part of a structured table of contents.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NumberOfPages numberOfPages() {
-        _initialize();
-        return numberOfPages;
     }
 }

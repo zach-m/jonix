@@ -129,6 +129,10 @@ public class Set implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case TitleOfSet.refname:
+                case TitleOfSet.shortname:
+                    titleOfSet = new TitleOfSet(e);
+                    break;
                 case ISBNOfSet.refname:
                 case ISBNOfSet.shortname:
                     isbnOfSet = new ISBNOfSet(e);
@@ -136,18 +140,6 @@ public class Set implements OnixSuperComposite, Serializable {
                 case EAN13OfSet.refname:
                 case EAN13OfSet.shortname:
                     ean13OfSet = new EAN13OfSet(e);
-                    break;
-                case ProductIdentifier.refname:
-                case ProductIdentifier.shortname:
-                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-                    break;
-                case TitleOfSet.refname:
-                case TitleOfSet.shortname:
-                    titleOfSet = new TitleOfSet(e);
-                    break;
-                case Title.refname:
-                case Title.shortname:
-                    titles = JPU.addToList(titles, new Title(e));
                     break;
                 case SetPartNumber.refname:
                 case SetPartNumber.shortname:
@@ -169,6 +161,14 @@ public class Set implements OnixSuperComposite, Serializable {
                 case SetItemTitle.shortname:
                     setItemTitle = new SetItemTitle(e);
                     break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case Title.refname:
+                case Title.shortname:
+                    titles = JPU.addToList(titles, new Title(e));
+                    break;
                 default:
                     break;
             }
@@ -186,6 +186,22 @@ public class Set implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private TitleOfSet titleOfSet = TitleOfSet.EMPTY;
+
+    /**
+     * <p>
+     * The full title of the set, without abbreviation or abridgement. Non-repeating. Either the &lt;TitleOfSet&gt;
+     * element or at least one occurrence of the &lt;Title&gt; composite must occur in each occurrence of the
+     * &lt;Set&gt; composite. The &lt;Title&gt; composite provides a more comprehensive representation of a set title,
+     * and allows alternative forms to be sent.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public TitleOfSet titleOfSet() {
+        _initialize();
+        return titleOfSet;
+    }
 
     private ISBNOfSet isbnOfSet = ISBNOfSet.EMPTY;
 
@@ -215,53 +231,6 @@ public class Set implements OnixSuperComposite, Serializable {
     public EAN13OfSet ean13OfSet() {
         _initialize();
         return ean13OfSet;
-    }
-
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together define the identifier of a product in accordance with a
-     * specified scheme, used here to carry the product identifier for a set. <strong>See notes on the
-     * &lt;ProductIdentifier&gt; composite in section PR.2 for details of the handling of ISBN-13.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        _initialize();
-        return productIdentifiers;
-    }
-
-    private TitleOfSet titleOfSet = TitleOfSet.EMPTY;
-
-    /**
-     * <p>
-     * The full title of the set, without abbreviation or abridgement. Non-repeating. Either the &lt;TitleOfSet&gt;
-     * element or at least one occurrence of the &lt;Title&gt; composite must occur in each occurrence of the
-     * &lt;Set&gt; composite. The &lt;Title&gt; composite provides a more comprehensive representation of a set title,
-     * and allows alternative forms to be sent.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public TitleOfSet titleOfSet() {
-        _initialize();
-        return titleOfSet;
-    }
-
-    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together give the text of a title, including a subtitle where
-     * applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
-        _initialize();
-        return titles;
     }
 
     private SetPartNumber setPartNumber = SetPartNumber.EMPTY;
@@ -341,5 +310,36 @@ public class Set implements OnixSuperComposite, Serializable {
     public SetItemTitle setItemTitle() {
         _initialize();
         return setItemTitle;
+    }
+
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define the identifier of a product in accordance with a
+     * specified scheme, used here to carry the product identifier for a set. <strong>See notes on the
+     * &lt;ProductIdentifier&gt; composite in section PR.2 for details of the handling of ISBN-13.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+        _initialize();
+        return productIdentifiers;
+    }
+
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together give the text of a title, including a subtitle where
+     * applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
+        _initialize();
+        return titles;
     }
 }

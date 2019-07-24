@@ -126,6 +126,10 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case ProductWebsiteLink.refname:
+                case ProductWebsiteLink.shortname:
+                    productWebsiteLink = new ProductWebsiteLink(e);
+                    break;
                 case WebsiteRole.refname:
                 case WebsiteRole.shortname:
                     websiteRole = new WebsiteRole(e);
@@ -133,10 +137,6 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
                 case ProductWebsiteDescription.refname:
                 case ProductWebsiteDescription.shortname:
                     productWebsiteDescription = new ProductWebsiteDescription(e);
-                    break;
-                case ProductWebsiteLink.refname:
-                case ProductWebsiteLink.shortname:
-                    productWebsiteLink = new ProductWebsiteLink(e);
                     break;
                 default:
                     break;
@@ -156,6 +156,20 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private ProductWebsiteLink productWebsiteLink = ProductWebsiteLink.EMPTY;
+
+    /**
+     * <p>
+     * A URL for a website carrying additional information related to the product, which is available to be viewed for
+     * promotional purposes. Mandatory in each occurrence of the &lt;ProductWebsite&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ProductWebsiteLink productWebsiteLink() {
+        _initialize();
+        return productWebsiteLink;
+    }
 
     private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
@@ -183,20 +197,6 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
     public ProductWebsiteDescription productWebsiteDescription() {
         _initialize();
         return productWebsiteDescription;
-    }
-
-    private ProductWebsiteLink productWebsiteLink = ProductWebsiteLink.EMPTY;
-
-    /**
-     * <p>
-     * A URL for a website carrying additional information related to the product, which is available to be viewed for
-     * promotional purposes. Mandatory in each occurrence of the &lt;ProductWebsite&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ProductWebsiteLink productWebsiteLink() {
-        _initialize();
-        return productWebsiteLink;
     }
 
     @Override

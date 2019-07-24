@@ -121,6 +121,10 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case DiscountPercent.refname:
+                case DiscountPercent.shortname:
+                    discountPercent = new DiscountPercent(e);
+                    break;
                 case DiscountType.refname:
                 case DiscountType.shortname:
                     discountType = new DiscountType(e);
@@ -132,10 +136,6 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
                 case ToQuantity.refname:
                 case ToQuantity.shortname:
                     toQuantity = new ToQuantity(e);
-                    break;
-                case DiscountPercent.refname:
-                case DiscountPercent.shortname:
-                    discountPercent = new DiscountPercent(e);
                     break;
                 case DiscountAmount.refname:
                 case DiscountAmount.shortname:
@@ -158,6 +158,21 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private DiscountPercent discountPercent = DiscountPercent.EMPTY;
+
+    /**
+     * <p>
+     * A discount percentage applicable to the price carried in an occurrence of the &lt;Price&gt; composite. Optional
+     * and non-repeating; but either &lt;DiscountPercent&gt; or &lt;DiscountAmount&gt; or both must be present in each
+     * occurrence of the &lt;Discount&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public DiscountPercent discountPercent() {
+        _initialize();
+        return discountPercent;
+    }
 
     private DiscountType discountType = DiscountType.EMPTY;
 
@@ -202,21 +217,6 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
     public ToQuantity toQuantity() {
         _initialize();
         return toQuantity;
-    }
-
-    private DiscountPercent discountPercent = DiscountPercent.EMPTY;
-
-    /**
-     * <p>
-     * A discount percentage applicable to the price carried in an occurrence of the &lt;Price&gt; composite. Optional
-     * and non-repeating; but either &lt;DiscountPercent&gt; or &lt;DiscountAmount&gt; or both must be present in each
-     * occurrence of the &lt;Discount&gt; composite.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public DiscountPercent discountPercent() {
-        _initialize();
-        return discountPercent;
     }
 
     private DiscountAmount discountAmount = DiscountAmount.EMPTY;

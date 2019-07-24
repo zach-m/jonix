@@ -125,13 +125,13 @@ public class PublishingDate
                 case PublishingDateRole.shortname:
                     publishingDateRole = new PublishingDateRole(e);
                     break;
-                case DateFormat.refname:
-                case DateFormat.shortname:
-                    dateFormat = new DateFormat(e);
-                    break;
                 case Date.refname:
                 case Date.shortname:
                     date = new Date(e);
+                    break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
                     break;
                 default:
                     break;
@@ -166,21 +166,6 @@ public class PublishingDate
         return publishingDateRole;
     }
 
-    private DateFormat dateFormat = DateFormat.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of the
-     * &lt;PublishingDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
-     * attribute instead.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public DateFormat dateFormat() {
-        _initialize();
-        return dateFormat;
-    }
-
     private Date date = Date.EMPTY;
 
     /**
@@ -195,6 +180,21 @@ public class PublishingDate
     public Date date() {
         _initialize();
         return date;
+    }
+
+    private DateFormat dateFormat = DateFormat.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of the
+     * &lt;PublishingDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
+     * attribute instead.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public DateFormat dateFormat() {
+        _initialize();
+        return dateFormat;
     }
 
     @Override

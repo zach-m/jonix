@@ -133,6 +133,10 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
                 case SubjectSchemeIdentifier.shortname:
                     subjectSchemeIdentifier = new SubjectSchemeIdentifier(e);
                     break;
+                case SubjectCode.refname:
+                case SubjectCode.shortname:
+                    subjectCode = new SubjectCode(e);
+                    break;
                 case SubjectSchemeName.refname:
                 case SubjectSchemeName.shortname:
                     subjectSchemeName = new SubjectSchemeName(e);
@@ -140,10 +144,6 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
                 case SubjectSchemeVersion.refname:
                 case SubjectSchemeVersion.shortname:
                     subjectSchemeVersion = new SubjectSchemeVersion(e);
-                    break;
-                case SubjectCode.refname:
-                case SubjectCode.shortname:
-                    subjectCode = new SubjectCode(e);
                     break;
                 case SubjectHeadingText.refname:
                 case SubjectHeadingText.shortname:
@@ -192,6 +192,21 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         return subjectSchemeIdentifier;
     }
 
+    private SubjectCode subjectCode = SubjectCode.EMPTY;
+
+    /**
+     * <p>
+     * A subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element. Either
+     * &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
+     * &lt;Subject&gt; composite. Non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public SubjectCode subjectCode() {
+        _initialize();
+        return subjectCode;
+    }
+
     private SubjectSchemeName subjectSchemeName = SubjectSchemeName.EMPTY;
 
     /**
@@ -218,21 +233,6 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     public SubjectSchemeVersion subjectSchemeVersion() {
         _initialize();
         return subjectSchemeVersion;
-    }
-
-    private SubjectCode subjectCode = SubjectCode.EMPTY;
-
-    /**
-     * <p>
-     * A subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element. Either
-     * &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
-     * &lt;Subject&gt; composite. Non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public SubjectCode subjectCode() {
-        _initialize();
-        return subjectCode;
     }
 
     private SubjectHeadingText subjectHeadingText = SubjectHeadingText.EMPTY;

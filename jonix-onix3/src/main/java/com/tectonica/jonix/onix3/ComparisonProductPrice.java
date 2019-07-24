@@ -142,6 +142,10 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case PriceAmount.refname:
+                case PriceAmount.shortname:
+                    priceAmount = new PriceAmount(e);
+                    break;
                 case ProductIdentifier.refname:
                 case ProductIdentifier.shortname:
                     productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
@@ -149,10 +153,6 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
                 case PriceType.refname:
                 case PriceType.shortname:
                     priceType = new PriceType(e);
-                    break;
-                case PriceAmount.refname:
-                case PriceAmount.shortname:
-                    priceAmount = new PriceAmount(e);
                     break;
                 case CurrencyCode.refname:
                 case CurrencyCode.shortname:
@@ -176,6 +176,20 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private PriceAmount priceAmount = PriceAmount.EMPTY;
+
+    /**
+     * <p>
+     * The amount of the comparison product price. Mandatory and non-repeating within any occurrence of the
+     * &lt;ComparisonProductPrice&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public PriceAmount priceAmount() {
+        _initialize();
+        return priceAmount;
+    }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
         ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
@@ -214,20 +228,6 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
     public PriceType priceType() {
         _initialize();
         return priceType;
-    }
-
-    private PriceAmount priceAmount = PriceAmount.EMPTY;
-
-    /**
-     * <p>
-     * The amount of the comparison product price. Mandatory and non-repeating within any occurrence of the
-     * &lt;ComparisonProductPrice&gt; composite.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public PriceAmount priceAmount() {
-        _initialize();
-        return priceAmount;
     }
 
     private CurrencyCode currencyCode = CurrencyCode.EMPTY;

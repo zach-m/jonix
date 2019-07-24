@@ -147,13 +147,13 @@ public class NotForSale implements OnixSuperComposite, Serializable {
                 case EAN13.shortname:
                     ean13 = new EAN13(e);
                     break;
-                case ProductIdentifier.refname:
-                case ProductIdentifier.shortname:
-                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-                    break;
                 case PublisherName.refname:
                 case PublisherName.shortname:
                     publisherName = new PublisherName(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
                     break;
                 default:
                     break;
@@ -238,6 +238,22 @@ public class NotForSale implements OnixSuperComposite, Serializable {
         return ean13;
     }
 
+    private PublisherName publisherName = PublisherName.EMPTY;
+
+    /**
+     * <p>
+     * The full name of the publisher of the equivalent product which is available in the country/ies specified in
+     * &lt;RightsCountry&gt;. Optional and non-repeating. Except where they are essential to the recognized form of the
+     * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be
+     * omitted.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PublisherName publisherName() {
+        _initialize();
+        return publisherName;
+    }
+
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
 
@@ -253,21 +269,5 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
         _initialize();
         return productIdentifiers;
-    }
-
-    private PublisherName publisherName = PublisherName.EMPTY;
-
-    /**
-     * <p>
-     * The full name of the publisher of the equivalent product which is available in the country/ies specified in
-     * &lt;RightsCountry&gt;. Optional and non-repeating. Except where they are essential to the recognized form of the
-     * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be
-     * omitted.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PublisherName publisherName() {
-        _initialize();
-        return publisherName;
     }
 }

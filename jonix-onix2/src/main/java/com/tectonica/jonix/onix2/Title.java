@@ -143,6 +143,10 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
                 case TitleType.shortname:
                     titleType = new TitleType(e);
                     break;
+                case TitleText.refname:
+                case TitleText.shortname:
+                    titleText = new TitleText(e);
+                    break;
                 case AbbreviatedLength.refname:
                 case AbbreviatedLength.shortname:
                     abbreviatedLength = new AbbreviatedLength(e);
@@ -150,10 +154,6 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
                 case TextCaseFlag.refname:
                 case TextCaseFlag.shortname:
                     textCaseFlag = new TextCaseFlag(e);
-                    break;
-                case TitleText.refname:
-                case TitleText.shortname:
-                    titleText = new TitleText(e);
                     break;
                 case TitlePrefix.refname:
                 case TitlePrefix.shortname:
@@ -200,6 +200,22 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
         return titleType;
     }
 
+    private TitleText titleText = TitleText.EMPTY;
+
+    /**
+     * <p>
+     * The text of the title specified by the &lt;TitleType&gt; code; and excluding the subtitle, if any. Optional and
+     * non-repeating: see text at the head of the &lt;Title&gt; composite for details of valid title text options. The
+     * &lt;TitleText&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
+     * transliteration, textcase</i>.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public TitleText titleText() {
+        _initialize();
+        return titleText;
+    }
+
     private AbbreviatedLength abbreviatedLength = AbbreviatedLength.EMPTY;
 
     /**
@@ -233,22 +249,6 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     public TextCaseFlag textCaseFlag() {
         _initialize();
         return textCaseFlag;
-    }
-
-    private TitleText titleText = TitleText.EMPTY;
-
-    /**
-     * <p>
-     * The text of the title specified by the &lt;TitleType&gt; code; and excluding the subtitle, if any. Optional and
-     * non-repeating: see text at the head of the &lt;Title&gt; composite for details of valid title text options. The
-     * &lt;TitleText&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
-     * transliteration, textcase</i>.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public TitleText titleText() {
-        _initialize();
-        return titleText;
     }
 
     private TitlePrefix titlePrefix = TitlePrefix.EMPTY;

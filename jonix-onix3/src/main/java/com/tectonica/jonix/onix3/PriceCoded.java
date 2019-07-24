@@ -127,13 +127,13 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
                 case PriceCodeType.shortname:
                     priceCodeType = new PriceCodeType(e);
                     break;
-                case PriceCodeTypeName.refname:
-                case PriceCodeTypeName.shortname:
-                    priceCodeTypeName = new PriceCodeTypeName(e);
-                    break;
                 case PriceCode.refname:
                 case PriceCode.shortname:
                     priceCode = new PriceCode(e);
+                    break;
+                case PriceCodeTypeName.refname:
+                case PriceCodeTypeName.shortname:
+                    priceCodeTypeName = new PriceCodeTypeName(e);
                     break;
                 default:
                     break;
@@ -167,6 +167,20 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
         return priceCodeType;
     }
 
+    private PriceCode priceCode = PriceCode.EMPTY;
+
+    /**
+     * <p>
+     * A price code from the scheme specified in the &lt;PriceCodeType&gt; element. Mandatory in each occurrence of the
+     * &lt;PriceCoded&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public PriceCode priceCode() {
+        _initialize();
+        return priceCode;
+    }
+
     private PriceCodeTypeName priceCodeTypeName = PriceCodeTypeName.EMPTY;
 
     /**
@@ -180,20 +194,6 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
     public PriceCodeTypeName priceCodeTypeName() {
         _initialize();
         return priceCodeTypeName;
-    }
-
-    private PriceCode priceCode = PriceCode.EMPTY;
-
-    /**
-     * <p>
-     * A price code from the scheme specified in the &lt;PriceCodeType&gt; element. Mandatory in each occurrence of the
-     * &lt;PriceCoded&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public PriceCode priceCode() {
-        _initialize();
-        return priceCode;
     }
 
     @Override

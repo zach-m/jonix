@@ -136,13 +136,13 @@ public class Header implements OnixHeader, Serializable {
                 case FromEANNumber.shortname:
                     fromEANNumber = new FromEANNumber(e);
                     break;
+                case SentDate.refname:
+                case SentDate.shortname:
+                    sentDate = new SentDate(e);
+                    break;
                 case FromSAN.refname:
                 case FromSAN.shortname:
                     fromSAN = new FromSAN(e);
-                    break;
-                case SenderIdentifier.refname:
-                case SenderIdentifier.shortname:
-                    senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(e));
                     break;
                 case FromCompany.refname:
                 case FromCompany.shortname:
@@ -164,10 +164,6 @@ public class Header implements OnixHeader, Serializable {
                 case ToSAN.shortname:
                     toSAN = new ToSAN(e);
                     break;
-                case AddresseeIdentifier.refname:
-                case AddresseeIdentifier.shortname:
-                    addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
-                    break;
                 case ToCompany.refname:
                 case ToCompany.shortname:
                     toCompany = new ToCompany(e);
@@ -183,10 +179,6 @@ public class Header implements OnixHeader, Serializable {
                 case MessageRepeat.refname:
                 case MessageRepeat.shortname:
                     messageRepeat = new MessageRepeat(e);
-                    break;
-                case SentDate.refname:
-                case SentDate.shortname:
-                    sentDate = new SentDate(e);
                     break;
                 case MessageNote.refname:
                 case MessageNote.shortname:
@@ -215,6 +207,14 @@ public class Header implements OnixHeader, Serializable {
                 case DefaultClassOfTrade.refname:
                 case DefaultClassOfTrade.shortname:
                     defaultClassOfTrade = new DefaultClassOfTrade(e);
+                    break;
+                case SenderIdentifier.refname:
+                case SenderIdentifier.shortname:
+                    senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(e));
+                    break;
+                case AddresseeIdentifier.refname:
+                case AddresseeIdentifier.shortname:
+                    addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
                     break;
                 default:
                     break;
@@ -248,6 +248,20 @@ public class Header implements OnixHeader, Serializable {
         return fromEANNumber;
     }
 
+    private SentDate sentDate = SentDate.EMPTY;
+
+    /**
+     * <p>
+     * The date on which the message is sent. Optionally, the time may be added, using the 24-hour clock. Mandatory and
+     * non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public SentDate sentDate() {
+        _initialize();
+        return sentDate;
+    }
+
     private FromSAN fromSAN = FromSAN.EMPTY;
 
     /**
@@ -261,24 +275,6 @@ public class Header implements OnixHeader, Serializable {
     public FromSAN fromSAN() {
         _initialize();
         return fromSAN;
-    }
-
-    private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes> senderIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A group of data elements which together define the identifier of the sender within a specified namespace, used
-     * here to allow different party identifiers to be included without defining additional data elements. In particular
-     * the composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
-     * composite is optional and repeatable; but either the &lt;FromCompany&gt; element or a sender identifier using one
-     * or more elements from MH.1 to MH.5 must be included.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes> senderIdentifiers() {
-        _initialize();
-        return senderIdentifiers;
     }
 
     private FromCompany fromCompany = FromCompany.EMPTY;
@@ -360,23 +356,6 @@ public class Header implements OnixHeader, Serializable {
         return toSAN;
     }
 
-    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes> addresseeIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A group of data elements which together define the identifier of the addressee within a specified namespace, used
-     * here to allow different party identifiers to be included without defining additional data elements. In particular
-     * the composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
-     * composite is optional and repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes> addresseeIdentifiers() {
-        _initialize();
-        return addresseeIdentifiers;
-    }
-
     private ToCompany toCompany = ToCompany.EMPTY;
 
     /**
@@ -437,20 +416,6 @@ public class Header implements OnixHeader, Serializable {
     public MessageRepeat messageRepeat() {
         _initialize();
         return messageRepeat;
-    }
-
-    private SentDate sentDate = SentDate.EMPTY;
-
-    /**
-     * <p>
-     * The date on which the message is sent. Optionally, the time may be added, using the 24-hour clock. Mandatory and
-     * non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public SentDate sentDate() {
-        _initialize();
-        return sentDate;
     }
 
     private MessageNote messageNote = MessageNote.EMPTY;
@@ -562,5 +527,40 @@ public class Header implements OnixHeader, Serializable {
     public DefaultClassOfTrade defaultClassOfTrade() {
         _initialize();
         return defaultClassOfTrade;
+    }
+
+    private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes> senderIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A group of data elements which together define the identifier of the sender within a specified namespace, used
+     * here to allow different party identifiers to be included without defining additional data elements. In particular
+     * the composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
+     * composite is optional and repeatable; but either the &lt;FromCompany&gt; element or a sender identifier using one
+     * or more elements from MH.1 to MH.5 must be included.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes> senderIdentifiers() {
+        _initialize();
+        return senderIdentifiers;
+    }
+
+    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes> addresseeIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A group of data elements which together define the identifier of the addressee within a specified namespace, used
+     * here to allow different party identifiers to be included without defining additional data elements. In particular
+     * the composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
+     * composite is optional and repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes> addresseeIdentifiers() {
+        _initialize();
+        return addresseeIdentifiers;
     }
 }

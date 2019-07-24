@@ -135,13 +135,13 @@ public class CopyrightOwnerIdentifier
                 case CopyrightOwnerIDType.shortname:
                     copyrightOwnerIDType = new CopyrightOwnerIDType(e);
                     break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
                 case IDValue.refname:
                 case IDValue.shortname:
                     idValue = new IDValue(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
                     break;
                 default:
                     break;
@@ -176,20 +176,6 @@ public class CopyrightOwnerIdentifier
         return copyrightOwnerIDType;
     }
 
-    private IDTypeName idTypeName = IDTypeName.EMPTY;
-
-    /**
-     * <p>
-     * A name which identifies a proprietary identifier scheme when, and only when, the code in the
-     * &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public IDTypeName idTypeName() {
-        _initialize();
-        return idTypeName;
-    }
-
     private IDValue idValue = IDValue.EMPTY;
 
     /**
@@ -202,6 +188,20 @@ public class CopyrightOwnerIdentifier
     public IDValue idValue() {
         _initialize();
         return idValue;
+    }
+
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
+
+    /**
+     * <p>
+     * A name which identifies a proprietary identifier scheme when, and only when, the code in the
+     * &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public IDTypeName idTypeName() {
+        _initialize();
+        return idTypeName;
     }
 
     @Override

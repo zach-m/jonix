@@ -128,6 +128,10 @@ public class AVItem implements OnixSuperComposite, Serializable {
                 case AVItemType.shortname:
                     avItemType = new AVItemType(e);
                     break;
+                case AVDuration.refname:
+                case AVDuration.shortname:
+                    avDuration = new AVDuration(e);
+                    break;
                 case AVItemIdentifier.refname:
                 case AVItemIdentifier.shortname:
                     avItemIdentifiers = JPU.addToList(avItemIdentifiers, new AVItemIdentifier(e));
@@ -135,10 +139,6 @@ public class AVItem implements OnixSuperComposite, Serializable {
                 case TimeRun.refname:
                 case TimeRun.shortname:
                     timeRuns = JPU.addToList(timeRuns, new TimeRun(e));
-                    break;
-                case AVDuration.refname:
-                case AVDuration.shortname:
-                    avDuration = new AVDuration(e);
                     break;
                 default:
                     break;
@@ -172,6 +172,21 @@ public class AVItem implements OnixSuperComposite, Serializable {
         return avItemType;
     }
 
+    private AVDuration avDuration = AVDuration.EMPTY;
+
+    /**
+     * <p>
+     * The duration of an audio or audiovisual item within the time-based content of a product. Optional and
+     * non-repeating, but normally expected when the AV content item is being referenced as part of a structured table
+     * of contents.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public AVDuration avDuration() {
+        _initialize();
+        return avDuration;
+    }
+
     private ListOfOnixDataCompositeWithKey<AVItemIdentifier, JonixAVItemIdentifier,
         AvItemIdentifierTypes> avItemIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -201,20 +216,5 @@ public class AVItem implements OnixSuperComposite, Serializable {
     public ListOfOnixDataComposite<TimeRun, JonixTimeRun> timeRuns() {
         _initialize();
         return timeRuns;
-    }
-
-    private AVDuration avDuration = AVDuration.EMPTY;
-
-    /**
-     * <p>
-     * The duration of an audio or audiovisual item within the time-based content of a product. Optional and
-     * non-repeating, but normally expected when the AV content item is being referenced as part of a structured table
-     * of contents.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public AVDuration avDuration() {
-        _initialize();
-        return avDuration;
     }
 }

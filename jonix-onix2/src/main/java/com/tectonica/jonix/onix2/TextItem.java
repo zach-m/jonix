@@ -135,10 +135,6 @@ public class TextItem implements OnixSuperComposite, Serializable {
                 case TextItemType.shortname:
                     textItemType = new TextItemType(e);
                     break;
-                case TextItemIdentifier.refname:
-                case TextItemIdentifier.shortname:
-                    textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(e));
-                    break;
                 case FirstPageNumber.refname:
                 case FirstPageNumber.shortname:
                     firstPageNumber = new FirstPageNumber(e);
@@ -147,13 +143,17 @@ public class TextItem implements OnixSuperComposite, Serializable {
                 case LastPageNumber.shortname:
                     lastPageNumber = new LastPageNumber(e);
                     break;
-                case PageRun.refname:
-                case PageRun.shortname:
-                    pageRuns = JPU.addToList(pageRuns, new PageRun(e));
-                    break;
                 case NumberOfPages.refname:
                 case NumberOfPages.shortname:
                     numberOfPages = new NumberOfPages(e);
+                    break;
+                case TextItemIdentifier.refname:
+                case TextItemIdentifier.shortname:
+                    textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(e));
+                    break;
+                case PageRun.refname:
+                case PageRun.shortname:
+                    pageRuns = JPU.addToList(pageRuns, new PageRun(e));
                     break;
                 default:
                     break;
@@ -187,21 +187,6 @@ public class TextItem implements OnixSuperComposite, Serializable {
         return textItemType;
     }
 
-    private ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together define an identifier of a text item in accordance with a
-     * specified scheme. The composite is optional.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers() {
-        _initialize();
-        return textItemIdentifiers;
-    }
-
     private FirstPageNumber firstPageNumber = FirstPageNumber.EMPTY;
 
     /**
@@ -230,20 +215,6 @@ public class TextItem implements OnixSuperComposite, Serializable {
         return lastPageNumber;
     }
 
-    private ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together define a run of contiguous pages on which a text item appears.
-     * The composite is optional, but may be repeated where the text item covers two or more separate page runs.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns() {
-        _initialize();
-        return pageRuns;
-    }
-
     private NumberOfPages numberOfPages = NumberOfPages.EMPTY;
 
     /**
@@ -256,5 +227,34 @@ public class TextItem implements OnixSuperComposite, Serializable {
     public NumberOfPages numberOfPages() {
         _initialize();
         return numberOfPages;
+    }
+
+    private ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define an identifier of a text item in accordance with a
+     * specified scheme. The composite is optional.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers() {
+        _initialize();
+        return textItemIdentifiers;
+    }
+
+    private ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define a run of contiguous pages on which a text item appears.
+     * The composite is optional, but may be repeated where the text item covers two or more separate page runs.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns() {
+        _initialize();
+        return pageRuns;
     }
 }

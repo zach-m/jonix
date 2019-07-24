@@ -131,13 +131,13 @@ public class Conference implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case ConferenceRole.refname:
-                case ConferenceRole.shortname:
-                    conferenceRole = new ConferenceRole(e);
-                    break;
                 case ConferenceName.refname:
                 case ConferenceName.shortname:
                     conferenceName = new ConferenceName(e);
+                    break;
+                case ConferenceRole.refname:
+                case ConferenceRole.shortname:
+                    conferenceRole = new ConferenceRole(e);
                     break;
                 case ConferenceAcronym.refname:
                 case ConferenceAcronym.shortname:
@@ -185,20 +185,6 @@ public class Conference implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ConferenceRole conferenceRole = ConferenceRole.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which indicates the relationship between the product and a conference to which it is related,
-     * <em>eg</em> Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ConferenceRole conferenceRole() {
-        _initialize();
-        return conferenceRole;
-    }
-
     private ConferenceName conferenceName = ConferenceName.EMPTY;
 
     /**
@@ -211,6 +197,20 @@ public class Conference implements OnixSuperComposite, Serializable {
     public ConferenceName conferenceName() {
         _initialize();
         return conferenceName;
+    }
+
+    private ConferenceRole conferenceRole = ConferenceRole.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which indicates the relationship between the product and a conference to which it is related,
+     * <em>eg</em> Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ConferenceRole conferenceRole() {
+        _initialize();
+        return conferenceRole;
     }
 
     private ConferenceAcronym conferenceAcronym = ConferenceAcronym.EMPTY;

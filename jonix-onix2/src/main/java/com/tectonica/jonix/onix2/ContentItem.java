@@ -139,21 +139,17 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case LevelSequenceNumber.refname:
-                case LevelSequenceNumber.shortname:
-                    levelSequenceNumber = new LevelSequenceNumber(e);
-                    break;
                 case TextItem.refname:
                 case TextItem.shortname:
                     textItem = new TextItem(e);
                     break;
-                case Website.refname:
-                case Website.shortname:
-                    websites = JPU.addToList(websites, new Website(e));
-                    break;
                 case ComponentTypeName.refname:
                 case ComponentTypeName.shortname:
                     componentTypeName = new ComponentTypeName(e);
+                    break;
+                case LevelSequenceNumber.refname:
+                case LevelSequenceNumber.shortname:
+                    levelSequenceNumber = new LevelSequenceNumber(e);
                     break;
                 case ComponentNumber.refname:
                 case ComponentNumber.shortname:
@@ -162,6 +158,14 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case DistinctiveTitle.refname:
                 case DistinctiveTitle.shortname:
                     distinctiveTitle = new DistinctiveTitle(e);
+                    break;
+                case ContributorStatement.refname:
+                case ContributorStatement.shortname:
+                    contributorStatement = new ContributorStatement(e);
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
                     break;
                 case Title.refname:
                 case Title.shortname:
@@ -174,10 +178,6 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case Contributor.refname:
                 case Contributor.shortname:
                     contributors = JPU.addToList(contributors, new Contributor(e));
-                    break;
-                case ContributorStatement.refname:
-                case ContributorStatement.shortname:
-                    contributorStatement = new ContributorStatement(e);
                     break;
                 case Subject.refname:
                 case Subject.shortname:
@@ -221,6 +221,37 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
+    private TextItem textItem = TextItem.EMPTY;
+
+    /**
+     * <p>
+     * A group of data elements which are specific to text content. The composite must occur once and only once in a
+     * &lt;ContentItem&gt; composite which describes a text content item. (Similar composites are being defined for
+     * other media, and the occurrence of one of them will be mandatory in any &lt;ContentItem&gt; composite.)
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public TextItem textItem() {
+        _initialize();
+        return textItem;
+    }
+
+    private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
+
+    /**
+     * <p>
+     * The generic name (if any) which is given in the product to the type of section which the content item represents,
+     * <em>eg</em> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in
+     * &lt;DistinctiveTitle&gt; or in a &lt;Title&gt; composite) or both must be present in any occurrence of the
+     * &lt;ContentItem&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ComponentTypeName componentTypeName() {
+        _initialize();
+        return componentTypeName;
+    }
+
     private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
 
     /**
@@ -238,51 +269,6 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     public LevelSequenceNumber levelSequenceNumber() {
         _initialize();
         return levelSequenceNumber;
-    }
-
-    private TextItem textItem = TextItem.EMPTY;
-
-    /**
-     * <p>
-     * A group of data elements which are specific to text content. The composite must occur once and only once in a
-     * &lt;ContentItem&gt; composite which describes a text content item. (Similar composites are being defined for
-     * other media, and the occurrence of one of them will be mandatory in any &lt;ContentItem&gt; composite.)
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public TextItem textItem() {
-        _initialize();
-        return textItem;
-    }
-
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify and provide pointers to a website which is related to
-     * a content item.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        _initialize();
-        return websites;
-    }
-
-    private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
-
-    /**
-     * <p>
-     * The generic name (if any) which is given in the product to the type of section which the content item represents,
-     * <em>eg</em> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in
-     * &lt;DistinctiveTitle&gt; or in a &lt;Title&gt; composite) or both must be present in any occurrence of the
-     * &lt;ContentItem&gt; composite.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ComponentTypeName componentTypeName() {
-        _initialize();
-        return componentTypeName;
     }
 
     private ComponentNumber componentNumber = ComponentNumber.EMPTY;
@@ -313,6 +299,37 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     public DistinctiveTitle distinctiveTitle() {
         _initialize();
         return distinctiveTitle;
+    }
+
+    private ContributorStatement contributorStatement = ContributorStatement.EMPTY;
+
+    /**
+     * <p>
+     * Free text showing exactly how the authorship should be described in an online display, when a standard
+     * concatenation of individual contributor elements would not give a satisfactory presentation. When this field is
+     * sent, the receiving party is expected to use it to replace all names sent in the &lt;Contributor&gt; composite
+     * for display purposes only. It does not replace any biographical notes sent in the composite. The individual
+     * contributor elements must also be sent for indexing and retrieval.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ContributorStatement contributorStatement() {
+        _initialize();
+        return contributorStatement;
+    }
+
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify and provide pointers to a website which is related to
+     * a content item.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
+        _initialize();
+        return websites;
     }
 
     private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
@@ -358,23 +375,6 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     public List<Contributor> contributors() {
         _initialize();
         return contributors;
-    }
-
-    private ContributorStatement contributorStatement = ContributorStatement.EMPTY;
-
-    /**
-     * <p>
-     * Free text showing exactly how the authorship should be described in an online display, when a standard
-     * concatenation of individual contributor elements would not give a satisfactory presentation. When this field is
-     * sent, the receiving party is expected to use it to replace all names sent in the &lt;Contributor&gt; composite
-     * for display purposes only. It does not replace any biographical notes sent in the composite. The individual
-     * contributor elements must also be sent for indexing and retrieval.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ContributorStatement contributorStatement() {
-        _initialize();
-        return contributorStatement;
     }
 
     private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();

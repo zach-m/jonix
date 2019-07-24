@@ -132,13 +132,13 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
                 case ResourceForm.shortname:
                     resourceForm = new ResourceForm(e);
                     break;
-                case ResourceVersionFeature.refname:
-                case ResourceVersionFeature.shortname:
-                    resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(e));
-                    break;
                 case ResourceLink.refname:
                 case ResourceLink.shortname:
                     resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
+                    break;
+                case ResourceVersionFeature.refname:
+                case ResourceVersionFeature.shortname:
+                    resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(e));
                     break;
                 case ContentDate.refname:
                 case ContentDate.shortname:
@@ -177,6 +177,22 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         return resourceForm;
     }
 
+    private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A URL which provides a link to a supporting resource. Mandatory in each occurrence of the &lt;ResourceVersion&gt;
+     * composite, and repeatable if the resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a
+     * supporting resource is available in multiple parallel languages. Where multiple languages are used, all repeats
+     * must carry the <i>language</i> attribute.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixElement<ResourceLink, String> resourceLinks() {
+        _initialize();
+        return resourceLinks;
+    }
+
     private ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature,
         ResourceVersionFeatureTypes> resourceVersionFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -194,22 +210,6 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         resourceVersionFeatures() {
         _initialize();
         return resourceVersionFeatures;
-    }
-
-    private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * A URL which provides a link to a supporting resource. Mandatory in each occurrence of the &lt;ResourceVersion&gt;
-     * composite, and repeatable if the resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a
-     * supporting resource is available in multiple parallel languages. Where multiple languages are used, all repeats
-     * must carry the <i>language</i> attribute.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public ListOfOnixElement<ResourceLink, String> resourceLinks() {
-        _initialize();
-        return resourceLinks;
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =

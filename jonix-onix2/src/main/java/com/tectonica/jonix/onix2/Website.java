@@ -150,6 +150,10 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case WebsiteLink.refname:
+                case WebsiteLink.shortname:
+                    websiteLink = new WebsiteLink(e);
+                    break;
                 case WebsiteRole.refname:
                 case WebsiteRole.shortname:
                     websiteRole = new WebsiteRole(e);
@@ -157,10 +161,6 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
                 case WebsiteDescription.refname:
                 case WebsiteDescription.shortname:
                     websiteDescription = new WebsiteDescription(e);
-                    break;
-                case WebsiteLink.refname:
-                case WebsiteLink.shortname:
-                    websiteLink = new WebsiteLink(e);
                     break;
                 default:
                     break;
@@ -179,6 +179,19 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private WebsiteLink websiteLink = WebsiteLink.EMPTY;
+
+    /**
+     * <p>
+     * The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public WebsiteLink websiteLink() {
+        _initialize();
+        return websiteLink;
+    }
 
     private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
@@ -206,19 +219,6 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     public WebsiteDescription websiteDescription() {
         _initialize();
         return websiteDescription;
-    }
-
-    private WebsiteLink websiteLink = WebsiteLink.EMPTY;
-
-    /**
-     * <p>
-     * The URL for the website. Mandatory in each occurrence of the &lt;Website&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public WebsiteLink websiteLink() {
-        _initialize();
-        return websiteLink;
     }
 
     @Override

@@ -126,6 +126,14 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case ComponentTypeName.refname:
+                case ComponentTypeName.shortname:
+                    componentTypeName = new ComponentTypeName(e);
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
                 case LevelSequenceNumber.refname:
                 case LevelSequenceNumber.shortname:
                     levelSequenceNumber = new LevelSequenceNumber(e);
@@ -138,29 +146,21 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case AVItem.shortname:
                     avItem = new AVItem(e);
                     break;
-                case ComponentTypeName.refname:
-                case ComponentTypeName.shortname:
-                    componentTypeName = new ComponentTypeName(e);
-                    break;
                 case ComponentNumber.refname:
                 case ComponentNumber.shortname:
                     componentNumber = new ComponentNumber(e);
+                    break;
+                case NoContributor.refname:
+                case NoContributor.shortname:
+                    noContributor = new NoContributor(e);
                     break;
                 case TitleDetail.refname:
                 case TitleDetail.shortname:
                     titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
                     break;
-                case Contributor.refname:
-                case Contributor.shortname:
-                    contributors = JPU.addToList(contributors, new Contributor(e));
-                    break;
                 case ContributorStatement.refname:
                 case ContributorStatement.shortname:
                     contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
-                    break;
-                case NoContributor.refname:
-                case NoContributor.shortname:
-                    noContributor = new NoContributor(e);
                     break;
                 case Language.refname:
                 case Language.shortname:
@@ -211,6 +211,35 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
+
+    /**
+     * <p>
+     * The generic name (if any) which is given in the product to the type of section which the content item represents,
+     * <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
+     * &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the &lt;ContentItem&gt;.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ComponentTypeName componentTypeName() {
+        _initialize();
+        return componentTypeName;
+    }
+
+    private List<Contributor> contributors = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together describe a personal or corporate contributor to a content item. Optional
+     * and repeatable.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public List<Contributor> contributors() {
+        _initialize();
+        return contributors;
+    }
 
     private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
 
@@ -264,21 +293,6 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return avItem;
     }
 
-    private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
-
-    /**
-     * <p>
-     * The generic name (if any) which is given in the product to the type of section which the content item represents,
-     * <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
-     * &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the &lt;ContentItem&gt;.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ComponentTypeName componentTypeName() {
-        _initialize();
-        return componentTypeName;
-    }
-
     private ComponentNumber componentNumber = ComponentNumber.EMPTY;
 
     /**
@@ -293,6 +307,24 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return componentNumber;
     }
 
+    private NoContributor noContributor = NoContributor.EMPTY;
+
+    /**
+     * <p>
+     * An empty element that provides a positive indication that a content item has no stated authorship. Optional and
+     * non-repeating. Must only be sent in a &lt;ContentItem&gt; composite that has no &lt;Contributor&gt; elements.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NoContributor noContributor() {
+        _initialize();
+        return noContributor;
+    }
+
+    public boolean isNoContributor() {
+        return (noContributor().exists());
+    }
+
     private List<TitleDetail> titleDetails = Collections.emptyList();
 
     /**
@@ -305,20 +337,6 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     public List<TitleDetail> titleDetails() {
         _initialize();
         return titleDetails;
-    }
-
-    private List<Contributor> contributors = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together describe a personal or corporate contributor to a content item. Optional
-     * and repeatable.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public List<Contributor> contributors() {
-        _initialize();
-        return contributors;
     }
 
     private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
@@ -339,24 +357,6 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
         return contributorStatements;
-    }
-
-    private NoContributor noContributor = NoContributor.EMPTY;
-
-    /**
-     * <p>
-     * An empty element that provides a positive indication that a content item has no stated authorship. Optional and
-     * non-repeating. Must only be sent in a &lt;ContentItem&gt; composite that has no &lt;Contributor&gt; elements.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NoContributor noContributor() {
-        _initialize();
-        return noContributor;
-    }
-
-    public boolean isNoContributor() {
-        return (noContributor().exists());
     }
 
     private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =

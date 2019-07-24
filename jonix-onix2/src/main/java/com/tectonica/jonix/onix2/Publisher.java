@@ -134,6 +134,14 @@ public class Publisher implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case NameCodeType.refname:
+                case NameCodeType.shortname:
+                    nameCodeType = new NameCodeType(e);
+                    break;
+                case NameCodeValue.refname:
+                case NameCodeValue.shortname:
+                    nameCodeValue = new NameCodeValue(e);
+                    break;
                 case PublishingRole.refname:
                 case PublishingRole.shortname:
                     publishingRole = new PublishingRole(e);
@@ -142,17 +150,9 @@ public class Publisher implements OnixSuperComposite, Serializable {
                 case PublisherName.shortname:
                     publisherName = new PublisherName(e);
                     break;
-                case NameCodeType.refname:
-                case NameCodeType.shortname:
-                    nameCodeType = new NameCodeType(e);
-                    break;
                 case NameCodeTypeName.refname:
                 case NameCodeTypeName.shortname:
                     nameCodeTypeName = new NameCodeTypeName(e);
-                    break;
-                case NameCodeValue.refname:
-                case NameCodeValue.shortname:
-                    nameCodeValue = new NameCodeValue(e);
                     break;
                 case Website.refname:
                 case Website.shortname:
@@ -175,6 +175,35 @@ public class Publisher implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private NameCodeType nameCodeType = NameCodeType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt; element is taken.
+     * Optional and non-repeating, but mandatory if the &lt;Publisher&gt; composite does not carry a
+     * &lt;PublisherName&gt;.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public NameCodeType nameCodeType() {
+        _initialize();
+        return nameCodeType;
+    }
+
+    private NameCodeValue nameCodeValue = NameCodeValue.EMPTY;
+
+    /**
+     * <p>
+     * A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and only if
+     * &lt;NameCodeType&gt; is present, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public NameCodeValue nameCodeValue() {
+        _initialize();
+        return nameCodeValue;
+    }
 
     private PublishingRole publishingRole = PublishingRole.EMPTY;
 
@@ -204,21 +233,6 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return publisherName;
     }
 
-    private NameCodeType nameCodeType = NameCodeType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt; element is taken.
-     * Optional and non-repeating, but mandatory if the &lt;Publisher&gt; composite does not carry a
-     * &lt;PublisherName&gt;.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public NameCodeType nameCodeType() {
-        _initialize();
-        return nameCodeType;
-    }
-
     private NameCodeTypeName nameCodeTypeName = NameCodeTypeName.EMPTY;
 
     /**
@@ -231,20 +245,6 @@ public class Publisher implements OnixSuperComposite, Serializable {
     public NameCodeTypeName nameCodeTypeName() {
         _initialize();
         return nameCodeTypeName;
-    }
-
-    private NameCodeValue nameCodeValue = NameCodeValue.EMPTY;
-
-    /**
-     * <p>
-     * A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and only if
-     * &lt;NameCodeType&gt; is present, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public NameCodeValue nameCodeValue() {
-        _initialize();
-        return nameCodeValue;
     }
 
     private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();

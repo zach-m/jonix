@@ -132,13 +132,9 @@ public class Tax implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case ProductIdentifier.refname:
-                case ProductIdentifier.shortname:
-                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-                    break;
-                case PricePartDescription.refname:
-                case PricePartDescription.shortname:
-                    pricePartDescriptions = JPU.addToList(pricePartDescriptions, new PricePartDescription(e));
+                case TaxRatePercent.refname:
+                case TaxRatePercent.shortname:
+                    taxRatePercent = new TaxRatePercent(e);
                     break;
                 case TaxType.refname:
                 case TaxType.shortname:
@@ -148,10 +144,6 @@ public class Tax implements OnixSuperComposite, Serializable {
                 case TaxRateCode.shortname:
                     taxRateCode = new TaxRateCode(e);
                     break;
-                case TaxRatePercent.refname:
-                case TaxRatePercent.shortname:
-                    taxRatePercent = new TaxRatePercent(e);
-                    break;
                 case TaxableAmount.refname:
                 case TaxableAmount.shortname:
                     taxableAmount = new TaxableAmount(e);
@@ -159,6 +151,14 @@ public class Tax implements OnixSuperComposite, Serializable {
                 case TaxAmount.refname:
                 case TaxAmount.shortname:
                     taxAmount = new TaxAmount(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case PricePartDescription.refname:
+                case PricePartDescription.shortname:
+                    pricePartDescriptions = JPU.addToList(pricePartDescriptions, new PricePartDescription(e));
                     break;
                 default:
                     break;
@@ -177,6 +177,76 @@ public class Tax implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private TaxRatePercent taxRatePercent = TaxRatePercent.EMPTY;
+
+    /**
+     * <p>
+     * A tax rate expressed numerically as a percentage. Optional and non-repeating; but either &lt;TaxRatePercent&gt;
+     * or &lt;TaxAmount&gt; or both must be present in each occurrence of the &lt;Tax&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public TaxRatePercent taxRatePercent() {
+        _initialize();
+        return taxRatePercent;
+    }
+
+    private TaxType taxType = TaxType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code identifying a tax type, <i>eg</i> VAT. Optional, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public TaxType taxType() {
+        _initialize();
+        return taxType;
+    }
+
+    private TaxRateCode taxRateCode = TaxRateCode.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which specifies a tax rate. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public TaxRateCode taxRateCode() {
+        _initialize();
+        return taxRateCode;
+    }
+
+    private TaxableAmount taxableAmount = TaxableAmount.EMPTY;
+
+    /**
+     * <p>
+     * The amount of the unit price of the product, excluding tax, which is taxable at the rate specified in an
+     * occurrence of the &lt;Tax&gt; composite. Optional and non-repeating; but required if tax is charged on part of
+     * the price. Omission of this element implies that tax is charged on the full amount of the price.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public TaxableAmount taxableAmount() {
+        _initialize();
+        return taxableAmount;
+    }
+
+    private TaxAmount taxAmount = TaxAmount.EMPTY;
+
+    /**
+     * <p>
+     * The amount of tax chargeable at the rate specified in an occurrence of the &lt;Tax&gt; composite. Optional and
+     * non-repeating; but either &lt;TaxRatePercent&gt; or &lt;TaxAmount&gt; or both must be present in each occurrence
+     * of the &lt;Tax&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public TaxAmount taxAmount() {
+        _initialize();
+        return taxAmount;
+    }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
         ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
@@ -212,75 +282,5 @@ public class Tax implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<PricePartDescription, String> pricePartDescriptions() {
         _initialize();
         return pricePartDescriptions;
-    }
-
-    private TaxType taxType = TaxType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code identifying a tax type, <i>eg</i> VAT. Optional, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public TaxType taxType() {
-        _initialize();
-        return taxType;
-    }
-
-    private TaxRateCode taxRateCode = TaxRateCode.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which specifies a tax rate. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public TaxRateCode taxRateCode() {
-        _initialize();
-        return taxRateCode;
-    }
-
-    private TaxRatePercent taxRatePercent = TaxRatePercent.EMPTY;
-
-    /**
-     * <p>
-     * A tax rate expressed numerically as a percentage. Optional and non-repeating; but either &lt;TaxRatePercent&gt;
-     * or &lt;TaxAmount&gt; or both must be present in each occurrence of the &lt;Tax&gt; composite.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public TaxRatePercent taxRatePercent() {
-        _initialize();
-        return taxRatePercent;
-    }
-
-    private TaxableAmount taxableAmount = TaxableAmount.EMPTY;
-
-    /**
-     * <p>
-     * The amount of the unit price of the product, excluding tax, which is taxable at the rate specified in an
-     * occurrence of the &lt;Tax&gt; composite. Optional and non-repeating; but required if tax is charged on part of
-     * the price. Omission of this element implies that tax is charged on the full amount of the price.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public TaxableAmount taxableAmount() {
-        _initialize();
-        return taxableAmount;
-    }
-
-    private TaxAmount taxAmount = TaxAmount.EMPTY;
-
-    /**
-     * <p>
-     * The amount of tax chargeable at the rate specified in an occurrence of the &lt;Tax&gt; composite. Optional and
-     * non-repeating; but either &lt;TaxRatePercent&gt; or &lt;TaxAmount&gt; or both must be present in each occurrence
-     * of the &lt;Tax&gt; composite.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public TaxAmount taxAmount() {
-        _initialize();
-        return taxAmount;
     }
 }

@@ -135,14 +135,6 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
                 case MediaFileTypeCode.shortname:
                     mediaFileTypeCode = new MediaFileTypeCode(e);
                     break;
-                case MediaFileFormatCode.refname:
-                case MediaFileFormatCode.shortname:
-                    mediaFileFormatCode = new MediaFileFormatCode(e);
-                    break;
-                case ImageResolution.refname:
-                case ImageResolution.shortname:
-                    imageResolution = new ImageResolution(e);
-                    break;
                 case MediaFileLinkTypeCode.refname:
                 case MediaFileLinkTypeCode.shortname:
                     mediaFileLinkTypeCode = new MediaFileLinkTypeCode(e);
@@ -151,13 +143,21 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
                 case MediaFileLink.shortname:
                     mediaFileLink = new MediaFileLink(e);
                     break;
-                case TextWithDownload.refname:
-                case TextWithDownload.shortname:
-                    textWithDownload = new TextWithDownload(e);
-                    break;
                 case DownloadCaption.refname:
                 case DownloadCaption.shortname:
                     downloadCaption = new DownloadCaption(e);
+                    break;
+                case MediaFileFormatCode.refname:
+                case MediaFileFormatCode.shortname:
+                    mediaFileFormatCode = new MediaFileFormatCode(e);
+                    break;
+                case ImageResolution.refname:
+                case ImageResolution.shortname:
+                    imageResolution = new ImageResolution(e);
+                    break;
+                case TextWithDownload.refname:
+                case TextWithDownload.shortname:
+                    textWithDownload = new TextWithDownload(e);
                     break;
                 case DownloadCredit.refname:
                 case DownloadCredit.shortname:
@@ -207,34 +207,6 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
         return mediaFileTypeCode;
     }
 
-    private MediaFileFormatCode mediaFileFormatCode = MediaFileFormatCode.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which identifies the format of the image/audio/video file which is linked by the
-     * &lt;MediaFileLink&gt; element. For image files, JPEG, GIF and TIF are supported. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public MediaFileFormatCode mediaFileFormatCode() {
-        _initialize();
-        return mediaFileFormatCode;
-    }
-
-    private ImageResolution imageResolution = ImageResolution.EMPTY;
-
-    /**
-     * <p>
-     * The resolution of an image file which is linked by the &lt;MediaFileLink&gt; element, expressed as dots or pixels
-     * per inch. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ImageResolution imageResolution() {
-        _initialize();
-        return imageResolution;
-    }
-
     private MediaFileLinkTypeCode mediaFileLinkTypeCode = MediaFileLinkTypeCode.EMPTY;
 
     /**
@@ -265,6 +237,49 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
         return mediaFileLink;
     }
 
+    private DownloadCaption downloadCaption = DownloadCaption.EMPTY;
+
+    /**
+     * <p>
+     * Text of a caption associated with a download file, and intended to be displayed whenever the file content is
+     * used. Optional and non-repeating. The &lt;DownloadCaption&gt; element may be sent together with either or both of
+     * fields &lt;DownloadCredit&gt;, or &lt;DownloadCopyrightNotice&gt;.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public DownloadCaption downloadCaption() {
+        _initialize();
+        return downloadCaption;
+    }
+
+    private MediaFileFormatCode mediaFileFormatCode = MediaFileFormatCode.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which identifies the format of the image/audio/video file which is linked by the
+     * &lt;MediaFileLink&gt; element. For image files, JPEG, GIF and TIF are supported. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public MediaFileFormatCode mediaFileFormatCode() {
+        _initialize();
+        return mediaFileFormatCode;
+    }
+
+    private ImageResolution imageResolution = ImageResolution.EMPTY;
+
+    /**
+     * <p>
+     * The resolution of an image file which is linked by the &lt;MediaFileLink&gt; element, expressed as dots or pixels
+     * per inch. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ImageResolution imageResolution() {
+        _initialize();
+        return imageResolution;
+    }
+
     private TextWithDownload textWithDownload = TextWithDownload.EMPTY;
 
     /**
@@ -279,21 +294,6 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     public TextWithDownload textWithDownload() {
         _initialize();
         return textWithDownload;
-    }
-
-    private DownloadCaption downloadCaption = DownloadCaption.EMPTY;
-
-    /**
-     * <p>
-     * Text of a caption associated with a download file, and intended to be displayed whenever the file content is
-     * used. Optional and non-repeating. The &lt;DownloadCaption&gt; element may be sent together with either or both of
-     * fields &lt;DownloadCredit&gt;, or &lt;DownloadCopyrightNotice&gt;.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public DownloadCaption downloadCaption() {
-        _initialize();
-        return downloadCaption;
     }
 
     private DownloadCredit downloadCredit = DownloadCredit.EMPTY;

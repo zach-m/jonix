@@ -125,9 +125,9 @@ public class Header implements OnixHeader, Serializable {
                 case Sender.shortname:
                     sender = new Sender(e);
                     break;
-                case Addressee.refname:
-                case Addressee.shortname:
-                    addressees = JPU.addToList(addressees, new Addressee(e));
+                case SentDateTime.refname:
+                case SentDateTime.shortname:
+                    sentDateTime = new SentDateTime(e);
                     break;
                 case MessageNumber.refname:
                 case MessageNumber.shortname:
@@ -136,14 +136,6 @@ public class Header implements OnixHeader, Serializable {
                 case MessageRepeat.refname:
                 case MessageRepeat.shortname:
                     messageRepeat = new MessageRepeat(e);
-                    break;
-                case SentDateTime.refname:
-                case SentDateTime.shortname:
-                    sentDateTime = new SentDateTime(e);
-                    break;
-                case MessageNote.refname:
-                case MessageNote.shortname:
-                    messageNotes = JPU.addToList(messageNotes, new MessageNote(e));
                     break;
                 case DefaultLanguageOfText.refname:
                 case DefaultLanguageOfText.shortname:
@@ -156,6 +148,14 @@ public class Header implements OnixHeader, Serializable {
                 case DefaultCurrencyCode.refname:
                 case DefaultCurrencyCode.shortname:
                     defaultCurrencyCode = new DefaultCurrencyCode(e);
+                    break;
+                case Addressee.refname:
+                case Addressee.shortname:
+                    addressees = JPU.addToList(addressees, new Addressee(e));
+                    break;
+                case MessageNote.refname:
+                case MessageNote.shortname:
+                    messageNotes = JPU.addToList(messageNotes, new MessageNote(e));
                     break;
                 default:
                     break;
@@ -189,18 +189,18 @@ public class Header implements OnixHeader, Serializable {
         return sender;
     }
 
-    private List<Addressee> addressees = Collections.emptyList();
+    private SentDateTime sentDateTime = SentDateTime.EMPTY;
 
     /**
      * <p>
-     * A group of data elements which together specify the addressee of an ONIX for Books message. Optional, and
-     * repeatable if there are several addressees.
+     * The date on which the message is sent. Optionally, the time may be added, using the 24-hour clock, with an
+     * explicit indication of the time zone if required, in a format based on ISO 8601. Mandatory and non-repeating.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * Jonix-Comment: this field is required
      */
-    public List<Addressee> addressees() {
+    public SentDateTime sentDateTime() {
         _initialize();
-        return addressees;
+        return sentDateTime;
     }
 
     private MessageNumber messageNumber = MessageNumber.EMPTY;
@@ -229,35 +229,6 @@ public class Header implements OnixHeader, Serializable {
     public MessageRepeat messageRepeat() {
         _initialize();
         return messageRepeat;
-    }
-
-    private SentDateTime sentDateTime = SentDateTime.EMPTY;
-
-    /**
-     * <p>
-     * The date on which the message is sent. Optionally, the time may be added, using the 24-hour clock, with an
-     * explicit indication of the time zone if required, in a format based on ISO 8601. Mandatory and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public SentDateTime sentDateTime() {
-        _initialize();
-        return sentDateTime;
-    }
-
-    private ListOfOnixElement<MessageNote, String> messageNotes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * Free text giving additional information about the message. Optional, and repeatable in order to provide a note in
-     * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;MessageNote&gt;, but
-     * must be included in each instance if &lt;MessageNote&gt; is repeated.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<MessageNote, String> messageNotes() {
-        _initialize();
-        return messageNotes;
     }
 
     private DefaultLanguageOfText defaultLanguageOfText = DefaultLanguageOfText.EMPTY;
@@ -305,5 +276,34 @@ public class Header implements OnixHeader, Serializable {
     public DefaultCurrencyCode defaultCurrencyCode() {
         _initialize();
         return defaultCurrencyCode;
+    }
+
+    private List<Addressee> addressees = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together specify the addressee of an ONIX for Books message. Optional, and
+     * repeatable if there are several addressees.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Addressee> addressees() {
+        _initialize();
+        return addressees;
+    }
+
+    private ListOfOnixElement<MessageNote, String> messageNotes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Free text giving additional information about the message. Optional, and repeatable in order to provide a note in
+     * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;MessageNote&gt;, but
+     * must be included in each instance if &lt;MessageNote&gt; is repeated.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<MessageNote, String> messageNotes() {
+        _initialize();
+        return messageNotes;
     }
 }

@@ -125,13 +125,13 @@ public class ReturnsConditions
                 case ReturnsCodeType.shortname:
                     returnsCodeType = new ReturnsCodeType(e);
                     break;
-                case ReturnsCodeTypeName.refname:
-                case ReturnsCodeTypeName.shortname:
-                    returnsCodeTypeName = new ReturnsCodeTypeName(e);
-                    break;
                 case ReturnsCode.refname:
                 case ReturnsCode.shortname:
                     returnsCode = new ReturnsCode(e);
+                    break;
+                case ReturnsCodeTypeName.refname:
+                case ReturnsCodeTypeName.shortname:
+                    returnsCodeTypeName = new ReturnsCodeTypeName(e);
                     break;
                 case ReturnsNote.refname:
                 case ReturnsNote.shortname:
@@ -170,6 +170,20 @@ public class ReturnsConditions
         return returnsCodeType;
     }
 
+    private ReturnsCode returnsCode = ReturnsCode.EMPTY;
+
+    /**
+     * <p>
+     * A returns conditions code from the scheme specified in &lt;ReturnsCodeType&gt;. Mandatory in each occurrence of
+     * the &lt;ReturnsConditions&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ReturnsCode returnsCode() {
+        _initialize();
+        return returnsCode;
+    }
+
     private ReturnsCodeTypeName returnsCodeTypeName = ReturnsCodeTypeName.EMPTY;
 
     /**
@@ -183,20 +197,6 @@ public class ReturnsConditions
     public ReturnsCodeTypeName returnsCodeTypeName() {
         _initialize();
         return returnsCodeTypeName;
-    }
-
-    private ReturnsCode returnsCode = ReturnsCode.EMPTY;
-
-    /**
-     * <p>
-     * A returns conditions code from the scheme specified in &lt;ReturnsCodeType&gt;. Mandatory in each occurrence of
-     * the &lt;ReturnsConditions&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ReturnsCode returnsCode() {
-        _initialize();
-        return returnsCode;
     }
 
     private ListOfOnixElement<ReturnsNote, String> returnsNotes = ListOfOnixElement.empty();

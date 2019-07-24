@@ -135,57 +135,33 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case SupplierIdentifier.refname:
-                case SupplierIdentifier.shortname:
-                    supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
-                    break;
-                case SupplierSAN.refname:
-                case SupplierSAN.shortname:
-                    supplierSAN = new SupplierSAN(e);
-                    break;
                 case SupplierEANLocationNumber.refname:
                 case SupplierEANLocationNumber.shortname:
                     supplierEANLocationNumber = new SupplierEANLocationNumber(e);
                     break;
-                case SupplierName.refname:
-                case SupplierName.shortname:
-                    supplierName = new SupplierName(e);
-                    break;
-                case TelephoneNumber.refname:
-                case TelephoneNumber.shortname:
-                    telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
-                    break;
-                case FaxNumber.refname:
-                case FaxNumber.shortname:
-                    faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
-                    break;
-                case EmailAddress.refname:
-                case EmailAddress.shortname:
-                    emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
-                    break;
-                case Website.refname:
-                case Website.shortname:
-                    websites = JPU.addToList(websites, new Website(e));
-                    break;
-                case SupplierRole.refname:
-                case SupplierRole.shortname:
-                    supplierRole = new SupplierRole(e);
+                case AvailabilityCode.refname:
+                case AvailabilityCode.shortname:
+                    availabilityCode = new AvailabilityCode(e);
                     break;
                 case SupplyToCountry.refname:
                 case SupplyToCountry.shortname:
                     supplyToCountrys = JPU.addToList(supplyToCountrys, new SupplyToCountry(e));
                     break;
+                case SupplierSAN.refname:
+                case SupplierSAN.shortname:
+                    supplierSAN = new SupplierSAN(e);
+                    break;
+                case SupplierName.refname:
+                case SupplierName.shortname:
+                    supplierName = new SupplierName(e);
+                    break;
+                case SupplierRole.refname:
+                case SupplierRole.shortname:
+                    supplierRole = new SupplierRole(e);
+                    break;
                 case SupplyToTerritory.refname:
                 case SupplyToTerritory.shortname:
                     supplyToTerritory = new SupplyToTerritory(e);
-                    break;
-                case SupplyToRegion.refname:
-                case SupplyToRegion.shortname:
-                    supplyToRegions = JPU.addToList(supplyToRegions, new SupplyToRegion(e));
-                    break;
-                case SupplyToCountryExcluded.refname:
-                case SupplyToCountryExcluded.shortname:
-                    supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(e));
                     break;
                 case SupplyRestrictionDetail.refname:
                 case SupplyRestrictionDetail.shortname:
@@ -202,10 +178,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
                 case LastDateForReturns.refname:
                 case LastDateForReturns.shortname:
                     lastDateForReturns = new LastDateForReturns(e);
-                    break;
-                case AvailabilityCode.refname:
-                case AvailabilityCode.shortname:
-                    availabilityCode = new AvailabilityCode(e);
                     break;
                 case ProductAvailability.refname:
                 case ProductAvailability.shortname:
@@ -235,10 +207,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
                 case OrderTime.shortname:
                     orderTime = new OrderTime(e);
                     break;
-                case Stock.refname:
-                case Stock.shortname:
-                    stocks = JPU.addToList(stocks, new Stock(e));
-                    break;
                 case PackQuantity.refname:
                 case PackQuantity.shortname:
                     packQuantity = new PackQuantity(e);
@@ -259,13 +227,45 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
                 case UnpricedItemType.shortname:
                     unpricedItemType = new UnpricedItemType(e);
                     break;
-                case Price.refname:
-                case Price.shortname:
-                    prices = JPU.addToList(prices, new Price(e));
-                    break;
                 case Reissue.refname:
                 case Reissue.shortname:
                     reissue = new Reissue(e);
+                    break;
+                case SupplierIdentifier.refname:
+                case SupplierIdentifier.shortname:
+                    supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
+                    break;
+                case TelephoneNumber.refname:
+                case TelephoneNumber.shortname:
+                    telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+                    break;
+                case FaxNumber.refname:
+                case FaxNumber.shortname:
+                    faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                case SupplyToRegion.refname:
+                case SupplyToRegion.shortname:
+                    supplyToRegions = JPU.addToList(supplyToRegions, new SupplyToRegion(e));
+                    break;
+                case SupplyToCountryExcluded.refname:
+                case SupplyToCountryExcluded.shortname:
+                    supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(e));
+                    break;
+                case Stock.refname:
+                case Stock.shortname:
+                    stocks = JPU.addToList(stocks, new Stock(e));
+                    break;
+                case Price.refname:
+                case Price.shortname:
+                    prices = JPU.addToList(prices, new Price(e));
                     break;
                 default:
                     break;
@@ -285,38 +285,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together define the identifier of a supplier in accordance with a
-     * specified scheme, and allowing different types of supplier identifier to be included without defining additional
-     * data elements. Optional, but each occurrence of the &lt;SupplyDetail&gt; composite must carry either at least one
-     * supplier identifier, or a &lt;SupplierName&gt;.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers() {
-        _initialize();
-        return supplierIdentifiers;
-    }
-
-    private SupplierSAN supplierSAN = SupplierSAN.EMPTY;
-
-    /**
-     * <p>
-     * The book trade Standard Address Number that identifies the supplier with whom trade orders for the product should
-     * be placed. Used in the US and UK. Optional, but each occurrence of the &lt;SupplyDetail&gt; composite must carry
-     * either at least one supplier identifier, or a &lt;SupplierName&gt;.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SupplierSAN supplierSAN() {
-        _initialize();
-        return supplierSAN;
-    }
-
     private SupplierEANLocationNumber supplierEANLocationNumber = SupplierEANLocationNumber.EMPTY;
 
     /**
@@ -332,88 +300,30 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplierEANLocationNumber;
     }
 
-    private SupplierName supplierName = SupplierName.EMPTY;
+    private AvailabilityCode availabilityCode = AvailabilityCode.EMPTY;
 
     /**
      * <p>
-     * The name of a supply source from which the product may be ordered by a trade customer. Optional and
-     * non-repeating; required if no supplier identifier is sent.
+     * An ONIX code indicating the availability of a product. Each occurrence of the &lt;SupplyDetail&gt; composite must
+     * carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both, but &lt;ProductAvailability&gt; is
+     * now strongly preferred. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SupplierName supplierName() {
-        _initialize();
-        return supplierName;
-    }
-
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
-
-    /**
      * <p>
-     * A telephone number of a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable.
+     * Some code values require other accompanying data. Where the code lists state that one of the following is
+     * required or may optionally be sent, use the element indicated below:
      * </p>
-     * Jonix-Comment: this list may be empty
+     * <ul>
+     * <li>Expected availability date – use &lt;ExpectedShipDate&gt;</li>
+     * <li>Remainder date – &lt;ExpectedShipDate&gt; is again used</li>
+     * <li>Estimated time to supply – &lt;OrderTime&gt;</li>
+     * <li>Identifier of alternative or successor product – &lt;RelatedProduct&gt;, Group&nbsp;PR.23</li>
+     * <li>New supplier – &lt;NewSupplier&gt;</li>
+     * </ul>
+     * Jonix-Comment: this field is required
      */
-    public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
+    public AvailabilityCode availabilityCode() {
         _initialize();
-        return telephoneNumbers;
-    }
-
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * A fax number of a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<FaxNumber, String> faxNumbers() {
-        _initialize();
-        return faxNumbers;
-    }
-
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An email address for a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<EmailAddress, String> emailAddresss() {
-        _initialize();
-        return emailAddresss;
-    }
-
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together identify and provide pointers to a website which
-     * is related to the supplier identified in an occurrence of the &lt;SupplyDetail&gt; composite.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        _initialize();
-        return websites;
-    }
-
-    private SupplierRole supplierRole = SupplierRole.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code identifying the role of a supplier in relation to the product, <em>eg</em> Publisher, Publisher’s
-     * exclusive distributor, <em>etc</em>. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SupplierRole supplierRole() {
-        _initialize();
-        return supplierRole;
+        return availabilityCode;
     }
 
     private ListOfOnixElement<SupplyToCountry, java.util.Set<Countrys>> supplyToCountrys = ListOfOnixElement.empty();
@@ -432,6 +342,49 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplyToCountrys;
     }
 
+    private SupplierSAN supplierSAN = SupplierSAN.EMPTY;
+
+    /**
+     * <p>
+     * The book trade Standard Address Number that identifies the supplier with whom trade orders for the product should
+     * be placed. Used in the US and UK. Optional, but each occurrence of the &lt;SupplyDetail&gt; composite must carry
+     * either at least one supplier identifier, or a &lt;SupplierName&gt;.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SupplierSAN supplierSAN() {
+        _initialize();
+        return supplierSAN;
+    }
+
+    private SupplierName supplierName = SupplierName.EMPTY;
+
+    /**
+     * <p>
+     * The name of a supply source from which the product may be ordered by a trade customer. Optional and
+     * non-repeating; required if no supplier identifier is sent.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SupplierName supplierName() {
+        _initialize();
+        return supplierName;
+    }
+
+    private SupplierRole supplierRole = SupplierRole.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code identifying the role of a supplier in relation to the product, <em>eg</em> Publisher, Publisher’s
+     * exclusive distributor, <em>etc</em>. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SupplierRole supplierRole() {
+        _initialize();
+        return supplierRole;
+    }
+
     private SupplyToTerritory supplyToTerritory = SupplyToTerritory.EMPTY;
 
     /**
@@ -446,40 +399,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public SupplyToTerritory supplyToTerritory() {
         _initialize();
         return supplyToTerritory;
-    }
-
-    private ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code for a region to which the supplier is able to supply. A full code list is yet to be defined. A
-     * provisional coding, for UK use only, is given for Open Market supply. <strong>This element will not be further
-     * developed, and is superseded by &lt;SupplyToTerritory&gt; above. It is retained for purposes of upwards
-     * compatibility only. Note that Open Market distribution rights should be specified, like any others, by listing
-     * countries and territories.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions() {
-        _initialize();
-        return supplyToRegions;
-    }
-
-    private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds = ListOfOnixElement
-        .empty();
-
-    /**
-     * <p>
-     * One or more ISO standard codes identifying a country which is excluded from a territory specified in
-     * &lt;SupplyToTerritory&gt;. Successive codes may be separated by spaces. Thus, a single occurrence of the element
-     * can carry an unlimited number of country codes. For upwards compatibility, the element remains repeatable, so
-     * that multiple countries can be listed as multiple occurrences of the whole element. Optional and repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds() {
-        _initialize();
-        return supplyToCountryExcludeds;
     }
 
     private SupplyRestrictionDetail supplyRestrictionDetail = SupplyRestrictionDetail.EMPTY;
@@ -536,32 +455,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public LastDateForReturns lastDateForReturns() {
         _initialize();
         return lastDateForReturns;
-    }
-
-    private AvailabilityCode availabilityCode = AvailabilityCode.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the availability of a product. Each occurrence of the &lt;SupplyDetail&gt; composite must
-     * carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both, but &lt;ProductAvailability&gt; is
-     * now strongly preferred. Non-repeating.
-     * </p>
-     * <p>
-     * Some code values require other accompanying data. Where the code lists state that one of the following is
-     * required or may optionally be sent, use the element indicated below:
-     * </p>
-     * <ul>
-     * <li>Expected availability date – use &lt;ExpectedShipDate&gt;</li>
-     * <li>Remainder date – &lt;ExpectedShipDate&gt; is again used</li>
-     * <li>Estimated time to supply – &lt;OrderTime&gt;</li>
-     * <li>Identifier of alternative or successor product – &lt;RelatedProduct&gt;, Group&nbsp;PR.23</li>
-     * <li>New supplier – &lt;NewSupplier&gt;</li>
-     * </ul>
-     * Jonix-Comment: this field is required
-     */
-    public AvailabilityCode availabilityCode() {
-        _initialize();
-        return availabilityCode;
     }
 
     private ProductAvailability productAvailability = ProductAvailability.EMPTY;
@@ -677,20 +570,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return orderTime;
     }
 
-    private List<Stock> stocks = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together specify a quantity of stock and, where a supplier has more
-     * than one warehouse, a supplier location. Optional.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<Stock> stocks() {
-        _initialize();
-        return stocks;
-    }
-
     private PackQuantity packQuantity = PackQuantity.EMPTY;
 
     /**
@@ -766,19 +645,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return unpricedItemType;
     }
 
-    private List<Price> prices = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together specify a unit price.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<Price> prices() {
-        _initialize();
-        return prices;
-    }
-
     private Reissue reissue = Reissue.EMPTY;
 
     /**
@@ -805,5 +671,139 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public Reissue reissue() {
         _initialize();
         return reissue;
+    }
+
+    private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define the identifier of a supplier in accordance with a
+     * specified scheme, and allowing different types of supplier identifier to be included without defining additional
+     * data elements. Optional, but each occurrence of the &lt;SupplyDetail&gt; composite must carry either at least one
+     * supplier identifier, or a &lt;SupplierName&gt;.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers() {
+        _initialize();
+        return supplierIdentifiers;
+    }
+
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A telephone number of a supply source from which the product may be ordered by a trade customer. Optional and
+     * repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
+        _initialize();
+        return telephoneNumbers;
+    }
+
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A fax number of a supply source from which the product may be ordered by a trade customer. Optional and
+     * repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<FaxNumber, String> faxNumbers() {
+        _initialize();
+        return faxNumbers;
+    }
+
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An email address for a supply source from which the product may be ordered by a trade customer. Optional and
+     * repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<EmailAddress, String> emailAddresss() {
+        _initialize();
+        return emailAddresss;
+    }
+
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together identify and provide pointers to a website which
+     * is related to the supplier identified in an occurrence of the &lt;SupplyDetail&gt; composite.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
+        _initialize();
+        return websites;
+    }
+
+    private ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code for a region to which the supplier is able to supply. A full code list is yet to be defined. A
+     * provisional coding, for UK use only, is given for Open Market supply. <strong>This element will not be further
+     * developed, and is superseded by &lt;SupplyToTerritory&gt; above. It is retained for purposes of upwards
+     * compatibility only. Note that Open Market distribution rights should be specified, like any others, by listing
+     * countries and territories.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions() {
+        _initialize();
+        return supplyToRegions;
+    }
+
+    private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds = ListOfOnixElement
+        .empty();
+
+    /**
+     * <p>
+     * One or more ISO standard codes identifying a country which is excluded from a territory specified in
+     * &lt;SupplyToTerritory&gt;. Successive codes may be separated by spaces. Thus, a single occurrence of the element
+     * can carry an unlimited number of country codes. For upwards compatibility, the element remains repeatable, so
+     * that multiple countries can be listed as multiple occurrences of the whole element. Optional and repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds() {
+        _initialize();
+        return supplyToCountryExcludeds;
+    }
+
+    private List<Stock> stocks = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together specify a quantity of stock and, where a supplier has more
+     * than one warehouse, a supplier location. Optional.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Stock> stocks() {
+        _initialize();
+        return stocks;
+    }
+
+    private List<Price> prices = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together specify a unit price.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Price> prices() {
+        _initialize();
+        return prices;
     }
 }

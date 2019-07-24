@@ -119,13 +119,17 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case MainSubject.refname:
-                case MainSubject.shortname:
-                    mainSubject = new MainSubject(e);
-                    break;
                 case SubjectSchemeIdentifier.refname:
                 case SubjectSchemeIdentifier.shortname:
                     subjectSchemeIdentifier = new SubjectSchemeIdentifier(e);
+                    break;
+                case SubjectCode.refname:
+                case SubjectCode.shortname:
+                    subjectCode = new SubjectCode(e);
+                    break;
+                case MainSubject.refname:
+                case MainSubject.shortname:
+                    mainSubject = new MainSubject(e);
                     break;
                 case SubjectSchemeName.refname:
                 case SubjectSchemeName.shortname:
@@ -134,10 +138,6 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
                 case SubjectSchemeVersion.refname:
                 case SubjectSchemeVersion.shortname:
                     subjectSchemeVersion = new SubjectSchemeVersion(e);
-                    break;
-                case SubjectCode.refname:
-                case SubjectCode.shortname:
-                    subjectCode = new SubjectCode(e);
                     break;
                 case SubjectHeadingText.refname:
                 case SubjectHeadingText.shortname:
@@ -161,6 +161,41 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
+    private SubjectSchemeIdentifier subjectSchemeIdentifier = SubjectSchemeIdentifier.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which identifies the category scheme which is used in an occurrence of the &lt;Subject&gt;
+     * composite. Mandatory in each occurrence of the composite, and non-repeating.
+     * </p>
+     * <p>
+     * For category schemes that use code values, use the associated &lt;SubjectCode&gt; element to carry the value (if
+     * so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the text equivalent of
+     * the code). For schemes that use text headings, use the &lt;SubjectHeadingText&gt; element to carry the text of
+     * the category heading.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public SubjectSchemeIdentifier subjectSchemeIdentifier() {
+        _initialize();
+        return subjectSchemeIdentifier;
+    }
+
+    private SubjectCode subjectCode = SubjectCode.EMPTY;
+
+    /**
+     * <p>
+     * A subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element. Either
+     * &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
+     * &lt;Subject&gt; composite. Non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public SubjectCode subjectCode() {
+        _initialize();
+        return subjectCode;
+    }
+
     private MainSubject mainSubject = MainSubject.EMPTY;
 
     /**
@@ -180,26 +215,6 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
 
     public boolean isMainSubject() {
         return (mainSubject().exists());
-    }
-
-    private SubjectSchemeIdentifier subjectSchemeIdentifier = SubjectSchemeIdentifier.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which identifies the category scheme which is used in an occurrence of the &lt;Subject&gt;
-     * composite. Mandatory in each occurrence of the composite, and non-repeating.
-     * </p>
-     * <p>
-     * For category schemes that use code values, use the associated &lt;SubjectCode&gt; element to carry the value (if
-     * so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the text equivalent of
-     * the code). For schemes that use text headings, use the &lt;SubjectHeadingText&gt; element to carry the text of
-     * the category heading.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public SubjectSchemeIdentifier subjectSchemeIdentifier() {
-        _initialize();
-        return subjectSchemeIdentifier;
     }
 
     private SubjectSchemeName subjectSchemeName = SubjectSchemeName.EMPTY;
@@ -228,21 +243,6 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     public SubjectSchemeVersion subjectSchemeVersion() {
         _initialize();
         return subjectSchemeVersion;
-    }
-
-    private SubjectCode subjectCode = SubjectCode.EMPTY;
-
-    /**
-     * <p>
-     * A subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element. Either
-     * &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
-     * &lt;Subject&gt; composite. Non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public SubjectCode subjectCode() {
-        _initialize();
-        return subjectCode;
     }
 
     private ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts = ListOfOnixElement.empty();

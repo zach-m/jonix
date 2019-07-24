@@ -120,13 +120,13 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case CopyrightType.refname:
-                case CopyrightType.shortname:
-                    copyrightType = new CopyrightType(e);
-                    break;
                 case CopyrightYear.refname:
                 case CopyrightYear.shortname:
                     copyrightYears = JPU.addToList(copyrightYears, new CopyrightYear(e));
+                    break;
+                case CopyrightType.refname:
+                case CopyrightType.shortname:
+                    copyrightType = new CopyrightType(e);
                     break;
                 case CopyrightOwner.refname:
                 case CopyrightOwner.shortname:
@@ -151,20 +151,6 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private CopyrightType copyrightType = CopyrightType.EMPTY;
-
-    /**
-     * <p>
-     * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or
-     * neighbouring right. If omitted, the default is that the statement represents a copyright.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public CopyrightType copyrightType() {
-        _initialize();
-        return copyrightType;
-    }
-
     private ListOfOnixElement<CopyrightYear, String> copyrightYears = ListOfOnixElement.empty();
 
     /**
@@ -177,6 +163,20 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<CopyrightYear, String> copyrightYears() {
         _initialize();
         return copyrightYears;
+    }
+
+    private CopyrightType copyrightType = CopyrightType.EMPTY;
+
+    /**
+     * <p>
+     * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or
+     * neighbouring right. If omitted, the default is that the statement represents a copyright.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public CopyrightType copyrightType() {
+        _initialize();
+        return copyrightType;
     }
 
     private List<CopyrightOwner> copyrightOwners = Collections.emptyList();

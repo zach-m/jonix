@@ -130,13 +130,13 @@ public class EpubLicenseExpression
                 case EpubLicenseExpressionType.shortname:
                     epubLicenseExpressionType = new EpubLicenseExpressionType(e);
                     break;
-                case EpubLicenseExpressionTypeName.refname:
-                case EpubLicenseExpressionTypeName.shortname:
-                    epubLicenseExpressionTypeName = new EpubLicenseExpressionTypeName(e);
-                    break;
                 case EpubLicenseExpressionLink.refname:
                 case EpubLicenseExpressionLink.shortname:
                     epubLicenseExpressionLink = new EpubLicenseExpressionLink(e);
+                    break;
+                case EpubLicenseExpressionTypeName.refname:
+                case EpubLicenseExpressionTypeName.shortname:
+                    epubLicenseExpressionTypeName = new EpubLicenseExpressionTypeName(e);
                     break;
                 default:
                     break;
@@ -172,6 +172,20 @@ public class EpubLicenseExpression
         return epubLicenseExpressionType;
     }
 
+    private EpubLicenseExpressionLink epubLicenseExpressionLink = EpubLicenseExpressionLink.EMPTY;
+
+    /**
+     * <p>
+     * The URI for the license expression. Mandatory in each instance of the &lt;EpubLicenseExpression&gt; composite,
+     * and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public EpubLicenseExpressionLink epubLicenseExpressionLink() {
+        _initialize();
+        return epubLicenseExpressionLink;
+    }
+
     private EpubLicenseExpressionTypeName epubLicenseExpressionTypeName = EpubLicenseExpressionTypeName.EMPTY;
 
     /**
@@ -186,20 +200,6 @@ public class EpubLicenseExpression
     public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName() {
         _initialize();
         return epubLicenseExpressionTypeName;
-    }
-
-    private EpubLicenseExpressionLink epubLicenseExpressionLink = EpubLicenseExpressionLink.EMPTY;
-
-    /**
-     * <p>
-     * The URI for the license expression. Mandatory in each instance of the &lt;EpubLicenseExpression&gt; composite,
-     * and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public EpubLicenseExpressionLink epubLicenseExpressionLink() {
-        _initialize();
-        return epubLicenseExpressionLink;
     }
 
     @Override

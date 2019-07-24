@@ -135,6 +135,10 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case MarketTerritory.refname:
+                case MarketTerritory.shortname:
+                    marketTerritory = new MarketTerritory(e);
+                    break;
                 case AgentIdentifier.refname:
                 case AgentIdentifier.shortname:
                     agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(e));
@@ -142,6 +146,26 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
                 case AgentName.refname:
                 case AgentName.shortname:
                     agentName = new AgentName(e);
+                    break;
+                case AgentRole.refname:
+                case AgentRole.shortname:
+                    agentRole = new AgentRole(e);
+                    break;
+                case MarketCountry.refname:
+                case MarketCountry.shortname:
+                    marketCountry = new MarketCountry(e);
+                    break;
+                case MarketCountryExcluded.refname:
+                case MarketCountryExcluded.shortname:
+                    marketCountryExcluded = new MarketCountryExcluded(e);
+                    break;
+                case MarketRestrictionDetail.refname:
+                case MarketRestrictionDetail.shortname:
+                    marketRestrictionDetail = new MarketRestrictionDetail(e);
+                    break;
+                case MarketPublishingStatus.refname:
+                case MarketPublishingStatus.shortname:
+                    marketPublishingStatus = new MarketPublishingStatus(e);
                     break;
                 case TelephoneNumber.refname:
                 case TelephoneNumber.shortname:
@@ -158,30 +182,6 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
                 case Website.refname:
                 case Website.shortname:
                     websites = JPU.addToList(websites, new Website(e));
-                    break;
-                case AgentRole.refname:
-                case AgentRole.shortname:
-                    agentRole = new AgentRole(e);
-                    break;
-                case MarketCountry.refname:
-                case MarketCountry.shortname:
-                    marketCountry = new MarketCountry(e);
-                    break;
-                case MarketTerritory.refname:
-                case MarketTerritory.shortname:
-                    marketTerritory = new MarketTerritory(e);
-                    break;
-                case MarketCountryExcluded.refname:
-                case MarketCountryExcluded.shortname:
-                    marketCountryExcluded = new MarketCountryExcluded(e);
-                    break;
-                case MarketRestrictionDetail.refname:
-                case MarketRestrictionDetail.shortname:
-                    marketRestrictionDetail = new MarketRestrictionDetail(e);
-                    break;
-                case MarketPublishingStatus.refname:
-                case MarketPublishingStatus.shortname:
-                    marketPublishingStatus = new MarketPublishingStatus(e);
                     break;
                 case MarketDate.refname:
                 case MarketDate.shortname:
@@ -205,6 +205,23 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
+
+    private MarketTerritory marketTerritory = MarketTerritory.EMPTY;
+
+    /**
+     * <p>
+     * One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in
+     * geographical terms, <em>eg</em> World, Northern Ireland, Australian Capital Territory. Successive codes are
+     * separated by spaces. Thus the element can carry an unlimited number of territory codes. Optional, but each
+     * occurrence of the &lt;MarketRepresentation&gt; composite must carry either an occurrence of &lt;MarketCountry&gt;
+     * or an occurrence of &lt;MarketTerritory&gt;, to specify the market concerned. Non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public MarketTerritory marketTerritory() {
+        _initialize();
+        return marketTerritory;
+    }
 
     private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey
         .emptyKeyed();
@@ -235,6 +252,80 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     public AgentName agentName() {
         _initialize();
         return agentName;
+    }
+
+    private AgentRole agentRole = AgentRole.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code identifying the role of an agent in relation to the product in the specified market, <em>eg</em>
+     * Exclusive sales agent, Local publisher, <em>etc</em>. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public AgentRole agentRole() {
+        _initialize();
+        return agentRole;
+    }
+
+    private MarketCountry marketCountry = MarketCountry.EMPTY;
+
+    /**
+     * <p>
+     * One or more ISO standard codes identifying a country in which the agent or local publisher markets the product.
+     * Successive codes are separated by spaces. Thus, a single occurrence of the element can carry an unlimited number
+     * of country codes. Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite must carry either
+     * an occurrence of &lt;MarketCountry&gt; or an occurrence of &lt;MarketTerritory&gt;, to specify the market
+     * concerned. Non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public MarketCountry marketCountry() {
+        _initialize();
+        return marketCountry;
+    }
+
+    private MarketCountryExcluded marketCountryExcluded = MarketCountryExcluded.EMPTY;
+
+    /**
+     * <p>
+     * One or more ISO standard codes identifying a country which is excluded from a territory specified in
+     * &lt;MarketTerritory&gt;. Successive codes are separated by spaces. Thus, a single occurrence of the element can
+     * carry an unlimited number of country codes. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public MarketCountryExcluded marketCountryExcluded() {
+        _initialize();
+        return marketCountryExcluded;
+    }
+
+    private MarketRestrictionDetail marketRestrictionDetail = MarketRestrictionDetail.EMPTY;
+
+    /**
+     * <p>
+     * A free text field describing a non-geographical restriction of the market covered by a sales agent or local
+     * publisher. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public MarketRestrictionDetail marketRestrictionDetail() {
+        _initialize();
+        return marketRestrictionDetail;
+    }
+
+    private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which identifies the status of a published product in the market defined in an occurrence of the
+     * &lt;MarketRepresentation&gt; composite. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public MarketPublishingStatus marketPublishingStatus() {
+        _initialize();
+        return marketPublishingStatus;
     }
 
     private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
@@ -289,97 +380,6 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();
         return websites;
-    }
-
-    private AgentRole agentRole = AgentRole.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code identifying the role of an agent in relation to the product in the specified market, <em>eg</em>
-     * Exclusive sales agent, Local publisher, <em>etc</em>. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public AgentRole agentRole() {
-        _initialize();
-        return agentRole;
-    }
-
-    private MarketCountry marketCountry = MarketCountry.EMPTY;
-
-    /**
-     * <p>
-     * One or more ISO standard codes identifying a country in which the agent or local publisher markets the product.
-     * Successive codes are separated by spaces. Thus, a single occurrence of the element can carry an unlimited number
-     * of country codes. Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite must carry either
-     * an occurrence of &lt;MarketCountry&gt; or an occurrence of &lt;MarketTerritory&gt;, to specify the market
-     * concerned. Non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public MarketCountry marketCountry() {
-        _initialize();
-        return marketCountry;
-    }
-
-    private MarketTerritory marketTerritory = MarketTerritory.EMPTY;
-
-    /**
-     * <p>
-     * One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in
-     * geographical terms, <em>eg</em> World, Northern Ireland, Australian Capital Territory. Successive codes are
-     * separated by spaces. Thus the element can carry an unlimited number of territory codes. Optional, but each
-     * occurrence of the &lt;MarketRepresentation&gt; composite must carry either an occurrence of &lt;MarketCountry&gt;
-     * or an occurrence of &lt;MarketTerritory&gt;, to specify the market concerned. Non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public MarketTerritory marketTerritory() {
-        _initialize();
-        return marketTerritory;
-    }
-
-    private MarketCountryExcluded marketCountryExcluded = MarketCountryExcluded.EMPTY;
-
-    /**
-     * <p>
-     * One or more ISO standard codes identifying a country which is excluded from a territory specified in
-     * &lt;MarketTerritory&gt;. Successive codes are separated by spaces. Thus, a single occurrence of the element can
-     * carry an unlimited number of country codes. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public MarketCountryExcluded marketCountryExcluded() {
-        _initialize();
-        return marketCountryExcluded;
-    }
-
-    private MarketRestrictionDetail marketRestrictionDetail = MarketRestrictionDetail.EMPTY;
-
-    /**
-     * <p>
-     * A free text field describing a non-geographical restriction of the market covered by a sales agent or local
-     * publisher. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public MarketRestrictionDetail marketRestrictionDetail() {
-        _initialize();
-        return marketRestrictionDetail;
-    }
-
-    private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which identifies the status of a published product in the market defined in an occurrence of the
-     * &lt;MarketRepresentation&gt; composite. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public MarketPublishingStatus marketPublishingStatus() {
-        _initialize();
-        return marketPublishingStatus;
     }
 
     private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates = ListOfOnixDataCompositeWithKey

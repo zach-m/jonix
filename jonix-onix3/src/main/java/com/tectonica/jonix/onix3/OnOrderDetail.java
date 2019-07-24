@@ -128,13 +128,13 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
                 case OnOrder.shortname:
                     onOrder = new OnOrder(e);
                     break;
-                case Proximity.refname:
-                case Proximity.shortname:
-                    proximity = new Proximity(e);
-                    break;
                 case ExpectedDate.refname:
                 case ExpectedDate.shortname:
                     expectedDate = new ExpectedDate(e);
+                    break;
+                case Proximity.refname:
+                case Proximity.shortname:
+                    proximity = new Proximity(e);
                     break;
                 default:
                     break;
@@ -168,19 +168,6 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
         return onOrder;
     }
 
-    private Proximity proximity = Proximity.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which specifies the precision of the stock quantity in a shipment. Optional, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public Proximity proximity() {
-        _initialize();
-        return proximity;
-    }
-
     private ExpectedDate expectedDate = ExpectedDate.EMPTY;
 
     /**
@@ -193,6 +180,19 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
     public ExpectedDate expectedDate() {
         _initialize();
         return expectedDate;
+    }
+
+    private Proximity proximity = Proximity.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which specifies the precision of the stock quantity in a shipment. Optional, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public Proximity proximity() {
+        _initialize();
+        return proximity;
     }
 
     @Override

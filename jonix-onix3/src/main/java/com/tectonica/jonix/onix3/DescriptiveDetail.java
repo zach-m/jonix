@@ -153,21 +153,17 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case ProductForm.shortname:
                     productForm = new ProductForm(e);
                     break;
-                case ProductFormDetail.refname:
-                case ProductFormDetail.shortname:
-                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                case TitleDetail.refname:
+                case TitleDetail.shortname:
+                    titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
                     break;
-                case ProductFormFeature.refname:
-                case ProductFormFeature.shortname:
-                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
                     break;
                 case ProductPackaging.refname:
                 case ProductPackaging.shortname:
                     productPackaging = new ProductPackaging(e);
-                    break;
-                case ProductFormDescription.refname:
-                case ProductFormDescription.shortname:
-                    productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(e));
                     break;
                 case TradeCategory.refname:
                 case TradeCategory.shortname:
@@ -177,6 +173,70 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case PrimaryContentType.shortname:
                     primaryContentType = new PrimaryContentType(e);
                     break;
+                case CountryOfManufacture.refname:
+                case CountryOfManufacture.shortname:
+                    countryOfManufacture = new CountryOfManufacture(e);
+                    break;
+                case EpubLicense.refname:
+                case EpubLicense.shortname:
+                    epubLicense = new EpubLicense(e);
+                    break;
+                case NoCollection.refname:
+                case NoCollection.shortname:
+                    noCollection = new NoCollection(e);
+                    break;
+                case ThesisType.refname:
+                case ThesisType.shortname:
+                    thesisType = new ThesisType(e);
+                    break;
+                case ThesisPresentedTo.refname:
+                case ThesisPresentedTo.shortname:
+                    thesisPresentedTo = new ThesisPresentedTo(e);
+                    break;
+                case ThesisYear.refname:
+                case ThesisYear.shortname:
+                    thesisYear = new ThesisYear(e);
+                    break;
+                case NoContributor.refname:
+                case NoContributor.shortname:
+                    noContributor = new NoContributor(e);
+                    break;
+                case EditionNumber.refname:
+                case EditionNumber.shortname:
+                    editionNumber = new EditionNumber(e);
+                    break;
+                case EditionVersionNumber.refname:
+                case EditionVersionNumber.shortname:
+                    editionVersionNumber = new EditionVersionNumber(e);
+                    break;
+                case NoEdition.refname:
+                case NoEdition.shortname:
+                    noEdition = new NoEdition(e);
+                    break;
+                case ReligiousText.refname:
+                case ReligiousText.shortname:
+                    religiousText = new ReligiousText(e);
+                    break;
+                case Illustrated.refname:
+                case Illustrated.shortname:
+                    illustrated = new Illustrated(e);
+                    break;
+                case NumberOfIllustrations.refname:
+                case NumberOfIllustrations.shortname:
+                    numberOfIllustrations = new NumberOfIllustrations(e);
+                    break;
+                case ProductFormDetail.refname:
+                case ProductFormDetail.shortname:
+                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                    break;
+                case ProductFormFeature.refname:
+                case ProductFormFeature.shortname:
+                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                    break;
+                case ProductFormDescription.refname:
+                case ProductFormDescription.shortname:
+                    productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(e));
+                    break;
                 case ProductContentType.refname:
                 case ProductContentType.shortname:
                     productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
@@ -185,10 +245,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case Measure.shortname:
                     measures = JPU.addToList(measures, new Measure(e));
                     break;
-                case CountryOfManufacture.refname:
-                case CountryOfManufacture.shortname:
-                    countryOfManufacture = new CountryOfManufacture(e);
-                    break;
                 case EpubTechnicalProtection.refname:
                 case EpubTechnicalProtection.shortname:
                     epubTechnicalProtections = JPU.addToList(epubTechnicalProtections, new EpubTechnicalProtection(e));
@@ -196,10 +252,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case EpubUsageConstraint.refname:
                 case EpubUsageConstraint.shortname:
                     epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(e));
-                    break;
-                case EpubLicense.refname:
-                case EpubLicense.shortname:
-                    epubLicense = new EpubLicense(e);
                     break;
                 case MapScale.refname:
                 case MapScale.shortname:
@@ -217,37 +269,9 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case Collection.shortname:
                     collections = JPU.addToList(collections, new Collection(e));
                     break;
-                case NoCollection.refname:
-                case NoCollection.shortname:
-                    noCollection = new NoCollection(e);
-                    break;
-                case TitleDetail.refname:
-                case TitleDetail.shortname:
-                    titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
-                    break;
-                case ThesisType.refname:
-                case ThesisType.shortname:
-                    thesisType = new ThesisType(e);
-                    break;
-                case ThesisPresentedTo.refname:
-                case ThesisPresentedTo.shortname:
-                    thesisPresentedTo = new ThesisPresentedTo(e);
-                    break;
-                case ThesisYear.refname:
-                case ThesisYear.shortname:
-                    thesisYear = new ThesisYear(e);
-                    break;
-                case Contributor.refname:
-                case Contributor.shortname:
-                    contributors = JPU.addToList(contributors, new Contributor(e));
-                    break;
                 case ContributorStatement.refname:
                 case ContributorStatement.shortname:
                     contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
-                    break;
-                case NoContributor.refname:
-                case NoContributor.shortname:
-                    noContributor = new NoContributor(e);
                     break;
                 case Event.refname:
                 case Event.shortname:
@@ -261,25 +285,9 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case EditionType.shortname:
                     editionTypes = JPU.addToList(editionTypes, new EditionType(e));
                     break;
-                case EditionNumber.refname:
-                case EditionNumber.shortname:
-                    editionNumber = new EditionNumber(e);
-                    break;
-                case EditionVersionNumber.refname:
-                case EditionVersionNumber.shortname:
-                    editionVersionNumber = new EditionVersionNumber(e);
-                    break;
                 case EditionStatement.refname:
                 case EditionStatement.shortname:
                     editionStatements = JPU.addToList(editionStatements, new EditionStatement(e));
-                    break;
-                case NoEdition.refname:
-                case NoEdition.shortname:
-                    noEdition = new NoEdition(e);
-                    break;
-                case ReligiousText.refname:
-                case ReligiousText.shortname:
-                    religiousText = new ReligiousText(e);
                     break;
                 case Language.refname:
                 case Language.shortname:
@@ -288,14 +296,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case Extent.refname:
                 case Extent.shortname:
                     extents = JPU.addToList(extents, new Extent(e));
-                    break;
-                case Illustrated.refname:
-                case Illustrated.shortname:
-                    illustrated = new Illustrated(e);
-                    break;
-                case NumberOfIllustrations.refname:
-                case NumberOfIllustrations.shortname:
-                    numberOfIllustrations = new NumberOfIllustrations(e);
                     break;
                 case IllustrationsNote.refname:
                 case IllustrationsNote.shortname:
@@ -383,6 +383,291 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return productForm;
     }
 
+    private List<TitleDetail> titleDetails = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together give the text of a title and specify its type. At least one title detail
+     * element is mandatory in each occurrence of the &lt;DescriptiveDetail&gt; composite, to give the primary form of
+     * the product title. The composite is repeatable with different title types.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public List<TitleDetail> titleDetails() {
+        _initialize();
+        return titleDetails;
+    }
+
+    private List<Contributor> contributors = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together describe a personal or corporate contributor to the product. Optional,
+     * and repeatable to describe multiple contributors.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public List<Contributor> contributors() {
+        _initialize();
+        return contributors;
+    }
+
+    private ProductPackaging productPackaging = ProductPackaging.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which indicates the type of outer packaging used for the product. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ProductPackaging productPackaging() {
+        _initialize();
+        return productPackaging;
+    }
+
+    private TradeCategory tradeCategory = TradeCategory.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which indicates a trade category which is somewhat related to, but not properly an attribute of,
+     * product form. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public TradeCategory tradeCategory() {
+        _initialize();
+        return tradeCategory;
+    }
+
+    private PrimaryContentType primaryContentType = PrimaryContentType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which indicates the primary or only content type included in a product. The element is intended to
+     * be used in particular for digital products, when the sender wishes to make it clear that one of a number of
+     * content types (<i>eg</i> text, audio, video) is the primary type for the product. Other content types may be
+     * specified in the &lt;ProductContentType&gt;. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PrimaryContentType primaryContentType() {
+        _initialize();
+        return primaryContentType;
+    }
+
+    private CountryOfManufacture countryOfManufacture = CountryOfManufacture.EMPTY;
+
+    /**
+     * <p>
+     * An ISO code identifying the country of manufacture of a single-item product, or of a multiple-item product when
+     * all items are manufactured in the same country. This information is needed in some countries to meet regulatory
+     * requirements. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public CountryOfManufacture countryOfManufacture() {
+        _initialize();
+        return countryOfManufacture;
+    }
+
+    private EpubLicense epubLicense = EpubLicense.EMPTY;
+
+    /**
+     * <p>
+     * An optional and non-repeatable composite carrying the name or title of the license governing use of the product,
+     * and a link to the license terms in eye-readable or machine-readable form.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public EpubLicense epubLicense() {
+        _initialize();
+        return epubLicense;
+    }
+
+    private NoCollection noCollection = NoCollection.EMPTY;
+
+    /**
+     * <p>
+     * An empty element that provides a positive indication that a product does not belong to a collection (a ‘set’ or
+     * ‘series’). This element is intended to be used in an ONIX accreditation scheme to confirm that collection
+     * information is being consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent
+     * in a record that has no instances of the &lt;Collection&gt; composite <em>and</em> has no collection level title
+     * elements in Group&nbsp;P.6.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NoCollection noCollection() {
+        _initialize();
+        return noCollection;
+    }
+
+    public boolean isNoCollection() {
+        return (noCollection().exists());
+    }
+
+    private ThesisType thesisType = ThesisType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code identifying a thesis type, when the ONIX record describes an item which was originally presented as
+     * an academic thesis or dissertation. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ThesisType thesisType() {
+        _initialize();
+        return thesisType;
+    }
+
+    private ThesisPresentedTo thesisPresentedTo = ThesisPresentedTo.EMPTY;
+
+    /**
+     * <p>
+     * The name of an academic institution to which a thesis was presented. Optional and non-repeating, but if this
+     * element is present, &lt;ThesisType&gt; must also be present.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ThesisPresentedTo thesisPresentedTo() {
+        _initialize();
+        return thesisPresentedTo;
+    }
+
+    private ThesisYear thesisYear = ThesisYear.EMPTY;
+
+    /**
+     * <p>
+     * The year in which a thesis was presented. Optional and non-repeating, but if this element is present,
+     * &lt;ThesisType&gt; must also be present.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ThesisYear thesisYear() {
+        _initialize();
+        return thesisYear;
+    }
+
+    private NoContributor noContributor = NoContributor.EMPTY;
+
+    /**
+     * <p>
+     * An empty element that provides a positive indication that a product has no stated authorship. Intended to be used
+     * in an ONIX accreditation scheme to confirm that author information is being consistently supplied in publisher
+     * ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no other elements from
+     * Group&nbsp;P.7.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NoContributor noContributor() {
+        _initialize();
+        return noContributor;
+    }
+
+    public boolean isNoContributor() {
+        return (noContributor().exists());
+    }
+
+    private EditionNumber editionNumber = EditionNumber.EMPTY;
+
+    /**
+     * <p>
+     * The number of a numbered edition. Optional and non-repeating. Normally sent only for the second and subsequent
+     * editions of a work, but by agreement between parties to an ONIX exchange a first edition may be explicitly
+     * numbered.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public EditionNumber editionNumber() {
+        _initialize();
+        return editionNumber;
+    }
+
+    private EditionVersionNumber editionVersionNumber = EditionVersionNumber.EMPTY;
+
+    /**
+     * <p>
+     * The number of a numbered revision within an edition number. To be used only where a publisher uses such two-level
+     * numbering to indicate revisions which do not constitute a new edition under a new ISBN or other distinctive
+     * product identifier. Optional and non-repeating. If this field is used, an &lt;EditionNumber&gt; must also be
+     * present.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public EditionVersionNumber editionVersionNumber() {
+        _initialize();
+        return editionVersionNumber;
+    }
+
+    private NoEdition noEdition = NoEdition.EMPTY;
+
+    /**
+     * <p>
+     * An empty element that provides a positive indication that a product does not carry any edition information.
+     * Intended to be used an ONIX accreditation scheme to confirm that edition information is being consistently
+     * supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no instances
+     * of any of the four preceding Edition elements.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NoEdition noEdition() {
+        _initialize();
+        return noEdition;
+    }
+
+    public boolean isNoEdition() {
+        return (noEdition().exists());
+    }
+
+    private ReligiousText religiousText = ReligiousText.EMPTY;
+
+    /**
+     * <p>
+     * An optional, non-repeating, group of data elements which together describe features of the content of an edition
+     * of a religious text, and intended to meet the special needs of religious publishers and booksellers. The
+     * &lt;ReligiousText&gt; composite may carry <em>either</em> a &lt;Bible&gt; composite <em>or</em> a
+     * &lt;ReligiousTextIdentifier&gt; element accompanied by multiple repeats of the &lt;ReligiousTextFeature&gt;
+     * composite. This approach is adopted to enable other devotional texts to be included if need arises without
+     * requiring a new ONIX release.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ReligiousText religiousText() {
+        _initialize();
+        return religiousText;
+    }
+
+    private Illustrated illustrated = Illustrated.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating whether a book or other textual (usually printed) product has illustrations. The more
+     * informative free text field &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt; composite are strongly
+     * preferred. This element has been added specifically to cater for a situation where a sender of product
+     * information maintains only a yes/no flag, and it should not otherwise be used. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public Illustrated illustrated() {
+        _initialize();
+        return illustrated;
+    }
+
+    private NumberOfIllustrations numberOfIllustrations = NumberOfIllustrations.EMPTY;
+
+    /**
+     * <p>
+     * The total number of illustrations in a book or other printed product. The more informative free text field
+     * &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt; composite are strongly preferred, but where a
+     * sender of product information maintains only a simple numeric field, the &lt;NumberOfIllustrations&gt; element
+     * may be used. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NumberOfIllustrations numberOfIllustrations() {
+        _initialize();
+        return numberOfIllustrations;
+    }
+
     private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
 
     /**
@@ -414,19 +699,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return productFormFeatures;
     }
 
-    private ProductPackaging productPackaging = ProductPackaging.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which indicates the type of outer packaging used for the product. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ProductPackaging productPackaging() {
-        _initialize();
-        return productPackaging;
-    }
-
     private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
 
     /**
@@ -442,36 +714,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ProductFormDescription, String> productFormDescriptions() {
         _initialize();
         return productFormDescriptions;
-    }
-
-    private TradeCategory tradeCategory = TradeCategory.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which indicates a trade category which is somewhat related to, but not properly an attribute of,
-     * product form. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public TradeCategory tradeCategory() {
-        _initialize();
-        return tradeCategory;
-    }
-
-    private PrimaryContentType primaryContentType = PrimaryContentType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which indicates the primary or only content type included in a product. The element is intended to
-     * be used in particular for digital products, when the sender wishes to make it clear that one of a number of
-     * content types (<i>eg</i> text, audio, video) is the primary type for the product. Other content types may be
-     * specified in the &lt;ProductContentType&gt;. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PrimaryContentType primaryContentType() {
-        _initialize();
-        return primaryContentType;
     }
 
     private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
@@ -505,21 +747,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return measures;
     }
 
-    private CountryOfManufacture countryOfManufacture = CountryOfManufacture.EMPTY;
-
-    /**
-     * <p>
-     * An ISO code identifying the country of manufacture of a single-item product, or of a multiple-item product when
-     * all items are manufactured in the same country. This information is needed in some countries to meet regulatory
-     * requirements. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public CountryOfManufacture countryOfManufacture() {
-        _initialize();
-        return countryOfManufacture;
-    }
-
     private ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
         ListOfOnixElement.empty();
 
@@ -549,20 +776,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     public List<EpubUsageConstraint> epubUsageConstraints() {
         _initialize();
         return epubUsageConstraints;
-    }
-
-    private EpubLicense epubLicense = EpubLicense.EMPTY;
-
-    /**
-     * <p>
-     * An optional and non-repeatable composite carrying the name or title of the license governing use of the product,
-     * and a link to the license terms in eye-readable or machine-readable form.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public EpubLicense epubLicense() {
-        _initialize();
-        return epubLicense;
     }
 
     private ListOfOnixElement<MapScale, Integer> mapScales = ListOfOnixElement.empty();
@@ -637,98 +850,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return collections;
     }
 
-    private NoCollection noCollection = NoCollection.EMPTY;
-
-    /**
-     * <p>
-     * An empty element that provides a positive indication that a product does not belong to a collection (a ‘set’ or
-     * ‘series’). This element is intended to be used in an ONIX accreditation scheme to confirm that collection
-     * information is being consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent
-     * in a record that has no instances of the &lt;Collection&gt; composite <em>and</em> has no collection level title
-     * elements in Group&nbsp;P.6.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NoCollection noCollection() {
-        _initialize();
-        return noCollection;
-    }
-
-    public boolean isNoCollection() {
-        return (noCollection().exists());
-    }
-
-    private List<TitleDetail> titleDetails = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together give the text of a title and specify its type. At least one title detail
-     * element is mandatory in each occurrence of the &lt;DescriptiveDetail&gt; composite, to give the primary form of
-     * the product title. The composite is repeatable with different title types.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public List<TitleDetail> titleDetails() {
-        _initialize();
-        return titleDetails;
-    }
-
-    private ThesisType thesisType = ThesisType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code identifying a thesis type, when the ONIX record describes an item which was originally presented as
-     * an academic thesis or dissertation. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ThesisType thesisType() {
-        _initialize();
-        return thesisType;
-    }
-
-    private ThesisPresentedTo thesisPresentedTo = ThesisPresentedTo.EMPTY;
-
-    /**
-     * <p>
-     * The name of an academic institution to which a thesis was presented. Optional and non-repeating, but if this
-     * element is present, &lt;ThesisType&gt; must also be present.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ThesisPresentedTo thesisPresentedTo() {
-        _initialize();
-        return thesisPresentedTo;
-    }
-
-    private ThesisYear thesisYear = ThesisYear.EMPTY;
-
-    /**
-     * <p>
-     * The year in which a thesis was presented. Optional and non-repeating, but if this element is present,
-     * &lt;ThesisType&gt; must also be present.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ThesisYear thesisYear() {
-        _initialize();
-        return thesisYear;
-    }
-
-    private List<Contributor> contributors = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together describe a personal or corporate contributor to the product. Optional,
-     * and repeatable to describe multiple contributors.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public List<Contributor> contributors() {
-        _initialize();
-        return contributors;
-    }
-
     private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
 
     /**
@@ -747,26 +868,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
         return contributorStatements;
-    }
-
-    private NoContributor noContributor = NoContributor.EMPTY;
-
-    /**
-     * <p>
-     * An empty element that provides a positive indication that a product has no stated authorship. Intended to be used
-     * in an ONIX accreditation scheme to confirm that author information is being consistently supplied in publisher
-     * ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no other elements from
-     * Group&nbsp;P.7.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NoContributor noContributor() {
-        _initialize();
-        return noContributor;
-    }
-
-    public boolean isNoContributor() {
-        return (noContributor().exists());
     }
 
     private List<Event> events = Collections.emptyList();
@@ -815,37 +916,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return editionTypes;
     }
 
-    private EditionNumber editionNumber = EditionNumber.EMPTY;
-
-    /**
-     * <p>
-     * The number of a numbered edition. Optional and non-repeating. Normally sent only for the second and subsequent
-     * editions of a work, but by agreement between parties to an ONIX exchange a first edition may be explicitly
-     * numbered.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public EditionNumber editionNumber() {
-        _initialize();
-        return editionNumber;
-    }
-
-    private EditionVersionNumber editionVersionNumber = EditionVersionNumber.EMPTY;
-
-    /**
-     * <p>
-     * The number of a numbered revision within an edition number. To be used only where a publisher uses such two-level
-     * numbering to indicate revisions which do not constitute a new edition under a new ISBN or other distinctive
-     * product identifier. Optional and non-repeating. If this field is used, an &lt;EditionNumber&gt; must also be
-     * present.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public EditionVersionNumber editionVersionNumber() {
-        _initialize();
-        return editionVersionNumber;
-    }
-
     private ListOfOnixElement<EditionStatement, String> editionStatements = ListOfOnixElement.empty();
 
     /**
@@ -864,44 +934,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<EditionStatement, String> editionStatements() {
         _initialize();
         return editionStatements;
-    }
-
-    private NoEdition noEdition = NoEdition.EMPTY;
-
-    /**
-     * <p>
-     * An empty element that provides a positive indication that a product does not carry any edition information.
-     * Intended to be used an ONIX accreditation scheme to confirm that edition information is being consistently
-     * supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no instances
-     * of any of the four preceding Edition elements.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NoEdition noEdition() {
-        _initialize();
-        return noEdition;
-    }
-
-    public boolean isNoEdition() {
-        return (noEdition().exists());
-    }
-
-    private ReligiousText religiousText = ReligiousText.EMPTY;
-
-    /**
-     * <p>
-     * An optional, non-repeating, group of data elements which together describe features of the content of an edition
-     * of a religious text, and intended to meet the special needs of religious publishers and booksellers. The
-     * &lt;ReligiousText&gt; composite may carry <em>either</em> a &lt;Bible&gt; composite <em>or</em> a
-     * &lt;ReligiousTextIdentifier&gt; element accompanied by multiple repeats of the &lt;ReligiousTextFeature&gt;
-     * composite. This approach is adopted to enable other devotional texts to be included if need arises without
-     * requiring a new ONIX release.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ReligiousText religiousText() {
-        _initialize();
-        return religiousText;
     }
 
     private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =
@@ -934,38 +966,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     public ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents() {
         _initialize();
         return extents;
-    }
-
-    private Illustrated illustrated = Illustrated.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating whether a book or other textual (usually printed) product has illustrations. The more
-     * informative free text field &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt; composite are strongly
-     * preferred. This element has been added specifically to cater for a situation where a sender of product
-     * information maintains only a yes/no flag, and it should not otherwise be used. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public Illustrated illustrated() {
-        _initialize();
-        return illustrated;
-    }
-
-    private NumberOfIllustrations numberOfIllustrations = NumberOfIllustrations.EMPTY;
-
-    /**
-     * <p>
-     * The total number of illustrations in a book or other printed product. The more informative free text field
-     * &lt;IllustrationsNote&gt; and/or the &lt;AncillaryContent&gt; composite are strongly preferred, but where a
-     * sender of product information maintains only a simple numeric field, the &lt;NumberOfIllustrations&gt; element
-     * may be used. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NumberOfIllustrations numberOfIllustrations() {
-        _initialize();
-        return numberOfIllustrations;
     }
 
     private ListOfOnixElement<IllustrationsNote, String> illustrationsNotes = ListOfOnixElement.empty();

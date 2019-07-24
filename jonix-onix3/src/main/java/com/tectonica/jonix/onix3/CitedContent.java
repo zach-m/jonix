@@ -127,9 +127,13 @@ public class CitedContent implements OnixSuperComposite, Serializable {
                 case CitedContentType.shortname:
                     citedContentType = new CitedContentType(e);
                     break;
-                case ContentAudience.refname:
-                case ContentAudience.shortname:
-                    contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+                case ReviewRating.refname:
+                case ReviewRating.shortname:
+                    reviewRating = new ReviewRating(e);
+                    break;
+                case SourceTitle.refname:
+                case SourceTitle.shortname:
+                    sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
                     break;
                 case Territory.refname:
                 case Territory.shortname:
@@ -139,21 +143,17 @@ public class CitedContent implements OnixSuperComposite, Serializable {
                 case SourceType.shortname:
                     sourceType = new SourceType(e);
                     break;
-                case ReviewRating.refname:
-                case ReviewRating.shortname:
-                    reviewRating = new ReviewRating(e);
+                case PositionOnList.refname:
+                case PositionOnList.shortname:
+                    positionOnList = new PositionOnList(e);
                     break;
-                case SourceTitle.refname:
-                case SourceTitle.shortname:
-                    sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
+                case ContentAudience.refname:
+                case ContentAudience.shortname:
+                    contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
                     break;
                 case ListName.refname:
                 case ListName.shortname:
                     listNames = JPU.addToList(listNames, new ListName(e));
-                    break;
-                case PositionOnList.refname:
-                case PositionOnList.shortname:
-                    positionOnList = new PositionOnList(e);
                     break;
                 case CitationNote.refname:
                 case CitationNote.shortname:
@@ -199,18 +199,35 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return citedContentType;
     }
 
-    private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
+    private ReviewRating reviewRating = ReviewRating.EMPTY;
 
     /**
      * <p>
-     * An ONIX code which identifies the audience for which a piece of cited content is intended. Optional and
-     * repeatable.
+     * An optional group of data elements which together specify a ‘star rating’ awarded as part of a review of the
+     * publication, used where &lt;CitedContentType&gt; indicates the cited content is a review. Not repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * Jonix-Comment: this field is required
      */
-    public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
+    public ReviewRating reviewRating() {
         _initialize();
-        return contentAudiences;
+        return reviewRating;
+    }
+
+    private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The title, name or short description of a publication, broadcast, website or other source of cited content.
+     * Optional, and repeatable; required unless the cited content refers to a bestseller list, and &lt;ListName&gt; is
+     * present. &lt;SourceTitle&gt; may be repeated to provide the title in multiple languages. The <i>language</i>
+     * attribute is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if
+     * &lt;SourceTitle&gt; is repeated.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixElement<SourceTitle, String> sourceTitles() {
+        _initialize();
+        return sourceTitles;
     }
 
     private Territory territory = Territory.EMPTY;
@@ -253,35 +270,32 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return sourceType;
     }
 
-    private ReviewRating reviewRating = ReviewRating.EMPTY;
+    private PositionOnList positionOnList = PositionOnList.EMPTY;
 
     /**
      * <p>
-     * An optional group of data elements which together specify a ‘star rating’ awarded as part of a review of the
-     * publication, used where &lt;CitedContentType&gt; indicates the cited content is a review. Not repeatable.
+     * The position that a product has reached on a bestseller list specified in &lt;ListName&gt;. Optional and
+     * non-repeating. The &lt;ListName&gt; element must also be present if &lt;PositionOnList&gt; is included.
      * </p>
-     * Jonix-Comment: this field is required
+     * Jonix-Comment: this field is optional
      */
-    public ReviewRating reviewRating() {
+    public PositionOnList positionOnList() {
         _initialize();
-        return reviewRating;
+        return positionOnList;
     }
 
-    private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
+    private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
 
     /**
      * <p>
-     * The title, name or short description of a publication, broadcast, website or other source of cited content.
-     * Optional, and repeatable; required unless the cited content refers to a bestseller list, and &lt;ListName&gt; is
-     * present. &lt;SourceTitle&gt; may be repeated to provide the title in multiple languages. The <i>language</i>
-     * attribute is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if
-     * &lt;SourceTitle&gt; is repeated.
+     * An ONIX code which identifies the audience for which a piece of cited content is intended. Optional and
+     * repeatable.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<SourceTitle, String> sourceTitles() {
+    public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
-        return sourceTitles;
+        return contentAudiences;
     }
 
     private ListOfOnixElement<ListName, String> listNames = ListOfOnixElement.empty();
@@ -298,20 +312,6 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ListName, String> listNames() {
         _initialize();
         return listNames;
-    }
-
-    private PositionOnList positionOnList = PositionOnList.EMPTY;
-
-    /**
-     * <p>
-     * The position that a product has reached on a bestseller list specified in &lt;ListName&gt;. Optional and
-     * non-repeating. The &lt;ListName&gt; element must also be present if &lt;PositionOnList&gt; is included.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PositionOnList positionOnList() {
-        _initialize();
-        return positionOnList;
     }
 
     private ListOfOnixElement<CitationNote, String> citationNotes = ListOfOnixElement.empty();

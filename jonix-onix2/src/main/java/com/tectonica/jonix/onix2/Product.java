@@ -177,6 +177,30 @@ public class Product implements OnixProduct, Serializable {
                 case NotificationType.shortname:
                     notificationType = new NotificationType(e);
                     break;
+                case ISBN.refname:
+                case ISBN.shortname:
+                    isbn = new ISBN(e);
+                    break;
+                case DistinctiveTitle.refname:
+                case DistinctiveTitle.shortname:
+                    distinctiveTitle = new DistinctiveTitle(e);
+                    break;
+                case ConferenceName.refname:
+                case ConferenceName.shortname:
+                    conferenceName = new ConferenceName(e);
+                    break;
+                case ImprintName.refname:
+                case ImprintName.shortname:
+                    imprintName = new ImprintName(e);
+                    break;
+                case Height.refname:
+                case Height.shortname:
+                    height = new Height(e);
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
                 case DeletionCode.refname:
                 case DeletionCode.shortname:
                     deletionCode = new DeletionCode(e);
@@ -201,10 +225,6 @@ public class Product implements OnixProduct, Serializable {
                 case RecordSourceName.shortname:
                     recordSourceName = new RecordSourceName(e);
                     break;
-                case ISBN.refname:
-                case ISBN.shortname:
-                    isbn = new ISBN(e);
-                    break;
                 case EAN13.refname:
                 case EAN13.shortname:
                     ean13 = new EAN13(e);
@@ -225,14 +245,6 @@ public class Product implements OnixProduct, Serializable {
                 case DOI.shortname:
                     doi = new DOI(e);
                     break;
-                case ProductIdentifier.refname:
-                case ProductIdentifier.shortname:
-                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-                    break;
-                case Barcode.refname:
-                case Barcode.shortname:
-                    barcodes = JPU.addToList(barcodes, new Barcode(e));
-                    break;
                 case ReplacesISBN.refname:
                 case ReplacesISBN.shortname:
                     replacesISBN = new ReplacesISBN(e);
@@ -244,18 +256,6 @@ public class Product implements OnixProduct, Serializable {
                 case ProductForm.refname:
                 case ProductForm.shortname:
                     productForm = new ProductForm(e);
-                    break;
-                case ProductFormDetail.refname:
-                case ProductFormDetail.shortname:
-                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
-                    break;
-                case ProductFormFeature.refname:
-                case ProductFormFeature.shortname:
-                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
-                    break;
-                case BookFormDetail.refname:
-                case BookFormDetail.shortname:
-                    bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
                     break;
                 case ProductPackaging.refname:
                 case ProductPackaging.shortname:
@@ -272,18 +272,6 @@ public class Product implements OnixProduct, Serializable {
                 case TradeCategory.refname:
                 case TradeCategory.shortname:
                     tradeCategory = new TradeCategory(e);
-                    break;
-                case ProductContentType.refname:
-                case ProductContentType.shortname:
-                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
-                    break;
-                case ContainedItem.refname:
-                case ContainedItem.shortname:
-                    containedItems = JPU.addToList(containedItems, new ContainedItem(e));
-                    break;
-                case ProductClassification.refname:
-                case ProductClassification.shortname:
-                    productClassifications = JPU.addToList(productClassifications, new ProductClassification(e));
                     break;
                 case EpubType.refname:
                 case EpubType.shortname:
@@ -325,25 +313,13 @@ public class Product implements OnixProduct, Serializable {
                 case EpubTypeNote.shortname:
                     epubTypeNote = new EpubTypeNote(e);
                     break;
-                case Series.refname:
-                case Series.shortname:
-                    seriess = JPU.addToList(seriess, new Series(e));
-                    break;
                 case NoSeries.refname:
                 case NoSeries.shortname:
                     noSeries = new NoSeries(e);
                     break;
-                case Set.refname:
-                case Set.shortname:
-                    sets = JPU.addToList(sets, new Set(e));
-                    break;
                 case TextCaseFlag.refname:
                 case TextCaseFlag.shortname:
                     textCaseFlag = new TextCaseFlag(e);
-                    break;
-                case DistinctiveTitle.refname:
-                case DistinctiveTitle.shortname:
-                    distinctiveTitle = new DistinctiveTitle(e);
                     break;
                 case TitlePrefix.refname:
                 case TitlePrefix.shortname:
@@ -361,22 +337,6 @@ public class Product implements OnixProduct, Serializable {
                 case TranslationOfTitle.shortname:
                     translationOfTitle = new TranslationOfTitle(e);
                     break;
-                case FormerTitle.refname:
-                case FormerTitle.shortname:
-                    formerTitles = JPU.addToList(formerTitles, new FormerTitle(e));
-                    break;
-                case Title.refname:
-                case Title.shortname:
-                    titles = JPU.addToList(titles, new Title(e));
-                    break;
-                case WorkIdentifier.refname:
-                case WorkIdentifier.shortname:
-                    workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
-                    break;
-                case Website.refname:
-                case Website.shortname:
-                    websites = JPU.addToList(websites, new Website(e));
-                    break;
                 case ThesisType.refname:
                 case ThesisType.shortname:
                     thesisType = new ThesisType(e);
@@ -388,10 +348,6 @@ public class Product implements OnixProduct, Serializable {
                 case ThesisYear.refname:
                 case ThesisYear.shortname:
                     thesisYear = new ThesisYear(e);
-                    break;
-                case Contributor.refname:
-                case Contributor.shortname:
-                    contributors = JPU.addToList(contributors, new Contributor(e));
                     break;
                 case ContributorStatement.refname:
                 case ContributorStatement.shortname:
@@ -409,10 +365,6 @@ public class Product implements OnixProduct, Serializable {
                 case ConferenceRole.shortname:
                     conferenceRole = new ConferenceRole(e);
                     break;
-                case ConferenceName.refname:
-                case ConferenceName.shortname:
-                    conferenceName = new ConferenceName(e);
-                    break;
                 case ConferenceNumber.refname:
                 case ConferenceNumber.shortname:
                     conferenceNumber = new ConferenceNumber(e);
@@ -424,14 +376,6 @@ public class Product implements OnixProduct, Serializable {
                 case ConferencePlace.refname:
                 case ConferencePlace.shortname:
                     conferencePlace = new ConferencePlace(e);
-                    break;
-                case Conference.refname:
-                case Conference.shortname:
-                    conferences = JPU.addToList(conferences, new Conference(e));
-                    break;
-                case EditionTypeCode.refname:
-                case EditionTypeCode.shortname:
-                    editionTypeCodes = JPU.addToList(editionTypeCodes, new EditionTypeCode(e));
                     break;
                 case EditionNumber.refname:
                 case EditionNumber.shortname:
@@ -453,17 +397,9 @@ public class Product implements OnixProduct, Serializable {
                 case ReligiousText.shortname:
                     religiousText = new ReligiousText(e);
                     break;
-                case LanguageOfText.refname:
-                case LanguageOfText.shortname:
-                    languageOfTexts = JPU.addToList(languageOfTexts, new LanguageOfText(e));
-                    break;
                 case OriginalLanguage.refname:
                 case OriginalLanguage.shortname:
                     originalLanguage = new OriginalLanguage(e);
-                    break;
-                case Language.refname:
-                case Language.shortname:
-                    languages = JPU.addToList(languages, new Language(e));
                     break;
                 case NumberOfPages.refname:
                 case NumberOfPages.shortname:
@@ -477,10 +413,6 @@ public class Product implements OnixProduct, Serializable {
                 case PagesArabic.shortname:
                     pagesArabic = new PagesArabic(e);
                     break;
-                case Extent.refname:
-                case Extent.shortname:
-                    extents = JPU.addToList(extents, new Extent(e));
-                    break;
                 case NumberOfIllustrations.refname:
                 case NumberOfIllustrations.shortname:
                     numberOfIllustrations = new NumberOfIllustrations(e);
@@ -488,14 +420,6 @@ public class Product implements OnixProduct, Serializable {
                 case IllustrationsNote.refname:
                 case IllustrationsNote.shortname:
                     illustrationsNote = new IllustrationsNote(e);
-                    break;
-                case Illustrations.refname:
-                case Illustrations.shortname:
-                    illustrationss = JPU.addToList(illustrationss, new Illustrations(e));
-                    break;
-                case MapScale.refname:
-                case MapScale.shortname:
-                    mapScales = JPU.addToList(mapScales, new MapScale(e));
                     break;
                 case BASICMainSubject.refname:
                 case BASICMainSubject.shortname:
@@ -513,34 +437,6 @@ public class Product implements OnixProduct, Serializable {
                 case BICVersion.shortname:
                     bicVersion = new BICVersion(e);
                     break;
-                case MainSubject.refname:
-                case MainSubject.shortname:
-                    mainSubjects = JPU.addToList(mainSubjects, new MainSubject(e));
-                    break;
-                case Subject.refname:
-                case Subject.shortname:
-                    subjects = JPU.addToList(subjects, new Subject(e));
-                    break;
-                case PersonAsSubject.refname:
-                case PersonAsSubject.shortname:
-                    personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(e));
-                    break;
-                case CorporateBodyAsSubject.refname:
-                case CorporateBodyAsSubject.shortname:
-                    corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(e));
-                    break;
-                case PlaceAsSubject.refname:
-                case PlaceAsSubject.shortname:
-                    placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(e));
-                    break;
-                case AudienceCode.refname:
-                case AudienceCode.shortname:
-                    audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(e));
-                    break;
-                case Audience.refname:
-                case Audience.shortname:
-                    audiences = JPU.addToList(audiences, new Audience(e));
-                    break;
                 case USSchoolGrade.refname:
                 case USSchoolGrade.shortname:
                     usSchoolGrade = new USSchoolGrade(e);
@@ -549,17 +445,9 @@ public class Product implements OnixProduct, Serializable {
                 case InterestAge.shortname:
                     interestAge = new InterestAge(e);
                     break;
-                case AudienceRange.refname:
-                case AudienceRange.shortname:
-                    audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(e));
-                    break;
                 case AudienceDescription.refname:
                 case AudienceDescription.shortname:
                     audienceDescription = new AudienceDescription(e);
-                    break;
-                case Complexity.refname:
-                case Complexity.shortname:
-                    complexitys = JPU.addToList(complexitys, new Complexity(e));
                     break;
                 case Annotation.refname:
                 case Annotation.shortname:
@@ -568,14 +456,6 @@ public class Product implements OnixProduct, Serializable {
                 case MainDescription.refname:
                 case MainDescription.shortname:
                     mainDescription = new MainDescription(e);
-                    break;
-                case OtherText.refname:
-                case OtherText.shortname:
-                    otherTexts = JPU.addToList(otherTexts, new OtherText(e));
-                    break;
-                case ReviewQuote.refname:
-                case ReviewQuote.shortname:
-                    reviewQuotes = JPU.addToList(reviewQuotes, new ReviewQuote(e));
                     break;
                 case CoverImageFormatCode.refname:
                 case CoverImageFormatCode.shortname:
@@ -589,57 +469,17 @@ public class Product implements OnixProduct, Serializable {
                 case CoverImageLink.shortname:
                     coverImageLink = new CoverImageLink(e);
                     break;
-                case MediaFile.refname:
-                case MediaFile.shortname:
-                    mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
-                    break;
-                case ProductWebsite.refname:
-                case ProductWebsite.shortname:
-                    productWebsites = JPU.addToList(productWebsites, new ProductWebsite(e));
-                    break;
                 case PrizesDescription.refname:
                 case PrizesDescription.shortname:
                     prizesDescription = new PrizesDescription(e);
-                    break;
-                case Prize.refname:
-                case Prize.shortname:
-                    prizes = JPU.addToList(prizes, new Prize(e));
-                    break;
-                case ContentItem.refname:
-                case ContentItem.shortname:
-                    contentItems = JPU.addToList(contentItems, new ContentItem(e));
-                    break;
-                case ImprintName.refname:
-                case ImprintName.shortname:
-                    imprintName = new ImprintName(e);
-                    break;
-                case Imprint.refname:
-                case Imprint.shortname:
-                    imprints = JPU.addToList(imprints, new Imprint(e));
                     break;
                 case PublisherName.refname:
                 case PublisherName.shortname:
                     publisherName = new PublisherName(e);
                     break;
-                case Publisher.refname:
-                case Publisher.shortname:
-                    publishers = JPU.addToList(publishers, new Publisher(e));
-                    break;
-                case CityOfPublication.refname:
-                case CityOfPublication.shortname:
-                    cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
-                    break;
                 case CountryOfPublication.refname:
                 case CountryOfPublication.shortname:
                     countryOfPublication = new CountryOfPublication(e);
-                    break;
-                case CopublisherName.refname:
-                case CopublisherName.shortname:
-                    copublisherNames = JPU.addToList(copublisherNames, new CopublisherName(e));
-                    break;
-                case SponsorName.refname:
-                case SponsorName.shortname:
-                    sponsorNames = JPU.addToList(sponsorNames, new SponsorName(e));
                     break;
                 case OriginalPublisher.refname:
                 case OriginalPublisher.shortname:
@@ -665,10 +505,6 @@ public class Product implements OnixProduct, Serializable {
                 case PublicationDate.shortname:
                     publicationDate = new PublicationDate(e);
                     break;
-                case CopyrightStatement.refname:
-                case CopyrightStatement.shortname:
-                    copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
-                    break;
                 case CopyrightYear.refname:
                 case CopyrightYear.shortname:
                     copyrightYear = new CopyrightYear(e);
@@ -676,22 +512,6 @@ public class Product implements OnixProduct, Serializable {
                 case YearFirstPublished.refname:
                 case YearFirstPublished.shortname:
                     yearFirstPublished = new YearFirstPublished(e);
-                    break;
-                case SalesRights.refname:
-                case SalesRights.shortname:
-                    salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
-                    break;
-                case NotForSale.refname:
-                case NotForSale.shortname:
-                    notForSales = JPU.addToList(notForSales, new NotForSale(e));
-                    break;
-                case SalesRestriction.refname:
-                case SalesRestriction.shortname:
-                    salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
-                    break;
-                case Height.refname:
-                case Height.shortname:
-                    height = new Height(e);
                     break;
                 case Width.refname:
                 case Width.shortname:
@@ -704,10 +524,6 @@ public class Product implements OnixProduct, Serializable {
                 case Weight.refname:
                 case Weight.shortname:
                     weight = new Weight(e);
-                    break;
-                case Measure.refname:
-                case Measure.shortname:
-                    measures = JPU.addToList(measures, new Measure(e));
                     break;
                 case Dimensions.refname:
                 case Dimensions.shortname:
@@ -737,21 +553,9 @@ public class Product implements OnixProduct, Serializable {
                 case AlternativeProductEAN13.shortname:
                     alternativeProductEAN13 = new AlternativeProductEAN13(e);
                     break;
-                case RelatedProduct.refname:
-                case RelatedProduct.shortname:
-                    relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
-                    break;
                 case OutOfPrintDate.refname:
                 case OutOfPrintDate.shortname:
                     outOfPrintDate = new OutOfPrintDate(e);
-                    break;
-                case SupplyDetail.refname:
-                case SupplyDetail.shortname:
-                    supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
-                    break;
-                case MarketRepresentation.refname:
-                case MarketRepresentation.shortname:
-                    marketRepresentations = JPU.addToList(marketRepresentations, new MarketRepresentation(e));
                     break;
                 case PromotionCampaign.refname:
                 case PromotionCampaign.shortname:
@@ -765,10 +569,6 @@ public class Product implements OnixProduct, Serializable {
                 case InitialPrintRun.shortname:
                     initialPrintRun = new InitialPrintRun(e);
                     break;
-                case ReprintDetail.refname:
-                case ReprintDetail.shortname:
-                    reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
-                    break;
                 case CopiesSold.refname:
                 case CopiesSold.shortname:
                     copiesSold = new CopiesSold(e);
@@ -776,6 +576,206 @@ public class Product implements OnixProduct, Serializable {
                 case BookClubAdoption.refname:
                 case BookClubAdoption.shortname:
                     bookClubAdoption = new BookClubAdoption(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case Barcode.refname:
+                case Barcode.shortname:
+                    barcodes = JPU.addToList(barcodes, new Barcode(e));
+                    break;
+                case ProductFormDetail.refname:
+                case ProductFormDetail.shortname:
+                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                    break;
+                case ProductFormFeature.refname:
+                case ProductFormFeature.shortname:
+                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                    break;
+                case BookFormDetail.refname:
+                case BookFormDetail.shortname:
+                    bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
+                    break;
+                case ProductContentType.refname:
+                case ProductContentType.shortname:
+                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+                    break;
+                case ContainedItem.refname:
+                case ContainedItem.shortname:
+                    containedItems = JPU.addToList(containedItems, new ContainedItem(e));
+                    break;
+                case ProductClassification.refname:
+                case ProductClassification.shortname:
+                    productClassifications = JPU.addToList(productClassifications, new ProductClassification(e));
+                    break;
+                case Series.refname:
+                case Series.shortname:
+                    seriess = JPU.addToList(seriess, new Series(e));
+                    break;
+                case Set.refname:
+                case Set.shortname:
+                    sets = JPU.addToList(sets, new Set(e));
+                    break;
+                case FormerTitle.refname:
+                case FormerTitle.shortname:
+                    formerTitles = JPU.addToList(formerTitles, new FormerTitle(e));
+                    break;
+                case Title.refname:
+                case Title.shortname:
+                    titles = JPU.addToList(titles, new Title(e));
+                    break;
+                case WorkIdentifier.refname:
+                case WorkIdentifier.shortname:
+                    workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                case Conference.refname:
+                case Conference.shortname:
+                    conferences = JPU.addToList(conferences, new Conference(e));
+                    break;
+                case EditionTypeCode.refname:
+                case EditionTypeCode.shortname:
+                    editionTypeCodes = JPU.addToList(editionTypeCodes, new EditionTypeCode(e));
+                    break;
+                case LanguageOfText.refname:
+                case LanguageOfText.shortname:
+                    languageOfTexts = JPU.addToList(languageOfTexts, new LanguageOfText(e));
+                    break;
+                case Language.refname:
+                case Language.shortname:
+                    languages = JPU.addToList(languages, new Language(e));
+                    break;
+                case Extent.refname:
+                case Extent.shortname:
+                    extents = JPU.addToList(extents, new Extent(e));
+                    break;
+                case Illustrations.refname:
+                case Illustrations.shortname:
+                    illustrationss = JPU.addToList(illustrationss, new Illustrations(e));
+                    break;
+                case MapScale.refname:
+                case MapScale.shortname:
+                    mapScales = JPU.addToList(mapScales, new MapScale(e));
+                    break;
+                case MainSubject.refname:
+                case MainSubject.shortname:
+                    mainSubjects = JPU.addToList(mainSubjects, new MainSubject(e));
+                    break;
+                case Subject.refname:
+                case Subject.shortname:
+                    subjects = JPU.addToList(subjects, new Subject(e));
+                    break;
+                case PersonAsSubject.refname:
+                case PersonAsSubject.shortname:
+                    personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(e));
+                    break;
+                case CorporateBodyAsSubject.refname:
+                case CorporateBodyAsSubject.shortname:
+                    corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(e));
+                    break;
+                case PlaceAsSubject.refname:
+                case PlaceAsSubject.shortname:
+                    placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(e));
+                    break;
+                case AudienceCode.refname:
+                case AudienceCode.shortname:
+                    audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(e));
+                    break;
+                case Audience.refname:
+                case Audience.shortname:
+                    audiences = JPU.addToList(audiences, new Audience(e));
+                    break;
+                case AudienceRange.refname:
+                case AudienceRange.shortname:
+                    audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(e));
+                    break;
+                case Complexity.refname:
+                case Complexity.shortname:
+                    complexitys = JPU.addToList(complexitys, new Complexity(e));
+                    break;
+                case OtherText.refname:
+                case OtherText.shortname:
+                    otherTexts = JPU.addToList(otherTexts, new OtherText(e));
+                    break;
+                case ReviewQuote.refname:
+                case ReviewQuote.shortname:
+                    reviewQuotes = JPU.addToList(reviewQuotes, new ReviewQuote(e));
+                    break;
+                case MediaFile.refname:
+                case MediaFile.shortname:
+                    mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
+                    break;
+                case ProductWebsite.refname:
+                case ProductWebsite.shortname:
+                    productWebsites = JPU.addToList(productWebsites, new ProductWebsite(e));
+                    break;
+                case Prize.refname:
+                case Prize.shortname:
+                    prizes = JPU.addToList(prizes, new Prize(e));
+                    break;
+                case ContentItem.refname:
+                case ContentItem.shortname:
+                    contentItems = JPU.addToList(contentItems, new ContentItem(e));
+                    break;
+                case Imprint.refname:
+                case Imprint.shortname:
+                    imprints = JPU.addToList(imprints, new Imprint(e));
+                    break;
+                case Publisher.refname:
+                case Publisher.shortname:
+                    publishers = JPU.addToList(publishers, new Publisher(e));
+                    break;
+                case CityOfPublication.refname:
+                case CityOfPublication.shortname:
+                    cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
+                    break;
+                case CopublisherName.refname:
+                case CopublisherName.shortname:
+                    copublisherNames = JPU.addToList(copublisherNames, new CopublisherName(e));
+                    break;
+                case SponsorName.refname:
+                case SponsorName.shortname:
+                    sponsorNames = JPU.addToList(sponsorNames, new SponsorName(e));
+                    break;
+                case CopyrightStatement.refname:
+                case CopyrightStatement.shortname:
+                    copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
+                    break;
+                case SalesRights.refname:
+                case SalesRights.shortname:
+                    salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
+                    break;
+                case NotForSale.refname:
+                case NotForSale.shortname:
+                    notForSales = JPU.addToList(notForSales, new NotForSale(e));
+                    break;
+                case SalesRestriction.refname:
+                case SalesRestriction.shortname:
+                    salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+                    break;
+                case Measure.refname:
+                case Measure.shortname:
+                    measures = JPU.addToList(measures, new Measure(e));
+                    break;
+                case RelatedProduct.refname:
+                case RelatedProduct.shortname:
+                    relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
+                    break;
+                case SupplyDetail.refname:
+                case SupplyDetail.shortname:
+                    supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
+                    break;
+                case MarketRepresentation.refname:
+                case MarketRepresentation.shortname:
+                    marketRepresentations = JPU.addToList(marketRepresentations, new MarketRepresentation(e));
+                    break;
+                case ReprintDetail.refname:
+                case ReprintDetail.shortname:
+                    reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
                     break;
                 default:
                     break;
@@ -830,6 +830,109 @@ public class Product implements OnixProduct, Serializable {
     public NotificationType notificationType() {
         _initialize();
         return notificationType;
+    }
+
+    private ISBN isbn = ISBN.EMPTY;
+
+    /**
+     * <p>
+     * The 10-character International Standard Book Number, the recognized standard identifier for books and certain
+     * other non-serial publications up to 31 December 2006. Optional and non-repeating. <strong>The
+     * &lt;ProductIdentifier&gt; composite on a later page provides a more general method of handling this and other
+     * product codes, and is to be preferred. The &lt;ISBN&gt; element is on no account to be used to carry a 13-digit
+     * ISBN.</strong>
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ISBN isbn() {
+        _initialize();
+        return isbn;
+    }
+
+    private DistinctiveTitle distinctiveTitle = DistinctiveTitle.EMPTY;
+
+    /**
+     * <p>
+     * The full text of the distinctive title of the product, without abbreviation or abridgement, but excluding the
+     * subtitle (if any). Where the title alone is not distinctive, elements may be taken from a set or series title and
+     * part number <em>etc</em> to create a distinctive title. Where the product is an omnibus edition containing two or
+     * more works by the same author, and there is no separate product title, a product title may be constructed by
+     * concatenating the individual titles, with suitable punctuation, as in the second example below. (If, however,
+     * there is a separate product title, or if more description of each individual work is required, the
+     * &lt;ContentItem&gt; composite can be used for the individual works – see Group&nbsp;PR.18.) Optional and
+     * non-repeating. <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all
+     * forms of title, and is to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public DistinctiveTitle distinctiveTitle() {
+        _initialize();
+        return distinctiveTitle;
+    }
+
+    private ConferenceName conferenceName = ConferenceName.EMPTY;
+
+    /**
+     * <p>
+     * The name of a conference or conference series to which the product is related. This element is mandatory unless
+     * the &lt;ConferenceDescription&gt; element or the &lt;Conference&gt; composite is used, and is non-repeating.
+     * <strong>The &lt;Conference&gt; composite on a later page provides a more general method of handling conference
+     * detail, and is to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ConferenceName conferenceName() {
+        _initialize();
+        return conferenceName;
+    }
+
+    private ImprintName imprintName = ImprintName.EMPTY;
+
+    /**
+     * <p>
+     * The full name of the imprint or brand under which the product is issued, as it appears on the title page of a
+     * book or in a corresponding position on a non-book product. Optional and non-repeating; and should not be used if
+     * the &lt;Imprint&gt; composite is used.
+     * </p>
+     * <p>
+     * <strong>The &lt;Imprint&gt; composite below provides a more general method of handling imprint identities, and is
+     * to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ImprintName imprintName() {
+        _initialize();
+        return imprintName;
+    }
+
+    private Height height = Height.EMPTY;
+
+    /**
+     * <p>
+     * The overall height of the product: in the case of a book, the spine height, in the units specified in the message
+     * header, &lt;DefaultLinearUnit&gt; field, defined in the <cite>ONIX for Books – Product Information Message – XML
+     * Message Specification</cite>. Optional and non-repeating; but required if either &lt;Width&gt; or
+     * &lt;Thickness&gt; is present. <strong>The &lt;Measure&gt; composite on a previous page provides a more general
+     * method of handling measurements, and is to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public Height height() {
+        _initialize();
+        return height;
+    }
+
+    private List<Contributor> contributors = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe a personal or corporate contributor to the product.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public List<Contributor> contributors() {
+        _initialize();
+        return contributors;
     }
 
     private DeletionCode deletionCode = DeletionCode.EMPTY;
@@ -922,23 +1025,6 @@ public class Product implements OnixProduct, Serializable {
         return recordSourceName;
     }
 
-    private ISBN isbn = ISBN.EMPTY;
-
-    /**
-     * <p>
-     * The 10-character International Standard Book Number, the recognized standard identifier for books and certain
-     * other non-serial publications up to 31 December 2006. Optional and non-repeating. <strong>The
-     * &lt;ProductIdentifier&gt; composite on a later page provides a more general method of handling this and other
-     * product codes, and is to be preferred. The &lt;ISBN&gt; element is on no account to be used to carry a 13-digit
-     * ISBN.</strong>
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ISBN isbn() {
-        _initialize();
-        return isbn;
-    }
-
     private EAN13 ean13 = EAN13.EMPTY;
 
     /**
@@ -1021,54 +1107,6 @@ public class Product implements OnixProduct, Serializable {
         return doi;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together define the identifier of a product in accordance with a
-     * specified scheme, allowing new types of product identifier to be included without defining additional data
-     * elements. In particular, the composite allows proprietary identifiers (SKUs) assigned by wholesalers or vendors
-     * to be sent as part of the ONIX record.
-     * </p>
-     * <p>
-     * To support the transition from ten-character ISBNs to 13-digit ISBNs, effective from 1 January 2007, there are
-     * distinct &lt;ProductIDType&gt; codes for ISBN-10 and ISBN-13, as well as for EAN.UCC-13.
-     * </p>
-     * <p>
-     * ISBN-13 numbers in their unhyphenated form constitute a range of EAN.UCC-13 numbers that has been reserved for
-     * the international book trade. It has been agreed by ONIX national groups that it will be mandatory in an ONIX
-     * &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled as an EAN.UCC number
-     * (ProductIDType code 03), since this is how the ISBN-13 will be universally used in trading transactions. For many
-     * ONIX applications this will also be sufficient.
-     * </p>
-     * <p>
-     * For some ONIX applications, however, particularly when data is to be supplied to the library sector, there may be
-     * reasons why the ISBN-13 must also be sent labelled distinctively as an ISBN-13 (ProductIDType code 15); or, if
-     * the item also has an ISBN-10, why it may still be desirable to send the ISBN-10 even after the end of 2006. Users
-     * should consult national “good practice” guidelines and/or discuss with their trading partners.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        _initialize();
-        return productIdentifiers;
-    }
-
-    private ListOfOnixElement<Barcode, BarcodeIndicatorsList6> barcodes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code indicating whether a product is bar-coded. Optional, and repeatable if the product carries two or
-     * more barcodes from different schemes. The absence of this field does NOT mean that a product is not bar-coded.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<Barcode, BarcodeIndicatorsList6> barcodes() {
-        _initialize();
-        return barcodes;
-    }
-
     private ReplacesISBN replacesISBN = ReplacesISBN.EMPTY;
 
     /**
@@ -1113,52 +1151,6 @@ public class Product implements OnixProduct, Serializable {
     public ProductForm productForm() {
         _initialize();
         return productForm;
-    }
-
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails = ListOfOnixElement
-        .empty();
-
-    /**
-     * <p>
-     * An ONIX code which provides added detail of the medium and/or format of the product. Optional and repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
-        _initialize();
-        return productFormDetails;
-    }
-
-    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
-     * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
-        _initialize();
-        return productFormFeatures;
-    }
-
-    private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code specifying more detail of the product format when the product is a book. Repeatable when two or more
-     * coded characteristics apply. This field is optional, but must only be included when the code in the
-     * &lt;ProductForm&gt; element begins with letter B. <strong>This field will be superseded by the new element
-     * &lt;ProductFormDetail&gt;, and the code list will not be further developed. The field is retained only for
-     * purposes of upwards compatibility, and its use is now to be deprecated.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
-        _initialize();
-        return bookFormDetails;
     }
 
     private ProductPackaging productPackaging = ProductPackaging.EMPTY;
@@ -1220,61 +1212,6 @@ public class Product implements OnixProduct, Serializable {
     public TradeCategory tradeCategory() {
         _initialize();
         return tradeCategory;
-    }
-
-    private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code which indicates certain types of content which are closely related to but not strictly an attribute
-     * of product form, <em>eg</em> audiobook. Optional and repeatable. The element is intended to be used with products
-     * where content is delivered in the form of a digital or analogue recording. It is not expected to be used for
-     * books.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
-        _initialize();
-        return productContentTypes;
-    }
-
-    private List<ContainedItem> containedItems = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe an item which is part of or contained within the
-     * current product. The composite may be used to specify the item(s) and item quantity/ies carried in a dumpbin, or
-     * included in (eg) a classroom pack, or simply to state the product forms contained within a mixed media product,
-     * without specifying their identifiers or quantity. The composite is used only when the product form coding for the
-     * product as a whole indicates that the product includes two or more different items, or multiple copies of the
-     * same item.
-     * </p>
-     * <p>
-     * Each instance of the &lt;ContainedItem&gt; composite must carry at least either a product identifier, or a
-     * product form code, or both. In other words, it is valid to send an instance of the composite with an identifier
-     * and no product form code, or with a product form code and no identifier.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<ContainedItem> containedItems() {
-        _initialize();
-        return containedItems;
-    }
-
-    private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together define a product classification (NOT to be confused with a
-     * subject classification). The intended use is to enable national or international trade classifications (aka
-     * commodity codes) to be carried in an ONIX record.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications() {
-        _initialize();
-        return productClassifications;
     }
 
     private EpubType epubType = EpubType.EMPTY;
@@ -1426,19 +1363,6 @@ public class Product implements OnixProduct, Serializable {
         return epubTypeNote;
     }
 
-    private List<Series> seriess = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe a series of which the product is part.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<Series> seriess() {
-        _initialize();
-        return seriess;
-    }
-
     private NoSeries noSeries = NoSeries.EMPTY;
 
     /**
@@ -1459,19 +1383,6 @@ public class Product implements OnixProduct, Serializable {
         return (noSeries().exists());
     }
 
-    private List<Set> sets = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe a set of which the product is part.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<Set> sets() {
-        _initialize();
-        return sets;
-    }
-
     private TextCaseFlag textCaseFlag = TextCaseFlag.EMPTY;
 
     /**
@@ -1486,27 +1397,6 @@ public class Product implements OnixProduct, Serializable {
     public TextCaseFlag textCaseFlag() {
         _initialize();
         return textCaseFlag;
-    }
-
-    private DistinctiveTitle distinctiveTitle = DistinctiveTitle.EMPTY;
-
-    /**
-     * <p>
-     * The full text of the distinctive title of the product, without abbreviation or abridgement, but excluding the
-     * subtitle (if any). Where the title alone is not distinctive, elements may be taken from a set or series title and
-     * part number <em>etc</em> to create a distinctive title. Where the product is an omnibus edition containing two or
-     * more works by the same author, and there is no separate product title, a product title may be constructed by
-     * concatenating the individual titles, with suitable punctuation, as in the second example below. (If, however,
-     * there is a separate product title, or if more description of each individual work is required, the
-     * &lt;ContentItem&gt; composite can be used for the individual works – see Group&nbsp;PR.18.) Optional and
-     * non-repeating. <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all
-     * forms of title, and is to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public DistinctiveTitle distinctiveTitle() {
-        _initialize();
-        return distinctiveTitle;
     }
 
     private TitlePrefix titlePrefix = TitlePrefix.EMPTY;
@@ -1574,71 +1464,6 @@ public class Product implements OnixProduct, Serializable {
         return translationOfTitle;
     }
 
-    private ListOfOnixElement<FormerTitle, String> formerTitles = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * A different title under which the work was previously published, without abbreviation or abridgement. Optional,
-     * and repeatable if the work has had more than one former title. <strong>The &lt;Title&gt; composite below provides
-     * a more general method of handling all forms of title, and is to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<FormerTitle, String> formerTitles() {
-        _initialize();
-        return formerTitles;
-    }
-
-    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together give the text of a title and specify its type. The composite
-     * may also be used to send a title which has been abbreviated where necessary to keep it within a specified maximum
-     * length. Any occurrence of the &lt;Title&gt; composite must include one of the following: &lt;TitleText&gt; only,
-     * &lt;TitlePrefix&gt; with &lt;TitleWithoutPrefix&gt;, &lt;TitleText&gt; and &lt;TitlePrefix&gt; with
-     * &lt;TitleWithoutPrefix&gt;. If there is a subtitle, it should not be sent as part of the title text, but as a
-     * separate &lt;Subtitle&gt; element, The &lt;Title&gt; element may carry any of the following ONIX attributes:
-     * <i>textformat, language, transliteration, textcase,</i> where these are shared by all text elements within the
-     * composite.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
-        _initialize();
-        return titles;
-    }
-
-    private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A group of data elements which together define the identifier of a work which is manifested in the product
-     * described by an ONIX &lt;Product&gt; record. Optional and repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
-        _initialize();
-        return workIdentifiers;
-    }
-
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify and provide pointers to a website which is related to
-     * the work identified in an occurrence of the &lt;WorkIdentifier&gt; composite.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        _initialize();
-        return websites;
-    }
-
     private ThesisType thesisType = ThesisType.EMPTY;
 
     /**
@@ -1679,19 +1504,6 @@ public class Product implements OnixProduct, Serializable {
     public ThesisYear thesisYear() {
         _initialize();
         return thesisYear;
-    }
-
-    private List<Contributor> contributors = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe a personal or corporate contributor to the product.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public List<Contributor> contributors() {
-        _initialize();
-        return contributors;
     }
 
     private ContributorStatement contributorStatement = ContributorStatement.EMPTY;
@@ -1762,22 +1574,6 @@ public class Product implements OnixProduct, Serializable {
         return conferenceRole;
     }
 
-    private ConferenceName conferenceName = ConferenceName.EMPTY;
-
-    /**
-     * <p>
-     * The name of a conference or conference series to which the product is related. This element is mandatory unless
-     * the &lt;ConferenceDescription&gt; element or the &lt;Conference&gt; composite is used, and is non-repeating.
-     * <strong>The &lt;Conference&gt; composite on a later page provides a more general method of handling conference
-     * detail, and is to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ConferenceName conferenceName() {
-        _initialize();
-        return conferenceName;
-    }
-
     private ConferenceNumber conferenceNumber = ConferenceNumber.EMPTY;
 
     /**
@@ -1821,34 +1617,6 @@ public class Product implements OnixProduct, Serializable {
     public ConferencePlace conferencePlace() {
         _initialize();
         return conferencePlace;
-    }
-
-    private List<Conference> conferences = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together describe a conference to which the product is related. Repeatable if the
-     * product contains material from two or more conferences.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<Conference> conferences() {
-        _initialize();
-        return conferences;
-    }
-
-    private ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
-     * characteristics of two or more types (<em>eg</em> revised and annotated).
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes() {
-        _initialize();
-        return editionTypeCodes;
     }
 
     private EditionNumber editionNumber = EditionNumber.EMPTY;
@@ -1937,21 +1705,6 @@ public class Product implements OnixProduct, Serializable {
         return religiousText;
     }
 
-    private ListOfOnixElement<LanguageOfText, Languages> languageOfTexts = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * A code indicating a language in which the text of the product is written: optional, and repeatable if the text is
-     * in two or more languages. <strong>The &lt;Language&gt; composite on the next page provides a more general method
-     * of handling language detail, and is to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<LanguageOfText, Languages> languageOfTexts() {
-        _initialize();
-        return languageOfTexts;
-    }
-
     private OriginalLanguage originalLanguage = OriginalLanguage.EMPTY;
 
     /**
@@ -1965,21 +1718,6 @@ public class Product implements OnixProduct, Serializable {
     public OriginalLanguage originalLanguage() {
         _initialize();
         return originalLanguage;
-    }
-
-    private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together represent a language, and specify its role and, where
-     * required, whether it is a country variant.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
-        _initialize();
-        return languages;
     }
 
     private NumberOfPages numberOfPages = NumberOfPages.EMPTY;
@@ -2035,20 +1773,6 @@ public class Product implements OnixProduct, Serializable {
         return pagesArabic;
     }
 
-    private ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe an extent pertaining to the product.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents() {
-        _initialize();
-        return extents;
-    }
-
     private NumberOfIllustrations numberOfIllustrations = NumberOfIllustrations.EMPTY;
 
     /**
@@ -2078,35 +1802,6 @@ public class Product implements OnixProduct, Serializable {
     public IllustrationsNote illustrationsNote() {
         _initialize();
         return illustrationsNote;
-    }
-
-    private ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together specify the number of illustrations or other content items of
-     * a stated type which the product carries. Use of the &lt;Illustrations&gt; composite is optional.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss() {
-        _initialize();
-        return illustrationss;
-    }
-
-    private ListOfOnixElement<MapScale, String> mapScales = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data element, without
-     * spaces or punctuation. Optional, and repeatable if the product comprises maps with two or more different scales.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<MapScale, String> mapScales() {
-        _initialize();
-        return mapScales;
     }
 
     private BASICMainSubject basicMainSubject = BASICMainSubject.EMPTY;
@@ -2168,104 +1863,6 @@ public class Product implements OnixProduct, Serializable {
         return bicVersion;
     }
 
-    private ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together describe a main subject classification or
-     * subject heading which is taken from a recognized scheme other than BISAC or BIC.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects() {
-        _initialize();
-        return mainSubjects;
-    }
-
-    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together describe a subject classification or subject
-     * heading which is additional to the BISAC, BIC or other main subject category.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
-        _initialize();
-        return subjects;
-    }
-
-    private List<PersonAsSubject> personAsSubjects = Collections.emptyList();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together represent the name of a person who is part of
-     * the subject of a product.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<PersonAsSubject> personAsSubjects() {
-        _initialize();
-        return personAsSubjects;
-    }
-
-    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The name of a corporate body which is part of the subject of the product. Optional, and repeatable if more than
-     * one corporate body is involved.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects() {
-        _initialize();
-        return corporateBodyAsSubjects;
-    }
-
-    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The name of a place or region or geographical entity which is part of the subject of the product. Optional, and
-     * repeatable if the subject of the product includes more than one place.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects() {
-        _initialize();
-        return placeAsSubjects;
-    }
-
-    private ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code, derived from BISAC and BIC lists, which identifies the broad audience or readership for whom a
-     * product is intended. Optional, and repeatable if the product is intended for two or more groups.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes() {
-        _initialize();
-        return audienceCodes;
-    }
-
-    private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe an audience to which the product is directed.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences() {
-        _initialize();
-        return audiences;
-    }
-
     private USSchoolGrade usSchoolGrade = USSchoolGrade.EMPTY;
 
     /**
@@ -2297,21 +1894,6 @@ public class Product implements OnixProduct, Serializable {
         return interestAge;
     }
 
-    private ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together describe an audience or readership range for
-     * which a product is intended. The composite can carry a single value from, to, or exact, or a pair of values with
-     * an explicit from and to. See examples below.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges() {
-        _initialize();
-        return audienceRanges;
-    }
-
     private AudienceDescription audienceDescription = AudienceDescription.EMPTY;
 
     /**
@@ -2323,19 +1905,6 @@ public class Product implements OnixProduct, Serializable {
     public AudienceDescription audienceDescription() {
         _initialize();
         return audienceDescription;
-    }
-
-    private ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together describe the level of complexity of a text.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys() {
-        _initialize();
-        return complexitys;
     }
 
     private Annotation annotation = Annotation.EMPTY;
@@ -2376,39 +1945,6 @@ public class Product implements OnixProduct, Serializable {
     public MainDescription mainDescription() {
         _initialize();
         return mainDescription;
-    }
-
-    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together identify and either include, or provide pointers
-     * to, text related to the product.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts() {
-        _initialize();
-        return otherTexts;
-    }
-
-    private ListOfOnixElement<ReviewQuote, String> reviewQuotes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * A free text excerpt from a review. Optional and repeatable. At the end of the text of the quote, the authorship,
-     * source title, and date (if known) should always be included.
-     * </p>
-     * <p>
-     * <strong>The &lt;OtherText&gt; composite on preceding pages provides a more general method of handling review
-     * quotes, and is to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<ReviewQuote, String> reviewQuotes() {
-        _initialize();
-        return reviewQuotes;
     }
 
     private CoverImageFormatCode coverImageFormatCode = CoverImageFormatCode.EMPTY;
@@ -2461,36 +1997,6 @@ public class Product implements OnixProduct, Serializable {
         return coverImageLink;
     }
 
-    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify and provide pointers to, an image, audio or video
-     * file related to the product.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles() {
-        _initialize();
-        return mediaFiles;
-    }
-
-    private ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites = ListOfOnixDataComposite
-        .empty();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together identify and provide pointers to a website which
-     * is related to the product.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites() {
-        _initialize();
-        return productWebsites;
-    }
-
     private PrizesDescription prizesDescription = PrizesDescription.EMPTY;
 
     /**
@@ -2507,65 +2013,6 @@ public class Product implements OnixProduct, Serializable {
     public PrizesDescription prizesDescription() {
         _initialize();
         return prizesDescription;
-    }
-
-    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe a prize or award won by the product.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
-        _initialize();
-        return prizes;
-    }
-
-    private List<ContentItem> contentItems = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe a content item within a product.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<ContentItem> contentItems() {
-        _initialize();
-        return contentItems;
-    }
-
-    private ImprintName imprintName = ImprintName.EMPTY;
-
-    /**
-     * <p>
-     * The full name of the imprint or brand under which the product is issued, as it appears on the title page of a
-     * book or in a corresponding position on a non-book product. Optional and non-repeating; and should not be used if
-     * the &lt;Imprint&gt; composite is used.
-     * </p>
-     * <p>
-     * <strong>The &lt;Imprint&gt; composite below provides a more general method of handling imprint identities, and is
-     * to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ImprintName imprintName() {
-        _initialize();
-        return imprintName;
-    }
-
-    private List<Imprint> imprints = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify an imprint or brand under which the product is
-     * marketed. The composite must carry either a name code or a name or both.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<Imprint> imprints() {
-        _initialize();
-        return imprints;
     }
 
     private PublisherName publisherName = PublisherName.EMPTY;
@@ -2589,41 +2036,6 @@ public class Product implements OnixProduct, Serializable {
         return publisherName;
     }
 
-    private List<Publisher> publishers = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify an entity which is associated with the publishing of
-     * a product. The composite will allow additional publishing roles to be introduced without adding new fields. Each
-     * occurrence of the composite must carry either a name code or a name or both.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<Publisher> publishers() {
-        _initialize();
-        return publishers;
-    }
-
-    private ListOfOnixElement<CityOfPublication, String> cityOfPublications = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The name of a city or town associated with the imprint or publisher. Optional, and repeatable if the imprint
-     * carries two or more cities of publication.
-     * </p>
-     * <p>
-     * A place of publication is normally given in the form in which it appears on the title page. If the place name
-     * appears in more than one language, use the language of the title carried in the ONIX record. If this criterion
-     * does not apply, use the form that appears first. Alternatively, some ONIX applications may follow their own
-     * “house style”.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<CityOfPublication, String> cityOfPublications() {
-        _initialize();
-        return cityOfPublications;
-    }
-
     private CountryOfPublication countryOfPublication = CountryOfPublication.EMPTY;
 
     /**
@@ -2635,45 +2047,6 @@ public class Product implements OnixProduct, Serializable {
     public CountryOfPublication countryOfPublication() {
         _initialize();
         return countryOfPublication;
-    }
-
-    private ListOfOnixElement<CopublisherName, String> copublisherNames = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The name of a co-publisher of the product, in the form in which the co-publisher wishes to be identified, and
-     * controlled to maintain consistency across products. Except where they are essential to the recognized form of the
-     * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be
-     * omitted. Optional, and repeatable if there are two or more co-publishers.
-     * </p>
-     * <p>
-     * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
-     * identities, and is to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<CopublisherName, String> copublisherNames() {
-        _initialize();
-        return copublisherNames;
-    }
-
-    private ListOfOnixElement<SponsorName, String> sponsorNames = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The name of a sponsor of the product, in the form in which the sponsor wishes to be identified. Except where they
-     * are essential to the recognized form of the name, it is recommended that suffixes denoting incorporation (“Co”,
-     * “Inc”, “Ltd”, “SA”, “GmbH”) should be omitted. Optional, and repeatable if there are two or more sponsors.
-     * </p>
-     * <p>
-     * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
-     * identities, and is to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<SponsorName, String> sponsorNames() {
-        _initialize();
-        return sponsorNames;
     }
 
     private OriginalPublisher originalPublisher = OriginalPublisher.EMPTY;
@@ -2785,21 +2158,6 @@ public class Product implements OnixProduct, Serializable {
         return publicationDate;
     }
 
-    private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together represent a structured copyright statement for
-     * the product. Either a structured copyright statement or statements, or a copyright year in the separate
-     * &lt;CopyrightYear&gt; element which follows the composite, but not both, may be sent.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<CopyrightStatement> copyrightStatements() {
-        _initialize();
-        return copyrightStatements;
-    }
-
     private CopyrightYear copyrightYear = CopyrightYear.EMPTY;
 
     /**
@@ -2827,67 +2185,6 @@ public class Product implements OnixProduct, Serializable {
     public YearFirstPublished yearFirstPublished() {
         _initialize();
         return yearFirstPublished;
-    }
-
-    private List<SalesRights> salesRightss = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify territorial sales rights which a publisher chooses to
-     * exercise in a product. The &lt;SalesRights&gt; composite may occur once for each value of &lt;b089&gt;. See
-     * examples at the end of Group&nbsp;PR.21.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<SalesRights> salesRightss() {
-        _initialize();
-        return salesRightss;
-    }
-
-    private List<NotForSale> notForSales = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together identify a country or countries in which the product is not
-     * for sale, together with the ISBN and/or other product identifier and/or the name of the publisher of the same
-     * work in the specified country/ies.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<NotForSale> notForSales() {
-        _initialize();
-        return notForSales;
-    }
-
-    private List<SalesRestriction> salesRestrictions = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together identify a non-territorial sales restriction which a publisher applies to
-     * a product. Optional and repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<SalesRestriction> salesRestrictions() {
-        _initialize();
-        return salesRestrictions;
-    }
-
-    private Height height = Height.EMPTY;
-
-    /**
-     * <p>
-     * The overall height of the product: in the case of a book, the spine height, in the units specified in the message
-     * header, &lt;DefaultLinearUnit&gt; field, defined in the <cite>ONIX for Books – Product Information Message – XML
-     * Message Specification</cite>. Optional and non-repeating; but required if either &lt;Width&gt; or
-     * &lt;Thickness&gt; is present. <strong>The &lt;Measure&gt; composite on a previous page provides a more general
-     * method of handling measurements, and is to be preferred.</strong>
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public Height height() {
-        _initialize();
-        return height;
     }
 
     private Width width = Width.EMPTY;
@@ -2936,21 +2233,6 @@ public class Product implements OnixProduct, Serializable {
     public Weight weight() {
         _initialize();
         return weight;
-    }
-
-    private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
-
-    /**
-     * <p>
-     * An optional and repeatable group of data elements which together identify a measurement and the units in which it
-     * is expressed.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
-        _initialize();
-        return measures;
     }
 
     private Dimensions dimensions = Dimensions.EMPTY;
@@ -3062,27 +2344,6 @@ public class Product implements OnixProduct, Serializable {
         return alternativeProductEAN13;
     }
 
-    private List<RelatedProduct> relatedProducts = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together describe a product which has a specified relationship to the
-     * product which is described in the ONIX record. Although for reasons of upwards compatibility the composite
-     * includes individual fields for ISBN and EAN-13 number, use of the nested &lt;ProductIdentifier&gt; composite is
-     * to be preferred, since it allows any recognized identifier scheme (<em>eg</em> DOI) to be used.
-     * </p>
-     * <p>
-     * The minimum required content of an occurrence of the &lt;RelatedProduct&gt; composite is a &lt;RelationCode&gt;
-     * and either a product identifier or a &lt;ProductForm&gt; value. In other words, it is valid to list related
-     * products by relationship and identifier only, or by relationship and form only.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<RelatedProduct> relatedProducts() {
-        _initialize();
-        return relatedProducts;
-    }
-
     private OutOfPrintDate outOfPrintDate = OutOfPrintDate.EMPTY;
 
     /**
@@ -3094,34 +2355,6 @@ public class Product implements OnixProduct, Serializable {
     public OutOfPrintDate outOfPrintDate() {
         _initialize();
         return outOfPrintDate;
-    }
-
-    private List<SupplyDetail> supplyDetails = Collections.emptyList();
-
-    /**
-     * <p>
-     * A repeatable group of data elements which together give details of a trade supply source and the product price
-     * and availability from that source.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<SupplyDetail> supplyDetails() {
-        _initialize();
-        return supplyDetails;
-    }
-
-    private List<MarketRepresentation> marketRepresentations = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together specify a territorial market and the identity of a sales agent or local
-     * publisher responsible for marketing the product therein. Optional and repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public List<MarketRepresentation> marketRepresentations() {
-        _initialize();
-        return marketRepresentations;
     }
 
     private PromotionCampaign promotionCampaign = PromotionCampaign.EMPTY;
@@ -3165,20 +2398,6 @@ public class Product implements OnixProduct, Serializable {
         return initialPrintRun;
     }
 
-    private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * Free text used to give details of the reprint history as part of the promotion of a book. Optional, and
-     * repeatable to give information about successive reprintings.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<ReprintDetail, String> reprintDetails() {
-        _initialize();
-        return reprintDetails;
-    }
-
     private CopiesSold copiesSold = CopiesSold.EMPTY;
 
     /**
@@ -3204,5 +2423,786 @@ public class Product implements OnixProduct, Serializable {
     public BookClubAdoption bookClubAdoption() {
         _initialize();
         return bookClubAdoption;
+    }
+
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define the identifier of a product in accordance with a
+     * specified scheme, allowing new types of product identifier to be included without defining additional data
+     * elements. In particular, the composite allows proprietary identifiers (SKUs) assigned by wholesalers or vendors
+     * to be sent as part of the ONIX record.
+     * </p>
+     * <p>
+     * To support the transition from ten-character ISBNs to 13-digit ISBNs, effective from 1 January 2007, there are
+     * distinct &lt;ProductIDType&gt; codes for ISBN-10 and ISBN-13, as well as for EAN.UCC-13.
+     * </p>
+     * <p>
+     * ISBN-13 numbers in their unhyphenated form constitute a range of EAN.UCC-13 numbers that has been reserved for
+     * the international book trade. It has been agreed by ONIX national groups that it will be mandatory in an ONIX
+     * &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled as an EAN.UCC number
+     * (ProductIDType code 03), since this is how the ISBN-13 will be universally used in trading transactions. For many
+     * ONIX applications this will also be sufficient.
+     * </p>
+     * <p>
+     * For some ONIX applications, however, particularly when data is to be supplied to the library sector, there may be
+     * reasons why the ISBN-13 must also be sent labelled distinctively as an ISBN-13 (ProductIDType code 15); or, if
+     * the item also has an ISBN-10, why it may still be desirable to send the ISBN-10 even after the end of 2006. Users
+     * should consult national “good practice” guidelines and/or discuss with their trading partners.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+        _initialize();
+        return productIdentifiers;
+    }
+
+    private ListOfOnixElement<Barcode, BarcodeIndicatorsList6> barcodes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code indicating whether a product is bar-coded. Optional, and repeatable if the product carries two or
+     * more barcodes from different schemes. The absence of this field does NOT mean that a product is not bar-coded.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<Barcode, BarcodeIndicatorsList6> barcodes() {
+        _initialize();
+        return barcodes;
+    }
+
+    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails = ListOfOnixElement
+        .empty();
+
+    /**
+     * <p>
+     * An ONIX code which provides added detail of the medium and/or format of the product. Optional and repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
+        _initialize();
+        return productFormDetails;
+    }
+
+    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
+     * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
+        _initialize();
+        return productFormFeatures;
+    }
+
+    private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code specifying more detail of the product format when the product is a book. Repeatable when two or more
+     * coded characteristics apply. This field is optional, but must only be included when the code in the
+     * &lt;ProductForm&gt; element begins with letter B. <strong>This field will be superseded by the new element
+     * &lt;ProductFormDetail&gt;, and the code list will not be further developed. The field is retained only for
+     * purposes of upwards compatibility, and its use is now to be deprecated.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
+        _initialize();
+        return bookFormDetails;
+    }
+
+    private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code which indicates certain types of content which are closely related to but not strictly an attribute
+     * of product form, <em>eg</em> audiobook. Optional and repeatable. The element is intended to be used with products
+     * where content is delivered in the form of a digital or analogue recording. It is not expected to be used for
+     * books.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
+        _initialize();
+        return productContentTypes;
+    }
+
+    private List<ContainedItem> containedItems = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe an item which is part of or contained within the
+     * current product. The composite may be used to specify the item(s) and item quantity/ies carried in a dumpbin, or
+     * included in (eg) a classroom pack, or simply to state the product forms contained within a mixed media product,
+     * without specifying their identifiers or quantity. The composite is used only when the product form coding for the
+     * product as a whole indicates that the product includes two or more different items, or multiple copies of the
+     * same item.
+     * </p>
+     * <p>
+     * Each instance of the &lt;ContainedItem&gt; composite must carry at least either a product identifier, or a
+     * product form code, or both. In other words, it is valid to send an instance of the composite with an identifier
+     * and no product form code, or with a product form code and no identifier.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<ContainedItem> containedItems() {
+        _initialize();
+        return containedItems;
+    }
+
+    private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together define a product classification (NOT to be confused with a
+     * subject classification). The intended use is to enable national or international trade classifications (aka
+     * commodity codes) to be carried in an ONIX record.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications() {
+        _initialize();
+        return productClassifications;
+    }
+
+    private List<Series> seriess = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe a series of which the product is part.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Series> seriess() {
+        _initialize();
+        return seriess;
+    }
+
+    private List<Set> sets = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe a set of which the product is part.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Set> sets() {
+        _initialize();
+        return sets;
+    }
+
+    private ListOfOnixElement<FormerTitle, String> formerTitles = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A different title under which the work was previously published, without abbreviation or abridgement. Optional,
+     * and repeatable if the work has had more than one former title. <strong>The &lt;Title&gt; composite below provides
+     * a more general method of handling all forms of title, and is to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<FormerTitle, String> formerTitles() {
+        _initialize();
+        return formerTitles;
+    }
+
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together give the text of a title and specify its type. The composite
+     * may also be used to send a title which has been abbreviated where necessary to keep it within a specified maximum
+     * length. Any occurrence of the &lt;Title&gt; composite must include one of the following: &lt;TitleText&gt; only,
+     * &lt;TitlePrefix&gt; with &lt;TitleWithoutPrefix&gt;, &lt;TitleText&gt; and &lt;TitlePrefix&gt; with
+     * &lt;TitleWithoutPrefix&gt;. If there is a subtitle, it should not be sent as part of the title text, but as a
+     * separate &lt;Subtitle&gt; element, The &lt;Title&gt; element may carry any of the following ONIX attributes:
+     * <i>textformat, language, transliteration, textcase,</i> where these are shared by all text elements within the
+     * composite.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
+        _initialize();
+        return titles;
+    }
+
+    private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A group of data elements which together define the identifier of a work which is manifested in the product
+     * described by an ONIX &lt;Product&gt; record. Optional and repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
+        _initialize();
+        return workIdentifiers;
+    }
+
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify and provide pointers to a website which is related to
+     * the work identified in an occurrence of the &lt;WorkIdentifier&gt; composite.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
+        _initialize();
+        return websites;
+    }
+
+    private List<Conference> conferences = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together describe a conference to which the product is related. Repeatable if the
+     * product contains material from two or more conferences.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Conference> conferences() {
+        _initialize();
+        return conferences;
+    }
+
+    private ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
+     * characteristics of two or more types (<em>eg</em> revised and annotated).
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes() {
+        _initialize();
+        return editionTypeCodes;
+    }
+
+    private ListOfOnixElement<LanguageOfText, Languages> languageOfTexts = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A code indicating a language in which the text of the product is written: optional, and repeatable if the text is
+     * in two or more languages. <strong>The &lt;Language&gt; composite on the next page provides a more general method
+     * of handling language detail, and is to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<LanguageOfText, Languages> languageOfTexts() {
+        _initialize();
+        return languageOfTexts;
+    }
+
+    private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together represent a language, and specify its role and, where
+     * required, whether it is a country variant.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
+        _initialize();
+        return languages;
+    }
+
+    private ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe an extent pertaining to the product.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents() {
+        _initialize();
+        return extents;
+    }
+
+    private ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together specify the number of illustrations or other content items of
+     * a stated type which the product carries. Use of the &lt;Illustrations&gt; composite is optional.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss() {
+        _initialize();
+        return illustrationss;
+    }
+
+    private ListOfOnixElement<MapScale, String> mapScales = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data element, without
+     * spaces or punctuation. Optional, and repeatable if the product comprises maps with two or more different scales.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<MapScale, String> mapScales() {
+        _initialize();
+        return mapScales;
+    }
+
+    private ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together describe a main subject classification or
+     * subject heading which is taken from a recognized scheme other than BISAC or BIC.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects() {
+        _initialize();
+        return mainSubjects;
+    }
+
+    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together describe a subject classification or subject
+     * heading which is additional to the BISAC, BIC or other main subject category.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
+        _initialize();
+        return subjects;
+    }
+
+    private List<PersonAsSubject> personAsSubjects = Collections.emptyList();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together represent the name of a person who is part of
+     * the subject of a product.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<PersonAsSubject> personAsSubjects() {
+        _initialize();
+        return personAsSubjects;
+    }
+
+    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a corporate body which is part of the subject of the product. Optional, and repeatable if more than
+     * one corporate body is involved.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects() {
+        _initialize();
+        return corporateBodyAsSubjects;
+    }
+
+    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a place or region or geographical entity which is part of the subject of the product. Optional, and
+     * repeatable if the subject of the product includes more than one place.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects() {
+        _initialize();
+        return placeAsSubjects;
+    }
+
+    private ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code, derived from BISAC and BIC lists, which identifies the broad audience or readership for whom a
+     * product is intended. Optional, and repeatable if the product is intended for two or more groups.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes() {
+        _initialize();
+        return audienceCodes;
+    }
+
+    private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe an audience to which the product is directed.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences() {
+        _initialize();
+        return audiences;
+    }
+
+    private ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together describe an audience or readership range for
+     * which a product is intended. The composite can carry a single value from, to, or exact, or a pair of values with
+     * an explicit from and to. See examples below.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges() {
+        _initialize();
+        return audienceRanges;
+    }
+
+    private ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together describe the level of complexity of a text.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys() {
+        _initialize();
+        return complexitys;
+    }
+
+    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together identify and either include, or provide pointers
+     * to, text related to the product.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts() {
+        _initialize();
+        return otherTexts;
+    }
+
+    private ListOfOnixElement<ReviewQuote, String> reviewQuotes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A free text excerpt from a review. Optional and repeatable. At the end of the text of the quote, the authorship,
+     * source title, and date (if known) should always be included.
+     * </p>
+     * <p>
+     * <strong>The &lt;OtherText&gt; composite on preceding pages provides a more general method of handling review
+     * quotes, and is to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<ReviewQuote, String> reviewQuotes() {
+        _initialize();
+        return reviewQuotes;
+    }
+
+    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify and provide pointers to, an image, audio or video
+     * file related to the product.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles() {
+        _initialize();
+        return mediaFiles;
+    }
+
+    private ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites = ListOfOnixDataComposite
+        .empty();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together identify and provide pointers to a website which
+     * is related to the product.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites() {
+        _initialize();
+        return productWebsites;
+    }
+
+    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe a prize or award won by the product.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
+        _initialize();
+        return prizes;
+    }
+
+    private List<ContentItem> contentItems = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe a content item within a product.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<ContentItem> contentItems() {
+        _initialize();
+        return contentItems;
+    }
+
+    private List<Imprint> imprints = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify an imprint or brand under which the product is
+     * marketed. The composite must carry either a name code or a name or both.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Imprint> imprints() {
+        _initialize();
+        return imprints;
+    }
+
+    private List<Publisher> publishers = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify an entity which is associated with the publishing of
+     * a product. The composite will allow additional publishing roles to be introduced without adding new fields. Each
+     * occurrence of the composite must carry either a name code or a name or both.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Publisher> publishers() {
+        _initialize();
+        return publishers;
+    }
+
+    private ListOfOnixElement<CityOfPublication, String> cityOfPublications = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a city or town associated with the imprint or publisher. Optional, and repeatable if the imprint
+     * carries two or more cities of publication.
+     * </p>
+     * <p>
+     * A place of publication is normally given in the form in which it appears on the title page. If the place name
+     * appears in more than one language, use the language of the title carried in the ONIX record. If this criterion
+     * does not apply, use the form that appears first. Alternatively, some ONIX applications may follow their own
+     * “house style”.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<CityOfPublication, String> cityOfPublications() {
+        _initialize();
+        return cityOfPublications;
+    }
+
+    private ListOfOnixElement<CopublisherName, String> copublisherNames = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a co-publisher of the product, in the form in which the co-publisher wishes to be identified, and
+     * controlled to maintain consistency across products. Except where they are essential to the recognized form of the
+     * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be
+     * omitted. Optional, and repeatable if there are two or more co-publishers.
+     * </p>
+     * <p>
+     * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
+     * identities, and is to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<CopublisherName, String> copublisherNames() {
+        _initialize();
+        return copublisherNames;
+    }
+
+    private ListOfOnixElement<SponsorName, String> sponsorNames = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a sponsor of the product, in the form in which the sponsor wishes to be identified. Except where they
+     * are essential to the recognized form of the name, it is recommended that suffixes denoting incorporation (“Co”,
+     * “Inc”, “Ltd”, “SA”, “GmbH”) should be omitted. Optional, and repeatable if there are two or more sponsors.
+     * </p>
+     * <p>
+     * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
+     * identities, and is to be preferred.</strong>
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<SponsorName, String> sponsorNames() {
+        _initialize();
+        return sponsorNames;
+    }
+
+    private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together represent a structured copyright statement for
+     * the product. Either a structured copyright statement or statements, or a copyright year in the separate
+     * &lt;CopyrightYear&gt; element which follows the composite, but not both, may be sent.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<CopyrightStatement> copyrightStatements() {
+        _initialize();
+        return copyrightStatements;
+    }
+
+    private List<SalesRights> salesRightss = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify territorial sales rights which a publisher chooses to
+     * exercise in a product. The &lt;SalesRights&gt; composite may occur once for each value of &lt;b089&gt;. See
+     * examples at the end of Group&nbsp;PR.21.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<SalesRights> salesRightss() {
+        _initialize();
+        return salesRightss;
+    }
+
+    private List<NotForSale> notForSales = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together identify a country or countries in which the product is not
+     * for sale, together with the ISBN and/or other product identifier and/or the name of the publisher of the same
+     * work in the specified country/ies.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<NotForSale> notForSales() {
+        _initialize();
+        return notForSales;
+    }
+
+    private List<SalesRestriction> salesRestrictions = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together identify a non-territorial sales restriction which a publisher applies to
+     * a product. Optional and repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<SalesRestriction> salesRestrictions() {
+        _initialize();
+        return salesRestrictions;
+    }
+
+    private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures = ListOfOnixDataCompositeWithKey
+        .emptyKeyed();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together identify a measurement and the units in which it
+     * is expressed.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
+        _initialize();
+        return measures;
+    }
+
+    private List<RelatedProduct> relatedProducts = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together describe a product which has a specified relationship to the
+     * product which is described in the ONIX record. Although for reasons of upwards compatibility the composite
+     * includes individual fields for ISBN and EAN-13 number, use of the nested &lt;ProductIdentifier&gt; composite is
+     * to be preferred, since it allows any recognized identifier scheme (<em>eg</em> DOI) to be used.
+     * </p>
+     * <p>
+     * The minimum required content of an occurrence of the &lt;RelatedProduct&gt; composite is a &lt;RelationCode&gt;
+     * and either a product identifier or a &lt;ProductForm&gt; value. In other words, it is valid to list related
+     * products by relationship and identifier only, or by relationship and form only.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<RelatedProduct> relatedProducts() {
+        _initialize();
+        return relatedProducts;
+    }
+
+    private List<SupplyDetail> supplyDetails = Collections.emptyList();
+
+    /**
+     * <p>
+     * A repeatable group of data elements which together give details of a trade supply source and the product price
+     * and availability from that source.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<SupplyDetail> supplyDetails() {
+        _initialize();
+        return supplyDetails;
+    }
+
+    private List<MarketRepresentation> marketRepresentations = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together specify a territorial market and the identity of a sales agent or local
+     * publisher responsible for marketing the product therein. Optional and repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<MarketRepresentation> marketRepresentations() {
+        _initialize();
+        return marketRepresentations;
+    }
+
+    private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Free text used to give details of the reprint history as part of the promotion of a book. Optional, and
+     * repeatable to give information about successive reprintings.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<ReprintDetail, String> reprintDetails() {
+        _initialize();
+        return reprintDetails;
     }
 }

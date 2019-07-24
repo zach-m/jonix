@@ -125,14 +125,14 @@ public class AncillaryContent
                 case AncillaryContentType.shortname:
                     ancillaryContentType = new AncillaryContentType(e);
                     break;
+                case Number.refname:
+                case Number.shortname:
+                    number = new Number(e);
+                    break;
                 case AncillaryContentDescription.refname:
                 case AncillaryContentDescription.shortname:
                     ancillaryContentDescriptions =
                         JPU.addToList(ancillaryContentDescriptions, new AncillaryContentDescription(e));
-                    break;
-                case Number.refname:
-                case Number.shortname:
-                    number = new Number(e);
                     break;
                 default:
                     break;
@@ -167,6 +167,20 @@ public class AncillaryContent
         return ancillaryContentType;
     }
 
+    private Number number = Number.EMPTY;
+
+    /**
+     * <p>
+     * The number of illustrations or other content items of the type specified in &lt;AncillaryContentType&gt;.
+     * Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public Number number() {
+        _initialize();
+        return number;
+    }
+
     private ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions =
         ListOfOnixElement.empty();
 
@@ -183,20 +197,6 @@ public class AncillaryContent
     public ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions() {
         _initialize();
         return ancillaryContentDescriptions;
-    }
-
-    private Number number = Number.EMPTY;
-
-    /**
-     * <p>
-     * The number of illustrations or other content items of the type specified in &lt;AncillaryContentType&gt;.
-     * Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public Number number() {
-        _initialize();
-        return number;
     }
 
     @Override

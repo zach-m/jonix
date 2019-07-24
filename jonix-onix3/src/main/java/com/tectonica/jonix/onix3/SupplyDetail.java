@@ -131,6 +131,38 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
                 case Supplier.shortname:
                     supplier = new Supplier(e);
                     break;
+                case ProductAvailability.refname:
+                case ProductAvailability.shortname:
+                    productAvailability = new ProductAvailability(e);
+                    break;
+                case OrderTime.refname:
+                case OrderTime.shortname:
+                    orderTime = new OrderTime(e);
+                    break;
+                case NewSupplier.refname:
+                case NewSupplier.shortname:
+                    newSupplier = new NewSupplier(e);
+                    break;
+                case PackQuantity.refname:
+                case PackQuantity.shortname:
+                    packQuantity = new PackQuantity(e);
+                    break;
+                case PalletQuantity.refname:
+                case PalletQuantity.shortname:
+                    palletQuantity = new PalletQuantity(e);
+                    break;
+                case OrderQuantityMultiple.refname:
+                case OrderQuantityMultiple.shortname:
+                    orderQuantityMultiple = new OrderQuantityMultiple(e);
+                    break;
+                case UnpricedItemType.refname:
+                case UnpricedItemType.shortname:
+                    unpricedItemType = new UnpricedItemType(e);
+                    break;
+                case Reissue.refname:
+                case Reissue.shortname:
+                    reissue = new Reissue(e);
+                    break;
                 case SupplyContact.refname:
                 case SupplyContact.shortname:
                     supplyContacts = JPU.addToList(supplyContacts, new SupplyContact(e));
@@ -143,53 +175,21 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
                 case ReturnsConditions.shortname:
                     returnsConditionss = JPU.addToList(returnsConditionss, new ReturnsConditions(e));
                     break;
-                case ProductAvailability.refname:
-                case ProductAvailability.shortname:
-                    productAvailability = new ProductAvailability(e);
-                    break;
                 case SupplyDate.refname:
                 case SupplyDate.shortname:
                     supplyDates = JPU.addToList(supplyDates, new SupplyDate(e));
-                    break;
-                case OrderTime.refname:
-                case OrderTime.shortname:
-                    orderTime = new OrderTime(e);
-                    break;
-                case NewSupplier.refname:
-                case NewSupplier.shortname:
-                    newSupplier = new NewSupplier(e);
                     break;
                 case Stock.refname:
                 case Stock.shortname:
                     stocks = JPU.addToList(stocks, new Stock(e));
                     break;
-                case PackQuantity.refname:
-                case PackQuantity.shortname:
-                    packQuantity = new PackQuantity(e);
-                    break;
-                case PalletQuantity.refname:
-                case PalletQuantity.shortname:
-                    palletQuantity = new PalletQuantity(e);
-                    break;
                 case OrderQuantityMinimum.refname:
                 case OrderQuantityMinimum.shortname:
                     orderQuantityMinimums = JPU.addToList(orderQuantityMinimums, new OrderQuantityMinimum(e));
                     break;
-                case OrderQuantityMultiple.refname:
-                case OrderQuantityMultiple.shortname:
-                    orderQuantityMultiple = new OrderQuantityMultiple(e);
-                    break;
-                case UnpricedItemType.refname:
-                case UnpricedItemType.shortname:
-                    unpricedItemType = new UnpricedItemType(e);
-                    break;
                 case Price.refname:
                 case Price.shortname:
                     prices = JPU.addToList(prices, new Price(e));
-                    break;
-                case Reissue.refname:
-                case Reissue.shortname:
-                    reissue = new Reissue(e);
                     break;
                 default:
                     break;
@@ -221,6 +221,156 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public Supplier supplier() {
         _initialize();
         return supplier;
+    }
+
+    private ProductAvailability productAvailability = ProductAvailability.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the availability of a product from a supplier. Mandatory in each occurrence of the
+     * &lt;SupplyDetail&gt; composite, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public ProductAvailability productAvailability() {
+        _initialize();
+        return productAvailability;
+    }
+
+    private OrderTime orderTime = OrderTime.EMPTY;
+
+    /**
+     * <p>
+     * The expected average number of days from receipt of order to despatch (for items ‘manufactured on demand’ or
+     * ‘only to order’). Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public OrderTime orderTime() {
+        _initialize();
+        return orderTime;
+    }
+
+    private NewSupplier newSupplier = NewSupplier.EMPTY;
+
+    /**
+     * <p>
+     * An optional group of data elements which together specify a new supply source to which orders are referred. Use
+     * only when the code in &lt;ProductAvailability&gt; indicates ‘no longer available from us, refer to new supplier’.
+     * Only one occurrence of the composite is permitted in this context.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NewSupplier newSupplier() {
+        _initialize();
+        return newSupplier;
+    }
+
+    private PackQuantity packQuantity = PackQuantity.EMPTY;
+
+    /**
+     * <p>
+     * The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and non-repeating.
+     * </p>
+     * <p>
+     * Note that orders do not <em>have</em> to be aligned with multiples of the pack size, but such orders may be more
+     * convenient to handle.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PackQuantity packQuantity() {
+        _initialize();
+        return packQuantity;
+    }
+
+    private PalletQuantity palletQuantity = PalletQuantity.EMPTY;
+
+    /**
+     * <p>
+     * The quantity (number of copies) on each complete pallet in stock currently held by the supplier. Optional and
+     * non-repeating. Of course, orders do not have to be aligned to the pallet quantity, but for bulk orders, it may be
+     * useful to know how many pallets will be required for a delivery.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PalletQuantity palletQuantity() {
+        _initialize();
+        return palletQuantity;
+    }
+
+    private OrderQuantityMultiple orderQuantityMultiple = OrderQuantityMultiple.EMPTY;
+
+    /**
+     * <p>
+     * The order quantity multiple that must be used in any order for the product placed with the supplier. Optional,
+     * but where supplied, must be preceded by at least one &lt;OrderQuantityMinimum&gt; element. For example with a
+     * minimum order quantity of 6 and a multiple of 4, orders for 6, 10 or 14 copies are acceptable, but orders for
+     * fewer than 6, or for 7, 8, 9 or 11 copies are not. If omitted, the minimum or any larger quantity may be ordered.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public OrderQuantityMultiple orderQuantityMultiple() {
+        _initialize();
+        return orderQuantityMultiple;
+    }
+
+    private UnpricedItemType unpricedItemType = UnpricedItemType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which specifies the product is free of charge, or a reason why a price is not sent. <em>If code
+     * value 02 is used to send advance information without giving a price, the price must be confirmed as soon as
+     * possible.</em> Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a
+     * price.
+     * </p>
+     * <p>
+     * Use here in preference to P.26.70a when the product is available <em>only</em> under free of charge or unpriced
+     * terms from the supplier.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public UnpricedItemType unpricedItemType() {
+        _initialize();
+        return unpricedItemType;
+    }
+
+    private Reissue reissue = Reissue.EMPTY;
+
+    /**
+     * <p>
+     * An optional and non-repeating group of data elements which together specify that a product is to be reissued
+     * within the market to which the &lt;SupplyDetail&gt; composite applies.
+     * </p>
+     * <p>
+     * The entire &lt;Reissue&gt; composite is deprecated. Suppliers should supply information about planned reissues in
+     * other parts of the Product record – the date of a planned reissue in &lt;PublishingDate&gt; and/or in
+     * &lt;MarketDate&gt;, and new collateral material alongside old collateral in
+     * <a href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral items may be associated with
+     * appropriate end and start dates using &lt;ContentDate&gt;.
+     * </p>
+     * <p>
+     * The &lt;Reissue&gt; composite was (prior to deprecation) used only when the publisher intended to re-launch the
+     * product under the same ISBN. There are two possible cases:
+     * </p>
+     * <ol>
+     * <li>When the product is unavailable during the period immediately before reissue. In this case,
+     * &lt;ProductAvailability&gt; should carry the value 33 for ‘unavailable, awaiting reissue’, and the ONIX record
+     * can be updated to describe the reissued product as soon as details can be made available;</li>
+     * <li>When the product is still available during the period up to the reissue date. In this case, the ONIX record
+     * should continue to describe the existing product and the &lt;ProductAvailability&gt; value should continue to
+     * record the product as ‘available’ (<i>eg</i> code 21) right up to the reissue date. At that date, the record
+     * should be updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining
+     * unchanged.</li>
+     * </ol>
+     * <p>
+     * After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record, carrying
+     * only the &lt;ReissueDate&gt; element, which will then indicate ‘date last reissued’.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public Reissue reissue() {
+        _initialize();
+        return reissue;
     }
 
     private List<SupplyContact> supplyContacts = Collections.emptyList();
@@ -269,20 +419,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return returnsConditionss;
     }
 
-    private ProductAvailability productAvailability = ProductAvailability.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the availability of a product from a supplier. Mandatory in each occurrence of the
-     * &lt;SupplyDetail&gt; composite, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public ProductAvailability productAvailability() {
-        _initialize();
-        return productAvailability;
-    }
-
     private ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates =
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -296,35 +432,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates() {
         _initialize();
         return supplyDates;
-    }
-
-    private OrderTime orderTime = OrderTime.EMPTY;
-
-    /**
-     * <p>
-     * The expected average number of days from receipt of order to despatch (for items ‘manufactured on demand’ or
-     * ‘only to order’). Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public OrderTime orderTime() {
-        _initialize();
-        return orderTime;
-    }
-
-    private NewSupplier newSupplier = NewSupplier.EMPTY;
-
-    /**
-     * <p>
-     * An optional group of data elements which together specify a new supply source to which orders are referred. Use
-     * only when the code in &lt;ProductAvailability&gt; indicates ‘no longer available from us, refer to new supplier’.
-     * Only one occurrence of the composite is permitted in this context.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NewSupplier newSupplier() {
-        _initialize();
-        return newSupplier;
     }
 
     private List<Stock> stocks = Collections.emptyList();
@@ -345,38 +452,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return stocks;
     }
 
-    private PackQuantity packQuantity = PackQuantity.EMPTY;
-
-    /**
-     * <p>
-     * The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and non-repeating.
-     * </p>
-     * <p>
-     * Note that orders do not <em>have</em> to be aligned with multiples of the pack size, but such orders may be more
-     * convenient to handle.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PackQuantity packQuantity() {
-        _initialize();
-        return packQuantity;
-    }
-
-    private PalletQuantity palletQuantity = PalletQuantity.EMPTY;
-
-    /**
-     * <p>
-     * The quantity (number of copies) on each complete pallet in stock currently held by the supplier. Optional and
-     * non-repeating. Of course, orders do not have to be aligned to the pallet quantity, but for bulk orders, it may be
-     * useful to know how many pallets will be required for a delivery.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PalletQuantity palletQuantity() {
-        _initialize();
-        return palletQuantity;
-    }
-
     private ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums = ListOfOnixElement.empty();
 
     /**
@@ -394,42 +469,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums() {
         _initialize();
         return orderQuantityMinimums;
-    }
-
-    private OrderQuantityMultiple orderQuantityMultiple = OrderQuantityMultiple.EMPTY;
-
-    /**
-     * <p>
-     * The order quantity multiple that must be used in any order for the product placed with the supplier. Optional,
-     * but where supplied, must be preceded by at least one &lt;OrderQuantityMinimum&gt; element. For example with a
-     * minimum order quantity of 6 and a multiple of 4, orders for 6, 10 or 14 copies are acceptable, but orders for
-     * fewer than 6, or for 7, 8, 9 or 11 copies are not. If omitted, the minimum or any larger quantity may be ordered.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public OrderQuantityMultiple orderQuantityMultiple() {
-        _initialize();
-        return orderQuantityMultiple;
-    }
-
-    private UnpricedItemType unpricedItemType = UnpricedItemType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which specifies the product is free of charge, or a reason why a price is not sent. <em>If code
-     * value 02 is used to send advance information without giving a price, the price must be confirmed as soon as
-     * possible.</em> Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a
-     * price.
-     * </p>
-     * <p>
-     * Use here in preference to P.26.70a when the product is available <em>only</em> under free of charge or unpriced
-     * terms from the supplier.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public UnpricedItemType unpricedItemType() {
-        _initialize();
-        return unpricedItemType;
     }
 
     private List<Price> prices = Collections.emptyList();
@@ -453,44 +492,5 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public List<Price> prices() {
         _initialize();
         return prices;
-    }
-
-    private Reissue reissue = Reissue.EMPTY;
-
-    /**
-     * <p>
-     * An optional and non-repeating group of data elements which together specify that a product is to be reissued
-     * within the market to which the &lt;SupplyDetail&gt; composite applies.
-     * </p>
-     * <p>
-     * The entire &lt;Reissue&gt; composite is deprecated. Suppliers should supply information about planned reissues in
-     * other parts of the Product record – the date of a planned reissue in &lt;PublishingDate&gt; and/or in
-     * &lt;MarketDate&gt;, and new collateral material alongside old collateral in
-     * <a href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral items may be associated with
-     * appropriate end and start dates using &lt;ContentDate&gt;.
-     * </p>
-     * <p>
-     * The &lt;Reissue&gt; composite was (prior to deprecation) used only when the publisher intended to re-launch the
-     * product under the same ISBN. There are two possible cases:
-     * </p>
-     * <ol>
-     * <li>When the product is unavailable during the period immediately before reissue. In this case,
-     * &lt;ProductAvailability&gt; should carry the value 33 for ‘unavailable, awaiting reissue’, and the ONIX record
-     * can be updated to describe the reissued product as soon as details can be made available;</li>
-     * <li>When the product is still available during the period up to the reissue date. In this case, the ONIX record
-     * should continue to describe the existing product and the &lt;ProductAvailability&gt; value should continue to
-     * record the product as ‘available’ (<i>eg</i> code 21) right up to the reissue date. At that date, the record
-     * should be updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining
-     * unchanged.</li>
-     * </ol>
-     * <p>
-     * After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record, carrying
-     * only the &lt;ReissueDate&gt; element, which will then indicate ‘date last reissued’.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public Reissue reissue() {
-        _initialize();
-        return reissue;
     }
 }

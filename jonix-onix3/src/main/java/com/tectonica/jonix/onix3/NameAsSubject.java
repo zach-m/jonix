@@ -137,17 +137,25 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case NameType.refname:
-                case NameType.shortname:
-                    nameType = new NameType(e);
+                case PersonName.refname:
+                case PersonName.shortname:
+                    personName = new PersonName(e);
+                    break;
+                case KeyNames.refname:
+                case KeyNames.shortname:
+                    keyNames = new KeyNames(e);
+                    break;
+                case CorporateName.refname:
+                case CorporateName.shortname:
+                    corporateName = new CorporateName(e);
                     break;
                 case NameIdentifier.refname:
                 case NameIdentifier.shortname:
                     nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
                     break;
-                case PersonName.refname:
-                case PersonName.shortname:
-                    personName = new PersonName(e);
+                case NameType.refname:
+                case NameType.shortname:
+                    nameType = new NameType(e);
                     break;
                 case PersonNameInverted.refname:
                 case PersonNameInverted.shortname:
@@ -164,10 +172,6 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
                 case PrefixToKey.refname:
                 case PrefixToKey.shortname:
                     prefixToKey = new PrefixToKey(e);
-                    break;
-                case KeyNames.refname:
-                case KeyNames.shortname:
-                    keyNames = new KeyNames(e);
                     break;
                 case NamesAfterKey.refname:
                 case NamesAfterKey.shortname:
@@ -188,10 +192,6 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
                 case Gender.refname:
                 case Gender.shortname:
                     gender = new Gender(e);
-                    break;
-                case CorporateName.refname:
-                case CorporateName.shortname:
-                    corporateName = new CorporateName(e);
                     break;
                 case CorporateNameInverted.refname:
                 case CorporateNameInverted.shortname:
@@ -227,18 +227,48 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private NameType nameType = NameType.EMPTY;
+    private PersonName personName = PersonName.EMPTY;
 
     /**
      * <p>
-     * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
-     * ‘unspecified’.
+     * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
+     * Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * Jonix-Comment: this field is required
      */
-    public NameType nameType() {
+    public PersonName personName() {
         _initialize();
-        return nameType;
+        return personName;
+    }
+
+    private KeyNames keyNames = KeyNames.EMPTY;
+
+    /**
+     * <p>
+     * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
+     * <i>ie</i> the name elements normally used to open an entry in an alphabetical list, <i>eg</i> ‘Smith’ or ‘Garcia
+     * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
+     * elements P.7.11 to P.7.18 are used.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public KeyNames keyNames() {
+        _initialize();
+        return keyNames;
+    }
+
+    private CorporateName corporateName = CorporateName.EMPTY;
+
+    /**
+     * <p>
+     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
+     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public CorporateName corporateName() {
+        _initialize();
+        return corporateName;
     }
 
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
@@ -258,18 +288,18 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private PersonName personName = PersonName.EMPTY;
+    private NameType nameType = NameType.EMPTY;
 
     /**
      * <p>
-     * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
-     * Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
+     * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
+     * ‘unspecified’.
      * </p>
-     * Jonix-Comment: this field is required
+     * Jonix-Comment: this field is optional
      */
-    public PersonName personName() {
+    public NameType nameType() {
         _initialize();
-        return personName;
+        return nameType;
     }
 
     private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
@@ -330,22 +360,6 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     public PrefixToKey prefixToKey() {
         _initialize();
         return prefixToKey;
-    }
-
-    private KeyNames keyNames = KeyNames.EMPTY;
-
-    /**
-     * <p>
-     * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
-     * <i>ie</i> the name elements normally used to open an entry in an alphabetical list, <i>eg</i> ‘Smith’ or ‘Garcia
-     * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
-     * elements P.7.11 to P.7.18 are used.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public KeyNames keyNames() {
-        _initialize();
-        return keyNames;
     }
 
     private NamesAfterKey namesAfterKey = NamesAfterKey.EMPTY;
@@ -417,20 +431,6 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     public Gender gender() {
         _initialize();
         return gender;
-    }
-
-    private CorporateName corporateName = CorporateName.EMPTY;
-
-    /**
-     * <p>
-     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
-     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public CorporateName corporateName() {
-        _initialize();
-        return corporateName;
     }
 
     private CorporateNameInverted corporateNameInverted = CorporateNameInverted.EMPTY;

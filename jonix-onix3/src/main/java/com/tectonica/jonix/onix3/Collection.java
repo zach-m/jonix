@@ -128,9 +128,17 @@ public class Collection implements OnixSuperComposite, Serializable {
                 case CollectionType.shortname:
                     collectionType = new CollectionType(e);
                     break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
                 case SourceName.refname:
                 case SourceName.shortname:
                     sourceName = new SourceName(e);
+                    break;
+                case NoContributor.refname:
+                case NoContributor.shortname:
+                    noContributor = new NoContributor(e);
                     break;
                 case CollectionIdentifier.refname:
                 case CollectionIdentifier.shortname:
@@ -144,17 +152,9 @@ public class Collection implements OnixSuperComposite, Serializable {
                 case TitleDetail.shortname:
                     titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
                     break;
-                case Contributor.refname:
-                case Contributor.shortname:
-                    contributors = JPU.addToList(contributors, new Contributor(e));
-                    break;
                 case ContributorStatement.refname:
                 case ContributorStatement.shortname:
                     contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
-                    break;
-                case NoContributor.refname:
-                case NoContributor.shortname:
-                    noContributor = new NoContributor(e);
                     break;
                 default:
                     break;
@@ -188,6 +188,23 @@ public class Collection implements OnixSuperComposite, Serializable {
         return collectionType;
     }
 
+    private List<Contributor> contributors = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together describe a personal or corporate contributor to a collection. Optional,
+     * and repeatable to describe multiple contributors. <strong>The &lt;Contributor&gt; composite is included here for
+     * use only by those ONIX communities whose national practice requires contributors to be identified at collection
+     * level. In many countries, including the UK, USA, Canada and Spain, the required practice is to identify all
+     * contributors at product level in Group&nbsp;P.7.</strong>
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public List<Contributor> contributors() {
+        _initialize();
+        return contributors;
+    }
+
     private SourceName sourceName = SourceName.EMPTY;
 
     /**
@@ -201,6 +218,29 @@ public class Collection implements OnixSuperComposite, Serializable {
     public SourceName sourceName() {
         _initialize();
         return sourceName;
+    }
+
+    private NoContributor noContributor = NoContributor.EMPTY;
+
+    /**
+     * <p>
+     * An empty element that provides a positive indication that a collection has no stated authorship. Optional and
+     * non-repeating. Must only be sent in a record that has no &lt;Contributor&gt; data in Group P.5.
+     * </p>
+     * <p>
+     * <strong>The &lt;NoContributor/&gt; element is provided here for use only by those ONIX communities whose national
+     * practice requires contributors to be identified at collection level.</strong> It should not be sent in a context
+     * where collection contributors are normally identified in Group&nbsp;P.6.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public NoContributor noContributor() {
+        _initialize();
+        return noContributor;
+    }
+
+    public boolean isNoContributor() {
+        return (noContributor().exists());
     }
 
     private ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier,
@@ -253,23 +293,6 @@ public class Collection implements OnixSuperComposite, Serializable {
         return titleDetails;
     }
 
-    private List<Contributor> contributors = Collections.emptyList();
-
-    /**
-     * <p>
-     * A group of data elements which together describe a personal or corporate contributor to a collection. Optional,
-     * and repeatable to describe multiple contributors. <strong>The &lt;Contributor&gt; composite is included here for
-     * use only by those ONIX communities whose national practice requires contributors to be identified at collection
-     * level. In many countries, including the UK, USA, Canada and Spain, the required practice is to identify all
-     * contributors at product level in Group&nbsp;P.7.</strong>
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public List<Contributor> contributors() {
-        _initialize();
-        return contributors;
-    }
-
     private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
 
     /**
@@ -294,28 +317,5 @@ public class Collection implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
         return contributorStatements;
-    }
-
-    private NoContributor noContributor = NoContributor.EMPTY;
-
-    /**
-     * <p>
-     * An empty element that provides a positive indication that a collection has no stated authorship. Optional and
-     * non-repeating. Must only be sent in a record that has no &lt;Contributor&gt; data in Group P.5.
-     * </p>
-     * <p>
-     * <strong>The &lt;NoContributor/&gt; element is provided here for use only by those ONIX communities whose national
-     * practice requires contributors to be identified at collection level.</strong> It should not be sent in a context
-     * where collection contributors are normally identified in Group&nbsp;P.6.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public NoContributor noContributor() {
-        _initialize();
-        return noContributor;
-    }
-
-    public boolean isNoContributor() {
-        return (noContributor().exists());
     }
 }

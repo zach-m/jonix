@@ -146,10 +146,6 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
                 case StudyBibleType.shortname:
                     studyBibleType = new StudyBibleType(e);
                     break;
-                case BiblePurpose.refname:
-                case BiblePurpose.shortname:
-                    biblePurposes = JPU.addToList(biblePurposes, new BiblePurpose(e));
-                    break;
                 case BibleTextOrganization.refname:
                 case BibleTextOrganization.shortname:
                     bibleTextOrganization = new BibleTextOrganization(e);
@@ -157,6 +153,10 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
                 case BibleReferenceLocation.refname:
                 case BibleReferenceLocation.shortname:
                     bibleReferenceLocation = new BibleReferenceLocation(e);
+                    break;
+                case BiblePurpose.refname:
+                case BiblePurpose.shortname:
+                    biblePurposes = JPU.addToList(biblePurposes, new BiblePurpose(e));
                     break;
                 case BibleTextFeature.refname:
                 case BibleTextFeature.shortname:
@@ -225,20 +225,6 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
         return studyBibleType;
     }
 
-    private ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * An ONIX code indicating the purpose for which a Bible or selected Biblical text is intended, for example Family,
-     * Lectern/pulpit. Optional and repeatable.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes() {
-        _initialize();
-        return biblePurposes;
-    }
-
     private BibleTextOrganization bibleTextOrganization = BibleTextOrganization.EMPTY;
 
     /**
@@ -265,6 +251,20 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     public BibleReferenceLocation bibleReferenceLocation() {
         _initialize();
         return bibleReferenceLocation;
+    }
+
+    private ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An ONIX code indicating the purpose for which a Bible or selected Biblical text is intended, for example Family,
+     * Lectern/pulpit. Optional and repeatable.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes() {
+        _initialize();
+        return biblePurposes;
     }
 
     private ListOfOnixElement<BibleTextFeature, BibleTextFeatures> bibleTextFeatures = ListOfOnixElement.empty();

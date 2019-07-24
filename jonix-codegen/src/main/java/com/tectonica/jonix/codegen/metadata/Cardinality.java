@@ -19,19 +19,25 @@
 
 package com.tectonica.jonix.codegen.metadata;
 
+import java.util.Comparator;
+
 public enum Cardinality {
-    Optional(true, true), //
-    Required(false, true), //
-    ZeroOrMore(true, false), //
-    OneOrMore(false, false);
+    Optional(true, true, 3), //
+    Required(false, true, 1), //
+    ZeroOrMore(true, false, 4), //
+    OneOrMore(false, false, 2);
 
     public final boolean omittable;
     public final boolean singular;
+    private final int displayOrder;
 
-    Cardinality(boolean omittable, boolean singular) {
+    Cardinality(boolean omittable, boolean singular, int displayOrder) {
         this.omittable = omittable;
         this.singular = singular;
+        this.displayOrder = displayOrder;
     }
+
+    public static final Comparator<Cardinality> displayOrderComparator = Comparator.comparingInt(o -> o.displayOrder);
 
     private static Cardinality of(boolean omittable, boolean singular) {
         for (Cardinality cardinality : values()) {

@@ -116,13 +116,13 @@ public class ParentIdentifier
                 case SeriesIDType.shortname:
                     seriesIDType = new SeriesIDType(e);
                     break;
-                case IDTypeName.refname:
-                case IDTypeName.shortname:
-                    idTypeName = new IDTypeName(e);
-                    break;
                 case IDValue.refname:
                 case IDValue.shortname:
                     idValue = new IDValue(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
                     break;
                 default:
                     break;
@@ -157,16 +157,6 @@ public class ParentIdentifier
         return seriesIDType;
     }
 
-    private IDTypeName idTypeName = IDTypeName.EMPTY;
-
-    /**
-     * Jonix-Comment: this field is optional
-     */
-    public IDTypeName idTypeName() {
-        _initialize();
-        return idTypeName;
-    }
-
     private IDValue idValue = IDValue.EMPTY;
 
     /**
@@ -175,6 +165,16 @@ public class ParentIdentifier
     public IDValue idValue() {
         _initialize();
         return idValue;
+    }
+
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
+
+    /**
+     * Jonix-Comment: this field is optional
+     */
+    public IDTypeName idTypeName() {
+        _initialize();
+        return idTypeName;
     }
 
     @Override

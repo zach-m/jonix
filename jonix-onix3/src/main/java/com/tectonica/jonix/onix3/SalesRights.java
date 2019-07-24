@@ -132,6 +132,10 @@ public class SalesRights implements OnixSuperComposite, Serializable {
                 case Territory.shortname:
                     territory = new Territory(e);
                     break;
+                case PublisherName.refname:
+                case PublisherName.shortname:
+                    publisherName = new PublisherName(e);
+                    break;
                 case SalesRestriction.refname:
                 case SalesRestriction.shortname:
                     salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
@@ -139,10 +143,6 @@ public class SalesRights implements OnixSuperComposite, Serializable {
                 case ProductIdentifier.refname:
                 case ProductIdentifier.shortname:
                     productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-                    break;
-                case PublisherName.refname:
-                case PublisherName.shortname:
-                    publisherName = new PublisherName(e);
                     break;
                 default:
                     break;
@@ -192,6 +192,22 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         return territory;
     }
 
+    private PublisherName publisherName = PublisherName.EMPTY;
+
+    /**
+     * <p>
+     * The name of the publisher of an equivalent product which is available in the territory specified in the
+     * &lt;SalesRights&gt; composite, used only when &lt;SalesRightsType&gt; has a value indicating ‘not for sale’.
+     * Optional and non-repeating. Except where they are essential to the recognized form of the name, it is recommended
+     * that suffixes denoting incorporation (‘Co’, ‘Inc’, ‘Ltd’, ‘SA’, ‘GmbH’ <i>etc</i>) should be omitted.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PublisherName publisherName() {
+        _initialize();
+        return publisherName;
+    }
+
     private List<SalesRestriction> salesRestrictions = Collections.emptyList();
 
     /**
@@ -222,21 +238,5 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         productIdentifiers() {
         _initialize();
         return productIdentifiers;
-    }
-
-    private PublisherName publisherName = PublisherName.EMPTY;
-
-    /**
-     * <p>
-     * The name of the publisher of an equivalent product which is available in the territory specified in the
-     * &lt;SalesRights&gt; composite, used only when &lt;SalesRightsType&gt; has a value indicating ‘not for sale’.
-     * Optional and non-repeating. Except where they are essential to the recognized form of the name, it is recommended
-     * that suffixes denoting incorporation (‘Co’, ‘Inc’, ‘Ltd’, ‘SA’, ‘GmbH’ <i>etc</i>) should be omitted.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PublisherName publisherName() {
-        _initialize();
-        return publisherName;
     }
 }

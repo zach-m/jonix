@@ -128,6 +128,22 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
                 case Imprint.shortname:
                     imprints = JPU.addToList(imprints, new Imprint(e));
                     break;
+                case CountryOfPublication.refname:
+                case CountryOfPublication.shortname:
+                    countryOfPublication = new CountryOfPublication(e);
+                    break;
+                case PublishingStatus.refname:
+                case PublishingStatus.shortname:
+                    publishingStatus = new PublishingStatus(e);
+                    break;
+                case LatestReprintNumber.refname:
+                case LatestReprintNumber.shortname:
+                    latestReprintNumber = new LatestReprintNumber(e);
+                    break;
+                case ROWSalesRightsType.refname:
+                case ROWSalesRightsType.shortname:
+                    rowSalesRightsType = new ROWSalesRightsType(e);
+                    break;
                 case Publisher.refname:
                 case Publisher.shortname:
                     publishers = JPU.addToList(publishers, new Publisher(e));
@@ -136,17 +152,9 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
                 case CityOfPublication.shortname:
                     cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
                     break;
-                case CountryOfPublication.refname:
-                case CountryOfPublication.shortname:
-                    countryOfPublication = new CountryOfPublication(e);
-                    break;
                 case ProductContact.refname:
                 case ProductContact.shortname:
                     productContacts = JPU.addToList(productContacts, new ProductContact(e));
-                    break;
-                case PublishingStatus.refname:
-                case PublishingStatus.shortname:
-                    publishingStatus = new PublishingStatus(e);
                     break;
                 case PublishingStatusNote.refname:
                 case PublishingStatusNote.shortname:
@@ -156,10 +164,6 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
                 case PublishingDate.shortname:
                     publishingDates = JPU.addToList(publishingDates, new PublishingDate(e));
                     break;
-                case LatestReprintNumber.refname:
-                case LatestReprintNumber.shortname:
-                    latestReprintNumber = new LatestReprintNumber(e);
-                    break;
                 case CopyrightStatement.refname:
                 case CopyrightStatement.shortname:
                     copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
@@ -167,10 +171,6 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
                 case SalesRights.refname:
                 case SalesRights.shortname:
                     salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
-                    break;
-                case ROWSalesRightsType.refname:
-                case ROWSalesRightsType.shortname:
-                    rowSalesRightsType = new ROWSalesRightsType(e);
                     break;
                 case SalesRestriction.refname:
                 case SalesRestriction.shortname:
@@ -210,6 +210,73 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return imprints;
     }
 
+    private CountryOfPublication countryOfPublication = CountryOfPublication.EMPTY;
+
+    /**
+     * <p>
+     * A code identifying the country where the product is published. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public CountryOfPublication countryOfPublication() {
+        _initialize();
+        return countryOfPublication;
+    }
+
+    private PublishingStatus publishingStatus = PublishingStatus.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code which identifies the status of a published product. Optional and non-repeating, but required if
+     * publishing status is <em>not</em> identified at market level in &lt;MarketPublishingDetail&gt; (P.25).
+     * </p>
+     * <p>
+     * Where the element is sent by a sender who is not the publisher, based on information that has been previously
+     * supplied by the publisher, it is strongly recommended that it should carry a <i>datestamp</i> attribute to
+     * indicate its likely reliability. See <a href="#message_attributes">Section 1</a> for further details of the
+     * <i>datestamp</i> attribute.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PublishingStatus publishingStatus() {
+        _initialize();
+        return publishingStatus;
+    }
+
+    private LatestReprintNumber latestReprintNumber = LatestReprintNumber.EMPTY;
+
+    /**
+     * <p>
+     * The number of the most recent reprint (or current ‘impression number’) of the product. Optional and
+     * non-repeating. This element is used only in certain countries where there is a legal requirement to record
+     * reprints.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public LatestReprintNumber latestReprintNumber() {
+        _initialize();
+        return latestReprintNumber;
+    }
+
+    private ROWSalesRightsType rowSalesRightsType = ROWSalesRightsType.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code describing the sales rights applicable in territories not specifically associated with a sales right
+     * within an occurrence of the &lt;SalesRights&gt; composite. Must be preceded by at least one &lt;SalesRights&gt;
+     * composite. Optional, but required in all cases where no sales rights type is associated with the region ‘WORLD’,
+     * and in all cases where a sales rights type is associated with ‘WORLD’ but with exclusions that are not themselves
+     * associated with a sales rights type. Not repeatable. Note the value ‘00’ should be used to indicate where sales
+     * rights are genuinely unknown, or are unstated for any reason – in this case, data recipients must not assume
+     * anything about the rights that are applicable.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ROWSalesRightsType rowSalesRightsType() {
+        _initialize();
+        return rowSalesRightsType;
+    }
+
     private List<Publisher> publishers = Collections.emptyList();
 
     /**
@@ -247,19 +314,6 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return cityOfPublications;
     }
 
-    private CountryOfPublication countryOfPublication = CountryOfPublication.EMPTY;
-
-    /**
-     * <p>
-     * A code identifying the country where the product is published. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public CountryOfPublication countryOfPublication() {
-        _initialize();
-        return countryOfPublication;
-    }
-
     private List<ProductContact> productContacts = Collections.emptyList();
 
     /**
@@ -273,26 +327,6 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
     public List<ProductContact> productContacts() {
         _initialize();
         return productContacts;
-    }
-
-    private PublishingStatus publishingStatus = PublishingStatus.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code which identifies the status of a published product. Optional and non-repeating, but required if
-     * publishing status is <em>not</em> identified at market level in &lt;MarketPublishingDetail&gt; (P.25).
-     * </p>
-     * <p>
-     * Where the element is sent by a sender who is not the publisher, based on information that has been previously
-     * supplied by the publisher, it is strongly recommended that it should carry a <i>datestamp</i> attribute to
-     * indicate its likely reliability. See <a href="#message_attributes">Section 1</a> for further details of the
-     * <i>datestamp</i> attribute.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PublishingStatus publishingStatus() {
-        _initialize();
-        return publishingStatus;
     }
 
     private ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes = ListOfOnixElement.empty();
@@ -329,21 +363,6 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return publishingDates;
     }
 
-    private LatestReprintNumber latestReprintNumber = LatestReprintNumber.EMPTY;
-
-    /**
-     * <p>
-     * The number of the most recent reprint (or current ‘impression number’) of the product. Optional and
-     * non-repeating. This element is used only in certain countries where there is a legal requirement to record
-     * reprints.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public LatestReprintNumber latestReprintNumber() {
-        _initialize();
-        return latestReprintNumber;
-    }
-
     private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
 
     /**
@@ -374,25 +393,6 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
     public List<SalesRights> salesRightss() {
         _initialize();
         return salesRightss;
-    }
-
-    private ROWSalesRightsType rowSalesRightsType = ROWSalesRightsType.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code describing the sales rights applicable in territories not specifically associated with a sales right
-     * within an occurrence of the &lt;SalesRights&gt; composite. Must be preceded by at least one &lt;SalesRights&gt;
-     * composite. Optional, but required in all cases where no sales rights type is associated with the region ‘WORLD’,
-     * and in all cases where a sales rights type is associated with ‘WORLD’ but with exclusions that are not themselves
-     * associated with a sales rights type. Not repeatable. Note the value ‘00’ should be used to indicate where sales
-     * rights are genuinely unknown, or are unstated for any reason – in this case, data recipients must not assume
-     * anything about the rights that are applicable.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public ROWSalesRightsType rowSalesRightsType() {
-        _initialize();
-        return rowSalesRightsType;
     }
 
     private List<SalesRestriction> salesRestrictions = Collections.emptyList();

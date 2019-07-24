@@ -129,6 +129,10 @@ public class Stock implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
+                case StockQuantityCoded.refname:
+                case StockQuantityCoded.shortname:
+                    stockQuantityCoded = new StockQuantityCoded(e);
+                    break;
                 case LocationIdentifier.refname:
                 case LocationIdentifier.shortname:
                     locationIdentifier = new LocationIdentifier(e);
@@ -136,10 +140,6 @@ public class Stock implements OnixSuperComposite, Serializable {
                 case LocationName.refname:
                 case LocationName.shortname:
                     locationName = new LocationName(e);
-                    break;
-                case StockQuantityCoded.refname:
-                case StockQuantityCoded.shortname:
-                    stockQuantityCoded = new StockQuantityCoded(e);
                     break;
                 case OnHand.refname:
                 case OnHand.shortname:
@@ -175,6 +175,21 @@ public class Stock implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
+    private StockQuantityCoded stockQuantityCoded = StockQuantityCoded.EMPTY;
+
+    /**
+     * <p>
+     * A group of data elements which together specify coded stock level without stating the exact quantity of stock.
+     * Either &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of the &lt;Stock&gt;
+     * composite, even if the onhand quantity is zero. Non-repeating.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public StockQuantityCoded stockQuantityCoded() {
+        _initialize();
+        return stockQuantityCoded;
+    }
+
     private LocationIdentifier locationIdentifier = LocationIdentifier.EMPTY;
 
     /**
@@ -201,21 +216,6 @@ public class Stock implements OnixSuperComposite, Serializable {
     public LocationName locationName() {
         _initialize();
         return locationName;
-    }
-
-    private StockQuantityCoded stockQuantityCoded = StockQuantityCoded.EMPTY;
-
-    /**
-     * <p>
-     * A group of data elements which together specify coded stock level without stating the exact quantity of stock.
-     * Either &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of the &lt;Stock&gt;
-     * composite, even if the onhand quantity is zero. Non-repeating.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public StockQuantityCoded stockQuantityCoded() {
-        _initialize();
-        return stockQuantityCoded;
     }
 
     private OnHand onHand = OnHand.EMPTY;

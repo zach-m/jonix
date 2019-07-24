@@ -130,14 +130,6 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
                 case SalesRestrictionType.shortname:
                     salesRestrictionType = new SalesRestrictionType(e);
                     break;
-                case SalesOutlet.refname:
-                case SalesOutlet.shortname:
-                    salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
-                    break;
-                case SalesRestrictionNote.refname:
-                case SalesRestrictionNote.shortname:
-                    salesRestrictionNotes = JPU.addToList(salesRestrictionNotes, new SalesRestrictionNote(e));
-                    break;
                 case StartDate.refname:
                 case StartDate.shortname:
                     startDate = new StartDate(e);
@@ -145,6 +137,14 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
                 case EndDate.refname:
                 case EndDate.shortname:
                     endDate = new EndDate(e);
+                    break;
+                case SalesOutlet.refname:
+                case SalesOutlet.shortname:
+                    salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
+                    break;
+                case SalesRestrictionNote.refname:
+                case SalesRestrictionNote.shortname:
+                    salesRestrictionNotes = JPU.addToList(salesRestrictionNotes, new SalesRestrictionNote(e));
                     break;
                 default:
                     break;
@@ -179,6 +179,32 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         return salesRestrictionType;
     }
 
+    private StartDate startDate = StartDate.EMPTY;
+
+    /**
+     * <p>
+     * The date from which a sales restriction is effective. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public StartDate startDate() {
+        _initialize();
+        return startDate;
+    }
+
+    private EndDate endDate = EndDate.EMPTY;
+
+    /**
+     * <p>
+     * The date until which a sales restriction is effective. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public EndDate endDate() {
+        _initialize();
+        return endDate;
+    }
+
     private List<SalesOutlet> salesOutlets = Collections.emptyList();
 
     /**
@@ -208,31 +234,5 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes() {
         _initialize();
         return salesRestrictionNotes;
-    }
-
-    private StartDate startDate = StartDate.EMPTY;
-
-    /**
-     * <p>
-     * The date from which a sales restriction is effective. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public StartDate startDate() {
-        _initialize();
-        return startDate;
-    }
-
-    private EndDate endDate = EndDate.EMPTY;
-
-    /**
-     * <p>
-     * The date until which a sales restriction is effective. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public EndDate endDate() {
-        _initialize();
-        return endDate;
     }
 }
