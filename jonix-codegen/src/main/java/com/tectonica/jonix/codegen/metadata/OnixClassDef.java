@@ -50,13 +50,6 @@ public abstract class OnixClassDef implements Comparable<OnixClassDef> {
             .collect(Collectors.toList());
     }
 
-    public void add(OnixConst onixConst) {
-        if (consts == null) {
-            consts = new ArrayList<>();
-        }
-        consts.add(onixConst);
-    }
-
     public String constValue(String constName) {
         for (OnixConst aConst : consts) {
             if (aConst.name.equals(constName)) {
@@ -64,6 +57,13 @@ public abstract class OnixClassDef implements Comparable<OnixClassDef> {
             }
         }
         return null;
+    }
+
+    public void add(OnixConst onixConst) {
+        if (consts == null) {
+            consts = new ArrayList<>();
+        }
+        consts.add(onixConst);
     }
 
     public void add(OnixAttribute onixAttribute) {

@@ -491,7 +491,7 @@ public class OnixClassGen {
         p.printf(" * Possible placements within ONIX message:\n");
         p.printf(" * <ul>\n");
         onixClass.paths.stream()
-            .map(path -> "{@link " + path.replaceAll("/", "} \u2BC8 {@link ") + "}")
+            .map(path -> "{@link " + path.replaceAll("/", "} ⯈ {@link ") + "}")
             .forEach(path -> p.printf(" * <li>%s</li>\n", path));
         p.printf(" * </ul>\n");
 

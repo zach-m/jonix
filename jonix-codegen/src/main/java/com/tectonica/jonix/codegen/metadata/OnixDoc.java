@@ -98,7 +98,7 @@ public class OnixDoc {
         if (extended) {
             sb.append("<p><tt><b>&lt;").append(onixClassName).append("&gt;</b></tt>  ")
                 .append(tags).append(" (").append(groupMarker).append(")").append("</p>");
-            sb.append("<p><tt><i>").append(path.replaceAll("/", " \u2bc8 ")).append("</i></tt></p>");
+            sb.append("<p><tt><i>").append(path.replaceAll("/", " ⯈ ")).append("</i></tt></p>");
         }
         sb.append(escapedDescription);
         sb.append("<table border='1' cellpadding='3'>");

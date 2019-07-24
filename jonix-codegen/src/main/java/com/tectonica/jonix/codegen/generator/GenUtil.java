@@ -65,14 +65,6 @@ public class GenUtil {
         return typeInfoOf(simpleTypeNameOf(attr.simpleType), attr.primitiveType.javaType, attr.getEnumName());
     }
 
-    private String simpleTypeNameOf(OnixSimpleType simpleType) {
-        if (simpleType == null) {
-            return null;
-        }
-        // de-reference alias
-        return (simpleType.enumAliasFor == null) ? simpleType.name : simpleType.enumAliasFor;
-    }
-
     private TypeInfo typeInfoOf(String simpleTypeName, String primitiveJavaType, String enumName) {
         // in case the enumName in the question has been "renamed" (i.e. we chose the enumName of the
         // other side during codelist unification) we adjust to new (unified) enumName
@@ -95,6 +87,14 @@ public class GenUtil {
             }
         }
         return result;
+    }
+
+    private String simpleTypeNameOf(OnixSimpleType simpleType) {
+        if (simpleType == null) {
+            return null;
+        }
+        // de-reference alias
+        return (simpleType.enumAliasFor == null) ? simpleType.name : simpleType.enumAliasFor;
     }
 
     public static class FieldInfo {

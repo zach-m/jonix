@@ -819,7 +819,7 @@ public class Parser {
                         if (simpleType.isEnum() && (member.cardinality == Cardinality.Required)) {
                             if (simpleType.enumName.endsWith("Types") || simpleType.enumName.endsWith("Roles")) {
                                 if (struct.keyMember == null) {
-                                    // in rare-cases (e.g. OtherText) where there are several candidates we take the first
+                                    // in rare-cases (e.g. OtherText) having several candidates - we take the first
                                     isKey = true;
                                 }
                             }

@@ -230,7 +230,7 @@ public class GenerateCode {
         ListDiff.compare(enum2.enumValues, enum3.enumValues, (enumValue2, enumValue3) -> {
             if (enumValue2 != null && enumValue3 != null) {
                 //if (!enumValue2.name.equals(enumValue3.name)) {
-                //    LOGGER.debug("unifyCodelists: Difference in enumValue: Onix2={}, Onix3={}", enumValue2, enumValue3);
+                //LOGGER.debug("unifyCodelists: Difference in enumValue: Onix2={}, Onix3={}", enumValue2, enumValue3);
                 //}
             } else if (enumValue2 != null) {
                 //LOGGER.debug("unifyCodelists: Unique to Onix2: " + enum2.enumName + "." + enumValue2);
