@@ -143,8 +143,9 @@ public class CountryExcluded implements OnixElement<java.util.Set<Countrys>>, Se
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +"))
+        for (String split : JPU.getContentAsString(element).split(" +")) {
             value.add(Countrys.byCode(split));
+        }
     }
 
     /**

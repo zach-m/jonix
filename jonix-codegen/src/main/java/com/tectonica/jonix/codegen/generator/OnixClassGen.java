@@ -396,12 +396,13 @@ public class OnixClassGen {
             }
         } else {
             p.printf("      value = new java.util.HashSet<>();\n");
-            p.printf("      for (String split : JPU.getContentAsString(element).trim().split(\" +\"))\n");
+            p.printf("      for (String split : JPU.getContentAsString(element).split(\" +\")) {\n");
             if (ti.isPrimitive) {
                 p.printf("         value.add(%s.valueOf(split));\n", ti.javaType);
             } else {
                 p.printf("         value.add(%s.byCode(split));\n", ti.javaType);
             }
+            p.printf("      }\n");
         }
 
         p.printf("   }\n");

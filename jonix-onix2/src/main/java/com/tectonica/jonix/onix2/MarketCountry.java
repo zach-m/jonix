@@ -149,8 +149,9 @@ public class MarketCountry implements OnixElement<java.util.Set<String>>, Serial
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).trim().split(" +"))
+        for (String split : JPU.getContentAsString(element).split(" +")) {
             value.add(String.valueOf(split));
+        }
     }
 
     /**
