@@ -53,10 +53,10 @@ public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends J
     }
 
     public Optional<S> firstAsStruct() {
-        return first().map(i -> i.asStruct());
+        return first().map(OnixDataComposite::asStruct);
     }
 
-    private static ListOfOnixDataComposite<OnixDataComposite<JonixStruct>, JonixStruct> EMPTY =
+    private static final ListOfOnixDataComposite<OnixDataComposite<JonixStruct>, JonixStruct> EMPTY =
         new ListOfOnixDataComposite<>();
 
     @SuppressWarnings("unchecked")

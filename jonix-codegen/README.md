@@ -4,20 +4,20 @@ jonix-codegen
 Utility library for generating source code for onix-processing classes directly from EDItEUR's schema  
  
  
-## Structure of of Onix Class
+## Structure of Onix Class
 
 General structure is as follows:
 
-	<xs:element name="OnixClassName">         element
-	    <xs:complexType>                      complexTypeElem
-	        <xs:...>                          contentElem
+	<xs:element name="OnixClassName">         --> element
+	    <xs:complexType>                      --> complexTypeElem
+	        <xs:...>                          --> contentElem
 	        </xs:...>
 	    </xs:complexType>
 	</xs:element>
 
 ### Onix Elements
 
-#### Case: xs:simpleContent with xs:extension
+#### Case: `xs:simpleContent` with `xs:extension`
 
     <xs:element name="AgentRole">
         <xs:complexType>
@@ -43,7 +43,7 @@ General structure is as follows:
         </xs:complexType>
     </xs:element>
 
-#### Case: xs:complexContent with xs:extension (Onix3 only)
+#### Case: `xs:complexContent` with `xs:extension` (Onix3 only)
 
     <xs:element name="BiographicalNote">
         <xs:complexType mixed="true">
@@ -90,9 +90,9 @@ General structure is as follows:
 
 ### Onix Composites
 
-HERE
+T.B.D
 
-## Structure of of Onix Types
+## Structure of Onix Types
 
 Represented by an `<simpleType>` tag, with the following general structure:
 

@@ -34,6 +34,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * JPU (Jonix Processing Utility) is an all-static internal utility class, assisting in run time processing of the DOM
@@ -64,7 +65,7 @@ public class JPU {
     }
 
     @FunctionalInterface
-    public static interface ElementListener {
+    public interface ElementListener {
         void onElement(Element element);
     }
 
@@ -83,11 +84,13 @@ public class JPU {
         return getChildText(element);
     }
 
+    @SuppressWarnings("ConstantConditions")
     public static Integer getContentAsInteger(Element element) {
         final String s = getChildText(element);
         return (s.isEmpty() ? null : Integer.valueOf(s));
     }
 
+    @SuppressWarnings("ConstantConditions")
     public static Double getContentAsDouble(Element element) {
         final String s = getChildText(element);
         return (s.isEmpty() ? null : Double.valueOf(s));
@@ -117,7 +120,7 @@ public class JPU {
     //    System.setProperty("javax.xml.transform.TransformerFactory",
     //        "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
     //}
-    private static TransformerFactory transformerFactory = TransformerFactory.newInstance();
+    private static final TransformerFactory transformerFactory = TransformerFactory.newInstance();
 
     public static String getChildXHTML(Node node, boolean strip) {
         StringWriter sw = new StringWriter();
@@ -202,7 +205,7 @@ public class JPU {
             }
 
             if (Character.getType(s.charAt(0)) == Character.CURRENCY_SYMBOL) {
-                return convertStringToDoubleSafe(s.substring(1, s.length()));
+                return convertStringToDoubleSafe(s.substring(1));
             }
 
             final boolean quoted1 = s.startsWith("'") && s.endsWith("'");

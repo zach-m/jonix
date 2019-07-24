@@ -62,7 +62,7 @@ public class CsvWriter {
     public static final int ESCAPE_MODE_BACKSLASH = 2;
 
     /**
-     * Creates a {@link repackaged.com.csvreader.CsvWriter CsvWriter} object using a file
+     * Creates a {@link CsvWriter} object using a file
      * as the data destination.
      * 
      * @param fileName
@@ -88,7 +88,7 @@ public class CsvWriter {
     }
 
     /**
-     * Creates a {@link repackaged.com.csvreader.CsvWriter CsvWriter} object using a file
+     * Creates a {@link CsvWriter} object using a file
      * as the data destination.&nbsp;Uses a comma as the column delimiter and
      * ISO-8859-1 as the {@link Charset Charset}.
      * 
@@ -100,7 +100,7 @@ public class CsvWriter {
     }
 
     /**
-     * Creates a {@link repackaged.com.csvreader.CsvWriter CsvWriter} object using a Writer
+     * Creates a {@link CsvWriter} object using a Writer
      * to write data to.
      * 
      * @param outputStream
@@ -119,7 +119,7 @@ public class CsvWriter {
     }
 
     /**
-     * Creates a {@link repackaged.com.csvreader.CsvWriter CsvWriter} object using an
+     * Creates a {@link CsvWriter} object using an
      * OutputStream to write data to.
      * 
      * @param outputStream

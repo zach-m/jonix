@@ -56,7 +56,7 @@ public class ListOfOnixDataCompositeWithKey
      * @return an {@link Optional} with the found item as a {@link JonixStruct} (or empty Optional if none exists)
      */
     public Optional<S> findAsStruct(K structKey) {
-        return find(structKey).map(odc -> odc.asStruct());
+        return find(structKey).map(OnixComposite.OnixDataComposite::asStruct);
     }
 
     public ListOfOnixDataCompositeWithKey<C,S,K> findAll(Set<K> structKeys) {
@@ -75,7 +75,7 @@ public class ListOfOnixDataCompositeWithKey
     }
 
     public List<S> findAllAsStructs(Set<K> structKeys) {
-        return findAll(structKeys).stream().map(odc -> odc.asStruct()).collect(Collectors.toList());
+        return findAll(structKeys).stream().map(OnixComposite.OnixDataComposite::asStruct).collect(Collectors.toList());
     }
 
     public Optional<C> findAny(Set<K> structKeys) {
@@ -87,15 +87,16 @@ public class ListOfOnixDataCompositeWithKey
         return Optional.empty();
     }
 
-    public Optional<C> findAny(K... structKeys) {
+    @SafeVarargs
+    public final Optional<C> findAny(K... structKeys) {
         return findAny(new HashSet<>(Arrays.asList(structKeys)));
     }
 
     public Optional<S> findAnyAsStructs(Set<K> structKeys) {
-        return findAny(structKeys).map(odc -> odc.asStruct());
+        return findAny(structKeys).map(OnixComposite.OnixDataComposite::asStruct);
     }
 
-    private static ListOfOnixDataCompositeWithKey<?, ?, ?> EMPTY = new ListOfOnixDataCompositeWithKey<>();
+    private static final ListOfOnixDataCompositeWithKey<?, ?, ?> EMPTY = new ListOfOnixDataCompositeWithKey<>();
 
     @SuppressWarnings("unchecked")
     public static <C extends OnixDataCompositeWithKey<S, K>,

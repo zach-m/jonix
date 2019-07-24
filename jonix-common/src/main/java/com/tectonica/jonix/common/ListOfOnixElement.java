@@ -57,7 +57,7 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
         return (size() == 0) ? Optional.empty() : Optional.of(get(0)._value());
     }
 
-    private static ListOfOnixElement<OnixElement<Object>, Object> EMPTY = new ListOfOnixElement<>();
+    private static final ListOfOnixElement<OnixElement<Object>, Object> EMPTY = new ListOfOnixElement<>();
 
     @SuppressWarnings("unchecked")
     public static <X extends OnixElement<Y>, Y> ListOfOnixElement<X, Y> empty() {
