@@ -133,11 +133,11 @@
         </pluginManagement>
 
         <plugins>
-            <!-- CheckStyle plugin. To execute:  mvn clean verify -DskipTests; look for '*/checkstyle-result.xml' -->
+            <!-- CheckStyle plugin. To execute:  mvn verify -DskipTests; look for '*/checkstyle-result.xml' -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.17</version>
+                <version>3.1.0</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
@@ -147,13 +147,14 @@
                 </dependencies>
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
-					<excludes>**/module-info.java</excludes>
+                    <failOnViolation>true</failOnViolation>
+                    <violationSeverity>warning</violationSeverity>
+                    <logViolationsToConsole>true</logViolationsToConsole>
                 </configuration>
                 <executions>
                     <execution>
                         <id>validate-checkstyle</id>
                         <phase>verify</phase>
-                        <!--<phase>process-classes</phase>-->
                         <goals>
                             <goal>check</goal>
                         </goals>
