@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.TextCaseFlags;
 import com.tectonica.jonix.common.codelist.TitleTypes;
 
@@ -29,9 +30,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix2 <code>&lt;Title></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixTitle implements JonixKeyedStruct<TitleTypes>, Serializable {
-    public static JonixTitle EMPTY = new JonixTitle();
+    public static final JonixTitle EMPTY = new JonixTitle();
 
     /**
      * the key of this struct (by which it can be looked up)

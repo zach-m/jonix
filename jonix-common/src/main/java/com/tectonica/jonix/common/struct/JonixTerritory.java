@@ -29,9 +29,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;Territory></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixTerritory implements JonixStruct, Serializable {
-    public static JonixTerritory EMPTY = new JonixTerritory();
+    public static final JonixTerritory EMPTY = new JonixTerritory();
 
     public java.util.Set<Countrys> countriesIncluded;
 

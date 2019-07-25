@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.SupplierIdentifierTypes;
 
 import java.io.Serializable;
@@ -28,9 +29,15 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;AgentIdentifier></code> and Onix3
+ * <code>&lt;AgentIdentifier></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixAgentIdentifier implements JonixKeyedStruct<SupplierIdentifierTypes>, Serializable {
-    public static JonixAgentIdentifier EMPTY = new JonixAgentIdentifier();
+    public static final JonixAgentIdentifier EMPTY = new JonixAgentIdentifier();
 
     /**
      * the key of this struct (by which it can be looked up)

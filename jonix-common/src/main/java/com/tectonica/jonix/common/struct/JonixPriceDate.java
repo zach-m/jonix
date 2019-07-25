@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.DateFormats;
 import com.tectonica.jonix.common.codelist.PriceDateRoles;
 
@@ -29,9 +30,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;PriceDate></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixPriceDate implements JonixKeyedStruct<PriceDateRoles>, Serializable {
-    public static JonixPriceDate EMPTY = new JonixPriceDate();
+    public static final JonixPriceDate EMPTY = new JonixPriceDate();
 
     /**
      * the key of this struct (by which it can be looked up)

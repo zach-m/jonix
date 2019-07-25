@@ -27,9 +27,15 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;BatchBonus></code> and Onix3
+ * <code>&lt;BatchBonus></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixBatchBonus implements JonixStruct, Serializable {
-    public static JonixBatchBonus EMPTY = new JonixBatchBonus();
+    public static final JonixBatchBonus EMPTY = new JonixBatchBonus();
 
     /**
      * Raw Format: Positive integer, suggested maximum length 4 digits

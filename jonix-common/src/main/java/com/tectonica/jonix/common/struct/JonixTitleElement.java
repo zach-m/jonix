@@ -28,9 +28,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;TitleElement></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixTitleElement implements JonixStruct, Serializable {
-    public static JonixTitleElement EMPTY = new JonixTitleElement();
+    public static final JonixTitleElement EMPTY = new JonixTitleElement();
 
     /**
      * Raw Format: Positive integer, 1, 2, 3 etc, suggested maximum length 3 digits

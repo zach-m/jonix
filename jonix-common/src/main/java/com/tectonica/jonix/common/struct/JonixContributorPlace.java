@@ -31,9 +31,14 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;ContributorPlace></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixContributorPlace implements JonixStruct, Serializable {
-    public static JonixContributorPlace EMPTY = new JonixContributorPlace();
+    public static final JonixContributorPlace EMPTY = new JonixContributorPlace();
 
     public ContributorPlaceRelators contributorPlaceRelator;
 

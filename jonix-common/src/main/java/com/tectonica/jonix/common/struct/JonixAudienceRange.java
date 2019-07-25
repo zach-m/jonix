@@ -30,9 +30,15 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;AudienceRange></code> and Onix3
+ * <code>&lt;AudienceRange></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixAudienceRange implements JonixStruct, Serializable {
-    public static JonixAudienceRange EMPTY = new JonixAudienceRange();
+    public static final JonixAudienceRange EMPTY = new JonixAudienceRange();
 
     public List<AudienceRangePrecisions> audienceRangePrecisions;
 

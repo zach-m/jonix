@@ -21,7 +21,7 @@ package com.tectonica.jonix.common;
 
 /**
  * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, merely marking a Jonix
- * <code>Struct</code>
+ * <code>Struct</code>.
  * <p>
  * The idea of a <code>Struct</code> is to represent an ONIX Data Composite (i.e. an ONIX item that contains several
  * fields, but no nested ONIX items) as a simple Java object. One of the biggest advantages of such <code>Struct</code>

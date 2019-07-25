@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
 
 import java.io.Serializable;
@@ -28,9 +29,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix2 <code>&lt;ParentIdentifier></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixParentIdentifier implements JonixKeyedStruct<SeriesIdentifierTypes>, Serializable {
-    public static JonixParentIdentifier EMPTY = new JonixParentIdentifier();
+    public static final JonixParentIdentifier EMPTY = new JonixParentIdentifier();
 
     /**
      * the key of this struct (by which it can be looked up)

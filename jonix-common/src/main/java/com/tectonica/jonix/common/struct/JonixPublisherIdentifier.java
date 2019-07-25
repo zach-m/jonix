@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 
 import java.io.Serializable;
@@ -28,9 +29,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;PublisherIdentifier></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixPublisherIdentifier implements JonixKeyedStruct<NameIdentifierTypes>, Serializable {
-    public static JonixPublisherIdentifier EMPTY = new JonixPublisherIdentifier();
+    public static final JonixPublisherIdentifier EMPTY = new JonixPublisherIdentifier();
 
     /**
      * the key of this struct (by which it can be looked up)

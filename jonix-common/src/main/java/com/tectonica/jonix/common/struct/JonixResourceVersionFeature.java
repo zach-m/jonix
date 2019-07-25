@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.ResourceVersionFeatureTypes;
 
 import java.io.Serializable;
@@ -29,9 +30,14 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;ResourceVersionFeature></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixResourceVersionFeature implements JonixKeyedStruct<ResourceVersionFeatureTypes>, Serializable {
-    public static JonixResourceVersionFeature EMPTY = new JonixResourceVersionFeature();
+    public static final JonixResourceVersionFeature EMPTY = new JonixResourceVersionFeature();
 
     /**
      * the key of this struct (by which it can be looked up)

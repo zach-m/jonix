@@ -254,7 +254,7 @@ public class GenerateCode {
             if (struct2 != null && struct3 != null) {
                 final OnixStruct unified = unifiedStruct(struct2, struct3, ref2, ref3);
                 if (unified != null) {
-                    String name = struct3.containingComposite.name;
+                    String name = unified.containingComposite.name;
                     unifiedStructs.put(name, unified);
                 }
             } else if (struct2 != null) {
@@ -262,6 +262,7 @@ public class GenerateCode {
                 if (ref3.onixComposites.containsKey(name)) {
                     LOGGER.warn("<" + name + "> is a struct in Onix2 but doesn't qualify for one in Onix3");
                 } else {
+                    struct2.onix2composite = struct2.containingComposite;
                     unifiedStructs.put(name, struct2);
                 }
             } else {
@@ -269,6 +270,7 @@ public class GenerateCode {
                 if (ref2.onixComposites.containsKey(name)) {
                     LOGGER.warn("<" + name + "> is a struct in Onix3 but doesn't qualify for one in Onix2");
                 } else {
+                    struct3.onix3composite = struct3.containingComposite;
                     unifiedStructs.put(name, struct3);
                 }
             }
@@ -304,8 +306,7 @@ public class GenerateCode {
             unified.keyMember = struct3.keyMember;
 
             // even though the type of the key may be the same (which is what's really important for us), we deal with
-            // the case where the
-            // elements' name is different (for example MeasureTypeCode vs MeasureType)
+            // the case where the elements' name is different (for example MeasureTypeCode vs MeasureType)
             if (!struct2.keyMember.dataMember.className.equals(struct3.keyMember.dataMember.className)) {
                 unified.keyMember.transformationNeededInVersion = ref2.onixVersion;
                 unified.keyMember.transformationType = TransformationType.ChangeClassName;
@@ -313,6 +314,8 @@ public class GenerateCode {
             }
         }
 
+        unified.onix2composite = struct2.containingComposite;
+        unified.onix3composite = struct3.containingComposite;
         unified.members = new ArrayList<>();
 
         boolean completed = ListDiff.sortAndCompare(struct2.members, struct3.members,

@@ -28,9 +28,15 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;ProfessionalAffiliation></code> and Onix3
+ * <code>&lt;ProfessionalAffiliation></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixProfessionalAffiliation implements JonixStruct, Serializable {
-    public static JonixProfessionalAffiliation EMPTY = new JonixProfessionalAffiliation();
+    public static final JonixProfessionalAffiliation EMPTY = new JonixProfessionalAffiliation();
 
     /**
      * Raw Format: Variable length text, suggested maximum length 200 characters

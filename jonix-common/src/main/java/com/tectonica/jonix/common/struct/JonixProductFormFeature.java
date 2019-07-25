@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.ProductFormFeatureTypes;
 
 import java.io.Serializable;
@@ -29,9 +30,15 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;ProductFormFeature></code> and Onix3
+ * <code>&lt;ProductFormFeature></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixProductFormFeature implements JonixKeyedStruct<ProductFormFeatureTypes>, Serializable {
-    public static JonixProductFormFeature EMPTY = new JonixProductFormFeature();
+    public static final JonixProductFormFeature EMPTY = new JonixProductFormFeature();
 
     /**
      * the key of this struct (by which it can be looked up)

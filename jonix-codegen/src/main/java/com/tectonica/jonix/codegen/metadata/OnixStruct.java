@@ -35,6 +35,10 @@ public class OnixStruct implements Comparable<OnixStruct> {
 
     public List<OnixStructMember> members = new ArrayList<>();
 
+    // filled during unification:
+    public OnixCompositeDef onix2composite;
+    public OnixCompositeDef onix3composite;
+
     public OnixStruct(OnixCompositeDef containingComposite) {
         this.containingComposite = containingComposite;
     }

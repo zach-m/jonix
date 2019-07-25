@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.ImageAudioVideoFileFormats;
 import com.tectonica.jonix.common.codelist.ImageAudioVideoFileLinkTypes;
 import com.tectonica.jonix.common.codelist.ImageAudioVideoFileTypes;
@@ -30,9 +31,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix2 <code>&lt;MediaFile></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixMediaFile implements JonixKeyedStruct<ImageAudioVideoFileTypes>, Serializable {
-    public static JonixMediaFile EMPTY = new JonixMediaFile();
+    public static final JonixMediaFile EMPTY = new JonixMediaFile();
 
     /**
      * the key of this struct (by which it can be looked up)

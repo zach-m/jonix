@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.OtherTextTypes;
 import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TextLinkTypes;
@@ -30,9 +31,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix2 <code>&lt;OtherText></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixOtherText implements JonixKeyedStruct<OtherTextTypes>, Serializable {
-    public static JonixOtherText EMPTY = new JonixOtherText();
+    public static final JonixOtherText EMPTY = new JonixOtherText();
 
     /**
      * the key of this struct (by which it can be looked up)

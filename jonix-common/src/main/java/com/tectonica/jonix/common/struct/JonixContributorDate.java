@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.DateFormats;
 import com.tectonica.jonix.common.codelist.PersonOrganizationDateRoles;
 
@@ -29,9 +30,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;ContributorDate></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixContributorDate implements JonixKeyedStruct<PersonOrganizationDateRoles>, Serializable {
-    public static JonixContributorDate EMPTY = new JonixContributorDate();
+    public static final JonixContributorDate EMPTY = new JonixContributorDate();
 
     /**
      * the key of this struct (by which it can be looked up)

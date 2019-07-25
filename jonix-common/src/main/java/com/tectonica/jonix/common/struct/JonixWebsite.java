@@ -29,9 +29,15 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;Website></code> and Onix3
+ * <code>&lt;Website></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixWebsite implements JonixStruct, Serializable {
-    public static JonixWebsite EMPTY = new JonixWebsite();
+    public static final JonixWebsite EMPTY = new JonixWebsite();
 
     /**
      * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see

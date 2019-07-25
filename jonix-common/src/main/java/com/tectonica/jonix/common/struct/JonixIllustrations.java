@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.IllustrationAndOtherContentTypes;
 
 import java.io.Serializable;
@@ -28,9 +29,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix2 <code>&lt;Illustrations></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixIllustrations implements JonixKeyedStruct<IllustrationAndOtherContentTypes>, Serializable {
-    public static JonixIllustrations EMPTY = new JonixIllustrations();
+    public static final JonixIllustrations EMPTY = new JonixIllustrations();
 
     /**
      * the key of this struct (by which it can be looked up)

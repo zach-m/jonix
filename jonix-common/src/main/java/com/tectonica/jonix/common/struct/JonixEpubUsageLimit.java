@@ -28,9 +28,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;EpubUsageLimit></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixEpubUsageLimit implements JonixStruct, Serializable {
-    public static JonixEpubUsageLimit EMPTY = new JonixEpubUsageLimit();
+    public static final JonixEpubUsageLimit EMPTY = new JonixEpubUsageLimit();
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the

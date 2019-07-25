@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.SalesOutletIdentifierTypes;
 
 import java.io.Serializable;
@@ -28,9 +29,15 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;SalesOutletIdentifier></code> and Onix3
+ * <code>&lt;SalesOutletIdentifier></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixSalesOutletIdentifier implements JonixKeyedStruct<SalesOutletIdentifierTypes>, Serializable {
-    public static JonixSalesOutletIdentifier EMPTY = new JonixSalesOutletIdentifier();
+    public static final JonixSalesOutletIdentifier EMPTY = new JonixSalesOutletIdentifier();
 
     /**
      * the key of this struct (by which it can be looked up)

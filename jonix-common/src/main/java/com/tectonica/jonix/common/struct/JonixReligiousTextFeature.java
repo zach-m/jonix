@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.ReligiousTextFeatureTypes;
 import com.tectonica.jonix.common.codelist.ReligiousTextFeatures;
 
@@ -30,9 +31,15 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;ReligiousTextFeature></code> and Onix3
+ * <code>&lt;ReligiousTextFeature></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixReligiousTextFeature implements JonixKeyedStruct<ReligiousTextFeatureTypes>, Serializable {
-    public static JonixReligiousTextFeature EMPTY = new JonixReligiousTextFeature();
+    public static final JonixReligiousTextFeature EMPTY = new JonixReligiousTextFeature();
 
     /**
      * the key of this struct (by which it can be looked up)

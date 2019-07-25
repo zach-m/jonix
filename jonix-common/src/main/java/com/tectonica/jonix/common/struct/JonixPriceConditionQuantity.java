@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.PriceConditionQuantityTypes;
 import com.tectonica.jonix.common.codelist.QuantityUnits;
 
@@ -29,9 +30,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;PriceConditionQuantity></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixPriceConditionQuantity implements JonixKeyedStruct<PriceConditionQuantityTypes>, Serializable {
-    public static JonixPriceConditionQuantity EMPTY = new JonixPriceConditionQuantity();
+    public static final JonixPriceConditionQuantity EMPTY = new JonixPriceConditionQuantity();
 
     /**
      * the key of this struct (by which it can be looked up)

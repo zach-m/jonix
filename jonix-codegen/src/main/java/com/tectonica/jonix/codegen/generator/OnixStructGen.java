@@ -84,15 +84,36 @@ public class OnixStructGen {
         p.print("\n");
 
         p.printf("import %s.%s;\n", COMMON_PACKAGE, structMarkerInterface);
+        p.printf("import %s.JonixStruct;\n", COMMON_PACKAGE); // for javadocs
         p.printf("import %s.codelist.*;\n", COMMON_PACKAGE);
         p.print("\n");
         p.printf("%s\n", Comments.AutoGen);
+
+        // generate an informative comment for the struct
+        if (struct.onix2composite == null && struct.onix3composite == null) {
+            throw new RuntimeException(String.format("Internal error, both composites of unified struct %s are null",
+                structName));
+        }
+        String onix2phrase = struct.onix2composite == null ? "" :
+            String.format("Onix2 <code>&lt;%s></code>%s", struct.onix2composite.name,
+                struct.onix3composite == null ? "" : " and ");
+        String onix3phrase = struct.onix3composite == null ? "" :
+            String.format("Onix3 <code>&lt;%s></code>", struct.onix3composite.name);
+        String bothPhrase = (struct.onix2composite != null && struct.onix3composite != null) ? "both " : "";
+        String structComment = String.format(
+            "This class is a {@link JonixStruct} that represents %s%s%s.<p>"+
+            "It can be retrieved from the composite by invoking its <code>asStruct()</code> method.",
+            bothPhrase, onix2phrase, onix3phrase);
+
+        p.printf("/**\n");
+        p.printf(" * %s\n", structComment);
+        p.printf(" */\n");
         p.printf("@SuppressWarnings(\"serial\")\n");
         p.printf("public class %s implements %s%s, Serializable\n", structName, structMarkerInterface,
             structKeyQualifier);
         p.printf("{\n");
 
-        p.printf("   public static %s EMPTY = new %s();\n", structName, structName);
+        p.printf("   public static final %s EMPTY = new %s();\n", structName, structName);
         p.print("\n");
 
         // declare key

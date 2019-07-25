@@ -30,9 +30,15 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;Prize></code> and Onix3
+ * <code>&lt;Prize></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixPrize implements JonixStruct, Serializable {
-    public static JonixPrize EMPTY = new JonixPrize();
+    public static final JonixPrize EMPTY = new JonixPrize();
 
     public PrizeOrAwardAchievements prizeCode;
 

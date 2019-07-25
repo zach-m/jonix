@@ -28,9 +28,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix2 <code>&lt;MainSubject></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixMainSubject implements JonixStruct, Serializable {
-    public static JonixMainSubject EMPTY = new JonixMainSubject();
+    public static final JonixMainSubject EMPTY = new JonixMainSubject();
 
     public MainSubjectSchemeIdentifiers mainSubjectSchemeIdentifier;
 

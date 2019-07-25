@@ -27,9 +27,15 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;PageRun></code> and Onix3
+ * <code>&lt;PageRun></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixPageRun implements JonixStruct, Serializable {
-    public static JonixPageRun EMPTY = new JonixPageRun();
+    public static final JonixPageRun EMPTY = new JonixPageRun();
 
     /**
      * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters

@@ -35,9 +35,15 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;Bible></code> and Onix3
+ * <code>&lt;Bible></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixBible implements JonixStruct, Serializable {
-    public static JonixBible EMPTY = new JonixBible();
+    public static final JonixBible EMPTY = new JonixBible();
 
     public List<BibleContentss> bibleContentss;
 

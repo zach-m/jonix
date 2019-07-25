@@ -27,9 +27,15 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;OnOrderDetail></code> and Onix3
+ * <code>&lt;OnOrderDetail></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixOnOrderDetail implements JonixStruct, Serializable {
-    public static JonixOnOrderDetail EMPTY = new JonixOnOrderDetail();
+    public static final JonixOnOrderDetail EMPTY = new JonixOnOrderDetail();
 
     /**
      * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is

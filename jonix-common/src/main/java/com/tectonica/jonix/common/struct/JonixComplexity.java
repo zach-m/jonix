@@ -28,9 +28,15 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;Complexity></code> and Onix3
+ * <code>&lt;Complexity></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixComplexity implements JonixStruct, Serializable {
-    public static JonixComplexity EMPTY = new JonixComplexity();
+    public static final JonixComplexity EMPTY = new JonixComplexity();
 
     /**
      * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters, according to the code type

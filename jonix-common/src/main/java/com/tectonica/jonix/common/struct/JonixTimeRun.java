@@ -27,9 +27,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;TimeRun></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixTimeRun implements JonixStruct, Serializable {
-    public static JonixTimeRun EMPTY = new JonixTimeRun();
+    public static final JonixTimeRun EMPTY = new JonixTimeRun();
 
     /**
      * Raw Format: Hours, minutes and seconds in the form HHHMMSS or HHHMMSScc (hundredths of a second)

@@ -28,9 +28,14 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;PriceConstraintLimit></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixPriceConstraintLimit implements JonixStruct, Serializable {
-    public static JonixPriceConstraintLimit EMPTY = new JonixPriceConstraintLimit();
+    public static final JonixPriceConstraintLimit EMPTY = new JonixPriceConstraintLimit();
 
     /**
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the

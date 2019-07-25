@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.DiscountCodeTypes;
 
 import java.io.Serializable;
@@ -28,9 +29,15 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;DiscountCoded></code> and Onix3
+ * <code>&lt;DiscountCoded></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixDiscountCoded implements JonixKeyedStruct<DiscountCodeTypes>, Serializable {
-    public static JonixDiscountCoded EMPTY = new JonixDiscountCoded();
+    public static final JonixDiscountCoded EMPTY = new JonixDiscountCoded();
 
     /**
      * the key of this struct (by which it can be looked up)

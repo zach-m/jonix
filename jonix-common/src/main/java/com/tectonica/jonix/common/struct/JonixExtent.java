@@ -20,6 +20,7 @@
 package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
+import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.ExtentTypes;
 import com.tectonica.jonix.common.codelist.ExtentUnits;
 
@@ -29,9 +30,15 @@ import java.io.Serializable;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
+/**
+ * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;Extent></code> and Onix3
+ * <code>&lt;Extent></code>.
+ * <p>
+ * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
+ */
 @SuppressWarnings("serial")
 public class JonixExtent implements JonixKeyedStruct<ExtentTypes>, Serializable {
-    public static JonixExtent EMPTY = new JonixExtent();
+    public static final JonixExtent EMPTY = new JonixExtent();
 
     /**
      * the key of this struct (by which it can be looked up)
