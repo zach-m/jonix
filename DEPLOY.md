@@ -51,16 +51,19 @@ Edit `~/.m2/settings.xml`
 
     cd /path/to/jonix/home
     # mvn clean
-    mvn javadoc:javadoc
-    # ls target/site/apidocs
+    mvn -P release package javadoc:aggregate-jar -DskipTests
+    # ls -l target/apidocs
     
     # git clone -b gh-pages --single-branch https://github.com/zach-m/jonix.git gh-pages
     cd gh-pages
     rm -rf $(ls -1)
-    cp -r ../target/site/apidocs/* .
+    cp -r ../target/apidocs/* .
+    git add -A
+    git commit -m 'official documentation for v9.0'
     git push
 
 ## Deploy
 
     cd /path/to/jonix/home
-    mvn -P java9,release clean install deploy
+    # mvn clean
+    mvn -P java9,release javadoc:jar install deploy

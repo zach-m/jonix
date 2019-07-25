@@ -6,6 +6,8 @@
 
 [ ] Copyright comment: 2012 -> 2012-2019
 
+[ ] run javadocs plugin WITHOUT <doclint>none</doclint>, maybe try to fix all the lint warnings
+
 [ ] in JPU.forElementsOf code generation introduce lambda
 
 (run Code Analysis and Optimization in Intellij)
