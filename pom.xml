@@ -50,6 +50,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.slf4j>1.7.25</version.slf4j>
+        <javadoc.bottom>Copyright &#169; 2012-2019 Zach Melamed. All rights reserved.</javadoc.bottom>
     </properties>
 
     <prerequisites>
@@ -59,17 +60,21 @@
     <build>
         <pluginManagement>
             <plugins>
-                <!-- Configure Compiler -->
+                <!-- Configure compiler; this is used by IDEs, hence release 9 is the minimal value -->
+                <!-- when installing and deploying, a special profile 'java8' below overrides the default -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.1</version>
                     <configuration>
+                        <jdkToolchain>
+                            <version>9</version>
+                        </jdkToolchain>
                         <release>9</release>
                     </configuration>
                 </plugin>
 
-                <!-- Configure logging properties when running tests -->
+                <!-- Configure tester, and logging properties when running tests -->
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.19.1</version>
@@ -118,7 +123,8 @@
         </pluginManagement>
 
         <plugins>
-            <!-- CheckStyle plugin. To execute:  mvn verify -DskipTests; look for '*/checkstyle-result.xml' -->
+            <!-- CheckStyle plugin, set to execute on the verify phase.
+                 To execute manually: mvn verify -DskipTests; and look for '*/target/checkstyle-result.xml' -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -214,7 +220,7 @@
     </dependencyManagement>
 
     <profiles>
-        <!-- mvn -P versioning versions:set -DnewVersion=8.1.0 -->
+        <!-- mvn -P versioning versions:set -DnewVersion=9.1 -->
         <!-- mvn -P versioning versions:display-plugin-updates -->
         <profile>
             <id>versioning</id>
@@ -236,41 +242,31 @@
             </modules>
         </profile>
 
-        <!-- Java9 Modularization in Java8 JARs -->
-        <!-- mvn -P java9 clean package -->
+        <!-- Java9 modularization (Jigsaw) within Java8 JARs -->
+        <!-- mvn -P java8 clean package -->
         <profile>
-            <id>java9</id>
+            <id>java8</id>
             <build>
                 <plugins>
                     <plugin>
+                        <!-- We use a trick here, following official Maven documentation, having all java files
+                             compiled twice. First compilation is with a Java9 compiler (module-info.java files
+                             included), followed by a second compilation with a Java8 compiler for all but
+                             module-info.java files), resulting in a JAR compatible with both Java8 and Java9.
+                             This is needed only for installation and deployment of JAR files.
+                             see: https://maven.apache.org/plugins/maven-compiler-plugin/examples/module-info.html -->
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
-                        <!-- set the basic language level to Java-8; this is used on all classes and tests -->
-                        <configuration>
-                            <jdkToolchain>
-                                <version>[1.5,9)</version>
-                            </jdkToolchain>
-                            <release>8</release>
-                        </configuration>
-                        <!-- create a Java-8-compatible JAR with Java-9 compatible module-info.class files -->
                         <executions>
+                            <!-- first we compile all files for Java9 (ensures module-info contains right entries) -->
+                            <!-- then, here we re-compile all files for Java8, except the module-info.java files -->
                             <execution>
-                                <id>default-compile</id>
-                                <configuration>
-                                    <!-- pre-compile everything to ensure module-info contains right entries -->
-                                    <jdkToolchain>
-                                        <version>9</version>
-                                    </jdkToolchain>
-                                    <release>9</release>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>base-compile</id>
+                                <id>java8-compile</id>
                                 <goals>
                                     <goal>compile</goal>
                                 </goals>
-                                <!-- re-compile everything for Java-8 except the module-info.java -->
                                 <configuration>
+                                    <release>8</release>
                                     <excludes>
                                         <exclude>module-info.java</exclude>
                                     </excludes>
@@ -283,7 +279,7 @@
         </profile>
 
         <!-- Deployment configuration -->
-        <!-- mvn -P java9,release clean deploy -->
+        <!-- mvn -P java8,release clean deploy -->
         <profile>
             <id>release</id>
 
@@ -298,40 +294,48 @@
             <build>
                 <plugins>
 
-                    <!-- Generate source code -->
+                    <!-- Generate source-code jars, set to run on verify phase -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.0.1</version>
+                        <version>3.1.0</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
                                 <phase>verify</phase>
                                 <goals>
-                                    <goal>jar-no-fork</goal>
+                                    <goal>jar</goal>
                                 </goals>
                             </execution>
                         </executions>
                     </plugin>
 
-                    <!-- Generate javadocs -->
+                    <!-- Generate javadoc jars, set to run on verify phase -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>3.1.1</version>
                         <configuration>
                             <doctitle>Jonix Framework ${project.version} APIs</doctitle>
-                            <windowtitle>Jonix Framework ${project.version} APIs</windowtitle>
+                            <windowtitle>Jonix ${project.version} APIs</windowtitle>
                             <encoding>UTF-8</encoding>
                             <excludePackageNames>repackaged</excludePackageNames>
                             <doclint>none</doclint>
+<!--                            <source>9</source>-->
                             <sourceFileExcludes>
                                 <exclude>module-info.java</exclude>
                             </sourceFileExcludes>
-                            <bottom>
-                                Copyright &#169; 2012-2019 Zach Melamed. All rights reserved.
-                            </bottom>
+                            <bottom>${javadoc.bottom}</bottom>
                         </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadoc</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
 
                     <!-- GPG - needed for deployment -->
@@ -342,7 +346,7 @@
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
-                                <phase>verify</phase>
+                                <phase>deploy</phase>
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
