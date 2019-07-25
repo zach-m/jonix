@@ -9,7 +9,7 @@ Commercial-grade library for extracting data from [ONIX for Books](https://www.e
 - Version 3.1-rc1 (May 2016).
 
 #### JavaDocs
-API documentation can be found [here](http://zach-m.github.io/jonix).
+API documentation can be found [here](https://zach-m.github.io/jonix).
 
 # Usage
 
@@ -82,19 +82,19 @@ With ONIX, dealing directly with the XML content could be quite complicated, for
 
 Jonix provides solutions for all the above:
 
-* **Source size** - Jonix is using [XmlChunker](http://zach-m.github.io/jonix/com/tectonica/xmlchunk/XmlChunker.html) internally, which is a service capable of processing infinitely large ONIX sources by reading them chunk-by-chunk.
+* **Source size** - Jonix is using [XmlChunker](https://zach-m.github.io/jonix/jonix.xml/com/tectonica/xmlchunk/XmlChunker.html) internally, which is a service capable of processing infinitely large ONIX sources by reading them chunk-by-chunk.
 * **ONIX Versions** - All versions and all sub-schemas of ONIX are mapped to a corresponding set of Java classes.
-* **Codelists** - Each ONIX Codelist is mapped to a Jonix `Enum`, all listed [here](http://zach-m.github.io/jonix/com/tectonica/jonix/codelist/package-summary.html). 
+* **Codelists** - Each ONIX Codelist is mapped to a Jonix `Enum`, all listed [here](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/codelist/package-summary.html). 
 Note that even though each ONIX version defines its own set of Codelists, the corresponding `Enum`s in Jonix were unified 
 to avoid confusion.
 * **Schema Rules** - These are accounted for in Jonix in several ways:
 	* ONIX Tags that can be repeated are represented as Java `Set`s or `List`s
 	* Tags with special traits (is-mandatory, data format, etc.) have a corresponding Java-doc comment in their definition
-	* Coherent and descriptive [data model](http://zach-m.github.io/jonix/com/tectonica/jonix/package-summary.html#package.description) 
+	* Coherent and descriptive [data model](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/package-summary.html) 
 	with several interfaces used to categorize ONIX tags as either 
-	[Composite](http://zach-m.github.io/jonix/com/tectonica/jonix/OnixComposite.html), 
-	[Element](http://zach-m.github.io/jonix/com/tectonica/jonix/OnixElement.html) or 
-	[Flag](http://zach-m.github.io/jonix/com/tectonica/jonix/OnixFlag.html). 
+	[Composite](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/OnixComposite.html), 
+	[Element](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/OnixElement.html) or 
+	[Flag](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/OnixFlag.html). 
 
 > Classes in Jonix that represent ONIX tags are generated automatically from the official schema 
 ([here](https://www.editeur.org/93/Release-3.0-Downloads/#Schema%20defs) 
@@ -113,14 +113,14 @@ be made (such as writing into a database, sort, search, etc.).
 as if they were rows in a table. Flattening a tree into a plain list of columns can't be done without loss of generality, 
 but with the proper knowledge of the ONIX content, it can be done at a reasonable compromise. Jonix offers a default 
 tabulation scheme, which you can customize to your needs. For more information see the documentation for 
-[Tabulation](http://zach-m.github.io/jonix/com/tectonica/jonix/tabulate/Tabulation.html)  
+[Tabulation](https://zach-m.github.io/jonix/jonix/com/tectonica/jonix/tabulate/Tabulation.html)  
 * **Bulk Processing**. Jonix provides methods for handling multiple ONIX sources, scattered in the file system.
 
 # Examples
 
 ## Preparation
 
-The main entry-point for processing ONIX content is [JonixRecords](http://zach-m.github.io/jonix/com/tectonica/jonix/JonixRecords.html) class.
+The main entry-point for processing ONIX content is [JonixRecords](https://zach-m.github.io/jonix/jonix/com/tectonica/jonix/JonixRecords.html) class.
 
 The typical preparation steps for reading ONIX content are as follows:
 1. Add one or more ONIX sources
@@ -148,7 +148,7 @@ JonixRecords records = Jonix
  
 ## Low-level iteration
  
-`JonixRecords` is first and foremost an `Iterable` of [JonixRecord](http://zach-m.github.io/jonix/com/tectonica/jonix/JonixRecord.html) items.
+`JonixRecords` is first and foremost an `Iterable` of [JonixRecord](https://zach-m.github.io/jonix/jonix/com/tectonica/jonix/JonixRecord.html) items.
 Each of these items contain an ONIX Product and a link to the ONIX source from which it was read.
  
 The exact concrete class that contain the ONIX Product depends on the ONIX Version of the source, and can be known
@@ -225,8 +225,8 @@ List<Product> products3 = records.stream()
 One of Jonix's best facilities is the Unification framework, allowing to simplify the treatment in varied sources 
 (Onix2 mixed with Onix3, _Reference_ mixed with _Short_) and eliminate some of the intricacies of XML handling. 
 The method `streamUnified()` returns a Stream, but not of the low-level `JonixRecord`s. 
-Instead, it streams out [BaseRecords](http://zach-m.github.io/jonix/com/tectonica/jonix/unify/BaseRecord.html), 
-that contain [BaseProduct](http://zach-m.github.io/jonix/com/tectonica/jonix/unify/base/BaseProduct.html) - a typed 
+Instead, it streams out [BaseRecords](https://zach-m.github.io/jonix/jonix/com/tectonica/jonix/unify/BaseRecord.html), 
+that contain [BaseProduct](https://zach-m.github.io/jonix/jonix/com/tectonica/jonix/unify/base/BaseProduct.html) - a typed 
 and unified representation of the most essential data within typical ONIX source. 
 
 The following example demonstrates extraction of some fundamental ONIX fields from an ONIX source of any version and type:
@@ -252,7 +252,7 @@ records.streamUnified()
 ```
  
 Unification can also be done explicitly (not via `streamUnified()`) using 
-[JonixUnifier](http://zach-m.github.io/jonix/com/tectonica/jonix/unify/JonixUnifier.html). For example, here's how 
+[JonixUnifier](https://zach-m.github.io/jonix/jonix/com/tectonica/jonix/unify/JonixUnifier.html). For example, here's how 
 to manually transform a raw `OnixProduct` into a `BaseProduct`:
 
 ```java
@@ -299,5 +299,5 @@ System.out.println("Written " + recordsWritten + " records")
 ```
 
 The procedure of how to define which fields to output and how are described in 
-[Tabulation](http://zach-m.github.io/jonix/com/tectonica/jonix/tabulate/Tabulation.html) and in 
-[FieldTabulator](http://zach-m.github.io/jonix/com/tectonica/jonix/tabulate/FieldTabulator.html)
+[Tabulation](https://zach-m.github.io/jonix/jonix/com/tectonica/jonix/tabulate/Tabulation.html) and in 
+[FieldTabulator](https://zach-m.github.io/jonix/jonix/com/tectonica/jonix/tabulate/FieldTabulator.html)
