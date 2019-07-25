@@ -23,7 +23,7 @@ import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 /**
- * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, this interface completes
+ * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, this interface completes
  * {@link JonixStruct} by representing a <code>Struct</code> that contains a <b>key</b> (i.e. mandatory, unique, and
  * searchable-by field).
  * <p>

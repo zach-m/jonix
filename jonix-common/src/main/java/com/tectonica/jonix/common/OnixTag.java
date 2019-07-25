@@ -20,7 +20,7 @@
 package com.tectonica.jonix.common;
 
 /**
- * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, used as a base-class for all types
+ * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, used as a base-class for all types
  * of ONIX Tags (namely Elements, Composites and Flags)
  */
 public interface OnixTag {

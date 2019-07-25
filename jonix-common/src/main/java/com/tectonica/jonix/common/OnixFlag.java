@@ -20,7 +20,7 @@
 package com.tectonica.jonix.common;
 
 /**
- * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, used to mark objects that represent
+ * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, used to mark objects that represent
  * an ONIX flag (i.e. an ONIX Element that has no content, but indicates something in its presence)
  */
 public interface OnixFlag extends OnixTag {

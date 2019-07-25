@@ -20,7 +20,7 @@
 package com.tectonica.jonix.common;
 
 /**
- * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite (i.e.
+ * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, representing an ONIX Composite (i.e.
  * a container for ONIX Elements and possibly other ONIX Composites)
  */
 public interface OnixComposite extends OnixTag {
@@ -31,14 +31,14 @@ public interface OnixComposite extends OnixTag {
     void _initialize();
 
     /**
-     * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite
+     * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, representing an ONIX Composite
      * that contains other composites
      */
     interface OnixSuperComposite extends OnixComposite {
     }
 
     /**
-     * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite
+     * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, representing an ONIX Composite
      * that contains only ONIX Elements (i.e. no nested composites). This composite is unique to specific version of
      * ONIX, and isn't common to all.
      */
@@ -46,7 +46,7 @@ public interface OnixComposite extends OnixTag {
     }
 
     /**
-     * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite
+     * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, representing an ONIX Composite
      * that contains only ONIX Elements (i.e. no nested composites)
      */
     interface OnixDataComposite<V extends JonixStruct> extends OnixComposite {
@@ -54,7 +54,7 @@ public interface OnixComposite extends OnixTag {
     }
 
     /**
-     * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite
+     * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, representing an ONIX Composite
      * that contains only ONIX Elements (i.e. no nested composites), one of which is the key of the composite (i.e. a
      * mandatory, unique, enumerated code-list, by which a composite can't be looked up)
      */
