@@ -34,7 +34,6 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * JPU (Jonix Processing Utility) is an all-static internal utility class, assisting in run time processing of the DOM

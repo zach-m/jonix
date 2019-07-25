@@ -1,0 +1,34 @@
+[x] for all structs add a common comment: this class is a Jonix Struct, which means it is an onix-version-agnostic representation of an OnixDataComposite. (Maybe:) It is obtained by invoking XXX#asYYY(). 
+
+[ ] For all composites we can docment: This particular class can be found in Onix2 here:... and Onix3 here:...
+
+[x] Sort onix members (in composite) by required first, optional later ?
+
+[ ] Copyright comment: 2012 -> 2012-2019
+
+[ ] in JPU.forElementsOf code generation introduce lambda
+
+(run Code Analysis and Optimization in Intellij)
+
+[ ] lazy initialization: on new Audience(element) -> just keep ref in this.element, and introduce accessors functions like audienceCodeType() instead of the variable member, which first asks (isInitialized) before returning results
+
+[ ] The initilize() new method needs to do whatever the non-default constructor does today, but with some additional code to support the optional thing: assign all the values that remained null after the element scanning with their empty() version
+
+[ ] return JonixOptional? will have these members:
+	.value()
+	.values()
+	.struct()
+	.empty() - static member, returns object that for values (enums, Strings, etc) returns null, but for composites returns and empty composite
+	(id) - finder
+	(Set ids) - multiple finder
+	
+[ ] maybe we'll have:
+* JonixValueOptional<T>	
+* JonixListOptional<T>	
+* JonixSetOptional<T>	
+	
+[ ] have the parser create h2/mongo database instead of zillion json files. this db can later be queried for all sorts of questions
+	
+[ ] make sure all the http links to ONIX documentation are still relevant
+	
+[ ] use some real serialVersionUID values in the classes, using a static map

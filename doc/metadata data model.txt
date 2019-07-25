@@ -1,0 +1,51 @@
+metadata
+	onixVersion
+	isShort
+	composites
+		name
+		members
+			className, cardinality
+		consts
+			name, value
+		attributes
+			name, primitiveType, simpleTypeName, enumName (nullable)
+	elements (element contains a single value + the standard attributes)
+		name
+		isSpaceable
+		valueMember
+			simpleTypeName, dataType
+		consts
+			name, value
+		attributes
+			name, primitiveType, simpleTypeName, enumName
+	flags
+		name
+		consts
+			name, value
+		attributes
+			name, primitiveType, simpleTypeName, enumName
+	types
+		name
+		primitiveType
+		comment
+		enum
+		enumName
+		enumAliasFor
+		enumValues
+			name, value, description
+	enums
+		name
+		primitiveType
+		comment
+		enum
+		enumName
+		enumAliasFor
+		enumValues
+			name, value, description
+	structs
+		containingComposite
+			(composite)
+		keyed
+		keyMember
+		members
+			dataMember = className, cardinality
