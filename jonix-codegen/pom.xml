@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.tectonica</groupId>
-        <artifactId>jonix-parent</artifactId>
+        <artifactId>jonix-project</artifactId>
         <version>9.1-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
 
-    <name>Jonix - Code Generator</name>
+    <name>Jonix-CodeGenerator</name>
     <description>Utility library for generating source code for onix-processing classes directly from EDItEUR's schema
     </description>
 

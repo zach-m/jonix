@@ -6,12 +6,12 @@
 
 	<parent>
 		<groupId>com.tectonica</groupId>
-		<artifactId>jonix-parent</artifactId>
+		<artifactId>jonix-project</artifactId>
 		<version>9.1-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 
-	<name>Jonix - Onix2</name>
+	<name>Jonix-Onix2</name>
 	<description>Collection of classes for processing Onix-2 sources</description>
 
 	<dependencies>

@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.tectonica</groupId>
-        <artifactId>jonix-parent</artifactId>
+        <artifactId>jonix-project</artifactId>
         <version>9.1-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
 
-    <name>Jonix - JSON</name>
+    <name>Jonix-JSON</name>
     <description>Utilities to output ONIX as JSON</description>
 
     <properties>

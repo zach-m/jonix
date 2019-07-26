@@ -54,15 +54,16 @@ Edit `~/.m2/settings.xml`
 ## Set Version for deployment
 ```bash
     cd /path/to/jonix/home
-    mvn -P versioning versions:set -DnewVersion=8.1.0
-    # manually set <project.parent.version> in jonix-codegen
+    mvn -P versioning versions:set -DnewVersion=9.1
+    # update README.md: sections "Release History" and "Usage"
+    # edit <javadoc.bottom> in pom.xml if necessary
 ```
 
 ## Generate aggregated JavaDocs (for online site)
 ```bash
     cd /path/to/jonix/home
     # mvn clean
-    mvn -P release compile javadoc:aggregate
+    mvn javadoc:aggregate
     # ls -l target/site/apidocs
     
     # deploy to https://zach-m.github.io/jonix/
@@ -85,3 +86,6 @@ NOTE: due to `maven-javadoc-plugin` this currently works only with [open-jdk-9](
     # mvn clean
     mvn -P release,java8 install deploy
 ```
+
+- Artifacts should be at <https://repo1.maven.org/maven2/com/tectonica/>
+- Dashboard is at <https://oss.sonatype.org/#welcome>

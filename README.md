@@ -24,9 +24,9 @@ Maven
 ```
 Gradle
 ```
-compile group: 'com.tectonica', name: 'jonix', version: '8.0.1'
+compile group: 'com.tectonica', name: 'jonix', version: '9.0'
 ```
-For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/8.0.1>
+For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/9.0>
 
 ## 2. Latest Release (from latest source code)
 
@@ -35,7 +35,7 @@ mvn -version # REQUIRED: Maven-version >= 3.3.9  &&  JDK-version >= 9
 git clone git@github.com:zach-m/jonix.git # or https://github.com/zach-m/jonix.git
 cd jonix
 mvn clean install
-# in your project, use version 9.1-SNAPSHOT 
+# in your project's pom.xml, use <version> 9.1-SNAPSHOT 
 ```
 
 # Table of contents

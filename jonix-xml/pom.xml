@@ -6,12 +6,12 @@
 
 	<parent>
 		<groupId>com.tectonica</groupId>
-		<artifactId>jonix-parent</artifactId>
+		<artifactId>jonix-project</artifactId>
 		<version>9.1-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 
-	<name>Jonix - XML</name>
+	<name>Jonix-XML</name>
 	<description>Utilities to handle infinitely large XML files</description>
 
 	<dependencies>

@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tectonica</groupId>
-    <artifactId>jonix-parent</artifactId>
+    <artifactId>jonix-project</artifactId>
     <version>9.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Jonix - Parent</name>
-    <description>Common configuration for Jonix projects</description>
+    <name>JONIX-PROJECT</name>
+    <description>Maven configuration for Jonix sub-projects</description>
     <url>https://github.com/zach-m/jonix</url>
 
     <organization>
@@ -34,7 +34,7 @@
     </developers>
 
     <scm>
-        <url>https://github.com/zach-m/jonix.git</url>
+        <url>https://github.com/zach-m/jonix</url>
         <connection>scm:git:https://github.com/zach-m/jonix.git</connection>
     </scm>
 
@@ -88,6 +88,21 @@
                     </configuration>
                 </plugin>
 
+                <!-- Configure javadocs generator -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.1.1</version>
+                    <configuration>
+                        <doctitle>Jonix Framework ${project.version} APIs</doctitle>
+                        <windowtitle>Jonix ${project.version} APIs</windowtitle>
+                        <encoding>UTF-8</encoding>
+                        <excludePackageNames>repackaged</excludePackageNames>
+                        <doclint>none</doclint>
+                        <bottom>${javadoc.bottom}</bottom>
+                    </configuration>
+                </plugin>
+
                 <!-- Configure various dependencies -->
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -104,6 +119,10 @@
                 <plugin>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.7.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.0.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
@@ -123,6 +142,7 @@
         </pluginManagement>
 
         <plugins>
+
             <!-- CheckStyle plugin, set to execute on the verify phase.
                  To execute manually: mvn verify -DskipTests; and look for '*/target/checkstyle-result.xml' -->
             <plugin>
@@ -152,6 +172,22 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Generate aggregated javadocs for online deployment: mvn site -->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>aggregated-javadoc</id>-->
+<!--                        <phase>site</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>aggregate</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+
         </plugins>
     </build>
 
@@ -314,19 +350,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
-                        <configuration>
-                            <doctitle>Jonix Framework ${project.version} APIs</doctitle>
-                            <windowtitle>Jonix ${project.version} APIs</windowtitle>
-                            <encoding>UTF-8</encoding>
-                            <excludePackageNames>repackaged</excludePackageNames>
-                            <doclint>none</doclint>
-<!--                            <source>9</source>-->
-                            <sourceFileExcludes>
-                                <exclude>module-info.java</exclude>
-                            </sourceFileExcludes>
-                            <bottom>${javadoc.bottom}</bottom>
-                        </configuration>
                         <executions>
                             <execution>
                                 <id>attach-javadoc</id>
