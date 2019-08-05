@@ -15,7 +15,7 @@
     <description>Utilities to output ONIX as JSON</description>
 
     <properties>
-        <version.jackson>2.9.9</version.jackson>
+        <version.jackson>2.9.9.2</version.jackson>
     </properties>
 
     <dependencies>
