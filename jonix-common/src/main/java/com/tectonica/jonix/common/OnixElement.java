@@ -34,4 +34,39 @@ public interface OnixElement<V> extends OnixTag {
     default Optional<V> value() {
         return Optional.ofNullable(_value());
     }
+
+    /**
+     * helper-method for fluent code, checking if the value is {@code null}, which could happen either if the element
+     * itself is missing (in which case {@code exists()} would be {@code false}), or if it's listed but has an empty or
+     * invalid value
+     */
+    default boolean isNull() {
+        return _value() == null;
+    }
+
+    /**
+     * helper-method for fluent code, comparing the ONIX element's value with the given value, using <b>identity</b>
+     * (i.e. {@code ==}) operator. This is particularly useful when the value is an {@link OnixCodelist}.
+     * <p>
+     * The caller doesn't have to worry about the ONIX element's value being {@code null} (which could happen either if
+     * the element itself is missing (in which case {@code exists()} would be {@code false}), or if it's listed but has
+     * an empty or invalid value)
+     *
+     * @return {@code true} if the element's value {@code ==} the passed value, {@code false} otherwise
+     */
+    default boolean is(V value) {
+        return _value() == value;
+    }
+
+    /**
+     * helper-method for fluent code, comparing the ONIX element's value with the given value, using {@code equals()}
+     * operation. The caller doesn't have to worry about the ONIX element's value being {@code null} (which could happen
+     * either if the element itself is missing (in which case {@code exists()} would be {@code false}), or if it's
+     * listed but has an empty or invalid value)
+     *
+     * @return {@code true} if the element's value {@code equals()} to the passed value, {@code false} otherwise
+     */
+    default boolean equal(V value) {
+        return _value() != null && _value().equals(value);
+    }
 }
