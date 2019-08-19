@@ -88,13 +88,27 @@ public class JonixUtil {
         return corporateName;
     }
 
-    private static SimpleDateFormat yyyymmdd = new SimpleDateFormat("yyyyMMdd");
+    private static final SimpleDateFormat yyyy = new SimpleDateFormat("yyyy");
+    private static final SimpleDateFormat yyyymm = new SimpleDateFormat("yyyyMM");
+    private static final SimpleDateFormat yyyymmdd = new SimpleDateFormat("yyyyMMdd");
 
     public static Date parseYYYYMMDD(String s) {
-        try {
-            return (s == null) ? null : yyyymmdd.parse(s);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
+        if (s == null) {
+            return null;
         }
+        try {
+            switch (s.length()) {
+                case 4:
+                    return yyyy.parse(s);
+                case 6:
+                    return yyyymm.parse(s);
+                case 8:
+                    return yyyymmdd.parse(s);
+            }
+        } catch (ParseException e) {
+            // throw new RuntimeException(e);
+            return null; // date format was supposed to be parsable, but is probably corrupt
+        }
+        return null; // date format is not in one of the supported lengths
     }
 }
