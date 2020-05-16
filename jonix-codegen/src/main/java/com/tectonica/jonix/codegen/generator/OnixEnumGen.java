@@ -114,6 +114,7 @@ public class OnixEnumGen {
 
         Set<String> tokens = new HashSet<>();
         boolean first = true;
+        boolean disableCheckstyle = false;
         for (OnixEnumValue ev : enumType.enumValues) {
             String token = enumNameOf(ev.name);
             while (!tokens.add(token)) {
@@ -123,7 +124,7 @@ public class OnixEnumGen {
             if (first) {
                 first = false;
             } else {
-                p.print(", //\n\n");
+                p.printf(",\n%s\n", disableCheckstyle ? "   // CHECKSTYLE:ON\n" : "");
             }
             if (ev.description != null || ev.comment != null) {
                 p.printf("   /**\n");
@@ -138,9 +139,13 @@ public class OnixEnumGen {
                 }
                 p.printf("    */\n");
             }
+            disableCheckstyle = token.length() >= 110 || ev.name.length() >= 110;
+            if (disableCheckstyle) {
+                p.print("   // CHECKSTYLE:OFF\n");
+            }
             p.printf("   %s(\"%s\", \"%s\")", token, ev.value, ev.name);
         }
-        p.print(";\n");
+        p.printf(";\n%s", disableCheckstyle ? "// CHECKSTYLE:ON\n" : "");
 
         p.print("\n");
         p.printf("   public final String code;\n");

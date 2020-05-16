@@ -104,11 +104,12 @@ public class JonixUtil {
                     return yyyymm.parse(s);
                 case 8:
                     return yyyymmdd.parse(s);
+                default:
+                    return null; // date format is not in one of the supported lengths
             }
         } catch (ParseException e) {
             // throw new RuntimeException(e);
             return null; // date format was supposed to be parsable, but is probably corrupt
         }
-        return null; // date format is not in one of the supported lengths
     }
 }

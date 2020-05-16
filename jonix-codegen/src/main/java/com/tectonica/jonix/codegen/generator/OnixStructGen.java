@@ -101,8 +101,8 @@ public class OnixStructGen {
             String.format("Onix3 <code>&lt;%s></code>", struct.onix3composite.name);
         String bothPhrase = (struct.onix2composite != null && struct.onix3composite != null) ? "both " : "";
         String structComment = String.format(
-            "This class is a {@link JonixStruct} that represents %s%s%s.<p>"+
-            "It can be retrieved from the composite by invoking its <code>asStruct()</code> method.",
+            "This class is a {@link JonixStruct} that represents %s%s%s.<p>"
+                + "It can be retrieved from the composite by invoking its <code>asStruct()</code> method.",
             bothPhrase, onix2phrase, onix3phrase);
 
         p.printf("/**\n");

@@ -25,7 +25,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.StartElement;
 import java.io.InputStream;
 
-//CHECKSTYLE:OFF
+// CHECKSTYLE:OFF
 
 /**
  * An XML data extraction class, intended for XML source that has the following properties:
@@ -69,7 +69,7 @@ import java.io.InputStream;
  *
  * @author Zach Melamed
  */
-//CHECKSTYLE:ON
+// CHECKSTYLE:ON
 public class XmlChunker {
     /**
      * An interface that the user of {@link XmlChunker} must implement in order to get the 'chunks' extracted from the

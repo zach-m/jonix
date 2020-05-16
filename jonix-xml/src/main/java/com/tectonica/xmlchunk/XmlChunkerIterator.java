@@ -26,7 +26,7 @@ import java.io.InputStream;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-//CHECKSTYLE:OFF
+// CHECKSTYLE:OFF
 
 /**
  * An iterator for XML data extraction, intended for XML source that has the following properties:
@@ -70,7 +70,7 @@ import java.util.NoSuchElementException;
  *
  * @author Zach Melamed
  */
-//CHECKSTYLE:ON
+// CHECKSTYLE:ON
 public class XmlChunkerIterator implements Iterator<Element> {
     private final XmlChunkerContext ctx;
     private Element nextChunk;
