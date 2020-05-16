@@ -2425,8 +2425,8 @@ public class Product implements OnixProduct, Serializable {
         return bookClubAdoption;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
+        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2454,7 +2454,8 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers() {
         _initialize();
         return productIdentifiers;
     }
@@ -2473,8 +2474,8 @@ public class Product implements OnixProduct, Serializable {
         return barcodes;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails = ListOfOnixElement
-        .empty();
+    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
+        ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -2487,8 +2488,8 @@ public class Product implements OnixProduct, Serializable {
         return productFormDetails;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature,
+        ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2497,7 +2498,8 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
+    public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
+        productFormFeatures() {
         _initialize();
         return productFormFeatures;
     }
@@ -2558,8 +2560,8 @@ public class Product implements OnixProduct, Serializable {
         return containedItems;
     }
 
-    private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification,
+        ProductClassificationTypes> productClassifications = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2569,7 +2571,8 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications() {
+    public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes>
+        productClassifications() {
         _initialize();
         return productClassifications;
     }
@@ -2615,8 +2618,8 @@ public class Product implements OnixProduct, Serializable {
         return formerTitles;
     }
 
-    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2636,8 +2639,8 @@ public class Product implements OnixProduct, Serializable {
         return titles;
     }
 
-    private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2708,8 +2711,8 @@ public class Product implements OnixProduct, Serializable {
         return languageOfTexts;
     }
 
-    private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2723,8 +2726,8 @@ public class Product implements OnixProduct, Serializable {
         return languages;
     }
 
-    private ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2737,8 +2740,8 @@ public class Product implements OnixProduct, Serializable {
         return extents;
     }
 
-    private ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations,
+        IllustrationAndOtherContentTypes> illustrationss = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2747,7 +2750,8 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss() {
+    public ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes>
+        illustrationss() {
         _initialize();
         return illustrationss;
     }
@@ -2850,8 +2854,8 @@ public class Product implements OnixProduct, Serializable {
         return audienceCodes;
     }
 
-    private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2892,8 +2896,8 @@ public class Product implements OnixProduct, Serializable {
         return complexitys;
     }
 
-    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2925,8 +2929,8 @@ public class Product implements OnixProduct, Serializable {
         return reviewQuotes;
     }
 
-    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -2940,8 +2944,8 @@ public class Product implements OnixProduct, Serializable {
         return mediaFiles;
     }
 
-    private ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites = ListOfOnixDataComposite
-        .empty();
+    private ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites =
+        ListOfOnixDataComposite.empty();
 
     /**
      * <p>
@@ -3128,8 +3132,8 @@ public class Product implements OnixProduct, Serializable {
         return salesRestrictions;
     }
 
-    private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

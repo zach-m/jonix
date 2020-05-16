@@ -115,10 +115,10 @@ public class JPU {
         return str.toString().trim();
     }
 
-    //static {
-    //    System.setProperty("javax.xml.transform.TransformerFactory",
-    //        "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
-    //}
+    // static {
+    // System.setProperty("javax.xml.transform.TransformerFactory",
+    // "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
+    // }
     private static final TransformerFactory transformerFactory = TransformerFactory.newInstance();
 
     public static String getChildXHTML(Node node, boolean strip) {
@@ -154,17 +154,16 @@ public class JPU {
         return out;
     }
 
-    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> addToList(
-        ListOfOnixDataComposite<C, S> in, C item) {
+    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S>
+        addToList(ListOfOnixDataComposite<C, S> in, C item) {
         ListOfOnixDataComposite<C, S> out = (in.size() > 0) ? in : new ListOfOnixDataComposite<>();
         out.add(item);
         return out;
     }
 
-    public static <C extends OnixDataCompositeWithKey<S, K>,
-        S extends JonixKeyedStruct<K>,
-        K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K> addToList(
-        ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
+    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
+        K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K>
+        addToList(ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
         ListOfOnixDataCompositeWithKey<C, S, K> out = (in.size() > 0) ? in : new ListOfOnixDataCompositeWithKey<>();
         out.add(item);
         return out;
@@ -190,8 +189,7 @@ public class JPU {
     }
 
     /**
-     * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes,
-     * etc.
+     * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes, etc.
      */
     public static Double convertStringToDoubleSafe(String s) {
         try {

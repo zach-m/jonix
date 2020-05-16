@@ -45,27 +45,27 @@ public enum BibleReferenceLocations implements OnixCodelist, CodeList87 {
     /**
      * References are printed in a narrow column in the center of the page between two columns of text
      */
-    Center_column("CCL", "Center column"), //
+    Center_column("CCL", "Center column"),
 
     /**
      * References are printed at the foot of the page
      */
-    Page_end("PGE", "Page end"), //
+    Page_end("PGE", "Page end"),
 
     /**
      * References are printed in a column to the side of the scripture
      */
-    Side_column("SID", "Side column"), //
+    Side_column("SID", "Side column"),
 
     /**
      * References are printed at the end of the applicable verse
      */
-    Verse_end("VER", "Verse end"), //
+    Verse_end("VER", "Verse end"),
 
     /**
      * The person creating the ONIX record does not know where the references are located
      */
-    Unknown("UNK", "Unknown"), //
+    Unknown("UNK", "Unknown"),
 
     /**
      * Other locations not otherwise identified

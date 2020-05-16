@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,83 +48,83 @@ public enum TextFormats implements OnixCodelist, CodeList34 {
     /**
      * Other than XHTML
      */
-    HTML("02", "HTML"), //
+    HTML("02", "HTML"),
 
     /**
      * Other than XHTML
      */
-    XML("03", "XML"), //
+    XML("03", "XML"),
 
-    XHTML("05", "XHTML"), //
+    XHTML("05", "XHTML"),
 
     /**
      * Default: text containing no tags of any kind, except for the tags &amp;amp; and &amp;lt; that XML insists must be
      * used to represent ampersand and less-than characters in text, and in the encoding declared at the head of the
      * message or in the XML default (UTF-8 or UTF-16) if there is no explicit declaration
      */
-    Default_text_format("06", "Default text format"), //
+    Default_text_format("06", "Default text format"),
 
     /**
      * Plain text containing no tags of any kind, except for the tags &amp;amp; and &amp;lt; that XML insists must be
      * used to represent ampersand and less-than characters in text, and with the character set limited to the ASCII
      * range, i.e. valid characters whose Unicode character number lies between 32 (space) and 126 (tilde)
      */
-    Basic_ASCII_text("07", "Basic ASCII text"), //
+    Basic_ASCII_text("07", "Basic ASCII text"),
 
     /**
      * DEPRECATED: use code 06 or 07 as appropriate
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    ASCII_text("00", "ASCII text"), //
+    ASCII_text("00", "ASCII text"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    SGML("01", "SGML"), //
+    SGML("01", "SGML"),
 
     /**
      * DEPRECATED: was formerly assigned both to PDF and to XHTML
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    PDF("04", "PDF"), //
+    PDF("04", "PDF"),
 
     /**
      * Replaces 04 for the &lt;TextFormat&gt; element, but cannot of course be used as a textformat attribute
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    PDF_("08", "PDF"), //
+    PDF_("08", "PDF"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Microsoft_rich_text_format_RTF("09", "Microsoft rich text format (RTF)"), //
+    Microsoft_rich_text_format_RTF("09", "Microsoft rich text format (RTF)"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Microsoft_Word_binary_format_DOC("10", "Microsoft Word binary format (DOC)"), //
+    Microsoft_Word_binary_format_DOC("10", "Microsoft Word binary format (DOC)"),
 
     /**
      * Office Open XML file format / OOXML / DOCX
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    ECMA_376_WordprocessingML("11", "ECMA 376 WordprocessingML"), //
+    ECMA_376_WordprocessingML("11", "ECMA 376 WordprocessingML"),
 
     /**
      * ISO Open Document Format
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    ISO_26300_ODF("12", "ISO 26300 ODF"), //
+    ISO_26300_ODF("12", "ISO 26300 ODF"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Corel_Wordperfect_binary_format_DOC("13", "Corel Wordperfect binary format (DOC)"), //
+    Corel_Wordperfect_binary_format_DOC("13", "Corel Wordperfect binary format (DOC)"),
 
     /**
      * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
@@ -132,7 +132,7 @@ public enum TextFormats implements OnixCodelist, CodeList34 {
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    EPUB("14", "EPUB"), //
+    EPUB("14", "EPUB"),
 
     /**
      * XML Paper Specification

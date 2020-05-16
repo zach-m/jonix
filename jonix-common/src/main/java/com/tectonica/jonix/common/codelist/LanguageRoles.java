@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,27 +45,27 @@ interface CodeList22 {
  *      Codelist 22 in Reference Guide</a>
  */
 public enum LanguageRoles implements OnixCodelist, CodeList22 {
-    Language_of_text("01", "Language of text"), //
+    Language_of_text("01", "Language of text"),
 
     /**
      * Where the text in the original language is NOT part of the current product
      */
-    Original_language_of_a_translated_text("02", "Original language of a translated text"), //
+    Original_language_of_a_translated_text("02", "Original language of a translated text"),
 
     /**
      * Where different from language of text: used mainly for serials
      */
-    Language_of_abstracts("03", "Language of abstracts"), //
+    Language_of_abstracts("03", "Language of abstracts"),
 
     /**
      * Where the text in the original language is part of a bilingual or multilingual product
      */
-    Original_language_in_a_multilingual_edition("06", "Original language in a multilingual edition"), //
+    Original_language_in_a_multilingual_edition("06", "Original language in a multilingual edition"),
 
     /**
      * Where the text in a translated language is part of a bilingual or multilingual product
      */
-    Translated_language_in_a_multilingual_edition("07", "Translated language in a multilingual edition"), //
+    Translated_language_in_a_multilingual_edition("07", "Translated language in a multilingual edition"),
 
     /**
      * For example, on an audiobook or video product. Use for the only available audio track, or where there are
@@ -73,36 +73,36 @@ public enum LanguageRoles implements OnixCodelist, CodeList22 {
      * case, use code 11 for the original language audio if it is included in the product, or code 10 to identify an
      * original language that is not present in the product)
      */
-    Language_of_audio_track("08", "Language of audio track"), //
+    Language_of_audio_track("08", "Language of audio track"),
 
     /**
      * For example, on a DVD
      */
-    Language_of_subtitles("09", "Language of subtitles"), //
+    Language_of_subtitles("09", "Language of subtitles"),
 
     /**
      * Where the audio in the original language is NOT part of the current product
      */
-    Language_of_original_audio_track("10", "Language of original audio track"), //
+    Language_of_original_audio_track("10", "Language of original audio track"),
 
     /**
      * Where the audio in the original language is part of a multilingual product with multiple audio tracks
      */
     Original_language_audio_track_in_a_multilingual_product("11",
-        "Original language audio track in a multilingual product"), //
+        "Original language audio track in a multilingual product"),
 
     /**
      * Use for the language of footnotes, endnotes, annotations or commentary, etc, where it is different from the
      * language of the main text
      */
-    Language_of_notes("12", "Language of notes"), //
+    Language_of_notes("12", "Language of notes"),
 
     /**
      * Language to which specified rights apply
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    Rights_language("04", "Rights language"), //
+    Rights_language("04", "Rights language"),
 
     /**
      * Language to which specified rights do not apply

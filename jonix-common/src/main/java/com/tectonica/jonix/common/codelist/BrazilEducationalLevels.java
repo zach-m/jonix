@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -50,69 +50,69 @@ public enum BrazilEducationalLevels implements OnixCodelist, CodeList238 {
     /**
      * Preschool and kindergarten
      */
-    Educa_o_Infantil("K", "Educação Infantil"), //
+    Educa_o_Infantil("K", "Educação Infantil"),
 
     /**
      * Elementary school
      */
-    Fundamental_I_1_ano("1", "Fundamental I 1º ano"), //
+    Fundamental_I_1_ano("1", "Fundamental I 1º ano"),
 
-    Fundamental_I_2_ano("2", "Fundamental I 2º ano"), //
+    Fundamental_I_2_ano("2", "Fundamental I 2º ano"),
 
-    Fundamental_I_3_ano("3", "Fundamental I 3º ano"), //
+    Fundamental_I_3_ano("3", "Fundamental I 3º ano"),
 
-    Fundamental_I_4_ano("4", "Fundamental I 4º ano"), //
+    Fundamental_I_4_ano("4", "Fundamental I 4º ano"),
 
-    Fundamental_I_5_ano("5", "Fundamental I 5º ano"), //
+    Fundamental_I_5_ano("5", "Fundamental I 5º ano"),
 
-    Fundamental_II_6_ano("6", "Fundamental II 6º ano"), //
+    Fundamental_II_6_ano("6", "Fundamental II 6º ano"),
 
-    Fundamental_II_7_ano("7", "Fundamental II 7º ano"), //
+    Fundamental_II_7_ano("7", "Fundamental II 7º ano"),
 
-    Fundamental_II_8_ano("8", "Fundamental II 8º ano"), //
+    Fundamental_II_8_ano("8", "Fundamental II 8º ano"),
 
-    Fundamental_II_9_ano("9", "Fundamental II 9º ano"), //
+    Fundamental_II_9_ano("9", "Fundamental II 9º ano"),
 
     /**
      * High school
      */
-    Ensino_M_dio_1_ano("10", "Ensino Médio 1º ano"), //
+    Ensino_M_dio_1_ano("10", "Ensino Médio 1º ano"),
 
-    Ensino_M_dio_2_ano("11", "Ensino Médio 2º ano"), //
+    Ensino_M_dio_2_ano("11", "Ensino Médio 2º ano"),
 
-    Ensino_M_dio_3_ano("12", "Ensino Médio 3º ano"), //
+    Ensino_M_dio_3_ano("12", "Ensino Médio 3º ano"),
 
     /**
      * Technical study at High school, alongside 2nd and 3rd year
      */
-    Ensino_T_cnico_Integrado("13", "Ensino Técnico Integrado"), //
+    Ensino_T_cnico_Integrado("13", "Ensino Técnico Integrado"),
 
     /**
      * Technical study at separate institution in parallel with 2nd and 3rd year High school study
      */
-    Ensino_T_cnico_Concomitante("14", "Ensino Técnico Concomitante"), //
+    Ensino_T_cnico_Concomitante("14", "Ensino Técnico Concomitante"),
 
     /**
      * Technical study after completion of High school
      */
-    Ensino_T_cnico_Subsequente("15", "Ensino Técnico Subsequente"), //
+    Ensino_T_cnico_Subsequente("15", "Ensino Técnico Subsequente"),
 
     /**
      * University entrance
      */
-    Ensino_pr_vestibular("P", "Ensino pré-vestibular"), //
+    Ensino_pr_vestibular("P", "Ensino pré-vestibular"),
 
     /**
      * Undergraduate degree level
      */
-    Ensino_Superior_Gradua_o_Licenciatura_Bacharelado("A", "Ensino Superior Graduação Licenciatura/ Bacharelado"), //
+    Ensino_Superior_Gradua_o_Licenciatura_Bacharelado("A", "Ensino Superior Graduação Licenciatura/ Bacharelado"),
 
-    Ensino_Superior_Gradua_o_Tecnologia("B", "Ensino Superior Graduação Tecnologia"), //
+    Ensino_Superior_Gradua_o_Tecnologia("B", "Ensino Superior Graduação Tecnologia"),
 
     /**
      * Masters and Doctoral degree level
      */
-    Ensino_Superior_P_s_gradua_o_Stricto_sensu("D", "Ensino Superior Pós-graduação Stricto sensu"), //
+    Ensino_Superior_P_s_gradua_o_Stricto_sensu("D", "Ensino Superior Pós-graduação Stricto sensu"),
 
     /**
      * Professional qualifications

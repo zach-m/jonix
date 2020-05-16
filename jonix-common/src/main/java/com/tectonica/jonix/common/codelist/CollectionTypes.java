@@ -45,7 +45,7 @@ public enum CollectionTypes implements OnixCodelist, CodeList148 {
     /**
      * Collection type is not determined
      */
-    Unspecified_default("00", "Unspecified (default)"), //
+    Unspecified_default("00", "Unspecified (default)"),
 
     /**
      * The collection is a bibliographic collection (eg a series or set (Fr. s&#233;rie)) defined and identified by a
@@ -53,7 +53,7 @@ public enum CollectionTypes implements OnixCodelist, CodeList148 {
      * collection generally share a subject, narrative, design style or authorship. They may may have a specific order,
      * or the collection may be unordered
      */
-    Publisher_collection("10", "Publisher collection"), //
+    Publisher_collection("10", "Publisher collection"),
 
     /**
      * The collection is a bibliographic collection defined and identified by a publisher, either on the product itself
@@ -63,7 +63,7 @@ public enum CollectionTypes implements OnixCodelist, CodeList148 {
      * publishing, to distinguish between 's&#233;rie' (using the normal code 10) and 'collection' (code 11), and where
      * the collection &#233;ditoriale is not an imprint
      */
-    Collection_ditoriale("11", "Collection éditoriale"), //
+    Collection_ditoriale("11", "Collection éditoriale"),
 
     /**
      * The collection has been defined and identified by a party in the metadata supply chain other than the publisher,

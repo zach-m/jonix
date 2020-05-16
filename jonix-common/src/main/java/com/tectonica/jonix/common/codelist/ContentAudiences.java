@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,36 +48,36 @@ public enum ContentAudiences implements OnixCodelist, CodeList154 {
     /**
      * Any audience
      */
-    Unrestricted("00", "Unrestricted"), //
+    Unrestricted("00", "Unrestricted"),
 
     /**
      * Distribution by agreement between the parties to the ONIX exchange (this value is provided to cover applications
      * where ONIX content includes material which is not for general distribution)
      */
-    Restricted("01", "Restricted"), //
+    Restricted("01", "Restricted"),
 
     /**
      * Distributors, bookstores, publisher's own staff etc
      */
-    Booktrade("02", "Booktrade"), //
+    Booktrade("02", "Booktrade"),
 
-    End_customers("03", "End-customers"), //
+    End_customers("03", "End-customers"),
 
-    Librarians("04", "Librarians"), //
+    Librarians("04", "Librarians"),
 
-    Teachers("05", "Teachers"), //
+    Teachers("05", "Teachers"),
 
-    Students("06", "Students"), //
+    Students("06", "Students"),
 
     /**
      * Press or other media
      */
-    Press("07", "Press"), //
+    Press("07", "Press"),
 
     /**
      * Where a specially formatted description is required for this audience
      */
-    Shopping_comparison_service("08", "Shopping comparison service"), //
+    Shopping_comparison_service("08", "Shopping comparison service"),
 
     /**
      * Text not intended for display, but may be used (in addition to any less restricted text) for indexing and search

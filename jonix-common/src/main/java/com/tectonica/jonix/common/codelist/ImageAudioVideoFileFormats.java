@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -47,80 +47,80 @@ interface CodeList39 {
  *      Codelist 39 in Reference Guide</a>
  */
 public enum ImageAudioVideoFileFormats implements OnixCodelist, CodeList39 {
-    GIF("02", "GIF"), //
+    GIF("02", "GIF"),
 
-    JPEG("03", "JPEG"), //
+    JPEG("03", "JPEG"),
 
-    PDF("04", "PDF"), //
+    PDF("04", "PDF"),
 
-    TIF("05", "TIF"), //
+    TIF("05", "TIF"),
 
-    RealAudio_28_8("06", "RealAudio 28.8"), //
+    RealAudio_28_8("06", "RealAudio 28.8"),
 
     /**
      * MPEG-1/2 Audio Layer III file (.mp3)
      */
-    MP3("07", "MP3"), //
+    MP3("07", "MP3"),
 
     /**
      * MPEG-4 container format (.mp4, .m4a)
      */
-    MPEG_4("08", "MPEG-4"), //
+    MPEG_4("08", "MPEG-4"),
 
     /**
      * Portable Network Graphics bitmapped image format (.png)
      */
-    PNG("09", "PNG"), //
+    PNG("09", "PNG"),
 
     /**
      * Windows Media Audio format (.wma)
      */
-    WMA("10", "WMA"), //
+    WMA("10", "WMA"),
 
     /**
      * Advanced Audio Codec format (.aac)
      */
-    AAC("11", "AAC"), //
+    AAC("11", "AAC"),
 
     /**
      * Waveform audio file (.wav)
      */
-    WAV("12", "WAV"), //
+    WAV("12", "WAV"),
 
     /**
      * Audio Interchange File Format (.aiff)
      */
-    AIFF("13", "AIFF"), //
+    AIFF("13", "AIFF"),
 
     /**
      * Windows Media Video format (.wmv)
      */
-    WMV("14", "WMV"), //
+    WMV("14", "WMV"),
 
     /**
      * Ogg container format (.ogg)
      */
-    OGG("15", "OGG"), //
+    OGG("15", "OGG"),
 
     /**
      * Audio Video Interleaved container format (.avi)
      */
-    AVI("16", "AVI"), //
+    AVI("16", "AVI"),
 
     /**
      * Quicktime container format (.mov)
      */
-    MOV("17", "MOV"), //
+    MOV("17", "MOV"),
 
     /**
      * Flash container format (includes .flv, .swf, .f4v etc)
      */
-    Flash("18", "Flash"), //
+    Flash("18", "Flash"),
 
     /**
      * 3GP container format (.3gp, 3g2)
      */
-    _3GP("19", "3GP"), //
+    _3GP("19", "3GP"),
 
     /**
      * WebM container format (includes .webm and .mkv)

@@ -46,7 +46,7 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
      * Allows positive indication that there are no additional constraints (other than those specified in
      * &lt;EpubUsageConstraint&gt;) - the default if &lt;PriceConstraint&gt; is omitted
      */
-    No_constraints("00", "No constraints"), //
+    No_constraints("00", "No constraints"),
 
     /**
      * Lendable by the purchaser to other device owner, account holder or patron, eg library lending (use where the
@@ -54,25 +54,25 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
      * 'primary' copy becomes unusable while the secondary copy is on loan, unless a number of concurrent borrowers is
      * also specified
      */
-    Lend("06", "Lend"), //
+    Lend("06", "Lend"),
 
     /**
      * E-publication license is time-limited. Use with code 02 from List 146 and a time period in days, weeks or months
      * in &lt;PriceConstraintLimit&gt;. The purchased copy becomes unusable when the license expires
      */
-    Time_limited_license("07", "Time-limited license"), //
+    Time_limited_license("07", "Time-limited license"),
 
     /**
      * Maximum number of consecutive loans or loan extensions (eg from a library) to a single device owner, account
      * holder or patron. Note that a limit of 1 indicates that a loan cannot be renewed or extended
      */
-    Loan_renewal("08", "Loan renewal"), //
+    Loan_renewal("08", "Loan renewal"),
 
     /**
      * E-publication license is multi-user. Maximum number of concurrent users licensed to use the product should be
      * given in &lt;PriceConstraintLimit&gt;
      */
-    Multi_user_license("09", "Multi-user license"), //
+    Multi_user_license("09", "Multi-user license"),
 
     /**
      * Preview locally before purchase. Allows a retail customer, account holder or patron to view a proportion of the

@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -50,63 +50,63 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * products, the height of the retail packaging. In general, the height of a product in the form in which it is
      * presented or packaged for retail sale
      */
-    Height("01", "Height"), //
+    Height("01", "Height"),
 
     /**
      * For a book, the overall horizontal dimension of the cover when standing upright. For a folded map, the width when
      * folded. For packaged products, the width of the retail packaging. In general, the width of a product in the form
      * in which it is presented or packaged for retail sale
      */
-    Width("02", "Width"), //
+    Width("02", "Width"),
 
     /**
      * For a book, the overall thickness of the spine. For a folded map, the thickness when folded. For packaged
      * products, the depth of the packaging. In general, the thickness or depth of a product in the form in which it is
      * presented or packaged for retail sale
      */
-    Thickness("03", "Thickness"), //
+    Thickness("03", "Thickness"),
 
     /**
      * Not recommended for general use
      */
-    Page_trim_height("04", "Page trim height"), //
+    Page_trim_height("04", "Page trim height"),
 
     /**
      * Not recommended for general use
      */
-    Page_trim_width("05", "Page trim width"), //
+    Page_trim_width("05", "Page trim width"),
 
     /**
      * The weight of the product, including any retail packaging
      */
-    Unit_weight("08", "Unit weight"), //
+    Unit_weight("08", "Unit weight"),
 
     /**
      * Of a globe, for example
      */
-    Diameter_sphere("09", "Diameter (sphere)"), //
+    Diameter_sphere("09", "Diameter (sphere)"),
 
     /**
      * The height of a folded or rolled sheet map, poster etc when unfolded
      */
-    Unfolded_unrolled_sheet_height("10", "Unfolded/unrolled sheet height"), //
+    Unfolded_unrolled_sheet_height("10", "Unfolded/unrolled sheet height"),
 
     /**
      * The width of a folded or rolled sheet map, poster etc when unfolded
      */
-    Unfolded_unrolled_sheet_width("11", "Unfolded/unrolled sheet width"), //
+    Unfolded_unrolled_sheet_width("11", "Unfolded/unrolled sheet width"),
 
     /**
      * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01 'Height'
      * for the height or length of the tube
      */
-    Diameter_tube_or_cylinder("12", "Diameter (tube or cylinder)"), //
+    Diameter_tube_or_cylinder("12", "Diameter (tube or cylinder)"),
 
     /**
      * The length of a side of the cross-section of a long triangular or square package, usually carrying a rolled sheet
      * product. Use 01 'Height' for the height or length of the package
      */
-    Rolled_sheet_package_side_measure("13", "Rolled sheet package side measure"), //
+    Rolled_sheet_package_side_measure("13", "Rolled sheet package side measure"),
 
     /**
      * As height, but of the product without packaging (use only for products supplied in retail packaging, must also
@@ -114,7 +114,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Unpackaged_height("14", "Unpackaged height"), //
+    Unpackaged_height("14", "Unpackaged height"),
 
     /**
      * As width, but of the product without packaging (use only for products supplied in retail packaging, must also
@@ -122,7 +122,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Unpackaged_width("15", "Unpackaged width"), //
+    Unpackaged_width("15", "Unpackaged width"),
 
     /**
      * As thickness, but of the product without packaging (use only for products supplied in retail packaging, must also
@@ -130,7 +130,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Unpackaged_thickness("16", "Unpackaged thickness"), //
+    Unpackaged_thickness("16", "Unpackaged thickness"),
 
     /**
      * Weight of batteries built-in, pre-installed or supplied with the product. Details of the batteries should be
@@ -139,7 +139,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Total_battery_weight("17", "Total battery weight"), //
+    Total_battery_weight("17", "Total battery weight"),
 
     /**
      * Mass or equivalent mass of elemental Lithium within the batteries built-in, pre-installed or supplied with the

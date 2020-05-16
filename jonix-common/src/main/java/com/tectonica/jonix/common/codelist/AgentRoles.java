@@ -45,17 +45,17 @@ public enum AgentRoles implements OnixCodelist, CodeList69 {
     /**
      * Publisher's exclusive sales agent in a specified territory
      */
-    Exclusive_sales_agent("05", "Exclusive sales agent"), //
+    Exclusive_sales_agent("05", "Exclusive sales agent"),
 
     /**
      * Publisher's non-exclusive sales agent in a specified territory
      */
-    Non_exclusive_sales_agent("06", "Non-exclusive sales agent"), //
+    Non_exclusive_sales_agent("06", "Non-exclusive sales agent"),
 
     /**
      * Publisher for a specified territory
      */
-    Local_publisher("07", "Local publisher"), //
+    Local_publisher("07", "Local publisher"),
 
     /**
      * Publisher's sales agent in a specific territory. Use only where exclusive / non-exclusive status is not known.

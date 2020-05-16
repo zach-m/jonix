@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,61 +45,61 @@ interface CodeList3 {
  *      Codelist 3 in Reference Guide</a>
  */
 public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
-    Unspecified("00", "Unspecified"), //
+    Unspecified("00", "Unspecified"),
 
-    Publisher("01", "Publisher"), //
+    Publisher("01", "Publisher"),
 
     /**
      * Use to designate a distributor providing warehousing and fulfillment for a publisher or for a publisher's sales
      * agent, as distinct from a wholesaler
      */
-    Publisher_s_distributor("02", "Publisher’s distributor"), //
+    Publisher_s_distributor("02", "Publisher’s distributor"),
 
-    Wholesaler("03", "Wholesaler"), //
+    Wholesaler("03", "Wholesaler"),
 
     /**
      * Bibliographic data aggregator
      */
-    Bibliographic_agency("04", "Bibliographic agency"), //
+    Bibliographic_agency("04", "Bibliographic agency"),
 
     /**
      * Library supplier. Bookseller selling to libraries (including academic libraries)
      */
-    Library_bookseller("05", "Library bookseller"), //
+    Library_bookseller("05", "Library bookseller"),
 
     /**
      * Use for a publisher's sales agent responsible for marketing the publisher's products within a territory, as
      * opposed to a publisher's distributor who fulfills orders but does not market
      */
-    Publisher_s_sales_agent("06", "Publisher’s sales agent"), //
+    Publisher_s_sales_agent("06", "Publisher’s sales agent"),
 
     /**
      * Downstream provider of e-publication format conversion services (who might also be a distributor or retailer of
      * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
      * publisher's ISBN prefix
      */
-    Publisher_s_conversion_service_provider("07", "Publisher’s conversion service provider"), //
+    Publisher_s_conversion_service_provider("07", "Publisher’s conversion service provider"),
 
     /**
      * Downstream provider of e-publication format conversion services (who might also be a distributor or retailer of
      * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
      * service provider's prefix (whether or not the service provider dedicates that prefix to a particular publisher)
      */
-    Conversion_service_provider("08", "Conversion service provider"), //
+    Conversion_service_provider("08", "Conversion service provider"),
 
-    ISBN_Registration_Agency("09", "ISBN Registration Agency"), //
+    ISBN_Registration_Agency("09", "ISBN Registration Agency"),
 
-    ISTC_Registration_Agency("10", "ISTC Registration Agency"), //
+    ISTC_Registration_Agency("10", "ISTC Registration Agency"),
 
     /**
      * Bookseller selling primarily to consumers
      */
-    Retail_bookseller("11", "Retail bookseller"), //
+    Retail_bookseller("11", "Retail bookseller"),
 
     /**
      * Bookseller selling primarily to educational institutions
      */
-    Education_bookseller("12", "Education bookseller"), //
+    Education_bookseller("12", "Education bookseller"),
 
     /**
      * Library service providing enhanced metadata to publishers or other parties

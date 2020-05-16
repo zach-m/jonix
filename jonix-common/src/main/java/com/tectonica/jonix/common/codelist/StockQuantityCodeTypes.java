@@ -45,7 +45,7 @@ public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70 {
     /**
      * As specified in &lt;StockQuantityCodeTypeName&gt;
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * Code scheme defined by the Australian Publishers Association

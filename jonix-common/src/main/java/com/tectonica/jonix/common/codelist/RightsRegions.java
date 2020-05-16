@@ -44,12 +44,12 @@ interface CodeList47 {
  *      Codelist 47 in Reference Guide</a>
  */
 public enum RightsRegions implements OnixCodelist, CodeList47 {
-    World("000", "World"), //
+    World("000", "World"),
 
     World_except_territories_specified_elsewhere_in_rights_statements("001",
-        "World except territories specified elsewhere in rights statements"), //
+        "World except territories specified elsewhere in rights statements"),
 
-    UK_airports("002", "UK airports"), //
+    UK_airports("002", "UK airports"),
 
     /**
      * Use when an open market edition is published under its own ISBN

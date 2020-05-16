@@ -45,27 +45,27 @@ public enum ResourceModes implements OnixCodelist, CodeList159 {
     /**
      * An executable together with data on which it operates
      */
-    Application("01", "Application"), //
+    Application("01", "Application"),
 
     /**
      * A sound recording
      */
-    Audio("02", "Audio"), //
+    Audio("02", "Audio"),
 
     /**
      * A still image
      */
-    Image("03", "Image"), //
+    Image("03", "Image"),
 
     /**
      * Readable text, with or without associated images etc
      */
-    Text("04", "Text"), //
+    Text("04", "Text"),
 
     /**
      * Moving images, with or without accompanying sound
      */
-    Video("05", "Video"), //
+    Video("05", "Video"),
 
     /**
      * A website or other supporting resource delivering content in a variety of modes

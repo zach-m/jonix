@@ -47,27 +47,27 @@ public enum TransliterationSchemes implements OnixCodelist, CodeList138 {
     /**
      * Transliteration of Cyrillic characters - Slavic languages
      */
-    Finnish_standard_SFS_4900("SFS4900", "Finnish standard SFS 4900"), //
+    Finnish_standard_SFS_4900("SFS4900", "Finnish standard SFS 4900"),
 
     /**
      * Transliteration and transcription of Greek characters
      */
-    Finnish_standard_SFS_5807("SFS5807", "Finnish standard SFS 5807"), //
+    Finnish_standard_SFS_5807("SFS5807", "Finnish standard SFS 5807"),
 
     /**
      * Transliteration of Arabic characters
      */
-    Finnish_standard_SFS_5755("SFS5755", "Finnish standard SFS 5755"), //
+    Finnish_standard_SFS_5755("SFS5755", "Finnish standard SFS 5755"),
 
     /**
      * Transliteration of Hebrew characters
      */
-    Finnish_standard_SFS_5824("SFS3602", "Finnish standard SFS 5824"), //
+    Finnish_standard_SFS_5824("SFS3602", "Finnish standard SFS 5824"),
 
     /**
      * Documentation - Romanization of Japanese (kana script)
      */
-    ISO_3602("ISO3602", "ISO 3602"), //
+    ISO_3602("ISO3602", "ISO 3602"),
 
     /**
      * Information and documentation - Romanization of Chinese

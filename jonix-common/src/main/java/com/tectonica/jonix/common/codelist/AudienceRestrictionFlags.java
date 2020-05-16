@@ -44,7 +44,7 @@ interface CodeList56 {
  *      Codelist 56 in Reference Guide</a>
  */
 public enum AudienceRestrictionFlags implements OnixCodelist, CodeList56 {
-    Restrictions_apply_see_note("R", "Restrictions apply, see note"), //
+    Restrictions_apply_see_note("R", "Restrictions apply, see note"),
 
     /**
      * Indexed for the German market - in Deutschland indiziert

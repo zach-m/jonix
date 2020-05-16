@@ -45,12 +45,12 @@ public enum TaxTypes implements OnixCodelist, CodeList171 {
     /**
      * Value-added tax (TVA, IVA, MwSt etc)
      */
-    VAT("01", "VAT"), //
+    VAT("01", "VAT"),
 
     /**
      * General sales tax
      */
-    GST("02", "GST"), //
+    GST("02", "GST"),
 
     /**
      * 'Green' or eco-tax, levied to encourage responsible production or disposal, used only where this is identified

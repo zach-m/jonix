@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -51,89 +51,89 @@ public enum BibleContentss implements OnixCodelist, CodeList82 {
      * portions of Esther and Daniel (Additions to Esther; the Prayer of Azariah; Song of the Three Jews; Susannah; Bel
      * and the Dragon). These are not generally included in the Protestant canon
      */
-    Apocrypha_Catholic_canon("AP", "Apocrypha (Catholic canon)"), //
+    Apocrypha_Catholic_canon("AP", "Apocrypha (Catholic canon)"),
 
     /**
      * A collection of Apocryphal texts, canon not specified
      */
-    Apocrypha_canon_unspecified("AQ", "Apocrypha (canon unspecified)"), //
+    Apocrypha_canon_unspecified("AQ", "Apocrypha (canon unspecified)"),
 
     /**
      * I Esdras; Prayer of Manasseh; Psalm 151; III Maccabees
      */
-    Additional_Apocryphal_texts_Greek_Orthodox_canon("AX", "Additional Apocryphal texts: Greek Orthodox canon"), //
+    Additional_Apocryphal_texts_Greek_Orthodox_canon("AX", "Additional Apocryphal texts: Greek Orthodox canon"),
 
     /**
      * I and II Esdras; Prayer of Manasseh; Psalm 151; III and IV Maccabees
      */
-    Additional_Apocryphal_texts_Slavonic_Orthodox_canon("AY", "Additional Apocryphal texts: Slavonic Orthodox canon"), //
+    Additional_Apocryphal_texts_Slavonic_Orthodox_canon("AY", "Additional Apocryphal texts: Slavonic Orthodox canon"),
 
     /**
      * Additional Apocryphal texts included in some Bible versions: I and II Esdras; Prayer of Manasseh
      */
-    Additional_Apocryphal_texts("AZ", "Additional Apocryphal texts"), //
+    Additional_Apocryphal_texts("AZ", "Additional Apocryphal texts"),
 
     /**
      * The 66 books included in the Protestant, Catholic and Orthodox canons, together with the seven portions of the
      * Apocrypha included in the Catholic canon. (Equivalent to OT plus NT plus AP)
      */
-    General_canon_with_Apocrypha_Catholic_canon("GA", "General canon with Apocrypha (Catholic canon)"), //
+    General_canon_with_Apocrypha_Catholic_canon("GA", "General canon with Apocrypha (Catholic canon)"),
 
     /**
      * The 66 books included in the Protestant, Catholic and Orthodox canons, together with Apocryphal texts, canon not
      * specified. (Equivalent to OT plus NT plus AQ)
      */
     General_canon_with_Apocryphal_texts_canon_unspecified("GC",
-        "General canon with Apocryphal texts (canon unspecified)"), //
+        "General canon with Apocryphal texts (canon unspecified)"),
 
     /**
      * The 66 books included in the Protestant, Catholic and Orthodox canons, 39 from the Old Testament and 27 from the
      * New Testament. The sequence of books may differ in different canons. (Equivalent to OT plus NT)
      */
-    General_canon("GE", "General canon"), //
+    General_canon("GE", "General canon"),
 
     /**
      * The books of Matthew, Mark, Luke and John
      */
-    Gospels("GS", "Gospels"), //
+    Gospels("GS", "Gospels"),
 
     /**
      * Those 39 books which were included in the Jewish canon by the rabbinical academy established at Jamma in 90 CE.
      * Also known as the Jewish or Hebrew scriptures
      */
-    Old_Testament("OT", "Old Testament"), //
+    Old_Testament("OT", "Old Testament"),
 
     /**
      * The 27 books included in the Christian canon through the Easter Letter of Athanasius, Bishop of Alexandria and
      * also by a general council of the Christian church held near the end of the 4th century CE
      */
-    New_Testament("NT", "New Testament"), //
+    New_Testament("NT", "New Testament"),
 
     /**
      * Includes the 27 books of the New Testament plus Psalms and Proverbs from the Old Testament. Equivalent to NT plus
      * PP)
      */
-    New_Testament_with_Psalms_and_Proverbs("NP", "New Testament with Psalms and Proverbs"), //
+    New_Testament_with_Psalms_and_Proverbs("NP", "New Testament with Psalms and Proverbs"),
 
     /**
      * The books containing the letters of Paul to the various early Christian churches
      */
-    Paul_s_Epistles("PE", "Paul’s Epistles"), //
+    Paul_s_Epistles("PE", "Paul’s Epistles"),
 
     /**
      * The book of Psalms and the book of Proverbs combined
      */
-    Psalms_and_Proverbs("PP", "Psalms and Proverbs"), //
+    Psalms_and_Proverbs("PP", "Psalms and Proverbs"),
 
     /**
      * The book of Psalms
      */
-    Psalms("PS", "Psalms"), //
+    Psalms("PS", "Psalms"),
 
     /**
      * The first five books of the Bible: Genesis, Exodus, Numbers, Leviticus, Deuteronomy. Also applied to the Torah
      */
-    Pentateuch("PT", "Pentateuch"), //
+    Pentateuch("PT", "Pentateuch"),
 
     /**
      * Selected books of either the OT or NT not otherwise noted

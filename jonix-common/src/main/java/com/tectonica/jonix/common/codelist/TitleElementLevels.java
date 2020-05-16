@@ -45,31 +45,31 @@ public enum TitleElementLevels implements OnixCodelist, CodeList149 {
     /**
      * The title element refers to an individual product
      */
-    Product("01", "Product"), //
+    Product("01", "Product"),
 
     /**
      * The title element refers to the top level of a bibliographic collection
      */
-    Collection_level("02", "Collection level"), //
+    Collection_level("02", "Collection level"),
 
     /**
      * The title element refers to an intermediate level of a bibliographic collection that comprises two or more
      * 'sub-collections'
      */
-    Subcollection("03", "Subcollection"), //
+    Subcollection("03", "Subcollection"),
 
     /**
      * The title element refers to a content item within a product, eg a work included in a combined or 'omnibus'
      * edition, or a chapter in a book. Generally used only for titles within &lt;ContentItem&gt; (Block 3)
      */
-    Content_item("04", "Content item"), //
+    Content_item("04", "Content item"),
 
     /**
      * The title element names a master brand where the use of the brand spans multiple collections and product forms,
      * and possibly multiple imprints and publishers. Used only for branded media properties carrying, for example, a
      * children's character brand
      */
-    Master_brand("05", "Master brand"), //
+    Master_brand("05", "Master brand"),
 
     /**
      * The title element refers to an intermediate level of a bibliographic collection that is a subdivision of a

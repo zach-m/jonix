@@ -45,9 +45,9 @@ public enum PriceStatuss implements OnixCodelist, CodeList61 {
     /**
      * Default
      */
-    Unspecified("00", "Unspecified"), //
+    Unspecified("00", "Unspecified"),
 
-    Provisional("01", "Provisional"), //
+    Provisional("01", "Provisional"),
 
     Firm("02", "Firm");
 

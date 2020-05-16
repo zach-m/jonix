@@ -44,9 +44,9 @@ interface CodeList95 {
  *      Codelist 95 in Reference Guide</a>
  */
 public enum DefaultUnitOfWeights implements OnixCodelist, CodeList95 {
-    Pounds_US("lb", "Pounds (US)"), //
+    Pounds_US("lb", "Pounds (US)"),
 
-    Grams("gr", "Grams"), //
+    Grams("gr", "Grams"),
 
     Ounces_US("oz", "Ounces (US)");
 

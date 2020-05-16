@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -50,29 +50,29 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
      * before purchase. Also applies to borrowers making use of 'acquisition on demand' models in libraries, and to
      * 'subscription' models where the purchase is made on behalf of the reader
      */
-    Preview("01", "Preview"), //
+    Preview("01", "Preview"),
 
     /**
      * Print paper copy of extract
      */
-    Print("02", "Print"), //
+    Print("02", "Print"),
 
     /**
      * Make digital copy of extract
      */
-    Copy_paste("03", "Copy / paste"), //
+    Copy_paste("03", "Copy / paste"),
 
     /**
      * Share product across multiple concurrent devices. Allows a retail customer, account holder or patron to read the
      * book across multiple devices linked to the same account. Also applies to readers in library borrowing and
      * 'subscription' models
      */
-    Share("04", "Share"), //
+    Share("04", "Share"),
 
     /**
      * 'Read aloud' with text to speech functionality
      */
-    Text_to_speech("05", "Text to speech"), //
+    Text_to_speech("05", "Text to speech"),
 
     /**
      * Lendable by the purchaser to other device owner or account holder or patron, eg 'Lend-to-a-friend', library
@@ -80,25 +80,25 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
      * 'primary' copy becomes unusable while the secondary copy is 'on loan' unless a number of concurrent borrowers is
      * also specified
      */
-    Lend("06", "Lend"), //
+    Lend("06", "Lend"),
 
     /**
      * E-publication license is time limited. Use with 02 from List 146 and a time period in days, weeks or months in
      * &lt;EpubUsageLimit&gt;. The purchased copy becomes unusable when the license expires
      */
-    Time_limited_license("07", "Time-limited license"), //
+    Time_limited_license("07", "Time-limited license"),
 
     /**
      * Maximum number of consecutive loans or loan extensions (eg from a library) to a single device owner or account
      * holder. Note that a limit of 1 indicates that a loan cannot be renewed or extended
      */
-    Loan_renewal("08", "Loan renewal"), //
+    Loan_renewal("08", "Loan renewal"),
 
     /**
      * E-publication license is multi-user. Maximum number of concurrent users licensed to use the product should be
      * given in &lt;EpubUsageLimit&gt;
      */
-    Multi_user_license("09", "Multi-user license"), //
+    Multi_user_license("09", "Multi-user license"),
 
     /**
      * Preview locally before purchase. Allows a retail customer, account holder or patron to view a proportion of the

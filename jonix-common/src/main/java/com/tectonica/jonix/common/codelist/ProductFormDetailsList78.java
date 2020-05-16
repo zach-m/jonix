@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -50,932 +50,932 @@ public enum ProductFormDetailsList78 implements OnixCodelist, CodeList78 {
     /**
      * CD 'red book' format
      */
-    CD_standard_audio_format("A101", "CD standard audio format"), //
+    CD_standard_audio_format("A101", "CD standard audio format"),
 
-    SACD_super_audio_format("A102", "SACD super audio format"), //
+    SACD_super_audio_format("A102", "SACD super audio format"),
 
     /**
      * MPEG-1/2 Audio Layer III file
      */
-    MP3_format("A103", "MP3 format"), //
+    MP3_format("A103", "MP3 format"),
 
     /**
      * Waveform audio file
      */
-    WAV_format("A104", "WAV format"), //
+    WAV_format("A104", "WAV format"),
 
-    Real_Audio_format("A105", "Real Audio format"), //
+    Real_Audio_format("A105", "Real Audio format"),
 
     /**
      * Windows Media Audio format
      */
-    WMA("A106", "WMA"), //
+    WMA("A106", "WMA"),
 
     /**
      * Advanced Audio Coding format
      */
-    AAC("A107", "AAC"), //
+    AAC("A107", "AAC"),
 
     /**
      * Vorbis audio format in the Ogg container
      */
-    Ogg_Vorbis("A108", "Ogg/Vorbis"), //
+    Ogg_Vorbis("A108", "Ogg/Vorbis"),
 
     /**
      * Audio format proprietary to Audible.com
      */
-    Audible("A109", "Audible"), //
+    Audible("A109", "Audible"),
 
     /**
      * Free lossless audio codec
      */
-    FLAC("A110", "FLAC"), //
+    FLAC("A110", "FLAC"),
 
     /**
      * Audio Interchangeable File Format
      */
-    AIFF("A111", "AIFF"), //
+    AIFF("A111", "AIFF"),
 
     /**
      * Apple Lossless Audio Codec
      */
-    ALAC("A112", "ALAC"), //
+    ALAC("A112", "ALAC"),
 
     /**
      * Deprecated, as does not meet DAISY 2 standard. Use conventional audiobook codes instead
      */
-    DAISY_2_full_audio_with_title_only_no_navigation("A201", "DAISY 2: full audio with title only (no navigation)"), //
+    DAISY_2_full_audio_with_title_only_no_navigation("A201", "DAISY 2: full audio with title only (no navigation)"),
 
-    DAISY_2_full_audio_with_navigation_no_text("A202", "DAISY 2: full audio with navigation (no text)"), //
+    DAISY_2_full_audio_with_navigation_no_text("A202", "DAISY 2: full audio with navigation (no text)"),
 
-    DAISY_2_full_audio_with_navigation_and_partial_text("A203", "DAISY 2: full audio with navigation and partial text"), //
+    DAISY_2_full_audio_with_navigation_and_partial_text("A203", "DAISY 2: full audio with navigation and partial text"),
 
-    DAISY_2_full_audio_with_navigation_and_full_text("A204", "DAISY 2: full audio with navigation and full text"), //
-
-    /**
-     * Reading systems may provide full audio via text-to-speech
-     */
-    DAISY_2_full_text_with_navigation_and_partial_audio("A205", "DAISY 2: full text with navigation and partial audio"), //
+    DAISY_2_full_audio_with_navigation_and_full_text("A204", "DAISY 2: full audio with navigation and full text"),
 
     /**
      * Reading systems may provide full audio via text-to-speech
      */
-    DAISY_2_full_text_with_navigation_and_no_audio("A206", "DAISY 2: full text with navigation and no audio"), //
+    DAISY_2_full_text_with_navigation_and_partial_audio("A205", "DAISY 2: full text with navigation and partial audio"),
+
+    /**
+     * Reading systems may provide full audio via text-to-speech
+     */
+    DAISY_2_full_text_with_navigation_and_no_audio("A206", "DAISY 2: full text with navigation and no audio"),
 
     /**
      * Deprecated, as does not meet DAISY 3 standard. Use conventional audiobook codes instead
      */
-    DAISY_3_full_audio_with_title_only_no_navigation("A207", "DAISY 3: full audio with title only (no navigation)"), //
+    DAISY_3_full_audio_with_title_only_no_navigation("A207", "DAISY 3: full audio with title only (no navigation)"),
 
-    DAISY_3_full_audio_with_navigation_no_text("A208", "DAISY 3: full audio with navigation (no text)"), //
+    DAISY_3_full_audio_with_navigation_no_text("A208", "DAISY 3: full audio with navigation (no text)"),
 
-    DAISY_3_full_audio_with_navigation_and_partial_text("A209", "DAISY 3: full audio with navigation and partial text"), //
+    DAISY_3_full_audio_with_navigation_and_partial_text("A209", "DAISY 3: full audio with navigation and partial text"),
 
-    DAISY_3_full_audio_with_navigation_and_full_text("A210", "DAISY 3: full audio with navigation and full text"), //
-
-    /**
-     * Reading systems may provide full audio via text-to-speech
-     */
-    DAISY_3_full_text_with_navigation_and_some_audio("A211", "DAISY 3: full text with navigation and some audio"), //
+    DAISY_3_full_audio_with_navigation_and_full_text("A210", "DAISY 3: full audio with navigation and full text"),
 
     /**
      * Reading systems may provide full audio via text-to-speech
      */
-    DAISY_3_full_text_with_navigation_no_audio("A212", "DAISY 3: full text with navigation (no audio)"), //
+    DAISY_3_full_text_with_navigation_and_some_audio("A211", "DAISY 3: full text with navigation and some audio"),
 
-    Standalone_audio("A301", "Standalone audio"), //
+    /**
+     * Reading systems may provide full audio via text-to-speech
+     */
+    DAISY_3_full_text_with_navigation_no_audio("A212", "DAISY 3: full text with navigation (no audio)"),
+
+    Standalone_audio("A301", "Standalone audio"),
 
     /**
      * Audio intended exclusively for use alongside a printed copy of the book. Most often a children's product.
      * Normally contains instructions such as 'turn the page now' and other references to the printed item, and is
      * usually sold packaged together with a printed copy
      */
-    Readalong_audio("A302", "Readalong audio"), //
+    Readalong_audio("A302", "Readalong audio"),
 
     /**
      * Audio intended for musical accompaniment, eg 'Music minus one', etc, often used for music learning. Includes
      * singalong backing audio for musical learning or for Karaoke-style entertainment
      */
-    Playalong_audio("A303", "Playalong audio"), //
+    Playalong_audio("A303", "Playalong audio"),
 
     /**
      * Audio intended for language learning, which includes speech plus gaps intended to be filled by the listener
      */
-    Speakalong_audio("A304", "Speakalong audio"), //
+    Speakalong_audio("A304", "Speakalong audio"),
 
     /**
      * Audio synchronised to text within an e-publication, for example an EPUB3 with audio overlay. Synchronisation at
      * least at paragraph level, and covering the full content
      */
-    Synchronised_audio("A305", "Synchronised audio"), //
+    Synchronised_audio("A305", "Synchronised audio"),
 
     /**
      * Includes &apos;stereo&apos; where channels are identical
      */
-    Mono("A410", "Mono"), //
+    Mono("A410", "Mono"),
 
-    Stereo("A420", "Stereo"), //
+    Stereo("A420", "Stereo"),
 
     /**
      * Stereo plus low-frequency channel
      */
-    Stereo_2_1("A421", "Stereo 2.1"), //
+    Stereo_2_1("A421", "Stereo 2.1"),
 
     /**
      * Five-channel audio (including low-frequency channel)
      */
-    Surround_4_1("A441", "Surround 4.1"), //
+    Surround_4_1("A441", "Surround 4.1"),
 
     /**
      * Six-channel audio (including low-frequency channel)
      */
-    Surround_5_1("A451", "Surround 5.1"), //
+    Surround_5_1("A451", "Surround 5.1"),
 
     /**
      * In North America, a category of paperback characterized partly by page size (typically from 6&#190; up to
      * 7&#8539; x 4&#188; inches) and partly by target market and terms of trade. Use with Product Form code BC
      */
-    Mass_market_rack("B101", "Mass market (rack) paperback"), //
+    Mass_market_rack("B101", "Mass market (rack) paperback"),
 
     /**
      * In North America, a category of paperback characterized partly by page size and partly by target market and terms
      * of trade. AKA 'quality paperback', and including textbooks. Most paperback books sold in North America except
      * 'mass-market' (B101) and 'tall rack' (B107) are correctly described with this code. Use with Product Form code BC
      */
-    Trade_paperback_US("B102", "Trade paperback (US)"), //
+    Trade_paperback_US("B102", "Trade paperback (US)"),
 
     /**
      * In North America, a category of paperback characterized by page size and generally used for children's books; use
      * with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3
      */
-    Digest_format_paperback("B103", "Digest format paperback"), //
+    Digest_format_paperback("B103", "Digest format paperback"),
 
     /**
      * In UK, a category of paperback characterized by page size (normally 178 x 111 mm approx); use with Product Form
      * code BC
      */
-    A_format_paperback("B104", "A-format paperback"), //
+    A_format_paperback("B104", "A-format paperback"),
 
     /**
      * In UK, a category of paperback characterized by page size (normally 198 x 129 mm approx); use with Product Form
      * code BC
      */
-    B_format_paperback("B105", "B-format paperback"), //
+    B_format_paperback("B105", "B-format paperback"),
 
     /**
      * In UK, a category of paperback characterized partly by size (usually in traditional hardback dimensions), and
      * often used for paperback originals; use with Product Form code BC (replaces 'C-format' from former List 8)
      */
-    Trade_paperback_UK("B106", "Trade paperback (UK)"), //
+    Trade_paperback_UK("B106", "Trade paperback (UK)"),
 
     /**
      * In North America, a category of paperback characterised partly by page size (typically 7&#189; x 4&#188; inches)
      * and partly by target market and terms of trade; use with Product Form code BC
      */
-    Tall_rack_paperback_US("B107", "Tall rack paperback (US)"), //
+    Tall_rack_paperback_US("B107", "Tall rack paperback (US)"),
 
     /**
      * 210 x 148mm
      */
-    A5_size_Tankobon("B108", "A5 size Tankobon"), //
+    A5_size_Tankobon("B108", "A5 size Tankobon"),
 
     /**
      * Japanese B-series size, 257 x 182 mm
      */
-    JIS_B5_size_Tankobon("B109", "JIS B5 size Tankobon"), //
+    JIS_B5_size_Tankobon("B109", "JIS B5 size Tankobon"),
 
     /**
      * Japanese B-series size, 182 x 128 mm
      */
-    JIS_B6_size_Tankobon("B110", "JIS B6 size Tankobon"), //
+    JIS_B6_size_Tankobon("B110", "JIS B6 size Tankobon"),
 
     /**
      * 148 x 105 mm
      */
-    A6_size_Bunko("B111", "A6 size Bunko"), //
+    A6_size_Bunko("B111", "A6 size Bunko"),
 
     /**
      * Japanese format, 182 x 103 mm or 173 x 105 mm
      */
-    B40_dori_Shinsho("B112", "B40-dori Shinsho"), //
+    B40_dori_Shinsho("B112", "B40-dori Shinsho"),
 
     /**
      * A Swedish, Norwegian, French paperback format, of no particular fixed size. Use with Product Form Code BC
      */
-    Pocket_Sweden_Norway_France("B113", "Pocket (Sweden, Norway, France)"), //
+    Pocket_Sweden_Norway_France("B113", "Pocket (Sweden, Norway, France)"),
 
     /**
      * A Swedish paperback format, use with Product Form Code BC
      */
-    Storpocket_Sweden("B114", "Storpocket (Sweden)"), //
+    Storpocket_Sweden("B114", "Storpocket (Sweden)"),
 
     /**
      * A Swedish hardback format, use with Product Form Code BB
      */
-    Kartonnage_Sweden("B115", "Kartonnage (Sweden)"), //
+    Kartonnage_Sweden("B115", "Kartonnage (Sweden)"),
 
     /**
      * A Swedish softback format, use with Product Form Code BC
      */
-    Flexband_Sweden("B116", "Flexband (Sweden)"), //
+    Flexband_Sweden("B116", "Flexband (Sweden)"),
 
     /**
      * A softback book in the format of a magazine, usually sold like a book. Use with Product Form code BC
      */
-    Mook_Bookazine("B117", "Mook / Bookazine"), //
+    Mook_Bookazine("B117", "Mook / Bookazine"),
 
     /**
      * Also called 'Flipback'. A softback book in a specially compact proprietary format with pages printed in landscape
      * on very thin paper and bound along the long (top) edge - see www.dwarsligger.com
      */
-    Dwarsligger("B118", "Dwarsligger"), //
+    Dwarsligger("B118", "Dwarsligger"),
 
     /**
      * Japanese format: 188 x 127 mm
      */
-    _46_size("B119", "46 size"), //
+    _46_size("B119", "46 size"),
 
     /**
      * Japanese format
      */
-    _46_Henkei_size("B120", "46-Henkei size"), //
+    _46_Henkei_size("B120", "46-Henkei size"),
 
     /**
      * 297 x 210 mm
      */
-    A4("B121", "A4"), //
+    A4("B121", "A4"),
 
     /**
      * Japanese format
      */
-    A4_Henkei_size("B122", "A4-Henkei size"), //
+    A4_Henkei_size("B122", "A4-Henkei size"),
 
     /**
      * Japanese format
      */
-    A5_Henkei_size("B123", "A5-Henkei size"), //
+    A5_Henkei_size("B123", "A5-Henkei size"),
 
     /**
      * Japanese format
      */
-    B5_Henkei_size("B124", "B5-Henkei size"), //
+    B5_Henkei_size("B124", "B5-Henkei size"),
 
     /**
      * Japanese format
      */
-    B6_Henkei_size("B125", "B6-Henkei size"), //
+    B6_Henkei_size("B125", "B6-Henkei size"),
 
     /**
      * 257 x 210 mm
      */
-    AB_size("B126", "AB size"), //
+    AB_size("B126", "AB size"),
 
     /**
      * Japanese B-series size, 128 x 91 mm
      */
-    JIS_B7_size("B127", "JIS B7 size"), //
+    JIS_B7_size("B127", "JIS B7 size"),
 
     /**
      * Japanese format, 218 x 152 mm or 227 x 152 mm
      */
-    Kiku_size("B128", "Kiku size"), //
+    Kiku_size("B128", "Kiku size"),
 
     /**
      * Japanese format
      */
-    Kiku_Henkei_size("B129", "Kiku-Henkei size"), //
+    Kiku_Henkei_size("B129", "Kiku-Henkei size"),
 
     /**
      * Japanese B-series size, 364 x 257 mm
      */
-    JIS_B4_size("B130", "JIS B4 size"), //
+    JIS_B4_size("B130", "JIS B4 size"),
 
     /**
      * German paperback format, greater than 205 mm high, with flaps. Use with Product form code BC
      */
-    Paperback_DE("B131", "Paperback (DE)"), //
+    Paperback_DE("B131", "Paperback (DE)"),
 
-    Coloring_join_the_dot_book("B201", "Coloring / join-the-dot book"), //
+    Coloring_join_the_dot_book("B201", "Coloring / join-the-dot book"),
 
-    Lift_the_flap_book("B202", "Lift-the-flap book"), //
+    Lift_the_flap_book("B202", "Lift-the-flap book"),
 
     /**
      * DEPRECATED because of ambiguity - use B210, B214 or B215 as appropriate
      */
-    Fuzzy_book("B203", "Fuzzy book"), //
+    Fuzzy_book("B203", "Fuzzy book"),
 
     /**
      * Note: was wrongly shown as B203 (duplicate entry) in Issue 3
      */
-    Miniature_book("B204", "Miniature book"), //
+    Miniature_book("B204", "Miniature book"),
 
-    Moving_picture_flicker_book("B205", "Moving picture / flicker book"), //
+    Moving_picture_flicker_book("B205", "Moving picture / flicker book"),
 
-    Pop_up_book("B206", "Pop-up book"), //
+    Pop_up_book("B206", "Pop-up book"),
 
-    Scented_smelly_book("B207", "Scented / ‘smelly’ book"), //
+    Scented_smelly_book("B207", "Scented / ‘smelly’ book"),
 
-    Sound_story_noisy_book("B208", "Sound story / ‘noisy’ book"), //
+    Sound_story_noisy_book("B208", "Sound story / ‘noisy’ book"),
 
-    Sticker_book("B209", "Sticker book"), //
+    Sticker_book("B209", "Sticker book"),
 
     /**
      * A book whose pages have a variety of textured inserts designed to stimulate tactile exploration: see also B214
      * and B215
      */
-    Touch_and_feel_book("B210", "Touch-and-feel book"), //
+    Touch_and_feel_book("B210", "Touch-and-feel book"),
 
     /**
      * DEPRECATED - use B212 or B213 as appropriate
      */
-    Toy_die_cut_book("B211", "Toy / die-cut book"), //
+    Toy_die_cut_book("B211", "Toy / die-cut book"),
 
     /**
      * A book which is cut into a distinctive non-rectilinear shape and/or in which holes or shapes have been cut
      * internally. ('Die-cut' is used here as a convenient shorthand, and does not imply strict limitation to a
      * particular production process)
      */
-    Die_cut_book("B212", "Die-cut book"), //
+    Die_cut_book("B212", "Die-cut book"),
 
     /**
      * A book which is also a toy, or which incorporates a toy as an integral part. (Do not, however, use B213 for a
      * multiple-item product which includes a book and a toy as separate items)
      */
-    Book_as_toy("B213", "Book-as-toy"), //
+    Book_as_toy("B213", "Book-as-toy"),
 
     /**
      * A book whose cover has a soft textured finish, typically over board
      */
-    Soft_to_touch_book("B214", "Soft-to-touch book"), //
+    Soft_to_touch_book("B214", "Soft-to-touch book"),
 
     /**
      * A book with detachable felt pieces and textured pages on which they can be arranged
      */
-    Fuzzy_felt_book("B215", "Fuzzy-felt book"), //
+    Fuzzy_felt_book("B215", "Fuzzy-felt book"),
 
     /**
      * Children's picture book: use with applicable Product Form code
      */
-    Picture_book("B221", "Picture book"), //
+    Picture_book("B221", "Picture book"),
 
     /**
      * (aka 'Star' book). Tax treatment of products may differ from that of products with similar codes such as Book as
      * toy or Pop-up book)
      */
-    _Carousel_book("B222", "‘Carousel’ book"), //
+    _Carousel_book("B222", "‘Carousel’ book"),
 
     /**
      * Use with Product Form code BD
      */
-    Loose_leaf_sheets_and_binder("B301", "Loose leaf – sheets and binder"), //
+    Loose_leaf_sheets_and_binder("B301", "Loose leaf – sheets and binder"),
 
     /**
      * Use with Product Form code BD
      */
-    Loose_leaf_binder_only("B302", "Loose leaf – binder only"), //
+    Loose_leaf_binder_only("B302", "Loose leaf – binder only"),
 
     /**
      * Use with Product Form code BD
      */
-    Loose_leaf_sheets_only("B303", "Loose leaf – sheets only"), //
+    Loose_leaf_sheets_only("B303", "Loose leaf – sheets only"),
 
     /**
      * AKA stitched; for 'saddle-sewn', see code B310
      */
-    Sewn("B304", "Sewn"), //
+    Sewn("B304", "Sewn"),
 
     /**
      * Including 'perfect bound', 'glued'
      */
-    Unsewn_adhesive_bound("B305", "Unsewn / adhesive bound"), //
+    Unsewn_adhesive_bound("B305", "Unsewn / adhesive bound"),
 
     /**
      * Strengthened cloth-over-boards binding intended for libraries: use with Product form code BB
      */
-    Library_binding("B306", "Library binding"), //
+    Library_binding("B306", "Library binding"),
 
     /**
      * Strengthened binding, not specifically intended for libraries
      */
-    Reinforced_binding("B307", "Reinforced binding"), //
+    Reinforced_binding("B307", "Reinforced binding"),
 
     /**
      * Must be accompanied by a code specifiying a material, eg 'half-bound real leather'
      */
-    Half_bound("B308", "Half bound"), //
+    Half_bound("B308", "Half bound"),
 
     /**
      * Must be accompanied by a code specifiying a material, eg 'quarter bound real leather'
      */
-    Quarter_bound("B309", "Quarter bound"), //
+    Quarter_bound("B309", "Quarter bound"),
 
     /**
      * AKA 'saddle-stitched' or 'wire-stitched'
      */
-    Saddle_sewn("B310", "Saddle-sewn"), //
+    Saddle_sewn("B310", "Saddle-sewn"),
 
     /**
      * Round or oval plastic forms in a clamp-like configuration: use with Product Form code BE
      */
-    Comb_bound("B311", "Comb bound"), //
+    Comb_bound("B311", "Comb bound"),
 
     /**
      * Twin loop metal wire spine: use with Product Form code BE
      */
-    Wire_O("B312", "Wire-O"), //
+    Wire_O("B312", "Wire-O"),
 
     /**
      * Cased over Coiled or Wire-O binding: use with Product Form code BE and Product Form Detail code B312 or B315
      */
-    Concealed_wire("B313", "Concealed wire"), //
+    Concealed_wire("B313", "Concealed wire"),
 
     /**
      * Spiral wire bound. Use with product form code BE. The default if a spiral binding type is not stated. Cf. Comb
      * and Wire-O binding
      */
-    Coiled_wire_bound("B314", "Coiled wire bound"), //
+    Coiled_wire_bound("B314", "Coiled wire bound"),
 
     /**
      * Hardcover binding intended for general consumers rather than libraries, use with Product form code BB. The
      * default if a hardcover binding detail is not stated. cf. Library binding
      */
-    Trade_binding("B315", "Trade binding"), //
+    Trade_binding("B315", "Trade binding"),
 
     /**
      * Covers do not use a distinctive stock, but are the same as the body pages
      */
-    Self_cover("B400", "Self-cover"), //
+    Self_cover("B400", "Self-cover"),
 
     /**
      * AKA fabric, linen over boards
      */
-    Cloth_over_boards("B401", "Cloth over boards"), //
+    Cloth_over_boards("B401", "Cloth over boards"),
 
-    Paper_over_boards("B402", "Paper over boards"), //
+    Paper_over_boards("B402", "Paper over boards"),
 
-    Leather_real("B403", "Leather, real"), //
+    Leather_real("B403", "Leather, real"),
 
-    Leather_imitation("B404", "Leather, imitation"), //
+    Leather_imitation("B404", "Leather, imitation"),
 
-    Leather_bonded("B405", "Leather, bonded"), //
+    Leather_bonded("B405", "Leather, bonded"),
 
-    Vellum("B406", "Vellum"), //
+    Vellum("B406", "Vellum"),
 
     /**
      * DEPRECATED - use new B412 or B413 as appropriate
      */
-    Plastic("B407", "Plastic"), //
+    Plastic("B407", "Plastic"),
 
     /**
      * DEPRECATED - use new B412 or B414 as appropriate
      */
-    Vinyl("B408", "Vinyl"), //
+    Vinyl("B408", "Vinyl"),
 
     /**
      * Cloth, not necessarily over boards - cf B401
      */
-    Cloth("B409", "Cloth"), //
+    Cloth("B409", "Cloth"),
 
     /**
      * Spanish 'simil-tela'
      */
-    Imitation_cloth("B410", "Imitation cloth"), //
+    Imitation_cloth("B410", "Imitation cloth"),
 
-    Velvet("B411", "Velvet"), //
+    Velvet("B411", "Velvet"),
 
     /**
      * AKA 'flexibound': use with Product Form code BC
      */
-    Flexible_plastic_vinyl_cover("B412", "Flexible plastic/vinyl cover"), //
+    Flexible_plastic_vinyl_cover("B412", "Flexible plastic/vinyl cover"),
 
-    Plastic_covered("B413", "Plastic-covered"), //
+    Plastic_covered("B413", "Plastic-covered"),
 
-    Vinyl_covered("B414", "Vinyl-covered"), //
+    Vinyl_covered("B414", "Vinyl-covered"),
 
     /**
      * Book, laminating material unspecified: use L101 for 'whole product laminated', eg a laminated sheet map or
      * wallchart
      */
-    Laminated_cover("B415", "Laminated cover"), //
+    Laminated_cover("B415", "Laminated cover"),
 
     /**
      * With card cover (like a typical paperback). As distinct from a self-cover or more elaborate binding
      */
-    Card_cover("B416", "Card cover"), //
+    Card_cover("B416", "Card cover"),
 
     /**
      * Type unspecified
      */
-    With_dust_jacket("B501", "With dust jacket"), //
+    With_dust_jacket("B501", "With dust jacket"),
 
     /**
      * Used to distinguish from B503
      */
-    With_printed_dust_jacket("B502", "With printed dust jacket"), //
+    With_printed_dust_jacket("B502", "With printed dust jacket"),
 
     /**
      * With translucent paper or plastic protective cover
      */
-    With_translucent_dust_cover("B503", "With translucent dust cover"), //
+    With_translucent_dust_cover("B503", "With translucent dust cover"),
 
     /**
      * For paperback with flaps
      */
-    With_flaps("B504", "With flaps"), //
+    With_flaps("B504", "With flaps"),
 
-    With_thumb_index("B505", "With thumb index"), //
+    With_thumb_index("B505", "With thumb index"),
 
     /**
      * If the number of markers is significant, it can be stated as free text in &lt;ProductFormDescription&gt;
      */
-    With_ribbon_marker_s("B506", "With ribbon marker(s)"), //
+    With_ribbon_marker_s("B506", "With ribbon marker(s)"),
 
-    With_zip_fastener("B507", "With zip fastener"), //
+    With_zip_fastener("B507", "With zip fastener"),
 
-    With_button_snap_fastener("B508", "With button snap fastener"), //
+    With_button_snap_fastener("B508", "With button snap fastener"),
 
     /**
      * AKA yapp edge?
      */
-    With_leather_edge_lining("B509", "With leather edge lining"), //
+    With_leather_edge_lining("B509", "With leather edge lining"),
 
     /**
      * With edge trimming such that the front edge is ragged, not neatly and squarely trimmed: AKA deckle edge, feather
      * edge, uncut edge, rough cut
      */
-    Rough_front("B510", "Rough front"), //
+    Rough_front("B510", "Rough front"),
 
     /**
      * With one or more gatefold or foldout sections bound in
      */
-    With_foldout("B511", "With foldout"), //
+    With_foldout("B511", "With foldout"),
 
     /**
      * Pages include extra-wide margin specifically intended for hand-written annotations
      */
-    Wide_margin("B512", "Wide margin"), //
+    Wide_margin("B512", "Wide margin"),
 
     /**
      * Book with attached loop for fixing to baby stroller, cot, chair etc
      */
-    With_fastening_strap("B513", "With fastening strap"), //
+    With_fastening_strap("B513", "With fastening strap"),
 
     /**
      * With one or more pages perforated and intended to be torn out for use
      */
-    With_perforated_pages("B514", "With perforated pages"), //
+    With_perforated_pages("B514", "With perforated pages"),
 
     /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
      * 'flip-book', 'back-to-back', (fr.) 't&#234;te-b&#234;che' (usually an omnibus of two works)
      */
-    Turn_around_book("B601", "Turn-around book"), //
+    Turn_around_book("B601", "Turn-around book"),
 
     /**
      * Manga with pages and panels in the sequence of the original Japanese, but with Western text
      */
-    Unflipped_manga_format("B602", "Unflipped manga format"), //
+    Unflipped_manga_format("B602", "Unflipped manga format"),
 
     /**
      * Text shows syllable breaks
      */
-    Syllabification("B610", "Syllabification"), //
+    Syllabification("B610", "Syllabification"),
 
     /**
      * Single letters only. Was formerly identified as UK Braille Grade 1
      */
-    UK_Uncontracted_Braille("B701", "UK Uncontracted Braille"), //
+    UK_Uncontracted_Braille("B701", "UK Uncontracted Braille"),
 
     /**
      * With some letter combinations. Was formerly identified as UK Braille Grade 2
      */
-    UK_Contracted_Braille("B702", "UK Contracted Braille"), //
+    UK_Contracted_Braille("B702", "UK Contracted Braille"),
 
     /**
      * DEPRECATED- use B704/B705 as appropriate instead
      */
-    US_Braille("B703", "US Braille"), //
+    US_Braille("B703", "US Braille"),
 
-    US_Uncontracted_Braille("B704", "US Uncontracted Braille"), //
+    US_Uncontracted_Braille("B704", "US Uncontracted Braille"),
 
-    US_Contracted_Braille("B705", "US Contracted Braille"), //
+    US_Contracted_Braille("B705", "US Contracted Braille"),
 
-    Unified_English_Braille("B706", "Unified English Braille"), //
+    Unified_English_Braille("B706", "Unified English Braille"),
 
     /**
      * Moon embossed alphabet, used by some print-impaired readers who have difficulties with Braille
      */
-    Moon("B707", "Moon"), //
+    Moon("B707", "Moon"),
 
     /**
      * Includes RealVideo packaged within a .rm RealMedia container
      */
-    Real_Video_format("D101", "Real Video format"), //
+    Real_Video_format("D101", "Real Video format"),
 
-    Quicktime_format("D102", "Quicktime format"), //
+    Quicktime_format("D102", "Quicktime format"),
 
-    AVI_format("D103", "AVI format"), //
+    AVI_format("D103", "AVI format"),
 
-    Windows_Media_Video_format("D104", "Windows Media Video format"), //
+    Windows_Media_Video_format("D104", "Windows Media Video format"),
 
-    MPEG_4("D105", "MPEG-4"), //
+    MPEG_4("D105", "MPEG-4"),
 
     /**
      * Use with an applicable Product Form code D*; note that more detail of operating system requirements can be given
      * in a Product Form Feature composite
      */
-    MS_DOS("D201", "MS-DOS"), //
+    MS_DOS("D201", "MS-DOS"),
 
     /**
      * Use with an applicable Product Form code D*; see note on D201
      */
-    Windows("D202", "Windows"), //
+    Windows("D202", "Windows"),
 
     /**
      * Use with an applicable Product Form code D*; see note on D201
      */
-    Macintosh("D203", "Macintosh"), //
+    Macintosh("D203", "Macintosh"),
 
     /**
      * Use with an applicable Product Form code D*; see note on D201
      */
-    UNIX_LINUX("D204", "UNIX / LINUX"), //
+    UNIX_LINUX("D204", "UNIX / LINUX"),
 
     /**
      * Use with an applicable Product Form code D*; see note on D201
      */
-    Other_operating_system_s("D205", "Other operating system(s)"), //
+    Other_operating_system_s("D205", "Other operating system(s)"),
 
     /**
      * Use with an applicable Product Form code D*; see note on D201
      */
-    Palm_OS("D206", "Palm OS"), //
+    Palm_OS("D206", "Palm OS"),
 
     /**
      * Use with an applicable Product Form code D*; see note on D201
      */
-    Windows_Mobile("D207", "Windows Mobile"), //
+    Windows_Mobile("D207", "Windows Mobile"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Microsoft_XBox("D301", "Microsoft XBox"), //
+    Microsoft_XBox("D301", "Microsoft XBox"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Nintendo_Gameboy_Color("D302", "Nintendo Gameboy Color"), //
+    Nintendo_Gameboy_Color("D302", "Nintendo Gameboy Color"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Nintendo_Gameboy_Advanced("D303", "Nintendo Gameboy Advanced"), //
+    Nintendo_Gameboy_Advanced("D303", "Nintendo Gameboy Advanced"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Nintendo_Gameboy("D304", "Nintendo Gameboy"), //
+    Nintendo_Gameboy("D304", "Nintendo Gameboy"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Nintendo_Gamecube("D305", "Nintendo Gamecube"), //
+    Nintendo_Gamecube("D305", "Nintendo Gamecube"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Nintendo_64("D306", "Nintendo 64"), //
+    Nintendo_64("D306", "Nintendo 64"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Sega_Dreamcast("D307", "Sega Dreamcast"), //
+    Sega_Dreamcast("D307", "Sega Dreamcast"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Sega_Genesis_Megadrive("D308", "Sega Genesis/Megadrive"), //
+    Sega_Genesis_Megadrive("D308", "Sega Genesis/Megadrive"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Sega_Saturn("D309", "Sega Saturn"), //
+    Sega_Saturn("D309", "Sega Saturn"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Sony_PlayStation_1("D310", "Sony PlayStation 1"), //
+    Sony_PlayStation_1("D310", "Sony PlayStation 1"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      */
-    Sony_PlayStation_2("D311", "Sony PlayStation 2"), //
+    Sony_PlayStation_2("D311", "Sony PlayStation 2"),
 
-    Nintendo_Dual_Screen("D312", "Nintendo Dual Screen"), //
+    Nintendo_Dual_Screen("D312", "Nintendo Dual Screen"),
 
-    Sony_PlayStation_3("D313", "Sony PlayStation 3"), //
+    Sony_PlayStation_3("D313", "Sony PlayStation 3"),
 
-    Xbox_360("D314", "Xbox 360"), //
+    Xbox_360("D314", "Xbox 360"),
 
-    Nintendo_Wii("D315", "Nintendo Wii"), //
+    Nintendo_Wii("D315", "Nintendo Wii"),
 
-    Sony_PlayStation_Portable_PSP("D316", "Sony PlayStation Portable (PSP)"), //
+    Sony_PlayStation_Portable_PSP("D316", "Sony PlayStation Portable (PSP)"),
 
     /**
      * Use where a particular e-publication type (specified in &lt;EpubType&gt;) has both reflowable and fixed-format
      * variants
      */
-    Reflowable("E200", "Reflowable"), //
+    Reflowable("E200", "Reflowable"),
 
     /**
      * Use where a particular e-publication type (specified in &lt;EpubType&gt;) has both reflowable and fixed-format
      * variants
      */
-    Fixed_format("E201", "Fixed format"), //
+    Fixed_format("E201", "Fixed format"),
 
     /**
      * All e-publication resources are included within the e-publication package
      */
-    Readable_offline("E202", "Readable offline"), //
+    Readable_offline("E202", "Readable offline"),
 
     /**
      * E-publication requires a network connection to access some resources (eg an enhanced e-book where video clips are
      * not stored within the e-publication 'package' itself, but are delivered via an internet connection)
      */
-    Requires_network_connection("E203", "Requires network connection"), //
+    Requires_network_connection("E203", "Requires network connection"),
 
     /**
      * Resources (eg images) present in other editions have been removed from this product, eg due to rights issues
      */
-    Content_removed("E204", "Content removed"), //
+    Content_removed("E204", "Content removed"),
 
     /**
      * Use for fixed-format e-books optimised for landscape display. Also include an indication of the optimal screen
      * aspect ratio
      */
-    Landscape("E210", "Landscape"), //
+    Landscape("E210", "Landscape"),
 
     /**
      * Use for fixed-format e-books optimised for portrait display. Also include an indication of the optimal screen
      * aspect ratio
      */
-    Portrait("E211", "Portrait"), //
+    Portrait("E211", "Portrait"),
 
     /**
      * Use for fixed-format e-books optimised for displays with a 5:4 aspect ratio (eg 1280x1024 pixels etc, assuming
      * square pixels). Note that aspect ratio codes are NOT specific to actual screen dimensions or pixel counts, but to
      * the ratios between two dimensions or two pixel counts
      */
-    _5_4("E221", "5:4"), //
+    _5_4("E221", "5:4"),
 
     /**
      * Use for fixed-format e-books optimised for displays with a 4:3 aspect ratio (eg 800x600, 1024x768, 2048x1536
      * pixels etc)
      */
-    _4_3("E222", "4:3"), //
+    _4_3("E222", "4:3"),
 
     /**
      * Use for fixed-format e-books optimised for displays with a 3:2 aspect ratio (eg 960x640, 3072x2048 pixels etc)
      */
-    _3_2("E223", "3:2"), //
+    _3_2("E223", "3:2"),
 
     /**
      * Use for fixed-format e-books optimised for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600 pixels etc)
      */
-    _16_10("E224", "16:10"), //
+    _16_10("E224", "16:10"),
 
     /**
      * Use for fixed-format e-books optimised for displays with a 16:9 aspect ratio (eg 1024x576, 1920x1080, 2048x1152
      * pixels etc)
      */
-    _16_9("E225", "16:9"), //
+    _16_9("E225", "16:9"),
 
     /**
      * Whole product laminated (eg laminated map, fold-out chart, wallchart, etc): use B415 for book with laminated
      * cover
      */
-    Laminated("L101", "Laminated"), //
+    Laminated("L101", "Laminated"),
 
     /**
      * Use with Product Form code PC
      */
-    Desk_calendar("P101", "Desk calendar"), //
+    Desk_calendar("P101", "Desk calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Mini_calendar("P102", "Mini calendar"), //
+    Mini_calendar("P102", "Mini calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Engagement_calendar("P103", "Engagement calendar"), //
+    Engagement_calendar("P103", "Engagement calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Day_by_day_calendar("P104", "Day by day calendar"), //
+    Day_by_day_calendar("P104", "Day by day calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Poster_calendar("P105", "Poster calendar"), //
+    Poster_calendar("P105", "Poster calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Wall_calendar("P106", "Wall calendar"), //
+    Wall_calendar("P106", "Wall calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Perpetual_calendar("P107", "Perpetual calendar"), //
+    Perpetual_calendar("P107", "Perpetual calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Advent_calendar("P108", "Advent calendar"), //
+    Advent_calendar("P108", "Advent calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Bookmark_calendar("P109", "Bookmark calendar"), //
+    Bookmark_calendar("P109", "Bookmark calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Student_calendar("P110", "Student calendar"), //
+    Student_calendar("P110", "Student calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Project_calendar("P111", "Project calendar"), //
+    Project_calendar("P111", "Project calendar"),
 
     /**
      * Use with Product Form code PC
      */
-    Almanac_calendar("P112", "Almanac calendar"), //
+    Almanac_calendar("P112", "Almanac calendar"),
 
     /**
      * A calendar that is not one of the types specified elsewhere: use with Product Form code PC
      */
-    Other_calendar("P113", "Other calendar"), //
+    Other_calendar("P113", "Other calendar"),
 
     /**
      * A product that is associated with or ancillary to a calendar or organiser, eg a deskstand for a calendar, or an
      * insert for an organiser: use with Product Form code PC or PS
      */
-    Other_calendar_or_organiser_product("P114", "Other calendar or organiser product"), //
+    Other_calendar_or_organiser_product("P114", "Other calendar or organiser product"),
 
     /**
      * Kamishibai / Cantastoria cards
      */
-    Picture_story_cards("P120", "Picture story cards"), //
+    Picture_story_cards("P120", "Picture story cards"),
 
     /**
      * Stationery item in hardback book format
      */
-    Hardback_stationery("P201", "Hardback (stationery)"), //
+    Hardback_stationery("P201", "Hardback (stationery)"),
 
     /**
      * Stationery item in paperback/softback book format
      */
-    Paperback_softback_stationery("P202", "Paperback / softback (stationery)"), //
+    Paperback_softback_stationery("P202", "Paperback / softback (stationery)"),
 
     /**
      * Stationery item in spiral-bound book format
      */
-    Spiral_bound_stationery("P203", "Spiral bound (stationery)"), //
+    Spiral_bound_stationery("P203", "Spiral bound (stationery)"),
 
     /**
      * Stationery item in leather-bound book format, or other fine binding
      */
-    Leather_fine_binding_stationery("P204", "Leather / fine binding (stationery)"), //
+    Leather_fine_binding_stationery("P204", "Leather / fine binding (stationery)"),
 
     /**
      * For map, poster, wallchart etc
      */
-    With_hanging_strips("P301", "With hanging strips"), //
+    With_hanging_strips("P301", "With hanging strips"),
 
     /**
      * TV standard for video or DVD
      */
-    PAL("V201", "PAL"), //
+    PAL("V201", "PAL"),
 
     /**
      * TV standard for video or DVD
      */
-    NTSC("V202", "NTSC"), //
+    NTSC("V202", "NTSC"),
 
     /**
      * TV standard for video or DVD
      */
-    SECAM("V203", "SECAM"), //
+    SECAM("V203", "SECAM"),
 
     /**
      * Licensed for use in domestic contexts only
      */
-    Home_use("V220", "Home use"), //
+    Home_use("V220", "Home use"),
 
     /**
      * Licensed for use in education

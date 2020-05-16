@@ -47,24 +47,24 @@ public enum PersonNameIdentifierTypes implements OnixCodelist, CodeList101 {
     /**
      * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * Personennamendatei - person name authority file used by Deutsche Nationalbibliothek and in other German-speaking
      * countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
      * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND
      */
-    PND("02", "PND"), //
+    PND("02", "PND"),
 
     /**
      * Library of Congress control number assigned to a Library of Congress Name Authority record
      */
-    LCCN("04", "LCCN"), //
+    LCCN("04", "LCCN"),
 
     /**
      * International Standard Name Identifier. See http://www.isni.org/
      */
-    ISNI("16", "ISNI"), //
+    ISNI("16", "ISNI"),
 
     /**
      * Gemeinsame Normdatei - Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd

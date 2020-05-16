@@ -47,34 +47,34 @@ public enum AvItemIdentifierTypes implements OnixCodelist, CodeList241 {
     /**
      * For example, a publisher's own identifier. Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * Formerly known as the EAN-13 (unhyphenated)
      */
-    GTIN_13("03", "GTIN-13"), //
+    GTIN_13("03", "GTIN-13"),
 
     /**
      * Digital Object Identifier (variable length and character set beginning '10.', and without https://doi.org/ or the
      * older http://dx.doi.org/)
      */
-    DOI("06", "DOI"), //
+    DOI("06", "DOI"),
 
     /**
      * Motion picture work identifier from the International Movie Database
      */
-    IMDB("12", "IMDB"), //
+    IMDB("12", "IMDB"),
 
     /**
      * International Standard Recording Code, 5 alphanumeric characters plus 7 digits
      */
-    ISRC("18", "ISRC"), //
+    ISRC("18", "ISRC"),
 
     /**
      * International Standard Audiovisual Number, 16 or 26 hex digits, with optional alphanumeric check character(s),
      * unhyphenated
      */
-    ISAN("19", "ISAN"), //
+    ISAN("19", "ISAN"),
 
     /**
      * Entertainment Identifier Registry DOI

@@ -28,9 +28,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ListOfOnixDataCompositeWithKey
-    <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>
-    extends ListOfOnixDataComposite<C, S> {
+public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
+    K extends Enum<K> & OnixCodelist> extends ListOfOnixDataComposite<C, S> {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -49,8 +48,8 @@ public class ListOfOnixDataCompositeWithKey
     }
 
     /**
-     * Scans the items (i.e. Data Composite) in this list, searching for the one that has the given key.
-     * If such item exists, it's converted into its corresponding {@link JonixStruct}.
+     * Scans the items (i.e. Data Composite) in this list, searching for the one that has the given key. If such item
+     * exists, it's converted into its corresponding {@link JonixStruct}.
      *
      * @param structKey the requested key
      * @return an {@link Optional} with the found item as a {@link JonixStruct} (or empty Optional if none exists)
@@ -59,8 +58,8 @@ public class ListOfOnixDataCompositeWithKey
         return find(structKey).map(OnixComposite.OnixDataComposite::asStruct);
     }
 
-    public ListOfOnixDataCompositeWithKey<C,S,K> findAll(Set<K> structKeys) {
-        ListOfOnixDataCompositeWithKey<C,S,K> matches = new ListOfOnixDataCompositeWithKey<>();
+    public ListOfOnixDataCompositeWithKey<C, S, K> findAll(Set<K> structKeys) {
+        ListOfOnixDataCompositeWithKey<C, S, K> matches = new ListOfOnixDataCompositeWithKey<>();
         forEach(item -> {
             if (structKeys == null || structKeys.contains(item.structKey())) {
                 matches.add(item);
@@ -70,7 +69,7 @@ public class ListOfOnixDataCompositeWithKey
     }
 
     @SuppressWarnings("unchecked")
-    public ListOfOnixDataCompositeWithKey<C,S,K> findAll(K... structKeys) {
+    public ListOfOnixDataCompositeWithKey<C, S, K> findAll(K... structKeys) {
         return findAll(new HashSet<>(Arrays.asList(structKeys)));
     }
 
@@ -99,8 +98,7 @@ public class ListOfOnixDataCompositeWithKey
     private static final ListOfOnixDataCompositeWithKey<?, ?, ?> EMPTY = new ListOfOnixDataCompositeWithKey<>();
 
     @SuppressWarnings("unchecked")
-    public static <C extends OnixDataCompositeWithKey<S, K>,
-        S extends JonixKeyedStruct<K>,
+    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
         K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K> emptyKeyed() {
         return (ListOfOnixDataCompositeWithKey<C, S, K>) EMPTY;
     }

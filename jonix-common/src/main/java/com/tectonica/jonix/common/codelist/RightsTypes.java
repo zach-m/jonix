@@ -46,12 +46,12 @@ public enum RightsTypes implements OnixCodelist, CodeList219 {
      * Text or image copyright (normally indicated by the &#169; symbol). The default if no &lt;CopyrightType&gt; is
      * specified
      */
-    Copyright("C", "Copyright"), //
+    Copyright("C", "Copyright"),
 
     /**
      * Phonogram copyright or neighbouring right (normally indicated by the &#8471; symbol)
      */
-    Phonogram_right("P", "Phonogram right"), //
+    Phonogram_right("P", "Phonogram right"),
 
     /**
      * Sui generis database right

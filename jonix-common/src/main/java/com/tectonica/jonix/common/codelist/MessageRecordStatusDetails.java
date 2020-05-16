@@ -42,7 +42,7 @@ interface CodeList225 {
  *      Codelist 225 in Reference Guide</a>
  */
 public enum MessageRecordStatusDetails implements OnixCodelist, CodeList225 {
-    Unknown_error("000", "Unknown error"), //
+    Unknown_error("000", "Unknown error"),
 
     Unknown_warning("001", "Unknown warning");
 

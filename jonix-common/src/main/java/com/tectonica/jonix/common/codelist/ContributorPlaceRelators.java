@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,22 +45,22 @@ interface CodeList151 {
  *      Codelist 151 in Reference Guide</a>
  */
 public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
-    Born_in("01", "Born in"), //
+    Born_in("01", "Born in"),
 
-    Died_in("02", "Died in"), //
+    Died_in("02", "Died in"),
 
-    Formerly_resided_in("03", "Formerly resided in"), //
+    Formerly_resided_in("03", "Formerly resided in"),
 
-    Currently_resides_in("04", "Currently resides in"), //
+    Currently_resides_in("04", "Currently resides in"),
 
-    Educated_in("05", "Educated in"), //
+    Educated_in("05", "Educated in"),
 
-    Worked_in("06", "Worked in"), //
+    Worked_in("06", "Worked in"),
 
     /**
      * ('Floruit')
      */
-    Flourished_in("07", "Flourished in"), //
+    Flourished_in("07", "Flourished in"),
 
     /**
      * Or nationality. For use with country codes only

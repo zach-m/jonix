@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -49,48 +49,48 @@ public enum StudyBibleTypes implements OnixCodelist, CodeList84 {
      * Contains the work of Howard Clark Kee including a summary of the development of the canon, introductions to the
      * books, notes and cross references. Originally published in 1993, NRSV
      */
-    Cambridge_Annotated("CAM", "Cambridge Annotated"), //
+    Cambridge_Annotated("CAM", "Cambridge Annotated"),
 
     /**
      * A project of Tyndale House Publishers and Zondervan intended to help readers apply the Bible to daily living.
      * Living Bible, King James, New International, NASB
      */
-    Life_Application("LIF", "Life Application"), //
+    Life_Application("LIF", "Life Application"),
 
     /**
      * A King James version study Bible with notes by James Macarthur first published in 1997
      */
-    Macarthur("MAC", "Macarthur"), //
+    Macarthur("MAC", "Macarthur"),
 
     /**
      * A study Bible originally published in the 1960s and based on the RSV / NRSV
      */
-    Oxford_Annotated("OXF", "Oxford Annotated"), //
+    Oxford_Annotated("OXF", "Oxford Annotated"),
 
     /**
      * Norwegian study Bible, New Testament
      */
-    Studiebibel_Det_Nye_testamentet("NNT", "Studiebibel, Det Nye testamentet"), //
+    Studiebibel_Det_Nye_testamentet("NNT", "Studiebibel, Det Nye testamentet"),
 
     /**
      * Published in 1991 and based on the New Revised Standard version
      */
-    New_Oxford_Annotated("NOX", "New Oxford Annotated"), //
+    New_Oxford_Annotated("NOX", "New Oxford Annotated"),
 
     /**
      * Norwegian study Bible
      */
-    Norsk_studiebibel("NSB", "Norsk studiebibel"), //
+    Norsk_studiebibel("NSB", "Norsk studiebibel"),
 
     /**
      * Based on the work of Charles C. Ryrie. King James, NI, NASB
      */
-    Ryrie("RYR", "Ryrie"), //
+    Ryrie("RYR", "Ryrie"),
 
     /**
      * A study Bible based on the early 20th century work of C.I. Scofield. Based on the King James version
      */
-    Scofield("SCO", "Scofield"), //
+    Scofield("SCO", "Scofield"),
 
     /**
      * A transdenominational study Bible for persons from the Pentecostal/Charismatic traditions

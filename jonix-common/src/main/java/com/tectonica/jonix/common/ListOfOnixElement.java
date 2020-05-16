@@ -30,8 +30,8 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
     private List<V> cachedValues = null;
 
     /**
-     * returns a list of the values stored within the elements of this list (as opposed to the elements themselves,
-     * each of which also contains attributes, which are usually not interesting)
+     * returns a list of the values stored within the elements of this list (as opposed to the elements themselves, each
+     * of which also contains attributes, which are usually not interesting)
      *
      * @return a non-null, possibly empty, list of the values
      */

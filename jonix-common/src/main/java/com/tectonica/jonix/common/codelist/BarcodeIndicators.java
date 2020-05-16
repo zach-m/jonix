@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,32 +45,32 @@ interface CodeList141 {
  *      Codelist 141 in Reference Guide</a>
  */
 public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
-    Not_barcoded("00", "Not barcoded"), //
+    Not_barcoded("00", "Not barcoded"),
 
-    Barcoded_scheme_unspecified("01", "Barcoded, scheme unspecified"), //
+    Barcoded_scheme_unspecified("01", "Barcoded, scheme unspecified"),
 
-    GTIN_13("02", "GTIN-13"), //
+    GTIN_13("02", "GTIN-13"),
 
-    GTIN_13_5_US_dollar_price_encoded("03", "GTIN-13+5 (US dollar price encoded)"), //
+    GTIN_13_5_US_dollar_price_encoded("03", "GTIN-13+5 (US dollar price encoded)"),
 
-    GTIN_13_5_CAN_dollar_price_encoded("04", "GTIN-13+5 (CAN dollar price encoded)"), //
+    GTIN_13_5_CAN_dollar_price_encoded("04", "GTIN-13+5 (CAN dollar price encoded)"),
 
-    GTIN_13_5_no_price_encoded("05", "GTIN-13+5 (no price encoded)"), //
-
-    /**
-     * AKA item/price
-     */
-    UPC_12_item_specific("06", "UPC-12 (item-specific)"), //
+    GTIN_13_5_no_price_encoded("05", "GTIN-13+5 (no price encoded)"),
 
     /**
      * AKA item/price
      */
-    UPC_12_5_item_specific("07", "UPC-12+5 (item-specific)"), //
+    UPC_12_item_specific("06", "UPC-12 (item-specific)"),
+
+    /**
+     * AKA item/price
+     */
+    UPC_12_5_item_specific("07", "UPC-12+5 (item-specific)"),
 
     /**
      * AKA price/item
      */
-    UPC_12_price_point("08", "UPC-12 (price-point)"), //
+    UPC_12_price_point("08", "UPC-12 (price-point)"),
 
     /**
      * AKA price/item

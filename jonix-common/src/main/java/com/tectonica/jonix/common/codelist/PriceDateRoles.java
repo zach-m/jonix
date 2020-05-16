@@ -45,12 +45,12 @@ public enum PriceDateRoles implements OnixCodelist, CodeList173 {
     /**
      * Date on which a price becomes effective
      */
-    From_date("14", "From date"), //
+    From_date("14", "From date"),
 
     /**
      * Date on which a price ceases to be effective
      */
-    Until_date("15", "Until date"), //
+    Until_date("15", "Until date"),
 
     /**
      * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat

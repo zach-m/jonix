@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -53,14 +53,14 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * in sales reports. The net price charged to the retailer depends on the RRP minus a trade discount (which may be
      * customer-specific). Relevant tax detail must be calculated by the data recipient
      */
-    RRP_excluding_tax("01", "RRP excluding tax"), //
+    RRP_excluding_tax("01", "RRP excluding tax"),
 
     /**
      * Recommended Retail Price, including sales or value-added tax where applicable. The net price charged to the
      * retailer depends on the trade discount. Sales or value-added tax detail is usually supplied in the &lt;Tax&gt;
      * composite
      */
-    RRP_including_tax("02", "RRP including tax"), //
+    RRP_including_tax("02", "RRP including tax"),
 
     /**
      * Fixed Retail Price, excluding any sales or value-added tax, used in countries were retail price maintenance
@@ -69,14 +69,14 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * price charged to the retailer depends on the FRP minus a customer-soecific trade discount. Relevant tax detail
      * must be calculated by the data recipient
      */
-    FRP_excluding_tax("03", "FRP excluding tax"), //
+    FRP_excluding_tax("03", "FRP excluding tax"),
 
     /**
      * Fixed Retail Price, including any sales or value-added tax where applicable, used in countries were retail price
      * maintenance applies by law to certain products. The net price charged to the retailer depends on the trade
      * discount. Sales or value-added tax detail is usually supplied in the &lt;Tax&gt; composite
      */
-    FRP_including_tax("04", "FRP including tax"), //
+    FRP_including_tax("04", "FRP including tax"),
 
     /**
      * Net or wholesale price, excluding any sales or value-added tax. Unit price charged by supplier for
@@ -84,13 +84,13 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * but sometimes subject to a further customer-specific trade discount based on volume. Relevant tax detail must be
      * calculated by the data recipient
      */
-    Supplier_s_Net_price_excluding_tax("05", "Supplier’s Net price excluding tax"), //
+    Supplier_s_Net_price_excluding_tax("05", "Supplier’s Net price excluding tax"),
 
     /**
      * Unit price charged by supplier to reseller / rental outlet, excluding any sales tax or value-added tax: goods for
      * rental (used for video and DVD)
      */
-    Supplier_s_Net_price_excluding_tax_rental_goods("06", "Supplier’s Net price excluding tax: rental goods"), //
+    Supplier_s_Net_price_excluding_tax_rental_goods("06", "Supplier’s Net price excluding tax: rental goods"),
 
     /**
      * Net or wholesale price, including any sales or value-added tax where applicable. Unit price charged by supplier
@@ -98,7 +98,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * consumer, but sometimes subject to a further customer-specific trade discount based on volume. Sales or
      * value-added tax detail is usually supplied in the &lt;Tax&gt; composite
      */
-    Supplier_s_Net_price_including_tax("07", "Supplier’s Net price including tax"), //
+    Supplier_s_Net_price_including_tax("07", "Supplier’s Net price including tax"),
 
     /**
      * Net or wholesale price charged by supplier to a specified class of reseller, excluding any sales tax or
@@ -106,7 +106,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * countries, eg Finland, where trade practice requires two different Net prices to be listed for different classes
      * of resellers, and where national guidelines specify how the code should be used)
      */
-    Supplier_s_alternative_Net_price_excluding_tax("08", "Supplier’s alternative Net price excluding tax"), //
+    Supplier_s_alternative_Net_price_excluding_tax("08", "Supplier’s alternative Net price excluding tax"),
 
     /**
      * Net or wholesale price charged by supplier to a specified class of reseller, including any sales tax or
@@ -114,7 +114,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * for use only in countries, eg Finland, where trade practice requires two different Net prices to be listed for
      * different classes of resellers, and where national guidelines specify how the code should be used)
      */
-    Supplier_s_alternative_net_price_including_tax("09", "Supplier’s alternative net price including tax"), //
+    Supplier_s_alternative_net_price_including_tax("09", "Supplier’s alternative net price including tax"),
 
     /**
      * Special sale RRP excluding any sales tax or value-added tax. Note 'special sales' are sales where terms and
@@ -123,64 +123,64 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * outlet (often termed a 'premium'&#160;product), or where other specific conditions or qualiifications apply.
      * Further details of the modified terms and conditions should be given in &lt;PriceTypeDescription&gt;
      */
-    Special_sale_RRP_excluding_tax("11", "Special sale RRP excluding tax"), //
+    Special_sale_RRP_excluding_tax("11", "Special sale RRP excluding tax"),
 
     /**
      * Special sale RRP including sales or value-added tax if applicable
      */
-    Special_sale_RRP_including_tax("12", "Special sale RRP including tax"), //
+    Special_sale_RRP_including_tax("12", "Special sale RRP including tax"),
 
     /**
      * In countries where retail price maintenance applies by law to certain products: not used in USA
      */
-    Special_sale_fixed_retail_price_excluding_tax("13", "Special sale fixed retail price excluding tax"), //
+    Special_sale_fixed_retail_price_excluding_tax("13", "Special sale fixed retail price excluding tax"),
 
     /**
      * In countries where retail price maintenance applies by law to certain products: not used in USA
      */
-    Special_sale_fixed_retail_price_including_tax("14", "Special sale fixed retail price including tax"), //
+    Special_sale_fixed_retail_price_including_tax("14", "Special sale fixed retail price including tax"),
 
     /**
      * Unit price charged by supplier to reseller for special sale excluding any sales tax or value-added tax
      */
-    Supplier_s_net_price_for_special_sale_excluding_tax("15", "Supplier’s net price for special sale excluding tax"), //
+    Supplier_s_net_price_for_special_sale_excluding_tax("15", "Supplier’s net price for special sale excluding tax"),
 
     /**
      * Unit price charged by supplier to reseller for special sale including any sales tax or value-added tax
      */
-    Supplier_s_net_price_for_special_sale_including_tax("17", "Supplier’s net price for special sale including tax"), //
+    Supplier_s_net_price_for_special_sale_including_tax("17", "Supplier’s net price for special sale including tax"),
 
     /**
      * Pre-publication RRP excluding any sales tax or value-added tax. Use where RRP for pre-orders is different from
      * post-publication RRP
      */
-    Pre_publication_RRP_excluding_tax("21", "Pre-publication RRP excluding tax"), //
+    Pre_publication_RRP_excluding_tax("21", "Pre-publication RRP excluding tax"),
 
     /**
      * Pre-publication RRP including sales or value-added tax if applicable. Use where RRP for pre-orders is different
      * from post-publication RRP
      */
-    Pre_publication_RRP_including_tax("22", "Pre-publication RRP including tax"), //
+    Pre_publication_RRP_including_tax("22", "Pre-publication RRP including tax"),
 
     /**
      * In countries where retail price maintenance applies by law to certain products: not used in USA
      */
-    Pre_publication_fixed_retail_price_excluding_tax("23", "Pre-publication fixed retail price excluding tax"), //
+    Pre_publication_fixed_retail_price_excluding_tax("23", "Pre-publication fixed retail price excluding tax"),
 
     /**
      * In countries where retail price maintenance applies by law to certain products: not used in USA
      */
-    Pre_publication_fixed_retail_price_including_tax("24", "Pre-publication fixed retail price including tax"), //
+    Pre_publication_fixed_retail_price_including_tax("24", "Pre-publication fixed retail price including tax"),
 
     /**
      * Unit price charged by supplier to reseller pre-publication excluding any sales tax or value-added tax
      */
-    Supplier_s_pre_publication_net_price_excluding_tax("25", "Supplier’s pre-publication net price excluding tax"), //
+    Supplier_s_pre_publication_net_price_excluding_tax("25", "Supplier’s pre-publication net price excluding tax"),
 
     /**
      * Unit price charged by supplier to reseller pre-publication including any sales tax or value-added tax
      */
-    Supplier_s_pre_publication_net_price_including_tax("27", "Supplier’s pre-publication net price including tax"), //
+    Supplier_s_pre_publication_net_price_including_tax("27", "Supplier’s pre-publication net price including tax"),
 
     /**
      * In the US, books are sometimes supplied on 'freight-pass-through' terms, where a price that is different from the
@@ -188,31 +188,31 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * are being invoked, code 31 is used instead of code 01 to indicate the RRP. Code 32 is used for the 'billing
      * price'
      */
-    Freight_pass_through_RRP_excluding_tax("31", "Freight-pass-through RRP excluding tax"), //
+    Freight_pass_through_RRP_excluding_tax("31", "Freight-pass-through RRP excluding tax"),
 
     /**
      * When freight-pass-through terms apply, the price on which the supplier's charge to a reseller is calculated, ie
      * the price to which trade discount terms are applied. See also code 31
      */
-    Freight_pass_through_billing_price_excluding_tax("32", "Freight-pass-through billing price excluding tax"), //
+    Freight_pass_through_billing_price_excluding_tax("32", "Freight-pass-through billing price excluding tax"),
 
     /**
      * In countries where retail price maintenance applies by law to certain products, but the price is set by the
      * importer or local sales agent, not the foreign publisher. In France, 'prix catalogue &#233;diteur &#233;tranger'
      */
-    Importer_s_Fixed_retail_price_excluding_tax("33", "Importer’s Fixed retail price excluding tax"), //
+    Importer_s_Fixed_retail_price_excluding_tax("33", "Importer’s Fixed retail price excluding tax"),
 
     /**
      * In countries where retail price maintenance applies by law to certain products, but the price is set by the
      * importer or local sales agent, not the foreign publisher. In France, 'prix catalogue &#233;diteur &#233;tranger'
      */
-    Importer_s_Fixed_retail_price_including_tax("34", "Importer’s Fixed retail price including tax"), //
+    Importer_s_Fixed_retail_price_including_tax("34", "Importer’s Fixed retail price including tax"),
 
     /**
      * For a product supplied on agency terms, the retail price set by the publisher, excluding any sales tax or
      * value-added tax
      */
-    Publishers_retail_price_excluding_tax("41", "Publishers retail price excluding tax"), //
+    Publishers_retail_price_excluding_tax("41", "Publishers retail price excluding tax"),
 
     /**
      * For a product supplied on agency terms, the retail price set by the publisher, including sales or value-added tax

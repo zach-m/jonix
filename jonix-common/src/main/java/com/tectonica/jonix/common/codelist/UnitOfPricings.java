@@ -45,7 +45,7 @@ public enum UnitOfPricings implements OnixCodelist, CodeList60 {
     /**
      * Default
      */
-    Per_copy_of_whole_product("00", "Per copy of whole product"), //
+    Per_copy_of_whole_product("00", "Per copy of whole product"),
 
     Per_page_for_printed_loose_leaf_content_only("01", "Per page for printed loose-leaf content only");
 

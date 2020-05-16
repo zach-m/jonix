@@ -45,23 +45,23 @@ public enum BibleTextOrganizations implements OnixCodelist, CodeList86 {
     /**
      * A Bible with the text organized in the order in which events are believed to have happened
      */
-    Chronological("CHR", "Chronological"), //
+    Chronological("CHR", "Chronological"),
 
     /**
      * A Bible which explores keywords or themes by referring text to preceding or following text
      */
-    Chain_reference("CHA", "Chain reference"), //
+    Chain_reference("CHA", "Chain reference"),
 
     /**
      * A Bible or other text in which different versions are printed one line above the other, so that the variations
      * can easily be detected
      */
-    Interlinear("INT", "Interlinear"), //
+    Interlinear("INT", "Interlinear"),
 
     /**
      * A Bible with two or more versions printed side by side
      */
-    Parallel("PAR", "Parallel"), //
+    Parallel("PAR", "Parallel"),
 
     /**
      * A Bible in which the text is presented in the traditional order

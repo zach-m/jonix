@@ -42,9 +42,9 @@ interface CodeList31 {
  *      Codelist 31 in Reference Guide</a>
  */
 public enum AudienceRangePrecisions implements OnixCodelist, CodeList31 {
-    Exact("01", "Exact"), //
+    Exact("01", "Exact"),
 
-    From("03", "From"), //
+    From("03", "From"),
 
     To("04", "To");
 

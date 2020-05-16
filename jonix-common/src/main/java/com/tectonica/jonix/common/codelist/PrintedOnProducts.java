@@ -45,7 +45,7 @@ public enum PrintedOnProducts implements OnixCodelist, CodeList174 {
     /**
      * Price not printed on product
      */
-    No("01", "No"), //
+    No("01", "No"),
 
     /**
      * Price printed on product

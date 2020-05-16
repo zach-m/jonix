@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,22 +48,22 @@ public enum MeasureUnits implements OnixCodelist, CodeList50 {
     /**
      * Millimeters are the preferred metric unit of length
      */
-    Centimeters("cm", "Centimeters"), //
+    Centimeters("cm", "Centimeters"),
 
-    Grams("gr", "Grams"), //
+    Grams("gr", "Grams"),
 
-    Inches_US("in", "Inches (US)"), //
+    Inches_US("in", "Inches (US)"),
 
     /**
      * Grams are the preferred metric unit of weight
      */
-    Kilograms("kg", "Kilograms"), //
+    Kilograms("kg", "Kilograms"),
 
-    Pounds_US("lb", "Pounds (US)"), //
+    Pounds_US("lb", "Pounds (US)"),
 
-    Millimeters("mm", "Millimeters"), //
+    Millimeters("mm", "Millimeters"),
 
-    Ounces_US("oz", "Ounces (US)"), //
+    Ounces_US("oz", "Ounces (US)"),
 
     Pixels("px", "Pixels");
 

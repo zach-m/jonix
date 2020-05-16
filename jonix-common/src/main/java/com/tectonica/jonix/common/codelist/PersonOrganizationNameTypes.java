@@ -42,29 +42,29 @@ interface CodeList18 {
  *      Codelist 18 in Reference Guide</a>
  */
 public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
-    Unspecified("00", "Unspecified"), //
+    Unspecified("00", "Unspecified"),
 
     /**
      * May be used to give a well-known pseudonym, where the primary name is a 'real' name
      */
-    Pseudonym("01", "Pseudonym"), //
+    Pseudonym("01", "Pseudonym"),
 
-    Authority_controlled_name("02", "Authority-controlled name"), //
+    Authority_controlled_name("02", "Authority-controlled name"),
 
     /**
      * Use only within &lt;AlternativeName&gt;
      */
-    Earlier_name("03", "Earlier name"), //
+    Earlier_name("03", "Earlier name"),
 
     /**
      * May be used to identify a well-known real name, where the primary name is a pseudonym
      */
-    _Real_name("04", "‘Real’ name"), //
+    _Real_name("04", "‘Real’ name"),
 
     /**
      * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified
      */
-    Transliterated_form_of_primary_name("05", "Transliterated form of primary name"), //
+    Transliterated_form_of_primary_name("05", "Transliterated form of primary name"),
 
     /**
      * Use only within &lt;AlternativeName&gt;

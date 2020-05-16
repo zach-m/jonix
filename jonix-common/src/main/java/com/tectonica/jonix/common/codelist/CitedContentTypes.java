@@ -45,19 +45,19 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
     /**
      * The full text of a review in a third-party publication in any medium
      */
-    Review("01", "Review"), //
+    Review("01", "Review"),
 
-    Bestseller_list("02", "Bestseller list"), //
+    Bestseller_list("02", "Bestseller list"),
 
     /**
      * Other than a review
      */
-    Media_mention("03", "Media mention"), //
+    Media_mention("03", "Media mention"),
 
     /**
      * (North America) Inclusion in a program such as 'Chicago Reads', 'Seattle Reads'
      */
-    _One_locality_one_book_program("04", "‘One locality, one book’ program"), //
+    _One_locality_one_book_program("04", "‘One locality, one book’ program"),
 
     /**
      * For example a 'best books of the year' or '25 books you should have read' list, without regard to their

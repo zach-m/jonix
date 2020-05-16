@@ -222,8 +222,8 @@ public class Reissue implements OnixSuperComposite, Serializable {
         return prices;
     }
 
-    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

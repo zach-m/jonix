@@ -177,8 +177,8 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         return religiousTextID;
     }
 
-    private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature,
+        ReligiousTextFeatureTypes> religiousTextFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -186,7 +186,8 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures() {
+    public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes>
+        religiousTextFeatures() {
         _initialize();
         return religiousTextFeatures;
     }

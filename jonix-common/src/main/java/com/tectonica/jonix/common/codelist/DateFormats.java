@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,67 +48,67 @@ public enum DateFormats implements OnixCodelist, CodeList55 {
     /**
      * Common Era year, month and day (default for most dates)
      */
-    YYYYMMDD("00", "YYYYMMDD"), //
+    YYYYMMDD("00", "YYYYMMDD"),
 
     /**
      * Year and month
      */
-    YYYYMM("01", "YYYYMM"), //
+    YYYYMM("01", "YYYYMM"),
 
     /**
      * Year and week number
      */
-    YYYYWW("02", "YYYYWW"), //
+    YYYYWW("02", "YYYYWW"),
 
     /**
      * Year and quarter (Q = 1, 2, 3, 4, with 1 = Jan to Mar)
      */
-    YYYYQ("03", "YYYYQ"), //
+    YYYYQ("03", "YYYYQ"),
 
     /**
      * Year and season (S = 1, 2, 3, 4, with 1 = 'Spring')
      */
-    YYYYS("04", "YYYYS"), //
+    YYYYS("04", "YYYYS"),
 
     /**
      * Year (default for some dates)
      */
-    YYYY("05", "YYYY"), //
+    YYYY("05", "YYYY"),
 
     /**
      * Spread of exact dates
      */
-    YYYYMMDDYYYYMMDD("06", "YYYYMMDDYYYYMMDD"), //
+    YYYYMMDDYYYYMMDD("06", "YYYYMMDDYYYYMMDD"),
 
     /**
      * Spread of months
      */
-    YYYYMMYYYYMM("07", "YYYYMMYYYYMM"), //
+    YYYYMMYYYYMM("07", "YYYYMMYYYYMM"),
 
     /**
      * Spread of week numbers
      */
-    YYYYWWYYYYWW("08", "YYYYWWYYYYWW"), //
+    YYYYWWYYYYWW("08", "YYYYWWYYYYWW"),
 
     /**
      * Spread of quarters
      */
-    YYYYQYYYYQ("09", "YYYYQYYYYQ"), //
+    YYYYQYYYYQ("09", "YYYYQYYYYQ"),
 
     /**
      * Spread of seasons
      */
-    YYYYSYYYYS("10", "YYYYSYYYYS"), //
+    YYYYSYYYYS("10", "YYYYSYYYYS"),
 
     /**
      * Spread of years
      */
-    YYYYYYYY("11", "YYYYYYYY"), //
+    YYYYYYYY("11", "YYYYYYYY"),
 
     /**
      * For complex, approximate or uncertain dates, or dates BCE
      */
-    Text_string("12", "Text string"), //
+    Text_string("12", "Text string"),
 
     /**
      * Exact time. Use ONLY when exact times with hour/minute precision are relevant. By default, time is local.
@@ -116,7 +116,7 @@ public enum DateFormats implements OnixCodelist, CodeList55 {
      * timezone offset from UTC. Times without a timezone are 'rolling' local times, times qualified with a timezone
      * (using Z, + or -) specify a particular instant in time
      */
-    YYYYMMDDThhmm("13", "YYYYMMDDThhmm"), //
+    YYYYMMDDThhmm("13", "YYYYMMDDThhmm"),
 
     /**
      * Exact time. Use ONLY when exact times with second precision are relevant. By default, time is local.
@@ -124,22 +124,22 @@ public enum DateFormats implements OnixCodelist, CodeList55 {
      * timezone offset from UTC. Times without a timezone are 'rolling' local times, times qualified with a timezone
      * (using Z, + or -) specify a particular instant in time
      */
-    YYYYMMDDThhmmss("14", "YYYYMMDDThhmmss"), //
+    YYYYMMDDThhmmss("14", "YYYYMMDDThhmmss"),
 
     /**
      * Year month day (Hijri calendar)
      */
-    YYYYMMDD_H("20", "YYYYMMDD (H)"), //
+    YYYYMMDD_H("20", "YYYYMMDD (H)"),
 
     /**
      * Year and month (Hijri calendar)
      */
-    YYYYMM_H("21", "YYYYMM (H)"), //
+    YYYYMM_H("21", "YYYYMM (H)"),
 
     /**
      * Year (Hijri calendar)
      */
-    YYYY_H("25", "YYYY (H)"), //
+    YYYY_H("25", "YYYY (H)"),
 
     /**
      * For complex, approximate or uncertain dates (Hijri calendar), text would usually be in Arabic script

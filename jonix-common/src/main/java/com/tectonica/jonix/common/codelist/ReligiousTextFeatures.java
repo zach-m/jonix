@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,53 +48,53 @@ public enum ReligiousTextFeatures implements OnixCodelist, CodeList90 {
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Academic_year("01", "Academic year"), //
+    Academic_year("01", "Academic year"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Catechistic_year("02", "Catechistic year"), //
+    Catechistic_year("02", "Catechistic year"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Liturgical_year("03", "Liturgical year"), //
+    Liturgical_year("03", "Liturgical year"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Advent_and_Christmas("04", "Advent and Christmas"), //
+    Advent_and_Christmas("04", "Advent and Christmas"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Blessings("05", "Blessings"), //
+    Blessings("05", "Blessings"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Scholastic_cycles("06", "Scholastic cycles"), //
+    Scholastic_cycles("06", "Scholastic cycles"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Confirmation_and_Holy_Communion("07", "Confirmation and Holy Communion"), //
+    Confirmation_and_Holy_Communion("07", "Confirmation and Holy Communion"),
 
     /**
      * For example, summer camps and other youth recreational activities: use with code 01 in
      * &lt;ReligiousTextFeatureType&gt;
      */
-    Summer_activites("08", "Summer activites"), //
+    Summer_activites("08", "Summer activites"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Easter("09", "Easter"), //
+    Easter("09", "Easter"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
      */
-    Lent("10", "Lent"), //
+    Lent("10", "Lent"),
 
     /**
      * Use with code 01 in &lt;ReligiousTextFeatureType&gt;

@@ -44,7 +44,7 @@ interface CodeList75 {
  *      Codelist 75 in Reference Guide</a>
  */
 public enum PersonDateRoles implements OnixCodelist, CodeList75 {
-    Date_of_birth("007", "Date of birth"), //
+    Date_of_birth("007", "Date of birth"),
 
     Date_of_death("008", "Date of death");
 

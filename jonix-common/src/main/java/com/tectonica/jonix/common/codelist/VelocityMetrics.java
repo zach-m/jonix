@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,42 +48,42 @@ public enum VelocityMetrics implements OnixCodelist, CodeList216 {
     /**
      * Typically measured over most recent 1 month period
      */
-    Mean_daily_sale("01", "Mean daily sale"), //
+    Mean_daily_sale("01", "Mean daily sale"),
 
     /**
      * Typically measured over most recent 1 month period
      */
-    Maximum_daily_sale("02", "Maximum daily sale"), //
+    Maximum_daily_sale("02", "Maximum daily sale"),
 
     /**
      * Typically measured over most recent 1 month period
      */
-    Minimum_daily_sale("03", "Minimum daily sale"), //
+    Minimum_daily_sale("03", "Minimum daily sale"),
 
     /**
      * Typically measured over most recent rolling 12 week period
      */
-    Mean_weekly_sale("04", "Mean weekly sale"), //
+    Mean_weekly_sale("04", "Mean weekly sale"),
 
     /**
      * Typically measured over most recent rolling 12 week period
      */
-    Maximum_weekly_sale("05", "Maximum weekly sale"), //
+    Maximum_weekly_sale("05", "Maximum weekly sale"),
 
     /**
      * Typically measured over most recent rolling 12 week period
      */
-    Minimum_weekly_sale("06", "Minimum weekly sale"), //
+    Minimum_weekly_sale("06", "Minimum weekly sale"),
 
     /**
      * Typically measured over most recent rolling 6 month period
      */
-    Mean_monthly_sale("07", "Mean monthly sale"), //
+    Mean_monthly_sale("07", "Mean monthly sale"),
 
     /**
      * Typically measured over the most recent rolling 6 month period
      */
-    Maximum_monthly_sale("08", "Maximum monthly sale"), //
+    Maximum_monthly_sale("08", "Maximum monthly sale"),
 
     /**
      * Typically measured over the most recent rolling 6 month period

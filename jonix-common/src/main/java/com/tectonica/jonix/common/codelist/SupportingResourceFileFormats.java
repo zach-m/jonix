@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,177 +48,177 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     /**
      * MPEG 1/2 Audio Layer III file
      */
-    MP3("A103", "MP3"), //
+    MP3("A103", "MP3"),
 
     /**
      * Waveform Audio file
      */
-    WAV("A104", "WAV"), //
+    WAV("A104", "WAV"),
 
     /**
      * Proprietary RealNetworks format
      */
-    Real_Audio("A105", "Real Audio"), //
+    Real_Audio("A105", "Real Audio"),
 
     /**
      * Windows Media Audio format
      */
-    WMA("A106", "WMA"), //
+    WMA("A106", "WMA"),
 
     /**
      * Advanced Audio Coding format
      */
-    AAC("A107", "AAC"), //
+    AAC("A107", "AAC"),
 
     /**
      * Vorbis audio format in the Ogg container
      */
-    Ogg_Vorbis("A108", "Ogg/Vorbis"), //
+    Ogg_Vorbis("A108", "Ogg/Vorbis"),
 
     /**
      * Audio Interchange File format
      */
-    AIFF("A111", "AIFF"), //
+    AIFF("A111", "AIFF"),
 
     /**
      * Proprietary RealNetworks format. Includes Real Video packaged within a .rm RealMedia container
      */
-    Real_Video("D101", "Real Video"), //
+    Real_Video("D101", "Real Video"),
 
     /**
      * Quicktime container format (.mov)
      */
-    Quicktime("D102", "Quicktime"), //
+    Quicktime("D102", "Quicktime"),
 
     /**
      * Audio Video Interleave format
      */
-    AVI("D103", "AVI"), //
+    AVI("D103", "AVI"),
 
     /**
      * Windows Media Video format
      */
-    WMV("D104", "WMV"), //
+    WMV("D104", "WMV"),
 
     /**
      * MPEG-4 container format (.mp4, .m4a)
      */
-    MPEG_4("D105", "MPEG-4"), //
+    MPEG_4("D105", "MPEG-4"),
 
     /**
      * Flash Video (.flv, .f4v)
      */
-    FLV("D106", "FLV"), //
+    FLV("D106", "FLV"),
 
     /**
      * ShockWave (.swf)
      */
-    SWF("D107", "SWF"), //
+    SWF("D107", "SWF"),
 
     /**
      * 3GPP container format (.3gp, .3g2)
      */
-    _3GP("D108", "3GP"), //
+    _3GP("D108", "3GP"),
 
     /**
      * WebM container format (includes .mkv)
      */
-    WebM("D109", "WebM"), //
+    WebM("D109", "WebM"),
 
     /**
      * Portable Document File (single page image)
      */
-    PDF("D401", "PDF"), //
+    PDF("D401", "PDF"),
 
     /**
      * Graphic Interchange File format
      */
-    GIF("D501", "GIF"), //
+    GIF("D501", "GIF"),
 
     /**
      * Joint Photographic Experts Group format
      */
-    JPEG("D502", "JPEG"), //
+    JPEG("D502", "JPEG"),
 
     /**
      * Portable Network Graphics format
      */
-    PNG("D503", "PNG"), //
+    PNG("D503", "PNG"),
 
     /**
      * Tagged Image File format
      */
-    TIFF("D504", "TIFF"), //
+    TIFF("D504", "TIFF"),
 
     /**
      * Windows Bitmap format
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    BMP("D505", "BMP"), //
+    BMP("D505", "BMP"),
 
     /**
      * JPEG 2000, improved Joint Photographic Experts Group format
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    JP2("D506", "JP2"), //
+    JP2("D506", "JP2"),
 
     /**
      * Adobe Photoshop native file format, PSD or PSB
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    PSD("D507", "PSD"), //
+    PSD("D507", "PSD"),
 
     /**
      * Image as Postscript or Encapsulated Postscript file (.ps or .eps)
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    EPS("D508", "EPS"), //
+    EPS("D508", "EPS"),
 
     /**
      * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
      * (IDPF) [File extension .epub]
      */
-    EPUB("E101", "EPUB"), //
+    EPUB("E101", "EPUB"),
 
     /**
      * HyperText Mark-up Language [File extension .html, .htm]
      */
-    HTML("E105", "HTML"), //
+    HTML("E105", "HTML"),
 
     /**
      * Portable Document Format (ISO 32000-1:2008) [File extension .pdf]
      */
-    PDF_("E107", "PDF"), //
+    PDF_("E107", "PDF"),
 
     /**
      * Plain text (either ASCII or UTF-8/16 Unicode)
      */
-    TXT("E112", "TXT"), //
+    TXT("E112", "TXT"),
 
     /**
      * Extensible Hypertext Markup Language [File extension .xhtml, .xht, .xml, .html, .htm]
      */
-    XHTML("E113", "XHTML"), //
+    XHTML("E113", "XHTML"),
 
     /**
      * XML Paper Specification
      */
-    XPS("E115", "XPS"), //
+    XPS("E115", "XPS"),
 
     /**
      * A format proprietary to Amazon for use with its Kindle reading devices or software readers [File extensions .azw,
      * .mobi, .prc]
      */
-    Amazon_Kindle("E116", "Amazon Kindle"), //
+    Amazon_Kindle("E116", "Amazon Kindle"),
 
     /**
      * Founder Apabi's proprietary basic e-book format
      */
-    CEB("E139", "CEB"), //
+    CEB("E139", "CEB"),
 
     /**
      * Founder Apabi's proprietary XML e-book format

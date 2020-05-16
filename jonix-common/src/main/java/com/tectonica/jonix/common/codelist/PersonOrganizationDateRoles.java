@@ -42,9 +42,9 @@ interface CodeList177 {
  *      Codelist 177 in Reference Guide</a>
  */
 public enum PersonOrganizationDateRoles implements OnixCodelist, CodeList177 {
-    Date_of_birth("50", "Date of birth"), //
+    Date_of_birth("50", "Date of birth"),
 
-    Date_of_death("51", "Date of death"), //
+    Date_of_death("51", "Date of death"),
 
     /**
      * ('Floruit'). To date the height of or most productive period during a career

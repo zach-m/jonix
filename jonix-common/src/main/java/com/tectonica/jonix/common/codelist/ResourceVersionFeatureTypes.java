@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,41 +48,41 @@ public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
     /**
      * Resource Version Feature Value carries a code from List 178
      */
-    File_format("01", "File format"), //
+    File_format("01", "File format"),
 
     /**
      * Resource Version Feature Value carries an integer
      */
-    Image_height_in_pixels("02", "Image height in pixels"), //
+    Image_height_in_pixels("02", "Image height in pixels"),
 
     /**
      * Resource Version Feature Value carries an integer
      */
-    Image_width_in_pixels("03", "Image width in pixels"), //
+    Image_width_in_pixels("03", "Image width in pixels"),
 
     /**
      * Resource Version Feature Value carries the filename of the supporting resource, necessary only when it is
      * different from the last part of the path provided in &lt;ResourceLink&gt;
      */
-    Filename("04", "Filename"), //
+    Filename("04", "Filename"),
 
     /**
      * Resource Version Feature Value carries a decimal number only, suggested no more than 2 significant digits (eg
      * 1.7, not 1.7462)
      */
-    Approximate_download_file_size_in_megabytes("05", "Approximate download file size in megabytes"), //
+    Approximate_download_file_size_in_megabytes("05", "Approximate download file size in megabytes"),
 
     /**
      * MD5 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 128-bit digest value
      * (as 32 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been
      * retrieved
      */
-    MD5_hash_value("06", "MD5 hash value"), //
+    MD5_hash_value("06", "MD5 hash value"),
 
     /**
      * Resource Version Feature Value carries a integer number only (eg 1831023)
      */
-    Exact_download_file_size_in_bytes("07", "Exact download file size in bytes"), //
+    Exact_download_file_size_in_bytes("07", "Exact download file size in bytes"),
 
     /**
      * SHA-256 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 256-bit digest

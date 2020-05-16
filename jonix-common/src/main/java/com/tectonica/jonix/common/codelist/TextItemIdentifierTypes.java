@@ -45,26 +45,26 @@ public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43 {
     /**
      * For example, a publisher's own identifier. Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * Formerly known as the EAN-13 (unhyphenated)
      */
-    GTIN_13("03", "GTIN-13"), //
+    GTIN_13("03", "GTIN-13"),
 
-    DOI("06", "DOI"), //
+    DOI("06", "DOI"),
 
     /**
      * Publisher item identifier
      */
-    PII("09", "PII"), //
+    PII("09", "PII"),
 
     /**
      * For serial items only
      */
-    SICI("10", "SICI"), //
+    SICI("10", "SICI"),
 
-    ISTC("11", "ISTC"), //
+    ISTC("11", "ISTC"),
 
     /**
      * (Unhyphenated)

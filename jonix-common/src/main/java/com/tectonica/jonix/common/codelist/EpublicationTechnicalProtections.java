@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,37 +48,37 @@ public enum EpublicationTechnicalProtections implements OnixCodelist, CodeList14
     /**
      * Has no technical protection
      */
-    None("00", "None"), //
+    None("00", "None"),
 
     /**
      * Has DRM protection
      */
-    DRM("01", "DRM"), //
+    DRM("01", "DRM"),
 
     /**
      * Has digital watermarking
      */
-    Digital_watermarking("02", "Digital watermarking"), //
+    Digital_watermarking("02", "Digital watermarking"),
 
     /**
      * Has DRM protection applied by the Adobe CS4 Content Server Package or by the Adobe ADEPT hosted service
      */
-    Adobe_DRM("03", "Adobe DRM"), //
+    Adobe_DRM("03", "Adobe DRM"),
 
     /**
      * Has FairPlay DRM protection applied via Apple proprietary online store
      */
-    Apple_DRM("04", "Apple DRM"), //
+    Apple_DRM("04", "Apple DRM"),
 
     /**
      * Has OMA v2 DRM protection applied, as used to protect some mobile phone content
      */
-    OMA_DRM("05", "OMA DRM"), //
+    OMA_DRM("05", "OMA DRM"),
 
     /**
      * Has Licensed Content Protection DRM applied by a Readium License Server
      */
-    Readium_LCP_DRM("06", "Readium LCP DRM"), //
+    Readium_LCP_DRM("06", "Readium LCP DRM"),
 
     /**
      * Has Sony DADC User Rights Management (URMS) DRM protection applied

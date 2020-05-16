@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -53,25 +53,25 @@ public enum SupplyDateRoles implements OnixCodelist, CodeList166 {
      * &lt;PublishingDate&gt; codes. In the absence of any supplier-specific, market-wide or general embargo date,
      * retail sales and pre-order fulfillment may begin as soon as stock is available to the retailer
      */
-    Sales_embargo_date("02", "Sales embargo date"), //
+    Sales_embargo_date("02", "Sales embargo date"),
 
     /**
      * The date on which physical stock is expected to be available to be shipped from the supplier to retailers, or a
      * digital product is expected to be released by the publisher or digital asset distributor to retailers or their
      * retail platform providers
      */
-    Expected_availability_date("08", "Expected availability date"), //
+    Expected_availability_date("08", "Expected availability date"),
 
     /**
      * Last date when returns will be accepted, generally for a product which is being remaindered or put out of print
      */
-    Last_date_for_returns("18", "Last date for returns"), //
+    Last_date_for_returns("18", "Last date for returns"),
 
     /**
      * Latest date on which an order may be placed for guaranteed delivery prior to the publication date. May or may not
      * be linked to a special reservation or pre-publication price
      */
-    Reservation_order_deadline("25", "Reservation order deadline"), //
+    Reservation_order_deadline("25", "Reservation order deadline"),
 
     /**
      * Latest date on which existing owners or licensees may download or re-download a copy of the product. Existing
@@ -79,7 +79,7 @@ public enum SupplyDateRoles implements OnixCodelist, CodeList166 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Last_redownload_date("29", "Last redownload date"), //
+    Last_redownload_date("29", "Last redownload date"),
 
     /**
      * Date on which any required technical protection measures (DRM) support will be withdrawn. DRM-protected products
@@ -87,7 +87,7 @@ public enum SupplyDateRoles implements OnixCodelist, CodeList166 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Last_TPM_date("30", "Last TPM date"), //
+    Last_TPM_date("30", "Last TPM date"),
 
     /**
      * The date on which physical stock is expected to be delivered to the supplier from the manufacturer or from a
@@ -96,14 +96,14 @@ public enum SupplyDateRoles implements OnixCodelist, CodeList166 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Expected_warehouse_date("34", "Expected warehouse date"), //
+    Expected_warehouse_date("34", "Expected warehouse date"),
 
     /**
      * First date on which the supplier specified in &lt;NewSupplier&gt; will accept orders. Note the first date would
      * typically be the day after the old supplier end date, but they may overlap if there is an agreement to forward
      * any orders between old and new supplier for fulfillment
      */
-    New_supplier_start_date("50", "New supplier start date"), //
+    New_supplier_start_date("50", "New supplier start date"),
 
     /**
      * Last date on which the supplier specified in &lt;Supplier&gt; will accept orders. New supplier should be

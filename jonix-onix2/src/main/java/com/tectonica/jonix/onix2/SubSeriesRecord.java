@@ -266,8 +266,8 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
         return levelSequenceNumber;
     }
 
-    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier,
+        SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -277,13 +277,14 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes>
+        seriesIdentifiers() {
         _initialize();
         return seriesIdentifiers;
     }
 
-    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * Jonix-Comment: this list is required to contain at least one item
@@ -426,8 +427,8 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
         return contributors;
     }
 
-    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * Jonix-Comment: this list may be empty

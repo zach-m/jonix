@@ -45,7 +45,7 @@ public enum IllustratedNotIllustrateds implements OnixCodelist, CodeList152 {
     /**
      * Not illustrated
      */
-    No("01", "No"), //
+    No("01", "No"),
 
     /**
      * Illustrated

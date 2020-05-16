@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,37 +45,37 @@ interface CodeList203 {
  *      Codelist 203 in Reference Guide</a>
  */
 public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
-    Unrated("00", "Unrated"), //
+    Unrated("00", "Unrated"),
 
     /**
      * The publisher states that the product is suitable for any adult audience
      */
-    Any_adult_audience("01", "Any adult audience"), //
+    Any_adult_audience("01", "Any adult audience"),
 
     /**
      * The publisher warns the content may offend parts of the adult audience (for any reason)
      */
-    Content_warning("02", "Content warning"), //
+    Content_warning("02", "Content warning"),
 
     /**
      * The publisher warns the product includes content of an explicit sexual nature
      */
-    Content_warning_sex("03", "Content warning (sex)"), //
+    Content_warning_sex("03", "Content warning (sex)"),
 
     /**
      * The publisher warns the product includes content of an extreme violent nature
      */
-    Content_warning_violence("04", "Content warning (violence)"), //
+    Content_warning_violence("04", "Content warning (violence)"),
 
     /**
      * The publisher warns the product includes content involving severe misuse of drugs
      */
-    Content_warning_drug_taking("05", "Content warning (drug-taking)"), //
+    Content_warning_drug_taking("05", "Content warning (drug-taking)"),
 
     /**
      * The publisher warns the product includes extreme / offensive / explicit language
      */
-    Content_warning_language("06", "Content warning (language)"), //
+    Content_warning_language("06", "Content warning (language)"),
 
     /**
      * The publisher warns the product includes content involving intolerance or abuse of particular groups (eg

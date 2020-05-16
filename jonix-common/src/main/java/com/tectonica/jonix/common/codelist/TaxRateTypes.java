@@ -45,21 +45,21 @@ public enum TaxRateTypes implements OnixCodelist, CodeList62 {
     /**
      * Specifies that tax is applied at a higher rate than standard
      */
-    Higher_rate("H", "Higher rate"), //
+    Higher_rate("H", "Higher rate"),
 
     /**
      * Under Italian tax rules, VAT on books may be paid at source by the publisher, and subsequent transactions through
      * the supply chain are tax-exempt
      */
-    Tax_paid_at_source_Italy("P", "Tax paid at source (Italy)"), //
+    Tax_paid_at_source_Italy("P", "Tax paid at source (Italy)"),
 
     /**
      * Specifies that tax is applied at a lower rate than standard. In the EU, use code R for 'Reduced rates', and for
      * rates lower than 5%, use code T ('Super-reduced') or Z (Zero-rated)
      */
-    Lower_rate("R", "Lower rate"), //
+    Lower_rate("R", "Lower rate"),
 
-    Standard_rate("S", "Standard rate"), //
+    Standard_rate("S", "Standard rate"),
 
     /**
      * Specifies that tax is applied at a rate lower than the Lower rate(s). In the EU, use code T for 'Super-reduced
@@ -67,7 +67,7 @@ public enum TaxRateTypes implements OnixCodelist, CodeList62 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Super_low_rate("T", "Super-low rate"), //
+    Super_low_rate("T", "Super-low rate"),
 
     Zero_rated("Z", "Zero-rated");
 

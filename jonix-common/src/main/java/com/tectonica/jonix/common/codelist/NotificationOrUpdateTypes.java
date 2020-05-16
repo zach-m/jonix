@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,19 +48,19 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
     /**
      * Use for a complete record issued earlier than approximately six months before publication
      */
-    Early_notification("01", "Early notification"), //
+    Early_notification("01", "Early notification"),
 
     /**
      * Use for a complete record issued to confirm advance information approximately six months before publication; or
      * for a complete record issued after that date and before information has been confirmed from the book-in-hand
      */
-    Advance_notification_confirmed("02", "Advance notification (confirmed)"), //
+    Advance_notification_confirmed("02", "Advance notification (confirmed)"),
 
     /**
      * Use for a complete record issued to confirm advance information at or just before actual publication date,
      * usually from the book-in-hand, or for a complete record issued at any later date
      */
-    Notification_confirmed_on_publication("03", "Notification confirmed on publication"), //
+    Notification_confirmed_on_publication("03", "Notification confirmed on publication"),
 
     /**
      * In ONIX 3.0 only, use when sending a 'block update' record. A block update implies using the supplied block(s) to
@@ -69,7 +69,7 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
      * while retailing information from Blocks 1-3 and 5 untouched. In previous ONIX releases, and for ONIX 3.0 using
      * other notification types, updating is by replacing the complete record with the newly-received data
      */
-    Update_partial("04", "Update (partial)"), //
+    Update_partial("04", "Update (partial)"),
 
     /**
      * Use when sending an instruction to delete a record which was previously issued. Note that a Delete instruction
@@ -78,43 +78,43 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
      * record. A Delete instruction is used ONLY when there is a particular reason to withdraw a record completely, eg
      * because it was issued in error
      */
-    Delete("05", "Delete"), //
+    Delete("05", "Delete"),
 
     /**
      * Notice of sale of a product, from one publisher to another: sent by the publisher disposing of the product
      */
-    Notice_of_sale("08", "Notice of sale"), //
+    Notice_of_sale("08", "Notice of sale"),
 
     /**
      * Notice of acquisition of a product, by one publisher from another: sent by the acquiring publisher
      */
-    Notice_of_acquisition("09", "Notice of acquisition"), //
+    Notice_of_acquisition("09", "Notice of acquisition"),
 
     /**
      * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded when testing is complete.
      * Sender must ensure the &lt;RecordReference&gt; matches a previously-sent Test record
      */
-    Test_update_Partial("88", "Test update (Partial)"), //
+    Test_update_Partial("88", "Test update (Partial)"),
 
     /**
      * Record may be processed for test purposes, but data should be discarded when testing is complete. Sender must
      * ensure the &lt;RecordReference&gt; does not match any previously-sent live product record
      */
-    Test_record("89", "Test record"), //
+    Test_record("89", "Test record"),
 
     /**
      * ONIX Books 2.1 supply update - &lt;SupplyDetail&gt; only (not used in ONIX 3.0)
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    Update_SupplyDetail_only("12", "Update – SupplyDetail only"), //
+    Update_SupplyDetail_only("12", "Update – SupplyDetail only"),
 
     /**
      * ONIX Books 2.1 supply update - &lt;MarketRepresentation&gt; only (not used in ONIX 3.0)
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    Update_MarketRepresentation_only("13", "Update – MarketRepresentation only"), //
+    Update_MarketRepresentation_only("13", "Update – MarketRepresentation only"),
 
     /**
      * ONIX Books 2.1 supply update - both &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; (not used in ONIX 3.0)

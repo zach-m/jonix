@@ -44,9 +44,9 @@ interface CodeList36 {
  *      Codelist 36 in Reference Guide</a>
  */
 public enum FrontCoverImageFileFormats implements OnixCodelist, CodeList36 {
-    GIF("02", "GIF"), //
+    GIF("02", "GIF"),
 
-    JPEG("03", "JPEG"), //
+    JPEG("03", "JPEG"),
 
     TIF("05", "TIF");
 

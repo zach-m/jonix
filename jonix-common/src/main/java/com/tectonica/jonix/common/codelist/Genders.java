@@ -45,9 +45,9 @@ public enum Genders implements OnixCodelist, CodeList229 {
     /**
      * Provides positive indication that the gender is not known or is not specified by the sender for any reason
      */
-    Unknown_or_unspecified("u", "Unknown or unspecified"), //
+    Unknown_or_unspecified("u", "Unknown or unspecified"),
 
-    Female("f", "Female"), //
+    Female("f", "Female"),
 
     Male("m", "Male");
 

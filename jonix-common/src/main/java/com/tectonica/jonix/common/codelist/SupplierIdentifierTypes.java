@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,36 +48,36 @@ public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
     /**
      * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * DEPRECATED - use 01
      */
-    Proprietary_("02", "Proprietary"), //
+    Proprietary_("02", "Proprietary"),
 
-    B_rsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"), //
+    B_rsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"),
 
-    German_ISBN_Agency_publisher_identifier("05", "German ISBN Agency publisher identifier"), //
+    German_ISBN_Agency_publisher_identifier("05", "German ISBN Agency publisher identifier"),
 
     /**
      * GS1 global location number (formerly EAN location number)
      */
-    GLN("06", "GLN"), //
+    GLN("06", "GLN"),
 
     /**
      * Book trade Standard Address Number - US, UK etc
      */
-    SAN("07", "SAN"), //
+    SAN("07", "SAN"),
 
     /**
      * Flemish supplier code
      */
-    Distributeurscode_Boekenbank("12", "Distributeurscode Boekenbank"), //
+    Distributeurscode_Boekenbank("12", "Distributeurscode Boekenbank"),
 
     /**
      * Flemish publisher code
      */
-    Fondscode_Boekenbank("13", "Fondscode Boekenbank"), //
+    Fondscode_Boekenbank("13", "Fondscode Boekenbank"),
 
     /**
      * Identifier for a business organization for VAT purposes, eg within the EU's VIES system. See

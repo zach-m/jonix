@@ -45,19 +45,19 @@ public enum TextCaseFlags implements OnixCodelist, CodeList14 {
     /**
      * Default
      */
-    Undefined("00", "Undefined"), //
+    Undefined("00", "Undefined"),
 
     /**
      * Initial capitals on first word and subsequently on proper names only, eg 'The conquest of Mexico'
      */
-    Sentence_case("01", "Sentence case"), //
+    Sentence_case("01", "Sentence case"),
 
     /**
      * Initial capitals on first word and subsequently on all significant words (nouns, pronouns, adjectives, verbs,
      * adverbs, subordinate conjunctions) thereafter. Unless they appear as the first word, articles, prepositions and
      * coordinating conjunctions remain lower case, eg 'The Conquest of Mexico'
      */
-    Title_case("02", "Title case"), //
+    Title_case("02", "Title case"),
 
     /**
      * For example, 'THE CONQUEST OF MEXICO'. Use only when Sentence or Title case are not possible (for example because

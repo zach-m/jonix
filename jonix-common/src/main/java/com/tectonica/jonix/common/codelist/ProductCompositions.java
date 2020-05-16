@@ -42,30 +42,30 @@ interface CodeList2 {
  *      Codelist 2 in Reference Guide</a>
  */
 public enum ProductCompositions implements OnixCodelist, CodeList2 {
-    Single_component_retail_product("00", "Single-component retail product"), //
+    Single_component_retail_product("00", "Single-component retail product"),
 
     /**
      * Multiple-component product retailed as a whole
      */
-    Multiple_component_retail_product("10", "Multiple-component retail product"), //
+    Multiple_component_retail_product("10", "Multiple-component retail product"),
 
     /**
      * Used only when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed
      * as such
      */
-    Multiple_item_collection_retailed_as_separate_parts("11", "Multiple-item collection, retailed as separate parts"), //
+    Multiple_item_collection_retailed_as_separate_parts("11", "Multiple-item collection, retailed as separate parts"),
 
     /**
      * Product available to the book trade, but not for retail sale, and not carrying retail items, eg empty dumpbin,
      * empty counterpack, promotional material
      */
-    Trade_only_product("20", "Trade-only product"), //
+    Trade_only_product("20", "Trade-only product"),
 
     /**
      * Product available to the book trade, but not for general retail sale as a whole. It carries multiple components
      * for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled counterpack
      */
-    Multiple_item_trade_only_pack("30", "Multiple-item trade-only pack"), //
+    Multiple_item_trade_only_pack("30", "Multiple-item trade-only pack"),
 
     /**
      * Carrying multiple components, primarily for retailing as separate items. The pack may be split and retailed as

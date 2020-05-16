@@ -45,12 +45,12 @@ public enum LicenseExpressionTypes implements OnixCodelist, CodeList218 {
     /**
      * Document (eg Word file, PDF or web page) Intended for the lay reader
      */
-    Human_readable("01", "Human readable"), //
+    Human_readable("01", "Human readable"),
 
     /**
      * Document (eg Word file, PDF or web page) Intended for the legal specialist reader
      */
-    Professional_readable("02", "Professional readable"), //
+    Professional_readable("02", "Professional readable"),
 
     ONIX_PL("10", "ONIX-PL");
 

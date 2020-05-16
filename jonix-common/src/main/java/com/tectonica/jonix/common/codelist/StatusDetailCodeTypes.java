@@ -42,7 +42,7 @@ interface CodeList223 {
  *      Codelist 223 in Reference Guide</a>
  */
 public enum StatusDetailCodeTypes implements OnixCodelist, CodeList223 {
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * Status detail code is taken from List 225

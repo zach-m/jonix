@@ -47,9 +47,9 @@ public enum DefaultLinearUnits implements OnixCodelist, CodeList94 {
     /**
      * Millimeters are the preferred metric unit of length
      */
-    Centimeters("cm", "Centimeters"), //
+    Centimeters("cm", "Centimeters"),
 
-    Inches_US("in", "Inches (US)"), //
+    Inches_US("in", "Inches (US)"),
 
     Millimeters("mm", "Millimeters");
 

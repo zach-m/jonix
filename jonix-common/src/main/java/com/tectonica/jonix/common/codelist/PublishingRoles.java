@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,7 +45,7 @@ interface CodeList45 {
  *      Codelist 45 in Reference Guide</a>
  */
 public enum PublishingRoles implements OnixCodelist, CodeList45 {
-    Publisher("01", "Publisher"), //
+    Publisher("01", "Publisher"),
 
     /**
      * Use where two or more publishers co-publish the exact same product, either under a single ISBN (in which case
@@ -53,44 +53,44 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
      * publisher and the publishers of OTHER ISBNs are co-publishers. Note this is different from publication of
      * 'co-editions'
      */
-    Co_publisher("02", "Co-publisher"), //
+    Co_publisher("02", "Co-publisher"),
 
-    Sponsor("03", "Sponsor"), //
+    Sponsor("03", "Sponsor"),
 
     /**
      * Of a translated work
      */
-    Publisher_of_original_language_version("04", "Publisher of original-language version"), //
+    Publisher_of_original_language_version("04", "Publisher of original-language version"),
 
-    Host_distributor_of_electronic_content("05", "Host/distributor of electronic content"), //
+    Host_distributor_of_electronic_content("05", "Host/distributor of electronic content"),
 
-    Published_for_on_behalf_of("06", "Published for/on behalf of"), //
+    Published_for_on_behalf_of("06", "Published for/on behalf of"),
 
     /**
      * Use also for 'Published in cooperation with'
      */
-    Published_in_association_with("07", "Published in association with"), //
+    Published_in_association_with("07", "Published in association with"),
 
     /**
      * DEPRECATED: use code 06
      */
-    Published_on_behalf_of("08", "Published on behalf of"), //
+    Published_on_behalf_of("08", "Published on behalf of"),
 
     /**
      * When ownership of a product or title is transferred from one publisher to another
      */
-    New_or_acquiring_publisher("09", "New or acquiring publisher"), //
+    New_or_acquiring_publisher("09", "New or acquiring publisher"),
 
     /**
      * The group to which a publisher (publishing role 01) belongs: use only if a publisher has been identified with
      * role code 01
      */
-    Publishing_group("10", "Publishing group"), //
+    Publishing_group("10", "Publishing group"),
 
     /**
      * The publisher of the edition of which a product is a facsimile
      */
-    Publisher_of_facsimile_original("11", "Publisher of facsimile original"), //
+    Publisher_of_facsimile_original("11", "Publisher of facsimile original"),
 
     /**
      * The repackager of a prebound edition that has been assigned its own identifier. (In the US, a 'prebound edition'
@@ -98,42 +98,42 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
      * hardcover binding by a supplier other than the original publisher.) Required when the &lt;EditionType&gt; is
      * coded PRB. The original publisher should be named as the 'publisher'
      */
-    Repackager_of_prebound_edition("12", "Repackager of prebound edition"), //
+    Repackager_of_prebound_edition("12", "Repackager of prebound edition"),
 
     /**
      * When ownership of a product or title is transferred from one publisher to another (complement of code 09)
      */
-    Former_publisher("13", "Former publisher"), //
+    Former_publisher("13", "Former publisher"),
 
     /**
      * Body funding publication fees, if different from the body funding the underlying research. Intended primarily for
      * use with open access publications
      */
-    Publication_funder("14", "Publication funder"), //
+    Publication_funder("14", "Publication funder"),
 
     /**
      * Body funding the research on which publication is based, if different from the body funding the publication.
      * Intended primarily for use with open access publications
      */
-    Research_funder("15", "Research funder"), //
+    Research_funder("15", "Research funder"),
 
     /**
      * Body funding research and publication. Intended primarily for use with open access publications
      */
-    Funding_body("16", "Funding body"), //
+    Funding_body("16", "Funding body"),
 
     /**
      * Organisation responsible for printing a printed product. Supplied primarily to meet legal deposit requirements,
      * and may apply only to the first impression. The organisation may also be responsible for binding, when a separate
      * binder is not specified
      */
-    Printer("17", "Printer"), //
+    Printer("17", "Printer"),
 
     /**
      * Organisation responsible for binding a printed product (where distinct from the printer). Supplied primarily to
      * meet legal deposit requirements, and may apply only to the first impression
      */
-    Binder("18", "Binder"), //
+    Binder("18", "Binder"),
 
     /**
      * Organisation primarily responsible for physical manufacture of a product, when neither Printer nor Binder is

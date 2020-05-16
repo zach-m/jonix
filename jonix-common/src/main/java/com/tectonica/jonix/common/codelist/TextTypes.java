@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -50,54 +50,54 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * for general distribution, and (b) cannot be coded elsewhere. If more than one type of text is sent, it must be
      * identified by tagging within the text itself
      */
-    Sender_defined_text("01", "Sender-defined text"), //
+    Sender_defined_text("01", "Sender-defined text"),
 
     /**
      * Limited to a maximum of 350 characters
      */
-    Short_description_annotation("02", "Short description/annotation"), //
+    Short_description_annotation("02", "Short description/annotation"),
 
     /**
      * Length unrestricted
      */
-    Description("03", "Description"), //
+    Description("03", "Description"),
 
     /**
      * Used for a table of contents sent as a single text field, which may or may not carry structure expressed using
      * XHTML
      */
-    Table_of_contents("04", "Table of contents"), //
+    Table_of_contents("04", "Table of contents"),
 
     /**
      * Primary descriptive blurb taken from the back cover and/or flaps. See also code 27
      */
-    Flap_cover_copy("05", "Flap / cover copy"), //
+    Flap_cover_copy("05", "Flap / cover copy"),
 
     /**
      * A quote taken from a review of the product or of the work in question where there is no need to take account of
      * different editions
      */
-    Review_quote("06", "Review quote"), //
+    Review_quote("06", "Review quote"),
 
     /**
      * A quote taken from a review of a previous edition of the work
      */
-    Review_quote_previous_edition("07", "Review quote: previous edition"), //
+    Review_quote_previous_edition("07", "Review quote: previous edition"),
 
     /**
      * A quote taken from a review of a previous work by the same author(s) or in the same series
      */
-    Review_quote_previous_work("08", "Review quote: previous work"), //
+    Review_quote_previous_work("08", "Review quote: previous work"),
 
     /**
      * A quote usually provided by a celebrity or another author to promote a new book, not from a review
      */
-    Endorsement("09", "Endorsement"), //
+    Endorsement("09", "Endorsement"),
 
     /**
      * A promotional phrase which is intended to headline a description of the product
      */
-    Promotional_headline("10", "Promotional headline"), //
+    Promotional_headline("10", "Promotional headline"),
 
     /**
      * Text describing a feature of a product to which the publisher wishes to draw attention for promotional purposes.
@@ -105,82 +105,82 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * discretion of the receiver of the ONIX record, or multiple features can be described using appropriate XHTML
      * markup
      */
-    Feature("11", "Feature"), //
+    Feature("11", "Feature"),
 
     /**
      * A note referring to all contributors to a product - NOT linked to a single contributor
      */
-    Biographical_note("12", "Biographical note"), //
+    Biographical_note("12", "Biographical note"),
 
     /**
      * A statement included by a publisher in fulfillment of contractual obligations, such as a disclaimer, sponsor
      * statement, or legal notice of any sort. Note that the inclusion of such a notice cannot and does not imply that a
      * user of the ONIX record is obliged to reproduce it
      */
-    Publisher_s_notice("13", "Publisher’s notice"), //
+    Publisher_s_notice("13", "Publisher’s notice"),
 
     /**
      * A short excerpt from the main text of the work
      */
-    Excerpt("14", "Excerpt"), //
+    Excerpt("14", "Excerpt"),
 
     /**
      * Used for an index sent as a single text field, which may be structured using XHTML
      */
-    Index("15", "Index"), //
+    Index("15", "Index"),
 
     /**
      * (of which the product is a part.) Limited to a maximum of 350 characters
      */
-    Short_description_annotation_for_collection("16", "Short description/annotation for collection"), //
+    Short_description_annotation_for_collection("16", "Short description/annotation for collection"),
 
     /**
      * (of which the product is a part.) Length unrestricted
      */
-    Description_for_collection("17", "Description for collection"), //
+    Description_for_collection("17", "Description for collection"),
 
     /**
      * As code 11 but used for a new feature of this edition or version
      */
-    New_feature("18", "New feature"), //
+    New_feature("18", "New feature"),
 
-    Version_history("19", "Version history"), //
+    Version_history("19", "Version history"),
 
     /**
      * Short summary statement of open access status and any related conditions (eg 'Open access - no commercial use'),
      * primarily for marketing purposes. Should always be accompanied by a link to the complete license (see
      * &lt;EpubLicense&gt; or code 99 in List 158)
      */
-    Open_access_statement("20", "Open access statement"), //
+    Open_access_statement("20", "Open access statement"),
 
     /**
      * Short summary statement that the product is available only in digital formats (eg 'Digital exclusive'). If a
      * non-digital version is planned, &lt;ContentDate&gt; should be used to specify the date when exclusivity will end
      * (use content date role code 15). If a non-digital version is available, the statement should not be included
      */
-    Digital_exclusivity_statement("21", "Digital exclusivity statement"), //
+    Digital_exclusivity_statement("21", "Digital exclusivity statement"),
 
     /**
      * For example a recommendation or approval provided by a ministry of education or other official body. Use
      * &lt;Text&gt; to provide details and ideally use &lt;TextSourceCorporate&gt; to name the approver
      */
-    Official_recommendation("22", "Official recommendation"), //
+    Official_recommendation("22", "Official recommendation"),
 
     /**
      * Short description in format specified by Japanese Book Publishers Association
      */
-    JBPA_description("23", "JBPA description"), //
+    JBPA_description("23", "JBPA description"),
 
     /**
      * JSON-LD snippet suitable for use within an HTML &lt;script type=&quot;application/ld+json&quot;&gt; tag,
      * containing structured metadata suitable for use with schema.org
      */
-    schema_org_snippet("24", "schema.org snippet"), //
+    schema_org_snippet("24", "schema.org snippet"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    Errata("25", "Errata"), //
+    Errata("25", "Errata"),
 
     /**
      * Introduction, preface or the text of other preliminary material, sent as a single text field, which may be
@@ -188,7 +188,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Introduction("26", "Introduction"), //
+    Introduction("26", "Introduction"),
 
     /**
      * Secondary descriptive blurb taken from the back cover and/or flaps, used only when there are two separate texts
@@ -196,7 +196,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Secondary_flap_cover_copy("27", "Secondary flap / cover copy"), //
+    Secondary_flap_cover_copy("27", "Secondary flap / cover copy"),
 
     /**
      * For use with dramatized audiobooks, filmed entertainment etc, for a cast list sent as a single text field, which
@@ -204,7 +204,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Full_cast_and_credit_list("28", "Full cast and credit list"), //
+    Full_cast_and_credit_list("28", "Full cast and credit list"),
 
     /**
      * Complete list of books by the author(s), supplied as a single text field, which may be structured using (X)HTML

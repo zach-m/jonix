@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -49,36 +49,36 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * Status is not specified (as distinct from unknown): the default if the &lt;MarketPublishingStatus&gt; element is
      * not sent
      */
-    Unspecified("00", "Unspecified"), //
+    Unspecified("00", "Unspecified"),
 
     /**
      * The product was announced for publication in this market, and subsequently abandoned. A market publication date
      * must not be sent
      */
-    Cancelled("01", "Cancelled"), //
+    Cancelled("01", "Cancelled"),
 
     /**
      * Not yet published in this market, should be accompanied by expected local publication date
      */
-    Forthcoming("02", "Forthcoming"), //
+    Forthcoming("02", "Forthcoming"),
 
     /**
      * The product was announced for publication in this market, and subsequently postponed with no expected local
      * publication date. A market publication date must not be sent
      */
-    Postponed_indefinitely("03", "Postponed indefinitely"), //
+    Postponed_indefinitely("03", "Postponed indefinitely"),
 
     /**
      * The product was published in this market, and is still active in the sense that the publisher will accept orders
      * for it, though it may or may not be immediately available, for which see &lt;SupplyDetail&gt;
      */
-    Active("04", "Active"), //
+    Active("04", "Active"),
 
     /**
      * Responsibility for the product in this market has been transferred elsewhere (with details of acquiring publisher
      * representative in this market if possible in PR.25 (ONIX 2.1) OR P.25 (ONIX 3.0))
      */
-    No_longer_our_product("05", "No longer our product"), //
+    No_longer_our_product("05", "No longer our product"),
 
     /**
      * The product was active in this market, but is now inactive in the sense that (a) the publisher representative
@@ -86,7 +86,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * the supply chain, and (b) there are no current plans to bring it back into stock in this market. Code 06 does not
      * specifically imply that returns are or are not still accepted
      */
-    Out_of_stock_indefinitely("06", "Out of stock indefinitely"), //
+    Out_of_stock_indefinitely("06", "Out of stock indefinitely"),
 
     /**
      * The product was active in this market, but is now permanently inactive in this market in the sense that (a) the
@@ -94,7 +94,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * be available elsewhere in the supply chain, and (b) the product will not be made available again in this market
      * under the same ISBN. Code 07 normally implies that the publisher will not accept returns beyond a specified date
      */
-    Out_of_print("07", "Out of print"), //
+    Out_of_print("07", "Out of print"),
 
     /**
      * The product was active in this market, but is now permanently or indefinitely inactive in the sense that the
@@ -102,37 +102,37 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * be available elsewhere in the supply chain. Code 08 covers both of codes 06 and 07, and may be used where the
      * distinction between those values is either unnecessary or meaningless
      */
-    Inactive("08", "Inactive"), //
+    Inactive("08", "Inactive"),
 
     /**
      * The sender of the ONIX record does not know the current publishing status in this market
      */
-    Unknown("09", "Unknown"), //
+    Unknown("09", "Unknown"),
 
     /**
      * The product is no longer available in this market from the publisher representative (local publisher or sales
      * agent), under the current ISBN, at the current price. It may be available to be traded through another channel,
      * usually at a reduced price
      */
-    Remaindered("10", "Remaindered"), //
+    Remaindered("10", "Remaindered"),
 
     /**
      * Withdrawn from sale in this market, typically for legal reasons or to avoid giving offence
      */
-    Withdrawn_from_sale("11", "Withdrawn from sale"), //
+    Withdrawn_from_sale("11", "Withdrawn from sale"),
 
     /**
      * Either no rights are held for the product in this market, or for other reasons the publisher has decided not to
      * make it available in this market
      */
-    Not_available_in_this_market("12", "Not available in this market"), //
+    Not_available_in_this_market("12", "Not available in this market"),
 
     /**
      * The product is published in this market and active but, as a publishing decision, it is not sold separately -
      * only in an assembly or as part of a package. Depending on product composition and pricing, it may be saleable
      * separately at retail
      */
-    Active_but_not_sold_separately("13", "Active, but not sold separately"), //
+    Active_but_not_sold_separately("13", "Active, but not sold separately"),
 
     /**
      * The product is published in this market and active, but is not available to all customer types, typically because
@@ -140,12 +140,12 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * accompanied by a free-text statement in &lt;MarketRestrictionDetail&gt; describing the nature of the restriction.
      * In ONIX 3.0, the &lt;SalesRestriction&gt; composite in Group P.24 should be used
      */
-    Active_with_market_restrictions("14", "Active, with market restrictions"), //
+    Active_with_market_restrictions("14", "Active, with market restrictions"),
 
     /**
      * Recalled in this market for reasons of consumer safety
      */
-    Recalled("15", "Recalled"), //
+    Recalled("15", "Recalled"),
 
     /**
      * Temporarily withdrawn from sale in this market, typically for quality or technical reasons. In ONIX 3.0, must be

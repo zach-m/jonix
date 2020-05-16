@@ -44,15 +44,15 @@ interface CodeList37 {
  *      Codelist 37 in Reference Guide</a>
  */
 public enum FrontCoverImageFileLinkTypes implements OnixCodelist, CodeList37 {
-    URL("01", "URL"), //
+    URL("01", "URL"),
 
-    DOI("02", "DOI"), //
+    DOI("02", "DOI"),
 
-    PURL("03", "PURL"), //
+    PURL("03", "PURL"),
 
-    URN("04", "URN"), //
+    URN("04", "URN"),
 
-    FTP_address("05", "FTP address"), //
+    FTP_address("05", "FTP address"),
 
     filename("06", "filename");
 

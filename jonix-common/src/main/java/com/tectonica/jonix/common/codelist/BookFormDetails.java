@@ -47,32 +47,32 @@ public enum BookFormDetails implements OnixCodelist, CodeList8 {
     /**
      * DEPRECATED
      */
-    A_format_paperback("01", "A-format paperback"), //
+    A_format_paperback("01", "A-format paperback"),
 
     /**
      * 'B' format paperback: UK 198 x 129 mm - DEPRECATED
      */
-    B_format_paperback("02", "B-format paperback"), //
+    B_format_paperback("02", "B-format paperback"),
 
     /**
      * 'C' format paperback: UK 216 x 135 mm - DEPRECATED
      */
-    C_format_paperback("03", "C-format paperback"), //
+    C_format_paperback("03", "C-format paperback"),
 
     /**
      * DEPRECATED
      */
-    Paper_over_boards("04", "Paper over boards"), //
+    Paper_over_boards("04", "Paper over boards"),
 
     /**
      * DEPRECATED
      */
-    Cloth("05", "Cloth"), //
+    Cloth("05", "Cloth"),
 
     /**
      * DEPRECATED
      */
-    With_dust_jacket("06", "With dust jacket"), //
+    With_dust_jacket("06", "With dust jacket"),
 
     /**
      * DEPRECATED

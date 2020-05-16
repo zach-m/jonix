@@ -46,30 +46,30 @@ public enum StatusDetailTypeSeveritys implements OnixCodelist, CodeList224 {
      * Use ONLY if the message severity cannot be determined (eg with a legacy system unable to provide detailed error
      * codes)
      */
-    Unclassifiable("U", "Unclassifiable"), //
+    Unclassifiable("U", "Unclassifiable"),
 
     /**
      * For information only, provided to encourage the ONIX data supplier to improve the quality of their data (eg
      * provision of a non-mandatory data element that is currently missing, better conformity with best practice, etc)
      */
-    Info("I", "Info"), //
+    Info("I", "Info"),
 
     /**
      * Request for clarification or further detail of the meaning of the data provided
      */
-    Query("Q", "Query"), //
+    Query("Q", "Query"),
 
     /**
      * The ONIX data has been accepted as provided, but there may be issues in the way it is supplied
      */
-    Warning("W", "Warning"), //
+    Warning("W", "Warning"),
 
     /**
      * Some data in an ONIX data element or message structure caused an error due to not meeting the requirements of the
      * standard. The data in question has been rejected, but processing of the remaining elements in the record (or the
      * remain records in the message, if used within &lt;MessageStatusDetail&gt;) has continued
      */
-    Error("E", "Error"), //
+    Error("E", "Error"),
 
     /**
      * Some data in an ONIX data element or message structure caused an unrecoverable error due to not meeting the

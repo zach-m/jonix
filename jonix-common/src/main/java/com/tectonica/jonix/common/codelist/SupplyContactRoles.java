@@ -47,7 +47,7 @@ public enum SupplyContactRoles implements OnixCodelist, CodeList239 {
     /**
      * Eg for use where authorisation must be gained from the supplier (distributor or wholesaler)
      */
-    Return_authorisation_contact("07", "Return authorisation contact"), //
+    Return_authorisation_contact("07", "Return authorisation contact"),
 
     /**
      * For general enquiries

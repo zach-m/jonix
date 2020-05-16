@@ -42,36 +42,36 @@ interface CodeList41 {
  *      Codelist 41 in Reference Guide</a>
  */
 public enum PrizeOrAwardAchievements implements OnixCodelist, CodeList41 {
-    Winner("01", "Winner"), //
+    Winner("01", "Winner"),
 
     /**
      * Named as being in second place
      */
-    Runner_up("02", "Runner-up"), //
+    Runner_up("02", "Runner-up"),
 
     /**
      * Cited as being worthy of special attention at the final stage of the judging process, but not named specifically
      * as winner or runner-up. Possible terminology used by a particular prize includes 'specially commended' or
      * 'honored'
      */
-    Commended("03", "Commended"), //
+    Commended("03", "Commended"),
 
     /**
      * Title named by the judging process to be one of the final list of candidates, such as a 'short-list' from which
      * the winner is selected, or a title named as 'finalist'
      */
-    Short_listed("04", "Short-listed"), //
+    Short_listed("04", "Short-listed"),
 
     /**
      * Title named by the judging process to be one of the preliminary list of candidates, such as a 'long-list' from
      * which first a shorter list or set of finalists is selected, and then the winner is announced
      */
-    Long_listed("05", "Long-listed"), //
+    Long_listed("05", "Long-listed"),
 
     /**
      * Or co-winner
      */
-    Joint_winner("06", "Joint winner"), //
+    Joint_winner("06", "Joint winner"),
 
     /**
      * Selected by judging panel or an official nominating process for final consideration for a prize, award or honour

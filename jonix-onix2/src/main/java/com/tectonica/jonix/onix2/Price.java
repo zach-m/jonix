@@ -646,8 +646,8 @@ public class Price implements OnixSuperComposite, Serializable {
         return batchBonuss;
     }
 
-    private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

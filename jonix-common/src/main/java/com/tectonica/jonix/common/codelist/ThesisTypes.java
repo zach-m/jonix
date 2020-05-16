@@ -45,32 +45,32 @@ public enum ThesisTypes implements OnixCodelist, CodeList72 {
     /**
      * Professorial dissertation (thesis for postdoctoral lecturing qualification)
      */
-    Habilitationsschrift("01", "Habilitationsschrift"), //
+    Habilitationsschrift("01", "Habilitationsschrift"),
 
     /**
      * Doctoral thesis
      */
-    Dissertationsschrift("02", "Dissertationsschrift"), //
+    Dissertationsschrift("02", "Dissertationsschrift"),
 
     /**
      * State examination thesis
      */
-    Staatsexamensarbeit("03", "Staatsexamensarbeit"), //
+    Staatsexamensarbeit("03", "Staatsexamensarbeit"),
 
     /**
      * Magisters degree thesis
      */
-    Magisterarbeit("04", "Magisterarbeit"), //
+    Magisterarbeit("04", "Magisterarbeit"),
 
     /**
      * Diploma degree thesis
      */
-    Diplomarbeit("05", "Diplomarbeit"), //
+    Diplomarbeit("05", "Diplomarbeit"),
 
     /**
      * Bachelors degree thesis
      */
-    Bachelorarbeit("06", "Bachelorarbeit"), //
+    Bachelorarbeit("06", "Bachelorarbeit"),
 
     /**
      * Masters degree thesis

@@ -229,8 +229,8 @@ public class TextItem implements OnixSuperComposite, Serializable {
         return numberOfPages;
     }
 
-    private ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier,
+        TextItemIdentifierTypes> textItemIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -239,7 +239,8 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes>
+        textItemIdentifiers() {
         _initialize();
         return textItemIdentifiers;
     }

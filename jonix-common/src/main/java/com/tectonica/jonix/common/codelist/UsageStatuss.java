@@ -42,12 +42,12 @@ interface CodeList146 {
  *      Codelist 146 in Reference Guide</a>
  */
 public enum UsageStatuss implements OnixCodelist, CodeList146 {
-    Permitted_unlimited("01", "Permitted unlimited"), //
+    Permitted_unlimited("01", "Permitted unlimited"),
 
     /**
      * Limit should be specified in &lt;EpubUsageLimit&gt; or &lt;PriceConstraintLimit&gt;
      */
-    Permitted_subject_to_limit("02", "Permitted subject to limit"), //
+    Permitted_subject_to_limit("02", "Permitted subject to limit"),
 
     Prohibited("03", "Prohibited");
 

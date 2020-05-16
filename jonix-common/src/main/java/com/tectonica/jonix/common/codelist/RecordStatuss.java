@@ -47,14 +47,14 @@ public enum RecordStatuss implements OnixCodelist, CodeList226 {
      * itself may have a &lt;RecordStatusNote&gt; or &lt;RecordStatusDetail&gt; to convey information, editorial queries
      * or warnings
      */
-    No_record_errors("00", "No record errors"), //
+    No_record_errors("00", "No record errors"),
 
     /**
      * Entire record parsed and ingested without errors, record MUST have a Product record in the Acknowledgement with a
      * &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors in associated media files
      * (and possibly supplementary editorial queries)
      */
-    No_record_errors_errors_in_collateral("01", "No record errors – errors in collateral"), //
+    No_record_errors_errors_in_collateral("01", "No record errors – errors in collateral"),
 
     /**
      * Record parsed and ingested with errors, record MUST have a Product record in the Acknowledgement with a
@@ -62,14 +62,14 @@ public enum RecordStatuss implements OnixCodelist, CodeList226 {
      * information, editorial queries or warnings). At least SOME of the data in the original Product record has been
      * ingested. There may also be errors in associated media files
      */
-    Record_with_errors("02", "Record with errors"), //
+    Record_with_errors("02", "Record with errors"),
 
     /**
      * Entire record rejected, record MUST have a Product record in the Acknowedgemet, with a &lt;RecordStatusNote&gt;
      * or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial
      * queries or warnings). NONE of the data in the original Product record has been ingested
      */
-    Record_rejected("03", "Record rejected"), //
+    Record_rejected("03", "Record rejected"),
 
     /**
      * Record status reported in an earlier Acknowledgement message, based on partial processing of ONIX message. The

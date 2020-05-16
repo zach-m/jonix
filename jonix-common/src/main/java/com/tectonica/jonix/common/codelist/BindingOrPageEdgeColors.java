@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,63 +45,63 @@ interface CodeList98 {
  *      Codelist 98 in Reference Guide</a>
  */
 public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
-    Black("BLK", "Black"), //
+    Black("BLK", "Black"),
 
-    Blue("BLU", "Blue"), //
+    Blue("BLU", "Blue"),
 
-    Brown("BRN", "Brown"), //
+    Brown("BRN", "Brown"),
 
-    Burgundy_Maroon("BUR", "Burgundy/Maroon"), //
+    Burgundy_Maroon("BUR", "Burgundy/Maroon"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    Celadon_Pale_green("CEL", "Celadon/Pale green"), //
+    Celadon_Pale_green("CEL", "Celadon/Pale green"),
 
-    Cream("CRE", "Cream"), //
-
-    /**
-     * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required
-     */
-    Four_color("FCO", "Four-color"), //
+    Cream("CRE", "Cream"),
 
     /**
      * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required
      */
-    Four_color_and_spot_color("FCS", "Four-color and spot-color"), //
-
-    Gold("GLD", "Gold"), //
-
-    Green("GRN", "Green"), //
-
-    Grey("GRY", "Grey"), //
+    Four_color("FCO", "Four-color"),
 
     /**
      * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required
      */
-    Multicolor("MUL", "Multicolor"), //
+    Four_color_and_spot_color("FCS", "Four-color and spot-color"),
 
-    Navy_Dark_blue("NAV", "Navy/Dark blue"), //
+    Gold("GLD", "Gold"),
 
-    Orange("ORG", "Orange"), //
+    Green("GRN", "Green"),
 
-    Pink("PNK", "Pink"), //
+    Grey("GRY", "Grey"),
 
-    Purple("PUR", "Purple"), //
+    /**
+     * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required
+     */
+    Multicolor("MUL", "Multicolor"),
 
-    Red("RED", "Red"), //
+    Navy_Dark_blue("NAV", "Navy/Dark blue"),
 
-    Sky_Pale_blue("SKY", "Sky/Pale blue"), //
+    Orange("ORG", "Orange"),
 
-    Silver("SLV", "Silver"), //
+    Pink("PNK", "Pink"),
 
-    Tan_Light_brown("TAN", "Tan/Light brown"), //
+    Purple("PUR", "Purple"),
 
-    Teal_Turquoise_green("TEA", "Teal/Turquoise green"), //
+    Red("RED", "Red"),
 
-    White("WHI", "White"), //
+    Sky_Pale_blue("SKY", "Sky/Pale blue"),
 
-    Yellow("YEL", "Yellow"), //
+    Silver("SLV", "Silver"),
+
+    Tan_Light_brown("TAN", "Tan/Light brown"),
+
+    Teal_Turquoise_green("TEA", "Teal/Turquoise green"),
+
+    White("WHI", "White"),
+
+    Yellow("YEL", "Yellow"),
 
     /**
      * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required

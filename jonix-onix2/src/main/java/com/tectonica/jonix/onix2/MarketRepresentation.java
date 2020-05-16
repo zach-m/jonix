@@ -223,8 +223,8 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return marketTerritory;
     }
 
-    private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier,
+        SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>
@@ -235,7 +235,8 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers() {
+    public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes>
+        agentIdentifiers() {
         _initialize();
         return agentIdentifiers;
     }
@@ -382,8 +383,8 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return websites;
     }
 
-    private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates = ListOfOnixDataCompositeWithKey
-        .emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
      * <p>

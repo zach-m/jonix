@@ -42,11 +42,11 @@ interface CodeList157 {
  *      Codelist 157 in Reference Guide</a>
  */
 public enum ContentSourceTypes implements OnixCodelist, CodeList157 {
-    Printed_media("01", "Printed media"), //
+    Printed_media("01", "Printed media"),
 
-    Website("02", "Website"), //
+    Website("02", "Website"),
 
-    Radio("03", "Radio"), //
+    Radio("03", "Radio"),
 
     TV("04", "TV");
 

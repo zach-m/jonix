@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -49,83 +49,83 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * Restriction must be described in &lt;SalesRestrictionDetail&gt; (ONIX 2.1) or &lt;SalesRestrictionNote&gt; (ONIX
      * 3.0)
      */
-    Unspecified_see_text("00", "Unspecified – see text"), //
+    Unspecified_see_text("00", "Unspecified – see text"),
 
     /**
      * For sale only through designated retailer. Retailer must be identified or named in an instance of the
      * &lt;SalesOutlet&gt; composite. Use only when it is not possible to assign the more explicit code 04 or 05
      */
-    Retailer_exclusive_own_brand("01", "Retailer exclusive / own brand"), //
+    Retailer_exclusive_own_brand("01", "Retailer exclusive / own brand"),
 
     /**
      * For editions sold only though office supplies wholesalers. Retailer(s) and/or distributor(s) may be identified or
      * named in an instance of the &lt;SalesOutlet&gt; composite
      */
-    Office_supplies_edition("02", "Office supplies edition"), //
+    Office_supplies_edition("02", "Office supplies edition"),
 
     /**
      * For an ISBN that is assigned for a publisher's internal purposes
      */
-    Internal_publisher_use_only_do_not_list("03", "Internal publisher use only: do not list"), //
+    Internal_publisher_use_only_do_not_list("03", "Internal publisher use only: do not list"),
 
     /**
      * For sale only through designated retailer, though not under retailer's own brand/imprint. Retailer must be
      * identified or named in an instance of the &lt;SalesOutlet&gt; composite
      */
-    Retailer_exclusive("04", "Retailer exclusive"), //
+    Retailer_exclusive("04", "Retailer exclusive"),
 
     /**
      * For sale only through designated retailer under retailer's own brand/imprint. Retailer must be identified or
      * named in an instance of the &lt;SalesOutlet&gt; composite
      */
-    Retailer_own_brand("05", "Retailer own brand"), //
+    Retailer_own_brand("05", "Retailer own brand"),
 
     /**
      * For sale to libraries only; not for sale through retail trade
      */
-    Library_edition("06", "Library edition"), //
+    Library_edition("06", "Library edition"),
 
     /**
      * For sale directly to schools only; not for sale through retail trade
      */
-    Schools_only_edition("07", "Schools only edition"), //
+    Schools_only_edition("07", "Schools only edition"),
 
     /**
      * Indexed for the German market - in Deutschland indiziert
      */
-    Indiziert("08", "Indiziert"), //
+    Indiziert("08", "Indiziert"),
 
     /**
      * Expected to apply in particular to digital products for consumer sale where the publisher does not permit the
      * product to be supplied to libraries who provide an ebook loan service
      */
-    Not_for_sale_to_libraries("09", "Not for sale to libraries"), //
+    Not_for_sale_to_libraries("09", "Not for sale to libraries"),
 
     /**
      * For editions sold only through newsstands/newsagents
      */
-    News_outlet_edition("10", "News outlet edition"), //
+    News_outlet_edition("10", "News outlet edition"),
 
     /**
      * Not for sale through designated retailer. Retailer must be identified or named in an instance of the
      * &lt;SalesOutlet&gt; composite
      */
-    Retailer_exception("11", "Retailer exception"), //
+    Retailer_exception("11", "Retailer exception"),
 
     /**
      * Not for sale to organisations or services offering consumers subscription access to a library of books
      */
-    Not_for_sale_to_subscription_services("12", "Not for sale to subscription services"), //
+    Not_for_sale_to_subscription_services("12", "Not for sale to subscription services"),
 
     /**
      * Restricted to organisations or services offering consumers subscription access to a library of books
      */
-    Subscription_services_only("13", "Subscription services only"), //
+    Subscription_services_only("13", "Subscription services only"),
 
     /**
      * Exclusive to bricks-and-mortar retail outlets
      */
-    Not_for_retail_online("14", "Not for retail online"), //
+    Not_for_retail_online("14", "Not for retail online"),
 
     /**
      * Exclusive to online retail outlets

@@ -46,13 +46,13 @@ public enum PriceCodeTypes implements OnixCodelist, CodeList179 {
      * A publisher or retailer's proprietary code list as specified in &lt;PriceCodeTypeName&gt; which identifies
      * particular codes with particular price points, price tiers or bands
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * Price Code scheme for Finnish Pocket Books (Pokkareiden hintaryhm&#228;). Price codes expressed as letters A-J in
      * &lt;PriceCode&gt;
      */
-    Finnish_Pocket_Book_price_code("02", "Finnish Pocket Book price code"), //
+    Finnish_Pocket_Book_price_code("02", "Finnish Pocket Book price code"),
 
     /**
      * Price Code scheme for Finnish Miki Books (Miki-kirjojen hintaryhm&#228;). Price codes expressed as an integer 1-n

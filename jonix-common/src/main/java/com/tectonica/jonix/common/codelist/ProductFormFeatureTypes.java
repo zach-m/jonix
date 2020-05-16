@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,41 +48,41 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * For Product Form Feature values see code list 98
      */
-    Color_of_cover("01", "Color of cover"), //
+    Color_of_cover("01", "Color of cover"),
 
     /**
      * For Product Form Feature values see code list 98
      */
-    Color_of_page_edge("02", "Color of page edge"), //
+    Color_of_page_edge("02", "Color of page edge"),
 
     /**
      * The principal font used for body text, when this is a significant aspect of product description, eg for some
      * Bibles, and for large print product. The accompanying Product Form Feature Description is text specifying font
      * size and, if desired, typeface
      */
-    Text_font("03", "Text font"), //
+    Text_font("03", "Text font"),
 
     /**
      * For Product Form Feature values see code list 99
      */
-    Special_cover_material("04", "Special cover material"), //
+    Special_cover_material("04", "Special cover material"),
 
     /**
      * For Product Form Feature values see code list 76
      */
-    DVD_region("05", "DVD region"), //
+    DVD_region("05", "DVD region"),
 
     /**
      * A computer or handheld device operating system required to use a digital product, with version detail if
      * applicable. The accompanying Product Form Feature Value is a code from List 176. Version detail, when applicable,
      * is carried in Product Form Feature Description
      */
-    Operating_system_requirements("06", "Operating system requirements"), //
+    Operating_system_requirements("06", "Operating system requirements"),
 
     /**
      * Other system requirements for a digital product, described by free text in Product Form Feature Description
      */
-    Other_system_requirements("07", "Other system requirements"), //
+    Other_system_requirements("07", "Other system requirements"),
 
     /**
      * Indicates compatibility with proprietary 'point and listen' devices such as Ting Pen (http://www.ting.eu), the
@@ -90,12 +90,12 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * and position of the word, and the word is then read aloud by the device. The name of the compatible device (or
      * range of devices) should be given in &lt;ProductFormFeatureDescription&gt;
      */
-    _Point_and_listen_device_compatibility("08", "‘Point and listen’ device compatibility"), //
+    _Point_and_listen_device_compatibility("08", "‘Point and listen’ device compatibility"),
 
     /**
      * For &lt;ProductFormFeatureValue&gt; codes, see Codelist 196
      */
-    E_publication_accessibility_detail("09", "E-publication accessibility detail"), //
+    E_publication_accessibility_detail("09", "E-publication accessibility detail"),
 
     /**
      * For versioned e-book file formats (or in some cases, devices). &lt;ProductFormFeatureValue&gt; should contain the
@@ -103,31 +103,31 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * ONIX 2.1, use &lt;EpubTypeVersion&gt; instead. For the most common file formats, code 15 and List 220 is strongly
      * preferred
      */
-    E_publication_format_version("10", "E-publication format version"), //
+    E_publication_format_version("10", "E-publication format version"),
 
     /**
      * Choking hazard warning required by US Consumer Product Safety Improvement Act (CPSIA) of 2008. Required, when
      * applicable, for products sold in the US. The Product Form Feature Value is a code from List 143. Further
      * explanation may be given in Product Form Feature Description
      */
-    CPSIA_choking_hazard_warning("12", "CPSIA choking hazard warning"), //
+    CPSIA_choking_hazard_warning("12", "CPSIA choking hazard warning"),
 
     /**
      * Product carries hazard warning required by EU Toy Safety Directive. The Product Form Feature Value is a code from
      * List 184, and (for some codes) the exact wording of the warning may be given in Product Form Feature Description
      */
-    EU_Toy_Safety_Hazard_warning("13", "EU Toy Safety Hazard warning"), //
+    EU_Toy_Safety_Hazard_warning("13", "EU Toy Safety Hazard warning"),
 
     /**
      * Product Form Feature Description must give further details of the warning
      */
-    IATA_Dangerous_Goods_warning("14", "IATA Dangerous Goods warning"), //
+    IATA_Dangerous_Goods_warning("14", "IATA Dangerous Goods warning"),
 
     /**
      * For common versioned e-book formats (or in some cases, devices) - for example EPUB 2.0.1 or EPUB 3.0.
      * &lt;ProductFormFeatureValue&gt; is a code from list 220. Use in ONIX 3.0 only
      */
-    E_publication_format_version_code("15", "E-publication format version code"), //
+    E_publication_format_version_code("15", "E-publication format version code"),
 
     /**
      * For common versioned e-book formats, the name and version of the validator used to check conformance.
@@ -135,7 +135,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeatureValue&gt; is the version number of the validator (eg 4.0.0a). Use with code 15 (or possibly
      * code 10), or with &lt;EpubTypeVersion&gt;, to specify the version the e-publication conforms with
      */
-    E_publication_format_validator_version("16", "E-publication format validator version"), //
+    E_publication_format_validator_version("16", "E-publication format validator version"),
 
     /**
      * Indicates compatibility with proprietary 'point and watch' devices or apps. These scan invisible codes specially
@@ -145,7 +145,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    _Point_and_watch_device_app_compatibility("17", "‘Point and watch’ device/app compatibility"), //
+    _Point_and_watch_device_app_compatibility("17", "‘Point and watch’ device/app compatibility"),
 
     /**
      * Requirement for user authentication prior to use, with detail of authentication method (user enrolment, and login
@@ -154,7 +154,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    E_publication_authentication_and_access_control("18", "E-publication authentication and access control"), //
+    E_publication_authentication_and_access_control("18", "E-publication authentication and access control"),
 
     /**
      * Use to describe battery requirements, hazards and safety warnings. &lt;ProductFormFeatureValue&gt; is a code from
@@ -162,7 +162,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Battery_type("19", "Battery type"), //
+    Battery_type("19", "Battery type"),
 
     /**
      * Total capacity (of batteries in the product) in Watt hours. &lt;ProductFormFeatureValue&gt; is an integer or
@@ -170,7 +170,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Battery_capacity("20", "Battery capacity"), //
+    Battery_capacity("20", "Battery capacity"),
 
     /**
      * Use to describe regulation of the product for various purposes. &lt;ProductFormFeatureValue&gt; is a code from
@@ -178,7 +178,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Dangerous_goods("21", "Dangerous goods"), //
+    Dangerous_goods("21", "Dangerous goods"),
 
     /**
      * Product does not carry FSC or PEFC logo. The Product Form Feature Value element is not used. The Product Form
@@ -186,7 +186,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * also still carry a claimed Pre- and Post-Consumer Waste (PCW) percentage value (type code 37) in a separate
      * repeat of the Product Form Feature composite
      */
-    Not_FSC_or_PEFC_certified("30", "Not FSC or PEFC certified"), //
+    Not_FSC_or_PEFC_certified("30", "Not FSC or PEFC certified"),
 
     /**
      * Product carries FSC logo (Pure, 100%). &lt;ProductFormFeatureValue&gt; is the Certification number (ie either a
@@ -198,7 +198,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Post-Consumer-Waste (PCW), so type code 31 can only occur on its own. Certification numbers may be checked at
      * https://info.fsc.org/
      */
-    FSC_certified_pure("31", "FSC certified – pure"), //
+    FSC_certified_pure("31", "FSC certified – pure"),
 
     /**
      * Product carries FSC logo (Mixed sources, Mix). &lt;ProductFormFeatureValue&gt; is the Certification number (ie
@@ -210,7 +210,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * percentage value, to be reported in another instance of &lt;ProductFormFeature&gt; with type code 36.
      * Certification numbers may be checked at https://info.fsc.org/
      */
-    FSC_certified_mixed_sources("32", "FSC certified – mixed sources"), //
+    FSC_certified_mixed_sources("32", "FSC certified – mixed sources"),
 
     /**
      * Product carries FSC logo (Recycled). &lt;ProductFormFeatureValue&gt; is the Certification number (ie either a
@@ -222,7 +222,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * value, to be reported in another instance of &lt;ProductFormFeature&gt; with type code 36. Certification numbers
      * may be checked at https://info.fsc.org/
      */
-    FSC_certified_recycled("33", "FSC certified – recycled"), //
+    FSC_certified_recycled("33", "FSC certified – recycled"),
 
     /**
      * Product carries PEFC logo (certified). &lt;ProductFormFeatureValue&gt; is the Chain Of Custody (COC) number
@@ -230,7 +230,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * type of paper. May be accompanied by a Post-Consumer Waste (PCW) percentage value, to be reported in another
      * instance of &lt;ProductFormFeature&gt; with type code 36
      */
-    PEFC_certified("34", "PEFC certified"), //
+    PEFC_certified("34", "PEFC certified"),
 
     /**
      * Product carries PEFC logo (recycled). &lt;ProductFormFeatureValue&gt; is the Chain Of Custody (COC) number
@@ -238,7 +238,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * type of paper. Should be accompanied by a Post-Consumer-Waste (PCW) percentage value, to be reported in another
      * instance of &lt;ProductFormFeature&gt; with type code 36
      */
-    PEFC_recycled("35", "PEFC recycled"), //
+    PEFC_recycled("35", "PEFC recycled"),
 
     /**
      * The percentage of recycled Pre- and Post-Consumer-Waste (PCW) used in a product where the composition is
@@ -246,7 +246,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * 33, 34 or 35
      */
     FSC_or_PEFC_certified_Pre_and_Post_Consumer_Waste_PCW("36",
-        "FSC or PEFC certified Pre- and Post-Consumer Waste (PCW) percentage"), //
+        "FSC or PEFC certified Pre- and Post-Consumer Waste (PCW) percentage"),
 
     /**
      * The percentage of recycled Pre- and Post-Consumer Waste (PCW) claimed to be used in a product where the
@@ -254,13 +254,13 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeatureDescription&gt; may carry free text supporting the claim. Must be accompanied by type code
      * 30
      */
-    Claimed_Pre_and_Post_Consumer_Waste_PCW("37", "Claimed Pre- and Post-Consumer Waste (PCW) percentage"), //
+    Claimed_Pre_and_Post_Consumer_Waste_PCW("37", "Claimed Pre- and Post-Consumer Waste (PCW) percentage"),
 
     /**
      * Product made from paper produced using environmentally-conscious technology.
      * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement
      */
-    Paper_produced_by_green_technology("40", "Paper produced by ‘green’ technology"), //
+    Paper_produced_by_green_technology("40", "Paper produced by ‘green’ technology"),
 
     /**
      * DEPRECATED - use code 12 and List 143

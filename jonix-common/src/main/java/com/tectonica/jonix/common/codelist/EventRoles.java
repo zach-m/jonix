@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,31 +48,31 @@ public enum EventRoles implements OnixCodelist, CodeList20 {
     /**
      * For example an academic, professional or political conference
      */
-    Publication_linked_to_conference("01", "Publication linked to conference"), //
+    Publication_linked_to_conference("01", "Publication linked to conference"),
 
-    Complete_proceedings_of_conference("02", "Complete proceedings of conference"), //
+    Complete_proceedings_of_conference("02", "Complete proceedings of conference"),
 
-    Selected_papers_from_conference("03", "Selected papers from conference"), //
+    Selected_papers_from_conference("03", "Selected papers from conference"),
 
     /**
      * For example a competitive match, fixture series or championship
      */
-    Publication_linked_to_sporting_event("11", "Publication linked to sporting event"), //
+    Publication_linked_to_sporting_event("11", "Publication linked to sporting event"),
 
-    Programme_or_guide_for_sporting_event("12", "Programme or guide for sporting event"), //
+    Programme_or_guide_for_sporting_event("12", "Programme or guide for sporting event"),
 
     /**
      * For example a theatrical or musical event or performance, a season of events or performances, or an exhibition of
      * art
      */
-    Publication_linked_to_artistic_event("21", "Publication linked to artistic event"), //
+    Publication_linked_to_artistic_event("21", "Publication linked to artistic event"),
 
-    Programme_or_guide_for_artistic_event("22", "Programme or guide for artistic event"), //
+    Programme_or_guide_for_artistic_event("22", "Programme or guide for artistic event"),
 
     /**
      * For example a commercial exposition
      */
-    Publication_linked_to_exposition("31", "Publication linked to exposition"), //
+    Publication_linked_to_exposition("31", "Publication linked to exposition"),
 
     Programme_or_guide_for_exposition("32", "Programme or guide for exposition");
 

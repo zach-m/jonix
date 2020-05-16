@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,32 +48,38 @@ public enum SalesRightsTypes implements OnixCodelist, CodeList46 {
     /**
      * May only be used with the ONIX 3 &lt;ROWSalesRightsType&gt; element
      */
-    Sales_rights_unknown_or_unstated_for_any_reason("00", "Sales rights unknown or unstated for any reason"), //
+    Sales_rights_unknown_or_unstated_for_any_reason("00", "Sales rights unknown or unstated for any reason"),
 
     For_sale_with_exclusive_rights_in_the_specified_countries_or_territories("01",
-        "For sale with exclusive rights in the specified countries or territories"), //
+        "For sale with exclusive rights in the specified countries or territories"),
 
     For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories("02",
-        "For sale with non-exclusive rights in the specified countries or territories"), //
+        "For sale with non-exclusive rights in the specified countries or territories"),
 
     Not_for_sale_in_the_specified_countries_or_territories_reason_unspecified("03",
-        "Not for sale in the specified countries or territories (reason unspecified)"), //
+        "Not for sale in the specified countries or territories (reason unspecified)"),
 
+    // CHECKSTYLE:OFF
     Not_for_sale_in_the_specified_countries_but_publisher_holds_exclusive_rights_in_those_countries_or_territories("04",
-        "Not for sale in the specified countries (but publisher holds exclusive rights in those countries or territories)"), //
+        "Not for sale in the specified countries (but publisher holds exclusive rights in those countries or territories)"),
+    // CHECKSTYLE:ON
 
+    // CHECKSTYLE:OFF
     Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories("05",
-        "Not for sale in the specified countries (publisher holds non-exclusive rights in those countries or territories)"), //
+        "Not for sale in the specified countries (publisher holds non-exclusive rights in those countries or territories)"),
+    // CHECKSTYLE:ON
 
+    // CHECKSTYLE:OFF
     Not_for_sale_in_the_specified_countries_because_publisher_does_not_hold_rights_in_those_countries_or_territories(
         "06",
-        "Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)"), //
+        "Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)"),
+    // CHECKSTYLE:ON
 
     /**
      * Only for use with ONIX 3. Deprecated
      */
     For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("07",
-        "For sale with exclusive rights in the specified countries or territories (sales restriction applies)"), //
+        "For sale with exclusive rights in the specified countries or territories (sales restriction applies)"),
 
     /**
      * Only for use with ONIX 3. Deprecated

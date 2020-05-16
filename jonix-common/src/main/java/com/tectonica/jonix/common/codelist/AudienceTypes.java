@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,42 +48,42 @@ public enum AudienceTypes implements OnixCodelist, CodeList28 {
     /**
      * For a non-specialist adult audience
      */
-    General_trade("01", "General/trade"), //
+    General_trade("01", "General/trade"),
 
     /**
      * For a juvenile audience, not specifically for any educational purpose
      */
-    Children_juvenile("02", "Children/juvenile"), //
+    Children_juvenile("02", "Children/juvenile"),
 
     /**
      * For a teenage audience, not specifically for any educational purpose
      */
-    Young_adult("03", "Young adult"), //
+    Young_adult("03", "Young adult"),
 
     /**
      * Kindergarten, pre-school, primary/elementary or secondary/high school education
      */
-    Primary_and_secondary_elementary_and_high_school("04", "Primary and secondary/elementary and high school"), //
+    Primary_and_secondary_elementary_and_high_school("04", "Primary and secondary/elementary and high school"),
 
     /**
      * For universities and colleges of further and higher education
      */
-    College_higher_education("05", "College/higher education"), //
+    College_higher_education("05", "College/higher education"),
 
     /**
      * For an expert adult audience, including professional development and academic research
      */
-    Professional_and_scholarly("06", "Professional and scholarly"), //
+    Professional_and_scholarly("06", "Professional and scholarly"),
 
     /**
      * Intended for use in teaching English as a second language
      */
-    ELT_ESL("07", "ELT/ESL"), //
+    ELT_ESL("07", "ELT/ESL"),
 
     /**
      * For centres providing academic, vocational or recreational courses for adults
      */
-    Adult_education("08", "Adult education"), //
+    Adult_education("08", "Adult education"),
 
     /**
      * Intended for use in teaching second languages, for example teaching German to Spanish speakers. Prefer code 07

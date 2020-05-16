@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,57 +48,57 @@ public enum PositionOnProducts implements OnixCodelist, CodeList142 {
     /**
      * Position unknown or unspecified
      */
-    Unknown_unspecified("00", "Unknown / unspecified"), //
+    Unknown_unspecified("00", "Unknown / unspecified"),
 
     /**
      * The back cover of a book
      */
-    Cover_4("01", "Cover 4"), //
+    Cover_4("01", "Cover 4"),
 
     /**
      * The inside back cover of a book
      */
-    Cover_3("02", "Cover 3"), //
+    Cover_3("02", "Cover 3"),
 
     /**
      * The inside front cover of a book
      */
-    Cover_2("03", "Cover 2"), //
+    Cover_2("03", "Cover 2"),
 
     /**
      * The front cover of a book
      */
-    Cover_1("04", "Cover 1"), //
+    Cover_1("04", "Cover 1"),
 
     /**
      * The spine of a book
      */
-    On_spine("05", "On spine"), //
+    On_spine("05", "On spine"),
 
     /**
      * Used only for boxed products
      */
-    On_box("06", "On box"), //
+    On_box("06", "On box"),
 
     /**
      * Used only for products fitted with hanging tags
      */
-    On_tag("07", "On tag"), //
+    On_tag("07", "On tag"),
 
     /**
      * Not be used for books unless they are contained within outer packaging
      */
-    On_bottom("08", "On bottom"), //
+    On_bottom("08", "On bottom"),
 
     /**
      * Not be used for books unless they are contained within outer packaging
      */
-    On_back("09", "On back"), //
+    On_back("09", "On back"),
 
     /**
      * Used only for products packaged in outer sleeves
      */
-    On_outer_sleeve_back("10", "On outer sleeve / back"), //
+    On_outer_sleeve_back("10", "On outer sleeve / back"),
 
     /**
      * Used only for products packaged in shrink-wrap or other removable wrapping

@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,367 +45,367 @@ interface CodeList139 {
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
-    _24Symbols("SYM", "24Symbols"), //
+    _24Symbols("SYM", "24Symbols"),
 
-    A_C_Moore("ACM", "A C Moore"), //
+    A_C_Moore("ACM", "A C Moore"),
 
-    AandP("AAP", "AandP"), //
+    AandP("AAP", "AandP"),
 
-    Albertson_s("ALB", "Albertson’s"), //
+    Albertson_s("ALB", "Albertson’s"),
 
-    Amazon("AMZ", "Amazon"), //
+    Amazon("AMZ", "Amazon"),
 
-    Angus_and_Robertson("ANR", "Angus and Robertson"), //
+    Angus_and_Robertson("ANR", "Angus and Robertson"),
 
-    Anobii("ANB", "Anobii"), //
+    Anobii("ANB", "Anobii"),
 
-    Apabi("APA", "Apabi"), //
+    Apabi("APA", "Apabi"),
 
-    Apple("APC", "Apple"), //
+    Apple("APC", "Apple"),
 
-    Asda("ASD", "Asda"), //
+    Asda("ASD", "Asda"),
 
-    Asia_Books("ASB", "Asia Books"), //
+    Asia_Books("ASB", "Asia Books"),
 
-    Audible("AUD", "Audible"), //
+    Audible("AUD", "Audible"),
 
-    Audiobooks_com("AUC", "Audiobooks.com"), //
+    Audiobooks_com("AUC", "Audiobooks.com"),
 
-    Audioteka("ATK", "Audioteka"), //
+    Audioteka("ATK", "Audioteka"),
 
-    B_Dalton("BDL", "B Dalton"), //
+    B_Dalton("BDL", "B Dalton"),
 
-    Barnes_and_Noble("BNO", "Barnes and Noble"), //
+    Barnes_and_Noble("BNO", "Barnes and Noble"),
 
     /**
      * www.bdbuzz.net, for use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    BDBuzz("BDZ", "BDBuzz"), //
+    BDBuzz("BDZ", "BDBuzz"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    Bed_Bath_and_Beyond("BBB", "Bed Bath and Beyond"), //
+    Bed_Bath_and_Beyond("BBB", "Bed Bath and Beyond"),
 
-    Best_Buy("BST", "Best Buy"), //
+    Best_Buy("BST", "Best Buy"),
 
     /**
      * Formerly 3M Cloud Library
      */
-    Bibliotheca("MMM", "Bibliotheca"), //
+    Bibliotheca("MMM", "Bibliotheca"),
 
-    Bilbary("BIL", "Bilbary"), //
+    Bilbary("BIL", "Bilbary"),
 
-    BJ_s_Wholesale_Club("BJW", "BJ’s Wholesale Club"), //
+    BJ_s_Wholesale_Club("BJW", "BJ’s Wholesale Club"),
 
-    Blackstone_Audion("BLA", "Blackstone Audion"), //
+    Blackstone_Audion("BLA", "Blackstone Audion"),
 
-    Blackwell_s("BLK", "Blackwell’s"), //
+    Blackwell_s("BLK", "Blackwell’s"),
 
     /**
      * Formerly GoSpoken/Mobcast
      */
-    Blinkbox("GOS", "Blinkbox"), //
+    Blinkbox("GOS", "Blinkbox"),
 
-    Book_Club_Associates("BCA", "Book Club Associates"), //
+    Book_Club_Associates("BCA", "Book Club Associates"),
 
     /**
      * https://www.bolinda.com, for use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Bolinda("BLD", "Bolinda"), //
+    Bolinda("BLD", "Bolinda"),
 
-    Bookish("BSH", "Bookish"), //
+    Bookish("BSH", "Bookish"),
 
-    Bookpeople("BKP", "Bookpeople"), //
+    Bookpeople("BKP", "Bookpeople"),
 
-    Books_A_Million("BKM", "Books-A-Million"), //
+    Books_A_Million("BKM", "Books-A-Million"),
 
-    Bookshout("BKS", "Bookshout"), //
+    Bookshout("BKS", "Bookshout"),
 
-    Booktopia("BTP", "Booktopia"), //
+    Booktopia("BTP", "Booktopia"),
 
-    Borders("BRD", "Borders"), //
+    Borders("BRD", "Borders"),
 
-    Borders_Books_Etc("BRB", "Borders/Books Etc"), //
+    Borders_Books_Etc("BRB", "Borders/Books Etc"),
 
-    British_Bookshops("BRT", "British Bookshops"), //
+    British_Bookshops("BRT", "British Bookshops"),
 
-    Casa_del_Libro("CDL", "Casa del Libro"), //
+    Casa_del_Libro("CDL", "Casa del Libro"),
 
-    Ceebo("CEB", "Ceebo"), //
+    Ceebo("CEB", "Ceebo"),
 
-    Christianbook_com("CHD", "Christianbook.com"), //
+    Christianbook_com("CHD", "Christianbook.com"),
 
-    Copia("COP", "Copia"), //
+    Copia("COP", "Copia"),
 
-    Costco("CST", "Costco"), //
+    Costco("CST", "Costco"),
 
-    Crate_and_Barrel("CRB", "Crate and Barrel"), //
+    Crate_and_Barrel("CRB", "Crate and Barrel"),
 
-    CVS_Drug_Stores("CVS", "CVS Drug Stores"), //
+    CVS_Drug_Stores("CVS", "CVS Drug Stores"),
 
     /**
      * www.cvs-mediatheques.com
      */
-    CVS_Mediatheques("CVM", "CVS Mediatheques"), //
+    CVS_Mediatheques("CVM", "CVS Mediatheques"),
 
-    Cyberlibris("CYB", "Cyberlibris"), //
+    Cyberlibris("CYB", "Cyberlibris"),
 
-    De_Marque("DEM", "De Marque"), //
+    De_Marque("DEM", "De Marque"),
 
-    Dick_s_Sporting_Goods("DSG", "Dick’s Sporting Goods"), //
+    Dick_s_Sporting_Goods("DSG", "Dick’s Sporting Goods"),
 
-    Dilicom("DIL", "Dilicom"), //
+    Dilicom("DIL", "Dilicom"),
 
-    Dymocks("DYM", "Dymocks"), //
+    Dymocks("DYM", "Dymocks"),
 
-    E_Pagine("EPA", "E-Pagine"), //
+    E_Pagine("EPA", "E-Pagine"),
 
-    E_Reads("ERD", "E-Reads"), //
+    E_Reads("ERD", "E-Reads"),
 
-    Early_Learning_Centre("ELC", "Early Learning Centre"), //
+    Early_Learning_Centre("ELC", "Early Learning Centre"),
 
-    Eason("ESN", "Eason"), //
+    Eason("ESN", "Eason"),
 
     /**
      * www.ebooks.com
      */
-    Ebooks_Corp("EBC", "Ebooks Corp"), //
+    Ebooks_Corp("EBC", "Ebooks Corp"),
 
-    eChristian("ECH", "eChristian"), //
+    eChristian("ECH", "eChristian"),
 
-    El_Corte_Ingl_s("ECI", "El Corte Inglés"), //
+    El_Corte_Ingl_s("ECI", "El Corte Inglés"),
 
-    Electre("ELE", "Electre"), //
+    Electre("ELE", "Electre"),
 
-    Elib_se("ELB", "Elib.se"), //
+    Elib_se("ELB", "Elib.se"),
 
-    Empik("EMP", "Empik"), //
+    Empik("EMP", "Empik"),
 
-    English_Heritage("ENH", "English Heritage"), //
+    English_Heritage("ENH", "English Heritage"),
 
     /**
      * www.getepic.com
      */
-    Epic_("EPC", "Epic!"), //
+    Epic_("EPC", "Epic!"),
 
-    FeedBooks("FDB", "FeedBooks"), //
+    FeedBooks("FDB", "FeedBooks"),
 
-    Findaway("FIN", "Findaway"), //
+    Findaway("FIN", "Findaway"),
 
-    Fishpond("FSP", "Fishpond"), //
+    Fishpond("FSP", "Fishpond"),
 
-    FlipKart("FLP", "FlipKart"), //
+    FlipKart("FLP", "FlipKart"),
 
-    Fnac("FNC", "Fnac"), //
+    Fnac("FNC", "Fnac"),
 
-    Follett("FOL", "Follett"), //
+    Follett("FOL", "Follett"),
 
-    Fry_s_Electronics("FRY", "Fry’s Electronics"), //
+    Fry_s_Electronics("FRY", "Fry’s Electronics"),
 
-    Gamestop("GMS", "Gamestop"), //
+    Gamestop("GMS", "Gamestop"),
 
-    Glose("GLO", "Glose"), //
+    Glose("GLO", "Glose"),
 
-    Google_Books("GOO", "Google Books"), //
+    Google_Books("GOO", "Google Books"),
 
-    Hastings_Entertainment("HST", "Hastings Entertainment"), //
+    Hastings_Entertainment("HST", "Hastings Entertainment"),
 
-    HMV("HMV", "HMV"), //
+    HMV("HMV", "HMV"),
 
-    Home_Depot("HMD", "Home Depot"), //
+    Home_Depot("HMD", "Home Depot"),
 
-    Immat_riel_fr("IMM", "Immatériel.fr"), //
+    Immat_riel_fr("IMM", "Immatériel.fr"),
 
-    Indigo_Chapters("IND", "Indigo-Chapters"), //
+    Indigo_Chapters("IND", "Indigo-Chapters"),
 
     /**
      * www.ibs.it, for use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Internet_Bookshop_Italia("IBS", "Internet Bookshop Italia"), //
+    Internet_Bookshop_Italia("IBS", "Internet Bookshop Italia"),
 
-    Izneo("IZN", "Izneo"), //
+    Izneo("IZN", "Izneo"),
 
-    JB_Hifi("JBH", "JB Hifi"), //
+    JB_Hifi("JBH", "JB Hifi"),
 
-    John_Smith_and_Son("JSM", "John Smith and Son"), //
+    John_Smith_and_Son("JSM", "John Smith and Son"),
 
-    K_Mart("KMT", "K-Mart"), //
+    K_Mart("KMT", "K-Mart"),
 
-    KNFB_Blio("KNB", "KNFB/Blio"), //
+    KNFB_Blio("KNB", "KNFB/Blio"),
 
-    Kno_Inc("KNO", "Kno Inc"), //
+    Kno_Inc("KNO", "Kno Inc"),
 
-    Kobo("KBO", "Kobo"), //
+    Kobo("KBO", "Kobo"),
 
-    Koorong("KOO", "Koorong"), //
+    Koorong("KOO", "Koorong"),
 
-    Kortext("KOR", "Kortext"), //
+    Kortext("KOR", "Kortext"),
 
-    Kroger("KRG", "Kroger"), //
+    Kroger("KRG", "Kroger"),
 
-    Lowe_s("LWE", "Lowe’s"), //
+    Lowe_s("LWE", "Lowe’s"),
 
-    Mackin("MAC", "Mackin"), //
+    Mackin("MAC", "Mackin"),
 
-    Magzter("MAG", "Magzter"), //
+    Magzter("MAG", "Magzter"),
 
-    Marks_and_Spencer("MKS", "Marks and Spencer"), //
+    Marks_and_Spencer("MKS", "Marks and Spencer"),
 
-    Matras("MAT", "Matras"), //
+    Matras("MAT", "Matras"),
 
     /**
      * Also known as Media World
      */
-    Media_Markt_Saturn("MMS", "Media Markt/Saturn"), //
+    Media_Markt_Saturn("MMS", "Media Markt/Saturn"),
 
-    Messageries_ADP("ADP", "Messageries ADP"), //
+    Messageries_ADP("ADP", "Messageries ADP"),
 
-    Microcenter("MCR", "Microcenter"), //
+    Microcenter("MCR", "Microcenter"),
 
     /**
      * For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Microsoft("MSF", "Microsoft"), //
+    Microsoft("MSF", "Microsoft"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    Mofibo("MOF", "Mofibo"), //
+    Mofibo("MOF", "Mofibo"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    Morrisons("MRR", "Morrisons"), //
+    Morrisons("MRR", "Morrisons"),
 
-    Mothercare("MTC", "Mothercare"), //
+    Mothercare("MTC", "Mothercare"),
 
-    MyBoox("MYB", "MyBoox"), //
+    MyBoox("MYB", "MyBoox"),
 
-    MyiLibrary("MYI", "MyiLibrary"), //
+    MyiLibrary("MYI", "MyiLibrary"),
 
-    National_Trust("NTR", "National Trust"), //
+    National_Trust("NTR", "National Trust"),
 
-    Numilog("NUM", "Numilog"), //
+    Numilog("NUM", "Numilog"),
 
-    Office_Depot("OFD", "Office Depot"), //
+    Office_Depot("OFD", "Office Depot"),
 
-    Office_Max("OFM", "Office Max"), //
+    Office_Max("OFM", "Office Max"),
 
-    OLF("OLF", "OLF"), //
+    OLF("OLF", "OLF"),
 
-    OverDrive("OVD", "OverDrive"), //
+    OverDrive("OVD", "OverDrive"),
 
-    Oyster("OYS", "Oyster"), //
+    Oyster("OYS", "Oyster"),
 
-    Past_Times("PST", "Past Times"), //
+    Past_Times("PST", "Past Times"),
 
-    Pet_Smart("PTS", "Pet Smart"), //
+    Pet_Smart("PTS", "Pet Smart"),
 
-    Petco("PTC", "Petco"), //
+    Petco("PTC", "Petco"),
 
-    Play_com("PLY", "Play.com"), //
+    Play_com("PLY", "Play.com"),
 
-    Pottery_Barn("PTB", "Pottery Barn"), //
+    Pottery_Barn("PTB", "Pottery Barn"),
 
-    Readbooks("RDB", "Readbooks"), //
+    Readbooks("RDB", "Readbooks"),
 
-    ReadCloud("RCL", "ReadCloud"), //
+    ReadCloud("RCL", "ReadCloud"),
 
-    Restoration_Hardware("RST", "Restoration Hardware"), //
+    Restoration_Hardware("RST", "Restoration Hardware"),
 
-    Rethink("RET", "Rethink"), //
+    Rethink("RET", "Rethink"),
 
-    Ritz_Camera("RTZ", "Ritz Camera"), //
+    Ritz_Camera("RTZ", "Ritz Camera"),
 
-    RM_Books("RMB", "RM Books"), //
+    RM_Books("RMB", "RM Books"),
 
-    Safari("SAF", "Safari"), //
+    Safari("SAF", "Safari"),
 
-    Safeway("SFW", "Safeway"), //
+    Safeway("SFW", "Safeway"),
 
-    Sainsbury_s("SNS", "Sainsbury’s"), //
+    Sainsbury_s("SNS", "Sainsbury’s"),
 
-    Scribd("SCR", "Scribd"), //
+    Scribd("SCR", "Scribd"),
 
-    Selfridges("SLF", "Selfridges"), //
+    Selfridges("SLF", "Selfridges"),
 
-    Sequencity("SEQ", "Sequencity"), //
+    Sequencity("SEQ", "Sequencity"),
 
-    Shanghai_Book_Traders("SBT", "Shanghai Book Traders"), //
+    Shanghai_Book_Traders("SBT", "Shanghai Book Traders"),
 
-    Skoobe("SKB", "Skoobe"), //
+    Skoobe("SKB", "Skoobe"),
 
-    SmashWords("SMW", "SmashWords"), //
+    SmashWords("SMW", "SmashWords"),
 
-    Sony("SNY", "Sony"), //
+    Sony("SNY", "Sony"),
 
-    Staples("STP", "Staples"), //
+    Staples("STP", "Staples"),
 
-    Storytel("STT", "Storytel"), //
+    Storytel("STT", "Storytel"),
 
-    Target("TRG", "Target"), //
+    Target("TRG", "Target"),
 
-    Tesco("TES", "Tesco"), //
+    Tesco("TES", "Tesco"),
 
-    The_Ebook_Alternative("TEA", "The Ebook Alternative"), //
+    The_Ebook_Alternative("TEA", "The Ebook Alternative"),
 
-    Tolino("TOL", "Tolino"), //
+    Tolino("TOL", "Tolino"),
 
-    Toys_R_Us("TSR", "Toys ‘R’ Us"), //
+    Toys_R_Us("TSR", "Toys ‘R’ Us"),
 
-    TSO_The_Stationery_Office("TSO", "TSO (The Stationery Office)"), //
+    TSO_The_Stationery_Office("TSO", "TSO (The Stationery Office)"),
 
-    Txtr("TXR", "Txtr"), //
+    Txtr("TXR", "Txtr"),
 
-    Virgin_Megastores("VRG", "Virgin Megastores"), //
+    Virgin_Megastores("VRG", "Virgin Megastores"),
 
-    W_H_Smith("WHS", "W H Smith"), //
+    W_H_Smith("WHS", "W H Smith"),
 
-    Waitrose("WTR", "Waitrose"), //
+    Waitrose("WTR", "Waitrose"),
 
-    Wal_Mart("WLM", "Wal-Mart"), //
+    Wal_Mart("WLM", "Wal-Mart"),
 
-    Waterstone_s("WST", "Waterstone’s"), //
+    Waterstone_s("WST", "Waterstone’s"),
 
-    Whitcoul_s("WHT", "Whitcoul’s"), //
+    Whitcoul_s("WHT", "Whitcoul’s"),
 
-    Williams_Sonoma("WLS", "Williams Sonoma"), //
+    Williams_Sonoma("WLS", "Williams Sonoma"),
 
-    Woolworths("WLW", "Woolworths"), //
+    Woolworths("WLW", "Woolworths"),
 
     /**
      * youboox.fr
      */
-    Youboox("YOU", "Youboox"), //
+    Youboox("YOU", "Youboox"),
 
     /**
      * Formerly Virgin Megastores (UK)
      */
-    Zavvi("ZVV", "Zavvi"), //
+    Zavvi("ZVV", "Zavvi"),
 
     /**
      * Include retailer name in &lt;SalesOutletName&gt;
      */
-    Other("ZZZ", "Other"), //
+    Other("ZZZ", "Other"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Bed_Bath_and_Beyond_("BBB", "Bed Bath and Beyond"), //
+    Bed_Bath_and_Beyond_("BBB", "Bed Bath and Beyond"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Mofibo_("MOF", "Mofibo"), //
+    Mofibo_("MOF", "Mofibo"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3

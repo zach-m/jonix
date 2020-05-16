@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -51,89 +51,89 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * a sales embargo date, retail sales and pre-order fulfillment may begin as soon as stock is available to the
      * retailer
      */
-    Publication_date("01", "Publication date"), //
+    Publication_date("01", "Publication date"),
 
     /**
      * If there is an embargo on retail sales (in the market) before a certain date, the date from which the embargo is
      * lifted and retail sales and fulfillment of pre-orders are permitted. In the absence of an embargo date, retail
      * sales and pre-order fulfillment may begin as soon as stock is available to the retailer
      */
-    Sales_embargo_date("02", "Sales embargo date"), //
+    Sales_embargo_date("02", "Sales embargo date"),
 
     /**
      * Date when a new product may be announced to the general public. In the absence of an announcement date, the
      * planned product may be announced to the public as soon as metadata is available
      */
-    Public_announcement_date("09", "Public announcement date"), //
+    Public_announcement_date("09", "Public announcement date"),
 
     /**
      * Date when a new product may be announced to the book trade only. In the absence of a trade announcement date, the
      * planned product may be announced to supply chain partners (but not necessarily made public) as soon as metadata
      * is available
      */
-    Trade_announcement_date("10", "Trade announcement date"), //
+    Trade_announcement_date("10", "Trade announcement date"),
 
     /**
      * Date when the work incorporated in a product was first published. For works in translation, see also Date of
      * first publication in original language (code 20)
      */
-    Date_of_first_publication("11", "Date of first publication"), //
+    Date_of_first_publication("11", "Date of first publication"),
 
     /**
      * Date when a product was last reprinted
      */
-    Last_reprint_date("12", "Last reprint date"), //
+    Last_reprint_date("12", "Last reprint date"),
 
     /**
      * Date when a product was (or will be) declared out-of-print or deleted
      */
-    Out_of_print_deletion_date("13", "Out-of-print / deletion date"), //
+    Out_of_print_deletion_date("13", "Out-of-print / deletion date"),
 
     /**
      * Date when a product was last reissued
      */
-    Last_reissue_date("16", "Last reissue date"), //
+    Last_reissue_date("16", "Last reissue date"),
 
     /**
      * Date of publication of a printed book which is the direct print counterpart to a digital product. The counterpart
      * product may be included in &lt;RelatedProduct&gt; using code 13
      */
-    Publication_date_of_print_counterpart("19", "Publication date of print counterpart"), //
+    Publication_date_of_print_counterpart("19", "Publication date of print counterpart"),
 
     /**
      * Date when the original language version of work incorporated in a product was first published (note, use only on
      * works in translation - see code 11 for first publication date in the translated language)
      */
-    Date_of_first_publication_in_original_language("20", "Date of first publication in original language"), //
+    Date_of_first_publication_in_original_language("20", "Date of first publication in original language"),
 
     /**
      * Date when a product will be reissued
      */
-    Forthcoming_reissue_date("21", "Forthcoming reissue date"), //
+    Forthcoming_reissue_date("21", "Forthcoming reissue date"),
 
     /**
      * Date when a product that has been temporary withdrawn from sale or recalled for any reason is expected to become
      * available again, eg after correction of quality or technical issues
      */
     Expected_availability_date_after_temporary_withdrawal("22",
-        "Expected availability date after temporary withdrawal"), //
+        "Expected availability date after temporary withdrawal"),
 
     /**
      * Date from which reviews of a product may be published eg in newspapers and magazines or online. Provided to the
      * book trade for information only: newspapers and magazines are not expected to be recipients of ONIX metadata
      */
-    Review_embargo_date("23", "Review embargo date"), //
+    Review_embargo_date("23", "Review embargo date"),
 
     /**
      * Latest date on which an order may be placed with the publisher for guaranteed delivery prior to the publication
      * date. May or may not be linked to a special reservation or pre-publication price
      */
-    Publisher_s_reservation_order_deadline("25", "Publisher’s reservation order deadline"), //
+    Publisher_s_reservation_order_deadline("25", "Publisher’s reservation order deadline"),
 
     /**
      * Date when a product will be reprinted
      */
-    Forthcoming_reprint_date("26", "Forthcoming reprint date"), //
+    Forthcoming_reprint_date("26", "Forthcoming reprint date"),
 
     /**
      * Earliest date a retail 'preorder' can be placed (in the market), where this is distinct from the public
@@ -141,17 +141,17 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * available to the consumer (this would be the public announcement date, or in the absence of a public announcement
      * date, the earliest date metadata is available to the retailer)
      */
-    Preorder_embargo_date("27", "Preorder embargo date"), //
+    Preorder_embargo_date("27", "Preorder embargo date"),
 
     /**
      * Date of acquisition of product by new publisher (use with publishing roles 09 and 13)
      */
-    Transfer_date("28", "Transfer date"), //
+    Transfer_date("28", "Transfer date"),
 
     /**
      * For an audiovisual work (eg on DVD)
      */
-    Date_of_production("29", "Date of production"), //
+    Date_of_production("29", "Date of production"),
 
     /**
      * For digital products that are available to end customers both as a download and streamed, the earliest date the
@@ -160,7 +160,7 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Streaming_embargo_date("30", "Streaming embargo date"), //
+    Streaming_embargo_date("30", "Streaming embargo date"),
 
     /**
      * For digital products that are available to end customers both as purchases and as part of a subscription package,

@@ -49,19 +49,19 @@ public enum MessageStatuss implements OnixCodelist, CodeList221 {
      * original ONIX message header to ascertain &lt;MessageNumber&gt; etc.. The Acknowledgement message MAY give a date
      * when parsing is planned
      */
-    Message_received("00", "Message received"), //
+    Message_received("00", "Message received"),
 
     /**
      * Entire original ONIX message rejected (ie NONE of the data records have been ingested). The status of any
      * recognisable records MAY be summarised in the remainder of the Acknowledgement Message
      */
-    Message_rejected("01", "Message rejected"), //
+    Message_rejected("01", "Message rejected"),
 
     /**
      * Original ONIX message partially parsed (ie at least SOME of the data records have been ingested, in whole or in
      * part). Records processed to date MUST be summarised in the remainder of the Acknowledgement Message
      */
-    Message_part_processed("02", "Message part-processed"), //
+    Message_part_processed("02", "Message part-processed"),
 
     /**
      * Original ONIX message parsed and processed in full, and at least SOME of the data records have been ingested, in

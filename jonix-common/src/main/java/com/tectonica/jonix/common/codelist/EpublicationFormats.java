@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -47,34 +47,34 @@ interface CodeList11 {
  *      Codelist 11 in Reference Guide</a>
  */
 public enum EpublicationFormats implements OnixCodelist, CodeList11 {
-    HTML("01", "HTML"), //
+    HTML("01", "HTML"),
 
-    PDF("02", "PDF"), //
+    PDF("02", "PDF"),
 
     /**
      * '.LIT' file format used by Microsoft Reader software
      */
-    Microsoft_Reader("03", "Microsoft Reader"), //
+    Microsoft_Reader("03", "Microsoft Reader"),
 
-    RocketBook("04", "RocketBook"), //
+    RocketBook("04", "RocketBook"),
 
-    Rich_text_format_RTF("05", "Rich text format (RTF)"), //
+    Rich_text_format_RTF("05", "Rich text format (RTF)"),
 
-    Open_Ebook_Publication_Structure_OEBPS("06", "Open Ebook Publication Structure (OEBPS) format standard"), //
+    Open_Ebook_Publication_Structure_OEBPS("06", "Open Ebook Publication Structure (OEBPS) format standard"),
 
-    XML("07", "XML"), //
+    XML("07", "XML"),
 
-    SGML("08", "SGML"), //
+    SGML("08", "SGML"),
 
     /**
      * '.EXE' file format used when an epublication is delivered as a self-executing package of software and content
      */
-    EXE("09", "EXE"), //
+    EXE("09", "EXE"),
 
     /**
      * '.TXT' file format
      */
-    ASCII("10", "ASCII"), //
+    ASCII("10", "ASCII"),
 
     /**
      * Proprietary file format used for the MobiPocket reader software

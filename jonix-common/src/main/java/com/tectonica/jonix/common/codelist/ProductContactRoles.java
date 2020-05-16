@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -50,44 +50,44 @@ public enum ProductContactRoles implements OnixCodelist, CodeList198 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Metadata_contact("00", "Metadata contact"), //
+    Metadata_contact("00", "Metadata contact"),
 
     /**
      * Eg for requests for supply of mutable digital files for conversion to other formats
      */
-    Accessibility_request_contact("01", "Accessibility request contact"), //
+    Accessibility_request_contact("01", "Accessibility request contact"),
 
     /**
      * Eg for requests relating to interviews, author events
      */
-    Promotional_contact("02", "Promotional contact"), //
+    Promotional_contact("02", "Promotional contact"),
 
     /**
      * Eg for co-op advertising
      */
-    Advertising_contact("03", "Advertising contact"), //
+    Advertising_contact("03", "Advertising contact"),
 
     /**
      * Eg for requests for review copies
      */
-    Review_copy_contact("04", "Review copy contact"), //
+    Review_copy_contact("04", "Review copy contact"),
 
     /**
      * Eg for requests for approval or evaluation copies (particularly within education)
      */
-    Evaluation_copy_contact("05", "Evaluation copy contact"), //
+    Evaluation_copy_contact("05", "Evaluation copy contact"),
 
     /**
      * Eg for requests to reproduce or repurpose parts of the publication
      */
-    Permissions_contact("06", "Permissions contact"), //
+    Permissions_contact("06", "Permissions contact"),
 
     /**
      * Eg for use where authorisation must be gained from the publisher rather than the distributor or wholesaler
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Return_authorisation_contact("07", "Return authorisation contact"), //
+    Return_authorisation_contact("07", "Return authorisation contact"),
 
     /**
      * Jonix-Comment: Introduced in Onix3

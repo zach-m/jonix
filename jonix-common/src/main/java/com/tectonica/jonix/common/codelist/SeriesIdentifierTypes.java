@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,53 +48,53 @@ public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
     /**
      * For example, publisher's own series ID. Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * International Standard Serial Number, unhyphenated, 8 digits
      */
-    ISSN("02", "ISSN"), //
+    ISSN("02", "ISSN"),
 
     /**
      * Maintained by the Deutsche Nationalbibliothek
      */
-    German_National_Bibliography_series_ID("03", "German National Bibliography series ID"), //
+    German_National_Bibliography_series_ID("03", "German National Bibliography series ID"),
 
     /**
      * Maintained by VLB
      */
-    German_Books_in_Print_series_ID("04", "German Books in Print series ID"), //
+    German_Books_in_Print_series_ID("04", "German Books in Print series ID"),
 
     /**
      * Maintained by Electre Information, France
      */
-    Electre_series_ID("05", "Electre series ID"), //
+    Electre_series_ID("05", "Electre series ID"),
 
     /**
      * Digital Object Identifier (variable length and character set)
      */
-    DOI("06", "DOI"), //
+    DOI("06", "DOI"),
 
     /**
      * Use only where the collection (series or set) is available as a single product
      */
-    ISBN_13("15", "ISBN-13"), //
+    ISBN_13("15", "ISBN-13"),
 
     /**
      * Uniform Resource Name
      */
-    URN("22", "URN"), //
+    URN("22", "URN"),
 
     /**
      * French National Bibliography series ID. Identifiant des publications en s&#233;rie maintenu par la
      * Biblioth&#232;que Nationale de France
      */
-    BNF_Control_number("29", "BNF Control number"), //
+    BNF_Control_number("29", "BNF Control number"),
 
     /**
      * Archival Resource Key, as a URL (including the address of the ARK resolver provided by eg a national library)
      */
-    ARK("35", "ARK"), //
+    ARK("35", "ARK"),
 
     /**
      * International Standard Serial Number 'linking ISSN', used when distinct from the serial ISSN. Unhyphenated, 8

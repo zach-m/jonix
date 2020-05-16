@@ -42,29 +42,29 @@ interface CodeList19 {
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
-    Unknown("01", "Unknown"), //
+    Unknown("01", "Unknown"),
 
-    Anonymous("02", "Anonymous"), //
+    Anonymous("02", "Anonymous"),
 
     /**
      * And others: additional contributors not listed
      */
-    et_al("03", "et al"), //
+    et_al("03", "et al"),
 
     /**
      * When the product is a pack of books by different authors
      */
-    Various_authors("04", "Various authors"), //
+    Various_authors("04", "Various authors"),
 
     /**
      * Use with Contributor role code E07 'read by', for audio books for the blind
      */
-    Synthesized_voice_male("05", "Synthesized voice – male"), //
+    Synthesized_voice_male("05", "Synthesized voice – male"),
 
     /**
      * Use with Contributor role code E07 'read by', for audio books for the blind
      */
-    Synthesized_voice_female("06", "Synthesized voice – female"), //
+    Synthesized_voice_female("06", "Synthesized voice – female"),
 
     /**
      * Use with Contributor role code E07 'read by', for audio books for the blind

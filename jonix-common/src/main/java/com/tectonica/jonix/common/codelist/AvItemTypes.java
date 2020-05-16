@@ -48,18 +48,18 @@ public enum AvItemTypes implements OnixCodelist, CodeList240 {
      * A complete audiovisual work which is published as a content item in a product which carries two or more such
      * works, eg when two or three AV works are published in a single omnibus package
      */
-    Audiovisual_work("01", "Audiovisual work"), //
+    Audiovisual_work("01", "Audiovisual work"),
 
     /**
      * Audiovisual components such as a scene index or introduction which appear before the main content of the product
      */
-    Front_matter("02", "Front matter"), //
+    Front_matter("02", "Front matter"),
 
     /**
      * Audiovisual components such as scenes or 'chapters' which appear as part of the main body of the AV material in
      * the product
      */
-    Body_matter("03", "Body matter"), //
+    Body_matter("03", "Body matter"),
 
     /**
      * Audiovisual components such as advertising which appear after the main content of the product

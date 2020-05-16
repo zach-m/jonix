@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,50 +48,50 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
     /**
      * Allows positive indication that there are no conditions (the default if &lt;PriceCondition&gt; is omitted)
      */
-    No_conditions("00", "No conditions"), //
+    No_conditions("00", "No conditions"),
 
     /**
      * Purchase at this price includes specified updates
      */
-    Includes_updates("01", "Includes updates"), //
+    Includes_updates("01", "Includes updates"),
 
     /**
      * Purchase at this price requires commitment to purchase specified updates, not included in price
      */
-    Must_also_purchase_updates("02", "Must also purchase updates"), //
+    Must_also_purchase_updates("02", "Must also purchase updates"),
 
     /**
      * Updates may be purchased separately, no minimum commitment required
      */
-    Updates_available("03", "Updates available"), //
+    Updates_available("03", "Updates available"),
 
     /**
      * Purchase at this price requires commitment to purchase specified other product, not included in price
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Linked_subsequent_purchase_price("04", "Linked subsequent purchase price"), //
+    Linked_subsequent_purchase_price("04", "Linked subsequent purchase price"),
 
     /**
      * Purchase at this price requires prior purchase of other product
      */
-    Linked_prior_purchase_price("05", "Linked prior purchase price"), //
+    Linked_prior_purchase_price("05", "Linked prior purchase price"),
 
     /**
      * Purchase at this price requires simultaneous purchase of other product
      */
-    Linked_price("06", "Linked price"), //
+    Linked_price("06", "Linked price"),
 
     /**
      * The duration of the rental to which the price applies. Deprecated, use &lt;PriceConstraint&gt; instead
      */
-    Rental_duration("10", "Rental duration"), //
+    Rental_duration("10", "Rental duration"),
 
     /**
      * Purchase at this price requires prior rental of the product. &lt;PriceConditionQuantity&gt; gives minimum prior
      * rental period, and &lt;ProductIdentifier&gt; may be used if rental uses a different product identifier
      */
-    Rental_to_purchase("11", "Rental to purchase"), //
+    Rental_to_purchase("11", "Rental to purchase"),
 
     /**
      * Upgrade to longer rental duration. &lt;PriceConditionQuantity&gt; gives minimum prior rental duration, and

@@ -174,8 +174,8 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
         return audienceRangeQualifier;
     }
 
-    private ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions = ListOfOnixElement
-        .empty();
+    private ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions =
+        ListOfOnixElement.empty();
 
     /**
      * <p>

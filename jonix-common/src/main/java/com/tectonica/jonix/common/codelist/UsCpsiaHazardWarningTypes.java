@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -49,43 +49,45 @@ public enum UsCpsiaHazardWarningTypes implements OnixCodelist, CodeList143 {
      * Required on applicable products sold in the US
      */
     WARNING_CHOKING_HAZARD_Small_parts_Not_for_children_under_3_yrs_("01",
-        "WARNING: CHOKING HAZARD – Small parts | Not for children under 3 yrs."), //
+        "WARNING: CHOKING HAZARD – Small parts | Not for children under 3 yrs."),
 
     /**
      * Required on applicable products sold in the US
      */
+    // CHECKSTYLE:OFF
     WARNING_CHOKING_HAZARD_Children_under_8_yrs_can_choke_or_suffocate_on_uninflated_or_broken_balloons_Adult_supervision_required_Keep_uninflated_balloons_from_children_Discard_broken_balloons_at_once_(
         "02",
-        "WARNING: CHOKING HAZARD – Children under 8 yrs. can choke or suffocate on uninflated or broken balloons. Adult supervision required | Keep uninflated balloons from children. Discard broken balloons at once."), //
+        "WARNING: CHOKING HAZARD – Children under 8 yrs. can choke or suffocate on uninflated or broken balloons. Adult supervision required | Keep uninflated balloons from children. Discard broken balloons at once."),
+    // CHECKSTYLE:ON
 
     /**
      * Required on applicable products sold in the US
      */
     WARNING_CHOKING_HAZARD_This_toy_is_a_small_ball_Not_for_children_under_3_yrs_("03",
-        "WARNING: CHOKING HAZARD – This toy is a small ball | Not for children under 3 yrs."), //
+        "WARNING: CHOKING HAZARD – This toy is a small ball | Not for children under 3 yrs."),
 
     /**
      * Required on applicable products sold in the US
      */
     WARNING_CHOKING_HAZARD_Toy_contains_a_small_ball_Not_for_children_under_3_yrs_("04",
-        "WARNING: CHOKING HAZARD – Toy contains a small ball | Not for children under 3 yrs."), //
+        "WARNING: CHOKING HAZARD – Toy contains a small ball | Not for children under 3 yrs."),
 
     /**
      * Required on applicable products sold in the US
      */
     WARNING_CHOKING_HAZARD_This_toy_is_a_marble_Not_for_children_under_3_yrs_("05",
-        "WARNING: CHOKING HAZARD – This toy is a marble | Not for children under 3 yrs."), //
+        "WARNING: CHOKING HAZARD – This toy is a marble | Not for children under 3 yrs."),
 
     /**
      * Required on applicable products sold in the US
      */
     WARNING_CHOKING_HAZARD_Toy_contains_a_marble_Not_for_children_under_3_yrs_("06",
-        "WARNING: CHOKING HAZARD – Toy contains a marble | Not for children under 3 yrs."), //
+        "WARNING: CHOKING HAZARD – Toy contains a marble | Not for children under 3 yrs."),
 
     /**
      * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
      */
-    No_choking_hazard_warning_necessary("07", "No choking hazard warning necessary"), //
+    No_choking_hazard_warning_necessary("07", "No choking hazard warning necessary"),
 
     /**
      * Required on applicable products sold in the US. Should be accompanied by additional text: Swallowed magnets can

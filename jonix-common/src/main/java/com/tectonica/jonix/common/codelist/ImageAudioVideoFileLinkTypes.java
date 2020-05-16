@@ -44,15 +44,15 @@ interface CodeList40 {
  *      Codelist 40 in Reference Guide</a>
  */
 public enum ImageAudioVideoFileLinkTypes implements OnixCodelist, CodeList40 {
-    URL("01", "URL"), //
+    URL("01", "URL"),
 
-    DOI("02", "DOI"), //
+    DOI("02", "DOI"),
 
-    PURL("03", "PURL"), //
+    PURL("03", "PURL"),
 
-    URN("04", "URN"), //
+    URN("04", "URN"),
 
-    FTP_address("05", "FTP address"), //
+    FTP_address("05", "FTP address"),
 
     filename("06", "filename");
 

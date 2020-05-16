@@ -45,7 +45,7 @@ public enum MessageStatusDateRoles implements OnixCodelist, CodeList222 {
     /**
      * Expected or actual date of processing and ingestion of data to recipient's system
      */
-    Ingest_date("01", "Ingest date"), //
+    Ingest_date("01", "Ingest date"),
 
     /**
      * Expected or actual date for data to be available from the recipient's system to downstream supply chain partners

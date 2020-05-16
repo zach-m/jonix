@@ -42,26 +42,26 @@ interface CodeList57 {
  *      Codelist 57 in Reference Guide</a>
  */
 public enum UnpricedItemTypes implements OnixCodelist, CodeList57 {
-    Free_of_charge("01", "Free of charge"), //
+    Free_of_charge("01", "Free of charge"),
 
-    Price_to_be_announced("02", "Price to be announced"), //
+    Price_to_be_announced("02", "Price to be announced"),
 
     /**
      * Not sold separately at retail
      */
-    Not_sold_separately("03", "Not sold separately"), //
+    Not_sold_separately("03", "Not sold separately"),
 
     /**
      * May be used for books that do not carry a recommended retail price; when goods can only be ordered 'in person'
      * from a sales representative; when an ONIX file is 'broadcast' rather than sent one-to-one to a single trading
      * partner; or for digital products offered on subscription or with pricing which is too complex to specify in ONIX
      */
-    Contact_supplier("04", "Contact supplier"), //
+    Contact_supplier("04", "Contact supplier"),
 
     /**
      * When a collection that is not sold as a set nevertheless has its own ONIX record
      */
-    Not_sold_as_set("05", "Not sold as set"), //
+    Not_sold_as_set("05", "Not sold as set"),
 
     /**
      * Unpriced, but available via a pre-determined revenue share agreement

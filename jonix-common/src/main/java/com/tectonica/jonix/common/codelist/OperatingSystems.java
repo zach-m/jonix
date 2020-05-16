@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -49,72 +49,72 @@ public enum OperatingSystems implements OnixCodelist, CodeList176 {
      * An Open Source mobile device operating system originally developed by Google and supported by the Open Handset
      * Alliance
      */
-    Android("01", "Android"), //
+    Android("01", "Android"),
 
     /**
      * A proprietary operating system supplied by Research In Motion for its BlackBerry handheld devices
      */
-    BlackBerry_OS("02", "BlackBerry OS"), //
+    BlackBerry_OS("02", "BlackBerry OS"),
 
     /**
      * A proprietary operating system based on Mac OS X supplied by Apple for its iPhone, iPad and iPod Touch handheld
      * devices
      */
-    iOS("03", "iOS"), //
+    iOS("03", "iOS"),
 
     /**
      * An operating system based on the Linux kernel
      */
-    Linux("04", "Linux"), //
+    Linux("04", "Linux"),
 
     /**
      * Proprietary 'Classic' operating system supplied by Apple on Macintosh computers up to 2002. DEPRECATED - use code
      * 13 for all Mac OS versions
      */
-    Mac_OS("05", "Mac OS"), //
+    Mac_OS("05", "Mac OS"),
 
     /**
      * Proprietary 'OS X' operating system supplied by Apple on Macintosh computers from 2001/2002. DEPRECATED - use
      * code 13 for all Mac OS versions
      */
-    Mac_OS_X("06", "Mac OS X"), //
+    Mac_OS_X("06", "Mac OS X"),
 
     /**
      * A proprietary operating system (AKA Garnet OS) originally developed for handheld devices
      */
-    Palm_OS("07", "Palm OS"), //
+    Palm_OS("07", "Palm OS"),
 
     /**
      * A proprietry Linux-based operating system for handheld devices, originally developed by Palm (now owned by LG)
      */
-    webOS("08", "webOS"), //
+    webOS("08", "webOS"),
 
     /**
      * An operating system for hand-held devices, originally developed as a proprietary system, but planned to become
      * wholly Open Source by 2010
      */
-    Symbian("09", "Symbian"), //
+    Symbian("09", "Symbian"),
 
     /**
      * A proprietary operating system supplied by Microsoft
      */
-    Windows("10", "Windows"), //
+    Windows("10", "Windows"),
 
     /**
      * A proprietary operating system (AKA Windows Embedded Compact, WinCE) supplied by Microsoft for small-scale
      * devices
      */
-    Windows_CE("11", "Windows CE"), //
+    Windows_CE("11", "Windows CE"),
 
     /**
      * A proprietary operating system supplied by Microsoft for mobile devices
      */
-    Windows_Mobile("12", "Windows Mobile"), //
+    Windows_Mobile("12", "Windows Mobile"),
 
     /**
      * A proprietary operating system supplied by Apple on Macintosh computers
      */
-    Mac_OS_("13", "Mac OS"), //
+    Mac_OS_("13", "Mac OS"),
 
     /**
      * A proprietary operating system supplied by Microsoft for mobile devices, successor to Windows Mobile

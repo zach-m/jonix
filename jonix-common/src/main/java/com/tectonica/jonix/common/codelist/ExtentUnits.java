@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,15 +48,15 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
     /**
      * Words of natural language text
      */
-    Words("02", "Words"), //
+    Words("02", "Words"),
 
-    Pages("03", "Pages"), //
+    Pages("03", "Pages"),
 
-    Hours_integer_and_decimals("04", "Hours (integer and decimals)"), //
+    Hours_integer_and_decimals("04", "Hours (integer and decimals)"),
 
-    Minutes_integer_and_decimals("05", "Minutes (integer and decimals)"), //
+    Minutes_integer_and_decimals("05", "Minutes (integer and decimals)"),
 
-    Seconds_integer_only("06", "Seconds (integer only)"), //
+    Seconds_integer_only("06", "Seconds (integer only)"),
 
     /**
      * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3-6
@@ -64,7 +64,7 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
      * significantly more or less than this. Note that track breaks are not necessarily aligned with structural breaks
      * in the text (eg chapter breaks)
      */
-    Tracks("11", "Tracks"), //
+    Tracks("11", "Tracks"),
 
     /**
      * Of an audiobook on multiple Red Book audio CDs. Conventionally, each disc is 60-70 minutes of running time, and
@@ -74,26 +74,26 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Discs("12", "Discs"), //
+    Discs("12", "Discs"),
 
     /**
      * Fill with leading zeroes if any elements are missing
      */
-    Hours_HHH("14", "Hours HHH"), //
+    Hours_HHH("14", "Hours HHH"),
 
     /**
      * Fill with leading zeroes if any elements are missing
      */
-    Hours_and_minutes_HHHMM("15", "Hours and minutes HHHMM"), //
+    Hours_and_minutes_HHHMM("15", "Hours and minutes HHHMM"),
 
     /**
      * Fill with leading zeroes if any elements are missing
      */
-    Hours_minutes_seconds_HHHMMSS("16", "Hours minutes seconds HHHMMSS"), //
+    Hours_minutes_seconds_HHHMMSS("16", "Hours minutes seconds HHHMMSS"),
 
-    Bytes("17", "Bytes"), //
+    Bytes("17", "Bytes"),
 
-    Kbytes("18", "Kbytes"), //
+    Kbytes("18", "Kbytes"),
 
     Mbytes("19", "Mbytes");
 

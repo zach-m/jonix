@@ -45,12 +45,12 @@ public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
     /**
      * The price condition quantity represents a time period
      */
-    Time_period("01", "Time period"), //
+    Time_period("01", "Time period"),
 
     /**
      * The price condition quantity is a number of updates
      */
-    Number_of_updates("02", "Number of updates"), //
+    Number_of_updates("02", "Number of updates"),
 
     /**
      * Use with Price condition type 06 and a Quantity of units. Price is valid when purchased with a specific number of

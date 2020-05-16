@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,7 +48,7 @@ public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
     /**
      * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * 10-character ISBN of manifestation of work, when this is the only work identifier available - now DEPRECATED in
@@ -57,33 +57,33 @@ public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
      * used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13 of the
      * manifestation of the work)
      */
-    ISBN_10("02", "ISBN-10"), //
+    ISBN_10("02", "ISBN-10"),
 
     /**
      * Digital Object Identifier (variable length and character set)
      */
-    DOI("06", "DOI"), //
+    DOI("06", "DOI"),
 
     /**
      * International Standard Text Code (16 characters: numerals and letters A-F, unhyphenated)
      */
-    ISTC("11", "ISTC"), //
+    ISTC("11", "ISTC"),
 
     /**
      * 13-character ISBN of manifestation of work, when this is the only work identifier available (13 digits, without
      * spaces or hyphens)
      */
-    ISBN_13("15", "ISBN-13"), //
+    ISBN_13("15", "ISBN-13"),
 
     /**
      * International Standard Recording Code
      */
-    ISRC("18", "ISRC"), //
+    ISRC("18", "ISRC"),
 
     /**
      * Global Library Manifestation Identifier, OCLC's 'manifestation cluster' ID
      */
-    GLIMIR("32", "GLIMIR"), //
+    GLIMIR("32", "GLIMIR"),
 
     /**
      * OCLC Work Identifier

@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -49,43 +49,43 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * World Customs Organization Harmonized Commodity Coding and Description System. Use 6 (or occasionally 8 or 10)
      * digits, without punctuation
      */
-    WCO_Harmonized_System("01", "WCO Harmonized System"), //
+    WCO_Harmonized_System("01", "WCO Harmonized System"),
 
     /**
      * UN Standard Product and Service Classification. Use 8 (or occasionally 10) digits, without punctuation
      */
-    UNSPSC("02", "UNSPSC"), //
+    UNSPSC("02", "UNSPSC"),
 
     /**
      * UK Revenue and Customs classifications, based on the Harmonized System
      */
-    HMRC("03", "HMRC"), //
+    HMRC("03", "HMRC"),
 
     /**
      * German export trade classification, based on the Harmonised System
      */
-    Warenverzeichnis_f_r_die_Au_enhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"), //
+    Warenverzeichnis_f_r_die_Au_enhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"),
 
     /**
      * EU TARIC codes, an extended version of the Harmonized System. Use 10 digits, without punctuation
      */
-    TARIC("05", "TARIC"), //
+    TARIC("05", "TARIC"),
 
     /**
      * Centraal Boekhuis free classification field for publishers
      */
-    Fondsgroep("06", "Fondsgroep"), //
+    Fondsgroep("06", "Fondsgroep"),
 
     /**
      * A product category (not a subject classification) assigned by the sender
      */
-    Sender_s_product_category("07", "Sender’s product category"), //
+    Sender_s_product_category("07", "Sender’s product category"),
 
     /**
      * Product classification maintained by the Chinese General Administration of Press and Publication
      * (http://www.gapp.gov.cn)
      */
-    GAPP_Product_Class("08", "GAPP Product Class"), //
+    GAPP_Product_Class("08", "GAPP Product Class"),
 
     /**
      * Statistical Classification of Products by Activity in the European Economic Community, see
@@ -93,19 +93,19 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * digits, without punctuation. For example, printed children's books are '58.11.13', but the periods are normally
      * ommited in ONIX
      */
-    CPA("09", "CPA"), //
+    CPA("09", "CPA"),
 
     /**
      * Mercosur/Mercosul Common Nomenclature, based on the Harmonised System. Use 8 digits, without punctuation
      */
-    NCM("10", "NCM"), //
+    NCM("10", "NCM"),
 
     /**
      * Common Procurement Vocabulary, uses to describe requirements for tender for public tendering and procurement
      * within the EU. Code is a nine digit number (including the check digit). See
      * http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=URISERV:l22008
      */
-    CPV("11", "CPV"), //
+    CPV("11", "CPV"),
 
     /**
      * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)

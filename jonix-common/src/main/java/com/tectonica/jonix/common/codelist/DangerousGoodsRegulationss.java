@@ -47,13 +47,13 @@ public enum DangerousGoodsRegulationss implements OnixCodelist, CodeList243 {
     /**
      * The product is not classed as dangerous goods. The default if information is omitted
      */
-    Inapplicable("00", "Inapplicable"), //
+    Inapplicable("00", "Inapplicable"),
 
-    GHS("01", "GHS"), //
+    GHS("01", "GHS"),
 
-    Transport("02", "Transport"), //
+    Transport("02", "Transport"),
 
-    Storage("03", "Storage"), //
+    Storage("03", "Storage"),
 
     Waste("04", "Waste");
 

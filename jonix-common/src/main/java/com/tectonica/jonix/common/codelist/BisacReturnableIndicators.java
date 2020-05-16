@@ -42,11 +42,11 @@ interface CodeList66 {
  *      Codelist 66 in Reference Guide</a>
  */
 public enum BisacReturnableIndicators implements OnixCodelist, CodeList66 {
-    No_not_returnable("N", "No, not returnable"), //
+    No_not_returnable("N", "No, not returnable"),
 
-    Yes_returnable_full_copies_only("Y", "Yes, returnable, full copies only"), //
+    Yes_returnable_full_copies_only("Y", "Yes, returnable, full copies only"),
 
-    Yes_returnable_stripped_cover("S", "Yes, returnable, stripped cover"), //
+    Yes_returnable_stripped_cover("S", "Yes, returnable, stripped cover"),
 
     /**
      * Contact publisher for requirements and/or authorization

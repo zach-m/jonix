@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,92 +48,92 @@ public enum ChineseSchoolGrades implements OnixCodelist, CodeList227 {
     /**
      * Typical age less than 3
      */
-    Preschool("P", "Preschool"), //
+    Preschool("P", "Preschool"),
 
     /**
      * Typical age 3-5
      */
-    Kindergarten("K", "Kindergarten"), //
+    Kindergarten("K", "Kindergarten"),
 
     /**
      * Typical age 6
      */
-    Primary_school_First_grade("1", "Primary school First grade"), //
+    Primary_school_First_grade("1", "Primary school First grade"),
 
     /**
      * Typical age 7
      */
-    Primary_school_Second_grade("2", "Primary school Second grade"), //
+    Primary_school_Second_grade("2", "Primary school Second grade"),
 
     /**
      * Typical age 8
      */
-    Primary_school_Third_grade("3", "Primary school Third grade"), //
+    Primary_school_Third_grade("3", "Primary school Third grade"),
 
     /**
      * Typical age 9
      */
-    Primary_school_Fourth_grade("4", "Primary school Fourth grade"), //
+    Primary_school_Fourth_grade("4", "Primary school Fourth grade"),
 
     /**
      * Typical age 10
      */
-    Primary_school_Fifth_grade("5", "Primary school Fifth grade"), //
+    Primary_school_Fifth_grade("5", "Primary school Fifth grade"),
 
     /**
      * Typical age 11
      */
-    Primary_school_Sixth_grade("6", "Primary school Sixth grade"), //
+    Primary_school_Sixth_grade("6", "Primary school Sixth grade"),
 
     /**
      * Typical age 12
      */
-    Junior_secondary_school_Seventh_grade("7", "Junior secondary school Seventh grade"), //
+    Junior_secondary_school_Seventh_grade("7", "Junior secondary school Seventh grade"),
 
     /**
      * Typical age 13
      */
-    Junior_secondary_school_Eighth_grade("8", "Junior secondary school Eighth grade"), //
+    Junior_secondary_school_Eighth_grade("8", "Junior secondary school Eighth grade"),
 
     /**
      * Typical age 14
      */
-    Junior_secondary_school_Ninth_grade("9", "Junior secondary school Ninth grade"), //
+    Junior_secondary_school_Ninth_grade("9", "Junior secondary school Ninth grade"),
 
     /**
      * Typical age 15
      */
-    Senior_secondary_school_Tenth_grade("10", "Senior secondary school Tenth grade"), //
+    Senior_secondary_school_Tenth_grade("10", "Senior secondary school Tenth grade"),
 
     /**
      * Typical age 16
      */
-    Senior_secondary_school_Eleventh_grade("11", "Senior secondary school Eleventh grade"), //
+    Senior_secondary_school_Eleventh_grade("11", "Senior secondary school Eleventh grade"),
 
     /**
      * Typical age 17
      */
-    Senior_secondary_school_Twelfth_grade("12", "Senior secondary school Twelfth grade"), //
+    Senior_secondary_school_Twelfth_grade("12", "Senior secondary school Twelfth grade"),
 
     /**
      * Typical age 18
      */
-    University_first_year("13", "University first year"), //
+    University_first_year("13", "University first year"),
 
     /**
      * Typical age 19
      */
-    University_second_year("14", "University second year"), //
+    University_second_year("14", "University second year"),
 
     /**
      * Typical age 20
      */
-    University_third_year("15", "University third year"), //
+    University_third_year("15", "University third year"),
 
     /**
      * Typical age 21
      */
-    University_fourth_year("16", "University fourth year"), //
+    University_fourth_year("16", "University fourth year"),
 
     /**
      * Typical age 22+

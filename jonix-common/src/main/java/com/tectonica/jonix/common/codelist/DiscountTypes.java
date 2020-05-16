@@ -45,17 +45,17 @@ public enum DiscountTypes implements OnixCodelist, CodeList170 {
     /**
      * Discount applied to all units in a qualifying order. The default if no &lt;DiscountType&gt; is specified
      */
-    Rising_discount("01", "Rising discount"), //
+    Rising_discount("01", "Rising discount"),
 
     /**
      * Additional discount may be applied retrospectively, based on number of units ordered over a specific period
      */
-    Rising_discount_cumulative("02", "Rising discount (cumulative)"), //
+    Rising_discount_cumulative("02", "Rising discount (cumulative)"),
 
     /**
      * Discount applied to marginal units in a qualifying order
      */
-    Progressive_discount("03", "Progressive discount"), //
+    Progressive_discount("03", "Progressive discount"),
 
     /**
      * Previous orders within a specific time period are counted when calculating a progressive discount

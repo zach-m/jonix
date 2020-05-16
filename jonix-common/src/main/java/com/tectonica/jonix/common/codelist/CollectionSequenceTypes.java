@@ -45,36 +45,36 @@ public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
     /**
      * A short explanatory label for the sequence should be provided in &lt;CollectionSequenceTypeName&gt;
      */
-    Proprietary("01", "Proprietary"), //
+    Proprietary("01", "Proprietary"),
 
     /**
      * Order as specified by the title, eg by volume or part number sequence, provided for confirmation
      */
-    Title_order("02", "Title order"), //
+    Title_order("02", "Title order"),
 
     /**
      * Order of publication of products within the collection
      */
-    Publication_order("03", "Publication order"), //
+    Publication_order("03", "Publication order"),
 
     /**
      * Order defined by a continuing narrative or temporal sequence within products in the collection. Applicable to
      * either fiction or to non-fiction (eg within a collection of history textbooks)
      */
-    Temporal_narrative_order("04", "Temporal/narrative order"), //
+    Temporal_narrative_order("04", "Temporal/narrative order"),
 
     /**
      * Original publication order, for a republished collection or collected works originally published outside a
      * collection
      */
-    Original_publication_order("05", "Original publication order"), //
+    Original_publication_order("05", "Original publication order"),
 
     /**
      * Where it is different from the title order, publication order, narrative order etc
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Suggested_reading_order("06", "Suggested reading order"), //
+    Suggested_reading_order("06", "Suggested reading order"),
 
     /**
      * Where it is different from the title order, publication order, narrative order, reading order etc

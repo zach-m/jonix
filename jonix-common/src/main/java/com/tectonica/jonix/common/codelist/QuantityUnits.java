@@ -45,13 +45,13 @@ public enum QuantityUnits implements OnixCodelist, CodeList169 {
     /**
      * The quantity refers to a unit implied by the quantity type
      */
-    Units("00", "Units"), //
+    Units("00", "Units"),
 
-    Days("07", "Days"), //
+    Days("07", "Days"),
 
-    Weeks("08", "Weeks"), //
+    Weeks("08", "Weeks"),
 
-    Months("09", "Months"), //
+    Months("09", "Months"),
 
     Years("10", "Years");
 

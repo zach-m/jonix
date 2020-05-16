@@ -48,7 +48,7 @@ public enum MarketDateRoles implements OnixCodelist, CodeList67 {
      * The nominal date of publication in this market. If there is a strict embargo on retail sales before the expected
      * date, it should be specified separately as an embargo date
      */
-    Publication_date("01", "Publication date"), //
+    Publication_date("01", "Publication date"),
 
     /**
      * If there is an embargo on retail sales in this market before a certain date, the date from which the embargo is

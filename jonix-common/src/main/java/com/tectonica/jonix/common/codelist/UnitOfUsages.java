@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -48,59 +48,59 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     /**
      * Maximum number of copies that may be made of a permitted extract
      */
-    Copies("01", "Copies"), //
+    Copies("01", "Copies"),
 
     /**
      * Maximum number of characters in a permitted extract for a specified usage
      */
-    Characters("02", "Characters"), //
+    Characters("02", "Characters"),
 
     /**
      * Maximum number of words in a permitted extract for a specified usage
      */
-    Words("03", "Words"), //
+    Words("03", "Words"),
 
     /**
      * Maximum number of pages in a permitted extract for a specified usage
      */
-    Pages("04", "Pages"), //
+    Pages("04", "Pages"),
 
     /**
      * Maximum percentage of total content in a permitted extract for a specified usage
      */
-    Percentage("05", "Percentage"), //
+    Percentage("05", "Percentage"),
 
     /**
      * Maximum number of devices in 'share group'
      */
-    Devices("06", "Devices"), //
+    Devices("06", "Devices"),
 
     /**
      * Maximum number of concurrent users. NB where the number of concurrent users is specifically not limited, set the
      * number of concurrent users to zero
      */
-    Concurrent_users("07", "Concurrent users"), //
+    Concurrent_users("07", "Concurrent users"),
 
     /**
      * Maximum number of licenced individual users, independent of concurrency of use
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Users("15", "Users"), //
+    Users("15", "Users"),
 
     /**
      * A 'class' is a group of learners attending a specific course or lesson and generally taught as a group
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Concurrent_classes("19", "Concurrent classes"), //
+    Concurrent_classes("19", "Concurrent classes"),
 
     /**
      * Maximum number of classes of learners, independent of concurrency of use
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Classes("20", "Classes"), //
+    Classes("20", "Classes"),
 
     /**
      * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
@@ -108,28 +108,28 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Percentage_per_time_period("08", "Percentage per time period"), //
+    Percentage_per_time_period("08", "Percentage per time period"),
 
     /**
      * Maximum time period in days (beginning from product purchase or activation)
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Days("09", "Days"), //
+    Days("09", "Days"),
 
     /**
      * Maximum time period in weeks
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Weeks("13", "Weeks"), //
+    Weeks("13", "Weeks"),
 
     /**
      * Maximum time period in months
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Months("14", "Months"), //
+    Months("14", "Months"),
 
     /**
      * Maximum about of time in hours, minutes and seconds allowed in a permitted extract for a specified usage, in the
@@ -137,53 +137,53 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Hours_minutes_and_seconds("16", "Hours minutes and seconds"), //
+    Hours_minutes_and_seconds("16", "Hours minutes and seconds"),
 
     /**
      * Maximum time period in days (beginning from the product publication date). In effect, this defines a fixed end
      * date for the license independent of the purchase or activation date
      */
-    Days_fixed_start("27", "Days (fixed start)"), //
+    Days_fixed_start("27", "Days (fixed start)"),
 
     /**
      * Maximum time period in weeks
      */
-    Weeks_fixed_start("28", "Weeks (fixed start)"), //
+    Weeks_fixed_start("28", "Weeks (fixed start)"),
 
     /**
      * Maximum time period in months
      */
-    Months_fixed_start("29", "Months (fixed start)"), //
+    Months_fixed_start("29", "Months (fixed start)"),
 
     /**
      * Maximum number of times a specified usage event may occur (in the lifetime of the product)
      */
-    Times("10", "Times"), //
+    Times("10", "Times"),
 
     /**
      * Maximum frequency a specified usage event may occur (per day)
      */
-    Times_per_day("22", "Times per day"), //
+    Times_per_day("22", "Times per day"),
 
     /**
      * Maximum frequency a specified usage event may occur (per month)
      */
-    Times_per_month("23", "Times per month"), //
+    Times_per_month("23", "Times per month"),
 
     /**
      * Maximum frequency a specified usage event may occur (per year)
      */
-    Times_per_year("24", "Times per year"), //
+    Times_per_year("24", "Times per year"),
 
     /**
      * Maximum resolution of printed or copy/pasted extracts
      */
-    Dots_per_inch("21", "Dots per inch"), //
+    Dots_per_inch("21", "Dots per inch"),
 
     /**
      * Maximum resolution of printed or copy/pasted extracts
      */
-    Dots_per_cm("26", "Dots per cm"), //
+    Dots_per_cm("26", "Dots per cm"),
 
     /**
      * Page number where allowed usage begins. &lt;Quantity&gt; should contain an absolute page number, counting the
@@ -191,14 +191,14 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * pagination). Use with (max number of) Pages, Percentage of content, or End page to specify pages allowed in
      * Preview
      */
-    Allowed_usage_start_page("11", "Allowed usage start page"), //
+    Allowed_usage_start_page("11", "Allowed usage start page"),
 
     /**
      * Page number at which allowed usage ends. &lt;Quantity&gt; should contain an absolute page number, counting the
      * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
      * pagination). Use with Start page to specify pages allowed in a preview
      */
-    Allowed_usage_end_page("12", "Allowed usage end page"), //
+    Allowed_usage_end_page("12", "Allowed usage end page"),
 
     /**
      * Time at which allowed usage begins. &lt;Quantity&gt; should contain an absolute time, counting from the beginning
@@ -207,7 +207,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Allowed_usage_start_time("17", "Allowed usage start time"), //
+    Allowed_usage_start_time("17", "Allowed usage start time"),
 
     /**
      * Time at which allowed usage ends. &lt;Quantity&gt; should contain an absolute time, counting from the beginning
@@ -216,7 +216,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Allowed_usage_end_time("18", "Allowed usage end time"), //
+    Allowed_usage_end_time("18", "Allowed usage end time"),
 
     /**
      * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
@@ -224,21 +224,21 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    Percentage_per_time_period_("08", "Percentage per time period"), //
+    Percentage_per_time_period_("08", "Percentage per time period"),
 
     /**
      * Maximum time period in days (beginning from product purchase or activation)
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    Days_("09", "Days"), //
+    Days_("09", "Days"),
 
     /**
      * Maximum time period in weeks
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    Weeks_("13", "Weeks"), //
+    Weeks_("13", "Weeks"),
 
     /**
      * Maximum time period in months
