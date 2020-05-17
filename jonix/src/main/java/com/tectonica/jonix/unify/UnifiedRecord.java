@@ -20,10 +20,18 @@
 package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.JonixSource;
-import com.tectonica.jonix.unify.base.BaseProduct;
 
-public class BaseRecord extends UnifiedRecord<BaseProduct> {
-    public BaseRecord(JonixSource source, BaseProduct product) {
-        super(source, product);
+public class UnifiedRecord<P extends UnifiedProduct> {
+    public final JonixSource source;
+    public final P product;
+
+    public UnifiedRecord(JonixSource source, P product) {
+        this.source = source;
+        this.product = product;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("{source=%s, product=%s}", source, product);
     }
 }

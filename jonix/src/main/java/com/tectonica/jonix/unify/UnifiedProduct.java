@@ -19,11 +19,8 @@
 
 package com.tectonica.jonix.unify;
 
-import com.tectonica.jonix.JonixSource;
-import com.tectonica.jonix.unify.base.BaseProduct;
+import com.tectonica.jonix.common.OnixProduct;
 
-public class BaseRecord extends UnifiedRecord<BaseProduct> {
-    public BaseRecord(JonixSource source, BaseProduct product) {
-        super(source, product);
-    }
+public interface UnifiedProduct {
+    OnixProduct getRawProduct();
 }

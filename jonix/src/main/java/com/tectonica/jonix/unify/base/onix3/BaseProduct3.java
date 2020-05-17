@@ -31,7 +31,8 @@ public class BaseProduct3 extends BaseProduct {
     private static final long serialVersionUID = 1L;
 
     public BaseProduct3(Product product) {
-        onixProduct = product;
+        rawProduct = product;
+
         info = new BaseInfo3(product);
         description = new BaseDescription3(product);
         publishingDetails = new BasePublishingDetails3(product);

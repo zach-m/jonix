@@ -20,7 +20,11 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.unify.BaseRecord;
+import com.tectonica.jonix.unify.CustomUnifier;
 import com.tectonica.jonix.unify.JonixUnifier;
+import com.tectonica.jonix.unify.UnifiedHeader;
+import com.tectonica.jonix.unify.UnifiedProduct;
+import com.tectonica.jonix.unify.UnifiedRecord;
 import com.tectonica.jonix.util.GlobScanner;
 import com.tectonica.xmlchunk.XmlChunkerContext;
 import org.slf4j.Logger;
@@ -246,11 +250,10 @@ public class JonixRecords implements Iterable<JonixRecord> {
     }
 
     /**
-     * Registers a listener for <code>SourceEnd</code> event, which occurs when after all records have been processed
-     * in the recently opened source. In addition to all the information that was available for event-listeners
-     * registered with {@link #onSourceStart(OnSourceEvent)}, the {@link JonixSource} when this event is fired also
-     * includes {@link JonixSource#productsProcessedCount()}, with the final count of ONIX Products processed from the
-     * source.
+     * Registers a listener for <code>SourceEnd</code> event, which occurs when after all records have been processed in
+     * the recently opened source. In addition to all the information that was available for event-listeners registered
+     * with {@link #onSourceStart(OnSourceEvent)}, the {@link JonixSource} when this event is fired also includes {@link
+     * JonixSource#productsProcessedCount()}, with the final count of ONIX Products processed from the source.
      * <p>
      * NOTE: this method can be called more than once to register several event-listeners
      */
@@ -265,6 +268,11 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
     public Stream<BaseRecord> streamUnified() {
         return stream().map(JonixUnifier::unifyRecord);
+    }
+
+    public <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> Stream<R> streamUnified(
+        CustomUnifier<P, H, R> unifier) {
+        return stream().map(record -> JonixUnifier.unifyRecord(record, unifier));
     }
 
     @Override
@@ -393,7 +401,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
             // the context now points to the first product in the input-stream, we can start iterate
             final Element firstProduct = firstElement;
-            return new Iterator<JonixRecord>() {
+            return new Iterator<>() {
                 Element nextProduct = firstProduct;
 
                 @Override

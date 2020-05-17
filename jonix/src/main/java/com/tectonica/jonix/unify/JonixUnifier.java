@@ -24,38 +24,47 @@ import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.unify.base.BaseHeader;
 import com.tectonica.jonix.unify.base.BaseProduct;
-import com.tectonica.jonix.unify.base.onix2.BaseHeader2;
-import com.tectonica.jonix.unify.base.onix2.BaseProduct2;
-import com.tectonica.jonix.unify.base.onix3.BaseHeader3;
-import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 
 /**
- * This class provides static services for converting version-specific ONIX data into its version-less equivalent
- * from the <code>com.tectonica.jonix.unify.base</code> package.
+ * This class provides static services for converting version-specific ONIX data into its version-less equivalent from
+ * the <code>com.tectonica.jonix.unify.base</code> package.
  */
 public class JonixUnifier {
 
+    private static final BaseUnifier baseUnifier = new BaseUnifier();
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // unify into the bundled ("Base") product class
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public static BaseRecord unifyRecord(JonixRecord record) {
-        return new BaseRecord(record.source, unifyProduct(record.product));
+        return unifyRecord(record, baseUnifier);
     }
 
     public static BaseProduct unifyProduct(OnixProduct onixProduct) {
-        if (onixProduct instanceof com.tectonica.jonix.onix2.Product) {
-            return new BaseProduct2((com.tectonica.jonix.onix2.Product) onixProduct);
-        }
-        if (onixProduct instanceof com.tectonica.jonix.onix3.Product) {
-            return new BaseProduct3((com.tectonica.jonix.onix3.Product) onixProduct);
-        }
-        throw new UnsupportedOperationException();
+        return unifyProduct(onixProduct, baseUnifier);
     }
 
     public static BaseHeader unifyHeader(OnixHeader onixHeader) {
-        if (onixHeader instanceof com.tectonica.jonix.onix2.Header) {
-            return new BaseHeader2((com.tectonica.jonix.onix2.Header) onixHeader);
-        }
-        if (onixHeader instanceof com.tectonica.jonix.onix3.Header) {
-            return new BaseHeader3((com.tectonica.jonix.onix3.Header) onixHeader);
-        }
-        throw new UnsupportedOperationException();
+        return unifyHeader(onixHeader, baseUnifier);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // unify into a user-defined product class
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> R unifyRecord(
+        JonixRecord record, CustomUnifier<P, H, R> customUnifier) {
+        return customUnifier.unifiedRecord(record);
+    }
+
+    public static <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> P unifyProduct(
+        OnixProduct onixProduct, CustomUnifier<P, H, R> customUnifier) {
+        return customUnifier.unifiedProduct(onixProduct);
+    }
+
+    public static <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> H unifyHeader(
+        OnixHeader onixHeader, CustomUnifier<P, H, R> customUnifier) {
+        return customUnifier.unifiedHeader(onixHeader);
     }
 }

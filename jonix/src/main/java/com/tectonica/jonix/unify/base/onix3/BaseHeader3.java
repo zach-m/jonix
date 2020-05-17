@@ -35,6 +35,8 @@ public class BaseHeader3 extends BaseHeader {
     private static final long serialVersionUID = 1L;
 
     public BaseHeader3(Header header) {
+        rawHeader = header;
+
         fromCompany = header.sender().senderName().value;
         fromPerson = header.sender().contactName().value;
         fromEmail = header.sender().emailAddress().value;
