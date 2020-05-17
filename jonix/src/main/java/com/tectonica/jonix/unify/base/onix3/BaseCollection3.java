@@ -36,19 +36,23 @@ public class BaseCollection3 extends BaseCollection {
 
     @SuppressWarnings("serial")
     public BaseCollection3(final Collection c) {
-        titles = new BaseTitles3(c);
-        mainTitle = (titles.size() > 0) ? titles.get(0).titleText : null;
+        extract(c, this);
+    }
+
+    public static void extract(Collection c, BaseCollection dest) {
+        dest.titles = new BaseTitles3(c);
+        dest.mainTitle = (dest.titles.size() > 0) ? dest.titles.get(0).titleText : null;
 
         // TODO: also look at Collection -> TitleDetail -> TitleElement -> PartNumber
-        numberWithinSeries = (c.collectionSequences().isEmpty()) ? null
+        dest.numberWithinSeries = (c.collectionSequences().isEmpty()) ? null
             : c.collectionSequences().get(0).collectionSequenceNumber().value;
 
-        seriesIdentifiers = new LazyList<JonixCollectionIdentifier>() {
+        dest.seriesIdentifiers = new LazyList<JonixCollectionIdentifier>() {
             @Override
             protected List<JonixCollectionIdentifier> initialize() {
                 return c.collectionIdentifiers().asStructs();
             }
         };
-        contributors = new BaseContributors3(c);
+        dest.contributors = new BaseContributors3(c);
     }
 }

@@ -38,21 +38,25 @@ public class BaseDescription3 extends BaseDescription {
     private final transient AudienceRange audienceRange;
 
     public BaseDescription3(Product product) {
+        extract(product, this);
+
+        DescriptiveDetail dd = product.descriptiveDetail();
+        audienceRange = dd.exists() ? dd.audienceRanges().first().orElse(null) : null;
+    }
+
+    public static void extract(Product product, BaseDescription dest) {
         DescriptiveDetail dd = product.descriptiveDetail();
         if (dd.exists()) {
-            editionType = dd.editionTypes().firstValue().orElse(null);
-            editionNumber = dd.editionNumber().value;
+            dest.editionType = dd.editionTypes().firstValue().orElse(null);
+            dest.editionNumber = dd.editionNumber().value;
             ProductForms productFormValue = dd.productForm().value;
-            productForm = (productFormValue == null) ? null : productFormValue.description;
+            dest.productForm = (productFormValue == null) ? null : productFormValue.description;
             JonixExtent jNumberOfPages = dd.extents().findAsStruct(ExtentTypes.Main_content_page_count).orElse(null);
-            numberOfPages = (jNumberOfPages == null || jNumberOfPages.extentValue == null) ? null
+            dest.numberOfPages = (jNumberOfPages == null || jNumberOfPages.extentValue == null) ? null
                 : jNumberOfPages.extentValue.toString();
-            languages = dd.languages().asStructs();
-            audiences = dd.audiences().asStructs();
-            audienceCodes = dd.audienceCodes().values();
-            audienceRange = dd.audienceRanges().first().orElse(null);
-        } else {
-            audienceRange = null;
+            dest.languages = dd.languages().asStructs();
+            dest.audiences = dd.audiences().asStructs();
+            dest.audienceCodes = dd.audienceCodes().values();
         }
     }
 

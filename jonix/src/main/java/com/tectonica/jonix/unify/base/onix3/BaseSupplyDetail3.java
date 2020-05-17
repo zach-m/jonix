@@ -31,9 +31,13 @@ public class BaseSupplyDetail3 extends BaseSupplyDetail {
     private static final long serialVersionUID = 1L;
 
     public BaseSupplyDetail3(SupplyDetail supplyDetail) {
-        supplierRole = supplyDetail.supplier().supplierRole().value;
-        supplierName = supplyDetail.supplier().supplierName().value;
-        availability = supplyDetail.productAvailability().value.name();
-        prices = new BasePrices3(supplyDetail);
+        extract(supplyDetail, this);
+    }
+
+    public static void extract(SupplyDetail supplyDetail, BaseSupplyDetail dest) {
+        dest.supplierRole = supplyDetail.supplier().supplierRole().value;
+        dest.supplierName = supplyDetail.supplier().supplierName().value;
+        dest.availability = supplyDetail.productAvailability().value.name();
+        dest.prices = new BasePrices3(supplyDetail);
     }
 }

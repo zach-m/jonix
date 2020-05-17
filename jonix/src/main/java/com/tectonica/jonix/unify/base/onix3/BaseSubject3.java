@@ -39,12 +39,16 @@ public class BaseSubject3 extends BaseSubject {
     }
 
     public BaseSubject3(Subject s) {
-        subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
-        subjectCode = s.subjectCode().value;
-        subjectHeadingText = pickSubjectHeadingText(s);
+        extract(s, this);
     }
 
-    private String pickSubjectHeadingText(Subject subject) {
+    public static void extract(Subject s, BaseSubject dest) {
+        dest.subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
+        dest.subjectCode = s.subjectCode().value;
+        dest.subjectHeadingText = pickSubjectHeadingText(s);
+    }
+
+    private static String pickSubjectHeadingText(Subject subject) {
         if (!subject.subjectHeadingTexts().isEmpty()) {
             for (SubjectHeadingText sht : subject.subjectHeadingTexts()) {
                 if (sht.language == null || sht.language == Languages.English) {

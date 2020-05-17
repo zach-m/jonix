@@ -32,11 +32,15 @@ public class BaseSupplyDetail2 extends BaseSupplyDetail {
     private static final long serialVersionUID = 1L;
 
     public BaseSupplyDetail2(SupplyDetail supplyDetail) {
+        extract(supplyDetail, this);
+    }
+
+    public static void extract(SupplyDetail supplyDetail, BaseSupplyDetail dest) {
         final AvailabilityStatuss availabilityCode = supplyDetail.availabilityCode().value;
         // NOTE: AvailabilityStatuss is a required field, we essentially bury here a validation error
-        supplierRole = supplyDetail.supplierRole().value;
-        supplierName = supplyDetail.supplierName().value;
-        availability = (availabilityCode == null) ? null : availabilityCode.name();
-        prices = new BasePrices2(supplyDetail);
+        dest.supplierRole = supplyDetail.supplierRole().value;
+        dest.supplierName = supplyDetail.supplierName().value;
+        dest.availability = (availabilityCode == null) ? null : availabilityCode.name();
+        dest.prices = new BasePrices2(supplyDetail);
     }
 }

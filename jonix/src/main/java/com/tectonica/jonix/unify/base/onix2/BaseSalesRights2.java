@@ -31,11 +31,15 @@ public class BaseSalesRights2 extends BaseSalesRights {
     private static final long serialVersionUID = 1L;
 
     public BaseSalesRights2(SalesRights salesRights) {
-        salesRightsType = salesRights.salesRightsType().value;
-        countries = salesRights.rightsCountrys().values();
-        regions = salesRights.rightsTerritory().value;
-        rightRegions = salesRights.rightsRegions().values();
-        countriesExcluded = null;
-        regionsExcluded = null;
+        extract(salesRights, this);
+    }
+
+    public static void extract(SalesRights salesRights, BaseSalesRights dest) {
+        dest.salesRightsType = salesRights.salesRightsType().value;
+        dest.countries = salesRights.rightsCountrys().values();
+        dest.regions = salesRights.rightsTerritory().value;
+        dest.rightRegions = salesRights.rightsRegions().values();
+        dest.countriesExcluded = null;
+        dest.regionsExcluded = null;
     }
 }

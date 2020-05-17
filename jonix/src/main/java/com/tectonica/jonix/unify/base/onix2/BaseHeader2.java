@@ -33,12 +33,16 @@ public class BaseHeader2 extends BaseHeader {
     private static final long serialVersionUID = 1L;
 
     public BaseHeader2(Header header) {
-        rawHeader = header;
+        extract(header, this);
+    }
 
-        fromCompany = header.fromCompany().value;
-        fromPerson = header.fromPerson().value;
-        fromEmail = header.fromEmail().value;
-        toCompanies = header.toCompany().value().map(Collections::singletonList).orElse(null);
-        sentDate = header.sentDate().value;
+    public static void extract(Header header, BaseHeader dest) {
+        dest.rawHeader = header;
+
+        dest.fromCompany = header.fromCompany().value;
+        dest.fromPerson = header.fromPerson().value;
+        dest.fromEmail = header.fromEmail().value;
+        dest.toCompanies = header.toCompany().value().map(Collections::singletonList).orElse(null);
+        dest.sentDate = header.sentDate().value;
     }
 }

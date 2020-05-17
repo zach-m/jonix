@@ -31,9 +31,13 @@ public class BasePrice3 extends BasePrice {
     private static final long serialVersionUID = 1L;
 
     public BasePrice3(Price p) {
-        priceType = p.priceType().value;
-        priceAmount = p.priceAmount().value;
-        priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
-        currencyCode = p.currencyCode().value;
+        extract(p, this);
+    }
+
+    public static void extract(Price p, BasePrice dest) {
+        dest.priceType = p.priceType().value;
+        dest.priceAmount = p.priceAmount().value;
+        dest.priceAmountAsStr = (dest.priceAmount == null) ? "" : dest.priceAmount.toString();
+        dest.currencyCode = p.currencyCode().value;
     }
 }

@@ -31,9 +31,13 @@ public class BaseTitle2 extends BaseTitle {
     private static final long serialVersionUID = 1L;
 
     public BaseTitle2(Title title) {
-        titleType = title.titleType().value;
-        titleText = noBreaks(title.titleText().value);
-        titleWithoutPrefix = noBreaks(title.titleWithoutPrefix().value);
-        subtitle = noBreaks(title.subtitle().value);
+        extract(title, this);
+    }
+
+    public static void extract(Title title, BaseTitle dest) {
+        dest.titleType = title.titleType().value;
+        dest.titleText = noBreaks(title.titleText().value);
+        dest.titleWithoutPrefix = noBreaks(title.titleWithoutPrefix().value);
+        dest.subtitle = noBreaks(title.subtitle().value);
     }
 }

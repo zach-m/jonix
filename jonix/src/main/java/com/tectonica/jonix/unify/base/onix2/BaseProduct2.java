@@ -31,19 +31,23 @@ public class BaseProduct2 extends BaseProduct {
     private static final long serialVersionUID = 1L;
 
     public BaseProduct2(Product product) {
-        rawProduct = product;
+        extract(product, this);
+    }
 
-        info = new BaseInfo2(product);
-        description = new BaseDescription2(product);
-        publishingDetails = new BasePublishingDetails2(product);
-        titles = new BaseTitles2(product);
-        contributors = new BaseContributors2(product);
-        collections = new BaseCollections2(product);
-        subjects = new BaseSubjects2(product);
-        texts = new BaseTexts2(product);
-        publishers = new BasePublishers2(product);
-        imprints = new BaseImprints2(product);
-        supplyDetails = new BaseSupplyDetails2(product);
-        salesRightss = new BaseSalesRightss2(product);
+    public static void extract(Product product, BaseProduct dest) {
+        dest.rawProduct = product;
+
+        dest.info = new BaseInfo2(product);
+        dest.description = new BaseDescription2(product);
+        dest.publishingDetails = new BasePublishingDetails2(product);
+        dest.titles = new BaseTitles2(product);
+        dest.contributors = new BaseContributors2(product);
+        dest.collections = new BaseCollections2(product);
+        dest.subjects = new BaseSubjects2(product);
+        dest.texts = new BaseTexts2(product);
+        dest.publishers = new BasePublishers2(product);
+        dest.imprints = new BaseImprints2(product);
+        dest.supplyDetails = new BaseSupplyDetails2(product);
+        dest.salesRightss = new BaseSalesRightss2(product);
     }
 }

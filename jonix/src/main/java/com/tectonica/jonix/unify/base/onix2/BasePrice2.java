@@ -32,9 +32,13 @@ public class BasePrice2 extends BasePrice {
     private static final long serialVersionUID = 1L;
 
     public BasePrice2(Price p) {
-        priceType = p.priceTypeCode().value;
-        priceAmount = JPU.convertStringToDoubleSafe(p.priceAmount().value);
-        priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
-        currencyCode = p.currencyCode().value;
+        extract(p, this);
+    }
+
+    public static void extract(Price p, BasePrice dest) {
+        dest.priceType = p.priceTypeCode().value;
+        dest.priceAmount = JPU.convertStringToDoubleSafe(p.priceAmount().value);
+        dest.priceAmountAsStr = (dest.priceAmount == null) ? "" : dest.priceAmount.toString();
+        dest.currencyCode = p.currencyCode().value;
     }
 }

@@ -33,11 +33,15 @@ public class BaseText3 extends BaseText {
     private static final long serialVersionUID = 1L;
 
     public BaseText3(TextContent textContent) {
-        textType = textContent.textType().value;
+        extract(textContent, this);
+    }
+
+    public static void extract(TextContent textContent, BaseText dest) {
+        dest.textType = textContent.textType().value;
         Text textElement = pickTextObject(textContent);
         if (textElement != null) { // invalid ONIX
-            textFormat = textElement.textformat;
-            text = textElement.value;
+            dest.textFormat = textElement.textformat;
+            dest.text = textElement.value;
         }
     }
 
@@ -45,7 +49,7 @@ public class BaseText3 extends BaseText {
      * ONIX-3 requires at least one &lt;Text&gt; element, and allow more than one to provide translations in several
      * languages. This simplistic implementation simply prioritizes English.
      */
-    private Text pickTextObject(TextContent textContent) {
+    private static Text pickTextObject(TextContent textContent) {
         if (!textContent.texts().isEmpty()) {
             for (Text text : textContent.texts()) {
                 if (text.language == null || text.language == Languages.English) {

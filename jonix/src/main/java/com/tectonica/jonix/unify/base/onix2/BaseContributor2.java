@@ -33,13 +33,17 @@ public class BaseContributor2 extends BaseContributor {
     private static final long serialVersionUID = 1L;
 
     public BaseContributor2(Contributor c) {
-        contributorRoles = c.contributorRoles().valuesInto(new HashSet<>());
-        sequenceNumber = c.sequenceNumber().value;
-        personName = c.personName().value;
-        personNameKey = c.keyNames().value;
-        personNameBeforeKey = c.namesBeforeKey().value;
-        personNameInverted = c.personNameInverted().value;
-        corporateName = c.corporateName().value;
-        biographicalNote = c.biographicalNote().value;
+        extract(c, this);
+    }
+
+    public static void extract(Contributor c, BaseContributor dest) {
+        dest.contributorRoles = c.contributorRoles().valuesInto(new HashSet<>());
+        dest.sequenceNumber = c.sequenceNumber().value;
+        dest.personName = c.personName().value;
+        dest.personNameKey = c.keyNames().value;
+        dest.personNameBeforeKey = c.namesBeforeKey().value;
+        dest.personNameInverted = c.personNameInverted().value;
+        dest.corporateName = c.corporateName().value;
+        dest.biographicalNote = c.biographicalNote().value;
     }
 }

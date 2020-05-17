@@ -38,16 +38,20 @@ public class BaseCollection2 extends BaseCollection {
 
     @SuppressWarnings("serial")
     public BaseCollection2(final Series c) {
-        mainTitle = c.titleOfSeries().value;
-        numberWithinSeries = c.numberWithinSeries().value;
-        seriesIdentifiers = new LazyList<JonixCollectionIdentifier>() {
+        extract(c, this);
+    }
+
+    public static void extract(Series c, BaseCollection dest) {
+        dest.mainTitle = c.titleOfSeries().value;
+        dest.numberWithinSeries = c.numberWithinSeries().value;
+        dest.seriesIdentifiers = new LazyList<>() {
             @Override
             protected List<JonixCollectionIdentifier> initialize() {
                 return sidsToCids(c.seriesIdentifiers().asStructs());
             }
         };
-        titles = new BaseTitles2(c);
-        contributors = new BaseContributors2(c);
+        dest.titles = new BaseTitles2(c);
+        dest.contributors = new BaseContributors2(c);
     }
 
     private static List<JonixCollectionIdentifier> sidsToCids(List<JonixSeriesIdentifier> sids) {

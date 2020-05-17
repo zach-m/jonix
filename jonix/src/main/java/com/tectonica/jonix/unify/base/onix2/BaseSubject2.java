@@ -37,8 +37,12 @@ public class BaseSubject2 extends BaseSubject {
     }
 
     public BaseSubject2(Subject s) {
-        subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
-        subjectCode = s.subjectCode().value;
-        subjectHeadingText = s.subjectHeadingText().value;
+        extract(s, this);
+    }
+
+    public static void extract(Subject s, BaseSubject dest) {
+        dest.subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
+        dest.subjectCode = s.subjectCode().value;
+        dest.subjectHeadingText = s.subjectHeadingText().value;
     }
 }

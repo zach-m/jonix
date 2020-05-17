@@ -31,8 +31,12 @@ public class BaseInfo3 extends BaseInfo {
     private static final long serialVersionUID = 1L;
 
     public BaseInfo3(Product product) {
-        recordReference = product.recordReference().value;
-        notificationType = product.notificationType().value;
-        productIds = product.productIdentifiers().asStructs();
+        extract(product, this);
+    }
+
+    public static void extract(Product product, BaseInfo dest) {
+        dest.recordReference = product.recordReference().value;
+        dest.notificationType = product.notificationType().value;
+        dest.productIds = product.productIdentifiers().asStructs();
     }
 }

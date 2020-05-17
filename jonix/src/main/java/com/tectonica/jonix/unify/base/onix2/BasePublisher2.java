@@ -31,7 +31,11 @@ public class BasePublisher2 extends BasePublisher {
     private static final long serialVersionUID = 1L;
 
     public BasePublisher2(Publisher i) {
-        publishingRole = i.publishingRole().value;
-        publisherName = i.publisherName().value;
+        extract(i, this);
+    }
+
+    public static void extract(Publisher i, BasePublisher dest) {
+        dest.publishingRole = i.publishingRole().value;
+        dest.publisherName = i.publisherName().value;
     }
 }

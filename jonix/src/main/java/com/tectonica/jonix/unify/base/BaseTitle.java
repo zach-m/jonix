@@ -37,7 +37,7 @@ public abstract class BaseTitle implements Serializable {
     public String titleWithoutPrefix;
     public String subtitle;
 
-    protected String noBreaks(String s) {
+    protected static String noBreaks(String s) {
         return (s == null || s.isEmpty()) ? s : s.replaceAll("[\\t\\n\\r]", " ").trim();
     }
 }

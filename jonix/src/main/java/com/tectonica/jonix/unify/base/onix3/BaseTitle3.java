@@ -32,11 +32,15 @@ public class BaseTitle3 extends BaseTitle {
     private static final long serialVersionUID = 1L;
 
     public BaseTitle3(TitleDetail title) {
+        extract(title, this);
+    }
+
+    public static void extract(TitleDetail title, BaseTitle dest) {
         // TODO: check out the TitleElementLevel of the TitleElement, especially in collections
         TitleElement titleElement = title.titleElements().get(0); // at least 1 is mandatory
-        titleType = title.titleType().value;
-        titleText = noBreaks(titleElement.titleText().value);
-        titleWithoutPrefix = noBreaks(titleElement.titleWithoutPrefix().value);
-        subtitle = noBreaks(titleElement.subtitle().value);
+        dest.titleType = title.titleType().value;
+        dest.titleText = noBreaks(titleElement.titleText().value);
+        dest.titleWithoutPrefix = noBreaks(titleElement.titleWithoutPrefix().value);
+        dest.subtitle = noBreaks(titleElement.subtitle().value);
     }
 }

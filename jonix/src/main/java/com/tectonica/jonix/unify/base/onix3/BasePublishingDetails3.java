@@ -37,23 +37,27 @@ public class BasePublishingDetails3 extends BasePublishingDetails {
     private static final long serialVersionUID = 1L;
 
     public BasePublishingDetails3(Product product) {
+        extract(product, this);
+    }
+
+    public static void extract(Product product, BasePublishingDetails dest) {
         PublishingDetail pd = product.publishingDetail();
         if (pd.exists()) {
-            publicationDate =
+            dest.publicationDate =
                 pd.publishingDates().findAsStruct(PublishingDateRoles.Publication_date).map(p -> p.date).orElse(null);
-            outOfPrintDate =
+            dest.outOfPrintDate =
                 pd.publishingDates().findAsStruct(PublishingDateRoles.Out_of_print_deletion_date).map(p -> p.date)
                     .orElse(null);
-            countryOfPublication = pd.countryOfPublication().value;
-            cityOfPublication = pickCityOfPublication(product, Languages.English);
+            dest.countryOfPublication = pd.countryOfPublication().value;
+            dest.cityOfPublication = pickCityOfPublication(product, Languages.English);
         } else {
-            publicationDate = null;
-            countryOfPublication = null;
-            cityOfPublication = null;
+            dest.publicationDate = null;
+            dest.countryOfPublication = null;
+            dest.cityOfPublication = null;
         }
     }
 
-    private String pickCityOfPublication(Product product, Languages preferredLanguage) {
+    private static String pickCityOfPublication(Product product, Languages preferredLanguage) {
         List<CityOfPublication> cops = product.publishingDetail().cityOfPublications();
 
         if (cops.isEmpty()) {

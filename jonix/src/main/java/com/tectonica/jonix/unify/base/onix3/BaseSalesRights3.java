@@ -34,12 +34,16 @@ public class BaseSalesRights3 extends BaseSalesRights {
     private static final long serialVersionUID = 1L;
 
     public BaseSalesRights3(SalesRights salesRights) {
+        extract(salesRights, this);
+    }
+
+    public static void extract(SalesRights salesRights, BaseSalesRights dest) {
         Territory territory = salesRights.territory();
-        salesRightsType = salesRights.salesRightsType().value;
-        countries = Arrays.asList(territory.countriesIncluded().value);
-        regions = territory.regionsIncluded().value;
-        rightRegions = null;
-        countriesExcluded = territory.countriesExcluded().value;
-        regionsExcluded = territory.regionsExcluded().value;
+        dest.salesRightsType = salesRights.salesRightsType().value;
+        dest.countries = Arrays.asList(territory.countriesIncluded().value);
+        dest.regions = territory.regionsIncluded().value;
+        dest.rightRegions = null;
+        dest.countriesExcluded = territory.countriesExcluded().value;
+        dest.regionsExcluded = territory.regionsExcluded().value;
     }
 }

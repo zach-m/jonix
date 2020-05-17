@@ -35,18 +35,22 @@ public class BaseContributor3 extends BaseContributor {
     private static final long serialVersionUID = 1L;
 
     public BaseContributor3(Contributor c) {
-        contributorRoles = (c.contributorRoles().valuesInto(new HashSet<>()));
-        Integer sequenceNumberValue = c.sequenceNumber().value;
-        sequenceNumber = (sequenceNumberValue == null) ? null : sequenceNumberValue.toString();
-        personName = c.personName().value;
-        personNameKey = c.keyNames().value;
-        personNameBeforeKey = c.namesBeforeKey().value;
-        personNameInverted = c.personNameInverted().value;
-        corporateName = c.corporateName().value;
-        biographicalNote = pickBiographicalNote(c);
+        extract(c, this);
     }
 
-    private String pickBiographicalNote(Contributor contributor) {
+    public static void extract(Contributor c, BaseContributor dest) {
+        dest.contributorRoles = (c.contributorRoles().valuesInto(new HashSet<>()));
+        Integer sequenceNumberValue = c.sequenceNumber().value;
+        dest.sequenceNumber = (sequenceNumberValue == null) ? null : sequenceNumberValue.toString();
+        dest.personName = c.personName().value;
+        dest.personNameKey = c.keyNames().value;
+        dest.personNameBeforeKey = c.namesBeforeKey().value;
+        dest.personNameInverted = c.personNameInverted().value;
+        dest.corporateName = c.corporateName().value;
+        dest.biographicalNote = pickBiographicalNote(c);
+    }
+
+    private static String pickBiographicalNote(Contributor contributor) {
         for (BiographicalNote bio : contributor.biographicalNotes()) {
             if (bio.language == null || bio.language == Languages.English) {
                 return bio.value;

@@ -35,14 +35,18 @@ public class BaseDescription2 extends BaseDescription {
     private final transient AudienceRange audienceRange;
 
     public BaseDescription2(Product product) {
-        editionType = product.editionTypeCodes().firstValue().orElse(null);
-        editionNumber = JPU.convertStringToInteger(product.editionNumber().value);
-        productForm = product.productForm().value().map(fv -> fv.description).orElse(null);
-        numberOfPages = product.numberOfPages().value;
-        languages = product.languages().asStructs(); // TODO: lazify
-        audiences = product.audiences().asStructs(); // TODO: lazify
-        audienceCodes = product.audienceCodes().values();
+        extract(product, this);
         audienceRange = product.audienceRanges().first().orElse(null);
+    }
+
+    public static void extract(Product product, BaseDescription dest) {
+        dest.editionType = product.editionTypeCodes().firstValue().orElse(null);
+        dest.editionNumber = JPU.convertStringToInteger(product.editionNumber().value);
+        dest.productForm = product.productForm().value().map(fv -> fv.description).orElse(null);
+        dest.numberOfPages = product.numberOfPages().value;
+        dest.languages = product.languages().asStructs(); // TODO: lazify
+        dest.audiences = product.audiences().asStructs(); // TODO: lazify
+        dest.audienceCodes = product.audienceCodes().values();
     }
 
     @Override

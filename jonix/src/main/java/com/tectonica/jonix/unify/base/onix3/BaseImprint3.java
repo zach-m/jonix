@@ -31,7 +31,11 @@ public class BaseImprint3 extends BaseImprint {
     private static final long serialVersionUID = 1L;
 
     public BaseImprint3(Imprint imprint) {
+        extract(imprint, this);
+    }
+
+    public static void extract(Imprint imprint, BaseImprint dest) {
         // TODO: we should at least read one required field (unlike ImprintName)
-        imprintName = imprint.imprintName().value;
+        dest.imprintName = imprint.imprintName().value;
     }
 }

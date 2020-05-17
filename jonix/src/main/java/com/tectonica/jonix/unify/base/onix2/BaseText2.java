@@ -33,12 +33,16 @@ public class BaseText2 extends BaseText {
     private static final long serialVersionUID = 1L;
 
     public BaseText2(OtherText otherText) {
-        textType = translate33to153(otherText.textTypeCode().value);
-        textFormat = otherText.textFormat().value;
+        extract(otherText, this);
+    }
+
+    public static void extract(OtherText otherText, BaseText dest) {
+        dest.textType = translate33to153(otherText.textTypeCode().value);
+        dest.textFormat = otherText.textFormat().value;
         if (otherText.text() != null) {
-            text = otherText.text().value;
-            if (textFormat == null) {
-                textFormat = otherText.text().textformat;
+            dest.text = otherText.text().value;
+            if (dest.textFormat == null) {
+                dest.textFormat = otherText.text().textformat;
             }
         }
     }
@@ -48,7 +52,7 @@ public class BaseText2 extends BaseText {
      * "http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_10_Changes_for_3.0.pdf"
      * >this document from Editeur</a>
      */
-    private TextTypes translate33to153(OtherTextTypes o) {
+    private static TextTypes translate33to153(OtherTextTypes o) {
         switch (o) {
             case Main_description:
                 return TextTypes.Description;

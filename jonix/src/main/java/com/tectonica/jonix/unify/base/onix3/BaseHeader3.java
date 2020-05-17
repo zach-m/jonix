@@ -35,16 +35,20 @@ public class BaseHeader3 extends BaseHeader {
     private static final long serialVersionUID = 1L;
 
     public BaseHeader3(Header header) {
-        rawHeader = header;
-
-        fromCompany = header.sender().senderName().value;
-        fromPerson = header.sender().contactName().value;
-        fromEmail = header.sender().emailAddress().value;
-        toCompanies = extractToCompanies(header);
-        sentDate = header.sentDateTime().value;
+        extract(header, this);
     }
 
-    private List<String> extractToCompanies(Header header) {
+    public static void extract(Header header, BaseHeader dest) {
+        dest.rawHeader = header;
+
+        dest.fromCompany = header.sender().senderName().value;
+        dest.fromPerson = header.sender().contactName().value;
+        dest.fromEmail = header.sender().emailAddress().value;
+        dest.toCompanies = extractToCompanies(header);
+        dest.sentDate = header.sentDateTime().value;
+    }
+
+    private static List<String> extractToCompanies(Header header) {
         List<String> list = new ArrayList<>();
         for (Addressee addressee : header.addressees()) {
             String toCompany = addressee.addresseeName().value;
