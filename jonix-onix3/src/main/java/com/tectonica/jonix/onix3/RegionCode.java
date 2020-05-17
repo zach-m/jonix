@@ -72,6 +72,8 @@ import java.io.Serializable;
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContributorPlace}&gt;</li>
+ * <li>&lt;{@link EventOccurrence}&gt;</li>
+ * <li>&lt;{@link Language}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
@@ -80,8 +82,15 @@ import java.io.Serializable;
  * {@link ContributorPlace} ⯈ {@link RegionCode}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link ContributorPlace} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link ContributorPlace} ⯈ {@link RegionCode}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link ContributorPlace} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Language} ⯈ {@link RegionCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Language} ⯈
+ * {@link RegionCode}</li>
  * </ul>
  */
 public class RegionCode implements OnixElement<Regions>, Serializable {

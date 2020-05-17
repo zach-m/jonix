@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList23 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist23">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist23">ONIX
  *      Codelist 23 in Reference Guide</a>
  */
 public enum ExtentTypes implements OnixCodelist, CodeList23 {
@@ -59,9 +59,9 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
     Main_content_page_count("00", "Main content page count"),
 
     /**
-     * Number of words of natural language text
+     * Number of words or characters of natural language text
      */
-    Number_of_words("02", "Number of words"),
+    Total_text_length("02", "Total text length"),
 
     /**
      * The total number of numbered (usually Roman-numbered) pages that precede the main content of a book. This usually
@@ -157,7 +157,7 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
     Production_duration("16", "Production duration"),
 
     /**
-     * The size of a digital file, expressed in the specified extent unit
+     * Approximate size of a digital file, expressed in the specified extent unit
      */
     Filesize("22", "Filesize");
 

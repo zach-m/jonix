@@ -72,6 +72,7 @@ import java.io.Serializable;
  * <li>&lt;{@link ContentDate}&gt;</li>
  * <li>&lt;{@link SubjectDate}&gt;</li>
  * <li>&lt;{@link PriceDate}&gt;</li>
+ * <li>&lt;{@link OccurrenceDate}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
@@ -86,6 +87,8 @@ import java.io.Serializable;
  * ⯈ {@link DateFormat}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link ContributorDate} ⯈ {@link DateFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link ContributorDate} ⯈ {@link DateFormat}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link ContributorDate} ⯈ {@link DateFormat}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
@@ -110,10 +113,13 @@ import java.io.Serializable;
  * {@link Price} ⯈ {@link PriceDate} ⯈ {@link DateFormat}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link PriceDate} ⯈ {@link DateFormat}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link OccurrenceDate} ⯈ {@link DateFormat}</li>
  * </ul>
  *
  * @deprecated
  */
+@Deprecated
 public class DateFormat implements OnixElement<DateFormats>, Serializable {
     private static final long serialVersionUID = 1L;
 

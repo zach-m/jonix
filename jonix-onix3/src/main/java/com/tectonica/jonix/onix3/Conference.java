@@ -70,6 +70,7 @@ import java.util.List;
  *
  * @deprecated
  */
+@Deprecated
 public class Conference implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 

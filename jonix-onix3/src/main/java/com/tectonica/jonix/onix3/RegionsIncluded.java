@@ -42,7 +42,7 @@ import java.io.Serializable;
  * <tr>
  * <td>Format</td>
  * <td>One or more variable-length codes, each consisting of upper case letters, with or without a hyphen and further
- * upper case letters or digits, successive codes being separated by spaces. Suggested maximum length 750
+ * upper case letters or digits, and with successive codes being separated by spaces. Suggested maximum length 750
  * characters</td>
  * </tr>
  * <tr>

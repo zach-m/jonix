@@ -76,6 +76,8 @@ import java.io.Serializable;
  * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈

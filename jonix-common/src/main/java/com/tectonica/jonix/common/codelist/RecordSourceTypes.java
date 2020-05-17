@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList3 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist3">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist3">ONIX
  *      Codelist 3 in Reference Guide</a>
  */
 public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
@@ -50,8 +50,8 @@ public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
     Publisher("01", "Publisher"),
 
     /**
-     * Use to designate a distributor providing warehousing and fulfillment for a publisher or for a publisher's sales
-     * agent, as distinct from a wholesaler
+     * Use to designate a distributor providing primary warehousing and fulfillment for a publisher or for a publisher's
+     * sales agent, as distinct from a wholesaler
      */
     Publisher_s_distributor("02", "Publisher’s distributor"),
 

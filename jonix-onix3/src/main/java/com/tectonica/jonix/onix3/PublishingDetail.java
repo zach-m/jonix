@@ -38,10 +38,10 @@ import java.util.List;
 /**
  * <h1>Publishing detail composite</h1>
  * <p>
- * The publishing detail block covers data element Groups P.19 to P.21, carrying information on the publisher(s),
- * ‘global’ publishing status, and rights attaching to a product. The block as a whole is non-repeating. It is mandatory
- * in any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an
- * update notice which carries only those blocks in which changes have occurred.
+ * The publishing detail block covers data Groups P.19 to P.21, carrying information on the publisher(s), ‘global’
+ * publishing status, and rights attaching to a product. The block as a whole is non-repeating. It is mandatory in any
+ * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an update
+ * notice which carries only those blocks in which changes have occurred.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -368,8 +368,10 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional and repeatable group of data elements which together represent a copyright or neighbouring right
-     * statement for the product. Either the copyright year alone, or a structured rights statement listing year(s) and
-     * rights holder(s), may be sent as an instance of the composite.
+     * statement for the product. At least one &lt;CopyrightYear&gt; or one instance of the &lt;CopyrightOwner&gt;
+     * composite must be sent within an instance of the composite, but it is recommended that all elements in the
+     * composite are explicitly populated. The Copyright statement may be repeated to provide a full structured rights
+     * statement listing year(s) and rights holder(s).
      * </p>
      * Jonix-Comment: this list may be empty
      */

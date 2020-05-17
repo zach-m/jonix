@@ -62,6 +62,7 @@ import java.io.Serializable;
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleElement}&gt;</li>
+ * <li>&lt;{@link ContributorReference}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
@@ -73,10 +74,14 @@ import java.io.Serializable;
  * {@link TitleElement} ⯈ {@link SequenceNumber}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link TitleDetail} ⯈
  * {@link TitleElement} ⯈ {@link SequenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link ContributorReference} ⯈ {@link SequenceNumber}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
  * {@link SequenceNumber}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link SequenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link SequenceNumber}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link SequenceNumber}</li>
  * </ul>

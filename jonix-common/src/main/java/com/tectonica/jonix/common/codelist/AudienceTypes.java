@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,32 +41,33 @@ interface CodeList28 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist28">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist28">ONIX
  *      Codelist 28 in Reference Guide</a>
  */
 public enum AudienceTypes implements OnixCodelist, CodeList28 {
     /**
-     * For a non-specialist adult audience
+     * For a non-specialist adult audience. Consider also adding an ONIX Adult audience rating
      */
     General_trade("01", "General/trade"),
 
     /**
-     * For a juvenile audience, not specifically for any educational purpose
+     * For a juvenile audience, not specifically for any educational purpose. An audience range should also be included
      */
     Children_juvenile("02", "Children/juvenile"),
 
     /**
-     * For a teenage audience, not specifically for any educational purpose
+     * For a teenage audience, not specifically for any educational purpose. An audience range should also be included
      */
     Young_adult("03", "Young adult"),
 
     /**
-     * Kindergarten, pre-school, primary/elementary or secondary/high school education
+     * Kindergarten, pre-school, primary/elementary or secondary/high school education. An audience range should also be
+     * included
      */
     Primary_and_secondary_elementary_and_high_school("04", "Primary and secondary/elementary and high school"),
 
     /**
-     * For universities and colleges of further and higher education
+     * For tertiary education - universities and colleges of higher education
      */
     College_higher_education("05", "College/higher education"),
 
@@ -76,18 +77,23 @@ public enum AudienceTypes implements OnixCodelist, CodeList28 {
     Professional_and_scholarly("06", "Professional and scholarly"),
 
     /**
-     * Intended for use in teaching English as a second language
+     * Intended for use in teaching English as a second, non-native or additional language. Indication of the language
+     * level (eg CEFR) should be included where possible. An audience range should also be included if the product is
+     * (also) suitable for use in primary and secondary education
      */
     ELT_ESL("07", "ELT/ESL"),
 
     /**
-     * For centres providing academic, vocational or recreational courses for adults
+     * For an adult audience in a formal or semi-formal learning setting, eg vocational training, apprenticeships, or
+     * academic or recreational learning for adults
      */
     Adult_education("08", "Adult education"),
 
     /**
-     * Intended for use in teaching second languages, for example teaching German to Spanish speakers. Prefer code 07
-     * for products specific to teaching English
+     * Intended for use in teaching second, non-native or additional languages, for example teaching German to Spanish
+     * speakers. Indication of the language level (eg CEFR) should be included where possible. An audience range should
+     * also be included if the product is (also) suitable for use in primary and secondary education. Prefer code 07 for
+     * products specific to teaching English
      */
     Second_language_teaching("09", "Second language teaching");
 

@@ -80,6 +80,8 @@ import java.io.Serializable;
  * {@link AlternativeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link AlternativeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link AlternativeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link AlternativeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
@@ -285,12 +287,6 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * <p>
-     * A group of data elements which together specify a name identifier, used here to carry an identifier for a person
-     * or organization name given in an occurrence of the &lt;Contributor&gt; composite. Optional: see Group&nbsp;P.7
-     * introductory text for valid options. Repeatable to specify name identifiers of different types for the same
-     * person or organization name.
-     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {

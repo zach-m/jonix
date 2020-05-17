@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList44 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -103,8 +103,8 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
 
     /**
      * Personennamendatei - person name authority file used by Deutsche Nationalbibliothek and in other German-speaking
-     * countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
-     * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favor of the GND
+     * countries. See http://www.dnb.de/standardisierung/normdateien/pnd.htm (German) or
+     * http://www.dnb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favor of the GND
      */
     PND("17", "PND"),
 
@@ -120,8 +120,8 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
 
     /**
      * Gemeinsame K&#246;rperschaftsdatei - Corporate Body Authority File in the German-speaking countries. See
-     * http://www.d-nb.de/standardisierung/normdateien/gkd.htm (German) or
-     * http://www.d-nb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favor of the GND
+     * http://www.dnb.de/standardisierung/normdateien/gkd.htm (German) or
+     * http://www.dnb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favor of the GND
      */
     GKD("20", "GKD"),
 

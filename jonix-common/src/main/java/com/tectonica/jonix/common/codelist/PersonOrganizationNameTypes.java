@@ -21,6 +21,9 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -38,7 +41,7 @@ interface CodeList18 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist18">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist18">ONIX
  *      Codelist 18 in Reference Guide</a>
  */
 public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
@@ -69,7 +72,14 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
     /**
      * Use only within &lt;AlternativeName&gt;
      */
-    Later_name("06", "Later name");
+    Later_name("06", "Later name"),
+
+    /**
+     * Use only within &lt;NameAsSubject&gt;, to indicate the subject is fictional. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Fictional_character_name("07", "Fictional character name");
 
     public final String code;
     public final String description;
@@ -89,15 +99,29 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
         return description;
     }
 
+    private static volatile Map<String, PersonOrganizationNameTypes> map;
+
+    private static Map<String, PersonOrganizationNameTypes> map() {
+        Map<String, PersonOrganizationNameTypes> result = map;
+        if (result == null) {
+            synchronized (PersonOrganizationNameTypes.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (PersonOrganizationNameTypes e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static PersonOrganizationNameTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (PersonOrganizationNameTypes e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 }

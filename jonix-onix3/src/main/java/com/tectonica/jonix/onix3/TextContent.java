@@ -151,6 +151,10 @@ public class TextContent implements OnixSuperComposite, Serializable {
                 case TextAuthor.shortname:
                     textAuthors = JPU.addToList(textAuthors, new TextAuthor(e));
                     break;
+                case TextSourceDescription.refname:
+                case TextSourceDescription.shortname:
+                    textSourceDescriptions = JPU.addToList(textSourceDescriptions, new TextSourceDescription(e));
+                    break;
                 case SourceTitle.refname:
                 case SourceTitle.shortname:
                     sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
@@ -287,6 +291,24 @@ public class TextContent implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<TextAuthor, String> textAuthors() {
         _initialize();
         return textAuthors;
+    }
+
+    private ListOfOnixElement<TextSourceDescription, String> textSourceDescriptions = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Brief text describing or providing context for the text author or corporate source, at the publisher’s
+     * discretion, and intended to be used in addition to &lt;TextAuthor&gt; or &lt;TextSourceCorporate&gt;. Optional,
+     * and repeatable to provide parallel descriptions in multiple languages. The <i>language</i> attribute is optional
+     * for a single instance of &lt;TextSourceDescription&gt;, but must be included in each instance if
+     * &lt;TextSourceDescription&gt; is repeated. The description may be used with either a person or corporate name, to
+     * draw attention to any aspect of the text source’s background which provides context for the text in &lt;Text&gt;.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<TextSourceDescription, String> textSourceDescriptions() {
+        _initialize();
+        return textSourceDescriptions;
     }
 
     private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();

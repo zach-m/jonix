@@ -34,8 +34,8 @@ import java.util.List;
 /**
  * <h1>Related material composite</h1>
  * <p>
- * The related material block covers data element Groups P.22 and P.23, providing links to related works and related
- * products. The block as a whole is optional and non-repeating.
+ * The related material block covers data Groups P.22 and P.23, providing links to related works and related products.
+ * The block as a whole is optional and non-repeating.
  * </p>
  * <p>
  * None of the individual sections are mandatory within an occurrence of the block. However, in most circumstances, the

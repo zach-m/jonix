@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList96 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist96">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -601,7 +601,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Malagasy_Franc("MGF", "Malagasy Franc"),
 
     /**
-     * Macedonia (former Yugoslav Republic of)
+     * North Macedonia (formerly FYR Macedonia)
      */
     Denar("MKD", "Denar"),
 

@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,19 +41,21 @@ interface CodeList65 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist65">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist65">ONIX
  *      Codelist 65 in Reference Guide</a>
  */
 public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     /**
-     * Cancelled: product was announced, and subsequently abandoned
+     * Product was announced, and subsequently abandoned by the publisher. No expected availability date should be
+     * included in &lt;SupplyDate&gt;
      */
     Cancelled("01", "Cancelled"),
 
     /**
-     * Not yet available, publisher indicates that it has been postponed indefinitely. Should be used in preference to
-     * code 10 where the publisher has indicated that a previously-announced publication date is no longer correct, and
-     * no new date has yet been announced. For use in ONIX 3.0 only
+     * Not yet available from the supplier, and the publisher indicates that it has been postponed indefinitely. Should
+     * be used in preference to code 10 where the publisher has indicated that a previously-announced publication date
+     * is no longer correct, and no new date has yet been announced. No expected avalabilty date should be included in
+     * &lt;SupplyDate&gt;. For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -93,12 +95,14 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     In_stock("21", "In stock"),
 
     /**
-     * Available from us as a non-stock item, by special order
+     * Available from the supplier as a non-stock item, by special order. Where possible, an &lt;OrderTime&gt; should be
+     * included
      */
     To_order("22", "To order"),
 
     /**
-     * Available from us by print-on-demand
+     * Available from the supplier by print-on-demand. If the fulfillment delay is likely to be more than 24 hours, an
+     * &lt;OrderTime&gt; should be included
      */
     POD("23", "POD"),
 
@@ -165,7 +169,9 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     Apply_direct("44", "Apply direct"),
 
     /**
-     * Must be bought as part of a set or trade pack (identify set or pack in &lt;RelatedProduct&gt;)
+     * Individual copies of the product are not available from the supplier, but packs of copies are available, and
+     * individual copies of the product may typically be sold at retail. Must be bought as part of a set or trade pack
+     * (identify set or pack in &lt;RelatedProduct&gt; using code 02)
      */
     Not_sold_separately("45", "Not sold separately"),
 
@@ -196,15 +202,15 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     Not_sold_as_set("50", "Not sold as set"),
 
     /**
-     * This product is unavailable, no successor product or alternative format is available or planned. Use this code
-     * only when the publisher has indicated the product is out of print
+     * This product is unavailable from the supplier, no successor product or alternative format is available or
+     * planned. Use this code only when the publisher has indicated the product is out of print
      */
     Not_available_publisher_indicates_OP("51", "Not available, publisher indicates OP"),
 
     /**
-     * This product is unavailable in this market, no successor product or alternative format is available or planned.
-     * Use this code when a publisher has indicated the product is permanently unavailable (in this market) while
-     * remaining available elsewhere
+     * This product is unavailable from the supplier in this market, no successor product or alternative format is
+     * available or planned. Use this code when a publisher has indicated the product is permanently unavailable (in
+     * this market) while remaining available elsewhere
      */
     Not_available_publisher_no_longer_sells_product_in_this_market("52",
         "Not available, publisher no longer sells product in this market"),

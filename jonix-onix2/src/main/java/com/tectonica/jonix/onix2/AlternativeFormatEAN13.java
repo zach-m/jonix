@@ -71,6 +71,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class AlternativeFormatEAN13 implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 

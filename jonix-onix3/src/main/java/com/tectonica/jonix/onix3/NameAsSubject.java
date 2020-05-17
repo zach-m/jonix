@@ -275,12 +275,6 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
     /**
-     * <p>
-     * A group of data elements which together specify a name identifier, used here to carry an identifier for a person
-     * or organization name given in an occurrence of the &lt;Contributor&gt; composite. Optional: see Group&nbsp;P.7
-     * introductory text for valid options. Repeatable to specify name identifiers of different types for the same
-     * person or organization name.
-     * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {

@@ -83,6 +83,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class TextCaseFlag implements OnixElement<TextCaseFlags>, Serializable {
     private static final long serialVersionUID = 1L;
 

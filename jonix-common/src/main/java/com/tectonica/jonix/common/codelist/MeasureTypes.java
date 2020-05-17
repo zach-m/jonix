@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList48 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist48">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist48">ONIX
  *      Codelist 48 in Reference Guide</a>
  */
 public enum MeasureTypes implements OnixCodelist, CodeList48 {
@@ -75,6 +75,24 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * Not recommended for general use
      */
     Page_trim_width("05", "Page trim width"),
+
+    /**
+     * The volume of the product, including any retail packaging. Note the &lt;MeasureUnit&gt; is interpreted as a
+     * volumetric unit - for example code cm = cubic centimetres (ie millilitres), and code oz = fluid ounces. For use
+     * in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Unit_volume("06", "Unit volume"),
+
+    /**
+     * Volume of the internal (fluid) contents of a product (eg of paint in a can). Note the &lt;MeasureUnit&gt; is
+     * interpreted as a volumetric unit - for example code cm = cubic centimetres (ie millilitres), and code oz = fluid
+     * ounces. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Unit_capacity("07", "Unit capacity"),
 
     /**
      * The weight of the product, including any retail packaging

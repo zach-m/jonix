@@ -81,6 +81,7 @@ import java.io.Serializable;
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
  * <p/>
@@ -88,6 +89,8 @@ import java.io.Serializable;
  * <ul>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ContributorStatement}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈
+ * {@link ContributorStatement}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link ContributorStatement}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
  * {@link ContributorStatement}</li>

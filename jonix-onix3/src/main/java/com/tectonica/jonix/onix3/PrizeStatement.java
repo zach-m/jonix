@@ -23,6 +23,7 @@ import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextFormats;
 
 import java.io.Serializable;
 
@@ -46,7 +47,8 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 100 characters</td>
+ * <td>Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -62,11 +64,11 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language</td>
+ * <td>language, textformat</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;PrizeStatement language=&quot;eng&quot;&gt;Joint winner of the Mao Dun Literature Prize, 2000&lt;/PrizeStatement&gt;</tt></td>
+ * <td><tt>&lt;PrizeStatement language=&quot;eng&quot; textformat=&quot;05&quot;&gt;&lt;p&gt;Joint winner of the &lt;cite&gt;Mao Dun Literature Prize&lt;/cite&gt;, 2000&lt;/p&gt;&lt;/PrizeStatement&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -82,6 +84,8 @@ import java.io.Serializable;
  * {@link PrizeStatement}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link Prize} ⯈ {@link PrizeStatement}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link Prize} ⯈ {@link PrizeStatement}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link Prize} ⯈ {@link PrizeStatement}</li>
  * </ul>
@@ -112,14 +116,17 @@ public class PrizeStatement implements OnixElement<String>, Serializable {
 
     public Languages language;
 
+    public TextFormats textformat;
+
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML or XML with ONIX text fields
      * <p>
-     * (type: dt.NonEmptyString)
+     * (type: XHTML)
      */
     public String value;
 
@@ -148,8 +155,9 @@ public class PrizeStatement implements OnixElement<String>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
-        value = JPU.getContentAsString(element);
+        value = JPU.getChildXHTML(element, true);
     }
 
     /**

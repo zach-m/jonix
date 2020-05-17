@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList158 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -242,6 +242,30 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * Jonix-Comment: Introduced in Onix3
      */
     Bibliography("43", "Bibliography"),
+
+    /**
+     * Formal summary of content (normally used with academic and scholarly content only)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Abstract("44", "Abstract"),
+
+    /**
+     * Image that may be used for promotional purposes in place of a front cover, ONLY where the front cover itself
+     * cannot be provided or used for any reason. Typically, holding images may comprise logos, artwork or an unfinished
+     * front cover image. Senders should ensure removal of the holding image from the record as soon as a cover image is
+     * available. Recipients must ensure replacement of the holding image with the cover image when it is supplied
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Cover_holding_image("45", "Cover holding image"),
+
+    /**
+     * Eg for a game, kit
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Rules_or_instructions("46", "Rules or instructions"),
 
     /**
      * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.

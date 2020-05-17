@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList79 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -106,11 +106,11 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     E_publication_format_version("10", "E-publication format version"),
 
     /**
-     * Choking hazard warning required by US Consumer Product Safety Improvement Act (CPSIA) of 2008. Required, when
-     * applicable, for products sold in the US. The Product Form Feature Value is a code from List 143. Further
-     * explanation may be given in Product Form Feature Description
+     * Hazard warning required by US Consumer Product Safety Improvement Act (CPSIA) of 2008 or other US legislation.
+     * Required, when applicable, for products sold in the US. The Product Form Feature Value is a code from List 143.
+     * Further explanation may be given in Product Form Feature Description
      */
-    CPSIA_choking_hazard_warning("12", "CPSIA choking hazard warning"),
+    CPSIA_or_other_US_hazard_warning("12", "CPSIA or other US hazard warning"),
 
     /**
      * Product carries hazard warning required by EU Toy Safety Directive. The Product Form Feature Value is a code from
@@ -179,6 +179,32 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Jonix-Comment: Introduced in Onix3
      */
     Dangerous_goods("21", "Dangerous goods"),
+
+    /**
+     * Number of pieces, eg for jigsaws, puzzles, kits, board games. &lt;ProductFormFeatureValue&gt; is an integer. For
+     * use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Game_pieces("22", "Game pieces"),
+
+    /**
+     * Number of players, for board games, card games, videogames etc. &lt;ProductFormFeatureValue&gt; must be a
+     * required (exact) number as an integer OR a range (eg '2-6'), optionally accompanied by the number of players as
+     * text (eg 'suitable for 2-6 players') in &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Game_players("23", "Game players"),
+
+    /**
+     * Typical time to complete a game, for board games, card games, videogames etc, stated as an integer (in minutes)
+     * OR range (eg '60-90') in &lt;ProductFormFeatureValue&gt;, optionally accompanied by the playing time as text (eg
+     * 'typically 60-90 minutes') in &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Game_play_time("24", "Game play time"),
 
     /**
      * Product does not carry FSC or PEFC logo. The Product Form Feature Value element is not used. The Product Form
@@ -267,7 +293,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    CPSIA_choking_hazard_warning_("11", "CPSIA choking hazard warning");
+    CPSIA_choking_hazard_warning("11", "CPSIA choking hazard warning");
 
     public final String code;
     public final String description;

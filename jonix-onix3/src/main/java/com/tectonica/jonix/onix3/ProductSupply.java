@@ -34,11 +34,11 @@ import java.util.List;
 /**
  * <h1>Product supply composite</h1>
  * <p>
- * The product supply block covers data element Groups P.24 to P.26, specifying a market, the publishing status of the
- * product in that market, and the supply arrangements for the product in that market. The block is repeatable to
- * describe multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the
- * &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a partial update notice which carries only
- * those blocks in which changes have occurred.
+ * The product supply block covers data Groups P.24 to P.26, specifying a market, the publishing status of the product
+ * in that market, and the supply arrangements for the product in that market. The block is repeatable to describe
+ * multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the &lt;NotificationType&gt;
+ * in Group&nbsp;P.1 indicates that the record is a partial update notice which carries only those blocks in which
+ * changes have occurred.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

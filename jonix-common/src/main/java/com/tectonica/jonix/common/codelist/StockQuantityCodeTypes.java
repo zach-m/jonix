@@ -38,7 +38,7 @@ interface CodeList70 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist70">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist70">ONIX
  *      Codelist 70 in Reference Guide</a>
  */
 public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70 {
@@ -48,7 +48,7 @@ public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70 {
     Proprietary("01", "Proprietary"),
 
     /**
-     * Code scheme defined by the Australian Publishers Association
+     * Code scheme defined by the Australian Publishers Association. Deprecated
      */
     APA_stock_quantity_code("02", "APA stock quantity code");
 

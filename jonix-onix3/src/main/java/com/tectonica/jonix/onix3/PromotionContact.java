@@ -75,6 +75,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class PromotionContact implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 

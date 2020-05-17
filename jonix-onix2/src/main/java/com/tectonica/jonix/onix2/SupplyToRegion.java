@@ -78,6 +78,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class SupplyToRegion implements OnixElement<SupplytoRegions>, Serializable {
     private static final long serialVersionUID = 1L;
 

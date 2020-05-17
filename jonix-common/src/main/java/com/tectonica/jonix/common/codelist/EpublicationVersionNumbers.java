@@ -21,6 +21,9 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -38,7 +41,7 @@ interface CodeList220 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist220">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist220">ONIX
  *      Codelist 220 in Reference Guide</a>
  */
 public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
@@ -61,6 +64,13 @@ public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
      * Use only with &lt;ProductFormDetail&gt; code E101
      */
     EPUB_3_1("101D", "EPUB 3.1"),
+
+    /**
+     * Use only with &lt;ProductFormDetail&gt; code E101
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    EPUB_3_2("101E", "EPUB 3.2"),
 
     /**
      * Use only with &lt;ProductFormDetail&gt; codes E116 or E127
@@ -97,15 +107,29 @@ public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
         return description;
     }
 
+    private static volatile Map<String, EpublicationVersionNumbers> map;
+
+    private static Map<String, EpublicationVersionNumbers> map() {
+        Map<String, EpublicationVersionNumbers> result = map;
+        if (result == null) {
+            synchronized (EpublicationVersionNumbers.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (EpublicationVersionNumbers e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static EpublicationVersionNumbers byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (EpublicationVersionNumbers e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 }

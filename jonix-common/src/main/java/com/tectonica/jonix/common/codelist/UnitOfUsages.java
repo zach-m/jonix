@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList147 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist147">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist147">ONIX
  *      Codelist 147 in Reference Guide</a>
  */
 public enum UnitOfUsages implements OnixCodelist, CodeList147 {
@@ -82,7 +82,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     Concurrent_users("07", "Concurrent users"),
 
     /**
-     * Maximum number of licenced individual users, independent of concurrency of use
+     * Maximum number of licensed individual users, independent of concurrency of use
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -104,7 +104,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
 
     /**
      * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
-     * specified as another EpubUsageQuantity
+     * specified as another &lt;EpubUsageLimit&gt; Quantity
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -217,6 +217,20 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * Jonix-Comment: Introduced in Onix3
      */
     Allowed_usage_end_time("18", "Allowed usage end time"),
+
+    /**
+     * The date from which the usage constraint applies. &lt;Quantity&gt; is in the format YYYYMMDD
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Valid_from("98", "Valid from"),
+
+    /**
+     * The date until which the usage constraint applies. &lt;Quantity&gt; is in the format YYYYMMDD
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Valid_to("99", "Valid to"),
 
     /**
      * Maximum percentage of total content which may be used in a specified usage per time period; the time period being

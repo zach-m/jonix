@@ -34,10 +34,10 @@ import java.util.List;
 /**
  * <h1>Content detail composite</h1>
  * <p>
- * The content detail block comprises the single data element Group&nbsp;P.18. The block as a whole is non-repeating. It
- * is not mandatory within the &lt;Product&gt; record, and is used only when there is a requirement to describe
- * individual chapters or parts within a product in a fully structured way. The more usual ONIX practice is to send a
- * table of contents as text, possibly in XHTML, in Group&nbsp;P.14.
+ * The content detail block comprises the single data Group&nbsp;P.18. The block as a whole is non-repeating. It is not
+ * mandatory within the &lt;Product&gt; record, and is used only when there is a requirement to describe individual
+ * chapters or parts within a product in a fully structured way. The more usual ONIX practice is to send a table of
+ * contents as text, possibly in XHTML, in Group&nbsp;P.14.
  * </p>
  * <p>
  * When used, the block should normally contain at least one instance of &lt;ContentItem&gt;. It may be empty

@@ -78,6 +78,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class CurrencyZone implements OnixElement<CurrencyZones>, Serializable {
     private static final long serialVersionUID = 1L;
 

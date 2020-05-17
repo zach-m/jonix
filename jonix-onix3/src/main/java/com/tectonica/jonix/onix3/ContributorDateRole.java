@@ -74,6 +74,8 @@ import java.io.Serializable;
  * ⯈ {@link ContributorDateRole}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link ContributorDate} ⯈ {@link ContributorDateRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link ContributorDate} ⯈ {@link ContributorDateRole}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link ContributorDate} ⯈ {@link ContributorDateRole}</li>
  * </ul>

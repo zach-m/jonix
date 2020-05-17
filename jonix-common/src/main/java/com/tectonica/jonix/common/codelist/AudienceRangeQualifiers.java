@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList30 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist30">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist30">ONIX
  *      Codelist 30 in Reference Guide</a>
  */
 public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
@@ -125,16 +125,23 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     Chinese_School_Grade_range("29", "Chinese School Grade range"),
 
     /**
-     * French educational level classification scolomfr-voc-022. See https://www.reseau-canope.fr/scolomfr/accueil.html
+     * French educational level classification, URI http://data.education.fr/voc/scolomfr/scolomfr-voc-022
      */
-    Nomenclature_niveaux("30", "Nomenclature niveaux"),
+    Nomenclature_niveaux_ducatif_d_taill_("30", "Nomenclature niveaux éducatif détaillé"),
 
     /**
      * N&#237;vel de Educa&#231;&#227;o do Brasil, see List 238. For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Brazil_Education_level("31", "Brazil Education level");
+    Brazil_Education_level("31", "Brazil Education level"),
+
+    /**
+     * French educational level classification, URI http://data.education.fr/voc/scolomfr/scolomfr-voc-012
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Nomenclature_niveaux_ducatif_de_base("32", "Nomenclature niveaux éducatif de base");
 
     public final String code;
     public final String description;

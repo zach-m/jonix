@@ -172,8 +172,8 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
      * only one, ONIX product record.
      * </p>
      * <p>
-     * In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data element Groups P.1 and P.2,
-     * and carrying data that identifies the record and the product to which it refers. This is followed by up to six
+     * In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data Groups P.1 and P.2, and
+     * carrying data that identifies the record and the product to which it refers. This is followed by up to seven
      * ‘blocks’, each optional, some of which are repeatable.
      * </p>
      * Jonix-Comment: this list may be empty

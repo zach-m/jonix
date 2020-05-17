@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList68 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist68">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist68">ONIX
  *      Codelist 68 in Reference Guide</a>
  */
 public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
@@ -149,7 +149,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
 
     /**
      * Temporarily withdrawn from sale in this market, typically for quality or technical reasons. In ONIX 3.0, must be
-     * accompanied by expected availability date coded '22' within the &lt;MarketPublishingDate&gt; composite, except in
+     * accompanied by expected availability date coded '22' within the &lt;MarketDate&gt; composite, except in
      * exceptional circumstances where no date is known
      */
     Temporarily_withdrawn_from_sale("16", "Temporarily withdrawn from sale");

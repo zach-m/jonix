@@ -49,9 +49,9 @@ import java.util.List;
  * identified by a recognized product identifier should be described by one, and only one, ONIX product record.
  * </p>
  * <p>
- * In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data element Groups P.1 and P.2, and
- * carrying data that identifies the record and the product to which it refers. This is followed by up to six ‘blocks’,
- * each optional, some of which are repeatable.
+ * In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data Groups P.1 and P.2, and
+ * carrying data that identifies the record and the product to which it refers. This is followed by up to seven
+ * ‘blocks’, each optional, some of which are repeatable.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -161,6 +161,10 @@ public class Product implements OnixProduct, Serializable {
                 case CollateralDetail.refname:
                 case CollateralDetail.shortname:
                     collateralDetail = new CollateralDetail(e);
+                    break;
+                case PromotionDetail.refname:
+                case PromotionDetail.shortname:
+                    promotionDetail = new PromotionDetail(e);
                     break;
                 case ContentDetail.refname:
                 case ContentDetail.shortname:
@@ -315,10 +319,10 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * The descriptive detail block covers data element Groups P.3 to P.13, all of which are essentially part of the
-     * factual description of the form and content of a product. The block as a whole is non-repeating. It is mandatory
-     * in any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is
-     * an update notice which carries only those blocks in which changes have occurred.
+     * The descriptive detail block covers data Groups P.3 to P.13, all of which are essentially part of the factual
+     * description of the form and content of a product. The block as a whole is non-repeating. It is mandatory in any
+     * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an
+     * update notice which carries only those blocks in which changes have occurred.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -331,7 +335,7 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * The collateral detail block covers data element Groups P.14 to P.17, all of which are primarily concerned with
+     * The collateral detail block covers data Groups P.14 to P.17, all of which are primarily concerned with
      * information and/or resources which in one way or another support the marketing of the product. The block as a
      * whole is non-repeating.
      * </p>
@@ -349,14 +353,31 @@ public class Product implements OnixProduct, Serializable {
         return collateralDetail;
     }
 
+    private PromotionDetail promotionDetail = PromotionDetail.EMPTY;
+
+    /**
+     * <p>
+     * The promotion detail block comprises the single data Group P.27. The block as a whole is optional and
+     * non-repeating, and is used only when there is a need to describe various promotional events intended to promote
+     * the product in a structured way. When used, the block usually consists of one or more instances of
+     * &lt;PromotionalEvent&gt;. It may be empty <em>only</em> within a partial or ‘block update’ (Notification or
+     * update type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all previously-supplied promotion detail.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PromotionDetail promotionDetail() {
+        _initialize();
+        return promotionDetail;
+    }
+
     private ContentDetail contentDetail = ContentDetail.EMPTY;
 
     /**
      * <p>
-     * The content detail block comprises the single data element Group&nbsp;P.18. The block as a whole is
-     * non-repeating. It is not mandatory within the &lt;Product&gt; record, and is used only when there is a
-     * requirement to describe individual chapters or parts within a product in a fully structured way. The more usual
-     * ONIX practice is to send a table of contents as text, possibly in XHTML, in Group&nbsp;P.14.
+     * The content detail block comprises the single data Group&nbsp;P.18. The block as a whole is non-repeating. It is
+     * not mandatory within the &lt;Product&gt; record, and is used only when there is a requirement to describe
+     * individual chapters or parts within a product in a fully structured way. The more usual ONIX practice is to send
+     * a table of contents as text, possibly in XHTML, in Group&nbsp;P.14.
      * </p>
      * <p>
      * When used, the block should normally contain at least one instance of &lt;ContentItem&gt;. It may be empty
@@ -374,10 +395,10 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * The publishing detail block covers data element Groups P.19 to P.21, carrying information on the publisher(s),
-     * ‘global’ publishing status, and rights attaching to a product. The block as a whole is non-repeating. It is
-     * mandatory in any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the
-     * record is an update notice which carries only those blocks in which changes have occurred.
+     * The publishing detail block covers data Groups P.19 to P.21, carrying information on the publisher(s), ‘global’
+     * publishing status, and rights attaching to a product. The block as a whole is non-repeating. It is mandatory in
+     * any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an
+     * update notice which carries only those blocks in which changes have occurred.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -390,7 +411,7 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * The related material block covers data element Groups P.22 and P.23, providing links to related works and related
+     * The related material block covers data Groups P.22 and P.23, providing links to related works and related
      * products. The block as a whole is optional and non-repeating.
      * </p>
      * <p>
@@ -459,9 +480,9 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * The product supply block covers data element Groups P.24 to P.26, specifying a market, the publishing status of
-     * the product in that market, and the supply arrangements for the product in that market. The block is repeatable
-     * to describe multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the
+     * The product supply block covers data Groups P.24 to P.26, specifying a market, the publishing status of the
+     * product in that market, and the supply arrangements for the product in that market. The block is repeatable to
+     * describe multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the
      * &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a partial update notice which carries
      * only those blocks in which changes have occurred.
      * </p>

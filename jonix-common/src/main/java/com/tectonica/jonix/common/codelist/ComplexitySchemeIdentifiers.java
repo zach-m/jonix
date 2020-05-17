@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList32 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist32">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist32">ONIX
  *      Codelist 32 in Reference Guide</a>
  */
 public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
@@ -62,8 +62,9 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
     Fry_Readability_score("03", "Fry Readability score"),
 
     /**
-     * UK Institute of Education Book Bands for Guided Reading scheme (see http://www.ioe.ac.uk/research/4664.html).
-     * &lt;ComplexityCode&gt; is a color, eg 'Pink A' or 'Copper'
+     * UK Institute of Education Book Bands for Guided Reading scheme (see
+     * https://www.ucl.ac.uk/reading-recovery-europe/ilc/publications/which-book-why). &lt;ComplexityCode&gt; is a
+     * color, eg 'Pink A' or 'Copper'
      */
     IoE_Book_Band("04", "IoE Book Band"),
 
@@ -82,7 +83,7 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
 
     /**
      * Advantage-TASA Open Standard book readability score, used for example within the Renaissance Learning Accelerated
-     * Reader scheme. &lt;ComplexityCode&gt; is a real number between 0 and 17. See
+     * Reader scheme. &lt;ComplexityCode&gt; is the 'Book Level', a real number between 0 and 17. See
      * http://www.renaissance.com/products/accelerated-reader/atos-analyzer
      */
     ATOS_for_Books("07", "ATOS for Books"),

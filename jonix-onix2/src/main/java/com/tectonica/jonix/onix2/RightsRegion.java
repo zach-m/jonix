@@ -77,6 +77,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class RightsRegion implements OnixElement<RightsRegions>, Serializable {
     private static final long serialVersionUID = 1L;
 

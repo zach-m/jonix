@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList29 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist29">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist29">ONIX
  *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -161,7 +161,8 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     Japanese_Children_s_audience_code("21", "Japanese Children’s audience code"),
 
     /**
-     * Publisher's rating indicating suitability for an particular adult audience, using a code from List 203
+     * Publisher's rating indicating suitability for a particular adult audience, using a code from List 203. Should
+     * only be used when the ONIX Audience code indicates a general adult audience (code 01 from List 28)
      */
     ONIX_Adult_audience_rating("22", "ONIX Adult audience rating"),
 

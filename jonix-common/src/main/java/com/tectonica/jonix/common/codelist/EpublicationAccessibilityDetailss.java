@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,16 +41,15 @@ interface CodeList196 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
     /**
      * &lt;ProductFormFeatureDescription&gt; contains a short explanatory summary of the accessibility of the product,
      * consistent with the more specific conformance and feature details provided. The summary should note both the
-     * accessibility features provided and any potential deficiencies. More detailed information may be provided using
-     * codes 94-96. For use in ONIX 3.0 only. See also code 00 for a summary of the accessibility features of the
-     * product itself
+     * accessibility features provided and any potential deficiencies. More detailed information may be provided in an
+     * external file using codes 94-96. For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -64,7 +63,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * an independent third party certifier. In the absence of a URL, conformance with the requirements of the
      * Accessibility Specification is self-certified by the publisher
      */
-    Accessibility_Specification_1_0_A("02", "Accessibility Specification 1.0 A"),
+    EPUB_Accessibility_Specification_1_0_A("02", "EPUB Accessibility Specification 1.0 A"),
 
     /**
      * Conforms with the requirements of EPUB Accessibility Spec 1.0 and WCAG level AA.
@@ -72,7 +71,15 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * an independent third party certifier. In the absence of a URL, conformance with the requirements of the
      * Accessibility Specification is self-certified by the publisher
      */
-    Accessibility_Specification_1_0_AA("03", "Accessibility Specification 1.0 AA"),
+    EPUB_Accessibility_Specification_1_0_AA("03", "EPUB Accessibility Specification 1.0 AA"),
+
+    /**
+     * Conforms with the requirements of ISO 32000-1:2008 plus ISO 14289-1:2014 - Portable Document Format for Universal
+     * Accessibility. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    PDF_UA("05", "PDF/UA"),
 
     /**
      * Known to lack significant features required for broad accessibility. For use in ONIX 3.0 only
@@ -86,8 +93,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * choice of text size or typeface, choice of text or background color, text-to-speech) are disabled, overridden or
      * otherwise unusable with the product EXCEPT - in ONIX 3 messages only - those specifically noted as subject to
      * restriction or prohibition in &lt;EpubUsageConstraint&gt;. Note that provision of any significant part of the
-     * textual content as images (ie as pictures of text, rather than as text) inevitably prevents use of these
-     * accessibility options
+     * textual content as images (ie as pictures of text, rather than as text, and without any textual equivalent)
+     * inevitably prevents use of these accessibility options
      */
     No_reading_system_accessibility_options_disabled_except("10",
         "No reading system accessibility options disabled (except)"),
@@ -126,10 +133,10 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     /**
      * All or substantially all non-text content has full alternative descriptions. Note this applies to normal images
      * (eg photographs, charts and diagrams) and also to any embedded audio, video etc. Audio and video content should
-     * include full alternative descriptions (eg audio-described video) and subtitles or closed captions suitable for
-     * hearing-impaired as well as for visually-impaired readers. (Purely decorative non-text content can be ignored,
-     * but the accessibility of resources delivered via a network connection rather than as part of the e-publication
-     * package must be included)
+     * include full alternative descriptions (eg audio-described video) and transcript, subtitles or captions (whether
+     * closed or open) suitable for hearing-impaired as well as for visually-impaired readers. (Purely decorative
+     * non-text content can be ignored, but the accessibility of resources delivered via a network connection rather
+     * than as part of the e-publication package must be included)
      */
     Full_alternative_descriptions("15", "Full alternative descriptions"),
 
@@ -151,7 +158,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Accessible_chem_content("18", "Accessible chem content"),
 
     /**
-     * For a reflowable e-publication, contains references to the page numbering of an equivalent printed product
+     * For a reflowable e-publication, contains references to the page numbering of an equivalent printed product. Use
+     * &lt;RelatedProduct&gt; with relation code 13 to specify an identifier for the source of the page numbers
      */
     Print_equivalent_page_numbering("19", "Print-equivalent page numbering"),
 
@@ -174,11 +182,26 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Language_tagging_provided("22", "Language tagging provided"),
 
     /**
-     * Specialised font, character and line spacing, justification and paragraph spacing, colouring and other options
-     * provided specifically to improve readability for dyslexic readers. Details, including the name of the font,
-     * should be listed in &lt;ProductFormFeatureDescription&gt;
+     * Specialised font, character and/or line spacing, justification and paragraph spacing, coloring and other options
+     * provided specifically to improve readability for dyslexic readers. Details, including the name of the font if
+     * relevant, should be listed in &lt;ProductFormFeatureDescription&gt;
      */
     Dyslexia_readability("24", "Dyslexia readability"),
+
+    /**
+     * For readers with color vision deficiency, use of color (eg in diagrams) is not the sole means of graphical
+     * distinction
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Use_of_color("25", "Use of color"),
+
+    /**
+     * Body text is presented with a contrast ratio of at least 4.5:1 (or 3:1 for large/heading text)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Use_of_contrast("26", "Use of contrast"),
 
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the

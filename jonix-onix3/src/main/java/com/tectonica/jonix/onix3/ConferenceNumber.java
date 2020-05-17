@@ -70,6 +70,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class ConferenceNumber implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
 

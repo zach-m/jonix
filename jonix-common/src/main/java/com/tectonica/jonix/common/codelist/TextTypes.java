@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList153 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -211,7 +211,21 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Bibliography("29", "Bibliography");
+    Bibliography("29", "Bibliography"),
+
+    /**
+     * Formal summary of content (normally used with academic and scholarly content only)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Abstract("30", "Abstract"),
+
+    /**
+     * Eg for a game, kit
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Rules_or_instructions("31", "Rules or instructions");
 
     public final String code;
     public final String description;

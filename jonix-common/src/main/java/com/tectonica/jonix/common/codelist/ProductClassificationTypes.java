@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList9 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist9">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
@@ -106,6 +106,14 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=URISERV:l22008
      */
     CPV("11", "CPV"),
+
+    /**
+     * Polish Classification of Products and Services (2015). Use a single letter followed by 2 to 7 digits, without
+     * punctuation. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    PKWiU("12", "PKWiU"),
 
     /**
      * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)

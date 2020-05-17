@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList139 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -49,9 +49,40 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     A_C_Moore("ACM", "A C Moore"),
 
+    /**
+     * Academic and Professional Book Center (HK)
+     */
     AandP("AAP", "AandP"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Adlibris("ADL", "Adlibris"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Akademibokhandeln("ACB", "Akademibokhandeln"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Akateeminen_Kirjakauppa("AKK", "Akateeminen Kirjakauppa"),
+
     Albertson_s("ALB", "Albertson’s"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    AlmaTalent("ALT", "AlmaTalent"),
 
     Amazon("AMZ", "Amazon"),
 
@@ -73,6 +104,9 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Audioteka("ATK", "Audioteka"),
 
+    /**
+     * Deprecated
+     */
     B_Dalton("BDL", "B Dalton"),
 
     Barnes_and_Noble("BNO", "Barnes and Noble"),
@@ -96,63 +130,162 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Bibliotheca("MMM", "Bibliotheca"),
 
+    /**
+     * Deprecated
+     */
     Bilbary("BIL", "Bilbary"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Billigbook("BLG", "Billigbook"),
+
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     BJ_s_Wholesale_Club("BJW", "BJ’s Wholesale Club"),
 
-    Blackstone_Audion("BLA", "Blackstone Audion"),
+    /**
+     * Deprecated
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Blackstone_Audio("BLA", "Blackstone Audio"),
 
     Blackwell_s("BLK", "Blackwell’s"),
 
     /**
-     * Formerly GoSpoken/Mobcast
+     * Formerly GoSpoken/Mobcast. Deprecated
      */
     Blinkbox("GOS", "Blinkbox"),
 
-    Book_Club_Associates("BCA", "Book Club Associates"),
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Bokus("BKU", "Bokus"),
 
     /**
-     * https://www.bolinda.com, for use in ONIX 3.0 only
+     * www.bolinda.com, for use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Bolinda("BLD", "Bolinda"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Book_Club_Associates("BCA", "Book Club Associates"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Bookbeat("BOO", "Bookbeat"),
+
     Bookish("BSH", "Bookish"),
 
     Bookpeople("BKP", "Bookpeople"),
 
+    /**
+     * Deprecated
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Books_Etc("BRB", "Books Etc"),
+
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Books_A_Million("BKM", "Books-A-Million"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Bookshout("BKS", "Bookshout"),
 
     Booktopia("BTP", "Booktopia"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Booky_fi("BKY", "Booky.fi"),
+
+    /**
+     * Deprecated
+     */
     Borders("BRD", "Borders"),
 
-    Borders_Books_Etc("BRB", "Borders/Books Etc"),
-
+    /**
+     * Deprecated
+     */
     British_Bookshops("BRT", "British Bookshops"),
 
     Casa_del_Libro("CDL", "Casa del Libro"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    CDON_com("CDN", "CDON.com"),
 
     Ceebo("CEB", "Ceebo"),
 
     Christianbook_com("CHD", "Christianbook.com"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Citymarket("CYM", "Citymarket"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Comixology("CMX", "Comixology"),
+
+    /**
+     * Deprecated
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
     Copia("COP", "Copia"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Costco("CST", "Costco"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Crate_and_Barrel("CRB", "Crate and Barrel"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     CVS_Drug_Stores("CVS", "CVS Drug Stores"),
 
     /**
      * www.cvs-mediatheques.com
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     CVS_Mediatheques("CVM", "CVS Mediatheques"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Cyberlibris("CYB", "Cyberlibris"),
 
     De_Marque("DEM", "De Marque"),
@@ -176,6 +309,9 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Ebooks_Corp("EBC", "Ebooks Corp"),
 
+    /**
+     * Deprecated
+     */
     eChristian("ECH", "eChristian"),
 
     El_Corte_Ingl_s("ECI", "El Corte Inglés"),
@@ -183,6 +319,20 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Electre("ELE", "Electre"),
 
     Elib_se("ELB", "Elib.se"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Ellibs_com("ELL", "Ellibs.com"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Elisa("ELS", "Elisa"),
 
     Empik("EMP", "Empik"),
 
@@ -213,6 +363,9 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Google_Books("GOO", "Google Books"),
 
+    /**
+     * Deprecated
+     */
     Hastings_Entertainment("HST", "Hastings Entertainment"),
 
     HMV("HMV", "HMV"),
@@ -238,17 +391,55 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     K_Mart("KMT", "K-Mart"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Kirja_Idea("KID", "Kirja&Idea"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Kirjastopalvelu("KPV", "Kirjastopalvelu"),
+
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     KNFB_Blio("KNB", "KNFB/Blio"),
 
+    /**
+     * Deprecate
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
     Kno_Inc("KNO", "Kno Inc"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Kobo("KBO", "Kobo"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Koorong("KOO", "Koorong"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Kortext("KOR", "Kortext"),
 
     Kroger("KRG", "Kroger"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Lehtipiste("LTP", "Lehtipiste"),
 
     Lowe_s("LWE", "Lowe’s"),
 
@@ -288,12 +479,25 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Mothercare("MTC", "Mothercare"),
 
+    /**
+     * Deprecated
+     */
     MyBoox("MYB", "MyBoox"),
 
     MyiLibrary("MYI", "MyiLibrary"),
 
     National_Trust("NTR", "National Trust"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Nextory("NXT", "Nextory"),
+
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Numilog("NUM", "Numilog"),
 
     Office_Depot("OFD", "Office Depot"),
@@ -304,8 +508,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     OverDrive("OVD", "OverDrive"),
 
+    /**
+     * Deprecated
+     */
     Oyster("OYS", "Oyster"),
 
+    /**
+     * Deprecated
+     */
     Past_Times("PST", "Past Times"),
 
     Pet_Smart("PTS", "Pet Smart"),
@@ -314,8 +524,18 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Play_com("PLY", "Play.com"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Pokkaritukku("POK", "Pokkaritukku"),
+
     Pottery_Barn("PTB", "Pottery Barn"),
 
+    /**
+     * Deprecated
+     */
     Readbooks("RDB", "Readbooks"),
 
     ReadCloud("RCL", "ReadCloud"),
@@ -326,10 +546,33 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Ritz_Camera("RTZ", "Ritz Camera"),
 
+    /**
+     * Deprecated
+     */
     RM_Books("RMB", "RM Books"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Rosebud("RBD", "Rosebud"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    S_Group("SGR", "S Group"),
+
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Safari("SAF", "Safari"),
 
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
     Safeway("SFW", "Safeway"),
 
     Sainsbury_s("SNS", "Sainsbury’s"),
@@ -352,6 +595,27 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Storytel("STT", "Storytel"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Suomalainen_Kirjakauppa("SKK", "Suomalainen Kirjakauppa"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Suomalainen_Plus("SPL", "Suomalainen Plus"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Suuri_Suomalainen_Kirjakerho("SSK", "Suuri Suomalainen Kirjakerho"),
+
     Target("TRG", "Target"),
 
     Tesco("TES", "Tesco"),
@@ -360,12 +624,25 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Tolino("TOL", "Tolino"),
 
-    Toys_R_Us("TSR", "Toys ‘R’ Us"),
+    Toys_R_Us("TSR", "Toys ’R’ Us"),
 
     TSO_The_Stationery_Office("TSO", "TSO (The Stationery Office)"),
 
+    /**
+     * Deprecated
+     */
     Txtr("TXR", "Txtr"),
 
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Ugglan_Bokhandel("UBH", "Ugglan Bokhandel"),
+
+    /**
+     * Deprecated
+     */
     Virgin_Megastores("VRG", "Virgin Megastores"),
 
     W_H_Smith("WHS", "W H Smith"),
@@ -405,12 +682,114 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
+    BJ_s_Wholesale_Club_("BJW", "BJ’s Wholesale Club"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Blackstone_Audion("BLA", "Blackstone Audion"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Book_Club_Associates_("BCA", "Book Club Associates"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Books_A_Million_("BKM", "Books-A-Million"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Bookshout_("BKS", "Bookshout"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Borders_Books_Etc("BRB", "Borders/Books Etc"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Copia_("COP", "Copia"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Costco_("CST", "Costco"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Crate_and_Barrel_("CRB", "Crate and Barrel"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    CVS_Drug_Stores_("CVS", "CVS Drug Stores"),
+
+    /**
+     * www.cvs-mediatheques.com
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    CVS_Mediatheques_("CVM", "CVS Mediatheques"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Cyberlibris_("CYB", "Cyberlibris"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    KNFB_Blio_("KNB", "KNFB/Blio"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Kno_Inc_("KNO", "Kno Inc"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Kobo_("KBO", "Kobo"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Koorong_("KOO", "Koorong"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Kortext_("KOR", "Kortext"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
     Mofibo_("MOF", "Mofibo"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Morrisons_("MRR", "Morrisons");
+    Morrisons_("MRR", "Morrisons"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Numilog_("NUM", "Numilog"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Safari_("SAF", "Safari"),
+
+    /**
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Safeway_("SFW", "Safeway");
 
     public final String code;
     public final String description;

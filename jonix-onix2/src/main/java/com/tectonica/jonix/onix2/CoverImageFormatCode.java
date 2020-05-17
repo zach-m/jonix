@@ -81,6 +81,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class CoverImageFormatCode implements OnixElement<FrontCoverImageFileFormats>, Serializable {
     private static final long serialVersionUID = 1L;
 

@@ -72,6 +72,7 @@ import java.util.List;
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
  * <p/>
@@ -79,6 +80,8 @@ import java.util.List;
  * <ul>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link Contributor}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor}</li>
  * </ul>
  */

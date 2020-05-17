@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList163 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -61,15 +61,18 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     Sales_embargo_date("02", "Sales embargo date"),
 
     /**
-     * Date when a new product may be announced to the general public. In the absence of an announcement date, the
-     * planned product may be announced to the public as soon as metadata is available
+     * Date when a new product may be announced to the general public. Prior to the announcement date, the product data
+     * is intended for internal use by the recipient and supply chain partners only. After the announcement date, or in
+     * the absence of an announcement date, the planned product may be announced to the public as soon as metadata is
+     * available
      */
     Public_announcement_date("09", "Public announcement date"),
 
     /**
-     * Date when a new product may be announced to the book trade only. In the absence of a trade announcement date, the
-     * planned product may be announced to supply chain partners (but not necessarily made public) as soon as metadata
-     * is available
+     * Date when a new product may be announced to the book trade only. Prior to the announcement date, the product
+     * information is intended for internal use by the recipient only. After the announcement date, or in the absence of
+     * a trade announcement date, the planned product may be announced to supply chain partners (but not necessarily
+     * made public - see the Public announcement date) as soon as metadata is available
      */
     Trade_announcement_date("10", "Trade announcement date"),
 

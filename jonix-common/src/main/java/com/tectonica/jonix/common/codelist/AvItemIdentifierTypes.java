@@ -40,7 +40,7 @@ interface CodeList241 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist241">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist241">ONIX
  *      Codelist 241 in Reference Guide</a>
  */
 public enum AvItemIdentifierTypes implements OnixCodelist, CodeList241 {
@@ -71,8 +71,8 @@ public enum AvItemIdentifierTypes implements OnixCodelist, CodeList241 {
     ISRC("18", "ISRC"),
 
     /**
-     * International Standard Audiovisual Number, 16 or 26 hex digits, with optional alphanumeric check character(s),
-     * unhyphenated
+     * International Standard Audiovisual Number (17 or 26 characters - 16 or 24 hexadecimal digits, plus one or two
+     * alphanumeric check characters, and without spaces or hyphens)
      */
     ISAN("19", "ISAN"),
 

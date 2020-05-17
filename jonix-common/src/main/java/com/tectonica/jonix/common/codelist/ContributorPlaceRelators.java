@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList151 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist151">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist151">ONIX
  *      Codelist 151 in Reference Guide</a>
  */
 public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
@@ -65,7 +65,21 @@ public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
     /**
      * Or nationality. For use with country codes only
      */
-    Citizen_of("08", "Citizen of");
+    Citizen_of("08", "Citizen of"),
+
+    /**
+     * The place of legal registration of an organisation
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Registered_in("09", "Registered in"),
+
+    /**
+     * The place an organisation or part of an organisation is based or operates from
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Operating_from("10", "Operating from");
 
     public final String code;
     public final String description;

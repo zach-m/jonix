@@ -75,6 +75,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class OriginalLanguage implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
 

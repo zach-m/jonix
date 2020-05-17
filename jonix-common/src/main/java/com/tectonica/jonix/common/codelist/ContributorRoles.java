@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList17 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -500,6 +500,21 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Assisted_by("Z01", "Assisted by"),
 
     Honored_dedicated_to("Z02", "Honored/dedicated to"),
+
+    /**
+     * For publication of laws, regulations, rulings etc. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Enacting_jurisdiction("Z03", "Enacting jurisdiction"),
+
+    /**
+     * Use with &lt;UnnamedPersons&gt; code 02 as a 'flag' to indicate the publication is anonymously peer-reviewed. For
+     * use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Peer_reviewed("Z04", "Peer reviewed"),
 
     /**
      * For use ONLY with 'et al' or 'Various' within &lt;UnnamedPersons&gt;, where the roles of the multiple

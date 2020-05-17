@@ -21,15 +21,15 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 143 (US CPSIA hazard warning type)
+ * marker interface to assist in IDE navigation to code-list 143 (CPSIA or other US hazard warning type)
  */
 interface CodeList143 {
 }
@@ -37,14 +37,14 @@ interface CodeList143 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 143</b>
  * <p>
- * Description: US CPSIA hazard warning type
+ * Description: CPSIA or other US hazard warning type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist143">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist143">ONIX
  *      Codelist 143 in Reference Guide</a>
  */
-public enum UsCpsiaHazardWarningTypes implements OnixCodelist, CodeList143 {
+public enum CpsiaOrOtherUsHazardWarningTypes implements OnixCodelist, CodeList143 {
     /**
      * Required on applicable products sold in the US
      */
@@ -94,12 +94,62 @@ public enum UsCpsiaHazardWarningTypes implements OnixCodelist, CodeList143 {
      * stick together across intestines causing serious infections and death. Seek immediate medical attention if
      * magnet(s) are swallowed or inhaled
      */
-    WARNING_MAGNET_HAZARD_Product_contains_a("11", "WARNING: MAGNET HAZARD – Product contains (a) small magnet(s)");
+    WARNING_MAGNET_HAZARD_Product_contains_a("11", "WARNING: MAGNET HAZARD – Product contains (a) small magnet(s)"),
+
+    /**
+     * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    No_magnet_hazard_warning_necessary("12", "No magnet hazard warning necessary"),
+
+    /**
+     * Product flashes, flickers or includes high-contrast static or moving patterns which may cause discomfort or
+     * seizures in people with photosensitive epilepsy
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    WARNING_Flashing_hazard("13", "WARNING – Flashing hazard"),
+
+    /**
+     * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    No_flashing_hazard_warning_necessary("14", "No flashing hazard warning necessary"),
+
+    /**
+     * Required on applicable products sold in California. Must be accompanied in &lt;ProductFormFeatureDescription&gt;
+     * by specific additional text as displayed on product or packaging. For example, &#8220;WARNING: This product can
+     * expose you to chemicals including [chemical name], which is known to the State of California to cause cancer. For
+     * more information, go to www.P65Warnings.ca.gov&#8221;. Note long-form warnings should be used here, even if a
+     * short form warning is used on the product or packaging
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    WARNING_California_Proposition_65_carcinogenic_teratogenic_or_other_reproductively_harmful_chemical_hazard("21",
+        "WARNING – California Proposition 65 carcinogenic, teratogenic or other reproductively harmful chemical hazard"),
+
+    /**
+     * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    No_California_Proposition_65_hazard_warning_necessary("22",
+        "No California Proposition 65 hazard warning necessary"),
+
+    /**
+     * &lt;ProductFormFeatureDescripton&gt; carries the name of chemical that is the subject of a warning, taken from
+     * the list at www.p65warnings.ca.gov/chemicals
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    California_Proposition_65_chemical_name("23", "California Proposition 65 chemical name");
 
     public final String code;
     public final String description;
 
-    UsCpsiaHazardWarningTypes(String code, String description) {
+    CpsiaOrOtherUsHazardWarningTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -114,16 +164,16 @@ public enum UsCpsiaHazardWarningTypes implements OnixCodelist, CodeList143 {
         return description;
     }
 
-    private static volatile Map<String, UsCpsiaHazardWarningTypes> map;
+    private static volatile Map<String, CpsiaOrOtherUsHazardWarningTypes> map;
 
-    private static Map<String, UsCpsiaHazardWarningTypes> map() {
-        Map<String, UsCpsiaHazardWarningTypes> result = map;
+    private static Map<String, CpsiaOrOtherUsHazardWarningTypes> map() {
+        Map<String, CpsiaOrOtherUsHazardWarningTypes> result = map;
         if (result == null) {
-            synchronized (UsCpsiaHazardWarningTypes.class) {
+            synchronized (CpsiaOrOtherUsHazardWarningTypes.class) {
                 result = map;
                 if (result == null) {
                     result = new HashMap<>();
-                    for (UsCpsiaHazardWarningTypes e : values()) {
+                    for (CpsiaOrOtherUsHazardWarningTypes e : values()) {
                         result.put(e.code, e);
                     }
                     map = result;
@@ -133,7 +183,7 @@ public enum UsCpsiaHazardWarningTypes implements OnixCodelist, CodeList143 {
         return result;
     }
 
-    public static UsCpsiaHazardWarningTypes byCode(String code) {
+    public static CpsiaOrOtherUsHazardWarningTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }

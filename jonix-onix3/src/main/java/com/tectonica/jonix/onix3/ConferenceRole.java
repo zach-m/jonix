@@ -72,6 +72,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
     private static final long serialVersionUID = 1L;
 

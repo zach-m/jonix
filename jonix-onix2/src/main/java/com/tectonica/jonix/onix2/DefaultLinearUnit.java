@@ -77,6 +77,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class DefaultLinearUnit implements OnixElement<DefaultLinearUnits>, Serializable {
     private static final long serialVersionUID = 1L;
 

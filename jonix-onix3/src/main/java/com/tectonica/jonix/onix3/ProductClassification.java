@@ -130,6 +130,10 @@ public class ProductClassification
                 case ProductClassificationCode.shortname:
                     productClassificationCode = new ProductClassificationCode(e);
                     break;
+                case ProductClassificationTypeName.refname:
+                case ProductClassificationTypeName.shortname:
+                    productClassificationTypeName = new ProductClassificationTypeName(e);
+                    break;
                 case Percent.refname:
                 case Percent.shortname:
                     percent = new Percent(e);
@@ -179,6 +183,22 @@ public class ProductClassification
     public ProductClassificationCode productClassificationCode() {
         _initialize();
         return productClassificationCode;
+    }
+
+    private ProductClassificationTypeName productClassificationTypeName = ProductClassificationTypeName.EMPTY;
+
+    /**
+     * <p>
+     * A name which identifies a proprietary classification scheme (<i>ie</i> a scheme which is not a standard and for
+     * which there is no individual scheme type code). Should be included when, and only when, the code in the
+     * &lt;ProductClassificationType&gt; element indicates a proprietary scheme, <i>ie</i> the sender’s own category
+     * scheme. Optional and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ProductClassificationTypeName productClassificationTypeName() {
+        _initialize();
+        return productClassificationTypeName;
     }
 
     private Percent percent = Percent.EMPTY;

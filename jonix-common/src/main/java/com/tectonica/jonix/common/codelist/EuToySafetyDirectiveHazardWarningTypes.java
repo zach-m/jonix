@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList184 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist184">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist184">ONIX
  *      Codelist 184 in Reference Guide</a>
  */
 public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, CodeList184 {
@@ -75,7 +75,7 @@ public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, Code
     /**
      * Exact text (not in itself a warning) must be included in &lt;ProductFormFeatureDescription&gt;. May be used
      * either without any warning, or as text additional to a warning. Note that if no warnings apply, code 00 can
-     * provide positive indication of this. Example use: 'Suitable for all ages'
+     * provide positive indication of this. Example uses: 'Suitable for all ages' or 'Adult supervision required'
      */
     Carries_other_text_associated_with_toy_safety("05", "Carries other text associated with toy safety"),
 
@@ -89,7 +89,15 @@ public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, Code
      * Declaration of Conformity (the document that backs up the CE mark) available online, typically as a PDF file or
      * similar. &lt;ProductFormFeatureDescription&gt; must carry the URL of the document
      */
-    Declaration_of_Conformity_available("07", "Declaration of Conformity available");
+    Declaration_of_Conformity_available("07", "Declaration of Conformity available"),
+
+    /**
+     * If specific alternative wording is carried in &lt;ProductFormFeatureDescription&gt;, this must be used in place
+     * of the default 'Conforms to EN71' text. For use in ONIX 3.0 only.
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Carries_EN71_conformity_statement("08", "Carries EN71 conformity statement");
 
     public final String code;
     public final String description;

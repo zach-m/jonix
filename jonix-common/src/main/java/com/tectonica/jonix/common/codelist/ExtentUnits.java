@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,12 +41,19 @@ interface CodeList24 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist24">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist24">ONIX
  *      Codelist 24 in Reference Guide</a>
  */
 public enum ExtentUnits implements OnixCodelist, CodeList24 {
     /**
-     * Words of natural language text
+     * Approximate number of characters (including spaces) of natural language text. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Characters("01", "Characters"),
+
+    /**
+     * Approximate number of words of natural language text
      */
     Words("02", "Words"),
 
@@ -87,7 +94,8 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
     Hours_and_minutes_HHHMM("15", "Hours and minutes HHHMM"),
 
     /**
-     * Fill with leading zeroes if any elements are missing
+     * Fill with leading zeroes if any elements are missing. If centisecond precision is required, use HHHMMSScc (in
+     * ONIX 3.0 only)
      */
     Hours_minutes_seconds_HHHMMSS("16", "Hours minutes seconds HHHMMSS"),
 

@@ -35,9 +35,9 @@ import java.io.Serializable;
 /**
  * <h1>Copyright owner composite</h1>
  * <p>
- * A repeatable group of data elements which together name a copyright owner. Optional, so that a copyright statement
- * can be limited to &lt;CopyrightYear&gt;. Each occurrence of the &lt;CopyrightOwner&gt; composite must carry a single
- * name (personal or corporate), or an identifier, or both.
+ * A repeatable group of data elements which together name a copyright owner. Optional, but may be omitted only if
+ * &lt;CopyrightYear&gt; is present. Each occurrence of the &lt;CopyrightOwner&gt; composite must carry a single name
+ * (personal or corporate), or an identifier, or both.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

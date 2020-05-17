@@ -21,6 +21,9 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -38,7 +41,7 @@ interface CodeList204 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist204">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist204">ONIX
  *      Codelist 204 in Reference Guide</a>
  */
 public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
@@ -55,25 +58,50 @@ public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
     Consignment("01", "Consignment"),
 
     /**
-     * The retailer is invoiced and pays immediately as in the sale or return model, but any excess unsold inventory
-     * cannot be returned to the supplier
+     * The retailer is invoiced for the goods immediately (or upon dispatch) and pays within the specified credit
+     * period, as in the sale or return model, but any excess unsold inventory cannot be returned to the supplier
      */
     Firm_sale("02", "Firm sale"),
 
     /**
-     * Contact supplier for applicable returns authorization process. The retailer is invoiced immediately for the goods
-     * and pays within the specified credit period, but can return excess unsold inventory to the supplier for full
-     * credit at a later date (some kind of returns authorisation process is normally required and returns must be in
-     * saleable conditon, except when return of stripped covers or proof of destruction may be allowed instead)
+     * Contact supplier for applicable returns authorization process. The retailer is invoiced for the goods immediately
+     * (or upon dispatch) and pays within the specified credit period, but can return excess unsold inventory to the
+     * supplier for full credit at a later date. Some kind of returns authorisation process is normally required.
+     * Returns must be in saleable conditon, except when return of stripped covers or proof of destruction may be
+     * allowed instead. For more detail, use codes 05, 06 or 07
      */
     Sale_or_return("03", "Sale or return"),
 
     /**
      * The retailer pays for goods only after they are sold by the retailer to an end consumer, but all inventory
-     * remains physically located at the supplier (thus there can be no returns of unsold inventory). When ordered by
-     * the retailer, the goods are delivered direct to the consumer
+     * remains physically located at the supplier (thus there can be no retailer returns of unsold inventory). When
+     * ordered by the retailer, the goods are delivered direct to the end consumer
      */
-    Direct_fulfillment("04", "Direct fulfillment");
+    Direct_fulfillment("04", "Direct fulfillment"),
+
+    /**
+     * Contact supplier for applicable returns authorization process. As for code 03, but only returns of saleable
+     * copies will be accepted. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sale_or_return_of_saleable_copies("05", "Sale or return of saleable copies"),
+
+    /**
+     * Contact supplier for applicable cover returns authorization process. As for code 03, but only returns of stripped
+     * covers will be accepted. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sale_or_return_of_stripped_covers("06", "Sale or return of stripped covers"),
+
+    /**
+     * Contact supplier for applicable destruction certification process. As for code 03, but only certified destruction
+     * will be accepted. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sale_or_certified_destruction("07", "Sale or certified destruction");
 
     public final String code;
     public final String description;
@@ -93,15 +121,29 @@ public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
         return description;
     }
 
+    private static volatile Map<String, OnixReturnsConditionss> map;
+
+    private static Map<String, OnixReturnsConditionss> map() {
+        Map<String, OnixReturnsConditionss> result = map;
+        if (result == null) {
+            synchronized (OnixReturnsConditionss.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (OnixReturnsConditionss e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static OnixReturnsConditionss byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (OnixReturnsConditionss e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 }

@@ -59,7 +59,7 @@ import java.util.List;
 /**
  * <h1>Descriptive detail composite</h1>
  * <p>
- * The descriptive detail block covers data element Groups P.3 to P.13, all of which are essentially part of the factual
+ * The descriptive detail block covers data Groups P.3 to P.13, all of which are essentially part of the factual
  * description of the form and content of a product. The block as a whole is non-repeating. It is mandatory in any
  * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an update
  * notice which carries only those blocks in which changes have occurred.

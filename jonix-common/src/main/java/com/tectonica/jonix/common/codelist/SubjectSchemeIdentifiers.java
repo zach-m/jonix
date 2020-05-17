@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList27 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -116,8 +116,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Used for German National Bibliography since 2004 (100 subjects). Is different from value 30. See
-     * http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or
-     * http://www.d-nb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf (English)
+     * http://www.dnb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or
+     * http://www.dnb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf (English)
      */
     DDC_Sachgruppen_der_Deutschen_Nationalbibliografie("18", "DDC-Sachgruppen der Deutschen Nationalbibliografie"),
 
@@ -161,8 +161,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Schlagwortnormdatei - Subject Headings Authority File in the German-speaking countries. See
-     * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and
-     * http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm (English). DEPRECATED in favor of the GND
+     * http://www.dnb.de/standardisierung/normdateien/swd.htm (in German) and
+     * http://www.dnb.de/eng/standardisierung/normdateien/swd.htm (English). DEPRECATED in favor of the GND
      */
     SWD("27", "SWD"),
 
@@ -179,7 +179,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Deutsche Bibliothek subject groups. Used for German National Bibliography until 2003 (65 subjects). Is different
-     * from value 18. See http://www.d-nb.de/service/pdf/ddc_wv_alt_neu.pdf (in German)
+     * from value 18. See http://www.dnb.de/service/pdf/ddc_wv_alt_neu.pdf (in German)
      */
     DNB_Sachgruppen("30", "DNB-Sachgruppen"),
 
@@ -548,8 +548,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Rameau("A5", "Rameau"),
 
     /**
-     * French educational subject classification scolomfr-voc-015. See
-     * https://www.reseau-canope.fr/scolomfr/accueil.html
+     * French educational subject classification, URI http://data.education.fr/voc/scolomfr/scolomfr-voc-015GTPX
      */
     Nomenclature_discipline_scolaire("A6", "Nomenclature discipline scolaire"),
 
@@ -592,8 +591,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Keywords_not_for_display("B2", "Keywords (not for display)"),
 
     /**
-     * French higher and vocational educational subject classification scolomfr-voc-29 subject category for degree and
-     * diploma study. See https://www.reseau-canope.fr/scolomfr/accueil.html
+     * French higher and vocational educational subject classification, URI
+     * http://data.education.fr/voc/scolomfr/scolomfr-voc-029
      */
     Nomenclature_Dipl_me("B3", "Nomenclature Diplôme"),
 
@@ -612,7 +611,23 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Key_place_names("B5", "Key place names");
+    Key_place_names("B5", "Key place names"),
+
+    /**
+     * Faceted Application of Subject Terminology, OCLC subject scheme based on but different from LCSH (see code 04).
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    FAST("B6", "FAST"),
+
+    /**
+     * Next Generation Science Standards for K-12 education in the USA (https://www.nextgenscience.org).
+     * &lt;SubjectCode&gt; is a code such as 4-PS3-2. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    NGSS("B7", "NGSS");
 
     public final String code;
     public final String description;

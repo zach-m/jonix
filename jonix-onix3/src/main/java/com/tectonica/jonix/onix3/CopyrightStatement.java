@@ -36,8 +36,10 @@ import java.util.List;
  * <h1>Copyright statement composite</h1>
  * <p>
  * An optional and repeatable group of data elements which together represent a copyright or neighbouring right
- * statement for the product. Either the copyright year alone, or a structured rights statement listing year(s) and
- * rights holder(s), may be sent as an instance of the composite.
+ * statement for the product. At least one &lt;CopyrightYear&gt; or one instance of the &lt;CopyrightOwner&gt; composite
+ * must be sent within an instance of the composite, but it is recommended that all elements in the composite are
+ * explicitly populated. The Copyright statement may be repeated to provide a full structured rights statement listing
+ * year(s) and rights holder(s).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -155,8 +157,9 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The copyright year as it appears in a copyright statement on the product. Mandatory in each occurrence of the
-     * &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.
+     * The copyright year as it appears in a copyright statement on the product. Optional in each occurrence of the
+     * &lt;CopyrightStatement&gt; composite but may be omitted only if &lt;CopyrightOwner&gt; is present, and repeatable
+     * if several years or periods are listed.
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
@@ -183,9 +186,9 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A repeatable group of data elements which together name a copyright owner. Optional, so that a copyright
-     * statement can be limited to &lt;CopyrightYear&gt;. Each occurrence of the &lt;CopyrightOwner&gt; composite must
-     * carry a single name (personal or corporate), or an identifier, or both.
+     * A repeatable group of data elements which together name a copyright owner. Optional, but may be omitted only if
+     * &lt;CopyrightYear&gt; is present. Each occurrence of the &lt;CopyrightOwner&gt; composite must carry a single
+     * name (personal or corporate), or an identifier, or both.
      * </p>
      * Jonix-Comment: this list may be empty
      */

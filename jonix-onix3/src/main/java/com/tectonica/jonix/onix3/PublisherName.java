@@ -55,7 +55,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language</td>
+ * <td>language, collationkey</td>
  * </tr>
  * <tr>
  * <td>Example</td>
@@ -98,6 +98,11 @@ public class PublisherName implements OnixElement<String>, Serializable {
      */
     public String sourcename;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String collationkey;
+
     public Languages language;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -135,6 +140,7 @@ public class PublisherName implements OnixElement<String>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        collationkey = JPU.getAttribute(element, "collationkey");
         language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);

@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList34 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist34">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist34">ONIX
  *      Codelist 34 in Reference Guide</a>
  */
 public enum TextFormats implements OnixCodelist, CodeList34 {
@@ -58,16 +58,18 @@ public enum TextFormats implements OnixCodelist, CodeList34 {
     XHTML("05", "XHTML"),
 
     /**
-     * Default: text containing no tags of any kind, except for the tags &amp;amp; and &amp;lt; that XML insists must be
-     * used to represent ampersand and less-than characters in text, and in the encoding declared at the head of the
-     * message or in the XML default (UTF-8 or UTF-16) if there is no explicit declaration
+     * Default: plain text containing no markup tags of any kind, except for the character entities &amp;amp; and
+     * &amp;lt; that XML insists must be used to represent ampersand and less-than characters in textual data, and in
+     * the encoding declared at the head of the message or in the XML default (UTF-8 or UTF-16) if there is no explicit
+     * declaration
      */
     Default_text_format("06", "Default text format"),
 
     /**
-     * Plain text containing no tags of any kind, except for the tags &amp;amp; and &amp;lt; that XML insists must be
-     * used to represent ampersand and less-than characters in text, and with the character set limited to the ASCII
-     * range, i.e. valid characters whose Unicode character number lies between 32 (space) and 126 (tilde)
+     * Plain text containing no markup tags of any kind, except for the character entities &amp;amp; and &amp;lt; that
+     * XML insists must be used to represent ampersand and less-than characters in textual data, and with the character
+     * set limited to the ASCII range, i.e. valid characters whose Unicode character numbers lie between 32 (space) and
+     * 126 (tilde)
      */
     Basic_ASCII_text("07", "Basic ASCII text"),
 

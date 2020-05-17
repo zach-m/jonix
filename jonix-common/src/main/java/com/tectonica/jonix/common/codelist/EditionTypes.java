@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList21 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -91,7 +91,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
 
     /**
      * An edition in which two or more works also published separately are combined in a single volume; AKA 'omnibus'
-     * edition
+     * edition (fr: 'int&#232;grale')
      */
     Combined_volume("CMB", "Combined volume"),
 
@@ -138,6 +138,17 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Festschrift("FST", "Festschrift"),
 
     /**
+     * Edition optimised for high readability, typically featuring colored or tinted page backgrounds to reduce
+     * contrast, extra letter, word and line spacing to reduce crowding and isolate individual words, simplified page
+     * layouts and an open, sans serif font (or occasionally, an unusual font design) intended to aid readability.
+     * Sometimes labelled 'dyslexia-friendly'. See also code SMP if the text itself is simplified, and codes LTE or ULP
+     * if the type size is significantly larger than normal. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    High_readability_edition("HRE", "High readability edition"),
+
+    /**
      * Content includes extensive illustrations which are not part of other editions
      */
     Illustrated_edition("ILL", "Illustrated edition"),
@@ -170,13 +181,13 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Multilingual_edition("MLL", "Multilingual edition"),
 
     /**
-     * Where no other information is given, or no other coded type is applicable
+     * Where no other information is given, or no other coded type or edition numbering is applicable
      */
     New_edition("NED", "New edition"),
 
     /**
-     * A limited edition in which each copy is individually numbered. Use &lt;EditionStatement&gt; to give details of
-     * the number of copies printed
+     * A limited edition in which each copy is individually numbered, and the actual number of copies is strictly
+     * limited. Use &lt;EditionStatement&gt; to give details of the number of copies printed
      */
     Edition_with_numbered_copies("NUM", "Edition with numbered copies"),
 
@@ -188,7 +199,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Prebound_edition("PRB", "Prebound edition"),
 
     /**
-     * Content has been revised from that of a previous edition
+     * Content has been revised from that of a previous edition (often used when there has been no corresponding
+     * increment in the edition number, or no edition numbering is available)
      */
     Revised_edition("REV", "Revised edition"),
 

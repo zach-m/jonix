@@ -67,6 +67,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class ConferenceSponsor implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 

@@ -69,6 +69,7 @@ import java.io.Serializable;
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>
  * <li>&lt;{@link ContributorPlace}&gt;</li>
+ * <li>&lt;{@link EventOccurrence}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
@@ -79,8 +80,12 @@ import java.io.Serializable;
  * {@link ContributorPlace} ⯈ {@link LocationName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link ContributorPlace} ⯈ {@link LocationName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link ContributorPlace} ⯈ {@link LocationName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link ContributorPlace} ⯈ {@link LocationName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link LocationName}</li>
  * </ul>
  *
  * @since Onix-3.02

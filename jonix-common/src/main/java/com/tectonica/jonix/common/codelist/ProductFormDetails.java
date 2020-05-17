@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList175 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -163,6 +163,21 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * least at paragraph level, and covering the full content
      */
     Synchronised_audio("A305", "Synchronised audio"),
+
+    /**
+     * Incidental sounds added to the audiobook narration (eg background environmental sounds)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sound_effects("A310", "Sound effects"),
+
+    /**
+     * Incidental music added to the audiobook narration (eg to heighten atmosphere). Do not use where the music is a
+     * primary part of the audio
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Background_music("A311", "Background music"),
 
     /**
      * Includes 'stereo' where channels are identical
@@ -877,15 +892,72 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      */
     Sony_PlayStation_2("D311", "Sony PlayStation 2"),
 
+    /**
+     * Use with Product Form code DE or DB as applicable
+     */
     Nintendo_Dual_Screen("D312", "Nintendo Dual Screen"),
 
+    /**
+     * Use with Product Form code DE or DB as applicable
+     */
     Sony_PlayStation_3("D313", "Sony PlayStation 3"),
 
+    /**
+     * Use with Product Form code DE or DB as applicable
+     */
     Xbox_360("D314", "Xbox 360"),
 
+    /**
+     * Use with Product Form code DE or DB as applicable
+     */
     Nintendo_Wii("D315", "Nintendo Wii"),
 
+    /**
+     * Use with Product Form code DE or DB as applicable
+     */
     Sony_PlayStation_Portable_PSP("D316", "Sony PlayStation Portable (PSP)"),
+
+    /**
+     * Use with Product Form code DE or DB as applicable
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sony_PlayStation_3_("D317", "Sony PlayStation 3"),
+
+    /**
+     * Use with Product Form code DE or DB as applicable
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sony_PlayStation_4("D318", "Sony PlayStation 4"),
+
+    /**
+     * Use with Product Form code DE or DB as applicable
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sony_PlayStation_Vita("D319", "Sony PlayStation Vita"),
+
+    /**
+     * Use with Product Form code DE or DB as applicable
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Microsoft_Xbox_One("D320", "Microsoft Xbox One"),
+
+    /**
+     * Use with Product Form code DE or DB as applicable
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Nintendo_Switch("D321", "Nintendo Switch"),
+
+    /**
+     * Use with Product Form code DE or DB as applicable
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Nintendo_Wii_U("D322", "Nintendo Wii U"),
 
     /**
      * No code allocated for this e-publication format yet
@@ -972,7 +1044,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * A format proprietary to Amazon for use with its Kindle reading devices or software readers [File extensions .azw,
-     * .mobi, .prc etc]
+     * .mobi, .prc etc]. Prefer code E148 for Print Replica files
      */
     Amazon_Kindle("E116", "Amazon Kindle"),
 
@@ -1143,6 +1215,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Erudit("E147", "Erudit"),
 
     /**
+     * A format proprietary to Amazon for use with its Kindle reading devices or software readers. Essentially a PDF
+     * embedded within a KF8 format file
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Amazon_Kindle_Print_Replica("E148", "Amazon Kindle Print Replica"),
+
+    /**
      * Use this and/or code E201 when a particular e-publication type (specified using codes E100 and upwards) has both
      * fixed format and reflowable variants, to indicate which option is included in this product
      */
@@ -1218,39 +1298,39 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Laminated("L101", "Laminated"),
 
     /**
-     * Use with Product Form code PC
+     * Large format. Use with Product Form code PC or PF
      */
-    Desk_calendar("P101", "Desk calendar"),
+    Desk_calendar_or_diary("P101", "Desk calendar or diary"),
 
     /**
-     * Use with Product Form code PC
+     * Small format. Use with Product Form code PC or PF
      */
-    Mini_calendar("P102", "Mini calendar"),
+    Mini_calendar_or_pocket_diary("P102", "Mini calendar or pocket diary"),
 
     /**
-     * Use with Product Form code PC
+     * Usually with time-of-day subdivisions (rather than just days). Use with Product Form code PC or PF
      */
-    Engagement_calendar("P103", "Engagement calendar"),
+    Engagement_calendar_or_Appointment_diary("P103", "Engagement calendar or Appointment diary"),
 
     /**
-     * Use with Product Form code PC
+     * Eg tear-off calendars. Use with Product Form code PC
      */
     Day_by_day_calendar("P104", "Day by day calendar"),
 
     /**
-     * Use with Product Form code PC
+     * Large single-sheet calendar intended for hanging. Use with Product Form code PC
      */
     Poster_calendar("P105", "Poster calendar"),
 
     /**
-     * Use with Product Form code PC
+     * Large calendar intended for hanging, usually one page per month. Use with Product Form code PC
      */
     Wall_calendar("P106", "Wall calendar"),
 
     /**
-     * Use with Product Form code PC
+     * Usually undated. Use with Product Form code PC or PF
      */
-    Perpetual_calendar("P107", "Perpetual calendar"),
+    Perpetual_calendar_or_diary("P107", "Perpetual calendar or diary"),
 
     /**
      * Use with Product Form code PC
@@ -1258,14 +1338,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Advent_calendar("P108", "Advent calendar"),
 
     /**
-     * Use with Product Form code PC
+     * Use with Product Form code PC or PT
      */
     Bookmark_calendar("P109", "Bookmark calendar"),
 
     /**
-     * Use with Product Form code PC
+     * Mid-year diary, start and end aligned with the academic year. Use with Product Form code PC or PF
      */
-    Student_calendar("P110", "Student calendar"),
+    Student_or_Academic_calendar_or_diary("P110", "Student or Academic calendar or diary"),
 
     /**
      * Use with Product Form code PC
@@ -1278,15 +1358,23 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Almanac_calendar("P112", "Almanac calendar"),
 
     /**
-     * A calendar that is not one of the types specified elsewhere: use with Product Form code PC
+     * A calendar, diary or organiser that is not one of the types specified elsewhere: use with Product Form code PC,
+     * PF or PS
      */
-    Other_calendar("P113", "Other calendar"),
+    Other_calendar_diary_or_organiser("P113", "Other calendar, diary or organiser"),
 
     /**
      * A product that is associated with or ancillary to a calendar or organiser, eg a deskstand for a calendar, or an
      * insert for an organiser: use with Product Form code PC or PS
      */
     Other_calendar_or_organiser_product("P114", "Other calendar or organiser product"),
+
+    /**
+     * Wall or poster calendar with entries for each family member. Use with Product Form code PC or PK
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Family_planner("P115", "Family planner"),
 
     /**
      * Kamishibai / Cantastoria cards

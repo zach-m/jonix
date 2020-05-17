@@ -68,6 +68,7 @@ import java.io.Serializable;
  * <li>&lt;{@link SupportingResource}&gt;</li>
  * <li>&lt;{@link TextContent}&gt;</li>
  * <li>&lt;{@link CitedContent}&gt;</li>
+ * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
@@ -85,6 +86,8 @@ import java.io.Serializable;
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
  * {@link ContentAudience}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈
+ * {@link ContentAudience}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link ContentAudience}</li>
  * </ul>
  */

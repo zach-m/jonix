@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList150 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
@@ -385,7 +385,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Calendar("PC", "Calendar"),
 
     /**
-     * Cards, flash cards (eg for teaching reading)
+     * Cards, flash cards (eg for teaching reading), revision cards, divination, playing or trading cards
      */
     Cards("PD", "Cards"),
 
@@ -397,7 +397,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     /**
      * May use &lt;ProductFormDetail&gt; codes P201 to P204 to specify binding
      */
-    Diary("PF", "Diary"),
+    Diary_or_journal("PF", "Diary or journal"),
 
     /**
      * Narrow strip-shaped printed sheet used mostly for education or children's products (eg depicting alphabet, number
@@ -410,8 +410,15 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      */
     Kit("PH", "Kit"),
 
+    /**
+     * May use &lt;ProductFormDetail&gt; codes P201 to P204 to specify binding
+     */
     Sheet_music("PI", "Sheet music"),
 
+    /**
+     * Including greeting cards and packs. For bound books (usually with perforated sheets to remove cards), may use
+     * &lt;ProductFormDetail&gt; codes P201 to P204 to specify binding
+     */
     Postcard_book_or_pack("PJ", "Postcard book or pack"),
 
     /**
@@ -462,6 +469,13 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * Jonix-Comment: Introduced in Onix3
      */
     Leaflet("PU", "Leaflet"),
+
+    /**
+     * Ex libris' book labels and packs
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Book_plates("PV", "Book plates"),
 
     /**
      * Other printed item not specified by PB to PQ
@@ -618,7 +632,16 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Boxed_pack("XM", "Boxed pack"),
 
     /**
-     * Other point of sale material not specified by XB to XL
+     * A quantity pack with its own product code, usually for trade supply only: the retail items it contains are
+     * intended for sale individually. ISBN (where applicable) and format of contained items must be given in
+     * &lt;ProductPart&gt;. Use only when the pack is neither shrinp-wrapped nor boxed
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Pack_outer_packaging_unspecified("XN", "Pack (outer packaging unspecified)"),
+
+    /**
+     * Other point of sale material not specified by XB to XM
      */
     Other_point_of_sale("XZ", "Other point of sale"),
 
@@ -627,13 +650,19 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      */
     General_merchandise("ZA", "General merchandise"),
 
-    Doll("ZB", "Doll"),
+    /**
+     * Including action figures, figurines
+     */
+    Doll_or_figure("ZB", "Doll or figure"),
 
     /**
      * Soft or plush toy
      */
     Soft_toy("ZC", "Soft toy"),
 
+    /**
+     * Including educational toys (where no other code is relevant)
+     */
     Toy("ZD", "Toy"),
 
     /**
@@ -658,6 +687,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      */
     Audiobook_player("ZI", "Audiobook player"),
 
+    /**
+     * Jigsaw or similar 'shapes' puzzle
+     */
     Jigsaw("ZJ", "Jigsaw"),
 
     /**

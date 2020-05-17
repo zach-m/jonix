@@ -64,6 +64,8 @@ import java.io.Serializable;
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link Prize}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link Prize}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link Prize}</li>
  * </ul>
@@ -138,6 +140,10 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
                 case PrizeCountry.shortname:
                     prizeCountry = new PrizeCountry(e);
                     break;
+                case PrizeRegion.refname:
+                case PrizeRegion.shortname:
+                    prizeRegion = new PrizeRegion(e);
+                    break;
                 case PrizeCode.refname:
                 case PrizeCode.shortname:
                     prizeCode = new PrizeCode(e);
@@ -208,6 +214,22 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     public PrizeCountry prizeCountry() {
         _initialize();
         return prizeCountry;
+    }
+
+    private PrizeRegion prizeRegion = PrizeRegion.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code identifying the region in which a prize or award is given. Optional and non-repeatable. A region is
+     * an area which is not a country, but which is precisely defined in geographical terms, <i>eg</i> Newfoundland and
+     * Labrador, Florida. If both country and region are specified, the region must be within the country. Note that US
+     * States have region codes, while US overseas territories have distinct ISO Country Codes.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PrizeRegion prizeRegion() {
+        _initialize();
+        return prizeRegion;
     }
 
     private PrizeCode prizeCode = PrizeCode.EMPTY;

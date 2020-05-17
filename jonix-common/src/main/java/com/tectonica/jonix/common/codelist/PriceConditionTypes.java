@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList167 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist167">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist167">ONIX
  *      Codelist 167 in Reference Guide</a>
  */
 public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
@@ -83,6 +83,13 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
     Linked_price("06", "Linked price"),
 
     /**
+     * The rental or subscription will automatically renew at the end of the period unless actively cancelled
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Auto_renewing("07", "Auto-renewing"),
+
+    /**
      * The duration of the rental to which the price applies. Deprecated, use &lt;PriceConstraint&gt; instead
      */
     Rental_duration("10", "Rental duration"),
@@ -96,7 +103,7 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
     /**
      * Upgrade to longer rental duration. &lt;PriceConditionQuantity&gt; gives minimum prior rental duration, and
      * &lt;ProductIdentifier&gt; may be used if rental uses a different product identifier. Separate price constraint
-     * with time limited licence duration (code 07) specifies the new combined rental duration
+     * with time limited license duration (code 07) specifies the new combined rental duration
      */
     Rental_extension("12", "Rental extension");
 

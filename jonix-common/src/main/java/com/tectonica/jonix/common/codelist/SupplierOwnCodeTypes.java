@@ -38,7 +38,7 @@ interface CodeList165 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist165">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist165">ONIX
  *      Codelist 165 in Reference Guide</a>
  */
 public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
@@ -76,7 +76,16 @@ public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
      * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
      * to that the publisher estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or GTIN-13
      */
-    Publisher_s_sales_expectation("06", "Publisher’s sales expectation");
+    Publisher_s_sales_expectation("06", "Publisher’s sales expectation"),
+
+    /**
+     * Code indicates whether an order can be placed with the supplier indirectly via an intermediary system. The code
+     * name type indicates the specific intermediate order aggregation/routing platform and the code indicates the
+     * eligibility
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Supplier_s_order_routing_eligibility("07", "Supplier’s order routing eligibility");
 
     public final String code;
     public final String description;

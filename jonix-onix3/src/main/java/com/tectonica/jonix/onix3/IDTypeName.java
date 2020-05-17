@@ -79,6 +79,7 @@ import java.io.Serializable;
  * <li>&lt;{@link WorkIdentifier}&gt;</li>
  * <li>&lt;{@link AgentIdentifier}&gt;</li>
  * <li>&lt;{@link AVItemIdentifier}&gt;</li>
+ * <li>&lt;{@link EventIdentifier}&gt;</li>
  * <li>&lt;{@link ProductIdentifier}&gt;</li>
  * <li>&lt;{@link CollectionIdentifier}&gt;</li>
  * <li>&lt;{@link NameIdentifier}&gt;</li>
@@ -96,6 +97,10 @@ import java.io.Serializable;
  * {@link SupplyContactIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventSponsor} ⯈
  * {@link EventSponsorIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link EventSponsor} ⯈ {@link EventSponsorIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventSponsor}
+ * ⯈ {@link EventSponsorIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Funding} ⯈
  * {@link FundingIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
@@ -122,6 +127,10 @@ import java.io.Serializable;
  * {@link PublisherRepresentative} ⯈ {@link AgentIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈
  * {@link AVItemIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link EventIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
  * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
@@ -149,16 +158,22 @@ import java.io.Serializable;
  * ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
  * {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
  * {@link AlternativeName} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link ContributorReference} ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link NameIdentifier}
  * ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈

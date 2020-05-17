@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList45 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist45">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist45">ONIX
  *      Codelist 45 in Reference Guide</a>
  */
 public enum PublishingRoles implements OnixCodelist, CodeList45 {
@@ -70,11 +70,6 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
      * Use also for 'Published in cooperation with'
      */
     Published_in_association_with("07", "Published in association with"),
-
-    /**
-     * DEPRECATED: use code 06
-     */
-    Published_on_behalf_of("08", "Published on behalf of"),
 
     /**
      * When ownership of a product or title is transferred from one publisher to another
@@ -139,7 +134,14 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
      * Organisation primarily responsible for physical manufacture of a product, when neither Printer nor Binder is
      * directly appropriate (for example, with disc or tape products, or digital products on a physical carrier)
      */
-    Manufacturer("19", "Manufacturer");
+    Manufacturer("19", "Manufacturer"),
+
+    /**
+     * DEPRECATED: use code 06
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Published_on_behalf_of("08", "Published on behalf of");
 
     public final String code;
     public final String description;

@@ -21,8 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -41,7 +41,7 @@ interface CodeList71 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist71">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
@@ -52,16 +52,17 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Unspecified_see_text("00", "Unspecified – see text"),
 
     /**
-     * For sale only through designated retailer. Retailer must be identified or named in an instance of the
-     * &lt;SalesOutlet&gt; composite. Use only when it is not possible to assign the more explicit code 04 or 05
+     * Sales rights (or market distribution rights) apply to sales through designated retailer(s), which must be
+     * identified or named in an instance of the &lt;SalesOutlet&gt; composite. Use only when it is not possible to
+     * assign the more explicit codes 04 or 05
      */
     Retailer_exclusive_own_brand("01", "Retailer exclusive / own brand"),
 
     /**
-     * For editions sold only though office supplies wholesalers. Retailer(s) and/or distributor(s) may be identified or
-     * named in an instance of the &lt;SalesOutlet&gt; composite
+     * Sales rights (or market distribution rights) apply to sales though office supplies channels. Specific outlet(s)
+     * may be identified or named in an instance of the &lt;SalesOutlet&gt; composite
      */
-    Office_supplies_edition("02", "Office supplies edition"),
+    Through_office_supplies_outlets_only("02", "Through office supplies outlets only"),
 
     /**
      * For an ISBN that is assigned for a publisher's internal purposes
@@ -69,26 +70,26 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Internal_publisher_use_only_do_not_list("03", "Internal publisher use only: do not list"),
 
     /**
-     * For sale only through designated retailer, though not under retailer's own brand/imprint. Retailer must be
-     * identified or named in an instance of the &lt;SalesOutlet&gt; composite
+     * Sales rights (or market distribution rights) apply to sales (under the publisher's brand / imprint) through the
+     * designated retailer(s), which must be identified or named in an instance of the &lt;SalesOutlet&gt; composite
      */
     Retailer_exclusive("04", "Retailer exclusive"),
 
     /**
-     * For sale only through designated retailer under retailer's own brand/imprint. Retailer must be identified or
-     * named in an instance of the &lt;SalesOutlet&gt; composite
+     * Sales rights (or market distribution rights) apply to sales (under the retailer's own brand / imprint) through
+     * the designated retailer(s), which must be identified or named in an instance of the &lt;SalesOutlet&gt; composite
      */
     Retailer_own_brand("05", "Retailer own brand"),
 
     /**
-     * For sale to libraries only; not for sale through retail trade
+     * Sales rights (or market distribution rights) apply to supplies to libraries
      */
-    Library_edition("06", "Library edition"),
+    To_libraries_only("06", "To libraries only"),
 
     /**
-     * For sale directly to schools only; not for sale through retail trade
+     * Sales rights (or market distribution rights) apply to supplies to schools
      */
-    Schools_only_edition("07", "Schools only edition"),
+    To_schools_only("07", "To schools only"),
 
     /**
      * Indexed for the German market - in Deutschland indiziert
@@ -96,41 +97,58 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Indiziert("08", "Indiziert"),
 
     /**
-     * Expected to apply in particular to digital products for consumer sale where the publisher does not permit the
-     * product to be supplied to libraries who provide an ebook loan service
+     * Sales rights (or market distribution rights) apply to supplies other than to libraries
      */
-    Not_for_sale_to_libraries("09", "Not for sale to libraries"),
+    Except_to_libraries("09", "Except to libraries"),
 
     /**
-     * For editions sold only through newsstands/newsagents
+     * Sales rights (or market distribution rights) apply to sales though news outlet channels (newsstands / newsagents)
      */
-    News_outlet_edition("10", "News outlet edition"),
+    Through_news_outlets_only("10", "Through news outlets only"),
 
     /**
-     * Not for sale through designated retailer. Retailer must be identified or named in an instance of the
-     * &lt;SalesOutlet&gt; composite
+     * Sales rights (or market distribution rights) apply to sales other than through designated retailer(s), which must
+     * be identified or named in the &lt;SalesOutlet&gt; composite
      */
     Retailer_exception("11", "Retailer exception"),
 
     /**
-     * Not for sale to organisations or services offering consumers subscription access to a library of books
+     * Sales rights (or market distribution rights) apply to supplies other than to organisations or services offering
+     * consumers subscription access to a catalog of books
      */
-    Not_for_sale_to_subscription_services("12", "Not for sale to subscription services"),
+    Except_to_subscription_services("12", "Except to subscription services"),
 
     /**
-     * Restricted to organisations or services offering consumers subscription access to a library of books
+     * Sales rights (or market distribution rights) apply to supplies to organisations or services offering consumers
+     * subscription access to a catalog of books
      */
-    Subscription_services_only("13", "Subscription services only"),
+    To_subscription_services_only("13", "To subscription services only"),
 
     /**
-     * Exclusive to bricks-and-mortar retail outlets
+     * Sales rights (or market distribution rights) apply to sales other than through online retail channels
      */
-    Not_for_retail_online("14", "Not for retail online"),
+    Except_through_online_retail("14", "Except through online retail"),
 
     /**
-     * Exclusive to online retail outlets
+     * Sales rights (or market distribution rights) apply to sales through online retail channels
      */
-    Online_retail_only("15", "Online retail only");
+    Through_online_retail_only("15", "Through online retail only"),
+
+    /**
+     * Sales rights (or market distribution rights) apply to supplies other than to schools
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Except_to_schools("16", "Except to schools"),
+
+    /**
+     * Positive indication that no sales restrictions apply, for example to indicate the product may be sold both online
+     * and in bricks-and mortar retail, or to subscription services and non-subscription customers. For use in ONIX 3.0
+     * only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    No_restrictions_on_sales("99", "No restrictions on sales");
 
     public final String code;
     public final String description;

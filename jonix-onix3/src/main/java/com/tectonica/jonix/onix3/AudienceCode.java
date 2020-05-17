@@ -76,6 +76,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class AudienceCode implements OnixElement<AudienceTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 

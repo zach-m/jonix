@@ -89,6 +89,7 @@ import java.util.List;
  *
  * @deprecated
  */
+@Deprecated
 public class Reissue implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 

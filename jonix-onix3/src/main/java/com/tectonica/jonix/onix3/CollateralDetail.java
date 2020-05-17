@@ -36,9 +36,9 @@ import java.util.List;
 /**
  * <h1>Collateral detail composite</h1>
  * <p>
- * The collateral detail block covers data element Groups P.14 to P.17, all of which are primarily concerned with
- * information and/or resources which in one way or another support the marketing of the product. The block as a whole
- * is non-repeating.
+ * The collateral detail block covers data Groups P.14 to P.17, all of which are primarily concerned with information
+ * and/or resources which in one way or another support the marketing of the product. The block as a whole is
+ * non-repeating.
  * </p>
  * <p>
  * The block is not mandatory within the &lt;Product&gt; record, nor are any of the individual sections mandatory within

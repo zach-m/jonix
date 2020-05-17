@@ -278,9 +278,10 @@ public class Stock implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The name of a stock location. Optional, and repeatable to provide parallel names for a single location in
-     * multiple languages (<i>eg</i> Baile Átha Cliath and Dublin, or Bruxelles and Brussel). The <i>language</i>
-     * attribute is optional for a single instance of &lt;LocationName&gt;, but must be included in each instance if
-     * &lt;LocationName&gt; is repeated.
+     * multiple languages (<i>eg</i> Baile Átha Cliath and Dublin, or Bruxelles and Brussel). It may if necessary
+     * include a postal code (<i>eg</i> 10680 Αθήνα, or 20090 Assago). The <i>language</i> attribute is optional for a
+     * single instance of &lt;LocationName&gt;, but must be included in each instance if &lt;LocationName&gt; is
+     * repeated.
      * </p>
      * Jonix-Comment: this list may be empty
      */

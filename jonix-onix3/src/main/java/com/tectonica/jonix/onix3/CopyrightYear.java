@@ -33,8 +33,9 @@ import java.io.Serializable;
 /**
  * <h1>Copyright year</h1>
  * <p>
- * The copyright year as it appears in a copyright statement on the product. Mandatory in each occurrence of the
- * &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.
+ * The copyright year as it appears in a copyright statement on the product. Optional in each occurrence of the
+ * &lt;CopyrightStatement&gt; composite but may be omitted only if &lt;CopyrightOwner&gt; is present, and repeatable if
+ * several years or periods are listed.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -51,7 +52,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>1&#8230;n</td>
+ * <td>0&#8230;n</td>
  * </tr>
  * <tr>
  * <td>Attributes</td>

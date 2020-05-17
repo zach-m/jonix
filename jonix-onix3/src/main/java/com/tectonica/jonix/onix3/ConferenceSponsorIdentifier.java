@@ -65,6 +65,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class ConferenceSponsorIdentifier
     implements OnixDataCompositeWithKey<JonixConferenceSponsorIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;

@@ -83,6 +83,7 @@ import java.io.Serializable;
  *
  * @deprecated
  */
+@Deprecated
 public class PublisherName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 

@@ -21,6 +21,9 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -38,12 +41,15 @@ interface CodeList19 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_45.html#codelist19">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
     Unknown("01", "Unknown"),
 
+    /**
+     * Note that Anonymous can be interpreted as singular or plural
+     */
     Anonymous("02", "Anonymous"),
 
     /**
@@ -52,24 +58,32 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
     et_al("03", "et al"),
 
     /**
-     * When the product is a pack of books by different authors
+     * Use for example when the product is a pack of books by different authors
      */
-    Various_authors("04", "Various authors"),
+    Various("04", "Various"),
 
     /**
-     * Use with Contributor role code E07 'read by', for audio books for the blind
+     * Use with Contributor role code E07 'read by', eg for audio books
      */
     Synthesized_voice_male("05", "Synthesized voice – male"),
 
     /**
-     * Use with Contributor role code E07 'read by', for audio books for the blind
+     * Use with Contributor role code E07 'read by', eg for audio books
      */
     Synthesized_voice_female("06", "Synthesized voice – female"),
 
     /**
-     * Use with Contributor role code E07 'read by', for audio books for the blind
+     * Use with Contributor role code E07 'read by', eg for audio books
      */
-    Synthesized_voice_unspecified("07", "Synthesized voice – unspecified");
+    Synthesized_voice_unspecified("07", "Synthesized voice – unspecified"),
+
+    /**
+     * Use with Contributor role code E07 'read by', eg for audio books, and provide name of voice actor in
+     * &lt;AlternativeName&gt;. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Synthesised_voice_based_on_real_voice_actor("08", "Synthesised voice – based on real voice actor");
 
     public final String code;
     public final String description;
@@ -89,15 +103,29 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
         return description;
     }
 
+    private static volatile Map<String, UnnamedPersonss> map;
+
+    private static Map<String, UnnamedPersonss> map() {
+        Map<String, UnnamedPersonss> result = map;
+        if (result == null) {
+            synchronized (UnnamedPersonss.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (UnnamedPersonss e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static UnnamedPersonss byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (UnnamedPersonss e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 }
