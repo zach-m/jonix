@@ -65,7 +65,7 @@ public class GenerateCode {
         }
 
         final OnixMetadata ref2 = ParseUtil.parse(OnixSpecs.SPECS_2_1_03_REF);
-        final OnixMetadata ref3 = ParseUtil.parse(OnixSpecs.SPECS_3_0_06_REF);
+        final OnixMetadata ref3 = ParseUtil.parse(OnixSpecs.SPECS_3_0_LATEST_REF);
 
         final Map<String, OnixSimpleType> unifiedCodelists = unifyCodelists(ref2, ref3);
         final Map<String, OnixStruct> unifiedStructs = unifyStructs(ref2, ref3);

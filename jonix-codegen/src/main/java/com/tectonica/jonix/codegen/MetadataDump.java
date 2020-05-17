@@ -51,7 +51,9 @@ import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_03_REF;
 import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_04_REF;
 import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_05_REF;
 import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_06_REF;
-import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_06_SHORT;
+import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_07_REF;
+import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_LATEST_REF;
+import static com.tectonica.jonix.codegen.util.OnixSpecs.SPECS_3_0_LATEST_SHORT;
 
 public class MetadataDump {
     private static final Logger LOGGER = LoggerFactory.getLogger(MetadataDump.class);
@@ -79,8 +81,8 @@ public class MetadataDump {
 
     private static void parse3() throws IOException, ParserConfigurationException, SAXException {
         File parent = new File(DUMP_FOLDER, "onix3");
-        saveMetadata(SPECS_3_0_06_REF, new File(parent, "reference"));
-        saveMetadata(SPECS_3_0_06_SHORT, new File(parent, "short"));
+        saveMetadata(SPECS_3_0_LATEST_REF, new File(parent, "reference"));
+        saveMetadata(SPECS_3_0_LATEST_SHORT, new File(parent, "short"));
     }
 
     private static void parse3_unified_all_rev() throws IOException, ParserConfigurationException, SAXException {
@@ -91,6 +93,7 @@ public class MetadataDump {
         saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_04_REF, new File(parent, "3.0.4"));
         saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_05_REF, new File(parent, "3.0.5"));
         saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_06_REF, new File(parent, "3.0.6"));
+        saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_07_REF, new File(parent, "3.0.7"));
     }
 
     // ///////////////////////////////////////////////////////////////////////////////////////////////////////

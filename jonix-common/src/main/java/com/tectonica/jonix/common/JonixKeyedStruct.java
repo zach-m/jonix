@@ -38,7 +38,7 @@ import com.tectonica.jonix.common.struct.JonixProductIdentifier;
  * identifier, say ISBN-13, you can look up its struct {@link JonixProductIdentifier} by its key (of type
  * {@link ProductIdentifierTypes}), and once having the struct, use it to get the requested value (the product
  * identifier, <code>idValue</code>):
- * 
+ *
  * <pre>
  *     com.tectonica.jonix.onix2.Product product;
  *     ...

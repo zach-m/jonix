@@ -495,11 +495,12 @@ public class OnixClassGen {
             .forEach(path -> p.printf(" * <li>%s</li>\n", path));
         p.printf(" * </ul>\n");
 
+        boolean deprecated = false;
         if (onixDocs != null) {
             Set<String> tags = onixDocs.get(0).tags; // TODO: first is arbitrary
             String since = tags.stream().filter(tag -> tag.startsWith("new")).findFirst().map(
                 tag -> "Onix-" + tag.substring(3, 4) + "." + tag.substring(4)).orElse(null);
-            boolean deprecated = tags.contains("deprecated");
+            deprecated = tags.contains("deprecated");
             if ((since != null) || deprecated) {
                 p.printf(" *\n");
             }
@@ -514,7 +515,11 @@ public class OnixClassGen {
             }
         }
 
-        p.printf(" */\n");
+        p.print(" */\n");
+
+        if (deprecated) {
+            p.print("@Deprecated\n");
+        }
     }
 
     private void declareConstsAndAttributes(PrintStream p, OnixClassDef clz) {
