@@ -127,8 +127,10 @@ public enum CpsiaOrOtherUsHazardWarningTypes implements OnixCodelist, CodeList14
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
+    // CHECKSTYLE:OFF
     WARNING_California_Proposition_65_carcinogenic_teratogenic_or_other_reproductively_harmful_chemical_hazard("21",
         "WARNING – California Proposition 65 carcinogenic, teratogenic or other reproductively harmful chemical hazard"),
+    // CHECKSTYLE:ON
 
     /**
      * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product

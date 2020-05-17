@@ -47,7 +47,8 @@ public class OnixDocsParser {
     public static void main(String[] args) throws IOException {
         File outDir = new File("meta");
         parseAndSave(SPECS_2_1_03_REF.specHtml, new File(outDir, "Onix2.html"), new File(outDir, "Onix2-Groups.csv"));
-        parseAndSave(SPECS_3_0_LATEST_REF.specHtml, new File(outDir, "Onix3.html"), new File(outDir, "Onix3-Groups.csv"));
+        parseAndSave(SPECS_3_0_LATEST_REF.specHtml, new File(outDir, "Onix3.html"),
+            new File(outDir, "Onix3-Groups.csv"));
     }
 
     private static void parseAndSave(final String specHtml, File targetHtml, File targetGroupCsv) throws IOException {

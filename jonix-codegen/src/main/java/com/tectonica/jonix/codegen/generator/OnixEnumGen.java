@@ -139,7 +139,7 @@ public class OnixEnumGen {
                 }
                 p.printf("    */\n");
             }
-            disableCheckstyle = token.length() >= 110 || ev.name.length() >= 110;
+            disableCheckstyle = token.length() >= 114 || ev.name.length() >= 107;
             if (disableCheckstyle) {
                 p.print("   // CHECKSTYLE:OFF\n");
             }
