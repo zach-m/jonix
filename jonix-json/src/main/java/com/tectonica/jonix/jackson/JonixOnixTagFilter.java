@@ -38,8 +38,7 @@ public class JonixOnixTagFilter extends SimpleBeanPropertyFilter {
 
     @Override
     public void serializeAsField(Object pojo, JsonGenerator jgen, SerializerProvider provider,
-                                 PropertyWriter writer)
-        throws Exception {
+                                 PropertyWriter writer) throws Exception {
         Class<?> memberType = writer.getMember().getRawType();
         Object memberObject = writer.getMember().getValue(pojo);
         if (OnixTag.class.isAssignableFrom(memberType)) {

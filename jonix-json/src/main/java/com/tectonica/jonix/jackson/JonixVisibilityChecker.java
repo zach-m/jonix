@@ -42,8 +42,11 @@ public class JonixVisibilityChecker implements VisibilityChecker<JonixVisibility
             return true;
         }
         boolean isPrivate = Modifier.isPrivate(f.getModifiers());
-        return isPrivate &&
-            (List.class.isAssignableFrom(f.getType()) || OnixTag.class.isAssignableFrom(f.getType()));
+        if (isPrivate) {
+            // private fields that are Onix tags (or list of those) - are the basis for our JSON serialization
+            return OnixTag.class.isAssignableFrom(f.getType()) || List.class.isAssignableFrom(f.getType());
+        }
+        return false;
     }
 
     @Override
