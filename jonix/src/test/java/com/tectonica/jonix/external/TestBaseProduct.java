@@ -23,9 +23,12 @@ import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.JonixRecord;
 import com.tectonica.jonix.JonixSource;
 import com.tectonica.jonix.common.codelist.ProductForms;
+import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.json.JonixJson;
 import com.tectonica.jonix.onix3.DescriptiveDetail;
+import com.tectonica.jonix.unify.BaseUnifier;
 import com.tectonica.jonix.unify.CustomUnifier;
+import com.tectonica.jonix.unify.JonixUnifier;
 import com.tectonica.jonix.unify.UnifiedRecord;
 import com.tectonica.jonix.unify.base.BaseDescription;
 import com.tectonica.jonix.unify.base.BaseHeader;
@@ -43,6 +46,7 @@ import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 import com.tectonica.jonix.unify.base.onix3.BaseTitle3;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -147,21 +151,21 @@ public class TestBaseProduct {
     @Test
     public void testCustomFactories() {
 
-        // example 1: succinct Java code to add titlePrefix to BaseTitle
+        // example 1: extend class BaseTitle with the field titlePrefix (using succinct Java code)
 
-        class MyBaseTitle extends BaseTitle {
+        class MyTitle extends BaseTitle {
             public String titlePrefix;
         }
-        BaseFactory2 factory2 = new BaseFactory2().setBaseTitleFactory(title -> new MyBaseTitle() {{
+        BaseFactory2 factory2 = new BaseFactory2().setBaseTitleFactory(title -> new MyTitle() {{
             BaseTitle2.extract(title, this); // first parse whatever BaseTitle2 was parsing
-            titlePrefix = "PREFIX=" + title.titlePrefix().value;
+            titlePrefix = title.titlePrefix().value;
         }});
-        BaseFactory3 factory3 = new BaseFactory3().setBaseTitleFactory(title -> new MyBaseTitle() {{
+        BaseFactory3 factory3 = new BaseFactory3().setBaseTitleFactory(title -> new MyTitle() {{
             BaseTitle3.extract(title, this); // first parse whatever BaseTitle3 was parsing
-            titlePrefix = "PREFIX=" + title.titleElements().get(0).titlePrefix().value;
+            titlePrefix = title.titleElements().get(0).titlePrefix().value;
         }});
 
-        // example 2: more verbose Java code to add productFormCode to BaseDescription
+        // example 2: extend BaseDescription with the field productFormCode (using more verbose Java code)
 
         class MyDescription extends BaseDescription {
             public String productFormCode;
@@ -184,9 +188,24 @@ public class TestBaseProduct {
         factory2.setBaseDescriptionFactory(MyDescription2::new);
         factory3.setBaseDescriptionFactory(MyDescription3::new);
 
-        // stream using the custom factories
-
+        // test unified result
         String onix3Resource = "/single-book-onix3.xml";
+
+        // iterator-based
+        BaseUnifier myUnifier = new BaseUnifier(factory2, factory3);
+        for (JonixRecord record : Jonix.source(getClass().getResourceAsStream(onix3Resource))) {
+            BaseProduct product = JonixUnifier.unifyProduct(record.product, myUnifier);
+            String isbn13 = product.info.findJonixProductId(ProductIdentifierTypes.ISBN_13).idValue;
+            LOGGER.debug("Custom fields for ISBN " + isbn13);
+            Assert.assertTrue(product.description instanceof MyDescription);
+            LOGGER.debug("ProductFormCode=" + ((MyDescription) product.description).productFormCode);
+            for (BaseTitle title : product.titles) {
+                Assert.assertTrue(title instanceof MyTitle);
+                LOGGER.debug("Prefix=" + ((MyTitle) title).titlePrefix);
+            }
+        }
+
+        // stream-base + JSON
         Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified(factory2, factory3).limit(1)
             .forEach(record -> LOGGER.debug(JonixJson.objectToJson(record.product)));
     }
