@@ -145,7 +145,7 @@ public class TestBaseProduct {
     }
 
     @Test
-    public void testCustomSuppliers() {
+    public void testCustomFactories() {
 
         // example 1: succinct Java code to add titlePrefix to BaseTitle
 
