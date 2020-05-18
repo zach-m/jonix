@@ -163,6 +163,11 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

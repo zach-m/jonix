@@ -61,7 +61,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b037&gt;Johnson, James J., III&lt;/b037&gt;</tt></td>
+ * <td><tt>&lt;b037&gt;Johnson, James J.,
+ * III&lt;/b037&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -198,6 +198,11 @@ public class Name implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

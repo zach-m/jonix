@@ -62,7 +62,9 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x516 language=&quot;fre&quot;&gt;Conf&#233;rences des Nations unies sur les changements climatiques&lt;/x516&gt; (United Nations Climate Change Conference)</tt></td>
+ * <td><tt>&lt;x516
+ * language=&quot;fre&quot;&gt;Conf&#233;rences des Nations unies sur les changements climatiques&lt;/x516&gt; (United
+ * Nations Climate Change Conference)</tt></td>
  * </tr>
  * </table>
  * <p/>

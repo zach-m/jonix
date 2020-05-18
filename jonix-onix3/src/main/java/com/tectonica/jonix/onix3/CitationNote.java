@@ -63,7 +63,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;CitationNote&gt;Volume 3, page 7&lt;/CitationNote&gt;</tt></td>
+ * <td><tt>&lt;CitationNote&gt;Volume 3, page
+ * 7&lt;/CitationNote&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

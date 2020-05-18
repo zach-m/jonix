@@ -64,7 +64,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x406&gt;Agent has lost contact with publisher&lt;/x406&gt;</tt></td>
+ * <td><tt>&lt;x406&gt;Agent has lost contact with
+ * publisher&lt;/x406&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

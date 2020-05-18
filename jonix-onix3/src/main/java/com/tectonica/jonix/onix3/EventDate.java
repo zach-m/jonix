@@ -60,8 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;EventDate dateformat=&quot;06&quot;&gt;2015113020151215&lt;/EventDate&gt;</tt> (30 November-15 December
- * 2015)</td>
+ * <td><tt>&lt;EventDate
+ * dateformat=&quot;06&quot;&gt;2015113020151215&lt;/EventDate&gt;</tt> (30 November-15 December 2015)</td>
  * </tr>
  * </table>
  * <p/>

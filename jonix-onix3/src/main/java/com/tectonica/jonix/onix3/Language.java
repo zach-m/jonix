@@ -154,6 +154,11 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

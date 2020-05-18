@@ -60,7 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;PublisherName&gt;Reed International Books&lt;/PublisherName&gt;</tt></td>
+ * <td><tt>&lt;PublisherName&gt;Reed International
+ * Books&lt;/PublisherName&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

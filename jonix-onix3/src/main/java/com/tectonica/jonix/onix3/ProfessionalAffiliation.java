@@ -153,6 +153,11 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

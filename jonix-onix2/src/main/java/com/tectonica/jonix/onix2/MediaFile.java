@@ -189,6 +189,11 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

@@ -59,7 +59,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b121&gt;RetailCo ShelfScheme&lt;/b121&gt;</tt></td>
+ * <td><tt>&lt;b121&gt;RetailCo
+ * ShelfScheme&lt;/b121&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

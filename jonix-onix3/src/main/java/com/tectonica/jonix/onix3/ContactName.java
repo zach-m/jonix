@@ -54,7 +54,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x299&gt;Jackie Brown, tel. +44 20 7946 0921&lt;/x299&gt;</tt></td>
+ * <td><tt>&lt;x299&gt;Jackie
+ * Brown, tel. +44 20 7946 0921&lt;/x299&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

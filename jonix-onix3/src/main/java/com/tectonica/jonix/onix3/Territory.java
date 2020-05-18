@@ -182,6 +182,11 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

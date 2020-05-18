@@ -58,7 +58,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ConferencePlace&gt;Aix-les-Bains, France&lt;/ConferencePlace&gt;</tt></td>
+ * <td><tt>&lt;ConferencePlace&gt;Aix-les-Bains,
+ * France&lt;/ConferencePlace&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

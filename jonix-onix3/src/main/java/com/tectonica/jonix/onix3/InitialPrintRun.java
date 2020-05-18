@@ -63,7 +63,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;InitialPrintRun&gt;450 numbered copies&lt;/InitialPrintRun&gt;</tt></td>
+ * <td><tt>&lt;InitialPrintRun&gt;450 numbered
+ * copies&lt;/InitialPrintRun&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

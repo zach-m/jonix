@@ -61,11 +61,13 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;DistinctiveTitle&gt;A People's Tragedy&lt;/DistinctiveTitle&gt;</tt></td>
+ * <td><tt>&lt;DistinctiveTitle&gt;A People's
+ * Tragedy&lt;/DistinctiveTitle&gt;</tt></td>
  * </tr>
  * <tr>
  * <td></td>
- * <td><tt>&lt;b028&gt;Pride and prejudice / Sense and sensibility / Northanger Abbey&lt;/b028&gt;</tt></td>
+ * <td><tt>&lt;b028&gt;Pride and prejudice / Sense and
+ * sensibility / Northanger Abbey&lt;/b028&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

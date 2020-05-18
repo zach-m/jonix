@@ -191,6 +191,11 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

@@ -64,7 +64,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ContributorDescription&gt;Skipper of the winning crew in the Americas Cup, 1998&lt;/ContributorDescription&gt;</tt></td>
+ * <td><tt>&lt;ContributorDescription&gt;Skipper of the winning crew in the
+ * Americas Cup, 1998&lt;/ContributorDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

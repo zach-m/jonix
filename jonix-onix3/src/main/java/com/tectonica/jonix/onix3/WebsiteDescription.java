@@ -63,7 +63,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b294&gt;Includes author bio, gallery of photos, interview, complete bibliography and links to download book covers as mobile phone wallpapers&lt;/b294&gt;</tt></td>
+ * <td><tt>&lt;b294&gt;Includes author bio, gallery of photos, interview,
+ * complete bibliography and links to download book covers as mobile phone wallpapers&lt;/b294&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

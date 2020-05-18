@@ -61,7 +61,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x443&gt;Countryside Commission, The&lt;/x443&gt;</tt></td>
+ * <td><tt>&lt;x443&gt;Countryside Commission,
+ * The&lt;/x443&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

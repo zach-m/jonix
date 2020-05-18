@@ -60,7 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x480&gt;Order of TV series transmission&lt;/x480&gt;</tt></td>
+ * <td><tt>&lt;x480&gt;Order
+ * of TV series transmission&lt;/x480&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -64,7 +64,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;TitlePrefix language=&quot;eng&quot;&gt;The&lt;/TitlePrefix&gt;</tt></td>
+ * <td><tt>&lt;TitlePrefix
+ * language=&quot;eng&quot;&gt;The&lt;/TitlePrefix&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

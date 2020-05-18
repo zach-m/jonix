@@ -61,7 +61,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;TitleWithoutPrefix language=&quot;eng&quot; textcase=&quot;01&quot;&gt;shameful life of Salvador Dali&lt;/TitleWithoutPrefix&gt;</tt></td>
+ * <td><tt>&lt;TitleWithoutPrefix language=&quot;eng&quot;
+ * textcase=&quot;01&quot;&gt;shameful life of Salvador Dali&lt;/TitleWithoutPrefix&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

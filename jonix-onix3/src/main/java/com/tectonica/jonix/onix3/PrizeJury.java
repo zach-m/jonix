@@ -62,7 +62,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;g343&gt;Russell Banks, Victoria Glendinning and Alistair MacLeod&lt;/g343&gt;</tt></td>
+ * <td><tt>&lt;g343&gt;Russell Banks, Victoria Glendinning and Alistair
+ * MacLeod&lt;/g343&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

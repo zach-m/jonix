@@ -56,7 +56,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;Subtitle&gt;The Russian Revolution 1891-1924&lt;/Subtitle&gt;</tt></td>
+ * <td><tt>&lt;Subtitle&gt;The Russian Revolution
+ * 1891-1924&lt;/Subtitle&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

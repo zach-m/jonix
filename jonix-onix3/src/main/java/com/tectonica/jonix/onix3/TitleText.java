@@ -67,7 +67,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b203 language=&quot;eng&quot; textcase=&quot;01&quot;&gt;Dickens classics&lt;/b203&gt;</tt></td>
+ * <td><tt>&lt;b203 language=&quot;eng&quot;
+ * textcase=&quot;01&quot;&gt;Dickens classics&lt;/b203&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

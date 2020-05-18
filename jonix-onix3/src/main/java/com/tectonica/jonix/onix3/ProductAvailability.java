@@ -59,7 +59,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j396 datestamp=&quot;20101029&quot;&gt;41&lt;/j396&gt;</tt> (Replaced by new product)</td>
+ * <td><tt>&lt;j396
+ * datestamp=&quot;20101029&quot;&gt;41&lt;/j396&gt;</tt> (Replaced by new product)</td>
  * </tr>
  * <tr>
  * <td>Notes</td>

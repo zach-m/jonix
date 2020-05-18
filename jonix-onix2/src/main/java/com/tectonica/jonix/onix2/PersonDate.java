@@ -159,6 +159,11 @@ public class PersonDate implements OnixDataCompositeWithKey<JonixPersonDate, Per
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

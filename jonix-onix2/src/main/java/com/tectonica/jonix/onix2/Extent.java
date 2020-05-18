@@ -152,6 +152,11 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

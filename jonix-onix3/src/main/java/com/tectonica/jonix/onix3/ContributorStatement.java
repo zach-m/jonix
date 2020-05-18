@@ -73,7 +73,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b049&gt;Series conceived and edited by Samantha and Darrin Stephens&lt;/b049&gt;</tt></td>
+ * <td><tt>&lt;b049&gt;Series conceived and edited by Samantha and Darrin
+ * Stephens&lt;/b049&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

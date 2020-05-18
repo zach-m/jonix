@@ -60,7 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j366&gt;Timed to coincide 'day and date' with theatrical release of film.&lt;/j366&gt;</tt></td>
+ * <td><tt>&lt;j366&gt;Timed to coincide 'day and date' with theatrical release
+ * of film.&lt;/j366&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

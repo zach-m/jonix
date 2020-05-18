@@ -68,18 +68,23 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b044 language=&quot;eng&quot; textformat=&quot;05&quot;&gt;&lt;p&gt;&lt;strong&gt;Umberto Eco&lt;/strong&gt;, professor of semiotics at the University of Bologna, and author of &lt;cite&gt;The Name Of The Rose&lt;/cite&gt; and &lt;cite&gt;Foucault's Pendulum&lt;/cite&gt;, is one of the world's bestselling novelists.&lt;/p&gt;&lt;p&gt;As well as novels, he also writes children's books and academic works.&lt;/p&gt;&lt;/b044&gt;</tt>
- * &lt;b044 language=&quot;ita&quot; textformat=&quot;05&quot;&gt;&lt;p&gt;&lt;strong&gt;Umberto Eco&lt;/strong&gt;,
- * professore di semiotica all'Universit&#224; di Bologna e autore di &lt;cite&gt;Il nome della rosa&lt;/cite&gt; e
- * &lt;cite&gt;Il pendolo di Foucault&lt;/cite&gt;, &#232; uno dei romanzieri pi&#249; venduto al
- * mondo.&lt;/p&gt;&lt;p&gt;Cos&#236; come romanzi, lui scrive anche libri per bambini e opere
- * accademici.&lt;/p&gt;&lt;/b044&gt; (text is marked up with XHTML, and both English and Italian versions are
- * provided)</td>
+ * <td><tt>&lt;b044 language=&quot;eng&quot;
+ * textformat=&quot;05&quot;&gt;&lt;p&gt;&lt;strong&gt;Umberto Eco&lt;/strong&gt;, professor of semiotics at the
+ * University of Bologna, and author of &lt;cite&gt;The Name Of The Rose&lt;/cite&gt; and &lt;cite&gt;Foucault's
+ * Pendulum&lt;/cite&gt;, is one of the world's bestselling novelists.&lt;/p&gt;&lt;p&gt;As well as novels, he also
+ * writes children's books and academic works.&lt;/p&gt;&lt;/b044&gt;</tt> &lt;b044 language=&quot;ita&quot;
+ * textformat=&quot;05&quot;&gt;&lt;p&gt;&lt;strong&gt;Umberto Eco&lt;/strong&gt;, professore di semiotica
+ * all'Universit&#224; di Bologna e autore di &lt;cite&gt;Il nome della rosa&lt;/cite&gt; e &lt;cite&gt;Il pendolo di
+ * Foucault&lt;/cite&gt;, &#232; uno dei romanzieri pi&#249; venduto al mondo.&lt;/p&gt;&lt;p&gt;Cos&#236; come romanzi,
+ * lui scrive anche libri per bambini e opere accademici.&lt;/p&gt;&lt;/b044&gt; (text is marked up with XHTML, and both
+ * English and Italian versions are provided)</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b044&gt;Umberto Eco, professor of semiotics at the University of Bologna, and author of 'The Name Of The Rose' and 'Foucault's Pendulum', is one of the world's bestselling novelists. As well as novels, he also writes children's books and academic works.&lt;/b044&gt;</tt>
- * (text is not marked up)</td>
+ * <td><tt>&lt;b044&gt;Umberto Eco, professor of
+ * semiotics at the University of Bologna, and author of 'The Name Of The Rose' and 'Foucault's Pendulum', is one of the
+ * world's bestselling novelists. As well as novels, he also writes children's books and academic
+ * works.&lt;/b044&gt;</tt> (text is not marked up)</td>
  * </tr>
  * <tr>
  * <td>Notes</td>

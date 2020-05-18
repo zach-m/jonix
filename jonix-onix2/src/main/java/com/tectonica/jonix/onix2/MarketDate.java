@@ -156,6 +156,11 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

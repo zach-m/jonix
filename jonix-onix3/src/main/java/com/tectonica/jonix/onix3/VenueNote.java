@@ -62,7 +62,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x553 language=&quot;eng&quot;&gt;Visitors requiring wheelchair access: please contact the venue in advance.&lt;/x553&gt;</tt></td>
+ * <td><tt>&lt;x553 language=&quot;eng&quot;&gt;Visitors requiring wheelchair
+ * access: please contact the venue in advance.&lt;/x553&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -55,7 +55,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;FormerTitle&gt;English English&lt;/FormerTitle&gt;</tt></td>
+ * <td><tt>&lt;FormerTitle&gt;English
+ * English&lt;/FormerTitle&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

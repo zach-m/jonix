@@ -61,7 +61,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;TitlesBeforeNames&gt;HRH Prince&lt;/TitlesBeforeNames&gt;</tt></td>
+ * <td><tt>&lt;TitlesBeforeNames&gt;HRH
+ * Prince&lt;/TitlesBeforeNames&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

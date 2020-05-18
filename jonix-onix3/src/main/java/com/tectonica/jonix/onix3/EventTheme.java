@@ -61,7 +61,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;EventTheme&gt;Building a better world&lt;/EventTheme&gt;</tt></td>
+ * <td><tt>&lt;EventTheme&gt;Building
+ * a better world&lt;/EventTheme&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

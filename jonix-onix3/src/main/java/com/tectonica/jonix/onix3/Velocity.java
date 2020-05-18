@@ -147,6 +147,11 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

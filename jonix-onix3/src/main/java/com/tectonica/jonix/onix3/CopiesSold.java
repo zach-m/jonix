@@ -63,7 +63,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;CopiesSold&gt;6400 copies sold of this edition in hardback&lt;/CopiesSold&gt;</tt></td>
+ * <td><tt>&lt;CopiesSold&gt;6400 copies sold of this edition in
+ * hardback&lt;/CopiesSold&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

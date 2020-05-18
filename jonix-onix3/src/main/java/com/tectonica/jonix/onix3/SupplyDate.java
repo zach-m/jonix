@@ -144,6 +144,11 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

@@ -64,7 +64,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b062&gt;500 illustrations, 210 in full color&lt;/b062&gt;</tt></td>
+ * <td><tt>&lt;b062&gt;500 illustrations, 210 in full
+ * color&lt;/b062&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

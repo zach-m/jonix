@@ -142,6 +142,11 @@ public class TimeRun implements OnixDataComposite<JonixTimeRun>, Serializable {
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

@@ -54,7 +54,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b277&gt;First appearance of this title in Microsoft Reader format&lt;/b277&gt;</tt></td>
+ * <td><tt>&lt;b277&gt;First appearance of this title in
+ * Microsoft Reader format&lt;/b277&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

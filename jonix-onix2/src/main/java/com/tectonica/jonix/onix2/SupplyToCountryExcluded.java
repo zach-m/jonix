@@ -63,7 +63,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;SupplyToCountryExcluded&gt;US CA&lt;/SupplyToCountryExcluded&gt;</tt></td>
+ * <td><tt>&lt;SupplyToCountryExcluded&gt;US
+ * CA&lt;/SupplyToCountryExcluded&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

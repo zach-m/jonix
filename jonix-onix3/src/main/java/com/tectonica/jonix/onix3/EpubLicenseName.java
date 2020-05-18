@@ -60,7 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x511&gt;Elsevier e-book EULA v5&lt;/x511&gt;</tt></td>
+ * <td><tt>&lt;x511&gt;Elsevier
+ * e-book EULA v5&lt;/x511&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

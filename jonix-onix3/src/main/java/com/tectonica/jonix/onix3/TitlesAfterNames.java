@@ -60,7 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;TitlesAfterNames&gt;Duke of Edinburgh&lt;/TitlesAfterNames&gt;</tt></td>
+ * <td><tt>&lt;TitlesAfterNames&gt;Duke of
+ * Edinburgh&lt;/TitlesAfterNames&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

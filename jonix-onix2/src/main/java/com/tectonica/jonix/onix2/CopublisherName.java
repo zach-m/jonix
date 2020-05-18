@@ -60,7 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b084&gt;Institute of Chartered Accountants&lt;/b084&gt;</tt></td>
+ * <td><tt>&lt;b084&gt;Institute of Chartered
+ * Accountants&lt;/b084&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

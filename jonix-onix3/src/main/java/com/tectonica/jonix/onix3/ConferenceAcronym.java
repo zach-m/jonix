@@ -59,7 +59,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ConferenceAcronym&gt;UNFCCC COP17&lt;/ConferenceAcronym&gt;</tt></td>
+ * <td><tt>&lt;ConferenceAcronym&gt;UNFCCC
+ * COP17&lt;/ConferenceAcronym&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

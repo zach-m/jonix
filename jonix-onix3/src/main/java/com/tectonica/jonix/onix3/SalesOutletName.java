@@ -58,8 +58,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;SalesOutletName&gt;Marks &amp;amp; Spencer&lt;/SalesOutletName&gt;</tt> (note '&amp;' is a reserved
- * character in XML)</td>
+ * <td><tt>&lt;SalesOutletName&gt;Marks
+ * &amp;amp; Spencer&lt;/SalesOutletName&gt;</tt> (note '&amp;' is a reserved character in XML)</td>
  * </tr>
  * </table>
  * <p/>

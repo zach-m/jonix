@@ -62,7 +62,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x535 language=&quot;fre&quot;&gt;Eco-mobilier&lt;/x535&gt;</tt></td>
+ * <td><tt>&lt;x535
+ * language=&quot;fre&quot;&gt;Eco-mobilier&lt;/x535&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

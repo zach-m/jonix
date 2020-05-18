@@ -68,7 +68,9 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;PrizeStatement language=&quot;eng&quot; textformat=&quot;05&quot;&gt;&lt;p&gt;Joint winner of the &lt;cite&gt;Mao Dun Literature Prize&lt;/cite&gt;, 2000&lt;/p&gt;&lt;/PrizeStatement&gt;</tt></td>
+ * <td><tt>&lt;PrizeStatement language=&quot;eng&quot;
+ * textformat=&quot;05&quot;&gt;&lt;p&gt;Joint winner of the &lt;cite&gt;Mao Dun Literature Prize&lt;/cite&gt;,
+ * 2000&lt;/p&gt;&lt;/PrizeStatement&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

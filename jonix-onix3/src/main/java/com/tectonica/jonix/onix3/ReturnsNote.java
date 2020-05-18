@@ -61,7 +61,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x528 language=&quot;eng&quot;&gt;Obtain return authorization in advance&lt;/x528&gt;</tt></td>
+ * <td><tt>&lt;x528
+ * language=&quot;eng&quot;&gt;Obtain return authorization in advance&lt;/x528&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -145,6 +145,11 @@ public class PriceConstraintLimit implements OnixDataComposite<JonixPriceConstra
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

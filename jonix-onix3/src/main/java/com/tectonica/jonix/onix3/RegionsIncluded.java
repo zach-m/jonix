@@ -64,7 +64,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x450&gt;GB-SCT GB-NIR GB-WLS&lt;/x450&gt;</tt> (Includes Scotland, Northern Ireland, Wales)</td>
+ * <td><tt>&lt;x450&gt;GB-SCT
+ * GB-NIR GB-WLS&lt;/x450&gt;</tt> (Includes Scotland, Northern Ireland, Wales)</td>
  * </tr>
  * </table>
  * <p/>

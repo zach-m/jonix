@@ -157,6 +157,11 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

@@ -62,7 +62,9 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;EventDescription textformat=&quot;05&quot;&gt;&lt;p&gt;Daniel Handler will be reading from his latest hardback &lt;cite&gt;Bottle Grove&lt;/cite&gt;, and signing copies of this and his earlier novels.&lt;/p&gt;&lt;/EventDescription&gt;</tt></td>
+ * <td><tt>&lt;EventDescription textformat=&quot;05&quot;&gt;&lt;p&gt;Daniel
+ * Handler will be reading from his latest hardback &lt;cite&gt;Bottle Grove&lt;/cite&gt;, and signing copies of this
+ * and his earlier novels.&lt;/p&gt;&lt;/EventDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

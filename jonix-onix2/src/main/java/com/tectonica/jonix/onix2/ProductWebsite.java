@@ -153,6 +153,11 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

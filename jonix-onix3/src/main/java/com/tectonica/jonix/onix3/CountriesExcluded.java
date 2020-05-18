@@ -62,7 +62,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;CountriesExcluded&gt;US CA&lt;/CountriesExcluded&gt;</tt> (Excludes USA and Canada)</td>
+ * <td><tt>&lt;CountriesExcluded&gt;US
+ * CA&lt;/CountriesExcluded&gt;</tt> (Excludes USA and Canada)</td>
  * </tr>
  * </table>
  * <p/>

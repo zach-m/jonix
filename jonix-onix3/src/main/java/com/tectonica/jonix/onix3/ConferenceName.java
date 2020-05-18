@@ -59,7 +59,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b052&gt;United Nations Climate Change Conference&lt;/b052&gt;</tt></td>
+ * <td><tt>&lt;b052&gt;United
+ * Nations Climate Change Conference&lt;/b052&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -57,7 +57,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b049&gt;Written and illustrated by Fred and Emily Jackson&lt;/b049&gt;</tt></td>
+ * <td><tt>&lt;b049&gt;Written and illustrated by Fred
+ * and Emily Jackson&lt;/b049&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

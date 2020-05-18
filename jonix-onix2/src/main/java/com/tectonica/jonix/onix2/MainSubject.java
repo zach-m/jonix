@@ -156,6 +156,11 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

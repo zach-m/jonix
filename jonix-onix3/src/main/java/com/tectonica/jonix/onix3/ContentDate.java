@@ -159,6 +159,11 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

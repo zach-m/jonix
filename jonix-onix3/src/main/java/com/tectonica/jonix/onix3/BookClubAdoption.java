@@ -62,7 +62,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;k169&gt;Book-Of-The-Month Club selection for May 2000&lt;/k169&gt;</tt></td>
+ * <td><tt>&lt;k169&gt;Book-Of-The-Month Club selection for May
+ * 2000&lt;/k169&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

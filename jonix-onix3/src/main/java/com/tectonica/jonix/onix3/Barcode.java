@@ -140,6 +140,11 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

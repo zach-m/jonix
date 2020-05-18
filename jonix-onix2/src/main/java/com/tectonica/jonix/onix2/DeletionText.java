@@ -56,7 +56,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;a199&gt;Issued in error&lt;/a199&gt;</tt></td>
+ * <td><tt>&lt;a199&gt;Issued in
+ * error&lt;/a199&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

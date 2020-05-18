@@ -60,7 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b054 dateformat=&quot;12&quot;&gt;7-9 October 2009&lt;/b054&gt;</tt></td>
+ * <td><tt>&lt;b054
+ * dateformat=&quot;12&quot;&gt;7-9 October 2009&lt;/b054&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

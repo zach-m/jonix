@@ -142,6 +142,11 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

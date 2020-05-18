@@ -54,7 +54,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;TelephoneNumber&gt;+44 20 8843 8607&lt;/TelephoneNumber&gt;</tt></td>
+ * <td><tt>&lt;TelephoneNumber&gt;+44 20 8843
+ * 8607&lt;/TelephoneNumber&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -54,7 +54,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b395&gt;Lost contact with publisher&lt;/b395&gt;</tt></td>
+ * <td><tt>&lt;b395&gt;Lost contact with
+ * publisher&lt;/b395&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -61,7 +61,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x432&gt;Sunday Times Hardback Fiction&lt;/x432&gt;</tt></td>
+ * <td><tt>&lt;x432&gt;Sunday
+ * Times Hardback Fiction&lt;/x432&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

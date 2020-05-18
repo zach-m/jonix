@@ -64,7 +64,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x424 language=&quot;eng&quot;&gt;Full color stickers&lt;/x424&gt;</tt></td>
+ * <td><tt>&lt;x424 language=&quot;eng&quot;&gt;Full color
+ * stickers&lt;/x424&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

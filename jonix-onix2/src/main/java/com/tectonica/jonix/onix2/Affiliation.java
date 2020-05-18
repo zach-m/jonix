@@ -58,7 +58,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;Affiliation&gt;Universidad de La Laguna&lt;/Affiliation&gt;</tt></td>
+ * <td><tt>&lt;Affiliation&gt;Universidad de La
+ * Laguna&lt;/Affiliation&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

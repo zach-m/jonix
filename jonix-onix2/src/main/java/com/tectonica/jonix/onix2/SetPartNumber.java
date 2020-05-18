@@ -56,7 +56,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;SetPartNumber&gt;Part II&lt;/SetPartNumber&gt;</tt></td>
+ * <td><tt>&lt;SetPartNumber&gt;Part
+ * II&lt;/SetPartNumber&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

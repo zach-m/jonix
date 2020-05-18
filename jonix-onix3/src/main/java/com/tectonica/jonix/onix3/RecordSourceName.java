@@ -54,7 +54,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;RecordSourceName&gt;Cambridge University Press&lt;/RecordSourceName&gt;</tt></td>
+ * <td><tt>&lt;RecordSourceName&gt;Cambridge
+ * University Press&lt;/RecordSourceName&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Notes</td>

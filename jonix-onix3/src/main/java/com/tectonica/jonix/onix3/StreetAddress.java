@@ -60,7 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x552&gt;555 Crystal Parkway, Suite 2021, Spar Hill&lt;/x552&gt;</tt></td>
+ * <td><tt>&lt;x552&gt;555
+ * Crystal Parkway, Suite 2021, Spar Hill&lt;/x552&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

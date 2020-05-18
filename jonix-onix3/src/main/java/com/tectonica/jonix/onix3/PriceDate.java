@@ -147,6 +147,11 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

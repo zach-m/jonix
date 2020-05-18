@@ -141,6 +141,11 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

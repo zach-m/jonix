@@ -62,7 +62,9 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ProductFormDescription language=&quot;eng&quot;&gt;Hardback book die-cut into car shape, with wheels attached to front and back covers&lt;/ProductFormDescription&gt;</tt></td>
+ * <td><tt>&lt;ProductFormDescription
+ * language=&quot;eng&quot;&gt;Hardback book die-cut into car shape, with wheels attached to front and back
+ * covers&lt;/ProductFormDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

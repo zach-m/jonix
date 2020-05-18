@@ -155,6 +155,11 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////

@@ -55,7 +55,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x300&gt;BiblioAggregator Ltd&lt;/x300&gt;</tt></td>
+ * <td><tt>&lt;x300&gt;BiblioAggregator
+ * Ltd&lt;/x300&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

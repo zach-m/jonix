@@ -59,7 +59,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b046 language=&quot;spa&quot;&gt;Universidad de La Laguna&lt;/b046&gt;</tt></td>
+ * <td><tt>&lt;b046
+ * language=&quot;spa&quot;&gt;Universidad de La Laguna&lt;/b046&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

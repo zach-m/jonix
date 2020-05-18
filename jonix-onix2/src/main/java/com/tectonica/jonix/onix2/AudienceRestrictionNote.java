@@ -54,7 +54,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j147&gt;Answer book available only to teachers&lt;/j147&gt;</tt></td>
+ * <td><tt>&lt;j147&gt;Answer
+ * book available only to teachers&lt;/j147&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

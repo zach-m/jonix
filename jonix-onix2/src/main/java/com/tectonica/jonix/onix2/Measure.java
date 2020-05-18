@@ -153,6 +153,11 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
         return exists;
     }
 
+    @Override
+    public org.w3c.dom.Element getXmlElement() {
+        return element;
+    }
+
     /////////////////////////////////////////////////////////////////////////////////
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
