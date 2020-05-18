@@ -23,9 +23,10 @@ import com.tectonica.jonix.onix3.Collection;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.unify.base.BaseCollection;
 import com.tectonica.jonix.unify.base.BaseCollections;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseCollections}
@@ -41,12 +42,10 @@ public class BaseCollections3 extends BaseCollections {
         this.product = product;
     }
 
+    public static Function<Collection, ? extends BaseCollection> supplier = BaseCollection3::new;
+
     @Override
     protected List<BaseCollection> initialize() {
-        List<BaseCollection> list = new ArrayList<>();
-        for (Collection collection : product.descriptiveDetail().collections()) {
-            list.add(new BaseCollection3(collection));
-        }
-        return list;
+        return Helper.createList(product.descriptiveDetail().collections(), supplier);
     }
 }

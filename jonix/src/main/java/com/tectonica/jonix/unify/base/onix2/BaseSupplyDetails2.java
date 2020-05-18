@@ -23,9 +23,10 @@ import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.unify.base.BaseSupplyDetail;
 import com.tectonica.jonix.unify.base.BaseSupplyDetails;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX2 concrete implementation for {@link BaseSupplyDetails}
@@ -41,12 +42,10 @@ public class BaseSupplyDetails2 extends BaseSupplyDetails {
         this.product = product;
     }
 
+    public static Function<SupplyDetail, ? extends BaseSupplyDetail> supplier = BaseSupplyDetail2::new;
+
     @Override
     protected List<BaseSupplyDetail> initialize() {
-        List<BaseSupplyDetail> list = new ArrayList<>();
-        for (SupplyDetail supplyDetail : product.supplyDetails()) {
-            list.add(new BaseSupplyDetail2(supplyDetail));
-        }
-        return list;
+        return Helper.createList(product.supplyDetails(), supplier);
     }
 }

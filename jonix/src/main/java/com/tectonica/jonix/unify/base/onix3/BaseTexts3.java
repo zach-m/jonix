@@ -23,9 +23,10 @@ import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.TextContent;
 import com.tectonica.jonix.unify.base.BaseText;
 import com.tectonica.jonix.unify.base.BaseTexts;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseTexts}
@@ -41,12 +42,10 @@ public class BaseTexts3 extends BaseTexts {
         this.product = product;
     }
 
+    public static Function<TextContent, ? extends BaseText> supplier = BaseText3::new;
+
     @Override
     protected List<BaseText> initialize() {
-        List<BaseText> list = new ArrayList<>();
-        for (TextContent textContent : product.collateralDetail().textContents()) {
-            list.add(new BaseText3(textContent));
-        }
-        return list;
+        return Helper.createList(product.collateralDetail().textContents(), supplier);
     }
 }

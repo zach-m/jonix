@@ -24,9 +24,10 @@ import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.TitleDetail;
 import com.tectonica.jonix.unify.base.BaseTitle;
 import com.tectonica.jonix.unify.base.BaseTitles;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseTitles}
@@ -46,12 +47,10 @@ public class BaseTitles3 extends BaseTitles {
         titles = collection.titleDetails();
     }
 
+    public static Function<TitleDetail, ? extends BaseTitle> supplier = BaseTitle3::new;
+
     @Override
     protected List<BaseTitle> initialize() {
-        List<BaseTitle> list = new ArrayList<>();
-        for (TitleDetail title : titles) {
-            list.add(new BaseTitle3(title));
-        }
-        return list;
+        return Helper.createList(titles, supplier);
     }
 }

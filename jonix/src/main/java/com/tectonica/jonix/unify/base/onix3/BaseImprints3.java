@@ -23,9 +23,10 @@ import com.tectonica.jonix.onix3.Imprint;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.unify.base.BaseImprint;
 import com.tectonica.jonix.unify.base.BaseImprints;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseImprints}
@@ -41,12 +42,10 @@ public class BaseImprints3 extends BaseImprints {
         this.product = product;
     }
 
+    public static Function<Imprint, ? extends BaseImprint> supplier = BaseImprint3::new;
+
     @Override
     protected List<BaseImprint> initialize() {
-        List<BaseImprint> list = new ArrayList<>();
-        for (Imprint imprint : product.publishingDetail().imprints()) {
-            list.add(new BaseImprint3(imprint));
-        }
-        return list;
+        return Helper.createList(product.publishingDetail().imprints(), supplier);
     }
 }

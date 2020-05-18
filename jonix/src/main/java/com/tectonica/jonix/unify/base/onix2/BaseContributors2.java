@@ -24,9 +24,10 @@ import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.unify.base.BaseContributor;
 import com.tectonica.jonix.unify.base.BaseContributors;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX2 concrete implementation for {@link BaseContributors}
@@ -46,12 +47,11 @@ public class BaseContributors2 extends BaseContributors {
         contributors = series.contributors();
     }
 
+    public static Function<Contributor, ? extends BaseContributor> supplier = BaseContributor2::new;
+
     @Override
     protected List<BaseContributor> initialize() {
-        List<BaseContributor> list = new ArrayList<>();
-        for (Contributor contributor : contributors) {
-            list.add(new BaseContributor2(contributor));
-        }
+        List<BaseContributor> list = Helper.createList(contributors, supplier);
         sortBySequence(list);
         return list;
     }

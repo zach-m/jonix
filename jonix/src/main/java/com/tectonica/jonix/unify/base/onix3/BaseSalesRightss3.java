@@ -23,9 +23,10 @@ import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.SalesRights;
 import com.tectonica.jonix.unify.base.BaseSalesRights;
 import com.tectonica.jonix.unify.base.BaseSalesRightss;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseSalesRightss}
@@ -41,12 +42,10 @@ public class BaseSalesRightss3 extends BaseSalesRightss {
         this.product = product;
     }
 
+    public static Function<SalesRights, ? extends BaseSalesRights> supplier = BaseSalesRights3::new;
+
     @Override
     protected List<BaseSalesRights> initialize() {
-        List<BaseSalesRights> list = new ArrayList<>();
-        for (SalesRights salesRights : product.publishingDetail().salesRightss()) {
-            list.add(new BaseSalesRights3(salesRights));
-        }
-        return list;
+        return Helper.createList(product.publishingDetail().salesRightss(), supplier);
     }
 }

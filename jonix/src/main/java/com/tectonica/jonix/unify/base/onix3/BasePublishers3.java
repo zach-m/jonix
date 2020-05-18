@@ -23,9 +23,10 @@ import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.Publisher;
 import com.tectonica.jonix.unify.base.BasePublisher;
 import com.tectonica.jonix.unify.base.BasePublishers;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BasePublishers}
@@ -41,12 +42,10 @@ public class BasePublishers3 extends BasePublishers {
         this.product = product;
     }
 
+    public static Function<Publisher, ? extends BasePublisher> supplier = BasePublisher3::new;
+
     @Override
     protected List<BasePublisher> initialize() {
-        List<BasePublisher> list = new ArrayList<>();
-        for (Publisher publisher : product.publishingDetail().publishers()) {
-            list.add(new BasePublisher3(publisher));
-        }
-        return list;
+        return Helper.createList(product.publishingDetail().publishers(), supplier);
     }
 }

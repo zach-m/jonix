@@ -23,9 +23,10 @@ import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.unify.base.BasePrice;
 import com.tectonica.jonix.unify.base.BasePrices;
+import com.tectonica.jonix.unify.base.util.Helper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * ONIX2 concrete implementation for {@link BasePrices}
@@ -41,12 +42,10 @@ public class BasePrices2 extends BasePrices {
         this.supplyDetail = supplyDetail;
     }
 
+    public static Function<Price, ? extends BasePrice> supplier = BasePrice2::new;
+
     @Override
     protected List<BasePrice> initialize() {
-        List<BasePrice> list = new ArrayList<>();
-        for (Price price : supplyDetail.prices()) {
-            list.add(new BasePrice2(price));
-        }
-        return list;
+        return Helper.createList(supplyDetail.prices(), supplier);
     }
 }
