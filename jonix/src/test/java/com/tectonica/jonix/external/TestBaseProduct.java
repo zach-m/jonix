@@ -191,7 +191,7 @@ public class TestBaseProduct {
         // test unified result
         String onix3Resource = "/single-book-onix3.xml";
 
-        // iterator-based
+        // pass 1: iterator-based (verbose and manual approach)
         BaseUnifier myUnifier = new BaseUnifier(factory2, factory3);
         for (JonixRecord record : Jonix.source(getClass().getResourceAsStream(onix3Resource))) {
             BaseProduct product = JonixUnifier.unifyProduct(record.product, myUnifier);
@@ -205,7 +205,7 @@ public class TestBaseProduct {
             }
         }
 
-        // stream-base + JSON
+        // pass 2: stream-based + JSON
         Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified(factory2, factory3).limit(1)
             .forEach(record -> LOGGER.debug(JonixJson.objectToJson(record.product)));
     }
