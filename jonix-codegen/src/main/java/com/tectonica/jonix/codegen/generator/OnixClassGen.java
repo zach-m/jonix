@@ -37,7 +37,6 @@ import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 import java.io.File;
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
@@ -202,6 +201,12 @@ public class OnixClassGen {
         p.printf("   @Override\n");
         p.printf("   public boolean exists() {\n");
         p.printf("      return exists;\n");
+        p.printf("   }\n");
+
+        p.print("\n");
+        p.printf("   @Override\n");
+        p.printf("   public org.w3c.dom.Element getXmlElement() {\n");
+        p.printf("      return element;\n");
         p.printf("   }\n");
 
         /////////////////////////////////////////////////////////////////////////////////

@@ -31,6 +31,13 @@ public interface OnixComposite extends OnixTag {
     void _initialize();
 
     /**
+     * For advanced use-cases only.
+     *
+     * @return native representation of the XML element underlying to this tag
+     */
+    org.w3c.dom.Element getXmlElement();
+
+    /**
      * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, representing an ONIX Composite
      * that contains other composites
      */
