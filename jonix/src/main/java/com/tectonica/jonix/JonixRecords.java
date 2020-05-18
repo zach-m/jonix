@@ -20,11 +20,14 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.unify.BaseRecord;
+import com.tectonica.jonix.unify.BaseUnifier;
 import com.tectonica.jonix.unify.CustomUnifier;
 import com.tectonica.jonix.unify.JonixUnifier;
 import com.tectonica.jonix.unify.UnifiedHeader;
 import com.tectonica.jonix.unify.UnifiedProduct;
 import com.tectonica.jonix.unify.UnifiedRecord;
+import com.tectonica.jonix.unify.base.onix2.BaseFactory2;
+import com.tectonica.jonix.unify.base.onix3.BaseFactory3;
 import com.tectonica.jonix.util.GlobScanner;
 import com.tectonica.xmlchunk.XmlChunkerContext;
 import org.slf4j.Logger;
@@ -262,12 +265,19 @@ public class JonixRecords implements Iterable<JonixRecord> {
         return this;
     }
 
+    //public Stream<JonixRecord> setFactory2
+
     public Stream<JonixRecord> stream() {
         return StreamSupport.stream(spliterator(), false);
     }
 
     public Stream<BaseRecord> streamUnified() {
         return stream().map(JonixUnifier::unifyRecord);
+    }
+
+    public Stream<BaseRecord> streamUnified(BaseFactory2 baseFactory2, BaseFactory3 baseFactory3) {
+        BaseUnifier customBaseUnifier = new BaseUnifier(baseFactory2, baseFactory3);
+        return stream().map(record -> JonixUnifier.unifyRecord(record, customBaseUnifier));
     }
 
     public <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> Stream<R> streamUnified(

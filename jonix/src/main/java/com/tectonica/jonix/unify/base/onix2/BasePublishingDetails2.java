@@ -33,10 +33,14 @@ public class BasePublishingDetails2 extends BasePublishingDetails {
     private static final long serialVersionUID = 1L;
 
     public BasePublishingDetails2(Product product) {
-        publicationDate = product.publicationDate().value;
-        outOfPrintDate = product.outOfPrintDate().value;
-        countryOfPublication = product.countryOfPublication().value;
-        cityOfPublication = pickCityOfPublication(product, Languages.English);
+        extract(product, this);
+    }
+
+    public static void extract(Product product, BasePublishingDetails dest) {
+        dest.publicationDate = product.publicationDate().value;
+        dest.outOfPrintDate = product.outOfPrintDate().value;
+        dest.countryOfPublication = product.countryOfPublication().value;
+        dest.cityOfPublication = pickCityOfPublication(product, Languages.English);
     }
 
     public static String pickCityOfPublication(Product product, Languages preferredLanguage) {

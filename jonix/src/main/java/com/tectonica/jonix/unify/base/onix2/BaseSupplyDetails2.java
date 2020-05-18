@@ -20,13 +20,11 @@
 package com.tectonica.jonix.unify.base.onix2;
 
 import com.tectonica.jonix.onix2.Product;
-import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.unify.base.BaseSupplyDetail;
 import com.tectonica.jonix.unify.base.BaseSupplyDetails;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX2 concrete implementation for {@link BaseSupplyDetails}
@@ -38,14 +36,19 @@ public class BaseSupplyDetails2 extends BaseSupplyDetails {
 
     private final transient Product product;
 
+    private final transient BaseFactory2 factory;
+
     public BaseSupplyDetails2(Product product) {
+        this(product, BaseFactory2.DEFAULT);
+    }
+
+    public BaseSupplyDetails2(Product product, BaseFactory2 factory) {
+        this.factory = factory;
         this.product = product;
     }
 
-    public static Function<SupplyDetail, ? extends BaseSupplyDetail> supplier = BaseSupplyDetail2::new;
-
     @Override
     protected List<BaseSupplyDetail> initialize() {
-        return Helper.createList(product.supplyDetails(), supplier);
+        return Helper.createList(product.supplyDetails(), factory.baseSupplyDetailFactory);
     }
 }

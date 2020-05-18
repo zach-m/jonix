@@ -22,20 +22,25 @@ package com.tectonica.jonix.external;
 import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.JonixRecord;
 import com.tectonica.jonix.JonixSource;
+import com.tectonica.jonix.common.codelist.ProductForms;
 import com.tectonica.jonix.json.JonixJson;
+import com.tectonica.jonix.onix3.DescriptiveDetail;
 import com.tectonica.jonix.unify.CustomUnifier;
 import com.tectonica.jonix.unify.UnifiedRecord;
+import com.tectonica.jonix.unify.base.BaseDescription;
 import com.tectonica.jonix.unify.base.BaseHeader;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.BaseTitle;
+import com.tectonica.jonix.unify.base.onix2.BaseDescription2;
+import com.tectonica.jonix.unify.base.onix2.BaseFactory2;
 import com.tectonica.jonix.unify.base.onix2.BaseHeader2;
 import com.tectonica.jonix.unify.base.onix2.BaseProduct2;
 import com.tectonica.jonix.unify.base.onix2.BaseTitle2;
-import com.tectonica.jonix.unify.base.onix2.BaseTitles2;
+import com.tectonica.jonix.unify.base.onix3.BaseDescription3;
+import com.tectonica.jonix.unify.base.onix3.BaseFactory3;
 import com.tectonica.jonix.unify.base.onix3.BaseHeader3;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 import com.tectonica.jonix.unify.base.onix3.BaseTitle3;
-import com.tectonica.jonix.unify.base.onix3.BaseTitles3;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.After;
 import org.junit.Ignore;
@@ -141,20 +146,48 @@ public class TestBaseProduct {
 
     @Test
     public void testCustomSuppliers() {
+
+        // example 1: succinct Java code to add titlePrefix to BaseTitle
+
         class MyBaseTitle extends BaseTitle {
             public String titlePrefix;
         }
-        BaseTitles2.supplier = title -> new MyBaseTitle() {{
-            BaseTitle2.extract(title, this); // first parse whatever Base was parsing
+        BaseFactory2 factory2 = new BaseFactory2().setBaseTitleFactory(title -> new MyBaseTitle() {{
+            BaseTitle2.extract(title, this); // first parse whatever BaseTitle2 was parsing
             titlePrefix = "PREFIX=" + title.titlePrefix().value;
-        }};
-        BaseTitles3.supplier = title -> new MyBaseTitle() {{
-            BaseTitle3.extract(title, this); // first parse whatever Base was parsing
+        }});
+        BaseFactory3 factory3 = new BaseFactory3().setBaseTitleFactory(title -> new MyBaseTitle() {{
+            BaseTitle3.extract(title, this); // first parse whatever BaseTitle3 was parsing
             titlePrefix = "PREFIX=" + title.titleElements().get(0).titlePrefix().value;
-        }};
+        }});
+
+        // example 2: more verbose Java code to add productFormCode to BaseDescription
+
+        class MyDescription extends BaseDescription {
+            public String productFormCode;
+        }
+        class MyDescription2 extends MyDescription {
+            MyDescription2(com.tectonica.jonix.onix2.Product product) {
+                BaseDescription2.extract(product, this);
+                productFormCode = product.productForm().value().map(fv -> fv.code).orElse(null);
+            }
+        }
+        class MyDescription3 extends MyDescription {
+            MyDescription3(com.tectonica.jonix.onix3.Product product) {
+                BaseDescription3.extract(product, this);
+                DescriptiveDetail dd = product.descriptiveDetail();
+                if (dd.exists()) {
+                    productFormCode = dd.productForm().value().map(ProductForms::getCode).orElse(null);
+                }
+            }
+        }
+        factory2.setBaseDescriptionFactory(MyDescription2::new);
+        factory3.setBaseDescriptionFactory(MyDescription3::new);
+
+        // stream using the custom factories
 
         String onix3Resource = "/single-book-onix3.xml";
-        Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified().limit(1)
+        Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified(factory2, factory3).limit(1)
             .forEach(record -> LOGGER.debug(JonixJson.objectToJson(record.product)));
     }
 
@@ -210,5 +243,9 @@ public class TestBaseProduct {
                 return new BaseHeader3(onixHeader);
             }
         }
+
+        String onix3Resource = "/single-book-onix3.xml";
+        Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified(new MyCustomUnifier()).limit(1)
+            .forEach(record -> LOGGER.debug(JonixJson.objectToJson(record.product)));
     }
 }

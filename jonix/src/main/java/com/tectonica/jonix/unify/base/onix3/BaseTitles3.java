@@ -27,7 +27,6 @@ import com.tectonica.jonix.unify.base.BaseTitles;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseTitles}
@@ -39,18 +38,28 @@ public class BaseTitles3 extends BaseTitles {
 
     private final transient List<TitleDetail> titles;
 
+    private final transient BaseFactory3 factory;
+
     public BaseTitles3(Product product) {
+        this(product, BaseFactory3.DEFAULT);
+    }
+
+    public BaseTitles3(Product product, BaseFactory3 factory) {
+        this.factory = factory;
         titles = product.descriptiveDetail().titleDetails();
     }
 
     public BaseTitles3(Collection collection) {
+        this(collection, BaseFactory3.DEFAULT);
+    }
+
+    public BaseTitles3(Collection collection, BaseFactory3 factory) {
+        this.factory = factory;
         titles = collection.titleDetails();
     }
 
-    public static Function<TitleDetail, ? extends BaseTitle> supplier = BaseTitle3::new;
-
     @Override
     protected List<BaseTitle> initialize() {
-        return Helper.createList(titles, supplier);
+        return Helper.createList(titles, factory.baseTitleFactory);
     }
 }

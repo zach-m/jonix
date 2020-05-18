@@ -21,14 +21,12 @@ package com.tectonica.jonix.unify.base.onix3;
 
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.ProductSupply;
-import com.tectonica.jonix.onix3.SupplyDetail;
 import com.tectonica.jonix.unify.base.BaseSupplyDetail;
 import com.tectonica.jonix.unify.base.BaseSupplyDetails;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseSupplyDetails}
@@ -40,17 +38,22 @@ public class BaseSupplyDetails3 extends BaseSupplyDetails {
 
     private final transient Product product;
 
+    private final transient BaseFactory3 factory;
+
     public BaseSupplyDetails3(Product product) {
-        this.product = product;
+        this(product, BaseFactory3.DEFAULT);
     }
 
-    public static Function<SupplyDetail, ? extends BaseSupplyDetail> supplier = BaseSupplyDetail3::new;
+    public BaseSupplyDetails3(Product product, BaseFactory3 factory) {
+        this.factory = factory;
+        this.product = product;
+    }
 
     @Override
     protected List<BaseSupplyDetail> initialize() {
         List<BaseSupplyDetail> list = new ArrayList<>();
         for (ProductSupply ps : product.productSupplys()) { // scanning all markets, maybe not good idea
-            list.addAll(Helper.createList(ps.supplyDetails(), supplier));
+            list.addAll(Helper.createList(ps.supplyDetails(), factory.baseSupplyDetailFactory));
         }
         return list;
     }

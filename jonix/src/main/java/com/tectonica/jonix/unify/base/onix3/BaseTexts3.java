@@ -20,13 +20,11 @@
 package com.tectonica.jonix.unify.base.onix3;
 
 import com.tectonica.jonix.onix3.Product;
-import com.tectonica.jonix.onix3.TextContent;
 import com.tectonica.jonix.unify.base.BaseText;
 import com.tectonica.jonix.unify.base.BaseTexts;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseTexts}
@@ -38,14 +36,19 @@ public class BaseTexts3 extends BaseTexts {
 
     private final transient Product product;
 
+    private final transient BaseFactory3 factory;
+
     public BaseTexts3(Product product) {
+        this(product, BaseFactory3.DEFAULT);
+    }
+
+    public BaseTexts3(Product product, BaseFactory3 factory) {
+        this.factory = factory;
         this.product = product;
     }
 
-    public static Function<TextContent, ? extends BaseText> supplier = BaseText3::new;
-
     @Override
     protected List<BaseText> initialize() {
-        return Helper.createList(product.collateralDetail().textContents(), supplier);
+        return Helper.createList(product.collateralDetail().textContents(), factory.baseTextFactory);
     }
 }

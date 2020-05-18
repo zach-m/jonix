@@ -37,7 +37,7 @@ public class BaseCollection2 extends BaseCollection {
     private static final long serialVersionUID = 1L;
 
     @SuppressWarnings("serial")
-    public BaseCollection2(final Series c) {
+    public BaseCollection2(Series c) {
         extract(c, this);
     }
 

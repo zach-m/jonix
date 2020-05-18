@@ -39,7 +39,14 @@ public class BaseSubjects2 extends BaseSubjects {
 
     private final transient Product product;
 
+    private final transient BaseFactory2 factory;
+
     public BaseSubjects2(Product product) {
+        this(product, BaseFactory2.DEFAULT);
+    }
+
+    public BaseSubjects2(Product product, BaseFactory2 factory) {
+        this.factory = factory;
         this.product = product;
     }
 

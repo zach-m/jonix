@@ -38,6 +38,6 @@ public class BaseSupplyDetail3 extends BaseSupplyDetail {
         dest.supplierRole = supplyDetail.supplier().supplierRole().value;
         dest.supplierName = supplyDetail.supplier().supplierName().value;
         dest.availability = supplyDetail.productAvailability().value.name();
-        dest.prices = new BasePrices3(supplyDetail);
+        dest.prices = new BasePrices3(supplyDetail); // TODO: this is outside of the factory mechanism
     }
 }

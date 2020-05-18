@@ -19,14 +19,12 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.onix3.Collection;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.unify.base.BaseCollection;
 import com.tectonica.jonix.unify.base.BaseCollections;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseCollections}
@@ -38,14 +36,19 @@ public class BaseCollections3 extends BaseCollections {
 
     private final transient Product product;
 
+    private final transient BaseFactory3 factory;
+
     public BaseCollections3(Product product) {
+        this(product, BaseFactory3.DEFAULT);
+    }
+
+    public BaseCollections3(Product product, BaseFactory3 factory) {
+        this.factory = factory;
         this.product = product;
     }
 
-    public static Function<Collection, ? extends BaseCollection> supplier = BaseCollection3::new;
-
     @Override
     protected List<BaseCollection> initialize() {
-        return Helper.createList(product.descriptiveDetail().collections(), supplier);
+        return Helper.createList(product.descriptiveDetail().collections(), factory.baseCollectionFactory);
     }
 }

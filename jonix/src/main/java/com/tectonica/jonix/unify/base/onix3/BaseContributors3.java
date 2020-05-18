@@ -26,7 +26,6 @@ import com.tectonica.jonix.unify.base.BaseContributors;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseContributors}
@@ -38,19 +37,29 @@ public class BaseContributors3 extends BaseContributors {
 
     private final transient List<Contributor> contributors;
 
+    private final transient BaseFactory3 factory;
+
     public BaseContributors3(Product product) {
+        this(product, BaseFactory3.DEFAULT);
+    }
+
+    public BaseContributors3(Product product, BaseFactory3 factory) {
+        this.factory = factory;
         contributors = product.descriptiveDetail().contributors();
     }
 
     public BaseContributors3(com.tectonica.jonix.onix3.Collection collection) {
+        this(collection, BaseFactory3.DEFAULT);
+    }
+
+    public BaseContributors3(com.tectonica.jonix.onix3.Collection collection, BaseFactory3 factory) {
+        this.factory = factory;
         contributors = collection.contributors();
     }
 
-    public static Function<Contributor, ? extends BaseContributor> supplier = BaseContributor3::new;
-
     @Override
     protected List<BaseContributor> initialize() {
-        List<BaseContributor> list = Helper.createList(contributors, supplier);
+        List<BaseContributor> list = Helper.createList(contributors, factory.baseContributorFactory);
         sortBySequence(list);
         return list;
     }

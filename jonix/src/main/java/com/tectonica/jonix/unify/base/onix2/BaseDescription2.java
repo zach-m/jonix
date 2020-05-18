@@ -32,11 +32,8 @@ import com.tectonica.jonix.unify.base.BaseDescription;
 public class BaseDescription2 extends BaseDescription {
     private static final long serialVersionUID = 1L;
 
-    private final transient AudienceRange audienceRange;
-
     public BaseDescription2(Product product) {
         extract(product, this);
-        audienceRange = product.audienceRanges().first().orElse(null);
     }
 
     public static void extract(Product product, BaseDescription dest) {
@@ -47,13 +44,6 @@ public class BaseDescription2 extends BaseDescription {
         dest.languages = product.languages().asStructs(); // TODO: lazify
         dest.audiences = product.audiences().asStructs(); // TODO: lazify
         dest.audienceCodes = product.audienceCodes().values();
-    }
-
-    @Override
-    public Integer[] getFirstAudienceAgeRange() {
-        if (audienceRange != null) {
-            return getAudienceAgeRange(audienceRange.asStruct());
-        }
-        return new Integer[] {null, null};
+        dest.audienceRange = product.audienceRanges().first().map(AudienceRange::asStruct).orElse(null);
     }
 }

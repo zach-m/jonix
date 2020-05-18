@@ -31,23 +31,31 @@ public class BaseProduct2 extends BaseProduct {
     private static final long serialVersionUID = 1L;
 
     public BaseProduct2(Product product) {
-        extract(product, this);
+        this(product, BaseFactory2.DEFAULT);
+    }
+
+    public BaseProduct2(Product product, BaseFactory2 factory) {
+        extract(product, this, factory);
     }
 
     public static void extract(Product product, BaseProduct dest) {
+        extract(product, dest, BaseFactory2.DEFAULT);
+    }
+
+    public static void extract(Product product, BaseProduct dest, BaseFactory2 factory) {
         dest.rawProduct = product;
 
-        dest.info = new BaseInfo2(product);
-        dest.description = new BaseDescription2(product);
-        dest.publishingDetails = new BasePublishingDetails2(product);
-        dest.titles = new BaseTitles2(product);
-        dest.contributors = new BaseContributors2(product);
-        dest.collections = new BaseCollections2(product);
-        dest.subjects = new BaseSubjects2(product);
-        dest.texts = new BaseTexts2(product);
-        dest.publishers = new BasePublishers2(product);
-        dest.imprints = new BaseImprints2(product);
-        dest.supplyDetails = new BaseSupplyDetails2(product);
-        dest.salesRightss = new BaseSalesRightss2(product);
+        dest.info = factory.baseInfoFactory.apply(product);
+        dest.description = factory.baseDescriptionFactory.apply(product);
+        dest.publishingDetails = factory.basePublishingDetailsFactory.apply(product);
+        dest.titles = new BaseTitles2(product, factory);
+        dest.contributors = new BaseContributors2(product, factory);
+        dest.collections = new BaseCollections2(product, factory);
+        dest.subjects = new BaseSubjects2(product, factory); // TODO: map, not list, factory not effective
+        dest.texts = new BaseTexts2(product, factory);
+        dest.publishers = new BasePublishers2(product, factory);
+        dest.imprints = new BaseImprints2(product, factory);
+        dest.supplyDetails = new BaseSupplyDetails2(product, factory);
+        dest.salesRightss = new BaseSalesRightss2(product, factory);
     }
 }

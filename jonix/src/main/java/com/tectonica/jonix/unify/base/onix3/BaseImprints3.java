@@ -19,14 +19,12 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.onix3.Imprint;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.unify.base.BaseImprint;
 import com.tectonica.jonix.unify.base.BaseImprints;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BaseImprints}
@@ -38,14 +36,19 @@ public class BaseImprints3 extends BaseImprints {
 
     private final transient Product product;
 
+    private final transient BaseFactory3 factory;
+
     public BaseImprints3(Product product) {
+        this(product, BaseFactory3.DEFAULT);
+    }
+
+    public BaseImprints3(Product product, BaseFactory3 factory) {
+        this.factory = factory;
         this.product = product;
     }
 
-    public static Function<Imprint, ? extends BaseImprint> supplier = BaseImprint3::new;
-
     @Override
     protected List<BaseImprint> initialize() {
-        return Helper.createList(product.publishingDetail().imprints(), supplier);
+        return Helper.createList(product.publishingDetail().imprints(), factory.baseImprintFactory);
     }
 }

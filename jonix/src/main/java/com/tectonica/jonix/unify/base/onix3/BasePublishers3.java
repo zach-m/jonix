@@ -20,13 +20,11 @@
 package com.tectonica.jonix.unify.base.onix3;
 
 import com.tectonica.jonix.onix3.Product;
-import com.tectonica.jonix.onix3.Publisher;
 import com.tectonica.jonix.unify.base.BasePublisher;
 import com.tectonica.jonix.unify.base.BasePublishers;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX3 concrete implementation for {@link BasePublishers}
@@ -38,14 +36,19 @@ public class BasePublishers3 extends BasePublishers {
 
     private final transient Product product;
 
+    private final transient BaseFactory3 factory;
+
     public BasePublishers3(Product product) {
+        this(product, BaseFactory3.DEFAULT);
+    }
+
+    public BasePublishers3(Product product, BaseFactory3 factory) {
+        this.factory = factory;
         this.product = product;
     }
 
-    public static Function<Publisher, ? extends BasePublisher> supplier = BasePublisher3::new;
-
     @Override
     protected List<BasePublisher> initialize() {
-        return Helper.createList(product.publishingDetail().publishers(), supplier);
+        return Helper.createList(product.publishingDetail().publishers(), factory.basePublisherFactory);
     }
 }

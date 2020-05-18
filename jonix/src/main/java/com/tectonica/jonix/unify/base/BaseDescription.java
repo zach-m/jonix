@@ -47,12 +47,18 @@ public abstract class BaseDescription implements Serializable {
     public List<JonixLanguage> languages;
     public List<JonixAudience> audiences;
     public List<AudienceTypes> audienceCodes;
+    public JonixAudienceRange audienceRange;
 
     /**
      * returns a 2-items array, containing the FROM and TO age-range values, or null if not indicated. This function
      * never returns null.
      */
-    public abstract Integer[] getFirstAudienceAgeRange();
+    public Integer[] getFirstAudienceAgeRange() {
+        if (audienceRange != null) {
+            return getAudienceAgeRange(audienceRange);
+        }
+        return new Integer[] {null, null};
+    }
 
     public String findLanguage(LanguageRoles requestedType) {
         JonixLanguage jonixLanguage = findJonixLanguage(requestedType);
@@ -85,7 +91,7 @@ public abstract class BaseDescription implements Serializable {
                 // TODO: invalid ONIX
             } else {
                 for (int i = 0; i < precisions.size(); i++) {
-                    Integer value = Integer.valueOf(values.get(i));
+                    int value = Integer.parseInt(values.get(i));
                     if (value != 0) { // 0 has exact meaning as null, it's sometimes provided wrongly as such
                         switch (precisions.get(i)) {
                             case From:

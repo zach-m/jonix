@@ -19,14 +19,12 @@
 
 package com.tectonica.jonix.unify.base.onix2;
 
-import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.unify.base.BasePrice;
 import com.tectonica.jonix.unify.base.BasePrices;
 import com.tectonica.jonix.unify.base.util.Helper;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * ONIX2 concrete implementation for {@link BasePrices}
@@ -38,14 +36,19 @@ public class BasePrices2 extends BasePrices {
 
     private final transient SupplyDetail supplyDetail;
 
+    private final transient BaseFactory2 factory;
+
     public BasePrices2(SupplyDetail supplyDetail) {
+        this(supplyDetail, BaseFactory2.DEFAULT);
+    }
+
+    public BasePrices2(SupplyDetail supplyDetail, BaseFactory2 factory) {
+        this.factory = factory;
         this.supplyDetail = supplyDetail;
     }
 
-    public static Function<Price, ? extends BasePrice> supplier = BasePrice2::new;
-
     @Override
     protected List<BasePrice> initialize() {
-        return Helper.createList(supplyDetail.prices(), supplier);
+        return Helper.createList(supplyDetail.prices(), factory.basePriceFactory);
     }
 }
