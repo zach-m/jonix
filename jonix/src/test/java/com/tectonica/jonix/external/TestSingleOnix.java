@@ -23,7 +23,12 @@ import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.JonixRecord;
 import com.tectonica.jonix.OnixVersion;
 import com.tectonica.jonix.common.OnixProduct;
+import com.tectonica.jonix.common.codelist.PublishingDateRoles;
+import com.tectonica.jonix.common.codelist.SupplyDateRoles;
 import com.tectonica.jonix.json.JonixJson;
+import com.tectonica.jonix.onix2.OnSaleDate;
+import com.tectonica.jonix.onix2.SupplyDetail;
+import com.tectonica.jonix.onix3.Product;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -37,6 +42,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 
@@ -60,6 +68,7 @@ public class TestSingleOnix {
         InputStream source = getClass().getResourceAsStream(xmlResourceName);
         boolean entered = false;
         for (JonixRecord record : Jonix.source(source)) {
+            //codeSnippet(record);
             Assert.assertFalse(entered); // there should be exactly one product in the file
             entered = true;
             assertEquals(expectedOnixVersion, record.source.onixVersion());
@@ -68,6 +77,34 @@ public class TestSingleOnix {
             LOGGER.debug("API: {}", json); // or: JonixJson.productToJson(record.product);
             assertEquals(expectedLength, json.length());
         }
+    }
+
+    private void codeSnippet(JonixRecord record) {
+        List<String> allDates = new ArrayList<>();
+        boolean isOnix3 = record.product instanceof Product;
+        if (isOnix3) {
+            com.tectonica.jonix.onix3.Product p3 = (com.tectonica.jonix.onix3.Product) record.product;
+            // PublishingDetail/PublishingDate[PublishingDateRole='02']/Date
+            p3.publishingDetail().publishingDates().find(PublishingDateRoles.Sales_embargo_date)
+                .map(pd -> pd.date().value).ifPresent(allDates::add);
+            // ProductSupply/SupplyDetail/SupplyDate[SupplyDateRole='02']/Date
+            // ProductSupply/SupplyDetail/SupplyDate[SupplyDateRole='08']/Date
+            p3.productSupplys().forEach(
+                ps -> ps.supplyDetails().forEach(
+                    sp -> sp.supplyDates()
+                        .findAll(SupplyDateRoles.Sales_embargo_date, SupplyDateRoles.Expected_availability_date)
+                        .forEach(sd -> allDates.add(sd.date().value))
+                )
+            );
+        } else { // ONIX2
+            // SupplyDetail/OnSaleDate
+            com.tectonica.jonix.onix2.Product p2 = (com.tectonica.jonix.onix2.Product) record.product;
+            allDates.addAll(
+                p2.supplyDetails().stream()
+                    .map(SupplyDetail::onSaleDate).filter(OnSaleDate::exists).map(osd -> osd.value)
+                    .collect(Collectors.toList()));
+        }
+        System.out.println(allDates);
     }
 
     private void testViaDOM(String xmlResourceName, int expectedLength, OnixVersion expectedOnixVersion) {
