@@ -108,7 +108,7 @@ public class BASICMainSubject implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of BASICMainSubject. Could be null if {@code exists == false}. Use {@link #value()}
+     * This is the raw content of BASICMainSubject. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Fixed-length, three upper-case letters and six numeric digits.

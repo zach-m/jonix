@@ -349,7 +349,7 @@ public class OnixClassGen {
         p.print("\n");
         if (ti.comment != null) {
             p.printf("   /**\n");
-            p.printf("   * This is the raw content of %s. Could be null if {@code exists == false}.\n", element.name);
+            p.printf("   * This is the raw content of %s. Could be null if {@code exists() == false}.\n", element.name);
             p.printf("   * Use {@link #value()} instead if you want to get this as an {@link java.util.Optional}.\n");
             p.printf("   * <p>\n");
             if (element.onixDocs != null) {

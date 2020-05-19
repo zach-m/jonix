@@ -103,8 +103,8 @@ public class NumberOfCopies implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of NumberOfCopies. Could be null if {@code exists == false}. Use {@link #value()} instead
-     * if you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of NumberOfCopies. Could be null if {@code exists() == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Positive integer, suggested maximum length 4 digits
      * <p>

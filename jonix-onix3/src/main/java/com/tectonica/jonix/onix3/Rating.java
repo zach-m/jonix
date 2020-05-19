@@ -105,8 +105,8 @@ public class Rating implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of Rating. Could be null if {@code exists == false}. Use {@link #value()} instead if you
-     * want to get this as an {@link java.util.Optional}.
+     * This is the raw content of Rating. Could be null if {@code exists() == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the
      * limit specified in &lt;RatingLimit&gt;. Suggested maximum length 7 characters

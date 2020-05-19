@@ -109,7 +109,7 @@ public class LevelSequenceNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of LevelSequenceNumber. Could be null if {@code exists == false}. Use {@link #value()}
+     * This is the raw content of LevelSequenceNumber. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested

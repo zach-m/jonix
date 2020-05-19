@@ -112,8 +112,8 @@ public class MarketCountry implements OnixElement<java.util.Set<String>>, Serial
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of MarketCountry. Could be null if {@code exists == false}. Use {@link #value()} instead
-     * if you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of MarketCountry. Could be null if {@code exists() == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
      * spaces. Suggested maximum length 600 characters. [Note that ISO 3166-1 specifies that country codes shall be sent

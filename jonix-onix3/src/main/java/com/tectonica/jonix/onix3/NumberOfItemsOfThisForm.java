@@ -98,7 +98,7 @@ public class NumberOfItemsOfThisForm implements OnixElement<Integer>, Serializab
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of NumberOfItemsOfThisForm. Could be null if {@code exists == false}. Use
+     * This is the raw content of NumberOfItemsOfThisForm. Could be null if {@code exists() == false}. Use
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Positive integer, suggested maximum length 4 digits

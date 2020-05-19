@@ -96,8 +96,8 @@ public class Number implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of Number. Could be null if {@code exists == false}. Use {@link #value()} instead if you
-     * want to get this as an {@link java.util.Optional}.
+     * This is the raw content of Number. Could be null if {@code exists() == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Positive integer or zero, suggested maximum length 6 digits
      * <p>

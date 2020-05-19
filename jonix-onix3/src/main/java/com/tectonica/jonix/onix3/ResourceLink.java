@@ -114,7 +114,7 @@ public class ResourceLink implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ResourceLink. Could be null if {@code exists == false}. Use {@link #value()} instead
+     * This is the raw content of ResourceLink. Could be null if {@code exists() == false}. Use {@link #value()} instead
      * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested

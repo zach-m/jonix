@@ -98,7 +98,7 @@ public class Reserved implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of Reserved. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * This is the raw content of Reserved. Could be null if {@code exists() == false}. Use {@link #value()} instead if
      * you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Positive integer or zero, suggested maximum length 7 digits.

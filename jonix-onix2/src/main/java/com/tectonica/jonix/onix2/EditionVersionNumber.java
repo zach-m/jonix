@@ -101,7 +101,7 @@ public class EditionVersionNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of EditionVersionNumber. Could be null if {@code exists == false}. Use {@link #value()}
+     * This is the raw content of EditionVersionNumber. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Free form, suggested maximum length 20 characters.

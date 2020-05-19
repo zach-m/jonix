@@ -100,7 +100,7 @@ public class SentDate implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of SentDate. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * This is the raw content of SentDate. Could be null if {@code exists() == false}. Use {@link #value()} instead if
      * you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)

@@ -105,7 +105,7 @@ public class AlternativeProductEAN13 implements OnixElement<String>, Serializabl
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of AlternativeProductEAN13. Could be null if {@code exists == false}. Use
+     * This is the raw content of AlternativeProductEAN13. Could be null if {@code exists() == false}. Use
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Fixed-length, 13 numeric digits.

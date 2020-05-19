@@ -102,8 +102,8 @@ public class FromSAN implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of FromSAN. Could be null if {@code exists == false}. Use {@link #value()} instead if you
-     * want to get this as an {@link java.util.Optional}.
+     * This is the raw content of FromSAN. Could be null if {@code exists() == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
      * character which may be a numeric digit or letter X.

@@ -97,7 +97,7 @@ public class FirstPageNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of FirstPageNumber. Could be null if {@code exists == false}. Use {@link #value()}
+     * This is the raw content of FirstPageNumber. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length alphanumeric, suggested maximum length 20 characters

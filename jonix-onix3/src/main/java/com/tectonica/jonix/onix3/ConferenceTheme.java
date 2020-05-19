@@ -108,7 +108,7 @@ public class ConferenceTheme implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ConferenceTheme. Could be null if {@code exists == false}. Use {@link #value()}
+     * This is the raw content of ConferenceTheme. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see

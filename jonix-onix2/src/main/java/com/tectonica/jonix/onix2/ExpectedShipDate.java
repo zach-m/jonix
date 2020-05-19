@@ -102,7 +102,7 @@ public class ExpectedShipDate implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ExpectedShipDate. Could be null if {@code exists == false}. Use {@link #value()}
+     * This is the raw content of ExpectedShipDate. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;

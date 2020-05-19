@@ -98,8 +98,8 @@ public class ExtentValue implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ExtentValue. Could be null if {@code exists == false}. Use {@link #value()} instead if
-     * you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of ExtentValue. Could be null if {@code exists() == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Positive real number, with explicit decimal point when required, as appropriate for the units
      * specified in &lt;ExtentUnit&gt;. Suggested maximum length 8 characters

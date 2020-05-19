@@ -106,7 +106,7 @@ public class Width implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of Width. Could be null if {@code exists == false}. Use {@link #value()} instead if you
+     * This is the raw content of Width. Could be null if {@code exists() == false}. Use {@link #value()} instead if you
      * want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6

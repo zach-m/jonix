@@ -106,8 +106,8 @@ public class ContactName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ContactName. Could be null if {@code exists == false}. Use {@link #value()} instead if
-     * you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of ContactName. Could be null if {@code exists() == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum 300 characters
      * <p>

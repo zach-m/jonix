@@ -104,7 +104,7 @@ public class SentDateTime implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of SentDateTime. Could be null if {@code exists == false}. Use {@link #value()} instead
+     * This is the raw content of SentDateTime. Could be null if {@code exists() == false}. Use {@link #value()} instead
      * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Permitted formats, where 'T' and 'Z' represent themselves (ie the letters T and Z), and where the

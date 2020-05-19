@@ -108,7 +108,7 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ProductFormFeatureDescription. Could be null if {@code exists == false}. Use
+     * This is the raw content of ProductFormFeatureDescription. Could be null if {@code exists() == false}. Use
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable-length text, suggested maximum length 100 characters.

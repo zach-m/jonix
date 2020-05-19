@@ -102,7 +102,7 @@ public class EpubLicenseExpressionLink implements OnixElement<String>, Serializa
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of EpubLicenseExpressionLink. Could be null if {@code exists == false}. Use
+     * This is the raw content of EpubLicenseExpressionLink. Could be null if {@code exists() == false}. Use
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 300 characters

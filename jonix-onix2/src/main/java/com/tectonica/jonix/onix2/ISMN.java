@@ -105,7 +105,7 @@ public class ISMN implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ISMN. Could be null if {@code exists == false}. Use {@link #value()} instead if you
+     * This is the raw content of ISMN. Could be null if {@code exists() == false}. Use {@link #value()} instead if you
      * want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character

@@ -102,8 +102,8 @@ public class ToQuantity implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ToQuantity. Could be null if {@code exists == false}. Use {@link #value()} instead if
-     * you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of ToQuantity. Could be null if {@code exists() == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits
      * <p>

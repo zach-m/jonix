@@ -95,7 +95,7 @@ public class LatestReprintNumber implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of LatestReprintNumber. Could be null if {@code exists == false}. Use {@link #value()}
+     * This is the raw content of LatestReprintNumber. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Positive integer, suggested maximum four digits

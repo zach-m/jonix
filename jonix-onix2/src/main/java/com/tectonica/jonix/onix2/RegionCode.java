@@ -112,8 +112,8 @@ public class RegionCode implements OnixElement<java.util.Set<String>>, Serializa
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of RegionCode. Could be null if {@code exists == false}. Use {@link #value()} instead if
-     * you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of RegionCode. Could be null if {@code exists() == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes
      * being separated by spaces. Suggested maximum length 8 characters.

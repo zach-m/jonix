@@ -106,7 +106,7 @@ public class AgentRole implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of AgentRole. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * This is the raw content of AgentRole. Could be null if {@code exists() == false}. Use {@link #value()} instead if
      * you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Fixed-length, two numeric digits.

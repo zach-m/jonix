@@ -104,7 +104,7 @@ public class SupplierEANLocationNumber implements OnixElement<String>, Serializa
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of SupplierEANLocationNumber. Could be null if {@code exists == false}. Use
+     * This is the raw content of SupplierEANLocationNumber. Could be null if {@code exists() == false}. Use
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
