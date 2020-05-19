@@ -122,6 +122,9 @@ public class MainDescription implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of MainDescription. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable-length text, suggested maximum 2,000 characters (XHTML is enabled in this element - see ONIX
      * for Books - Product Information Message - XML Message Specification, Section 7)
      * <p>

@@ -106,6 +106,9 @@ public class CollectionSequenceNumber implements OnixElement<String>, Serializab
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of CollectionSequenceNumber. Could be null if {@code exists == false}. Use
+     * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable length string of one or more positive integers or hyphens, each successive integer or hyphen
      * being separated by a period character, suggested maximum length 50 characters
      * <p>

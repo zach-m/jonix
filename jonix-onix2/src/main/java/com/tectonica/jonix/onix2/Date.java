@@ -110,6 +110,9 @@ public class Date implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of Date. Could be null if {@code exists == false}. Use {@link #value()} instead if you
+     * want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
      * <p>
      * (type: NonEmptyString)

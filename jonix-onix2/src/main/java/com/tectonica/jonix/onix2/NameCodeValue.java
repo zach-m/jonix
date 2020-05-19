@@ -101,6 +101,9 @@ public class NameCodeValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of NameCodeValue. Could be null if {@code exists == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Determined by the scheme specified in &lt;NameCodeType&gt;
      * <p>
      * (type: NonEmptyString)

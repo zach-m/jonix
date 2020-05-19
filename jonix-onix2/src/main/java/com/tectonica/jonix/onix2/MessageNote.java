@@ -103,6 +103,9 @@ public class MessageNote implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of MessageNote. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable-length ASCII text, suggested maximum 500 characters
      * <p>
      * (type: NonEmptyString)

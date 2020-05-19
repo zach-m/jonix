@@ -102,6 +102,9 @@ public class ReligiousTextID implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of ReligiousTextID. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Fixed-length, two numeric digits
      * <p>
      * (type: List88)

@@ -111,6 +111,9 @@ public class ReviewQuote implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of ReviewQuote. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
      * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
      * <p>

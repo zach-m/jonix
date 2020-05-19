@@ -98,6 +98,9 @@ public class OnHand implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of OnHand. Could be null if {@code exists == false}. Use {@link #value()} instead if you
+     * want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Positive or negative integer or zero, suggested maximum length 7 digits. Negative numbers indicate
      * order commitments in excess of the copies on hand for which no further stock has been ordered
      * <p>

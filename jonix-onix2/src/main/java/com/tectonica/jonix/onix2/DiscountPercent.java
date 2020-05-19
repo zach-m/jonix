@@ -103,6 +103,9 @@ public class DiscountPercent implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of DiscountPercent. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
      * <p>
      * (type: NonEmptyString)

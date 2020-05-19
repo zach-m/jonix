@@ -111,6 +111,9 @@ public class PublisherName implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of PublisherName. Could be null if {@code exists == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable length text, suggested maximum length 100 characters
      * <p>
      * (type: dt.NonEmptyString)

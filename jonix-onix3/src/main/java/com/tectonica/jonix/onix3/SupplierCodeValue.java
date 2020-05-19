@@ -96,6 +96,9 @@ public class SupplierCodeValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of SupplierCodeValue. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
      * <p>
      * (type: dt.NonEmptyString)

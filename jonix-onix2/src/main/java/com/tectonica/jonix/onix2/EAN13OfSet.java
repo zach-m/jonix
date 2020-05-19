@@ -104,6 +104,9 @@ public class EAN13OfSet implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of EAN13OfSet. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Fixed-length, 13 numeric digits
      * <p>
      * (type: NonEmptyString)

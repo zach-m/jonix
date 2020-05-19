@@ -99,6 +99,9 @@ public class PrizeYear implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of PrizeYear. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Four digits, YYYY
      * <p>
      * (type: NonEmptyString)

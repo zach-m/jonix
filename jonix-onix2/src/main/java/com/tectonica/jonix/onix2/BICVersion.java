@@ -101,6 +101,9 @@ public class BICVersion implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of BICVersion. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
      * consistency with other version number elements.
      * <p>

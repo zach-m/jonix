@@ -98,6 +98,9 @@ public class Percent implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of Percent. Could be null if {@code exists == false}. Use {@link #value()} instead if you
+     * want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Real number between zero and 100 (inclusive), with explicit decimal point when required, suggested
      * maximum length 7 characters
      * <p>

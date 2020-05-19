@@ -95,6 +95,9 @@ public class AudienceDescription implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of AudienceDescription. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Free text, suggested maximum length 1000 characters.
      * <p>
      * (type: NonEmptyString)

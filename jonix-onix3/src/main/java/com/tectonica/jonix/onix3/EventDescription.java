@@ -115,6 +115,9 @@ public class EventDescription implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of EventDescription. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
      * see Using XHTML, HTML or XML with ONIX text fields
      * <p>

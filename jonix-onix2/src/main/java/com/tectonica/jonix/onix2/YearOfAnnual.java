@@ -100,6 +100,9 @@ public class YearOfAnnual implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of YearOfAnnual. Could be null if {@code exists == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
      * <p>
      * (type: NonEmptyString)

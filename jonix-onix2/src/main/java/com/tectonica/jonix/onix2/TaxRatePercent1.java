@@ -101,6 +101,9 @@ public class TaxRatePercent1 implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of TaxRatePercent1. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable length real number, with an explicit decimal point where required.
      * <p>
      * (type: NonEmptyString)

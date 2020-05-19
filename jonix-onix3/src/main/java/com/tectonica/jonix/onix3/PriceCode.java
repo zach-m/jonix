@@ -98,6 +98,9 @@ public class PriceCode implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of PriceCode. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: According to the scheme specified in &lt;PriceCodeType&gt;
      * <p>
      * (type: dt.NonEmptyString)

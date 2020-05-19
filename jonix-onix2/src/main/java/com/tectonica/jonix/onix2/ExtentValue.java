@@ -100,6 +100,9 @@ public class ExtentValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of ExtentValue. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Numeric, with decimal point where required, as specified in field PR.12.4
      * <p>
      * (type: NonEmptyString)

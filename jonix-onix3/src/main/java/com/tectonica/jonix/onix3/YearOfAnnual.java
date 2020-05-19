@@ -100,6 +100,9 @@ public class YearOfAnnual implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of YearOfAnnual. Could be null if {@code exists == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Year or range of years, in the format YYYY or YYYY-YYYY
      * <p>
      * (type: dt.YearOrYearRange)

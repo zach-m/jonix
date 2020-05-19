@@ -98,6 +98,9 @@ public class SupplyRestrictionDetail implements OnixElement<String>, Serializabl
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of SupplyRestrictionDetail. Could be null if {@code exists == false}. Use
+     * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable-length text, suggested maximum length 300 characters
      * <p>
      * (type: NonEmptyString)

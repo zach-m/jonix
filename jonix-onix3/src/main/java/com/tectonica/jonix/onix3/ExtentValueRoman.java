@@ -96,6 +96,9 @@ public class ExtentValueRoman implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of ExtentValueRoman. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Letters forming a valid Roman numeral
      * <p>
      * (type: dt.RomanNumeralString)

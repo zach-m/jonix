@@ -98,6 +98,9 @@ public class AudienceRangeValue implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of AudienceRangeValue. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable length string, suggested maximum 10 characters, according to the scheme specified in
      * &lt;AudienceRangeQualifier&gt;. (This element was originally defined as a variable-length integer, but its
      * definition was extended in ONIX 2.1 to enable non-numeric values to be carried. For values that BISAC has defined

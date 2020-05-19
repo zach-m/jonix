@@ -95,6 +95,9 @@ public class OrderTime implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of OrderTime. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Positive integer or zero, one or two digits only. Zero indicates expected 'same day' dispatch
      * <p>
      * (type: dt.PositiveInteger)

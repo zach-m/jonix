@@ -100,6 +100,9 @@ public class OrderTime implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of OrderTime. Could be null if {@code exists == false}. Use {@link #value()} instead if
+     * you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable-length integer, one or two digits only
      * <p>
      * (type: NonEmptyString)

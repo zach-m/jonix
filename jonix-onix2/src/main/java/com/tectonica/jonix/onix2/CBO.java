@@ -101,6 +101,9 @@ public class CBO implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of CBO. Could be null if {@code exists == false}. Use {@link #value()} instead if you
+     * want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable-length integer, suggested maximum length 7 digits
      * <p>
      * (type: NonEmptyString)

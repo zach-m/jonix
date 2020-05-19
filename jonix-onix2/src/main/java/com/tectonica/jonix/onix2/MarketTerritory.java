@@ -115,6 +115,9 @@ public class MarketTerritory implements OnixElement<java.util.Set<String>>, Seri
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of MarketTerritory. Could be null if {@code exists == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: One or more variable-length codes, each consisting of upper case letters with or without a hyphen,
      * successive codes being separated by spaces. Suggested maximum length 100 characters.
      * <p>

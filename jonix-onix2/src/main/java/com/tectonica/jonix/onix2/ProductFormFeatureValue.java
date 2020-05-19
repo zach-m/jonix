@@ -138,6 +138,9 @@ public class ProductFormFeatureValue implements OnixElement<String>, Serializabl
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of ProductFormFeatureValue. Could be null if {@code exists == false}. Use
+     * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
      * <p>
      * (type: NonEmptyString)

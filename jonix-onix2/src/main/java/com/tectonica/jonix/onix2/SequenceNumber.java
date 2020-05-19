@@ -108,6 +108,9 @@ public class SequenceNumber implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of SequenceNumber. Could be null if {@code exists == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
      * <p>
      * (type: NonEmptyString)

@@ -99,6 +99,9 @@ public class TaxableAmount implements OnixElement<Double>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * This is the raw content of TaxableAmount. Could be null if {@code exists == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
+     * <p>
      * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 12
      * characters
      * <p>
