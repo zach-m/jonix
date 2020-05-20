@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Zach Melamed
+ * Copyright (C) 2012-2020 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
