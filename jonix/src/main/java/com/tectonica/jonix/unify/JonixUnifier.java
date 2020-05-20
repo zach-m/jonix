@@ -33,34 +33,26 @@ public class JonixUnifier {
 
     private static final BaseUnifier baseUnifier = new BaseUnifier();
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // unify into the bundled ("Base") product class
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public static BaseRecord unifyRecord(JonixRecord record) {
         return unifyRecord(record, baseUnifier);
     }
-
-    public static BaseProduct unifyProduct(OnixProduct onixProduct) {
-        return unifyProduct(onixProduct, baseUnifier);
-    }
-
-    public static BaseHeader unifyHeader(OnixHeader onixHeader) {
-        return unifyHeader(onixHeader, baseUnifier);
-    }
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // unify into a user-defined product class
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> R unifyRecord(
         JonixRecord record, CustomUnifier<P, H, R> customUnifier) {
         return customUnifier.unifiedRecord(record);
     }
 
+    public static BaseProduct unifyProduct(OnixProduct onixProduct) {
+        return unifyProduct(onixProduct, baseUnifier);
+    }
+
     public static <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> P unifyProduct(
         OnixProduct onixProduct, CustomUnifier<P, H, R> customUnifier) {
         return customUnifier.unifiedProduct(onixProduct);
+    }
+
+    public static BaseHeader unifyHeader(OnixHeader onixHeader) {
+        return unifyHeader(onixHeader, baseUnifier);
     }
 
     public static <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> H unifyHeader(

@@ -48,7 +48,10 @@ public interface CustomUnifier<P extends UnifiedProduct, H extends UnifiedHeader
     R unifiedRecord(JonixRecord record);
 
     P extractProduct2(com.tectonica.jonix.onix2.Product onixProduct2);
+
     P extractProduct3(com.tectonica.jonix.onix3.Product onixProduct3);
+
     H extractHeader2(Header onixHeader);
+
     H extractHeader3(com.tectonica.jonix.onix3.Header onixHeader);
 }
