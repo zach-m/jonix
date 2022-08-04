@@ -8,7 +8,7 @@
 		<groupId>com.tectonica</groupId>
 		<artifactId>jonix-project</artifactId>
 		<version>9.1-SNAPSHOT</version>
-		<relativePath>..</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<name>Jonix-Onix2</name>

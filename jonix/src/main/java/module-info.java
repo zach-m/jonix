@@ -5,7 +5,7 @@ module jonix {
     requires transitive jonix.xml;
 
     requires java.xml;
-    requires slf4j.api;
+    requires org.slf4j;
 
     exports com.tectonica.jonix;
     exports com.tectonica.jonix.unify;
