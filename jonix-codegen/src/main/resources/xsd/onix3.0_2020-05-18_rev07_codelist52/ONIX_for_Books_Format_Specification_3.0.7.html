@@ -7826,7 +7826,7 @@
 										<p>An ONIX code which specifies the status of a particular occurrence of a promotional event occurrence. Mandatory within each instance of the &lt;EventOccurrence> composite, and non-repeatable.</p>
 										<dl>
 											<dt class="format"></dt><dd>Fixed length, single character</dd>
-											<dt class="codelist"></dt><dd><a href="codelists/onix-codelist-246.htm" rel="help" target="_blank">List 244</a></dd>
+											<dt class="codelist"></dt><dd><a href="codelists/onix-codelist-246.htm" rel="help" target="_blank">List 246</a></dd>
 											<dt class="referencename"></dt><dd>EventStatus</dd>
 											<dt class="shorttag"></dt><dd>x549</dd>
 											<dt class="cardinality"></dt><dd>1</dd>
@@ -8237,7 +8237,7 @@
 											<dl>
 												<dt class="format"></dt><dd>Hours, minutes and seconds in the form HHHMMSS or HHHMMSScc (hundredths of a second)</dd>
 												<dt class="referencename"></dt><dd>EndTime</dd>
-												<dt class="shorttag"></dt><dd>543</dd>
+												<dt class="shorttag"></dt><dd>x543</dd>
 												<dt class="cardinality"></dt><dd>0…1</dd>
 												<dt class="example"></dt><dd><samp>&lt;x543>0014154&lt;/x543></samp> (One hour, 41 minutes and 54 seconds)</dd>
 											</dl>
@@ -12326,7 +12326,7 @@
 								<section class="element" id="onixmessage_product_productsupply_p26_supplydetail_packquantity">
 									<h5>P.26.41 Pack or carton quantity</h5>
 									<p>The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and non-repeating.</p>
-									<p>Note that orders do not <em>have</em> to be aligned with multiples of the pack size, but such orders may be more convenient to handle.</p>
+									<p>Note that orders do not <em>have</em> to be aligned with multiples of the pack quantity, but such orders may be more convenient to handle.</p>
 									<dl>
 										<dt class="format"></dt><dd>Positive integer, suggested maximum length 4 digits</dd>
 										<dt class="referencename"></dt><dd>PackQuantity</dd>
@@ -12383,7 +12383,7 @@
 								<section class="element" id="onixmessage_product_productsupply_p26_supplydetail_unpriceditemtype">
 									<h5>P.26.42 Unpriced item type</h5>
 									<p>An ONIX code which specifies the product is free of charge, or a reason why a price is not sent. <em>If code value 02 is used to send advance information without giving a price, the price must be confirmed as soon as possible.</em> Optional and non-repeating, but required if the &lt;SupplyDetail> composite does not carry a price.</p>
-									<p>Use here in preference to P.26.70a when the product is available <em>only</em> under free of charge or unpriced terms from the supplier.</p>
+									<p>Use here in preference to P.26.70b when the product is available <em>only</em> under free of charge or unpriced terms from the supplier.</p>
 									<dl>
 										<dt class="format"></dt><dd>Fixed length, two digits</dd>
 										<dt class="codelist"></dt><dd><a href="codelists/onix-codelist-57.htm" rel="help" target="_blank">List 57</a></dd>
@@ -12396,7 +12396,7 @@
 								<section class="composite" id="onixmessage_product_productsupply_p26_supplydetail_price">
 									<h5>Price composite</h5>
 									<p>An optional group of data elements which together specify a unit price, repeatable in order to specify multiple prices. Each &lt;SupplyDetail> composite must include <em>either</em> one or more prices, <em>or</em> a single &lt;UnpricedItemType> element (see P.26.42).</p>
-									<p>Where multiple prices are specified for a product, each price option should specify a distinct combination of its terms of trade and the group of end customers it is applicable to, any relevant price conditions, periods of time, currency and territory <i>etc</i>, so that the data recipient can clearly select the correct pricing option. If, under a particular combination, the product is free of charge or its price is not yet set, an &lt;UnpricedItemType> element (P.26.70a) must be used in place of a &lt;PriceAmount>. Each pricing option may optionally be given an identifier for use in subsequent revenue reporting or for other internal purposes.</p>
+									<p>Where multiple prices are specified for a product, each price option should specify a distinct combination of its terms of trade and the group of end customers it is applicable to, any relevant price conditions, periods of time, currency and territory <i>etc</i>, so that the data recipient can clearly select the correct pricing option. If, under a particular combination, the product is free of charge or its price is not yet set, an &lt;UnpricedItemType> element (P.26.70b) must be used in place of a &lt;PriceAmount>. Each pricing option may optionally be given an identifier for use in subsequent revenue reporting or for other internal purposes.</p>
 									<dl>
 										<dt class="referencename"></dt><dd>Price</dd>
 										<dt class="shorttag"></dt><dd>price</dd>
@@ -14371,7 +14371,7 @@
 									<tr><td><a href="#onixmessage_product_promotiondetail_p27_promotionalevent_eventidentifier_idtypename">P.27.2</a></td><td><samp>. . . . . &lt;IDTypeName></samp></td><td><samp>&lt;b233></samp></td><td><a href="#message_attributes">la</a> Σ</td><td>0…1</td></tr>
 									<tr><td><a href="#onixmessage_product_promotiondetail_p27_promotionalevent_eventidentifier_idvalue">P.27.3</a></td><td><samp>. . . . . &lt;IDValue></samp></td><td><samp>&lt;b244></samp></td><td>Σ</td><td>1</td></tr>
 									<tr><td><a href="#onixmessage_product_promotiondetail_p27_promotionalevent_eventtype">P.27.4</a></td><td><samp>. . . . &lt;EventType></samp></td><td><samp>&lt;x548></samp></td><td><a href="codelists/onix-codelist-245.htm" rel="help" target="_blank">245</a> Σ</td><td>1…n</td></tr>
-									<tr><td><a href="#onixmessage_product_promotiondetail_p27_promotionalevent_eventstatus">P.27.7</a></td><td><samp>. . . . &lt;EventStatus></samp></td><td><samp>&lt;x549></samp></td><td><a href="codelists/onix-codelist-246.htm" rel="help" target="_blank">246</a> Σ</td><td>0…1</td></tr>
+									<tr><td><a href="#onixmessage_product_promotiondetail_p27_promotionalevent_eventstatus">P.27.5</a></td><td><samp>. . . . &lt;EventStatus></samp></td><td><samp>&lt;x549></samp></td><td><a href="codelists/onix-codelist-246.htm" rel="help" target="_blank">246</a> Σ</td><td>0…1</td></tr>
 									<tr><td><a href="#onixmessage_product_promotiondetail_p27_promotionalevent_contentaudience">P.27.6</a></td><td><samp>. . . . &lt;ContentAudience></samp></td><td><samp>&lt;x427></samp></td><td><a href="codelists/onix-codelist-154.htm" rel="help" target="_blank">154</a> Σ</td><td>1…n</td></tr>
 									<tr><td><a href="#onixmessage_product_promotiondetail_p27_promotionalevent_eventname">P.27.7</a></td><td><samp>. . . . &lt;EventName></samp></td><td><samp>&lt;x516></samp></td><td><a href="#message_attributes">la</a> Σ</td><td>1…n</td></tr>
 									<tr><td> </td><td><samp>. . . . &lt;ContributorReference></samp></td><td><samp>&lt;contributorreference></samp></td><td>Σ</td><td>0…n</td></tr>

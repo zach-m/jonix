@@ -475,11 +475,25 @@ public class Parser {
         String contentType = "";
         try {
             complexTypeElem = DOM.firstElemChild(element);
-            if (!complexTypeElem.getNodeName().equals("xs:complexType")) {
-                throw new RuntimeException("top-level xs:element is expected to be defined as a xs:complexType");
+
+            // skip the possible xs:annotation
+            if (complexTypeElem.getNodeName().equals("xs:annotation")) {
+                // TODO maybe use description = extractAnnotationText(complexTypeElem);
+                complexTypeElem = DOM.nextElemChild(complexTypeElem);
             }
 
-            if (DOM.nextElemChild(complexTypeElem) != null) {
+            if (!complexTypeElem.getNodeName().equals("xs:complexType")) {
+                throw new RuntimeException("top-level xs:element is expected in xs:complexType");
+            }
+
+            // skip the possible several xs:unique
+            Element postComplexTypeElem = DOM.nextElemChild(complexTypeElem);
+            while (postComplexTypeElem != null && postComplexTypeElem.getNodeName().equals("xs:unique")) {
+                // TODO maybe use this unique-key information?
+                postComplexTypeElem = DOM.nextElemChild(postComplexTypeElem);
+            }
+
+            if (postComplexTypeElem != null) {
                 throw new RuntimeException("top-level xs:element is expected contain exactly one xs:complexType");
             }
 
@@ -678,6 +692,14 @@ public class Parser {
             throw new RuntimeException("group " + groupName + " is empty");
         }
         String groupTopElemType = groupDefTopElem.getTagName();
+
+        // skip the possible xs:annotation
+        if (groupTopElemType.equals("xs:annotation")) {
+            // TODO maybe use description = extractAnnotationText(groupTopElemType);
+            groupDefTopElem = DOM.nextElemChild(groupDefTopElem);
+            groupTopElemType = groupDefTopElem.getTagName();
+        }
+
         if (!groupTopElemType.equals("xs:sequence") && !groupTopElemType.equals("xs:choice")) {
             throw new RuntimeException(
                 "group " + groupName + " has unexpected top-element: " + groupTopElemType);
@@ -884,10 +906,10 @@ public class Parser {
                 Optional.ofNullable(child.parents).ifPresent(parents -> parents.forEach(parent -> {
                     // of all the onixDocs in the child, find the one whose path pertains to the current parent
                     Optional.ofNullable(child.onixDocs).map(onixDocs ->
-                        onixDocs.stream()
-                            .filter(od -> ("/" + od.path).endsWith(String.format("/%s/%s", parent.name, child.name)))
-                            .findFirst()
-                            .orElse(manuallyMatchedOnixDoc(onixDocList, child, parent)))
+                            onixDocs.stream()
+                                .filter(od -> ("/" + od.path).endsWith(String.format("/%s/%s", parent.name, child.name)))
+                                .findFirst()
+                                .orElse(manuallyMatchedOnixDoc(onixDocList, child, parent)))
                         // if found, attach them to the member of the parent that pertains to the child
                         .map(onixDoc -> {
                             parent.members.stream().filter(m -> m.className.equals(child.name)).findFirst()

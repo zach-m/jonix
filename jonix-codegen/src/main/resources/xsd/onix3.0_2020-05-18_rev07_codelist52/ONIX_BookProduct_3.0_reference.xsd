@@ -18,9 +18,9 @@
 	*                   Revision 7                   *
 	*                Status: RELEASED                *
 	*            Release date: 2009-04-09            *
-	*              Revised: 2019-10-31               *
+	*              Revised: 2020-05-18               *
 	*                                                *
-	*             (c) 2000-2019 EDItEUR              *
+	*             (c) 2000-2020 EDItEUR              *
 	*             http://www.editeur.org/            *
 	*                                                *
 	**************************************************
@@ -58,6 +58,10 @@
 
 	SCHEMA REVISION HISTORY (IN REVERSE CHRONOLOGICAL ORDER)
 
+	2020-05-18: added uniqueness constraints on <RecordReference>, <ProductFormDetail>, <Measure>, <SequenceNumber> in <Contributor> and <TitleElement>, <EditionType>, <ProductContentType>, @language in <BiographicalNote> and <Text> as trial
+
+	2020-04-13: refactored DateOrDateTime pattern to allow 20th century dates
+
 	            (intentionally blank)
 
 	2019-10-31: ONIX for Books 3.0 revision 7
@@ -67,7 +71,7 @@
 	            4. added <RegionCode> and <PrizeRegion> to <Language> and <Prize> composites
 	            5. modified <PrizeStatement> to accept (X)HTML markup
 	            6. modified cardinality of <CopyrightYear> in <CopyrightStatement>
-	            7. added collationKey attribute to imprint, publisher, agent and supplier name
+	            7. added collationkey attribute to imprint, publisher, agent and supplier name
 
 	2019-04-26: ONIX for Books 3.0 revision 6
 	            1. added <Measure> within <ProductPart>
@@ -278,6 +282,11 @@
 	<xs:include schemaLocation="ONIX_XHTML_Subset.xsd"/>
 
 	<xs:element name="ONIXMessage">
+		<xs:annotation>
+			<xs:documentation>Root element – the top level container within an ONIX message</xs:documentation>
+			<xs:documentation>Added uniqueness constraint on &lt;Product> &lt;RecordReference> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;NoProduct> at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="Header"/>
@@ -303,6 +312,10 @@
 			<xs:attributeGroup ref="generalAttributes"/>
 			<xs:attributeGroup ref="releaseAttribute"/>
 		</xs:complexType>
+		<xs:unique name="Product_RecordReference_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:Product"/>
+			<xs:field xpath="onix:RecordReference"/>
+		</xs:unique>
 	</xs:element>
 
 	<xs:element name="Addressee">
@@ -477,6 +490,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AgentName">
+		<xs:annotation>
+			<xs:documentation>Added collationkey attribute at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -525,6 +541,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AlternativeName">
+		<xs:annotation>
+			<xs:documentation>Added &lt;Gender> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Added &lt;CorporateNameInverted> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="NameType"/>
@@ -578,6 +598,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AncillaryContent">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;AncillaryContentDescription> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="AncillaryContentType"/>
@@ -674,6 +697,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AudienceCode">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Audience> instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List28">
@@ -720,6 +746,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AudienceCodeTypeName">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -889,6 +918,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AVDuration">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.TimeOrDuration">
@@ -912,6 +944,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AVItem">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="AVItemType"/>
@@ -937,6 +972,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AVItemIdentifier">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="AVItemIDType"/>
@@ -961,6 +999,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AVItemIDType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List241">
@@ -984,6 +1025,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="AVItemType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List240">
@@ -1363,6 +1407,11 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CitedContent">
+		<xs:annotation>
+			<xs:documentation>Added &lt;Territory>, &lt;ReviewRating> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;ListName>, &lt;SourceTitle> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;CitationNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="CitedContentType"/>
@@ -1431,6 +1480,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CityOfPublication">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -1455,6 +1507,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CollateralDetail">
+		<xs:annotation>
+			<xs:documentation>Block 2, container for information and resources to support marketing the product</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="gp.descriptions"/>
@@ -1478,6 +1533,12 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Collection">
+		<xs:annotation>
+			<xs:documentation>Added uniqueness constraint on &lt;Contributor> &lt;SequenceNumber> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;NoContributor> (in gp.authorship) at revision 3.0.4</xs:documentation>
+			<xs:documentation>Added &lt;CollectionSequence> and &lt;ContributorStatement> (in gp.authorship) at revision 3.0.1</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;ContributorStatement> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="CollectionType"/>
@@ -1503,6 +1564,10 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="generalAttributes"/>
 		</xs:complexType>
+		<xs:unique name="Collection_Contributor_SequenceNumber_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:Contributor"/>
+			<xs:field xpath="onix:SequenceNumber"/>
+		</xs:unique>
 	</xs:element>
 	<xs:element name="CollectionIdentifier">
 		<xs:complexType>
@@ -1552,6 +1617,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CollectionSequence">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="CollectionSequenceType"/>
@@ -1576,6 +1644,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CollectionSequenceNumber">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.MultiLevelNumberOrHyphen">
@@ -1599,6 +1670,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CollectionSequenceType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List197">
@@ -1622,6 +1696,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CollectionSequenceTypeName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -1669,6 +1746,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ComparisonProductPrice">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" ref="ProductIdentifier"/>
@@ -1810,6 +1890,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Conference">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Event> instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="ConferenceRole"/>
@@ -1840,6 +1923,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceAcronym">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Event> instead of &lt;Conference></xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -1864,6 +1950,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceDate">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Event> instead of &lt;Conference></xs:documentation>
+			<xs:documentation>Added dateformat attribute at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -1888,6 +1978,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceName">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Event> instead of &lt;Conference></xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -1912,6 +2005,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceNumber">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Event> instead of &lt;Conference></xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.StrictPositiveInteger">
@@ -1935,6 +2031,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferencePlace">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Event> instead of &lt;Conference></xs:documentation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -1959,6 +2059,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceRole" default="01">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Event> instead of &lt;Conference></xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List20">
@@ -1982,6 +2085,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceSponsor">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;EventSponsor> instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:choice>
 				<xs:sequence>
@@ -2012,6 +2118,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceSponsorIdentifier">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;EventSponsorIdentifier> instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ConferenceSponsorIDType"/>
@@ -2036,6 +2145,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceSponsorIDType">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;EventSponsorIdentifier> instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List44">
@@ -2059,6 +2171,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceTheme">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Event> instead of &lt;Conference></xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -2130,6 +2245,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ContentDate">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;DateFormat> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ContentDateRole"/>
@@ -2177,6 +2295,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ContentDetail">
+		<xs:annotation>
+			<xs:documentation>Block 3, container for information about the content of sections or chapters within the product</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;ContentItem> at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" maxOccurs="unbounded" ref="ContentItem"/>
@@ -2199,6 +2321,12 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ContentItem">
+		<xs:annotation>
+			<xs:documentation>Added &lt;AVItem> at revision 3.0.5</xs:documentation>
+			<xs:documentation>Added &lt;ContributorStatement>, &lt;NoContributor> (in gp.authorship), &lt;Language> at revision 3.0.4</xs:documentation>
+			<xs:documentation>Added &lt;RelatedProduct> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;ContributorStatement> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="LevelSequenceNumber"/>
@@ -2241,6 +2369,13 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Contributor">
+		<xs:annotation>
+			<xs:documentation>Added uniqueness constraint on &lt;BiographicalNote language> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;Gender>, &lt;Prize> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Modified to allow &lt;NameIdentifier> and &lt;AlternativeName> with &lt;UnnamedPersons> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;BiographicalNote>, &lt;ContributorDescription> at revision 3.0.1</xs:documentation>
+			<xs:documentation>Added &lt;CorporateNameInverted> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="SequenceNumber"/>
@@ -2359,8 +2494,15 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="generalAttributes"/>
 		</xs:complexType>
+		<xs:unique name="BiographicalNote_language_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:BiographicalNote"/>
+			<xs:field xpath="@language"/>
+		</xs:unique>
 	</xs:element>
 	<xs:element name="ContributorDate">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;DateFormat> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ContributorDateRole"/>
@@ -2433,6 +2575,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ContributorPlace">
+		<xs:annotation>
+			<xs:documentation>Added &lt;LocationName> at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ContributorPlaceRelator"/>
@@ -2486,6 +2631,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ContributorReference">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="SequenceNumber"/>
@@ -2660,6 +2808,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CopyrightStatement">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;CopyrightYear> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;CopyrightType> at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="CopyrightType"/>
@@ -2689,6 +2841,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CopyrightType" default="C">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List219">
@@ -2712,6 +2867,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CopyrightYear">
+		<xs:annotation>
+			<xs:documentation>Added dateformat attribute at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -2736,6 +2894,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CorporateName">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -2762,6 +2924,11 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CorporateNameInverted">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+			<xs:documentation>Added at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -2926,6 +3093,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="CurrencyZone">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;Territory> instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List172">
@@ -2949,6 +3119,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Date">
+		<xs:annotation>
+			<xs:documentation>Added dateformat attribute at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -2973,6 +3146,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="DateFormat">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use dateformat attribute instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List55">
@@ -3089,6 +3265,13 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="DescriptiveDetail">
+		<xs:annotation>
+			<xs:documentation>Block 1, container for data describing the form and content of the product</xs:documentation>
+			<xs:documentation>Added uniqueness constraint on &lt;ProductFormDetail>, &lt;ProductContentType>, &lt;Measure>, &lt;Contributor> &lt;SequenceNumber> and &lt;EditionType> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;Event>, deprecated &lt;Conference> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Added &lt;EpubLicence> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;ContributorStatement>, &lt;EditionStatement>, &lt;IllustrationsNote>, &lt;AudienceDescription> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="gp.product_form"/>
@@ -3118,8 +3301,32 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="generalAttributes"/>
 		</xs:complexType>
+		<xs:unique name="ProductFormDetail_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:ProductFormDetail"/>
+			<xs:field xpath="."/>
+		</xs:unique>
+		<xs:unique name="ProductContentType_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:PrimaryContentType|onix:ProductContentType"/>
+			<xs:field xpath="."/>
+		</xs:unique>
+		<xs:unique name="Measure_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:Measure"/>
+			<xs:field xpath="onix:MeasureType"/>
+			<xs:field xpath="onix:MeasureUnitCode"/>
+		</xs:unique>
+		<xs:unique name="Contributor_SequenceNumber_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:Contributor"/>
+			<xs:field xpath="onix:SequenceNumber"/>
+		</xs:unique>
+		<xs:unique name="EditionType_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:EditionType"/>
+			<xs:field xpath="."/>
+		</xs:unique>
 	</xs:element>
 	<xs:element name="Discount">
+		<xs:annotation>
+			<xs:documentation>Added &lt;ToQuantity> at revison 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="DiscountType"/>
@@ -3339,6 +3546,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EditionStatement">
+		<xs:annotation>
+			<xs:documentation>Modified base type from NonEmptyString, added textformat attribute at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -3433,6 +3643,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EndDate">
+		<xs:annotation>
+			<xs:documentation>Added dateformat attribute at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -3457,6 +3670,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EndTime">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.TimeOrDuration">
@@ -3480,6 +3696,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EpubLicense">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" ref="EpubLicenseName"/>
@@ -3503,6 +3722,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EpubLicenseExpression">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="EpubLicenseExpressionType"/>
@@ -3527,6 +3749,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EpubLicenseExpressionLink">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyURI">
@@ -3550,6 +3775,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EpubLicenseExpressionType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List218">
@@ -3573,6 +3801,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EpubLicenseExpressionTypeName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -3597,6 +3828,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EpubLicenseName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -3760,6 +3994,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Event">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="EventRole"/>
@@ -3790,6 +4027,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventAcronym">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -3814,6 +4054,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventDate">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -3838,6 +4081,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventDescription">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -3863,6 +4109,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventIdentifier">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="EventIDType"/>
@@ -3887,6 +4136,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventIDType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List244">
@@ -3910,6 +4162,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -3934,6 +4189,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventNumber">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.StrictPositiveInteger">
@@ -3957,6 +4215,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventOccurrence">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="EventIdentifier" minOccurs="0" maxOccurs="unbounded"/>
@@ -3998,6 +4259,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventPlace">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -4022,6 +4286,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventRole">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List20">
@@ -4045,6 +4312,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventSponsor">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:choice>
 				<xs:sequence>
@@ -4075,6 +4345,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventSponsorIdentifier">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="EventSponsorIDType"/>
@@ -4099,6 +4372,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventSponsorIDType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List44">
@@ -4122,6 +4398,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventStatus">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List246">
@@ -4145,6 +4424,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventTheme">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -4169,6 +4451,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EventType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List245">
@@ -4192,6 +4477,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ExpectedDate">
+		<xs:annotation>
+			<xs:documentation>Added dateformat attribute at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -4478,6 +4766,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Funding">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" ref="FundingIdentifier"/>
@@ -4500,6 +4791,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="FundingIdentifier">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="FundingIDType"/>
@@ -4524,6 +4818,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="FundingIDType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List228">
@@ -4547,6 +4844,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Gender">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List229">
@@ -4570,6 +4870,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Header">
+		<xs:annotation>
+			<xs:documentation>Container for message metadata</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;MessageNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="Sender"/>
@@ -4768,6 +5072,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ImprintName">
+		<xs:annotation>
+			<xs:documentation>Added collationkey attribute at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -4818,6 +5126,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="KeyNames">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -4844,6 +5156,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Language">
+		<xs:annotation>
+			<xs:documentation>Added &lt;RegionCode at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="LanguageRole"/>
@@ -4962,6 +5277,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="LettersAfterNames">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -5171,6 +5490,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="MarketDate">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;DateFormat> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="MarketDateRole"/>
@@ -5218,6 +5540,11 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="MarketPublishingDetail">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;PromotionCampaign>, &lt;InitialPrintRun>, &lt;CopiesSold>, &lt;BookClubAdoption> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;MarketPublishingStatusNote> at revision 3.0.1</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;MarketDate> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" maxOccurs="unbounded" ref="PublisherRepresentative"/>
@@ -5273,6 +5600,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="MarketPublishingStatusNote">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -5391,6 +5721,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="MessageNote">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -5484,6 +5817,11 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="NameAsSubject">
+		<xs:annotation>
+			<xs:documentation>Added &lt;AlternativeName>, &lt;SubjectDate>, &lt;ProfessionalAffiliation>, &lt;Gender> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Added &lt;CorporateNameInverted> at revision 3.0 (2010)</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;NameType> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="NameType"/>
@@ -5587,6 +5925,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="NamesAfterKey">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -5613,6 +5955,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="NamesBeforeKey">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -5750,6 +6096,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="NoPrefix">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:attribute name="refname">
 				<xs:simpleType>
@@ -5769,6 +6118,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="NoProduct">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:attribute name="refname">
 				<xs:simpleType>
@@ -5926,6 +6278,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="OccurrenceDate">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="OccurrenceDateRole"/>
@@ -5950,6 +6305,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="OccurrenceDateRole">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List247">
@@ -6043,6 +6401,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="OrderQuantityMinimum">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.StrictPositiveInteger">
@@ -6066,6 +6427,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="OrderQuantityMultiple">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.StrictPositiveInteger">
@@ -6158,6 +6522,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PalletQuantity">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.StrictPositiveInteger">
@@ -6181,6 +6548,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PartNumber">
+		<xs:annotation>
+			<xs:documentation>Added language, textscript attributes at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -6229,6 +6599,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PersonName">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -6255,6 +6629,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PersonNameInverted">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -6327,6 +6705,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PrefixToKey">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -6353,6 +6735,14 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Price">
+		<xs:annotation>
+			<xs:documentation>Added &lt;TaxExempt> at revision 3.0.5</xs:documentation>
+			<xs:documentation>Added &lt;EpubTechnicalProtection> and &lt;EpubLicense> at revision 3.0.4</xs:documentation>
+			<xs:documentation>Added &lt;UnpricedItemType>, &lt;PriceConstraint>, &lt; at revision 3.0.3</xs:documentation>
+			<xs:documentation>Added &lt;PriceIdentifier> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;PriceTypeDescription> at revision 3.0.1</xs:documentation>
+			<xs:documentation>Added &lt;PriceCoded>, &lt;ComparisonProductPrice> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" maxOccurs="unbounded" ref="PriceIdentifier"/>
@@ -6456,6 +6846,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceCoded">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="PriceCodeType"/>
@@ -6527,6 +6920,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceCondition">
+		<xs:annotation>
+			<xs:documentation>Added &lt;ProductIdentifier> at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="PriceConditionType"/>
@@ -6621,6 +7017,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceConstraint">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="PriceConstraintType"/>
@@ -6645,6 +7044,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceConstraintLimit">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="Quantity"/>
@@ -6668,6 +7070,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceConstraintStatus">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List146">
@@ -6691,6 +7096,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceConstraintType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List230">
@@ -6714,6 +7122,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceConstraintUnit">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List147">
@@ -6737,6 +7148,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceDate">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;DateFormat> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="PriceDateRole"/>
@@ -6784,6 +7198,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceIdentifier">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="PriceIDType"/>
@@ -6808,6 +7225,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PriceIDType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List217">
@@ -6831,6 +7251,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PricePartDescription">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.4</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -7036,6 +7459,12 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Prize">
+		<xs:annotation>
+			<xs:documentation>Added &lt;PrizeRegion> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;PrizeStatement> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;PrizeName> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;PrizeJury> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" ref="PrizeName"/>
@@ -7159,6 +7588,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PrizeRegion">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List49">
@@ -7182,6 +7614,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PrizeStatement">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified base type from NonEmptyString, added textformat attribute at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -7230,6 +7666,11 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Product">
+		<xs:annotation>
+			<xs:documentation>Container for details of a single product</xs:documentation>
+			<xs:documentation>Added &lt;PromotionDetail> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;DeletionText> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="gp.record_metadata"/>
@@ -7283,6 +7724,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductClassification">
+		<xs:annotation>
+			<xs:documentation>Added &lt;ProductClassificationTypeName> at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ProductClassificationType"/>
@@ -7354,6 +7798,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductClassificationTypeName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -7401,6 +7848,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductContact">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ProductContactRole"/>
@@ -7432,6 +7882,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductContactIdentifier">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ProductContactIDType"/>
@@ -7456,6 +7909,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductContactIDType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List44">
@@ -7479,6 +7935,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductContactName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -7502,6 +7961,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductContactRole">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List198">
@@ -7618,6 +8080,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductFormFeature">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;ProductFormFeatureDescription> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ProductFormFeatureType"/>
@@ -7782,6 +8247,12 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductPart">
+		<xs:annotation>
+			<xs:documentation>Added uniqueness constraints to &lt;ProductFormDetail>, &lt;ProductContentType> and &lt;Measure> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;Measure> at revision 3.0.6</xs:documentation>
+			<xs:documentation>Added &lt;ProductPckaging> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;ProductFormDescription> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="PrimaryPart"/>
@@ -7818,6 +8289,19 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="generalAttributes"/>
 		</xs:complexType>
+		<xs:unique name="ProductPart_ProductFormDetail_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:ProductFormDetail"/>
+			<xs:field xpath="."/>
+		</xs:unique>
+		<xs:unique name="ProductPart_ProductContentType_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:ProductContentType"/>
+			<xs:field xpath="."/>
+		</xs:unique>
+		<xs:unique name="ProductPart_Measure_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:Measure"/>
+			<xs:field xpath="onix:MeasureType"/>
+			<xs:field xpath="onix:MeasureUnitCode"/>
+		</xs:unique>
 	</xs:element>
 	<xs:element name="ProductRelationCode">
 		<xs:complexType>
@@ -7843,6 +8327,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProductSupply">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;SupplyDetail at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" maxOccurs="unbounded" ref="Market"/>
@@ -7867,6 +8354,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ProfessionalAffiliation">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;ProfessionalPosition> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:choice>
 				<xs:sequence>
@@ -7917,6 +8407,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PromotionalEvent">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="EventIdentifier" minOccurs="0" maxOccurs="unbounded"/>
@@ -7985,6 +8478,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PromotionContact">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;ProductContact> instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -8010,6 +8506,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PromotionDetail">
+		<xs:annotation>
+			<xs:documentation>Block 7, container for data describing events arranged to promote the product</xs:documentation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" maxOccurs="unbounded" ref="PromotionalEvent"/>
@@ -8032,6 +8532,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Proximity">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List215">
@@ -8055,6 +8558,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Publisher">
+		<xs:annotation>
+			<xs:documentation>Added &lt;Funding> at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="PublishingRole"/>
@@ -8133,6 +8639,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PublisherName">
+		<xs:annotation>
+			<xs:documentation>Added collationkey attribute at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -8191,6 +8700,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PublishingDate">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;DateFormat> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="PublishingDateRole"/>
@@ -8238,6 +8750,12 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PublishingDetail">
+		<xs:annotation>
+			<xs:documentation>Block 4, container for information about describing branding, publishing and rights attached to the product</xs:documentation>
+			<xs:documentation>Added &lt;ProductContact> at revision 3.0.1</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;PublishingStatusNote> at revision 3.0.1</xs:documentation>
+			<xs:documentation>Added &lt;ROWSalesRightsType> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="gp.imprints_publishers"/>
@@ -8379,6 +8897,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Rate">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.Integer">
@@ -8402,6 +8923,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Rating">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.PositiveDecimal">
@@ -8425,6 +8949,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="RatingLimit">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.PositiveInteger">
@@ -8448,6 +8975,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="RatingUnits">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -8657,6 +9187,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Reissue">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use start and end dates in &lt;Price>, &lt;TextContent>, &lt;SupportingResource> etc instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ReissueDate"/>
@@ -8682,6 +9215,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ReissueDate">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;PublishingDate> or &lt;SupplyDate> instead</xs:documentation>
+			<xs:documentation>Added dateformat attribute at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -8706,6 +9243,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ReissueDescription">
+		<xs:annotation>
+			<xs:documentation>Deprecated – use &lt;TextContent> with start and end dates instead</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -8731,6 +9271,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="RelatedMaterial">
+		<xs:annotation>
+			<xs:documentation>Block 5, container for elements providing links to closely-related products and works</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:group ref="gp.related_materials"/>
 			<xs:attribute name="refname">
@@ -8751,6 +9294,11 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="RelatedProduct">
+		<xs:annotation>
+			<xs:documentation>Added uniqueness constraint to &lt;ProductFormDetail> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;ProductForm>, &lt;ProductFormDetail> at revision 3.0 (2010)</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;ProductRelationCode> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" ref="ProductRelationCode"/>
@@ -8776,6 +9324,10 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="generalAttributes"/>
 		</xs:complexType>
+		<xs:unique name="RelatedProduct_ProductFormDetail_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:ProductFormDetail"/>
+			<xs:field xpath="."/>
+		</xs:unique>
 	</xs:element>
 	<xs:element name="RelatedWork">
 		<xs:complexType>
@@ -8827,6 +9379,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ReligiousTextFeature">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;ReligiousTextFeatureDescription> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ReligiousTextFeatureType"/>
@@ -8970,6 +9525,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Reserved">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.4</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.PositiveInteger">
@@ -9016,6 +9574,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ResourceFeature">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;FeatureNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ResourceFeatureType"/>
@@ -9086,6 +9647,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ResourceLink">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyURI">
@@ -9158,6 +9722,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ResourceVersionFeature">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;FeatureNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ResourceVersionFeatureType"/>
@@ -9275,6 +9842,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ReturnsConditions">
+		<xs:annotation>
+			<xs:documentation>Added &lt;ReturnsNote> at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ReturnsCodeType"/>
@@ -9300,6 +9870,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ReturnsNote">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -9324,6 +9897,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ReviewRating">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="Rating"/>
@@ -9348,6 +9924,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ROWSalesRightsType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List46">
@@ -9470,6 +10049,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SalesRestriction">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;SalesRestrictionNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="SalesRestrictionType"/>
@@ -9544,6 +10126,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SalesRights">
+		<xs:annotation>
+			<xs:documentation>Added &lt;SalesRestriction> at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="SalesRightsType"/>
@@ -9785,6 +10370,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SourceTitle">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -9832,6 +10420,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="StartDate">
+		<xs:annotation>
+			<xs:documentation>Added dateformat attribute at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -9856,6 +10447,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="StartTime">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.TimeOrDuration">
@@ -9879,6 +10473,12 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Stock">
+		<xs:annotation>
+			<xs:documentation>Added &lt;Reserved> and adjacent &lt;Proximity> at revision 3.0.4</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;LocationIdentifier>, &lt;LocationName> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Added &lt;Proximity>, &lt;Velocity> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;StockQuantityCoded> at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" maxOccurs="unbounded" ref="LocationIdentifier"/>
@@ -10017,6 +10617,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="StreetAddress">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -10064,6 +10667,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Subject">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;SubjectHeadingText> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="MainSubject"/>
@@ -10119,6 +10725,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SubjectDate">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="SubjectDateRole"/>
@@ -10143,6 +10752,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SubjectDateRole">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List177">
@@ -10260,6 +10872,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Subtitle">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -10287,6 +10903,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SuffixToKey">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -10369,6 +10989,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplierCodeTypeName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -10463,6 +11086,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplierName">
+		<xs:annotation>
+			<xs:documentation>Added collationkey attribute at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -10488,6 +11114,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplierOwnCoding">
+		<xs:annotation>
+			<xs:documentation>Added &lt;SupplierCodeTypeName> at revison 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="SupplierCodeType"/>
@@ -10535,6 +11164,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplyContact">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.4</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="SupplyContactRole"/>
@@ -10566,6 +11198,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplyContactIdentifier">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.4</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="SupplyContactIDType"/>
@@ -10590,6 +11225,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplyContactIDType">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.4</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List44">
@@ -10613,6 +11251,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplyContactName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.4</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -10636,6 +11277,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplyContactRole">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.4</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List239">
@@ -10659,6 +11303,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplyDate">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;DateFormat> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="SupplyDateRole"/>
@@ -10706,6 +11353,13 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupplyDetail">
+		<xs:annotation>
+			<xs:documentation>Block 6, container for data specifying a market, suppliers and the status of the product in that market</xs:documentation>
+			<xs:documentation>Added &lt;PalletQuantity> at revision 3.0.5</xs:documentation>
+			<xs:documentation>Added &lt;SupplyContact> at revision 3.0.4</xs:documentation>
+			<xs:documentation>Added &lt;OrderQuantityMinimum>, &lt;OrderQuantityMultiple> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;Supplier> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="Supplier"/>
@@ -10747,6 +11401,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SupportingResource">
+		<xs:annotation>
+			<xs:documentation>Added &lt;Territory> at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ResourceContentType"/>
@@ -10774,6 +11431,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Tax">
+		<xs:annotation>
+			<xs:documentation>Added &lt;PricePartDescription> at revision 3.0.4</xs:documentation>
+			<xs:documentation>Added &lt;ProductIdentifier> at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" maxOccurs="unbounded" ref="ProductIdentifier"/>
@@ -10856,6 +11517,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TaxExempt">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:attribute name="refname">
 				<xs:simpleType>
@@ -11047,6 +11711,13 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TextContent">
+		<xs:annotation>
+			<xs:documentation>Added uniqueness constraint on &lt;Text language> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;TextSourceDescription> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;Territory>, &lt;ReviewRating> at revision 3.0.3</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;SourceTitle> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;Text> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="TextType"/>
@@ -11076,6 +11747,10 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="generalAttributes"/>
 		</xs:complexType>
+		<xs:unique name="Text_language_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:Text"/>
+			<xs:field xpath="@language"/>
+		</xs:unique>
 	</xs:element>
 	<xs:element name="TextItem">
 		<xs:complexType>
@@ -11197,6 +11872,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TextSourceDescription">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -11292,6 +11970,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ThesisYear">
+		<xs:annotation>
+			<xs:documentation>Added dateformat attribute at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -11316,6 +11997,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TimeRun">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.5</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="StartTime"/>
@@ -11339,6 +12023,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TitleDetail">
+		<xs:annotation>
+			<xs:documentation>Added uniqueness constraint on &lt;TitleElement> &lt;SequenceNumber> at revision 3.0.7</xs:documentation>
+			<xs:documentation>Added &lt;TitleStatement> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="TitleType"/>
@@ -11361,8 +12049,16 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="generalAttributes"/>
 		</xs:complexType>
+		<xs:unique name="TitleElement_SequenceNumber_must_be_unique" xmlns:onix="http://ns.editeur.org/onix/3.0/reference">
+			<xs:selector xpath="onix:TitleElement"/>
+			<xs:field xpath="onix:SequenceNumber"/>
+		</xs:unique>
 	</xs:element>
 	<xs:element name="TitleElement">
+		<xs:annotation>
+			<xs:documentation>Added &lt;NoPrefix> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added &lt;SequenceNumber> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="SequenceNumber"/>
@@ -11447,6 +12143,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TitlePrefix">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -11474,6 +12174,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TitlesAfterNames">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -11500,6 +12204,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TitlesBeforeNames">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -11526,6 +12234,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TitleStatement">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -11551,6 +12262,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TitleText">
+		<xs:annotation>
+			<xs:documentation>Added textscript attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -11601,6 +12316,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="TitleWithoutPrefix">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added collationkey, textscript attributes at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -11651,6 +12370,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ToQuantity">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.PositiveDecimal">
@@ -11743,6 +12465,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Velocity">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="VelocityMetric"/>
@@ -11767,6 +12492,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="VelocityMetric">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.2</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="List216">
@@ -11790,6 +12518,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="VenueName">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="dt.NonEmptyString">
@@ -11814,6 +12545,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="VenueNote">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.7</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -11839,6 +12573,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Website">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;WebsiteLink> at revision 3.0.6</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;WebsiteDescription> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" ref="WebsiteRole"/>
@@ -11863,6 +12601,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="WebsiteDescription">
+		<xs:annotation>
+			<xs:documentation>Added language attribute at revision 3.0.6</xs:documentation>
+		</xs:annotation>
 		<xs:complexType mixed="true">
 			<xs:complexContent>
 				<xs:extension base="Flow">
@@ -12028,6 +12769,10 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:group name="gp.record_metadata">
+		<xs:annotation>
+			<xs:documentation>Group of elements carrying infomation about the &lt;Product> record itself</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;MessageNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:element ref="RecordReference"/>
 			<xs:element ref="NotificationType"/>
@@ -12038,6 +12783,10 @@
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="gp.product_numbers">
+		<xs:annotation>
+			<xs:documentation>Group of elements carrying one or more identifiers for the product</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;MessageNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:element maxOccurs="unbounded" ref="ProductIdentifier"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" ref="Barcode"/>
@@ -12067,6 +12816,9 @@
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="gp.corporate_name">
+		<xs:annotation>
+			<xs:documentation>Added &lt;CorporateNameInverted> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:choice>
 			<xs:sequence>
 				<xs:element ref="CorporateName"/>
@@ -12076,6 +12828,10 @@
 		</xs:choice>
 	</xs:group>
 	<xs:group name="gp.product_form">
+		<xs:annotation>
+			<xs:documentation>Added &lt;EpubLicense> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Modified cardinality of &lt;ProductFormDescription> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:element ref="ProductComposition"/>
 			<xs:element ref="ProductForm"/>
@@ -12115,6 +12871,9 @@
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="gp.authorship">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;ContributorStatement> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:choice>
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" ref="Contributor"/>
@@ -12124,12 +12883,18 @@
 		</xs:choice>
 	</xs:group>
 	<xs:group name="gp.events">
+		<xs:annotation>
+			<xs:documentation>Added &lt;Event>, deprecated &lt;Conference> at revision 3.0.3</xs:documentation>
+		</xs:annotation>
 		<xs:choice>
 			<xs:element minOccurs="0" maxOccurs="unbounded" ref="Event"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" ref="Conference"/>
 		</xs:choice>
 	</xs:group>
 	<xs:group name="gp.editions">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;EditionStatement> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:choice>
 				<xs:sequence>
@@ -12151,6 +12916,9 @@
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="gp.extents">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;IllustrationsNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:element minOccurs="0" maxOccurs="unbounded" ref="Extent"/>
 			<xs:element minOccurs="0" ref="Illustrated"/>
@@ -12166,6 +12934,9 @@
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="gp.audiences">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;AudienceDescription> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:element minOccurs="0" maxOccurs="unbounded" ref="AudienceCode"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" ref="Audience"/>
@@ -12193,6 +12964,9 @@
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="gp.imprints_publishers">
+		<xs:annotation>
+			<xs:documentation>Added &lt;ProductContact> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:choice>
 				<xs:sequence>
@@ -12207,6 +12981,9 @@
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="gp.publishing_status">
+		<xs:annotation>
+			<xs:documentation>Modified cardinality of &lt;PublishingStatusNote> at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:sequence minOccurs="0">
 				<xs:element ref="PublishingStatus"/>
@@ -12218,6 +12995,10 @@
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="gp.rights_restrictions">
+		<xs:annotation>
+			<xs:documentation>Deprecated &lt;SalesRestriction> at revision 3.0.2</xs:documentation>
+			<xs:documentation>Added &lt;ROWSalesRightsType> at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:sequence minOccurs="0">
 				<xs:element maxOccurs="unbounded" ref="SalesRights"/>
@@ -12246,64 +13027,100 @@
 		<xs:union>
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
-					<xs:pattern value="2\d\d\d(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-8])(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
-					<xs:pattern value="2\d\d\d(0[13-9]|1[0-2])(29|30)(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
-					<xs:pattern value="2\d\d\d(0[13578]|1[02])31(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
-					<xs:pattern value="2[048](0[048]|[13579][26]|[2468][048])0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
-					<xs:pattern value="2[1235679](0[48]|[13579][26]|[2468][048])0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+					<xs:pattern value="(19|2\d)\d\d(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-8])(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+					<xs:pattern value="(19|2\d)\d\d(0[13-9]|1[0-2])(29|30)(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+					<xs:pattern value="(19|2\d)\d\d(0[13578]|1[02])31(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+					<xs:pattern value="(19|2\d)(0[48]|[13579][26]|[2468][048])0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+					<xs:pattern value="2[048][0]{2}0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:union>
 	</xs:simpleType>
 	<xs:simpleType name="dt.Decimal">
+		<xs:annotation>
+			<xs:documentation>Datatype for any real number</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
 	<xs:simpleType name="dt.PositiveDecimal">
+		<xs:annotation>
+			<xs:documentation>Datatype for zero or any positive real number</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:decimal">
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.StrictPositiveDecimal">
+		<xs:annotation>
+			<xs:documentation>Datatype for any positive real number (not including zero)</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:decimal">
 			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.PercentDecimal">
+		<xs:annotation>
+			<xs:documentation>Datatype for real number 0–100</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:decimal">
 			<xs:minInclusive value="0"/>
 			<xs:maxInclusive value="100"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.Integer">
+		<xs:annotation>
+			<xs:documentation>Datatype for any integer</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:int"/>
 	</xs:simpleType>
 	<xs:simpleType name="dt.PositiveInteger">
+		<xs:annotation>
+			<xs:documentation>Datatype for zero or any positive integer</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="dt.StrictPositiveInteger">
+		<xs:annotation>
+			<xs:documentation>Datatype for any positive integer (not including zero)</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:positiveInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="dt.NonEmptyString">
+		<xs:annotation>
+			<xs:documentation>Datatype for non-empty string without leading or trailing white space</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="\s*\S.*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.EmailString">
+		<xs:annotation>
+			<xs:documentation>Datatype for plausible e-mail address</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[A-Za-z0-9_]+([\-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([\-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([\-.][A-Za-z0-9_]+)*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.RomanNumeralString">
+		<xs:annotation>
+			<xs:documentation>Datatype for Roman numerals (upper or lower case)</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="([MDCLXVI]+|[mdclxvi]+)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.NonEmptyURI">
+		<xs:annotation>
+			<xs:documentation>Datatype for URI without leading or trailing white space</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
 			<xs:pattern value="\S+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.Year">
+		<xs:annotation>
+			<xs:documentation>Datatype for year 1000 to 2999</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[12]\d\d\d"/>
 		</xs:restriction>
@@ -12314,21 +13131,33 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.YearOrYearRange">
+		<xs:annotation>
+			<xs:documentation>Datatype for year or range of years 1000-2099</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[12]\d\d\d(-[12]\d\d\d)?"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.MultiLevelNumber">
+		<xs:annotation>
+			<xs:documentation>Datatype for string of dot-separated numbers, eg 3.12.8</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="\d+(\.\d+)*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.MultiLevelNumberOrHyphen">
+		<xs:annotation>
+			<xs:documentation>Datatype for string of dot-separated numbers where hyphen can replace a number, eg 3.-.8</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="(\d+|-)(\.(\d+|-))*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:attributeGroup name="releaseAttribute">
+		<xs:annotation>
+			<xs:documentation>Must be 3.0 for this release</xs:documentation>
+		</xs:annotation>
 		<xs:attribute name="release" use="required">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
@@ -12338,6 +13167,9 @@
 		</xs:attribute>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="collationkeyAttribute">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:attribute name="collationkey" type="dt.NonEmptyString"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="generalAttributes">
@@ -12346,6 +13178,9 @@
 		<xs:attribute name="sourcename" type="dt.NonEmptyString"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="dateformatAttribute">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0 (2010)</xs:documentation>
+		</xs:annotation>
 		<xs:attribute name="dateformat" type="List55"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="languageAttribute">
@@ -12355,9 +13190,15 @@
 		<xs:attribute name="textcase" type="TextCaseCode"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="textformatAttribute">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:attribute name="textformat" type="TextFormatCode"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="textscriptAttribute">
+		<xs:annotation>
+			<xs:documentation>Added at revision 3.0.1</xs:documentation>
+		</xs:annotation>
 		<xs:attribute name="textscript" type="List121"/>
 	</xs:attributeGroup>
 </xs:schema>

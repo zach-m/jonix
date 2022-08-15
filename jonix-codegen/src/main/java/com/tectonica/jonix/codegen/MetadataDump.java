@@ -87,7 +87,7 @@ public class MetadataDump {
 
     private static void parse3_unified_all_rev() throws IOException, ParserConfigurationException, SAXException {
         File parent = new File(DUMP_FOLDER, "onix3-history");
-        saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_01_REF, new File(parent, "3.0.1"));
+        //saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_01_REF, new File(parent, "3.0.1"));
         saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_02_REF, new File(parent, "3.0.2"));
         saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_03_REF, new File(parent, "3.0.3"));
         saveMetadata(SPECS_2_1_03_REF, SPECS_3_0_04_REF, new File(parent, "3.0.4"));
