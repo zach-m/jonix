@@ -14,7 +14,7 @@
 
 Install [CheckStyle-IDEA Plugin](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea/)
 
-    File > Settings.. > Checkstyle > Checkstyle version: 8.30
+    File > Settings.. > Checkstyle > Checkstyle version: 8.41.1
 
     File > Settings.. > Checkstyle > (+) Configuration File > 
         Description           : jonix-checkstyle
