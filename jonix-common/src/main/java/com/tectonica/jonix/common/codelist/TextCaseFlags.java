@@ -38,7 +38,7 @@ interface CodeList14 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist14">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist14">ONIX
  *      Codelist 14 in Reference Guide</a>
  */
 public enum TextCaseFlags implements OnixCodelist, CodeList14 {

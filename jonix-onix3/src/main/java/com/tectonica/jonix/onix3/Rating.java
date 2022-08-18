@@ -93,12 +93,12 @@ public class Rating implements OnixElement<Double>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -137,8 +137,8 @@ public class Rating implements OnixElement<Double>, Serializable {
     public Rating(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsDouble(element);
     }

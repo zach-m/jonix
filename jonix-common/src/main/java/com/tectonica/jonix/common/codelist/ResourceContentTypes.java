@@ -41,7 +41,7 @@ interface CodeList158 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -69,6 +69,9 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
 
     Series_logo("06", "Series logo"),
 
+    /**
+     * For example, an isolated image from the front cover (without text), image of a completed jigsaw
+     */
     Product_image_artwork("07", "Product image / artwork"),
 
     Product_logo("08", "Product logo"),
@@ -109,7 +112,10 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      */
     Review("17", "Review"),
 
-    Other_commentary_discussion("18", "Other commentary / discussion"),
+    /**
+     * For example a publisher's podcast episode, social media message, newsletter issue, other commentary
+     */
+    Commentary_discussion("18", "Commentary / discussion"),
 
     Reading_group_guide("19", "Reading group guide"),
 
@@ -184,9 +190,9 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Student_s_guide("33", "Student’s guide"),
 
     /**
-     * For example a PDF or other digital representation of a publisher's 'new titles' or range catalogue
+     * For example a PDF or other digital representation of a publisher's 'new titles' or range catalog
      */
-    Publisher_s_catalogue("34", "Publisher’s catalogue"),
+    Publisher_s_catalog("34", "Publisher’s catalog"),
 
     /**
      * For example a banner ad for the product. Pixel dimensions should typically be included in
@@ -205,7 +211,8 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Promotional_event_material("37", "Promotional event material"),
 
     /**
-     * Availability of a digital review or digital proof copy, may be limited to authorised users or account holders
+     * Availability of a digital review, evaluation or sample copy, or a digital proof copy, which may be limited to
+     * authorised users or account holders, but should otherwise be fully readable and functional
      */
     Digital_review_copy("38", "Digital review copy"),
 
@@ -266,6 +273,21 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * Jonix-Comment: Introduced in Onix3
      */
     Rules_or_instructions("46", "Rules or instructions"),
+
+    /**
+     * Full transcript of audio or video content of the product
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Transcript("47", "Transcript"),
+
+    /**
+     * For use with dramatised audiobooks, filmed entertainment etc, for a cast list sent as a separate resource file,
+     * not in the ONIX record. Equivalent of code 28 in List 153
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Full_cast_and_credit_list("48", "Full cast and credit list"),
 
     /**
      * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.

@@ -41,7 +41,7 @@ interface CodeList98 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist98">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist98">ONIX
  *      Codelist 98 in Reference Guide</a>
  */
 public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
@@ -54,6 +54,8 @@ public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
     Burgundy_Maroon("BUR", "Burgundy/Maroon"),
 
     /**
+     * For use in ONIX 3.0 only
+     * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Celadon_Pale_green("CEL", "Celadon/Pale green"),

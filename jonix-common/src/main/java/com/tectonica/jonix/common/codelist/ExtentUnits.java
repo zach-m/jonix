@@ -41,10 +41,17 @@ interface CodeList24 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist24">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist24">ONIX
  *      Codelist 24 in Reference Guide</a>
  */
 public enum ExtentUnits implements OnixCodelist, CodeList24 {
+    /**
+     * For example a count of the individual number of cards in a pack. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Physical_pieces("00", "Physical pieces"),
+
     /**
      * Approximate number of characters (including spaces) of natural language text. For use in ONIX 3.0 only
      * <p>

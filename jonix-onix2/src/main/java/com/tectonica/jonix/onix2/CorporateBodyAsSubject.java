@@ -54,8 +54,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b071&gt;Vienna Philharmonic
- * Orchestra&lt;/b071&gt;</tt></td>
+ * <td><tt>&lt;b071&gt;Vienna Philharmonic Orchestra&lt;/b071&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

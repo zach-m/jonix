@@ -60,10 +60,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;d100&gt;Set
- * on the Greek island of Cephallonia during World War II, this is the story of a beautiful young woman and her two
- * suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head of the Italian garrison
- * on the island.&lt;/d100&gt;</tt></td>
+ * <td><tt>&lt;d100&gt;Set on the Greek island of Cephallonia during World War II, this is the story of a beautiful young woman and her two suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head of the Italian garrison on the island.&lt;/d100&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

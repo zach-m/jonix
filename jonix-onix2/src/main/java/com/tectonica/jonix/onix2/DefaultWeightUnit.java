@@ -38,9 +38,8 @@ import java.io.Serializable;
  * <h1>Default unit of weight</h1>
  * <p>
  * A code indicating the default unit which is assumed for weights listed in the message, unless otherwise specified in
- * the product record. <strong>This element is deprecated <!-- provided for use at Level 1 -->. For most
- * implementations, explicit coding of units with each occurrence of a weight is to be preferred.</strong> Optional and
- * non-repeating.
+ * the product record. <strong>This element is deprecated<!-- provided for use at Level 1 -->. For most implementations,
+ * explicit coding of units with each occurrence of a weight is to be preferred.</strong> Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

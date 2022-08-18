@@ -41,7 +41,7 @@ interface CodeList153 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -69,9 +69,10 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     Table_of_contents("04", "Table of contents"),
 
     /**
-     * Primary descriptive blurb taken from the back cover and/or flaps. See also code 27
+     * Primary descriptive blurb usually taken from the back cover or jacket, or occasionally from the cover/jacket
+     * flaps. See also code 27
      */
-    Flap_cover_copy("05", "Flap / cover copy"),
+    Primary_cover_copy("05", "Primary cover copy"),
 
     /**
      * A quote taken from a review of the product or of the work in question where there is no need to take account of
@@ -191,12 +192,12 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     Introduction("26", "Introduction"),
 
     /**
-     * Secondary descriptive blurb taken from the back cover and/or flaps, used only when there are two separate texts
-     * and the primary text is included using code 05
+     * Secondary descriptive blurb taken from the cover/jacket flaps, or occasionally from the back cover or jacket,
+     * used only when there are two separate texts and the primary text is included using code 05
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Secondary_flap_cover_copy("27", "Secondary flap / cover copy"),
+    Secondary_cover_copy("27", "Secondary cover copy"),
 
     /**
      * For use with dramatized audiobooks, filmed entertainment etc, for a cast list sent as a single text field, which
@@ -225,7 +226,14 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Rules_or_instructions("31", "Rules or instructions");
+    Rules_or_instructions("31", "Rules or instructions"),
+
+    /**
+     * Eg for a game, kit. Note: use code 04 for a Table of Contents of a book
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    List_of_contents("32", "List of contents");
 
     public final String code;
     public final String description;

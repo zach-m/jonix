@@ -75,7 +75,9 @@ import java.io.Serializable;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * <li>&lt;{@link ProductPart}&gt;</li>
+ * <li>&lt;{@link SupplementManifest}&gt;</li>
  * <li>&lt;{@link RelatedProduct}&gt;</li>
+ * <li>&lt;{@link ProductionManifest}&gt;</li>
  * <li>&lt;{@link Tax}&gt;</li>
  * <li>&lt;{@link ComparisonProductPrice}&gt;</li>
  * <li>&lt;{@link SalesRights}&gt;</li>
@@ -87,9 +89,13 @@ import java.io.Serializable;
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
  * {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * {@link SupplementManifest} ⯈ {@link ProductIdentifier}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedProduct} ⯈
  * {@link ProductIdentifier}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedProduct} ⯈
+ * {@link ProductIdentifier}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
  * {@link ProductIdentifier}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
  * {@link Price} ⯈ {@link Tax} ⯈ {@link ProductIdentifier}</li>
@@ -123,12 +129,12 @@ public class ProductIdentifier
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -150,8 +156,8 @@ public class ProductIdentifier
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

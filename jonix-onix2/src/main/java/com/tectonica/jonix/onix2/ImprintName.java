@@ -59,8 +59,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ImprintName&gt;Secker &amp;amp;
- * Warburg&lt;/ImprintName&gt;</tt></td>
+ * <td><tt>&lt;ImprintName&gt;Secker &amp;amp; Warburg&lt;/ImprintName&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

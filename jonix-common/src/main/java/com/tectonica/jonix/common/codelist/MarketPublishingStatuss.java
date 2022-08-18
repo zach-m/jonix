@@ -41,7 +41,7 @@ interface CodeList68 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist68">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist68">ONIX
  *      Codelist 68 in Reference Guide</a>
  */
 public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
@@ -128,9 +128,10 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
     Not_available_in_this_market("12", "Not available in this market"),
 
     /**
-     * The product is published in this market and active but, as a publishing decision, it is not sold separately -
-     * only in an assembly or as part of a package. Depending on product composition and pricing, it may be saleable
-     * separately at retail
+     * The product is published and active in this market but, as a publishing decision, its constituent parts are not
+     * sold separately - only in an assembly or as part of a pack, eg with Product composition code 01. Also use with
+     * Product composition codes 30, 31 where depending on product composition and pricing, items in the pack may be
+     * saleable separately at retail
      */
     Active_but_not_sold_separately("13", "Active, but not sold separately"),
 
@@ -152,7 +153,25 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * accompanied by expected availability date coded '22' within the &lt;MarketDate&gt; composite, except in
      * exceptional circumstances where no date is known
      */
-    Temporarily_withdrawn_from_sale("16", "Temporarily withdrawn from sale");
+    Temporarily_withdrawn_from_sale("16", "Temporarily withdrawn from sale"),
+
+    /**
+     * Withdrawn permanently from sale in this market. Effectively synonymous with 'Out of print' (code 07), but
+     * specific to downloadable and online digital products (where no 'stock' would remain in the supply chain). For use
+     * in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Permanently_withdrawn_from_sale("17", "Permanently withdrawn from sale"),
+
+    /**
+     * The various constituent parts of a product are published and active in this market but, as a publishing decision,
+     * they are not sold together as a single product - eg with Product composition code 11 - and are only available as
+     * a number of individual items. For use on ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Active_but_not_sold_as_set("18", "Active, but not sold as set");
 
     public final String code;
     public final String description;

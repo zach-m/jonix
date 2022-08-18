@@ -96,12 +96,12 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -123,8 +123,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -315,7 +315,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * A group of data elements which together define an identifier of a product in accordance with a specified scheme,
      * used here to carry the product identifier of a product part. Optional, but required when an occurrence of
      * &lt;ProductPart&gt; specifies an individual item with its own identifier, and repeatable with different
-     * identifiers for the same item.
+     * identifiers for the same product part.
      * </p>
      * Jonix-Comment: this list may be empty
      */

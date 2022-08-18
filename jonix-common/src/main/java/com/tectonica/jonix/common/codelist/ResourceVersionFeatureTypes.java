@@ -41,7 +41,7 @@ interface CodeList162 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist162">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist162">ONIX
  *      Codelist 162 in Reference Guide</a>
  */
 public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
@@ -67,8 +67,8 @@ public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
     Filename("04", "Filename"),
 
     /**
-     * Resource Version Feature Value carries a decimal number only, suggested no more than 2 significant digits (eg
-     * 1.7, not 1.7462)
+     * Resource Version Feature Value carries a decimal number only, suggested no more than 2 or 3 significant digits
+     * (eg 1.7, not 1.7462 or 1.75MB)
      */
     Approximate_download_file_size_in_megabytes("05", "Approximate download file size in megabytes"),
 
@@ -89,7 +89,16 @@ public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
      * value (as 64 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it
      * has been retrieved
      */
-    SHA_256_hash_value("08", "SHA-256 hash value");
+    SHA_256_hash_value("08", "SHA-256 hash value"),
+
+    /**
+     * International Standard Content Code, a 'similarity hash' derived algorithmically from the resource content itself
+     * (see https://iscc.codes). &lt;IDValue&gt; is the 55-character case-sensitive string (including three hyphens)
+     * forming the ISCC of the resource file
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    ISCC("09", "ISCC");
 
     public final String code;
     public final String description;

@@ -41,7 +41,7 @@ interface CodeList73 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -170,6 +170,9 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      */
     Web_page_for_full_content("29", "Web page for full content"),
 
+    /**
+     * For example a subscribable podcast hosting site, social media message, newsletter issue, other commentary
+     */
     Web_page_for_other_commentary_discussion("30", "Web page for other commentary / discussion"),
 
     /**
@@ -223,23 +226,24 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     URL_of_full_metadata_description("40", "URL of full metadata description"),
 
     /**
-     * For example, a Facebook, Google+ or Twitter URL for the product or work
+     * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar URL for the product
+     * or work
      */
     Social_networking_URL_for_specific_work_or_product("41", "Social networking URL for specific work or product"),
 
     /**
-     * For example, a Facebook, Google+ or Twitter page
+     * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page
      */
     Author_s_social_networking_URL("42", "Author’s social networking URL"),
 
     /**
-     * For example, a Facebook, Google+ or Twitter page
+     * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page
      */
     Publisher_s_social_networking_URL("43", "Publisher’s social networking URL"),
 
     /**
-     * For example, a Facebook, Google+ or Twitter page. Use only in the context of a specific content item (eg within
-     * &lt;ContentItem&gt;)
+     * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page. Use only in the
+     * context of a specific content item (eg within &lt;ContentItem&gt;)
      */
     Social_networking_URL_for_specific_article_chapter_or_content_item("44",
         "Social networking URL for specific article, chapter or content item"),
@@ -256,7 +260,41 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * Jonix-Comment: Introduced in Onix3
      */
     Publisher_s_or_third_party_website_for_privacy_statement("46",
-        "Publisher’s or third party website for privacy statement");
+        "Publisher’s or third party website for privacy statement"),
+
+    /**
+     * The URL of the publisher's preservation service, or a more specific URL for access to its preserved copy. For use
+     * in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Publisher_s_website_for_digital_preservation("47", "Publisher’s website for digital preservation"),
+
+    /**
+     * The URL of the preservation service (eg https://clockss.org), or a more specific URL for access to its preserved
+     * copy. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Third_party_website_for_digital_preservation("48", "Third-party website for digital preservation"),
+
+    /**
+     * The URL of a web page describing the environmental and sustainability policy, or carbon neutrality status, that
+     * applies to the specific product. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Product_website_for_environmental_responsibility_statement("49",
+        "Product website for environmental responsibility statement"),
+
+    /**
+     * The URL of a web page describing the environmental and sustainability policies, carbon neutrality status, etc of
+     * the organisation (publisher, supplier etc). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Organisation_s_website_for_environmental_responsibility_statement("50",
+        "Organisation’s website for environmental responsibility statement");
 
     public final String code;
     public final String description;

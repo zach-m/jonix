@@ -41,7 +41,7 @@ interface CodeList96 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist96">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -840,9 +840,17 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Slovak_Koruna("SKK", "Slovak Koruna"),
 
     /**
-     * Sierra Leone (prices normally quoted as integers)
+     * Sierra Leone (from April 2022)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
-    Leone("SLL", "Leone"),
+    Leone("SLE", "Leone"),
+
+    /**
+     * Sierra Leone (prices normally quoted as integers). Deprecated - replaced by SLE from April 2022 (SLE is a
+     * redenomination of the Leone by a factor of 1,000)
+     */
+    Leone_("SLL", "Leone"),
 
     /**
      * Somalia (prices normally quoted as integers)
@@ -985,7 +993,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Bol_var_("VEF", "Bolívar"),
 
     /**
-     * Venezuela (replaced VEF from August 2018 at rate of 100,000:1). For use in ONIX 3.0 only
+     * Venezuela (replaced VEF from August 2018 at rate of 100,000:1, and was redenominated by a further factor of
+     * 1,000,000:1 in late 2021). For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

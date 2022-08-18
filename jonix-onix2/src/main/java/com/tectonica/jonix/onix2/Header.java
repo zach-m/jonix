@@ -488,7 +488,7 @@ public class Header implements OnixHeader, Serializable {
     /**
      * <p>
      * A code indicating the default unit which is assumed for linear measurements listed in the message, unless
-     * otherwise specified in the product record. <strong>This element is deprecated <!-- provided for use at Level 1
+     * otherwise specified in the product record. <strong>This element is deprecated<!-- provided for use at Level 1
      * -->. For most implementations, explicit coding of measure units with each occurrence of a measurement is to be
      * preferred.</strong> Optional and non-repeating.
      * </p>
@@ -504,7 +504,7 @@ public class Header implements OnixHeader, Serializable {
     /**
      * <p>
      * A code indicating the default unit which is assumed for weights listed in the message, unless otherwise specified
-     * in the product record. <strong>This element is deprecated <!-- provided for use at Level 1 -->. For most
+     * in the product record. <strong>This element is deprecated<!-- provided for use at Level 1 -->. For most
      * implementations, explicit coding of units with each occurrence of a weight is to be preferred.</strong> Optional
      * and non-repeating.
      * </p>

@@ -57,8 +57,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b058&gt;3rd edition, revised with an
- * introduction and notes&lt;/b058&gt;</tt></td>
+ * <td><tt>&lt;b058&gt;3rd edition, revised with an introduction and notes&lt;/b058&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

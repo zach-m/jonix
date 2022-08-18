@@ -45,7 +45,7 @@ import java.util.List;
  */
 
 /**
- * <h1>Contributor composite</h1>
+ * <h1>Contributor composite (collection)</h1>
  * <p>
  * A group of data elements which together describe a personal or corporate contributor to a collection. Optional, and
  * repeatable to describe multiple contributors. <strong>The &lt;Contributor&gt; composite is included here for use only
@@ -100,12 +100,12 @@ public class Contributor implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -127,8 +127,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

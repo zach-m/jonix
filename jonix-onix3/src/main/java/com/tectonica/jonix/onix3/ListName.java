@@ -61,8 +61,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x432&gt;Sunday
- * Times Hardback Fiction&lt;/x432&gt;</tt></td>
+ * <td><tt>&lt;x432&gt;Sunday Times Hardback Fiction&lt;/x432&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -93,12 +92,12 @@ public class ListName implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public Languages language;
 
@@ -138,8 +137,8 @@ public class ListName implements OnixElement<String>, Serializable {
     public ListName(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);

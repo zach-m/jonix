@@ -64,8 +64,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x450&gt;GB-SCT
- * GB-NIR GB-WLS&lt;/x450&gt;</tt> (Includes Scotland, Northern Ireland, Wales)</td>
+ * <td><tt>&lt;x450&gt;GB-SCT GB-NIR GB-WLS&lt;/x450&gt;</tt> (Includes Scotland, Northern Ireland, Wales)</td>
  * </tr>
  * </table>
  * <p/>
@@ -81,6 +80,10 @@ import java.io.Serializable;
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link Territory}
  * ⯈ {@link RegionsIncluded}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link RegionsIncluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link RegionsIncluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link RegionsIncluded}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
  * {@link Territory} ⯈ {@link RegionsIncluded}</li>
@@ -117,12 +120,12 @@ public class RegionsIncluded implements OnixElement<java.util.Set<Regions>>, Ser
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -152,8 +155,8 @@ public class RegionsIncluded implements OnixElement<java.util.Set<Regions>>, Ser
     public RegionsIncluded(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = new java.util.HashSet<>();
         for (String split : JPU.getContentAsString(element).split(" +")) {

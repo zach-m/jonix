@@ -78,12 +78,12 @@ public class Sender implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -105,8 +105,8 @@ public class Sender implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -130,6 +130,10 @@ public class Sender implements OnixSuperComposite, Serializable {
                 case ContactName.refname:
                 case ContactName.shortname:
                     contactName = new ContactName(e);
+                    break;
+                case TelephoneNumber.refname:
+                case TelephoneNumber.shortname:
+                    telephoneNumber = new TelephoneNumber(e);
                     break;
                 case EmailAddress.refname:
                 case EmailAddress.shortname:
@@ -194,14 +198,28 @@ public class Sender implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * Free text giving the name, department, phone number, <i>etc</i> for a contact person in the sender organization
-     * who is responsible for the content of the message. Optional and non-repeating.
+     * Free text giving the name, department, <i>etc</i> for a contact person in the sender organization who is
+     * responsible for the content of the message. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
     public ContactName contactName() {
         _initialize();
         return contactName;
+    }
+
+    private TelephoneNumber telephoneNumber = TelephoneNumber.EMPTY;
+
+    /**
+     * <p>
+     * A telephone number of the contact person in the sender organization, wherever possible including the plus sign
+     * and the international dialling code. Optional, and non-repeating.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public TelephoneNumber telephoneNumber() {
+        _initialize();
+        return telephoneNumber;
     }
 
     private EmailAddress emailAddress = EmailAddress.EMPTY;

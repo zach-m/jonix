@@ -41,7 +41,7 @@ interface CodeList167 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist167">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist167">ONIX
  *      Codelist 167 in Reference Guide</a>
  */
 public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
@@ -66,19 +66,22 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
     Updates_available("03", "Updates available"),
 
     /**
-     * Purchase at this price requires commitment to purchase specified other product, not included in price
+     * Use with &lt;PriceConditionQuantity&gt; and &lt;ProductIdentifier&gt;. Purchase at this price requires commitment
+     * to purchase the specified linked product, which is not included in the price
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Linked_subsequent_purchase_price("04", "Linked subsequent purchase price"),
 
     /**
-     * Purchase at this price requires prior purchase of other product
+     * Use with &lt;PriceConditionQuantity&gt; and &lt;ProductIdentifier&gt;. Purchase at this price requires prior
+     * purchase of the specified linked product
      */
     Linked_prior_purchase_price("05", "Linked prior purchase price"),
 
     /**
-     * Purchase at this price requires simultaneous purchase of other product
+     * Use with &lt;PriceConditionQuantity&gt; and &lt;ProductIdentifier&gt;. Purchase at this price requires
+     * simultaneous purchase of the specified linked product, which is not included in the price
      */
     Linked_price("06", "Linked price"),
 
@@ -88,6 +91,13 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
      * Jonix-Comment: Introduced in Onix3
      */
     Auto_renewing("07", "Auto-renewing"),
+
+    /**
+     * Purchase at this price includes the price of the specified other product
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Combined_price("08", "Combined price"),
 
     /**
      * The duration of the rental to which the price applies. Deprecated, use &lt;PriceConstraint&gt; instead

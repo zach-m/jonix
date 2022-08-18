@@ -81,6 +81,10 @@ import java.io.Serializable;
  * ⯈ {@link RegionsExcluded}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
  * {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link RegionsExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link RegionsExcluded}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link RegionsExcluded}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
  * {@link Territory} ⯈ {@link RegionsExcluded}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link Territory} ⯈
@@ -116,12 +120,12 @@ public class RegionsExcluded implements OnixElement<java.util.Set<Regions>>, Ser
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -151,8 +155,8 @@ public class RegionsExcluded implements OnixElement<java.util.Set<Regions>>, Ser
     public RegionsExcluded(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = new java.util.HashSet<>();
         for (String split : JPU.getContentAsString(element).split(" +")) {

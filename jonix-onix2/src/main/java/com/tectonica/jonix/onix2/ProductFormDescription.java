@@ -58,8 +58,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b014&gt;3 volumes with 2
- * audiocassettes&lt;/b014&gt;</tt></td>
+ * <td><tt>&lt;b014&gt;3 volumes with 2 audiocassettes&lt;/b014&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

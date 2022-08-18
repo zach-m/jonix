@@ -41,7 +41,7 @@ interface CodeList99 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist99">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist99">ONIX
  *      Codelist 99 in Reference Guide</a>
  */
 public enum SpecialCoverMaterials implements OnixCodelist, CodeList99 {
@@ -108,14 +108,14 @@ public enum SpecialCoverMaterials implements OnixCodelist, CodeList99 {
     Papyrus("22", "Papyrus"),
 
     /**
-     * An imitation cloth binding material
+     * Proprietary imitation cloth binding material, cellulose-based, usually embossed / textured
      */
-    G_ltex("23", "Géltex"),
+    G_ltex_Wibalin("23", "Géltex / Wibalin"),
 
     /**
-     * An imitation leather binding material
+     * Proprietary imitation leather binding material, cellulose-based, usually embossed / textured
      */
-    Guaflex("24", "Guaflex"),
+    Guaflex_Skivertex("24", "Guaflex / Skivertex"),
 
     /**
      * An imitation made of any non-leather material

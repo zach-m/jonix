@@ -41,7 +41,7 @@ interface CodeList17 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -86,6 +86,9 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      */
     By_photographer("A08", "By (photographer)"),
 
+    /**
+     * For example of editorial concept, of board game, etc
+     */
     Created_by("A09", "Created by"),
 
     From_an_idea_by("A10", "From an idea by"),
@@ -381,6 +384,13 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Jonix-Comment: Introduced in Onix3
      */
     Original_editor("B31", "Original editor"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Translation_revised_by("B32", "Translation revised by"),
 
     /**
      * Other type of adaptation or editing not specified above

@@ -55,8 +55,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j262&gt;When
- * purchased as part of a three-item set with &#8230;&lt;/j262&gt;</tt></td>
+ * <td><tt>&lt;j262&gt;When purchased as part of a three-item set with &#8230;&lt;/j262&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

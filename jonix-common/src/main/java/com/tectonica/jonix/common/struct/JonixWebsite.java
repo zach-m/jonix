@@ -49,7 +49,8 @@ public class JonixWebsite implements JonixStruct, Serializable {
 
     /**
      * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
-     * maximum length 300 characters
+     * maximum length 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters
+     * should be 'URL-encoded'
      * <p>
      * (type: dt.NonEmptyURI)
      */

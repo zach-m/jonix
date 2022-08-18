@@ -40,7 +40,7 @@ import java.util.List;
  */
 
 /**
- * <h1>Event occurrence</h1>
+ * <h1>Event occurrence composite</h1>
  * <p>
  * A group of data elements which together describe a single occurrence of the promotional event. At least one occurence
  * is mandatory within the &lt;PromotionalEvent&gt; composite, and &lt;EventOccurrence&gt; is repeatable in order to
@@ -89,12 +89,12 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -116,8 +116,8 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -169,6 +169,10 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
                 case EventDescription.refname:
                 case EventDescription.shortname:
                     eventDescriptions = JPU.addToList(eventDescriptions, new EventDescription(e));
+                    break;
+                case SupportingResource.refname:
+                case SupportingResource.shortname:
+                    supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
                     break;
                 case EventSponsor.refname:
                 case EventSponsor.shortname:
@@ -356,6 +360,22 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return eventDescriptions;
     }
 
+    private List<SupportingResource> supportingResources = Collections.emptyList();
+
+    /**
+     * <p>
+     * An optional group of data elements which together describe a supporting resource related to an occurrence of a
+     * promotional event. The composite is repeatable to describe and link to multiple resources. Note that different
+     * forms of the same resource (for example a cover image in separate low and high resolution versions) should be
+     * specified in a single instance of the composite.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<SupportingResource> supportingResources() {
+        _initialize();
+        return supportingResources;
+    }
+
     private List<EventSponsor> eventSponsors = Collections.emptyList();
 
     /**
@@ -376,8 +396,8 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of data elements which together identify and provide a pointers to a website which is related
-     * to the event occurrence – for example a website providing a ticketing service. Repeatable to provide links to
+     * An optional group of data elements which together identify and provide pointers to a website which is related to
+     * the event occurrence – for example a website providing a ticketing service. Repeatable to provide links to
      * multiple websites.
      * </p>
      * Jonix-Comment: this list may be empty

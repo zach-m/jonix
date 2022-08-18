@@ -55,8 +55,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b048&gt;Skipper of the winning crew in the
- * Americas Cup, 1998&lt;/b048&gt;</tt></td>
+ * <td><tt>&lt;b048&gt;Skipper of the winning crew in the Americas Cup, 1998&lt;/b048&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

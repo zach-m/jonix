@@ -41,7 +41,7 @@ interface CodeList59 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist59">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist59">ONIX
  *      Codelist 59 in Reference Guide</a>
  */
 public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
@@ -141,7 +141,23 @@ public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
      */
     Academic_library_price("15", "Academic library price"),
 
-    Public_library_price("16", "Public library price");
+    Public_library_price("16", "Public library price"),
+
+    /**
+     * Initial 'Introductory offer' price. Must be accompanied by an Effective until date in a &lt;PriceDate&gt;
+     * composite in ONIX 3, and may also be accompanied by a 'normal' price valid after the introductory offer expires
+     * (Fr. Prix de lancement). Only valid in ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Introductory_price("17", "Introductory price"),
+
+    /**
+     * Price for library consortia. Only valid in ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Consortial_price("18", "Consortial price");
 
     public final String code;
     public final String description;

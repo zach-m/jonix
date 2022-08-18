@@ -41,7 +41,7 @@ interface CodeList32 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist32">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist32">ONIX
  *      Codelist 32 in Reference Guide</a>
  */
 public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
@@ -103,7 +103,23 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
     /**
      * Used for books aimed at K-2 literacy intervention. &lt;ComplexityCode&gt; is an integer between 1 and 20
      */
-    Reading_Recovery_Level("10", "Reading Recovery Level");
+    Reading_Recovery_Level("10", "Reading Recovery Level"),
+
+    /**
+     * Swedish 'l&#228;sbarhetsindex' readability index used in Scandinavia. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    LIX("11", "LIX"),
+
+    /**
+     * Lexile Audio measure from MetaMetrics' Framework for Listening. The code in &lt;ComplexityCode&gt; indicates the
+     * difficulty of comprehension of audio material (for example 600L or 1030L). For use in ONIX 3.0 only. See
+     * https://lexile.global/the-lexile-framework-for-listening/
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Lexile_Audio_measure("12", "Lexile Audio measure");
 
     public final String code;
     public final String description;

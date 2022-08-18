@@ -62,9 +62,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ProductFormDescription
- * language=&quot;eng&quot;&gt;Hardback book die-cut into car shape, with wheels attached to front and back
- * covers&lt;/ProductFormDescription&gt;</tt></td>
+ * <td><tt>&lt;ProductFormDescription language=&quot;eng&quot;&gt;Hardback book die-cut into car shape, with wheels attached to front and back covers&lt;/ProductFormDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -72,6 +70,7 @@ import java.io.Serializable;
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ProductPart}&gt;</li>
+ * <li>&lt;{@link SupplementManifest}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
@@ -79,6 +78,8 @@ import java.io.Serializable;
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormDescription}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
  * {@link ProductFormDescription}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * {@link SupplementManifest} ⯈ {@link ProductFormDescription}</li>
  * </ul>
  */
 public class ProductFormDescription implements OnixElement<String>, Serializable {
@@ -96,12 +97,12 @@ public class ProductFormDescription implements OnixElement<String>, Serializable
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public Languages language;
 
@@ -141,8 +142,8 @@ public class ProductFormDescription implements OnixElement<String>, Serializable
     public ProductFormDescription(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);

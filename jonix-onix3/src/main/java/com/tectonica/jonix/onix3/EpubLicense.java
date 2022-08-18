@@ -34,7 +34,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Digital product license</h1>
+ * <h1>Digital product license composite</h1>
  * <p>
  * An optional and non-repeatable composite carrying the name or title of the license governing use of the product, and
  * a link to the license terms in eye-readable or machine-readable form.
@@ -86,12 +86,12 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -113,8 +113,8 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

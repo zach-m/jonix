@@ -95,12 +95,12 @@ public class StartDate implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public DateFormats dateformat;
 
@@ -141,8 +141,8 @@ public class StartDate implements OnixElement<String>, Serializable {
     public StartDate(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
         value = JPU.getContentAsString(element);

@@ -99,12 +99,12 @@ public class ContributorRole implements OnixElement<ContributorRoles>, Serializa
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -134,8 +134,8 @@ public class ContributorRole implements OnixElement<ContributorRoles>, Serializa
     public ContributorRole(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = ContributorRoles.byCode(JPU.getContentAsString(element));
     }

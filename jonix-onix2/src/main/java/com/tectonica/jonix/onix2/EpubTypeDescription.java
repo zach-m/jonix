@@ -54,8 +54,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;EpubTypeDescription&gt;Adobe Ebook
- * Reader&lt;/EpubTypeDescription&gt;</tt></td>
+ * <td><tt>&lt;EpubTypeDescription&gt;Adobe Ebook Reader&lt;/EpubTypeDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

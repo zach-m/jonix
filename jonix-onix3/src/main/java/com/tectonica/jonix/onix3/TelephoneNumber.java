@@ -30,10 +30,10 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Agent telephone number</h1>
+ * <h1>Sender telephone number</h1>
  * <p>
- * A telephone number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of
- * providing contact details in the &lt;ProductContact&gt; composite.
+ * A telephone number of the contact person in the sender organization, wherever possible including the plus sign and
+ * the international dialling code. Optional, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -50,35 +50,45 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;n</td>
+ * <td>0&#8230;1</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j270&gt;+44
- * 20 8843 8607&lt;/j270&gt;</tt></td>
+ * <td><tt>&lt;j270&gt;+44 20 8843 8607&lt;/j270&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link SupplyContact}&gt;</li>
+ * <li>&lt;{@link Sender}&gt;</li>
  * <li>&lt;{@link NewSupplier}&gt;</li>
+ * <li>&lt;{@link ProductContact}&gt;</li>
  * <li>&lt;{@link Supplier}&gt;</li>
+ * <li>&lt;{@link Addressee}&gt;</li>
  * <li>&lt;{@link PublisherRepresentative}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈
+ * {@link TelephoneNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link TelephoneNumber}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈
  * {@link TelephoneNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈
+ * {@link TelephoneNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
+ * {@link ProductContact} ⯈ {@link TelephoneNumber}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
  * {@link TelephoneNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Addressee} ⯈ {@link TelephoneNumber}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
  * {@link PublisherRepresentative} ⯈ {@link TelephoneNumber}</li>
  * </ul>
  *
- * @deprecated
+ * @since Onix-3.08
  */
-@Deprecated
 public class TelephoneNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -94,12 +104,12 @@ public class TelephoneNumber implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -137,8 +147,8 @@ public class TelephoneNumber implements OnixElement<String>, Serializable {
     public TelephoneNumber(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsString(element);
     }

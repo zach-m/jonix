@@ -97,12 +97,12 @@ public class SubjectSchemeIdentifier implements OnixElement<SubjectSchemeIdentif
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -132,8 +132,8 @@ public class SubjectSchemeIdentifier implements OnixElement<SubjectSchemeIdentif
     public SubjectSchemeIdentifier(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = SubjectSchemeIdentifiers.byCode(JPU.getContentAsString(element));
     }

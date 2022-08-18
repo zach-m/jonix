@@ -41,59 +41,139 @@ interface CodeList28 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist28">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist28">ONIX
  *      Codelist 28 in Reference Guide</a>
  */
 public enum AudienceTypes implements OnixCodelist, CodeList28 {
     /**
      * For a non-specialist adult audience. Consider also adding an ONIX Adult audience rating
      */
-    General_trade("01", "General/trade"),
+    General_adult("01", "General / adult"),
 
     /**
-     * For a juvenile audience, not specifically for any educational purpose. An audience range should also be included
+     * For a young audience typically up to about the age of 12, not specifically for any educational purpose. An
+     * audience range should also be included
      */
-    Children_juvenile("02", "Children/juvenile"),
+    Children("02", "Children"),
 
     /**
-     * For a teenage audience, not specifically for any educational purpose. An audience range should also be included
+     * For a teenage or 'young adult' audience typically from about the age of 12 to the late teens, not specifically
+     * for any educational purpose. An audience range should also be included
      */
-    Young_adult("03", "Young adult"),
+    Teenage("03", "Teenage"),
 
     /**
-     * Kindergarten, pre-school, primary/elementary or secondary/high school education. An audience range should also be
-     * included
+     * Kindergarten, pre-school, primary / elementary or secondary / high school education. Note 'secondary' includes
+     * both level 2 and level 3 secondary education as defined in UNESCO's ISCED 2011 (see
+     * http://uis.unesco.org/en/topic/international-standard-classification-education-isced). An audience range should
+     * also be included
      */
-    Primary_and_secondary_elementary_and_high_school("04", "Primary and secondary/elementary and high school"),
+    Primary_and_secondary_education("04", "Primary and secondary education"),
 
     /**
-     * For tertiary education - universities and colleges of higher education
+     * Equivalent to UNESCO's ISCED Level 0 - see
+     * http://uis.unesco.org/en/topic/international-standard-classification-education-isced (note codes 11-14 are
+     * specific subsets of the Primary and secondary education audience, code 04). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Pre_primary_education("11", "Pre-primary education"),
+
+    /**
+     * Equivalent to ISCED Level 1. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Primary_education("12", "Primary education"),
+
+    /**
+     * Equivalent to ISCED Level 2 (general and vocational). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Lower_secondary_education("13", "Lower secondary education"),
+
+    /**
+     * Equivalent to ISCED Level 3 (general and vocational). For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Upper_secondary_education("14", "Upper secondary education"),
+
+    /**
+     * For tertiary education typically in universities and colleges of higher education, equivalent to ISCED Levels 5-7
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Tertiary_education("05", "Tertiary education"),
+
+    /**
+     * For an expert adult audience, including professional development and academic research
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Professional_and_scholarly("06", "Professional and scholarly"),
+
+    /**
+     * For any adult audience in a formal or semi-formal learning setting, eg vocational training and apprenticeships
+     * (collectively, equivalent to ISCED Level 4), or practical or recreational learning for adults
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Adult_education("08", "Adult education"),
+
+    /**
+     * Intended for use in teaching and learning English as a second, non-native or additional language. Indication of
+     * the language level (eg CEFR) should be included where possible. An audience range should also be included if the
+     * product is (also) suitable for use in primary and secondary education
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    EFL_TEFL_TESOL("07", "EFL / TEFL / TESOL"),
+
+    /**
+     * Intended for use in teaching and learning second, non-native or additional languages (other than English), for
+     * example teaching German to Spanish speakers. Indication of the language level (eg CEFR) should be included where
+     * possible. An audience range should also be included if the product is (also) suitable for use in primary and
+     * secondary education. Prefer code 07 for products specific to teaching English
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Second_additional_language_teaching("09", "Second / additional language teaching"),
+
+    /**
+     * For universities and colleges of further and higher education
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     College_higher_education("05", "College/higher education"),
 
     /**
      * For an expert adult audience, including professional development and academic research
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
-    Professional_and_scholarly("06", "Professional and scholarly"),
+    Professional_and_scholarly_("06", "Professional and scholarly"),
 
     /**
-     * Intended for use in teaching English as a second, non-native or additional language. Indication of the language
-     * level (eg CEFR) should be included where possible. An audience range should also be included if the product is
-     * (also) suitable for use in primary and secondary education
+     * Intended for use in teaching English as a second language
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     ELT_ESL("07", "ELT/ESL"),
 
     /**
-     * For an adult audience in a formal or semi-formal learning setting, eg vocational training, apprenticeships, or
-     * academic or recreational learning for adults
+     * For centres providing academic, vocational or recreational courses for adults
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
-    Adult_education("08", "Adult education"),
+    Adult_education_("08", "Adult education"),
 
     /**
-     * Intended for use in teaching second, non-native or additional languages, for example teaching German to Spanish
-     * speakers. Indication of the language level (eg CEFR) should be included where possible. An audience range should
-     * also be included if the product is (also) suitable for use in primary and secondary education. Prefer code 07 for
-     * products specific to teaching English
+     * Intended for use in teaching second languages, for example teaching German to Spanish speakers. Prefer code 07
+     * for products specific to teaching English
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
      */
     Second_language_teaching("09", "Second language teaching");
 

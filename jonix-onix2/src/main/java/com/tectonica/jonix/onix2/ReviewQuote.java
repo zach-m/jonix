@@ -59,10 +59,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ReviewQuote&gt;Norman Schur is without
- * doubt the outstanding authority on the similarities and differences between British and American English. BRITISH
- * ENGLISH, A TO ZED attests not only to his expertise, but also to his undiminished powers to inform, amuse and
- * entertain. - Laurence Urdang, Editor, VERBATIM, The Language Quarterly, Spring 1992&lt;/ReviewQuote&gt;</tt></td>
+ * <td><tt>&lt;ReviewQuote&gt;Norman Schur is without doubt the outstanding authority on the similarities and differences between British and American English. BRITISH ENGLISH, A TO ZED attests not only to his expertise, but also to his undiminished powers to inform, amuse and entertain. - Laurence Urdang, Editor, VERBATIM, The Language Quarterly, Spring 1992&lt;/ReviewQuote&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

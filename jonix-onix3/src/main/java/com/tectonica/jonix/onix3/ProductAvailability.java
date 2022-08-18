@@ -59,8 +59,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j396
- * datestamp=&quot;20101029&quot;&gt;41&lt;/j396&gt;</tt> (Replaced by new product)</td>
+ * <td><tt>&lt;j396 datestamp=&quot;20101029&quot;&gt;41&lt;/j396&gt;</tt> (Replaced by new product)</td>
  * </tr>
  * <tr>
  * <td>Notes</td>
@@ -105,12 +104,12 @@ public class ProductAvailability implements OnixElement<ProductAvailabilitys>, S
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -140,8 +139,8 @@ public class ProductAvailability implements OnixElement<ProductAvailabilitys>, S
     public ProductAvailability(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = ProductAvailabilitys.byCode(JPU.getContentAsString(element));
     }

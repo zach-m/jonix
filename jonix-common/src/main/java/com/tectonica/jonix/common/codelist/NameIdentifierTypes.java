@@ -41,7 +41,7 @@ interface CodeList44 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -97,7 +97,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     /**
      * International Standard Name Identifier. A sixteen digit number. Usually presented with spaces or hyphens dividing
      * the number into four groups of four digits, but in ONIX the spaces or hyphens should be omitted. See
-     * http://www.isni.org/
+     * https://isni.org/
      */
     ISNI("16", "ISNI"),
 
@@ -109,9 +109,9 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     PND("17", "PND"),
 
     /**
-     * A control number assigned to a Library of Congress Name Authority record
+     * A control number assigned to a Library of Congress Control Number (LCCN) Name Authority / NACO record
      */
-    LCCN("18", "LCCN"),
+    NACO("18", "NACO"),
 
     /**
      * Publisher identifier administered by Japanese ISBN Agency
@@ -222,7 +222,32 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    GRID("37", "GRID");
+    GRID("37", "GRID"),
+
+    /**
+     * Party ID from Identifiers and Standards for Higher Education and Research (fr: Identifiants et
+     * R&#233;f&#233;rentiels pour l'enseignement sup&#233;rieur et la recherche). For use on ONIX 3.0 only. See
+     * https://www.idref.fr
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    IDRef("38", "IDRef"),
+
+    /**
+     * Party ID from CISAC's proprietary Interested Party Information scheme, used primarily in rights and royalies
+     * administration. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    IPI("39", "IPI"),
+
+    /**
+     * Research organisation registry identifier (see https://ror.org), leading 0 followed by 8 alphanumeric characters
+     * (including 2-digit checksum). For use on ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    ROR("40", "ROR");
 
     public final String code;
     public final String description;

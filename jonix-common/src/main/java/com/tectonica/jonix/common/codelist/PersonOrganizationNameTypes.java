@@ -41,10 +41,13 @@ interface CodeList18 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist18">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist18">ONIX
  *      Codelist 18 in Reference Guide</a>
  */
 public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
+    /**
+     * Usually the name as it is presented on the book
+     */
     Unspecified("00", "Unspecified"),
 
     /**
@@ -65,9 +68,10 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
     _Real_name("04", "‘Real’ name"),
 
     /**
-     * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified
+     * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified, for names in a different
+     * script or language
      */
-    Transliterated_form_of_primary_name("05", "Transliterated form of primary name"),
+    Transliterated_translated_form_of_primary_name("05", "Transliterated / translated form of primary name"),
 
     /**
      * Use only within &lt;AlternativeName&gt;

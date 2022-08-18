@@ -38,7 +38,7 @@ import java.io.Serializable;
  * Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a price.
  * </p>
  * <p>
- * Use here in preference to P.26.70a when the product is available <em>only</em> under free of charge or unpriced terms
+ * Use here in preference to P.26.70b when the product is available <em>only</em> under free of charge or unpriced terms
  * from the supplier.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -99,12 +99,12 @@ public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Seriali
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -134,8 +134,8 @@ public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Seriali
     public UnpricedItemType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = UnpricedItemTypes.byCode(JPU.getContentAsString(element));
     }

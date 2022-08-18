@@ -62,18 +62,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;MainDescription&gt;This volume tells the
- * story of Europe, East and West, from prehistory to the present day. It lays down the chronological and geographical
- * grid on which the dramas of European history have been played out. It zooms in from the distant focus of Chapter One,
- * which explores the first five million years of the continent's evolution, to the close focus of the last two
- * chapters, which cover the 20th century at roughly one page per year. Alongside Europe's better-known stories - human,
- * national and continental - it brings into focus areas often ignored or misunderstood, remembering the stateless
- * nation as well as the nation-state. Minority communities, from heretics and lepers to Jews, Romanies and Muslims have
- * not been forgotten. This history reveals not only the rich variety of Europe's past but also the many and rewarding
- * prisms through which it can be viewed. Each chapter contains a selection of telephoto &#8220;capsules&#8221;,
- * illustrating narrower themes and topics that cut across the chronological flow. It then concludes with a wide-angle
- * &#8220;snapshot&#8221; of the whole continent as seen from one particular vantage
- * point.&lt;/MainDescription&gt;</tt></td>
+ * <td><tt>&lt;MainDescription&gt;This volume tells the story of Europe, East and West, from prehistory to the present day. It lays down the chronological and geographical grid on which the dramas of European history have been played out. It zooms in from the distant focus of Chapter One, which explores the first five million years of the continent's evolution, to the close focus of the last two chapters, which cover the 20th century at roughly one page per year. Alongside Europe's better-known stories - human, national and continental - it brings into focus areas often ignored or misunderstood, remembering the stateless nation as well as the nation-state. Minority communities, from heretics and lepers to Jews, Romanies and Muslims have not been forgotten. This history reveals not only the rich variety of Europe's past but also the many and rewarding prisms through which it can be viewed. Each chapter contains a selection of telephoto &#8220;capsules&#8221;, illustrating narrower themes and topics that cut across the chronological flow. It then concludes with a wide-angle &#8220;snapshot&#8221; of the whole continent as seen from one particular vantage point.&lt;/MainDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

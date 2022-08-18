@@ -32,8 +32,8 @@ import java.io.Serializable;
 /**
  * <h1>Order time</h1>
  * <p>
- * The expected average number of days from receipt of order to despatch (for items ‘manufactured on demand’ or ‘only to
- * order’). Optional and non-repeating.
+ * The expected average number of business days from receipt of order to despatch (for items ‘manufactured on demand’ or
+ * ‘only to order’). Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -83,12 +83,12 @@ public class OrderTime implements OnixElement<Integer>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -126,8 +126,8 @@ public class OrderTime implements OnixElement<Integer>, Serializable {
     public OrderTime(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsInteger(element);
     }

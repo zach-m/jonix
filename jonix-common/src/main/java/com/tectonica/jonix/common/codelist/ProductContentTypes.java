@@ -41,7 +41,7 @@ interface CodeList81 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
@@ -146,7 +146,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Performance_spoken_word("02", "Performance – spoken word"),
 
     /**
-     * eg an interview, speech, lecture or discussion, not a 'reading' or 'performance')
+     * eg an interview, speech, lecture or commentary / discussion, not a 'reading' or 'performance')
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -329,6 +329,15 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * Jonix-Comment: Introduced in Onix3
      */
     Scripting("40", "Scripting"),
+
+    /**
+     * E-publication contains pop-ups or other functionality offering (eg) term definitions, cross-links or glossary
+     * entries [Note this should not include (eg) dictionary funcionality that is part of the reading system.] For use
+     * in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Scripted_pop_ups("43", "Scripted pop-ups"),
 
     /**
      * eg Teaser chapter

@@ -86,12 +86,12 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -113,8 +113,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -246,8 +246,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The expected average number of days from receipt of order to despatch (for items ‘manufactured on demand’ or
-     * ‘only to order’). Optional and non-repeating.
+     * The expected average number of business days from receipt of order to despatch (for items ‘manufactured on
+     * demand’ or ‘only to order’). Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -278,8 +278,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and non-repeating.
      * </p>
      * <p>
-     * Note that orders do not <em>have</em> to be aligned with multiples of the pack size, but such orders may be more
-     * convenient to handle.
+     * Note that orders do not <em>have</em> to be aligned with multiples of the pack quantity, but such orders may be
+     * more convenient to handle.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -329,7 +329,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * price.
      * </p>
      * <p>
-     * Use here in preference to P.26.70a when the product is available <em>only</em> under free of charge or unpriced
+     * Use here in preference to P.26.70b when the product is available <em>only</em> under free of charge or unpriced
      * terms from the supplier.
      * </p>
      * Jonix-Comment: this field is optional
@@ -489,7 +489,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * terms of trade and the group of end customers it is applicable to, any relevant price conditions, periods of
      * time, currency and territory <i>etc</i>, so that the data recipient can clearly select the correct pricing
      * option. If, under a particular combination, the product is free of charge or its price is not yet set, an
-     * &lt;UnpricedItemType&gt; element (P.26.70a) must be used in place of a &lt;PriceAmount&gt;. Each pricing option
+     * &lt;UnpricedItemType&gt; element (P.26.70b) must be used in place of a &lt;PriceAmount&gt;. Each pricing option
      * may optionally be given an identifier for use in subsequent revenue reporting or for other internal purposes.
      * </p>
      * Jonix-Comment: this list may be empty

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.common.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -77,12 +78,12 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -104,8 +105,8 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -129,6 +130,10 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
                 case AudienceCodeTypeName.refname:
                 case AudienceCodeTypeName.shortname:
                     audienceCodeTypeName = new AudienceCodeTypeName(e);
+                    break;
+                case AudienceHeadingText.refname:
+                case AudienceHeadingText.shortname:
+                    audienceHeadingTexts = JPU.addToList(audienceHeadingTexts, new AudienceHeadingText(e));
                     break;
                 default:
                     break;
@@ -193,6 +198,26 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     public AudienceCodeTypeName audienceCodeTypeName() {
         _initialize();
         return audienceCodeTypeName;
+    }
+
+    private ListOfOnixElement<AudienceHeadingText, String> audienceHeadingTexts = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The text of an audience heading taken from the scheme specified in the &lt;AudienceCodeType&gt; element; or the
+     * text equivalent to the &lt;AudienceCode&gt; value, if both code and text are sent. Either &lt;AudienceCode&gt; or
+     * &lt;AudienceHeadingText&gt; or both must be present in each occurrence of the &lt;Audience&gt; composite.
+     * </p>
+     * <p>
+     * Optional, and repeatable if the text is sent in multiple languages. The <i>language</i> attribute is optional for
+     * a single instance of &lt;AudienceHeadingText&gt;, but must be included in each instance if
+     * &lt;AudienceHeadingText&gt; is repeated.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<AudienceHeadingText, String> audienceHeadingTexts() {
+        _initialize();
+        return audienceHeadingTexts;
     }
 
     @Override

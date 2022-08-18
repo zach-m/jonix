@@ -41,7 +41,7 @@ interface CodeList25 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist25">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist25">ONIX
  *      Codelist 25 in Reference Guide</a>
  */
 public enum IllustrationAndOtherContentTypes implements OnixCodelist, CodeList25 {
@@ -147,7 +147,14 @@ public enum IllustrationAndOtherContentTypes implements OnixCodelist, CodeList25
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Table_of_contents("30", "Table of contents");
+    Table_of_contents("30", "Table of contents"),
+
+    /**
+     * Geographical index. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Gazetteer("31", "Gazetteer");
 
     public final String code;
     public final String description;

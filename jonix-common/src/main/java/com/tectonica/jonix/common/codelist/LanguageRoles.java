@@ -41,7 +41,7 @@ interface CodeList22 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist22">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist22">ONIX
  *      Codelist 22 in Reference Guide</a>
  */
 public enum LanguageRoles implements OnixCodelist, CodeList22 {
@@ -92,10 +92,35 @@ public enum LanguageRoles implements OnixCodelist, CodeList22 {
         "Original language audio track in a multilingual product"),
 
     /**
-     * Use for the language of footnotes, endnotes, annotations or commentary, etc, where it is different from the
-     * language of the main text
+     * Use for the language of footnotes, endnotes, annotations or commentary, instructions or guidance for use etc,
+     * where it is different from the language of the main text
      */
     Language_of_notes("12", "Language of notes"),
+
+    /**
+     * Use for the language of any introductory text, prologue, etc, or epilogue, end matter, etc, where it is different
+     * from the language of the main text. For use on ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Language_of_introduction_end_matter("13", "Language of introduction / end matter"),
+
+    /**
+     * Eg for the book 'Ingles para latinos', English. For phrasebooks and language teaching and learning material.
+     * Wherever possible, the language should also be listed as the subject of the book. For use on ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Target_language_of_teaching_learning("14", "Target language of teaching / learning"),
+
+    /**
+     * Use of significant words, phrases, quotations or short passages from a language other than the main language of
+     * the text, as an integral part of the text. This does not include 'loanwords', academic Latin, etc. For use on
+     * ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Additional_vocabulary_text_in_this_language("15", "Additional vocabulary / text in this language"),
 
     /**
      * Language to which specified rights apply

@@ -36,7 +36,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Related product composite</h1>
+ * <h1>Related product composite (content item)</h1>
  * <p>
  * A group of data elements which together describe a product which has a specified relationship to a content item.
  * Optional and repeatable.
@@ -85,12 +85,12 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -112,8 +112,8 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

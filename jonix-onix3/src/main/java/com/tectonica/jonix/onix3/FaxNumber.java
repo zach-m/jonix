@@ -54,8 +54,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;FaxNumber&gt;+44
- * 20 8843 8744&lt;/FaxNumber&gt;</tt></td>
+ * <td><tt>&lt;FaxNumber&gt;+44 20 8843 8744&lt;/FaxNumber&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -94,12 +93,12 @@ public class FaxNumber implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -137,8 +136,8 @@ public class FaxNumber implements OnixElement<String>, Serializable {
     public FaxNumber(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsString(element);
     }

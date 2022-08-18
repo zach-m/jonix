@@ -32,9 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>Subject code</h1>
  * <p>
- * A subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element. Either
- * &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;Subject&gt;
- * composite. Non-repeating.
+ * A single subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element.
+ * Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
+ * &lt;Subject&gt; composite. Non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -90,12 +90,12 @@ public class SubjectCode implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -133,8 +133,8 @@ public class SubjectCode implements OnixElement<String>, Serializable {
     public SubjectCode(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsString(element);
     }

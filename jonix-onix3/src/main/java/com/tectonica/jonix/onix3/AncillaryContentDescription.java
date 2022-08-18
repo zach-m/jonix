@@ -64,8 +64,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x424 language=&quot;eng&quot;&gt;Full color
- * stickers&lt;/x424&gt;</tt></td>
+ * <td><tt>&lt;x424 language=&quot;eng&quot;&gt;Full color stickers&lt;/x424&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -95,12 +94,12 @@ public class AncillaryContentDescription implements OnixElement<String>, Seriali
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public Languages language;
 
@@ -143,8 +142,8 @@ public class AncillaryContentDescription implements OnixElement<String>, Seriali
     public AncillaryContentDescription(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 

@@ -38,7 +38,7 @@ interface CodeList164 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist164">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist164">ONIX
  *      Codelist 164 in Reference Guide</a>
  */
 public enum WorkRelations implements OnixCodelist, CodeList164 {
@@ -50,10 +50,10 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
 
     /**
      * Product X is or includes a manifestation of a work derived (directly) from related work Y in one or more of the
-     * ways specified in ISTC rules. (There is a relationship between a grandparent work Y and a prent work, and between
-     * that parent work and the product.) This relation type is intended to enable products with a common 'grandparent'
-     * work to be linked without specifying the precise nature of their derivation, and without necessarily assigning an
-     * identifier to the product's parent
+     * ways specified in ISTC rules. (There is a relationship between a grandparent work Y and a parent work Z, and
+     * between that parent work and the product.) This relation type is intended to enable products with a common
+     * 'grandparent' work to be linked without specifying the precise nature of their derivation, and without
+     * necessarily assigning an identifier to the product's parent
      */
     Derived_from("02", "Derived from"),
 

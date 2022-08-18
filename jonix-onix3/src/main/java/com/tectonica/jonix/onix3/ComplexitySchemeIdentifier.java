@@ -89,12 +89,12 @@ public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeI
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -124,8 +124,8 @@ public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeI
     public ComplexitySchemeIdentifier(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = ComplexitySchemeIdentifiers.byCode(JPU.getContentAsString(element));
     }

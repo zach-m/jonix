@@ -31,7 +31,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title element composite</h1>
+ * <h1>Title element composite (collection)</h1>
  * <p>
  * A group of data elements which together represent an element of a collection title. At least one title element is
  * mandatory in each occurrence of the &lt;TitleDetail&gt; composite. The composite is repeatable with different
@@ -96,12 +96,12 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -123,8 +123,8 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

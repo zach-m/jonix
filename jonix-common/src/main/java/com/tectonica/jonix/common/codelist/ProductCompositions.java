@@ -38,11 +38,19 @@ interface CodeList2 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist2">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist2">ONIX
  *      Codelist 2 in Reference Guide</a>
  */
 public enum ProductCompositions implements OnixCodelist, CodeList2 {
     Single_component_retail_product("00", "Single-component retail product"),
+
+    /**
+     * Used only when an ONIX record is required for a component-as-an-item, even though it is not currently available
+     * as such
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Single_component_not_available_separately("01", "Single-component, not available separately"),
 
     /**
      * Multiple-component product retailed as a whole

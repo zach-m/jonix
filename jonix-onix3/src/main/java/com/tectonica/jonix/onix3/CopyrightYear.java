@@ -60,8 +60,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b087
- * dateformat=&quot;11&quot;&gt;20032008&lt;/b087&gt;</tt> (2003-2008)</td>
+ * <td><tt>&lt;b087 dateformat=&quot;11&quot;&gt;20032008&lt;/b087&gt;</tt> (2003-2008)</td>
  * </tr>
  * </table>
  * <p/>
@@ -91,12 +90,12 @@ public class CopyrightYear implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public DateFormats dateformat;
 
@@ -137,8 +136,8 @@ public class CopyrightYear implements OnixElement<String>, Serializable {
     public CopyrightYear(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
         value = JPU.getContentAsString(element);

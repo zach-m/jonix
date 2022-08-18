@@ -55,7 +55,7 @@ import java.util.List;
  * terms of trade and the group of end customers it is applicable to, any relevant price conditions, periods of time,
  * currency and territory <i>etc</i>, so that the data recipient can clearly select the correct pricing option. If,
  * under a particular combination, the product is free of charge or its price is not yet set, an
- * &lt;UnpricedItemType&gt; element (P.26.70a) must be used in place of a &lt;PriceAmount&gt;. Each pricing option may
+ * &lt;UnpricedItemType&gt; element (P.26.70b) must be used in place of a &lt;PriceAmount&gt;. Each pricing option may
  * optionally be given an identifier for use in subsequent revenue reporting or for other internal purposes.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -101,12 +101,12 @@ public class Price implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -128,8 +128,8 @@ public class Price implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -623,7 +623,8 @@ public class Price implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A repeatable group of data elements which together specify a batch bonus, <i>ie</i> a quantity of free copies
-     * which are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.
+     * which are supplied (typically to a reseller) with a certain order quantity. The &lt;BatchBonus&gt; composite is
+     * optional.
      * </p>
      * Jonix-Comment: this list may be empty
      */

@@ -32,8 +32,8 @@ import java.io.Serializable;
 /**
  * <h1>Sender contact name</h1>
  * <p>
- * Free text giving the name, department, phone number, <i>etc</i> for a contact person in the sender organization who
- * is responsible for the content of the message. Optional and non-repeating.
+ * Free text giving the name, department, <i>etc</i> for a contact person in the sender organization who is responsible
+ * for the content of the message. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -54,8 +54,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x299&gt;Jackie
- * Brown, tel. +44 20 7946 0921&lt;/x299&gt;</tt></td>
+ * <td><tt>&lt;x299&gt;Jackie Brown&lt;/x299&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -94,12 +93,12 @@ public class ContactName implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -137,8 +136,8 @@ public class ContactName implements OnixElement<String>, Serializable {
     public ContactName(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsString(element);
     }

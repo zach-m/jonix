@@ -41,7 +41,7 @@ interface CodeList9 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist9">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
@@ -52,12 +52,14 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     WCO_Harmonized_System("01", "WCO Harmonized System"),
 
     /**
-     * UN Standard Product and Service Classification. Use 8 (or occasionally 10) digits, without punctuation
+     * UN Standard Product and Service Classification, including national versions adopted without any additions or
+     * changes to the codes or their meaning. Use 8 (or occasionally 10) digits, without punctuation
      */
     UNSPSC("02", "UNSPSC"),
 
     /**
-     * UK Revenue and Customs classifications, based on the Harmonized System
+     * UK Revenue and Customs classifications, based on the Harmonized System (8 or 10 digits, without punctuation, for
+     * export and import respectively)
      */
     HMRC("03", "HMRC"),
 
@@ -114,6 +116,30 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * Jonix-Comment: Introduced in Onix3
      */
     PKWiU("12", "PKWiU"),
+
+    /**
+     * US HTS (or HTSA) commodity codes for import of goods into USA (10 digits, without punctuation). For use in ONIX
+     * 3.0 only. See https://hts.usitc.gov/current
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    HTSUS("13", "HTSUS"),
+
+    /**
+     * US Schedule B commodity codes for export from USA (10 digits, without punctuation). For use in ONIX 3.0 only. See
+     * http://uscensus.prod.3ceonline.com
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    US_Schedule_B("14", "US Schedule B"),
+
+    /**
+     * Mexican SAT classification, based on UN SPSC with later modifications (8 digits, without punctuation). See
+     * https://www.sat.gob.mx/consultas/53693/catalogo-de-productos-y-servicios
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Clave_SAT("15", "Clave SAT"),
 
     /**
      * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)

@@ -63,6 +63,8 @@ import java.util.List;
  * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link CollateralDetail}&gt;</li>
  * <li>&lt;{@link Reissue}&gt;</li>
+ * <li>&lt;{@link EventOccurrence}&gt;</li>
+ * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
@@ -71,6 +73,10 @@ import java.util.List;
  * {@link SupportingResource}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link SupportingResource}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link SupportingResource}</li>
  * </ul>
  */
@@ -89,12 +95,12 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -116,8 +122,8 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

@@ -59,7 +59,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b274&gt;02&lt;/b063&gt;</tt> (UNSPSC)</td>
+ * <td><tt>&lt;b274&gt;02&lt;/b274&gt;</tt> (UNSPSC)</td>
  * </tr>
  * </table>
  * <p/>
@@ -89,12 +89,12 @@ public class ProductClassificationType implements OnixElement<ProductClassificat
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -124,8 +124,8 @@ public class ProductClassificationType implements OnixElement<ProductClassificat
     public ProductClassificationType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = ProductClassificationTypes.byCode(JPU.getContentAsString(element));
     }

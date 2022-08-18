@@ -47,7 +47,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;543&gt;</tt></td>
+ * <td><tt>&lt;x543&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
@@ -87,12 +87,12 @@ public class EndTime implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -130,8 +130,8 @@ public class EndTime implements OnixElement<String>, Serializable {
     public EndTime(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsString(element);
     }

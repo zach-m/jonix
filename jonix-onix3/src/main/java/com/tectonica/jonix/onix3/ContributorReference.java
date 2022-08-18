@@ -35,7 +35,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Contributor by reference</h1>
+ * <h1>Contributor by reference composite</h1>
  * <p>
  * Optional composite that identifies a contributor – a person or corporate body – participating in the promotional
  * event <em>who is also a contributor to the product, or who is its subject</em> (<i>ie</i> who is fully described in
@@ -90,12 +90,12 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -117,8 +117,8 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

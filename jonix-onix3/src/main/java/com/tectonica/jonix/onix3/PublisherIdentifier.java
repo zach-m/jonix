@@ -35,7 +35,7 @@ import java.io.Serializable;
  * <h1>Publisher identifier composite</h1>
  * <p>
  * An optional group of data elements which together define the identifier of a publisher name. Optional, but mandatory
- * if the &lt;Publisher&gt; composite does not carry a &lt;PublisherName&gt;. The composite it repeatable in order to
+ * if the &lt;Publisher&gt; composite does not carry a &lt;PublisherName&gt;. The composite is repeatable in order to
  * specify multiple identifiers for the same publisher.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -80,12 +80,12 @@ public class PublisherIdentifier
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -107,8 +107,8 @@ public class PublisherIdentifier
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

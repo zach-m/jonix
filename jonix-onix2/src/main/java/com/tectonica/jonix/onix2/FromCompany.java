@@ -58,8 +58,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;FromCompany&gt;HarperCollins
- * London&lt;/FromCompany&gt;</tt></td>
+ * <td><tt>&lt;FromCompany&gt;HarperCollins London&lt;/FromCompany&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

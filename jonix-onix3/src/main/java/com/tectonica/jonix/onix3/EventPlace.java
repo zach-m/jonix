@@ -60,8 +60,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;EventPlace&gt;Aix-les-Bains,
- * France&lt;/EventPlace&gt;</tt></td>
+ * <td><tt>&lt;EventPlace&gt;Aix-les-Bains, France&lt;/EventPlace&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -92,12 +91,12 @@ public class EventPlace implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public Languages language;
 
@@ -137,8 +136,8 @@ public class EventPlace implements OnixElement<String>, Serializable {
     public EventPlace(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);

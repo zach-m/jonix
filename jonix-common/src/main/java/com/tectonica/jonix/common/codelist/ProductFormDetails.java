@@ -41,7 +41,7 @@ interface CodeList175 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -95,6 +95,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Apple Lossless Audio Codec
      */
     ALAC("A112", "ALAC"),
+
+    /**
+     * Audiobook package format
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    W3C_Audiobook_format("A113", "W3C Audiobook format"),
 
     /**
      * Deprecated, as does not meet DAISY 2 standard. Use conventional audiobook codes instead
@@ -180,10 +187,43 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Background_music("A311", "Background music"),
 
     /**
+     * Constant or average bit rate (eg of an mp3 or AAC audio file) 64kbits/second or more. Note the bit rate is the
+     * total across all channels, not a per channel rate
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _64kbits_s("A400", "64kbits/s"),
+
+    /**
+     * Constant or average bit rate 128bbits/second or more
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _128kbits_s("A401", "128kbits/s"),
+
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _192kbits_s("A402", "192kbits/s"),
+
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _256kbits_s("A403", "256kbits/s"),
+
+    /**
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _320kbits_s("A404", "320kbits/s"),
+
+    /**
      * Includes 'stereo' where channels are identical
      */
     Mono("A410", "Mono"),
 
+    /**
+     * Includes 'joint stereo'
+     */
     Stereo("A420", "Stereo"),
 
     /**
@@ -222,20 +262,20 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Digest_format_paperback("B103", "Digest format paperback"),
 
     /**
-     * In UK, a category of paperback characterized by page size (normally 178 x 111 mm approx); use with Product Form
-     * code BC
+     * In UK and IE, a category of paperback characterized by page size (normally 178 x 111 mm approx); use with Product
+     * Form code BC
      */
     A_format_paperback("B104", "A-format paperback"),
 
     /**
-     * In UK, a category of paperback characterized by page size (normally 198 x 129 mm approx); use with Product Form
-     * code BC
+     * In UK and IE, a category of paperback characterized by page size (normally 198 x 129 mm approx); use with Product
+     * Form code BC
      */
     B_format_paperback("B105", "B-format paperback"),
 
     /**
-     * In UK, a category of paperback characterized largely by size (usually in traditional hardback dimensions), and
-     * often used for paperback originals or retailer/travel/export-exclusives; use with Product Form code BC
+     * In UK and IE, a category of paperback characterized largely by size (usually in traditional hardback dimensions),
+     * and often used for paperback originals or retailer/travel/export-exclusives; use with Product Form code BC
      */
     Trade_paperback_UK("B106", "Trade paperback (UK)"),
 
@@ -388,6 +428,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      */
     A5("B134", "A5"),
 
+    /**
+     * In North America, a category of paperback characterized partly by page size (typically 7&#8539; x 4&#190; inches)
+     * and partly by target market and terms of trade. Use with Product Form code BC
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Mass_market_max_paperback("B135", "Mass market max paperback"),
+
     Coloring_join_the_dot_book("B201", "Coloring / join-the-dot book"),
 
     Lift_the_flap_book("B202", "Lift-the-flap book"),
@@ -462,19 +510,20 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Pull_the_tab_book("B223", "Pull-the-tab book"),
 
     /**
-     * Use with Product Form code BD
+     * Use with Product Form code BD, BN or PM
      */
-    Loose_leaf_sheets_and_binder("B301", "Loose leaf – sheets and binder"),
+    Loose_leaf_or_partwork_sheets_parts_and_binder_wallet("B301",
+        "Loose leaf or partwork – sheets / parts and binder / wallet"),
 
     /**
-     * Use with Product Form code BD
+     * Use with Product Form code BD, BN or PM
      */
-    Loose_leaf_binder_only("B302", "Loose leaf – binder only"),
+    Loose_leaf_or_partwork_binder_wallet_only("B302", "Loose leaf or partwork – binder / wallet only"),
 
     /**
-     * Use with Product Form code BD
+     * Use with Product Form code BD, BN or PM
      */
-    Loose_leaf_sheets_only("B303", "Loose leaf – sheets only"),
+    Loose_leaf_or_partwork_sheets_parts_only("B303", "Loose leaf or partwork – sheets / parts only"),
 
     /**
      * AKA stitched; for 'saddle-sewn', see code B310
@@ -552,6 +601,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Notched_binding("B317", "Notched binding"),
 
     /**
+     * Hardcover or softcover where interior spreads lay flat across the spine
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Lay_flat_binding("B318", "Lay-flat binding"),
+
+    /**
      * Covers do not use a distinctive stock, but are the same as the body pages
      */
     Self_covered("B400", "Self-covered"),
@@ -613,13 +669,20 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      */
     Flexible_plastic_vinyl_cover("B412", "Flexible plastic/vinyl cover"),
 
+    /**
+     * Separate outer plastic cover, often transparent and allowing the cover to show through. Typically has pockets
+     * into which the cover tucks. See also B412, where the cover itself is plastic or vinyl
+     */
     Plastic_covered("B413", "Plastic-covered"),
 
+    /**
+     * Separate outer vinyl cover. See also B412, where the cover itself is plastic or vinyl
+     */
     Vinyl_covered("B414", "Vinyl-covered"),
 
     /**
-     * Book, laminating material unspecified: use L101 for 'whole product laminated', eg a laminated sheet map or
-     * wallchart
+     * Book, laminating material unspecified, often termed PLC or PPC (printed laminated case, printed paper case) when
+     * used with Product form BB. Use L101 for 'whole product laminated', eg a laminated sheet map or wallchart
      */
     Laminated_cover("B415", "Laminated cover"),
 
@@ -634,6 +697,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     Duplex_printed_cover("B417", "Duplex-printed cover"),
+
+    /**
+     * Cover or jacket finish may merit special handling or packaging during distribution and fulfilment, for example
+     * because of gloss varnish which may hold fingerprints or matt laminate liable to scuffing
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Delicate_cover_jacket_finish("B420", "Delicate cover / jacket finish"),
 
     /**
      * Type unspecified
@@ -728,6 +799,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     With_dust_jacket_poster("B519", "With dust jacket poster"),
+
+    /**
+     * Usually die-cut rounding to foredge corners of cover (and/or to foredge page corners). See B212 for elaborate
+     * die-cutting
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Rounded_corners("B520", "Rounded corners"),
 
     /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
@@ -838,7 +917,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Windows_Mobile("D207", "Windows Mobile"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DB or DI as applicable
      */
     Microsoft_XBox("D301", "Microsoft XBox"),
 
@@ -883,63 +962,63 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Sega_Saturn("D309", "Sega Saturn"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DB as applicable
      */
     Sony_PlayStation_1("D310", "Sony PlayStation 1"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DB or DI as applicable
      */
     Sony_PlayStation_2("D311", "Sony PlayStation 2"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DE as applicable
      */
     Nintendo_Dual_Screen("D312", "Nintendo Dual Screen"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DB, DI, DO or E* as applicable
      */
     Sony_PlayStation_3("D313", "Sony PlayStation 3"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DB, DI or VN as applicable
      */
-    Xbox_360("D314", "Xbox 360"),
+    Microsoft_Xbox_360("D314", "Microsoft Xbox 360"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DA or E* as applicable
      */
     Nintendo_Wii("D315", "Nintendo Wii"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DL or VL as applicable
      */
     Sony_PlayStation_Portable_PSP("D316", "Sony PlayStation Portable (PSP)"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DB, DI, DO or E* as applicable. DEPRECATED
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Sony_PlayStation_3_("D317", "Sony PlayStation 3"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DB, DI, DO or E* as applicable
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Sony_PlayStation_4("D318", "Sony PlayStation 4"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DA or E* as applicable
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Sony_PlayStation_Vita("D319", "Sony PlayStation Vita"),
 
     /**
-     * Use with Product Form code DE or DB as applicable
+     * Use with Product Form code DB, DI, DO or E* as applicable
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -958,6 +1037,20 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     Nintendo_Wii_U("D322", "Nintendo Wii U"),
+
+    /**
+     * Use with Product Form code DB, DI, DO or E* as applicable
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sony_PlayStation_5("D323", "Sony PlayStation 5"),
+
+    /**
+     * Use with Product Form code DB, DI, DO or E* as applicable
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Microsoft_Xbox_Series_X_S("D324", "Microsoft Xbox Series X / S"),
 
     /**
      * No code allocated for this e-publication format yet
@@ -1201,7 +1294,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Page_Perfect("E145", "Page Perfect"),
 
     /**
-     * Electronic Braille file
+     * (Braille-ready file) Electronic Braille file
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1221,6 +1314,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     Amazon_Kindle_Print_Replica("E148", "Amazon Kindle Print Replica"),
+
+    /**
+     * Format for comic books, consisting primarily of sequentially-named PNG or JPEG images in a zip container
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Comic_Book_Archive("E149", "Comic Book Archive"),
 
     /**
      * Use this and/or code E201 when a particular e-publication type (specified using codes E100 and upwards) has both
@@ -1263,33 +1363,58 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Portrait("E211", "Portrait"),
 
     /**
-     * Use for fixed-format e-books optimised for displays with a 5:4 aspect ratio (eg 1280x1024 pixels etc, assuming
-     * square pixels). Note that aspect ratio codes are NOT specific to actual screen dimensions or pixel counts, but to
-     * the ratios between two dimensions or two pixel counts
+     * Use for fixed-format e-books optimised for a square display.
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Square("E212", "Square"),
+
+    /**
+     * (1.25:1) Use for fixed-format e-books optimised for displays with a 5:4 aspect ratio (eg 1280x1024 pixels etc,
+     * assuming square pixels). Note that aspect ratio codes are NOT specific to actual screen dimensions or pixel
+     * counts, but to the ratios between two dimensions or two pixel counts
      */
     _5_4("E221", "5:4"),
 
     /**
-     * Use for fixed-format e-books optimised for displays with a 4:3 aspect ratio (eg 800x600, 1024x768, 2048x1536
-     * pixels etc)
+     * (1.33:1) Use for fixed-format e-books optimised for displays with a 4:3 aspect ratio (eg 800x600, 1024x768,
+     * 2048x1536 pixels etc)
      */
     _4_3("E222", "4:3"),
 
     /**
-     * Use for fixed-format e-books optimised for displays with a 3:2 aspect ratio (eg 960x640, 3072x2048 pixels etc)
+     * (1.5:1) Use for fixed-format e-books optimised for displays with a 3:2 aspect ratio (eg 960x640, 3072x2048 pixels
+     * etc)
      */
     _3_2("E223", "3:2"),
 
     /**
-     * Use for fixed-format e-books optimised for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600 pixels etc)
+     * (1.6:1) Use for fixed-format e-books optimised for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600
+     * pixels etc)
      */
     _16_10("E224", "16:10"),
 
     /**
-     * Use for fixed-format e-books optimised for displays with a 16:9 aspect ratio (eg 1024x576, 1920x1080, 2048x1152
-     * pixels etc)
+     * (1.77:1) Use for fixed-format e-books optimised for displays with a 16:9 aspect ratio (eg 1024x576, 1920x1080,
+     * 2048x1152 pixels etc)
      */
     _16_9("E225", "16:9"),
+
+    /**
+     * (2:1) Use for fixed-format e-books optimised for displays with an 18:9 aspect ratio (eg 2160x1080, 2880x1440
+     * pixels etc)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _18_9("E226", "18:9"),
+
+    /**
+     * (2.37:1) Use for fixed-format e-books optimised for displays with an 21:9 (or 64:27) aspect ratio (eg 3840x1644
+     * pixels etc)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _21_9("E227", "21:9"),
 
     /**
      * Whole product laminated (eg laminated map, fold-out chart, wallchart, etc): use B415 for book with laminated
@@ -1318,7 +1443,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Day_by_day_calendar("P104", "Day by day calendar"),
 
     /**
-     * Large single-sheet calendar intended for hanging. Use with Product Form code PC
+     * Large single-sheet calendar intended for hanging. Use with Product Form code PC or PK
      */
     Poster_calendar("P105", "Poster calendar"),
 
@@ -1377,9 +1502,70 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Family_planner("P115", "Family planner"),
 
     /**
+     * Calendar sheets detachable (usually perforated) and intended for mailing as postcards. Use with Product Form code
+     * PC
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Postcard_calendar("P116", "Postcard calendar"),
+
+    /**
      * Kamishibai / Cantastoria cards
      */
     Picture_story_cards("P120", "Picture story cards"),
+
+    /**
+     * For use to specify letter, word, image (etc) recognition cards for teaching reading or other classroom use. Use
+     * with Product form code PD
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Flash_cards("P121", "Flash cards"),
+
+    /**
+     * Quick reference cards, revision cards, recipe cards etc. Use with Product form code PD
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Reference_cards("P122", "Reference cards"),
+
+    /**
+     * For use to specify cards and card decks for gaming, collecting and trading etc. Use also for divination cards.
+     * Use with Product form codes PD
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Recreation_cards("P123", "Recreation cards"),
+
+    /**
+     * And postcard packs / books. Use with Product form code PJ
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Postcards("P124", "Postcards"),
+
+    /**
+     * And greeting card packs. Use with Product form code PJ
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Greeting_cards("P125", "Greeting cards"),
+
+    /**
+     * Physical cards which carry an intrinsic value, or which are intended to have value added to them, that may be
+     * redeemed later. For example book token cards, gift cards. Note value additions and redemption may be in a
+     * physical store or online
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Gift_cards("P126", "Gift cards"),
+
+    /**
+     * Blank certificate, award or achievement cards. Use with Product form code PD
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Certificate_cards("P127", "Certificate cards"),
 
     /**
      * Stationery item in hardback book format
@@ -1405,6 +1591,21 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * For wall map, poster, wallchart etc
      */
     With_hanging_strips("P301", "With hanging strips"),
+
+    /**
+     * Content is printed single-sided (for wallcharts and hanging maps, calendars, etc)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Single_sided("P305", "Single-sided"),
+
+    /**
+     * Content is printed double-sided (for wallcharts and hanging maps, calendars, etc, where double-sided may not
+     * always be expected)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Double_sided("P306", "Double-sided"),
 
     /**
      * SD TV standard for video or DVD
@@ -1450,7 +1651,57 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Licensed for use in education
      */
-    Classroom_use("V221", "Classroom use");
+    Classroom_use("V221", "Classroom use"),
+
+    /**
+     * Primary material composition (eg of kit or puzzle pieces, of gameplay tokens or tiles) is wood or has wooden
+     * pieces/parts
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Wooden("Z101", "Wooden"),
+
+    /**
+     * Plastic or plastic pieces/parts
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Plastic("Z102", "Plastic"),
+
+    /**
+     * Card or board pieces/parts
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Board("Z103", "Board"),
+
+    /**
+     * Puzzle assembles into a 3D object
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _3D_puzzle("Z111", "3D puzzle"),
+
+    /**
+     * Toy makes a noise. See B208 for noisy books
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Noisy_kit_puzzle_toy("Z112", "Noisy kit / puzzle / toy"),
+
+    /**
+     * Including finger / hand puppets, marionettes
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Puppet("Z113", "Puppet"),
+
+    /**
+     * Designed and sized for the very young, or those with visual impairments, limited motor skills, dementia etc
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Extra_large_pieces("Z121", "Extra large pieces");
 
     public final String code;
     public final String description;

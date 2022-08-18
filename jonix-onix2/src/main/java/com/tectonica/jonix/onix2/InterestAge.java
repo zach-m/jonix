@@ -60,8 +60,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;InterestAge&gt;from
- * 9 to 12&lt;/InterestAge&gt;</tt></td>
+ * <td><tt>&lt;InterestAge&gt;from 9 to 12&lt;/InterestAge&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

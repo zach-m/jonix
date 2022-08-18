@@ -59,7 +59,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ReturnsCodeType&gt;01&lt;/ReturnsCodeType&gt;</tt> (CLIL French book trade returns conditions code)</td>
+ * <td><tt>&lt;ReturnsCodeType&gt;01&lt;/ReturnsCodeType&gt;</tt> (CLIL French book trade returns code)</td>
  * </tr>
  * </table>
  * <p/>
@@ -89,12 +89,12 @@ public class ReturnsCodeType implements OnixElement<ReturnsConditionsCodeTypes>,
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -124,8 +124,8 @@ public class ReturnsCodeType implements OnixElement<ReturnsConditionsCodeTypes>,
     public ReturnsCodeType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = ReturnsConditionsCodeTypes.byCode(JPU.getContentAsString(element));
     }

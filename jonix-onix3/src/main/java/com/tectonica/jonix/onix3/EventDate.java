@@ -60,8 +60,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;EventDate
- * dateformat=&quot;06&quot;&gt;2015113020151215&lt;/EventDate&gt;</tt> (30 November-15 December 2015)</td>
+ * <td><tt>&lt;EventDate dateformat=&quot;06&quot;&gt;2015113020151215&lt;/EventDate&gt;</tt> (30 November-15 December
+ * 2015)</td>
  * </tr>
  * </table>
  * <p/>
@@ -92,12 +92,12 @@ public class EventDate implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public DateFormats dateformat;
 
@@ -139,8 +139,8 @@ public class EventDate implements OnixElement<String>, Serializable {
     public EventDate(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
         value = JPU.getContentAsString(element);

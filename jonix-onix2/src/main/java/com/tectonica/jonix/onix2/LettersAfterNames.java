@@ -54,8 +54,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b042&gt;MB
- * FRCS&lt;/b042&gt;</tt></td>
+ * <td><tt>&lt;b042&gt;MB FRCS&lt;/b042&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

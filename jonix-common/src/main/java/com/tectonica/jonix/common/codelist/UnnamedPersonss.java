@@ -41,7 +41,7 @@ interface CodeList19 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist19">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
@@ -65,17 +65,17 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
     /**
      * Use with Contributor role code E07 'read by', eg for audio books
      */
-    Synthesized_voice_male("05", "Synthesized voice – male"),
+    Synthesised_voice_male("05", "Synthesised voice – male"),
 
     /**
      * Use with Contributor role code E07 'read by', eg for audio books
      */
-    Synthesized_voice_female("06", "Synthesized voice – female"),
+    Synthesised_voice_female("06", "Synthesised voice – female"),
 
     /**
      * Use with Contributor role code E07 'read by', eg for audio books
      */
-    Synthesized_voice_unspecified("07", "Synthesized voice – unspecified"),
+    Synthesised_voice_unspecified("07", "Synthesised voice – unspecified"),
 
     /**
      * Use with Contributor role code E07 'read by', eg for audio books, and provide name of voice actor in

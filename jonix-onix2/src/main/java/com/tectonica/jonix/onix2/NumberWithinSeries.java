@@ -53,8 +53,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;NumberWithinSeries&gt;Volume
- * 14&lt;/NumberWithinSeries&gt;</tt></td>
+ * <td><tt>&lt;NumberWithinSeries&gt;Volume 14&lt;/NumberWithinSeries&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

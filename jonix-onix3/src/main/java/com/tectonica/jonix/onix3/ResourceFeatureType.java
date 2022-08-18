@@ -76,6 +76,10 @@ import java.io.Serializable;
  * {@link ResourceFeature} ⯈ {@link ResourceFeatureType}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
  * {@link SupportingResource} ⯈ {@link ResourceFeature} ⯈ {@link ResourceFeatureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link ResourceFeature} ⯈ {@link ResourceFeatureType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceFeature} ⯈ {@link ResourceFeatureType}</li>
  * </ul>
  */
 public class ResourceFeatureType implements OnixElement<ResourceFeatureTypes>, Serializable {
@@ -93,12 +97,12 @@ public class ResourceFeatureType implements OnixElement<ResourceFeatureTypes>, S
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -128,8 +132,8 @@ public class ResourceFeatureType implements OnixElement<ResourceFeatureTypes>, S
     public ResourceFeatureType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = ResourceFeatureTypes.byCode(JPU.getContentAsString(element));
     }

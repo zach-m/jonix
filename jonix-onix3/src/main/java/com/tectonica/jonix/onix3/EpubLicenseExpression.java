@@ -32,7 +32,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Digital product license expression</h1>
+ * <h1>Digital product license expression composite</h1>
  * <p>
  * An optional composite that carries details of a link to an expression of the license terms, which may be in
  * human-readable or machine-readable form. Repeatable when there is more than one expression of the license.
@@ -85,12 +85,12 @@ public class EpubLicenseExpression
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -112,8 +112,8 @@ public class EpubLicenseExpression
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

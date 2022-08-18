@@ -41,7 +41,7 @@ interface CodeList91 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist91">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist91">ONIX
  *      Codelist 91 in Reference Guide</a>
  */
 public enum Countrys implements OnixCodelist, CodeList91 {
@@ -517,7 +517,10 @@ public enum Countrys implements OnixCodelist, CodeList91 {
 
     Tonga("TO", "Tonga"),
 
-    Turkey("TR", "Turkey"),
+    /**
+     * Formerly known as Turkey
+     */
+    T_rkiye("TR", "Türkiye"),
 
     Trinidad_and_Tobago("TT", "Trinidad and Tobago"),
 

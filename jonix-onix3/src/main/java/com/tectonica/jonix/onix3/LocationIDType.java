@@ -89,12 +89,12 @@ public class LocationIDType implements OnixElement<SupplierIdentifierTypes>, Ser
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -124,8 +124,8 @@ public class LocationIDType implements OnixElement<SupplierIdentifierTypes>, Ser
     public LocationIDType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = SupplierIdentifierTypes.byCode(JPU.getContentAsString(element));
     }

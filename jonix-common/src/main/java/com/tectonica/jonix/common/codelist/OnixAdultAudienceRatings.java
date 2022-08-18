@@ -41,7 +41,7 @@ interface CodeList203 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist203">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist203">ONIX
  *      Codelist 203 in Reference Guide</a>
  */
 public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
@@ -78,10 +78,25 @@ public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
     Content_warning_language("06", "Content warning (language)"),
 
     /**
-     * The publisher warns the product includes content involving intolerance or abuse of particular groups (eg
-     * religious, ethnic, racial, social)
+     * The publisher warns the product includes content involving severe intolerance or abuse of particular groups (eg
+     * religious, ethnic, racial, gendered and other social groups)
      */
-    Content_warning_intolerance("07", "Content warning (intolerance)");
+    Content_warning_intolerance("07", "Content warning (intolerance)"),
+
+    /**
+     * The publisher warns the product includes content involving sexual or extreme domestic abuse (including both
+     * mental and physical abuse)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Content_warning_abuse("08", "Content warning (abuse)"),
+
+    /**
+     * The publisher warns the product includes content involving severe self-harm (including serious eating disorders)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Content_warning_self_harm("09", "Content warning (self-harm)");
 
     public final String code;
     public final String description;

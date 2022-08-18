@@ -38,7 +38,7 @@ interface CodeList61 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist61">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist61">ONIX
  *      Codelist 61 in Reference Guide</a>
  */
 public enum PriceStatuss implements OnixCodelist, CodeList61 {
@@ -49,7 +49,7 @@ public enum PriceStatuss implements OnixCodelist, CodeList61 {
 
     Provisional("01", "Provisional"),
 
-    Firm("02", "Firm");
+    Confirmed("02", "Confirmed");
 
     public final String code;
     public final String description;

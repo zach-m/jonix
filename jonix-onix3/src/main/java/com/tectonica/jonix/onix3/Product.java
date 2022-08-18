@@ -93,12 +93,12 @@ public class Product implements OnixProduct, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -120,8 +120,8 @@ public class Product implements OnixProduct, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -177,6 +177,10 @@ public class Product implements OnixProduct, Serializable {
                 case RelatedMaterial.refname:
                 case RelatedMaterial.shortname:
                     relatedMaterial = new RelatedMaterial(e);
+                    break;
+                case ProductionDetail.refname:
+                case ProductionDetail.shortname:
+                    productionDetail = new ProductionDetail(e);
                     break;
                 case DeletionText.refname:
                 case DeletionText.shortname:
@@ -379,7 +383,7 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * The content detail block comprises the single data Group&nbsp;P.18. The block as a whole is non-repeating. It is
+     * The Content detail block comprises the single data Group&nbsp;P.18. The block as a whole is non-repeating. It is
      * not mandatory within the &lt;Product&gt; record, and is used only when there is a requirement to describe
      * individual chapters or parts within a product in a fully structured way. The more usual ONIX practice is to send
      * a table of contents as text, possibly in XHTML, in Group&nbsp;P.14.
@@ -430,6 +434,29 @@ public class Product implements OnixProduct, Serializable {
     public RelatedMaterial relatedMaterial() {
         _initialize();
         return relatedMaterial;
+    }
+
+    private ProductionDetail productionDetail = ProductionDetail.EMPTY;
+
+    /**
+     * <p>
+     * The Production detail block comprises the single data Group P.28. The block as a whole is non-repeating. It is
+     * optional within the &lt;Product&gt; record, and is used only when there is a requirement to communicate
+     * specification and file manifest detail relating to intermediary services within the supply chain, for example
+     * manufacturing on demand, e-book conversion services or distribution of digital audio. It is not expected to be
+     * present in most ONIX messages – though recipients not requiring the data should be able to ignore the entire
+     * block if it is supplied.
+     * </p>
+     * <p>
+     * When used, the block should normally contain at least one instance of &lt;ProductionManifest&gt;. It may be empty
+     * only within a partial or ‘block update’ (Notification or update type 04, see P.1.2), when the intention is to
+     * remove all previously-supplied manifest detail.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public ProductionDetail productionDetail() {
+        _initialize();
+        return productionDetail;
     }
 
     private ListOfOnixElement<DeletionText, String> deletionTexts = ListOfOnixElement.empty();

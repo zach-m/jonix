@@ -41,7 +41,7 @@ interface CodeList83 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist83">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist83">ONIX
  *      Codelist 83 in Reference Guide</a>
  */
 public enum BibleVersions implements OnixCodelist, CodeList83 {
@@ -356,7 +356,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     /**
      * A Spanish translation from the original Greek and Hebrew, sponsored by Tyndale House
      */
-    Nueva_Traduccion_Vivienta("NTV", "Nueva Traduccion Vivienta"),
+    Nueva_Traducci_n_Viviente("NTV", "Nueva Traducción Viviente"),
 
     /**
      * Nuovissima version - a Catholic-oriented translation in modern Italian, edited by a group including Carlo

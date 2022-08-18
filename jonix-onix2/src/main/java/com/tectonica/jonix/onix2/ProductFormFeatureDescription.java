@@ -55,8 +55,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b336&gt;11pt
- * Helvetia&lt;/b336&gt;</tt></td>
+ * <td><tt>&lt;b336&gt;11pt Helvetia&lt;/b336&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

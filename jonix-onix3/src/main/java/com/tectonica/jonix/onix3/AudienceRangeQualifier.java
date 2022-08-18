@@ -90,12 +90,12 @@ public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifie
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -125,8 +125,8 @@ public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifie
     public AudienceRangeQualifier(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = AudienceRangeQualifiers.byCode(JPU.getContentAsString(element));
     }

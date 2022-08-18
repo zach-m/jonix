@@ -54,8 +54,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b280&gt;Screen optimized PDF, with low-res
- * figures&lt;/b280&gt;</tt></td>
+ * <td><tt>&lt;b280&gt;Screen optimized PDF, with low-res figures&lt;/b280&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -63,9 +63,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;BiographicalNote&gt;Umberto Eco, professor
- * of semiotics at the University of Bologna, and author of &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's
- * Pendulum&#8221;, is one of the world's bestselling novelists.&lt;/BiographicalNote&gt;</tt></td>
+ * <td><tt>&lt;BiographicalNote&gt;Umberto Eco, professor of semiotics at the University of Bologna, and author of &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's Pendulum&#8221;, is one of the world's bestselling novelists.&lt;/BiographicalNote&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

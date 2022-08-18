@@ -41,14 +41,22 @@ interface CodeList145 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist145">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist145">ONIX
  *      Codelist 145 in Reference Guide</a>
  */
 public enum UsageTypes implements OnixCodelist, CodeList145 {
     /**
-     * Preview before purchase. Allows a retail customer, account holder or patron to view a proportion of the book
-     * before purchase. Also applies to borrowers making use of 'acquisition on demand' models in libraries, and to
-     * 'subscription' models where the purchase is made on behalf of the reader
+     * Allows positive indication that there are no particular constraints (that can be specifed in
+     * &lt;EpubUsageConstraint&gt;). By convention, use 01 in &lt;EpubUsageStatus&gt;
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    No_constraints("00", "No constraints"),
+
+    /**
+     * Preview before purchase. Allows a retail customer, account holder or patron to view or listen to a proportion of
+     * the book before purchase. Also applies to borrowers making use of 'acquisition on demand' models in libraries,
+     * and to 'subscription' models where the purchase is made on behalf of the reader
      */
     Preview("01", "Preview"),
 

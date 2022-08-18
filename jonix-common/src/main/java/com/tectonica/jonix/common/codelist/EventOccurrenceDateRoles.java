@@ -40,12 +40,18 @@ interface CodeList247 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist247">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist247">ONIX
  *      Codelist 247 in Reference Guide</a>
  */
 public enum EventOccurrenceDateRoles implements OnixCodelist, CodeList247 {
+    /**
+     * Date and (with the default dateformat) time the event occurrence begins
+     */
     Date_of_occurrence("01", "Date of occurrence"),
 
+    /**
+     * Date and (with the default dateformat) time the event occurrence ends
+     */
     Date_of_occurrence_end("02", "Date of occurrence end");
 
     public final String code;

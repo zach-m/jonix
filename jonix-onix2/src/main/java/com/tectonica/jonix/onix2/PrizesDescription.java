@@ -58,8 +58,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;g124&gt;Shortlisted for the Booker Prize,
- * 1998&lt;/g124&gt;</tt></td>
+ * <td><tt>&lt;g124&gt;Shortlisted for the Booker Prize, 1998&lt;/g124&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

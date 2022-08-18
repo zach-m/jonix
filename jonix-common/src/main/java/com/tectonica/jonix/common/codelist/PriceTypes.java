@@ -41,7 +41,7 @@ interface CodeList58 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist58">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist58">ONIX
  *      Codelist 58 in Reference Guide</a>
  */
 public enum PriceTypes implements OnixCodelist, CodeList58 {
@@ -63,18 +63,18 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
     RRP_including_tax("02", "RRP including tax"),
 
     /**
-     * Fixed Retail Price, excluding any sales or value-added tax, used in countries were retail price maintenance
-     * applies by law to certain products. Price fixed by the publisher or supplier for retail sales to the consumer.
-     * The retailer must use this price, or may vary the price only within certain legally-prescribed limits. The net
-     * price charged to the retailer depends on the FRP minus a customer-soecific trade discount. Relevant tax detail
-     * must be calculated by the data recipient
+     * Fixed Retail Price, excluding any sales or value-added tax, used in countries where retail price maintenance
+     * applies (by law or via trade agreement) to certain products. Price fixed by the publisher or supplier for retail
+     * sales to the consumer. The retailer must use this price, or may vary the price only within certain
+     * legally-prescribed limits. The net price charged to the retailer depends on the FRP minus a customer-specific
+     * trade discount. Relevant tax detail must be calculated by the data recipient
      */
     FRP_excluding_tax("03", "FRP excluding tax"),
 
     /**
-     * Fixed Retail Price, including any sales or value-added tax where applicable, used in countries were retail price
-     * maintenance applies by law to certain products. The net price charged to the retailer depends on the trade
-     * discount. Sales or value-added tax detail is usually supplied in the &lt;Tax&gt; composite
+     * Fixed Retail Price, including any sales or value-added tax where applicable, used in countries where retail price
+     * maintenance applies (by law or via trade agreement) to certain products. The net price charged to the retailer
+     * depends on the trade discount. Sales or value-added tax detail is usually supplied in the &lt;Tax&gt; composite
      */
     FRP_including_tax("04", "FRP including tax"),
 
@@ -120,8 +120,8 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * Special sale RRP excluding any sales tax or value-added tax. Note 'special sales' are sales where terms and
      * conditions are different from normal trade sales, when for example products that are normally sold on a
      * sale-or-return basis are sold on firm-sale terms, where a particular product is tailored for a specific retail
-     * outlet (often termed a 'premium'&#160;product), or where other specific conditions or qualiifications apply.
-     * Further details of the modified terms and conditions should be given in &lt;PriceTypeDescription&gt;
+     * outlet (often termed a 'premium' product), or where other specific conditions or qualiifications apply. Further
+     * details of the modified terms and conditions should be given in &lt;PriceTypeDescription&gt;
      */
     Special_sale_RRP_excluding_tax("11", "Special sale RRP excluding tax"),
 
@@ -207,6 +207,15 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * importer or local sales agent, not the foreign publisher. In France, 'prix catalogue &#233;diteur &#233;tranger'
      */
     Importer_s_Fixed_retail_price_including_tax("34", "Importer’s Fixed retail price including tax"),
+
+    /**
+     * Nominal value of gratis copies (eg review, sample or evaluation copies) for international customs declarations
+     * only, when a 'free of charge' price cannot be used. Only for use in ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Nominal_gratis_copy_value_for_customs_purposes_excluding_tax("35",
+        "Nominal gratis copy value for customs purposes, excluding tax"),
 
     /**
      * For a product supplied on agency terms, the retail price set by the publisher, excluding any sales tax or

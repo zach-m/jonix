@@ -56,8 +56,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b070&gt;Labor and industrial
- * relations&lt;/b070&gt;</tt></td>
+ * <td><tt>&lt;b070&gt;Labor and industrial relations&lt;/b070&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

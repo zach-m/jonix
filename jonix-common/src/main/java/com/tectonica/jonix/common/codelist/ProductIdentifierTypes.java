@@ -41,7 +41,7 @@ interface CodeList5 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist5">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist5">ONIX
  *      Codelist 5 in Reference Guide</a>
  */
 public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
@@ -94,7 +94,7 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
     GTIN_14("14", "GTIN-14"),
 
     /**
-     * International Standard Book Number, from 2007 (13 digits starting 978 or 9791-9799, without spaces or hypens)
+     * International Standard Book Number, from 2007 (13 digits starting 978 or 9791-9799, without spaces or hyphens)
      */
     ISBN_13("15", "ISBN-13"),
 

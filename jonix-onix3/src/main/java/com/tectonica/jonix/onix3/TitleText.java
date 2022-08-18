@@ -67,8 +67,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b203 language=&quot;eng&quot;
- * textcase=&quot;01&quot;&gt;Dickens classics&lt;/b203&gt;</tt></td>
+ * <td><tt>&lt;b203 language=&quot;eng&quot; textcase=&quot;01&quot;&gt;Dickens classics&lt;/b203&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -102,12 +101,12 @@ public class TitleText implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /**
      * (type: dt.NonEmptyString)
@@ -156,8 +155,8 @@ public class TitleText implements OnixElement<String>, Serializable {
     public TitleText(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         collationkey = JPU.getAttribute(element, "collationkey");
         language = Languages.byCode(JPU.getAttribute(element, "language"));
         textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));

@@ -41,7 +41,7 @@ interface CodeList29 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist29">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist29">ONIX
  *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -206,7 +206,16 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
      * Code indicating the intended curriculum (eg Naturvetenskapsprogrammet, Estetica programmet) in Swedish higher
      * secondary education
      */
-    Gymnasieprogram("29", "Gymnasieprogram");
+    Gymnasieprogram("29", "Gymnasieprogram"),
+
+    /**
+     * International Standard Classification of Education levels (2011), eg &lt;AudienceCodeValue&gt; 253 is 'Lower
+     * secondary vocational education, level completion without direct access to upper secondary education'. For use in
+     * ONIX 3.0 only. See http://uis.unesco.org/en/topic/international-standard-classification-education-isced
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    ISCED_2011("30", "ISCED 2011");
 
     public final String code;
     public final String description;

@@ -60,8 +60,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j366&gt;Timed to coincide 'day and date' with theatrical release
- * of film.&lt;/j366&gt;</tt></td>
+ * <td><tt>&lt;j366&gt;Timed to coincide 'day and date' with theatrical release of film.&lt;/j366&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -94,12 +93,12 @@ public class ReissueDescription implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public Languages language;
 
@@ -142,8 +141,8 @@ public class ReissueDescription implements OnixElement<String>, Serializable {
     public ReissueDescription(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 

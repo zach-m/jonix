@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -84,12 +85,12 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -111,8 +112,8 @@ public class ProductContact implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -145,6 +146,10 @@ public class ProductContact implements OnixSuperComposite, Serializable {
                 case EmailAddress.refname:
                 case EmailAddress.shortname:
                     emailAddress = new EmailAddress(e);
+                    break;
+                case TelephoneNumber.refname:
+                case TelephoneNumber.shortname:
+                    telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
                     break;
                 default:
                     break;
@@ -220,8 +225,8 @@ public class ProductContact implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * Free text giving the name, department, phone number, <i>etc</i> for a contact person in the product contact
-     * organization who is responsible for the product. Optional and non-repeating.
+     * Free text giving the name, department, <i>etc</i> for a contact person in the product contact organization who is
+     * responsible for the product. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -242,5 +247,20 @@ public class ProductContact implements OnixSuperComposite, Serializable {
     public EmailAddress emailAddress() {
         _initialize();
         return emailAddress;
+    }
+
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A telephone number of the contact person in the product contact organization who is responsible for the product,
+     * wherever possible including the plus sign and the international dialling code. Optional, and repeatable to
+     * provide multiple numbers for the same contact.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
+        _initialize();
+        return telephoneNumbers;
     }
 }

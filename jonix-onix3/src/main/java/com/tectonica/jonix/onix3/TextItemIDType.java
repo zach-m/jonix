@@ -89,12 +89,12 @@ public class TextItemIDType implements OnixElement<TextItemIdentifierTypes>, Ser
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -124,8 +124,8 @@ public class TextItemIDType implements OnixElement<TextItemIdentifierTypes>, Ser
     public TextItemIDType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = TextItemIdentifierTypes.byCode(JPU.getContentAsString(element));
     }

@@ -85,12 +85,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -112,8 +112,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -350,12 +350,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * <p>
      * Free text showing how the authorship of a content item should be described in an online display, when a standard
      * concatenation of individual contributor elements would not give a satisfactory presentation. Optional, and
-     * repeatable if parallel text is provided in multiple languages. The language attribute is optional for a single
-     * instance of &lt;ContributorStatement&gt;, but must be included in each instance if &lt;ContributorStatement&gt;
-     * is repeated. When the &lt;ContributorStatement&gt; field is sent, the receiver should use it to replace all name
-     * detail (though not the biographical, date or place details) sent in the &lt;Contributor&gt; composite for display
-     * purposes only. The individual name detail must also be sent in the &lt;Contributor&gt; composite for indexing and
-     * retrieval.
+     * repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a
+     * single instance of &lt;ContributorStatement&gt;, but must be included in each instance if
+     * &lt;ContributorStatement&gt; is repeated. When the &lt;ContributorStatement&gt; field is sent, the receiver
+     * should use it to replace all name detail (though not the biographical, date or place details) sent in the
+     * &lt;Contributor&gt; composite for display purposes only. The individual name detail must also be sent in the
+     * &lt;Contributor&gt; composite for indexing and retrieval.
      * </p>
      * Jonix-Comment: this list may be empty
      */

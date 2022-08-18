@@ -32,7 +32,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Title detail composite</h1>
+ * <h1>Title detail composite (collection)</h1>
  * <p>
  * A group of data elements which together give the text of a collection title and specify its type. Optional, but the
  * composite is required unless the only collection title is carried in full, and word-for-word, as an integral part of
@@ -83,12 +83,12 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -110,8 +110,8 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

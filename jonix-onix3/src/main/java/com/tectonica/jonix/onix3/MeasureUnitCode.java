@@ -75,6 +75,8 @@ import java.io.Serializable;
  * {@link MeasureUnitCode}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link Measure} ⯈
  * {@link MeasureUnitCode}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * {@link SupplementManifest} ⯈ {@link Measure} ⯈ {@link MeasureUnitCode}</li>
  * </ul>
  */
 public class MeasureUnitCode implements OnixElement<MeasureUnits>, Serializable {
@@ -92,12 +94,12 @@ public class MeasureUnitCode implements OnixElement<MeasureUnits>, Serializable 
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -127,8 +129,8 @@ public class MeasureUnitCode implements OnixElement<MeasureUnits>, Serializable 
     public MeasureUnitCode(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = MeasureUnits.byCode(JPU.getContentAsString(element));
     }

@@ -93,12 +93,12 @@ public class TitleElementLevel implements OnixElement<TitleElementLevels>, Seria
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -128,8 +128,8 @@ public class TitleElementLevel implements OnixElement<TitleElementLevels>, Seria
     public TitleElementLevel(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = TitleElementLevels.byCode(JPU.getContentAsString(element));
     }

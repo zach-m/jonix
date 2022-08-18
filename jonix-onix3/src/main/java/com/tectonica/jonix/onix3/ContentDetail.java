@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * <h1>Content detail composite</h1>
  * <p>
- * The content detail block comprises the single data Group&nbsp;P.18. The block as a whole is non-repeating. It is not
+ * The Content detail block comprises the single data Group&nbsp;P.18. The block as a whole is non-repeating. It is not
  * mandatory within the &lt;Product&gt; record, and is used only when there is a requirement to describe individual
  * chapters or parts within a product in a fully structured way. The more usual ONIX practice is to send a table of
  * contents as text, possibly in XHTML, in Group&nbsp;P.14.
@@ -84,12 +84,12 @@ public class ContentDetail implements OnixSuperComposite, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -111,8 +111,8 @@ public class ContentDetail implements OnixSuperComposite, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

@@ -61,8 +61,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x528
- * language=&quot;eng&quot;&gt;Obtain return authorization in advance&lt;/x528&gt;</tt></td>
+ * <td><tt>&lt;x528 language=&quot;eng&quot;&gt;Obtain return authorization in advance&lt;/x528&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -94,12 +93,12 @@ public class ReturnsNote implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public Languages language;
 
@@ -139,8 +138,8 @@ public class ReturnsNote implements OnixElement<String>, Serializable {
     public ReturnsNote(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);

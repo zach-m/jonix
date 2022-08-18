@@ -41,7 +41,7 @@ interface CodeList65 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist65">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist65">ONIX
  *      Codelist 65 in Reference Guide</a>
  */
 public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
@@ -169,9 +169,9 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     Apply_direct("44", "Apply direct"),
 
     /**
-     * Individual copies of the product are not available from the supplier, but packs of copies are available, and
-     * individual copies of the product may typically be sold at retail. Must be bought as part of a set or trade pack
-     * (identify set or pack in &lt;RelatedProduct&gt; using code 02)
+     * Must be bought as part of a set or trade pack (identify set or pack in &lt;RelatedProduct&gt; using code 02).
+     * Individual copies of the product are not available from the supplier, but packs of copies are available, or
+     * individual copies of the product may typically be sold at retail
      */
     Not_sold_separately("45", "Not sold separately"),
 
@@ -197,7 +197,8 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     Recalled("49", "Recalled"),
 
     /**
-     * When a collection that is not sold as a set nevertheless has its own ONIX record
+     * Must be bought as individual items (identify contents of set or oack in &lt;RelatedProduct&lt; using code 01.
+     * Used when a collection that is not sold as a set nevertheless has its own ONIX record
      */
     Not_sold_as_set("50", "Not sold as set"),
 

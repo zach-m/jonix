@@ -32,7 +32,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Event identifier</h1>
+ * <h1>Event identifier composite</h1>
  * <p>
  * An optional group of data elements which together define an identifier for an event. The composite is repeatable in
  * order to specify multiple identifiers for the same event.
@@ -84,12 +84,12 @@ public class EventIdentifier
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -111,8 +111,8 @@ public class EventIdentifier
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

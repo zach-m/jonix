@@ -59,8 +59,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b081&gt;Reed International
- * Books&lt;/b081&gt;</tt></td>
+ * <td><tt>&lt;b081&gt;Reed International Books&lt;/b081&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -92,12 +91,12 @@ public class PublisherName implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /**
      * (type: dt.NonEmptyString)
@@ -142,8 +141,8 @@ public class PublisherName implements OnixElement<String>, Serializable {
     public PublisherName(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         collationkey = JPU.getAttribute(element, "collationkey");
         language = Languages.byCode(JPU.getAttribute(element, "language"));
 

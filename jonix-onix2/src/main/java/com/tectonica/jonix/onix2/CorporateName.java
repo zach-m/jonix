@@ -54,8 +54,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b047&gt;Good Housekeeping
- * Institute&lt;/b047&gt;</tt></td>
+ * <td><tt>&lt;b047&gt;Good Housekeeping Institute&lt;/b047&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

@@ -41,7 +41,7 @@ interface CodeList92 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist92">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist92">ONIX
  *      Codelist 92 in Reference Guide</a>
  */
 public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
@@ -78,6 +78,14 @@ public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
      * Flemish publisher code
      */
     Fondscode_Boekenbank("13", "Fondscode Boekenbank"),
+
+    /**
+     * International Standard Name Identifier (used here to identify an organisation). For use in ONIX 3.0 only. See
+     * https://isni.org/
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    ISNI("16", "ISNI"),
 
     /**
      * Identifier for a business organization for VAT purposes, eg within the EU's VIES system. See

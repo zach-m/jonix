@@ -41,7 +41,7 @@ interface CodeList27 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -100,7 +100,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     BISAC_Regional_theme("11", "BISAC Regional theme"),
 
     /**
-     * For all BIC subject codes and qualifiers, see http://www.bic.org.uk/7/BIC-Standard-Subject-Categories/
+     * For all BIC subject codes and qualifiers, see https://www.bic.org.uk/7/BIC-Standard-Subject-Categories/
      */
     BIC_subject_category("12", "BIC subject category"),
 
@@ -155,7 +155,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Tabla_de_materias_ISBN("25", "Tabla de materias ISBN"),
 
     /**
-     * See http://info.vlb.de/files/wgsneuversion2_0.pdf (in German)
+     * See https://vlb.de/assets/images/wgsneuversion2_0.pdf (in German)
      */
     Warengruppen_Systematik_des_deutschen_Buchhandels("26", "Warengruppen-Systematik des deutschen Buchhandels"),
 
@@ -172,10 +172,9 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Th_mes_Electre("28", "Thèmes Electre"),
 
     /**
-     * France. A four-digit number, see http://www.clil.org/information/documentation.html (in French). The first digit
-     * identifies the version of the scheme
+     * France. A four-digit number, see https://clil.centprod.com/listeActive.html (in French)
      */
-    CLIL("29", "CLIL"),
+    CLIL_Classification_th_matique("29", "CLIL Classification thématique"),
 
     /**
      * Deutsche Bibliothek subject groups. Used for German National Bibliography until 2003 (65 subjects). Is different
@@ -231,7 +230,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * Norwegian school curriculum version. Deprecated
      */
-    L_replaner("39", "Læreplaner"),
+    L_replaner_KL06("39", "Læreplaner-KL06"),
 
     /**
      * Japanese subject classification scheme
@@ -302,7 +301,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Classificazione commerciale editoriale (Italian book trade subject category based on BIC). CCE documentation
-     * available at http://www.ie-online.it/CCE2_2.0.pdf
+     * available at https://www.ie-online.it/CCE2_2.0.pdf
      */
     Soggetto_CCE("53", "Soggetto CCE"),
 
@@ -358,53 +357,60 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     RVM("63", "RVM"),
 
     /**
-     * Yleinen suomalainen asiasanasto: Finnish General Thesaurus. See http://onki.fi/fi/browser/ (in Finnish)
+     * Finnish General Thesaurus (Finnish: Yleinen suomalainen asiasanasto). See https://finto.fi/ysa/fi/ (in Finnish).
+     * Deprecated. No longer updated, and replaced by YSO (see code 71)
      */
     YSA("64", "YSA"),
 
     /**
-     * Allm&#228;n tesaurus p&#229; svenska: Swedish translation of the Finnish General Thesaurus. See
-     * http://onki.fi/fi/browser/ (in Finnish)
+     * Swedish translation of the Finnish General Thesaurus (Swedish: Allm&#228;n tesaurus p&#229; svenska). See
+     * https://finto.fi/allars/sv/ (in Swedish). Deprecated. No longer updated, and replaced by YSO (see code 71)
      */
     All_rs("65", "Allärs"),
 
     /**
-     * Yleisten kirjastojen luokitusj&#228;rjestelm&#228;: Finnish Public Libraries Classification System. See
-     * http://ykl.kirjastot.fi/ (in Finnish)
+     * Finnish Public Libraries Classification System (Finnish: Yleisten kirjastojen luokitusj&#228;rjestelm&#228;). See
+     * https://finto.fi/ykl/fi/ (in Finnish), https://finto.fi/ykl/sv/ (in Swedish), https://finto.fi/ykl/en/ (in
+     * English)
      */
     YKL("66", "YKL"),
 
     /**
-     * Musiikin asiasanasto: Finnish Music Thesaurus. See http://onki.fi/fi/browser/ (in Finnish)
+     * Finnish Music Thesaurus (Finnish: Musiikin asiasanasto). See https://finto.fi/musa/fi/ (in Finnish). Deprecated,
+     * and replaced by YSO (see code 71)
      */
     MUSA("67", "MUSA"),
 
     /**
-     * Specialtesaurus f&#246;r musik: Swedish translation of the Finnish Music Thesaurus. See
-     * http://onki.fi/fi/browser/ (in Finnish)
+     * Specialtesaurus f&#246;r musik: Swedish translation of the Finnish Music Thesaurus. See https://finto.fi/musa/sv/
+     * (in Swedish). Deprecated, and replaced by YSO (see code 71)
      */
     CILLA("68", "CILLA"),
 
     /**
-     * Fiktiivisen aineiston asiasanasto: Finnish thesaurus for fiction. See http://kaunokki.kirjastot.fi/ (in Finnish)
+     * Fiktiivisen aineiston asiasanasto: Finnish thesaurus for fiction. See https://finto.fi/kaunokki/fi/ (in Finnish).
+     * Deprecated. No longer updated, and replaced by Kauno and SLM (see codes D0 and D1)
      */
     Kaunokki("69", "Kaunokki"),
 
     /**
      * Specialtesaurus f&#246;r fiktivt material: Swedish translation of the Finnish thesaurus for fiction. See
-     * http://kaunokki.kirjastot.fi/sv-FI/ (in Finnish)
+     * https://finto.fi/kaunokki/sv/ (in Swedish). Deprecated. No longer updated, and replaced by Kauno and SLM (see
+     * codes D0 and D1)
      */
     Bella("70", "Bella"),
 
     /**
-     * Yleinen suomalainen ontologia: Finnish General Upper Ontology. See http://onki.fi/fi/browser/ (In Finnish)
+     * General Finnish Ontology (Finnish: Yleinen suomalainen ontologia). See https://finto.fi/yso/fi/ (in Finnish),
+     * https://finto.fi/yso/sv/ (in Swedish), https://finto.fi/yso/en/ (in English)
      */
     YSO("71", "YSO"),
 
     /**
-     * Finnish Place Ontology. See http://onki.fi/fi/browser/ (in Finnish)
+     * Finnish Geospatial Domain Ontology (Finnish: Paikkatieto ontologia). See https://finto.fi/pto/fi/ (in Finnish),
+     * https://finto.fi/pto/sv/ (in Swedish), https://finto.fi/pto/en/ (in English)
      */
-    Paikkatieto_ontologia("72", "Paikkatieto ontologia"),
+    PTO("72", "PTO"),
 
     /**
      * Finnish book trade categorisation
@@ -427,19 +433,20 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     CSR("76", "CSR"),
 
     /**
-     * Finnish school subject categories
+     * Finnish school subject categories. See https://www.onixkeskus.fi/media/f/56
      */
     Suomalainen_oppiaineluokitus("77", "Suomalainen oppiaineluokitus"),
 
     /**
-     * See http://www.asahi-net.or.jp/~ax2s-kmtn/ref/ccode.html (in Japanese)
+     * See https://isbn.jpo.or.jp/doc/08.pdf#page=44 (in Japanese)
      */
     Japanese_book_trade_C_Code("78", "Japanese book trade C-Code"),
 
     Japanese_book_trade_Genre_Code("79", "Japanese book trade Genre Code"),
 
     /**
-     * Finnish fiction genre classification. See http://ykl.kirjastot.fi/fi-FI/lisaluokat/ (in Finnish)
+     * Finnish fiction genre classification. See https://finto.fi/ykl/fi/page/fiktioluokka (in Finnish),
+     * https://finto.fi/ykl/sv/page/fiktioluokka (in Swedish), https://finto.fi/ykl/en/page/fiktioluokka (in English)
      */
     Fiktiivisen_aineiston_lis_luokitus("80", "Fiktiivisen aineiston lisäluokitus"),
 
@@ -504,12 +511,13 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     GND("91", "GND"),
 
     /**
-     * UK Standard Library Categories, the successor to BIC's E4L classification scheme
+     * UK Standard Library Categories, the successor to BIC's E4L classification scheme. See
+     * https://www.bic.org.uk/51/UK-Standard-Library-Categories/
      */
     BIC_UKSLC("92", "BIC UKSLC"),
 
     /**
-     * International multilingual subject category scheme -&#160;see https://ns.editeur.org/thema
+     * International multilingual subject category scheme - see https://ns.editeur.org/thema
      */
     Thema_subject_category("93", "Thema subject category"),
 
@@ -577,7 +585,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     EuroVoc("B0", "EuroVoc"),
 
     /**
-     * Controlled vocabulary for educational objectives. See https://www.bisg.org/educational-taxonomy
+     * Controlled vocabulary for educational objectives. See https://bisg.org/page/EducationalTaxonomy
      */
     BISG_Educational_Taxonomy("B1", "BISG Educational Taxonomy"),
 
@@ -627,7 +635,124 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    NGSS("B7", "NGSS");
+    NGSS("B7", "NGSS"),
+
+    /**
+     * MVB classification of 'reading rationales', which classify unconscious motives that lead to a book purchase.
+     * Categories are assigned and maintained by MVB. For use in ONIX 3.0 only. See https://vlb.de/lesemotive
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    MVB_Lesemotive("B8", "MVB-Lesemotive"),
+
+    /**
+     * Finnish Suomalainen oppiaineluokitus. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    LOPS21_Subject_module("B9", "LOPS21 Subject module"),
+
+    /**
+     * Codes for Norwegian curriculum for primary and secondary education. For use in ONIX 3.0 only. See
+     * L&#230;replaner-LK20 at https://www.udir.no/om-udir/data/kl06-grep/
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    L_replaner_LK20("C0", "Læreplaner-LK20"),
+
+    /**
+     * Codes for competency aims in the Norwegian curriculum for primary and secondary education. For use in ONIX 3.0
+     * only. See Kompetansem&#229;l-LK20 at https://www.udir.no/om-udir/data/kl06-grep/
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Kompetansem_l_LK20("C1", "Kompetansemål-LK20"),
+
+    /**
+     * Codes for sets of competency aims in the Norwegian curriculum for primary and secondary education. For use in
+     * ONIX 3.0 only. See Kompetansem&#229;lsett-LK20 at https://www.udir.no/om-udir/data/kl06-grep/
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Kompetansem_lsett_LK20("C2", "Kompetansemålsett-LK20"),
+
+    /**
+     * Codes for interdisciplinary topics in the Norwegian curriculum for primary and secondary education. For use in
+     * ONIX 3.0 only. See Tverrfaglige temaer-LK20 at https://www.udir.no/om-udir/data/kl06-grep/
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Tverrfaglige_temaer_LK20("C3", "Tverrfaglige temaer-LK20"),
+
+    /**
+     * For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    CLIL_Type_d_article_scolaire("C4", "CLIL – Type d’article scolaire"),
+
+    /**
+     * Gestionnaire d'Acc&#232;s aux resources - see https://gar.education.fr/ For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    GAR_Type_p_dagogique("C5", "GAR – Type pédagogique"),
+
+    /**
+     * UNESCO ISCED Fields of education and training (2013), eg &lt;SubjectCode&gt; 0222 is 'History and archaeology'.
+     * For use in ONIX 3.0 only. See
+     * http://uis.unesco.org/sites/default/files/documents/international-standard-classification-of-education-fields-of-education-and-training-2013-detailed-field-descriptions-2015-en.pdf
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    ISCED_F("C6", "ISCED-F"),
+
+    /**
+     * German category scheme for games, puzzles and toys. For use in ONIX 3.0 only. See
+     * https://www.ludologie.de/fileadmin/user_upload/PDFs/211126_Kategorisierung_von_Spielen_Puzzles_und_Spielwaren.pdf
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Klassifikationen_von_Spielen_Puzzles_und_Spielwaren("C7", "Klassifikationen von Spielen, Puzzles und Spielwaren"),
+
+    /**
+     * National Library of Norway genre and form thesaurus. For use in ONIX 3.0 only. See https://www.nb.no/nbvok/ntsf
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    NBVok("C8", "NBVok"),
+
+    /**
+     * Subject / genre code used in Japan
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    JPRO_Genre("C9", "JPRO Genre"),
+
+    /**
+     * Finnish Ontology for fiction (Finnish: Fiktiivisen aineiston ontologia). See https://finto.fi/kauno/fi/ (in
+     * Finnish), https://finto.fi/kauno/sv/ (in Swedish), https://finto.fi/kauno/en/ (in English)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    KAUNO("D0", "KAUNO"),
+
+    /**
+     * Finnish genre and form vocabulary (Finnish: Suomalainen lajityyppi ja muotosanasto). See https://finto.fi/slm/fi/
+     * (in Finnish), https://finto.fi/slm/sv/ (in Swedish), https://finto.fi/slm/en/ (in English)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    SLM("D1", "SLM"),
+
+    /**
+     * General Finnish Ontology for Places (Finnish: Yleinen suomalainen ontologia - paikat). See
+     * https://finto.fi/yso-paikat/fi/ (in Finnish), https://finto.fi/yso-paikat/sv/ (in Swedish),
+     * https://finto.fi/yso-paikat/en/ (in English)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    YSO_places("D2", "YSO-places");
 
     public final String code;
     public final String description;

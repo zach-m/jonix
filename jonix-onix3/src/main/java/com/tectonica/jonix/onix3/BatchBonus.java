@@ -34,7 +34,7 @@ import java.io.Serializable;
  * <h1>Batch bonus composite</h1>
  * <p>
  * A repeatable group of data elements which together specify a batch bonus, <i>ie</i> a quantity of free copies which
- * are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.
+ * are supplied (typically to a reseller) with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -79,12 +79,12 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -106,8 +106,8 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

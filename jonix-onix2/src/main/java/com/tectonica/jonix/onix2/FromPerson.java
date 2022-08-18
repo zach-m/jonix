@@ -57,8 +57,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;m175&gt;Jackie Brown, 020 7979
- * 6444&lt;/m175&gt;</tt></td>
+ * <td><tt>&lt;m175&gt;Jackie Brown, 020 7979 6444&lt;/m175&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

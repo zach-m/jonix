@@ -41,7 +41,7 @@ interface CodeList55 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist55">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist55">ONIX
  *      Codelist 55 in Reference Guide</a>
  */
 public enum DateFormats implements OnixCodelist, CodeList55 {

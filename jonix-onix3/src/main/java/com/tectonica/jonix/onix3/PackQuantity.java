@@ -35,7 +35,7 @@ import java.io.Serializable;
  * The quantity in each carton or binder’s pack in stock currently held by the supplier. Optional and non-repeating.
  * </p>
  * <p>
- * Note that orders do not <em>have</em> to be aligned with multiples of the pack size, but such orders may be more
+ * Note that orders do not <em>have</em> to be aligned with multiples of the pack quantity, but such orders may be more
  * convenient to handle.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -86,12 +86,12 @@ public class PackQuantity implements OnixElement<Integer>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -129,8 +129,8 @@ public class PackQuantity implements OnixElement<Integer>, Serializable {
     public PackQuantity(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsInteger(element);
     }

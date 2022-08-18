@@ -91,12 +91,12 @@ public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTyp
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -126,8 +126,8 @@ public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTyp
     public ProductFormFeatureType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = ProductFormFeatureTypes.byCode(JPU.getContentAsString(element));
     }

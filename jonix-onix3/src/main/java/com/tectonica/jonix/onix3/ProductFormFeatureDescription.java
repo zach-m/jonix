@@ -62,8 +62,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b336&gt;11pt
- * Helvetica&lt;/b336&gt;</tt></td>
+ * <td><tt>&lt;b336&gt;11pt Helvetica&lt;/b336&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -95,12 +94,12 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public Languages language;
 
@@ -140,8 +139,8 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
     public ProductFormFeatureDescription(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);

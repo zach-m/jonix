@@ -32,7 +32,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Event occurrence date</h1>
+ * <h1>Event occurrence date composite</h1>
  * <p>
  * A group of data elements which together specify a date associated with the event occurrence. At least the date (and
  * typically also the time) the event occurrence begins must be specified, and other dates related to the event
@@ -82,12 +82,12 @@ public class OccurrenceDate
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -109,8 +109,8 @@ public class OccurrenceDate
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override

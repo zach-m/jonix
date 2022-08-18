@@ -41,7 +41,7 @@ interface CodeList163 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -88,9 +88,9 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     Last_reprint_date("12", "Last reprint date"),
 
     /**
-     * Date when a product was (or will be) declared out-of-print or deleted
+     * Date when a product was (or will be) declared out-of-print, permanently withdrawn from sale or deleted
      */
-    Out_of_print_deletion_date("13", "Out-of-print / deletion date"),
+    Out_of_print_permanently_withdrawn_date("13", "Out-of-print / permanently withdrawn date"),
 
     /**
      * Date when a product was last reissued
@@ -173,7 +173,14 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Subscription_embargo_date("31", "Subscription embargo date");
+    Subscription_embargo_date("31", "Subscription embargo date"),
+
+    /**
+     * Date by which CIP copy is required for inclusion in the product
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    CIP_date("35", "CIP date");
 
     public final String code;
     public final String description;

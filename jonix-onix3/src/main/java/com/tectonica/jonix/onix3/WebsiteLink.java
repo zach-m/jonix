@@ -42,7 +42,8 @@ import java.io.Serializable;
  * <tr>
  * <td>Format</td>
  * <td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum length
- * 300 characters</td>
+ * 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters should be
+ * 'URL-encoded'</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -112,12 +113,12 @@ public class WebsiteLink implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     public Languages language;
 
@@ -130,7 +131,8 @@ public class WebsiteLink implements OnixElement<String>, Serializable {
      * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
-     * maximum length 300 characters
+     * maximum length 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters
+     * should be 'URL-encoded'
      * <p>
      * (type: dt.NonEmptyURI)
      */
@@ -158,8 +160,8 @@ public class WebsiteLink implements OnixElement<String>, Serializable {
     public WebsiteLink(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);

@@ -41,7 +41,7 @@ interface CodeList79 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -57,8 +57,9 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * The principal font used for body text, when this is a significant aspect of product description, eg for some
-     * Bibles, and for large print product. The accompanying Product Form Feature Description is text specifying font
-     * size and, if desired, typeface
+     * Bibles, and for large print product. The accompanying &lt;ProductFormFeatureDescription&gt; is text specifying
+     * the typeface name. The font size may be specified with the font name, but is preferred separately (in points) in
+     * &lt;ProductFormFeatureValue&gt;
      */
     Text_font("03", "Text font"),
 
@@ -106,11 +107,11 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     E_publication_format_version("10", "E-publication format version"),
 
     /**
-     * Hazard warning required by US Consumer Product Safety Improvement Act (CPSIA) of 2008 or other US legislation.
-     * Required, when applicable, for products sold in the US. The Product Form Feature Value is a code from List 143.
-     * Further explanation may be given in Product Form Feature Description
+     * Hazard warning required by US Consumer Product Safety Improvement Act (CPSIA) of 2008 or other US or
+     * international legislation. Required, when applicable, for products sold in the US. The Product Form Feature Value
+     * is a code from List 143. Further explanation may be given in Product Form Feature Description
      */
-    CPSIA_or_other_US_hazard_warning("12", "CPSIA or other US hazard warning"),
+    US_CPSIA_or_other_international_hazard_warning("12", "US CPSIA or other international hazard warning"),
 
     /**
      * Product carries hazard warning required by EU Toy Safety Directive. The Product Form Feature Value is a code from
@@ -157,12 +158,12 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     E_publication_authentication_and_access_control("18", "E-publication authentication and access control"),
 
     /**
-     * Use to describe battery requirements, hazards and safety warnings. &lt;ProductFormFeatureValue&gt; is a code from
-     * List 242. For use in ONIX 3.0 only
+     * Use to describe battery requirements, types, hazards and battery safety warnings. &lt;ProductFormFeatureValue&gt;
+     * is a code from List 242. For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Battery_type("19", "Battery type"),
+    Battery_type_and_safety("19", "Battery type and safety"),
 
     /**
      * Total capacity (of batteries in the product) in Watt hours. &lt;ProductFormFeatureValue&gt; is an integer or
@@ -205,6 +206,16 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Jonix-Comment: Introduced in Onix3
      */
     Game_play_time("24", "Game play time"),
+
+    /**
+     * Personal data required for registration or use of the product. This can be coded in
+     * &lt;ProductFormFeatureValue&gt; (for example using a URI from SCOLOM list 044 - see
+     * http://data.education.fr/voc/scolomfr/scolomfr-voc-044) - and/or described in
+     * &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Personal_data_requirements("25", "Personal data requirements"),
 
     /**
      * Product does not carry FSC or PEFC logo. The Product Form Feature Value element is not used. The Product Form
@@ -251,25 +262,27 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     FSC_certified_recycled("33", "FSC certified – recycled"),
 
     /**
-     * Product carries PEFC logo (certified). &lt;ProductFormFeatureValue&gt; is the Chain Of Custody (COC) number
-     * printed on the book. The Product Form Feature Description element may carry free text indicating the grade or
-     * type of paper. May be accompanied by a Post-Consumer Waste (PCW) percentage value, to be reported in another
-     * instance of &lt;ProductFormFeature&gt; with type code 36
+     * Product carries PEFC logo (certified) or equivalent from PEFC-endorsed national scheme.
+     * &lt;ProductFormFeatureValue&gt; is the Chain Of Custody (COC) number printed on the book. The Product Form
+     * Feature Description element may carry free text indicating the grade or type of paper. May be accompanied by a
+     * Post-Consumer Waste (PCW) percentage value, to be reported in another instance of &lt;ProductFormFeature&gt; with
+     * type code 36
      */
     PEFC_certified("34", "PEFC certified"),
 
     /**
-     * Product carries PEFC logo (recycled). &lt;ProductFormFeatureValue&gt; is the Chain Of Custody (COC) number
-     * printed on the book. The Product Form Feature Description element may carry free text indicating the grade or
-     * type of paper. Should be accompanied by a Post-Consumer-Waste (PCW) percentage value, to be reported in another
-     * instance of &lt;ProductFormFeature&gt; with type code 36
+     * Product carries PEFC logo (recycled) or equivalent from PEFC-endorsed national scheme.
+     * &lt;ProductFormFeatureValue&gt; is the Chain Of Custody (COC) number printed on the book. The Product Form
+     * Feature Description element may carry free text indicating the grade or type of paper. Should be accompanied by a
+     * Post-Consumer-Waste (PCW) percentage value, to be reported in another instance of &lt;ProductFormFeature&gt; with
+     * type code 36
      */
     PEFC_recycled("35", "PEFC recycled"),
 
     /**
      * The percentage of recycled Pre- and Post-Consumer-Waste (PCW) used in a product where the composition is
-     * certified by FSC or PEFC. &lt;ProductFormFeatureValue&gt; is an integer. May occur together with type code 32,
-     * 33, 34 or 35
+     * certified by FSC, PEFC or PEFC-endorsed scheme. &lt;ProductFormFeatureValue&gt; is an integer. May occur together
+     * with type code 32, 33, 34 or 35
      */
     FSC_or_PEFC_certified_Pre_and_Post_Consumer_Waste_PCW("36",
         "FSC or PEFC certified Pre- and Post-Consumer Waste (PCW) percentage"),
@@ -281,6 +294,23 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * 30
      */
     Claimed_Pre_and_Post_Consumer_Waste_PCW("37", "Claimed Pre- and Post-Consumer Waste (PCW) percentage"),
+
+    /**
+     * Vegetable-based or other environmentally-conscious inks and varnishes. &lt;ProductFormFeatureDescription&gt; may
+     * carry free text with a more detailed statement. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _Green_inks("38", "‘Green’ inks"),
+
+    /**
+     * Product binding uses environmentally-concious adhesives and other binding materials.
+     * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement. For use in ONIX 3.0
+     * only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    _Green_adhesives("39", "‘Green’ adhesives"),
 
     /**
      * Product made from paper produced using environmentally-conscious technology.

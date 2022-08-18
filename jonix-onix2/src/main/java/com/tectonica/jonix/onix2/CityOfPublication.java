@@ -59,8 +59,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;CityOfPublication&gt;New
- * York&lt;/CityOfPublication&gt;</tt></td>
+ * <td><tt>&lt;CityOfPublication&gt;New York&lt;/CityOfPublication&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

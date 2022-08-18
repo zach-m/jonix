@@ -38,15 +38,25 @@ interface CodeList230 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist230">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist230">ONIX
  *      Codelist 230 in Reference Guide</a>
  */
 public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
     /**
      * Allows positive indication that there are no additional constraints (other than those specified in
-     * &lt;EpubUsageConstraint&gt;) - the default if &lt;PriceConstraint&gt; is omitted
+     * &lt;EpubUsageConstraint&gt;). By convention, use 01 in &lt;PriceConstraintStatus&gt;
      */
-    No_constraints("00", "No constraints"),
+    No_price_specific_constraints("00", "No price-specific constraints"),
+
+    /**
+     * Preview before purchase. Allows a retail customer, account holder or patron to view or listen to a proportion of
+     * the book before purchase. Also applies to borrowers making use of 'acquisition on demand' models in libraries,
+     * and to 'subscription' models where the purchase is made on behalf of the reader. Generally used to specify
+     * different preview percentages across different customer types
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Preview("01", "Preview"),
 
     /**
      * Lendable by the purchaser to other device owner, account holder or patron, eg library lending (use where the

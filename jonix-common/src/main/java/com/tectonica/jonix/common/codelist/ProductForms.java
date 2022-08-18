@@ -41,7 +41,7 @@ interface CodeList150 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
@@ -131,7 +131,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Online_audio_file("AO", "Online audio file"),
 
     /**
-     * Other audio format not specified by AB to AM
+     * Other audio format not specified by AB to AM. Further detail is expected in &lt;ProductFormDescription&gt;, as
+     * &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_audio_format("AZ", "Other audio format"),
 
@@ -205,7 +206,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Big_book("BM", "Big book"),
 
     /**
-     * A part-work issued with its own ISBN and intended to be collected and bound into a complete book
+     * A part-work issued with its own ISBN and intended to be collected and bound into a complete book.
      */
     Part_work_fasc_culo("BN", "Part-work (fascículo)"),
 
@@ -221,7 +222,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Foam_book("BP", "Foam book"),
 
     /**
-     * Other book format or binding not specified by BB to BP
+     * Other book format or binding not specified by BB to BP. Further detail is expected in
+     * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
+     * sufficient
      */
     Other_book_format("BZ", "Other book format"),
 
@@ -245,7 +248,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Globe("CE", "Globe"),
 
     /**
-     * Other cartographic format not specified by CB to CE
+     * Other cartographic format not specified by CB to CE. Further detail is expected in
+     * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
+     * sufficient
      */
     Other_cartographic("CZ", "Other cartographic"),
 
@@ -284,7 +289,16 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Double_sided_CD_DVD("DN", "Double-sided CD/DVD"),
 
     /**
-     * Other carrier of digital content not specified by DB to DN
+     * (Blu Ray ROM)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    BR_ROM("DO", "BR-ROM"),
+
+    /**
+     * Other carrier of digital content not specified by DB to DO. Further detail is expected in
+     * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
+     * sufficient
      */
     Other_digital_carrier("DZ", "Other digital carrier"),
 
@@ -334,7 +348,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Film("FF", "Film"),
 
     /**
-     * Other film or transparency format not specified by FB to FF
+     * Other film or transparency format not specified by FB to FF. Further detail is expected in
+     * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
+     * sufficient
      */
     Other_film_or_transparency_format("FZ", "Other film or transparency format"),
 
@@ -368,7 +384,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Microfilm("MC", "Microfilm"),
 
     /**
-     * Other microform not specified by MB or MC
+     * Other microform not specified by MB or MC. Further detail is expected in &lt;ProductFormDescription&gt;, as
+     * &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_microform("MZ", "Other microform"),
 
@@ -406,7 +423,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Frieze("PG", "Frieze"),
 
     /**
-     * Parts for post-purchase assembly
+     * Parts for post-purchase assembly, including card, wood or plastic parts or model components, interlocking
+     * construction blocks, beads and other crafting materials etc
      */
     Kit("PH", "Kit"),
 
@@ -433,9 +451,11 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Record_book("PL", "Record book"),
 
     /**
-     * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat 'wallet' as
-     * packaging in &lt;ProductPackaging&gt; with Codelist 80, but if this is not possible the product as a whole may be
-     * coded as a 'wallet'
+     * Wallet, folder or box (containing loose sheets etc, or empty): it is preferable to code the contents and treat
+     * 'wallet' (or folder / box) as packaging in &lt;ProductPackaging&gt; with Codelist 80, but if this is not possible
+     * (eg where the product is empty and intended for storing other loose items) the product as a whole may be coded as
+     * a 'wallet'. For binders intended for loose leaf or partwork publications intended to be updateable, see codes BD,
+     * BN
      */
     Wallet_or_folder("PM", "Wallet or folder"),
 
@@ -478,7 +498,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Book_plates("PV", "Book plates"),
 
     /**
-     * Other printed item not specified by PB to PQ
+     * Other printed item not specified by PB to PQ. Further detail is expected in &lt;ProductFormDescription&gt;, as
+     * &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_printed_item("PZ", "Other printed item"),
 
@@ -571,7 +592,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     CBHD("VQ", "CBHD"),
 
     /**
-     * Other video format not specified by VB to VQ
+     * Other video format not specified by VB to VQ. Further detail is expected in &lt;ProductFormDescription&gt;, as
+     * &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_video_format("VZ", "Other video format"),
 
@@ -609,7 +631,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
 
     Streamer("XI", "Streamer"),
 
-    Spinner("XJ", "Spinner"),
+    Spinner_empty("XJ", "Spinner – empty"),
 
     /**
      * Large scale facsimile of book for promotional display
@@ -641,7 +663,27 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Pack_outer_packaging_unspecified("XN", "Pack (outer packaging unspecified)"),
 
     /**
-     * Other point of sale material not specified by XB to XM
+     * Spinner with contents. ISBN(s) (where applicable) and detail of contained items must be given in
+     * &lt;ProductPart&gt;
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Spinner_filled("XO", "Spinner – filled"),
+
+    /**
+     * Other point of sale material not specified by XB to XO, supplied with included product(s) for retail sale. The
+     * retail product(s) must be described in &lt;ProductPart&gt;. Further detail of the POS material is expected in
+     * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
+     * sufficient
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Other_point_of_sale_including_retail_product("XY", "Other point of sale – including retail product"),
+
+    /**
+     * Other point of sale material not specified by XB to XY, promotional or decorative. Further detail is expected in
+     * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
+     * sufficient
      */
     Other_point_of_sale("XZ", "Other point of sale"),
 
@@ -717,12 +759,31 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Umbrella("ZN", "Umbrella"),
 
     /**
-     * Other apparel items not specified by ZB to ZJ, including branded, promotional or tie-in scarves, caps, aprons etc
+     * Coloring set, including pens, chalks, etc
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Paints_crayons_pencils("ZO", "Paints, crayons, pencils"),
+
+    /**
+     * Other toy, game and puzzle items not specified by ZB to ZN, generally accessories to other products etc. Further
+     * detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt;
+     * are unlikely to be sufficient
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Other_toy_game_accessories("ZX", "Other toy/game accessories"),
+
+    /**
+     * Other apparel items not specified by ZB to ZN, including branded, promotional or tie-in scarves, caps, aprons,
+     * dress-up costumes etc. Further detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt;
+     * and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_apparel("ZY", "Other apparel"),
 
     /**
-     * Other merchandise not specified by ZB to ZY
+     * Other merchandise not specified by ZB to ZY. Further detail is expected in &lt;ProductFormDescription&gt;, as
+     * &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_merchandise("ZZ", "Other merchandise");
 

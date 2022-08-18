@@ -78,12 +78,12 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -105,8 +105,8 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
@@ -190,8 +190,8 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
 
     /**
      * <p>
-     * A subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element. Either
-     * &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
+     * A single subject class or category code from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element.
+     * Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
      * &lt;Subject&gt; composite. Non-repeating.
      * </p>
      * Jonix-Comment: this field is required

@@ -41,7 +41,7 @@ interface CodeList71 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist71">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
@@ -135,11 +135,34 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Through_online_retail_only("15", "Through online retail only"),
 
     /**
-     * Sales rights (or market distribution rights) apply to supplies other than to schools
+     * Sales rights (or market distribution rights) apply to supplies other than to schools. For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Except_to_schools("16", "Except to schools"),
+
+    /**
+     * POD copies may be manufactured at any time, either to fulfill a customer order immediately or to replace a
+     * minimal stockholding (ie near-inventoryless). Only valid in ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Through_Inventoryless_POD("17", "Through Inventoryless POD"),
+
+    /**
+     * POD copies may be manfactured only to fulfill a customer order immediately while out of stock and awaiting
+     * delivery of further stock from the supplier. Only valid in ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Through_Stock_Protection_POD("18", "Through Stock Protection POD"),
+
+    /**
+     * Not eligible for POD. Only valid in ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Except_through_POD("19", "Except through POD"),
 
     /**
      * Positive indication that no sales restrictions apply, for example to indicate the product may be sold both online

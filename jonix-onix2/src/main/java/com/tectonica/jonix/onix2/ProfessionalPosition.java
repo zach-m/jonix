@@ -58,8 +58,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b045&gt;Humboldt Professor of
- * Oceanography&lt;/b045&gt;</tt></td>
+ * <td><tt>&lt;b045&gt;Humboldt Professor of Oceanography&lt;/b045&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

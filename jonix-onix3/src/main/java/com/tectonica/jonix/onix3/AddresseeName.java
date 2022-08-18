@@ -55,8 +55,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x300&gt;BiblioAggregator
- * Ltd&lt;/x300&gt;</tt></td>
+ * <td><tt>&lt;x300&gt;BiblioAggregator Ltd&lt;/x300&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -85,12 +84,12 @@ public class AddresseeName implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -128,8 +127,8 @@ public class AddresseeName implements OnixElement<String>, Serializable {
     public AddresseeName(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = JPU.getContentAsString(element);
     }

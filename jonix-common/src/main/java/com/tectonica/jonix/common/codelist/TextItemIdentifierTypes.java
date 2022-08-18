@@ -21,6 +21,9 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -38,7 +41,7 @@ interface CodeList43 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist43">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist43">ONIX
  *      Codelist 43 in Reference Guide</a>
  */
 public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43 {
@@ -69,7 +72,17 @@ public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43 {
     /**
      * (Unhyphenated)
      */
-    ISBN_13("15", "ISBN-13");
+    ISBN_13("15", "ISBN-13"),
+
+    /**
+     * International Standard Content Code, a 'similarity hash' identifier derived algorithmically from the content
+     * itself (see https://iscc.codes). &lt;IDValue&gt; is the 27-character case-sensitive string (including one hyphen)
+     * comprising the Meta-ID and Content-ID components of a full ISCC generated from a digital manifestation of the
+     * work. Use only with ONIX 3.0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    ISCC("39", "ISCC");
 
     public final String code;
     public final String description;
@@ -89,15 +102,29 @@ public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43 {
         return description;
     }
 
+    private static volatile Map<String, TextItemIdentifierTypes> map;
+
+    private static Map<String, TextItemIdentifierTypes> map() {
+        Map<String, TextItemIdentifierTypes> result = map;
+        if (result == null) {
+            synchronized (TextItemIdentifierTypes.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (TextItemIdentifierTypes e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static TextItemIdentifierTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (TextItemIdentifierTypes e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 }

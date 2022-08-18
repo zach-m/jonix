@@ -41,7 +41,7 @@ interface CodeList196 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -121,7 +121,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Reading_order("13", "Reading order"),
 
     /**
-     * All or substantially all non-text content has short alternative descriptions, usually provided via alt
+     * All or substantially all non-text content has short alternative (textual) descriptions, usually provided via alt
      * attributes. Note this applies to normal images (eg photographs, charts and diagrams) and also to any embedded
      * audio, video etc. Audio and video content should include alternative descriptions suitable for hearing-impaired
      * as well as for visually-impaired readers. (Purely decorative non-text content can be ignored, but the
@@ -131,12 +131,12 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Short_alternative_descriptions("14", "Short alternative descriptions"),
 
     /**
-     * All or substantially all non-text content has full alternative descriptions. Note this applies to normal images
-     * (eg photographs, charts and diagrams) and also to any embedded audio, video etc. Audio and video content should
-     * include full alternative descriptions (eg audio-described video) and transcript, subtitles or captions (whether
-     * closed or open) suitable for hearing-impaired as well as for visually-impaired readers. (Purely decorative
-     * non-text content can be ignored, but the accessibility of resources delivered via a network connection rather
-     * than as part of the e-publication package must be included)
+     * All or substantially all non-text content has full alternative (textual) descriptions. Note this applies to
+     * normal images (eg photographs, charts and diagrams) and also to any embedded audio, video etc. Audio and video
+     * content should include full alternative descriptions (eg audio-described video) and transcript, subtitles or
+     * captions (whether closed or open) suitable for hearing-impaired as well as for visually-impaired readers. (Purely
+     * decorative non-text content can be ignored, but the accessibility of resources delivered via a network connection
+     * rather than as part of the e-publication package must be included)
      */
     Full_alternative_descriptions("15", "Full alternative descriptions"),
 
@@ -204,24 +204,63 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Use_of_contrast("26", "Use of contrast"),
 
     /**
+     * Audio content is presented with no or low background noise (eg ambient sounds), at least 20dB below the level of
+     * foreground speech
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Use_of_audio("27", "Use of audio"),
+
+    /**
+     * All or substantially all non-text content has full alternative descriptions as pre-recorded audio. Note this
+     * applies to normal images (eg photographs, charts and diagrams) and also to any embedded video etc. Video content
+     * should include full alternative descriptions (eg audio-described video) and transcript, subtitles or captions
+     * (whether closed or open) suitable for hearing-impaired as well as for visually-impaired readers. (Purely
+     * decorative non-text content can be ignored, but the accessibility of resources delivered via a network connection
+     * rather than as part of the e-publication package must be included)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Full_alternative_audio_descriptions("28", "Full alternative audio descriptions"),
+
+    /**
+     * All levels of heading and other structural elements of the content are correctly marked up and (if applicable)
+     * numbered, to enable fast next heading / previous heading, next chapter / previous chapter navigation without
+     * returning to the table of contents
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Next_Previous_navigation("29", "Next / Previous navigation"),
+
+    /**
+     * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page belonging to the organisation responsible for
+     * compliance testing and certification of the product - typically a 'home page' or a page describing the
+     * certification scheme itself. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Compliance_certification_by("93", "Compliance certification by"),
+
+    /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
-     * accessibility features, compatibility, testing etc. The web page should be maintained by an independent
-     * compliance scheme or testing organization
+     * accessibility features, compatibility, testing, certification etc relevant to this product. The web page should
+     * be maintained by an independent compliance scheme or testing organization
      */
     Compliance_web_page_for_detailed_accessibility_information("94",
         "Compliance web page for detailed accessibility information"),
 
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
-     * accessibility features, compatibility, testing etc. The web page should be provided by a trusted intermediary or
-     * third party nominated by the publisher
+     * accessibility features, compatibility, testing etc relevant to this product. The web page should be provided by a
+     * trusted intermediary or third party nominated by the publisher
      */
     Trusted_intermediary_s_web_page_for_detailed_accessibility_information("95",
         "Trusted intermediary’s web page for detailed accessibility information"),
 
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
-     * accessibility features, compatibility, testing etc. The web page should be provided by the publisher
+     * accessibility features, compatibility, testing etc relevant to this product. The web page should be provided by
+     * the publisher
      */
     Publisher_s_web_page_for_detailed_accessibility_information("96",
         "Publisher’s web page for detailed accessibility information"),

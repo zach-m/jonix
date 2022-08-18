@@ -61,8 +61,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j405&gt;US
- * CA&lt;/j405&gt;</tt></td>
+ * <td><tt>&lt;j405&gt;US CA&lt;/j405&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

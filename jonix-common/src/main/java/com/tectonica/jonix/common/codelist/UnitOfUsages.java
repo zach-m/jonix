@@ -41,7 +41,7 @@ interface CodeList147 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist147">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist147">ONIX
  *      Codelist 147 in Reference Guide</a>
  */
 public enum UnitOfUsages implements OnixCodelist, CodeList147 {
@@ -89,18 +89,28 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     Users("15", "Users"),
 
     /**
-     * A 'class' is a group of learners attending a specific course or lesson and generally taught as a group
+     * Maximum number of licensed concurrent classes of user. A 'class' is a group of learners attending a specific
+     * course or lesson and generally taught as a group
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Concurrent_classes("19", "Concurrent classes"),
 
     /**
-     * Maximum number of classes of learners, independent of concurrency of use
+     * Maximum number of licensed classes of learners, independent of concurrency of use and the number of users per
+     * class
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Classes("20", "Classes"),
+
+    /**
+     * Maximum number of licensed institutions, independend of concurrency of use and the number of classes or
+     * individuals per institution
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Institutions("31", "Institutions"),
 
     /**
      * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
@@ -132,7 +142,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     Months("14", "Months"),
 
     /**
-     * Maximum about of time in hours, minutes and seconds allowed in a permitted extract for a specified usage, in the
+     * Maximum amount of time in hours, minutes and seconds allowed in a permitted extract for a specified usage, in the
      * format HHHMMSS (7 digits, with leading zeros if necessary)
      * <p>
      * Jonix-Comment: Introduced in Onix3
@@ -142,46 +152,64 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     /**
      * Maximum time period in days (beginning from the product publication date). In effect, this defines a fixed end
      * date for the license independent of the purchase or activation date
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Days_fixed_start("27", "Days (fixed start)"),
 
     /**
      * Maximum time period in weeks
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Weeks_fixed_start("28", "Weeks (fixed start)"),
 
     /**
      * Maximum time period in months
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Months_fixed_start("29", "Months (fixed start)"),
 
     /**
      * Maximum number of times a specified usage event may occur (in the lifetime of the product)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Times("10", "Times"),
 
     /**
      * Maximum frequency a specified usage event may occur (per day)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Times_per_day("22", "Times per day"),
 
     /**
      * Maximum frequency a specified usage event may occur (per month)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Times_per_month("23", "Times per month"),
 
     /**
      * Maximum frequency a specified usage event may occur (per year)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Times_per_year("24", "Times per year"),
 
     /**
      * Maximum resolution of printed or copy/pasted extracts
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Dots_per_inch("21", "Dots per inch"),
 
     /**
      * Maximum resolution of printed or copy/pasted extracts
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Dots_per_cm("26", "Dots per cm"),
 
@@ -190,6 +218,8 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
      * pagination). Use with (max number of) Pages, Percentage of content, or End page to specify pages allowed in
      * Preview
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Allowed_usage_start_page("11", "Allowed usage start page"),
 
@@ -197,6 +227,8 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * Page number at which allowed usage ends. &lt;Quantity&gt; should contain an absolute page number, counting the
      * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
      * pagination). Use with Start page to specify pages allowed in a preview
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Allowed_usage_end_page("12", "Allowed usage end page"),
 
@@ -259,7 +291,90 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    Months_("14", "Months");
+    Months_("14", "Months"),
+
+    /**
+     * Maximum time period in days (beginning from the product publication date). In effect, this defines a fixed end
+     * date for the license independent of the purchase or activation date
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Days_fixed_start_("27", "Days (fixed start)"),
+
+    /**
+     * Maximum time period in weeks
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Weeks_fixed_start_("28", "Weeks (fixed start)"),
+
+    /**
+     * Maximum time period in months
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Months_fixed_start_("29", "Months (fixed start)"),
+
+    /**
+     * Maximum number of times a specified usage event may occur (in the lifetime of the product)
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Times_("10", "Times"),
+
+    /**
+     * Maximum frequency a specified usage event may occur (per day)
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Times_per_day_("22", "Times per day"),
+
+    /**
+     * Maximum frequency a specified usage event may occur (per month)
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Times_per_month_("23", "Times per month"),
+
+    /**
+     * Maximum frequency a specified usage event may occur (per year)
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Times_per_year_("24", "Times per year"),
+
+    /**
+     * Maximum resolution of printed or copy/pasted extracts
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Dots_per_inch_("21", "Dots per inch"),
+
+    /**
+     * Maximum resolution of printed or copy/pasted extracts
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Dots_per_cm_("26", "Dots per cm"),
+
+    /**
+     * Page number where allowed usage begins. &lt;Quantity&gt; should contain an absolute page number, counting the
+     * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
+     * pagination). Use with (max number of) Pages, Percentage of content, or End page to specify pages allowed in
+     * Preview
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Allowed_usage_start_page_("11", "Allowed usage start page"),
+
+    /**
+     * Page number at which allowed usage ends. &lt;Quantity&gt; should contain an absolute page number, counting the
+     * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
+     * pagination). Use with Start page to specify pages allowed in a preview
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Allowed_usage_end_page_("12", "Allowed usage end page");
 
     public final String code;
     public final String description;

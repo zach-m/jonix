@@ -38,7 +38,7 @@ interface CodeList217 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_49.html#codelist217">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist217">ONIX
  *      Codelist 217 in Reference Guide</a>
  */
 public enum PriceIdentifierTypes implements OnixCodelist, CodeList217 {

@@ -65,8 +65,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b090&gt;US
- * CA&lt;/b090&gt;</tt> USA and Canada</td>
+ * <td><tt>&lt;b090&gt;US CA&lt;/b090&gt;</tt> USA and Canada</td>
  * </tr>
  * </table>
  * <p/>

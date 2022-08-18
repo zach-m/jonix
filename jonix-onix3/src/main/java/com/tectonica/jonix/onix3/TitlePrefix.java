@@ -64,8 +64,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;TitlePrefix
- * language=&quot;eng&quot;&gt;The&lt;/TitlePrefix&gt;</tt></td>
+ * <td><tt>&lt;TitlePrefix language=&quot;eng&quot;&gt;The&lt;/TitlePrefix&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -99,12 +98,12 @@ public class TitlePrefix implements OnixElement<String>, Serializable {
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /**
      * (type: dt.NonEmptyString)
@@ -153,8 +152,8 @@ public class TitlePrefix implements OnixElement<String>, Serializable {
     public TitlePrefix(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         collationkey = JPU.getAttribute(element, "collationkey");
         language = Languages.byCode(JPU.getAttribute(element, "language"));
         textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));

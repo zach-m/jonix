@@ -32,7 +32,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Imprint identifier composite</h1>
+ * <h1>Imprint or brand identifier composite</h1>
  * <p>
  * A group of data elements which together define the identifier of an imprint name. Optional, but mandatory if the
  * &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite is repeatable in order to specify
@@ -80,12 +80,12 @@ public class ImprintIdentifier
      */
     public String datestamp;
 
-    public RecordSourceTypes sourcetype;
-
     /**
      * (type: dt.NonEmptyString)
      */
     public String sourcename;
+
+    public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
     // CONSTRUCTION
@@ -107,8 +107,8 @@ public class ImprintIdentifier
         initialized = false;
         this.element = element;
         datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
     }
 
     @Override
