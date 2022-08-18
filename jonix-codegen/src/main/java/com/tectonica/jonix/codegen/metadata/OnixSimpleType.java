@@ -99,7 +99,8 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
 
     @JsonIgnore
     public boolean isEmpty() {
-        return (primitiveType == null) && (description == null) && (comment == null) && (enumName == null) &&
+        // NOTE: we don't require (description == null) here, to allow override of this specific field by alias
+        return (primitiveType == null) && (comment == null) && (enumName == null) &&
             (enumCodelistIssue == null) && (enumAliasFor == null) && !isList;
     }
 
@@ -124,7 +125,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
         }
 
         primitiveType = enumType.primitiveType;
-        description = enumType.description;
+        description = (description == null) ? enumType.description : description;
         comment = enumType.comment;
         isList = enumType.isList;
         enumName = enumType.enumName;

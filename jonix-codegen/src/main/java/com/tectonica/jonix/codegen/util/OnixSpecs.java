@@ -43,6 +43,29 @@ public class OnixSpecs {
         "36"
     );
 
+    private static final String SPECS_3_0_08_DIR = "/xsd/onix3.0_2021-04-29_rev08_codelist58/";
+    public static final OnixSpecs SPECS_3_0_08_REF = new OnixSpecs(
+        OnixVersion.Onix3,
+        false,
+        SPECS_3_0_08_DIR + "ONIX_BookProduct_3.0_reference.xsd",
+        SPECS_3_0_08_DIR + "ONIX_BookProduct_CodeLists.xsd",
+        SPECS_3_0_08_DIR + "ONIX_for_Books_Format_Specification_3.0.8.html",
+        "58"
+    );
+    public static final OnixSpecs SPECS_3_0_08_SHORT = new OnixSpecs(
+        OnixVersion.Onix3,
+        true,
+        SPECS_3_0_08_DIR + "ONIX_BookProduct_3.0_short.xsd",
+        SPECS_3_0_08_DIR + "ONIX_BookProduct_CodeLists.xsd",
+        SPECS_3_0_08_DIR + "ONIX_for_Books_Format_Specification_3.0.8.html",
+        "58"
+    );
+
+    public static final OnixSpecs SPECS_3_0_LATEST_REF = SPECS_3_0_08_REF;
+    public static final OnixSpecs SPECS_3_0_LATEST_SHORT = SPECS_3_0_08_SHORT;
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     private static final String SPECS_3_0_07_DIR = "/xsd/onix3.0_2020-05-18_rev07_codelist52/";
     public static final OnixSpecs SPECS_3_0_07_REF = new OnixSpecs(
         OnixVersion.Onix3,
@@ -60,11 +83,6 @@ public class OnixSpecs {
         SPECS_3_0_07_DIR + "ONIX_for_Books_Format_Specification_3.0.7.html",
         "52"
     );
-
-    public static final OnixSpecs SPECS_3_0_LATEST_REF = SPECS_3_0_07_REF;
-    public static final OnixSpecs SPECS_3_0_LATEST_SHORT = SPECS_3_0_07_SHORT;
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private static final String SPECS_3_0_06_DIR = "/xsd/onix3.0_2019-04-26_rev06_codelist45/";
     public static final OnixSpecs SPECS_3_0_06_REF = new OnixSpecs(

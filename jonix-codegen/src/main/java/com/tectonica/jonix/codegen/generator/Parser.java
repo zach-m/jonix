@@ -305,7 +305,7 @@ public class Parser {
                     throw new RuntimeException(
                         "Can't create list for " + simpleType.name + " with unknown type " + itemType);
                 }
-                LOGGER.debug("simpleTye {} is an xs:list of {} items", simpleType.name, existingType.name);
+                LOGGER.debug("simpleType {} is an xs:list of {} items", simpleType.name, existingType.name);
                 // we create an alias to the item-type, and then mark the alias as such that represents a list
                 simpleType.setAsAliasFor(existingType);
                 simpleType.isList = true;
