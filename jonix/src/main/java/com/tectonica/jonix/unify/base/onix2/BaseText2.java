@@ -77,9 +77,9 @@ public class BaseText2 extends BaseText {
             case Competing_titles:
                 return TextTypes.Description;
             case Flap_copy:
-                return TextTypes.Flap_cover_copy;
+                return TextTypes.Primary_cover_copy;
             case Back_cover_copy:
-                return TextTypes.Flap_cover_copy;
+                return TextTypes.Primary_cover_copy;
             case Feature:
                 return TextTypes.Feature;
             case New_feature:

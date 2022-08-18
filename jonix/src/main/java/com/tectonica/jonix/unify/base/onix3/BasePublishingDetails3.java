@@ -44,9 +44,11 @@ public class BasePublishingDetails3 extends BasePublishingDetails {
         PublishingDetail pd = product.publishingDetail();
         if (pd.exists()) {
             dest.publicationDate =
-                pd.publishingDates().findAsStruct(PublishingDateRoles.Publication_date).map(p -> p.date).orElse(null);
+                pd.publishingDates().findAsStruct(PublishingDateRoles.Publication_date).map(p -> p.date)
+                    .orElse(null);
             dest.outOfPrintDate =
-                pd.publishingDates().findAsStruct(PublishingDateRoles.Out_of_print_deletion_date).map(p -> p.date)
+                pd.publishingDates().findAsStruct(PublishingDateRoles.Out_of_print_permanently_withdrawn_date)
+                    .map(p -> p.date)
                     .orElse(null);
             dest.countryOfPublication = pd.countryOfPublication().value;
             dest.cityOfPublication = pickCityOfPublication(product, Languages.English);
