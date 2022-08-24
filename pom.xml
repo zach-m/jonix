@@ -217,11 +217,6 @@
             </dependency>
             <dependency>
                 <groupId>com.tectonica</groupId>
-                <artifactId>jonix-codegen</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.tectonica</groupId>
                 <artifactId>jonix-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -295,10 +290,6 @@
                     </plugin>
                 </plugins>
             </build>
-            <modules>
-                <!-- include non-deployable modules -->
-                <module>jonix-codegen</module>
-            </modules>
         </profile>
 
         <!-- Java9 modularization (Jigsaw) within Java8 JARs -->
