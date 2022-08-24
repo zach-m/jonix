@@ -68,7 +68,7 @@ public enum BiblePurposes implements OnixCodelist, CodeList85 {
     /**
      * A text Bible (or selected Biblical text) designed in presentation and readability for a child
      */
-    Children_s("CH", "Children’s"),
+    Childrens("CH", "Children’s"),
 
     /**
      * A small Bible (or selected Biblical text) with a trim height of five inches or less
@@ -116,7 +116,7 @@ public enum BiblePurposes implements OnixCodelist, CodeList85 {
     /**
      * A Bible (or selected Biblical text) especially designed with helps and study guides oriented to the adult male
      */
-    Men_s("MN", "Men’s"),
+    Mens("MN", "Men’s"),
 
     /**
      * A Bible (or selected Biblical text) designed for use in primary school
@@ -154,7 +154,7 @@ public enum BiblePurposes implements OnixCodelist, CodeList85 {
     /**
      * A devotional or study Bible (or selected Biblical text) with helps targeted at the adult woman
      */
-    Women_s("WM", "Women’s"),
+    Womens("WM", "Women’s"),
 
     /**
      * A Bible (or selected Biblical text) containing special study and devotional helps designed specifically for the

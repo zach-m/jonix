@@ -89,7 +89,7 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     /**
      * Swedish educational qualifier (code)
      */
-    Niv_("21", "Nivå"),
+    Niva("21", "Nivå"),
 
     Italian_school_grade("22", "Italian school grade"),
 

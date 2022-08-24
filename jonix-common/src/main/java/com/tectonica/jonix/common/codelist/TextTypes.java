@@ -118,7 +118,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * statement, or legal notice of any sort. Note that the inclusion of such a notice cannot and does not imply that a
      * user of the ONIX record is obliged to reproduce it
      */
-    Publisher_s_notice("13", "Publisher’s notice"),
+    Publishers_notice("13", "Publisher’s notice"),
 
     /**
      * A short excerpt from the main text of the work

@@ -135,7 +135,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     /**
      * See http://www.bic.org.uk/8/Children's-Books-Marketing-Classifications/
      */
-    BIC_children_s_book_marketing_category("21", "BIC children’s book marketing category"),
+    BIC_childrens_book_marketing_category("21", "BIC children’s book marketing category"),
 
     /**
      * BISAC Merchandising Themes are used in addition to BISAC Subject Headings to denote an audience to which a work
@@ -144,7 +144,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
      */
     BISAC_Merchandising_Theme("22", "BISAC Merchandising Theme"),
 
-    Publisher_s_own_category_code("23", "Publisher’s own category code"),
+    Publishers_own_category_code("23", "Publisher’s own category code"),
 
     /**
      * As specified in &lt;SubjectSchemeName&gt;
@@ -171,7 +171,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     /**
      * Subject classification used by Electre (France)
      */
-    Th_mes_Electre("28", "Thèmes Electre"),
+    Themes_Electre("28", "Thèmes Electre"),
 
     /**
      * France. A four-digit number, see http://www.clil.org/information/documentation.html (in French). The first digit
@@ -233,7 +233,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     /**
      * Norwegian school curriculum version. Deprecated
      */
-    L_replaner("39", "Læreplaner"),
+    Lreplaner("39", "Læreplaner"),
 
     /**
      * Japanese subject classification scheme
@@ -260,7 +260,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
      * Codes for Norwegian 'programomr&#229;de' used in secondary education. See http://www.udir.no/. (Formerly labelled
      * 'Videreg&#229;ende' or 'Programfag')
      */
-    Programomr_de("44", "Programområde"),
+    Programomrade("44", "Programområde"),
 
     /**
      * Norwegian list of categories for books and other material used in education
@@ -285,12 +285,12 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     /**
      * Swedish bookselling educational subject type
      */
-    L_romedelstyp("49", "Läromedelstyp"),
+    Laromedelstyp("49", "Läromedelstyp"),
 
     /**
      * Swedish publishers preliminary subject classification
      */
-    F_rhandsbeskrivning("50", "Förhandsbeskrivning"),
+    Forhandsbeskrivning("50", "Förhandsbeskrivning"),
 
     /**
      * Controlled subset of UDC codes used by the Spanish ISBN Agency
@@ -316,12 +316,12 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
 
     Qualificatore_di_livello_scolastico_CCE("57", "Qualificatore di livello scolastico CCE"),
 
-    Qualificatore_di_et_di_lettura_CCE("58", "Qualificatore di età di lettura CCE"),
+    Qualificatore_di_eta_di_lettura_CCE("58", "Qualificatore di età di lettura CCE"),
 
     /**
      * Subject code list of the German association of educational media publishers
      */
-    VdS_Bildungsmedien_F_cher("59", "VdS Bildungsmedien Fächer"),
+    VdS_Bildungsmedien_Facher("59", "VdS Bildungsmedien Fächer"),
 
     /**
      * Norwegian primary and secondary school subject categories (fagkoder), see http://www.udir.no/
@@ -352,7 +352,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
      * Allm&#228;n tesaurus p&#229; svenska: Swedish translation of the Finnish General Thesaurus. See
      * http://onki.fi/fi/browser/ (in Finnish)
      */
-    All_rs("65", "Allärs"),
+    Allars("65", "Allärs"),
 
     /**
      * Yleisten kirjastojen luokitusj&#228;rjestelm&#228;: Finnish Public Libraries Classification System. See
@@ -427,7 +427,7 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     /**
      * Finnish fiction genre classification. See http://ykl.kirjastot.fi/fi-FI/lisaluokat/ (in Finnish)
      */
-    Fiktiivisen_aineiston_lis_luokitus("80", "Fiktiivisen aineiston lisäluokitus"),
+    Fiktiivisen_aineiston_lisaluokitus("80", "Fiktiivisen aineiston lisäluokitus"),
 
     /**
      * Location defined by postal code. Format is two-letter country code (from List 91), space, postal code. Note some
@@ -477,12 +477,12 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     /**
      * Swedish subject categories maintained by Bokrondellen
      */
-    _mnesord("A2", "Ämnesord"),
+    Amnesord("A2", "Ämnesord"),
 
     /**
      * Polish Statistical Book and E-book Classification
      */
-    Statystyka_Ksi_ek_Papierowych_M_wionych_I_Elektronicznych("A3",
+    Statystyka_Ksiazek_Papierowych_Mowionych_I_Elektronicznych("A3",
         "Statystyka Książek Papierowych, Mówionych I Elektronicznych"),
 
     /**
@@ -513,12 +513,12 @@ public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26 {
     /**
      * Library of Congress Children's Subject Headings: LCSHAC supplementary headings for Children's books
      */
-    LC_Children_s_Subject_Headings("A8", "LC Children’s Subject Headings"),
+    LC_Childrens_Subject_Headings("A8", "LC Children’s Subject Headings"),
 
     /**
      * Swedish bookselling educational subject
      */
-    Ny_L_romedel("A9", "Ny Läromedel"),
+    Ny_Laromedel("A9", "Ny Läromedel"),
 
     /**
      * EuroVoc multilingual thesaurus. &lt;SubjectCode&gt; should be a EuroVoc concept dc:identifier (for example, 2777,

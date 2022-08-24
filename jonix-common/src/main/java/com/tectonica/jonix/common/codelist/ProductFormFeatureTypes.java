@@ -91,7 +91,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * and position of the word, and the word is then read aloud by the device. The name of the compatible device (or
      * range of devices) should be given in &lt;ProductFormFeatureDescription&gt;
      */
-    _Point_and_listen_device_compatibility("08", "‘Point and listen’ device compatibility"),
+    Point_and_listen_device_compatibility("08", "‘Point and listen’ device compatibility"),
 
     /**
      * For &lt;ProductFormFeatureValue&gt; codes, see Codelist 196
@@ -146,7 +146,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    _Point_and_watch_device_app_compatibility("17", "‘Point and watch’ device/app compatibility"),
+    Point_and_watch_device_app_compatibility("17", "‘Point and watch’ device/app compatibility"),
 
     /**
      * Requirement for user authentication prior to use, with detail of authentication method (user enrolment, and login
@@ -301,7 +301,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    _Green_inks("38", "‘Green’ inks"),
+    Green_inks("38", "‘Green’ inks"),
 
     /**
      * Product binding uses environmentally-concious adhesives and other binding materials.
@@ -310,7 +310,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    _Green_adhesives("39", "‘Green’ adhesives"),
+    Green_adhesives("39", "‘Green’ adhesives"),
 
     /**
      * Product made from paper produced using environmentally-conscious technology.

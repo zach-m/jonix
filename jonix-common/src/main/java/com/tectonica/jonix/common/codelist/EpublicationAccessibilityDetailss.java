@@ -254,7 +254,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * accessibility features, compatibility, testing etc relevant to this product. The web page should be provided by a
      * trusted intermediary or third party nominated by the publisher
      */
-    Trusted_intermediary_s_web_page_for_detailed_accessibility_information("95",
+    Trusted_intermediarys_web_page_for_detailed_accessibility_information("95",
         "Trusted intermediary’s web page for detailed accessibility information"),
 
     /**
@@ -262,7 +262,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * accessibility features, compatibility, testing etc relevant to this product. The web page should be provided by
      * the publisher
      */
-    Publisher_s_web_page_for_detailed_accessibility_information("96",
+    Publishers_web_page_for_detailed_accessibility_information("96",
         "Publisher’s web page for detailed accessibility information"),
 
     /**

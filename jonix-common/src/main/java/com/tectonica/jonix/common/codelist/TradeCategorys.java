@@ -89,12 +89,12 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     /**
      * In France, a category of book that has a particular legal status, claimed by the publisher
      */
-    Livre_scolaire_d_clar_par_l_diteur("08", "Livre scolaire, déclaré par l’éditeur"),
+    Livre_scolaire_declare_par_lediteur("08", "Livre scolaire, déclaré par l’éditeur"),
 
     /**
      * In France, a category of book that has a particular legal status, designated independently of the publisher
      */
-    Livre_scolaire_non_sp_cifi_("09", "Livre scolaire (non spécifié)"),
+    Livre_scolaire_non_specifie("09", "Livre scolaire (non spécifié)"),
 
     /**
      * Edition published for sale only with a newspaper or periodical

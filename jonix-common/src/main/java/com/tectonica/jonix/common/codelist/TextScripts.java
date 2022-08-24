@@ -198,7 +198,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
      */
     Elbasan("Elba", "Elbasan"),
 
-    Ethiopic_Ge_ez("Ethi", "Ethiopic (Ge‘ez)"),
+    Ethiopic_Geez("Ethi", "Ethiopic (Ge‘ez)"),
 
     /**
      * Georgian in Unicode
@@ -249,11 +249,11 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
      */
     Han_with_Bopomofo("Hanb", "Han with Bopomofo"),
 
-    Hangul_Hang_l_Hangeul("Hang", "Hangul (Hangŭl, Hangeul)"),
+    Hangul_Hangul_Hangeul("Hang", "Hangul (Hangŭl, Hangeul)"),
 
     Han_Hanzi_Kanji_Hanja("Hani", "Han (Hanzi, Kanji, Hanja)"),
 
-    Hanunoo_Hanun_o("Hano", "Hanunoo (Hanunóo)"),
+    Hanunoo_Hanunoo("Hano", "Hanunoo (Hanunóo)"),
 
     /**
      * Subset of Hani
@@ -395,7 +395,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
      */
     Leke("Leke", "Leke"),
 
-    Lepcha_R_ng("Lepc", "Lepcha (Róng)"),
+    Lepcha_Rong("Lepc", "Lepcha (Róng)"),
 
     Limbu("Limb", "Limbu"),
 
@@ -464,7 +464,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Medefaidrin_Oberi_Okaime_Oberi_kaim_("Medf", "Medefaidrin (Oberi Okaime, Oberi Ɔkaimɛ)"),
+    Medefaidrin_Oberi_Okaime_Oberi_kaim("Medf", "Medefaidrin (Oberi Okaime, Oberi Ɔkaimɛ)"),
 
     Mende_Kikakui("Mend", "Mende Kikakui"),
 
@@ -485,7 +485,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Modi_Mo_("Modi", "Modi, Moḍī"),
+    Modi_Modi("Modi", "Modi, Moḍī"),
 
     /**
      * Includes Clear, Manchu scripts
@@ -525,16 +525,16 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Newa_Newar_Newari_Nep_la_lipi("Newa", "Newa, Newar, Newari, Nepāla lipi"),
+    Newa_Newar_Newari_Nepala_lipi("Newa", "Newa, Newar, Newari, Nepāla lipi"),
 
     /**
      * Script is not supported by Unicode
      */
-    Nakhi_Geba_Na_Khi_Gg_baw_Naxi_Geba("Nkgb", "Nakhi Geba (’Na-’Khi ²Ggŏ-¹baw, Naxi Geba)"),
+    Nakhi_Geba_Na_Khi_Ggo_baw_Naxi_Geba("Nkgb", "Nakhi Geba (’Na-’Khi ²Ggŏ-¹baw, Naxi Geba)"),
 
-    N_Ko("Nkoo", "N’Ko"),
+    NKo("Nkoo", "N’Ko"),
 
-    N_shu("Nshu", "Nüshu"),
+    Nushu("Nshu", "Nüshu"),
 
     /**
      * Ancient/historic script
@@ -649,14 +649,14 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
 
     Shavian_Shaw("Shaw", "Shavian (Shaw)"),
 
-    Sharada_rad_("Shrd", "Sharada, Śāradā"),
+    Sharada_Sarada("Shrd", "Sharada, Śāradā"),
 
     /**
      * Ancient/historic script. For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Siddham_Siddha_Siddham_t_k_("Sidd", "Siddham, Siddhaṃ, Siddhamātṛkā"),
+    Siddham_Siddham_Siddhamatrka("Sidd", "Siddham, Siddhaṃ, Siddhamātṛkā"),
 
     Khudawadi_Sindhi("Sind", "Khudawadi, Sindhi"),
 
@@ -694,7 +694,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
 
     Tagbanwa("Tagb", "Tagbanwa"),
 
-    Takri_kr_kr_("Takr", "Takri, Ṭākrī, Ṭāṅkrī"),
+    Takri_Takri_Tankri("Takr", "Takri, Ṭākrī, Ṭāṅkrī"),
 
     Tai_Le("Tale", "Tai Le"),
 
@@ -764,7 +764,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Zanabazar_Square_Zanabazarin_D_rb_ljin_Useg_Xewtee_D_rb_ljin_Bicig_Horizontal_Square_Script("Zanb",
+    Zanabazar_Square_Zanabazarin_Dorboljin_Useg_Xewtee_Dorboljin_Bicig_Horizontal_Square_Script("Zanb",
         "Zanabazar Square (Zanabazarin Dörböljin Useg, Xewtee Dörböljin Bicig, Horizontal Square Script)"),
 
     Code_for_inherited_script("Zinh", "Code for inherited script"),

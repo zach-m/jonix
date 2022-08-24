@@ -50,7 +50,7 @@ public enum BrazilEducationalLevels implements OnixCodelist, CodeList238 {
     /**
      * Preschool and kindergarten
      */
-    Educa_o_Infantil("K", "Educação Infantil"),
+    Educacao_Infantil("K", "Educação Infantil"),
 
     /**
      * Elementary school
@@ -76,48 +76,48 @@ public enum BrazilEducationalLevels implements OnixCodelist, CodeList238 {
     /**
      * High school
      */
-    Ensino_M_dio_1_ano("10", "Ensino Médio 1º ano"),
+    Ensino_Medio_1_ano("10", "Ensino Médio 1º ano"),
 
-    Ensino_M_dio_2_ano("11", "Ensino Médio 2º ano"),
+    Ensino_Medio_2_ano("11", "Ensino Médio 2º ano"),
 
-    Ensino_M_dio_3_ano("12", "Ensino Médio 3º ano"),
+    Ensino_Medio_3_ano("12", "Ensino Médio 3º ano"),
 
     /**
      * Technical study at High school, alongside 2nd and 3rd year
      */
-    Ensino_T_cnico_Integrado("13", "Ensino Técnico Integrado"),
+    Ensino_Tecnico_Integrado("13", "Ensino Técnico Integrado"),
 
     /**
      * Technical study at separate institution in parallel with 2nd and 3rd year High school study
      */
-    Ensino_T_cnico_Concomitante("14", "Ensino Técnico Concomitante"),
+    Ensino_Tecnico_Concomitante("14", "Ensino Técnico Concomitante"),
 
     /**
      * Technical study after completion of High school
      */
-    Ensino_T_cnico_Subsequente("15", "Ensino Técnico Subsequente"),
+    Ensino_Tecnico_Subsequente("15", "Ensino Técnico Subsequente"),
 
     /**
      * University entrance
      */
-    Ensino_pr_vestibular("P", "Ensino pré-vestibular"),
+    Ensino_pre_vestibular("P", "Ensino pré-vestibular"),
 
     /**
      * Undergraduate degree level
      */
-    Ensino_Superior_Gradua_o_Licenciatura_Bacharelado("A", "Ensino Superior Graduação Licenciatura/ Bacharelado"),
+    Ensino_Superior_Graduacao_Licenciatura_Bacharelado("A", "Ensino Superior Graduação Licenciatura/ Bacharelado"),
 
-    Ensino_Superior_Gradua_o_Tecnologia("B", "Ensino Superior Graduação Tecnologia"),
+    Ensino_Superior_Graduacao_Tecnologia("B", "Ensino Superior Graduação Tecnologia"),
 
     /**
      * Masters and Doctoral degree level
      */
-    Ensino_Superior_P_s_gradua_o_Stricto_sensu("D", "Ensino Superior Pós-graduação Stricto sensu"),
+    Ensino_Superior_Pos_graduacao_Stricto_sensu("D", "Ensino Superior Pós-graduação Stricto sensu"),
 
     /**
      * Professional qualifications
      */
-    Ensino_Superior_P_s_gradua_o_Lato_sensu("F", "Ensino Superior Pós-graduação Lato sensu");
+    Ensino_Superior_Pos_graduacao_Lato_sensu("F", "Ensino Superior Pós-graduação Lato sensu");
 
     public final String code;
     public final String description;

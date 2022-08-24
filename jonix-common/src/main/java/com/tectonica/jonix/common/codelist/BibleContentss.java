@@ -118,7 +118,7 @@ public enum BibleContentss implements OnixCodelist, CodeList82 {
     /**
      * The books containing the letters of Paul to the various early Christian churches
      */
-    Paul_s_Epistles("PE", "Paul’s Epistles"),
+    Pauls_Epistles("PE", "Paul’s Epistles"),
 
     /**
      * The book of Psalms and the book of Proverbs combined

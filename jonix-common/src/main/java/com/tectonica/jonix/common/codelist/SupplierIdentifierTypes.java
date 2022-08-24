@@ -55,7 +55,7 @@ public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
      */
     Proprietary_("02", "Proprietary"),
 
-    B_rsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"),
+    Borsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"),
 
     German_ISBN_Agency_publisher_identifier("05", "German ISBN Agency publisher identifier"),
 

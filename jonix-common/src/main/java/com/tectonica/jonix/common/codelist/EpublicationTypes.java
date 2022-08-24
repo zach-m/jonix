@@ -52,7 +52,7 @@ public enum EpublicationTypes implements OnixCodelist, CodeList10 {
      * types for delivery to the consumer. This code is used when an ONIX &lt;Product&gt; record describes the content
      * package and lists within the record the different forms in which it is available
      */
-    Epublication_content_package_("000", "Epublication ‘content package’"),
+    Epublication_content_package("000", "Epublication ‘content package’"),
 
     /**
      * An epublication delivered in a basic, unprotected, HTML format. Do NOT use for HTML-based formats which include
@@ -293,13 +293,13 @@ public enum EpublicationTypes implements OnixCodelist, CodeList10 {
      * Epublication packaged as an application for Android (eg Android phone or tablet) containing both executable code
      * and content. Content can be described with &lt;ProductContentType&gt;
      */
-    Android_app_("041", "Android ‘app’"),
+    Android_app("041", "Android ‘app’"),
 
     /**
      * Epublication packaged as an application. Technical requirements such as target operating system and/or device
      * should be provided in &lt;EpubTypeNote&gt;. Content can be described with &lt;ProductContentType&gt;
      */
-    Other_app_("042", "Other ‘app’"),
+    Other_app("042", "Other ‘app’"),
 
     /**
      * XML Paper Specification format [File extension .xps] for (eg) Blio

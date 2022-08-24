@@ -50,13 +50,13 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * See also codes 17 and 18
      */
-    Publisher_s_corporate_website("01", "Publisher’s corporate website"),
+    Publishers_corporate_website("01", "Publisher’s corporate website"),
 
     /**
      * A publisher's informative and/or promotional webpage relating to a specified work (book, journal, online resource
      * or other publication type)
      */
-    Publisher_s_website_for_a_specified_work("02", "Publisher’s website for a specified work"),
+    Publishers_website_for_a_specified_work("02", "Publisher’s website for a specified work"),
 
     /**
      * A webpage giving access to an online content hosting service as a whole
@@ -77,19 +77,18 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * A webpage maintained by an author or other contributor about her/his publications and personal background
      */
-    Contributor_s_own_website("06", "Contributor’s own website"),
+    Contributors_own_website("06", "Contributor’s own website"),
 
     /**
      * A publisher's webpage devoted to a specific author or other contributor
      */
-    Publisher_s_website_relating_to_specified_contributor("07",
-        "Publisher’s website relating to specified contributor"),
+    Publishers_website_relating_to_specified_contributor("07", "Publisher’s website relating to specified contributor"),
 
     /**
      * A webpage devoted to a specific author or other contributor, and maintained by a publisher other than the
      * publisher of the item described in the ONIX record
      */
-    Other_publisher_s_website_relating_to_specified_contributor("08",
+    Other_publishers_website_relating_to_specified_contributor("08",
         "Other publisher’s website relating to specified contributor"),
 
     /**
@@ -101,13 +100,13 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * A webpage maintained by an author or other contributor and specific to an individual work
      */
-    Contributor_s_own_website_for_specified_work("10", "Contributor’s own website for specified work"),
+    Contributors_own_website_for_specified_work("10", "Contributor’s own website for specified work"),
 
     /**
      * A webpage devoted to an individual work, and maintained by a publisher other than the publisher of the item
      * described in the ONIX record
      */
-    Other_publisher_s_website_relating_to_specified_work("11", "Other publisher’s website relating to specified work"),
+    Other_publishers_website_relating_to_specified_work("11", "Other publisher’s website relating to specified work"),
 
     /**
      * A webpage devoted to an individual work, and maintained by a third party (eg a fan site)
@@ -117,20 +116,20 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * A webpage maintained by an author or other contributor and specific to a group or series of works
      */
-    Contributor_s_own_website_for_group_or_series_of_works("13",
+    Contributors_own_website_for_group_or_series_of_works("13",
         "Contributor’s own website for group or series of works"),
 
     /**
      * A publisher's webpage devoted to a group or series of works
      */
-    Publisher_s_website_relating_to_group_or_series_of_works("14",
+    Publishers_website_relating_to_group_or_series_of_works("14",
         "Publisher’s website relating to group or series of works"),
 
     /**
      * A webpage devoted to a group or series of works, and maintained by a publisher other than the publisher of the
      * item described in the ONIX record
      */
-    Other_publisher_s_website_relating_to_group_or_series_of_works("15",
+    Other_publishers_website_relating_to_group_or_series_of_works("15",
         "Other publisher’s website relating to group or series of works"),
 
     /**
@@ -142,12 +141,12 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * Use instead of code 01 to specify a publisher's website for trade users
      */
-    Publisher_s_B2B_website("17", "Publisher’s B2B website"),
+    Publishers_B2B_website("17", "Publisher’s B2B website"),
 
     /**
      * Use instead of code 01 to specify a publisher's website for end customers (consumers)
      */
-    Publisher_s_B2C_website("18", "Publisher’s B2C website"),
+    Publishers_B2C_website("18", "Publisher’s B2C website"),
 
     /**
      * For example, a Blogger or Tumblr URL, a Wordpress website or other blog URL
@@ -188,37 +187,37 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * A corporate website operated by a distributor or other supplier (not the publisher)
      */
-    Supplier_s_corporate_website("33", "Supplier’s corporate website"),
+    Suppliers_corporate_website("33", "Supplier’s corporate website"),
 
     /**
      * A website operated by a distributor or other supplier (not the publisher) and aimed at trade customers
      */
-    Supplier_s_B2B_website("34", "Supplier’s B2B website"),
+    Suppliers_B2B_website("34", "Supplier’s B2B website"),
 
     /**
      * A website operated by a distributor or other supplier (not the publisher) and aimed at consumers
      */
-    Supplier_s_B2C_website("35", "Supplier’s B2C website"),
+    Suppliers_B2C_website("35", "Supplier’s B2C website"),
 
     /**
      * A distributor or supplier's webpage describing a specified work
      */
-    Supplier_s_website_for_a_specified_work("36", "Supplier’s website for a specified work"),
+    Suppliers_website_for_a_specified_work("36", "Supplier’s website for a specified work"),
 
     /**
      * A distributor or supplier's webpage describing a specified work, and aimed at trade customers
      */
-    Supplier_s_B2B_website_for_a_specified_work("37", "Supplier’s B2B website for a specified work"),
+    Suppliers_B2B_website_for_a_specified_work("37", "Supplier’s B2B website for a specified work"),
 
     /**
      * A distributor or supplier's webpage describing a specified work, and aimed at consumers
      */
-    Supplier_s_B2C_website_for_a_specified_work("38", "Supplier’s B2C website for a specified work"),
+    Suppliers_B2C_website_for_a_specified_work("38", "Supplier’s B2C website for a specified work"),
 
     /**
      * A distributor or supplier's webpage describing a group or series of works
      */
-    Supplier_s_website_for_a_group_or_series_of_works("39", "Supplier’s website for a group or series of works"),
+    Suppliers_website_for_a_group_or_series_of_works("39", "Supplier’s website for a group or series of works"),
 
     /**
      * For example an ONIX or MARC record for the product, available online
@@ -234,12 +233,12 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page
      */
-    Author_s_social_networking_URL("42", "Author’s social networking URL"),
+    Authors_social_networking_URL("42", "Author’s social networking URL"),
 
     /**
      * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page
      */
-    Publisher_s_social_networking_URL("43", "Publisher’s social networking URL"),
+    Publishers_social_networking_URL("43", "Publisher’s social networking URL"),
 
     /**
      * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page. Use only in the
@@ -251,7 +250,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * For example, a service offering click-through licensing of extracts
      */
-    Publisher_s_or_third_party_website_for_permissions_requests("45",
+    Publishers_or_third_party_website_for_permissions_requests("45",
         "Publisher’s or third party website for permissions requests"),
 
     /**
@@ -259,7 +258,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Publisher_s_or_third_party_website_for_privacy_statement("46",
+    Publishers_or_third_party_website_for_privacy_statement("46",
         "Publisher’s or third party website for privacy statement"),
 
     /**
@@ -268,7 +267,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Publisher_s_website_for_digital_preservation("47", "Publisher’s website for digital preservation"),
+    Publishers_website_for_digital_preservation("47", "Publisher’s website for digital preservation"),
 
     /**
      * The URL of the preservation service (eg https://clockss.org), or a more specific URL for access to its preserved
@@ -293,7 +292,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Organisation_s_website_for_environmental_responsibility_statement("50",
+    Organisations_website_for_environmental_responsibility_statement("50",
         "Organisation’s website for environmental responsibility statement");
 
     public final String code;

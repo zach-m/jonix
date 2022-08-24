@@ -55,9 +55,9 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
      */
     Publisher_to_retailers("01", "Publisher to retailers"),
 
-    Publisher_s_exclusive_distributor_to_retailers("02", "Publisher’s exclusive distributor to retailers"),
+    Publishers_exclusive_distributor_to_retailers("02", "Publisher’s exclusive distributor to retailers"),
 
-    Publisher_s_non_exclusive_distributor_to_retailers("03", "Publisher’s non-exclusive distributor to retailers"),
+    Publishers_non_exclusive_distributor_to_retailers("03", "Publisher’s non-exclusive distributor to retailers"),
 
     /**
      * Wholesaler supplying retail trade outlets
@@ -74,7 +74,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
      * In a specified supply territory. Use only where exclusive/non-exclusive status is not known. Prefer 02 or 03 as
      * appropriate, where possible
      */
-    Publisher_s_distributor_to_retailers("06", "Publisher’s distributor to retailers"),
+    Publishers_distributor_to_retailers("06", "Publisher’s distributor to retailers"),
 
     /**
      * Where a POD product is supplied to retailers and/or consumers direct from a POD source

@@ -500,7 +500,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (aka 'Star' book). Tax treatment of products may differ from that of products with similar codes such as Book as
      * toy or Pop-up book)
      */
-    _Carousel_book("B222", "‘Carousel’ book"),
+    Carousel_book("B222", "‘Carousel’ book"),
 
     /**
      * A book with movable card 'tabs' within the pages. Pull a tab to reveal or animate part of a picture (distinct

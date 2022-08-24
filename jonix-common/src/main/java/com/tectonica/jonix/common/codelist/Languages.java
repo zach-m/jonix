@@ -472,7 +472,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     /**
      * ONIX local code, equivalent to fit in ISO 639-3
      */
-    Me_nkieli_Tornedalen_Finnish("fit", "Meänkieli / Tornedalen Finnish"),
+    Meankieli_Tornedalen_Finnish("fit", "Meänkieli / Tornedalen Finnish"),
 
     /**
      * Collective name
@@ -502,7 +502,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Friulian("fur", "Friulian"),
 
-    G_("gaa", "Gã"),
+    Ga("gaa", "Gã"),
 
     Gayo("gay", "Gayo"),
 
@@ -520,7 +520,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     German("ger", "German"),
 
-    Ethiopic_Ge_ez("gez", "Ethiopic (Ge’ez)"),
+    Ethiopic_Geez("gez", "Ethiopic (Ge’ez)"),
 
     Gilbertese("gil", "Gilbertese"),
 
@@ -570,7 +570,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Gujarati("guj", "Gujarati"),
 
-    Gwich_in("gwi", "Gwich’in"),
+    Gwichin("gwi", "Gwich’in"),
 
     /**
      * Macrolanguage
@@ -706,7 +706,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Kachin_Jingpho("kac", "Kachin; Jingpho"),
 
-    Kal_tdlisut_Greenlandic("kal", "Kalâtdlisut; Greenlandic"),
+    Kalatdlisut_Greenlandic("kal", "Kalâtdlisut; Greenlandic"),
 
     Kamba("kam", "Kamba"),
 
@@ -855,7 +855,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Ganda("lug", "Ganda"),
 
-    Luise_o("lui", "Luiseño"),
+    Luiseno("lui", "Luiseño"),
 
     Lunda("lun", "Lunda"),
 
@@ -906,7 +906,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Irish_Middle_ca_1100_1550("mga", "Irish, Middle (ca. 1100-1550)"),
 
-    Mi_kmaq_Micmac("mic", "Mi’kmaq; Micmac"),
+    Mikmaq_Micmac("mic", "Mi’kmaq; Micmac"),
 
     Minangkabau("min", "Minangkabau"),
 
@@ -948,7 +948,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Mongolian("mon", "Mongolian"),
 
-    Moor_Mossi("mos", "Mooré; Mossi"),
+    Moore_Mossi("mos", "Mooré; Mossi"),
 
     Multiple_languages("mul", "Multiple languages"),
 
@@ -1022,7 +1022,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Norwegian_Nynorsk("nno", "Norwegian Nynorsk"),
 
-    Norwegian_Bokm_l("nob", "Norwegian Bokmål"),
+    Norwegian_Bokmal("nob", "Norwegian Bokmål"),
 
     Nogai("nog", "Nogai"),
 
@@ -1033,14 +1033,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Norwegian("nor", "Norwegian"),
 
-    N_Ko("nqo", "N’Ko"),
+    NKo("nqo", "N’Ko"),
 
     /**
      * ONIX local code, equivalent to nrf in ISO 639-3. For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Guern_siais_J_rriais("nrf", "Guernésiais, Jèrriais"),
+    Guernesiais_Jerriais("nrf", "Guernésiais, Jèrriais"),
 
     Pedi_Sepedi_Northern_Sotho("nso", "Pedi; Sepedi; Northern Sotho"),
 
@@ -1066,7 +1066,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     /**
      * ONIX local code, equivalent to odt in ISO 639-3
      */
-    Old_Dutch_Old_Low_Franconian_ca_400_1050("odt", "Old Dutch / Old Low Franconian (ca. 400–1050)"),
+    Old_Dutch_Old_Low_Franconian_ca_4001050("odt", "Old Dutch / Old Low Franconian (ca. 400–1050)"),
 
     /**
      * Macrolanguage
@@ -1157,7 +1157,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Prakrit_languages("pra", "Prakrit languages"),
 
-    Proven_al_Old_to_1500("pro", "Provençal, Old (to 1500); Occitan, Old (to 1500)"),
+    Provencal_Old_to_1500("pro", "Provençal, Old (to 1500); Occitan, Old (to 1500)"),
 
     /**
      * ONIX local code, equivalent to prs in ISO 639-3. For use in ONIX 3.0 only
@@ -1174,7 +1174,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     /**
      * ONIX local code, distinct dialect of Occitan (not distinguished from oci by ISO 639-3)
      */
-    Aran_s("qar", "Aranés"),
+    Aranes("qar", "Aranés"),
 
     /**
      * ONIX local code, distinct dialect of Catalan (not distinguished from cat by ISO 639-3)
@@ -1227,7 +1227,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    R_union_Creole_French("rcf", "Réunion Creole French"),
+    Reunion_Creole_French("rcf", "Réunion Creole French"),
 
     /**
      * ONIX local code for Italian dialect, equivalent to rgl in ISO 639-3. For use in ONIX 3.0 only
@@ -1471,7 +1471,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Tibetan("tib", "Tibetan"),
 
-    Tigr_("tig", "Tigré"),
+    Tigre("tig", "Tigré"),
 
     Tigrinya("tir", "Tigrinya"),
 
@@ -1572,7 +1572,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     /**
      * Artificial language
      */
-    Volap_k("vol", "Volapük"),
+    Volapuk("vol", "Volapük"),
 
     Votic("vot", "Votic"),
 

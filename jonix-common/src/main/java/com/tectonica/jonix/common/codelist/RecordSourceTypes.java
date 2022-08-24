@@ -53,7 +53,7 @@ public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
      * Use to designate a distributor providing primary warehousing and fulfillment for a publisher or for a publisher's
      * sales agent, as distinct from a wholesaler
      */
-    Publisher_s_distributor("02", "Publisher’s distributor"),
+    Publishers_distributor("02", "Publisher’s distributor"),
 
     Wholesaler("03", "Wholesaler"),
 
@@ -71,14 +71,14 @@ public enum RecordSourceTypes implements OnixCodelist, CodeList3 {
      * Use for a publisher's sales agent responsible for marketing the publisher's products within a territory, as
      * opposed to a publisher's distributor who fulfills orders but does not market
      */
-    Publisher_s_sales_agent("06", "Publisher’s sales agent"),
+    Publishers_sales_agent("06", "Publisher’s sales agent"),
 
     /**
      * Downstream provider of e-publication format conversion services (who might also be a distributor or retailer of
      * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
      * publisher's ISBN prefix
      */
-    Publisher_s_conversion_service_provider("07", "Publisher’s conversion service provider"),
+    Publishers_conversion_service_provider("07", "Publisher’s conversion service provider"),
 
     /**
      * Downstream provider of e-publication format conversion services (who might also be a distributor or retailer of

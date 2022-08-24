@@ -122,7 +122,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     /**
      * Incuding associated teacher / instructor resources
      */
-    Teacher_s_guide("20", "Teacher’s guide"),
+    Teachers_guide("20", "Teacher’s guide"),
 
     /**
      * Feature article provided by publisher
@@ -132,7 +132,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     /**
      * Fictional character 'interview'
      */
-    Character_interview_("22", "Character ‘interview’"),
+    Character_interview("22", "Character ‘interview’"),
 
     Wallpaper_screensaver("23", "Wallpaper / screensaver"),
 
@@ -187,12 +187,12 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     /**
      * Including associated student / learner resources
      */
-    Student_s_guide("33", "Student’s guide"),
+    Students_guide("33", "Student’s guide"),
 
     /**
      * For example a PDF or other digital representation of a publisher's 'new titles' or range catalog
      */
-    Publisher_s_catalog("34", "Publisher’s catalog"),
+    Publishers_catalog("34", "Publisher’s catalog"),
 
     /**
      * For example a banner ad for the product. Pixel dimensions should typically be included in

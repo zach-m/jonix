@@ -86,7 +86,7 @@ public enum OtherTextTypes implements OnixCodelist, CodeList33 {
     /**
      * A promotional phrase which is intended to headline a description of the product
      */
-    Promotional_headline_("09", "Promotional ‘headline’"),
+    Promotional_headline("09", "Promotional ‘headline’"),
 
     /**
      * A quote from a review of a previous work by the same author(s) or in the same series
@@ -143,7 +143,7 @@ public enum OtherTextTypes implements OnixCodelist, CodeList33 {
      * statement, or legal notice of any sort. Note that the inclusion of such a notice cannot and does not imply that a
      * user of the ONIX record is obliged to reproduce it
      */
-    Publisher_s_notice("21", "Publisher’s notice"),
+    Publishers_notice("21", "Publisher’s notice"),
 
     Index("22", "Index"),
 

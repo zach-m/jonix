@@ -47,7 +47,7 @@ public enum SupplytoRegions implements OnixCodelist, CodeList52 {
     /**
      * When the same ISBN is used for open market and UK editions
      */
-    UK_open_market_("004", "UK ‘open market’");
+    UK_open_market("004", "UK ‘open market’");
 
     public final String code;
     public final String description;

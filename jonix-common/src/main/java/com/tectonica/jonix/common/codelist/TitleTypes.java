@@ -96,7 +96,7 @@ public enum TitleTypes implements OnixCodelist, CodeList15 {
      * For books: the title carried in a book distributor's title file: frequently incomplete, and may include elements
      * not properly part of the title
      */
-    Distributor_s_title("10", "Distributor’s title"),
+    Distributors_title("10", "Distributor’s title"),
 
     /**
      * An alternative title that appears on the cover of a book

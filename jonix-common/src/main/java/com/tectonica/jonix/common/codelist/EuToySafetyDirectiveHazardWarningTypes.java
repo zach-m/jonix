@@ -64,7 +64,7 @@ public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, Code
      * &lt;ProductFormFeatureDescription&gt;. If specific alternative wording is carried in
      * &lt;ProductFormFeatureDescription&gt;, this must be used in place of the default text
      */
-    Carries_EU_Toy_Safety_Directive_Unsuitable_for_children_ages_0_3_warning_logo("03",
+    Carries_EU_Toy_Safety_Directive_Unsuitable_for_children_ages_03_warning_logo("03",
         "Carries EU Toy Safety Directive ‘Unsuitable for children ages 0–3’ warning logo"),
 
     /**

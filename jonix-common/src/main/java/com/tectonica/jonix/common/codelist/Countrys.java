@@ -83,7 +83,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
 
     Aruba("AW", "Aruba"),
 
-    _land_Islands("AX", "Åland Islands"),
+    Aland_Islands("AX", "Åland Islands"),
 
     Azerbaijan("AZ", "Azerbaijan"),
 
@@ -105,7 +105,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
 
     Benin("BJ", "Benin"),
 
-    Saint_Barth_lemy("BL", "Saint Barthélemy"),
+    Saint_Barthelemy("BL", "Saint Barthélemy"),
 
     Bermuda("BM", "Bermuda"),
 
@@ -141,7 +141,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
 
     Switzerland("CH", "Switzerland"),
 
-    Cote_d_Ivoire("CI", "Cote d’Ivoire"),
+    Cote_dIvoire("CI", "Cote d’Ivoire"),
 
     Cook_Islands("CK", "Cook Islands"),
 
@@ -164,7 +164,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
 
     Cabo_Verde("CV", "Cabo Verde"),
 
-    Cura_ao("CW", "Curaçao"),
+    Curacao("CW", "Curaçao"),
 
     Christmas_Island("CX", "Christmas Island"),
 
@@ -303,7 +303,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
 
     Saint_Kitts_and_Nevis("KN", "Saint Kitts and Nevis"),
 
-    Korea_Democratic_People_s_Republic_of("KP", "Korea, Democratic People’s Republic of"),
+    Korea_Democratic_Peoples_Republic_of("KP", "Korea, Democratic People’s Republic of"),
 
     Korea_Republic_of("KR", "Korea, Republic of"),
 
@@ -313,7 +313,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
 
     Kazakhstan("KZ", "Kazakhstan"),
 
-    Lao_People_s_Democratic_Republic("LA", "Lao People’s Democratic Republic"),
+    Lao_Peoples_Democratic_Republic("LA", "Lao People’s Democratic Republic"),
 
     Lebanon("LB", "Lebanon"),
 
@@ -440,7 +440,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
 
     Qatar("QA", "Qatar"),
 
-    R_union("RE", "Réunion"),
+    Reunion("RE", "Réunion"),
 
     Romania("RO", "Romania"),
 
@@ -520,7 +520,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
     /**
      * Formerly known as Turkey
      */
-    T_rkiye("TR", "Türkiye"),
+    Turkiye("TR", "Türkiye"),
 
     Trinidad_and_Tobago("TT", "Trinidad and Tobago"),
 

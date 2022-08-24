@@ -65,7 +65,7 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
     /**
      * May be used to identify a well-known real name, where the primary name is a pseudonym
      */
-    _Real_name("04", "‘Real’ name"),
+    Real_name("04", "‘Real’ name"),
 
     /**
      * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified, for names in a different

@@ -115,7 +115,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * &lt;Product&gt; has a publisher's suggested alternative &lt;RelatedProduct&gt;, which does not, however, carry
      * the same content (cf 05 and 06)
      */
-    Publisher_s_suggested_alternative("12", "Publisher’s suggested alternative"),
+    Publishers_suggested_alternative("12", "Publisher’s suggested alternative"),
 
     /**
      * &lt;Product&gt; is an epublication based on printed product &lt;RelatedProduct&gt;. The related product is the

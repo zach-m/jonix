@@ -255,7 +255,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * Where a text is available in both student and teacher's editions; use also for instructor's or leader's editions,
      * and for editions intended exclusively for educators where no specific student edition is available
      */
-    Teacher_s_edition("TCH", "Teacher’s edition"),
+    Teachers_edition("TCH", "Teacher’s edition"),
 
     /**
      * Where a title has also been published in an abridged edition; also for audiobooks, regardless of whether an
@@ -291,7 +291,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Vorleseb_cher("VOR", "Vorlesebücher");
+    Vorlesebucher("VOR", "Vorlesebücher");
 
     public final String code;
     public final String description;

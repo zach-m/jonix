@@ -133,7 +133,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * See PA/BIC CBMC guidelines at http://www.bic.org.uk/8/Children%27s-Books-Marketing-Classifications/
      */
-    BIC_children_s_book_marketing_category("21", "BIC children’s book marketing category"),
+    BIC_childrens_book_marketing_category("21", "BIC children’s book marketing category"),
 
     /**
      * BISAC Merchandising Themes are used in addition to BISAC Subject Headings to denote an audience to which a work
@@ -142,7 +142,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      */
     BISAC_Merchandising_Theme("22", "BISAC Merchandising Theme"),
 
-    Publisher_s_own_category_code("23", "Publisher’s own category code"),
+    Publishers_own_category_code("23", "Publisher’s own category code"),
 
     /**
      * As specified in &lt;SubjectSchemeName&gt;
@@ -169,12 +169,12 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * Subject classification used by Electre (France)
      */
-    Th_mes_Electre("28", "Thèmes Electre"),
+    Themes_Electre("28", "Thèmes Electre"),
 
     /**
      * France. A four-digit number, see https://clil.centprod.com/listeActive.html (in French)
      */
-    CLIL_Classification_th_matique("29", "CLIL Classification thématique"),
+    CLIL_Classification_thematique("29", "CLIL Classification thématique"),
 
     /**
      * Deutsche Bibliothek subject groups. Used for German National Bibliography until 2003 (65 subjects). Is different
@@ -230,7 +230,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * Norwegian school curriculum version. Deprecated
      */
-    L_replaner_KL06("39", "Læreplaner-KL06"),
+    Lreplaner_KL06("39", "Læreplaner-KL06"),
 
     /**
      * Japanese subject classification scheme
@@ -257,7 +257,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Codes for Norwegian 'programomr&#229;de' used in secondary education. See http://www.udir.no/. (Formerly labelled
      * 'Videreg&#229;ende' or 'Programfag')
      */
-    Programomr_de("44", "Programområde"),
+    Programomrade("44", "Programområde"),
 
     /**
      * Norwegian list of categories for books and other material used in education
@@ -282,12 +282,12 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * Swedish bookselling educational subject type
      */
-    L_romedelstyp("49", "Läromedelstyp"),
+    Laromedelstyp("49", "Läromedelstyp"),
 
     /**
      * Swedish publishers preliminary subject classification
      */
-    F_rhandsbeskrivning("50", "Förhandsbeskrivning"),
+    Forhandsbeskrivning("50", "Förhandsbeskrivning"),
 
     /**
      * Controlled subset of UDC codes used by the Spanish ISBN Agency
@@ -328,13 +328,13 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * CCE Reading Level Qualifier
      */
-    Qualificatore_di_et_di_lettura_CCE("58", "Qualificatore di età di lettura CCE"),
+    Qualificatore_di_eta_di_lettura_CCE("58", "Qualificatore di età di lettura CCE"),
 
     /**
      * Subject code list of the German association of educational media publishers. See
      * http://www.bildungsmedien.de/service/onixlisten/unterrichtsfach_onix_codelist27_value59_0408.pdf
      */
-    VdS_Bildungsmedien_F_cher("59", "VdS Bildungsmedien Fächer"),
+    VdS_Bildungsmedien_Facher("59", "VdS Bildungsmedien Fächer"),
 
     /**
      * Norwegian primary and secondary school subject categories (fagkoder), see http://www.udir.no/
@@ -366,7 +366,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Swedish translation of the Finnish General Thesaurus (Swedish: Allm&#228;n tesaurus p&#229; svenska). See
      * https://finto.fi/allars/sv/ (in Swedish). Deprecated. No longer updated, and replaced by YSO (see code 71)
      */
-    All_rs("65", "Allärs"),
+    Allars("65", "Allärs"),
 
     /**
      * Finnish Public Libraries Classification System (Finnish: Yleisten kirjastojen luokitusj&#228;rjestelm&#228;). See
@@ -448,7 +448,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Finnish fiction genre classification. See https://finto.fi/ykl/fi/page/fiktioluokka (in Finnish),
      * https://finto.fi/ykl/sv/page/fiktioluokka (in Swedish), https://finto.fi/ykl/en/page/fiktioluokka (in English)
      */
-    Fiktiivisen_aineiston_lis_luokitus("80", "Fiktiivisen aineiston lisäluokitus"),
+    Fiktiivisen_aineiston_lisaluokitus("80", "Fiktiivisen aineiston lisäluokitus"),
 
     Arabic_Subject_heading_scheme("81", "Arabic Subject heading scheme"),
 
@@ -536,12 +536,12 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * Swedish subject categories maintained by Bokrondellen
      */
-    _mnesord("A2", "Ämnesord"),
+    Amnesord("A2", "Ämnesord"),
 
     /**
      * Polish Statistical Book and E-book Classification
      */
-    Statystyka_Ksi_ek_Papierowych_M_wionych_I_Elektronicznych("A3",
+    Statystyka_Ksiazek_Papierowych_Mowionych_I_Elektronicznych("A3",
         "Statystyka Książek Papierowych, Mówionych I Elektronicznych"),
 
     /**
@@ -571,12 +571,12 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * Library of Congress Children's Subject Headings: LCSHAC supplementary headings for Children's books
      */
-    LC_Children_s_Subject_Headings("A8", "LC Children’s Subject Headings"),
+    LC_Childrens_Subject_Headings("A8", "LC Children’s Subject Headings"),
 
     /**
      * Swedish bookselling educational subject
      */
-    Ny_L_romedel("A9", "Ny Läromedel"),
+    Ny_Laromedel("A9", "Ny Läromedel"),
 
     /**
      * EuroVoc multilingual thesaurus. &lt;SubjectCode&gt; should be a EuroVoc concept dc:identifier (for example, 2777,
@@ -602,7 +602,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * French higher and vocational educational subject classification, URI
      * http://data.education.fr/voc/scolomfr/scolomfr-voc-029
      */
-    Nomenclature_Dipl_me("B3", "Nomenclature Diplôme"),
+    Nomenclature_Diplome("B3", "Nomenclature Diplôme"),
 
     /**
      * For fiction and non-fiction, one or more key names, provided - like keywords - for indexing and search purposes.
@@ -658,7 +658,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    L_replaner_LK20("C0", "Læreplaner-LK20"),
+    Lreplaner_LK20("C0", "Læreplaner-LK20"),
 
     /**
      * Codes for competency aims in the Norwegian curriculum for primary and secondary education. For use in ONIX 3.0
@@ -666,7 +666,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Kompetansem_l_LK20("C1", "Kompetansemål-LK20"),
+    Kompetansemal_LK20("C1", "Kompetansemål-LK20"),
 
     /**
      * Codes for sets of competency aims in the Norwegian curriculum for primary and secondary education. For use in
@@ -674,7 +674,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Kompetansem_lsett_LK20("C2", "Kompetansemålsett-LK20"),
+    Kompetansemalsett_LK20("C2", "Kompetansemålsett-LK20"),
 
     /**
      * Codes for interdisciplinary topics in the Norwegian curriculum for primary and secondary education. For use in
@@ -689,14 +689,14 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    CLIL_Type_d_article_scolaire("C4", "CLIL – Type d’article scolaire"),
+    CLIL_Type_darticle_scolaire("C4", "CLIL – Type d’article scolaire"),
 
     /**
      * Gestionnaire d'Acc&#232;s aux resources - see https://gar.education.fr/ For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    GAR_Type_p_dagogique("C5", "GAR – Type pédagogique"),
+    GAR_Type_pedagogique("C5", "GAR – Type pédagogique"),
 
     /**
      * UNESCO ISCED Fields of education and training (2013), eg &lt;SubjectCode&gt; 0222 is 'History and archaeology'.

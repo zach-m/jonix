@@ -54,7 +54,7 @@ public enum RightsRegions implements OnixCodelist, CodeList47 {
     /**
      * Use when an open market edition is published under its own ISBN
      */
-    UK_open_market_("003", "UK ‘open market’");
+    UK_open_market("003", "UK ‘open market’");
 
     public final String code;
     public final String description;

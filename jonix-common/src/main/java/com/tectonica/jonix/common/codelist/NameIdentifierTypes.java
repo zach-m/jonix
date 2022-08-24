@@ -60,7 +60,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      */
     DNB_publisher_identifier("03", "DNB publisher identifier"),
 
-    B_rsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"),
+    Borsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"),
 
     German_ISBN_Agency_publisher_identifier("05", "German ISBN Agency publisher identifier"),
 

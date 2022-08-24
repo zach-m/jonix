@@ -66,7 +66,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     /**
      * German export trade classification, based on the Harmonised System
      */
-    Warenverzeichnis_f_r_die_Au_enhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"),
+    Warenverzeichnis_fur_die_Auenhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"),
 
     /**
      * EU TARIC codes, an extended version of the Harmonized System. Use 10 digits, without punctuation
@@ -81,7 +81,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     /**
      * A product category (not a subject classification) assigned by the sender
      */
-    Sender_s_product_category("07", "Sender’s product category"),
+    Senders_product_category("07", "Sender’s product category"),
 
     /**
      * Product classification maintained by the Chinese General Administration of Press and Publication

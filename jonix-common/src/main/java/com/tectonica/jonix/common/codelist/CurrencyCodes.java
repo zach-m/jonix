@@ -739,7 +739,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Poland
      */
-    Z_oty("PLN", "Złoty"),
+    Zoty("PLN", "Złoty"),
 
     /**
      * Portugal. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
@@ -923,7 +923,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Tonga
      */
-    Pa_anga("TOP", "Pa’anga"),
+    Paanga("TOP", "Pa’anga"),
 
     /**
      * Deprecated. Timor-Leste now uses the US Dollar
@@ -985,12 +985,12 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Deprecated, replaced by VEF
      */
-    Bol_var("VEB", "Bolívar"),
+    Bolivar("VEB", "Bolívar"),
 
     /**
      * Venezuela (formerly Bol&#237;var fuerte). Deprecated, replaced by VES
      */
-    Bol_var_("VEF", "Bolívar"),
+    Bolivar_("VEF", "Bolívar"),
 
     /**
      * Venezuela (replaced VEF from August 2018 at rate of 100,000:1, and was redenominated by a further factor of
@@ -998,7 +998,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Bol_var_Soberano("VES", "Bolívar Soberano"),
+    Bolivar_Soberano("VES", "Bolívar Soberano"),
 
     /**
      * Viet Nam (prices normally quoted as integers)

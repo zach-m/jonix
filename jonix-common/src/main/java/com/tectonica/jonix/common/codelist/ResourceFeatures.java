@@ -85,42 +85,42 @@ public enum ResourceFeatures implements OnixCodelist, CodeList256 {
     /**
      * Shows front cover, spine and top edge of pages (or equivalent for non-book products or packaging)
      */
-    _3D_perspective_front_("21", "3D perspective ‘front’"),
+    _3D_perspective_front("21", "3D perspective ‘front’"),
 
     /**
      * Shows back cover, spine and top edge of pages (or equivalent for non-book products or packaging)
      */
-    _3D_perspective_back_("22", "3D perspective ‘back’"),
+    _3D_perspective_back("22", "3D perspective ‘back’"),
 
     /**
      * Shows front cover, foredge and top edge of pages (or equivalent for non-book products or packaging)
      */
-    _3D_perspective_front_foredge_("23", "3D perspective ‘front foredge’"),
+    _3D_perspective_front_foredge("23", "3D perspective ‘front foredge’"),
 
     /**
      * Shows back cover, foredge and top edge of pages (or equivalent for non-book products or packaging)
      */
-    _3D_perspective_back_foredge_("24", "3D perspective ‘back foredge’"),
+    _3D_perspective_back_foredge("24", "3D perspective ‘back foredge’"),
 
     /**
      * Shows front cover and spine (or equivalent for non-book products or packaging)
      */
-    _3D_perspective_front_low_("33", "3D perspective ‘front low’"),
+    _3D_perspective_front_low("33", "3D perspective ‘front low’"),
 
     /**
      * Shows back cover and spine (or equivalent for non-book products or packaging)
      */
-    _3D_perspective_back_low_("34", "3D perspective ‘back low’"),
+    _3D_perspective_back_low("34", "3D perspective ‘back low’"),
 
     /**
      * Shows front cover and foredge (or equivalent for non-book products or packaging)
      */
-    _3D_perspective_front_foredge_low_("35", "3D perspective ‘front foredge low’"),
+    _3D_perspective_front_foredge_low("35", "3D perspective ‘front foredge low’"),
 
     /**
      * Shows back cover and foredge (or equivalent for non-book products or packaging)
      */
-    _3D_perspective_back_foredge_low_("36", "3D perspective ‘back foredge low’"),
+    _3D_perspective_back_foredge_low("36", "3D perspective ‘back foredge low’"),
 
     /**
      * Shows front cover only (or equivalent for non-book products or packaging)
@@ -140,12 +140,12 @@ public enum ResourceFeatures implements OnixCodelist, CodeList256 {
     /**
      * Product is horizontal (eg lying on table)
      */
-    _3D_perspective_horizontal_("47", "3D perspective ‘horizontal’"),
+    _3D_perspective_horizontal("47", "3D perspective ‘horizontal’"),
 
     /**
      * Product is vertical (eg standing on table)
      */
-    _3D_perspective_vertical_("48", "3D perspective ‘vertical’");
+    _3D_perspective_vertical("48", "3D perspective ‘vertical’");
 
     public final String code;
     public final String description;

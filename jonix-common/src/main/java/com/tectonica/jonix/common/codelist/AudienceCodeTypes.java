@@ -158,7 +158,7 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
      * Children's audience code (&#23550;&#35937;&#35501;&#32773;), two-digit encoding of intended target readership
      * from 0-2 years up to High School level
      */
-    Japanese_Children_s_audience_code("21", "Japanese Children’s audience code"),
+    Japanese_Childrens_audience_code("21", "Japanese Children’s audience code"),
 
     /**
      * Publisher's rating indicating suitability for a particular adult audience, using a code from List 203. Should

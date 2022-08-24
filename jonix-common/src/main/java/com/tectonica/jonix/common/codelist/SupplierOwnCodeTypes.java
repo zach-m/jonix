@@ -46,37 +46,37 @@ public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
      * A rating applied by a supplier (typically a wholesaler) to indicate its assessment of the expected or actual
      * sales performance of a product
      */
-    Supplier_s_sales_classification("01", "Supplier’s sales classification"),
+    Suppliers_sales_classification("01", "Supplier’s sales classification"),
 
     /**
      * A supplier's coding of the eligibility of a product for a bonus scheme on overall sales
      */
-    Supplier_s_bonus_eligibility("02", "Supplier’s bonus eligibility"),
+    Suppliers_bonus_eligibility("02", "Supplier’s bonus eligibility"),
 
     /**
      * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only
      * when the publisher is not the 'supplier'
      */
-    Publisher_s_sales_classification("03", "Publisher’s sales classification"),
+    Publishers_sales_classification("03", "Publisher’s sales classification"),
 
     /**
      * A classification applied by a supplier to a product sold on Agency terms, to indicate that retail price
      * restrictions are applicable
      */
-    Supplier_s_pricing_restriction_classification("04", "Supplier’s pricing restriction classification"),
+    Suppliers_pricing_restriction_classification("04", "Supplier’s pricing restriction classification"),
 
     /**
      * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
      * to that the distributor or supplier estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or
      * GTIN-13
      */
-    Supplier_s_sales_expectation("05", "Supplier’s sales expectation"),
+    Suppliers_sales_expectation("05", "Supplier’s sales expectation"),
 
     /**
      * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
      * to that the publisher estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or GTIN-13
      */
-    Publisher_s_sales_expectation("06", "Publisher’s sales expectation"),
+    Publishers_sales_expectation("06", "Publisher’s sales expectation"),
 
     /**
      * Code indicates whether an order can be placed with the supplier indirectly via an intermediary system. The code
@@ -85,7 +85,7 @@ public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Supplier_s_order_routing_eligibility("07", "Supplier’s order routing eligibility");
+    Suppliers_order_routing_eligibility("07", "Supplier’s order routing eligibility");
 
     public final String code;
     public final String description;

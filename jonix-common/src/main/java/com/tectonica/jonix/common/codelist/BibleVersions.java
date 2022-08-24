@@ -118,7 +118,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     /**
      * A German translation of the Bible for use in Roman Catholic churches
      */
-    Einheits_bersetzung("EIN", "Einheitsübersetzung"),
+    Einheitsubersetzung("EIN", "Einheitsübersetzung"),
 
     /**
      * An update of the Revised Standard Version that makes 'modest' use of gender-free terminology
@@ -149,7 +149,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
      * A 1995 translation by the World Bible Publishing Company using the English language in a manner to communicate to
      * the late 20th century American
      */
-    God_s_Word("GDW", "God’s Word"),
+    Gods_Word("GDW", "God’s Word"),
 
     /**
      * An early (1560) English version of the Bible translated by William Whittingham with strong Protestant leanings
@@ -193,7 +193,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     /**
      * A translation completed in 1986 targeting readability at the US third grade level
      */
-    International_Children_s("ICB", "International Children’s"),
+    International_Childrens("ICB", "International Children’s"),
 
     /**
      * Interconfessional translation resulting from 1985 effort by Catholic and Protestant scholars, aimed at delivering
@@ -324,7 +324,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     /**
      * A 1996 translation designed for people with limited literacy in English and based on the NIV
      */
-    New_International_Reader_s("NIR", "New International Reader’s"),
+    New_International_Readers("NIR", "New International Reader’s"),
 
     /**
      * A revision of the Jerusalem Bible. First published in 1986
@@ -356,7 +356,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     /**
      * A Spanish translation from the original Greek and Hebrew, sponsored by Tyndale House
      */
-    Nueva_Traducci_n_Viviente("NTV", "Nueva Traducción Viviente"),
+    Nueva_Traduccion_Viviente("NTV", "Nueva Traducción Viviente"),
 
     /**
      * Nuovissima version - a Catholic-oriented translation in modern Italian, edited by a group including Carlo
@@ -418,13 +418,13 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
      * A translation of the New Testament sponsored by the American Bible Society and first published in 1966. It was
      * incorporated into the 'Good News Bible' (GNB) in 1976
      */
-    Today_s_English("TEV", "Today’s English"),
+    Todays_English("TEV", "Today’s English"),
 
     /**
      * An updating of the New International Version. The New Testament was published in 2002, and the entire Bible in
      * 2005. Superseded by the 2011 NIV update
      */
-    Today_s_New_International("TNI", "Today’s New International"),
+    Todays_New_International("TNI", "Today’s New International"),
 
     /**
      * Other translations not otherwise noted

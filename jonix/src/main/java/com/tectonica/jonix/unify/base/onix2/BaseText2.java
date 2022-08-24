@@ -66,7 +66,7 @@ public class BaseText2 extends BaseText {
                 return TextTypes.Review_quote_previous_edition;
             case Review_quote:
                 return TextTypes.Review_quote;
-            case Promotional_headline_:
+            case Promotional_headline:
                 return TextTypes.Promotional_headline;
             case Previous_review_quote:
                 return TextTypes.Review_quote_previous_work;
@@ -84,8 +84,8 @@ public class BaseText2 extends BaseText {
                 return TextTypes.Feature;
             case New_feature:
                 return TextTypes.Feature;
-            case Publisher_s_notice:
-                return TextTypes.Publisher_s_notice;
+            case Publishers_notice:
+                return TextTypes.Publishers_notice;
             case Index:
                 return TextTypes.Index;
             case Excerpt_from_book:

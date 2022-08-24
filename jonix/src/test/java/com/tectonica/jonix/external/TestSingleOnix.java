@@ -59,9 +59,9 @@ public class TestSingleOnix {
 
     @Test
     public void testSingleOnix3() {
-        testViaAPI("/single-book-onix3-short.xml", 16036, OnixVersion.ONIX3);
-        testViaAPI("/single-book-onix3.xml", 16036, OnixVersion.ONIX3);
-        testViaDOM("/single-book-onix3.xml", 16036, OnixVersion.ONIX3);
+        testViaAPI("/single-book-onix3-short.xml", 16034, OnixVersion.ONIX3);
+        testViaAPI("/single-book-onix3.xml", 16034, OnixVersion.ONIX3);
+        testViaDOM("/single-book-onix3.xml", 16034, OnixVersion.ONIX3);
     }
 
     private void testViaAPI(String xmlResourceName, int expectedLength, OnixVersion expectedOnixVersion) {
@@ -74,7 +74,6 @@ public class TestSingleOnix {
             assertEquals(expectedOnixVersion, record.source.onixVersion());
 
             String json = JonixJson.productToJson(record.product, false);
-            System.out.println(json);
             LOGGER.debug("API: {}", json); // or: JonixJson.productToJson(record.product);
             assertEquals(expectedLength, json.length());
         }

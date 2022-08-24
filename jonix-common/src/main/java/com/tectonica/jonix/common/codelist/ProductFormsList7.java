@@ -183,7 +183,7 @@ public enum ProductFormsList7 implements OnixCodelist, CodeList7 {
     /**
      * A part-work issued with its own ISBN and intended to be collected and bound into a complete book
      */
-    Part_work_fasc_culo("BN", "Part-work (fascículo)"),
+    Part_work_fasciculo("BN", "Part-work (fascículo)"),
 
     /**
      * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German 'Leporello'
@@ -401,7 +401,7 @@ public enum ProductFormsList7 implements OnixCodelist, CodeList7 {
     /**
      * A book-sized (as opposed to poster-sized) sheet, usually in color or high quality print
      */
-    Plate_l_mina("PQ", "Plate (lámina)"),
+    Plate_lamina("PQ", "Plate (lámina)"),
 
     /**
      * A book with all pages blank for the buyer's own use: may use product form detail codes P201 to P204 to specify

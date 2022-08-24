@@ -63,7 +63,7 @@ public enum CollectionTypes implements OnixCodelist, CodeList148 {
      * publishing, to distinguish between 's&#233;rie' (using the normal code 10) and 'collection' (code 11), and where
      * the collection &#233;ditoriale is not an imprint
      */
-    Collection_ditoriale("11", "Collection éditoriale"),
+    Collection_editoriale("11", "Collection éditoriale"),
 
     /**
      * The collection has been defined and identified by a party in the metadata supply chain other than the publisher,

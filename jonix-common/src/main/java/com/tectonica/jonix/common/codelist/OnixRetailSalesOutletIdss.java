@@ -75,7 +75,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Akateeminen_Kirjakauppa("AKK", "Akateeminen Kirjakauppa"),
 
-    Albertson_s("ALB", "Albertson’s"),
+    Albertsons("ALB", "Albertson’s"),
 
     /**
      * For use in ONIX 3.0 only
@@ -160,14 +160,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    BJ_s_Wholesale_Club("BJW", "BJ’s Wholesale Club"),
+    BJs_Wholesale_Club("BJW", "BJ’s Wholesale Club"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
      */
     Blackstone_Audio("BLA", "Blackstone Audio"),
 
-    Blackwell_s("BLK", "Blackwell’s"),
+    Blackwells("BLK", "Blackwell’s"),
 
     /**
      * Formerly GoSpoken/Mobcast. Deprecated
@@ -330,7 +330,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     De_Marque("DEM", "De Marque"),
 
-    Dick_s_Sporting_Goods("DSG", "Dick’s Sporting Goods"),
+    Dicks_Sporting_Goods("DSG", "Dick’s Sporting Goods"),
 
     Dilicom("DIL", "Dilicom"),
 
@@ -354,7 +354,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     eChristian("ECH", "eChristian"),
 
-    El_Corte_Ingl_s("ECI", "El Corte Inglés"),
+    El_Corte_Ingles("ECI", "El Corte Inglés"),
 
     Electre("ELE", "Electre"),
 
@@ -409,7 +409,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Follett("FOL", "Follett"),
 
-    Fry_s_Electronics("FRY", "Fry’s Electronics"),
+    Frys_Electronics("FRY", "Fry’s Electronics"),
 
     Gamestop("GMS", "Gamestop"),
 
@@ -433,7 +433,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Home_Depot("HMD", "Home Depot"),
 
-    Immat_riel_fr("IMM", "Immatériel.fr"),
+    Immateriel_fr("IMM", "Immatériel.fr"),
 
     Indigo_Chapters("IND", "Indigo-Chapters"),
 
@@ -449,7 +449,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Inl_sningstj_nst("ILT", "Inläsningstjänst"),
+    Inlasningstjanst("ILT", "Inläsningstjänst"),
 
     /**
      * www.ibs.it, for use in ONIX 3.0 only
@@ -544,7 +544,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     LoadMyBook("LMB", "LoadMyBook"),
 
-    Lowe_s("LWE", "Lowe’s"),
+    Lowes("LWE", "Lowe’s"),
 
     Mackin("MAC", "Mackin"),
 
@@ -693,7 +693,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Publisher_s_own_direct_sales("PUB", "Publisher’s own direct sales"),
+    Publishers_own_direct_sales("PUB", "Publisher’s own direct sales"),
 
     /**
      * Deprecated
@@ -763,7 +763,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    Sainsbury_s("SNS", "Sainsbury’s"),
+    Sainsburys("SNS", "Sainsbury’s"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
@@ -928,12 +928,12 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    Waterstone_s("WST", "Waterstone’s"),
+    Waterstones("WST", "Waterstone’s"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
      */
-    Whitcoul_s("WHT", "Whitcoul’s"),
+    Whitcouls("WHT", "Whitcoul’s"),
 
     /**
      * Jonix-Comment: Introduced in Onix3
@@ -982,7 +982,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    BJ_s_Wholesale_Club_("BJW", "BJ’s Wholesale Club"),
+    BJs_Wholesale_Club_("BJW", "BJ’s Wholesale Club"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
@@ -1169,7 +1169,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Sainsbury_s_("SNS", "Sainsbury’s"),
+    Sainsburys_("SNS", "Sainsbury’s"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
@@ -1274,12 +1274,12 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Waterstone_s_("WST", "Waterstone’s"),
+    Waterstones_("WST", "Waterstone’s"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3
      */
-    Whitcoul_s_("WHT", "Whitcoul’s"),
+    Whitcouls_("WHT", "Whitcoul’s"),
 
     /**
      * Jonix-Comment: Deprecated in Onix3

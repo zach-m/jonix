@@ -57,7 +57,7 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
     /**
      * Inclusion in a program such as 'Chicago Reads', 'Seattle Reads', 'Canada Reads', 'One Dublin, one book'
      */
-    _One_locality_one_book_program("04", "‘One locality, one book’ program"),
+    One_locality_one_book_program("04", "‘One locality, one book’ program"),
 
     /**
      * For example a 'best books of the year' or '25 books you should have read' list, without regard to their

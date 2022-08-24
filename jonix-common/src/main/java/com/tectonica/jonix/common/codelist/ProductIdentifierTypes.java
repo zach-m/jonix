@@ -120,7 +120,7 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
      * rules allow a co-published title to carry more than one ISBN. The co-publisher should be identified in an
      * instance of the &lt;Publisher&gt; composite, with the applicable &lt;PublishingRole&gt; code
      */
-    Co_publisher_s_ISBN_13("24", "Co-publisher’s ISBN-13"),
+    Co_publishers_ISBN_13("24", "Co-publisher’s ISBN-13"),
 
     /**
      * International Standard Music Number, from 2008 (13-digit number starting 9790, without spaces or hyphens)

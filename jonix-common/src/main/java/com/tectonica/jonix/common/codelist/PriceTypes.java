@@ -84,13 +84,13 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * but sometimes subject to a further customer-specific trade discount based on volume. Relevant tax detail must be
      * calculated by the data recipient
      */
-    Supplier_s_Net_price_excluding_tax("05", "Supplier’s Net price excluding tax"),
+    Suppliers_Net_price_excluding_tax("05", "Supplier’s Net price excluding tax"),
 
     /**
      * Unit price charged by supplier to reseller / rental outlet, excluding any sales tax or value-added tax: goods for
      * rental (used for video and DVD)
      */
-    Supplier_s_Net_price_excluding_tax_rental_goods("06", "Supplier’s Net price excluding tax: rental goods"),
+    Suppliers_Net_price_excluding_tax_rental_goods("06", "Supplier’s Net price excluding tax: rental goods"),
 
     /**
      * Net or wholesale price, including any sales or value-added tax where applicable. Unit price charged by supplier
@@ -98,7 +98,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * consumer, but sometimes subject to a further customer-specific trade discount based on volume. Sales or
      * value-added tax detail is usually supplied in the &lt;Tax&gt; composite
      */
-    Supplier_s_Net_price_including_tax("07", "Supplier’s Net price including tax"),
+    Suppliers_Net_price_including_tax("07", "Supplier’s Net price including tax"),
 
     /**
      * Net or wholesale price charged by supplier to a specified class of reseller, excluding any sales tax or
@@ -106,7 +106,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * countries, eg Finland, where trade practice requires two different Net prices to be listed for different classes
      * of resellers, and where national guidelines specify how the code should be used)
      */
-    Supplier_s_alternative_Net_price_excluding_tax("08", "Supplier’s alternative Net price excluding tax"),
+    Suppliers_alternative_Net_price_excluding_tax("08", "Supplier’s alternative Net price excluding tax"),
 
     /**
      * Net or wholesale price charged by supplier to a specified class of reseller, including any sales tax or
@@ -114,7 +114,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * for use only in countries, eg Finland, where trade practice requires two different Net prices to be listed for
      * different classes of resellers, and where national guidelines specify how the code should be used)
      */
-    Supplier_s_alternative_net_price_including_tax("09", "Supplier’s alternative net price including tax"),
+    Suppliers_alternative_net_price_including_tax("09", "Supplier’s alternative net price including tax"),
 
     /**
      * Special sale RRP excluding any sales tax or value-added tax. Note 'special sales' are sales where terms and
@@ -143,12 +143,12 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
     /**
      * Unit price charged by supplier to reseller for special sale excluding any sales tax or value-added tax
      */
-    Supplier_s_net_price_for_special_sale_excluding_tax("15", "Supplier’s net price for special sale excluding tax"),
+    Suppliers_net_price_for_special_sale_excluding_tax("15", "Supplier’s net price for special sale excluding tax"),
 
     /**
      * Unit price charged by supplier to reseller for special sale including any sales tax or value-added tax
      */
-    Supplier_s_net_price_for_special_sale_including_tax("17", "Supplier’s net price for special sale including tax"),
+    Suppliers_net_price_for_special_sale_including_tax("17", "Supplier’s net price for special sale including tax"),
 
     /**
      * Pre-publication RRP excluding any sales tax or value-added tax. Use where RRP for pre-orders is different from
@@ -175,12 +175,12 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
     /**
      * Unit price charged by supplier to reseller pre-publication excluding any sales tax or value-added tax
      */
-    Supplier_s_pre_publication_net_price_excluding_tax("25", "Supplier’s pre-publication net price excluding tax"),
+    Suppliers_pre_publication_net_price_excluding_tax("25", "Supplier’s pre-publication net price excluding tax"),
 
     /**
      * Unit price charged by supplier to reseller pre-publication including any sales tax or value-added tax
      */
-    Supplier_s_pre_publication_net_price_including_tax("27", "Supplier’s pre-publication net price including tax"),
+    Suppliers_pre_publication_net_price_including_tax("27", "Supplier’s pre-publication net price including tax"),
 
     /**
      * In the US, books are sometimes supplied on 'freight-pass-through' terms, where a price that is different from the
@@ -200,13 +200,13 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * In countries where retail price maintenance applies by law to certain products, but the price is set by the
      * importer or local sales agent, not the foreign publisher. In France, 'prix catalogue &#233;diteur &#233;tranger'
      */
-    Importer_s_Fixed_retail_price_excluding_tax("33", "Importer’s Fixed retail price excluding tax"),
+    Importers_Fixed_retail_price_excluding_tax("33", "Importer’s Fixed retail price excluding tax"),
 
     /**
      * In countries where retail price maintenance applies by law to certain products, but the price is set by the
      * importer or local sales agent, not the foreign publisher. In France, 'prix catalogue &#233;diteur &#233;tranger'
      */
-    Importer_s_Fixed_retail_price_including_tax("34", "Importer’s Fixed retail price including tax"),
+    Importers_Fixed_retail_price_including_tax("34", "Importer’s Fixed retail price including tax"),
 
     /**
      * Nominal value of gratis copies (eg review, sample or evaluation copies) for international customs declarations

@@ -110,7 +110,7 @@ public enum SpecialCoverMaterials implements OnixCodelist, CodeList99 {
     /**
      * Proprietary imitation cloth binding material, cellulose-based, usually embossed / textured
      */
-    G_ltex_Wibalin("23", "Géltex / Wibalin"),
+    Geltex_Wibalin("23", "Géltex / Wibalin"),
 
     /**
      * Proprietary imitation leather binding material, cellulose-based, usually embossed / textured

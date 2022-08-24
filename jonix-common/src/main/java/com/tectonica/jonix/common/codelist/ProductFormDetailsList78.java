@@ -422,7 +422,7 @@ public enum ProductFormDetailsList78 implements OnixCodelist, CodeList78 {
      * (aka 'Star' book). Tax treatment of products may differ from that of products with similar codes such as Book as
      * toy or Pop-up book)
      */
-    _Carousel_book("B222", "‘Carousel’ book"),
+    Carousel_book("B222", "‘Carousel’ book"),
 
     /**
      * Use with Product Form code BD

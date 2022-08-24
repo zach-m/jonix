@@ -698,7 +698,7 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     Foggia("IT-FG", "Foggia"),
 
-    Forl_Cesena("IT-FC", "Forlì-Cesena"),
+    Forli_Cesena("IT-FC", "Forlì-Cesena"),
 
     Frosinone("IT-FR", "Frosinone"),
 
@@ -714,7 +714,7 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     La_Spezia("IT-SP", "La Spezia"),
 
-    L_Aquila("IT-AQ", "L’Aquila"),
+    LAquila("IT-AQ", "L’Aquila"),
 
     Latina("IT-LT", "Latina"),
 
@@ -906,13 +906,13 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     Primorskiy_Administrative_Territory("RU-PRI", "Primorskiy Administrative Territory"),
 
-    Stavropol_skiy_Administrative_Territory("RU-STA", "Stavropol’skiy Administrative Territory"),
+    Stavropolskiy_Administrative_Territory("RU-STA", "Stavropol’skiy Administrative Territory"),
 
-    Zabaykal_skiy_Administrative_Territory("RU-ZAB", "Zabaykal’skiy Administrative Territory"),
+    Zabaykalskiy_Administrative_Territory("RU-ZAB", "Zabaykal’skiy Administrative Territory"),
 
     Amurskaya_Administrative_Region("RU-AMU", "Amurskaya Administrative Region"),
 
-    Arkhangel_skaya_Administrative_Region("RU-ARK", "Arkhangel’skaya Administrative Region"),
+    Arkhangelskaya_Administrative_Region("RU-ARK", "Arkhangel’skaya Administrative Region"),
 
     Astrakhanskaya_Administrative_Region("RU-AST", "Astrakhanskaya Administrative Region"),
 
@@ -984,13 +984,13 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     Tomskaya_Administrative_Region("RU-TOM", "Tomskaya Administrative Region"),
 
-    Tul_skaya_Administrative_Region("RU-TUL", "Tul’skaya Administrative Region"),
+    Tulskaya_Administrative_Region("RU-TUL", "Tul’skaya Administrative Region"),
 
     Tverskaya_Administrative_Region("RU-TVE", "Tverskaya Administrative Region"),
 
     Tyumenskaya_Administrative_Region("RU-TYU", "Tyumenskaya Administrative Region"),
 
-    Ul_yanovskaya_Administrative_Region("RU-ULY", "Ul’yanovskaya Administrative Region"),
+    Ulyanovskaya_Administrative_Region("RU-ULY", "Ul’yanovskaya Administrative Region"),
 
     Vladimirskaya_Administrative_Region("RU-VLA", "Vladimirskaya Administrative Region"),
 

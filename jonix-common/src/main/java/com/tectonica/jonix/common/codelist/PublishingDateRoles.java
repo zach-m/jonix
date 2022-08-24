@@ -131,7 +131,7 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * Latest date on which an order may be placed with the publisher for guaranteed delivery prior to the publication
      * date. May or may not be linked to a special reservation or pre-publication price
      */
-    Publisher_s_reservation_order_deadline("25", "Publisher’s reservation order deadline"),
+    Publishers_reservation_order_deadline("25", "Publisher’s reservation order deadline"),
 
     /**
      * Date when a product will be reprinted
