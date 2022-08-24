@@ -56,7 +56,13 @@ import org.w3c.dom.Element;
 import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
 
@@ -146,6 +152,40 @@ public class TestBaseProduct {
 
         // compare the JSON received in both methods
         assertEquals(jsonDirect, jsonViaReader);
+    }
+
+    @Test
+    public void readMultipleProductsWithReader() throws IOException {
+        File folder = new File("./src/test/resources/samples");
+        class Target {
+            public List<String> jsons;
+
+            void readJson(String jsonFileName) {
+                try (Stream<String> lines = Files.lines(new File(jsonFileName).toPath())) {
+                    jsons = lines.collect(Collectors.toList());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+        final Target target = new Target();
+        Jonix.source(folder, "*.xml", false).onSourceStart(jonixSource -> {
+                System.out.println("Validating " + jonixSource);
+                assert jonixSource.file != null;
+                target.readJson(jonixSource.file.getAbsolutePath().replace(".xml", ".json"));
+            }).stream()
+            .forEach(record -> {
+
+                //BaseRecord baseRecord = JonixUnifier.unifyRecord(record);
+                //String isbn13 = baseRecord.product.info.findProductId(ProductIdentifierTypes.ISBN_13);
+                //String title = baseRecord.product.getLabel();
+                //System.out.println(JonixJson.objectToJson(baseRecord.product));
+
+                String json = JonixJson.productToJson(record.product, false);
+                String targetJson = target.jsons.get(0);
+                assertEquals("Difference in source " + record.source, targetJson.length(), json.length());
+                target.jsons.remove(0);
+            });
     }
 
     @Test

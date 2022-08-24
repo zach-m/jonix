@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE ONIXMessage SYSTEM "https://report.titlepage.com/docs/web/TP/DTD2.1r3/onix-international.dtd">
+
+<!--
+    *MUST* will produce an error if not valid ( record will not be loaded/changed)
+    *SHOULD* will produce a warning if not valid ( field will be blanked). 
+    
+    Encoding is expected to be UTF-8. 
+    
+    The ONIX pre-processor will:-
+        1) Read the transfered file in the encoding specified (UTF-8 if not specified) and rewrite ( if needed ) to a new file with UTF-8 encoding.   
+        2) Check each character in the file will be check that it is valid in XML http://en.wikipedia.org/wiki/Valid_characters_in_XML
+        3) If invalid XML character is found, it will be blanked out.
+        4) If the file can not be read with the encoding specified, ASCII will be used and all characters will be treated as 8-bit ASCII ( any invalid XML characters will be blanked out).  
+        5) XML must be "wellformed"
+-->
+<ONIXMessage>
+    <Header>
+        <FromCompany>Australian Publishers Association</FromCompany>
+        <SentDate>20181122</SentDate>
+    </Header>
+
+    <!--
+        Generic validations to all attributes based on ONIX specification 2.1 issue 36 :-
+        	1) All text attributes must contain only characters valid in HTML. http://en.wikipedia.org/wiki/Character_encodings_in_HTML
+        	2) Integers must match the pattern [0-9]+ and within the 32 bit range. 
+        	3) Code values must be valid according to http://www.editeur.org/files/ONIX%202.1/ONIX_for_Books_Release2-1_rev03_docs+codes_Issue_36.zip
+        	4) Dates must match pattern [12][0-9]{3}(([0][1-9]|1[0-2])(|[0-3][0-9]))
+    -->
+    <Product>
+
+        <!--
+	    1) Must be unique with the file
+	    2) Should be the ISBN-13 number
+	    3) Mandatory
+        -->
+        <RecordReference>9780415671897</RecordReference>
+
+        <!--
+	    List 1: Notification or update type code
+	    
+	    Mandatory
+	    
+	    Add or Modify records with:-
+	    	01 - Early notification
+	    	02 - Advance notification (confirmed)
+	    	03 - Notification confirmed on publication
+	    	04 - Update (partial)
+	    	09 - Notice of acquisition of a product
+	    
+	    Ignore records with:-
+	    	88 - Test update (Partial)
+	    	89 - Test record
+	    
+	    Delete records with:-
+	    	05 - Delete
+	    	08 - Notice of sale Notice of sale of a product
+        -->
+        <NotificationType>03</NotificationType>
+
+        <!-- List 3: Record source type code -->
+        <RecordSourceType>02</RecordSourceType>
+        <RecordSourceName>Cambridge University Press</RecordSourceName>
+        <ProductIdentifier>
+	    <ProductIDType>01</ProductIDType>
+	    <IDTypeName>Publisher's Order Number</IDTypeName>
+	    <IDValue>Y226425</IDValue>
+        </ProductIdentifier>
+        <ProductIdentifier>
+            
+	    <!--
+	        List 5: Identifier Type
+	        '15'    ISBN-13    International Standard Book Number, from 2007, unhyphenated (13 digits starting 978 or 9791–9799)
+	        Required for every valid identifier
+	    -->
+	    <ProductIDType>03</ProductIDType>
+            
+	    <!--
+	        ISBN13 is Mandatory
+	        Product will be excluded if the ISBN13 does not start with 979 or 978 ( no other processing on the product will be done).
+	        The checkdigit for ISBN13 number must be valid.
+	        
+	        Should be unique for the publisher.
+	    -->
+	    <IDValue>9780415671897</IDValue>
+        </ProductIdentifier>
+        <ProductIdentifier>
+	    <ProductIDType>15</ProductIDType>
+	    <IDValue>9780415671897</IDValue>
+        </ProductIdentifier>
+
+        <!--
+	    List 6: Barcode indicator
+	    ONIX 3.0 is replaced by List 141 & List 142
+        -->
+        <Barcode>10</Barcode>
+
+        <!--
+	    Must be supplied. Error if missing.
+	    List 7: Product form code 
+	    ONIX 3.0 is replaced by List 150
+        -->
+        <ProductForm>BB</ProductForm>
+
+        <!--
+	    Should have supplied if <ProductForm> value = WW
+	    List 78: Product form detail 
+	    ONIX 3.0 is replaced by List 175
+        -->
+        <ProductFormDetail>B402</ProductFormDetail>
+
+        <!-- List 80: Product packaging type -->
+        <ProductPackaging>05</ProductPackaging>
+
+        <!--
+	    Must be a positive integer if present.
+	    DISCONTINUED in ONIX 3.0
+        -->
+        <NumberOfPieces>2</NumberOfPieces>
+
+        <!-- Superceeded by ProductPart in ONIX 3.0 -->
+        <ContainedItem>
+
+	    <!--
+	        Should have supplied if <ProductForm> value = WW 
+	        List 7: Product form code 
+	        ONIX 3.0 is replaced by List 150
+	    -->
+	    <ProductForm>AC</ProductForm>
+
+	    <!--
+	        Should have supplied if <ProductForm> value = WW 
+	        List 78: Product form detail 
+	        ONIX 3.0 is replaced by List 175
+	    -->
+	    <ProductFormDetail>A103</ProductFormDetail>
+
+	    <!--
+	        Should have supplied if <ProductForm> value = WW 
+	        Should be non negative 
+	        DISCONTINUED in ONIX 3.0
+	    -->
+	    <NumberOfPieces>2</NumberOfPieces>
+
+	    <!-- Should supply if <ProductForm> value = WW -->
+	    <ItemQuantity>20</ItemQuantity>
+        </ContainedItem>
+
+        <!--
+	    List 10
+	    DISCONTINUED in ONIX 3.0
+        -->
+        <EpubType>004</EpubType>
+
+        <!--
+	    only if the EpubType field is present
+	    DISCONTINUED in ONIX 3.0
+        -->
+        <EpubTypeVersion>2.1</EpubTypeVersion>
+
+        <!--
+	    only if the EpubType field is present
+	    DISCONTINUED in ONIX 3.0
+        -->
+        <EpubTypeDescription>Adobe Ebook Reader</EpubTypeDescription>
+
+        <!-- ONIX 3.0 maps to <Collection> unless <SourceName> is set to 'Set-Onix2_1' -->
+        <Series>
+
+	    <!-- ONIX 3.0 replaced by <CollectionIdentifier> -->
+	    <SeriesIdentifier>
+
+	        <!--
+		    List 13: Series identifier type code 
+		    ONIX 3.0 replaced by <CollectionIDType>
+	        -->
+	        <SeriesIDType>01</SeriesIDType>
+	        <IDValue>Travel Guide</IDValue>
+	    </SeriesIdentifier>
+	    <TitleOfSeries>Travel Guide</TitleOfSeries>
+	    <NumberWithinSeries>2</NumberWithinSeries>
+        </Series>
+
+        <!-- ONIX 3.0 maps to <Collection> if <SourceName> is set to 'Set-Onix2_1' -->
+        <Set>
+
+	    <!-- ONIX 3.0 replaced by <CollectionIdentifier> -->
+	    <ProductIdentifier>
+	        <ProductIDType>02</ProductIDType>
+	        <IDValue>0415739535</IDValue>
+	    </ProductIdentifier>
+	    <ProductIdentifier>
+	        <ProductIDType>03</ProductIDType>
+	        <IDValue>9780415739535</IDValue>
+	    </ProductIdentifier>
+	    <ProductIdentifier>
+	        <ProductIDType>15</ProductIDType>
+	        <IDValue>9780415739535</IDValue>
+	    </ProductIdentifier>
+	    <TitleOfSet>Routledge Studies in the Growth Economies of Asia: 2000-2010 Collection</TitleOfSet>
+	    <ItemNumberWithinSet>Volume 28</ItemNumberWithinSet>
+        </Set>
+
+        <!--
+	    Must have a 01-Distinctive Title 
+	    ONIX 3.0 maps to <TitleDetail> within <DescriptiveDetail>
+        -->
+        <Title>
+
+	    <!--
+	        - Mandatory
+	        - Must have at element of type '01' in first instance of title
+	        - List 15: Title type code
+	    -->
+	    <TitleType>01</TitleType>
+            
+            <!-- Mandatory / Must have non blank <TitleText> -->
+            <TitleText>World Of Mining, The</TitleText>
+
+	    <!-- Should have <TitlePrefix> if <TitleWithoutPrefix> is present -->
+	    <TitlePrefix>The</TitlePrefix>
+	    <TitleWithoutPrefix>World Of Mining</TitleWithoutPrefix>
+	    <Subtitle>Doomed for Failure?</Subtitle>
+        </Title>
+        <WorkIdentifier>
+
+	    <!-- List 16: Work identifier type code -->
+	    <WorkIDType>15</WorkIDType>
+	    <IDValue>9781740591218</IDValue>
+        </WorkIdentifier>
+        <Website>
+
+	    <!-- Should be a live website -->
+	    <WebsiteLink>http://www.penguin.com.au/products/9780415671897</WebsiteLink>
+        </Website>
+
+        <!-- Should have at least one <Contributor> with <ContributorRole> 'A01','B01' OR 'C01' unless <BICMainSubject> is 'HRCF-Bibles' -->
+        <Contributor>
+	    <SequenceNumber>1</SequenceNumber>
+
+	    <!-- List 17: Contributor role code -->
+	    <ContributorRole>A01</ContributorRole>
+	    <PersonName>Richard Woldendorp</PersonName>
+
+	    <!-- <PersonNameInverted> Should not be blank -->
+	    <PersonNameInverted>Woldendorp, Richard</PersonNameInverted>
+	    <TitlesBeforeNames>Dr</TitlesBeforeNames>
+	    <KeyNames>Rowling</KeyNames>
+
+	    <!-- Optional and non-repeating -->
+	    <BiographicalNote textformat="05">&lt;b&gt;Charles Stross&lt;/b&gt; is a full-time science fiction writer and resident of Edinburgh, Scotland. The author of seven Hugo-nominated novels and winner of three Hugo awards for best novella, two of which are part of the Laundry Files series, Stross's works have been translated into over twelve languages. As the owner of degrees in pharmacy and computer science, he graduated as the world's only academically qualified cyberpunk writer just as cyberpunk died. Today he describes his job as telling lies for money and tormenting his imaginary friends. Follow his blog at http://www.accelerando.org/ and his Twitter feed at @cstross.</BiographicalNote>
+
+	    <!--
+	        Optional and repeatable
+	        List 91: Country code ISO 3166-1
+	    -->
+	    <CountryCode>AU</CountryCode>
+	    <CountryCode>NZ</CountryCode>
+        </Contributor>
+
+        <!--
+	    List 21 Fixed-length, three upper-case letters. 
+	    ONIX 3.0 Maps to <EditionType> within <DescriptiveDetail>
+        -->
+        <EditionTypeCode>ENH</EditionTypeCode>
+
+        <!--
+	    Should be positive integer if present. 
+	    ONIX 3.0 Maps to <EditionNumber> within <DescriptiveDetail>
+        -->
+        <EditionNumber>1</EditionNumber>
+        <Language>
+
+	    <!-- List 22 -->
+	    <LanguageRole>01</LanguageRole>
+
+	    <!-- List 74 -->
+	    <LanguageCode>eng</LanguageCode>
+        </Language>
+        <Language>
+	    <LanguageRole>02</LanguageRole>
+	    <LanguageCode>swe</LanguageCode>
+        </Language>
+
+        <!--
+	    Should be positive integer if present
+	    DISCONTINUED in ONIX 3.0
+        -->
+        <NumberOfPages>120</NumberOfPages>
+
+        <!-- DISCONTINUED in ONIX 3.0 -->
+        <PagesRoman>xviii</PagesRoman>
+
+        <!-- DISCONTINUED in ONIX 3.0 -->
+        <PagesArabic>102</PagesArabic>
+        <Extent>
+
+	    <!-- List 23: An ONIX code which identifies the type of extent -->
+	    <ExtentType>06</ExtentType>
+	    <ExtentValue>72</ExtentValue>
+
+	    <!-- List 24: Extent unit code -->
+	    <ExtentUnit>03</ExtentUnit>
+        </Extent>
+        <NumberOfIllustrations>40</NumberOfIllustrations>
+        <IllustrationsNote>500 illustrations, 210 in full colour</IllustrationsNote>
+
+        <!--
+	    Should match pattern [A-Z]{3}[0-9]{6} if present. 
+	    ONIX 3.0 Maps to <Subject>
+        -->
+        <BASICMainSubject>SEL000000</BASICMainSubject>
+
+        <!--
+	    Should be present and non blank 
+	    ONIX 3.0 Maps to <Subject>
+        -->
+        <BICMainSubject>AJRK</BICMainSubject>
+
+        <!--
+	    Must match pattern [1-9][0-9]*\(|\.[0-9]*) if present. 
+	    ONIX 3.0 Maps to <SubjectSchemeVersion> within <Subject>
+        -->
+        <BICVersion>2.1</BICVersion>
+
+        <!-- The <Subject> composite is optional and repeatable. Should include <SubjectSchemeIdentifier> and <SubjectCode>. -->
+        <Subject>
+
+	    <!--
+	        List 27: Subject scheme identifier code
+	        Note only the first three <Subject> with the <SubjectCode> ‘12’, ‘13’, ‘14’, ‘15’, ‘16’, ‘17’, ‘21’, or ‘92’ will be displayed in TitlePage.
+	    -->
+	    <SubjectSchemeIdentifier>10</SubjectSchemeIdentifier>
+	    <SubjectCode>BUS008000</SubjectCode>
+	    <SubjectHeadingText>BUSINESS &amp; ECONOMICS / Business Ethics</SubjectHeadingText>
+        </Subject>
+        <Subject>
+	    <SubjectSchemeIdentifier>10</SubjectSchemeIdentifier>
+	    <SubjectCode>BUS043000</SubjectCode>
+	    <SubjectHeadingText>BUSINESS &amp; ECONOMICS / Marketing / General</SubjectHeadingText>
+        </Subject>
+
+        <!--
+	    List 28: Audience code
+	    <AudienceCode> gets converted to <Audience> composite
+        -->
+        <AudienceCode>01</AudienceCode>
+        <Audience>
+
+	    <!-- List 29: Audience code type -->
+	    <AudienceCodeType>17</AudienceCodeType>
+	    <AudienceCodeValue>UP</AudienceCodeValue>
+        </Audience>
+        <AudienceDescription>Any videotape operator, videographer, engineer, producer, editor or director that needs video recording to be high quality or who needs to understand video theory. Students taking courses on video basics, or as a secondary text for video production.</AudienceDescription>
+
+        <!--
+	    Should be at least one <OtherText> with <TextTypeCode> of:- 
+	    	'01-Main description' 
+	    	'02-Short description' 
+	    	'03-Long description'
+	    
+	    ONIX 3.0 Maps to <TextContent> within <CollateralDetail>
+        -->
+        <OtherText>
+
+	    <!--
+	        List 33: Other text type code 
+	        ONIX 3.0 maps to <TextType> within <TextContent> and replaced List 153
+	    -->
+	    <TextTypeCode>02</TextTypeCode>
+
+	    <!--
+	        List 34: Text format code 
+	        ONIX 3.0 maps to attribute on <Text>
+	    -->
+	    <TextFormat>02</TextFormat>
+
+	    <!--
+	        Safe HTML tags:- 
+	        	<a> tag defines a hyperlink, which is used to link from one page to another.
+	        	<b> tag specifies bold text.
+	        	<blockquote> tag specifies a section that is quoted from another source.
+	        	<br>  inserts a single line break.
+	        	<code> tag is a phrase tag. It defines a piece of computer code.
+	        	<em> tag is a phrase tag. It renders as emphasized text.
+	        	<i> tag defines a part of text in an alternate voice or mood.
+	        	<kbd> tag is a phrase tag. It defines keyboard input.
+	        	<p> tag defines a paragraph.
+	        	<samp> tag is a phrase tag. It defines sample output from a computer program.
+	        	<strong> tag is a phrase tag. It defines important text.
+	        	<sup> tag defines superscript text. Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font.
+	        	<ol> tag is used for specifying an ordered list. Optionally the attributes 'type', 'start' and 'reversed' can be specified.
+	        	<ul> tag defines an unordered (bulleted) list.
+	        		<li> tag is used in ordered lists(<ol>), unordered lists (<ul>)
+	        	<var> tag is a phrase tag. It defines a variable.
+	        
+	        Stripped tags:-
+	        	<u> underlined, it could be confused for a hyperlink.
+	        	<span> tag is used to group inline-elements in a document.
+	        	<div> tag defines a division or a section in an HTML document.
+	    -->
+	    <Text>&lt;em&gt;Emphasized text&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Strong text&lt;/strong&gt;&lt;br&gt;&lt;code&gt;A piece of computer code&lt;/code&gt;&lt;br&gt;&lt;samp&gt;Sample output from a computer program&lt;/samp&gt;&lt;br&gt;&lt;kbd&gt;Keyboard input&lt;/kbd&gt;&lt;br&gt;&lt;var&gt;Variable&lt;/var&gt;</Text>
+        </OtherText>
+        <OtherText>
+
+	    <!--
+	        List 33: Other text type code 
+	        ONIX 3.0 maps to <TextType> within <TextContent> and replaced List 153
+	    -->
+	    <TextTypeCode>01</TextTypeCode>
+	    <TextFormat>00</TextFormat>
+	    <Text>Two world-renowned photographers team up with mining experts to illustrate the colourful history of mining and its importance to the development of civilisation as we know it.     This beautiful tome presents that rare moment in which art, technology, the community and environmental consciousness meet.</Text>
+        </OtherText>
+
+        <!--
+	    Cover Image Mandatory - Should be at least one <MediaFile> of type '04-Image: front cover' or '06-Image: front cover, high quality' 
+	    ONIX 3.0 Maps to <SupportingResource> within <CollateralDetail>
+        -->
+        <MediaFile>
+
+	    <!--
+	        List 38: Image/audio/video file type code
+	        <MediaFileTypeCode> Should be present for every <MediaFile> composite.
+	        ONIX 3.0 replaced by ResourceMode & ResourceContentType
+	    -->
+	    <MediaFileTypeCode>04</MediaFileTypeCode>
+
+	    <!-- List 40: Image/audio/video file link type -->
+	    <MediaFileLinkTypeCode>01</MediaFileLinkTypeCode>
+
+	    <!-- Should be a image link ( returns an image ) -->
+	    <MediaFileLink>http://cdn.penguin.com.au/covers/original/9780415671897.jpg</MediaFileLink>
+
+	    <!-- Should use the date format ‘YYYYMMDD’ or blank. -->
+	    <MediaFileDate>20180201</MediaFileDate>
+        </MediaFile>
+        <Imprint>
+
+	    <!--
+	        List 44: Name code type 
+	        ONIX 3.0 maps to <ImprintIDType> within <ImprintIdentifier>
+	    -->
+	    <NameCodeType>01</NameCodeType>
+
+	    <!-- ONIX 3.0 maps to <IDValue> within <ImprintIdentifier> -->
+	    <NameCodeValue>LPTITLE</NameCodeValue>
+
+	    <!-- Should have a non blank <ImprintName> -->
+	    <ImprintName>Fremantle Press</ImprintName>
+        </Imprint>
+        <Publisher>
+
+	    <!--
+	        List 45: Publishing role code
+	        Should be present and non blank
+	    -->
+	    <PublishingRole>01</PublishingRole>
+
+	    <!-- Should be present and non blank -->
+	    <PublisherName>Fremantle Press</PublisherName>
+        </Publisher>
+        <CityOfPublication>Wollombi</CityOfPublication>
+
+        <!-- List 91: Country code ISO 3166-1 -->
+        <CountryOfPublication>AU</CountryOfPublication>
+
+        <!--
+	    Mandatory unless <ProductAvailability> is supplied.
+	    List 64
+        -->
+        <PublishingStatus>04</PublishingStatus>
+        <PublishingStatusNote>A Note</PublishingStatusNote>
+
+        <!-- ONIX 3.0 maps to <PublishingDate> within <PublishingDetail> where <PublishingDateRole> is '10' -->
+        <TradeAnnouncementDate>20120103</TradeAnnouncementDate>
+
+        <!--
+	    Should be present unless <MarketDateRole> is supplied 
+	    ONIX 3.0 maps to <PublishingDate> within <PublishingDetail>
+        -->
+        <PublicationDate>20120103</PublicationDate>
+
+        <!--
+	    Should be 4 digits
+	    Should be less than the current year plus 1
+        -->
+        <CopyrightYear>2012</CopyrightYear>
+
+        <!--
+	    Should match pattern [12][0-9]{3}
+	    Should be equal to or less than the current year plus one. 
+	    ONIX 3.0 maps to <PublishingDate> within <PublishingDetail> where <PublishingDateRole> is '11'
+        -->
+        <YearFirstPublished>2012</YearFirstPublished>
+        <SalesRights>
+
+	    <!-- List 46: Sales rights type code -->
+	    <SalesRightsType>01</SalesRightsType>
+
+	    <!--
+	        List 91: Country code ISO 3166-1 
+	        ONIX 3.0 maps to <CountriesIncluded> within <Territory>
+	    -->
+	    <RightsCountry>AU</RightsCountry>
+	    <RightsCountry>NZ</RightsCountry>
+        </SalesRights>
+        <SalesRights>
+	    <SalesRightsType>02</SalesRightsType>
+
+	    <!--
+	        List 49: Region code 
+	        ONIX 3.0 maps to <RegionsIncluded> within <Territory>
+	    -->
+	    <RightsTerritory>WORLD</RightsTerritory>
+        </SalesRights>
+        <SalesRights>
+	    <SalesRightsType>03</SalesRightsType>
+	    <RightsCountry>AD</RightsCountry>
+	    <RightsCountry>ZW</RightsCountry>
+        </SalesRights>
+
+        <!-- ONIX 3.0 maps to <SalesRights> with <SalesRightsType> '03' -->
+        <NotForSale>
+	    <RightsCountry>GB</RightsCountry>
+	    <RightsCountry>US</RightsCountry>
+	    <ProductIdentifier>
+	        <ProductIDType>15</ProductIDType>
+	        <IDValue>9780747557111</IDValue>
+	    </ProductIdentifier>
+        </NotForSale>
+        <SalesRestriction>
+
+	    <!-- List 71: Sales restriction type code -->
+	    <SalesRestrictionType>01</SalesRestrictionType>
+	    <SalesOutlet>
+	        <SalesOutletName>Newsagent</SalesOutletName>
+	    </SalesOutlet>
+	    <SalesRestrictionDetail>Description of sales restriction</SalesRestrictionDetail>
+        </SalesRestriction>
+
+        <!--
+	    The <Measure> composite is optional and repeatable.
+	    For each <Measure> composite we Should have <MeasureTypeCode>, <Measurement> and <MeasureUnitCode> otherwise the whole <Measure> composite is rejected with a warning.
+	    TP_MEASURE_05: Mutiple <Measure> with same <MeasureTypeCode> and <MeasureUnitCode> not allowed. Duplicate code/unit: ${VALUES} 
+	    
+	    ONIX 3.0 maps to <Measure> within <DescriptiveDetail>
+        -->
+        <Measure>
+
+	    <!--
+	        List 48: Measure type code
+	        Should be non blank
+	        TP_MEASURE_04: <Measure> <MeasureTypeCode> Should be valid. Was ${VALUE} 
+	        
+	        ONIX 3.0 maps to <MeasureType>
+	    -->
+	    <MeasureTypeCode>08</MeasureTypeCode>
+
+	    <!--
+	        TP_MEASURE_01: <Measure> <Measurement> Should be non negative decimal number, was: ${VALUE}
+	        TP_MEASURE_02: <Measure> <Measurement> Should be non blank.
+	    -->
+	    <Measurement>2212</Measurement>
+
+	    <!--
+	        List 50: Measure unit code
+	        TP_MEASURE_03: <Measure> <MeasureUnitCode> Should be valid.
+	    -->
+	    <MeasureUnitCode>gr</MeasureUnitCode>
+        </Measure>
+
+        <!-- ONIX 3.0 maps to <RelatedProduct> within <RelatedMaterial> -->
+        <RelatedProduct>
+
+	    <!--
+	        List 51: Product relation code 
+	        
+	        ONIX 3.0 maps to <ProductRelationCode>
+	    -->
+	    <RelationCode>03</RelationCode>
+	    <ProductIdentifier>
+	        <ProductIDType>15</ProductIDType>
+	        <IDValue>9781741046045</IDValue>
+	    </ProductIdentifier>
+	    <ProductForm>BC</ProductForm>
+        </RelatedProduct>
+
+        <!-- ONIX 3.0 maps to <PublishingDate> within <PublishingDetail> where <PublishingDateRole> is '13' -->
+        <OutOfPrintDate>20171231</OutOfPrintDate>
+
+        <!--
+	    Must be supplied for each market 
+	    
+	    ONIX 3.0 maps to <SupplyDetail> in <ProductSupply> composite
+        -->
+        <SupplyDetail>
+
+	    <!-- Mandatory / Must be non blank -->
+	    <SupplierName>United Book Distributors</SupplierName>
+
+	    <!-- DISCONTINUED in ONIX 3.0 -->
+	    <TelephoneNumber>+61 3 9338 0666</TelephoneNumber>
+
+	    <!-- DISCONTINUED in ONIX 3.0 -->
+	    <FaxNumber>+61 03 9335 1903</FaxNumber>
+
+	    <!--
+	        Should be a valid email and domain
+	        DISCONTINUED in ONIX 3.0
+	    -->
+	    <EmailAddress>sales@bolinda.com</EmailAddress>
+	    <Website>
+
+	        <!-- List 73: Website role -->
+	        <WebsiteRole>33</WebsiteRole>
+	        <WebsiteDescription>Book web site.</WebsiteDescription>
+
+	        <!-- Should be a live website -->
+	        <WebsiteLink>http://www.bolinda.com/aus</WebsiteLink>
+	    </Website>
+
+	    <!-- List 93: Supplier role -->
+	    <SupplierRole>02</SupplierRole>
+
+	    <!--
+	        List 91: Country code ISO 3166-1 
+	        Within <SupplyDetail> composite the <SupplyToCountry> should be provided 
+	        
+	        ONIX 3.0 maps to <CountriesIncluded> in <Market> <Territory> composite
+	    -->
+	    <SupplyToCountry>AU</SupplyToCountry>
+
+	    <!--
+	        List 53
+	        <ReturnsCodeType> field must be present if <ReturnsCode> is present.
+	    -->
+	    <ReturnsCodeType>02</ReturnsCodeType>
+
+	    <!--
+	        List 66
+	        <ReturnsCode> field must be present if <ReturnsCodeType> is present. 
+	        
+	        ONIX 3.0 uses List 66 and List 204
+	    -->
+	    <ReturnsCode>C</ReturnsCode>
+
+	    <!--
+	        Mandatory unless <PublishingStatus> is supplied 
+	        List 65: Availability status code
+	    -->
+	    <ProductAvailability>21</ProductAvailability>
+
+	    <!--
+	        TP_EXPECTED_SHIP_DATE_01: Should be less than one (1) year from date when record ‘Last Updated’. After 1 year the <ProductAvailability> and <MarketPublishingStatus> should be reviewed in 
+	        accordance with the TitlePage ONIX Dataset workbook, “Code Use & TPage Loader Rules” tab Rule# 11.
+	        
+	        <ExpectedShipDate> must use the date format 'YYYYMMDD' or blank 
+	        
+	        ONIX 3.0 maps to <SupplyDetail> <Stock> <OnOrderDetail> <ExpectedDate> composite
+	    -->
+	    <ExpectedShipDate>20000609</ExpectedShipDate>
+
+	    <!-- TP_SUPPLY_DETAIL_ORDER_TIME_01: Number Format - Integers should match the pattern [0-99], should be a non-negative integer and should not be blank. -->
+	    <OrderTime>5</OrderTime>
+	    <Stock>
+
+	        <!--
+		    Should be a non negative integer 
+		    Must not be blank 
+		    Zero if invalid value Z1
+	        -->
+	        <OnHand>53</OnHand>
+
+	        <!--
+		    Should be a non negative integer 
+		    Must not be blank 
+		    Zero if invalid value Z1
+	        -->
+	        <OnOrder>5</OnOrder>
+
+	        <!-- Optional and non-repeating. -->
+	        <CBO>9</CBO>
+	    </Stock>
+	    <PackQuantity>6</PackQuantity>
+	    <Price>
+
+	        <!--
+		    List 58: Price type code 
+		    
+		    ONIX 3.0 maps to <PriceType>
+	        -->
+	        <PriceTypeCode>02</PriceTypeCode>
+
+	        <!-- Must be a postive decimal amount -->
+	        <PriceAmount>80.00</PriceAmount>
+
+	        <!--
+		    List 96: Currency code - ISO 4217 
+		    Should match the Country's currency eg AUD for AU 
+		    if not specified here and in doc Header then default to AUD Or if CountryCode is NZ then NZD
+	        -->
+	        <CurrencyCode>AUD</CurrencyCode>
+
+	        <!--
+		    List 91: Country code ISO 3166-1
+		    Each <Price> composite should have a <CountryCode> element -
+		    MUST not have multiple Country Codes for one price
+		    
+		    superceeded by Territory in ONIX 3.0
+	        -->
+	        <CountryCode>AU</CountryCode>
+	    </Price>
+        </SupplyDetail>
+
+        <!-- ONIX 3.0 superceeded by <PublisherRepresentative> -->
+        <MarketRepresentation>
+	    <AgentName>Fremantle Press</AgentName>
+
+	    <!-- List 69 -->
+	    <AgentRole>07</AgentRole>
+
+	    <!--
+	        List 91: Country code ISO 3166-1 
+	        Must be a matching <SupplyDetail> for this country 
+	        
+	        ONIX 3.0 superceeded by <Market> <Territory>
+	    -->
+	    <MarketCountry>AU</MarketCountry>
+
+	    <!--
+	        Should be present unless <PublicationDate> is supplied 
+	        List 68: Market publishing status
+	    -->
+	    <MarketPublishingStatus>04</MarketPublishingStatus>
+	    <MarketDate>
+
+	        <!--
+		    Should be present unless <PublicationDate> is supplied 
+		    List 67: Market date role 
+		    
+		    ONIX 3.0 replaced List 163
+	        -->
+	        <MarketDateRole>01</MarketDateRole>
+
+	        <!-- should be present unless <PublicationDate> is supplied -->
+	        <Date>20120103</Date>
+	    </MarketDate>
+        </MarketRepresentation>
+        <MarketRepresentation>
+	    <AgentName>Quarto Publishing Group UK</AgentName>
+	    <AgentRole>05</AgentRole>
+
+	    <!--
+	        List 49: Region code 
+	        Must be a matching <SupplyDetail> for this territory
+	        
+	        Note: Should not use Market Territory, it will be ignored.
+	    -->
+	    <MarketTerritory>WORLD</MarketTerritory>
+	    <MarketPublishingStatus>02</MarketPublishingStatus>
+	    <MarketDate>
+	        <MarketDateRole>02</MarketDateRole>
+	        <Date>20150525</Date>
+	    </MarketDate>
+        </MarketRepresentation>
+    </Product>
+</ONIXMessage>
