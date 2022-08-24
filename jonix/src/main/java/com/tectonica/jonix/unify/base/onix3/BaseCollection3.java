@@ -34,7 +34,6 @@ import java.util.List;
 public class BaseCollection3 extends BaseCollection {
     private static final long serialVersionUID = 1L;
 
-    @SuppressWarnings("serial")
     public BaseCollection3(Collection c) {
         extract(c, this);
     }

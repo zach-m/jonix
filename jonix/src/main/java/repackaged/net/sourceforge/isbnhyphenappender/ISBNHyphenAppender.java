@@ -226,7 +226,7 @@ public class ISBNHyphenAppender {
      * Right pad a {@code String} with the specified {@code character}. The
      * string is padded to the size of {@code maxLength}.
      *
-     * @param the String to pad
+     * @param string the String to pad
      * @param character the character to pad with
      * @param maxLength the size to pad to
      * @return right padded {@code String} or original {@code String} if no

@@ -410,8 +410,8 @@ public class CsvWriter {
      */
     public void writeRecord(String[] values, boolean preserveSpaces) throws IOException {
         if (values != null && values.length > 0) {
-            for (int i = 0; i < values.length; i++) {
-                write(values[i], preserveSpaces);
+            for (String value : values) {
+                write(value, preserveSpaces);
             }
 
             endRecord();
@@ -522,7 +522,7 @@ public class CsvWriter {
         close(false);
     }
 
-    private class Letters {
+    private static class Letters {
         public static final char LF = '\n';
 
         public static final char CR = '\r';
@@ -575,7 +575,7 @@ public class CsvWriter {
         int found = original.indexOf(pattern);
 
         if (found > -1) {
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             int start = 0;
 
             while (found != -1) {

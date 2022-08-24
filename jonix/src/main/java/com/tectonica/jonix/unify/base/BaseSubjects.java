@@ -36,10 +36,7 @@ import java.util.Map;
 public abstract class BaseSubjects extends LazyMap<SubjectSchemeIdentifiers, List<BaseSubject>> {
     protected void addKV(Map<SubjectSchemeIdentifiers, List<BaseSubject>> map, BaseSubject subject,
                          boolean insertFirst) {
-        List<BaseSubject> items = map.get(subject.subjectSchemeIdentifier);
-        if (items == null) {
-            map.put(subject.subjectSchemeIdentifier, items = new ArrayList<>());
-        }
+        List<BaseSubject> items = map.computeIfAbsent(subject.subjectSchemeIdentifier, k -> new ArrayList<>());
         if (insertFirst) {
             items.add(0, subject);
         } else {

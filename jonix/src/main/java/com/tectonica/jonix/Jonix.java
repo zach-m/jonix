@@ -158,7 +158,7 @@ public class Jonix {
             File outputFile = new File(outputFileName);
             int linesWritten = jonix.streamUnified().collect(toDelimitedFile(outputFile, ',', BaseTabulation.ALL));
 
-            System.out.println(String.format("Written %,d records to %s", linesWritten, outputFile.getAbsolutePath()));
+            System.out.printf("Written %,d records to %s%n", linesWritten, outputFile.getAbsolutePath());
         } catch (Exception e) {
             e.printStackTrace();
         }

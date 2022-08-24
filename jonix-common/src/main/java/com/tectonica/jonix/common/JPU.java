@@ -83,13 +83,11 @@ public class JPU {
         return getChildText(element);
     }
 
-    @SuppressWarnings("ConstantConditions")
     public static Integer getContentAsInteger(Element element) {
         final String s = getChildText(element);
         return (s.isEmpty() ? null : Integer.valueOf(s));
     }
 
-    @SuppressWarnings("ConstantConditions")
     public static Double getContentAsDouble(Element element) {
         final String s = getChildText(element);
         return (s.isEmpty() ? null : Double.valueOf(s));
