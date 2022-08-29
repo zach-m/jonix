@@ -3,11 +3,11 @@
 Commercial-grade library for extracting data from [ONIX for Books](https://www.editeur.org/11/Books) sources.
 
 #### Release History:
-- Version 2022-08 (August 2022) Support for ONIX 3.0.08 and Codelist Issue 58
-- Version 9.0 (July 2019) support for Java 9 modules (Jigsaw), ONIX 3.0.06 and Codelist Issue 45
-- Version 8.0.x (January 2018) starts relying on Java 8 support and offers completely overhauled fluent APIs
-- Version 3.0 (June 2015) supports ONIX versions 2.1.03 and 3.0.02
-- Version 3.1-rc1 (May 2016).
+- Version `2022-08` (August 2022) Support for ONIX 3.0.08 and Codelist Issue 58
+- Version `9.0` (July 2019) support for Java 9 modules (Jigsaw), ONIX 3.0.06 and Codelist Issue 45
+- Version `8.0.x` (January 2018) starts relying on Java 8 support and offers completely overhauled fluent APIs
+- Version `3.0` (June 2015) supports ONIX versions 2.1.03 and 3.0.02
+- Version `3.1-rc1` (May 2016).
 
 #### JavaDocs
 API documentation can be found [here](https://zach-m.github.io/jonix).
@@ -15,6 +15,7 @@ API documentation can be found [here](https://zach-m.github.io/jonix).
 # Usage
 
 ## 1. Stable Release (from Central repository)
+
 Maven
 ```xml
 <dependency>
@@ -23,21 +24,30 @@ Maven
     <version>2022-08</version>
 </dependency>
 ```
+
 Gradle
 ```
 compile group: 'com.tectonica', name: 'jonix', version: '2022-08'
 ```
-For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2022-08>
 
 ## 2. Latest Release (from latest source code)
 
-```bash
-mvn -version # REQUIRED: Maven-version >= 3.3.9  &&  JDK-version >= 9
-git clone git@github.com:zach-m/jonix.git # or https://github.com/zach-m/jonix.git
+To build locally from source:
+
+```shell
+# verify requirements: Maven-version >= 3.3.9  &&  JDK-version >= 9
+mvn -version
+
+# clone the repository
+git clone https://github.com/zach-m/jonix.git # or git@github.com:zach-m/jonix.git
+
+# build
 cd jonix
 mvn clean install
-# in your project's pom.xml, use <version> 9.1-SNAPSHOT 
 ```
+
+Once completed, Jonix should be available to use locally in your project.
+Make sure to have your project's `pom.xml` point to the coordinates of the version you just built (highlighted here: https://github.com/zach-m/jonix/blob/master/pom.xml#L7).
 
 # Table of contents
 
@@ -55,7 +65,7 @@ mvn clean install
 
 For many years, Jonix has been the only free Java library supporting ONIX extensively and reliably. Only lately, however, it was truly adapted for ONIX 3, and it will continue to adapt as the standard evolves. 
 Jonix was designed with the following goals in mind:
-* **Run fast**. Jonix 8 is more performant and memory efficient than even, taking lazy approach whenever possible
+* **Run fast**. Jonix is more performant and memory efficient than even, taking lazy approach whenever possible
 * **Simplify XML Processing**. Even though superficially ONIX is nothing more than an XML source, using it as-is to 
 answer even basic questions (such as _What is the ISBN of the book whose title is ABC_) isn't something that XML 
 frameworks are designed to do. ONIX is organized in a key-value fashion (mapping, for instance, ID-types to ID-values 
