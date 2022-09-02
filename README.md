@@ -27,8 +27,10 @@ Maven
 
 Gradle
 ```
-compile group: 'com.tectonica', name: 'jonix', version: '2022-08'
+implementation group: 'com.tectonica', name: 'jonix', version: '2022-08'
 ```
+
+For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2022-08>
 
 ## 2. Latest Release (from latest source code)
 
