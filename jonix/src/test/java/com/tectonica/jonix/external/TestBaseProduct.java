@@ -183,6 +183,8 @@ public class TestBaseProduct {
 
                 String json = JonixJson.productToJson(record.product, false);
                 String targetJson = target.jsons.get(0);
+                //System.out.println("ACTUAL:   " + json);
+                //System.out.println("EXPECTED: " + targetJson);
                 assertEquals("Difference in source " + record.source, targetJson.length(), json.length());
                 target.jsons.remove(0);
             });
