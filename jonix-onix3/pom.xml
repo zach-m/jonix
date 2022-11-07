@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.tectonica</groupId>
 		<artifactId>jonix-project</artifactId>
-		<version>2022-08</version>
+		<version>2022-11</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 

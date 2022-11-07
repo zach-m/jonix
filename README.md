@@ -3,6 +3,7 @@
 Commercial-grade library for extracting data from [ONIX for Books](https://www.editeur.org/11/Books) sources.
 
 #### Release History:
+- Version `2022-11` (November 2022) Support for Codelist Issue 59
 - Version `2022-08` (August 2022) Support for ONIX 3.0.08 and Codelist Issue 58
 - Version `9.0` (July 2019) support for Java 9 modules (Jigsaw), ONIX 3.0.06 and Codelist Issue 45
 - Version `8.0.x` (January 2018) starts relying on Java 8 support and offers completely overhauled fluent APIs
