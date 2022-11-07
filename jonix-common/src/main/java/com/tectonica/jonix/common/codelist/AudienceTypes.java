@@ -102,23 +102,17 @@ public enum AudienceTypes implements OnixCodelist, CodeList28 {
 
     /**
      * For tertiary education typically in universities and colleges of higher education, equivalent to ISCED Levels 5-7
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Tertiary_education("05", "Tertiary education"),
 
     /**
      * For an expert adult audience, including professional development and academic research
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Professional_and_scholarly("06", "Professional and scholarly"),
 
     /**
      * For any adult audience in a formal or semi-formal learning setting, eg vocational training and apprenticeships
      * (collectively, equivalent to ISCED Level 4), or practical or recreational learning for adults
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Adult_education("08", "Adult education"),
 
@@ -126,8 +120,6 @@ public enum AudienceTypes implements OnixCodelist, CodeList28 {
      * Intended for use in teaching and learning English as a second, non-native or additional language. Indication of
      * the language level (eg CEFR) should be included where possible. An audience range should also be included if the
      * product is (also) suitable for use in primary and secondary education
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     EFL_TEFL_TESOL("07", "EFL / TEFL / TESOL"),
 
@@ -136,46 +128,8 @@ public enum AudienceTypes implements OnixCodelist, CodeList28 {
      * example teaching German to Spanish speakers. Indication of the language level (eg CEFR) should be included where
      * possible. An audience range should also be included if the product is (also) suitable for use in primary and
      * secondary education. Prefer code 07 for products specific to teaching English
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
-    Second_additional_language_teaching("09", "Second / additional language teaching"),
-
-    /**
-     * For universities and colleges of further and higher education
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    College_higher_education("05", "College/higher education"),
-
-    /**
-     * For an expert adult audience, including professional development and academic research
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Professional_and_scholarly_("06", "Professional and scholarly"),
-
-    /**
-     * Intended for use in teaching English as a second language
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    ELT_ESL("07", "ELT/ESL"),
-
-    /**
-     * For centres providing academic, vocational or recreational courses for adults
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Adult_education_("08", "Adult education"),
-
-    /**
-     * Intended for use in teaching second languages, for example teaching German to Spanish speakers. Prefer code 07
-     * for products specific to teaching English
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Second_language_teaching("09", "Second language teaching");
+    Second_additional_language_teaching("09", "Second / additional language teaching");
 
     public final String code;
     public final String description;

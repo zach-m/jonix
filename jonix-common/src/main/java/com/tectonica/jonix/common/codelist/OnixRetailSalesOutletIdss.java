@@ -113,14 +113,9 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     /**
      * Deprecated
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     B_Dalton("BDL", "B Dalton"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Barnes_and_Noble("BNO", "Barnes and Noble"),
 
     /**
@@ -130,14 +125,8 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     BDBuzz("BDZ", "BDBuzz"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Bed_Bath_and_Beyond("BBB", "Bed Bath and Beyond"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Best_Buy("BST", "Best Buy"),
 
     /**
@@ -157,14 +146,8 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Billigbook("BLG", "Billigbook"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     BJs_Wholesale_Club("BJW", "BJ’s Wholesale Club"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Blackstone_Audio("BLA", "Blackstone Audio"),
 
     Blackwells("BLK", "Blackwell’s"),
@@ -209,9 +192,6 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Bolinda("BLD", "Bolinda"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Book_Club_Associates("BCA", "Book Club Associates"),
 
     /**
@@ -242,9 +222,6 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Bookbites("BBI", "Bookbites"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Bookish("BSH", "Bookish"),
 
     /**
@@ -254,26 +231,15 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Bookmate("BMA", "Bookmate"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Bookpeople("BKP", "Bookpeople"),
 
     /**
      * Deprecated
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Books_Etc("BRB", "Books Etc"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Books_A_Million("BKM", "Books-A-Million"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Bookshout("BKS", "Bookshout"),
 
     Booktopia("BTP", "Booktopia"),
@@ -320,9 +286,6 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Chapter("CHP", "Chapter"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Christianbook_com("CHD", "Christianbook.com"),
 
     /**
@@ -341,36 +304,20 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     /**
      * Deprecated
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Copia("COP", "Copia"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Costco("CST", "Costco"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Crate_and_Barrel("CRB", "Crate and Barrel"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     CVS_Drug_Stores("CVS", "CVS Drug Stores"),
 
     /**
      * www.cvs-mediatheques.com
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     CVS_Mediatheques("CVM", "CVS Mediatheques"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Cyberlibris("CYB", "Cyberlibris"),
 
     De_Marque("DEM", "De Marque"),
@@ -553,31 +500,17 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Kirjastopalvelu("KPV", "Kirjastopalvelu"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     KNFB_Blio("KNB", "KNFB/Blio"),
 
     /**
      * Deprecate
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Kno_Inc("KNO", "Kno Inc"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Kobo("KBO", "Kobo"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Koorong("KOO", "Koorong"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Kortext("KOR", "Kortext"),
 
     Kroger("KRG", "Kroger"),
@@ -616,31 +549,17 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Maneno("MNO", "Maneno"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Marks_and_Spencer("MKS", "Marks and Spencer"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Matras("MAT", "Matras"),
 
     /**
      * Also known as Media World
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Media_Markt_Saturn("MMS", "Media Markt/Saturn"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Messageries_ADP("ADP", "Messageries ADP"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Microcenter("MCR", "Microcenter"),
 
     /**
@@ -650,14 +569,8 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Microsoft("MSF", "Microsoft"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Mofibo("MOF", "Mofibo"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Morrisons("MRR", "Morrisons"),
 
     Mothercare("MTC", "Mothercare"),
@@ -685,9 +598,6 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Nextory("NXT", "Nextory"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Numilog("NUM", "Numilog"),
 
     /**
@@ -790,14 +700,8 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Sacrum("SAC", "Sacrum"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Safari("SAF", "Safari"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Safeway("SFW", "Safeway"),
 
     Sainsburys("SNS", "Sainsbury’s"),
@@ -822,9 +726,6 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Sesamy("SES", "Sesamy"),
 
-    /**
-     * Jonix-Comment: Introduced in Onix3
-     */
     Shanghai_Book_Traders("SBT", "Shanghai Book Traders"),
 
     Skoobe("SKB", "Skoobe"),
@@ -915,8 +816,6 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     /**
      * Formerly The Ebook Alternative
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Vivlio("TEA", "Vivlio"),
 
@@ -958,191 +857,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Include retailer name in &lt;SalesOutletName&gt;
      */
-    Other("ZZZ", "Other"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    B_Dalton_("BDL", "B Dalton"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Barnes_and_Noble_("BNO", "Barnes and Noble"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Bed_Bath_and_Beyond_("BBB", "Bed Bath and Beyond"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Best_Buy_("BST", "Best Buy"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    BJs_Wholesale_Club_("BJW", "BJ’s Wholesale Club"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Blackstone_Audion("BLA", "Blackstone Audion"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Book_Club_Associates_("BCA", "Book Club Associates"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Bookish_("BSH", "Bookish"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Bookpeople_("BKP", "Bookpeople"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Books_A_Million_("BKM", "Books-A-Million"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Bookshout_("BKS", "Bookshout"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Borders_Books_Etc("BRB", "Borders/Books Etc"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Christianbook_com_("CHD", "Christianbook.com"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Copia_("COP", "Copia"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Costco_("CST", "Costco"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Crate_and_Barrel_("CRB", "Crate and Barrel"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    CVS_Drug_Stores_("CVS", "CVS Drug Stores"),
-
-    /**
-     * www.cvs-mediatheques.com
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    CVS_Mediatheques_("CVM", "CVS Mediatheques"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Cyberlibris_("CYB", "Cyberlibris"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    KNFB_Blio_("KNB", "KNFB/Blio"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Kno_Inc_("KNO", "Kno Inc"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Kobo_("KBO", "Kobo"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Koorong_("KOO", "Koorong"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Kortext_("KOR", "Kortext"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Marks_and_Spencer_("MKS", "Marks and Spencer"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Matras_("MAT", "Matras"),
-
-    /**
-     * Also known as Media World
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Media_Markt_Saturn_("MMS", "Media Markt/Saturn"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Messageries_ADP_("ADP", "Messageries ADP"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Microcenter_("MCR", "Microcenter"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Mofibo_("MOF", "Mofibo"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Morrisons_("MRR", "Morrisons"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Numilog_("NUM", "Numilog"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Safari_("SAF", "Safari"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Safeway_("SFW", "Safeway"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Shanghai_Book_Traders_("SBT", "Shanghai Book Traders"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    The_Ebook_Alternative("TEA", "The Ebook Alternative");
+    Other("ZZZ", "Other");
 
     public final String code;
     public final String description;

@@ -348,239 +348,171 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     /**
      * Deprecated in favor of CN-BJ
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Beijing_Municipality_("CN-11", "Beijing Municipality"),
 
     /**
      * Deprecated in favor of CN-TJ
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Tianjin_Municipality_("CN-12", "Tianjin Municipality"),
 
     /**
      * Deprecated in favor of CN-HE
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Hebei_Province_("CN-13", "Hebei Province"),
 
     /**
      * Deprecated in favor of CN-SX
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Shanxi_Province_("CN-14", "Shanxi Province"),
 
     /**
      * Deprecated in favor of CN-NM
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Inner_Mongolia_Autonomous_Region("CN-15", "Inner Mongolia Autonomous Region"),
 
     /**
      * Deprecated in favor of CN-LN
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Liaoning_Province_("CN-21", "Liaoning Province"),
 
     /**
      * Deprecated in favor of CN-JL
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Jilin_Province_("CN-22", "Jilin Province"),
 
     /**
      * Deprecated in favor of CN-HL
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Heilongjiang_Province_("CN-23", "Heilongjiang Province"),
 
     /**
      * Deprecated in favor of CN-SH
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Shanghai_Municipality_("CN-31", "Shanghai Municipality"),
 
     /**
      * Deprecated in favor of CN-JS
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Jiangsu_Province_("CN-32", "Jiangsu Province"),
 
     /**
      * Deprecated in favor of CN-ZJ
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Zhejiang_Province_("CN-33", "Zhejiang Province"),
 
     /**
      * Deprecated in favor of CN-AH
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Anhui_Province_("CN-34", "Anhui Province"),
 
     /**
      * Deprecated in favor of CN-FJ
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Fujian_Province_("CN-35", "Fujian Province"),
 
     /**
      * Deprecated in favor of CN-JX
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Jiangxi_Province_("CN-36", "Jiangxi Province"),
 
     /**
      * Deprecated in favor of CN-SD
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Shandong_Province_("CN-37", "Shandong Province"),
 
     /**
      * Deprecated in favor of CN-HA
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Henan_Province_("CN-41", "Henan Province"),
 
     /**
      * Deprecated in favor of CN-HB
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Hubei_Province_("CN-42", "Hubei Province"),
 
     /**
      * Deprecated in favor of CN-HN
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Hunan_Province_("CN-43", "Hunan Province"),
 
     /**
      * Deprecated in favor of CN-GD
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Guangdong_Province_("CN-44", "Guangdong Province"),
 
     /**
      * Deprecated in favor of CN-GX
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Guangxi_Zhuang_Autonomous_Region("CN-45", "Guangxi Zhuang Autonomous Region"),
 
     /**
      * Deprecated in favor of CN-HI
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Hainan_Province_("CN-46", "Hainan Province"),
 
     /**
      * Deprecated in favor of CN-CQ
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Chongqing_Municipality_("CN-50", "Chongqing Municipality"),
 
     /**
      * Deprecated in favor of CN-SC
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Sichuan_Province_("CN-51", "Sichuan Province"),
 
     /**
      * Deprecated in favor of CN-GZ
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Guizhou_Province_("CN-52", "Guizhou Province"),
 
     /**
      * Deprecated in favor of CN-YN
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Yunnan_Province_("CN-53", "Yunnan Province"),
 
     /**
      * Deprecated in favor of CN-XZ
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Tibet_Autonomous_Region_("CN-54", "Tibet Autonomous Region"),
 
     /**
      * Deprecated in favor of CN-SN
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Shaanxi_Province_("CN-61", "Shaanxi Province"),
 
     /**
      * Deprecated in favor of CN-GS
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Gansu_Province_("CN-62", "Gansu Province"),
 
     /**
      * Deprecated in favor of CN-QH
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Qinghai_Province_("CN-63", "Qinghai Province"),
 
     /**
      * Deprecated in favor of CN-NX
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Ningxia_Hui_Autonomous_Region("CN-64", "Ningxia Hui Autonomous Region"),
 
     /**
      * Deprecated in favor of CN-XJ
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Xinjiang_Uyghur_Autonomous_Region("CN-65", "Xinjiang Uyghur Autonomous Region"),
 
     /**
      * Deprecated in favor of CN-TW, but prefer code TW (Taiwan, Province of China) from List 91
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Taiwan_Province_("CN-71", "Taiwan Province"),
 
     /**
      * Deprecated in favor of CN-HK, but prefer code HK (Hong Kong) from List 91
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Hong_Kong_Special_Administrative_Region_("CN-91", "Hong Kong Special Administrative Region"),
 
     /**
      * Deprecated in favor of CN-MO, but prefer code MO (Macao) from List 91
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
      */
     Macau_Special_Administrative_Region_("CN-92", "Macau Special Administrative Region"),
 
@@ -1132,182 +1064,6 @@ public enum Regions implements OnixCodelist, CodeList49 {
      * In ONIX 3, may ONLY be used in &lt;RegionsIncluded&gt;
      */
     World("WORLD", "World"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Beijing_Municipality__("CN-11", "Beijing Municipality"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Tianjin_Municipality__("CN-12", "Tianjin Municipality"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Hebei_Province__("CN-13", "Hebei Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Shanxi_Province__("CN-14", "Shanxi Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Inner_Mongolia_Autonomous_Region_("CN-15", "Inner Mongolia Autonomous Region"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Liaoning_Province__("CN-21", "Liaoning Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Jilin_Province__("CN-22", "Jilin Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Heilongjiang_Province__("CN-23", "Heilongjiang Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Shanghai_Municipality__("CN-31", "Shanghai Municipality"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Jiangsu_Province__("CN-32", "Jiangsu Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Zhejiang_Province__("CN-33", "Zhejiang Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Anhui_Province__("CN-34", "Anhui Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Fujian_Province__("CN-35", "Fujian Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Jiangxi_Province__("CN-36", "Jiangxi Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Shandong_Province__("CN-37", "Shandong Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Henan_Province__("CN-41", "Henan Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Hubei_Province__("CN-42", "Hubei Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Hunan_Province__("CN-43", "Hunan Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Guangdong_Province__("CN-44", "Guangdong Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Guangxi_Zhuang_Autonomous_Region_("CN-45", "Guangxi Zhuang Autonomous Region"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Hainan_Province__("CN-46", "Hainan Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Chongqing_Municipality__("CN-50", "Chongqing Municipality"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Sichuan_Province__("CN-51", "Sichuan Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Guizhou_Province__("CN-52", "Guizhou Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Yunnan_Province__("CN-53", "Yunnan Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Tibet_Autonomous_Region__("CN-54", "Tibet Autonomous Region"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Shaanxi_Province__("CN-61", "Shaanxi Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Gansu_Province__("CN-62", "Gansu Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Qinghai_Province__("CN-63", "Qinghai Province"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Ningxia_Hui_Autonomous_Region_("CN-64", "Ningxia Hui Autonomous Region"),
-
-    /**
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Xinjiang_Uyghur_Autonomous_Region_("CN-65", "Xinjiang Uyghur Autonomous Region"),
-
-    /**
-     * Prefer code TW (Taiwan, Province of China) from List 91
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Taiwan_Province__("CN-71", "Taiwan Province"),
-
-    /**
-     * Prefer code HK (Hong Kong) from List 91
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Hong_Kong_Special_Administrative_Region__("CN-91", "Hong Kong Special Administrative Region"),
-
-    /**
-     * Prefer code MO (Macao) from List 91
-     * <p>
-     * Jonix-Comment: Deprecated in Onix3
-     */
-    Macau_Special_Administrative_Region__("CN-92", "Macau Special Administrative Region"),
 
     /**
      * World except as otherwise specified. NOT USED in ONIX 3
