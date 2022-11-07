@@ -41,7 +41,7 @@ interface CodeList71 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist71">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {

@@ -41,7 +41,7 @@ interface CodeList27 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -332,7 +332,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Subject code list of the German association of educational media publishers. See
-     * http://www.bildungsmedien.de/service/onixlisten/unterrichtsfach_onix_codelist27_value59_0408.pdf
+     * http://www.bildungsmedien.de/service/onixlisten/unterrichtsfach_onix_codelist27_value59_0408.pdf. Deprecated
      */
     VdS_Bildungsmedien_Facher("59", "VdS Bildungsmedien Fächer"),
 
@@ -382,20 +382,20 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     MUSA("67", "MUSA"),
 
     /**
-     * Specialtesaurus f&#246;r musik: Swedish translation of the Finnish Music Thesaurus. See https://finto.fi/musa/sv/
-     * (in Swedish). Deprecated, and replaced by YSO (see code 71)
+     * Swedish translation of the Finnish Music Thesaurus (Swedish: Specialtesaurus f&#246;r musik). See
+     * https://finto.fi/musa/sv/ (in Swedish). Deprecated, and replaced by YSO (see code 71)
      */
     CILLA("68", "CILLA"),
 
     /**
-     * Fiktiivisen aineiston asiasanasto: Finnish thesaurus for fiction. See https://finto.fi/kaunokki/fi/ (in Finnish).
-     * Deprecated. No longer updated, and replaced by Kauno and SLM (see codes D0 and D1)
+     * Finnish thesaurus for fiction (Finnish: Fiktiivisen aineiston asiasanasto). See https://finto.fi/kaunokki/fi/ (in
+     * Finnish). Deprecated. No longer updated, and replaced by Kauno and SLM (see codes D0 and D1)
      */
     Kaunokki("69", "Kaunokki"),
 
     /**
-     * Specialtesaurus f&#246;r fiktivt material: Swedish translation of the Finnish thesaurus for fiction. See
-     * https://finto.fi/kaunokki/sv/ (in Swedish). Deprecated. No longer updated, and replaced by Kauno and SLM (see
+     * Swedish translation of the Finnish thesaurus for fiction (Swedish: Specialtesaurus f&#246;r fiktivt material:).
+     * See https://finto.fi/kaunokki/sv/ (in Swedish). Deprecated. No longer updated, and replaced by Kauno and SLM (see
      * codes D0 and D1)
      */
     Bella("70", "Bella"),
@@ -716,14 +716,15 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Klassifikationen_von_Spielen_Puzzles_und_Spielwaren("C7", "Klassifikationen von Spielen, Puzzles und Spielwaren"),
 
     /**
+     * 
      * National Library of Norway genre and form thesaurus. For use in ONIX 3.0 only. See https://www.nb.no/nbvok/ntsf
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    NBVok("C8", "NBVok"),
+    NBVok_NTSF("C8", "NBVok NTSF"),
 
     /**
-     * Subject / genre code used in Japan
+     * Subject / genre code used in Japan. For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -731,7 +732,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Finnish Ontology for fiction (Finnish: Fiktiivisen aineiston ontologia). See https://finto.fi/kauno/fi/ (in
-     * Finnish), https://finto.fi/kauno/sv/ (in Swedish), https://finto.fi/kauno/en/ (in English)
+     * Finnish), https://finto.fi/kauno/sv/ (in Swedish), https://finto.fi/kauno/en/ (in English). For use in ONIX 3.0
+     * only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -739,7 +741,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * Finnish genre and form vocabulary (Finnish: Suomalainen lajityyppi ja muotosanasto). See https://finto.fi/slm/fi/
-     * (in Finnish), https://finto.fi/slm/sv/ (in Swedish), https://finto.fi/slm/en/ (in English)
+     * (in Finnish), https://finto.fi/slm/sv/ (in Swedish), https://finto.fi/slm/en/ (in English). For use in ONIX 3.0
+     * only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -748,7 +751,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * General Finnish Ontology for Places (Finnish: Yleinen suomalainen ontologia - paikat). See
      * https://finto.fi/yso-paikat/fi/ (in Finnish), https://finto.fi/yso-paikat/sv/ (in Swedish),
-     * https://finto.fi/yso-paikat/en/ (in English)
+     * https://finto.fi/yso-paikat/en/ (in English). For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

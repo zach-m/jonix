@@ -41,7 +41,7 @@ interface CodeList158 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -192,7 +192,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     /**
      * For example a PDF or other digital representation of a publisher's 'new titles' or range catalog
      */
-    Publishers_catalog("34", "Publisher’s catalog"),
+    Publishers_catalogue("34", "Publisher’s catalogue"),
 
     /**
      * For example a banner ad for the product. Pixel dimensions should typically be included in

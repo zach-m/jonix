@@ -41,7 +41,7 @@ interface CodeList51 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist51">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist51">ONIX
  *      Codelist 51 in Reference Guide</a>
  */
 public enum ProductRelations implements OnixCodelist, CodeList51 {
@@ -301,6 +301,14 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * Jonix-Comment: Introduced in Onix3
      */
     Linked_product_offer("45", "Linked product offer"),
+
+    /**
+     * If ordered, &lt;Product&gt; may (at the supplier's discretion) be substituted and the &lt;RelatedProduct&gt;
+     * supplied instead. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    May_be_substituted_by("46", "May be substituted by"),
 
     /**
      * &lt;Product&gt; is an epublication 'rendered' as &lt;RelatedProduct&gt;: use in ONIX 2.1 only when the

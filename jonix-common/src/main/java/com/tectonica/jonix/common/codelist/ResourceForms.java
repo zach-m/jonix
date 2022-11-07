@@ -38,7 +38,7 @@ interface CodeList161 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist161">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist161">ONIX
  *      Codelist 161 in Reference Guide</a>
  */
 public enum ResourceForms implements OnixCodelist, CodeList161 {

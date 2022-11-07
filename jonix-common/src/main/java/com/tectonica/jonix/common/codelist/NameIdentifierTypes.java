@@ -41,7 +41,7 @@ interface CodeList44 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -83,6 +83,13 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * Trading party identifier used in the Netherlands
      */
     Centraal_Boekhuis_Relatie_ID("10", "Centraal Boekhuis Relatie ID"),
+
+    /**
+     * Flemish supplier code. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Distributeurscode_Boekenbank("12", "Distributeurscode Boekenbank"),
 
     /**
      * Flemish publisher code
@@ -226,7 +233,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
 
     /**
      * Party ID from Identifiers and Standards for Higher Education and Research (fr: Identifiants et
-     * R&#233;f&#233;rentiels pour l'enseignement sup&#233;rieur et la recherche). For use on ONIX 3.0 only. See
+     * R&#233;f&#233;rentiels pour l'enseignement sup&#233;rieur et la recherche). For use in ONIX 3.0 only. See
      * https://www.idref.fr
      * <p>
      * Jonix-Comment: Introduced in Onix3
@@ -243,11 +250,19 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
 
     /**
      * Research organisation registry identifier (see https://ror.org), leading 0 followed by 8 alphanumeric characters
-     * (including 2-digit checksum). For use on ONIX 3.0 only
+     * (including 2-digit checksum). For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    ROR("40", "ROR");
+    ROR("40", "ROR"),
+
+    /**
+     * Economic Operators Registration and Identification, identifier for businesses that import into or export from the
+     * EU. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    EORI("41", "EORI");
 
     public final String code;
     public final String description;

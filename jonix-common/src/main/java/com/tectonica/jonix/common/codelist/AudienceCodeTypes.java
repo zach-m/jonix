@@ -41,7 +41,7 @@ interface CodeList29 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist29">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist29">ONIX
  *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -104,21 +104,22 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
 
     /**
      * Type of school: codelist maintained by VdS Bildungsmedien eV, the German association of educational media
-     * publishers. See http://www.bildungsmedien.de/service/onixlisten/schulform_onix_codelist29_value12_0408.pdf
+     * publishers. See http://www.bildungsmedien.de/service/onixlisten/schulform_onix_codelist29_value12_0408.pdf.
+     * Deprecated
      */
     Schulform("12", "Schulform"),
 
     /**
      * School region: codelist maintained by VdS Bildungsmedien eV, the German association of educational media
      * publishers, indicating where products are licensed to be used in schools. See
-     * http://www.bildungsmedien.de/service/onixlisten/bundesland_onix_codelist29_value13_0408.pdf
+     * http://www.bildungsmedien.de/service/onixlisten/bundesland_onix_codelist29_value13_0408.pdf. Deprecated
      */
     Bundesland("13", "Bundesland"),
 
     /**
      * Occupation: codelist for vocational training materials, maintained by VdS Bildungsmedien eV, the German
      * association of educational media publishers. See
-     * http://www.bildungsmedien.de/service/onixlisten/ausbildungsberufe_onix_codelist29_value14_0408.pdf
+     * http://www.bildungsmedien.de/service/onixlisten/ausbildungsberufe_onix_codelist29_value14_0408.pdf. Deprecated
      */
     Ausbildungsberuf("14", "Ausbildungsberuf"),
 

@@ -38,7 +38,7 @@ interface CodeList221 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist221">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist221">ONIX
  *      Codelist 221 in Reference Guide</a>
  */
 public enum MessageStatuss implements OnixCodelist, CodeList221 {
@@ -46,7 +46,7 @@ public enum MessageStatuss implements OnixCodelist, CodeList221 {
      * Message received but not yet parsed (Acknowledgement must contain neither &lt;MessageStatusDetail&gt; nor
      * &lt;RecordStatusSummary&gt;, and should include &lt;NoProduct/&gt;). There is no particular implication that the
      * acknowledgement message is valid - the status is based solely on receipt of a file and minimal parsing of the
-     * original ONIX message header to ascertain &lt;MessageNumber&gt; etc.. The Acknowledgement message MAY give a date
+     * original ONIX message header to ascertain &lt;MessageNumber&gt; etc. The Acknowledgement message MAY give a date
      * when parsing is planned
      */
     Message_received("00", "Message received"),

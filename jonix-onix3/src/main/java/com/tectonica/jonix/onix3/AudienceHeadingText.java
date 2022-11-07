@@ -34,7 +34,7 @@ import java.io.Serializable;
  * <h1>Audience heading text</h1>
  * <p>
  * The text of an audience heading taken from the scheme specified in the &lt;AudienceCodeType&gt; element; or the text
- * equivalent to the &lt;AudienceCode&gt; value, if both code and text are sent. Either &lt;AudienceCode&gt; or
+ * equivalent to the &lt;AudienceCodeValue&gt; if both code and text are sent. Either &lt;AudienceCodeValue&gt; or
  * &lt;AudienceHeadingText&gt; or both must be present in each occurrence of the &lt;Audience&gt; composite.
  * </p>
  * <p>

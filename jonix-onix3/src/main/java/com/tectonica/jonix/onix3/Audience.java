@@ -176,8 +176,9 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
 
     /**
      * <p>
-     * A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Mandatory in each occurrence of the
-     * &lt;Audience&gt; composite, and non-repeating.
+     * A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Either &lt;AudienceCodeValue&gt; or
+     * &lt;AudienceHeadingText&gt; or both must be present in each occurrence of the &lt;Audience&gt; composite.
+     * Non-repeating.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -205,8 +206,8 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     /**
      * <p>
      * The text of an audience heading taken from the scheme specified in the &lt;AudienceCodeType&gt; element; or the
-     * text equivalent to the &lt;AudienceCode&gt; value, if both code and text are sent. Either &lt;AudienceCode&gt; or
-     * &lt;AudienceHeadingText&gt; or both must be present in each occurrence of the &lt;Audience&gt; composite.
+     * text equivalent to the &lt;AudienceCodeValue&gt; if both code and text are sent. Either &lt;AudienceCodeValue&gt;
+     * or &lt;AudienceHeadingText&gt; or both must be present in each occurrence of the &lt;Audience&gt; composite.
      * </p>
      * <p>
      * Optional, and repeatable if the text is sent in multiple languages. The <i>language</i> attribute is optional for

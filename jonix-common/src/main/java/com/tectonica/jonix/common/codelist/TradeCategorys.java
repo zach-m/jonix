@@ -41,7 +41,7 @@ interface CodeList12 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist12">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist12">ONIX
  *      Codelist 12 in Reference Guide</a>
  */
 public enum TradeCategorys implements OnixCodelist, CodeList12 {
@@ -162,7 +162,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     Periodical("18", "Periodical"),
 
     /**
-     * Publisher's or supplier's catalog (when treated as a product in its own right). For use on ONIX 3.0 only
+     * Publisher's or supplier's catalog (when treated as a product in its own right). For use in ONIX 3.0 only
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

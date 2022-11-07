@@ -41,7 +41,7 @@ interface CodeList141 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist141">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist141">ONIX
  *      Codelist 141 in Reference Guide</a>
  */
 public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
@@ -50,22 +50,23 @@ public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
     Barcoded_scheme_unspecified("01", "Barcoded, scheme unspecified"),
 
     /**
-     * Barcode uses 13-digit EAN symbology (without 5-digit extension)
+     * Barcode uses 13-digit EAN symbology (version NR without 5-digit extension)
      */
     GTIN_13("02", "GTIN-13"),
 
     /**
-     * EAN symbology, first digit of 5-digit extension is 1-5
+     * EAN symbology version NK, first digit of 5-digit extension is 1-5
      */
     GTIN_13_5_US_dollar_price_encoded("03", "GTIN-13+5 (US dollar price encoded)"),
 
     /**
-     * EAN symbology, first digit of 5-digit extension is 6
+     * EAN symbology version NK, first digit of 5-digit extension is 6
      */
     GTIN_13_5_CAN_dollar_price_encoded("04", "GTIN-13+5 (CAN dollar price encoded)"),
 
     /**
-     * EAN symbology, 5-digit extension is 90000, or extension does not indicate a price
+     * EAN symbology version NF, 5-digit extension is 90000-98999 for proprietary use - extension does not indicate a
+     * price
      */
     GTIN_13_5_no_price_encoded("05", "GTIN-13+5 (no price encoded)"),
 
@@ -90,7 +91,7 @@ public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
     UPC_12_5_price_point("09", "UPC-12+5 (price-point)"),
 
     /**
-     * EAN symbology, first digit of 5-digit extension is 0
+     * EAN symbology version NK, first digit of 5-digit extension is 0
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

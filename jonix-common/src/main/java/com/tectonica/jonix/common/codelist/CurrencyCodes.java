@@ -41,7 +41,7 @@ interface CodeList96 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist96">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -847,8 +847,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Leone("SLE", "Leone"),
 
     /**
-     * Sierra Leone (prices normally quoted as integers). Deprecated - replaced by SLE from April 2022 (SLE is a
-     * redenomination of the Leone by a factor of 1,000)
+     * Sierra Leone (prices normally quoted as integers). Deprecated - gradually replaced by SLE from April 2022, but
+     * SLL Leone still usable until April 2023 (SLE is a redenomination of the Leone by a factor of 1,000)
      */
     Leone_("SLL", "Leone"),
 
@@ -936,7 +936,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Turkish_Lira_old("TRL", "Turkish Lira (old)"),
 
     /**
-     * Turkey, from 1 January 2005
+     * T&#252;rkiye, from 1 January 2005
      */
     Turkish_Lira("TRY", "Turkish Lira"),
 

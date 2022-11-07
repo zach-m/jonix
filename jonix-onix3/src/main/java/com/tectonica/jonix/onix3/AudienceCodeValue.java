@@ -32,8 +32,9 @@ import java.io.Serializable;
 /**
  * <h1>Audience code value</h1>
  * <p>
- * A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Mandatory in each occurrence of the
- * &lt;Audience&gt; composite, and non-repeating.
+ * A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Either &lt;AudienceCodeValue&gt; or
+ * &lt;AudienceHeadingText&gt; or both must be present in each occurrence of the &lt;Audience&gt; composite.
+ * Non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -50,7 +51,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>1</td>
+ * <td>0&#8230;1</td>
  * </tr>
  * <tr>
  * <td>Example</td>

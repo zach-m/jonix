@@ -41,7 +41,7 @@ interface CodeList9 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist9">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
@@ -134,8 +134,8 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     US_Schedule_B("14", "US Schedule B"),
 
     /**
-     * Mexican SAT classification, based on UN SPSC with later modifications (8 digits, without punctuation). See
-     * https://www.sat.gob.mx/consultas/53693/catalogo-de-productos-y-servicios
+     * Mexican SAT classification, based on UN SPSC with later modifications (8 digits, without punctuation). For use in
+     * ONIX 3.0 only. See https://www.sat.gob.mx/consultas/53693/catalogo-de-productos-y-servicios
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

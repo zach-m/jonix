@@ -41,7 +41,7 @@ interface CodeList79 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -51,7 +51,17 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Color_of_cover("01", "Color of cover"),
 
     /**
+     * Where it is different from the overall color of the cover (see code 01). For Product Form Feature values see code
+     * list 98. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Color_of_spine("26", "Color of spine"),
+
+    /**
      * For Product Form Feature values see code list 98
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Color_of_page_edge("02", "Color of page edge"),
 
@@ -60,16 +70,22 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Bibles, and for large print product. The accompanying &lt;ProductFormFeatureDescription&gt; is text specifying
      * the typeface name. The font size may be specified with the font name, but is preferred separately (in points) in
      * &lt;ProductFormFeatureValue&gt;
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Text_font("03", "Text font"),
 
     /**
      * For Product Form Feature values see code list 99
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Special_cover_material("04", "Special cover material"),
 
     /**
      * For Product Form Feature values see code list 76
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     DVD_region("05", "DVD region"),
 
@@ -77,11 +93,15 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * A computer or handheld device operating system required to use a digital product, with version detail if
      * applicable. The accompanying Product Form Feature Value is a code from List 176. Version detail, when applicable,
      * is carried in Product Form Feature Description
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Operating_system_requirements("06", "Operating system requirements"),
 
     /**
      * Other system requirements for a digital product, described by free text in Product Form Feature Description
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Other_system_requirements("07", "Other system requirements"),
 
@@ -90,11 +110,15 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * iSmart Touch and Read Pen. These devices scan invisible codes specially printed on the page to identify the book
      * and position of the word, and the word is then read aloud by the device. The name of the compatible device (or
      * range of devices) should be given in &lt;ProductFormFeatureDescription&gt;
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     Point_and_listen_device_compatibility("08", "‘Point and listen’ device compatibility"),
 
     /**
      * For &lt;ProductFormFeatureValue&gt; codes, see Codelist 196
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     E_publication_accessibility_detail("09", "E-publication accessibility detail"),
 
@@ -103,6 +127,8 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * version number as a period-separated list of numbers (eg '7', '1.5' or '3.10.7'). Use only with ONIX 3.0 - in
      * ONIX 2.1, use &lt;EpubTypeVersion&gt; instead. For the most common file formats, code 15 and List 220 is strongly
      * preferred
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     E_publication_format_version("10", "E-publication format version"),
 
@@ -110,23 +136,31 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Hazard warning required by US Consumer Product Safety Improvement Act (CPSIA) of 2008 or other US or
      * international legislation. Required, when applicable, for products sold in the US. The Product Form Feature Value
      * is a code from List 143. Further explanation may be given in Product Form Feature Description
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     US_CPSIA_or_other_international_hazard_warning("12", "US CPSIA or other international hazard warning"),
 
     /**
      * Product carries hazard warning required by EU Toy Safety Directive. The Product Form Feature Value is a code from
      * List 184, and (for some codes) the exact wording of the warning may be given in Product Form Feature Description
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     EU_Toy_Safety_Hazard_warning("13", "EU Toy Safety Hazard warning"),
 
     /**
      * Product Form Feature Description must give further details of the warning
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     IATA_Dangerous_Goods_warning("14", "IATA Dangerous Goods warning"),
 
     /**
      * For common versioned e-book formats (or in some cases, devices) - for example EPUB 2.0.1 or EPUB 3.0.
      * &lt;ProductFormFeatureValue&gt; is a code from list 220. Use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     E_publication_format_version_code("15", "E-publication format version code"),
 
@@ -135,6 +169,8 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeatureDescription&gt; is the common name of the validator used (eg EpubCheck, Flightdeck), and
      * &lt;ProductFormFeatureValue&gt; is the version number of the validator (eg 4.0.0a). Use with code 15 (or possibly
      * code 10), or with &lt;EpubTypeVersion&gt;, to specify the version the e-publication conforms with
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
     E_publication_format_validator_version("16", "E-publication format validator version"),
 
@@ -319,11 +355,126 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Paper_produced_by_green_technology("40", "Paper produced by ‘green’ technology"),
 
     /**
+     * For Product Form Feature values see code list 98
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Color_of_page_edge_("02", "Color of page edge"),
+
+    /**
+     * The principal font used for body text, when this is a significant aspect of product description, eg for some
+     * Bibles, and for large print product. The accompanying Product Form Feature Description is text specifying font
+     * size and, if desired, typeface
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Text_font_("03", "Text font"),
+
+    /**
+     * For Product Form Feature values see code list 99
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Special_cover_material_("04", "Special cover material"),
+
+    /**
+     * For Product Form Feature values see code list 76
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    DVD_region_("05", "DVD region"),
+
+    /**
+     * A computer or handheld device operating system required to use a digital product, with version detail if
+     * applicable. The accompanying Product Form Feature Value is a code from List 176. Version detail, when applicable,
+     * is carried in Product Form Feature Description
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Operating_system_requirements_("06", "Operating system requirements"),
+
+    /**
+     * Other system requirements for a digital product, described by free text in Product Form Feature Description
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Other_system_requirements_("07", "Other system requirements"),
+
+    /**
+     * Indicates compatibility with proprietary 'point and listen' devices such as Ting Pen (http://www.ting.eu) or the
+     * iSmart Touch and Read Pen. These devices scan invisible codes specially printed on the page to identify the book
+     * and position of the word, and the word is then read aloud by the device. The name of the compatible device (or
+     * range of devices) should be given in &lt;ProductFormFeatureDescription&gt;
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    Point_and_listen_device_compatibility_("08", "‘Point and listen’ device compatibility"),
+
+    /**
+     * For &lt;ProductFormFeatureValue&gt; codes, see Codelist 196
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    E_publication_accessibility_detail_("09", "E-publication accessibility detail"),
+
+    /**
+     * For versioned e-book file formats (or in some cases, devices). &lt;ProductFormFeatureValue&gt; should contain the
+     * version number as a period-separated list of numbers (eg '7', '1.5' or '3.10.7'). Use only with ONIX 3.0 - in
+     * ONIX 2.1, use &lt;EpubTypeVersion&gt; instead. For the most common file formats, code 15 and List 220 is strongly
+     * preferred
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    E_publication_format_version_("10", "E-publication format version"),
+
+    /**
      * DEPRECATED - use code 12 and List 143
      * <p>
      * Jonix-Comment: Deprecated in Onix3
      */
-    CPSIA_choking_hazard_warning("11", "CPSIA choking hazard warning");
+    CPSIA_choking_hazard_warning("11", "CPSIA choking hazard warning"),
+
+    /**
+     * Choking hazard warning required by US Consumer Product Safety Improvement Act (CPSIA) of 2008. Required, when
+     * applicable, for products sold in the US. The Product Form Feature Value is a code from List 143. Further
+     * explanation may be given in Product Form Feature Description
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    CPSIA_choking_hazard_warning_("12", "CPSIA choking hazard warning"),
+
+    /**
+     * Product carries hazard warning required by EU Toy Safety Directive. The Product Form Feature Value is a code from
+     * List 184, and (for some codes) the exact wording of the warning may be given in Product Form Feature Description
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    EU_Toy_Safety_Hazard_warning_("13", "EU Toy Safety Hazard warning"),
+
+    /**
+     * Product Form Feature Description must give further details of the warning
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    IATA_Dangerous_Goods_warning_("14", "IATA Dangerous Goods warning"),
+
+    /**
+     * For common versioned e-book formats (or in some cases, devices) - for example EPUB 2.0.1 or EPUB 3.0.
+     * &lt;ProductFormFeatureValue&gt; is a code from list 220. Use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    E_publication_format_version_code_("15", "E-publication format version code"),
+
+    /**
+     * For common versioned e-book formats, the name and version of the validator used to check conformance.
+     * &lt;ProductFormFeatureDescription&gt; is the common name of the validator used (eg EpubCheck, Flightdeck), and
+     * &lt;ProductFormFeatureValue&gt; is the version number of the validator (eg 4.0.0a). Use with code 15 (or possibly
+     * code 10), or with &lt;EpubTypeVersion&gt;, to specify the version the e-publication conforms with
+     * <p>
+     * Jonix-Comment: Deprecated in Onix3
+     */
+    E_publication_format_validator_version_("16", "E-publication format validator version");
 
     public final String code;
     public final String description;

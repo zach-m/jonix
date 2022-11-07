@@ -41,7 +41,7 @@ interface CodeList175 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -809,6 +809,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Rounded_corners("B520", "Rounded corners"),
 
     /**
+     * Water-resistant or 'waterproof' cover and pages
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Splashproof("B521", "Splashproof"),
+
+    /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
      * 'flip-book' or 't&#234;te-b&#234;che' (Fr) binding, it has two front covers and a single spine. Usually an
      * omnibus of two works
@@ -866,6 +873,34 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Unified_English_Uncontracted_Braille("B708", "Unified English Uncontracted Braille"),
 
     Unified_English_Contracted_Braille("B709", "Unified English Contracted Braille"),
+
+    /**
+     * Eg charts, diagrams, maps, that are embossed or textured for accessibility purposes
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Tactile_images("B750", "Tactile images"),
+
+    /**
+     * Image-changing effect, '3D' images, 'tilt cards', printed with tiny lenses
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Lenticular_images("B751", "Lenticular images"),
+
+    /**
+     * Stereoscopic 3D effect (eg of images) as viewed through red/green filters
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Anaglyph_images("B752", "Anaglyph images"),
+
+    /**
+     * Physical 3D relief (eg of a map, globe) reflects height of terrain etc
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Raised_3D_relief("C750", "Raised 3D relief"),
 
     /**
      * Proprietary RealNetworks format. Includes Real Video packaged within a .rm RealMedia container
@@ -1561,7 +1596,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Gift_cards("P126", "Gift cards"),
 
     /**
-     * Blank certificate, award or achievement cards. Use with Product form code PD
+     * Blank certificate, award or achivement cards, Use with Product form code PD
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

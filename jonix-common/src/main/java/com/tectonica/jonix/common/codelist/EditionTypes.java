@@ -41,7 +41,7 @@ interface CodeList21 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -234,8 +234,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Signed_edition("SIG", "Signed edition"),
 
     /**
-     * An edition that uses simplified language, often for languge learners. See ETR for highly simplified editions for
-     * readers with intellectual disabilities
+     * An edition that uses simplified language, usually for second or additional language learners. See ETR for highly
+     * simplified editions for readers with intellectual disabilities
      */
     Simplified_language_edition("SMP", "Simplified language edition"),
 

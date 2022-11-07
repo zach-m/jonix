@@ -41,7 +41,7 @@ interface CodeList153 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_58.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -233,7 +233,35 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    List_of_contents("32", "List of contents");
+    List_of_contents("32", "List of contents"),
+
+    /**
+     * Length limited to a maximum of 350 characters
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Short_description_annotation_for_imprint("33", "Short description/annotation for imprint"),
+
+    /**
+     * Length unrestricted
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Description_for_imprint("34", "Description for imprint"),
+
+    /**
+     * Length limited to a maximum of 350 characters
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Short_description_annotation_for_publisher("35", "Short description/annotation for publisher"),
+
+    /**
+     * Length unrestricted
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Description_for_publisher("36", "Description for publisher");
 
     public final String code;
     public final String description;
