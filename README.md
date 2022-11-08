@@ -22,16 +22,16 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2022-08</version>
+    <version>2022-11</version>
 </dependency>
 ```
 
 Gradle
 ```
-implementation group: 'com.tectonica', name: 'jonix', version: '2022-08'
+implementation group: 'com.tectonica', name: 'jonix', version: '2022-11'
 ```
 
-For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2022-08>
+For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2022-11>
 
 ## 2. Latest Release (from latest source code)
 
