@@ -1,5 +1,5 @@
 module jonix.common {
-    requires java.xml;
+    requires transitive java.xml;
 
     exports com.tectonica.jonix.common;
     exports com.tectonica.jonix.common.codelist;
