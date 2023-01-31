@@ -41,7 +41,7 @@ interface CodeList203 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist203">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist203">ONIX
  *      Codelist 203 in Reference Guide</a>
  */
 public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
@@ -96,7 +96,14 @@ public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Content_warning_self_harm("09", "Content warning (self-harm)");
+    Content_warning_self_harm("09", "Content warning (self-harm)"),
+
+    /**
+     * The publisher warns the product includes content involving extreme cruelty to animals
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Content_warning_animals("10", "Content warning (animals)");
 
     public final String code;
     public final String description;

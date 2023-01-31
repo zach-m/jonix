@@ -41,7 +41,7 @@ interface CodeList153 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -53,12 +53,12 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     Sender_defined_text("01", "Sender-defined text"),
 
     /**
-     * Limited to a maximum of 350 characters
+     * Of the product. Limited to a maximum of 350 characters
      */
     Short_description_annotation("02", "Short description/annotation"),
 
     /**
-     * Length unrestricted
+     * Of the product. Length unrestricted
      */
     Description("03", "Description"),
 

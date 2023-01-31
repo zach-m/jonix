@@ -41,7 +41,7 @@ interface CodeList74 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -93,6 +93,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Algonquian_languages("alg", "Algonquian languages"),
 
+    /**
+     * Collective name
+     */
     Altaic_languages("tut", "Altaic languages"),
 
     Amharic("amh", "Amharic"),
@@ -142,6 +145,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
      * Collective name
      */
     Australian_languages("aus", "Australian languages"),
+
+    /**
+     * Collective name. ONIX local code, equivalent of aav in ISO 639-5. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Austro_Asiatic_languages("aav", "Austro-Asiatic languages"),
 
     /**
      * Collective name
@@ -239,6 +249,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
      * Artificial language
      */
     Blissymbols_Blissymbolics_Bliss("zbl", "Blissymbols; Blissymbolics; Bliss"),
+
+    /**
+     * Boro. ONIX local code, equivalent to brx in ISO 639-3. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Bodo_India("brx", "Bodo (India)"),
 
     Bosnian("bos", "Bosnian"),
 
@@ -483,6 +500,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Erzya("myv", "Erzya"),
 
     /**
+     * Inuit-Yupik-Unangan languages. Collective name. ONIX local code, equivalent of esx in ISO 639-5. For use in ONIX
+     * 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Eskaleut_languages("esx", "Eskaleut languages"),
+
+    /**
      * Artificial language
      */
     Esperanto("epo", "Esperanto"),
@@ -642,9 +667,23 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Hittite("hit", "Hittite"),
 
     /**
+     * Collective name. ONIX local code, equivalent of hmx in ISO 639-5. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Hmong_Mien_languages("hmx", "Hmong-Mien languages"),
+
+    /**
      * Macrolanguage
      */
     Hmong_Mong("hmn", "Hmong; Mong"),
+
+    /**
+     * ONIX local code, equivalent to hop in ISO 639-3. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Hopi("hop", "Hopi"),
 
     Hungarian("hun", "Hungarian"),
 
@@ -738,6 +777,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Italian("ita", "Italian"),
 
     Japanese("jpn", "Japanese"),
+
+    /**
+     * Japonic. Collective name. ONIX local code, equivalent of jpx in ISO 639-5. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Japanese_languages("jpx", "Japanese languages"),
 
     Javanese("jav", "Javanese"),
 
@@ -884,6 +930,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Lahnda("lah", "Lahnda"),
 
+    /**
+     * Teton, Teton Sioux. ONIX local code, equivalent to lkt in ISO 639-3. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Lakota("lkt", "Lakota"),
+
     Lamba("lam", "Lamba"),
 
     /**
@@ -974,6 +1027,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Malay("may", "Malay"),
 
     Malayalam("mal", "Malayalam"),
+
+    /**
+     * Collective name. ONIX local code, equivalent of poz in ISO 639-5. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Malayo_Polynesian_languages("poz", "Malayo-Polynesian languages"),
 
     Maltese("mlt", "Maltese"),
 
@@ -1075,8 +1135,6 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Moore_Mossi("mos", "Mooré; Mossi"),
 
-    Multiple_languages("mul", "Multiple languages"),
-
     /**
      * Collective name
      */
@@ -1140,8 +1198,6 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Nilo_Saharan_languages("ssa", "Nilo-Saharan languages"),
 
     Niuean("niu", "Niuean"),
-
-    No_linguistic_content("zxx", "No linguistic content"),
 
     Nogai("nog", "Nogai"),
 
@@ -1414,6 +1470,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Sinhala_Sinhalese("sin", "Sinhala; Sinhalese"),
 
     /**
+     * Chinese (family) languages. Collective name. ONIX local code, equivalent of zhx in ISO 639-5. For use in ONIX 3.0
+     * only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sinitic_languages("zhx", "Sinitic languages"),
+
+    /**
      * Collective name
      */
     Sino_Tibetan_languages("sit", "Sino-Tibetan languages"),
@@ -1551,6 +1615,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Tongan("ton", "Tongan"),
 
+    /**
+     * ONIX local code, equivalent to tsd in ISO 639-3. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Tsakonian("tsd", "Tsakonian"),
+
     Tsimshian("tsi", "Tsimshian"),
 
     Tsonga("tso", "Tsonga"),
@@ -1594,14 +1665,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Umbundu("umb", "Umbundu"),
 
-    /**
-     * Use where no suitable code is available
-     */
-    Uncoded_languages("mis", "Uncoded languages"),
-
-    Undetermined_language("und", "Undetermined language"),
-
     Upper_Sorbian("hsb", "Upper Sorbian"),
+
+    /**
+     * Collective name. ONIX local code, equivalent of urj in ISO 639-5. For use in ONIX 3.0 only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Uralic_languages("urj", "Uralic languages"),
 
     Urdu("urd", "Urdu"),
 
@@ -1712,7 +1783,18 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Zulu("zul", "Zulu"),
 
-    Zuni("zun", "Zuni");
+    Zuni("zun", "Zuni"),
+
+    Undetermined_language("und", "Undetermined language"),
+
+    /**
+     * Use where no suitable code is available
+     */
+    Uncoded_languages("mis", "Uncoded languages"),
+
+    Multiple_languages("mul", "Multiple languages"),
+
+    No_linguistic_content("zxx", "No linguistic content");
 
     public final String code;
     public final String description;

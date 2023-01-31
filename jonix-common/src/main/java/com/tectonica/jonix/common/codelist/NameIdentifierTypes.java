@@ -41,7 +41,7 @@ interface CodeList44 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -225,7 +225,8 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     Nasjonalt_autoritetsregister("36", "Nasjonalt autoritetsregister"),
 
     /**
-     * Global Research Identifier Database ID (see https://www.grid.ac). For use in ONIX 3.0 only
+     * Global Research Identifier Database ID (see https://www.grid.ac). For use in ONIX 3.0 only. Deprecated - ROR is
+     * now generally preferred
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

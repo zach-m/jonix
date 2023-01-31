@@ -41,7 +41,7 @@ interface CodeList175 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -440,9 +440,6 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     Lift_the_flap_book("B202", "Lift-the-flap book"),
 
-    /**
-     * Note: was wrongly shown as B203 (duplicate entry) in Issue 3
-     */
     Miniature_book("B204", "Miniature book"),
 
     Moving_picture_flicker_book("B205", "Moving picture / flicker book"),
@@ -823,7 +820,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Turn_around_book("B601", "Turn-around book"),
 
     /**
-     * Manga with pages and panels in the sequence of the original Japanese, but with Western text
+     * Manga with pages and panels in the sequence of (right-to-left flowing) Japanese-style design
      */
     Unflipped_manga_format("B602", "Unflipped manga format"),
 
@@ -835,6 +832,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     Back_to_back_book("B603", "Back-to-back book"),
+
+    /**
+     * Manga with pages and panels in the sequence mirrored from Japanese-style design (thus flowing left-to-right)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Flipped_manga_format("B604", "Flipped manga format"),
 
     /**
      * Text shows syllable breaks

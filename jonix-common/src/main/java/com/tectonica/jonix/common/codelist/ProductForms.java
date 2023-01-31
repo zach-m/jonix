@@ -41,7 +41,7 @@ interface CodeList150 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
@@ -537,6 +537,15 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Multiple_component_retail_product_part_s("SF", "Multiple-component retail product, part(s) enclosed"),
 
     /**
+     * Multiple component product where all parts are digital, and delivered as separate files, eg a group of individual
+     * EPUB files, an EPUB with a PDF, an e-book with a license to access a range of online resources, etc. Format of
+     * product components must be given in &lt;ProductPart&gt;
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Multiple_component_retail_product_entirely_digital("SG", "Multiple-component retail product, entirely digital"),
+
+    /**
      * Video - detail unspecified
      */
     Video("VA", "Video"),
@@ -766,7 +775,15 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Paints_crayons_pencils("ZO", "Paints, crayons, pencils"),
 
     /**
-     * Other toy, game and puzzle items not specified by ZB to ZN, generally accessories to other products etc. Further
+     * Handicraft kit or set, eg sewing, crochet, weaving, basketry, beadwork, leather, wood or metalworking, pottery
+     * and glassworking, candlemaking etc
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Handicraft_kit("ZP", "Handicraft kit"),
+
+    /**
+     * Other toy, game and puzzle items not specified by ZB to ZP, generally accessories to other products etc. Further
      * detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt;
      * are unlikely to be sufficient
      * <p>
@@ -775,7 +792,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_toy_game_accessories("ZX", "Other toy/game accessories"),
 
     /**
-     * Other apparel items not specified by ZB to ZN, including branded, promotional or tie-in scarves, caps, aprons,
+     * Other apparel items not specified by ZB to ZP, including branded, promotional or tie-in scarves, caps, aprons,
      * dress-up costumes etc. Further detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt;
      * and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */

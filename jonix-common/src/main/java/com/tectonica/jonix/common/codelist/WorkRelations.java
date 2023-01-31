@@ -41,14 +41,13 @@ interface CodeList164 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist164">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist164">ONIX
  *      Codelist 164 in Reference Guide</a>
  */
 public enum WorkRelations implements OnixCodelist, CodeList164 {
     /**
      * Product A is or includes a manifestation of work X. (There is a direct parent-child relation between work X and
      * the product). The instance of &lt;RelatedWork&gt; must include an identifier for work X
-     * 
      */
     Manifestation_of("01", "Manifestation of"),
 
@@ -60,7 +59,6 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * without necessarily assigning an identifier to the product's parent work X. The instance of &lt;RelatedWork&gt;
      * must include an identifier for work W. Codes 20-30 may be used instead to provide details of the derivation of
      * work X from work W
-     * 
      */
     Derived_from("02", "Derived from"),
 
@@ -69,7 +67,6 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * ways specified in the former ISTC rules. (There is a relationship between a parent work X and a child work Y, and
      * between the parent work X and the product.) The instance of &lt;RelatedWork&gt; must include an identifier for
      * work Y. Codes 40-50 may be used instead to provide details of the derivation of work Y from work X
-     * 
      */
     Related_work_is_derived_from_this("03", "Related work is derived from this"),
 
@@ -77,15 +74,13 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * Product A is a manifestation of a work X in the same (bibliographic) collection as related work Z. (There is a
      * relationship between the parent work X and a 'same collection' work Z, and between the parent work X and the
      * product.) The instance of &lt;RelatedWork&gt; must include an identifier for work Z
-     * 
      */
-    Other_work_in_same_bibiographic("04", "Other work in same (bibiographic) collection"),
+    Other_work_in_same_bibliographic("04", "Other work in same (bibliographic) collection"),
 
     /**
      * Product A is a manifestation of a work X by the same contributor(s) as related work Z. (There is a relationship
      * between the parent work X and a work Z where X and Z have at least one contributor in common, and between the
      * parent work X and the product.) The instance of &lt;RelatedWork&gt; must include an identifier for work Z
-     * 
      */
     Other_work_by_same_contributor("05", "Other work by same contributor"),
 
@@ -104,7 +99,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * abridgement. (There is a relationship between the grandparent [unabridged] work W and the parent [abridged] work
      * X, and between the parent work X and the product.) The instance of &lt;RelatedWork&gt; must include an identifier
      * for [unabridged] work W. &lt;EditionType&gt; of product A would normally be ABR. See code 02 if the method of
-     * derivation of Z from W is unknown or unstated. The [abridged] parent work X may be identified using a separate
+     * derivation of X from W is unknown or unstated. The [abridged] parent work X may be identified using a separate
      * instance of &lt;RelatedWork&gt; with relation code 01
      * <p>
      * Jonix-Comment: Introduced in Onix3
@@ -114,7 +109,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
     /**
      * Product A is or includes a manifestation of a work X which is derived directly from related work W by annotation.
      * The instance of &lt;RelatedWork&gt; must include an identifier for [unannotated] work W. &lt;EditionType&gt; of
-     * product X would normally be ANN, VAR etc. See code 02 if the method of derivation of Z from W is unknown or
+     * product X would normally be ANN, VAR etc. See code 02 if the method of derivation of X from W is unknown or
      * unstated. The [annotated] parent work X may be identified using a separate instance of &lt;RelatedWork&gt; with
      * relation code 01
      * <p>
@@ -186,7 +181,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
 
     /**
      * The content of work W has been adapted [into a different literary form] to form work X. The instance of
-     * &lt;RelatedWork&gt; must include an identifier for [untranslated] work W. &lt;EditionType&gt; of product A would
+     * &lt;RelatedWork&gt; must include an identifier for [unadapted] work W. &lt;EditionType&gt; of product A would
      * normally be ADP, ACT etc
      * <p>
      * Jonix-Comment: Introduced in Onix3

@@ -41,7 +41,7 @@ interface CodeList196 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -204,8 +204,9 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Use_of_contrast("26", "Use of contrast"),
 
     /**
-     * Audio content is presented with no or low background noise (eg ambient sounds), at least 20dB below the level of
-     * foreground speech
+     * Foreground audio content (eg voice) is presented with no or low background noise (eg ambient sounds, music), at
+     * least 20dB below the level of the foreground, or background noise can be switched off (eg via an alternative
+     * audio track)
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

@@ -41,7 +41,7 @@ interface CodeList29 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist29">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist29">ONIX
  *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -103,9 +103,10 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     AWS("11", "AWS"),
 
     /**
-     * Type of school: codelist maintained by VdS Bildungsmedien eV, the German association of educational media
-     * publishers. See http://www.bildungsmedien.de/service/onixlisten/schulform_onix_codelist29_value12_0408.pdf.
-     * Deprecated
+     * Type of school: codelist formerly maintained by VdS Bildungsmedien eV, the German association of educational
+     * media publishers at http://www.bildungsmedien.de/service/onixlisten/schulform_onix_codelist29_value12_0408.pdf.
+     * Deprecated - use Thema educational purpose qualifier (eg 4Z-DE-BA - for German Elementary School) in
+     * &lt;Subject&gt; instead
      */
     Schulform("12", "Schulform"),
 
@@ -117,9 +118,11 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     Bundesland("13", "Bundesland"),
 
     /**
-     * Occupation: codelist for vocational training materials, maintained by VdS Bildungsmedien eV, the German
-     * association of educational media publishers. See
-     * http://www.bildungsmedien.de/service/onixlisten/ausbildungsberufe_onix_codelist29_value14_0408.pdf. Deprecated
+     * Occupation: codelist for vocational training materials formerly maintained by VdS Bildungsmedien eV, the German
+     * association of educational media publishers at
+     * http://www.bildungsmedien.de/service/onixlisten/ausbildungsberufe_onix_codelist29_value14_0408.pdf. Deprecated -
+     * use Thema educational purpose qualifier (eg 4Z-DE-UH - for specific German professional/vocational qualifications
+     * and degrees) in &lt;Subject&gt; instead
      */
     Ausbildungsberuf("14", "Ausbildungsberuf"),
 

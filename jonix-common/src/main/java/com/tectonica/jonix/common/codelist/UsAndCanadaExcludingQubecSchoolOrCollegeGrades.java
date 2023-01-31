@@ -42,7 +42,7 @@ interface CodeList77 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist77">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist77">ONIX
  *      Codelist 77 in Reference Guide</a>
  */
 public enum UsAndCanadaExcludingQubecSchoolOrCollegeGrades implements OnixCodelist, CodeList77 {

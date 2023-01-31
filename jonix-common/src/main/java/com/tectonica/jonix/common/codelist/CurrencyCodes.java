@@ -41,7 +41,7 @@ interface CodeList96 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist96">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -319,9 +319,9 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Ethiopian_Birr("ETB", "Ethiopian Birr"),
 
     /**
-     * Eurozone: Andorra, Austria, Belgium, Cyprus, Estonia, Finland, France, Fr Guiana, Fr S Territories, Germany,
-     * Greece, Guadeloupe, Holy See (Vatican City), Ireland, Italy, Latvia, Lithuania, Luxembourg, Martinique, Malta,
-     * Mayotte, Monaco, Montenegro, Netherlands, Portugal, R&#233;union, St Barthelemy, St Martin, St Pierre and
+     * Eurozone: Andorra, Austria, Belgium, Croatia, Cyprus, Estonia, Finland, France, Fr Guiana, Fr S Territories,
+     * Germany, Greece, Guadeloupe, Holy See (Vatican City), Ireland, Italy, Latvia, Lithuania, Luxembourg, Martinique,
+     * Malta, Mayotte, Monaco, Montenegro, Netherlands, Portugal, R&#233;union, St Barthelemy, St Martin, St Pierre and
      * Miquelon, San Marino, Slovakia, Slovenia, Spain
      */
     Euro("EUR", "Euro"),
@@ -416,7 +416,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Lempira("HNL", "Lempira"),
 
     /**
-     * Croatia
+     * Croatia. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * introduction of the Euro
      */
     Kuna("HRK", "Kuna"),
 

@@ -41,7 +41,7 @@ interface CodeList22 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist22">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist22">ONIX
  *      Codelist 22 in Reference Guide</a>
  */
 public enum LanguageRoles implements OnixCodelist, CodeList22 {
@@ -106,7 +106,7 @@ public enum LanguageRoles implements OnixCodelist, CodeList22 {
     Language_of_introduction_end_matter("13", "Language of introduction / end matter"),
 
     /**
-     * Eg for the book 'Ingles para latinos', English. For phrasebooks and language teaching. learning or study
+     * Eg for the book 'Ingles para latinos', English. For phrasebooks and language teaching, learning or study
      * material. Wherever possible, the language should also be listed as the subject of the book. For use in ONIX 3.0
      * only
      * <p>

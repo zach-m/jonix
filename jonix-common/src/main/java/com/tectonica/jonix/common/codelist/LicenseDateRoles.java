@@ -26,55 +26,44 @@ import com.tectonica.jonix.common.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 62 (Tax rate type)
+ * marker interface to assist in IDE navigation to code-list 260 (License date role)
  */
-interface CodeList62 {
+interface CodeList260 {
 }
 
 /**
- * <code>Enum</code> that corresponds to ONIX <b>Codelist 62</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 260</b>
  * <p>
- * Description: Tax rate type
+ * Description: License date role
+ * <p>
+ * Jonix-Comment: Introduced in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist62">ONIX
- *      Codelist 62 in Reference Guide</a>
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist260">ONIX
+ *      Codelist 260 in Reference Guide</a>
  */
-public enum TaxRateTypes implements OnixCodelist, CodeList62 {
+public enum LicenseDateRoles implements OnixCodelist, CodeList260 {
     /**
-     * Specifies that tax is applied at a higher rate than standard
+     * Date on which a license becomes effective
      */
-    Higher_rate("H", "Higher rate"),
-
-    /**
-     * Under Italian tax rules, VAT on books may be paid at source by the publisher, and subsequent transactions through
-     * the supply chain are tax-exempt
-     */
-    Tax_paid_at_source_Italy("P", "Tax paid at source (Italy)"),
+    Valid_from("14", "Valid from"),
 
     /**
-     * Specifies that tax is applied at a lower rate than standard. In the EU, use code R for 'Reduced rates', and for
-     * rates lower than 5%, use code T ('Super-reduced') or Z (Zero-rated)
+     * Date on which a license ceases to be effective
      */
-    Lower_rate("R", "Lower rate"),
-
-    Standard_rate("S", "Standard rate"),
+    Valid_until("15", "Valid until"),
 
     /**
-     * Specifies that tax is applied at a rate lower than the Lower rate(s). In the EU, use code T for 'Super-reduced
-     * rates', and for Reduced rates (5% or above) use code R (Lower rate). For use in ONIX 3.0 only
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
+     * 06
      */
-    Super_low_rate("T", "Super-low rate"),
-
-    Zero_rated("Z", "Zero-rated");
+    From_until_date("24", "From… until date");
 
     public final String code;
     public final String description;
 
-    TaxRateTypes(String code, String description) {
+    LicenseDateRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -89,11 +78,11 @@ public enum TaxRateTypes implements OnixCodelist, CodeList62 {
         return description;
     }
 
-    public static TaxRateTypes byCode(String code) {
+    public static LicenseDateRoles byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (TaxRateTypes e : values()) {
+        for (LicenseDateRoles e : values()) {
             if (e.code.equals(code)) {
                 return e;
             }

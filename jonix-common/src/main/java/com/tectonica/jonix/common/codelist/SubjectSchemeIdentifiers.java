@@ -41,7 +41,7 @@ interface CodeList27 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -194,8 +194,9 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     NUR("32", "NUR"),
 
     /**
-     * ECPA Christian Product Category Book Codes, consisting of up to three x 3-letter blocks, for Super Category,
-     * Primary Category and Sub-Category. See http://www.ecpa.org/ECPA/cbacategories.xls
+     * Former ECPA Christian Product Category Book Codes, consisting of up to three x 3-letter blocks, for Super
+     * Category, Primary Category and Sub-Category, previously at http://www.ecpa.org/ECPA/cbacategories.xls. No longer
+     * maintained by the ECPA. Deprecated
      */
     ECPA_Christian_Book_Category("33", "ECPA Christian Book Category"),
 
@@ -331,8 +332,10 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Qualificatore_di_eta_di_lettura_CCE("58", "Qualificatore di età di lettura CCE"),
 
     /**
-     * Subject code list of the German association of educational media publishers. See
-     * http://www.bildungsmedien.de/service/onixlisten/unterrichtsfach_onix_codelist27_value59_0408.pdf. Deprecated
+     * Subject code list of the German association of educational media publishers, formerly at
+     * http://www.bildungsmedien.de/service/onixlisten/unterrichtsfach_onix_codelist27_value59_0408.pdf. Deprecated -
+     * use Thema subject category (eg YPA - Educational: Arts, general) instead, and add a Thema language qualifier (eg
+     * 2ACB -&#160;English) for language teaching
      */
     VdS_Bildungsmedien_Facher("59", "VdS Bildungsmedien Fächer"),
 
@@ -433,7 +436,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     CSR("76", "CSR"),
 
     /**
-     * Finnish school subject categories. See https://www.onixkeskus.fi/media/f/56
+     * Finnish school subject categories. See https://www.onixkeskus.fi/media/f/5722
      */
     Suomalainen_oppiaineluokitus("77", "Suomalainen oppiaineluokitus"),
 
@@ -716,7 +719,6 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Klassifikationen_von_Spielen_Puzzles_und_Spielwaren("C7", "Klassifikationen von Spielen, Puzzles und Spielwaren"),
 
     /**
-     * 
      * National Library of Norway genre and form thesaurus. For use in ONIX 3.0 only. See https://www.nb.no/nbvok/ntsf
      * <p>
      * Jonix-Comment: Introduced in Onix3

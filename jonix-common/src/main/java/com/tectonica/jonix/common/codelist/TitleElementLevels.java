@@ -38,7 +38,7 @@ interface CodeList149 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_59.html#codelist149">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist149">ONIX
  *      Codelist 149 in Reference Guide</a>
  */
 public enum TitleElementLevels implements OnixCodelist, CodeList149 {
@@ -65,9 +65,10 @@ public enum TitleElementLevels implements OnixCodelist, CodeList149 {
     Content_item("04", "Content item"),
 
     /**
-     * The title element names a master brand where the use of the brand spans multiple collections and product forms,
-     * and possibly multiple imprints and publishers. Used only for branded media properties carrying, for example, a
-     * children's character brand
+     * The title element names a multimedia franchise, licensed property or master brand where the use of the brand
+     * spans multiple collections and product forms, and possibly multiple imprints and publishers. It need not have a
+     * hierarchical relationship with title elements at other levels, or with other master brands. Used only for branded
+     * media properties carrying, for example, a children's character brand or film franchise branding
      */
     Master_brand("05", "Master brand"),
 
