@@ -3,6 +3,7 @@
 Commercial-grade library for extracting data from [ONIX for Books](https://www.editeur.org/11/Books) sources.
 
 #### Release History:
+- Version `2023-01` (January 2023) Support for Codelist Issue 60
 - Version `2022-11` (November 2022) Support for Codelist Issue 59
 - Version `2022-08` (August 2022) Support for ONIX 3.0.08 and Codelist Issue 58
 - Version `9.0` (July 2019) support for Java 9 modules (Jigsaw), ONIX 3.0.06 and Codelist Issue 45
@@ -22,16 +23,16 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2022-11</version>
+    <version>2023-01</version>
 </dependency>
 ```
 
 Gradle
 ```
-implementation group: 'com.tectonica', name: 'jonix', version: '2022-11'
+implementation group: 'com.tectonica', name: 'jonix', version: '2023-01'
 ```
 
-For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2022-11>
+For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2023-01>
 
 ## 2. Latest Release (from latest source code)
 
