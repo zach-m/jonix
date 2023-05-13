@@ -76,11 +76,6 @@ public abstract class BaseDescription implements Serializable {
         return null;
     }
 
-    public String getAudienceDescription() {
-        // we pick the first audience, as in practice it's very rare to see more than one
-        return (audienceCodes == null) ? null : audienceCodes.get(0).description;
-    }
-
     public static Integer[] getAudienceAgeRange(JonixAudienceRange audienceRange) {
         Integer[] ageRange = new Integer[] {null, null};
         AudienceRangeQualifiers qualifier = audienceRange.audienceRangeQualifier;

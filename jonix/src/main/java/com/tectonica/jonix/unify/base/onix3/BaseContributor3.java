@@ -46,7 +46,7 @@ public class BaseContributor3 extends BaseContributor {
         dest.personNameKey = c.keyNames().value;
         dest.personNameBeforeKey = c.namesBeforeKey().value;
         dest.personNameInverted = c.personNameInverted().value;
-        dest.corporateName = c.corporateName().value;
+        dest.corporateName = c.corporateNames().firstValue().orElse(null);
         dest.biographicalNote = pickBiographicalNote(c);
     }
 

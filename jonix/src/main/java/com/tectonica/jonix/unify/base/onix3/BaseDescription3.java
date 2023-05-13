@@ -51,7 +51,6 @@ public class BaseDescription3 extends BaseDescription {
                 : jNumberOfPages.extentValue.toString();
             dest.languages = dd.languages().asStructs();
             dest.audiences = dd.audiences().asStructs();
-            dest.audienceCodes = dd.audienceCodes().values();
             dest.audienceRange = dd.audienceRanges().first().map(AudienceRange::asStruct).orElse(null);
         }
     }
