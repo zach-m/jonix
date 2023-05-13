@@ -34,7 +34,9 @@ import java.io.Serializable;
 /**
  * <h1>Subject composite</h1>
  * <p>
- * An optional and repeatable group of data elements which together specify a subject classification or subject heading.
+ * An optional group of data elements which together specify a subject classification, category or subject heading.
+ * Repeatable, both to express multiple subject categories or headings in a scheme, and to specify subjects using
+ * multiple schemes.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -170,8 +172,8 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
 
     /**
      * <p>
-     * An ONIX code which identifies the category scheme which is used in an occurrence of the &lt;Subject&gt;
-     * composite. Mandatory in each occurrence of the composite, and non-repeating.
+     * An ONIX code which identifies the category or subject heading scheme which is used in an occurrence of the
+     * &lt;Subject&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.
      * </p>
      * <p>
      * For category schemes that use code values, use the associated &lt;SubjectCode&gt; element to carry the value (if
@@ -205,11 +207,14 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
 
     /**
      * <p>
-     * An empty element that identifies an instance of the &lt;Subject&gt; composite as representing the main subject
-     * category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i> there may
-     * be two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
-     * &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em>. Optional and
-     * non-repeating in each occurrence of the &lt;Subject&gt; composite.
+     * An empty element that identifies an instance of the &lt;Subject&gt; composite as representing the primary or main
+     * subject category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i>
+     * there may be two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
+     * &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em> (<i>ie</i> per value of
+     * &lt;SubjectSchemeIdentifier&gt;). Optional, though for some subject schemes (<i>eg</i> <i>Thema</i>),
+     * &lt;MainSubject/&gt; can be vital in order to prevent potential misinterpretation of a group of subject codes,
+     * and for other schemes which by their nature only allow one code (<i>eg</i> Dewey), &lt;MainSubject&gt; is not
+     * relevant. Non-repeating in each occurrence of the &lt;Subject&gt; composite.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -260,8 +265,8 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;Subject&gt; composite.
      * </p>
      * <p>
-     * Optional, and repeatable if the text is sent in multiple languages. The <i>language</i> attribute is optional for
-     * a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance if
+     * Optional, and repeatable if the heading text is sent in multiple languages. The <i>language</i> attribute is
+     * optional for a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance if
      * &lt;SubjectHeadingText&gt; is repeated.
      * </p>
      * Jonix-Comment: this list may be empty

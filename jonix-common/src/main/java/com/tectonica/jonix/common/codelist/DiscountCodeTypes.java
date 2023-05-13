@@ -38,7 +38,7 @@ interface CodeList100 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist100">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist100">ONIX
  *      Codelist 100 in Reference Guide</a>
  */
 public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
@@ -85,7 +85,7 @@ public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
      * the supplier's 16-digit ISNI, followed by a hyphen and one to three alphanumeric characters - normally digits -
      * chosen by the supplier. These characters are the index to a discount percentage in a table shared in advance by
      * the supplier with individual customers. In this way, a supplier may maintain individual product-specific discount
-     * arrangements with each customer. For use in ONIX 3.0 only
+     * arrangements with each customer. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

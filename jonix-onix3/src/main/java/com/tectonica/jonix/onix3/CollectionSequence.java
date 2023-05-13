@@ -183,9 +183,10 @@ public class CollectionSequence
      * non-repeating within the &lt;CollectionSequence&gt; composite.
      * </p>
      * <p>
-     * <span style="color: deeppink; font-weight: bold">New in 3.0.4</span> A hyphen may be used in place of an integer
-     * within a multi-level number, where a particular level of the hierarchy is unnumbered, for example -.3 where a
-     * product is the third in a sub-collection, and the sub-collection is unnumbered within the collection.
+     * <span style="color: deeppink; font-weight: bold">New from 3.0.4</span> A hyphen may be used in place of an
+     * integer within a multi-level number, where a particular level of the hierarchy is unnumbered, for example -.3
+     * where a product is the third in a sub-collection, and the sub-collections are in no particular order within the
+     * collection.
      * </p>
      * Jonix-Comment: this field is required
      */

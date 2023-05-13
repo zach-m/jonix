@@ -41,7 +41,7 @@ interface CodeList51 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist51">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist51">ONIX
  *      Codelist 51 in Reference Guide</a>
  */
 public enum ProductRelations implements OnixCodelist, CodeList51 {
@@ -67,7 +67,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
 
     /**
      * &lt;Product&gt; and &lt;RelatedProduct&gt; are companion products, intended to be used, or are usable, together
-     * (is own inverse). For use in ONIX 3.0 only
+     * (is own inverse). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -136,9 +136,9 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
     Replaced_by_POD("17", "Replaced by POD"),
 
     /**
-     * &lt;Product&gt; is a special edition of &lt;RelatedProduct&gt;. Used for a special edition (German:
-     * Sonderausgabe) with different cover, binding, premium content etc - more than 'alternative format' - which may be
-     * available in limited quantity and for a limited time (inverse of code 19)
+     * &lt;Product&gt; is a special edition of &lt;RelatedProduct&gt;. Used for a special edition (de: 'Sonderausgabe')
+     * with different cover, binding, premium content etc - more than 'alternative format' - which may be available in
+     * limited quantity and for a limited time (inverse of code 19)
      */
     Is_special_edition_of("18", "Is special edition of"),
 
@@ -278,7 +278,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
 
     /**
      * &lt;Product&gt; is an adapted (dramatized, abridged, novelized etc) version of &lt;RelatedProduct&gt; (inverse of
-     * code 44). For use in ONIX 3.0 only
+     * code 44). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -286,7 +286,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
 
     /**
      * &lt;Product&gt; is the original from which &lt;RelatedProduct&gt; is adapted (dramatized etc) (inverse of code
-     * 43), For use in ONIX 3.0 only
+     * 43). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -294,21 +294,37 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
 
     /**
      * Purchases of &lt;Product&gt; may qualify for one or more copies of &lt;RelatedProduct&gt; either free of charge
-     * or at a reduced price, or vice versa (is own inverse). This may be dependent on retailer participation, upon
-     * price and upon the quantity of the &lt;Product&gt; or the &lt;RelatedProduct&gt; purchased. For use in ONIX 3.0
-     * only
+     * or at a reduced price (inverse of code 48). This may be dependent on retailer participation, upon price and upon
+     * the quantity of the &lt;Product&gt; purchased. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Linked_product_offer("45", "Linked product offer"),
+    Has_linked_product_offer("45", "Has linked product offer"),
 
     /**
      * If ordered, &lt;Product&gt; may (at the supplier's discretion) be substituted and the &lt;RelatedProduct&gt;
-     * supplied instead. For use in ONIX 3.0 only
+     * supplied instead (inverse of code 47). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     May_be_substituted_by("46", "May be substituted by"),
+
+    /**
+     * If ordered, &lt;RelatedProduct&gt; may (at the supplier's discretion) be substituted and the &lt;Product&gt;
+     * supplied instead (inverse of code 46). Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    May_be_substituted_for("47", "May be substituted for"),
+
+    /**
+     * Purchases of &lt;RelatedProduct&gt; may qualify for one or more copies of &lt;Product&gt; either free of charge
+     * or at a reduced price (inverse of code 45). This may be dependent on retailer participation, upon price and upon
+     * the quantity of the &lt;RelatedProduct&gt; purchased. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Is_linked_product_offer("48", "Is linked product offer"),
 
     /**
      * &lt;Product&gt; is an epublication 'rendered' as &lt;RelatedProduct&gt;: use in ONIX 2.1 only when the

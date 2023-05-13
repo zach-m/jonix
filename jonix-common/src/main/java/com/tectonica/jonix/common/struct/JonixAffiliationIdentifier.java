@@ -19,36 +19,46 @@
 
 package com.tectonica.jonix.common.struct;
 
+import com.tectonica.jonix.common.JonixKeyedStruct;
 import com.tectonica.jonix.common.JonixStruct;
+import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 
 import java.io.Serializable;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;ProfessionalAffiliation></code> and Onix3
- * <code>&lt;ProfessionalAffiliation></code>.
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;AffiliationIdentifier></code>.
  * <p>
  * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
  */
 @SuppressWarnings("serial")
-public class JonixProfessionalAffiliation implements JonixStruct, Serializable {
-    public static final JonixProfessionalAffiliation EMPTY = new JonixProfessionalAffiliation();
+public class JonixAffiliationIdentifier implements JonixKeyedStruct<NameIdentifierTypes>, Serializable {
+    public static final JonixAffiliationIdentifier EMPTY = new JonixAffiliationIdentifier();
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 200 characters
+     * the key of this struct (by which it can be looked up)
+     */
+    public NameIdentifierTypes affiliationIDType;
+
+    /**
+     * Raw Format: Variable length text, suggested maximum 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */
-    public String affiliation;
+    public String idTypeName;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * Raw Format: According to the identifier type specified in &lt;SenderIDType&gt;
      * <p>
      * (type: dt.NonEmptyString)
      */
-    public List<String> professionalPositions;
+    public String idValue;
+
+    @Override
+    public NameIdentifierTypes key() {
+        return affiliationIDType;
+    }
 }

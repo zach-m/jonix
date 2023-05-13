@@ -41,7 +41,7 @@ interface CodeList30 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist30">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist30">ONIX
  *      Codelist 30 in Reference Guide</a>
  */
 public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
@@ -51,7 +51,7 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     US_school_grade_range("11", "US school grade range"),
 
     /**
-     * Values are defined by BIC for England and Wales, Scotland and N Ireland
+     * Values are to be defined by BIC for England and Wales, Scotland and N Ireland
      */
     UK_school_grade("12", "UK school grade"),
 
@@ -132,31 +132,31 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     French_school_cycles_classes("30", "French school cycles / classes"),
 
     /**
-     * N&#237;vel de Educa&#231;&#227;o do Brasil, see List 238. For use in ONIX 3.0 only
+     * N&#237;vel de Educa&#231;&#227;o do Brasil, see List 238. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Brazil_Education_level("31", "Brazil Education level"),
 
     /**
-     * Basic French educational level classification. Values are defined by ScoLOMFR. For use in ONIX 3.0 only. See
-     * http://data.education.fr/voc/scolomfr/scolomfr-voc-012
+     * Basic French educational level classification. Values are defined by ScoLOMFR. Only for use in ONIX 3.0 or later.
+     * See http://data.education.fr/voc/scolomfr/scolomfr-voc-012
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     French_educational_levels("32", "French educational levels"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Finnish_Upper_secondary_school_course_2021_("33", "Finnish Upper secondary school course (2021+)"),
 
     /**
-     * Detailed French educational level classification. Values are defined by ScoLOMFR. For use in ONIX 3.0 only. See
-     * http://data.education.fr/voc/scolomfr/scolomfr-voc-022 - Niveau &#233;ducatif d&#233;taill&#233;. See also code
-     * 30
+     * Detailed French educational level classification. Values are defined by ScoLOMFR. Only for use in ONIX 3.0 or
+     * later. See http://data.education.fr/voc/scolomfr/scolomfr-voc-022 - Niveau &#233;ducatif d&#233;taill&#233;. See
+     * also code 30
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

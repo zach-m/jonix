@@ -103,7 +103,7 @@ public class OnOrder implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer or zero, suggested maximum length 7 digits
      * <p>
-     * (type: dt.PositiveInteger)
+     * (type: dt.PositiveIntegerOrZero)
      */
     public Integer value;
 

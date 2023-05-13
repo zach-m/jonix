@@ -38,7 +38,7 @@ import java.io.Serializable;
  * <p>
  * An optional group of data elements which together specify an organization (which may or may not be the publisher)
  * responsible for dealing with enquiries related to the product. Repeatable in order to specify multiple responsible
- * organisations.
+ * organizations.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -143,13 +143,17 @@ public class ProductContact implements OnixSuperComposite, Serializable {
                 case ContactName.shortname:
                     contactName = new ContactName(e);
                     break;
-                case EmailAddress.refname:
-                case EmailAddress.shortname:
-                    emailAddress = new EmailAddress(e);
-                    break;
                 case TelephoneNumber.refname:
                 case TelephoneNumber.shortname:
                     telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+                    break;
+                case FaxNumber.refname:
+                case FaxNumber.shortname:
+                    faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
                     break;
                 default:
                     break;
@@ -235,32 +239,47 @@ public class ProductContact implements OnixSuperComposite, Serializable {
         return contactName;
     }
 
-    private EmailAddress emailAddress = EmailAddress.EMPTY;
-
-    /**
-     * <p>
-     * A text field giving the e-mail address for a contact person in the product contact organization who is
-     * responsible for the product. Optional and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public EmailAddress emailAddress() {
-        _initialize();
-        return emailAddress;
-    }
-
     private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
      * A telephone number of the contact person in the product contact organization who is responsible for the product,
-     * wherever possible including the plus sign and the international dialling code. Optional, and repeatable to
-     * provide multiple numbers for the same contact.
+     * wherever possible including the plus sign and the international dialing code. Optional, and repeatable to provide
+     * multiple numbers for the same contact.
      * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
         _initialize();
         return telephoneNumbers;
+    }
+
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A fax number for the contact person in the product contact organization who is responsible for the product,
+     * wherever possible including the plus sign and the international dialing code. Optional, and repeatable to provide
+     * multiple numbers for the same contact.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<FaxNumber, String> faxNumbers() {
+        _initialize();
+        return faxNumbers;
+    }
+
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A text field giving the e‑mail address for a contact person in the product contact organization who is
+     * responsible for the product. Optional, and repeatable to provide multiple e‑mail addresses for the same contact.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<EmailAddress, String> emailAddresss() {
+        _initialize();
+        return emailAddresss;
     }
 }

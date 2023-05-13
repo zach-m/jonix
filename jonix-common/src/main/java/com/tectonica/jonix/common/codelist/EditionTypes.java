@@ -41,7 +41,7 @@ interface CodeList21 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -90,8 +90,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Braille_edition("BRL", "Braille edition"),
 
     /**
-     * An edition in which two or more works also published separately are combined in a single volume; AKA 'omnibus'
-     * edition (fr: 'int&#233;grale')
+     * An edition in which two or more works also published separately are combined in a single volume; AKA 'omnibus
+     * edition', or in comic books a 'trade paperback' (fr: 'int&#233;grale')
      */
     Combined_volume("CMB", "Combined volume"),
 
@@ -125,7 +125,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     /**
      * Book which uses highly simplified wording, clear page layout and typography to ensure the content can be
      * understood by those with intellectual disabilities. See https://www.inclusion-europe.eu/easy-to-read for
-     * guidelines. See also SMP for editions with simplified language. For use in ONIX 3.0 only
+     * guidelines. See also SMP for editions with simplified language. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -151,7 +151,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * contrast, extra letter, word and line spacing to reduce crowding and isolate individual words, simplified page
      * layouts and an open, sans serif font (or occasionally, an unusual font design) intended to aid readability.
      * Sometimes labelled 'dyslexia-friendly'. See also code SMP if the text itself is simplified, and codes LTE or ULP
-     * if the type size is significantly larger than normal. For use in ONIX 3.0 only
+     * if the type size is significantly larger than normal. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -204,7 +204,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     /**
      * A product published in any form of soft cover, that at the time of publication, has or had no counterpart in any
      * other format, and that is or was not expected to have such a counterpart for a reasonable time (recommended at
-     * least 30 days following publication). For use in ONIX 3.0 only
+     * least 30 days following publication). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -287,7 +287,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Variorum_edition("VAR", "Variorum edition"),
 
     /**
-     * Readaloud edition - specifially intended and designed for reading aloud (to children). For use in ONIX 3.0 only
+     * Readaloud edition - specifially intended and designed for reading aloud (to children). Only for use in ONIX 3.0
+     * or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

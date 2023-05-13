@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -31,56 +31,66 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Conference place</h1>
+ * <h1>Affiliation identifier type</h1>
  * <p>
- * The place of a conference to which the product is related. Optional and non-repeating.
+ * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory in
+ * each occurrence of the &lt;AffiliationIdentifier&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 100 characters</td>
+ * <td>Fixed length text, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 44</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;ConferencePlace&gt;</tt></td>
+ * <td><tt>&lt;AffiliationIDType&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;b055&gt;</tt></td>
+ * <td><tt>&lt;x580&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language</td>
+ * <td>1</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ConferencePlace&gt;Aix-les-Bains, France&lt;/ConferencePlace&gt;</tt></td>
+ * <td><tt>&lt;x580&gt;16&lt;/x580&gt;</tt> (ISNI)</td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link Conference}&gt;</li>
+ * <li>&lt;{@link AffiliationIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
- * {@link ConferencePlace}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link AffiliationIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link AffiliationIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link AffiliationIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link AffiliationIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link AffiliationIDType}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link AffiliationIDType}</li>
  * </ul>
  *
- * @deprecated
+ * @since Onix-3.10
  */
-@Deprecated
-public class ConferencePlace implements OnixElement<String>, Serializable {
+public class AffiliationIDType implements OnixElement<NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "ConferencePlace";
-    public static final String shortname = "b055";
+    public static final String refname = "AffiliationIDType";
+    public static final String shortname = "x580";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -98,27 +108,17 @@ public class ConferencePlace implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
-    public Languages language;
-
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * This is the raw content of ConferencePlace. Could be null if {@code exists() == false}. Use {@link #value()}
-     * instead if you want to get this as an {@link java.util.Optional}.
-     * <p>
-     * Raw Format: Variable length text, suggested maximum length 100 characters
-     * <p>
-     * (type: dt.NonEmptyString)
-     */
-    public String value;
+    public NameIdentifierTypes value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public String _value() {
+    public NameIdentifierTypes _value() {
         return value;
     }
 
@@ -127,24 +127,23 @@ public class ConferencePlace implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final ConferencePlace EMPTY = new ConferencePlace();
+    public static final AffiliationIDType EMPTY = new AffiliationIDType();
 
-    public ConferencePlace() {
+    public AffiliationIDType() {
         exists = false;
     }
 
-    public ConferencePlace(org.w3c.dom.Element element) {
+    public AffiliationIDType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
-        value = JPU.getContentAsString(element);
+        value = NameIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
     /**
-     * @return whether this tag (&lt;ConferencePlace&gt; or &lt;b055&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;AffiliationIDType&gt; or &lt;x580&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {

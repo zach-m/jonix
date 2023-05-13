@@ -38,12 +38,12 @@ interface CodeList53 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist53">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist53">ONIX
  *      Codelist 53 in Reference Guide</a>
  */
 public enum ReturnsConditionsCodeTypes implements OnixCodelist, CodeList53 {
     /**
-     * As specified in &lt;ReturnsCodeTypeName&gt; (ONIX 3.0 only)
+     * As specified in &lt;ReturnsCodeTypeName&gt;. Only for use in ONIX 3.0 or later
      */
     Proprietary("00", "Proprietary"),
 

@@ -20,10 +20,12 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixProfessionalAffiliation;
+import com.tectonica.jonix.common.struct.JonixAffiliationIdentifier;
 
 import java.io.Serializable;
 
@@ -74,7 +76,7 @@ import java.io.Serializable;
  * {@link ProfessionalAffiliation}</li>
  * </ul>
  */
-public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessionalAffiliation>, Serializable {
+public class ProfessionalAffiliation implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ProfessionalAffiliation";
@@ -138,6 +140,10 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
                 case Affiliation.shortname:
                     affiliation = new Affiliation(e);
                     break;
+                case AffiliationIdentifier.refname:
+                case AffiliationIdentifier.shortname:
+                    affiliationIdentifiers = JPU.addToList(affiliationIdentifiers, new AffiliationIdentifier(e));
+                    break;
                 default:
                     break;
             }
@@ -183,8 +189,8 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
     /**
      * <p>
      * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>, and –
-     * if the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and
-     * non-repeating.
+     * if the &lt;ProfessionalPosition&gt; element is also present – where the contributor held that position. Optional
+     * and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -193,12 +199,21 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
         return affiliation;
     }
 
-    @Override
-    public JonixProfessionalAffiliation asStruct() {
+    private ListOfOnixDataCompositeWithKey<AffiliationIdentifier, JonixAffiliationIdentifier,
+        NameIdentifierTypes> affiliationIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+
+    /**
+     * <p>
+     * A group of data elements which together define an identifier for an organization to which the contributor to the
+     * product was affiliated <em>at the time of its creation</em>, and – if the &lt;ProfessionalPosition&gt; element is
+     * also present – where the contributor held that position. Optional, and repeatable to specify organization
+     * identifiers of different types for the same organization.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<AffiliationIdentifier, JonixAffiliationIdentifier, NameIdentifierTypes>
+        affiliationIdentifiers() {
         _initialize();
-        JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
-        struct.affiliation = affiliation.value;
-        struct.professionalPositions = professionalPositions.values();
-        return struct;
+        return affiliationIdentifiers;
     }
 }

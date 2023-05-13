@@ -40,7 +40,7 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum 50 characters</td>
+ * <td>Variable length text, suggested maximum 100 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -69,8 +69,8 @@ import java.io.Serializable;
  * <li>&lt;{@link SupplyContactIdentifier}&gt;</li>
  * <li>&lt;{@link ResourceIdentifier}&gt;</li>
  * <li>&lt;{@link EventSponsorIdentifier}&gt;</li>
+ * <li>&lt;{@link AffiliationIdentifier}&gt;</li>
  * <li>&lt;{@link FundingIdentifier}&gt;</li>
- * <li>&lt;{@link ConferenceSponsorIdentifier}&gt;</li>
  * <li>&lt;{@link ImprintIdentifier}&gt;</li>
  * <li>&lt;{@link LocationIdentifier}&gt;</li>
  * <li>&lt;{@link PublisherIdentifier}&gt;</li>
@@ -117,14 +117,28 @@ import java.io.Serializable;
  * {@link EventOccurrence} ⯈ {@link EventSponsor} ⯈ {@link EventSponsorIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventSponsor}
  * ⯈ {@link EventSponsorIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈
+ * {@link Funding} ⯈ {@link FundingIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Funding} ⯈
  * {@link FundingIdentifier} ⯈ {@link IDTypeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
- * {@link ConferenceSponsor} ⯈ {@link ConferenceSponsorIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈ {@link ImprintIdentifier} ⯈
  * {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
  * {@link LocationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈
+ * {@link PublisherIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈
  * {@link PublisherIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier} ⯈ {@link IDTypeName}</li>
@@ -136,8 +150,6 @@ import java.io.Serializable;
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
  * {@link CoverManifest} ⯈ {@link CoverResource} ⯈ {@link SalesOutlet} ⯈ {@link SalesOutletIdentifier} ⯈
  * {@link IDTypeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet}
- * ⯈ {@link SalesOutletIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction} ⯈
  * {@link SalesOutlet} ⯈ {@link SalesOutletIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRestriction}
@@ -172,18 +184,12 @@ import java.io.Serializable;
  * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
  * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link Tax} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link Tax} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈
  * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link PriceCondition} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link PriceCondition} ⯈ {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
@@ -218,6 +224,8 @@ import java.io.Serializable;
  * {@link ProductContactIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
  * {@link ProductContact} ⯈ {@link ProductContactIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement}
+ * ⯈ {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈
  * {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈
@@ -227,8 +235,6 @@ import java.io.Serializable;
  * {@link SupplierIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
  * {@link SupplierIdentifier} ⯈ {@link IDTypeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link PriceIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link PriceIdentifier} ⯈ {@link IDTypeName}</li>
  * </ul>
@@ -265,7 +271,7 @@ public class IDTypeName implements OnixElement<String>, Serializable {
      * This is the raw content of IDTypeName. Could be null if {@code exists() == false}. Use {@link #value()} instead
      * if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text, suggested maximum 50 characters
+     * Raw Format: Variable length text, suggested maximum 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

@@ -33,17 +33,18 @@ import java.io.Serializable;
 /**
  * <h1>Country of publication</h1>
  * <p>
- * A code identifying the country where the product is published. Optional and non-repeating.
+ * An ONIX code identifying the country where the product is published (<i>ie</i> where the publisher is based).
+ * Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, two letters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case
- * only</td>
+ * <td>Fixed length, two letters, based on ISO 3166-1. Note that ISO 3166-1 specifies that country codes shall be sent
+ * as upper case only</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>ISO 3166-1 two-letter country codes List 91</td>
+ * <td>List 91</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>

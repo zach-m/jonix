@@ -20,12 +20,10 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.LicenseExpressionTypes;
+import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeWithKey;
+import com.tectonica.jonix.common.codelist.EpublicationLicenseDateRoles;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixEpubLicenseExpression;
+import com.tectonica.jonix.common.struct.JonixEpubLicenseDate;
 
 import java.io.Serializable;
 
@@ -34,48 +32,51 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Digital product license composite</h1>
+ * <h1>Digital product license date</h1>
  * <p>
- * An optional and non-repeatable composite carrying the name or title of the license governing use of the product, and
- * a link to the license terms in eye-readable or machine-readable form.
+ * An optional group of date elements which together specify a date associated with the license in an occurrence of the
+ * &lt;EpubLicense&gt; composite, <i>eg</i> a date when a license expires. Repeatable to specify different dates with
+ * their various roles.
+ * </p>
+ * <p>
+ * Note that if no dates are specified, the license is effective at the time the ONIX message is sent.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;EpubLicense&gt;</tt></td>
+ * <td><tt>&lt;EpubLicenseDate&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;epublicense&gt;</tt></td>
+ * <td><tt>&lt;epublicensedate&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;1</td>
+ * <td>0&#8230;n</td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link DescriptiveDetail}&gt;</li>
- * <li>&lt;{@link Price}&gt;</li>
+ * <li>&lt;{@link EpubLicenseWithDate}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link EpubLicense}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link EpubLicense}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate} ⯈
+ * {@link EpubLicenseDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate}
+ * ⯈ {@link EpubLicenseDate}</li>
  * </ul>
  *
- * @since Onix-3.02
+ * @since Onix-3.10
  */
-public class EpubLicense implements OnixSuperComposite, Serializable {
+public class EpubLicenseDate
+    implements OnixDataCompositeWithKey<JonixEpubLicenseDate, EpublicationLicenseDateRoles>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "EpubLicense";
-    public static final String shortname = "epublicense";
+    public static final String refname = "EpubLicenseDate";
+    public static final String shortname = "epublicensedate";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -100,15 +101,15 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
     private boolean initialized;
     private final boolean exists;
     private final org.w3c.dom.Element element;
-    public static final EpubLicense EMPTY = new EpubLicense();
+    public static final EpubLicenseDate EMPTY = new EpubLicenseDate();
 
-    public EpubLicense() {
+    public EpubLicenseDate() {
         exists = false;
         element = null;
         initialized = true; // so that no further processing will be done on this intentionally-empty object
     }
 
-    public EpubLicense(org.w3c.dom.Element element) {
+    public EpubLicenseDate(org.w3c.dom.Element element) {
         exists = true;
         initialized = false;
         this.element = element;
@@ -127,13 +128,13 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case EpubLicenseName.refname:
-                case EpubLicenseName.shortname:
-                    epubLicenseNames = JPU.addToList(epubLicenseNames, new EpubLicenseName(e));
+                case EpubLicenseDateRole.refname:
+                case EpubLicenseDateRole.shortname:
+                    epubLicenseDateRole = new EpubLicenseDateRole(e);
                     break;
-                case EpubLicenseExpression.refname:
-                case EpubLicenseExpression.shortname:
-                    epubLicenseExpressions = JPU.addToList(epubLicenseExpressions, new EpubLicenseExpression(e));
+                case Date.refname:
+                case Date.shortname:
+                    date = new Date(e);
                     break;
                 default:
                     break;
@@ -142,7 +143,8 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
     }
 
     /**
-     * @return whether this tag (&lt;EpubLicense&gt; or &lt;epublicense&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;EpubLicenseDate&gt; or &lt;epublicensedate&gt;) is explicitly provided in the ONIX
+     *         XML
      */
     @Override
     public boolean exists() {
@@ -158,34 +160,46 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames = ListOfOnixElement.empty();
+    private EpubLicenseDateRole epubLicenseDateRole = EpubLicenseDateRole.EMPTY;
 
     /**
      * <p>
-     * The name or title of the license. Mandatory in any &lt;EpubLicense&gt; composite, and repeatable to provide the
-     * license name in multiple languages. The <i>language</i> attribute is optional for a single instance of
-     * &lt;EpubLicenseName&gt;, but must be included in each instance if &lt;EpubLicenseName&gt; is repeated.
+     * An ONIX code indicating the significance of the date in relation to the license. Mandatory in each occurrence of
+     * the &lt;EpubLicenseDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * Jonix-Comment: this field is required
      */
-    public ListOfOnixElement<EpubLicenseName, String> epubLicenseNames() {
+    public EpubLicenseDateRole epubLicenseDateRole() {
         _initialize();
-        return epubLicenseNames;
+        return epubLicenseDateRole;
     }
 
-    private ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression,
-        LicenseExpressionTypes> epubLicenseExpressions = ListOfOnixDataCompositeWithKey.emptyKeyed();
+    private Date date = Date.EMPTY;
 
     /**
      * <p>
-     * An optional composite that carries details of a link to an expression of the license terms, which may be in
-     * human-readable or machine-readable form. Repeatable when there is more than one expression of the license.
+     * The date specified in the &lt;EpubLicenseDateRole&gt; field. Mandatory in each occurrence of the
+     * &lt;EpubLicenseDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if
+     * the attribute is missing, then the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * Jonix-Comment: this field is required
      */
-    public ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes>
-        epubLicenseExpressions() {
+    public Date date() {
         _initialize();
-        return epubLicenseExpressions;
+        return date;
+    }
+
+    @Override
+    public JonixEpubLicenseDate asStruct() {
+        _initialize();
+        JonixEpubLicenseDate struct = new JonixEpubLicenseDate();
+        struct.epubLicenseDateRole = epubLicenseDateRole.value;
+        struct.date = date.value;
+        return struct;
+    }
+
+    @Override
+    public EpublicationLicenseDateRoles structKey() {
+        return epubLicenseDateRole().value;
     }
 }

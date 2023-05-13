@@ -41,45 +41,47 @@ interface CodeList19 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist19">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
     Unknown("01", "Unknown"),
 
     /**
-     * Note that Anonymous can be interpreted as singular or plural
+     * Note that Anonymous can be interpreted as singular or plural. A real name can be provided using
+     * &lt;AlternativeName&gt; where it is generally known
      */
     Anonymous("02", "Anonymous"),
 
     /**
-     * And others: additional contributors not listed
+     * And others. Use when some but not all contributors are listed
      */
     et_al("03", "et al"),
 
     /**
-     * Use for example when the product is a pack of books by different authors
+     * When there are multiple contributors, and none are listed individually. Use for example when the product is a
+     * pack of books by different authors
      */
     Various("04", "Various"),
 
     /**
-     * Use with Contributor role code E07 'read by', eg for audio books
+     * Use with Contributor role code E07 'read by', eg for audio books with digital narration
      */
     Synthesised_voice_male("05", "Synthesised voice – male"),
 
     /**
-     * Use with Contributor role code E07 'read by', eg for audio books
+     * Use with Contributor role code E07 'read by', eg for audio books with digital narration
      */
     Synthesised_voice_female("06", "Synthesised voice – female"),
 
     /**
-     * Use with Contributor role code E07 'read by', eg for audio books
+     * Use with Contributor role code E07 'read by', eg for audio books with digital narration
      */
     Synthesised_voice_unspecified("07", "Synthesised voice – unspecified"),
 
     /**
-     * Use with Contributor role code E07 'read by', eg for audio books, and provide name of voice actor in
-     * &lt;AlternativeName&gt;. For use in ONIX 3.0 only
+     * Use with Contributor role code E07 'read by', eg for audio books with digital narration, and provide name of
+     * voice actor in &lt;AlternativeName&gt;. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

@@ -41,7 +41,7 @@ interface CodeList49 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist49">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist49">ONIX
  *      Codelist 49 in Reference Guide</a>
  */
 public enum Regions implements OnixCodelist, CodeList49 {
@@ -62,21 +62,21 @@ public enum Regions implements OnixCodelist, CodeList49 {
     Western_Australia("AU-WA", "Western Australia"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Brussels_Capital_Region("BE-BRU", "Brussels-Capital Region"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Flemish_Region("BE-VLG", "Flemish Region"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -109,238 +109,238 @@ public enum Regions implements OnixCodelist, CodeList49 {
     Yukon_Territory("CA-YT", "Yukon Territory"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Beijing_Municipality("CN-BJ", "Beijing Municipality"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Tianjin_Municipality("CN-TJ", "Tianjin Municipality"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Hebei_Province("CN-HE", "Hebei Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Shanxi_Province("CN-SX", "Shanxi Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Nei_Mongol_Autonomous_Region("CN-NM", "Nei Mongol Autonomous Region"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Liaoning_Province("CN-LN", "Liaoning Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Jilin_Province("CN-JL", "Jilin Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Heilongjiang_Province("CN-HL", "Heilongjiang Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Shanghai_Municipality("CN-SH", "Shanghai Municipality"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Jiangsu_Province("CN-JS", "Jiangsu Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Zhejiang_Province("CN-ZJ", "Zhejiang Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Anhui_Province("CN-AH", "Anhui Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Fujian_Province("CN-FJ", "Fujian Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Jiangxi_Province("CN-JX", "Jiangxi Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Shandong_Province("CN-SD", "Shandong Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Henan_Province("CN-HA", "Henan Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Hubei_Province("CN-HB", "Hubei Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Hunan_Province("CN-HN", "Hunan Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Guangdong_Province("CN-GD", "Guangdong Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Guangxi_Zhuangzu_Autonomous_Region("CN-GX", "Guangxi Zhuangzu Autonomous Region"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Hainan_Province("CN-HI", "Hainan Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Chongqing_Municipality("CN-CQ", "Chongqing Municipality"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Sichuan_Province("CN-SC", "Sichuan Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Guizhou_Province("CN-GZ", "Guizhou Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Yunnan_Province("CN-YN", "Yunnan Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Tibet_Autonomous_Region("CN-XZ", "Tibet Autonomous Region"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Shaanxi_Province("CN-SN", "Shaanxi Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Gansu_Province("CN-GS", "Gansu Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Qinghai_Province("CN-QH", "Qinghai Province"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Ningxia_Huizu_Autonomous_Region("CN-NX", "Ningxia Huizu Autonomous Region"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Xinjiang_Uygur_Autonomous_Region("CN-XJ", "Xinjiang Uygur Autonomous Region"),
 
     /**
-     * Prefer code TW (Taiwan, Province of China) from List 91. For use in ONIX 3.0 only
+     * Prefer code TW (Taiwan, Province of China) from List 91. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Taiwan_Province("CN-TW", "Taiwan Province"),
 
     /**
-     * Prefer code HK (Hong Kong) from List 91. For use in ONIX 3.0 only
+     * Prefer code HK (Hong Kong) from List 91. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Hong_Kong_Special_Administrative_Region("CN-HK", "Hong Kong Special Administrative Region"),
 
     /**
-     * Prefer code MO (Macao) from List 91. For use in ONIX 3.0 only
+     * Prefer code MO (Macao) from List 91. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1052,9 +1052,9 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     /**
      * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of
-     * writing, this is a synonym for 'AT BE CY EE FI FR DE ES GR IE IT LT LU LV MT NL PT SI SK' (the official Eurozone
-     * 19), plus 'AD MC SM VA ME' and Kosovo (other Euro-using countries in continental Europe). Note some other
-     * territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
+     * writing, this is a synonym for 'AT BE CY EE FI FR DE ES GR HR IE IT LT LU LV MT NL PT SI SK' (the official
+     * Eurozone 20), plus 'AD MC SM VA ME' and Kosovo (other Euro-using countries in continental Europe). Note some
+     * other territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
      * specified separately. ONLY valid in ONIX 3, and ONLY within P.26 - and this use is itself DEPRECATED. Use of an
      * explicit list of countries instead of ECZ is strongly encouraged
      */

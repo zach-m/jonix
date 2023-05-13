@@ -35,7 +35,8 @@ import java.io.Serializable;
  * <h1>Discount code composite</h1>
  * <p>
  * An optional group of data elements which together define a discount code from a specified scheme, and repeatable to
- * allow different discount code schemes to be supported without defining additional data elements.
+ * allow different discount code schemes to be supported without defining additional data elements. For prices specified
+ * as Agency prices in &lt;PriceType&gt;, this code is interpreted as a ‘commission code’.
  * </p>
  * <p>
  * A discount code is generally used when the exact percentage discount (or commission, in an agency business model)
@@ -65,8 +66,6 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link DiscountCoded}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link DiscountCoded}</li>
  * </ul>
@@ -180,8 +179,8 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
 
     /**
      * <p>
-     * A discount code from the scheme specified in the &lt;DiscountCodeType&gt; element. Mandatory in each occurrence
-     * of the &lt;DiscountCoded&gt; composite, and non-repeating.
+     * A discount or commission code from the scheme specified in the &lt;DiscountCodeType&gt; element. Mandatory in
+     * each occurrence of the &lt;DiscountCoded&gt; composite, and non-repeating.
      * </p>
      * Jonix-Comment: this field is required
      */

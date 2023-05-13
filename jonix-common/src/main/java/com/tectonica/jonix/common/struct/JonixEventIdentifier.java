@@ -44,7 +44,7 @@ public class JonixEventIdentifier implements JonixKeyedStruct<EventIdentifierTyp
     public EventIdentifierTypes eventIDType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 50 characters
+     * Raw Format: Variable length text, suggested maximum 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

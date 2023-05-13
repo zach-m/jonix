@@ -41,7 +41,7 @@ interface CodeList74 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -147,7 +147,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Australian_languages("aus", "Australian languages"),
 
     /**
-     * Collective name. ONIX local code, equivalent of aav in ISO 639-5. For use in ONIX 3.0 only
+     * Collective name. ONIX local code, equivalent of aav in ISO 639-5. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -251,7 +251,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Blissymbols_Blissymbolics_Bliss("zbl", "Blissymbols; Blissymbolics; Bliss"),
 
     /**
-     * Boro. ONIX local code, equivalent to brx in ISO 639-3. For use in ONIX 3.0 only
+     * Boro. ONIX local code, equivalent to brx in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -268,7 +268,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Bulgarian("bul", "Bulgarian"),
 
     /**
-     * ONIX local code, equivalent to bum in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to bum in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -284,7 +284,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Caddo("cad", "Caddo"),
 
     /**
-     * ONIX local code for Sardinian dialect, equivalent to sro in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Sardinian dialect, equivalent to sro in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -315,7 +315,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Central_American_Indian_languages("cai", "Central American Indian languages"),
 
     /**
-     * ONIX local code, equivalent to tzm in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to tzm in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -324,7 +324,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Central_Khmer("khm", "Central Khmer"),
 
     /**
-     * ONIX local code, equivalent to ckb in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to ckb in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -350,7 +350,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Chichewa_Chewa_Nyanja("nya", "Chichewa; Chewa; Nyanja"),
 
     /**
-     * ONIX local code, equivalent to cic in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to cic in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -434,7 +434,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Dargwa("dar", "Dargwa"),
 
     /**
-     * ONIX local code, equivalent to prs in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to prs in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -485,7 +485,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Elamite("elx", "Elamite"),
 
     /**
-     * ONIX local code for Italian dialect, equivalent to egl in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Italian dialect, equivalent to egl in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -500,8 +500,8 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Erzya("myv", "Erzya"),
 
     /**
-     * Inuit-Yupik-Unangan languages. Collective name. ONIX local code, equivalent of esx in ISO 639-5. For use in ONIX
-     * 3.0 only
+     * Inuit-Yupik-Unangan languages. Collective name. ONIX local code, equivalent of esx in ISO 639-5. Only for use in
+     * ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -559,15 +559,15 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Galician("glg", "Galician"),
 
     /**
-     * ONIX local code, distinct variant of langue d'o&#239;l (old northern French) (not distinguished from fro, or from
-     * frm, fre, nrf by ISO 639-3). For use in ONIX 3.0 only
+     * ONIX local code, distinct variant of langue d'o&#239;l (old northern French), not distinguished from fro, or from
+     * frm, fre, nrf by ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Gallo("qgl", "Gallo"),
 
     /**
-     * ONIX local code for Sardinian dialect, equivalent to sdn in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Sardinian dialect, equivalent to sdn in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -576,7 +576,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Ganda("lug", "Ganda"),
 
     /**
-     * ONIX local code, equivalent to grt in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to grt in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -628,7 +628,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Guarani("grn", "Guarani"),
 
     /**
-     * ONIX local code, equivalent to nrf in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to nrf in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -667,7 +667,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Hittite("hit", "Hittite"),
 
     /**
-     * Collective name. ONIX local code, equivalent of hmx in ISO 639-5. For use in ONIX 3.0 only
+     * Collective name. ONIX local code, equivalent of hmx in ISO 639-5. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -679,7 +679,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Hmong_Mong("hmn", "Hmong; Mong"),
 
     /**
-     * ONIX local code, equivalent to hop in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to hop in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -735,7 +735,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Interlingue_Occidental("ile", "Interlingue; Occidental"),
 
     /**
-     * Western Canadian Inuktitut. ONIX local code, equivalent to ikt in ISO 639-3. For use in ONIX 3.0 only
+     * Western Canadian Inuktitut. ONIX local code, equivalent to ikt in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -757,7 +757,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Iranian_languages("ira", "Iranian languages"),
 
     /**
-     * ONIX local code, equivalent to pes in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to pes in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -779,7 +779,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Japanese("jpn", "Japanese"),
 
     /**
-     * Japonic. Collective name. ONIX local code, equivalent of jpx in ISO 639-5. For use in ONIX 3.0 only
+     * Japonic. Collective name. ONIX local code, equivalent of jpx in ISO 639-5. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -788,7 +788,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Javanese("jav", "Javanese"),
 
     /**
-     * ONIX local code, equivalent to jow in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to jow in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -857,7 +857,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Khotanese_Sakan("kho", "Khotanese; Sakan"),
 
     /**
-     * ONIX local code, equivalent to xuu in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to xuu in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -931,7 +931,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Lahnda("lah", "Lahnda"),
 
     /**
-     * Teton, Teton Sioux. ONIX local code, equivalent to lkt in ISO 639-3. For use in ONIX 3.0 only
+     * Teton, Teton Sioux. ONIX local code, equivalent to lkt in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -954,7 +954,8 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Latvian("lav", "Latvian"),
 
     /**
-     * ONIX local code, distinct dialect of of Rusyn (not distinguished from rue by ISO 639-3). For use in ONIX 3.0 only
+     * ONIX local code, distinct dialect of of Rusyn (not distinguished from rue by ISO 639-3). Only for use in ONIX 3.0
+     * or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -963,7 +964,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Lezgian("lez", "Lezgian"),
 
     /**
-     * ONIX local code for Italian dialect, equivalent to lij in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Italian dialect, equivalent to lij in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -978,7 +979,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Lojban("jbo", "Lojban"),
 
     /**
-     * ONIX local code for Italian dialect, equivalent to lmo in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Italian dialect, equivalent to lmo in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1029,7 +1030,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Malayalam("mal", "Malayalam"),
 
     /**
-     * Collective name. ONIX local code, equivalent of poz in ISO 639-5. For use in ONIX 3.0 only
+     * Collective name. ONIX local code, equivalent of poz in ISO 639-5. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1095,7 +1096,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Mikmaq_Micmac("mic", "Mi’kmaq; Micmac"),
 
     /**
-     * ONIX local code, equivalent to gml in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to gml in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1127,7 +1128,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Mongolian("mon", "Mongolian"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1141,7 +1142,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Munda_languages("mun", "Munda languages"),
 
     /**
-     * ONIX local code, equivalent to mwf in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to mwf in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1177,7 +1178,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
      * 'country code' for Latin America - but prefer spa plus the relevant country code for specifically Mexican
      * Spanish, Argentine (Rioplatense) Spanish, Puerto Rican Spanish etc. Neutral Latin American Spanish must only be
      * used with audio material (including the audio tracks of TV, video and film) to indicate use of accent, vocabulary
-     * and construction suitable for broad use across Latin America. For use in ONIX 3.0 only
+     * and construction suitable for broad use across Latin America. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1308,7 +1309,22 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Phoenician("phn", "Phoenician"),
 
     /**
-     * ONIX local code for Italian dialect, equivalent to pms in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, distinct variant of langue d'o&#239;l (old northern French), equivalent to pcd in ISO 639-3.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Picard("pcd", "Picard"),
+
+    /**
+     * Guajiro. ONIX local code, equivalent of guc in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Wayuu("guc", "Wayuu"),
+
+    /**
+     * ONIX local code for Italian dialect, equivalent to pms in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1347,14 +1363,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Rarotongan_Cook_Islands_Maori("rar", "Rarotongan; Cook Islands Maori"),
 
     /**
-     * ONIX local code, equivalent to rcf in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to rcf in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Reunion_Creole_French("rcf", "Réunion Creole French"),
 
     /**
-     * ONIX local code for Italian dialect, equivalent to rgl in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Italian dialect, equivalent to rgl in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1401,7 +1417,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Santali("sat", "Santali"),
 
     /**
-     * ONIX local code for Saramaccan language, equivalent to srm in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Saramaccan language, equivalent to srm in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1415,7 +1431,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Sasak("sas", "Sasak"),
 
     /**
-     * ONIX local code for Sardinian dialect, equivalent to sdc in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Sardinian dialect, equivalent to sdc in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1459,7 +1475,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Siksika("bla", "Siksika"),
 
     /**
-     * ONIX local code, equivalent to szl in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to szl in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1470,8 +1486,8 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Sinhala_Sinhalese("sin", "Sinhala; Sinhalese"),
 
     /**
-     * Chinese (family) languages. Collective name. ONIX local code, equivalent of zhx in ISO 639-5. For use in ONIX 3.0
-     * only
+     * Chinese (family) languages. Collective name. ONIX local code, equivalent of zhx in ISO 639-5. Only for use in
+     * ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1579,7 +1595,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Tamil("tam", "Tamil"),
 
     /**
-     * ONIX local code, equivalent to shi in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to shi in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1616,7 +1632,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Tongan("ton", "Tongan"),
 
     /**
-     * ONIX local code, equivalent to tsd in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code, equivalent to tsd in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1668,7 +1684,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Upper_Sorbian("hsb", "Upper Sorbian"),
 
     /**
-     * Collective name. ONIX local code, equivalent of urj in ISO 639-5. For use in ONIX 3.0 only
+     * Collective name. ONIX local code, equivalent of urj in ISO 639-5. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1691,7 +1707,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Venda("ven", "Venda"),
 
     /**
-     * ONIX local code for Italian dialect, equivalent to vec in ISO 639-3. For use in ONIX 3.0 only
+     * ONIX local code for Italian dialect, equivalent to vec in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1712,7 +1728,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Wakashan_languages("wak", "Wakashan languages"),
 
     /**
-     * East Uvean. ONIX local code, equivalent to wls in ISO 639-3. For use in ONIX 3.0 only
+     * East Uvean. ONIX local code, equivalent to wls in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1733,7 +1749,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Wolof("wol", "Wolof"),
 
     /**
-     * Vilamovian. ONIX local code, equivalent to wym in ISO 639-3. For use in ONIX 3.0 only
+     * Vilamovian. ONIX local code, equivalent to wym in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1785,12 +1801,12 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Zuni("zun", "Zuni"),
 
-    Undetermined_language("und", "Undetermined language"),
-
     /**
      * Use where no suitable code is available
      */
-    Uncoded_languages("mis", "Uncoded languages"),
+    Uncoded_language("mis", "Uncoded language"),
+
+    Undetermined_language("und", "Undetermined language"),
 
     Multiple_languages("mul", "Multiple languages"),
 

@@ -20,8 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.OnixFlag;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -31,57 +30,54 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Conference acronym</h1>
+ * <h1>Main audience flag</h1>
  * <p>
- * An acronym used as a short form of the name of a conference or conference series given in the &lt;ConferenceName&gt;
- * element. Optional and non-repeating.
+ * An empty element that identifies an instance of the &lt;Audience&gt; composite as representing the primary or main
+ * audience for the product. The main audience may be expressed in more than one audience scheme, <i>ie</i> there may be
+ * two or more instances of the &lt;Audience&gt; composite, using different schemes, each carrying the
+ * &lt;MainAudience/&gt; flag, so long as there is only one main audience <em>per scheme</em> (<i>ie</i> per value of
+ * &lt;AudienceCodeType&gt;). Optional and non-repeating in each occurrence of the &lt;Audience&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 20 characters</td>
+ * <td>XML empty element</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;ConferenceAcronym&gt;</tt></td>
+ * <td><tt>&lt;MainAudience&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;b341&gt;</tt></td>
+ * <td><tt>&lt;x583&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
  * <td>0&#8230;1</td>
  * </tr>
  * <tr>
- * <td>Attributes</td>
- * <td>language</td>
- * </tr>
- * <tr>
  * <td>Example</td>
- * <td><tt>&lt;ConferenceAcronym&gt;UNFCCC COP17&lt;/ConferenceAcronym&gt;</tt></td>
+ * <td><tt>&lt;x583/&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link Conference}&gt;</li>
+ * <li>&lt;{@link Audience}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
- * {@link ConferenceAcronym}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Audience} ⯈ {@link MainAudience}</li>
  * </ul>
  *
- * @deprecated
+ * @since Onix-3.10
  */
-@Deprecated
-public class ConferenceAcronym implements OnixElement<String>, Serializable {
+public class MainAudience implements OnixFlag, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "ConferenceAcronym";
-    public static final String shortname = "b341";
+    public static final String refname = "MainAudience";
+    public static final String shortname = "x583";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -99,53 +95,26 @@ public class ConferenceAcronym implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
-    public Languages language;
-
     /////////////////////////////////////////////////////////////////////////////////
-    // VALUE MEMBER
-    /////////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * This is the raw content of ConferenceAcronym. Could be null if {@code exists() == false}. Use {@link #value()}
-     * instead if you want to get this as an {@link java.util.Optional}.
-     * <p>
-     * Raw Format: Variable length text, suggested maximum length 20 characters
-     * <p>
-     * (type: dt.NonEmptyString)
-     */
-    public String value;
-
-    /**
-     * Internal API, use the {@link #value()} method or the {@link #value} field instead
-     */
-    @Override
-    public String _value() {
-        return value;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////
-    // SERVICES
+    // CONSTRUCTORS
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final ConferenceAcronym EMPTY = new ConferenceAcronym();
+    public static final MainAudience EMPTY = new MainAudience();
 
-    public ConferenceAcronym() {
+    public MainAudience() {
         exists = false;
     }
 
-    public ConferenceAcronym(org.w3c.dom.Element element) {
+    public MainAudience(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        language = Languages.byCode(JPU.getAttribute(element, "language"));
-
-        value = JPU.getContentAsString(element);
     }
 
     /**
-     * @return whether this tag (&lt;ConferenceAcronym&gt; or &lt;b341&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;MainAudience&gt; or &lt;x583&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {

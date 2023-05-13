@@ -48,8 +48,8 @@ import java.io.Serializable;
  * </p>
  * <p>
  * In the simplest case, title detail sent in a &lt;Collection&gt; composite will consist of a single title element, at
- * collection level. However, the composite structure in ONIX&nbsp;3.0 allows more complex combinations of titles and
- * part designations in multi-level collections to be correctly represented.
+ * collection level. However, the composite structure in ONIX&nbsp;3.0 and 3.1 allows more complex combinations of
+ * titles and part designations in multi-level collections to be correctly represented.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -200,7 +200,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
 
     /**
      * <p>
-     * An ONIX code indicating the level of a title element: collection level, subcollection level, or product level.
+     * An ONIX code indicating the level of a title element: collection level, sub-collection level, or product level.
      * Mandatory in each occurrence of the &lt;TitleElement&gt; composite, and non-repeating.
      * </p>
      * Jonix-Comment: this field is required
@@ -311,10 +311,10 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.
      * </p>
      * <p>
-     * This element is intended to be used only when the sending system cannot reliably provide prefixes that are
-     * ignored for sorting purposes in a separate data element. If the system <em>can</em> reliably separate prefixes,
-     * it should state whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent
-     * (using &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
+     * This element is deprecated, and intended to be used only when the sending system cannot reliably provide prefixes
+     * that are ignored for sorting purposes in a separate data element. If the system <em>can</em> reliably separate
+     * prefixes, it should state whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;)
+     * or absent (using &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
      * </p>
      * Jonix-Comment: this field is optional
      */

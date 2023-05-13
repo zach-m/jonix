@@ -41,7 +41,7 @@ interface CodeList153 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -261,7 +261,15 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Description_for_publisher("36", "Description for publisher");
+    Description_for_publisher("36", "Description for publisher"),
+
+    /**
+     * (US) Reading line - line of usually explanatory copy on cover, somewhat like a subtitle but not on the title page
+     * and added by the publisher, eg 'with 125 illustrated recipes'
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Cover_line("37", "Cover line");
 
     public final String code;
     public final String description;

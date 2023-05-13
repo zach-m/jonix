@@ -45,7 +45,7 @@ public class JonixWorkIdentifier implements JonixKeyedStruct<WorkIdentifierTypes
     public WorkIdentifierTypes workIDType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 50 characters
+     * Raw Format: Variable length text, suggested maximum 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

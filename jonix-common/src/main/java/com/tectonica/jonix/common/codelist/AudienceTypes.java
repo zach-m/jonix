@@ -41,7 +41,7 @@ interface CodeList28 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist28">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist28">ONIX
  *      Codelist 28 in Reference Guide</a>
  */
 public enum AudienceTypes implements OnixCodelist, CodeList28 {
@@ -73,28 +73,28 @@ public enum AudienceTypes implements OnixCodelist, CodeList28 {
     /**
      * Equivalent to UNESCO's ISCED Level 0 - see
      * http://uis.unesco.org/en/topic/international-standard-classification-education-isced (note codes 11-14 are
-     * specific subsets of the Primary and secondary education audience, code 04). For use in ONIX 3.0 only
+     * specific subsets of the Primary and secondary education audience, code 04). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Pre_primary_education("11", "Pre-primary education"),
 
     /**
-     * Equivalent to ISCED Level 1. For use in ONIX 3.0 only
+     * Equivalent to ISCED Level 1. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Primary_education("12", "Primary education"),
 
     /**
-     * Equivalent to ISCED Level 2 (general and vocational). For use in ONIX 3.0 only
+     * Equivalent to ISCED Level 2 (general and vocational). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Lower_secondary_education("13", "Lower secondary education"),
 
     /**
-     * Equivalent to ISCED Level 3 (general and vocational). For use in ONIX 3.0 only
+     * Equivalent to ISCED Level 3 (general and vocational). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

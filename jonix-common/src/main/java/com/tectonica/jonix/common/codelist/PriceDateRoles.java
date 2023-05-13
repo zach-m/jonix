@@ -38,7 +38,7 @@ interface CodeList173 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist173">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist173">ONIX
  *      Codelist 173 in Reference Guide</a>
  */
 public enum PriceDateRoles implements OnixCodelist, CodeList173 {
@@ -53,7 +53,7 @@ public enum PriceDateRoles implements OnixCodelist, CodeList173 {
     Until_date("15", "Until date"),
 
     /**
-     * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
+     * Combines From date and Until date to define a period (both dates are inclusive). Use for example with dateformat
      * 06
      */
     From_until_date("24", "From… until date");

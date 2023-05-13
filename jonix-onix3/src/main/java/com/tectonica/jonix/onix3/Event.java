@@ -203,9 +203,9 @@ public class Event implements OnixSuperComposite, Serializable {
      * <p>
      * The name of an event or series of events to which the product is related. This element is mandatory in each
      * occurrence of the &lt;Event&gt; composite, and repeatable to provide parallel names for a single event in
-     * multiple languages (<i>eg</i> ‘United Nations Climate Change Conference’ and «&nbsp;Conférences des Nations unies
-     * sur les changements climatiques&nbsp;»). The <i>language</i> attribute is optional for a single instance of
-     * &lt;EventName&gt;, but must be included in each instance if &lt;EventName&gt; is repeated.
+     * multiple languages (<i>eg</i> ‘United Nations Climate Change Conference’ and <span lang="fr">«&nbsp;Conférences
+     * des Nations unies sur les changements climatiques&nbsp;»</span>). The <i>language</i> attribute is optional for a
+     * single instance of &lt;EventName&gt;, but must be included in each instance if &lt;EventName&gt; is repeated.
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */

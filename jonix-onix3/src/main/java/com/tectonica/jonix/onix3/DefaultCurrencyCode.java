@@ -33,15 +33,18 @@ import java.io.Serializable;
 /**
  * <h1>Default currency</h1>
  * <p>
- * An ISO standard code indicating the currency which is assumed for prices listed in the message, unless explicitly
- * stated otherwise in a &lt;Price&gt; composite in a product record. Optional and non-repeating. All ONIX messages must
- * include an explicit statement of the currency used for any prices. To avoid any possible ambiguity, it is strongly
- * recommended that the currency should be repeated in the &lt;Price&gt; composite for each individual price.
+ * An ONIX code indicating the default currency which is assumed for prices of products listed in the message, unless
+ * the Currency code is explicitly stated by sending a Currency code in each &lt;Price&gt; composite for each Product
+ * record. Optional and non-repeating. To avoid any possible ambiguity, use of this default is deprecated, but any
+ * default supplied will be assumed for all prices in Group&nbsp;P.26 which do not specify the Currency code explicitly.
+ * It is strongly recommended that the Currency code should be specified in the &lt;Price&gt; composite for each
+ * individual price.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, three letters</td>
+ * <td>Fixed length, three letters, based on ISO 4217. Note that ISO 4217 specifies that currency codes shall be sent as
+ * upper case only</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
@@ -74,7 +77,10 @@ import java.io.Serializable;
  * <ul>
  * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link DefaultCurrencyCode}</li>
  * </ul>
+ *
+ * @deprecated
  */
+@Deprecated
 public class DefaultCurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
     private static final long serialVersionUID = 1L;
 

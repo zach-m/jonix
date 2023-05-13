@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -37,12 +38,13 @@ import java.util.List;
  */
 
 /**
- * <h1>Publisher composite</h1>
+ * <h1>Publisher composite (content item)</h1>
  * <p>
- * An optional group of data elements which together identify an entity which is associated with the publishing of a
- * product. The composite allows additional publishing roles to be introduced without adding new fields. Each occurrence
- * of the composite must carry a publishing role code and either a name identifier or a name or both, and the composite
- * is repeatable in order to identify multiple entities.
+ * A group of data elements which together identify an entity which is associated with the publishing of a content item,
+ * included here to allow roles such as Funder, Sponsor to be associated with a specific content item rather than the
+ * product as a whole. The composite allows additional publishing roles to be introduced without adding new fields. Each
+ * occurrence of the composite must carry a publishing role code and either a name identifier or a name or both.
+ * Optional, and repeatable in order to identify multiple entities.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -61,13 +63,17 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher}</li>
  * </ul>
+ *
+ * @since Onix-3.10
  */
 public class Publisher implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -135,7 +141,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
                     break;
                 case PublisherName.refname:
                 case PublisherName.shortname:
-                    publisherName = new PublisherName(e);
+                    publisherNames = JPU.addToList(publisherNames, new PublisherName(e));
                     break;
                 case Funding.refname:
                 case Funding.shortname:
@@ -199,19 +205,21 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return publisherIdentifiers;
     }
 
-    private PublisherName publisherName = PublisherName.EMPTY;
+    private ListOfOnixElement<PublisherName, String> publisherNames = ListOfOnixElement.empty();
 
     /**
      * <p>
      * The name of an entity associated with the publishing of a product. Mandatory if there is no publisher identifier
      * in an occurrence of the &lt;Publisher&gt; composite, and optional if a publisher identifier is included.
-     * Non-repeating.
+     * Repeatable if the entity is officially known by names in multiple languages. The <i>language</i> attribute is
+     * optional for a single instance of &lt;PublisherName&gt;, but must be included in each instance if
+     * &lt;PublisherName&gt; is repeated.
      * </p>
-     * Jonix-Comment: this field is optional
+     * Jonix-Comment: this list may be empty
      */
-    public PublisherName publisherName() {
+    public ListOfOnixElement<PublisherName, String> publisherNames() {
         _initialize();
-        return publisherName;
+        return publisherNames;
     }
 
     private List<Funding> fundings = Collections.emptyList();
@@ -219,7 +227,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together identify a grant or award provided by the entity specified as a
-     * funder in an occurence of the &lt;Publisher&gt; composite, to subsidise research or publication. Repeatable when
+     * funder in an occurrence of the &lt;Publisher&gt; composite, to subsidize research or publication. Repeatable when
      * the funder provides multiple grants or awards. Used only when &lt;PublishingRole&gt; indicates the role of a
      * funder.
      * </p>

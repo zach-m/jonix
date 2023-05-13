@@ -41,19 +41,19 @@ interface CodeList24 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist24">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist24">ONIX
  *      Codelist 24 in Reference Guide</a>
  */
 public enum ExtentUnits implements OnixCodelist, CodeList24 {
     /**
-     * For example a count of the individual number of cards in a pack. For use in ONIX 3.0 only
+     * For example a count of the individual number of cards in a pack. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Physical_pieces("00", "Physical pieces"),
 
     /**
-     * Approximate number of characters (including spaces) of natural language text. For use in ONIX 3.0 only
+     * Approximate number of characters (including spaces) of natural language text. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -84,7 +84,7 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
      * Of an audiobook on multiple Red Book audio CDs. Conventionally, each disc is 60-70 minutes of running time, and
      * disc counts are misleading and inappropriate if the average disc duration is significantly more or less than this
      * (for example if the discs are Yellow Book CDs containing mp3 files). Note that disc breaks are not necessarily
-     * aligned with structural breaks in the text (eg chapter breaks). For use in ONIX 3.0 only
+     * aligned with structural breaks in the text (eg chapter breaks). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -101,8 +101,8 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
     Hours_and_minutes_HHHMM("15", "Hours and minutes HHHMM"),
 
     /**
-     * Fill with leading zeroes if any elements are missing. If centisecond precision is required, use HHHMMSScc (in
-     * ONIX 3.0 only)
+     * Fill with leading zeroes if any elements are missing. If centisecond precision is required, use HHHMMSScc. Only
+     * for use in ONIX 3.0 or later
      */
     Hours_minutes_seconds_HHHMMSS("16", "Hours minutes seconds HHHMMSS"),
 

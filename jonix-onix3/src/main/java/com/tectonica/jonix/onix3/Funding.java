@@ -36,7 +36,7 @@ import java.io.Serializable;
  * <h1>Funding composite</h1>
  * <p>
  * An optional group of data elements which together identify a grant or award provided by the entity specified as a
- * funder in an occurence of the &lt;Publisher&gt; composite, to subsidise research or publication. Repeatable when the
+ * funder in an occurrence of the &lt;Publisher&gt; composite, to subsidize research or publication. Repeatable when the
  * funder provides multiple grants or awards. Used only when &lt;PublishingRole&gt; indicates the role of a funder.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -61,6 +61,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈
+ * {@link Funding}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Funding}</li>
  * </ul>
  *

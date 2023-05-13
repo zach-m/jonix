@@ -69,20 +69,16 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link Discount} ⯈ {@link Quantity}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link Discount} ⯈ {@link Quantity}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link PriceConstraint} ⯈ {@link PriceConstraintLimit} ⯈ {@link Quantity}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link PriceConstraint} ⯈ {@link PriceConstraintLimit} ⯈ {@link Quantity}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link Quantity}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link Quantity}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈
  * {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint}
+ * ⯈ {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
  * </ul>
  */
 public class Quantity implements OnixElement<Double>, Serializable {
@@ -118,7 +114,7 @@ public class Quantity implements OnixElement<Double>, Serializable {
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, as appropriate for the
      * units specified in &lt;EpubUsageUnit&gt;
      * <p>
-     * (type: dt.PositiveDecimal)
+     * (type: dt.PositiveDecimalOrZero)
      */
     public Double value;
 

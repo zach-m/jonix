@@ -33,7 +33,6 @@ import com.tectonica.jonix.common.struct.JonixContributorDate;
 import com.tectonica.jonix.common.struct.JonixContributorPlace;
 import com.tectonica.jonix.common.struct.JonixNameIdentifier;
 import com.tectonica.jonix.common.struct.JonixPrize;
-import com.tectonica.jonix.common.struct.JonixProfessionalAffiliation;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
@@ -49,9 +48,9 @@ import java.util.List;
  * <p>
  * A group of data elements which together describe a personal or corporate contributor to a collection. Optional, and
  * repeatable to describe multiple contributors. <strong>The &lt;Contributor&gt; composite is included here for use only
- * by those ONIX communities whose national practice requires contributors to be identified at collection level. In many
- * countries, including the UK, USA, Canada and Spain, the required practice is to identify all contributors at product
- * level in Group&nbsp;P.7.</strong>
+ * by those ONIX communities whose national practice requires contributors to the collection as a whole (<i>eg</i>
+ * Series editors) to be identified at collection level. In many countries, including the UK, USA, Canada and Spain, the
+ * required practice is to identify all contributors at product level in Group&nbsp;P.7.</strong>
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -149,10 +148,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case KeyNames.shortname:
                     keyNames = new KeyNames(e);
                     break;
-                case CorporateName.refname:
-                case CorporateName.shortname:
-                    corporateName = new CorporateName(e);
-                    break;
                 case ContributorRole.refname:
                 case ContributorRole.shortname:
                     contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(e));
@@ -160,6 +155,10 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case NameIdentifier.refname:
                 case NameIdentifier.shortname:
                     nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
+                    break;
+                case CorporateName.refname:
+                case CorporateName.shortname:
+                    corporateNames = JPU.addToList(corporateNames, new CorporateName(e));
                     break;
                 case SequenceNumber.refname:
                 case SequenceNumber.shortname:
@@ -201,14 +200,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case TitlesAfterNames.shortname:
                     titlesAfterNames = new TitlesAfterNames(e);
                     break;
-                case Gender.refname:
-                case Gender.shortname:
-                    gender = new Gender(e);
-                    break;
-                case CorporateNameInverted.refname:
-                case CorporateNameInverted.shortname:
-                    corporateNameInverted = new CorporateNameInverted(e);
-                    break;
                 case UnnamedPersons.refname:
                 case UnnamedPersons.shortname:
                     unnamedPersons = new UnnamedPersons(e);
@@ -220,6 +211,10 @@ public class Contributor implements OnixSuperComposite, Serializable {
                 case ToLanguage.refname:
                 case ToLanguage.shortname:
                     toLanguages = JPU.addToList(toLanguages, new ToLanguage(e));
+                    break;
+                case CorporateNameInverted.refname:
+                case CorporateNameInverted.shortname:
+                    corporateNameInverteds = JPU.addToList(corporateNameInverteds, new CorporateNameInverted(e));
                     break;
                 case AlternativeName.refname:
                 case AlternativeName.shortname:
@@ -306,20 +301,6 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return keyNames;
     }
 
-    private CorporateName corporateName = CorporateName.EMPTY;
-
-    /**
-     * <p>
-     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
-     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public CorporateName corporateName() {
-        _initialize();
-        return corporateName;
-    }
-
     private ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixElement.empty();
 
     /**
@@ -352,13 +333,31 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
+    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in
+     * normal order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel
+     * names for a single organization in multiple languages (<i>eg</i> ‘World Health Organization’ and
+     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional
+     * for a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
+     * repeated.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixElement<CorporateName, String> corporateNames() {
+        _initialize();
+        return corporateNames;
+    }
+
     private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of contributor names. Optional and non-repeating. It is
-     * strongly recommended that each occurrence of the &lt;Contributor&gt; composite should carry a
-     * &lt;SequenceNumber&gt;.
+     * A number which specifies a single overall sequence of contributor names (across the contributors in
+     * Groups&nbsp;P.7 and P.5). Optional and non-repeating. It is strongly recommended that each occurrence of the
+     * &lt;Contributor&gt; composite should carry a &lt;SequenceNumber&gt;.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -372,7 +371,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
-     * ‘unspecified’.
+     * ‘unspecified’ (<i>ie</i> the name as it is presented on the book).
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -497,43 +496,13 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private Gender gender = Gender.EMPTY;
-
-    /**
-     * <p>
-     * An optional ONIX code specifying the gender of a personal contributor. Not repeatable. Note that this indicates
-     * the gender of the contributor’s public identity (which may be pseudonymous) based on designations used in ISO
-     * 5218, rather than the gender identity, biological sex or sexuality of a natural person.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public Gender gender() {
-        _initialize();
-        return gender;
-    }
-
-    private CorporateNameInverted corporateNameInverted = CorporateNameInverted.EMPTY;
-
-    /**
-     * <p>
-     * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with
-     * the element used for alphabetical sorting placed first. Optional and non-repeating: see Group&nbsp;P.7
-     * introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public CorporateNameInverted corporateNameInverted() {
-        _initialize();
-        return corporateNameInverted;
-    }
-
     private UnnamedPersons unnamedPersons = UnnamedPersons.EMPTY;
 
     /**
      * <p>
      * An ONIX code allowing a positive indication to be given when authorship is unknown or anonymous, or when as a
      * matter of editorial policy only a limited number of contributors are named. Optional and non-repeating: see
-     * Group&nbsp;P.7 introductory text for valid options. Use here in preference to P.7.47, where it is deprecated.
+     * Group&nbsp;P.7 introductory text for valid options.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -574,6 +543,24 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return toLanguages;
     }
 
+    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with
+     * the element used for alphabetical sorting placed first. Optional: see Group&nbsp;P.7 introductory text for valid
+     * options. Repeatable, to provide parallel names for a single organization in multiple languages (<i>eg</i> ‘Polar
+     * Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The <i>language</i>
+     * attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but must be included in each
+     * instance if &lt;CorporateNameInverted&gt; is repeated.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds() {
+        _initialize();
+        return corporateNameInverteds;
+    }
+
     private List<AlternativeName> alternativeNames = Collections.emptyList();
 
     /**
@@ -592,7 +579,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * <ul>
      * <li>one or more of the forms of representation of a person name, with or without an occurrence of the
      * &lt;NameIdentifier&gt; composite; <em>or</em></li>
-     * <li>one or both of the forms of representation of a corporate name, with or without an occurrence of the
+     * <li>one or more of the forms of representation of a corporate name, with or without an occurrence of the
      * &lt;NameIdentifier&gt; composite; <em>or</em></li>
      * <li>an occurrence of the &lt;NameIdentifier&gt; composite without any accompanying name element(s).</li>
      * </ul>
@@ -620,8 +607,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return contributorDates;
     }
 
-    private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations =
-        ListOfOnixDataComposite.empty();
+    private List<ProfessionalAffiliation> professionalAffiliations = Collections.emptyList();
 
     /**
      * <p>
@@ -630,7 +616,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations() {
+    public List<ProfessionalAffiliation> professionalAffiliations() {
         _initialize();
         return professionalAffiliations;
     }
@@ -654,14 +640,15 @@ public class Contributor implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A biographical note about a contributor to the product. (See the &lt;TextContent&gt; composite in Group&nbsp;P.14
-     * for a biographical note covering all contributors to a product in a single text.) Optional, and repeatable to
-     * provide parallel biographical notes in multiple languages. The <i>language</i> attribute is optional for a single
-     * instance of &lt;BiographicalNote&gt;, but must be included in each instance if &lt;BiographicalNote&gt; is
-     * repeated. May occur with a person name or with a corporate name. A biographical note in ONIX should
-     * <em>always</em> contain the name of the person or body concerned, and it should <em>always</em> be presented as a
-     * piece of continuous text consisting of full sentences. Some recipients of ONIX data feeds will not accept text
-     * which has embedded URLs. A contributor website link can be sent using the &lt;Website&gt; composite below.
+     * A biographical note about a contributor to the product. (See the &lt;TextContent&gt; composite in
+     * Group&nbsp;<a href="#onixmessage_product_collateraldetail_p14">P.14</a> for a biographical note covering all
+     * contributors to a product in a single text.) Optional, and repeatable to provide parallel biographical notes in
+     * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;BiographicalNote&gt;,
+     * but must be included in each instance if &lt;BiographicalNote&gt; is repeated. May occur with a person name or
+     * with a corporate name. A biographical note in ONIX should <em>always</em> contain the name of the person or body
+     * concerned, and it should <em>always</em> be presented as a piece of continuous text consisting of full sentences.
+     * Some recipients of ONIX data feeds will not accept text which has embedded URLs. A contributor website link can
+     * be sent using the &lt;Website&gt; composite below.
      * </p>
      * Jonix-Comment: this list may be empty
      */

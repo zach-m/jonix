@@ -65,12 +65,12 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense} ⯈
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate} ⯈
  * {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionLink}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link EpubLicense} ⯈ {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionLink}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate}
+ * ⯈ {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionLink}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link EpubLicense} ⯈ {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionLink}</li>
+ * {@link EpubLicenseWithoutDate} ⯈ {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionLink}</li>
  * </ul>
  *
  * @since Onix-3.02

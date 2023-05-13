@@ -41,8 +41,8 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 1,000 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML or XML with ONIX text fields</td>
+ * <td>Variable length text, suggested maximum length 2,000 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML, XML, JSON within ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -107,8 +107,8 @@ public class PromotionCampaign implements OnixElement<String>, Serializable {
      * This is the raw content of PromotionCampaign. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text, suggested maximum length 1,000 characters. XHTML is enabled in this element -
-     * see Using XHTML, HTML or XML with ONIX text fields
+     * Raw Format: Variable length text, suggested maximum length 2,000 characters. XHTML is enabled in this element -
+     * see Using XHTML, HTML, XML, JSON within ONIX text fields
      * <p>
      * (type: XHTML)
      */

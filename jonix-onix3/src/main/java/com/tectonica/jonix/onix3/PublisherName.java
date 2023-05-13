@@ -23,6 +23,7 @@ import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextScripts;
 
 import java.io.Serializable;
 
@@ -34,7 +35,9 @@ import java.io.Serializable;
  * <h1>Publisher name</h1>
  * <p>
  * The name of an entity associated with the publishing of a product. Mandatory if there is no publisher identifier in
- * an occurrence of the &lt;Publisher&gt; composite, and optional if a publisher identifier is included. Non-repeating.
+ * an occurrence of the &lt;Publisher&gt; composite, and optional if a publisher identifier is included. Repeatable if
+ * the entity is officially known by names in multiple languages. The <i>language</i> attribute is optional for a single
+ * instance of &lt;PublisherName&gt;, but must be included in each instance if &lt;PublisherName&gt; is repeated.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -51,15 +54,20 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;1</td>
+ * <td>0&#8230;n</td>
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language, collationkey</td>
+ * <td>collationkey, language, textscript</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b081&gt;Reed International Books&lt;/b081&gt;</tt></td>
+ * <td><tt>&lt;PublisherName&gt;Reed International Books&lt;/PublisherName&gt;</tt></td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td><tt>&lt;b081 language=&quot;eng&quot;&gt;World Health Organization&lt;/b081&gt;</tt> &lt;b081
+ * language=&quot;fre&quot;&gt;Organisation mondiale de la sant&#233;&lt;/b081&gt;</td>
  * </tr>
  * </table>
  * <p/>
@@ -71,6 +79,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈
+ * {@link PublisherName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link PublisherName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈
  * {@link PublisherName}</li>
@@ -104,6 +114,8 @@ public class PublisherName implements OnixElement<String>, Serializable {
     public String collationkey;
 
     public Languages language;
+
+    public TextScripts textscript;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -145,6 +157,7 @@ public class PublisherName implements OnixElement<String>, Serializable {
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         collationkey = JPU.getAttribute(element, "collationkey");
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
 
         value = JPU.getContentAsString(element);
     }

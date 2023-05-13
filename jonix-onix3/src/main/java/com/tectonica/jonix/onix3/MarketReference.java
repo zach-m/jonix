@@ -21,7 +21,6 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.DateFormats;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -31,58 +30,63 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Reissue date</h1>
+ * <h1>Market reference</h1>
  * <p>
- * The date on which the product will be reissued, or (after reissue) the date when it was last reissued. Mandatory in
- * each occurrence of the &lt;Reissue&gt; composite, and non-repeating. Deprecated.
+ * For every market, a single market reference which will uniquely identify the &lt;ProductSupply&gt; composite which
+ * describes the market within this Product record, and which will remain as its permanent identifier every time you
+ * send an update.
+ * </p>
+ * <p>
+ * The Market reference is optional and non-repeating, but it is strongly recommended unless there is only a single
+ * market. It is intended to be used to label each repeat of &lt;ProductSupply&gt; for use in subsequent partial updates
+ * and reporting.
+ * </p>
+ * <p>
+ * Note that the scope of the Market reference is limited to a single Product record –&nbsp;a geographically identical
+ * market for a different product may have a different Market reference, and a geographically different market in
+ * another Product record may use the same reference.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
- * missing</td>
+ * <td>Variable length alphanumeric, suggested maximum length 100 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;ReissueDate&gt;</tt></td>
+ * <td><tt>&lt;MarketReference&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;j365&gt;</tt></td>
+ * <td><tt>&lt;x587&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>dateformat</td>
+ * <td>0&#8230;1</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;j365&gt;20030616&lt;/j365&gt;</tt></td>
+ * <td><tt>&lt;x587&gt;jp.kadokawa.onix.market.&#12450;&#12472;&#12450;&#22826;&#24179;&#27915;1&lt;/x587&gt;</tt>
+ * (Asia-Pacific 1)</td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link Reissue}&gt;</li>
+ * <li>&lt;{@link ProductSupply}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link ReissueDate}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketReference}</li>
  * </ul>
  *
- * @deprecated
+ * @since Onix-3.10
  */
-@Deprecated
-public class ReissueDate implements OnixElement<String>, Serializable {
+public class MarketReference implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "ReissueDate";
-    public static final String shortname = "j365";
+    public static final String refname = "MarketReference";
+    public static final String shortname = "x587";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -100,18 +104,15 @@ public class ReissueDate implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
-    public DateFormats dateformat;
-
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ReissueDate. Could be null if {@code exists() == false}. Use {@link #value()} instead
-     * if you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of MarketReference. Could be null if {@code exists() == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
-     * missing
+     * Raw Format: Variable length alphanumeric, suggested maximum length 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */
@@ -130,24 +131,23 @@ public class ReissueDate implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final ReissueDate EMPTY = new ReissueDate();
+    public static final MarketReference EMPTY = new MarketReference();
 
-    public ReissueDate() {
+    public MarketReference() {
         exists = false;
     }
 
-    public ReissueDate(org.w3c.dom.Element element) {
+    public MarketReference(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
         value = JPU.getContentAsString(element);
     }
 
     /**
-     * @return whether this tag (&lt;ReissueDate&gt; or &lt;j365&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;MarketReference&gt; or &lt;x587&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {

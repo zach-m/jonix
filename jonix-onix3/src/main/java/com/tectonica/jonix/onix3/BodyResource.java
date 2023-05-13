@@ -306,7 +306,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The content contained in the resource may be described, for manual confirmation – for example ‘Chapters 2 and 3’
-     * or ‘CMYK separations pages 16-31’.
+     * or ‘CMYK separations pages 16–31’.
      * </p>
      * <p>
      * Note that individual resources do not need to be aligned with the physical organization of the book (<i>eg</i>

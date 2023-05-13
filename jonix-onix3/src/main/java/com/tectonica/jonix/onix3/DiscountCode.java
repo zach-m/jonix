@@ -32,8 +32,8 @@ import java.io.Serializable;
 /**
  * <h1>Discount code value</h1>
  * <p>
- * A discount code from the scheme specified in the &lt;DiscountCodeType&gt; element. Mandatory in each occurrence of
- * the &lt;DiscountCoded&gt; composite, and non-repeating.
+ * A discount or commission code from the scheme specified in the &lt;DiscountCodeType&gt; element. Mandatory in each
+ * occurrence of the &lt;DiscountCoded&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -65,8 +65,6 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link DiscountCoded} ⯈ {@link DiscountCode}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link DiscountCoded} ⯈ {@link DiscountCode}</li>
  * </ul>

@@ -163,6 +163,10 @@ public class Market implements OnixSuperComposite, Serializable {
      * A group of data elements which together identify a territory forming part or all of a market for which supply
      * detail is given. Mandatory in each occurrence of the &lt;Market&gt; composite, and non-repeating.
      * </p>
+     * <p>
+     * For valid combinations of &lt;CountriesIncluded&gt;, &lt;RegionsIncluded&gt; <i>etc</i> within &lt;Territory&gt;,
+     * see the notes describing the use of &lt;Territory&gt; within Group&nbsp;P.21.
+     * </p>
      * Jonix-Comment: this field is required
      */
     public Territory territory() {

@@ -33,8 +33,12 @@ import java.io.Serializable;
 /**
  * <h1>Default price type</h1>
  * <p>
- * An ONIX code indicating the default price type which is assumed for prices listed in the message, unless explicitly
- * stated otherwise in a &lt;Price&gt; composite in the product record. Optional and non-repeating.
+ * An ONIX code indicating the default price type which is assumed for prices of products listed in the message, unless
+ * the Price type is explicitly stated by sending a Price type code in each &lt;Price&gt; composite for each Product
+ * record. Optional and non-repeating. To avoid any possible ambiguity, use of this default is deprecated, but any
+ * default supplied will be assumed for all prices in Group&nbsp;P.26 which do not specify the Price type explicitly. It
+ * is strongly recommended that the price type should be specified in the &lt;Price&gt; composite for each individual
+ * price.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -72,7 +76,10 @@ import java.io.Serializable;
  * <ul>
  * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link DefaultPriceType}</li>
  * </ul>
+ *
+ * @deprecated
  */
+@Deprecated
 public class DefaultPriceType implements OnixElement<PriceTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 

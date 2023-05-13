@@ -288,7 +288,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A group of data elements which together describe a single occurrence of the promotional event. At least one
-     * occurence is mandatory within the &lt;PromotionalEvent&gt; composite, and &lt;EventOccurrence&gt; is repeatable
+     * occurrence is mandatory within the &lt;PromotionalEvent&gt; composite, and &lt;EventOccurrence&gt; is repeatable
      * in order to list a group of more or less similar occurrences such as a series of book signings.
      * </p>
      * Jonix-Comment: this list is required to contain at least one item

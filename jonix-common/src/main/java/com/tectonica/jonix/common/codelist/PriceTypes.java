@@ -41,7 +41,7 @@ interface CodeList58 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist58">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist58">ONIX
  *      Codelist 58 in Reference Guide</a>
  */
 public enum PriceTypes implements OnixCodelist, CodeList58 {
@@ -210,7 +210,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
 
     /**
      * Nominal value of gratis copies (eg review, sample or evaluation copies) for international customs declarations
-     * only, when a 'free of charge' price cannot be used. Only for use in ONIX 3.0
+     * only, when a 'free of charge' price cannot be used. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -219,7 +219,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
 
     /**
      * Nominal value of copies for claims purposes only (eg to account for copies lost during distribution). Only for
-     * use in ONIX 3.0
+     * use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

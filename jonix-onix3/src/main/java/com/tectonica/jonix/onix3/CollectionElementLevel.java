@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.EventRoles;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TitleElementLevels;
 
 import java.io.Serializable;
 
@@ -31,53 +31,62 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Conference role</h1>
+ * <h1>Collection title element level</h1>
  * <p>
- * An ONIX code which indicates the relationship between the product and a conference to which it is related, <i>eg</i>
- * Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
+ * An ONIX code indicating the level of the collection title element (collection level or sub-collection level) to which
+ * the identifier in the &lt;IDValue&gt; element is assigned. Optional in each occurrence of the
+ * &lt;CollectionIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <p>
+ * When used, the specified level must match the level of a &lt;TitleElement&gt; within the same Collection composite,
+ * or –&nbsp;is there is no &lt;TitleDetail&gt; within the Collection composite – the level of a &lt;TitleElement&gt;
+ * within Group&nbsp;P.6.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, two digits</td>
+ * <td>Fixed-length text, two digits</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>List 20 (only code 01 may be used)</td>
+ * <td>List 149 Note that codes 01, 04 cannot be used.</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;ConferenceRole&gt;</tt></td>
+ * <td><tt>&lt;CollectionElementLevel&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;b051&gt;</tt></td>
+ * <td><tt>&lt;x586&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
  * <td>0&#8230;1</td>
  * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;x586&gt;03&lt;/x586&gt;</tt> (Identifier is assigned to the sub-collection)</td>
+ * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link Conference}&gt;</li>
+ * <li>&lt;{@link CollectionIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
- * {@link ConferenceRole}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
+ * {@link CollectionIdentifier} ⯈ {@link CollectionElementLevel}</li>
  * </ul>
  *
- * @deprecated
+ * @since Onix-3.10
  */
-@Deprecated
-public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
+public class CollectionElementLevel implements OnixElement<TitleElementLevels>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "ConferenceRole";
-    public static final String shortname = "b051";
+    public static final String refname = "CollectionElementLevel";
+    public static final String shortname = "x586";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -99,13 +108,13 @@ public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public EventRoles value;
+    public TitleElementLevels value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EventRoles _value() {
+    public TitleElementLevels _value() {
         return value;
     }
 
@@ -114,23 +123,23 @@ public class ConferenceRole implements OnixElement<EventRoles>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final ConferenceRole EMPTY = new ConferenceRole();
+    public static final CollectionElementLevel EMPTY = new CollectionElementLevel();
 
-    public ConferenceRole() {
+    public CollectionElementLevel() {
         exists = false;
     }
 
-    public ConferenceRole(org.w3c.dom.Element element) {
+    public CollectionElementLevel(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
-        value = EventRoles.byCode(JPU.getContentAsString(element));
+        value = TitleElementLevels.byCode(JPU.getContentAsString(element));
     }
 
     /**
-     * @return whether this tag (&lt;ConferenceRole&gt; or &lt;b051&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;CollectionElementLevel&gt; or &lt;x586&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {

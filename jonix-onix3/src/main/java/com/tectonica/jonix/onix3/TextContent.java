@@ -35,10 +35,11 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Text content composite</h1>
+ * <h1>Supporting text content composite</h1>
  * <p>
- * An optional group of data elements which together carry text related to the product, repeatable in order to deliver
- * multiple texts (often of different types, though for some text types there many be multiple instances of that type).
+ * An optional group of data elements which together carry a supporting text related to the product, repeatable in order
+ * to deliver multiple texts (often of different types, though for some text types there many be multiple instances of
+ * that type).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -135,6 +136,10 @@ public class TextContent implements OnixSuperComposite, Serializable {
                 case Text.shortname:
                     texts = JPU.addToList(texts, new Text(e));
                     break;
+                case SequenceNumber.refname:
+                case SequenceNumber.shortname:
+                    sequenceNumber = new SequenceNumber(e);
+                    break;
                 case Territory.refname:
                 case Territory.shortname:
                     territory = new Territory(e);
@@ -158,6 +163,10 @@ public class TextContent implements OnixSuperComposite, Serializable {
                 case SourceTitle.refname:
                 case SourceTitle.shortname:
                     sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
+                    break;
+                case TextSourceLink.refname:
+                case TextSourceLink.shortname:
+                    textSourceLinks = JPU.addToList(textSourceLinks, new TextSourceLink(e));
                     break;
                 case ContentDate.refname:
                 case ContentDate.shortname:
@@ -230,15 +239,35 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return texts;
     }
 
+    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
+
+    /**
+     * <p>
+     * A number which specifies a single overall sequence of supporting texts. Optional and non-repeating. It is
+     * strongly recommended that if <em>any</em> occurrence of the &lt;TextContent&gt; composite of a specific
+     * &lt;TextType&gt; carries a &lt;SequenceNumber&gt;, then all of that type should carry a &lt;SequenceNumber&gt; –
+     * though there is no requirement to number supporting texts where there is a single instance of that type.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SequenceNumber sequenceNumber() {
+        _initialize();
+        return sequenceNumber;
+    }
+
     private Territory territory = Territory.EMPTY;
 
     /**
      * <p>
      * A group of data elements which together define a territory for which the text in the &lt;Text&gt; element is
      * specifically intended. Optional in each occurrence of the &lt;TextContent&gt; composite, and non-repeating. If
-     * omitted, the text is intended for use wherever the product may be sold (see
+     * omitted, the text is intended for use wherever the product may be sold (see Territorial sales rights in
      * <a href="#onixmessage_product_publishingdetail_p21">Group&nbsp;P.21</a>). If included, the text should be used by
-     * recipients in the specified territory in preference to any text that lacks a specified territory.
+     * recipients in the specified territory only, and in preference to any text that lacks a specified territory.
+     * </p>
+     * <p>
+     * For valid combinations of &lt;CountriesIncluded&gt;, &lt;RegionsIncluded&gt; <i>etc</i> within &lt;Territory&gt;,
+     * see the notes describing the use of &lt;Territory&gt; within Group&nbsp;P.21.
      * </p>
      * <p>
      * Care should be taken to avoid ambiguities (for example two different ‘short descriptions’ – without
@@ -330,6 +359,23 @@ public class TextContent implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<SourceTitle, String> sourceTitles() {
         _initialize();
         return sourceTitles;
+    }
+
+    private ListOfOnixElement<TextSourceLink, String> textSourceLinks = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * A URL which provides a link to a full text accessible in digital form, from which the supporting text in
+     * &lt;Text&gt; is an extract. Use, for example, to link to an original review. Optional, and repeatable if the
+     * resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a linked full text is available in
+     * multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i>
+     * attribute.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<TextSourceLink, String> textSourceLinks() {
+        _initialize();
+        return textSourceLinks;
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =

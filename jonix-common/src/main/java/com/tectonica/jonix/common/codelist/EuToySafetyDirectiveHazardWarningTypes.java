@@ -41,7 +41,7 @@ interface CodeList184 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist184">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist184">ONIX
  *      Codelist 184 in Reference Guide</a>
  */
 public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, CodeList184 {
@@ -93,14 +93,14 @@ public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, Code
 
     /**
      * If specific alternative wording is carried in &lt;ProductFormFeatureDescription&gt;, this must be used in place
-     * of the default 'Conforms to EN71' text. For use in ONIX 3.0 only.
+     * of the default 'Conforms to EN71' text
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Carries_EN71_conformity_statement("08", "Carries EN71 conformity statement"),
 
     /**
-     * UK Conformity Assessment mark. For use in ONIX 3.0 only
+     * UK Conformity Assessment mark. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

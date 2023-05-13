@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Title element level</h1>
  * <p>
- * An ONIX code indicating the level of a title element: collection level, subcollection level, or product level.
+ * An ONIX code indicating the level of a title element: collection level, sub-collection level, or product level.
  * Mandatory in each occurrence of the &lt;TitleElement&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

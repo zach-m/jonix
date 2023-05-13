@@ -41,7 +41,7 @@ interface CodeList158 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -201,7 +201,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Online_advertisement_panel("35", "Online advertisement panel"),
 
     /**
-     * German 'B&#250;hnenbild'
+     * (de: 'B&#250;hnenbild')
      */
     Online_advertisement_page("36", "Online advertisement page"),
 

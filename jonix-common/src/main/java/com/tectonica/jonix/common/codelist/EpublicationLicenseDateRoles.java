@@ -26,7 +26,7 @@ import com.tectonica.jonix.common.OnixCodelist;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 260 (License date role)
+ * marker interface to assist in IDE navigation to code-list 260 (Epublication license date role)
  */
 interface CodeList260 {
 }
@@ -34,16 +34,16 @@ interface CodeList260 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 260</b>
  * <p>
- * Description: License date role
+ * Description: Epublication license date role
  * <p>
  * Jonix-Comment: Introduced in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist260">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist260">ONIX
  *      Codelist 260 in Reference Guide</a>
  */
-public enum LicenseDateRoles implements OnixCodelist, CodeList260 {
+public enum EpublicationLicenseDateRoles implements OnixCodelist, CodeList260 {
     /**
      * Date on which a license becomes effective
      */
@@ -55,7 +55,7 @@ public enum LicenseDateRoles implements OnixCodelist, CodeList260 {
     Valid_until("15", "Valid until"),
 
     /**
-     * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
+     * Combines From date and Until date to define a period (both dates are inclusive). Use for example with dateformat
      * 06
      */
     From_until_date("24", "From… until date");
@@ -63,7 +63,7 @@ public enum LicenseDateRoles implements OnixCodelist, CodeList260 {
     public final String code;
     public final String description;
 
-    LicenseDateRoles(String code, String description) {
+    EpublicationLicenseDateRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -78,11 +78,11 @@ public enum LicenseDateRoles implements OnixCodelist, CodeList260 {
         return description;
     }
 
-    public static LicenseDateRoles byCode(String code) {
+    public static EpublicationLicenseDateRoles byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (LicenseDateRoles e : values()) {
+        for (EpublicationLicenseDateRoles e : values()) {
             if (e.code.equals(code)) {
                 return e;
             }

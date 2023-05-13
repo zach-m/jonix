@@ -22,6 +22,7 @@ package com.tectonica.jonix.common.struct;
 import com.tectonica.jonix.common.JonixKeyedStruct;
 import com.tectonica.jonix.common.JonixStruct;
 import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
+import com.tectonica.jonix.common.codelist.TitleElementLevels;
 
 import java.io.Serializable;
 
@@ -43,8 +44,10 @@ public class JonixCollectionIdentifier implements JonixKeyedStruct<SeriesIdentif
      */
     public SeriesIdentifierTypes collectionIDType;
 
+    public TitleElementLevels collectionElementLevel;
+
     /**
-     * Raw Format: Variable length text, suggested maximum 50 characters
+     * Raw Format: Variable length text, suggested maximum 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

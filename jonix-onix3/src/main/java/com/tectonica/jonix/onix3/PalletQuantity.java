@@ -104,7 +104,7 @@ public class PalletQuantity implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer, suggested maximum length 7 digits
      * <p>
-     * (type: dt.StrictPositiveInteger)
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

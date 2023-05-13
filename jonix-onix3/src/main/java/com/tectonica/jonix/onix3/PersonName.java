@@ -68,7 +68,6 @@ import java.io.Serializable;
  * <ul>
  * <li>&lt;{@link AlternativeName}&gt;</li>
  * <li>&lt;{@link CopyrightOwner}&gt;</li>
- * <li>&lt;{@link ConferenceSponsor}&gt;</li>
  * <li>&lt;{@link EventSponsor}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
@@ -88,10 +87,10 @@ import java.io.Serializable;
  * {@link AlternativeName} ⯈ {@link PersonName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
  * {@link AlternativeName} ⯈ {@link PersonName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement}
+ * ⯈ {@link CopyrightOwner} ⯈ {@link PersonName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈
  * {@link CopyrightOwner} ⯈ {@link PersonName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
- * {@link ConferenceSponsor} ⯈ {@link PersonName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventSponsor} ⯈
  * {@link PersonName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈

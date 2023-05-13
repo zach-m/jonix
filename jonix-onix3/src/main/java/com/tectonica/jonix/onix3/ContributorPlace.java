@@ -184,9 +184,9 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
 
     /**
      * <p>
-     * A code identifying a country with which a contributor is particularly associated. Optional and non-repeatable.
-     * There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt; elements in each
-     * occurrence of &lt;ContributorPlace&gt;.
+     * An ONIX code identifying a country with which a contributor is particularly associated. Optional and
+     * non-repeatable. There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt; elements
+     * in each occurrence of &lt;ContributorPlace&gt;.
      * </p>
      * Jonix-Comment: this field is required
      */

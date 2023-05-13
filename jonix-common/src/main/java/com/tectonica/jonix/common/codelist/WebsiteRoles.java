@@ -41,7 +41,7 @@ interface CodeList73 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -254,7 +254,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
         "Publisher’s or third party website for permissions requests"),
 
     /**
-     * For example, a page providing details related to GDPR. For use in ONIX 3.0 only
+     * For example, a page providing details related to GDPR. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -262,8 +262,8 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
         "Publisher’s or third party website for privacy statement"),
 
     /**
-     * The URL of the publisher's preservation service, or a more specific URL for access to its preserved copy. For use
-     * in ONIX 3.0 only
+     * The URL of the publisher's preservation service, or a more specific URL for access to its preserved copy. Only
+     * for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -271,7 +271,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
 
     /**
      * The URL of the preservation service (eg https://clockss.org), or a more specific URL for access to its preserved
-     * copy. For use in ONIX 3.0 only
+     * copy. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -279,7 +279,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
 
     /**
      * The URL of a web page describing the environmental and sustainability policy, or carbon neutrality status, that
-     * applies to the specific product. For use in ONIX 3.0 only
+     * applies to the specific product. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -288,7 +288,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
 
     /**
      * The URL of a web page describing the environmental and sustainability policies, carbon neutrality status, etc of
-     * the organisation (publisher, supplier etc). For use in ONIX 3.0 only
+     * the organisation (publisher, supplier etc). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

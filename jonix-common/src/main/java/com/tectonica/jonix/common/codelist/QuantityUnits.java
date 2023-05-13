@@ -38,7 +38,7 @@ interface CodeList169 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist169">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist169">ONIX
  *      Codelist 169 in Reference Guide</a>
  */
 public enum QuantityUnits implements OnixCodelist, CodeList169 {
@@ -53,7 +53,15 @@ public enum QuantityUnits implements OnixCodelist, CodeList169 {
 
     Months("09", "Months"),
 
-    Years("10", "Years");
+    Years("10", "Years"),
+
+    /**
+     * Multiple copies or units suitable for a class. A 'class' is a group of learners attending a specific course or
+     * lesson and generally taught as a group
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Classes("20", "Classes");
 
     public final String code;
     public final String description;

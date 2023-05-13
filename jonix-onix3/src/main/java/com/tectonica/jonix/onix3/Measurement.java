@@ -105,7 +105,7 @@ public class Measurement implements OnixElement<Double>, Serializable {
      * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 6
      * characters
      * <p>
-     * (type: dt.StrictPositiveDecimal)
+     * (type: dt.PositiveDecimal)
      */
     public Double value;
 

@@ -34,7 +34,7 @@ import java.io.Serializable;
  * <h1>Primary name type</h1>
  * <p>
  * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
- * ‘unspecified’.
+ * ‘unspecified’ (<i>ie</i> the name as it is presented on the book).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

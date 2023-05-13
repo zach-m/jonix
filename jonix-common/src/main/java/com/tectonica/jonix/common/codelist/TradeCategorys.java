@@ -41,20 +41,20 @@ interface CodeList12 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist12">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist12">ONIX
  *      Codelist 12 in Reference Guide</a>
  */
 public enum TradeCategorys implements OnixCodelist, CodeList12 {
     /**
      * An edition from a UK publisher sold only in territories where exclusive rights are not held. Rights details
-     * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
+     * should be carried in PR.21 (in ONIX 2.1) OR P.21 (in ONIX 3.0 or later) as usual
      */
     UK_open_market_edition("01", "UK open market edition"),
 
     /**
      * In UK, an edition intended primarily for airside sales in UK airports, though it may be available for sale in
-     * other territories where exclusive rights are not held. Rights details should be carried in PR.21 (ONIX 2.1) OR
-     * P.21 (ONIX 3.0) as usual
+     * other territories where exclusive rights are not held. Rights details should be carried in PR.21 (in ONIX 2.1) OR
+     * P.21 (in ONIX 3.0 or later) as usual
      */
     Airport_edition("02", "Airport edition"),
 
@@ -82,7 +82,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
 
     /**
      * An edition from a US publisher sold only in territories where exclusive rights are not held. Rights details
-     * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
+     * should be carried in PR.21 (in ONIX 2.1) OR P.21 (in ONIX 3.0 or later) as usual
      */
     US_open_market_edition("07", "US open market edition"),
 
@@ -129,8 +129,8 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     E_book_short("14", "E-book short"),
 
     /**
-     * In countries where recognised as a distinct trade category, eg Italy &#171;supertascabile&#187;. For use in ONIX
-     * 3.0 only
+     * In countries where recognised as a distinct trade category, eg Italy &#171;supertascabile&#187;. Only for use in
+     * ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -139,7 +139,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     /**
      * Category of books, usually hardcover and of a large format (A4 or larger) and printed on high-quality paper,
      * where the primary features are illustrations, and these are more important than text. Sometimes called
-     * 'coffee-table books' or 'art books' in English. For use in ONIX 3.0 only
+     * 'coffee-table books' or 'art books' in English. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -147,7 +147,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
 
     /**
      * Category of audio products typically distinguished by being free of charge (but which may be monetised through
-     * advertising content) and episodic. For use in ONIX 3.0 only
+     * advertising content) and episodic. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -155,14 +155,14 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
 
     /**
      * Category of books or e-books which are single issues of a periodical publication, sold as independent products.
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Periodical("18", "Periodical"),
 
     /**
-     * Publisher's or supplier's catalog (when treated as a product in its own right). For use in ONIX 3.0 only
+     * Publisher's or supplier's catalog (when treated as a product in its own right). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -170,7 +170,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
 
     /**
      * Category of books containing a linked group of plates, tables, diagrams, lists, often but not always combined
-     * with maps or a geographical theme or approach. For use in ONIX 3.0 only
+     * with maps or a geographical theme or approach. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

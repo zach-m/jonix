@@ -20,16 +20,14 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeUncommon;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.TextCaseFlags;
 import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
-import com.tectonica.jonix.common.struct.JonixProfessionalAffiliation;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +68,7 @@ import java.util.Arrays;
  *
  * @since Onix-2.1
  */
-public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessionalAffiliation>, Serializable {
+public class ProfessionalAffiliation implements OnixDataCompositeUncommon, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ProfessionalAffiliation";
@@ -193,14 +191,5 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
     public Affiliation affiliation() {
         _initialize();
         return affiliation;
-    }
-
-    @Override
-    public JonixProfessionalAffiliation asStruct() {
-        _initialize();
-        JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
-        struct.affiliation = affiliation.value;
-        struct.professionalPositions = Arrays.asList(professionalPosition.value);
-        return struct;
     }
 }

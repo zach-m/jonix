@@ -41,7 +41,7 @@ interface CodeList57 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist57">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist57">ONIX
  *      Codelist 57 in Reference Guide</a>
  */
 public enum UnpricedItemTypes implements OnixCodelist, CodeList57 {
@@ -72,7 +72,8 @@ public enum UnpricedItemTypes implements OnixCodelist, CodeList57 {
     Revenue_share("06", "Revenue share"),
 
     /**
-     * Price calculated as sum of individual prices of components listed as Product parts. For use in ONIX 3.0 only
+     * Price calculated as sum of individual prices of components listed as Product parts. Only for use in ONIX 3.0 or
+     * later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -80,9 +81,9 @@ public enum UnpricedItemTypes implements OnixCodelist, CodeList57 {
 
     /**
      * The supplier does not operate, or does not offer this product, in this part of the market as indicated by
-     * &lt;territory&gt;?. Use when other prices apply in different parts of the market (eg when the market is global,
+     * &lt;territory&gt;. Use when other prices apply in different parts of the market (eg when the market is global,
      * but the particular supplier does not operate outside its domestic territory). Use code 04 when the supplier does
-     * supply but has not set a price for part of the market. For use in ONIX 3.0 only
+     * supply but has not set a price for part of the market. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

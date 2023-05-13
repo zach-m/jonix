@@ -38,17 +38,11 @@ import java.io.Serializable;
  * parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of
  * &lt;ReprintDetail&gt;, but must be included in each instance if &lt;ReprintDetail&gt; is repeated.
  * </p>
- * <p>
- * (For compatibility purposes, &lt;ReprintDetail&gt; is also repeatable – without the <i>language</i> attribute, or
- * with the same <i>language</i> attribute – to give information about successive reprintings, but this is deprecated in
- * favor of a single &lt;ReprintDetail&gt; instance [or a single instance per language] and use of the XHTML &lt;dl&gt;
- * list structure.)
- * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML or XML with ONIX text fields</td>
+ * XHTML, HTML, XML, JSON within ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -65,6 +59,10 @@ import java.io.Serializable;
  * <tr>
  * <td>Attributes</td>
  * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td><tt>&lt;ReprintDetail textformat=&quot;05&quot;&gt;&lt;dl&gt;&lt;dt&gt;Jan 2016&lt;/dt&gt;&lt;dd&gt;Initial printing&lt;/dd&gt;&lt;dt&gt;Mar 2016&lt;/dt&gt;&lt;dd&gt;Second impression&lt;/dd&gt;&lt;/dl&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
@@ -114,7 +112,7 @@ public class ReprintDetail implements OnixElement<String>, Serializable {
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML or XML with ONIX text fields
+     * Using XHTML, HTML, XML, JSON within ONIX text fields
      * <p>
      * (type: XHTML)
      */

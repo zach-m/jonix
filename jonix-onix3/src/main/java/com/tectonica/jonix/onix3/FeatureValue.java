@@ -75,8 +75,6 @@ import java.io.Serializable;
  * ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈ {@link FeatureValue}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
  * {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈ {@link FeatureValue}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈ {@link FeatureValue}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈
  * {@link FeatureValue}</li>
@@ -86,8 +84,6 @@ import java.io.Serializable;
  * ⯈ {@link ResourceFeature} ⯈ {@link FeatureValue}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
  * {@link ResourceFeature} ⯈ {@link FeatureValue}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link SupportingResource} ⯈ {@link ResourceFeature} ⯈ {@link FeatureValue}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link ResourceFeature} ⯈ {@link FeatureValue}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈

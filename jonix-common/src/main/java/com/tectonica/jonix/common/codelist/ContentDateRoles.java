@@ -41,7 +41,7 @@ interface CodeList155 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist155">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist155">ONIX
  *      Codelist 155 in Reference Guide</a>
  */
 public enum ContentDateRoles implements OnixCodelist, CodeList155 {
@@ -72,7 +72,7 @@ public enum ContentDateRoles implements OnixCodelist, CodeList155 {
     Last_updated("17", "Last updated"),
 
     /**
-     * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
+     * Combines From date and Until date to define a period (both dates are inclusive). Use for example with dateformat
      * 06
      */
     From_until_date("24", "From… until date"),

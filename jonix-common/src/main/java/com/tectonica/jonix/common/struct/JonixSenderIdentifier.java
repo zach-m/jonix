@@ -45,7 +45,7 @@ public class JonixSenderIdentifier implements JonixKeyedStruct<NameIdentifierTyp
     public NameIdentifierTypes senderIDType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 50 characters
+     * Raw Format: Variable length text, suggested maximum 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

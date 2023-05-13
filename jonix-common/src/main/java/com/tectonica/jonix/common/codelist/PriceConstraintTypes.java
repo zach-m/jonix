@@ -38,7 +38,7 @@ interface CodeList230 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist230">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist230">ONIX
  *      Codelist 230 in Reference Guide</a>
  */
 public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
@@ -67,8 +67,10 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
     Lend("06", "Lend"),
 
     /**
-     * E-publication license is time-limited. Use with code 02 from List 146 and a time period in days, weeks or months
-     * in &lt;PriceConstraintLimit&gt;. The purchased copy becomes unusable when the license expires
+     * E-publication license is time-limited. Use with code 02 from List 146 and either a time period in days, weeks or
+     * months in &lt;PriceConstraintLimit&gt;, or a Valid until date in &lt;PriceConstraintLimit&gt;. The purchased copy
+     * becomes unusable when the license expires. For clarity, a perpetual license is the default, but may be specified
+     * explicitly with code 01 from list 146, or with code 02 and a limit &lt;Quantity&gt; of 0 days
      */
     Time_limited_license("07", "Time-limited license"),
 
@@ -80,7 +82,8 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
 
     /**
      * E-publication license is multi-user. Maximum number of concurrent users licensed to use the product should be
-     * given in &lt;PriceConstraintLimit&gt;
+     * given in &lt;PriceConstraintLimit&gt;. For clarity, unlimited concurrencyis the default, but may be specified
+     * explicitly with code 01 from list 146, or with code 02 and a limit &lt;Quantity&gt; of 0 users
      */
     Multi_user_license("09", "Multi-user license"),
 

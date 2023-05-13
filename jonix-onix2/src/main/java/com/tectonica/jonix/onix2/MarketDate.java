@@ -213,7 +213,6 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
         JonixMarketDate struct = new JonixMarketDate();
         struct.marketDateRole = marketDateRole.value;
         struct.date = date.value;
-        struct.dateFormat = dateFormat.value;
         return struct;
     }
 

@@ -41,7 +41,7 @@ interface CodeList93 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist93">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist93">ONIX
  *      Codelist 93 in Reference Guide</a>
  */
 public enum SupplierRoles implements OnixCodelist, CodeList93 {
@@ -53,20 +53,20 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
     /**
      * Publisher as supplier to retail trade outlets
      */
-    Publisher_to_retailers("01", "Publisher to retailers"),
+    Publisher_to_resellers("01", "Publisher to resellers"),
 
-    Publishers_exclusive_distributor_to_retailers("02", "Publisher’s exclusive distributor to retailers"),
+    Publishers_exclusive_distributor_to_resellers("02", "Publisher’s exclusive distributor to resellers"),
 
-    Publishers_non_exclusive_distributor_to_retailers("03", "Publisher’s non-exclusive distributor to retailers"),
+    Publishers_non_exclusive_distributor_to_resellers("03", "Publisher’s non-exclusive distributor to resellers"),
 
     /**
      * Wholesaler supplying retail trade outlets
      */
-    Wholesaler("04", "Wholesaler"),
+    Wholesaler_to_retailers("04", "Wholesaler to retailers"),
 
     /**
-     * DEPRECATED - use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0) to specify
-     * a sales agent
+     * DEPRECATED - use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0 or later) to
+     * specify a sales agent
      */
     Sales_agent("05", "Sales agent"),
 
@@ -104,29 +104,29 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
     Distributor_to_end_customers("12", "Distributor to end-customers"),
 
     /**
-     * Intermediary as exclusive distributor to retailers and direct to consumers and/or institutional customers. For
-     * use in ONIX 3.0 only
+     * Intermediary as exclusive distributor to retailers and direct to consumers and/or institutional customers. Only
+     * for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Exclusive_distributor_to_retailers_and_end_customers("13", "Exclusive distributor to retailers and end-customers"),
+    Exclusive_distributor_to_resellers_and_end_customers("13", "Exclusive distributor to resellers and end-customers"),
 
     /**
      * Intermediary as non-exclusive distributor to retailers and direct to consumers and/or institutional customers.
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Non_exclusive_distributor_to_retailers_and_end_customers("14",
-        "Non-exclusive distributor to retailers and end-customers"),
+    Non_exclusive_distributor_to_resellers_and_end_customers("14",
+        "Non-exclusive distributor to resellers and end-customers"),
 
     /**
      * Use only where exclusive/non-exclusive status is not known. Prefer codes 13 or 14 as appropriate whenever
-     * possible. For use in ONIX 3.0 only
+     * possible. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Distributor_to_retailers_and_end_customers("15", "Distributor to retailers and end-customers");
+    Distributor_to_resellers_and_end_customers("15", "Distributor to resellers and end-customers");
 
     public final String code;
     public final String description;

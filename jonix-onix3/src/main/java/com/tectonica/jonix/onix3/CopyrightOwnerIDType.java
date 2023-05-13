@@ -70,6 +70,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement}
+ * ⯈ {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier} ⯈ {@link CopyrightOwnerIDType}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈
  * {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier} ⯈ {@link CopyrightOwnerIDType}</li>
  * </ul>

@@ -41,7 +41,7 @@ interface CodeList139 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -55,21 +55,21 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     AandP("AAP", "AandP"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Adlibris("ADL", "Adlibris"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Akademibokhandeln("ACB", "Akademibokhandeln"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -78,7 +78,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Albertsons("ALB", "Albertson’s"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -105,7 +105,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Audioteka("ATK", "Audioteka"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -119,7 +119,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Barnes_and_Noble("BNO", "Barnes and Noble"),
 
     /**
-     * www.bdbuzz.net, for use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -140,7 +140,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Bilbary("BIL", "Bilbary"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -158,35 +158,35 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Blinkbox("GOS", "Blinkbox"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Bog_ide("BGI", "Bog & idé"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Boksnok("BSK", "Boksnok"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Boksy("BSY", "Boksy"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Bokus("BKU", "Bokus"),
 
     /**
-     * www.bolinda.com, for use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -195,28 +195,28 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Book_Club_Associates("BCA", "Book Club Associates"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Book_doreille("BDO", "Book d’oreille"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Book_Solutions("BSL", "Book Solutions"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Bookbeat("BOO", "Bookbeat"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -225,7 +225,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Bookish("BSH", "Bookish"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -245,7 +245,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Booktopia("BTP", "Booktopia"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -264,7 +264,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Casa_del_Libro("CDL", "Casa del Libro"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -273,14 +273,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Ceebo("CEB", "Ceebo"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     CFU_Danmark("CFU", "CFU Danmark"),
 
     /**
-     * Danish e-book retailer. For use in ONIX 3.0 only
+     * Danish e-book retailer. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -289,14 +289,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Christianbook_com("CHD", "Christianbook.com"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Citymarket("CYM", "Citymarket"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -353,28 +353,28 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Elib_se("ELB", "Elib.se"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Elib_Library("ELI", "Elib Library"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Elisa("ELS", "Elisa"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Elisa_Kirja_Kuukausitilaus("ELK", "Elisa Kirja Kuukausitilaus"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -390,21 +390,21 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Epic_("EPC", "Epic!"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Ereolen_dk("ELN", "Ereolen.dk"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Everybook("EVB", "Everybook"),
 
     /**
-     * www.fairyloot.com For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -427,7 +427,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Gamestop("GMS", "Gamestop"),
 
     /**
-     * (as a retail platform). For use in ONIX 3.0 only
+     * (as a retail platform). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -451,21 +451,21 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Indigo_Chapters("IND", "Indigo-Chapters"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Info_fi("INF", "Info.fi"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Inlasningstjanst("ILT", "Inläsningstjänst"),
 
     /**
-     * www.ibs.it, for use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -474,7 +474,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Izneo("IZN", "Izneo"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -487,21 +487,21 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     K_Mart("KMT", "K-Mart"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     KIPA("KIP", "KIPA"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Kirja_Idea("KID", "Kirja&Idea"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -523,28 +523,28 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Kroger("KRG", "Kroger"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Lidl("LDL", "Lidl"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Legible_com("LEG", "Legible.com"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Lehtipiste("LTP", "Lehtipiste"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -557,7 +557,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Magzter("MAG", "Magzter"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -577,7 +577,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Microcenter("MCR", "Microcenter"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -599,14 +599,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     National_Trust("NTR", "National Trust"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     NEXT("NEX", "NEXT"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -615,7 +615,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Numilog("NUM", "Numilog"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -644,7 +644,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Petco("PTC", "Petco"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -653,21 +653,21 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Play_com("PLY", "Play.com"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Podimo("POD", "Podimo"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Podit_Oy("POY", "Podit Oy"),
 
     /**
-     * For use in ONIX 3.0 only. Deprecated
+     * Only for use in ONIX 3.0 or later. Deprecated
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -694,21 +694,21 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     RM_Books("RMB", "RM Books"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Rosebud("RBD", "Rosebud"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     S_Group("SGR", "S Group"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -721,7 +721,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Sainsburys("SNS", "Sainsbury’s"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -734,7 +734,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Sequencity("SEQ", "Sequencity"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -751,7 +751,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Staples("STP", "Staples"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -760,28 +760,28 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Storytel("STT", "Storytel"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Suomalainen_Kirjakauppa("SKK", "Suomalainen Kirjakauppa"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Suomalainen_Plus("SPL", "Suomalainen Plus"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Supla_("SUP", "Supla+"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -792,7 +792,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Tesco("TES", "Tesco"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -805,7 +805,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     TSO_The_Stationery_Office("TSO", "TSO (The Stationery Office)"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -817,7 +817,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Txtr("TXR", "Txtr"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -850,7 +850,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Youboox("YOU", "Youboox"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -862,7 +862,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Zavvi("ZVV", "Zavvi"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

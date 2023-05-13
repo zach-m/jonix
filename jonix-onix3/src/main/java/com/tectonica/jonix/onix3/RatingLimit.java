@@ -109,7 +109,7 @@ public class RatingLimit implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer number, suggested maximum length 4 digits
      * <p>
-     * (type: dt.PositiveInteger)
+     * (type: dt.PositiveIntegerOrZero)
      */
     public Integer value;
 

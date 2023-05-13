@@ -74,8 +74,6 @@ import java.io.Serializable;
  * ⯈ {@link ResourceContentType}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
  * {@link ResourceContentType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link SupportingResource} ⯈ {@link ResourceContentType}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link ResourceContentType}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈

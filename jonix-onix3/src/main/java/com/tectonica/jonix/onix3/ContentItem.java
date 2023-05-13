@@ -154,6 +154,14 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case NoContributor.shortname:
                     noContributor = new NoContributor(e);
                     break;
+                case EpubUsageConstraint.refname:
+                case EpubUsageConstraint.shortname:
+                    epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(e));
+                    break;
+                case EpubLicenseWithDate.refname:
+                case EpubLicenseWithDate.shortname:
+                    epubLicenses = JPU.addToList(epubLicenses, new EpubLicenseWithDate(e));
+                    break;
                 case TitleDetail.refname:
                 case TitleDetail.shortname:
                     titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
@@ -185,6 +193,14 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case SupportingResource.refname:
                 case SupportingResource.shortname:
                     supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
+                    break;
+                case Publisher.refname:
+                case Publisher.shortname:
+                    publishers = JPU.addToList(publishers, new Publisher(e));
+                    break;
+                case CopyrightStatement.refname:
+                case CopyrightStatement.shortname:
+                    copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
                     break;
                 case RelatedWork.refname:
                 case RelatedWork.shortname:
@@ -330,6 +346,31 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return (noContributor().exists());
     }
 
+    private List<EpubUsageConstraint> epubUsageConstraints = Collections.emptyList();
+
+    /**
+     * <p>
+     * An optional group of data elements which together describe a usage constraint on a content item within a digital
+     * product (or the absence of such a constraint), whether enforced by DRM technical protection, inherent in the
+     * platform used, or specified by license agreement. Repeatable in order to describe multiple constraints on usage.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<EpubUsageConstraint> epubUsageConstraints() {
+        _initialize();
+        return epubUsageConstraints;
+    }
+
+    private List<EpubLicenseWithDate> epubLicenses = Collections.emptyList();
+
+    /**
+     * Jonix-Comment: this list may be empty
+     */
+    public List<EpubLicenseWithDate> epubLicenses() {
+        _initialize();
+        return epubLicenses;
+    }
+
     private List<TitleDetail> titleDetails = Collections.emptyList();
 
     /**
@@ -444,6 +485,40 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     public List<SupportingResource> supportingResources() {
         _initialize();
         return supportingResources;
+    }
+
+    private List<Publisher> publishers = Collections.emptyList();
+
+    /**
+     * <p>
+     * A group of data elements which together identify an entity which is associated with the publishing of a content
+     * item, included here to allow roles such as Funder, Sponsor to be associated with a specific content item rather
+     * than the product as a whole. The composite allows additional publishing roles to be introduced without adding new
+     * fields. Each occurrence of the composite must carry a publishing role code and either a name identifier or a name
+     * or both. Optional, and repeatable in order to identify multiple entities.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<Publisher> publishers() {
+        _initialize();
+        return publishers;
+    }
+
+    private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
+
+    /**
+     * <p>
+     * An optional and repeatable group of data elements which together represent a copyright or neighboring right
+     * statement for the content item. At least one &lt;CopyrightYear&gt; or one instance of the &lt;CopyrightOwner&gt;
+     * composite must be sent within an instance of the composite, but it is recommended that all elements in the
+     * composite are explicitly populated. The Copyright statement may be repeated to provide a full structured rights
+     * statement listing year(s) and rights holder(s).
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public List<CopyrightStatement> copyrightStatements() {
+        _initialize();
+        return copyrightStatements;
     }
 
     private List<RelatedWork> relatedWorks = Collections.emptyList();

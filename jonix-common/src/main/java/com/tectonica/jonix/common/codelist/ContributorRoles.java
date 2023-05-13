@@ -41,7 +41,7 @@ interface CodeList17 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -274,7 +274,8 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Letterer("A48", "Letterer"),
 
     /**
-     * Person or organization responsible for performing research on which the work is based. For use in ONIX 3.0 only
+     * Person or organization responsible for performing research on which the work is based. Only for use in ONIX 3.0
+     * or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -371,22 +372,22 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Scientific_editor("B29", "Scientific editor"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Historical_advisor("B30", "Historical advisor"),
 
     /**
-     * Editor of the first edition (usually of a standard work) who is not an editor of the current edition. For use in
-     * ONIX 3.0 only
+     * Editor of the first edition (usually of a standard work) who is not an editor of the current edition. Only for
+     * use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Original_editor("B31", "Original editor"),
 
     /**
-     * For use in ONIX 3.0 only
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -432,7 +433,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Conductor("D03", "Conductor"),
 
     /**
-     * Of a dance performance. For use in ONIX 3.0 only
+     * Of a dance performance. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -512,15 +513,15 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Honored_dedicated_to("Z02", "Honored/dedicated to"),
 
     /**
-     * For publication of laws, regulations, rulings etc. For use in ONIX 3.0 only
+     * For publication of laws, regulations, rulings etc. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Enacting_jurisdiction("Z03", "Enacting jurisdiction"),
 
     /**
-     * Use with &lt;UnnamedPersons&gt; code 02 as a 'flag' to indicate the publication is anonymously peer-reviewed. For
-     * use in ONIX 3.0 only
+     * Use with &lt;UnnamedPersons&gt; code 02 as a 'flag' to indicate the publication is anonymously peer-reviewed.
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

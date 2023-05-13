@@ -36,7 +36,7 @@ import java.io.Serializable;
  * <p>
  * An optional group of data elements which together define the identifier of a stock location in accordance with a
  * specified scheme, and repeatable to allow different types of location identifier to be supported without defining
- * additional data elements..
+ * additional data elements.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

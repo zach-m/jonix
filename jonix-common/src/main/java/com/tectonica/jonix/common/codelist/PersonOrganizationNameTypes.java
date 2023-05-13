@@ -41,7 +41,7 @@ interface CodeList18 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist18">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist18">ONIX
  *      Codelist 18 in Reference Guide</a>
  */
 public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
@@ -79,7 +79,7 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
     Later_name("06", "Later name"),
 
     /**
-     * Use only within &lt;NameAsSubject&gt;, to indicate the subject is fictional. For use in ONIX 3.0 only
+     * Use only within &lt;NameAsSubject&gt;, to indicate the subject is fictional. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

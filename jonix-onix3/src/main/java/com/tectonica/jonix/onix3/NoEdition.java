@@ -33,7 +33,7 @@ import java.io.Serializable;
  * <h1>“No edition” indicator</h1>
  * <p>
  * An empty element that provides a positive indication that a product does not carry any edition information. Intended
- * to be used an ONIX accreditation scheme to confirm that edition information is being consistently supplied in
+ * to be used in an ONIX accreditation scheme to confirm that edition information is being consistently supplied in
  * publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no instances of any of the
  * four preceding Edition elements.
  * </p>

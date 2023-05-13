@@ -42,7 +42,7 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
 
     public static final String refname = "ONIXMessage";
     public static final String shortname = "ONIXmessage";
-    public static final String release = "3.0";
+    public static final String release = "3.1";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -133,10 +133,11 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books message, and
-     * non-repeating. In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and the Sender and Addressee
-     * structures and the name and format of the &lt;SentDateTime&gt; element have been made consistent with other
-     * current ONIX formats.
+     * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books
+     * message<ins datetime="2023-03-06"> to provide metadata about the message itself</ins>, and
+     * non-repeating.<del datetime="2023-03-06"> In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and
+     * the Sender and Addressee structures and the name and format of the &lt;SentDateTime&gt; element have been made
+     * consistent with other current ONIX formats.</del>
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -171,15 +172,20 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
      * <p>
      * A product is described by a group of data elements beginning with an XML label &lt;Product&gt; and ending with an
      * XML label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two labels
-     * constitutes an ONIX product record. The product record is the fundamental unit within an ONIX Product Information
-     * message. In almost every case, each product record describes an individually tradable item; and in all
+     * constitutes an ONIX Product record. The Product record is the fundamental unit within an ONIX Product Information
+     * message. In almost every case, each Product record describes an individually tradable item; and in all
      * circumstances, each tradable item identified by a recognized product identifier should be described by one, and
-     * only one, ONIX product record.
+     * only one, ONIX Product record.
      * </p>
      * <p>
-     * In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data Groups P.1 and P.2, and
-     * carrying data that identifies the record and the product to which it refers. This is followed by up to seven
-     * ‘blocks’, each optional, some of which are repeatable.
+     * In ONIX&nbsp;3.0<ins datetime="2023-03-06"> and later</ins>, a Product record has a mandatory ‘preamble’
+     * comprising data Groups P.1 and P.2, and carrying data that identifies the record and the product to which it
+     * refers. This is followed by up to eight ‘blocks’, each of which is optional. Of these blocks, Blocks 1 to 5, plus
+     * 7 and 8 are not repeatable. Block 6 <em>appears</em> to be repeatable, but it is often more useful to think of a
+     * singular Block 6 comprising all repeats of its contained &lt;ProductSupply&gt; composites. In special
+     * circumstances – with partial (‘Block’) updates and only when &lt;MarketReference&gt; is used to label each
+     * individual &lt;ProductSupply&gt; composite – Block&nbsp;6 can be thought of as a truly repeatable block, each
+     * repeat consisting of a single &lt;ProductSupply&gt; composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */

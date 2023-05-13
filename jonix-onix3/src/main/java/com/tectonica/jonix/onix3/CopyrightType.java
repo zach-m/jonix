@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Copyright statement type</h1>
  * <p>
- * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or neighbouring
+ * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or neighboring
  * right. If omitted, the default is that the statement represents a copyright.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -70,6 +70,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement}
+ * ⯈ {@link CopyrightType}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈
  * {@link CopyrightType}</li>
  * </ul>

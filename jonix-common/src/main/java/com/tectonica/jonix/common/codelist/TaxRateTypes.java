@@ -38,7 +38,7 @@ interface CodeList62 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist62">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist62">ONIX
  *      Codelist 62 in Reference Guide</a>
  */
 public enum TaxRateTypes implements OnixCodelist, CodeList62 {
@@ -63,7 +63,7 @@ public enum TaxRateTypes implements OnixCodelist, CodeList62 {
 
     /**
      * Specifies that tax is applied at a rate lower than the Lower rate(s). In the EU, use code T for 'Super-reduced
-     * rates', and for Reduced rates (5% or above) use code R (Lower rate). For use in ONIX 3.0 only
+     * rates', and for Reduced rates (5% or above) use code R (Lower rate). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

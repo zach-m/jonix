@@ -65,8 +65,6 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link BatchBonus} ⯈ {@link FreeQuantity}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link BatchBonus} ⯈ {@link FreeQuantity}</li>
  * </ul>
@@ -103,7 +101,7 @@ public class FreeQuantity implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer, suggested maximum length 4 digits
      * <p>
-     * (type: dt.StrictPositiveInteger)
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

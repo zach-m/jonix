@@ -180,9 +180,9 @@ public class ProductFormFeature
     /**
      * <p>
      * A controlled value that describes a product form feature. Presence or absence of this element depends on the
-     * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i> thumb index) do not require an
-     * accompanying value, while others (<i>eg</i> text font) require free text in
-     * &lt;ProductFormFeatureDescription&gt;; and others may have both code and free text. Non-repeating.
+     * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i> color of cover binding) require an
+     * accompanying value, while some (<i>eg</i> text font) require free text in &lt;ProductFormFeatureDescription&gt;.
+     * Others may have both code value and free text. Non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */

@@ -72,6 +72,8 @@ import java.io.Serializable;
  * <ul>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈
  * {@link EpubUsageStatus}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint}
+ * ⯈ {@link EpubUsageStatus}</li>
  * </ul>
  */
 public class EpubUsageStatus implements OnixElement<UsageStatuss>, Serializable {

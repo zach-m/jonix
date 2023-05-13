@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.CurrencyZones;
+import com.tectonica.jonix.common.codelist.CollectionFrequencys;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -31,59 +31,56 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Currency zone</h1>
+ * <h1>Collection frequency</h1>
  * <p>
- * An ONIX code identifying a currency zone in which the price stated in an occurrence of the &lt;Price&gt; composite is
- * applicable. Optional and non-repeating. Deprecated – use Country or Region codes instead.
+ * An ONIX code specifying the approximate or expected publication frequency for addition of new products to the
+ * collection. Optional, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, three letters</td>
+ * <td>Fixed-length text, one alphabetic character</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>List 172</td>
+ * <td>List 259</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;CurrencyZone&gt;</tt></td>
+ * <td><tt>&lt;CollectionFrequency&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;x475&gt;</tt></td>
+ * <td><tt>&lt;x582&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;1</td>
+ * <td>1</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x475&gt;EUR&lt;/x475&gt;</tt> (Eurozone)</td>
+ * <td><tt>&lt;x582&gt;q&lt;/x582&gt;</tt> (Four times per year)</td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link Price}&gt;</li>
+ * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link CurrencyZone}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link CurrencyZone}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
+ * {@link CollectionFrequency}</li>
  * </ul>
  *
- * @deprecated
+ * @since Onix-3.10
  */
-@Deprecated
-public class CurrencyZone implements OnixElement<CurrencyZones>, Serializable {
+public class CollectionFrequency implements OnixElement<CollectionFrequencys>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "CurrencyZone";
-    public static final String shortname = "x475";
+    public static final String refname = "CollectionFrequency";
+    public static final String shortname = "x582";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -105,13 +102,13 @@ public class CurrencyZone implements OnixElement<CurrencyZones>, Serializable {
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public CurrencyZones value;
+    public CollectionFrequencys value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public CurrencyZones _value() {
+    public CollectionFrequencys _value() {
         return value;
     }
 
@@ -120,23 +117,23 @@ public class CurrencyZone implements OnixElement<CurrencyZones>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final CurrencyZone EMPTY = new CurrencyZone();
+    public static final CollectionFrequency EMPTY = new CollectionFrequency();
 
-    public CurrencyZone() {
+    public CollectionFrequency() {
         exists = false;
     }
 
-    public CurrencyZone(org.w3c.dom.Element element) {
+    public CollectionFrequency(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
-        value = CurrencyZones.byCode(JPU.getContentAsString(element));
+        value = CollectionFrequencys.byCode(JPU.getContentAsString(element));
     }
 
     /**
-     * @return whether this tag (&lt;CurrencyZone&gt; or &lt;x475&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;CollectionFrequency&gt; or &lt;x582&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {

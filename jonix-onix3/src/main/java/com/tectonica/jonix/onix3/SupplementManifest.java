@@ -333,7 +333,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * A group of data elements which together specify a product identifier, used here to carry an identifier for the
      * supplement which must <em>not</em> match a product identifier within Group&nbsp;P.2 or in an instance of the
      * &lt;ProductPart&gt; composite within Group&nbsp;P.4. The composite is optional, but at least a proprietary
-     * idenfifier for the supplement is recommended.
+     * identifier for the supplement is recommended.
      * </p>
      * Jonix-Comment: this list may be empty
      */

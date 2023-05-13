@@ -184,8 +184,9 @@ public class Sender implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The name of the sender organization, which should always be stated in a standard form agreed with the addressee.
-     * Optional and non-repeating; but <em>either</em> a &lt;SenderName&gt; element <em>or</em> a
-     * &lt;SenderIdentifier&gt; composite <em>must</em> be included.
+     * Optional and non-repeating<del datetime="2023-03-06">;</del><ins datetime="2023-03-06">,</ins> but
+     * <em>either</em> a &lt;SenderName&gt; element <em>or</em> a &lt;SenderIdentifier&gt; composite <em>must</em> be
+     * included.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -213,7 +214,7 @@ public class Sender implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A telephone number of the contact person in the sender organization, wherever possible including the plus sign
-     * and the international dialling code. Optional, and non-repeating.
+     * and the international dialing code. Optional, and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -226,7 +227,7 @@ public class Sender implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A text field giving the e-mail address for a contact person in the sender organization who is responsible for the
+     * A text field giving the e‑mail address for a contact person in the sender organization who is responsible for the
      * content of the message. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional

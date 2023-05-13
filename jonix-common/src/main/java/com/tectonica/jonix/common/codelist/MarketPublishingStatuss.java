@@ -41,7 +41,7 @@ interface CodeList68 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist68">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist68">ONIX
  *      Codelist 68 in Reference Guide</a>
  */
 public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
@@ -76,7 +76,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
 
     /**
      * Responsibility for the product in this market has been transferred elsewhere (with details of acquiring publisher
-     * representative in this market if possible in PR.25 (ONIX 2.1) OR P.25 (ONIX 3.0))
+     * representative in this market if possible in PR.25 (in ONIX 2.1) OR P.25 (in ONIX 3.0 or later))
      */
     No_longer_our_product("05", "No longer our product"),
 
@@ -139,7 +139,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * The product is published in this market and active, but is not available to all customer types, typically because
      * the market is split between exclusive sales agents for different market segments. In ONIX 2.1, should be
      * accompanied by a free-text statement in &lt;MarketRestrictionDetail&gt; describing the nature of the restriction.
-     * In ONIX 3.0, the &lt;SalesRestriction&gt; composite in Group P.24 should be used
+     * In ONIX 3.0 or later, the &lt;SalesRestriction&gt; composite in Group P.24 should be used
      */
     Active_with_market_restrictions("14", "Active, with market restrictions"),
 
@@ -149,16 +149,16 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
     Recalled("15", "Recalled"),
 
     /**
-     * Temporarily withdrawn from sale in this market, typically for quality or technical reasons. In ONIX 3.0, must be
-     * accompanied by expected availability date coded '22' within the &lt;MarketDate&gt; composite, except in
+     * Temporarily withdrawn from sale in this market, typically for quality or technical reasons. In ONIX 3.0 or later,
+     * must be accompanied by expected availability date coded '22' within the &lt;MarketDate&gt; composite, except in
      * exceptional circumstances where no date is known
      */
     Temporarily_withdrawn_from_sale("16", "Temporarily withdrawn from sale"),
 
     /**
      * Withdrawn permanently from sale in this market. Effectively synonymous with 'Out of print' (code 07), but
-     * specific to downloadable and online digital products (where no 'stock' would remain in the supply chain). For use
-     * in ONIX 3.0 only
+     * specific to downloadable and online digital products (where no 'stock' would remain in the supply chain). Only
+     * for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -167,7 +167,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
     /**
      * The various constituent parts of a product are published and active in this market but, as a publishing decision,
      * they are not sold together as a single product - eg with Product composition code 11 - and are only available as
-     * a number of individual items. For use in ONIX 3.0 only
+     * a number of individual items. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

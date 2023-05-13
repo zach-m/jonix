@@ -41,7 +41,7 @@ interface CodeList96 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist96">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -629,7 +629,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
 
     /**
      * Mauritania (prices normally quoted with 0 or 1 decimal place - 1 khoums = UM0.2). Replaced MRO (old) Ouguiya at
-     * rate of 10:1 in June 2018. For use in ONIX 3.0 only
+     * rate of 10:1 in June 2018. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -849,7 +849,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
 
     /**
      * Sierra Leone (prices normally quoted as integers). Deprecated - gradually replaced by SLE from April 2022, but
-     * SLL Leone still usable until April 2023 (SLE is a redenomination of the Leone by a factor of 1,000)
+     * SLL Leone still usable until December 2023 (SLE is a redenomination of the Leone by a factor of 1,000)
      */
     Leone_("SLL", "Leone"),
 
@@ -875,7 +875,8 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     _Old__("STD", "(Old) Dobra"),
 
     /**
-     * S&#227;o Tome and Principe. Replaced STD (old) Dobra at rate of 1000:1 in June 2018. For use in ONIX 3.0 only
+     * S&#227;o Tome and Principe. Replaced STD (old) Dobra at rate of 1000:1 in June 2018. Only for use in ONIX 3.0 or
+     * later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -995,7 +996,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
 
     /**
      * Venezuela (replaced VEF from August 2018 at rate of 100,000:1, and was redenominated by a further factor of
-     * 1,000,000:1 in late 2021). For use in ONIX 3.0 only
+     * 1,000,000:1 in late 2021). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

@@ -41,7 +41,7 @@ interface CodeList23 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist23">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist23">ONIX
  *      Codelist 23 in Reference Guide</a>
  */
 public enum ExtentTypes implements OnixCodelist, CodeList23 {
@@ -157,11 +157,20 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
     Production_duration("16", "Production duration"),
 
     /**
-     * In a pack of educational flash cards, playing cards, postcards, greeting cards etc. For use in ONIX 3.0 only
+     * In a pack of educational flash cards, playing cards, postcards, greeting cards etc. Only for use in ONIX 3.0 or
+     * later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Number_of_cards("17", "Number of cards"),
+
+    /**
+     * Count of the number of pages within the main content page count that are blank or substantially blank, intended
+     * for the reader to fill in (eg in a journal). Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Number_of_write_in_pages("18", "Number of write-in pages"),
 
     /**
      * Approximate size of a digital file or package (in the form it is downloaded), expressed in the specified extent
@@ -172,7 +181,7 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
     /**
      * Approximate size of storage space required for a digital file or package in the form in which it is usually
      * stored for use on a device, where this is different from the download filesize (see code 22), and expressed in
-     * the specified extent unit. For use in ONIX 3.0 only
+     * the specified extent unit. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

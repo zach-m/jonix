@@ -32,7 +32,7 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Text</h1>
+ * <h1>Supporting text</h1>
  * <p>
  * The text specified in the &lt;TextType&gt; element. Mandatory in each occurrence of the &lt;TextContent&gt;
  * composite, and repeatable when essentially identical text is supplied in multiple languages. The <i>language</i>
@@ -42,7 +42,9 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields</td>
+ * <td>Variable length text. XHTML is enabled in this element - see Using XHTML, HTML, XML, JSON within ONIX text
+ * fields. Note that certain Text types impose a strict limit on the number of characters, and such limits do not count
+ * the characters of any (X)HTML markup</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -68,10 +70,10 @@ import java.io.Serializable;
  * <tr>
  * <td>Example</td>
  * <td><tt>&lt;d104 language=&quot;eng&quot;&gt;'The Name of the Rose' is the author's first novel. It is a historical murder mystery set in an Italian monastery in the year 1327, and at the same time, it's an intellectual puzzle weaving semiotics, biblical analysis, medieval studies and literary theory into gripping fiction.&lt;/d104&gt;</tt>
- * &lt;d104 language=&quot;ita&quot;&gt;'Il nome della rosa' &#232; il primo romanzo dell'autore. Si tratta di un
- * misterioso omicidio storico ambientato in un monastero italiano nel corso dell'anno 1327, e allo stesso tempo, &#232;
- * un misterio intellettuale che unisce semiotica, analisi biblici, studi medievali e teoria letteraria nella narrativa
- * avvincente.&lt;/d104&gt; (Parallel short description text provided in two languages)</td>
+ * &lt;d104 language=&quot;ita&quot;&gt;&#8220;Il nome della rosa&#8221; &#232; il primo romanzo dell'autore. Si tratta
+ * di un misterioso omicidio storico ambientato in un monastero italiano nel corso dell'anno 1327, e allo stesso tempo,
+ * &#232; un mistero intellettuale che unisce semiotica, analisi biblici, studi medievali e teoria letteraria nella
+ * narrativa avvincente.&lt;/d104&gt; (Parallel short description text provided in two languages)</td>
  * </tr>
  * </table>
  * <p/>
@@ -121,8 +123,9 @@ public class Text implements OnixElement<String>, Serializable {
      * This is the raw content of Text. Could be null if {@code exists() == false}. Use {@link #value()} instead if you
      * want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
-     * fields
+     * Raw Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML, XML, JSON within ONIX
+     * text fields. Note that certain Text types impose a strict limit on the number of characters, and such limits do
+     * not count the characters of any (X)HTML markup
      * <p>
      * (type: XHTML)
      */

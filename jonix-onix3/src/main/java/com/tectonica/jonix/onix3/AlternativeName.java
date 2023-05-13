@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -49,7 +50,7 @@ import java.io.Serializable;
  * <ul>
  * <li>one or more of the forms of representation of a person name, with or without an occurrence of the
  * &lt;NameIdentifier&gt; composite; <em>or</em></li>
- * <li>one or both of the forms of representation of a corporate name, with or without an occurrence of the
+ * <li>one or more of the forms of representation of a corporate name, with or without an occurrence of the
  * &lt;NameIdentifier&gt; composite; <em>or</em></li>
  * <li>an occurrence of the &lt;NameIdentifier&gt; composite without any accompanying name element(s).</li>
  * </ul>
@@ -158,13 +159,13 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
                 case KeyNames.shortname:
                     keyNames = new KeyNames(e);
                     break;
-                case CorporateName.refname:
-                case CorporateName.shortname:
-                    corporateName = new CorporateName(e);
-                    break;
                 case NameIdentifier.refname:
                 case NameIdentifier.shortname:
                     nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
+                    break;
+                case CorporateName.refname:
+                case CorporateName.shortname:
+                    corporateNames = JPU.addToList(corporateNames, new CorporateName(e));
                     break;
                 case PersonNameInverted.refname:
                 case PersonNameInverted.shortname:
@@ -198,13 +199,9 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
                 case TitlesAfterNames.shortname:
                     titlesAfterNames = new TitlesAfterNames(e);
                     break;
-                case Gender.refname:
-                case Gender.shortname:
-                    gender = new Gender(e);
-                    break;
                 case CorporateNameInverted.refname:
                 case CorporateNameInverted.shortname:
-                    corporateNameInverted = new CorporateNameInverted(e);
+                    corporateNameInverteds = JPU.addToList(corporateNameInverteds, new CorporateNameInverted(e));
                     break;
                 default:
                     break;
@@ -274,20 +271,6 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         return keyNames;
     }
 
-    private CorporateName corporateName = CorporateName.EMPTY;
-
-    /**
-     * <p>
-     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
-     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
-     * </p>
-     * Jonix-Comment: this field is required
-     */
-    public CorporateName corporateName() {
-        _initialize();
-        return corporateName;
-    }
-
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
         ListOfOnixDataCompositeWithKey.emptyKeyed();
 
@@ -297,6 +280,24 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
     public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {
         _initialize();
         return nameIdentifiers;
+    }
+
+    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in
+     * normal order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel
+     * names for a single organization in multiple languages (<i>eg</i> ‘World Health Organization’ and
+     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional
+     * for a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
+     * repeated.
+     * </p>
+     * Jonix-Comment: this list is required to contain at least one item
+     */
+    public ListOfOnixElement<CorporateName, String> corporateNames() {
+        _initialize();
+        return corporateNames;
     }
 
     private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
@@ -415,33 +416,21 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private Gender gender = Gender.EMPTY;
-
-    /**
-     * <p>
-     * An optional ONIX code specifying the gender of a personal contributor. Not repeatable. Note that this indicates
-     * the gender of the contributor’s public identity (which may be pseudonymous) based on designations used in ISO
-     * 5218, rather than the gender identity, biological sex or sexuality of a natural person.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public Gender gender() {
-        _initialize();
-        return gender;
-    }
-
-    private CorporateNameInverted corporateNameInverted = CorporateNameInverted.EMPTY;
+    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
 
     /**
      * <p>
      * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with
-     * the element used for alphabetical sorting placed first. Optional and non-repeating: see Group&nbsp;P.7
-     * introductory text for valid options.
+     * the element used for alphabetical sorting placed first. Optional: see Group&nbsp;P.7 introductory text for valid
+     * options. Repeatable, to provide parallel names for a single organization in multiple languages (<i>eg</i> ‘Polar
+     * Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The <i>language</i>
+     * attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but must be included in each
+     * instance if &lt;CorporateNameInverted&gt; is repeated.
      * </p>
-     * Jonix-Comment: this field is optional
+     * Jonix-Comment: this list may be empty
      */
-    public CorporateNameInverted corporateNameInverted() {
+    public ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds() {
         _initialize();
-        return corporateNameInverted;
+        return corporateNameInverteds;
     }
 }

@@ -41,7 +41,7 @@ interface CodeList29 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist29">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist29">ONIX
  *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -214,8 +214,9 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
 
     /**
      * International Standard Classification of Education levels (2011), eg &lt;AudienceCodeValue&gt; 253 is 'Lower
-     * secondary vocational education, level completion without direct access to upper secondary education'. For use in
-     * ONIX 3.0 only. See http://uis.unesco.org/en/topic/international-standard-classification-education-isced
+     * secondary vocational education, level completion without direct access to upper secondary education'. Only for
+     * use in ONIX 3.0 or later. See
+     * http://uis.unesco.org/en/topic/international-standard-classification-education-isced
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

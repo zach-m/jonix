@@ -41,7 +41,7 @@ interface CodeList64 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist64">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist64">ONIX
  *      Codelist 64 in Reference Guide</a>
  */
 public enum PublishingStatuss implements OnixCodelist, CodeList64 {
@@ -54,20 +54,20 @@ public enum PublishingStatuss implements OnixCodelist, CodeList64 {
 
     /**
      * The product was announced, and subsequently abandoned; the &lt;PublicationDate&gt; element in ONIX 2.1 or its
-     * equivalent in &lt;PublishingDate&gt; in ONIX 3.0 must not be sent
+     * equivalent in &lt;PublishingDate&gt; in ONIX 3.0 or later must not be sent
      */
     Cancelled("01", "Cancelled"),
 
     /**
      * Not yet published; must be accompanied by the expected date in &lt;PublicationDate&gt; in ONIX 2.1, or its
-     * equivalent in the &lt;PublishingDate&gt; composite in ONIX 3.0
+     * equivalent in the &lt;PublishingDate&gt; composite in ONIX 3.0 or later
      */
     Forthcoming("02", "Forthcoming"),
 
     /**
      * The product was announced, and subsequently postponed with no expected publication date; the
-     * &lt;PublicationDate&gt; element in ONIX 2.1, or its equivalent as a &lt;PublishingDate&gt; composite in ONIX 3.0,
-     * must not be sent
+     * &lt;PublicationDate&gt; element in ONIX 2.1, or its equivalent as a &lt;PublishingDate&gt; composite in ONIX 3.0
+     * or later, must not be sent
      */
     Postponed_indefinitely("03", "Postponed indefinitely"),
 
@@ -79,7 +79,7 @@ public enum PublishingStatuss implements OnixCodelist, CodeList64 {
 
     /**
      * Ownership of the product has been transferred to another publisher (with details of acquiring publisher if
-     * possible in PR.19 (ONIX 2.1) OR P.19 (ONIX 3.0))
+     * possible in PR.19 (ONIX 2.1) OR P.19 (ONIX 3.0 or later))
      */
     No_longer_our_product("05", "No longer our product"),
 
@@ -149,9 +149,9 @@ public enum PublishingStatuss implements OnixCodelist, CodeList64 {
     Recalled_("15", "Recalled"),
 
     /**
-     * Withdrawn temporarily, typically for quality or technical reasons. In ONIX 3.0, must be accompanied by expected
-     * availability date coded '22' within the &lt;PublishingDate&gt; composite, except in exceptional circumstances
-     * where no date is known
+     * Withdrawn temporarily, typically for quality or technical reasons. In ONIX 3.0 or later, must be accompanied by
+     * expected availability date coded '22' within the &lt;PublishingDate&gt; composite, except in exceptional
+     * circumstances where no date is known
      */
     Temporarily_withdrawn_from_sale("16", "Temporarily withdrawn from sale"),
 
@@ -164,7 +164,7 @@ public enum PublishingStatuss implements OnixCodelist, CodeList64 {
     /**
      * The various constituent parts of a product are published and active but, as a publishing decision, they are not
      * sold together as a single product - eg with Product composition code 11 - and are only available as a number of
-     * individual items. For use in ONIX 3.0 only
+     * individual items. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

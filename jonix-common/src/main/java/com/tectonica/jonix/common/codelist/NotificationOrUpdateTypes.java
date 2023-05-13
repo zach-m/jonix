@@ -41,7 +41,7 @@ interface CodeList1 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist1">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist1">ONIX
  *      Codelist 1 in Reference Guide</a>
  */
 public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
@@ -63,11 +63,12 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
     Notification_confirmed_on_publication("03", "Notification confirmed on publication"),
 
     /**
-     * In ONIX 3.0 only, use when sending a 'block update' record. A block update implies using the supplied block(s) to
-     * update the existing record for the product, replacing only the blocks included in the block update, and leaving
-     * other blocks unchanged - for example, replacing old information from Blocks 4 and 6 with the newly-received data
-     * while retailing information from Blocks 1-3 and 5 untouched. In previous ONIX releases, and for ONIX 3.0 using
-     * other notification types, updating is by replacing the complete record with the newly-received data
+     * In ONIX 3.0 or later only, use when sending a 'block update' record. A block update implies using the supplied
+     * block(s) to update the existing record for the product, replacing only the blocks included in the block update,
+     * and leaving other blocks unchanged - for example, replacing old information from Blocks 4 and 6 with the
+     * newly-received data while retaining information from Blocks 1-3, 5 and 7-8 untouched. In previous ONIX releases,
+     * and for ONIX 3.0 or later using other notification types, updating is by replacing the complete record with the
+     * newly-received data
      */
     Update_partial("04", "Update (partial)"),
 
@@ -91,8 +92,8 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
     Notice_of_acquisition("09", "Notice of acquisition"),
 
     /**
-     * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded when testing is complete.
-     * Sender must ensure the &lt;RecordReference&gt; matches a previously-sent Test record
+     * Only for use in ONIX 3.0 or later. Record may be processed for test purposes, but data should be discarded when
+     * testing is complete. Sender must ensure the &lt;RecordReference&gt; matches a previously-sent Test record
      */
     Test_update_Partial("88", "Test update (Partial)"),
 

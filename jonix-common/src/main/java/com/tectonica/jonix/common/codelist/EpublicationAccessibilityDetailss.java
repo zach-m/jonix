@@ -41,7 +41,7 @@ interface CodeList196 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -49,7 +49,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * &lt;ProductFormFeatureDescription&gt; contains a short explanatory summary of the accessibility of the product,
      * consistent with the more specific conformance and feature details provided. The summary should note both the
      * accessibility features provided and any potential deficiencies. More detailed information may be provided in an
-     * external file using codes 94-96. For use in ONIX 3.0 only
+     * external file using codes 94-96. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -75,14 +75,14 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Conforms with the requirements of ISO 32000-1:2008 plus ISO 14289-1:2014 - Portable Document Format for Universal
-     * Accessibility. For use in ONIX 3.0 only
+     * Accessibility. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     PDF_UA("05", "PDF/UA"),
 
     /**
-     * Known to lack significant features required for broad accessibility. For use in ONIX 3.0 only
+     * Known to lack significant features required for broad accessibility. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -236,7 +236,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page belonging to the organisation responsible for
      * compliance testing and certification of the product - typically a 'home page' or a page describing the
-     * certification scheme itself. For use in ONIX 3.0 only
+     * certification scheme itself. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

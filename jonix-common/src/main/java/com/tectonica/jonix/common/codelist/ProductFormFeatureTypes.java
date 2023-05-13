@@ -41,7 +41,7 @@ interface CodeList79 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -52,11 +52,18 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * Where it is different from the overall color of the cover (see code 01). For Product Form Feature values see code
-     * list 98. For use in ONIX 3.0 only
+     * list 98. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Color_of_spine("26", "Color of spine"),
+
+    /**
+     * On cover or spine. For Product Form Feature values see metallic colors from code list 98
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Color_of_foil("27", "Color of foil"),
 
     /**
      * For Product Form Feature values see code list 98
@@ -108,9 +115,9 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * For versioned e-book file formats (or in some cases, devices). &lt;ProductFormFeatureValue&gt; should contain the
-     * version number as a period-separated list of numbers (eg '7', '1.5' or '3.10.7'). Use only with ONIX 3.0 - in
-     * ONIX 2.1, use &lt;EpubTypeVersion&gt; instead. For the most common file formats, code 15 and List 220 is strongly
-     * preferred
+     * version number as a period-separated list of numbers (eg '7', '1.5' or '3.10.7'). Only for use in ONIX 3.0 or
+     * later - in ONIX 2.1, use &lt;EpubTypeVersion&gt; instead. For the most common file formats, code 15 and List 220
+     * is strongly preferred
      */
     E_publication_format_version("10", "E-publication format version"),
 
@@ -134,7 +141,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * For common versioned e-book formats (or in some cases, devices) - for example EPUB 2.0.1 or EPUB 3.0.
-     * &lt;ProductFormFeatureValue&gt; is a code from list 220. Use in ONIX 3.0 only
+     * &lt;ProductFormFeatureValue&gt; is a code from list 220. Only for use in ONIX 3.0 or later
      */
     E_publication_format_version_code("15", "E-publication format version code"),
 
@@ -150,7 +157,8 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Indicates compatibility with proprietary 'point and watch' devices or apps. These scan invisible codes specially
      * printed on the page, or the whole page image, to identify the book and page position. Scanning can trigger
      * display of (for example) an augmented reality view of the page. The name of the compatible app or device (or
-     * range of apps/devices) should be given in &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * range of apps/devices) should be given in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or
+     * later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -159,7 +167,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * Requirement for user authentication prior to use, with detail of authentication method (user enrolment, and login
      * passwords, location- or device-based recognition, authentication via third-party identity service etc) given in
-     * &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -167,7 +175,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * Use to describe battery requirements, types, hazards and battery safety warnings. &lt;ProductFormFeatureValue&gt;
-     * is a code from List 242. For use in ONIX 3.0 only
+     * is a code from List 242. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -175,7 +183,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * Total capacity (of batteries in the product) in Watt hours. &lt;ProductFormFeatureValue&gt; is an integer or
-     * decimal number (eg '45', not '45Wh'). For use in ONIX 3.0 only
+     * decimal number (eg '45', not '45Wh'). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -183,15 +191,15 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * Use to describe regulation of the product for various purposes. &lt;ProductFormFeatureValue&gt; is a code from
-     * List 243. For use in ONIX 3.0 only
+     * List 243. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Dangerous_goods("21", "Dangerous goods"),
 
     /**
-     * Number of pieces, eg for jigsaws, puzzles, kits, board games. &lt;ProductFormFeatureValue&gt; is an integer. For
-     * use in ONIX 3.0 only
+     * Number of pieces, eg for jigsaws, puzzles, kits, board games. &lt;ProductFormFeatureValue&gt; is an integer. Only
+     * for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -200,7 +208,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * Number of players, for board games, card games, videogames etc. &lt;ProductFormFeatureValue&gt; must be a
      * required (exact) number as an integer OR a range (eg '2-6'), optionally accompanied by the number of players as
-     * text (eg 'suitable for 2-6 players') in &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * text (eg 'suitable for 2-6 players') in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -209,7 +217,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * Typical time to complete a game, for board games, card games, videogames etc, stated as an integer (in minutes)
      * OR range (eg '60-90') in &lt;ProductFormFeatureValue&gt;, optionally accompanied by the playing time as text (eg
-     * 'typically 60-90 minutes') in &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * 'typically 60-90 minutes') in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -219,7 +227,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Personal data required for registration or use of the product. This can be coded in
      * &lt;ProductFormFeatureValue&gt; (for example using a URI from SCOLOM list 044 - see
      * http://data.education.fr/voc/scolomfr/scolomfr-voc-044) - and/or described in
-     * &lt;ProductFormFeatureDescription&gt;. For use in ONIX 3.0 only
+     * &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -305,7 +313,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * Vegetable-based or other environmentally-conscious inks and varnishes. &lt;ProductFormFeatureDescription&gt; may
-     * carry free text with a more detailed statement. For use in ONIX 3.0 only
+     * carry free text with a more detailed statement. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -313,8 +321,8 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * Product binding uses environmentally-concious adhesives and other binding materials.
-     * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement. For use in ONIX 3.0
-     * only
+     * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement. Only for use in ONIX
+     * 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

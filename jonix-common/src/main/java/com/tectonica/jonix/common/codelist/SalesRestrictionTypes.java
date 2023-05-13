@@ -41,13 +41,13 @@ interface CodeList71 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist71">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     /**
      * Restriction must be described in &lt;SalesRestrictionDetail&gt; (ONIX 2.1) or &lt;SalesRestrictionNote&gt; (ONIX
-     * 3.0)
+     * 3.0 or later)
      */
     Unspecified_see_text("00", "Unspecified – see text"),
 
@@ -135,7 +135,8 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Through_online_retail_only("15", "Through online retail only"),
 
     /**
-     * Sales rights (or market distribution rights) apply to supplies other than to schools. For use in ONIX 3.0 only
+     * Sales rights (or market distribution rights) apply to supplies other than to schools. Only for use in ONIX 3.0 or
+     * later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -143,7 +144,7 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
 
     /**
      * POD copies may be manufactured at any time, either to fulfill a customer order immediately or to replace a
-     * minimal stockholding (ie near-inventoryless). Only valid in ONIX 3.0
+     * minimal stockholding (ie near-inventoryless). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -151,14 +152,14 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
 
     /**
      * POD copies may be manfactured only to fulfill a customer order immediately while out of stock and awaiting
-     * delivery of further stock from the supplier. Only valid in ONIX 3.0
+     * delivery of further stock from the supplier. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Through_Stock_Protection_POD("18", "Through Stock Protection POD"),
 
     /**
-     * Not eligible for POD. Only valid in ONIX 3.0
+     * Not eligible for POD. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -166,8 +167,8 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
 
     /**
      * Positive indication that no sales restrictions apply, for example to indicate the product may be sold both online
-     * and in bricks-and mortar retail, or to subscription services and non-subscription customers. For use in ONIX 3.0
-     * only
+     * and in bricks-and mortar retail, or to subscription services and non-subscription customers. Only for use in ONIX
+     * 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

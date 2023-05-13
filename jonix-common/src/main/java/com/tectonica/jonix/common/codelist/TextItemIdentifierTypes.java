@@ -41,7 +41,7 @@ interface CodeList43 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist43">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist43">ONIX
  *      Codelist 43 in Reference Guide</a>
  */
 public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43 {
@@ -78,7 +78,7 @@ public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43 {
      * International Standard Content Code, a 'similarity hash' identifier derived algorithmically from the content
      * itself (see https://iscc.codes). &lt;IDValue&gt; is the 27-character case-sensitive string (including one hyphen)
      * comprising the Meta-ID and Content-ID components of a full ISCC generated from a digital manifestation of the
-     * work. Use only with ONIX 3.0
+     * work. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

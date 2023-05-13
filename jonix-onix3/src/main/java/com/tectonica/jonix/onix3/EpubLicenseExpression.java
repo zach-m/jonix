@@ -54,17 +54,18 @@ import java.io.Serializable;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link EpubLicense}&gt;</li>
+ * <li>&lt;{@link EpubLicenseWithDate}&gt;</li>
+ * <li>&lt;{@link EpubLicenseWithoutDate}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense} ⯈
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate} ⯈
  * {@link EpubLicenseExpression}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link EpubLicense} ⯈ {@link EpubLicenseExpression}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate}
+ * ⯈ {@link EpubLicenseExpression}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link EpubLicense} ⯈ {@link EpubLicenseExpression}</li>
+ * {@link EpubLicenseWithoutDate} ⯈ {@link EpubLicenseExpression}</li>
  * </ul>
  *
  * @since Onix-3.02

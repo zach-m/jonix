@@ -32,7 +32,7 @@ import java.io.Serializable;
 /**
  * <h1>Order time</h1>
  * <p>
- * The expected average number of business days from receipt of order to despatch (for items ‘manufactured on demand’ or
+ * The expected average number of business days from receipt of order to dispatch (for items ‘manufactured on demand’ or
  * ‘only to order’). Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -100,7 +100,7 @@ public class OrderTime implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer or zero, one or two digits only. Zero indicates expected 'same day' dispatch
      * <p>
-     * (type: dt.PositiveInteger)
+     * (type: dt.PositiveIntegerOrZero)
      */
     public Integer value;
 

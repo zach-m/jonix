@@ -42,8 +42,8 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using XHTML, HTML
- * or XML with ONIX text fields</td>
+ * <td>Variable length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using XHTML, HTML,
+ * XML, JSON within ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -109,7 +109,7 @@ public class ReligiousTextFeatureDescription implements OnixElement<String>, Ser
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
-     * XHTML, HTML or XML with ONIX text fields
+     * XHTML, HTML, XML, JSON within ONIX text fields
      * <p>
      * (type: XHTML)
      */

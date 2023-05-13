@@ -35,9 +35,13 @@ import java.io.Serializable;
  * <p>
  * A group of data elements which together define a territory for which the text in the &lt;Text&gt; element is
  * specifically intended. Optional in each occurrence of the &lt;TextContent&gt; composite, and non-repeating. If
- * omitted, the text is intended for use wherever the product may be sold (see
+ * omitted, the text is intended for use wherever the product may be sold (see Territorial sales rights in
  * <a href="#onixmessage_product_publishingdetail_p21">Group&nbsp;P.21</a>). If included, the text should be used by
- * recipients in the specified territory in preference to any text that lacks a specified territory.
+ * recipients in the specified territory only, and in preference to any text that lacks a specified territory.
+ * </p>
+ * <p>
+ * For valid combinations of &lt;CountriesIncluded&gt;, &lt;RegionsIncluded&gt; <i>etc</i> within &lt;Territory&gt;, see
+ * the notes describing the use of &lt;Territory&gt; within Group&nbsp;P.21.
  * </p>
  * <p>
  * Care should be taken to avoid ambiguities (for example two different ‘short descriptions’ – without <i>language</i>
@@ -78,8 +82,6 @@ import java.io.Serializable;
  * ⯈ {@link Territory}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
  * {@link Territory}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link SupportingResource} ⯈ {@link Territory}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link Territory}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
@@ -91,8 +93,6 @@ import java.io.Serializable;
  * {@link Territory}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈ {@link Territory}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link Territory}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link Territory}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link Territory}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link Territory}</li>
@@ -199,9 +199,9 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
 
     /**
      * <p>
-     * One or more ISO standard codes identifying countries included in the territory. Successive codes must be
-     * separated by spaces. Optional and non-repeating, but either &lt;CountriesIncluded&gt; or &lt;RegionsIncluded&gt;
-     * is mandatory in each occurrence of the &lt;Territory&gt; composite.
+     * One or more ONIX codes identifying countries included in the territory. Successive codes must be separated by
+     * spaces. Optional and non-repeating, but either &lt;CountriesIncluded&gt; or &lt;RegionsIncluded&gt; is mandatory
+     * in each occurrence of the &lt;Territory&gt; composite.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -215,10 +215,13 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
     /**
      * <p>
      * One or more ONIX codes identifying regions included in the territory. A region is an area which is not a country,
-     * but which is precisely defined in geographical terms, <i>eg</i> World, Northern Ireland, Australian Capital
+     * but which is precisely defined in geographical terms, <i>eg</i> the World, Northern Ireland, Australian Capital
      * Territory. Successive codes must be separated by spaces. Optional and non-repeating, but either
      * &lt;CountriesIncluded&gt; or &lt;RegionsIncluded&gt; is mandatory in each occurrence of the &lt;Territory&gt;
      * composite.
+     * </p>
+     * <p>
+     * Note that if used, the ‘WORLD’ region code cannot be combined with other region codes.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -234,7 +237,7 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * One or more ONIX codes identifying regions excluded from the territory. Successive codes must be separated by
      * spaces. Optional and non-repeating, and can only occur if the &lt;CountriesIncluded&gt; element is also present
      * (and specifies countries of which the excluded regions are a part), or if &lt;RegionsIncluded&gt; is present and
-     * includes a supra-national region code (such as ‘World’).
+     * includes a supra-national region code (such as ‘WORLD’).
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -247,9 +250,9 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
 
     /**
      * <p>
-     * One or more ISO standard codes identifying countries excluded from the territory. Successive codes must be
-     * separated by spaces. Optional and non-repeating, and can only occur if the &lt;RegionsIncluded&gt; element is
-     * also present and includes a supra-national region code (such as ‘World’).
+     * One or more ONIX codes identifying countries excluded from the territory. Successive codes must be separated by
+     * spaces. Optional and non-repeating, and can only occur if the &lt;RegionsIncluded&gt; element is also present and
+     * includes a supra-national region code (such as ‘WORLD’).
      * </p>
      * Jonix-Comment: this field is optional
      */

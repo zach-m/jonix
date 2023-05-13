@@ -34,7 +34,8 @@ import java.io.Serializable;
  * <h1>Affiliation</h1>
  * <p>
  * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>, and – if
- * the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and non-repeating.
+ * the &lt;ProfessionalPosition&gt; element is also present – where the contributor held that position. Optional and
+ * non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -35,9 +35,8 @@ import java.io.Serializable;
  * <h1>Extent composite</h1>
  * <p>
  * A group of data elements which together describe an extent pertaining to the product. Optional, but in practice
- * required for most products, <i>eg</i> to give the number of pages in a printed book or paginated
- * <span class="nobreak">e-book</span>, or to give the running time of an audiobook. Repeatable to specify different
- * extent types or units.
+ * required for most products, <i>eg</i> to give the number of pages in a printed book or paginated e‑book, or to give
+ * the running time of an audiobook. Repeatable to specify different extent types or units.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

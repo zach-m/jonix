@@ -35,7 +35,7 @@ import java.io.Serializable;
  * <p>
  * An ONIX code allowing a positive indication to be given when authorship is unknown or anonymous, or when as a matter
  * of editorial policy only a limited number of contributors are named. Optional and non-repeating: see Group&nbsp;P.7
- * introductory text for valid options. Use here in preference to P.7.47, where it is deprecated.
+ * introductory text for valid options.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

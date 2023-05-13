@@ -192,8 +192,8 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
      * </p>
      * <p>
      * In the simplest case, title detail sent in a &lt;Collection&gt; composite will consist of a single title element,
-     * at collection level. However, the composite structure in ONIX&nbsp;3.0 allows more complex combinations of titles
-     * and part designations in multi-level collections to be correctly represented.
+     * at collection level. However, the composite structure in ONIX&nbsp;3.0 and 3.1 allows more complex combinations
+     * of titles and part designations in multi-level collections to be correctly represented.
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */

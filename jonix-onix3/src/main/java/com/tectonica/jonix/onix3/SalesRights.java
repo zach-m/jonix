@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -39,8 +40,8 @@ import java.util.List;
  * <p>
  * An optional and repeatable group of data elements which together identify territorial sales rights which a publisher
  * chooses to exercise in a product. When specifying a territory in which the product is not for sale, the publisher and
- * product ID for an edition which is available in the specified territory can optionally be included. (In previous
- * releases, this functionality was provided in a &lt;NotForSale&gt; composite, which is now redundant and has been
+ * product ID for an edition which is available in the specified territory can optionally be included. (In releases
+ * prior to 3.0, this functionality was provided in a &lt;NotForSale&gt; composite, which is now redundant and has been
  * deleted.) See examples at the end of the sales rights composite.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -132,10 +133,6 @@ public class SalesRights implements OnixSuperComposite, Serializable {
                 case Territory.shortname:
                     territory = new Territory(e);
                     break;
-                case PublisherName.refname:
-                case PublisherName.shortname:
-                    publisherName = new PublisherName(e);
-                    break;
                 case SalesRestriction.refname:
                 case SalesRestriction.shortname:
                     salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
@@ -143,6 +140,10 @@ public class SalesRights implements OnixSuperComposite, Serializable {
                 case ProductIdentifier.refname:
                 case ProductIdentifier.shortname:
                     productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case PublisherName.refname:
+                case PublisherName.shortname:
+                    publisherNames = JPU.addToList(publisherNames, new PublisherName(e));
                     break;
                 default:
                     break;
@@ -197,22 +198,6 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         return territory;
     }
 
-    private PublisherName publisherName = PublisherName.EMPTY;
-
-    /**
-     * <p>
-     * The name of the publisher of an equivalent product which is available in the territory specified in the
-     * &lt;SalesRights&gt; composite, used only when &lt;SalesRightsType&gt; has a value indicating ‘not for sale’.
-     * Optional and non-repeating. Except where they are essential to the recognized form of the name, it is recommended
-     * that suffixes denoting incorporation (‘Co’, ‘Inc’, ‘Ltd’, ‘SA’, ‘GmbH’ <i>etc</i>) should be omitted.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public PublisherName publisherName() {
-        _initialize();
-        return publisherName;
-    }
-
     private List<SalesRestriction> salesRestrictions = Collections.emptyList();
 
     /**
@@ -243,5 +228,23 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         productIdentifiers() {
         _initialize();
         return productIdentifiers;
+    }
+
+    private ListOfOnixElement<PublisherName, String> publisherNames = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of the publisher of an equivalent product which is available in the territory specified in the
+     * &lt;SalesRights&gt; composite, used only when &lt;SalesRightsType&gt; has a value indicating ‘not for sale’.
+     * Optional, and repeatable if the name is sent in multiple languages. The <i>language</i> attribute is optional for
+     * a single instance of &lt;PublisherName&gt;, but must be included in each instance if &lt;PublisherName&gt; is
+     * repeated.. Except where they are essential to the recognized form of the name, it is recommended that suffixes
+     * denoting incorporation (‘Co’, ‘Inc’, ‘Ltd’, ‘SA’, ‘GmbH’ <i>etc</i>) should be omitted.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<PublisherName, String> publisherNames() {
+        _initialize();
+        return publisherNames;
     }
 }

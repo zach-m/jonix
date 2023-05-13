@@ -41,7 +41,7 @@ interface CodeList59 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist59">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist59">ONIX
  *      Codelist 59 in Reference Guide</a>
  */
 public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
@@ -74,7 +74,7 @@ public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
      * limited time on presentation of a voucher or coupon published in a specified medium, eg a newspaper. Should be
      * accompanied by Price Type code 13 and additional detail in &lt;PriceTypeDescription&gt;, and by validity dates in
      * &lt;PriceEffectiveFrom&gt; and &lt;PriceEffectiveUntil&gt; (ONIX 2.1) or in the &lt;PriceDate&gt; composite (ONIX
-     * 3.0)
+     * 3.0 or later)
      */
     Voucher_price("04", "Voucher price"),
 
@@ -146,18 +146,25 @@ public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
     /**
      * Initial 'Introductory offer' price. Must be accompanied by an Effective until date in a &lt;PriceDate&gt;
      * composite in ONIX 3, and may also be accompanied by a 'normal' price valid after the introductory offer expires
-     * (Fr. Prix de lancement). Only valid in ONIX 3.0
+     * (Fr. Prix de lancement). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Introductory_price("17", "Introductory price"),
 
     /**
-     * Price for library consortia. Only valid in ONIX 3.0
+     * Price for library consortia. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Consortial_price("18", "Consortial price");
+    Consortial_price("18", "Consortial price"),
+
+    /**
+     * (fr: &#171;&#160;prix pour l'education specialis&#233;e&#160;&#187;) Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Education_price_for_alternative_provision("19", "Education price for alternative provision");
 
     public final String code;
     public final String description;

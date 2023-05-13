@@ -48,7 +48,7 @@ import java.io.Serializable;
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML or XML with ONIX text fields</td>
+ * XHTML, HTML, XML, JSON within ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -127,7 +127,7 @@ public class PrizeStatement implements OnixElement<String>, Serializable {
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML or XML with ONIX text fields
+     * Using XHTML, HTML, XML, JSON within ONIX text fields
      * <p>
      * (type: XHTML)
      */

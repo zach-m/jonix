@@ -63,7 +63,8 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Notes</td>
- * <td>Note a date such as a publication date should be interpreted as the 'global' publication date.</td>
+ * <td>A date such as a publication date here should be interpreted as the 'global' publication date. There may be
+ * market-specific 'publication dates' in Group P.25 which are later than the 'global' date.</td>
  * </tr>
  * </table>
  * <p/>

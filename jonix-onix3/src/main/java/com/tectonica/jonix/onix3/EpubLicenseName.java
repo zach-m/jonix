@@ -60,23 +60,24 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x511&gt;Elsevier e-book EULA v5&lt;/x511&gt;</tt></td>
+ * <td><tt>&lt;x511&gt;Elsevier e&#8209;book EULA v5&lt;/x511&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link EpubLicense}&gt;</li>
+ * <li>&lt;{@link EpubLicenseWithDate}&gt;</li>
+ * <li>&lt;{@link EpubLicenseWithoutDate}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense} ⯈
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate} ⯈
  * {@link EpubLicenseName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link EpubLicense} ⯈ {@link EpubLicenseName}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate}
+ * ⯈ {@link EpubLicenseName}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link EpubLicense} ⯈ {@link EpubLicenseName}</li>
+ * {@link EpubLicenseWithoutDate} ⯈ {@link EpubLicenseName}</li>
  * </ul>
  *
  * @since Onix-3.02

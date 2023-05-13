@@ -103,7 +103,7 @@ public class PackQuantity implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer, suggested maximum length 4 digits
      * <p>
-     * (type: dt.StrictPositiveInteger)
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

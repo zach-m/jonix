@@ -60,6 +60,8 @@ import java.io.Serializable;
  * <ul>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈
  * {@link EpubUsageLimit}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint}
+ * ⯈ {@link EpubUsageLimit}</li>
  * </ul>
  */
 public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, Serializable {

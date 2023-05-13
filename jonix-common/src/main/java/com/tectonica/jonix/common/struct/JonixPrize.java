@@ -46,7 +46,7 @@ public class JonixPrize implements JonixStruct, Serializable {
 
     /**
      * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML or XML with ONIX text fields
+     * Using XHTML, HTML, XML, JSON within ONIX text fields
      * <p>
      * (type: XHTML)
      */

@@ -44,7 +44,7 @@ public class JonixImprintIdentifier implements JonixKeyedStruct<NameIdentifierTy
     public NameIdentifierTypes imprintIDType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 50 characters
+     * Raw Format: Variable length text, suggested maximum 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

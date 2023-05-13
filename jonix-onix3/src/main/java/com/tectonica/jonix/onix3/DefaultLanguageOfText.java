@@ -33,19 +33,22 @@ import java.io.Serializable;
 /**
  * <h1>Default language of text</h1>
  * <p>
- * An ISO standard code indicating the default language which is assumed for the text of products listed in the message,
- * unless explicitly stated otherwise by sending a ‘language of text’ element in the product record. This default will
- * be assumed for all product records which do not specify a language in Group&nbsp;P.10. Optional and non-repeating.
+ * An ONIX code indicating the default language which is assumed for the text content of products listed in the message,
+ * unless the language is explicitly stated by sending a ‘language of text’ in Group&nbsp;P.10 of each Product record.
+ * Optional and non-repeating. To avoid any possible ambiguity, use of this default is deprecated, but any default
+ * supplied will be assumed for all Product records which do not specify the language of the text explicitly in
+ * Group&nbsp;P.10. It is strongly recommended that the language of the text should be specified in the &lt;Language&gt;
+ * composite for each product.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
- * lower-case</td>
+ * <td>Fixed length, three lower-case letters, based on ISO 639-2/B. Note that ISO 639 specifies that these codes should
+ * always be in lower-case</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>ISO 639-2/B List 74</td>
+ * <td>List 74</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -74,7 +77,10 @@ import java.io.Serializable;
  * <ul>
  * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link DefaultLanguageOfText}</li>
  * </ul>
+ *
+ * @deprecated
  */
+@Deprecated
 public class DefaultLanguageOfText implements OnixElement<Languages>, Serializable {
     private static final long serialVersionUID = 1L;
 

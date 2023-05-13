@@ -73,8 +73,6 @@ import java.io.Serializable;
  * ⯈ {@link ResourceVersion} ⯈ {@link ContentDate}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
  * {@link ResourceVersion} ⯈ {@link ContentDate}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ContentDate}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
  * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ContentDate}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
@@ -145,10 +143,6 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
                 case Date.shortname:
                     date = new Date(e);
                     break;
-                case DateFormat.refname:
-                case DateFormat.shortname:
-                    dateFormat = new DateFormat(e);
-                    break;
                 default:
                     break;
             }
@@ -192,8 +186,7 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * <p>
      * The date specified in the &lt;ContentDateRole&gt; field. Mandatory in each occurrence of the &lt;ContentDate&gt;
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
-     * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
-     * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
+     * then the default format is YYYYMMDD.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -202,27 +195,11 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
         return date;
     }
 
-    private DateFormat dateFormat = DateFormat.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of the
-     * &lt;ContentDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
-     * attribute on the &lt;Date&gt; element instead.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public DateFormat dateFormat() {
-        _initialize();
-        return dateFormat;
-    }
-
     @Override
     public JonixContentDate asStruct() {
         _initialize();
         JonixContentDate struct = new JonixContentDate();
         struct.contentDateRole = contentDateRole.value;
-        struct.dateFormat = dateFormat.value;
         struct.date = date.value;
         return struct;
     }

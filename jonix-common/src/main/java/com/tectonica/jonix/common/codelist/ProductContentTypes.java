@@ -41,7 +41,7 @@ interface CodeList81 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
@@ -71,7 +71,8 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Additional_eye_readable_text_not_part_of_main_work("16", "Additional eye-readable text not part of main work"),
 
     /**
-     * Publication contains a significant number of web links (printed URLs, QR codes etc). For use in ONIX 3.0 only
+     * Publication contains a significant number of web links (printed URLs, QR codes etc). Only for use in ONIX 3.0 or
+     * later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -108,8 +109,8 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Maps_and_or_other_cartographic_content("12", "Maps and/or other cartographic content"),
 
     /**
-     * eg Questions or student exercises, problems, quizzes or tests (as an integral part of the work). For use in ONIX
-     * 3.0 only
+     * eg Questions or student exercises, problems, quizzes or tests (as an integral part of the work). Only for use in
+     * ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -247,8 +248,8 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Advertising_third_party_textual("39", "Advertising – third party textual"),
 
     /**
-     * E-publication contains microprograms written (eg) in Javascript and executed within the reading system. For use
-     * in ONIX 3.0 only
+     * E-publication contains microprograms written (eg) in Javascript and executed within the reading system. Only for
+     * use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -256,12 +257,21 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
 
     /**
      * E-publication contains pop-ups or other functionality offering (eg) term definitions, cross-links or glossary
-     * entries [Note this should not include (eg) dictionary funcionality that is part of the reading system.] For use
-     * in ONIX 3.0 only
+     * entries [Note this should not include (eg) dictionary functionality that is part of the reading system.] Only for
+     * use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Scripted_pop_ups("43", "Scripted pop-ups");
+    Scripted_pop_ups("43", "Scripted pop-ups"),
+
+    /**
+     * Or pictorial narrative, usually panel-based. Images displayed in a specific order for the purpose of graphic
+     * storytelling or giving information (eg graphic novels, comics and manga). May include text integrated into the
+     * image (as speech and thought bubbles, textual 'sound' effects, captions etc). Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Sequential_art("44", "Sequential art");
 
     public final String code;
     public final String description;

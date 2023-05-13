@@ -39,10 +39,10 @@ import java.io.Serializable;
  * &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.
  * </p>
  * <p>
- * This element is intended to be used only when the sending system cannot reliably provide prefixes that are ignored
- * for sorting purposes in a separate data element. If the system <em>can</em> reliably separate prefixes, it should
- * state whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using
- * &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
+ * This element is deprecated, and intended to be used only when the sending system cannot reliably provide prefixes
+ * that are ignored for sorting purposes in a separate data element. If the system <em>can</em> reliably separate
+ * prefixes, it should state whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or
+ * absent (using &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -85,7 +85,10 @@ import java.io.Serializable;
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link TitleDetail} ⯈
  * {@link TitleElement} ⯈ {@link TitleText}</li>
  * </ul>
+ *
+ * @deprecated
  */
+@Deprecated
 public class TitleText implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 

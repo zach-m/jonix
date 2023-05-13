@@ -100,7 +100,7 @@ public class LatestReprintNumber implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer, suggested maximum four digits
      * <p>
-     * (type: dt.StrictPositiveInteger)
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

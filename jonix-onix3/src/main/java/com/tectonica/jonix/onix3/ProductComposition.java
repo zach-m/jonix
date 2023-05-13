@@ -33,8 +33,8 @@ import java.io.Serializable;
 /**
  * <h1>Product composition</h1>
  * <p>
- * An ONIX code which indicates whether a product consists of a single item or multiple items. Mandatory in an
- * occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.
+ * An ONIX code which indicates whether a product consists of a single item or multiple items or components. Mandatory
+ * in an occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

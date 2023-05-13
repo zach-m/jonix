@@ -42,9 +42,9 @@ import java.util.List;
 /**
  * <h1>Event occurrence composite</h1>
  * <p>
- * A group of data elements which together describe a single occurrence of the promotional event. At least one occurence
- * is mandatory within the &lt;PromotionalEvent&gt; composite, and &lt;EventOccurrence&gt; is repeatable in order to
- * list a group of more or less similar occurrences such as a series of book signings.
+ * A group of data elements which together describe a single occurrence of the promotional event. At least one
+ * occurrence is mandatory within the &lt;PromotionalEvent&gt; composite, and &lt;EventOccurrence&gt; is repeatable in
+ * order to list a group of more or less similar occurrences such as a series of book signings.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -224,8 +224,8 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A code identifying a country within which an event occurrence takes place. Optional and non-repeatable. For a
-     * physical event, at least one of the &lt;CountryCode&gt; or &lt;RegionCode&gt; elements is required in each
+     * An ONIX code identifying a country within which an event occurrence takes place. Optional and non-repeatable. For
+     * a physical event, at least one of the &lt;CountryCode&gt; or &lt;RegionCode&gt; elements is required in each
      * instance of &lt;EventOccurrence&gt;. For purely digital events, both must be omitted.
      * </p>
      * Jonix-Comment: this field is required
@@ -256,8 +256,8 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A code identifying a region within which an event occurrence takes place. Optional and non-repeatable. For a
-     * physical event, at least one of the &lt;CountryCode&gt; or &lt;RegionCode&gt; elements is required in each
+     * An ONIX code identifying a region within which an event occurrence takes place. Optional and non-repeatable. For
+     * a physical event, at least one of the &lt;CountryCode&gt; or &lt;RegionCode&gt; elements is required in each
      * instance of &lt;EventOccurrence&gt;. For purely digital events, both must be omitted.
      * </p>
      * Jonix-Comment: this field is optional

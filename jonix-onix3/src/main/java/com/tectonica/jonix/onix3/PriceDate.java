@@ -37,6 +37,9 @@ import java.io.Serializable;
  * An optional group of data elements which together specify a date associated with a price, repeatable in order to
  * specify multiple associated dates.
  * </p>
+ * <p>
+ * Note that if no dates are specified, the price is effective at the time the ONIX message is sent.
+ * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Reference name</td>
@@ -59,8 +62,6 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link PriceDate}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link PriceDate}</li>
  * </ul>
@@ -129,10 +130,6 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
                 case Date.shortname:
                     date = new Date(e);
                     break;
-                case DateFormat.refname:
-                case DateFormat.shortname:
-                    dateFormat = new DateFormat(e);
-                    break;
                 default:
                     break;
             }
@@ -176,8 +173,7 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
      * <p>
      * The date specified in the &lt;PriceDateRole&gt; field. Mandatory in each occurrence of the &lt;PriceDate&gt;
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
-     * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
-     * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
+     * then the default format is YYYYMMDD.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -186,27 +182,11 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
         return date;
     }
 
-    private DateFormat dateFormat = DateFormat.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of the
-     * &lt;PriceDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i> attribute
-     * instead.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public DateFormat dateFormat() {
-        _initialize();
-        return dateFormat;
-    }
-
     @Override
     public JonixPriceDate asStruct() {
         _initialize();
         JonixPriceDate struct = new JonixPriceDate();
         struct.priceDateRole = priceDateRole.value;
-        struct.dateFormat = dateFormat.value;
         struct.date = date.value;
         return struct;
     }

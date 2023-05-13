@@ -66,8 +66,6 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link Tax} ⯈ {@link TaxableAmount}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link Tax} ⯈ {@link TaxableAmount}</li>
  * </ul>
@@ -105,7 +103,7 @@ public class TaxableAmount implements OnixElement<Double>, Serializable {
      * Raw Format: Positive real number, with explicit decimal point when required, suggested maximum length 12
      * characters
      * <p>
-     * (type: dt.StrictPositiveDecimal)
+     * (type: dt.PositiveDecimal)
      */
     public Double value;
 

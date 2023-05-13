@@ -36,12 +36,12 @@ import java.io.Serializable;
  * which you send out about that product, and which will remain as its permanent identifier every time you send an
  * update. It doesn’t matter what reference you choose, provided that it is unique and permanent. This record reference
  * doesn’t identify the <em>product</em> – even though you may choose to use the ISBN or another product identifier as a
- * part or the whole of your record reference – it identifies <em>your information record about the product</em>, so
- * that the person to whom you are sending an update can match it with what you have previously sent. A good way of
- * generating references which are not part of a recognized product identification scheme but which can be guaranteed to
- * be unique is to prefix a product identifier or a meaningless row ID from your internal database with a reversed
- * Internet domain name which is registered to your organization (reversal prevents the record reference appearing to be
- * a resolvable URL). Alternatively, use a UUID.
+ * part of your record reference – it identifies <em>your information record about the product</em>, so that the person
+ * to whom you are sending an update can match it with what you have previously sent. It is not recommended to use a
+ * product identifier as the whole of the record reference. A good way of generating references which are not part of a
+ * recognized product identification scheme but which can be guaranteed to be unique is to prefix a product identifier
+ * or a meaningless row ID from your internal database with a reversed Internet domain name which is registered to your
+ * organization (reversal prevents the record reference appearing to be a resolvable URL). Alternatively, use a UUID.
  * </p>
  * <p>
  * This field is mandatory and non-repeating.
@@ -65,7 +65,7 @@ import java.io.Serializable;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;a001&gt;com.xyzpublishers.onix.36036&lt;/a001&gt;</tt> (36036 is row ID in an internal database that is
+ * <td><tt>&lt;a001&gt;com.xyzpublishers.onix.36036&lt;/a001&gt;</tt> (36036 is a row ID in an internal database that is
  * the source of the data in the record)</td>
  * </tr>
  * </table>

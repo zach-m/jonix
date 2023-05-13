@@ -268,7 +268,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * <p>
      * An optional group of data elements which together define the identifier of a stock location in accordance with a
      * specified scheme, and repeatable to allow different types of location identifier to be supported without defining
-     * additional data elements..
+     * additional data elements.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -283,10 +283,11 @@ public class Stock implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The name of a stock location. Optional, and repeatable to provide parallel names for a single location in
-     * multiple languages (<i>eg</i> Baile Átha Cliath and Dublin, or Bruxelles and Brussel). It may if necessary
-     * include a postal code (<i>eg</i> 10680 Αθήνα, or 20090 Assago). The <i>language</i> attribute is optional for a
-     * single instance of &lt;LocationName&gt;, but must be included in each instance if &lt;LocationName&gt; is
-     * repeated.
+     * multiple languages (<i>eg</i> <span lang="ga">Baile Átha Cliath</span> and Dublin, or
+     * <span lang="fr">Bruxelles</span> and <span lang="nl">Brussel</span>). It may if necessary include a postal code
+     * (<i>eg</i> <span lang="el">10680 Αθήνα</span>, or <span lang="it">20090 Assago</span>). The <i>language</i>
+     * attribute is optional for a single instance of &lt;LocationName&gt;, but must be included in each instance if
+     * &lt;LocationName&gt; is repeated.
      * </p>
      * Jonix-Comment: this list may be empty
      */

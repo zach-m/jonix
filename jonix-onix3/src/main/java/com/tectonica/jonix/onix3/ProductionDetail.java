@@ -37,7 +37,7 @@ import java.util.List;
  * The Production detail block comprises the single data Group P.28. The block as a whole is non-repeating. It is
  * optional within the &lt;Product&gt; record, and is used only when there is a requirement to communicate specification
  * and file manifest detail relating to intermediary services within the supply chain, for example manufacturing on
- * demand, e-book conversion services or distribution of digital audio. It is not expected to be present in most ONIX
+ * demand, e‑book conversion services or distribution of digital audio. It is not expected to be present in most ONIX
  * messages – though recipients not requiring the data should be able to ignore the entire block if it is supplied.
  * </p>
  * <p>

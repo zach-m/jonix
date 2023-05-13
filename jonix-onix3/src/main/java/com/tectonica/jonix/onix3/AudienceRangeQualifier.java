@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <h1>Audience range qualifier</h1>
  * <p>
- * An ONIX code specifying the attribute (age, school grade <i>etc</i>) which is measured by the value in the
+ * An ONIX code specifying the attribute (interest age, school grade <i>etc</i>) which is measured by the value in the
  * &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and
  * non-repeating.
  * </p>

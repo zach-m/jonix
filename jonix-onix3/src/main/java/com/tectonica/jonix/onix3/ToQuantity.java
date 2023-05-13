@@ -67,8 +67,6 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
- * {@link Price} ⯈ {@link Discount} ⯈ {@link ToQuantity}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link Discount} ⯈ {@link ToQuantity}</li>
  * </ul>
@@ -107,7 +105,7 @@ public class ToQuantity implements OnixElement<Double>, Serializable {
      * <p>
      * Raw Format: Positive number, here necessarily an integer, or zero. Suggested maximum length 7 digits
      * <p>
-     * (type: dt.PositiveDecimal)
+     * (type: dt.PositiveDecimalOrZero)
      */
     public Double value;
 

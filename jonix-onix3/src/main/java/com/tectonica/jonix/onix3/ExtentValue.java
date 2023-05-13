@@ -104,7 +104,7 @@ public class ExtentValue implements OnixElement<Double>, Serializable {
      * Raw Format: Positive real number, with explicit decimal point when required, as appropriate for the units
      * specified in &lt;ExtentUnit&gt;. Suggested maximum length 8 characters
      * <p>
-     * (type: dt.StrictPositiveDecimal)
+     * (type: dt.PositiveDecimal)
      */
     public Double value;
 

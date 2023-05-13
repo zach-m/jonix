@@ -41,7 +41,7 @@ import java.io.Serializable;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 50 characters</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -108,7 +108,7 @@ public class StockQuantityCodeTypeName implements OnixElement<String>, Serializa
      * This is the raw content of StockQuantityCodeTypeName. Could be null if {@code exists() == false}. Use
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text, suggested maximum length 50 characters
+     * Raw Format: Variable length text, suggested maximum length 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

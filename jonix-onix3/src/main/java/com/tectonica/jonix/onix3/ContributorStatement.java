@@ -46,14 +46,14 @@ import java.io.Serializable;
  * </p>
  * <p>
  * <strong>The &lt;ContributorStatement&gt; element is provided here for use only by those ONIX communities whose
- * national practice requires contributors to be identified at collection level.</strong> It should not be sent in a
- * context where collection contributors are normally identified in Group&nbsp;P.6.
+ * national practice requires contributors to the collection to be identified at collection level.</strong> It should
+ * not be sent in a context where collection contributors are normally identified in Group&nbsp;P.6.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML or XML with ONIX text fields</td>
+ * XHTML, HTML, XML, JSON within ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -133,7 +133,7 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
-     * see Using XHTML, HTML or XML with ONIX text fields
+     * see Using XHTML, HTML, XML, JSON within ONIX text fields
      * <p>
      * (type: XHTML)
      */

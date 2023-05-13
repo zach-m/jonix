@@ -41,7 +41,7 @@ interface CodeList3 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist3">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist3">ONIX
  *      Codelist 3 in Reference Guide</a>
  */
 public enum RecordSourceTypes implements OnixCodelist, CodeList3 {

@@ -132,6 +132,10 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
                 case PrizeName.shortname:
                     prizeNames = JPU.addToList(prizeNames, new PrizeName(e));
                     break;
+                case SequenceNumber.refname:
+                case SequenceNumber.shortname:
+                    sequenceNumber = new SequenceNumber(e);
+                    break;
                 case PrizeYear.refname:
                 case PrizeYear.shortname:
                     prizeYear = new PrizeYear(e);
@@ -147,6 +151,10 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
                 case PrizeCode.refname:
                 case PrizeCode.shortname:
                     prizeCode = new PrizeCode(e);
+                    break;
+                case AwardingBody.refname:
+                case AwardingBody.shortname:
+                    awardingBodys = JPU.addToList(awardingBodys, new AwardingBody(e));
                     break;
                 case PrizeStatement.refname:
                 case PrizeStatement.shortname:
@@ -195,6 +203,21 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return prizeNames;
     }
 
+    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
+
+    /**
+     * <p>
+     * A number which specifies a single overall sequence of prizes. Optional and non-repeating. It is strongly
+     * recommended that if any occurrence of the &lt;Prize&gt; composite carries a &lt;SequenceNumber&gt;, then all
+     * should carry a &lt;SequenceNumber&gt;.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public SequenceNumber sequenceNumber() {
+        _initialize();
+        return sequenceNumber;
+    }
+
     private PrizeYear prizeYear = PrizeYear.EMPTY;
 
     /**
@@ -212,7 +235,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
 
     /**
      * <p>
-     * An ISO standard code identifying the country in which a prize or award is given. Optional and non-repeating.
+     * An ONIX code identifying the country in which a prize or award is given. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -249,6 +272,21 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     public PrizeCode prizeCode() {
         _initialize();
         return prizeCode;
+    }
+
+    private ListOfOnixElement<AwardingBody, String> awardingBodys = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of the organization(s) that awarded the prize. Optional, and repeatable if the text is provided in more
+     * than one language. The <i>language</i> attribute is optional for a single instance of &lt;AwardingBody&gt;, but
+     * must be included in each instance if &lt;AwardingBody&gt; is repeated.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<AwardingBody, String> awardingBodys() {
+        _initialize();
+        return awardingBodys;
     }
 
     private ListOfOnixElement<PrizeStatement, String> prizeStatements = ListOfOnixElement.empty();

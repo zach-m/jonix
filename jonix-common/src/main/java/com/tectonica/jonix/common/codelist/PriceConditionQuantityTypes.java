@@ -38,7 +38,7 @@ interface CodeList168 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_60.html#codelist168">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist168">ONIX
  *      Codelist 168 in Reference Guide</a>
  */
 public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
@@ -63,14 +63,34 @@ public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
     Number_of_linked_products("03", "Number of linked products"),
 
     /**
-     * Use with Price condition type 06 and a Quantity of units. Meeting the Price condition qualifies for purchase of
-     * the specified number of copies of this product at this price. Use for example when describing a price that
-     * applies to the specified number of units of this product which is valid if they are purchased along with a number
-     * of copies of another product
+     * Use with Price condition type 06 and a Quantity of units. Meeting the Price condition qualifies for purchase of a
+     * specified number of copies of this product at this price. Use for example when describing a price that applies to
+     * the specified number of units of this product which is valid if they are purchased along with a number of copies
+     * of another product
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Number_of_copies_of_this_product("04", "Number of copies of this product");
+    Number_of_copies_of_this_product("04", "Number of copies of this product"),
+
+    /**
+     * Use with Price condition type 06 and a Quantity of units. Price is valid when purchased with at least a specific
+     * number of products from a list of product identifiers provided in the associated &lt;ProductIdentifier&gt;
+     * composites. Use for example when describing a price for this product which is valid if it is purchased along with
+     * any two from a list of other products
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Minimum_number_of_linked_products("05", "Minimum number of linked products"),
+
+    /**
+     * (at this price). Use with Price condition type 06 and a Quantity of units. Meeting the Price condition qualifies
+     * for purchase of up to the specified number of copies of this product at this price. Use for example when
+     * describing a price that applies to the specified number of units of this product which is valid if they are
+     * purchased along with a number of copies of another product
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Maximum_number_of_copies_of_this_product("06", "Maximum number of copies of this product");
 
     public final String code;
     public final String description;

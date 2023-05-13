@@ -35,10 +35,11 @@ import java.util.List;
 /**
  * <h1>Header composite</h1>
  * <p>
- * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books message, and
- * non-repeating. In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and the Sender and Addressee
- * structures and the name and format of the &lt;SentDateTime&gt; element have been made consistent with other current
- * ONIX formats.
+ * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books
+ * message<ins datetime="2023-03-06"> to provide metadata about the message itself</ins>, and
+ * non-repeating.<del datetime="2023-03-06"> In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and the
+ * Sender and Addressee structures and the name and format of the &lt;SentDateTime&gt; element have been made consistent
+ * with other current ONIX formats.</del>
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -240,10 +241,12 @@ public class Header implements OnixHeader, Serializable {
 
     /**
      * <p>
-     * An ISO standard code indicating the default language which is assumed for the text of products listed in the
-     * message, unless explicitly stated otherwise by sending a ‘language of text’ element in the product record. This
-     * default will be assumed for all product records which do not specify a language in Group&nbsp;P.10. Optional and
-     * non-repeating.
+     * An ONIX code indicating the default language which is assumed for the text content of products listed in the
+     * message, unless the language is explicitly stated by sending a ‘language of text’ in Group&nbsp;P.10 of each
+     * Product record. Optional and non-repeating. To avoid any possible ambiguity, use of this default is deprecated,
+     * but any default supplied will be assumed for all Product records which do not specify the language of the text
+     * explicitly in Group&nbsp;P.10. It is strongly recommended that the language of the text should be specified in
+     * the &lt;Language&gt; composite for each product.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -256,8 +259,12 @@ public class Header implements OnixHeader, Serializable {
 
     /**
      * <p>
-     * An ONIX code indicating the default price type which is assumed for prices listed in the message, unless
-     * explicitly stated otherwise in a &lt;Price&gt; composite in the product record. Optional and non-repeating.
+     * An ONIX code indicating the default price type which is assumed for prices of products listed in the message,
+     * unless the Price type is explicitly stated by sending a Price type code in each &lt;Price&gt; composite for each
+     * Product record. Optional and non-repeating. To avoid any possible ambiguity, use of this default is deprecated,
+     * but any default supplied will be assumed for all prices in Group&nbsp;P.26 which do not specify the Price type
+     * explicitly. It is strongly recommended that the price type should be specified in the &lt;Price&gt; composite for
+     * each individual price.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -270,11 +277,12 @@ public class Header implements OnixHeader, Serializable {
 
     /**
      * <p>
-     * An ISO standard code indicating the currency which is assumed for prices listed in the message, unless explicitly
-     * stated otherwise in a &lt;Price&gt; composite in a product record. Optional and non-repeating. All ONIX messages
-     * must include an explicit statement of the currency used for any prices. To avoid any possible ambiguity, it is
-     * strongly recommended that the currency should be repeated in the &lt;Price&gt; composite for each individual
-     * price.
+     * An ONIX code indicating the default currency which is assumed for prices of products listed in the message,
+     * unless the Currency code is explicitly stated by sending a Currency code in each &lt;Price&gt; composite for each
+     * Product record. Optional and non-repeating. To avoid any possible ambiguity, use of this default is deprecated,
+     * but any default supplied will be assumed for all prices in Group&nbsp;P.26 which do not specify the Currency code
+     * explicitly. It is strongly recommended that the Currency code should be specified in the &lt;Price&gt; composite
+     * for each individual price.
      * </p>
      * Jonix-Comment: this field is optional
      */

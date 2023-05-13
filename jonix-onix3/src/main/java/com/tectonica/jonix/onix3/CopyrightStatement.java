@@ -33,13 +33,13 @@ import java.util.List;
  */
 
 /**
- * <h1>Copyright statement composite</h1>
+ * <h1>Copyright statement composite (content item)</h1>
  * <p>
- * An optional and repeatable group of data elements which together represent a copyright or neighbouring right
- * statement for the product. At least one &lt;CopyrightYear&gt; or one instance of the &lt;CopyrightOwner&gt; composite
- * must be sent within an instance of the composite, but it is recommended that all elements in the composite are
- * explicitly populated. The Copyright statement may be repeated to provide a full structured rights statement listing
- * year(s) and rights holder(s).
+ * An optional and repeatable group of data elements which together represent a copyright or neighboring right statement
+ * for the content item. At least one &lt;CopyrightYear&gt; or one instance of the &lt;CopyrightOwner&gt; composite must
+ * be sent within an instance of the composite, but it is recommended that all elements in the composite are explicitly
+ * populated. The Copyright statement may be repeated to provide a full structured rights statement listing year(s) and
+ * rights holder(s).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -58,13 +58,18 @@ import java.util.List;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈
+ * {@link CopyrightStatement}</li>
  * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement}</li>
  * </ul>
+ *
+ * @since Onix-3.10
  */
 public class CopyrightStatement implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
@@ -177,8 +182,8 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or
-     * neighbouring right. If omitted, the default is that the statement represents a copyright.
+     * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or neighboring
+     * right. If omitted, the default is that the statement represents a copyright.
      * </p>
      * Jonix-Comment: this field is optional
      */

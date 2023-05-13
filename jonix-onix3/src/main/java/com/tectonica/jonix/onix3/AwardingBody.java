@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -30,52 +31,64 @@ import java.io.Serializable;
  */
 
 /**
- * <h1>Conference number</h1>
+ * <h1>Awarding body</h1>
  * <p>
- * The number of a conference to which the product is related, within a conference series. Optional and non-repeating.
+ * The name of the organization(s) that awarded the prize. Optional, and repeatable if the text is provided in more than
+ * one language. The <i>language</i> attribute is optional for a single instance of &lt;AwardingBody&gt;, but must be
+ * included in each instance if &lt;AwardingBody&gt; is repeated.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Positive integer, suggested maximum length 4 digits</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;ConferenceNumber&gt;</tt></td>
+ * <td><tt>&lt;AwardingBody&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;b053&gt;</tt></td>
+ * <td><tt>&lt;x584&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;1</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b053&gt;22&lt;/b053&gt;</tt></td>
+ * <td><tt>&lt;AwardingBody&gt;Deutsche Akademie f&#252;r Sprache und Dichtung&lt;/AwardingBody&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link Conference}&gt;</li>
+ * <li>&lt;{@link Prize}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈
- * {@link ConferenceNumber}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link AwardingBody}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link AwardingBody}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * {@link Prize} ⯈ {@link AwardingBody}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
+ * ⯈ {@link Prize} ⯈ {@link AwardingBody}</li>
+ * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link Prize} ⯈ {@link AwardingBody}</li>
  * </ul>
  *
- * @deprecated
+ * @since Onix-3.10
  */
-@Deprecated
-public class ConferenceNumber implements OnixElement<Integer>, Serializable {
+public class AwardingBody implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "ConferenceNumber";
-    public static final String shortname = "b053";
+    public static final String refname = "AwardingBody";
+    public static final String shortname = "x584";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -93,25 +106,32 @@ public class ConferenceNumber implements OnixElement<Integer>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    /**
+     * (type: dt.NonEmptyString)
+     */
+    public String collationkey;
+
+    public Languages language;
+
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ConferenceNumber. Could be null if {@code exists() == false}. Use {@link #value()}
-     * instead if you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of AwardingBody. Could be null if {@code exists() == false}. Use {@link #value()} instead
+     * if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Positive integer, suggested maximum length 4 digits
+     * Raw Format: Variable length text, suggested maximum length 100 characters
      * <p>
-     * (type: dt.StrictPositiveInteger)
+     * (type: dt.NonEmptyString)
      */
-    public Integer value;
+    public String value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public Integer _value() {
+    public String _value() {
         return value;
     }
 
@@ -120,23 +140,25 @@ public class ConferenceNumber implements OnixElement<Integer>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final ConferenceNumber EMPTY = new ConferenceNumber();
+    public static final AwardingBody EMPTY = new AwardingBody();
 
-    public ConferenceNumber() {
+    public AwardingBody() {
         exists = false;
     }
 
-    public ConferenceNumber(org.w3c.dom.Element element) {
+    public AwardingBody(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        collationkey = JPU.getAttribute(element, "collationkey");
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
-        value = JPU.getContentAsInteger(element);
+        value = JPU.getContentAsString(element);
     }
 
     /**
-     * @return whether this tag (&lt;ConferenceNumber&gt; or &lt;b053&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;AwardingBody&gt; or &lt;x584&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
