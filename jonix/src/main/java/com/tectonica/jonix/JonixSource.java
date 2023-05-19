@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Represents a source (either a {@link File} or an {@link InputStream}) containing ONIX records.
@@ -67,7 +68,7 @@ public class JonixSource {
     // internal, packaged-protected variable, managed during iteration over the source
     // TODO: this could be problematic in presence of concurrency and/or multiple-iterators. Currently not an issue
     // TODO: as this is a package-protected class, but Rethink a little.
-    int productsProcessed = 0;
+    AtomicInteger sourceProductCount = new AtomicInteger(0);
 
     JonixSource(InputStream stream) {
         this.stream = Objects.requireNonNull(stream);
@@ -96,7 +97,7 @@ public class JonixSource {
     }
 
     public int productsProcessedCount() {
-        return productsProcessed;
+        return sourceProductCount.get();
     }
 
     public <T> JonixSource setValue(String id, T value) {

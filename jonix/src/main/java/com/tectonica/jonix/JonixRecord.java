@@ -57,14 +57,16 @@ public class JonixRecord {
 
     public final JonixSource source;
     public final OnixProduct product;
+    public final int productIndex;
 
-    protected JonixRecord(Map<String, Object> globalConfig, JonixSource source, OnixProduct product) {
+    protected JonixRecord(Map<String, Object> globalConfig, JonixSource source, OnixProduct product, int productIndex) {
         assert globalConfig != null;
         assert source != null;
         assert product != null;
         this.globalConfig = globalConfig;
         this.source = source;
         this.product = product;
+        this.productIndex = productIndex;
     }
 
     public <T> JonixRecord configure(String id, T value) {

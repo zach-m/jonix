@@ -174,6 +174,11 @@ public class TestBaseProduct {
                 //String title = baseRecord.product.getLabel();
                 //System.out.println(JonixJson.objectToJson(baseRecord.product));
 
+                //System.out.println(record.productIndex +" | " + record.source.productsProcessedCount());
+                //if (record.productIndex == 30) {
+                //    record.configure("jonix.stream.break", Boolean.TRUE);
+                //}
+
                 String json = JonixJson.productToJson(record.product, false);
                 String targetJson = target.jsons.get(0);
                 //System.out.println("ACTUAL:   " + json);

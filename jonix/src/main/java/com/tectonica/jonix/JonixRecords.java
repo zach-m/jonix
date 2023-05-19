@@ -49,6 +49,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -177,6 +178,7 @@ import java.util.stream.StreamSupport;
 public class JonixRecords implements Iterable<JonixRecord> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JonixRecords.class);
+    protected final AtomicInteger globalProductCount = new AtomicInteger(0);
 
     @FunctionalInterface
     public interface OnSourceEvent {
@@ -450,9 +452,10 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
                     // TODO: verify the product is indeed <Product> ?
 
-                    currentSource.productsProcessed++;
+                    currentSource.sourceProductCount.incrementAndGet();
                     return new JonixRecord(globalConfig, currentSource,
-                        JonixFactory.productFromElement(product, currentSource.onixVersion));
+                        JonixFactory.productFromElement(product, currentSource.onixVersion),
+                        globalProductCount.incrementAndGet());
                 }
             };
         }
