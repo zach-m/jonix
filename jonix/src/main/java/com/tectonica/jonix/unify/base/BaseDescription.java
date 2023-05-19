@@ -46,7 +46,6 @@ public abstract class BaseDescription implements Serializable {
     public String numberOfPages;
     public List<JonixLanguage> languages;
     public List<JonixAudience> audiences;
-    public List<AudienceTypes> audienceCodes;
     public JonixAudienceRange audienceRange;
 
     /**

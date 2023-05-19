@@ -22,7 +22,6 @@ package com.tectonica.jonix.unify.base;
 import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.unify.UnifiedProduct;
 
-import java.io.Serializable;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -38,9 +37,10 @@ import java.util.stream.Stream;
  *
  * @author Zach Melamed
  */
-@SuppressWarnings("serial")
-public abstract class BaseProduct implements UnifiedProduct, Serializable {
-    public transient OnixProduct rawProduct;
+public abstract class BaseProduct extends UnifiedProduct {
+    public BaseProduct(OnixProduct rawProduct) {
+        super(rawProduct);
+    }
 
     public BaseInfo info;
     public BaseDescription description;
@@ -55,11 +55,6 @@ public abstract class BaseProduct implements UnifiedProduct, Serializable {
     public BaseImprints imprints;
     public BaseSupplyDetails supplyDetails;
     public BaseSalesRightss salesRightss;
-
-    @Override
-    public OnixProduct getRawProduct() {
-        return rawProduct;
-    }
 
     public String getLabel() {
         return (titles.size() > 0) ? titles.get(0).titleText : info.recordReference;

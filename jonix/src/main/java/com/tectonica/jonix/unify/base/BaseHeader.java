@@ -22,7 +22,6 @@ package com.tectonica.jonix.unify.base;
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.unify.UnifiedHeader;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -37,19 +36,15 @@ import java.util.List;
  *
  * @author Zach Melamed
  */
-@SuppressWarnings("serial")
-public abstract class BaseHeader implements UnifiedHeader, Serializable {
-    public transient OnixHeader rawHeader;
-
+public abstract class BaseHeader extends UnifiedHeader {
     public String fromCompany;
     public String fromPerson;
     public String fromEmail;
     public List<String> toCompanies;
     public String sentDate;
 
-    @Override
-    public OnixHeader getRawHeader() {
-        return rawHeader;
+    public BaseHeader(OnixHeader rawHeader) {
+        super(rawHeader);
     }
 
     @Override

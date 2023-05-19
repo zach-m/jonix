@@ -21,6 +21,16 @@ package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.common.OnixProduct;
 
-public interface UnifiedProduct {
-    OnixProduct getRawProduct();
+import java.io.Serializable;
+
+public abstract class UnifiedProduct implements Serializable {
+    private final transient OnixProduct rawProduct;
+
+    protected UnifiedProduct(OnixProduct rawProduct) {
+        this.rawProduct = rawProduct;
+    }
+
+    public OnixProduct getRawProduct() {
+        return rawProduct;
+    }
 }

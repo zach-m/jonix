@@ -35,6 +35,7 @@ public class BaseProduct2 extends BaseProduct {
     }
 
     public BaseProduct2(Product product, BaseFactory2 factory) {
+        super(product);
         extract(product, this, factory);
     }
 
@@ -43,8 +44,6 @@ public class BaseProduct2 extends BaseProduct {
     }
 
     public static void extract(Product product, BaseProduct dest, BaseFactory2 factory) {
-        dest.rawProduct = product;
-
         dest.info = factory.baseInfoFactory.apply(product);
         dest.description = factory.baseDescriptionFactory.apply(product);
         dest.publishingDetails = factory.basePublishingDetailsFactory.apply(product);

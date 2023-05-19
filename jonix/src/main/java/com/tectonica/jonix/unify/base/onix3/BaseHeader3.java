@@ -35,12 +35,11 @@ public class BaseHeader3 extends BaseHeader {
     private static final long serialVersionUID = 1L;
 
     public BaseHeader3(Header header) {
+        super(header);
         extract(header, this);
     }
 
     public static void extract(Header header, BaseHeader dest) {
-        dest.rawHeader = header;
-
         dest.fromCompany = header.sender().senderName().value;
         dest.fromPerson = header.sender().contactName().value;
         dest.fromEmail = header.sender().emailAddress().value;

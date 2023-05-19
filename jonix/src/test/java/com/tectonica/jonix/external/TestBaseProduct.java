@@ -22,6 +22,7 @@ package com.tectonica.jonix.external;
 import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.JonixRecord;
 import com.tectonica.jonix.JonixSource;
+import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.common.codelist.ProductForms;
 import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.json.JonixJson;
@@ -256,16 +257,22 @@ public class TestBaseProduct {
     @Ignore
     public void testCustomUnifier() {
         class MyBaseProduct extends BaseProduct {
+            public MyBaseProduct(OnixProduct rawProduct) {
+                super(rawProduct);
+            }
+
             public String extraFields;
         }
 
         class MyBaseProduct2 extends MyBaseProduct {
             public MyBaseProduct2(com.tectonica.jonix.onix2.Product product) {
+                super(product);
                 extraFields = "";
             }
         }
         class MyBaseProduct3 extends MyBaseProduct {
             public MyBaseProduct3(com.tectonica.jonix.onix3.Product product) {
+                super(product);
                 extraFields = "";
             }
         }

@@ -21,6 +21,16 @@ package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.common.OnixHeader;
 
-public interface UnifiedHeader {
-    OnixHeader getRawHeader();
+import java.io.Serializable;
+
+public abstract class UnifiedHeader implements Serializable {
+    private final transient OnixHeader rawHeader;
+
+    protected UnifiedHeader(OnixHeader rawHeader) {
+        this.rawHeader = rawHeader;
+    }
+
+    public OnixHeader getRawHeader() {
+        return rawHeader;
+    }
 }
