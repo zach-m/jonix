@@ -227,8 +227,12 @@ public class JonixRecords implements Iterable<JonixRecord> {
         return this;
     }
 
-    public Object configValue(String id) {
-        return globalConfig.get(id);
+    public <T> T configValue(String id) {
+        return (T) globalConfig.get(id);
+    }
+
+    public <T> T configValue(String id, T defaultValue) {
+        return (T) globalConfig.getOrDefault(id, defaultValue);
     }
 
     public Map<String, Object> getConfiguration() {

@@ -22,9 +22,9 @@ package com.tectonica.jonix;
 import com.tectonica.jonix.common.OnixHeader;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -60,9 +60,9 @@ public class JonixSource {
 
     /**
      * Per-source key-value store, for the convenience of the user when processing multiple sources.
-     * Can be read-from and written-to with {@link #configValue(String)} and {@link #configure(String, Object)}.
+     * Can be read-from and written-to with {@link #getValue(String)} and {@link #setValue(String, Object)}.
      */
-    private Map<String, Object> localConfig;
+    private Map<String, Object> sourceDict;
 
     // internal, packaged-protected variable, managed during iteration over the source
     // TODO: this could be problematic in presence of concurrency and/or multiple-iterators. Currently not an issue
@@ -74,8 +74,8 @@ public class JonixSource {
         this.file = null;
     }
 
-    JonixSource(File file) throws FileNotFoundException {
-        this.stream = new FileInputStream(file);
+    JonixSource(File file) throws IOException {
+        this.stream = Files.newInputStream(file.toPath());
         this.file = file;
     }
 
@@ -99,19 +99,26 @@ public class JonixSource {
         return productsProcessed;
     }
 
-    public <T> JonixSource configure(String id, T value) {
-        if (localConfig == null) {
-            localConfig = new HashMap<>();
+    public <T> JonixSource setValue(String id, T value) {
+        if (sourceDict == null) {
+            sourceDict = new HashMap<>();
         }
-        localConfig.put(id, value);
+        sourceDict.put(id, value);
         return this;
     }
 
-    public Object configValue(String id) {
-        if (localConfig == null) {
+    public <T> T getValue(String id) {
+        if (sourceDict == null) {
             return null;
         }
-        return localConfig.get(id);
+        return (T) sourceDict.get(id);
+    }
+
+    public <T> T getValue(String id, T defaultValue) {
+        if (sourceDict == null) {
+            return null;
+        }
+        return (T) sourceDict.getOrDefault(id, defaultValue);
     }
 
     @Override
