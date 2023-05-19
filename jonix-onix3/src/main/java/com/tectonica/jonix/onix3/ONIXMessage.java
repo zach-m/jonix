@@ -134,8 +134,8 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books
-     * message<ins datetime="2023-03-06"> to provide metadata about the message itself</ins>, and
-     * non-repeating.<del datetime="2023-03-06"> In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and
+     * message<ins datetime="2023-03-06">to provide metadata about the message itself</ins>, and
+     * non-repeating.<del datetime="2023-03-06">In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and
      * the Sender and Addressee structures and the name and format of the &lt;SentDateTime&gt; element have been made
      * consistent with other current ONIX formats.</del>
      * </p>
@@ -178,7 +178,7 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
      * only one, ONIX Product record.
      * </p>
      * <p>
-     * In ONIX&nbsp;3.0<ins datetime="2023-03-06"> and later</ins>, a Product record has a mandatory ‘preamble’
+     * In ONIX&nbsp;3.0<ins datetime="2023-03-06">and later</ins>, a Product record has a mandatory ‘preamble’
      * comprising data Groups P.1 and P.2, and carrying data that identifies the record and the product to which it
      * refers. This is followed by up to eight ‘blocks’, each of which is optional. Of these blocks, Blocks 1 to 5, plus
      * 7 and 8 are not repeatable. Block 6 <em>appears</em> to be repeatable, but it is often more useful to think of a

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -346,7 +347,8 @@ public class CoverResource implements OnixSuperComposite, Serializable {
         return resourceIdentifiers;
     }
 
-    private ListOfOnixElement<ResourceFileDetail, ResourceFileDetails> resourceFileDetails = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ResourceFileDetail, ResourceFileDetails> resourceFileDetails =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -356,7 +358,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ResourceFileDetail, ResourceFileDetails> resourceFileDetails() {
+    public ListOfOnixCodelist<ResourceFileDetail, ResourceFileDetails> resourceFileDetails() {
         _initialize();
         return resourceFileDetails;
     }

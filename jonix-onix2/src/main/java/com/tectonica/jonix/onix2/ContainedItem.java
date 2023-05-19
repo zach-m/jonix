@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.BookFormDetails;
 import com.tectonica.jonix.common.codelist.Languages;
@@ -351,8 +351,8 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
-        ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -361,7 +361,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
+    public ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
         _initialize();
         return productFormDetails;
     }
@@ -384,7 +384,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -396,12 +396,13 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
+    public ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails() {
         _initialize();
         return bookFormDetails;
     }
 
-    private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -412,7 +413,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
+    public ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
         return productContentTypes;
     }

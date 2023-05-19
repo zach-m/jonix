@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -225,8 +226,8 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
         return specificationBundleNames;
     }
 
-    private ListOfOnixElement<SpecificationDetail, SpecificationDetails> specificationDetails =
-        ListOfOnixElement.empty();
+    private ListOfOnixCodelist<SpecificationDetail, SpecificationDetails> specificationDetails =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -235,7 +236,7 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<SpecificationDetail, SpecificationDetails> specificationDetails() {
+    public ListOfOnixCodelist<SpecificationDetail, SpecificationDetails> specificationDetails() {
         _initialize();
         return specificationDetails;
     }

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -301,7 +302,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return keyNames;
     }
 
-    private ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -311,7 +312,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles() {
+    public ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles() {
         _initialize();
         return contributorRoles;
     }
@@ -511,7 +512,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return unnamedPersons;
     }
 
-    private ListOfOnixElement<FromLanguage, Languages> fromLanguages = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<FromLanguage, Languages> fromLanguages = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -522,12 +523,12 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<FromLanguage, Languages> fromLanguages() {
+    public ListOfOnixCodelist<FromLanguage, Languages> fromLanguages() {
         _initialize();
         return fromLanguages;
     }
 
-    private ListOfOnixElement<ToLanguage, Languages> toLanguages = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ToLanguage, Languages> toLanguages = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -538,7 +539,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ToLanguage, Languages> toLanguages() {
+    public ListOfOnixCodelist<ToLanguage, Languages> toLanguages() {
         _initialize();
         return toLanguages;
     }

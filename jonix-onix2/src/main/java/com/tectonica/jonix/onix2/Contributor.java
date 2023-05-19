@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -291,7 +292,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return personName;
     }
 
-    private ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -304,7 +305,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles() {
+    public ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles() {
         _initialize();
         return contributorRoles;
     }
@@ -573,7 +574,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return unnamedPersons;
     }
 
-    private ListOfOnixElement<LanguageCode, Languages> languageCodes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<LanguageCode, Languages> languageCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -584,7 +585,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<LanguageCode, Languages> languageCodes() {
+    public ListOfOnixCodelist<LanguageCode, Languages> languageCodes() {
         _initialize();
         return languageCodes;
     }
@@ -664,7 +665,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return websites;
     }
 
-    private ListOfOnixElement<CountryCode, Countrys> countryCodes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<CountryCode, Countrys> countryCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -673,7 +674,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<CountryCode, Countrys> countryCodes() {
+    public ListOfOnixCodelist<CountryCode, Countrys> countryCodes() {
         _initialize();
         return countryCodes;
     }

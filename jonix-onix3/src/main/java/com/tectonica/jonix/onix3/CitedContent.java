@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -314,7 +315,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return positionOnList;
     }
 
-    private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -323,7 +324,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
+    public ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
         return contentAudiences;
     }

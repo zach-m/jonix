@@ -36,8 +36,8 @@ import java.util.List;
  * <h1>Header composite</h1>
  * <p>
  * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books
- * message<ins datetime="2023-03-06"> to provide metadata about the message itself</ins>, and
- * non-repeating.<del datetime="2023-03-06"> In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and the
+ * message<ins datetime="2023-03-06">to provide metadata about the message itself</ins>, and
+ * non-repeating.<del datetime="2023-03-06">In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and the
  * Sender and Addressee structures and the name and format of the &lt;SentDateTime&gt; element have been made consistent
  * with other current ONIX formats.</del>
  * </p>

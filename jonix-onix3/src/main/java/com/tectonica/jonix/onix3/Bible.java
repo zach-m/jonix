@@ -20,7 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.common.codelist.BibleContentss;
 import com.tectonica.jonix.common.codelist.BiblePurposes;
@@ -174,7 +174,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<BibleContents, BibleContentss> bibleContentss = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<BibleContents, BibleContentss> bibleContentss = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -184,12 +184,12 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<BibleContents, BibleContentss> bibleContentss() {
+    public ListOfOnixCodelist<BibleContents, BibleContentss> bibleContentss() {
         _initialize();
         return bibleContentss;
     }
 
-    private ListOfOnixElement<BibleVersion, BibleVersions> bibleVersions = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<BibleVersion, BibleVersions> bibleVersions = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -199,7 +199,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<BibleVersion, BibleVersions> bibleVersions() {
+    public ListOfOnixCodelist<BibleVersion, BibleVersions> bibleVersions() {
         _initialize();
         return bibleVersions;
     }
@@ -247,7 +247,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
         return bibleReferenceLocation;
     }
 
-    private ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<BiblePurpose, BiblePurposes> biblePurposes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -256,12 +256,12 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes() {
+    public ListOfOnixCodelist<BiblePurpose, BiblePurposes> biblePurposes() {
         _initialize();
         return biblePurposes;
     }
 
-    private ListOfOnixElement<BibleTextFeature, BibleTextFeatures> bibleTextFeatures = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<BibleTextFeature, BibleTextFeatures> bibleTextFeatures = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -270,7 +270,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<BibleTextFeature, BibleTextFeatures> bibleTextFeatures() {
+    public ListOfOnixCodelist<BibleTextFeature, BibleTextFeatures> bibleTextFeatures() {
         _initialize();
         return bibleTextFeatures;
     }

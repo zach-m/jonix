@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -522,8 +523,8 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceIdentifiers;
     }
 
-    private ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
-        ListOfOnixElement.empty();
+    private ListOfOnixCodelist<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -538,7 +539,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections() {
+    public ListOfOnixCodelist<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections() {
         _initialize();
         return epubTechnicalProtections;
     }

@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.ContentAudiences;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -213,7 +213,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return resourceMode;
     }
 
-    private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -222,7 +222,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
+    public ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
         return contentAudiences;
     }

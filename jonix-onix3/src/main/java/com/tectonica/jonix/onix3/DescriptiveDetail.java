@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -653,7 +654,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return numberOfIllustrations;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -662,7 +664,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
+    public ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
         return productFormDetails;
     }
@@ -701,7 +703,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return productFormDescriptions;
     }
 
-    private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -711,7 +714,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
+    public ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
         return productContentTypes;
     }
@@ -732,8 +735,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return measures;
     }
 
-    private ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
-        ListOfOnixElement.empty();
+    private ListOfOnixCodelist<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -743,7 +746,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections() {
+    public ListOfOnixCodelist<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections() {
         _initialize();
         return epubTechnicalProtections;
     }
@@ -885,7 +888,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return events;
     }
 
-    private ListOfOnixElement<EditionType, EditionTypes> editionTypes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<EditionType, EditionTypes> editionTypes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -894,7 +897,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<EditionType, EditionTypes> editionTypes() {
+    public ListOfOnixCodelist<EditionType, EditionTypes> editionTypes() {
         _initialize();
         return editionTypes;
     }

@@ -49,7 +49,7 @@ import java.util.List;
  * identified by a recognized product identifier should be described by one, and only one, ONIX Product record.
  * </p>
  * <p>
- * In ONIX&nbsp;3.0<ins datetime="2023-03-06"> and later</ins>, a Product record has a mandatory ‘preamble’ comprising
+ * In ONIX&nbsp;3.0<ins datetime="2023-03-06">and later</ins>, a Product record has a mandatory ‘preamble’ comprising
  * data Groups P.1 and P.2, and carrying data that identifies the record and the product to which it refers. This is
  * followed by up to eight ‘blocks’, each of which is optional. Of these blocks, Blocks 1 to 5, plus 7 and 8 are not
  * repeatable. Block 6 <em>appears</em> to be repeatable, but it is often more useful to think of a singular Block 6

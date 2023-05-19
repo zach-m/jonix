@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -326,7 +327,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -335,7 +337,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
+    public ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
         return productFormDetails;
     }
@@ -374,7 +376,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         return productFormDescriptions;
     }
 
-    private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -383,7 +386,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
+    public ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
         return productContentTypes;
     }

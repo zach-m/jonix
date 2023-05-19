@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -752,7 +753,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return websites;
     }
 
-    private ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<SupplyToRegion, SupplytoRegions> supplyToRegions = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -764,7 +765,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions() {
+    public ListOfOnixCodelist<SupplyToRegion, SupplytoRegions> supplyToRegions() {
         _initialize();
         return supplyToRegions;
     }

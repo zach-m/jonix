@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -218,7 +219,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<EventType, EventTypes> eventTypes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<EventType, EventTypes> eventTypes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -227,12 +228,12 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<EventType, EventTypes> eventTypes() {
+    public ListOfOnixCodelist<EventType, EventTypes> eventTypes() {
         _initialize();
         return eventTypes;
     }
 
-    private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -241,7 +242,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
+    public ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
         return contentAudiences;
     }

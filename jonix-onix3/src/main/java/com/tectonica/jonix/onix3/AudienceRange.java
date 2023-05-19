@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.common.codelist.AudienceRangePrecisions;
@@ -170,8 +171,8 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
         return audienceRangeQualifier;
     }
 
-    private ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions =
-        ListOfOnixElement.empty();
+    private ListOfOnixCodelist<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -180,7 +181,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions() {
+    public ListOfOnixCodelist<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions() {
         _initialize();
         return audienceRangePrecisions;
     }

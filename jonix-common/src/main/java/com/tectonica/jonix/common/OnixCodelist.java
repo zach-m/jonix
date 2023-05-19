@@ -26,4 +26,18 @@ public interface OnixCodelist {
     String getCode();
 
     String getDescription();
+
+    default Pair getPair() {
+        return new Pair(getCode(), getDescription());
+    }
+
+    class Pair {
+        public final String code;
+        public final String description;
+
+        public Pair(String code, String description) {
+            this.code = code;
+            this.description = description;
+        }
+    }
 }

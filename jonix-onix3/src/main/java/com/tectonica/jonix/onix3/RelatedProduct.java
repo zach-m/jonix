@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.ProductFormDetails;
 import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
@@ -166,7 +166,8 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductRelationCode, ProductRelations> productRelationCodes =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -176,7 +177,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes() {
+    public ListOfOnixCodelist<ProductRelationCode, ProductRelations> productRelationCodes() {
         _initialize();
         return productRelationCodes;
     }
@@ -218,7 +219,8 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return productForm;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -227,7 +229,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
+    public ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
         return productFormDetails;
     }

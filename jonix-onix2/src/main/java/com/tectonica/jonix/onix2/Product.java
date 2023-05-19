@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -2465,7 +2466,7 @@ public class Product implements OnixProduct, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixElement<Barcode, BarcodeIndicatorsList6> barcodes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<Barcode, BarcodeIndicatorsList6> barcodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2474,13 +2475,13 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<Barcode, BarcodeIndicatorsList6> barcodes() {
+    public ListOfOnixCodelist<Barcode, BarcodeIndicatorsList6> barcodes() {
         _initialize();
         return barcodes;
     }
 
-    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
-        ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2488,7 +2489,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
+    public ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
         _initialize();
         return productFormDetails;
     }
@@ -2509,7 +2510,7 @@ public class Product implements OnixProduct, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2521,12 +2522,13 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
+    public ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails() {
         _initialize();
         return bookFormDetails;
     }
 
-    private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2537,7 +2539,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
+    public ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
         return productContentTypes;
     }
@@ -2687,7 +2689,7 @@ public class Product implements OnixProduct, Serializable {
         return conferences;
     }
 
-    private ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<EditionTypeCode, EditionTypes> editionTypeCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2696,12 +2698,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes() {
+    public ListOfOnixCodelist<EditionTypeCode, EditionTypes> editionTypeCodes() {
         _initialize();
         return editionTypeCodes;
     }
 
-    private ListOfOnixElement<LanguageOfText, Languages> languageOfTexts = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<LanguageOfText, Languages> languageOfTexts = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2711,7 +2713,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<LanguageOfText, Languages> languageOfTexts() {
+    public ListOfOnixCodelist<LanguageOfText, Languages> languageOfTexts() {
         _initialize();
         return languageOfTexts;
     }
@@ -2845,7 +2847,7 @@ public class Product implements OnixProduct, Serializable {
         return placeAsSubjects;
     }
 
-    private ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2854,7 +2856,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<AudienceCode, AudienceTypes> audienceCodes() {
+    public ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes() {
         _initialize();
         return audienceCodes;
     }

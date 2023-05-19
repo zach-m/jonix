@@ -152,6 +152,13 @@ public class JPU {
         return out;
     }
 
+    public static <E extends OnixElement<V>, V extends OnixCodelist> ListOfOnixCodelist<E, V>
+        addToList(ListOfOnixCodelist<E, V> in, E item) {
+        ListOfOnixCodelist<E, V> out = (in.size() > 0) ? in : new ListOfOnixCodelist<>();
+        out.add(item);
+        return out;
+    }
+
     public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S>
         addToList(ListOfOnixDataComposite<C, S> in, C item) {
         ListOfOnixDataComposite<C, S> out = (in.size() > 0) ? in : new ListOfOnixDataComposite<>();

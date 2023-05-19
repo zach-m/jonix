@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeUncommon;
 import com.tectonica.jonix.common.codelist.Countrys;
@@ -216,7 +217,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         return rightsTerritory;
     }
 
-    private ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<RightsRegion, RightsRegions> rightsRegions = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -228,7 +229,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions() {
+    public ListOfOnixCodelist<RightsRegion, RightsRegions> rightsRegions() {
         _initialize();
         return rightsRegions;
     }

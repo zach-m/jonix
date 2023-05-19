@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.ContributorRoles;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
@@ -167,7 +167,7 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -178,7 +178,7 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles() {
+    public ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles() {
         _initialize();
         return contributorRoles;
     }

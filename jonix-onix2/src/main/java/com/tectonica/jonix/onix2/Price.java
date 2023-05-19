@@ -20,9 +20,9 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.Countrys;
 import com.tectonica.jonix.common.codelist.DiscountCodeTypes;
@@ -277,7 +277,7 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceAmount;
     }
 
-    private ListOfOnixElement<CountryCode, Countrys> countryCodes = ListOfOnixElement.empty();
+    private ListOfOnixCodelist<CountryCode, Countrys> countryCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -288,7 +288,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixElement<CountryCode, Countrys> countryCodes() {
+    public ListOfOnixCodelist<CountryCode, Countrys> countryCodes() {
         _initialize();
         return countryCodes;
     }
