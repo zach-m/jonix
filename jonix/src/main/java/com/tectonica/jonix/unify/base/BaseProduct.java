@@ -37,8 +37,8 @@ import java.util.stream.Stream;
  *
  * @author Zach Melamed
  */
-public abstract class BaseProduct extends UnifiedProduct {
-    public BaseProduct(OnixProduct rawProduct) {
+public class BaseProduct extends UnifiedProduct {
+    protected BaseProduct(OnixProduct rawProduct) {
         super(rawProduct);
     }
 
