@@ -77,6 +77,10 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
         return findAll(structKeys).stream().map(OnixComposite.OnixDataComposite::asStruct).collect(Collectors.toList());
     }
 
+    public List<S> findAllAsStructs(K... structKeys) {
+        return findAllAsStructs(new HashSet<>(Arrays.asList(structKeys)));
+    }
+
     public Optional<C> findAny(Set<K> structKeys) {
         for (C item : this) {
             if (structKeys == null || structKeys.contains(item.structKey())) {
