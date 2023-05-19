@@ -259,8 +259,8 @@ public class JonixRecords implements Iterable<JonixRecord> {
     /**
      * Registers a listener for <code>SourceEnd</code> event, which occurs when after all records have been processed in
      * the recently opened source. In addition to all the information that was available for event-listeners registered
-     * with {@link #onSourceStart(OnSourceEvent)}, the {@link JonixSource} when this event is fired also includes {@link
-     * JonixSource#productsProcessedCount()}, with the final count of ONIX Products processed from the source.
+     * with {@link #onSourceStart(OnSourceEvent)}, the {@link JonixSource} when this event is fired also includes
+     * {@link JonixSource#productsProcessedCount()}, with the final count of ONIX Products processed from the source.
      * <p>
      * NOTE: this method can be called more than once to register several event-listeners
      */
@@ -329,6 +329,10 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
                 // if there are no remaining files to open, we can return false, concluding the entire iteration
                 if (nextFiles.isEmpty()) {
+                    return false;
+                }
+
+                if (configValue("jonix.stream.break", Boolean.FALSE)) {
                     return false;
                 }
 
@@ -415,11 +419,19 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
             // the context now points to the first product in the input-stream, we can start iterate
             final Element firstProduct = firstElement;
-            return new Iterator<JonixRecord>() {
+            return new Iterator<>() {
                 Element nextProduct = firstProduct;
 
                 @Override
                 public boolean hasNext() {
+                    if (configValue("jonix.stream.break", Boolean.FALSE)) {
+                        try {
+                            currentSource.stream.close();
+                        } catch (IOException e) {
+                            // ignore
+                        }
+                        return false;
+                    }
                     return (nextProduct != null);
                 }
 
