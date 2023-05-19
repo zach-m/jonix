@@ -49,12 +49,16 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
      * @return the same passed collection, after being populated
      */
     public <C extends Collection<OnixCodelist.Pair>> C pairsInto(C collection) {
-        forEach(item -> collection.add(item._value().getPair()));
+        forEach(item -> collection.add(item._value().pair()));
         return collection;
     }
 
+    public List<OnixCodelist.Pair> getCachedPairs() {
+        return cachedPairs;
+    }
+
     public Optional<OnixCodelist.Pair> firstPair() {
-        return (size() == 0) ? Optional.empty() : Optional.of(get(0)._value().getPair());
+        return (size() == 0) ? Optional.empty() : Optional.of(get(0)._value().pair());
     }
 
     private static final ListOfOnixElement<OnixElement<OnixCodelist>, OnixCodelist> EMPTY = new ListOfOnixCodelist<>();

@@ -23,11 +23,11 @@ package com.tectonica.jonix.common;
  * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, representing an ONIX Codelist
  */
 public interface OnixCodelist {
-    String getCode();
+    String getCode(); // TODO eventually this should be refactored as 'code()'
 
-    String getDescription();
+    String getDescription(); // TODO eventually this should be refactored as 'description()'
 
-    default Pair getPair() {
+    default Pair pair() {
         return new Pair(getCode(), getDescription());
     }
 
