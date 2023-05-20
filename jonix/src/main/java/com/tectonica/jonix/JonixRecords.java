@@ -230,17 +230,29 @@ public class JonixRecords implements Iterable<JonixRecord> {
         return this;
     }
 
-    public <T> JonixRecords store(String id, T value) {
-        globalConfig.put(id, value);
+    /**
+     * Stores an object for later use during the streaming process. The stored object can be retrieved with
+     * {@link #retrieve(String)}.
+     */
+    public <T> JonixRecords store(String key, T value) {
+        globalConfig.put(key, value);
         return this;
     }
 
-    public <T> T retrieve(String id) {
-        return (T) globalConfig.get(id);
+    /**
+     * @return an object stored with {@link #store(String, Object)} during the streaming, or {@code null} if the
+     *     {@code key} doesn't exist
+     */
+    public <T> T retrieve(String key) {
+        return (T) globalConfig.get(key);
     }
 
-    public <T> T retrieve(String id, T defaultValue) {
-        return (T) globalConfig.getOrDefault(id, defaultValue);
+    /**
+     * @return an object stored with {@link #store(String, Object)} during the streaming, or {@code defaultValue} if the
+     *     {@code key} doesn't exist
+     */
+    public <T> T retrieve(String key, T defaultValue) {
+        return (T) globalConfig.getOrDefault(key, defaultValue);
     }
 
     public Map<String, Object> getConfiguration() {
@@ -268,7 +280,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
      * Registers a listener for <code>SourceEnd</code> event, which occurs when after all records have been processed in
      * the recently opened source. In addition to all the information that was available for event-listeners registered
      * with {@link #onSourceStart(OnSourceEvent)}, the {@link JonixSource} when this event is fired also includes
-     * {@link JonixSource#productsProcessedCount()}, with the final count of ONIX Products processed from the source.
+     * {@link JonixSource#productCount()}, with the final count of ONIX Products processed from the source.
      * <p>
      * NOTE: this method can be called more than once to register several event-listeners
      */

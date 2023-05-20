@@ -49,7 +49,8 @@ public class JonixSource {
     public final InputStream stream;
 
     /**
-     * The {@link File} represented by this source (possibly <code>null</code> if {@link InputStream} was used directly)
+     * The {@link File} represented by this source (possibly <code>null</code> if {@link InputStream} was used
+     * directly)
      */
     public final File file;
 
@@ -60,8 +61,8 @@ public class JonixSource {
     OnixHeader header;
 
     /**
-     * Per-source key-value store, for the convenience of the user when processing multiple sources.
-     * Can be read-from and written-to with {@link #retrieve(String)} and {@link #store(String, Object)}.
+     * Per-source key-value store, for the convenience of the user when processing multiple sources. Can be read-from
+     * and written-to with {@link #retrieve(String)} and {@link #store(String, Object)}.
      */
     private Map<String, Object> sourceDict;
 
@@ -84,6 +85,10 @@ public class JonixSource {
         return (file == null);
     }
 
+    /**
+     * @return the absolute path of the file (if this source pertains to a file), or some text label representing the
+     *     stream if {@link #isStreamBased()}.
+     */
     public String sourceName() {
         return file != null ? file.getAbsolutePath() : stream.toString();
     }
@@ -96,30 +101,46 @@ public class JonixSource {
         return onixVersion;
     }
 
-    public int productsProcessedCount() {
+    /**
+     * @return the ordinal number of the current product, counting from the beginning of this source
+     */
+    public int productCount() {
         return sourceProductCount.get();
     }
 
-    public <T> JonixSource store(String id, T value) {
+    /**
+     * Stores an object for later use during the streaming OF THIS SOURCE (as opposed to the more general
+     * {@link JonixRecords#store(String, Object)} which stores an object for use throughout the entire streaming). The
+     * stored object can be retrieved with {@link #retrieve(String)}.
+     */
+    public <T> JonixSource store(String key, T value) {
         if (sourceDict == null) {
             sourceDict = new HashMap<>();
         }
-        sourceDict.put(id, value);
+        sourceDict.put(key, value);
         return this;
     }
 
-    public <T> T retrieve(String id) {
+    /**
+     * @return an object stored with {@link #store(String, Object)} during the streaming of the current source, or
+     *     {@code null} if the {@code key} doesn't exist
+     */
+    public <T> T retrieve(String key) {
         if (sourceDict == null) {
             return null;
         }
-        return (T) sourceDict.get(id);
+        return (T) sourceDict.get(key);
     }
 
-    public <T> T retrieve(String id, T defaultValue) {
+    /**
+     * @return an object stored with {@link #store(String, Object)} during the streaming of the current source, or
+     *     {@code defaultValue} if the {@code key} doesn't exist
+     */
+    public <T> T retrieve(String key, T defaultValue) {
         if (sourceDict == null) {
             return null;
         }
-        return (T) sourceDict.getOrDefault(id, defaultValue);
+        return (T) sourceDict.getOrDefault(key, defaultValue);
     }
 
     @Override

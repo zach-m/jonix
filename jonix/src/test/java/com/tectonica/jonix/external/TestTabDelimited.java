@@ -62,8 +62,8 @@ public class TestTabDelimited {
             .source(new File(samples, "onix-2"), "*.xml", true)
             .onSourceStart(src -> LOGGER.debug("Opening {} file: {}", src.onixVersion(), src.sourceName()))
             .onSourceEnd(src -> {
-                totalCount[0] += src.productsProcessedCount();
-                LOGGER.debug(" .. Read {} records", src.productsProcessedCount());
+                totalCount[0] += src.productCount();
+                LOGGER.debug(" .. Read {} records", src.productCount());
             })
             .failOnInvalidFile(false);
 

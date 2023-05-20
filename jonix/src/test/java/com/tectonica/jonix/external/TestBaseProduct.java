@@ -174,11 +174,11 @@ public class TestBaseProduct {
                 //String title = baseRecord.product.getLabel();
                 //System.out.println(JonixJson.objectToJson(baseRecord.product));
 
-                //System.out.println(record.productIndex +" | " + record.source.productsProcessedCount());
-                //if (record.productIndex == 10) {
+                //System.out.println(record.productCount() +" | " + record.source.productCount());
+                //if (record.productCount() == 10) {
                 //    System.out.println("Breaking current source");
                 //    record.breakCurrentSource();
-                //} else if (record.productIndex == 30) {
+                //} else if (record.productCount() == 30) {
                 //    System.out.println("Breaking stream");
                 //    record.breakStream();
                 //}

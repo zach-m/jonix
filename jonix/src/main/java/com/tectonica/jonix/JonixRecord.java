@@ -57,36 +57,62 @@ public class JonixRecord {
 
     public final JonixSource source;
     public final OnixProduct product;
-    public final int productIndex;
+    private final int globalProductCount;
 
-    protected JonixRecord(Map<String, Object> globalConfig, JonixSource source, OnixProduct product, int productIndex) {
+    protected JonixRecord(Map<String, Object> globalConfig, JonixSource source, OnixProduct product,
+                          int globalProductCount) {
         assert globalConfig != null;
         assert source != null;
         assert product != null;
         this.globalConfig = globalConfig;
         this.source = source;
         this.product = product;
-        this.productIndex = productIndex;
+        this.globalProductCount = globalProductCount;
     }
 
+    /**
+     * @return the ordinal number of the current product, counting from the beginning of the stream
+     */
+    public int productCount() {
+        return globalProductCount;
+    }
+
+    /**
+     * call this method to stop streaming products from the current source, and move on to the next one (if listed)
+     */
     public void breakCurrentSource() {
         store("jonix.source.break", true);
     }
 
+    /**
+     * call this method to stop streaming products from current as well as the next sources (if listed)
+     */
     public void breakStream() {
         store("jonix.stream.break", true);
     }
 
-    public <T> JonixRecord store(String id, T value) {
-        globalConfig.put(id, value);
+    /**
+     * Stores an object for later use during the streaming process. The stored object can be retrieved with
+     * {@link #retrieve(String)}.
+     */
+    public <T> JonixRecord store(String key, T value) {
+        globalConfig.put(key, value);
         return this;
     }
 
-    public <T> T retrieve(String id) {
-        return (T) globalConfig.get(id);
+    /**
+     * @return an object stored with {@link #store(String, Object)} during the streaming, or {@code null} if the
+     *     {@code key} doesn't exist
+     */
+    public <T> T retrieve(String key) {
+        return (T) globalConfig.get(key);
     }
 
-    public <T> T retrieve(String id, T defaultValue) {
-        return (T) globalConfig.getOrDefault(id, defaultValue);
+    /**
+     * @return an object stored with {@link #store(String, Object)} during the streaming, or {@code defaultValue} if the
+     *     {@code key} doesn't exist
+     */
+    public <T> T retrieve(String key, T defaultValue) {
+        return (T) globalConfig.getOrDefault(key, defaultValue);
     }
 }
