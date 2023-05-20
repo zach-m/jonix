@@ -63,7 +63,7 @@ public interface OnixComposite extends OnixTag {
     /**
      * Fundamental interface in {@link com.tectonica.jonix.common Jonix object model}, representing an ONIX Composite
      * that contains only ONIX Elements (i.e. no nested composites), one of which is the key of the composite (i.e. a
-     * mandatory, unique, enumerated code-list, by which a composite can't be looked up)
+     * mandatory, unique, enumerated code-list, by which a composite can be looked up)
      */
     interface OnixDataCompositeWithKey<V extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>
         extends OnixDataComposite<V> {
