@@ -20,24 +20,30 @@
 package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.JonixRecord;
+import com.tectonica.jonix.OnixVersion;
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.common.OnixProduct;
-import com.tectonica.jonix.onix2.Header;
 
 public interface CustomUnifier<P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> {
     default P unifiedProduct(OnixProduct onixProduct) {
         if (onixProduct instanceof com.tectonica.jonix.onix2.Product) {
-            return extractProduct2((com.tectonica.jonix.onix2.Product) onixProduct);
+            P product2 = extractProduct2((com.tectonica.jonix.onix2.Product) onixProduct);
+            product2.rawProduct = onixProduct;
+            product2.rawProductVersion = OnixVersion.ONIX2;
+            return product2;
         }
         if (onixProduct instanceof com.tectonica.jonix.onix3.Product) {
-            return extractProduct3((com.tectonica.jonix.onix3.Product) onixProduct);
+            P product3 = extractProduct3((com.tectonica.jonix.onix3.Product) onixProduct);
+            product3.rawProduct = onixProduct;
+            product3.rawProductVersion = OnixVersion.ONIX3;
+            return product3;
         }
         throw new UnsupportedOperationException("Wrong Product class passed: " + onixProduct.getClass().getName());
     }
 
     default H unifiedHeader(OnixHeader onixHeader) {
         if (onixHeader instanceof com.tectonica.jonix.onix2.Header) {
-            return extractHeader2((Header) onixHeader);
+            return extractHeader2((com.tectonica.jonix.onix2.Header) onixHeader);
         }
         if (onixHeader instanceof com.tectonica.jonix.onix3.Header) {
             return extractHeader3((com.tectonica.jonix.onix3.Header) onixHeader);
@@ -51,7 +57,7 @@ public interface CustomUnifier<P extends UnifiedProduct, H extends UnifiedHeader
 
     P extractProduct3(com.tectonica.jonix.onix3.Product onixProduct3);
 
-    H extractHeader2(Header onixHeader);
+    H extractHeader2(com.tectonica.jonix.onix2.Header onixHeader);
 
     H extractHeader3(com.tectonica.jonix.onix3.Header onixHeader);
 }

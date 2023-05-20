@@ -50,10 +50,6 @@ public class MyUnifier implements CustomUnifier<MyUnifier.MyProduct, BaseHeader,
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static class MyProduct extends UnifiedProduct {
-        protected MyProduct(OnixProduct rawProduct) {
-            super(rawProduct);
-        }
-
         // TODO declare unified fields, for example:
 
         public String recordReference;
@@ -63,8 +59,6 @@ public class MyUnifier implements CustomUnifier<MyUnifier.MyProduct, BaseHeader,
 
     public static class MyProduct2 extends MyProduct {
         public MyProduct2(com.tectonica.jonix.onix2.Product product) {
-            super(product);
-
             // TODO populate fields of base-class. In our example:
 
             recordReference = product.recordReference().value;
@@ -76,8 +70,6 @@ public class MyUnifier implements CustomUnifier<MyUnifier.MyProduct, BaseHeader,
 
     public static class MyProduct3 extends MyProduct {
         public MyProduct3(com.tectonica.jonix.onix3.Product product) {
-            super(product);
-
             // TODO populate fields of base-class. In our example:
 
             recordReference = product.recordReference().value;

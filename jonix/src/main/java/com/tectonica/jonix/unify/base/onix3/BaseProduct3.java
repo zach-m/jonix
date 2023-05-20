@@ -35,7 +35,6 @@ public class BaseProduct3 extends BaseProduct {
     }
 
     public BaseProduct3(Product product, BaseFactory3 factory) {
-        super(product);
         extract(product, this, factory);
     }
 

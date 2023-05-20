@@ -33,15 +33,17 @@ import java.util.stream.Stream;
  * etc.). The classes of the 'base' suite bridge the gap between ONIX versions, and provide a unified view of the
  * content, allowing the user to write a version-agnostic code.
  * <p>
+ * Given an instance of raw {@link OnixProduct}, i.e. of either ONIX2 or ONIX3, you may create a 'base' product for it:
+ * <pre>
+ * BaseProduct baseProduct = JonixUnifier.unifyProduct(product);
+ * </pre>
+ * The resulting {@link BaseProduct} will include the essential fields from the product, regardless of the ONIX version.
+ * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
  *
  * @author Zach Melamed
  */
 public class BaseProduct extends UnifiedProduct {
-    protected BaseProduct(OnixProduct rawProduct) {
-        super(rawProduct);
-    }
-
     public BaseInfo info;
     public BaseDescription description;
     public BasePublishingDetails publishingDetails;

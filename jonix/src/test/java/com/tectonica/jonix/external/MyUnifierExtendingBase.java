@@ -53,10 +53,6 @@ public class MyUnifierExtendingBase
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static class MyBaseProduct extends BaseProduct {
-        protected MyBaseProduct(OnixProduct rawProduct) {
-            super(rawProduct);
-        }
-
         // TODO declare unified fields, for example:
 
         public String extraFields;
@@ -64,7 +60,6 @@ public class MyUnifierExtendingBase
 
     public static class MyBaseProduct2 extends MyBaseProduct {
         public MyBaseProduct2(com.tectonica.jonix.onix2.Product product) {
-            super(product);
             BaseProduct2.extract(product, this);
 
             // TODO populate fields of base-class. In our example:
@@ -75,7 +70,6 @@ public class MyUnifierExtendingBase
 
     public static class MyBaseProduct3 extends MyBaseProduct {
         public MyBaseProduct3(com.tectonica.jonix.onix3.Product product) {
-            super(product);
             BaseProduct3.extract(product, this);
 
             // TODO populate fields of base-class. In our example:
