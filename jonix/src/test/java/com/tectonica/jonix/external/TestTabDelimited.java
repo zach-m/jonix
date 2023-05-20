@@ -65,7 +65,7 @@ public class TestTabDelimited {
                 totalCount[0] += src.productsProcessedCount();
                 LOGGER.debug(" .. Read {} records", src.productsProcessedCount());
             })
-            .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
+            .failOnInvalidFile(false);
 
         // start streaming the records, from their files into a single comma-delimited file
         File targetFile = new File("target", "Catalog.csv");

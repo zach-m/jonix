@@ -79,7 +79,7 @@ import java.util.stream.StreamSupport;
  *     .onSourceEnd(src -> { // take a look at:
  *         // src.productsProcessedCount()
  *     })
- *     .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
+ *     .failOnInvalidFile(false);
  * </pre>
  * <p>
  * Once the {@link JonixRecords} is prepared, processing can be done in several ways:
@@ -179,6 +179,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JonixRecords.class);
     protected final AtomicInteger globalProductCount = new AtomicInteger(0);
+    protected boolean failOnInvalidFile = true;
 
     @FunctionalInterface
     public interface OnSourceEvent {
@@ -224,16 +225,21 @@ public class JonixRecords implements Iterable<JonixRecord> {
         return this;
     }
 
-    public <T> JonixRecords configure(String id, T value) {
+    public JonixRecords failOnInvalidFile(boolean fail) {
+        failOnInvalidFile = fail;
+        return this;
+    }
+
+    public <T> JonixRecords store(String id, T value) {
         globalConfig.put(id, value);
         return this;
     }
 
-    public <T> T configValue(String id) {
+    public <T> T retrieve(String id) {
         return (T) globalConfig.get(id);
     }
 
-    public <T> T configValue(String id, T defaultValue) {
+    public <T> T retrieve(String id, T defaultValue) {
         return (T) globalConfig.getOrDefault(id, defaultValue);
     }
 
@@ -302,12 +308,8 @@ public class JonixRecords implements Iterable<JonixRecord> {
         final List<File> nextFiles;
         JonixSource currentSource;
         Iterator<JonixRecord> currentSourceIterator;
-        boolean ignoreException;
 
         RecordIterator() {
-            Boolean failOnInvalidFile = (Boolean) globalConfig.get("jonix.stream.failOnInvalidFile");
-            ignoreException = (failOnInvalidFile != null && !failOnInvalidFile);
-
             nextFiles = new ArrayList<>(files); // possibly an empty list
             try {
                 if (inputStream != null) {
@@ -334,7 +336,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
                     return false;
                 }
 
-                if (configValue("jonix.stream.break", Boolean.FALSE)) {
+                if (retrieve("jonix.stream.break", false)) {
                     return false;
                 }
 
@@ -352,10 +354,10 @@ public class JonixRecords implements Iterable<JonixRecord> {
         }
 
         private void handleInvalidFileException(Exception e) {
-            if (ignoreException) {
-                LOGGER.warn("Error processing " + currentSource.sourceName(), e);
-            } else {
+            if (failOnInvalidFile) {
                 throw new RuntimeException(e);
+            } else {
+                LOGGER.warn("Error processing " + currentSource.sourceName(), e);
             }
         }
 
@@ -426,11 +428,16 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
                 @Override
                 public boolean hasNext() {
-                    if (configValue("jonix.stream.break", Boolean.FALSE)) {
+                    boolean breakStream = retrieve("jonix.stream.break", false);
+                    boolean breakCurrentSource = retrieve("jonix.source.break", false);
+                    if (breakStream || breakCurrentSource) {
                         try {
                             currentSource.stream.close();
                         } catch (IOException e) {
                             // ignore
+                        }
+                        if (breakCurrentSource) {
+                            store("jonix.source.break", false); // reset the break for the next stream
                         }
                         return false;
                     }

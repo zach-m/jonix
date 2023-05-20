@@ -61,7 +61,7 @@ public class JonixSource {
 
     /**
      * Per-source key-value store, for the convenience of the user when processing multiple sources.
-     * Can be read-from and written-to with {@link #getValue(String)} and {@link #setValue(String, Object)}.
+     * Can be read-from and written-to with {@link #retrieve(String)} and {@link #store(String, Object)}.
      */
     private Map<String, Object> sourceDict;
 
@@ -100,7 +100,7 @@ public class JonixSource {
         return sourceProductCount.get();
     }
 
-    public <T> JonixSource setValue(String id, T value) {
+    public <T> JonixSource store(String id, T value) {
         if (sourceDict == null) {
             sourceDict = new HashMap<>();
         }
@@ -108,14 +108,14 @@ public class JonixSource {
         return this;
     }
 
-    public <T> T getValue(String id) {
+    public <T> T retrieve(String id) {
         if (sourceDict == null) {
             return null;
         }
         return (T) sourceDict.get(id);
     }
 
-    public <T> T getValue(String id, T defaultValue) {
+    public <T> T retrieve(String id, T defaultValue) {
         if (sourceDict == null) {
             return null;
         }

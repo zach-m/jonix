@@ -175,8 +175,12 @@ public class TestBaseProduct {
                 //System.out.println(JonixJson.objectToJson(baseRecord.product));
 
                 //System.out.println(record.productIndex +" | " + record.source.productsProcessedCount());
-                //if (record.productIndex == 30) {
-                //    record.configure("jonix.stream.break", Boolean.TRUE);
+                //if (record.productIndex == 10) {
+                //    System.out.println("Breaking current source");
+                //    record.breakCurrentSource();
+                //} else if (record.productIndex == 30) {
+                //    System.out.println("Breaking stream");
+                //    record.breakStream();
                 //}
 
                 String json = JonixJson.productToJson(record.product, false);

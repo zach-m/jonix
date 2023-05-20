@@ -69,16 +69,24 @@ public class JonixRecord {
         this.productIndex = productIndex;
     }
 
-    public <T> JonixRecord configure(String id, T value) {
+    public void breakCurrentSource() {
+        store("jonix.source.break", true);
+    }
+
+    public void breakStream() {
+        store("jonix.stream.break", true);
+    }
+
+    public <T> JonixRecord store(String id, T value) {
         globalConfig.put(id, value);
         return this;
     }
 
-    public <T> T configValue(String id) {
+    public <T> T retrieve(String id) {
         return (T) globalConfig.get(id);
     }
 
-    public <T> T configValue(String id, T defaultValue) {
+    public <T> T retrieve(String id, T defaultValue) {
         return (T) globalConfig.getOrDefault(id, defaultValue);
     }
 }
