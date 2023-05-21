@@ -21,9 +21,16 @@ package com.tectonica.jonix.util;
 
 import repackaged.net.sourceforge.isbnhyphenappender.ISBNHyphenAppender;
 
+/**
+ * service class to hyphenate ISBN string, see {@link #hyphenatedIsbn(String)}
+ */
 public class IsbnHyphener {
     private static final ISBNHyphenAppender hyphener = new ISBNHyphenAppender();
 
+    /**
+     * @param isbn String containing 13 or 10 digits, representing the ISBN of a book
+     * @return a "hyphenated" version of the ISBN, containing hyphens where appropriate
+     */
     public static String hyphenatedIsbn(String isbn) {
         if (isbn == null) {
             return null;

@@ -25,8 +25,8 @@ import com.tectonica.jonix.unify.base.util.LazyList;
 import java.util.List;
 
 /**
- * A {@link List} containing the multiple instances of ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt; that may exist in
- * a product
+ * A {@link List} containing the multiple instances of ONIX2 &lt;Title&gt; / ONIX3 &lt;TitleDetail&gt; that may exist
+ * in a product or a collection (series)
  *
  * @author Zach Melamed
  */

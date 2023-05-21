@@ -45,11 +45,9 @@ public abstract class BaseInfo implements Serializable {
     }
 
     public JonixProductIdentifier findJonixProductId(ProductIdentifierTypes requestedType) {
-        if (productIds != null) {
-            for (JonixProductIdentifier pid : productIds) {
-                if (pid.productIDType == requestedType) {
-                    return pid;
-                }
+        for (JonixProductIdentifier pid : productIds) {
+            if (pid.productIDType == requestedType) {
+                return pid;
             }
         }
         return null;
