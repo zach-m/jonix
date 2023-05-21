@@ -21,40 +21,80 @@ package com.tectonica.jonix.common;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
+/**
+ * Stores a list of {@link OnixCodelist}s, each of which is a Java {@link Enum} containing a {@code code} and a
+ * {@code description}. It is used with {@link OnixElement}s that are repeatable, i.e. can indicate more than one
+ * codelist (for example &lt;ProductFormDetail&gt;).
+ *
+ * @param <E> the type of the {@link OnixElement} containing the {@link OnixCodelist}
+ * @param <V> the type of the {@link OnixCodelist} enum
+ */
 public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist> extends ListOfOnixElement<E, V> {
     private static final long serialVersionUID = 1L;
 
     private List<OnixCodelist.Pair> cachedPairs = null;
+    private Map<String, String> cachedPairsMap = null;
 
     /**
-     * returns a list of the code+description pairs stored as elements of this list (as opposed to the elements
-     * themselves, each of which also contains attributes, which are usually not interesting)
+     * Given the {@link OnixCodelist}s stored in this container, this method returns a {@code String}-based
+     * {@code (code,description)} list of tuples. It is a "type-free" representation of the codelists, suitable for
+     * cross-comparisons.
      *
-     * @return a non-null, possibly empty, list of the pairs
+     * @return a non-null, possibly empty, list of code+description pairs
      */
     public List<OnixCodelist.Pair> pairs() {
         if (cachedPairs == null) {
-            return cachedPairs = pairsInto(new ArrayList<>(this.size()));
+            cachedPairs = pairsInto(new ArrayList<>(this.size()));
         }
         return cachedPairs;
     }
 
     /**
-     * stores into a given {@link Collection} the pairs stored within the elements of this list (as opposed to the
-     * elements themselves, each of which also contains attributes, which are usually not interesting)
+     * Given the {@link OnixCodelist}s stored in this container, this method returns a {@code String}-based map of
+     * {@code (code -> description)} entries. It is a "type-free" representation of the codelists, suitable for
+     * cross-comparisons.
+     *
+     * @return a non-null, possibly empty, map of code->description
+     */
+    public Map<String, String> pairsMap() {
+        if (cachedPairsMap == null) {
+            cachedPairsMap = new HashMap<>();
+            forEach(item -> cachedPairsMap.put(item._value().getCode(), item._value().getDescription()));
+        }
+        return cachedPairsMap;
+    }
+
+    /**
+     * @return a non-null, possibly empty, set of the {@code code} field of the {@link OnixCodelist}s stored in this
+     *     container
+     */
+    public Set<String> codes() {
+        return pairsMap().keySet();
+    }
+
+    /**
+     * @return a non-null, possibly empty, collection of the {@code description} field of the {@link OnixCodelist}s
+     *     stored in this container
+     */
+    public Collection<String> descriptions() {
+        return pairsMap().values();
+    }
+
+    /**
+     * stores into a given {@link Collection} the {@code (String,String)} code-description pairs stored within the
+     * elements of this list
      *
      * @return the same passed collection, after being populated
      */
     public <C extends Collection<OnixCodelist.Pair>> C pairsInto(C collection) {
         forEach(item -> collection.add(item._value().pair()));
         return collection;
-    }
-
-    public List<OnixCodelist.Pair> getCachedPairs() {
-        return cachedPairs;
     }
 
     public Optional<OnixCodelist.Pair> firstPair() {
