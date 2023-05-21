@@ -30,7 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixReligiousTextFeature;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.Collections;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -213,7 +213,9 @@ public class ReligiousTextFeature
         JonixReligiousTextFeature struct = new JonixReligiousTextFeature();
         struct.religiousTextFeatureType = religiousTextFeatureType.value;
         struct.religiousTextFeatureCode = religiousTextFeatureCode.value;
-        struct.religiousTextFeatureDescriptions = Arrays.asList(religiousTextFeatureDescription.value);
+        struct.religiousTextFeatureDescriptions =
+            religiousTextFeatureDescription.exists() ?
+                Collections.singletonList(religiousTextFeatureDescription.value) : Collections.emptyList();
         return struct;
     }
 

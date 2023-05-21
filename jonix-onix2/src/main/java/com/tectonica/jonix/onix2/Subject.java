@@ -29,7 +29,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixSubject;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.Collections;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -262,7 +262,8 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         _initialize();
         JonixSubject struct = new JonixSubject();
         struct.subjectCode = subjectCode.value;
-        struct.subjectHeadingTexts = Arrays.asList(subjectHeadingText.value);
+        struct.subjectHeadingTexts =
+            subjectHeadingText.exists() ? Collections.singletonList(subjectHeadingText.value) : Collections.emptyList();
         struct.subjectSchemeIdentifier = subjectSchemeIdentifier.value;
         struct.subjectSchemeName = subjectSchemeName.value;
         struct.subjectSchemeVersion = subjectSchemeVersion.value;

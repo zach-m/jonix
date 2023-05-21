@@ -30,7 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixProductFormFeature;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.Collections;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -221,7 +221,9 @@ public class ProductFormFeature
         _initialize();
         JonixProductFormFeature struct = new JonixProductFormFeature();
         struct.productFormFeatureType = productFormFeatureType.value;
-        struct.productFormFeatureDescriptions = Arrays.asList(productFormFeatureDescription.value);
+        struct.productFormFeatureDescriptions =
+            productFormFeatureDescription.exists() ? Collections.singletonList(productFormFeatureDescription.value) :
+                Collections.emptyList();
         struct.productFormFeatureValue = productFormFeatureValue.value;
         return struct;
     }

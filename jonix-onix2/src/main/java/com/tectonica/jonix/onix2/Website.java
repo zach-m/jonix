@@ -29,7 +29,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.Collections;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -230,8 +230,10 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     public JonixWebsite asStruct() {
         _initialize();
         JonixWebsite struct = new JonixWebsite();
-        struct.websiteDescriptions = Arrays.asList(websiteDescription.value);
-        struct.websiteLinks = Arrays.asList(websiteLink.value);
+        struct.websiteDescriptions =
+            websiteDescription.exists() ? Collections.singletonList(websiteDescription.value) : Collections.emptyList();
+        struct.websiteLinks =
+            websiteLink.exists() ? Collections.singletonList(websiteLink.value) : Collections.emptyList();
         struct.websiteRole = websiteRole.value;
         return struct;
     }

@@ -29,7 +29,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixPrize;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.Collections;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -242,8 +242,8 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         JonixPrize struct = new JonixPrize();
         struct.prizeCode = prizeCode.value;
         struct.prizeCountry = prizeCountry.value;
-        struct.prizeJurys = Arrays.asList(prizeJury.value);
-        struct.prizeNames = Arrays.asList(prizeName.value);
+        struct.prizeJurys = prizeJury.exists() ? Collections.singletonList(prizeJury.value) : Collections.emptyList();
+        struct.prizeNames = prizeName.exists() ? Collections.singletonList(prizeName.value) : Collections.emptyList();
         struct.prizeYear = prizeYear.value;
         return struct;
     }
