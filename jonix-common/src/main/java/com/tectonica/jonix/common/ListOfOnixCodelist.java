@@ -72,7 +72,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
 
     /**
      * @return a non-null, possibly empty, set of the {@code code} field of the {@link OnixCodelist}s stored in this
-     *     container
+     *         container
      */
     public Set<String> codes() {
         return pairsMap().keySet();
@@ -80,7 +80,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
 
     /**
      * @return a non-null, possibly empty, collection of the {@code description} field of the {@link OnixCodelist}s
-     *     stored in this container
+     *         stored in this container
      */
     public Collection<String> descriptions() {
         return pairsMap().values();
