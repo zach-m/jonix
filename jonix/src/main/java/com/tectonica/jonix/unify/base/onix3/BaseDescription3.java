@@ -20,6 +20,7 @@
 package com.tectonica.jonix.unify.base.onix3;
 
 import com.tectonica.jonix.common.codelist.ExtentTypes;
+import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.ProductForms;
 import com.tectonica.jonix.common.struct.JonixExtent;
 import com.tectonica.jonix.onix3.AudienceRange;
@@ -51,6 +52,10 @@ public class BaseDescription3 extends BaseDescription {
                 : jNumberOfPages.extentValue.toString();
             dest.languages = dd.languages().asStructs();
             dest.audiences = dd.audiences().asStructs();
+            dest.audienceDescription = dd.audienceDescriptions().stream()
+                .filter(ad -> ad.language == null || ad.language == Languages.English)
+                .map(ad -> ad.value)
+                .findFirst().orElse(null);
             dest.audienceRange = dd.audienceRanges().first().map(AudienceRange::asStruct).orElse(null);
         }
     }

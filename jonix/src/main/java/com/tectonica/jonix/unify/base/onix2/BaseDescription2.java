@@ -43,6 +43,7 @@ public class BaseDescription2 extends BaseDescription {
         dest.numberOfPages = product.numberOfPages().value;
         dest.languages = product.languages().asStructs(); // TODO: lazify
         dest.audiences = product.audiences().asStructs(); // TODO: lazify
+        dest.audienceDescription = product.audienceDescription().value;
         dest.audienceRange = product.audienceRanges().first().map(AudienceRange::asStruct).orElse(null);
     }
 }
