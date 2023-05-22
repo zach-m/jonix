@@ -222,8 +222,8 @@ public class ProductFormFeature
         JonixProductFormFeature struct = new JonixProductFormFeature();
         struct.productFormFeatureType = productFormFeatureType.value;
         struct.productFormFeatureDescriptions =
-            productFormFeatureDescription.exists() ? Collections.singletonList(productFormFeatureDescription.value) :
-                Collections.emptyList();
+            productFormFeatureDescription.exists() ? Collections.singletonList(productFormFeatureDescription.value)
+                : Collections.emptyList();
         struct.productFormFeatureValue = productFormFeatureValue.value;
         return struct;
     }

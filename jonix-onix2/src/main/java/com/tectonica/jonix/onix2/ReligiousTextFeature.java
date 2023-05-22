@@ -214,8 +214,8 @@ public class ReligiousTextFeature
         struct.religiousTextFeatureType = religiousTextFeatureType.value;
         struct.religiousTextFeatureCode = religiousTextFeatureCode.value;
         struct.religiousTextFeatureDescriptions =
-            religiousTextFeatureDescription.exists() ?
-                Collections.singletonList(religiousTextFeatureDescription.value) : Collections.emptyList();
+            religiousTextFeatureDescription.exists() ? Collections.singletonList(religiousTextFeatureDescription.value)
+                : Collections.emptyList();
         return struct;
     }
 
