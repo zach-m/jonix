@@ -21,6 +21,7 @@ package com.tectonica.jonix;
 
 import com.tectonica.jonix.common.OnixHeader;
 
+import javax.xml.stream.events.Attribute;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -57,6 +58,8 @@ public class JonixSource {
     // set externally AFTER construction
     OnixVersion onixVersion;
 
+    Attribute onixRelease;
+
     // set externally AFTER construction (if available)
     OnixHeader header;
 
@@ -67,8 +70,6 @@ public class JonixSource {
     private Map<String, Object> sourceDict;
 
     // internal, packaged-protected variable, managed during iteration over the source
-    // TODO: this could be problematic in presence of concurrency and/or multiple-iterators. Currently not an issue
-    // TODO: as this is a package-protected class, but Rethink a little.
     AtomicInteger sourceProductCount = new AtomicInteger(0);
 
     JonixSource(InputStream stream) {
@@ -99,6 +100,10 @@ public class JonixSource {
 
     public OnixVersion onixVersion() {
         return onixVersion;
+    }
+
+    public Attribute onixRelease() {
+        return onixRelease;
     }
 
     /**

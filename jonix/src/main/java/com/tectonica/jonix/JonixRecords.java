@@ -405,6 +405,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
                 throw new RuntimeException(
                     "source doesn't comply with either ONIX2 or ONIX3, release is: " + release.getValue());
             }
+            currentSource.onixRelease = release;
 
             // read the first chunk (level-2 element), which should either be a <Product> or <Header>
             Element firstElement = ctx.nextChunk();
