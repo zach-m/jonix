@@ -51,4 +51,9 @@ public abstract class BaseSubjects extends LazyMap<SubjectSchemeIdentifiers, Lis
         }
         return items;
     }
+
+    public String getMainBisacCode() {
+        return findSubjects(SubjectSchemeIdentifiers.BISAC_Subject_Heading)
+            .stream().findFirst().map(s -> s.subjectCode).orElse(null);
+    }
 }
