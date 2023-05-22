@@ -335,7 +335,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -352,7 +352,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
 
     /**
      * <p>
@@ -367,7 +367,8 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature,
-        ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductFormFeatureTypes> productFormFeatures =
+            JPU.emptyListOfOnixDataCompositeWithKey(ProductFormFeature.class);
 
     /**
      * <p>
@@ -384,7 +385,8 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails =
+        JPU.emptyListOfOnixCodelist(BookFormDetail.class);
 
     /**
      * <p>
@@ -402,7 +404,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductContentType.class);
 
     /**
      * <p>

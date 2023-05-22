@@ -187,7 +187,7 @@ public class ReligiousTextFeature
     }
 
     private ListOfOnixElement<ReligiousTextFeatureDescription, String> religiousTextFeatureDescriptions =
-        ListOfOnixElement.empty();
+        JPU.emptyListOfOnixElement(ReligiousTextFeatureDescription.class);
 
     /**
      * <p>

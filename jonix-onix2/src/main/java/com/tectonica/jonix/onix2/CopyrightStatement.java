@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.Languages;
@@ -29,8 +30,6 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -163,7 +162,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<CopyrightYear, String> copyrightYears = ListOfOnixElement.empty();
+    private ListOfOnixElement<CopyrightYear, String> copyrightYears = JPU.emptyListOfOnixElement(CopyrightYear.class);
 
     /**
      * <p>
@@ -177,7 +176,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
         return copyrightYears;
     }
 
-    private List<CopyrightOwner> copyrightOwners = Collections.emptyList();
+    private ListOfOnixComposite<CopyrightOwner> copyrightOwners = JPU.emptyListOfOnixComposite(CopyrightOwner.class);
 
     /**
      * <p>
@@ -187,7 +186,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public List<CopyrightOwner> copyrightOwners() {
+    public ListOfOnixComposite<CopyrightOwner> copyrightOwners() {
         _initialize();
         return copyrightOwners;
     }

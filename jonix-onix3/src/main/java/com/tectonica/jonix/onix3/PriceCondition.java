@@ -173,7 +173,8 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity,
-        PriceConditionQuantityTypes> priceConditionQuantitys = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        PriceConditionQuantityTypes> priceConditionQuantitys =
+            JPU.emptyListOfOnixDataCompositeWithKey(PriceConditionQuantity.class);
 
     /**
      * <p>
@@ -190,7 +191,7 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>

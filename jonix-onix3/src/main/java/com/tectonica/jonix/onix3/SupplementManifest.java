@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -32,8 +33,6 @@ import com.tectonica.jonix.common.struct.JonixMeasure;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -305,7 +304,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
         return (noSupplement().exists());
     }
 
-    private List<SalesOutlet> salesOutlets = Collections.emptyList();
+    private ListOfOnixComposite<SalesOutlet> salesOutlets = JPU.emptyListOfOnixComposite(SalesOutlet.class);
 
     /**
      * <p>
@@ -321,13 +320,13 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SalesOutlet> salesOutlets() {
+    public ListOfOnixComposite<SalesOutlet> salesOutlets() {
         _initialize();
         return salesOutlets;
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -345,7 +344,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
 
     /**
      * <p>
@@ -359,7 +358,8 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
         return productFormDetails;
     }
 
-    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions =
+        JPU.emptyListOfOnixElement(ProductFormDescription.class);
 
     /**
      * <p>
@@ -377,7 +377,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Measure.class);
 
     /**
      * <p>
@@ -392,7 +392,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
         return measures;
     }
 
-    private List<InsertManifest> insertManifests = Collections.emptyList();
+    private ListOfOnixComposite<InsertManifest> insertManifests = JPU.emptyListOfOnixComposite(InsertManifest.class);
 
     /**
      * <p>
@@ -410,7 +410,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<InsertManifest> insertManifests() {
+    public ListOfOnixComposite<InsertManifest> insertManifests() {
         _initialize();
         return insertManifests;
     }

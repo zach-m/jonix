@@ -535,7 +535,7 @@ public class Header implements OnixHeader, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier,
-        NameIdentifierTypes> senderIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> senderIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(SenderIdentifier.class);
 
     /**
      * <p>
@@ -554,7 +554,7 @@ public class Header implements OnixHeader, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier,
-        NameIdentifierTypes> addresseeIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> addresseeIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(AddresseeIdentifier.class);
 
     /**
      * <p>

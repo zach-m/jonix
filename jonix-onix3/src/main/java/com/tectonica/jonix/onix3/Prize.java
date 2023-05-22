@@ -187,7 +187,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<PrizeName, String> prizeNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<PrizeName, String> prizeNames = JPU.emptyListOfOnixElement(PrizeName.class);
 
     /**
      * <p>
@@ -274,7 +274,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return prizeCode;
     }
 
-    private ListOfOnixElement<AwardingBody, String> awardingBodys = ListOfOnixElement.empty();
+    private ListOfOnixElement<AwardingBody, String> awardingBodys = JPU.emptyListOfOnixElement(AwardingBody.class);
 
     /**
      * <p>
@@ -289,7 +289,8 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return awardingBodys;
     }
 
-    private ListOfOnixElement<PrizeStatement, String> prizeStatements = ListOfOnixElement.empty();
+    private ListOfOnixElement<PrizeStatement, String> prizeStatements =
+        JPU.emptyListOfOnixElement(PrizeStatement.class);
 
     /**
      * <p>
@@ -311,7 +312,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return prizeStatements;
     }
 
-    private ListOfOnixElement<PrizeJury, String> prizeJurys = ListOfOnixElement.empty();
+    private ListOfOnixElement<PrizeJury, String> prizeJurys = JPU.emptyListOfOnixElement(PrizeJury.class);
 
     /**
      * <p>

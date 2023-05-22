@@ -262,7 +262,8 @@ public class Stock implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<LocationIdentifier, JonixLocationIdentifier,
-        SupplierIdentifierTypes> locationIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SupplierIdentifierTypes> locationIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(LocationIdentifier.class);
 
     /**
      * <p>
@@ -278,7 +279,7 @@ public class Stock implements OnixSuperComposite, Serializable {
         return locationIdentifiers;
     }
 
-    private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<LocationName, String> locationNames = JPU.emptyListOfOnixElement(LocationName.class);
 
     /**
      * <p>
@@ -297,7 +298,7 @@ public class Stock implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded,
-        StockQuantityCodeTypes> stockQuantityCodeds = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        StockQuantityCodeTypes> stockQuantityCodeds = JPU.emptyListOfOnixDataCompositeWithKey(StockQuantityCoded.class);
 
     /**
      * <p>
@@ -314,7 +315,8 @@ public class Stock implements OnixSuperComposite, Serializable {
         return stockQuantityCodeds;
     }
 
-    private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails =
+        JPU.emptyListOfOnixDataComposite(OnOrderDetail.class);
 
     /**
      * <p>
@@ -334,7 +336,8 @@ public class Stock implements OnixSuperComposite, Serializable {
         return onOrderDetails;
     }
 
-    private ListOfOnixDataComposite<Velocity, JonixVelocity> velocitys = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Velocity, JonixVelocity> velocitys =
+        JPU.emptyListOfOnixDataComposite(Velocity.class);
 
     /**
      * <p>

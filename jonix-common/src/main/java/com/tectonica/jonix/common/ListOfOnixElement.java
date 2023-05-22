@@ -27,7 +27,20 @@ import java.util.Optional;
 public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E> {
     private static final long serialVersionUID = 1L;
 
+    final Class<E> clazz;
+
     private List<V> cachedValues = null;
+
+    public ListOfOnixElement(Class<E> clazz) {
+        this.clazz = clazz;
+    }
+
+    /**
+     * @return the {@link Class} of the items in this {@link List}
+     */
+    public Class<E> itemClass() {
+        return clazz;
+    }
 
     /**
      * returns a list of the values stored within the elements of this list (as opposed to the elements themselves, each
@@ -53,14 +66,19 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
         return collection;
     }
 
+    public Optional<E> first() {
+        return (size() == 0) ? Optional.empty() : Optional.of(get(0));
+    }
+
+    public E firstOrEmpty() {
+        return (size() == 0) ? JPU.newInstance(clazz) : get(0);
+    }
+    
     public Optional<V> firstValue() {
         return (size() == 0) ? Optional.empty() : Optional.of(get(0).__v());
     }
 
-    private static final ListOfOnixElement<OnixElement<Object>, Object> EMPTY = new ListOfOnixElement<>();
-
-    @SuppressWarnings("unchecked")
-    public static <X extends OnixElement<Y>, Y> ListOfOnixElement<X, Y> empty() {
-        return (ListOfOnixElement<X, Y>) EMPTY;
+    public V firstValueOrNull() {
+        return (size() == 0) ? null : get(0).__v();
     }
 }

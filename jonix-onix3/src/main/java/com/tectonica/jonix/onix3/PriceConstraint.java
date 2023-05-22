@@ -195,7 +195,7 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataComposite<PriceConstraintLimit, JonixPriceConstraintLimit> priceConstraintLimits =
-        ListOfOnixDataComposite.empty();
+        JPU.emptyListOfOnixDataComposite(PriceConstraintLimit.class);
 
     /**
      * <p>

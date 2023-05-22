@@ -204,7 +204,7 @@ public class SpecificationFeature
     }
 
     private ListOfOnixElement<SpecificationFeatureDescription, String> specificationFeatureDescriptions =
-        ListOfOnixElement.empty();
+        JPU.emptyListOfOnixElement(SpecificationFeatureDescription.class);
 
     /**
      * <p>

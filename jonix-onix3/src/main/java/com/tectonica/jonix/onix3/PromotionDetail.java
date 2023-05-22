@@ -20,12 +20,11 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -151,7 +150,8 @@ public class PromotionDetail implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private List<PromotionalEvent> promotionalEvents = Collections.emptyList();
+    private ListOfOnixComposite<PromotionalEvent> promotionalEvents =
+        JPU.emptyListOfOnixComposite(PromotionalEvent.class);
 
     /**
      * <p>
@@ -170,7 +170,7 @@ public class PromotionDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<PromotionalEvent> promotionalEvents() {
+    public ListOfOnixComposite<PromotionalEvent> promotionalEvents() {
         _initialize();
         return promotionalEvents;
     }

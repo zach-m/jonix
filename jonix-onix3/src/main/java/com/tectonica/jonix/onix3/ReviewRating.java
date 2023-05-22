@@ -191,7 +191,7 @@ public class ReviewRating implements OnixDataComposite<JonixReviewRating>, Seria
         return ratingLimit;
     }
 
-    private ListOfOnixElement<RatingUnits, String> ratingUnitss = ListOfOnixElement.empty();
+    private ListOfOnixElement<RatingUnits, String> ratingUnitss = JPU.emptyListOfOnixElement(RatingUnits.class);
 
     /**
      * <p>

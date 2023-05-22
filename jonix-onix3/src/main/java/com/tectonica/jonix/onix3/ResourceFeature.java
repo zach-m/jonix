@@ -192,7 +192,7 @@ public class ResourceFeature
         return featureValue;
     }
 
-    private ListOfOnixElement<FeatureNote, String> featureNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<FeatureNote, String> featureNotes = JPU.emptyListOfOnixElement(FeatureNote.class);
 
     /**
      * <p>

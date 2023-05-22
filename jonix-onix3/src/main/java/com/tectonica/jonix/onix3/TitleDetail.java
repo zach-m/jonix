@@ -173,7 +173,8 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
         return titleType;
     }
 
-    private ListOfOnixDataComposite<TitleElement, JonixTitleElement> titleElements = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<TitleElement, JonixTitleElement> titleElements =
+        JPU.emptyListOfOnixDataComposite(TitleElement.class);
 
     /**
      * <p>

@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -69,8 +70,6 @@ import com.tectonica.jonix.common.struct.JonixWebsite;
 import com.tectonica.jonix.common.struct.JonixWorkIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -928,7 +927,7 @@ public class Product implements OnixProduct, Serializable {
         return height;
     }
 
-    private List<Contributor> contributors = Collections.emptyList();
+    private ListOfOnixComposite<Contributor> contributors = JPU.emptyListOfOnixComposite(Contributor.class);
 
     /**
      * <p>
@@ -936,7 +935,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public List<Contributor> contributors() {
+    public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
         return contributors;
     }
@@ -2432,7 +2431,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -2466,7 +2465,7 @@ public class Product implements OnixProduct, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixCodelist<Barcode, BarcodeIndicatorsList6> barcodes = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<Barcode, BarcodeIndicatorsList6> barcodes = JPU.emptyListOfOnixCodelist(Barcode.class);
 
     /**
      * <p>
@@ -2481,7 +2480,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
 
     /**
      * <p>
@@ -2495,7 +2494,8 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature,
-        ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductFormFeatureTypes> productFormFeatures =
+            JPU.emptyListOfOnixDataCompositeWithKey(ProductFormFeature.class);
 
     /**
      * <p>
@@ -2510,7 +2510,8 @@ public class Product implements OnixProduct, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails =
+        JPU.emptyListOfOnixCodelist(BookFormDetail.class);
 
     /**
      * <p>
@@ -2528,7 +2529,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductContentType.class);
 
     /**
      * <p>
@@ -2544,7 +2545,7 @@ public class Product implements OnixProduct, Serializable {
         return productContentTypes;
     }
 
-    private List<ContainedItem> containedItems = Collections.emptyList();
+    private ListOfOnixComposite<ContainedItem> containedItems = JPU.emptyListOfOnixComposite(ContainedItem.class);
 
     /**
      * <p>
@@ -2562,13 +2563,14 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ContainedItem> containedItems() {
+    public ListOfOnixComposite<ContainedItem> containedItems() {
         _initialize();
         return containedItems;
     }
 
     private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification,
-        ProductClassificationTypes> productClassifications = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductClassificationTypes> productClassifications =
+            JPU.emptyListOfOnixDataCompositeWithKey(ProductClassification.class);
 
     /**
      * <p>
@@ -2584,7 +2586,7 @@ public class Product implements OnixProduct, Serializable {
         return productClassifications;
     }
 
-    private List<Series> seriess = Collections.emptyList();
+    private ListOfOnixComposite<Series> seriess = JPU.emptyListOfOnixComposite(Series.class);
 
     /**
      * <p>
@@ -2592,12 +2594,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Series> seriess() {
+    public ListOfOnixComposite<Series> seriess() {
         _initialize();
         return seriess;
     }
 
-    private List<Set> sets = Collections.emptyList();
+    private ListOfOnixComposite<Set> sets = JPU.emptyListOfOnixComposite(Set.class);
 
     /**
      * <p>
@@ -2605,12 +2607,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Set> sets() {
+    public ListOfOnixComposite<Set> sets() {
         _initialize();
         return sets;
     }
 
-    private ListOfOnixElement<FormerTitle, String> formerTitles = ListOfOnixElement.empty();
+    private ListOfOnixElement<FormerTitle, String> formerTitles = JPU.emptyListOfOnixElement(FormerTitle.class);
 
     /**
      * <p>
@@ -2626,7 +2628,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Title.class);
 
     /**
      * <p>
@@ -2647,7 +2649,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(WorkIdentifier.class);
 
     /**
      * <p>
@@ -2661,7 +2663,7 @@ public class Product implements OnixProduct, Serializable {
         return workIdentifiers;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>
@@ -2675,7 +2677,7 @@ public class Product implements OnixProduct, Serializable {
         return websites;
     }
 
-    private List<Conference> conferences = Collections.emptyList();
+    private ListOfOnixComposite<Conference> conferences = JPU.emptyListOfOnixComposite(Conference.class);
 
     /**
      * <p>
@@ -2684,12 +2686,13 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Conference> conferences() {
+    public ListOfOnixComposite<Conference> conferences() {
         _initialize();
         return conferences;
     }
 
-    private ListOfOnixCodelist<EditionTypeCode, EditionTypes> editionTypeCodes = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<EditionTypeCode, EditionTypes> editionTypeCodes =
+        JPU.emptyListOfOnixCodelist(EditionTypeCode.class);
 
     /**
      * <p>
@@ -2703,7 +2706,8 @@ public class Product implements OnixProduct, Serializable {
         return editionTypeCodes;
     }
 
-    private ListOfOnixCodelist<LanguageOfText, Languages> languageOfTexts = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<LanguageOfText, Languages> languageOfTexts =
+        JPU.emptyListOfOnixCodelist(LanguageOfText.class);
 
     /**
      * <p>
@@ -2719,7 +2723,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Language.class);
 
     /**
      * <p>
@@ -2734,7 +2738,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Extent.class);
 
     /**
      * <p>
@@ -2748,7 +2752,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations,
-        IllustrationAndOtherContentTypes> illustrationss = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        IllustrationAndOtherContentTypes> illustrationss = JPU.emptyListOfOnixDataCompositeWithKey(Illustrations.class);
 
     /**
      * <p>
@@ -2763,7 +2767,7 @@ public class Product implements OnixProduct, Serializable {
         return illustrationss;
     }
 
-    private ListOfOnixElement<MapScale, String> mapScales = ListOfOnixElement.empty();
+    private ListOfOnixElement<MapScale, String> mapScales = JPU.emptyListOfOnixElement(MapScale.class);
 
     /**
      * <p>
@@ -2777,7 +2781,8 @@ public class Product implements OnixProduct, Serializable {
         return mapScales;
     }
 
-    private ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects =
+        JPU.emptyListOfOnixDataComposite(MainSubject.class);
 
     /**
      * <p>
@@ -2791,7 +2796,7 @@ public class Product implements OnixProduct, Serializable {
         return mainSubjects;
     }
 
-    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = JPU.emptyListOfOnixDataComposite(Subject.class);
 
     /**
      * <p>
@@ -2805,7 +2810,7 @@ public class Product implements OnixProduct, Serializable {
         return subjects;
     }
 
-    private List<PersonAsSubject> personAsSubjects = Collections.emptyList();
+    private ListOfOnixComposite<PersonAsSubject> personAsSubjects = JPU.emptyListOfOnixComposite(PersonAsSubject.class);
 
     /**
      * <p>
@@ -2814,12 +2819,13 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<PersonAsSubject> personAsSubjects() {
+    public ListOfOnixComposite<PersonAsSubject> personAsSubjects() {
         _initialize();
         return personAsSubjects;
     }
 
-    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects = ListOfOnixElement.empty();
+    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects =
+        JPU.emptyListOfOnixElement(CorporateBodyAsSubject.class);
 
     /**
      * <p>
@@ -2833,7 +2839,8 @@ public class Product implements OnixProduct, Serializable {
         return corporateBodyAsSubjects;
     }
 
-    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects = ListOfOnixElement.empty();
+    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects =
+        JPU.emptyListOfOnixElement(PlaceAsSubject.class);
 
     /**
      * <p>
@@ -2847,7 +2854,8 @@ public class Product implements OnixProduct, Serializable {
         return placeAsSubjects;
     }
 
-    private ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes =
+        JPU.emptyListOfOnixCodelist(AudienceCode.class);
 
     /**
      * <p>
@@ -2862,7 +2870,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Audience.class);
 
     /**
      * <p>
@@ -2875,7 +2883,8 @@ public class Product implements OnixProduct, Serializable {
         return audiences;
     }
 
-    private ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges =
+        JPU.emptyListOfOnixDataComposite(AudienceRange.class);
 
     /**
      * <p>
@@ -2890,7 +2899,8 @@ public class Product implements OnixProduct, Serializable {
         return audienceRanges;
     }
 
-    private ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys =
+        JPU.emptyListOfOnixDataComposite(Complexity.class);
 
     /**
      * <p>
@@ -2904,7 +2914,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(OtherText.class);
 
     /**
      * <p>
@@ -2918,7 +2928,7 @@ public class Product implements OnixProduct, Serializable {
         return otherTexts;
     }
 
-    private ListOfOnixElement<ReviewQuote, String> reviewQuotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<ReviewQuote, String> reviewQuotes = JPU.emptyListOfOnixElement(ReviewQuote.class);
 
     /**
      * <p>
@@ -2937,7 +2947,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(MediaFile.class);
 
     /**
      * <p>
@@ -2952,7 +2962,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites =
-        ListOfOnixDataComposite.empty();
+        JPU.emptyListOfOnixDataComposite(ProductWebsite.class);
 
     /**
      * <p>
@@ -2966,7 +2976,7 @@ public class Product implements OnixProduct, Serializable {
         return productWebsites;
     }
 
-    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = JPU.emptyListOfOnixDataComposite(Prize.class);
 
     /**
      * <p>
@@ -2979,7 +2989,7 @@ public class Product implements OnixProduct, Serializable {
         return prizes;
     }
 
-    private List<ContentItem> contentItems = Collections.emptyList();
+    private ListOfOnixComposite<ContentItem> contentItems = JPU.emptyListOfOnixComposite(ContentItem.class);
 
     /**
      * <p>
@@ -2987,12 +2997,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ContentItem> contentItems() {
+    public ListOfOnixComposite<ContentItem> contentItems() {
         _initialize();
         return contentItems;
     }
 
-    private List<Imprint> imprints = Collections.emptyList();
+    private ListOfOnixComposite<Imprint> imprints = JPU.emptyListOfOnixComposite(Imprint.class);
 
     /**
      * <p>
@@ -3001,12 +3011,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Imprint> imprints() {
+    public ListOfOnixComposite<Imprint> imprints() {
         _initialize();
         return imprints;
     }
 
-    private List<Publisher> publishers = Collections.emptyList();
+    private ListOfOnixComposite<Publisher> publishers = JPU.emptyListOfOnixComposite(Publisher.class);
 
     /**
      * <p>
@@ -3016,12 +3026,13 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Publisher> publishers() {
+    public ListOfOnixComposite<Publisher> publishers() {
         _initialize();
         return publishers;
     }
 
-    private ListOfOnixElement<CityOfPublication, String> cityOfPublications = ListOfOnixElement.empty();
+    private ListOfOnixElement<CityOfPublication, String> cityOfPublications =
+        JPU.emptyListOfOnixElement(CityOfPublication.class);
 
     /**
      * <p>
@@ -3041,7 +3052,8 @@ public class Product implements OnixProduct, Serializable {
         return cityOfPublications;
     }
 
-    private ListOfOnixElement<CopublisherName, String> copublisherNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<CopublisherName, String> copublisherNames =
+        JPU.emptyListOfOnixElement(CopublisherName.class);
 
     /**
      * <p>
@@ -3061,7 +3073,7 @@ public class Product implements OnixProduct, Serializable {
         return copublisherNames;
     }
 
-    private ListOfOnixElement<SponsorName, String> sponsorNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<SponsorName, String> sponsorNames = JPU.emptyListOfOnixElement(SponsorName.class);
 
     /**
      * <p>
@@ -3080,7 +3092,8 @@ public class Product implements OnixProduct, Serializable {
         return sponsorNames;
     }
 
-    private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
+    private ListOfOnixComposite<CopyrightStatement> copyrightStatements =
+        JPU.emptyListOfOnixComposite(CopyrightStatement.class);
 
     /**
      * <p>
@@ -3090,12 +3103,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<CopyrightStatement> copyrightStatements() {
+    public ListOfOnixComposite<CopyrightStatement> copyrightStatements() {
         _initialize();
         return copyrightStatements;
     }
 
-    private List<SalesRights> salesRightss = Collections.emptyList();
+    private ListOfOnixComposite<SalesRights> salesRightss = JPU.emptyListOfOnixComposite(SalesRights.class);
 
     /**
      * <p>
@@ -3105,12 +3118,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SalesRights> salesRightss() {
+    public ListOfOnixComposite<SalesRights> salesRightss() {
         _initialize();
         return salesRightss;
     }
 
-    private List<NotForSale> notForSales = Collections.emptyList();
+    private ListOfOnixComposite<NotForSale> notForSales = JPU.emptyListOfOnixComposite(NotForSale.class);
 
     /**
      * <p>
@@ -3120,12 +3133,13 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<NotForSale> notForSales() {
+    public ListOfOnixComposite<NotForSale> notForSales() {
         _initialize();
         return notForSales;
     }
 
-    private List<SalesRestriction> salesRestrictions = Collections.emptyList();
+    private ListOfOnixComposite<SalesRestriction> salesRestrictions =
+        JPU.emptyListOfOnixComposite(SalesRestriction.class);
 
     /**
      * <p>
@@ -3134,13 +3148,13 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SalesRestriction> salesRestrictions() {
+    public ListOfOnixComposite<SalesRestriction> salesRestrictions() {
         _initialize();
         return salesRestrictions;
     }
 
     private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Measure.class);
 
     /**
      * <p>
@@ -3154,7 +3168,7 @@ public class Product implements OnixProduct, Serializable {
         return measures;
     }
 
-    private List<RelatedProduct> relatedProducts = Collections.emptyList();
+    private ListOfOnixComposite<RelatedProduct> relatedProducts = JPU.emptyListOfOnixComposite(RelatedProduct.class);
 
     /**
      * <p>
@@ -3170,12 +3184,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<RelatedProduct> relatedProducts() {
+    public ListOfOnixComposite<RelatedProduct> relatedProducts() {
         _initialize();
         return relatedProducts;
     }
 
-    private List<SupplyDetail> supplyDetails = Collections.emptyList();
+    private ListOfOnixComposite<SupplyDetail> supplyDetails = JPU.emptyListOfOnixComposite(SupplyDetail.class);
 
     /**
      * <p>
@@ -3184,12 +3198,13 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SupplyDetail> supplyDetails() {
+    public ListOfOnixComposite<SupplyDetail> supplyDetails() {
         _initialize();
         return supplyDetails;
     }
 
-    private List<MarketRepresentation> marketRepresentations = Collections.emptyList();
+    private ListOfOnixComposite<MarketRepresentation> marketRepresentations =
+        JPU.emptyListOfOnixComposite(MarketRepresentation.class);
 
     /**
      * <p>
@@ -3198,12 +3213,12 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<MarketRepresentation> marketRepresentations() {
+    public ListOfOnixComposite<MarketRepresentation> marketRepresentations() {
         _initialize();
         return marketRepresentations;
     }
 
-    private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
+    private ListOfOnixElement<ReprintDetail, String> reprintDetails = JPU.emptyListOfOnixElement(ReprintDetail.class);
 
     /**
      * <p>

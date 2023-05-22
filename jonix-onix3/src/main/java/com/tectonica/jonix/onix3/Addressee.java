@@ -163,7 +163,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier,
-        NameIdentifierTypes> addresseeIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> addresseeIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(AddresseeIdentifier.class);
 
     /**
      * <p>

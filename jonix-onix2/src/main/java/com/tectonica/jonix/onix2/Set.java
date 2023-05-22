@@ -318,7 +318,7 @@ public class Set implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -335,7 +335,7 @@ public class Set implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Title.class);
 
     /**
      * <p>

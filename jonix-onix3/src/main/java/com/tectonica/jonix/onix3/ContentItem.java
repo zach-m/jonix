@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -30,8 +31,6 @@ import com.tectonica.jonix.common.struct.JonixLanguage;
 import com.tectonica.jonix.common.struct.JonixSubject;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -248,7 +247,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return componentTypeName;
     }
 
-    private List<Contributor> contributors = Collections.emptyList();
+    private ListOfOnixComposite<Contributor> contributors = JPU.emptyListOfOnixComposite(Contributor.class);
 
     /**
      * <p>
@@ -257,7 +256,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public List<Contributor> contributors() {
+    public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
         return contributors;
     }
@@ -346,7 +345,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return (noContributor().exists());
     }
 
-    private List<EpubUsageConstraint> epubUsageConstraints = Collections.emptyList();
+    private ListOfOnixComposite<EpubUsageConstraint> epubUsageConstraints =
+        JPU.emptyListOfOnixComposite(EpubUsageConstraint.class);
 
     /**
      * <p>
@@ -356,22 +356,23 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<EpubUsageConstraint> epubUsageConstraints() {
+    public ListOfOnixComposite<EpubUsageConstraint> epubUsageConstraints() {
         _initialize();
         return epubUsageConstraints;
     }
 
-    private List<EpubLicenseWithDate> epubLicenses = Collections.emptyList();
+    private ListOfOnixComposite<EpubLicenseWithDate> epubLicenses =
+        JPU.emptyListOfOnixComposite(EpubLicenseWithDate.class);
 
     /**
      * Jonix-Comment: this list may be empty
      */
-    public List<EpubLicenseWithDate> epubLicenses() {
+    public ListOfOnixComposite<EpubLicenseWithDate> epubLicenses() {
         _initialize();
         return epubLicenses;
     }
 
-    private List<TitleDetail> titleDetails = Collections.emptyList();
+    private ListOfOnixComposite<TitleDetail> titleDetails = JPU.emptyListOfOnixComposite(TitleDetail.class);
 
     /**
      * <p>
@@ -380,12 +381,13 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<TitleDetail> titleDetails() {
+    public ListOfOnixComposite<TitleDetail> titleDetails() {
         _initialize();
         return titleDetails;
     }
 
-    private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
+    private ListOfOnixElement<ContributorStatement, String> contributorStatements =
+        JPU.emptyListOfOnixElement(ContributorStatement.class);
 
     /**
      * <p>
@@ -406,7 +408,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Language.class);
 
     /**
      * <p>
@@ -420,7 +422,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return languages;
     }
 
-    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = JPU.emptyListOfOnixDataComposite(Subject.class);
 
     /**
      * <p>
@@ -434,7 +436,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return subjects;
     }
 
-    private List<NameAsSubject> nameAsSubjects = Collections.emptyList();
+    private ListOfOnixComposite<NameAsSubject> nameAsSubjects = JPU.emptyListOfOnixComposite(NameAsSubject.class);
 
     /**
      * <p>
@@ -443,12 +445,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<NameAsSubject> nameAsSubjects() {
+    public ListOfOnixComposite<NameAsSubject> nameAsSubjects() {
         _initialize();
         return nameAsSubjects;
     }
 
-    private List<TextContent> textContents = Collections.emptyList();
+    private ListOfOnixComposite<TextContent> textContents = JPU.emptyListOfOnixComposite(TextContent.class);
 
     /**
      * <p>
@@ -456,12 +458,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<TextContent> textContents() {
+    public ListOfOnixComposite<TextContent> textContents() {
         _initialize();
         return textContents;
     }
 
-    private List<CitedContent> citedContents = Collections.emptyList();
+    private ListOfOnixComposite<CitedContent> citedContents = JPU.emptyListOfOnixComposite(CitedContent.class);
 
     /**
      * <p>
@@ -469,12 +471,13 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<CitedContent> citedContents() {
+    public ListOfOnixComposite<CitedContent> citedContents() {
         _initialize();
         return citedContents;
     }
 
-    private List<SupportingResource> supportingResources = Collections.emptyList();
+    private ListOfOnixComposite<SupportingResource> supportingResources =
+        JPU.emptyListOfOnixComposite(SupportingResource.class);
 
     /**
      * <p>
@@ -482,12 +485,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SupportingResource> supportingResources() {
+    public ListOfOnixComposite<SupportingResource> supportingResources() {
         _initialize();
         return supportingResources;
     }
 
-    private List<Publisher> publishers = Collections.emptyList();
+    private ListOfOnixComposite<Publisher> publishers = JPU.emptyListOfOnixComposite(Publisher.class);
 
     /**
      * <p>
@@ -499,12 +502,13 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Publisher> publishers() {
+    public ListOfOnixComposite<Publisher> publishers() {
         _initialize();
         return publishers;
     }
 
-    private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
+    private ListOfOnixComposite<CopyrightStatement> copyrightStatements =
+        JPU.emptyListOfOnixComposite(CopyrightStatement.class);
 
     /**
      * <p>
@@ -516,12 +520,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<CopyrightStatement> copyrightStatements() {
+    public ListOfOnixComposite<CopyrightStatement> copyrightStatements() {
         _initialize();
         return copyrightStatements;
     }
 
-    private List<RelatedWork> relatedWorks = Collections.emptyList();
+    private ListOfOnixComposite<RelatedWork> relatedWorks = JPU.emptyListOfOnixComposite(RelatedWork.class);
 
     /**
      * <p>
@@ -530,12 +534,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<RelatedWork> relatedWorks() {
+    public ListOfOnixComposite<RelatedWork> relatedWorks() {
         _initialize();
         return relatedWorks;
     }
 
-    private List<RelatedProduct> relatedProducts = Collections.emptyList();
+    private ListOfOnixComposite<RelatedProduct> relatedProducts = JPU.emptyListOfOnixComposite(RelatedProduct.class);
 
     /**
      * <p>
@@ -544,7 +548,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<RelatedProduct> relatedProducts() {
+    public ListOfOnixComposite<RelatedProduct> relatedProducts() {
         _initialize();
         return relatedProducts;
     }

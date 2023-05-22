@@ -252,7 +252,7 @@ public class Tax implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -270,7 +270,8 @@ public class Tax implements OnixSuperComposite, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixElement<PricePartDescription, String> pricePartDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<PricePartDescription, String> pricePartDescriptions =
+        JPU.emptyListOfOnixElement(PricePartDescription.class);
 
     /**
      * <p>

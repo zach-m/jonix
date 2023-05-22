@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -32,8 +33,6 @@ import com.tectonica.jonix.common.struct.JonixOccurrenceDate;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -236,7 +235,7 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<OccurrenceDate, JonixOccurrenceDate,
-        EventOccurrenceDateRoles> occurrenceDates = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        EventOccurrenceDateRoles> occurrenceDates = JPU.emptyListOfOnixDataCompositeWithKey(OccurrenceDate.class);
 
     /**
      * <p>
@@ -297,7 +296,7 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<EventIdentifier, JonixEventIdentifier,
-        EventIdentifierTypes> eventIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        EventIdentifierTypes> eventIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(EventIdentifier.class);
 
     /**
      * <p>
@@ -312,7 +311,7 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return eventIdentifiers;
     }
 
-    private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<LocationName, String> locationNames = JPU.emptyListOfOnixElement(LocationName.class);
 
     /**
      * <p>
@@ -330,7 +329,7 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return locationNames;
     }
 
-    private ListOfOnixElement<VenueNote, String> venueNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<VenueNote, String> venueNotes = JPU.emptyListOfOnixElement(VenueNote.class);
 
     /**
      * <p>
@@ -345,7 +344,8 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return venueNotes;
     }
 
-    private ListOfOnixElement<EventDescription, String> eventDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<EventDescription, String> eventDescriptions =
+        JPU.emptyListOfOnixElement(EventDescription.class);
 
     /**
      * <p>
@@ -360,7 +360,8 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return eventDescriptions;
     }
 
-    private List<SupportingResource> supportingResources = Collections.emptyList();
+    private ListOfOnixComposite<SupportingResource> supportingResources =
+        JPU.emptyListOfOnixComposite(SupportingResource.class);
 
     /**
      * <p>
@@ -371,12 +372,12 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SupportingResource> supportingResources() {
+    public ListOfOnixComposite<SupportingResource> supportingResources() {
         _initialize();
         return supportingResources;
     }
 
-    private List<EventSponsor> eventSponsors = Collections.emptyList();
+    private ListOfOnixComposite<EventSponsor> eventSponsors = JPU.emptyListOfOnixComposite(EventSponsor.class);
 
     /**
      * <p>
@@ -387,12 +388,12 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<EventSponsor> eventSponsors() {
+    public ListOfOnixComposite<EventSponsor> eventSponsors() {
         _initialize();
         return eventSponsors;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>

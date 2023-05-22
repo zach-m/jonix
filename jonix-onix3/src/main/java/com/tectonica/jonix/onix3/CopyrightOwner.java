@@ -161,7 +161,8 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier,
-        NameIdentifierTypes> copyrightOwnerIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> copyrightOwnerIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(CopyrightOwnerIdentifier.class);
 
     /**
      * <p>

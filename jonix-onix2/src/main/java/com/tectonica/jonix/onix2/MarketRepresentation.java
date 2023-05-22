@@ -229,7 +229,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier,
-        SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SupplierIdentifierTypes> agentIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(AgentIdentifier.class);
 
     /**
      * <p>
@@ -334,7 +334,8 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return marketPublishingStatus;
     }
 
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers =
+        JPU.emptyListOfOnixElement(TelephoneNumber.class);
 
     /**
      * <p>
@@ -347,7 +348,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return telephoneNumbers;
     }
 
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = JPU.emptyListOfOnixElement(FaxNumber.class);
 
     /**
      * <p>
@@ -360,7 +361,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return faxNumbers;
     }
 
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = JPU.emptyListOfOnixElement(EmailAddress.class);
 
     /**
      * <p>
@@ -373,7 +374,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return emailAddresss;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>
@@ -389,7 +390,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(MarketDate.class);
 
     /**
      * <p>

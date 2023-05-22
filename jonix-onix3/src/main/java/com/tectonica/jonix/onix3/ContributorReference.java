@@ -167,7 +167,8 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles =
+        JPU.emptyListOfOnixCodelist(ContributorRole.class);
 
     /**
      * <p>
@@ -184,7 +185,7 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(NameIdentifier.class);
 
     /**
      * <p>

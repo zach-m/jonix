@@ -255,7 +255,8 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         return subjectSchemeVersion;
     }
 
-    private ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts = ListOfOnixElement.empty();
+    private ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts =
+        JPU.emptyListOfOnixElement(SubjectHeadingText.class);
 
     /**
      * <p>

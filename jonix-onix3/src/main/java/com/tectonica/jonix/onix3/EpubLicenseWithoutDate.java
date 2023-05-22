@@ -133,7 +133,8 @@ public class EpubLicenseWithoutDate implements OnixSuperComposite, Serializable 
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames =
+        JPU.emptyListOfOnixElement(EpubLicenseName.class);
 
     /**
      * Jonix-Comment: this list is required to contain at least one item
@@ -144,7 +145,8 @@ public class EpubLicenseWithoutDate implements OnixSuperComposite, Serializable 
     }
 
     private ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression,
-        LicenseExpressionTypes> epubLicenseExpressions = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        LicenseExpressionTypes> epubLicenseExpressions =
+            JPU.emptyListOfOnixDataCompositeWithKey(EpubLicenseExpression.class);
 
     /**
      * Jonix-Comment: this list may be empty

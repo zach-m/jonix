@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -39,8 +40,6 @@ import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -472,7 +471,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -489,7 +488,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>
@@ -504,7 +503,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
 
     /**
      * <p>
@@ -518,7 +517,8 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature,
-        ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductFormFeatureTypes> productFormFeatures =
+            JPU.emptyListOfOnixDataCompositeWithKey(ProductFormFeature.class);
 
     /**
      * <p>
@@ -533,7 +533,8 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails =
+        JPU.emptyListOfOnixCodelist(BookFormDetail.class);
 
     /**
      * <p>
@@ -551,7 +552,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductContentType.class);
 
     /**
      * <p>
@@ -567,7 +568,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return productContentTypes;
     }
 
-    private List<Publisher> publishers = Collections.emptyList();
+    private ListOfOnixComposite<Publisher> publishers = JPU.emptyListOfOnixComposite(Publisher.class);
 
     /**
      * <p>
@@ -578,7 +579,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Publisher> publishers() {
+    public ListOfOnixComposite<Publisher> publishers() {
         _initialize();
         return publishers;
     }

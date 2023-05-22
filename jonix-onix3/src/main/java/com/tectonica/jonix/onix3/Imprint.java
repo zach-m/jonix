@@ -152,7 +152,7 @@ public class Imprint implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier,
-        NameIdentifierTypes> imprintIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> imprintIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ImprintIdentifier.class);
 
     /**
      * <p>

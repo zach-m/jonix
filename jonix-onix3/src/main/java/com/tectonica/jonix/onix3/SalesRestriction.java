@@ -20,13 +20,12 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -208,7 +207,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         return endDate;
     }
 
-    private List<SalesOutlet> salesOutlets = Collections.emptyList();
+    private ListOfOnixComposite<SalesOutlet> salesOutlets = JPU.emptyListOfOnixComposite(SalesOutlet.class);
 
     /**
      * <p>
@@ -218,12 +217,13 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SalesOutlet> salesOutlets() {
+    public ListOfOnixComposite<SalesOutlet> salesOutlets() {
         _initialize();
         return salesOutlets;
     }
 
-    private ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes =
+        JPU.emptyListOfOnixElement(SalesRestrictionNote.class);
 
     /**
      * <p>

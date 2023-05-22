@@ -173,7 +173,8 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature,
-        ReligiousTextFeatureTypes> religiousTextFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ReligiousTextFeatureTypes> religiousTextFeatures =
+            JPU.emptyListOfOnixDataCompositeWithKey(ReligiousTextFeature.class);
 
     /**
      * <p>

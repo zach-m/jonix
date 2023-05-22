@@ -226,7 +226,8 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier,
-        SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SupplierIdentifierTypes> supplierIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(SupplierIdentifier.class);
 
     /**
      * <p>
@@ -243,7 +244,8 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
         return supplierIdentifiers;
     }
 
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers =
+        JPU.emptyListOfOnixElement(TelephoneNumber.class);
 
     /**
      * <p>
@@ -257,7 +259,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
         return telephoneNumbers;
     }
 
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = JPU.emptyListOfOnixElement(FaxNumber.class);
 
     /**
      * <p>
@@ -271,7 +273,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
         return faxNumbers;
     }
 
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = JPU.emptyListOfOnixElement(EmailAddress.class);
 
     /**
      * <p>

@@ -19,21 +19,15 @@
 
 package com.tectonica.jonix.common;
 
-import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends JonixStruct> extends ArrayList<C> {
+public class ListOfOnixComposite<C extends OnixComposite> extends ArrayList<C> {
     private static final long serialVersionUID = 1L;
-
     final Class<C> clazz;
 
-    private List<S> cachedStructs = null;
-
-    public ListOfOnixDataComposite(Class<C> clazz) {
+    ListOfOnixComposite(Class<C> clazz) {
         this.clazz = clazz;
     }
 
@@ -44,36 +38,11 @@ public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends J
         return clazz;
     }
 
-    /**
-     * returns a list of the items inside this list, transformed into Jonix structs
-     *
-     * @return a non-null, possibly empty, list of the structs
-     */
-    public List<S> asStructs() {
-        if (cachedStructs == null) {
-            return cachedStructs = structsInto(new ArrayList<>(this.size()));
-        }
-        return cachedStructs;
-    }
-
-    public <L extends Collection<S>> L structsInto(L collection) {
-        forEach(item -> collection.add(item.asStruct()));
-        return collection;
-    }
-
     public Optional<C> first() {
         return (size() == 0) ? Optional.empty() : Optional.of(get(0));
     }
 
-    public Optional<S> firstAsStruct() {
-        return first().map(OnixDataComposite::asStruct);
-    }
-
     public C firstOrEmpty() {
         return (size() == 0) ? JPU.newInstance(clazz) : get(0);
-    }
-
-    public S firstOrEmptyAsStruct() {
-        return (size() == 0) ? JPU.newInstance(clazz).asStruct() : get(0).asStruct();
     }
 }

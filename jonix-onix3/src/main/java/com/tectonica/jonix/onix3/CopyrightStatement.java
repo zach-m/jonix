@@ -20,13 +20,12 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -163,7 +162,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<CopyrightYear, String> copyrightYears = ListOfOnixElement.empty();
+    private ListOfOnixElement<CopyrightYear, String> copyrightYears = JPU.emptyListOfOnixElement(CopyrightYear.class);
 
     /**
      * <p>
@@ -192,7 +191,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
         return copyrightType;
     }
 
-    private List<CopyrightOwner> copyrightOwners = Collections.emptyList();
+    private ListOfOnixComposite<CopyrightOwner> copyrightOwners = JPU.emptyListOfOnixComposite(CopyrightOwner.class);
 
     /**
      * <p>
@@ -202,7 +201,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<CopyrightOwner> copyrightOwners() {
+    public ListOfOnixComposite<CopyrightOwner> copyrightOwners() {
         _initialize();
         return copyrightOwners;
     }

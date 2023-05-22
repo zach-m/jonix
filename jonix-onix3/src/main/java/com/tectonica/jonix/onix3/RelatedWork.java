@@ -167,7 +167,7 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(WorkIdentifier.class);
 
     /**
      * <p>

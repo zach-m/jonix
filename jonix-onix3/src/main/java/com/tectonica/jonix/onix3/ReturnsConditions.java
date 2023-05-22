@@ -204,7 +204,7 @@ public class ReturnsConditions
         return returnsCodeTypeName;
     }
 
-    private ListOfOnixElement<ReturnsNote, String> returnsNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<ReturnsNote, String> returnsNotes = JPU.emptyListOfOnixElement(ReturnsNote.class);
 
     /**
      * <p>

@@ -210,7 +210,8 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return textType;
     }
 
-    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences =
+        JPU.emptyListOfOnixCodelist(ContentAudience.class);
 
     /**
      * <p>
@@ -224,7 +225,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
-    private ListOfOnixElement<Text, String> texts = ListOfOnixElement.empty();
+    private ListOfOnixElement<Text, String> texts = JPU.emptyListOfOnixElement(Text.class);
 
     /**
      * <p>
@@ -314,7 +315,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return textSourceCorporate;
     }
 
-    private ListOfOnixElement<TextAuthor, String> textAuthors = ListOfOnixElement.empty();
+    private ListOfOnixElement<TextAuthor, String> textAuthors = JPU.emptyListOfOnixElement(TextAuthor.class);
 
     /**
      * <p>
@@ -328,7 +329,8 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return textAuthors;
     }
 
-    private ListOfOnixElement<TextSourceDescription, String> textSourceDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<TextSourceDescription, String> textSourceDescriptions =
+        JPU.emptyListOfOnixElement(TextSourceDescription.class);
 
     /**
      * <p>
@@ -346,7 +348,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return textSourceDescriptions;
     }
 
-    private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
+    private ListOfOnixElement<SourceTitle, String> sourceTitles = JPU.emptyListOfOnixElement(SourceTitle.class);
 
     /**
      * <p>
@@ -362,7 +364,8 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return sourceTitles;
     }
 
-    private ListOfOnixElement<TextSourceLink, String> textSourceLinks = ListOfOnixElement.empty();
+    private ListOfOnixElement<TextSourceLink, String> textSourceLinks =
+        JPU.emptyListOfOnixElement(TextSourceLink.class);
 
     /**
      * <p>
@@ -380,7 +383,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(ContentDate.class);
 
     /**
      * <p>

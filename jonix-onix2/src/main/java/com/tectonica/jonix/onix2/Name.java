@@ -362,7 +362,8 @@ public class Name implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier,
-        PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        PersonNameIdentifierTypes> personNameIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(PersonNameIdentifier.class);
 
     /**
      * <p>

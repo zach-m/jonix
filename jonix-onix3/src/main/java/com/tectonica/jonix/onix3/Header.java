@@ -20,13 +20,12 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -291,7 +290,7 @@ public class Header implements OnixHeader, Serializable {
         return defaultCurrencyCode;
     }
 
-    private List<Addressee> addressees = Collections.emptyList();
+    private ListOfOnixComposite<Addressee> addressees = JPU.emptyListOfOnixComposite(Addressee.class);
 
     /**
      * <p>
@@ -300,12 +299,12 @@ public class Header implements OnixHeader, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Addressee> addressees() {
+    public ListOfOnixComposite<Addressee> addressees() {
         _initialize();
         return addressees;
     }
 
-    private ListOfOnixElement<MessageNote, String> messageNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<MessageNote, String> messageNotes = JPU.emptyListOfOnixElement(MessageNote.class);
 
     /**
      * <p>

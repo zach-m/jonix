@@ -272,7 +272,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(NameIdentifier.class);
 
     /**
      * Jonix-Comment: this list is required to contain at least one item
@@ -282,7 +282,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<CorporateName, String> corporateNames = JPU.emptyListOfOnixElement(CorporateName.class);
 
     /**
      * <p>
@@ -416,7 +416,8 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
+    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds =
+        JPU.emptyListOfOnixElement(CorporateNameInverted.class);
 
     /**
      * <p>

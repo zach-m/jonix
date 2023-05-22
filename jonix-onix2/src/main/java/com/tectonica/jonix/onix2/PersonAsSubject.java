@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.Languages;
@@ -31,8 +32,6 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixPersonNameIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -344,7 +343,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private List<Name> names = Collections.emptyList();
+    private ListOfOnixComposite<Name> names = JPU.emptyListOfOnixComposite(Name.class);
 
     /**
      * <p>
@@ -354,13 +353,14 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Name> names() {
+    public ListOfOnixComposite<Name> names() {
         _initialize();
         return names;
     }
 
     private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier,
-        PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        PersonNameIdentifierTypes> personNameIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(PersonNameIdentifier.class);
 
     /**
      * <p>

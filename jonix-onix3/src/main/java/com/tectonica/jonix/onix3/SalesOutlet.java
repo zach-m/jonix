@@ -170,7 +170,8 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier,
-        SalesOutletIdentifierTypes> salesOutletIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SalesOutletIdentifierTypes> salesOutletIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(SalesOutletIdentifier.class);
 
     /**
      * <p>

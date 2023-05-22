@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -32,8 +33,6 @@ import com.tectonica.jonix.common.struct.JonixSpecificationBundleName;
 import com.tectonica.jonix.common.struct.JonixSpecificationFeature;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -218,7 +217,7 @@ public class InsertManifest implements OnixSuperComposite, Serializable {
         return insertPoint;
     }
 
-    private List<InsertResource> insertResources = Collections.emptyList();
+    private ListOfOnixComposite<InsertResource> insertResources = JPU.emptyListOfOnixComposite(InsertResource.class);
 
     /**
      * <p>
@@ -231,13 +230,13 @@ public class InsertManifest implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public List<InsertResource> insertResources() {
+    public ListOfOnixComposite<InsertResource> insertResources() {
         _initialize();
         return insertResources;
     }
 
     private ListOfOnixDataComposite<SpecificationBundleName, JonixSpecificationBundleName> specificationBundleNames =
-        ListOfOnixDataComposite.empty();
+        JPU.emptyListOfOnixDataComposite(SpecificationBundleName.class);
 
     /**
      * <p>
@@ -253,7 +252,7 @@ public class InsertManifest implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<SpecificationDetail, SpecificationDetails> specificationDetails =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(SpecificationDetail.class);
 
     /**
      * <p>
@@ -268,7 +267,8 @@ public class InsertManifest implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SpecificationFeature, JonixSpecificationFeature,
-        SpecificationFeatureTypes> specificationFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SpecificationFeatureTypes> specificationFeatures =
+            JPU.emptyListOfOnixDataCompositeWithKey(SpecificationFeature.class);
 
     /**
      * <p>
@@ -284,7 +284,8 @@ public class InsertManifest implements OnixSuperComposite, Serializable {
         return specificationFeatures;
     }
 
-    private ListOfOnixElement<SpecificationDescription, String> specificationDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<SpecificationDescription, String> specificationDescriptions =
+        JPU.emptyListOfOnixElement(SpecificationDescription.class);
 
     /**
      * <p>

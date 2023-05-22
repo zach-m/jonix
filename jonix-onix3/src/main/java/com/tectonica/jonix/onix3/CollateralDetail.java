@@ -20,14 +20,13 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixPrize;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -168,7 +167,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private List<TextContent> textContents = Collections.emptyList();
+    private ListOfOnixComposite<TextContent> textContents = JPU.emptyListOfOnixComposite(TextContent.class);
 
     /**
      * <p>
@@ -178,12 +177,12 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<TextContent> textContents() {
+    public ListOfOnixComposite<TextContent> textContents() {
         _initialize();
         return textContents;
     }
 
-    private List<CitedContent> citedContents = Collections.emptyList();
+    private ListOfOnixComposite<CitedContent> citedContents = JPU.emptyListOfOnixComposite(CitedContent.class);
 
     /**
      * <p>
@@ -192,12 +191,13 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<CitedContent> citedContents() {
+    public ListOfOnixComposite<CitedContent> citedContents() {
         _initialize();
         return citedContents;
     }
 
-    private List<SupportingResource> supportingResources = Collections.emptyList();
+    private ListOfOnixComposite<SupportingResource> supportingResources =
+        JPU.emptyListOfOnixComposite(SupportingResource.class);
 
     /**
      * <p>
@@ -208,12 +208,12 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SupportingResource> supportingResources() {
+    public ListOfOnixComposite<SupportingResource> supportingResources() {
         _initialize();
         return supportingResources;
     }
 
-    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = JPU.emptyListOfOnixDataComposite(Prize.class);
 
     /**
      * <p>

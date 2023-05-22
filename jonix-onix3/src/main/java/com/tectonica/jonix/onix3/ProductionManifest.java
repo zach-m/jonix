@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
@@ -27,8 +28,6 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -236,7 +235,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -254,7 +253,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
         return productIdentifiers;
     }
 
-    private List<InsertManifest> insertManifests = Collections.emptyList();
+    private ListOfOnixComposite<InsertManifest> insertManifests = JPU.emptyListOfOnixComposite(InsertManifest.class);
 
     /**
      * <p>
@@ -283,12 +282,13 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<InsertManifest> insertManifests() {
+    public ListOfOnixComposite<InsertManifest> insertManifests() {
         _initialize();
         return insertManifests;
     }
 
-    private List<SupplementManifest> supplementManifests = Collections.emptyList();
+    private ListOfOnixComposite<SupplementManifest> supplementManifests =
+        JPU.emptyListOfOnixComposite(SupplementManifest.class);
 
     /**
      * <p>
@@ -306,7 +306,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SupplementManifest> supplementManifests() {
+    public ListOfOnixComposite<SupplementManifest> supplementManifests() {
         _initialize();
         return supplementManifests;
     }

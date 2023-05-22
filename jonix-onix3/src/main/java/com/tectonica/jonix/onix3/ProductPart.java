@@ -310,7 +310,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -328,7 +328,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
 
     /**
      * <p>
@@ -343,7 +343,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature,
-        ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductFormFeatureTypes> productFormFeatures =
+            JPU.emptyListOfOnixDataCompositeWithKey(ProductFormFeature.class);
 
     /**
      * <p>
@@ -360,7 +361,8 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions =
+        JPU.emptyListOfOnixElement(ProductFormDescription.class);
 
     /**
      * <p>
@@ -377,7 +379,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ProductContentType.class);
 
     /**
      * <p>
@@ -392,7 +394,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Measure.class);
 
     /**
      * <p>

@@ -252,7 +252,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return nameCodeTypeName;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>

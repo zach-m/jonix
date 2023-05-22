@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -37,8 +38,6 @@ import com.tectonica.jonix.common.struct.JonixPrize;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -302,7 +301,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return keyNames;
     }
 
-    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles =
+        JPU.emptyListOfOnixCodelist(ContributorRole.class);
 
     /**
      * <p>
@@ -318,7 +318,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(NameIdentifier.class);
 
     /**
      * <p>
@@ -334,7 +334,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<CorporateName, String> corporateNames = JPU.emptyListOfOnixElement(CorporateName.class);
 
     /**
      * <p>
@@ -512,7 +512,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return unnamedPersons;
     }
 
-    private ListOfOnixCodelist<FromLanguage, Languages> fromLanguages = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<FromLanguage, Languages> fromLanguages = JPU.emptyListOfOnixCodelist(FromLanguage.class);
 
     /**
      * <p>
@@ -528,7 +528,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return fromLanguages;
     }
 
-    private ListOfOnixCodelist<ToLanguage, Languages> toLanguages = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<ToLanguage, Languages> toLanguages = JPU.emptyListOfOnixCodelist(ToLanguage.class);
 
     /**
      * <p>
@@ -544,7 +544,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return toLanguages;
     }
 
-    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
+    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds =
+        JPU.emptyListOfOnixElement(CorporateNameInverted.class);
 
     /**
      * <p>
@@ -562,7 +563,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return corporateNameInverteds;
     }
 
-    private List<AlternativeName> alternativeNames = Collections.emptyList();
+    private ListOfOnixComposite<AlternativeName> alternativeNames = JPU.emptyListOfOnixComposite(AlternativeName.class);
 
     /**
      * <p>
@@ -586,13 +587,13 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </ul>
      * Jonix-Comment: this list may be empty
      */
-    public List<AlternativeName> alternativeNames() {
+    public ListOfOnixComposite<AlternativeName> alternativeNames() {
         _initialize();
         return alternativeNames;
     }
 
     private ListOfOnixDataCompositeWithKey<ContributorDate, JonixContributorDate,
-        PersonOrganizationDateRoles> contributorDates = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        PersonOrganizationDateRoles> contributorDates = JPU.emptyListOfOnixDataCompositeWithKey(ContributorDate.class);
 
     /**
      * <p>
@@ -608,7 +609,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return contributorDates;
     }
 
-    private List<ProfessionalAffiliation> professionalAffiliations = Collections.emptyList();
+    private ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations =
+        JPU.emptyListOfOnixComposite(ProfessionalAffiliation.class);
 
     /**
      * <p>
@@ -617,12 +619,12 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ProfessionalAffiliation> professionalAffiliations() {
+    public ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations() {
         _initialize();
         return professionalAffiliations;
     }
 
-    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = JPU.emptyListOfOnixDataComposite(Prize.class);
 
     /**
      * <p>
@@ -637,7 +639,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return prizes;
     }
 
-    private ListOfOnixElement<BiographicalNote, String> biographicalNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<BiographicalNote, String> biographicalNotes =
+        JPU.emptyListOfOnixElement(BiographicalNote.class);
 
     /**
      * <p>
@@ -658,7 +661,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return biographicalNotes;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>
@@ -673,7 +676,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return websites;
     }
 
-    private ListOfOnixElement<ContributorDescription, String> contributorDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<ContributorDescription, String> contributorDescriptions =
+        JPU.emptyListOfOnixElement(ContributorDescription.class);
 
     /**
      * <p>
@@ -691,7 +695,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataComposite<ContributorPlace, JonixContributorPlace> contributorPlaces =
-        ListOfOnixDataComposite.empty();
+        JPU.emptyListOfOnixDataComposite(ContributorPlace.class);
 
     /**
      * <p>

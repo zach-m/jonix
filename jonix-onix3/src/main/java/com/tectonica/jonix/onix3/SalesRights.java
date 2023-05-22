@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -28,8 +29,6 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -198,7 +197,8 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         return territory;
     }
 
-    private List<SalesRestriction> salesRestrictions = Collections.emptyList();
+    private ListOfOnixComposite<SalesRestriction> salesRestrictions =
+        JPU.emptyListOfOnixComposite(SalesRestriction.class);
 
     /**
      * <p>
@@ -207,13 +207,13 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SalesRestriction> salesRestrictions() {
+    public ListOfOnixComposite<SalesRestriction> salesRestrictions() {
         _initialize();
         return salesRestrictions;
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -230,7 +230,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixElement<PublisherName, String> publisherNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<PublisherName, String> publisherNames = JPU.emptyListOfOnixElement(PublisherName.class);
 
     /**
      * <p>

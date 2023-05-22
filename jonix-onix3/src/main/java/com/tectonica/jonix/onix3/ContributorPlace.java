@@ -213,7 +213,7 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
         return regionCode;
     }
 
-    private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<LocationName, String> locationNames = JPU.emptyListOfOnixElement(LocationName.class);
 
     /**
      * <p>

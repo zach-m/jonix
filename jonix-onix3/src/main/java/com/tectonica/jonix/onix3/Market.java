@@ -20,12 +20,11 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -174,7 +173,8 @@ public class Market implements OnixSuperComposite, Serializable {
         return territory;
     }
 
-    private List<SalesRestriction> salesRestrictions = Collections.emptyList();
+    private ListOfOnixComposite<SalesRestriction> salesRestrictions =
+        JPU.emptyListOfOnixComposite(SalesRestriction.class);
 
     /**
      * <p>
@@ -183,7 +183,7 @@ public class Market implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SalesRestriction> salesRestrictions() {
+    public ListOfOnixComposite<SalesRestriction> salesRestrictions() {
         _initialize();
         return salesRestrictions;
     }

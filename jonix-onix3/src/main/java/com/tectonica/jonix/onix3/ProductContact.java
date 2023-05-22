@@ -194,7 +194,8 @@ public class ProductContact implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier,
-        NameIdentifierTypes> productContactIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> productContactIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(ProductContactIdentifier.class);
 
     /**
      * <p>
@@ -239,7 +240,8 @@ public class ProductContact implements OnixSuperComposite, Serializable {
         return contactName;
     }
 
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers =
+        JPU.emptyListOfOnixElement(TelephoneNumber.class);
 
     /**
      * <p>
@@ -254,7 +256,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
         return telephoneNumbers;
     }
 
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = JPU.emptyListOfOnixElement(FaxNumber.class);
 
     /**
      * <p>
@@ -269,7 +271,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
         return faxNumbers;
     }
 
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = JPU.emptyListOfOnixElement(EmailAddress.class);
 
     /**
      * <p>

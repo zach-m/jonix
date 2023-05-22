@@ -187,7 +187,7 @@ public class AncillaryContent
     }
 
     private ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions =
-        ListOfOnixElement.empty();
+        JPU.emptyListOfOnixElement(AncillaryContentDescription.class);
 
     /**
      * <p>

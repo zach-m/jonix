@@ -180,7 +180,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<WebsiteLink, String> websiteLinks = ListOfOnixElement.empty();
+    private ListOfOnixElement<WebsiteLink, String> websiteLinks = JPU.emptyListOfOnixElement(WebsiteLink.class);
 
     /**
      * <p>
@@ -210,7 +210,8 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         return websiteRole;
     }
 
-    private ListOfOnixElement<WebsiteDescription, String> websiteDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<WebsiteDescription, String> websiteDescriptions =
+        JPU.emptyListOfOnixElement(WebsiteDescription.class);
 
     /**
      * <p>

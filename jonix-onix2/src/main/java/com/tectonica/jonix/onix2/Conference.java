@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.Languages;
@@ -30,8 +31,6 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -286,7 +285,8 @@ public class Conference implements OnixSuperComposite, Serializable {
         return conferencePlace;
     }
 
-    private List<ConferenceSponsor> conferenceSponsors = Collections.emptyList();
+    private ListOfOnixComposite<ConferenceSponsor> conferenceSponsors =
+        JPU.emptyListOfOnixComposite(ConferenceSponsor.class);
 
     /**
      * <p>
@@ -294,12 +294,12 @@ public class Conference implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ConferenceSponsor> conferenceSponsors() {
+    public ListOfOnixComposite<ConferenceSponsor> conferenceSponsors() {
         _initialize();
         return conferenceSponsors;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>

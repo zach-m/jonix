@@ -193,7 +193,7 @@ public class AVItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<AVItemIdentifier, JonixAVItemIdentifier,
-        AvItemIdentifierTypes> avItemIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        AvItemIdentifierTypes> avItemIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(AVItemIdentifier.class);
 
     /**
      * <p>
@@ -209,7 +209,7 @@ public class AVItem implements OnixSuperComposite, Serializable {
         return avItemIdentifiers;
     }
 
-    private ListOfOnixDataComposite<TimeRun, JonixTimeRun> timeRuns = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<TimeRun, JonixTimeRun> timeRuns = JPU.emptyListOfOnixDataComposite(TimeRun.class);
 
     /**
      * <p>

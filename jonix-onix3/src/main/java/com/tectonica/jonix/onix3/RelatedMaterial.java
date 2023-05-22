@@ -20,12 +20,11 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -156,7 +155,7 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private List<RelatedWork> relatedWorks = Collections.emptyList();
+    private ListOfOnixComposite<RelatedWork> relatedWorks = JPU.emptyListOfOnixComposite(RelatedWork.class);
 
     /**
      * <p>
@@ -166,12 +165,12 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<RelatedWork> relatedWorks() {
+    public ListOfOnixComposite<RelatedWork> relatedWorks() {
         _initialize();
         return relatedWorks;
     }
 
-    private List<RelatedProduct> relatedProducts = Collections.emptyList();
+    private ListOfOnixComposite<RelatedProduct> relatedProducts = JPU.emptyListOfOnixComposite(RelatedProduct.class);
 
     /**
      * <p>
@@ -181,7 +180,7 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<RelatedProduct> relatedProducts() {
+    public ListOfOnixComposite<RelatedProduct> relatedProducts() {
         _initialize();
         return relatedProducts;
     }

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -30,8 +31,6 @@ import com.tectonica.jonix.common.struct.JonixPublisherIdentifier;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -189,7 +188,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier,
-        NameIdentifierTypes> publisherIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> publisherIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(PublisherIdentifier.class);
 
     /**
      * <p>
@@ -205,7 +204,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return publisherIdentifiers;
     }
 
-    private ListOfOnixElement<PublisherName, String> publisherNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<PublisherName, String> publisherNames = JPU.emptyListOfOnixElement(PublisherName.class);
 
     /**
      * <p>
@@ -222,7 +221,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return publisherNames;
     }
 
-    private List<Funding> fundings = Collections.emptyList();
+    private ListOfOnixComposite<Funding> fundings = JPU.emptyListOfOnixComposite(Funding.class);
 
     /**
      * <p>
@@ -233,12 +232,12 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Funding> fundings() {
+    public ListOfOnixComposite<Funding> fundings() {
         _initialize();
         return fundings;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>

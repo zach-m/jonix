@@ -28,9 +28,24 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
-    K extends Enum<K> & OnixCodelist> extends ListOfOnixDataComposite<C, S> {
+// CHECKSTYLE:OFF
+public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>
+    extends ListOfOnixDataComposite<C, S> {
     private static final long serialVersionUID = 1L;
+
+    final Class<C> clazz;
+
+    public ListOfOnixDataCompositeWithKey(Class<C> clazz) {
+        super(clazz);
+        this.clazz = clazz;
+    }
+
+    /**
+     * @return the {@link Class} of the items in this {@link List}
+     */
+    public Class<C> itemClass() {
+        return clazz;
+    }
 
     /**
      * Scans the items (i.e. Data Composite) in this list, searching for the one that has the given key
@@ -59,7 +74,7 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
     }
 
     public ListOfOnixDataCompositeWithKey<C, S, K> findAll(Set<K> structKeys) {
-        ListOfOnixDataCompositeWithKey<C, S, K> matches = new ListOfOnixDataCompositeWithKey<>();
+        ListOfOnixDataCompositeWithKey<C, S, K> matches = new ListOfOnixDataCompositeWithKey<>(clazz);
         forEach(item -> {
             if (structKeys == null || structKeys.contains(item.structKey())) {
                 matches.add(item);
@@ -98,12 +113,5 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
     public Optional<S> findAnyAsStructs(Set<K> structKeys) {
         return findAny(structKeys).map(OnixComposite.OnixDataComposite::asStruct);
     }
-
-    private static final ListOfOnixDataCompositeWithKey<?, ?, ?> EMPTY = new ListOfOnixDataCompositeWithKey<>();
-
-    @SuppressWarnings("unchecked")
-    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
-        K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K> emptyKeyed() {
-        return (ListOfOnixDataCompositeWithKey<C, S, K>) EMPTY;
-    }
 }
+// CHECKSTYLE:ON

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.ImageAudioVideoFileTypes;
@@ -31,8 +32,6 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixMediaFile;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -212,7 +211,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
         return reissueDescription;
     }
 
-    private List<Price> prices = Collections.emptyList();
+    private ListOfOnixComposite<Price> prices = JPU.emptyListOfOnixComposite(Price.class);
 
     /**
      * <p>
@@ -222,13 +221,13 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Price> prices() {
+    public ListOfOnixComposite<Price> prices() {
         _initialize();
         return prices;
     }
 
     private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(MediaFile.class);
 
     /**
      * <p>

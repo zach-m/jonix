@@ -178,7 +178,8 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys = ListOfOnixElement.empty();
+    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys =
+        JPU.emptyListOfOnixElement(RightsCountry.class);
 
     /**
      * <p>
@@ -260,7 +261,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>

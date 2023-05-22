@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -28,8 +29,6 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -163,7 +162,7 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
         return header;
     }
 
-    private List<Product> products = Collections.emptyList();
+    private ListOfOnixComposite<Product> products = JPU.emptyListOfOnixComposite(Product.class);
 
     /**
      * <p>
@@ -174,27 +173,28 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Product> products() {
+    public ListOfOnixComposite<Product> products() {
         _initialize();
         return products;
     }
 
-    private List<MainSeriesRecord> mainSeriesRecords = Collections.emptyList();
+    private ListOfOnixComposite<MainSeriesRecord> mainSeriesRecords =
+        JPU.emptyListOfOnixComposite(MainSeriesRecord.class);
 
     /**
      * Jonix-Comment: this list may be empty
      */
-    public List<MainSeriesRecord> mainSeriesRecords() {
+    public ListOfOnixComposite<MainSeriesRecord> mainSeriesRecords() {
         _initialize();
         return mainSeriesRecords;
     }
 
-    private List<SubSeriesRecord> subSeriesRecords = Collections.emptyList();
+    private ListOfOnixComposite<SubSeriesRecord> subSeriesRecords = JPU.emptyListOfOnixComposite(SubSeriesRecord.class);
 
     /**
      * Jonix-Comment: this list may be empty
      */
-    public List<SubSeriesRecord> subSeriesRecords() {
+    public ListOfOnixComposite<SubSeriesRecord> subSeriesRecords() {
         _initialize();
         return subSeriesRecords;
     }

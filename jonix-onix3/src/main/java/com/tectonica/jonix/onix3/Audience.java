@@ -226,7 +226,8 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
         return audienceCodeTypeName;
     }
 
-    private ListOfOnixElement<AudienceHeadingText, String> audienceHeadingTexts = ListOfOnixElement.empty();
+    private ListOfOnixElement<AudienceHeadingText, String> audienceHeadingTexts =
+        JPU.emptyListOfOnixElement(AudienceHeadingText.class);
 
     /**
      * <p>

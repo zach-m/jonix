@@ -235,7 +235,8 @@ public class TextItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier,
-        TextItemIdentifierTypes> textItemIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        TextItemIdentifierTypes> textItemIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(TextItemIdentifier.class);
 
     /**
      * <p>
@@ -250,7 +251,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
         return textItemIdentifiers;
     }
 
-    private ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns = JPU.emptyListOfOnixDataComposite(PageRun.class);
 
     /**
      * <p>

@@ -277,7 +277,7 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceAmount;
     }
 
-    private ListOfOnixCodelist<CountryCode, Countrys> countryCodes = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<CountryCode, Countrys> countryCodes = JPU.emptyListOfOnixCodelist(CountryCode.class);
 
     /**
      * <p>
@@ -637,7 +637,8 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceEffectiveUntil;
     }
 
-    private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss =
+        JPU.emptyListOfOnixDataComposite(BatchBonus.class);
 
     /**
      * <p>
@@ -652,7 +653,7 @@ public class Price implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(DiscountCoded.class);
 
     /**
      * <p>

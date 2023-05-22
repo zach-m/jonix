@@ -152,7 +152,7 @@ public class Funding implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier,
-        GrantIdentifierTypes> fundingIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        GrantIdentifierTypes> fundingIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(FundingIdentifier.class);
 
     /**
      * <p>

@@ -183,7 +183,8 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         return salesRightsType;
     }
 
-    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys = ListOfOnixElement.empty();
+    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys =
+        JPU.emptyListOfOnixElement(RightsCountry.class);
 
     /**
      * <p>
@@ -217,7 +218,8 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         return rightsTerritory;
     }
 
-    private ListOfOnixCodelist<RightsRegion, RightsRegions> rightsRegions = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<RightsRegion, RightsRegions> rightsRegions =
+        JPU.emptyListOfOnixCodelist(RightsRegion.class);
 
     /**
      * <p>

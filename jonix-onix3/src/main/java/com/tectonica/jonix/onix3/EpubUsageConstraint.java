@@ -188,7 +188,7 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits =
-        ListOfOnixDataComposite.empty();
+        JPU.emptyListOfOnixDataComposite(EpubUsageLimit.class);
 
     /**
      * <p>

@@ -20,12 +20,11 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -156,7 +155,8 @@ public class ProductionDetail implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private List<ProductionManifest> productionManifests = Collections.emptyList();
+    private ListOfOnixComposite<ProductionManifest> productionManifests =
+        JPU.emptyListOfOnixComposite(ProductionManifest.class);
 
     /**
      * <p>
@@ -164,7 +164,7 @@ public class ProductionDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ProductionManifest> productionManifests() {
+    public ListOfOnixComposite<ProductionManifest> productionManifests() {
         _initialize();
         return productionManifests;
     }

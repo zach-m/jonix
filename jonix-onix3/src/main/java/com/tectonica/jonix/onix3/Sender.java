@@ -163,7 +163,7 @@ public class Sender implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier,
-        NameIdentifierTypes> senderIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> senderIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(SenderIdentifier.class);
 
     /**
      * <p>

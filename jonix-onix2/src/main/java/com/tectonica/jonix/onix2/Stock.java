@@ -263,7 +263,8 @@ public class Stock implements OnixSuperComposite, Serializable {
         return cbo;
     }
 
-    private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails =
+        JPU.emptyListOfOnixDataComposite(OnOrderDetail.class);
 
     /**
      * <p>

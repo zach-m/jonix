@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -30,8 +31,6 @@ import com.tectonica.jonix.common.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.common.struct.JonixCollectionSequence;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -202,7 +201,7 @@ public class Collection implements OnixSuperComposite, Serializable {
         return collectionType;
     }
 
-    private List<Contributor> contributors = Collections.emptyList();
+    private ListOfOnixComposite<Contributor> contributors = JPU.emptyListOfOnixComposite(Contributor.class);
 
     /**
      * <p>
@@ -214,7 +213,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public List<Contributor> contributors() {
+    public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
         return contributors;
     }
@@ -272,7 +271,8 @@ public class Collection implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier,
-        SeriesIdentifierTypes> collectionIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SeriesIdentifierTypes> collectionIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(CollectionIdentifier.class);
 
     /**
      * <p>
@@ -289,7 +289,8 @@ public class Collection implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence,
-        CollectionSequenceTypes> collectionSequences = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        CollectionSequenceTypes> collectionSequences =
+            JPU.emptyListOfOnixDataCompositeWithKey(CollectionSequence.class);
 
     /**
      * <p>
@@ -305,7 +306,7 @@ public class Collection implements OnixSuperComposite, Serializable {
         return collectionSequences;
     }
 
-    private List<TitleDetail> titleDetails = Collections.emptyList();
+    private ListOfOnixComposite<TitleDetail> titleDetails = JPU.emptyListOfOnixComposite(TitleDetail.class);
 
     /**
      * <p>
@@ -316,12 +317,13 @@ public class Collection implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<TitleDetail> titleDetails() {
+    public ListOfOnixComposite<TitleDetail> titleDetails() {
         _initialize();
         return titleDetails;
     }
 
-    private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
+    private ListOfOnixElement<ContributorStatement, String> contributorStatements =
+        JPU.emptyListOfOnixElement(ContributorStatement.class);
 
     /**
      * <p>

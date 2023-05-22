@@ -184,7 +184,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         return resourceForm;
     }
 
-    private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
+    private ListOfOnixElement<ResourceLink, String> resourceLinks = JPU.emptyListOfOnixElement(ResourceLink.class);
 
     /**
      * <p>
@@ -201,7 +201,8 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature,
-        ResourceVersionFeatureTypes> resourceVersionFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ResourceVersionFeatureTypes> resourceVersionFeatures =
+            JPU.emptyListOfOnixDataCompositeWithKey(ResourceVersionFeature.class);
 
     /**
      * <p>
@@ -220,7 +221,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(ContentDate.class);
 
     /**
      * <p>

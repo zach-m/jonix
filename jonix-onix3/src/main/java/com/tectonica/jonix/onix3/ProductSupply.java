@@ -20,12 +20,11 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -205,7 +204,7 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
         return marketPublishingDetail;
     }
 
-    private List<Market> markets = Collections.emptyList();
+    private ListOfOnixComposite<Market> markets = JPU.emptyListOfOnixComposite(Market.class);
 
     /**
      * <p>
@@ -222,12 +221,12 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Market> markets() {
+    public ListOfOnixComposite<Market> markets() {
         _initialize();
         return markets;
     }
 
-    private List<SupplyDetail> supplyDetails = Collections.emptyList();
+    private ListOfOnixComposite<SupplyDetail> supplyDetails = JPU.emptyListOfOnixComposite(SupplyDetail.class);
 
     /**
      * <p>
@@ -243,7 +242,7 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SupplyDetail> supplyDetails() {
+    public ListOfOnixComposite<SupplyDetail> supplyDetails() {
         _initialize();
         return supplyDetails;
     }

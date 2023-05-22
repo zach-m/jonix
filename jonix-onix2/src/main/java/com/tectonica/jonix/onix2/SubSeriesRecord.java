@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.Languages;
@@ -35,8 +36,6 @@ import com.tectonica.jonix.common.struct.JonixSeriesIdentifier;
 import com.tectonica.jonix.common.struct.JonixTitle;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -272,7 +271,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier,
-        SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SeriesIdentifierTypes> seriesIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(SeriesIdentifier.class);
 
     /**
      * <p>
@@ -289,7 +288,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Title.class);
 
     /**
      * Jonix-Comment: this list is required to contain at least one item
@@ -422,18 +421,18 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
         return subordinateEntries;
     }
 
-    private List<Contributor> contributors = Collections.emptyList();
+    private ListOfOnixComposite<Contributor> contributors = JPU.emptyListOfOnixComposite(Contributor.class);
 
     /**
      * Jonix-Comment: this list may be empty
      */
-    public List<Contributor> contributors() {
+    public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
         return contributors;
     }
 
     private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(OtherText.class);
 
     /**
      * Jonix-Comment: this list may be empty
@@ -443,12 +442,12 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
         return otherTexts;
     }
 
-    private List<Publisher> publishers = Collections.emptyList();
+    private ListOfOnixComposite<Publisher> publishers = JPU.emptyListOfOnixComposite(Publisher.class);
 
     /**
      * Jonix-Comment: this list may be empty
      */
-    public List<Publisher> publishers() {
+    public ListOfOnixComposite<Publisher> publishers() {
         _initialize();
         return publishers;
     }

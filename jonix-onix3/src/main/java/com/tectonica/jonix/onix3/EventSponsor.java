@@ -165,7 +165,8 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixDataCompositeWithKey<EventSponsorIdentifier, JonixEventSponsorIdentifier,
-        NameIdentifierTypes> eventSponsorIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> eventSponsorIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(EventSponsorIdentifier.class);
 
     /**
      * <p>

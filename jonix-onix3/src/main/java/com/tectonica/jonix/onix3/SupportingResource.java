@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.ContentAudiences;
@@ -29,8 +30,6 @@ import com.tectonica.jonix.common.codelist.ResourceFeatureTypes;
 import com.tectonica.jonix.common.struct.JonixResourceFeature;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -213,7 +212,8 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return resourceMode;
     }
 
-    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences =
+        JPU.emptyListOfOnixCodelist(ContentAudience.class);
 
     /**
      * <p>
@@ -227,7 +227,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
-    private List<ResourceVersion> resourceVersions = Collections.emptyList();
+    private ListOfOnixComposite<ResourceVersion> resourceVersions = JPU.emptyListOfOnixComposite(ResourceVersion.class);
 
     /**
      * <p>
@@ -238,7 +238,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public List<ResourceVersion> resourceVersions() {
+    public ListOfOnixComposite<ResourceVersion> resourceVersions() {
         _initialize();
         return resourceVersions;
     }
@@ -291,7 +291,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature,
-        ResourceFeatureTypes> resourceFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ResourceFeatureTypes> resourceFeatures = JPU.emptyListOfOnixDataCompositeWithKey(ResourceFeature.class);
 
     /**
      * <p>

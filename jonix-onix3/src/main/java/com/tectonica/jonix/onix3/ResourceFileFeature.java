@@ -206,7 +206,7 @@ public class ResourceFileFeature
     }
 
     private ListOfOnixElement<ResourceFileFeatureDescription, String> resourceFileFeatureDescriptions =
-        ListOfOnixElement.empty();
+        JPU.emptyListOfOnixElement(ResourceFileFeatureDescription.class);
 
     /**
      * <p>

@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -34,8 +35,6 @@ import com.tectonica.jonix.common.struct.JonixResourceFileFeature;
 import com.tectonica.jonix.common.struct.JonixResourceIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -205,7 +204,8 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<ResourceFileLink, String> resourceFileLinks = ListOfOnixElement.empty();
+    private ListOfOnixElement<ResourceFileLink, String> resourceFileLinks =
+        JPU.emptyListOfOnixElement(ResourceFileLink.class);
 
     /**
      * <p>
@@ -274,7 +274,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
         return (noResource().exists());
     }
 
-    private List<SalesOutlet> salesOutlets = Collections.emptyList();
+    private ListOfOnixComposite<SalesOutlet> salesOutlets = JPU.emptyListOfOnixComposite(SalesOutlet.class);
 
     /**
      * <p>
@@ -325,13 +325,14 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SalesOutlet> salesOutlets() {
+    public ListOfOnixComposite<SalesOutlet> salesOutlets() {
         _initialize();
         return salesOutlets;
     }
 
     private ListOfOnixDataCompositeWithKey<ResourceIdentifier, JonixResourceIdentifier,
-        ResourceIdentifierTypes> resourceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ResourceIdentifierTypes> resourceIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(ResourceIdentifier.class);
 
     /**
      * <p>
@@ -348,7 +349,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ResourceFileDetail, ResourceFileDetails> resourceFileDetails =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(ResourceFileDetail.class);
 
     /**
      * <p>
@@ -364,7 +365,8 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ResourceFileFeature, JonixResourceFileFeature,
-        ResourceFileFeatureTypes> resourceFileFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ResourceFileFeatureTypes> resourceFileFeatures =
+            JPU.emptyListOfOnixDataCompositeWithKey(ResourceFileFeature.class);
 
     /**
      * <p>
@@ -381,7 +383,8 @@ public class CoverResource implements OnixSuperComposite, Serializable {
         return resourceFileFeatures;
     }
 
-    private ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions =
+        JPU.emptyListOfOnixElement(ResourceFileDescription.class);
 
     /**
      * <p>
@@ -400,7 +403,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixElement<ResourceFileContentDescription, String> resourceFileContentDescriptions =
-        ListOfOnixElement.empty();
+        JPU.emptyListOfOnixElement(ResourceFileContentDescription.class);
 
     /**
      * <p>
@@ -426,7 +429,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ResourceFileDate, JonixResourceFileDate,
-        ResourceFileDateRoles> resourceFileDates = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ResourceFileDateRoles> resourceFileDates = JPU.emptyListOfOnixDataCompositeWithKey(ResourceFileDate.class);
 
     /**
      * <p>

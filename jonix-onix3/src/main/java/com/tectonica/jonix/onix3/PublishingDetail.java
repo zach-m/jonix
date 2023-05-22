@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -28,8 +29,6 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixPublishingDate;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -196,7 +195,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private List<Imprint> imprints = Collections.emptyList();
+    private ListOfOnixComposite<Imprint> imprints = JPU.emptyListOfOnixComposite(Imprint.class);
 
     /**
      * <p>
@@ -206,7 +205,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public List<Imprint> imprints() {
+    public ListOfOnixComposite<Imprint> imprints() {
         _initialize();
         return imprints;
     }
@@ -279,7 +278,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return rowSalesRightsType;
     }
 
-    private List<Publisher> publishers = Collections.emptyList();
+    private ListOfOnixComposite<Publisher> publishers = JPU.emptyListOfOnixComposite(Publisher.class);
 
     /**
      * <p>
@@ -290,12 +289,13 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Publisher> publishers() {
+    public ListOfOnixComposite<Publisher> publishers() {
         _initialize();
         return publishers;
     }
 
-    private ListOfOnixElement<CityOfPublication, String> cityOfPublications = ListOfOnixElement.empty();
+    private ListOfOnixElement<CityOfPublication, String> cityOfPublications =
+        JPU.emptyListOfOnixElement(CityOfPublication.class);
 
     /**
      * <p>
@@ -320,7 +320,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return cityOfPublications;
     }
 
-    private List<ProductContact> productContacts = Collections.emptyList();
+    private ListOfOnixComposite<ProductContact> productContacts = JPU.emptyListOfOnixComposite(ProductContact.class);
 
     /**
      * <p>
@@ -330,12 +330,13 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ProductContact> productContacts() {
+    public ListOfOnixComposite<ProductContact> productContacts() {
         _initialize();
         return productContacts;
     }
 
-    private ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes =
+        JPU.emptyListOfOnixElement(PublishingStatusNote.class);
 
     /**
      * <p>
@@ -353,7 +354,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<PublishingDate, JonixPublishingDate, PublishingDateRoles> publishingDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(PublishingDate.class);
 
     /**
      * <p>
@@ -369,7 +370,8 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return publishingDates;
     }
 
-    private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
+    private ListOfOnixComposite<CopyrightStatement> copyrightStatements =
+        JPU.emptyListOfOnixComposite(CopyrightStatement.class);
 
     /**
      * <p>
@@ -381,12 +383,12 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<CopyrightStatement> copyrightStatements() {
+    public ListOfOnixComposite<CopyrightStatement> copyrightStatements() {
         _initialize();
         return copyrightStatements;
     }
 
-    private List<SalesRights> salesRightss = Collections.emptyList();
+    private ListOfOnixComposite<SalesRights> salesRightss = JPU.emptyListOfOnixComposite(SalesRights.class);
 
     /**
      * <p>
@@ -398,7 +400,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SalesRights> salesRightss() {
+    public ListOfOnixComposite<SalesRights> salesRightss() {
         _initialize();
         return salesRightss;
     }

@@ -168,7 +168,8 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<ProfessionalPosition, String> professionalPositions = ListOfOnixElement.empty();
+    private ListOfOnixElement<ProfessionalPosition, String> professionalPositions =
+        JPU.emptyListOfOnixElement(ProfessionalPosition.class);
 
     /**
      * <p>
@@ -200,7 +201,8 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
     }
 
     private ListOfOnixDataCompositeWithKey<AffiliationIdentifier, JonixAffiliationIdentifier,
-        NameIdentifierTypes> affiliationIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> affiliationIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(AffiliationIdentifier.class);
 
     /**
      * <p>

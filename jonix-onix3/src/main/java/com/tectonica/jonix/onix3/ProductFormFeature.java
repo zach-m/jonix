@@ -192,7 +192,7 @@ public class ProductFormFeature
     }
 
     private ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions =
-        ListOfOnixElement.empty();
+        JPU.emptyListOfOnixElement(ProductFormFeatureDescription.class);
 
     /**
      * <p>

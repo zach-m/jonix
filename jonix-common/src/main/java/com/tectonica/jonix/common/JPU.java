@@ -32,8 +32,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * JPU (Jonix Processing Utility) is an all-static internal utility class, assisting in run time processing of the DOM
@@ -61,6 +62,17 @@ public class JPU {
             item = item.getNextSibling();
         }
         return (Element) item;
+    }
+
+    public static <C> C newInstance(Class<C> clazz) {
+        // CHECKSTYLE:OFF
+        try {
+            return clazz.getDeclaredConstructor().newInstance();
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+            NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
+        // CHECKSTYLE:ON
     }
 
     @FunctionalInterface
@@ -140,39 +152,78 @@ public class JPU {
         return content;
     }
 
-    public static <T> List<T> addToList(List<T> in, T item) {
-        List<T> out = (in.size() > 0) ? in : new ArrayList<>();
-        out.add(item);
-        return out;
-    }
+    // CHECKSTYLE:OFF
 
     public static <E extends OnixElement<V>, V> ListOfOnixElement<E, V> addToList(ListOfOnixElement<E, V> in, E item) {
-        ListOfOnixElement<E, V> out = (in.size() > 0) ? in : new ListOfOnixElement<>();
+        ListOfOnixElement<E, V> out = (in.size() > 0) ? in : new ListOfOnixElement<>(in.clazz);
         out.add(item);
         return out;
     }
 
-    public static <E extends OnixElement<V>, V extends OnixCodelist> ListOfOnixCodelist<E, V>
-        addToList(ListOfOnixCodelist<E, V> in, E item) {
-        ListOfOnixCodelist<E, V> out = (in.size() > 0) ? in : new ListOfOnixCodelist<>();
+    public static <E extends OnixElement<V>, V extends OnixCodelist> ListOfOnixCodelist<E, V> addToList(
+        ListOfOnixCodelist<E, V> in, E item) {
+        ListOfOnixCodelist<E, V> out = (in.size() > 0) ? in : new ListOfOnixCodelist<>(in.clazz);
         out.add(item);
         return out;
     }
 
-    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S>
-        addToList(ListOfOnixDataComposite<C, S> in, C item) {
-        ListOfOnixDataComposite<C, S> out = (in.size() > 0) ? in : new ListOfOnixDataComposite<>();
+    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> addToList(
+        ListOfOnixDataComposite<C, S> in, C item) {
+        ListOfOnixDataComposite<C, S> out = (in.size() > 0) ? in : new ListOfOnixDataComposite<>(in.clazz);
         out.add(item);
         return out;
     }
 
-    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
-        K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K>
-        addToList(ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
-        ListOfOnixDataCompositeWithKey<C, S, K> out = (in.size() > 0) ? in : new ListOfOnixDataCompositeWithKey<>();
+    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K> addToList(
+        ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
+        ListOfOnixDataCompositeWithKey<C, S, K> out =
+            (in.size() > 0) ? in : new ListOfOnixDataCompositeWithKey<>(in.clazz);
         out.add(item);
         return out;
     }
+
+    public static <C extends OnixComposite> ListOfOnixComposite<C> addToList(ListOfOnixComposite<C> in, C item) {
+        ListOfOnixComposite<C> out = (in.size() > 0) ? in : new ListOfOnixComposite<>(in.clazz);
+        out.add(item);
+        return out;
+    }
+
+    private static final Map<Class<?>, ListOfOnixElement<?, ?>> emptyListOfOnixElements = new HashMap<>();
+    private static final Map<Class<?>, ListOfOnixCodelist<?, ?>> emptyListOfOnixCodelists = new HashMap<>();
+    private static final Map<Class<?>, ListOfOnixDataComposite<?, ?>> emptyListOfOnixDataComposites = new HashMap<>();
+    private static final Map<Class<?>, ListOfOnixDataCompositeWithKey<?, ?, ?>> emptyListOfOnixDataCompositeWithKeys =
+        new HashMap<>();
+    private static final Map<Class<?>, ListOfOnixComposite<?>> emptyListOfOnixComposites = new HashMap<>();
+
+    public static <E extends OnixElement<V>, V> ListOfOnixElement<E, V> emptyListOfOnixElement(Class<E> clazz) {
+        return (ListOfOnixElement<E, V>) emptyListOfOnixElements.computeIfAbsent(clazz,
+            c -> new ListOfOnixElement<>(clazz));
+    }
+
+    public static <E extends OnixElement<V>, V extends OnixCodelist> ListOfOnixCodelist<E, V> emptyListOfOnixCodelist(
+        Class<E> clazz) {
+        return (ListOfOnixCodelist<E, V>) emptyListOfOnixCodelists.computeIfAbsent(clazz,
+            c -> new ListOfOnixCodelist<>(clazz));
+    }
+
+    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> emptyListOfOnixDataComposite(
+        Class<C> clazz) {
+        return (ListOfOnixDataComposite<C, S>) emptyListOfOnixDataComposites.computeIfAbsent(clazz,
+            c -> new ListOfOnixDataComposite<>(clazz));
+    }
+
+    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K> emptyListOfOnixDataCompositeWithKey(
+        Class<C> clazz) {
+        return (ListOfOnixDataCompositeWithKey<C, S, K>) emptyListOfOnixDataCompositeWithKeys.computeIfAbsent(clazz,
+            c -> new ListOfOnixDataCompositeWithKey<>(clazz));
+    }
+
+    public static <C extends OnixComposite> ListOfOnixComposite<C> emptyListOfOnixComposite(Class<C> clazz) {
+        return (ListOfOnixComposite<C>) emptyListOfOnixComposites.computeIfAbsent(clazz,
+            c -> new ListOfOnixComposite<>(clazz));
+    }
+
+    // CHECKSTYLE:ON
 
     public static Integer convertStringToInteger(String s) {
         return (s == null) ? null : Integer.parseInt(s.trim());
@@ -194,7 +245,8 @@ public class JPU {
     }
 
     /**
-     * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes, etc.
+     * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes,
+     * etc.
      */
     public static Double convertStringToDoubleSafe(String s) {
         try {

@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -37,8 +38,6 @@ import com.tectonica.jonix.common.struct.JonixPriceDate;
 import com.tectonica.jonix.common.struct.JonixPriceIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -498,7 +497,7 @@ public class Price implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<PriceIdentifier, JonixPriceIdentifier,
-        PriceIdentifierTypes> priceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        PriceIdentifierTypes> priceIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(PriceIdentifier.class);
 
     /**
      * <p>
@@ -524,7 +523,7 @@ public class Price implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(EpubTechnicalProtection.class);
 
     /**
      * <p>
@@ -544,7 +543,7 @@ public class Price implements OnixSuperComposite, Serializable {
         return epubTechnicalProtections;
     }
 
-    private List<PriceConstraint> priceConstraints = Collections.emptyList();
+    private ListOfOnixComposite<PriceConstraint> priceConstraints = JPU.emptyListOfOnixComposite(PriceConstraint.class);
 
     /**
      * <p>
@@ -561,12 +560,13 @@ public class Price implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<PriceConstraint> priceConstraints() {
+    public ListOfOnixComposite<PriceConstraint> priceConstraints() {
         _initialize();
         return priceConstraints;
     }
 
-    private ListOfOnixElement<PriceTypeDescription, String> priceTypeDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<PriceTypeDescription, String> priceTypeDescriptions =
+        JPU.emptyListOfOnixElement(PriceTypeDescription.class);
 
     /**
      * <p>
@@ -584,7 +584,7 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceTypeDescriptions;
     }
 
-    private List<PriceCondition> priceConditions = Collections.emptyList();
+    private ListOfOnixComposite<PriceCondition> priceConditions = JPU.emptyListOfOnixComposite(PriceCondition.class);
 
     /**
      * <p>
@@ -593,12 +593,13 @@ public class Price implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<PriceCondition> priceConditions() {
+    public ListOfOnixComposite<PriceCondition> priceConditions() {
         _initialize();
         return priceConditions;
     }
 
-    private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss =
+        JPU.emptyListOfOnixDataComposite(BatchBonus.class);
 
     /**
      * <p>
@@ -614,7 +615,7 @@ public class Price implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(DiscountCoded.class);
 
     /**
      * <p>
@@ -635,7 +636,8 @@ public class Price implements OnixSuperComposite, Serializable {
         return discountCodeds;
     }
 
-    private ListOfOnixDataComposite<Discount, JonixDiscount> discounts = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Discount, JonixDiscount> discounts =
+        JPU.emptyListOfOnixDataComposite(Discount.class);
 
     /**
      * <p>
@@ -650,7 +652,7 @@ public class Price implements OnixSuperComposite, Serializable {
         return discounts;
     }
 
-    private List<Tax> taxs = Collections.emptyList();
+    private ListOfOnixComposite<Tax> taxs = JPU.emptyListOfOnixComposite(Tax.class);
 
     /**
      * <p>
@@ -668,12 +670,13 @@ public class Price implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Tax> taxs() {
+    public ListOfOnixComposite<Tax> taxs() {
         _initialize();
         return taxs;
     }
 
-    private List<ComparisonProductPrice> comparisonProductPrices = Collections.emptyList();
+    private ListOfOnixComposite<ComparisonProductPrice> comparisonProductPrices =
+        JPU.emptyListOfOnixComposite(ComparisonProductPrice.class);
 
     /**
      * <p>
@@ -703,13 +706,13 @@ public class Price implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ComparisonProductPrice> comparisonProductPrices() {
+    public ListOfOnixComposite<ComparisonProductPrice> comparisonProductPrices() {
         _initialize();
         return comparisonProductPrices;
     }
 
     private ListOfOnixDataCompositeWithKey<PriceDate, JonixPriceDate, PriceDateRoles> priceDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(PriceDate.class);
 
     /**
      * <p>

@@ -223,7 +223,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return reviewRating;
     }
 
-    private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
+    private ListOfOnixElement<SourceTitle, String> sourceTitles = JPU.emptyListOfOnixElement(SourceTitle.class);
 
     /**
      * <p>
@@ -315,7 +315,8 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return positionOnList;
     }
 
-    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences =
+        JPU.emptyListOfOnixCodelist(ContentAudience.class);
 
     /**
      * <p>
@@ -329,7 +330,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
-    private ListOfOnixElement<ListName, String> listNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<ListName, String> listNames = JPU.emptyListOfOnixElement(ListName.class);
 
     /**
      * <p>
@@ -345,7 +346,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return listNames;
     }
 
-    private ListOfOnixElement<CitationNote, String> citationNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<CitationNote, String> citationNotes = JPU.emptyListOfOnixElement(CitationNote.class);
 
     /**
      * <p>
@@ -361,7 +362,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return citationNotes;
     }
 
-    private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
+    private ListOfOnixElement<ResourceLink, String> resourceLinks = JPU.emptyListOfOnixElement(ResourceLink.class);
 
     /**
      * <p>
@@ -378,7 +379,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(ContentDate.class);
 
     /**
      * <p>

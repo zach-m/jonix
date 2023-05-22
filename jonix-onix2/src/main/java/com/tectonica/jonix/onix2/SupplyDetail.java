@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -37,8 +38,6 @@ import com.tectonica.jonix.common.struct.JonixSupplierIdentifier;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -332,7 +331,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return availabilityCode;
     }
 
-    private ListOfOnixElement<SupplyToCountry, java.util.Set<Countrys>> supplyToCountrys = ListOfOnixElement.empty();
+    private ListOfOnixElement<SupplyToCountry, java.util.Set<Countrys>> supplyToCountrys =
+        JPU.emptyListOfOnixElement(SupplyToCountry.class);
 
     /**
      * <p>
@@ -680,7 +680,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier,
-        SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SupplierIdentifierTypes> supplierIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(SupplierIdentifier.class);
 
     /**
      * <p>
@@ -697,7 +698,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplierIdentifiers;
     }
 
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers =
+        JPU.emptyListOfOnixElement(TelephoneNumber.class);
 
     /**
      * <p>
@@ -711,7 +713,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return telephoneNumbers;
     }
 
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = JPU.emptyListOfOnixElement(FaxNumber.class);
 
     /**
      * <p>
@@ -725,7 +727,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return faxNumbers;
     }
 
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = JPU.emptyListOfOnixElement(EmailAddress.class);
 
     /**
      * <p>
@@ -739,7 +741,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return emailAddresss;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>
@@ -753,7 +755,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return websites;
     }
 
-    private ListOfOnixCodelist<SupplyToRegion, SupplytoRegions> supplyToRegions = ListOfOnixCodelist.emptyList();
+    private ListOfOnixCodelist<SupplyToRegion, SupplytoRegions> supplyToRegions =
+        JPU.emptyListOfOnixCodelist(SupplyToRegion.class);
 
     /**
      * <p>
@@ -771,7 +774,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds =
-        ListOfOnixElement.empty();
+        JPU.emptyListOfOnixElement(SupplyToCountryExcluded.class);
 
     /**
      * <p>
@@ -787,7 +790,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplyToCountryExcludeds;
     }
 
-    private List<Stock> stocks = Collections.emptyList();
+    private ListOfOnixComposite<Stock> stocks = JPU.emptyListOfOnixComposite(Stock.class);
 
     /**
      * <p>
@@ -796,12 +799,12 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Stock> stocks() {
+    public ListOfOnixComposite<Stock> stocks() {
         _initialize();
         return stocks;
     }
 
-    private List<Price> prices = Collections.emptyList();
+    private ListOfOnixComposite<Price> prices = JPU.emptyListOfOnixComposite(Price.class);
 
     /**
      * <p>
@@ -809,7 +812,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Price> prices() {
+    public ListOfOnixComposite<Price> prices() {
         _initialize();
         return prices;
     }

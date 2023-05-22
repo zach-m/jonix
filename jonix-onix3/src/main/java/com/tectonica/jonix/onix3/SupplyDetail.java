@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -32,8 +33,6 @@ import com.tectonica.jonix.common.struct.JonixSupplierOwnCoding;
 import com.tectonica.jonix.common.struct.JonixSupplyDate;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -341,7 +340,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return unpricedItemType;
     }
 
-    private List<SupplyContact> supplyContacts = Collections.emptyList();
+    private ListOfOnixComposite<SupplyContact> supplyContacts = JPU.emptyListOfOnixComposite(SupplyContact.class);
 
     /**
      * <p>
@@ -350,13 +349,13 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<SupplyContact> supplyContacts() {
+    public ListOfOnixComposite<SupplyContact> supplyContacts() {
         _initialize();
         return supplyContacts;
     }
 
     private ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding,
-        SupplierOwnCodeTypes> supplierOwnCodings = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SupplierOwnCodeTypes> supplierOwnCodings = JPU.emptyListOfOnixDataCompositeWithKey(SupplierOwnCoding.class);
 
     /**
      * <p>
@@ -372,7 +371,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions,
-        ReturnsConditionsCodeTypes> returnsConditionss = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ReturnsConditionsCodeTypes> returnsConditionss =
+            JPU.emptyListOfOnixDataCompositeWithKey(ReturnsConditions.class);
 
     /**
      * <p>
@@ -388,7 +388,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(SupplyDate.class);
 
     /**
      * <p>
@@ -402,7 +402,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplyDates;
     }
 
-    private List<Stock> stocks = Collections.emptyList();
+    private ListOfOnixComposite<Stock> stocks = JPU.emptyListOfOnixComposite(Stock.class);
 
     /**
      * <p>
@@ -415,12 +415,13 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Stock> stocks() {
+    public ListOfOnixComposite<Stock> stocks() {
         _initialize();
         return stocks;
     }
 
-    private ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums = ListOfOnixElement.empty();
+    private ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums =
+        JPU.emptyListOfOnixElement(OrderQuantityMinimum.class);
 
     /**
      * <p>
@@ -439,7 +440,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return orderQuantityMinimums;
     }
 
-    private List<Price> prices = Collections.emptyList();
+    private ListOfOnixComposite<Price> prices = JPU.emptyListOfOnixComposite(Price.class);
 
     /**
      * <p>
@@ -457,7 +458,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Price> prices() {
+    public ListOfOnixComposite<Price> prices() {
         _initialize();
         return prices;
     }

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -27,8 +28,6 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -197,7 +196,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventRole;
     }
 
-    private ListOfOnixElement<EventName, String> eventNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<EventName, String> eventNames = JPU.emptyListOfOnixElement(EventName.class);
 
     /**
      * <p>
@@ -240,7 +239,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventDate;
     }
 
-    private ListOfOnixElement<EventAcronym, String> eventAcronyms = ListOfOnixElement.empty();
+    private ListOfOnixElement<EventAcronym, String> eventAcronyms = JPU.emptyListOfOnixElement(EventAcronym.class);
 
     /**
      * <p>
@@ -256,7 +255,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventAcronyms;
     }
 
-    private ListOfOnixElement<EventTheme, String> eventThemes = ListOfOnixElement.empty();
+    private ListOfOnixElement<EventTheme, String> eventThemes = JPU.emptyListOfOnixElement(EventTheme.class);
 
     /**
      * <p>
@@ -272,7 +271,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventThemes;
     }
 
-    private ListOfOnixElement<EventPlace, String> eventPlaces = ListOfOnixElement.empty();
+    private ListOfOnixElement<EventPlace, String> eventPlaces = JPU.emptyListOfOnixElement(EventPlace.class);
 
     /**
      * <p>
@@ -287,7 +286,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventPlaces;
     }
 
-    private List<EventSponsor> eventSponsors = Collections.emptyList();
+    private ListOfOnixComposite<EventSponsor> eventSponsors = JPU.emptyListOfOnixComposite(EventSponsor.class);
 
     /**
      * <p>
@@ -298,12 +297,12 @@ public class Event implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<EventSponsor> eventSponsors() {
+    public ListOfOnixComposite<EventSponsor> eventSponsors() {
         _initialize();
         return eventSponsors;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>

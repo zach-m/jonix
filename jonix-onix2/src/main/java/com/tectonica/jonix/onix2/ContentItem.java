@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -41,8 +42,6 @@ import com.tectonica.jonix.common.struct.JonixWebsite;
 import com.tectonica.jonix.common.struct.JonixWorkIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -323,7 +322,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return contributorStatement;
     }
 
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
 
     /**
      * <p>
@@ -338,7 +337,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Title.class);
 
     /**
      * <p>
@@ -354,7 +353,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(WorkIdentifier.class);
 
     /**
      * <p>
@@ -368,7 +367,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return workIdentifiers;
     }
 
-    private List<Contributor> contributors = Collections.emptyList();
+    private ListOfOnixComposite<Contributor> contributors = JPU.emptyListOfOnixComposite(Contributor.class);
 
     /**
      * <p>
@@ -377,12 +376,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Contributor> contributors() {
+    public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
         return contributors;
     }
 
-    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = JPU.emptyListOfOnixDataComposite(Subject.class);
 
     /**
      * <p>
@@ -396,7 +395,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return subjects;
     }
 
-    private List<PersonAsSubject> personAsSubjects = Collections.emptyList();
+    private ListOfOnixComposite<PersonAsSubject> personAsSubjects = JPU.emptyListOfOnixComposite(PersonAsSubject.class);
 
     /**
      * <p>
@@ -405,12 +404,13 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<PersonAsSubject> personAsSubjects() {
+    public ListOfOnixComposite<PersonAsSubject> personAsSubjects() {
         _initialize();
         return personAsSubjects;
     }
 
-    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects = ListOfOnixElement.empty();
+    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects =
+        JPU.emptyListOfOnixElement(CorporateBodyAsSubject.class);
 
     /**
      * <p>
@@ -424,7 +424,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return corporateBodyAsSubjects;
     }
 
-    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects = ListOfOnixElement.empty();
+    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects =
+        JPU.emptyListOfOnixElement(PlaceAsSubject.class);
 
     /**
      * <p>
@@ -439,7 +440,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(OtherText.class);
 
     /**
      * <p>
@@ -454,7 +455,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(MediaFile.class);
 
     /**
      * <p>

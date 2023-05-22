@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
@@ -32,8 +33,6 @@ import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 import com.tectonica.jonix.common.struct.JonixRecordSourceIdentifier;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -267,7 +266,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier,
-        ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        ProductIdentifierTypes> productIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(ProductIdentifier.class);
 
     /**
      * <p>
@@ -466,7 +465,7 @@ public class Product implements OnixProduct, Serializable {
         return productionDetail;
     }
 
-    private ListOfOnixElement<DeletionText, String> deletionTexts = ListOfOnixElement.empty();
+    private ListOfOnixElement<DeletionText, String> deletionTexts = JPU.emptyListOfOnixElement(DeletionText.class);
 
     /**
      * <p>
@@ -490,7 +489,8 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier,
-        NameIdentifierTypes> recordSourceIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        NameIdentifierTypes> recordSourceIdentifiers =
+            JPU.emptyListOfOnixDataCompositeWithKey(RecordSourceIdentifier.class);
 
     /**
      * <p>
@@ -505,7 +505,7 @@ public class Product implements OnixProduct, Serializable {
         return recordSourceIdentifiers;
     }
 
-    private ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes = JPU.emptyListOfOnixDataComposite(Barcode.class);
 
     /**
      * <p>
@@ -520,7 +520,7 @@ public class Product implements OnixProduct, Serializable {
         return barcodes;
     }
 
-    private List<ProductSupply> productSupplys = Collections.emptyList();
+    private ListOfOnixComposite<ProductSupply> productSupplys = JPU.emptyListOfOnixComposite(ProductSupply.class);
 
     /**
      * <p>
@@ -539,7 +539,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ProductSupply> productSupplys() {
+    public ListOfOnixComposite<ProductSupply> productSupplys() {
         _initialize();
         return productSupplys;
     }

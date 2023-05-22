@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.Languages;
@@ -33,8 +34,6 @@ import com.tectonica.jonix.common.struct.JonixSeriesIdentifier;
 import com.tectonica.jonix.common.struct.JonixTitle;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -263,7 +262,7 @@ public class Series implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier,
-        SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
+        SeriesIdentifierTypes> seriesIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(SeriesIdentifier.class);
 
     /**
      * <p>
@@ -280,7 +279,7 @@ public class Series implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(Title.class);
 
     /**
      * <p>
@@ -294,7 +293,7 @@ public class Series implements OnixSuperComposite, Serializable {
         return titles;
     }
 
-    private List<Contributor> contributors = Collections.emptyList();
+    private ListOfOnixComposite<Contributor> contributors = JPU.emptyListOfOnixComposite(Contributor.class);
 
     /**
      * <p>
@@ -304,7 +303,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<Contributor> contributors() {
+    public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
         return contributors;
     }

@@ -181,7 +181,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
     }
 
     private ListOfOnixCodelist<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions =
-        ListOfOnixCodelist.emptyList();
+        JPU.emptyListOfOnixCodelist(AudienceRangePrecision.class);
 
     /**
      * <p>
@@ -195,7 +195,8 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
         return audienceRangePrecisions;
     }
 
-    private ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues = ListOfOnixElement.empty();
+    private ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues =
+        JPU.emptyListOfOnixElement(AudienceRangeValue.class);
 
     /**
      * <p>

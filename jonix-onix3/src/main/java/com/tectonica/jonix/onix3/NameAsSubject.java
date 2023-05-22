@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -30,8 +31,6 @@ import com.tectonica.jonix.common.struct.JonixNameIdentifier;
 import com.tectonica.jonix.common.struct.JonixSubjectDate;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -262,7 +261,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(NameIdentifier.class);
 
     /**
      * Jonix-Comment: this list is required to contain at least one item
@@ -272,7 +271,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<CorporateName, String> corporateNames = JPU.emptyListOfOnixElement(CorporateName.class);
 
     /**
      * <p>
@@ -420,7 +419,8 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
+    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds =
+        JPU.emptyListOfOnixElement(CorporateNameInverted.class);
 
     /**
      * <p>
@@ -438,7 +438,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return corporateNameInverteds;
     }
 
-    private List<AlternativeName> alternativeNames = Collections.emptyList();
+    private ListOfOnixComposite<AlternativeName> alternativeNames = JPU.emptyListOfOnixComposite(AlternativeName.class);
 
     /**
      * <p>
@@ -447,13 +447,13 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<AlternativeName> alternativeNames() {
+    public ListOfOnixComposite<AlternativeName> alternativeNames() {
         _initialize();
         return alternativeNames;
     }
 
     private ListOfOnixDataCompositeWithKey<SubjectDate, JonixSubjectDate, PersonOrganizationDateRoles> subjectDates =
-        ListOfOnixDataCompositeWithKey.emptyKeyed();
+        JPU.emptyListOfOnixDataCompositeWithKey(SubjectDate.class);
 
     /**
      * <p>
@@ -468,7 +468,8 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return subjectDates;
     }
 
-    private List<ProfessionalAffiliation> professionalAffiliations = Collections.emptyList();
+    private ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations =
+        JPU.emptyListOfOnixComposite(ProfessionalAffiliation.class);
 
     /**
      * <p>
@@ -477,7 +478,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public List<ProfessionalAffiliation> professionalAffiliations() {
+    public ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations() {
         _initialize();
         return professionalAffiliations;
     }
