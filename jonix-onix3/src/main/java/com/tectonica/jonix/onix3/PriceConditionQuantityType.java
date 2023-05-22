@@ -106,7 +106,7 @@ public class PriceConditionQuantityType implements OnixElement<PriceConditionQua
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PriceConditionQuantityTypes _value() {
+    public PriceConditionQuantityTypes __v() {
         return value;
     }
 

@@ -106,7 +106,7 @@ public class QuantityUnit implements OnixElement<QuantityUnits>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public QuantityUnits _value() {
+    public QuantityUnits __v() {
         return value;
     }
 

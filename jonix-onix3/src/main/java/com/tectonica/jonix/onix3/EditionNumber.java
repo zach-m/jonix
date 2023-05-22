@@ -109,7 +109,7 @@ public class EditionNumber implements OnixElement<Integer>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public Integer _value() {
+    public Integer __v() {
         return value;
     }
 

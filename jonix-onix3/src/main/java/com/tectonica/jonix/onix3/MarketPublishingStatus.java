@@ -106,7 +106,7 @@ public class MarketPublishingStatus implements OnixElement<MarketPublishingStatu
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public MarketPublishingStatuss _value() {
+    public MarketPublishingStatuss __v() {
         return value;
     }
 

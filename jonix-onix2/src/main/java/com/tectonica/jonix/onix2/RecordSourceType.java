@@ -113,7 +113,7 @@ public class RecordSourceType implements OnixElement<RecordSourceTypes>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public RecordSourceTypes _value() {
+    public RecordSourceTypes __v() {
         return value;
     }
 

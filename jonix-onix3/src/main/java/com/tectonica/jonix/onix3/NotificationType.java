@@ -104,7 +104,7 @@ public class NotificationType implements OnixElement<NotificationOrUpdateTypes>,
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public NotificationOrUpdateTypes _value() {
+    public NotificationOrUpdateTypes __v() {
         return value;
     }
 

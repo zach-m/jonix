@@ -108,7 +108,7 @@ public class CitedContentType implements OnixElement<CitedContentTypes>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public CitedContentTypes _value() {
+    public CitedContentTypes __v() {
         return value;
     }
 

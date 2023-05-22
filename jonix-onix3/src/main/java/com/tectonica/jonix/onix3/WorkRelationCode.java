@@ -108,7 +108,7 @@ public class WorkRelationCode implements OnixElement<WorkRelations>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public WorkRelations _value() {
+    public WorkRelations __v() {
         return value;
     }
 

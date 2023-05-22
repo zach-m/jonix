@@ -49,12 +49,12 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
      * @return the same passed collection, after being populated
      */
     public <C extends Collection<V>> C valuesInto(C collection) {
-        forEach(item -> collection.add(item._value()));
+        forEach(item -> collection.add(item.__v()));
         return collection;
     }
 
     public Optional<V> firstValue() {
-        return (size() == 0) ? Optional.empty() : Optional.of(get(0)._value());
+        return (size() == 0) ? Optional.empty() : Optional.of(get(0).__v());
     }
 
     private static final ListOfOnixElement<OnixElement<Object>, Object> EMPTY = new ListOfOnixElement<>();

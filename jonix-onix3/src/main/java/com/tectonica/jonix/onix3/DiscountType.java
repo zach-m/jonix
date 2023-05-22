@@ -102,7 +102,7 @@ public class DiscountType implements OnixElement<DiscountTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public DiscountTypes _value() {
+    public DiscountTypes __v() {
         return value;
     }
 

@@ -110,7 +110,7 @@ public class MeasureTypeCode implements OnixElement<MeasureTypes>, Serializable 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public MeasureTypes _value() {
+    public MeasureTypes __v() {
         return value;
     }
 

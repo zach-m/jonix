@@ -116,7 +116,7 @@ public class MainSubjectSchemeIdentifier implements OnixElement<MainSubjectSchem
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public MainSubjectSchemeIdentifiers _value() {
+    public MainSubjectSchemeIdentifiers __v() {
         return value;
     }
 

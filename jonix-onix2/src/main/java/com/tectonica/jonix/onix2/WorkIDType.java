@@ -111,7 +111,7 @@ public class WorkIDType implements OnixElement<WorkIdentifierTypes>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public WorkIdentifierTypes _value() {
+    public WorkIdentifierTypes __v() {
         return value;
     }
 

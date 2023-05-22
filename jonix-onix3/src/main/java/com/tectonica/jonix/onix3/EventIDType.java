@@ -111,7 +111,7 @@ public class EventIDType implements OnixElement<EventIdentifierTypes>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EventIdentifierTypes _value() {
+    public EventIdentifierTypes __v() {
         return value;
     }
 

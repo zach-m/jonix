@@ -115,7 +115,7 @@ public class RightsRegion implements OnixElement<RightsRegions>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public RightsRegions _value() {
+    public RightsRegions __v() {
         return value;
     }
 

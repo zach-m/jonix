@@ -119,7 +119,7 @@ public class EpubType implements OnixElement<EpublicationTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EpublicationTypes _value() {
+    public EpublicationTypes __v() {
         return value;
     }
 

@@ -139,7 +139,7 @@ public class PersonNameIDType implements OnixElement<PersonNameIdentifierTypes>,
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PersonNameIdentifierTypes _value() {
+    public PersonNameIdentifierTypes __v() {
         return value;
     }
 

@@ -115,7 +115,7 @@ public class TextFormat implements OnixElement<TextFormats>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TextFormats _value() {
+    public TextFormats __v() {
         return value;
     }
 

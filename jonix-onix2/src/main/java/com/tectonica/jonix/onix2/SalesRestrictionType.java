@@ -112,7 +112,7 @@ public class SalesRestrictionType implements OnixElement<SalesRestrictionTypes>,
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SalesRestrictionTypes _value() {
+    public SalesRestrictionTypes __v() {
         return value;
     }
 

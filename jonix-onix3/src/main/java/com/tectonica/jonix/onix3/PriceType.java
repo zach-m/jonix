@@ -109,7 +109,7 @@ public class PriceType implements OnixElement<PriceTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PriceTypes _value() {
+    public PriceTypes __v() {
         return value;
     }
 

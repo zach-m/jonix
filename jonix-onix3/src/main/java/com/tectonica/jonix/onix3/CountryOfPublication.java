@@ -106,7 +106,7 @@ public class CountryOfPublication implements OnixElement<Countrys>, Serializable
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public Countrys _value() {
+    public Countrys __v() {
         return value;
     }
 

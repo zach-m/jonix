@@ -111,7 +111,7 @@ public class TaxableAmount implements OnixElement<Double>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public Double _value() {
+    public Double __v() {
         return value;
     }
 

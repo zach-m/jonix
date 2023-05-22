@@ -114,7 +114,7 @@ public class DefaultWeightUnit implements OnixElement<DefaultUnitOfWeights>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public DefaultUnitOfWeights _value() {
+    public DefaultUnitOfWeights __v() {
         return value;
     }
 

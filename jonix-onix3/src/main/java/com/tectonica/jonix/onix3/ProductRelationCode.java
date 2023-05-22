@@ -109,7 +109,7 @@ public class ProductRelationCode implements OnixElement<ProductRelations>, Seria
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductRelations _value() {
+    public ProductRelations __v() {
         return value;
     }
 

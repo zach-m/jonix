@@ -113,7 +113,7 @@ public class PublishingRole implements OnixElement<PublishingRoles>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PublishingRoles _value() {
+    public PublishingRoles __v() {
         return value;
     }
 

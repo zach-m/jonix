@@ -125,7 +125,7 @@ public class ContentAudience implements OnixElement<ContentAudiences>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ContentAudiences _value() {
+    public ContentAudiences __v() {
         return value;
     }
 

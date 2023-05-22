@@ -110,7 +110,7 @@ public class ExtentType implements OnixElement<ExtentTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ExtentTypes _value() {
+    public ExtentTypes __v() {
         return value;
     }
 

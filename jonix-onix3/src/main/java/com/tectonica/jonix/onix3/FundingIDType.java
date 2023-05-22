@@ -110,7 +110,7 @@ public class FundingIDType implements OnixElement<GrantIdentifierTypes>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public GrantIdentifierTypes _value() {
+    public GrantIdentifierTypes __v() {
         return value;
     }
 

@@ -120,7 +120,7 @@ public class PersonDateRole implements OnixElement<PersonDateRoles>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PersonDateRoles _value() {
+    public PersonDateRoles __v() {
         return value;
     }
 

@@ -121,7 +121,7 @@ public class ContentDateRole implements OnixElement<ContentDateRoles>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ContentDateRoles _value() {
+    public ContentDateRoles __v() {
         return value;
     }
 

@@ -110,7 +110,7 @@ public class EpubLicenseDateRole implements OnixElement<EpublicationLicenseDateR
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EpublicationLicenseDateRoles _value() {
+    public EpublicationLicenseDateRoles __v() {
         return value;
     }
 

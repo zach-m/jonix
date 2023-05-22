@@ -119,7 +119,7 @@ public class PersonNameType implements OnixElement<PersonOrganizationNameTypes>,
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PersonOrganizationNameTypes _value() {
+    public PersonOrganizationNameTypes __v() {
         return value;
     }
 

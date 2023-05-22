@@ -108,7 +108,7 @@ public class EventType implements OnixElement<EventTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EventTypes _value() {
+    public EventTypes __v() {
         return value;
     }
 

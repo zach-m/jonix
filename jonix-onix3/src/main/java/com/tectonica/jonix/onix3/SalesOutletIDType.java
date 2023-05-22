@@ -124,7 +124,7 @@ public class SalesOutletIDType implements OnixElement<SalesOutletIdentifierTypes
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SalesOutletIdentifierTypes _value() {
+    public SalesOutletIdentifierTypes __v() {
         return value;
     }
 

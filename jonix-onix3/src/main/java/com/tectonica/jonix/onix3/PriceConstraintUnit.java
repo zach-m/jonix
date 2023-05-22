@@ -108,7 +108,7 @@ public class PriceConstraintUnit implements OnixElement<UnitOfUsages>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public UnitOfUsages _value() {
+    public UnitOfUsages __v() {
         return value;
     }
 

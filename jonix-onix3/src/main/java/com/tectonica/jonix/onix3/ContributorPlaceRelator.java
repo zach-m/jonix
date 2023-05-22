@@ -112,7 +112,7 @@ public class ContributorPlaceRelator implements OnixElement<ContributorPlaceRela
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ContributorPlaceRelators _value() {
+    public ContributorPlaceRelators __v() {
         return value;
     }
 

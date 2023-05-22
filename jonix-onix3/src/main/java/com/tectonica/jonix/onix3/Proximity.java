@@ -114,7 +114,7 @@ public class Proximity implements OnixElement<Proximitys>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public Proximitys _value() {
+    public Proximitys __v() {
         return value;
     }
 

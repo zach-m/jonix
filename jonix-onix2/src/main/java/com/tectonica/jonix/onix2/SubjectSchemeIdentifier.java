@@ -123,7 +123,7 @@ public class SubjectSchemeIdentifier implements OnixElement<SubjectSchemeIdentif
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SubjectSchemeIdentifiers _value() {
+    public SubjectSchemeIdentifiers __v() {
         return value;
     }
 

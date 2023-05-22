@@ -110,7 +110,7 @@ public class ReturnsCodeType implements OnixElement<ReturnsConditionsCodeTypes>,
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ReturnsConditionsCodeTypes _value() {
+    public ReturnsConditionsCodeTypes __v() {
         return value;
     }
 

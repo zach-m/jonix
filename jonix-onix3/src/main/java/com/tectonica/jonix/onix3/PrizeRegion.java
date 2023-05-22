@@ -119,7 +119,7 @@ public class PrizeRegion implements OnixElement<Regions>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public Regions _value() {
+    public Regions __v() {
         return value;
     }
 

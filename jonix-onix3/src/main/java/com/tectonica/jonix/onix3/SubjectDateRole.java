@@ -110,7 +110,7 @@ public class SubjectDateRole implements OnixElement<PersonOrganizationDateRoles>
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PersonOrganizationDateRoles _value() {
+    public PersonOrganizationDateRoles __v() {
         return value;
     }
 

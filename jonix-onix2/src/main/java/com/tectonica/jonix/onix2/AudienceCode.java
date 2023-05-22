@@ -110,7 +110,7 @@ public class AudienceCode implements OnixElement<AudienceTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public AudienceTypes _value() {
+    public AudienceTypes __v() {
         return value;
     }
 

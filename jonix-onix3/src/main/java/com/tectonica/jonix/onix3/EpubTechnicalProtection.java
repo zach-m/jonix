@@ -114,7 +114,7 @@ public class EpubTechnicalProtection implements OnixElement<EpublicationTechnica
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EpublicationTechnicalProtections _value() {
+    public EpublicationTechnicalProtections __v() {
         return value;
     }
 

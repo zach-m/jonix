@@ -107,7 +107,7 @@ public class PrintedOnProduct implements OnixElement<PrintedOnProducts>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PrintedOnProducts _value() {
+    public PrintedOnProducts __v() {
         return value;
     }
 

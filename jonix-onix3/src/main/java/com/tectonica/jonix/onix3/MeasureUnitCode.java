@@ -111,7 +111,7 @@ public class MeasureUnitCode implements OnixElement<MeasureUnits>, Serializable 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public MeasureUnits _value() {
+    public MeasureUnits __v() {
         return value;
     }
 

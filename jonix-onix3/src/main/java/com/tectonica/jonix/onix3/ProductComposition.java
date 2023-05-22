@@ -105,7 +105,7 @@ public class ProductComposition implements OnixElement<ProductCompositions>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductCompositions _value() {
+    public ProductCompositions __v() {
         return value;
     }
 

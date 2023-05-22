@@ -111,7 +111,7 @@ public class NumberOfItemsOfThisForm implements OnixElement<Integer>, Serializab
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public Integer _value() {
+    public Integer __v() {
         return value;
     }
 

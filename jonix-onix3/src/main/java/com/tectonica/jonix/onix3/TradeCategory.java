@@ -105,7 +105,7 @@ public class TradeCategory implements OnixElement<TradeCategorys>, Serializable 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TradeCategorys _value() {
+    public TradeCategorys __v() {
         return value;
     }
 

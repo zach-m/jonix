@@ -115,7 +115,7 @@ public class ProductPackaging implements OnixElement<ProductPackagingTypes>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductPackagingTypes _value() {
+    public ProductPackagingTypes __v() {
         return value;
     }
 

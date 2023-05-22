@@ -121,7 +121,7 @@ public class SpecificationFeatureType implements OnixElement<SpecificationFeatur
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SpecificationFeatureTypes _value() {
+    public SpecificationFeatureTypes __v() {
         return value;
     }
 

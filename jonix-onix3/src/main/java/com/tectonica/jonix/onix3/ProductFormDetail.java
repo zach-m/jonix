@@ -116,7 +116,7 @@ public class ProductFormDetail implements OnixElement<ProductFormDetails>, Seria
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductFormDetails _value() {
+    public ProductFormDetails __v() {
         return value;
     }
 

@@ -110,7 +110,7 @@ public class Barcode implements OnixElement<BarcodeIndicatorsList6>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public BarcodeIndicatorsList6 _value() {
+    public BarcodeIndicatorsList6 __v() {
         return value;
     }
 

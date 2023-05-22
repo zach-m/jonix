@@ -110,7 +110,7 @@ public class IllustrationType implements OnixElement<IllustrationAndOtherContent
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public IllustrationAndOtherContentTypes _value() {
+    public IllustrationAndOtherContentTypes __v() {
         return value;
     }
 

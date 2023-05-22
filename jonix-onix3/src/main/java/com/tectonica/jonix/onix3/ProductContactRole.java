@@ -110,7 +110,7 @@ public class ProductContactRole implements OnixElement<ProductContactRoles>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductContactRoles _value() {
+    public ProductContactRoles __v() {
         return value;
     }
 

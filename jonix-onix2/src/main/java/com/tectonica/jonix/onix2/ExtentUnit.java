@@ -110,7 +110,7 @@ public class ExtentUnit implements OnixElement<ExtentUnits>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ExtentUnits _value() {
+    public ExtentUnits __v() {
         return value;
     }
 

@@ -106,7 +106,7 @@ public class SupplierRole implements OnixElement<SupplierRoles>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SupplierRoles _value() {
+    public SupplierRoles __v() {
         return value;
     }
 

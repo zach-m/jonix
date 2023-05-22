@@ -113,7 +113,7 @@ public class EpubFormat implements OnixElement<EpublicationFormats>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EpublicationFormats _value() {
+    public EpublicationFormats __v() {
         return value;
     }
 

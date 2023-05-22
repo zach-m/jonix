@@ -112,7 +112,7 @@ public class ResourceForm implements OnixElement<ResourceForms>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ResourceForms _value() {
+    public ResourceForms __v() {
         return value;
     }
 

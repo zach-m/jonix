@@ -113,7 +113,7 @@ public class EpubLicenseExpressionType implements OnixElement<LicenseExpressionT
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public LicenseExpressionTypes _value() {
+    public LicenseExpressionTypes __v() {
         return value;
     }
 

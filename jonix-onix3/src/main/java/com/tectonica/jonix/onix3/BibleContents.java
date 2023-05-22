@@ -107,7 +107,7 @@ public class BibleContents implements OnixElement<BibleContentss>, Serializable 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public BibleContentss _value() {
+    public BibleContentss __v() {
         return value;
     }
 

@@ -107,7 +107,7 @@ public class AgentRole implements OnixElement<AgentRoles>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public AgentRoles _value() {
+    public AgentRoles __v() {
         return value;
     }
 

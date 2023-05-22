@@ -121,7 +121,7 @@ public class TextCaseFlag implements OnixElement<TextCaseFlags>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TextCaseFlags _value() {
+    public TextCaseFlags __v() {
         return value;
     }
 

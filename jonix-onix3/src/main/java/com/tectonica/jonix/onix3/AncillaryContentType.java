@@ -106,7 +106,7 @@ public class AncillaryContentType implements OnixElement<IllustrationAndOtherCon
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public IllustrationAndOtherContentTypes _value() {
+    public IllustrationAndOtherContentTypes __v() {
         return value;
     }
 

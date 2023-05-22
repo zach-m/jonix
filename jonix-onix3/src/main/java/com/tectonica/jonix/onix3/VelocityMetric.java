@@ -108,7 +108,7 @@ public class VelocityMetric implements OnixElement<VelocityMetrics>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public VelocityMetrics _value() {
+    public VelocityMetrics __v() {
         return value;
     }
 

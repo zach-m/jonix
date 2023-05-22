@@ -106,7 +106,7 @@ public class DiscountCodeType implements OnixElement<DiscountCodeTypes>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public DiscountCodeTypes _value() {
+    public DiscountCodeTypes __v() {
         return value;
     }
 

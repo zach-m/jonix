@@ -108,7 +108,7 @@ public class SupplyContactRole implements OnixElement<SupplyContactRoles>, Seria
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SupplyContactRoles _value() {
+    public SupplyContactRoles __v() {
         return value;
     }
 

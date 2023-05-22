@@ -114,7 +114,7 @@ public class CollectionElementLevel implements OnixElement<TitleElementLevels>, 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TitleElementLevels _value() {
+    public TitleElementLevels __v() {
         return value;
     }
 

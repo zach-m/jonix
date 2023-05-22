@@ -121,7 +121,7 @@ public class ResourceIDType implements OnixElement<ResourceIdentifierTypes>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ResourceIdentifierTypes _value() {
+    public ResourceIdentifierTypes __v() {
         return value;
     }
 

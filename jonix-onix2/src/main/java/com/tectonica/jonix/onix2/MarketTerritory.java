@@ -129,7 +129,7 @@ public class MarketTerritory implements OnixElement<java.util.Set<String>>, Seri
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public java.util.Set<String> _value() {
+    public java.util.Set<String> __v() {
         return value;
     }
 

@@ -106,7 +106,7 @@ public class PriceQualifier implements OnixElement<PriceTypeQualifiers>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PriceTypeQualifiers _value() {
+    public PriceTypeQualifiers __v() {
         return value;
     }
 

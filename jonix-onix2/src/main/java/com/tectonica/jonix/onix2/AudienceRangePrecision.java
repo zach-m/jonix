@@ -110,7 +110,7 @@ public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisio
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public AudienceRangePrecisions _value() {
+    public AudienceRangePrecisions __v() {
         return value;
     }
 

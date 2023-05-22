@@ -131,7 +131,7 @@ public class WebsiteRole implements OnixElement<WebsiteRoles>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public WebsiteRoles _value() {
+    public WebsiteRoles __v() {
         return value;
     }
 

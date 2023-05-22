@@ -108,7 +108,7 @@ public class AVItemIDType implements OnixElement<AvItemIdentifierTypes>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public AvItemIdentifierTypes _value() {
+    public AvItemIdentifierTypes __v() {
         return value;
     }
 

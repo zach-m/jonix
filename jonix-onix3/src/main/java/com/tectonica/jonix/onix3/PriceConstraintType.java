@@ -108,7 +108,7 @@ public class PriceConstraintType implements OnixElement<PriceConstraintTypes>, S
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PriceConstraintTypes _value() {
+    public PriceConstraintTypes __v() {
         return value;
     }
 

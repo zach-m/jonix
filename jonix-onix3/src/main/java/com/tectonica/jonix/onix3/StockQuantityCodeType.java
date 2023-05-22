@@ -106,7 +106,7 @@ public class StockQuantityCodeType implements OnixElement<StockQuantityCodeTypes
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public StockQuantityCodeTypes _value() {
+    public StockQuantityCodeTypes __v() {
         return value;
     }
 

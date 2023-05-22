@@ -115,7 +115,7 @@ public class ProductFormDetail implements OnixElement<ProductFormDetailsList78>,
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductFormDetailsList78 _value() {
+    public ProductFormDetailsList78 __v() {
         return value;
     }
 

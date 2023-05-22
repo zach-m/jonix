@@ -116,7 +116,7 @@ public class ContributorRole implements OnixElement<ContributorRoles>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ContributorRoles _value() {
+    public ContributorRoles __v() {
         return value;
     }
 

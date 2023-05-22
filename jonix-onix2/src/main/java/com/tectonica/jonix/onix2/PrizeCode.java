@@ -110,7 +110,7 @@ public class PrizeCode implements OnixElement<PrizeOrAwardAchievements>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PrizeOrAwardAchievements _value() {
+    public PrizeOrAwardAchievements __v() {
         return value;
     }
 

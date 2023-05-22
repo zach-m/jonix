@@ -109,7 +109,7 @@ public class TitleType implements OnixElement<TitleTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TitleTypes _value() {
+    public TitleTypes __v() {
         return value;
     }
 

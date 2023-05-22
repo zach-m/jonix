@@ -26,13 +26,13 @@ import java.util.Optional;
  * element that contains a single value field and possibly some attributes, but nothing else)
  */
 public interface OnixElement<V> extends OnixTag {
-    V _value();
+    V __v();
 
     /**
      * @return an {@link Optional} wrapping the (single) value included in this object
      */
     default Optional<V> value() {
-        return Optional.ofNullable(_value());
+        return Optional.ofNullable(__v());
     }
 
     /**
@@ -41,7 +41,7 @@ public interface OnixElement<V> extends OnixTag {
      * invalid value
      */
     default boolean isNull() {
-        return _value() == null;
+        return __v() == null;
     }
 
     /**
@@ -55,7 +55,7 @@ public interface OnixElement<V> extends OnixTag {
      * @return {@code true} if the element's value {@code ==} the passed value, {@code false} otherwise
      */
     default boolean is(V value) {
-        return _value() == value;
+        return __v() == value;
     }
 
     /**
@@ -67,6 +67,6 @@ public interface OnixElement<V> extends OnixTag {
      * @return {@code true} if the element's value {@code equals()} to the passed value, {@code false} otherwise
      */
     default boolean equal(V value) {
-        return _value() != null && _value().equals(value);
+        return __v() != null && __v().equals(value);
     }
 }

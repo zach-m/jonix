@@ -113,7 +113,7 @@ public class BibleReferenceLocation implements OnixElement<BibleReferenceLocatio
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public BibleReferenceLocations _value() {
+    public BibleReferenceLocations __v() {
         return value;
     }
 

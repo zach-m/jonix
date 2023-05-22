@@ -109,7 +109,7 @@ public class InsertPointType implements OnixElement<InsertPointTypes>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public InsertPointTypes _value() {
+    public InsertPointTypes __v() {
         return value;
     }
 

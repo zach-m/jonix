@@ -106,7 +106,7 @@ public class PriceCodeType implements OnixElement<PriceCodeTypes>, Serializable 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PriceCodeTypes _value() {
+    public PriceCodeTypes __v() {
         return value;
     }
 

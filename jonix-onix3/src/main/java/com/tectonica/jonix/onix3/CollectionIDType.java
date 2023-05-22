@@ -106,7 +106,7 @@ public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SeriesIdentifierTypes _value() {
+    public SeriesIdentifierTypes __v() {
         return value;
     }
 

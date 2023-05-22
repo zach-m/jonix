@@ -105,7 +105,7 @@ public class BarcodeType implements OnixElement<BarcodeIndicators>, Serializable
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public BarcodeIndicators _value() {
+    public BarcodeIndicators __v() {
         return value;
     }
 

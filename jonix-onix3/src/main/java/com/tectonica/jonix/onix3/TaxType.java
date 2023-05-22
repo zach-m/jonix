@@ -105,7 +105,7 @@ public class TaxType implements OnixElement<TaxTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TaxTypes _value() {
+    public TaxTypes __v() {
         return value;
     }
 

@@ -107,7 +107,7 @@ public class TextType implements OnixElement<TextTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TextTypes _value() {
+    public TextTypes __v() {
         return value;
     }
 

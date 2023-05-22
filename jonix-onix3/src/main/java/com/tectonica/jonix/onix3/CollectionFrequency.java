@@ -108,7 +108,7 @@ public class CollectionFrequency implements OnixElement<CollectionFrequencys>, S
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public CollectionFrequencys _value() {
+    public CollectionFrequencys __v() {
         return value;
     }
 

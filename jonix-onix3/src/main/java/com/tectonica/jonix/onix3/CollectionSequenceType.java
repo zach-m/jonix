@@ -108,7 +108,7 @@ public class CollectionSequenceType implements OnixElement<CollectionSequenceTyp
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public CollectionSequenceTypes _value() {
+    public CollectionSequenceTypes __v() {
         return value;
     }
 

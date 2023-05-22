@@ -107,7 +107,7 @@ public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public BibleVersions _value() {
+    public BibleVersions __v() {
         return value;
     }
 

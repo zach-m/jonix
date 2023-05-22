@@ -108,7 +108,7 @@ public class LanguageCode implements OnixElement<Languages>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public Languages _value() {
+    public Languages __v() {
         return value;
     }
 

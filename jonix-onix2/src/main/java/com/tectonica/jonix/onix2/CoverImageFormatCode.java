@@ -119,7 +119,7 @@ public class CoverImageFormatCode implements OnixElement<FrontCoverImageFileForm
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public FrontCoverImageFileFormats _value() {
+    public FrontCoverImageFileFormats __v() {
         return value;
     }
 

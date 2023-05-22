@@ -114,7 +114,7 @@ public class MediaFileLinkTypeCode implements OnixElement<ImageAudioVideoFileLin
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ImageAudioVideoFileLinkTypes _value() {
+    public ImageAudioVideoFileLinkTypes __v() {
         return value;
     }
 

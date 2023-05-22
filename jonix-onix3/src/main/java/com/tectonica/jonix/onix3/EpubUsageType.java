@@ -108,7 +108,7 @@ public class EpubUsageType implements OnixElement<UsageTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public UsageTypes _value() {
+    public UsageTypes __v() {
         return value;
     }
 

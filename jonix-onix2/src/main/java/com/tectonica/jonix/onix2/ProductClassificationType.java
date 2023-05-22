@@ -110,7 +110,7 @@ public class ProductClassificationType implements OnixElement<ProductClassificat
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductClassificationTypes _value() {
+    public ProductClassificationTypes __v() {
         return value;
     }
 

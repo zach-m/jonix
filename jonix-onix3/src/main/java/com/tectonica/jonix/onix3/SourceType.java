@@ -107,7 +107,7 @@ public class SourceType implements OnixElement<ContentSourceTypes>, Serializable
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ContentSourceTypes _value() {
+    public ContentSourceTypes __v() {
         return value;
     }
 

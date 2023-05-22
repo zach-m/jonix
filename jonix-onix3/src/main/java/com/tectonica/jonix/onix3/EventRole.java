@@ -108,7 +108,7 @@ public class EventRole implements OnixElement<EventRoles>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EventRoles _value() {
+    public EventRoles __v() {
         return value;
     }
 

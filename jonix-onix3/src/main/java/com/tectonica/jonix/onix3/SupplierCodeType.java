@@ -106,7 +106,7 @@ public class SupplierCodeType implements OnixElement<SupplierOwnCodeTypes>, Seri
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SupplierOwnCodeTypes _value() {
+    public SupplierOwnCodeTypes __v() {
         return value;
     }
 

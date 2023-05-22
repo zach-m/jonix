@@ -109,7 +109,7 @@ public class ProductContentType implements OnixElement<ProductContentTypes>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductContentTypes _value() {
+    public ProductContentTypes __v() {
         return value;
     }
 

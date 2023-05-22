@@ -120,7 +120,7 @@ public class SpecificationDetail implements OnixElement<SpecificationDetails>, S
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SpecificationDetails _value() {
+    public SpecificationDetails __v() {
         return value;
     }
 

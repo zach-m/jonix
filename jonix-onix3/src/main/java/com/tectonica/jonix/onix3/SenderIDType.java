@@ -105,7 +105,7 @@ public class SenderIDType implements OnixElement<NameIdentifierTypes>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public NameIdentifierTypes _value() {
+    public NameIdentifierTypes __v() {
         return value;
     }
 

@@ -110,7 +110,7 @@ public class EditionTypeCode implements OnixElement<EditionTypes>, Serializable 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EditionTypes _value() {
+    public EditionTypes __v() {
         return value;
     }
 

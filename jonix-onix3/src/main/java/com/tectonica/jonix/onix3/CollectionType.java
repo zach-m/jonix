@@ -106,7 +106,7 @@ public class CollectionType implements OnixElement<CollectionTypes>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public CollectionTypes _value() {
+    public CollectionTypes __v() {
         return value;
     }
 

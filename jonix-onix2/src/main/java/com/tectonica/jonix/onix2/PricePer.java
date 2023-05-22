@@ -113,7 +113,7 @@ public class PricePer implements OnixElement<UnitOfPricings>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public UnitOfPricings _value() {
+    public UnitOfPricings __v() {
         return value;
     }
 

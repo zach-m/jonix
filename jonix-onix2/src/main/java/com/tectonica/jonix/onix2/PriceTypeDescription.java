@@ -116,7 +116,7 @@ public class PriceTypeDescription implements OnixElement<String>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public String _value() {
+    public String __v() {
         return value;
     }
 

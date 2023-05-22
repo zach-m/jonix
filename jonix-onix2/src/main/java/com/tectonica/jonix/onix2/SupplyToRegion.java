@@ -116,7 +116,7 @@ public class SupplyToRegion implements OnixElement<SupplytoRegions>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SupplytoRegions _value() {
+    public SupplytoRegions __v() {
         return value;
     }
 

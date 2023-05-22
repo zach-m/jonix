@@ -108,7 +108,7 @@ public class EpubUsageStatus implements OnixElement<UsageStatuss>, Serializable 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public UsageStatuss _value() {
+    public UsageStatuss __v() {
         return value;
     }
 

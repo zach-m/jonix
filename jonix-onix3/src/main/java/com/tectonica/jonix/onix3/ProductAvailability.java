@@ -121,7 +121,7 @@ public class ProductAvailability implements OnixElement<ProductAvailabilitys>, S
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductAvailabilitys _value() {
+    public ProductAvailabilitys __v() {
         return value;
     }
 

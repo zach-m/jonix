@@ -110,7 +110,7 @@ public class LanguageRole implements OnixElement<LanguageRoles>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public LanguageRoles _value() {
+    public LanguageRoles __v() {
         return value;
     }
 

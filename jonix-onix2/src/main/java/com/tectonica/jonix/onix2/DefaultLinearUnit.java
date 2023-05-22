@@ -115,7 +115,7 @@ public class DefaultLinearUnit implements OnixElement<DefaultLinearUnits>, Seria
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public DefaultLinearUnits _value() {
+    public DefaultLinearUnits __v() {
         return value;
     }
 

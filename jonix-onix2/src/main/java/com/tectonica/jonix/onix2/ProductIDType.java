@@ -117,7 +117,7 @@ public class ProductIDType implements OnixElement<ProductIdentifierTypes>, Seria
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductIdentifierTypes _value() {
+    public ProductIdentifierTypes __v() {
         return value;
     }
 

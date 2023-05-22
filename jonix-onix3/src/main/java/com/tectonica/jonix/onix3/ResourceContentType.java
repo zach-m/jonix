@@ -112,7 +112,7 @@ public class ResourceContentType implements OnixElement<ResourceContentTypes>, S
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ResourceContentTypes _value() {
+    public ResourceContentTypes __v() {
         return value;
     }
 

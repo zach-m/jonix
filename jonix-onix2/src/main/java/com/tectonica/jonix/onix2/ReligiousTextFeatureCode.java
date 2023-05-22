@@ -109,7 +109,7 @@ public class ReligiousTextFeatureCode implements OnixElement<ReligiousTextFeatur
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ReligiousTextFeatures _value() {
+    public ReligiousTextFeatures __v() {
         return value;
     }
 

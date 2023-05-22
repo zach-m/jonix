@@ -112,7 +112,7 @@ public class PriceIDType implements OnixElement<PriceIdentifierTypes>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PriceIdentifierTypes _value() {
+    public PriceIdentifierTypes __v() {
         return value;
     }
 

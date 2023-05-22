@@ -113,7 +113,7 @@ public class MediaFileTypeCode implements OnixElement<ImageAudioVideoFileTypes>,
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ImageAudioVideoFileTypes _value() {
+    public ImageAudioVideoFileTypes __v() {
         return value;
     }
 

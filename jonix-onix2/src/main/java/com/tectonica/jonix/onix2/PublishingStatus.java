@@ -120,7 +120,7 @@ public class PublishingStatus implements OnixElement<PublishingStatuss>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PublishingStatuss _value() {
+    public PublishingStatuss __v() {
         return value;
     }
 

@@ -113,7 +113,7 @@ public class MarketDateRole implements OnixElement<PublishingDateRoles>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PublishingDateRoles _value() {
+    public PublishingDateRoles __v() {
         return value;
     }
 

@@ -112,7 +112,7 @@ public class TextLinkType implements OnixElement<TextLinkTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TextLinkTypes _value() {
+    public TextLinkTypes __v() {
         return value;
     }
 

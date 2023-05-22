@@ -122,7 +122,7 @@ public class AvailabilityCode implements OnixElement<AvailabilityStatuss>, Seria
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public AvailabilityStatuss _value() {
+    public AvailabilityStatuss __v() {
         return value;
     }
 

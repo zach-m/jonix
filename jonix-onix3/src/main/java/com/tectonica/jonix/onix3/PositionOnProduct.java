@@ -109,7 +109,7 @@ public class PositionOnProduct implements OnixElement<PositionOnProducts>, Seria
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PositionOnProducts _value() {
+    public PositionOnProducts __v() {
         return value;
     }
 

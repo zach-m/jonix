@@ -110,7 +110,7 @@ public class SalesRightsType implements OnixElement<SalesRightsTypes>, Serializa
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SalesRightsTypes _value() {
+    public SalesRightsTypes __v() {
         return value;
     }
 

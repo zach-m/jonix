@@ -106,7 +106,7 @@ public class PriceDateRole implements OnixElement<PriceDateRoles>, Serializable 
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PriceDateRoles _value() {
+    public PriceDateRoles __v() {
         return value;
     }
 

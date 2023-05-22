@@ -121,7 +121,7 @@ public class ResourceFileDetail implements OnixElement<ResourceFileDetails>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ResourceFileDetails _value() {
+    public ResourceFileDetails __v() {
         return value;
     }
 

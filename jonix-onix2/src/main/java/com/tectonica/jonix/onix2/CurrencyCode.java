@@ -112,7 +112,7 @@ public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public CurrencyCodes _value() {
+    public CurrencyCodes __v() {
         return value;
     }
 

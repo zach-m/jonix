@@ -114,7 +114,7 @@ public class ResourceVersionFeatureType implements OnixElement<ResourceVersionFe
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ResourceVersionFeatureTypes _value() {
+    public ResourceVersionFeatureTypes __v() {
         return value;
     }
 

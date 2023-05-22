@@ -112,7 +112,7 @@ public class ResourceFeatureType implements OnixElement<ResourceFeatureTypes>, S
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ResourceFeatureTypes _value() {
+    public ResourceFeatureTypes __v() {
         return value;
     }
 

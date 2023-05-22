@@ -110,7 +110,7 @@ public class TextItemType implements OnixElement<TextItemTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TextItemTypes _value() {
+    public TextItemTypes __v() {
         return value;
     }
 

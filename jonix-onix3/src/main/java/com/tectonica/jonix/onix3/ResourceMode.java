@@ -112,7 +112,7 @@ public class ResourceMode implements OnixElement<ResourceModes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ResourceModes _value() {
+    public ResourceModes __v() {
         return value;
     }
 

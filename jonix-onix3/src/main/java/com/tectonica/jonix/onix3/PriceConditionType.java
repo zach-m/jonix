@@ -106,7 +106,7 @@ public class PriceConditionType implements OnixElement<PriceConditionTypes>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public PriceConditionTypes _value() {
+    public PriceConditionTypes __v() {
         return value;
     }
 

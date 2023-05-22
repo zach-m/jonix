@@ -112,7 +112,7 @@ public class ThesisType implements OnixElement<ThesisTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ThesisTypes _value() {
+    public ThesisTypes __v() {
         return value;
     }
 

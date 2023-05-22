@@ -116,7 +116,7 @@ public class CoverImageLinkTypeCode implements OnixElement<FrontCoverImageFileLi
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public FrontCoverImageFileLinkTypes _value() {
+    public FrontCoverImageFileLinkTypes __v() {
         return value;
     }
 

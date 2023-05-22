@@ -112,7 +112,7 @@ public class BiblePurpose implements OnixElement<BiblePurposes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public BiblePurposes _value() {
+    public BiblePurposes __v() {
         return value;
     }
 

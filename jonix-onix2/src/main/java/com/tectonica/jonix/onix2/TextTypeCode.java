@@ -113,7 +113,7 @@ public class TextTypeCode implements OnixElement<OtherTextTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public OtherTextTypes _value() {
+    public OtherTextTypes __v() {
         return value;
     }
 

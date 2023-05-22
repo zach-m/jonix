@@ -65,7 +65,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
     public Map<String, String> pairsMap() {
         if (cachedPairsMap == null) {
             cachedPairsMap = new HashMap<>();
-            forEach(item -> cachedPairsMap.put(item._value().getCode(), item._value().getDescription()));
+            forEach(item -> cachedPairsMap.put(item.__v().getCode(), item.__v().getDescription()));
         }
         return cachedPairsMap;
     }
@@ -93,12 +93,12 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
      * @return the same passed collection, after being populated
      */
     public <C extends Collection<OnixCodelist.Pair>> C pairsInto(C collection) {
-        forEach(item -> collection.add(item._value().pair()));
+        forEach(item -> collection.add(item.__v().pair()));
         return collection;
     }
 
     public Optional<OnixCodelist.Pair> firstPair() {
-        return (size() == 0) ? Optional.empty() : Optional.of(get(0)._value().pair());
+        return (size() == 0) ? Optional.empty() : Optional.of(get(0).__v().pair());
     }
 
     private static final ListOfOnixElement<OnixElement<OnixCodelist>, OnixCodelist> EMPTY = new ListOfOnixCodelist<>();

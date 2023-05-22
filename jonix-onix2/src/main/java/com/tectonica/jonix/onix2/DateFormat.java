@@ -125,7 +125,7 @@ public class DateFormat implements OnixElement<DateFormats>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public DateFormats _value() {
+    public DateFormats __v() {
         return value;
     }
 

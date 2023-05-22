@@ -111,7 +111,7 @@ public class EventStatus implements OnixElement<EventStatuss>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EventStatuss _value() {
+    public EventStatuss __v() {
         return value;
     }
 

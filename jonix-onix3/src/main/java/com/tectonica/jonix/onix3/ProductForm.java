@@ -122,7 +122,7 @@ public class ProductForm implements OnixElement<ProductForms>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductForms _value() {
+    public ProductForms __v() {
         return value;
     }
 

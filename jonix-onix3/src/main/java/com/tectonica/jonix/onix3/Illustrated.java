@@ -107,7 +107,7 @@ public class Illustrated implements OnixElement<IllustratedNotIllustrateds>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public IllustratedNotIllustrateds _value() {
+    public IllustratedNotIllustrateds __v() {
         return value;
     }
 

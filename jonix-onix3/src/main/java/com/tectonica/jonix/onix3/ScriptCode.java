@@ -107,7 +107,7 @@ public class ScriptCode implements OnixElement<TextScripts>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public TextScripts _value() {
+    public TextScripts __v() {
         return value;
     }
 

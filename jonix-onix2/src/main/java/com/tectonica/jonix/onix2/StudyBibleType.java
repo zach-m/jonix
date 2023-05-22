@@ -113,7 +113,7 @@ public class StudyBibleType implements OnixElement<StudyBibleTypes>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public StudyBibleTypes _value() {
+    public StudyBibleTypes __v() {
         return value;
     }
 

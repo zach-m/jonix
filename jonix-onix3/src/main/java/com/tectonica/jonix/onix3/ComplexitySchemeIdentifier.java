@@ -106,7 +106,7 @@ public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeI
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ComplexitySchemeIdentifiers _value() {
+    public ComplexitySchemeIdentifiers __v() {
         return value;
     }
 

@@ -113,7 +113,7 @@ public class BibleTextOrganization implements OnixElement<BibleTextOrganizations
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public BibleTextOrganizations _value() {
+    public BibleTextOrganizations __v() {
         return value;
     }
 

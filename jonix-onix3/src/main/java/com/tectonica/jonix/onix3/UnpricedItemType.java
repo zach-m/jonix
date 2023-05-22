@@ -114,7 +114,7 @@ public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Seriali
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public UnpricedItemTypes _value() {
+    public UnpricedItemTypes __v() {
         return value;
     }
 

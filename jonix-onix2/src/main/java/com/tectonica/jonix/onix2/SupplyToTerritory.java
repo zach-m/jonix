@@ -120,7 +120,7 @@ public class SupplyToTerritory implements OnixElement<java.util.Set<Regions>>, S
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public java.util.Set<Regions> _value() {
+    public java.util.Set<Regions> __v() {
         return value;
     }
 

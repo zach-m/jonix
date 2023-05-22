@@ -108,7 +108,7 @@ public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTyp
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ProductFormFeatureTypes _value() {
+    public ProductFormFeatureTypes __v() {
         return value;
     }
 

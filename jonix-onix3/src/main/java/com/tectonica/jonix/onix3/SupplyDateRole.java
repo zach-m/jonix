@@ -106,7 +106,7 @@ public class SupplyDateRole implements OnixElement<SupplyDateRoles>, Serializabl
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SupplyDateRoles _value() {
+    public SupplyDateRoles __v() {
         return value;
     }
 

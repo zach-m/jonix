@@ -110,7 +110,7 @@ public class CopyrightType implements OnixElement<RightsTypes>, Serializable {
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public RightsTypes _value() {
+    public RightsTypes __v() {
         return value;
     }
 

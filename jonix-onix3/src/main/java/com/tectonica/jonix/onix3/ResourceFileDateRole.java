@@ -121,7 +121,7 @@ public class ResourceFileDateRole implements OnixElement<ResourceFileDateRoles>,
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public ResourceFileDateRoles _value() {
+    public ResourceFileDateRoles __v() {
         return value;
     }
 

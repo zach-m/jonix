@@ -113,7 +113,7 @@ public class LocationIDType implements OnixElement<SupplierIdentifierTypes>, Ser
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SupplierIdentifierTypes _value() {
+    public SupplierIdentifierTypes __v() {
         return value;
     }
 
