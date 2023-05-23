@@ -390,8 +390,9 @@ public class JonixRecords implements Iterable<JonixRecord> {
             // TODO: allow onixMessage = null, and check that it works on empty files
             if (!onixMessage.getName().getLocalPart()
                 .equalsIgnoreCase("ONIXMessage")) { // TODO: check if should be 'equals'
-                throw new RuntimeException("source doesn't start with the mandatory <ONIXMessage> tag. Found <" +
-                    onixMessage.getName().getLocalPart() + ">");
+                throw new RuntimeException(
+                    "source doesn't start with the mandatory <ONIXMessage> tag. Found <" + onixMessage.getName()
+                        .getLocalPart() + ">");
             }
 
             // given the <ONIXMessage>, determine the ONIX version (provided as an attribute of the tag)

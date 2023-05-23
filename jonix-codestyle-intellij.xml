@@ -6,6 +6,7 @@
     <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
       <value />
     </option>
+    <option name="ALIGN_TYPES_IN_MULTI_CATCH" value="false" />
     <option name="JD_KEEP_EMPTY_PARAMETER" value="false" />
     <option name="JD_KEEP_EMPTY_EXCEPTION" value="false" />
     <option name="JD_KEEP_EMPTY_RETURN" value="false" />
@@ -14,6 +15,7 @@
   <codeStyleSettings language="JAVA">
     <option name="RIGHT_MARGIN" value="120" />
     <option name="LINE_COMMENT_AT_FIRST_COLUMN" value="false" />
+    <option name="KEEP_LINE_BREAKS" value="false" />
     <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
     <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
     <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="1" />
