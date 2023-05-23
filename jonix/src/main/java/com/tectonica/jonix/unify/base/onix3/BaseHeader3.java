@@ -19,12 +19,11 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.onix3.Addressee;
 import com.tectonica.jonix.onix3.Header;
 import com.tectonica.jonix.unify.base.BaseHeader;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * ONIX3 concrete implementation for {@link BaseHeader}
@@ -40,21 +39,14 @@ public class BaseHeader3 extends BaseHeader {
     }
 
     public static void extract(Header header, BaseHeader dest) {
-        dest.fromCompany = header.sender().senderName().value;
-        dest.fromPerson = header.sender().contactName().value;
-        dest.fromEmail = header.sender().emailAddress().value;
-        dest.toCompanies = extractToCompanies(header);
-        dest.sentDate = header.sentDateTime().value;
+        dest.senderName = header.sender().senderName().value;
+        dest.senderContactName = header.sender().contactName().value;
+        dest.senderEmail = header.sender().emailAddress().value;
+        dest.addressees = extractAddressees(header);
+        dest.sentDateTime = header.sentDateTime().value;
     }
 
-    private static List<String> extractToCompanies(Header header) {
-        List<String> list = new ArrayList<>();
-        for (Addressee addressee : header.addressees()) {
-            String toCompany = addressee.addresseeName().value;
-            if (toCompany != null) {
-                list.add(toCompany);
-            }
-        }
-        return list.size() > 0 ? list : null;
+    private static List<String> extractAddressees(Header header) {
+        return header.addressees().stream().map(a -> a.addresseeName().value).collect(Collectors.toList());
     }
 }

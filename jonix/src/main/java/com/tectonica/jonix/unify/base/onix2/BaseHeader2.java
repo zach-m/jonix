@@ -38,10 +38,10 @@ public class BaseHeader2 extends BaseHeader {
     }
 
     public static void extract(Header header, BaseHeader dest) {
-        dest.fromCompany = header.fromCompany().value;
-        dest.fromPerson = header.fromPerson().value;
-        dest.fromEmail = header.fromEmail().value;
-        dest.toCompanies = header.toCompany().value().map(Collections::singletonList).orElse(null);
-        dest.sentDate = header.sentDate().value;
+        dest.senderName = header.fromCompany().value;
+        dest.senderContactName = header.fromPerson().value;
+        dest.senderEmail = header.fromEmail().value;
+        dest.addressees = header.toCompany().value().map(Collections::singletonList).orElse(Collections.emptyList());
+        dest.sentDateTime = header.sentDate().value;
     }
 }

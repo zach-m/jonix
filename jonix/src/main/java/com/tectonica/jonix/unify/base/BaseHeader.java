@@ -37,11 +37,11 @@ import java.util.List;
  * @author Zach Melamed
  */
 public abstract class BaseHeader extends UnifiedHeader {
-    public String fromCompany;
-    public String fromPerson;
-    public String fromEmail;
-    public List<String> toCompanies;
-    public String sentDate;
+    public String senderName;
+    public String senderContactName;
+    public String senderEmail;
+    public List<String> addressees;
+    public String sentDateTime;
 
     public BaseHeader(OnixHeader rawHeader) {
         super(rawHeader);
@@ -50,11 +50,11 @@ public abstract class BaseHeader extends UnifiedHeader {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("FromCompany: ").append(fromCompany).append("\n");
-        sb.append("FromPerson:  ").append(fromPerson).append("\n");
-        sb.append("FromEmail:   ").append(fromEmail).append("\n");
-        sb.append("ToCompany:   ").append(toCompanies).append("\n");
-        sb.append("SentDate:    ").append(sentDate);
+        sb.append("FromCompany: ").append(senderName).append("\n");
+        sb.append("FromPerson:  ").append(senderContactName).append("\n");
+        sb.append("FromEmail:   ").append(senderEmail).append("\n");
+        sb.append("ToCompany:   ").append(addressees).append("\n");
+        sb.append("SentDate:    ").append(sentDateTime);
         return sb.toString();
     }
 }
