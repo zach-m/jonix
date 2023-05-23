@@ -82,7 +82,7 @@ public class TestProductStream {
                     LOGGER.debug("RAW ONIX3  --------------------------------------------------------------");
                     LOGGER.debug(JonixJson.toJson(product, false));
                     LOGGER.debug("BASIC ONIX3  ------------------------------------------------------------");
-                    LOGGER.debug(baseViaXml = JonixJson.objectToJson(bp));
+                    LOGGER.debug(baseViaXml = JonixJson.toJson(bp));
                 }
                 return true;
             }
@@ -91,7 +91,7 @@ public class TestProductStream {
 
         // read the same file, this time using a JonixReader
         Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified().limit(1)
-            .forEach(record -> baseViaStream = JonixJson.objectToJson(record.product));
+            .forEach(record -> baseViaStream = JonixJson.toJson(record.product));
 
         // compare the JSON received in both methods
         assertEquals(baseViaXml, baseViaStream);
@@ -135,7 +135,7 @@ public class TestProductStream {
             //BaseRecord baseRecord = JonixUnifier.unifyRecord(record);
             //String isbn13 = baseRecord.product.info.findProductId(ProductIdentifierTypes.ISBN_13);
             //String title = baseRecord.product.getLabel();
-            //System.out.println(JonixJson.objectToJson(baseRecord.product));
+            //System.out.println(JonixJson.toJson(baseRecord.product));
 
             //System.out.println(record.productCount() +" | " + record.source.productCount());
             //if (record.productCount() == 10) {

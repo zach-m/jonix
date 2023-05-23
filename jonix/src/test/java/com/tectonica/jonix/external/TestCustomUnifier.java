@@ -109,15 +109,15 @@ public class TestCustomUnifier {
 
         // pass 2: stream-based + JSON
         Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified(factory2, factory3).limit(1)
-            .forEach(record -> LOGGER.debug(JonixJson.objectToJson(record.product)));
+            .forEach(record -> LOGGER.debug(JonixJson.toJson(record.product)));
     }
 
     @Test
     public void testCustomUnifier() {
         String onix3Resource = "/samples/onix3-multiple.xml";
         Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified(MyUnifier.unifier)
-            .forEach(record -> LOGGER.debug(JonixJson.objectToJson(record.product)));
+            .forEach(record -> LOGGER.debug(JonixJson.toJson(record.product)));
         Jonix.source(getClass().getResourceAsStream(onix3Resource)).streamUnified(MyUnifierExtendingBase.unifier)
-            .forEach(record -> LOGGER.debug(JonixJson.objectToJson(record.product)));
+            .forEach(record -> LOGGER.debug(JonixJson.toJson(record.product)));
     }
 }
