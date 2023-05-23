@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.SupplierIdentifierTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
- * {@link PublisherRepresentative} ⯈ {@link AgentIdentifier} ⯈ {@link AgentIDType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link PublisherRepresentative} ⯈
+ * {@link AgentIdentifier} ⯈ {@link AgentIDType}</li>
  * </ul>
  */
 public class AgentIDType implements OnixElement<SupplierIdentifierTypes>, Serializable {
@@ -136,5 +137,11 @@ public class AgentIDType implements OnixElement<SupplierIdentifierTypes>, Serial
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AgentIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

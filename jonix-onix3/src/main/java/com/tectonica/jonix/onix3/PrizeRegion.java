@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.Regions;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -74,15 +75,14 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeRegion}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeRegion}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈ {@link PrizeRegion}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
  * {@link PrizeRegion}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
- * {@link Prize} ⯈ {@link PrizeRegion}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
- * ⯈ {@link Prize} ⯈ {@link PrizeRegion}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
- * {@link Prize} ⯈ {@link PrizeRegion}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeRegion}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeRegion}</li>
  * </ul>
  *
  * @since Onix-3.07
@@ -149,5 +149,11 @@ public class PrizeRegion implements OnixElement<Regions>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PrizeRegion> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

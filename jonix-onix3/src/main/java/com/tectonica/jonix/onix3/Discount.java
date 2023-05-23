@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixDiscount;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -59,8 +60,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link Discount}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Discount}</li>
  * </ul>
  */
 public class Discount implements OnixDataComposite<JonixDiscount>, Serializable {
@@ -151,6 +151,12 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Discount> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

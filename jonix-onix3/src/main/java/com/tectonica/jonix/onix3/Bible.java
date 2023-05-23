@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixBible;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,7 +65,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText} ⯈ {@link Bible}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText} ⯈ {@link Bible}</li>
  * </ul>
  */
 public class Bible implements OnixDataComposite<JonixBible>, Serializable {
@@ -165,6 +166,12 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Bible> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -174,8 +181,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixCodelist<BibleContents, BibleContentss> bibleContentss =
-        JPU.emptyListOfOnixCodelist(BibleContents.class);
+    private ListOfOnixCodelist<BibleContents, BibleContentss> bibleContentss = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -190,8 +196,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
         return bibleContentss;
     }
 
-    private ListOfOnixCodelist<BibleVersion, BibleVersions> bibleVersions =
-        JPU.emptyListOfOnixCodelist(BibleVersion.class);
+    private ListOfOnixCodelist<BibleVersion, BibleVersions> bibleVersions = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -249,8 +254,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
         return bibleReferenceLocation;
     }
 
-    private ListOfOnixCodelist<BiblePurpose, BiblePurposes> biblePurposes =
-        JPU.emptyListOfOnixCodelist(BiblePurpose.class);
+    private ListOfOnixCodelist<BiblePurpose, BiblePurposes> biblePurposes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -264,8 +268,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
         return biblePurposes;
     }
 
-    private ListOfOnixCodelist<BibleTextFeature, BibleTextFeatures> bibleTextFeatures =
-        JPU.emptyListOfOnixCodelist(BibleTextFeature.class);
+    private ListOfOnixCodelist<BibleTextFeature, BibleTextFeatures> bibleTextFeatures = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>

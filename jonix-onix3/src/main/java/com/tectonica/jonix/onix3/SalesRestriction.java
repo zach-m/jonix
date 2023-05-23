@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,9 +61,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈
- * {@link SalesRestriction}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRestriction}</li>
  * </ul>
  *
  * @since Onix-3.02
@@ -158,6 +158,12 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<SalesRestriction> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -222,8 +228,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         return salesOutlets;
     }
 
-    private ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes =
-        JPU.emptyListOfOnixElement(SalesRestrictionNote.class);
+    private ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes = ListOfOnixElement.empty();
 
     /**
      * <p>

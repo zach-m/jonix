@@ -33,6 +33,7 @@ import com.tectonica.jonix.common.struct.JonixMeasure;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -75,8 +76,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest}</li>
  * </ul>
  *
  * @since Onix-3.08
@@ -194,6 +194,12 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SupplementManifest> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -344,7 +350,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
-        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -358,8 +364,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
         return productFormDetails;
     }
 
-    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions =
-        JPU.emptyListOfOnixElement(ProductFormDescription.class);
+    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>

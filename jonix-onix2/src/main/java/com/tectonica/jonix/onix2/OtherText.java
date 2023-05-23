@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixOtherText;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,10 +63,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link OtherText}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link OtherText}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link OtherText}</li>
+ * <li>{@link Product} ⯈ {@link OtherText}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link OtherText}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link OtherText}</li>
  * </ul>
  */
 public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, OtherTextTypes>, Serializable {
@@ -189,6 +190,12 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<OtherText> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

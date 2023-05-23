@@ -38,6 +38,7 @@ import com.tectonica.jonix.common.struct.JonixPriceDate;
 import com.tectonica.jonix.common.struct.JonixPriceIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -80,7 +81,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price}</li>
  * </ul>
  */
 public class Price implements OnixSuperComposite, Serializable {
@@ -251,6 +252,12 @@ public class Price implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Price> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -523,7 +530,7 @@ public class Price implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
-        JPU.emptyListOfOnixCodelist(EpubTechnicalProtection.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -565,8 +572,7 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceConstraints;
     }
 
-    private ListOfOnixElement<PriceTypeDescription, String> priceTypeDescriptions =
-        JPU.emptyListOfOnixElement(PriceTypeDescription.class);
+    private ListOfOnixElement<PriceTypeDescription, String> priceTypeDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>

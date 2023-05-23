@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.TextFormats;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -75,8 +76,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AncillaryContent} ⯈
- * {@link AncillaryContentDescription}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AncillaryContent} ⯈ {@link AncillaryContentDescription}</li>
  * </ul>
  */
 public class AncillaryContentDescription implements OnixElement<String>, Serializable {
@@ -157,5 +157,11 @@ public class AncillaryContentDescription implements OnixElement<String>, Seriali
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AncillaryContentDescription> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

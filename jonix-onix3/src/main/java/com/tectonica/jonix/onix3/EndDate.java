@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.DateFormats;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,10 +71,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction} ⯈
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction} ⯈ {@link EndDate}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRestriction} ⯈
  * {@link EndDate}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRestriction}
- * ⯈ {@link EndDate}</li>
  * </ul>
  *
  * @since Onix-3.02
@@ -152,5 +152,11 @@ public class EndDate implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<EndDate> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

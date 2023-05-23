@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixOnOrderDetail;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,8 +65,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
- * {@link OnOrderDetail}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link OnOrderDetail}</li>
  * </ul>
  */
 public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Serializable {
@@ -148,6 +148,12 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<OnOrderDetail> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

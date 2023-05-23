@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixPublishingDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,7 +62,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingDate}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingDate}</li>
  * </ul>
  */
 public class PublishingDate
@@ -142,6 +143,12 @@ public class PublishingDate
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PublishingDate> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

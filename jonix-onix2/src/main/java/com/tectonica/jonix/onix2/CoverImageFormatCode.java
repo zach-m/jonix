@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -76,7 +77,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CoverImageFormatCode}</li>
+ * <li>{@link Product} ⯈ {@link CoverImageFormatCode}</li>
  * </ul>
  *
  * @deprecated
@@ -153,5 +154,11 @@ public class CoverImageFormatCode implements OnixElement<FrontCoverImageFileForm
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<CoverImageFormatCode> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

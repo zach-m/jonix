@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -73,15 +74,14 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link CountryCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
- * {@link CountryCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Language} ⯈ {@link CountryCode}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link CountryCode}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈ {@link CountryCode}</li>
+ * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link CountryCode}</li>
+ * <li>{@link Product} ⯈ {@link Language} ⯈ {@link CountryCode}</li>
  * </ul>
  *
  * @since Onix-2.12
@@ -157,5 +157,11 @@ public class CountryCode implements OnixElement<Countrys>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<CountryCode> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

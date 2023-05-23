@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -63,10 +64,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher}</li>
+ * <li>{@link Product} ⯈ {@link Publisher}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Publisher}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Publisher}</li>
  * </ul>
  */
 public class Publisher implements OnixSuperComposite, Serializable {
@@ -170,6 +171,12 @@ public class Publisher implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Publisher> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixContentDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,8 +65,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent}</li>
  * </ul>
  */
 public class CitedContent implements OnixSuperComposite, Serializable {
@@ -186,6 +187,12 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<CitedContent> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -223,7 +230,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return reviewRating;
     }
 
-    private ListOfOnixElement<SourceTitle, String> sourceTitles = JPU.emptyListOfOnixElement(SourceTitle.class);
+    private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -315,8 +322,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return positionOnList;
     }
 
-    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences =
-        JPU.emptyListOfOnixCodelist(ContentAudience.class);
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -330,7 +336,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
-    private ListOfOnixElement<ListName, String> listNames = JPU.emptyListOfOnixElement(ListName.class);
+    private ListOfOnixElement<ListName, String> listNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -346,7 +352,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return listNames;
     }
 
-    private ListOfOnixElement<CitationNote, String> citationNotes = JPU.emptyListOfOnixElement(CitationNote.class);
+    private ListOfOnixElement<CitationNote, String> citationNotes = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -362,7 +368,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return citationNotes;
     }
 
-    private ListOfOnixElement<ResourceLink, String> resourceLinks = JPU.emptyListOfOnixElement(ResourceLink.class);
+    private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
 
     /**
      * <p>

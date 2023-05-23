@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link AudienceRange} ⯈ {@link AudienceRangePrecision}</li>
+ * <li>{@link Product} ⯈ {@link AudienceRange} ⯈ {@link AudienceRangePrecision}</li>
  * </ul>
  */
 public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisions>, Serializable {
@@ -144,5 +145,11 @@ public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisio
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AudienceRangePrecision> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

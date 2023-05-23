@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -75,18 +76,18 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link CoverManifest} ⯈ {@link SpecificationDescription}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link CoverManifest} ⯈ {@link SpecificationDescription}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link BodyManifest} ⯈ {@link SpecificationDescription}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link CoverManifest} ⯈
+ * {@link SpecificationDescription}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link BodyManifest} ⯈ {@link SpecificationDescription}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link InsertManifest} ⯈ {@link SpecificationDescription}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link BodyManifest} ⯈
+ * {@link SpecificationDescription}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link InsertManifest} ⯈ {@link SpecificationDescription}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link InsertManifest} ⯈
+ * {@link SpecificationDescription}</li>
  * </ul>
  *
  * @since Onix-3.08
@@ -165,5 +166,11 @@ public class SpecificationDescription implements OnixElement<String>, Serializab
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SpecificationDescription> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

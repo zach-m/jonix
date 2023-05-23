@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,11 +72,11 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link NameCodeType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link NameCodeType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link NameCodeType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link NameCodeType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Imprint} ⯈ {@link NameCodeType}</li>
+ * <li>{@link Product} ⯈ {@link Publisher} ⯈ {@link NameCodeType}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link NameCodeType}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link NameCodeType}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link NameCodeType}</li>
+ * <li>{@link Product} ⯈ {@link Imprint} ⯈ {@link NameCodeType}</li>
  * </ul>
  */
 public class NameCodeType implements OnixElement<NameIdentifierTypes>, Serializable {
@@ -149,5 +150,11 @@ public class NameCodeType implements OnixElement<NameIdentifierTypes>, Serializa
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<NameCodeType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

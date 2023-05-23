@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.struct.JonixEpubLicenseDate;
 import com.tectonica.jonix.common.struct.JonixEpubLicenseExpression;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -44,9 +45,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈
- * {@link EpubLicenseWithDate}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate}</li>
  * </ul>
  */
 public class EpubLicenseWithDate implements OnixSuperComposite, Serializable {
@@ -132,6 +132,12 @@ public class EpubLicenseWithDate implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<EpubLicenseWithDate> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -141,8 +147,7 @@ public class EpubLicenseWithDate implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames =
-        JPU.emptyListOfOnixElement(EpubLicenseName.class);
+    private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames = ListOfOnixElement.empty();
 
     /**
      * Jonix-Comment: this list is required to contain at least one item

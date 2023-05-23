@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixSupplierIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,9 +63,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link SupplierIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈
- * {@link SupplierIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link SupplierIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link SupplierIdentifier}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -160,6 +160,12 @@ public class SupplierIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SupplierIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

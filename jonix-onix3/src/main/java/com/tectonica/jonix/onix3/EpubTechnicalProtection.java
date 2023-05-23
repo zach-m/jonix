@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.EpublicationTechnicalProtections;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -77,8 +78,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubTechnicalProtection}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubTechnicalProtection}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link EpubTechnicalProtection}</li>
  * </ul>
  */
@@ -144,5 +145,11 @@ public class EpubTechnicalProtection implements OnixElement<EpublicationTechnica
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<EpubTechnicalProtection> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.SupplyDateRoles;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyDate} ⯈
- * {@link SupplyDateRole}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyDate} ⯈ {@link SupplyDateRole}</li>
  * </ul>
  */
 public class SupplyDateRole implements OnixElement<SupplyDateRoles>, Serializable {
@@ -136,5 +136,11 @@ public class SupplyDateRole implements OnixElement<SupplyDateRoles>, Serializabl
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SupplyDateRole> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

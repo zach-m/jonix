@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -73,10 +74,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature} ⯈
  * {@link ProductFormFeatureDescription}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
- * {@link ProductFormFeature} ⯈ {@link ProductFormFeatureDescription}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link ProductFormFeature} ⯈
+ * {@link ProductFormFeatureDescription}</li>
  * </ul>
  */
 public class ProductFormFeatureDescription implements OnixElement<String>, Serializable {
@@ -153,5 +154,11 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductFormFeatureDescription> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

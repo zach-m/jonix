@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixPublisherIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,10 +61,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈
  * {@link PublisherIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈
- * {@link PublisherIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link PublisherIdentifier}</li>
  * </ul>
  */
 public class PublisherIdentifier
@@ -148,6 +148,12 @@ public class PublisherIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PublisherIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

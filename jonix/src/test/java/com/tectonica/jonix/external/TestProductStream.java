@@ -99,10 +99,10 @@ public class TestProductStream {
 
     @Test
     public void readSingleProductOfOnix31_Ref_Short() {
-        String onix31_ref = "/samples/Onix3.1-single-ref.xml";
-        String onix31_short = "/samples/Onix3.1-single-short.xml";
+        String onix31_ref = "/Onix3.1-single-ref.xml";
+        String onix31_short = "/Onix3.1-single-short.xml";
         String refJson = Jonix.source(getClass().getResourceAsStream(onix31_ref))
-            .onSourceStart(src -> assertEquals(src.onixRelease().getValue(), "3.1")).stream()
+            .onSourceStart(src -> assertEquals(src.onixRelease(), "3.1")).stream()
             .map(record -> JonixJson.toJson(record.product)).findFirst().orElse(null);
         String shortJson = Jonix.source(getClass().getResourceAsStream(onix31_short)).stream()
             .map(record -> JonixJson.toJson(record.product)).findFirst().orElse(null);

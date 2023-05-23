@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.TextFormats;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -73,8 +74,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
- * {@link EventOccurrence} ⯈ {@link VenueNote}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
+ * {@link VenueNote}</li>
  * </ul>
  *
  * @since Onix-3.07
@@ -156,5 +157,11 @@ public class VenueNote implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<VenueNote> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

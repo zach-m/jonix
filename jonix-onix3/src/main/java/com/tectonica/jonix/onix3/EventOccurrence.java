@@ -33,6 +33,7 @@ import com.tectonica.jonix.common.struct.JonixOccurrenceDate;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -67,8 +68,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
- * {@link EventOccurrence}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence}</li>
  * </ul>
  *
  * @since Onix-3.07
@@ -196,6 +196,12 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<EventOccurrence> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -311,7 +317,7 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return eventIdentifiers;
     }
 
-    private ListOfOnixElement<LocationName, String> locationNames = JPU.emptyListOfOnixElement(LocationName.class);
+    private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -329,7 +335,7 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return locationNames;
     }
 
-    private ListOfOnixElement<VenueNote, String> venueNotes = JPU.emptyListOfOnixElement(VenueNote.class);
+    private ListOfOnixElement<VenueNote, String> venueNotes = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -344,8 +350,7 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
         return venueNotes;
     }
 
-    private ListOfOnixElement<EventDescription, String> eventDescriptions =
-        JPU.emptyListOfOnixElement(EventDescription.class);
+    private ListOfOnixElement<EventDescription, String> eventDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>

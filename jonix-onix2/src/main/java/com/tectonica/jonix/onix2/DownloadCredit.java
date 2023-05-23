@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,10 +63,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MediaFile} ⯈ {@link DownloadCredit}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link MediaFile} ⯈ {@link DownloadCredit}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link MediaFile} ⯈
- * {@link DownloadCredit}</li>
+ * <li>{@link Product} ⯈ {@link MediaFile} ⯈ {@link DownloadCredit}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link MediaFile} ⯈ {@link DownloadCredit}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link MediaFile} ⯈ {@link DownloadCredit}</li>
  * </ul>
  */
 public class DownloadCredit implements OnixElement<String>, Serializable {
@@ -148,5 +148,11 @@ public class DownloadCredit implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<DownloadCredit> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

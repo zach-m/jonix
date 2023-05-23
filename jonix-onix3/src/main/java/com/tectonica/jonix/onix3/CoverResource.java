@@ -35,6 +35,7 @@ import com.tectonica.jonix.common.struct.JonixResourceFileFeature;
 import com.tectonica.jonix.common.struct.JonixResourceIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -72,10 +73,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link CoverManifest} ⯈ {@link CoverResource}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link CoverManifest} ⯈ {@link CoverResource}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link CoverManifest} ⯈
+ * {@link CoverResource}</li>
  * </ul>
  *
  * @since Onix-3.08
@@ -195,6 +196,12 @@ public class CoverResource implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<CoverResource> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -204,8 +211,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<ResourceFileLink, String> resourceFileLinks =
-        JPU.emptyListOfOnixElement(ResourceFileLink.class);
+    private ListOfOnixElement<ResourceFileLink, String> resourceFileLinks = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -349,7 +355,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ResourceFileDetail, ResourceFileDetails> resourceFileDetails =
-        JPU.emptyListOfOnixCodelist(ResourceFileDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -383,8 +389,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
         return resourceFileFeatures;
     }
 
-    private ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions =
-        JPU.emptyListOfOnixElement(ResourceFileDescription.class);
+    private ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -403,7 +408,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixElement<ResourceFileContentDescription, String> resourceFileContentDescriptions =
-        JPU.emptyListOfOnixElement(ResourceFileContentDescription.class);
+        ListOfOnixElement.empty();
 
     /**
      * <p>

@@ -32,6 +32,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,7 +63,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SalesRights}</li>
+ * <li>{@link Product} ⯈ {@link SalesRights}</li>
  * </ul>
  */
 public class SalesRights implements OnixDataCompositeUncommon, Serializable {
@@ -160,6 +161,12 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<SalesRights> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -183,8 +190,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         return salesRightsType;
     }
 
-    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys =
-        JPU.emptyListOfOnixElement(RightsCountry.class);
+    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -218,8 +224,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
         return rightsTerritory;
     }
 
-    private ListOfOnixCodelist<RightsRegion, RightsRegions> rightsRegions =
-        JPU.emptyListOfOnixCodelist(RightsRegion.class);
+    private ListOfOnixCodelist<RightsRegion, RightsRegions> rightsRegions = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>

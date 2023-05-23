@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TradeCategorys;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -72,9 +73,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link TradeCategory}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link TradeCategory}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link TradeCategory}</li>
+ * <li>{@link Product} ⯈ {@link TradeCategory}</li>
+ * <li>{@link Product} ⯈ {@link ContainedItem} ⯈ {@link TradeCategory}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link TradeCategory}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -150,5 +151,11 @@ public class TradeCategory implements OnixElement<TradeCategorys>, Serializable 
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<TradeCategory> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

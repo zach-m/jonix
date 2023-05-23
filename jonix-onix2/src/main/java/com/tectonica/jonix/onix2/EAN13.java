@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -72,10 +73,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link EAN13}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link EAN13}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link EAN13}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link EAN13}</li>
+ * <li>{@link Product} ⯈ {@link EAN13}</li>
+ * <li>{@link Product} ⯈ {@link ContainedItem} ⯈ {@link EAN13}</li>
+ * <li>{@link Product} ⯈ {@link NotForSale} ⯈ {@link EAN13}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link EAN13}</li>
  * </ul>
  *
  * @deprecated
@@ -161,5 +162,11 @@ public class EAN13 implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<EAN13> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

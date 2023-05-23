@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -82,11 +83,11 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link ProductIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link NotForSale} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link Set} ⯈ {@link ProductIdentifier}</li>
  * </ul>
  */
 public class ProductIdentifier
@@ -180,6 +181,12 @@ public class ProductIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

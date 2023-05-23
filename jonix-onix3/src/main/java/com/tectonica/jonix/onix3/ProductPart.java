@@ -35,6 +35,7 @@ import com.tectonica.jonix.common.struct.JonixProductFormFeature;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -80,7 +81,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart}</li>
  * </ul>
  */
 public class ProductPart implements OnixSuperComposite, Serializable {
@@ -199,6 +200,12 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductPart> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -328,7 +335,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
-        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -361,8 +368,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions =
-        JPU.emptyListOfOnixElement(ProductFormDescription.class);
+    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -379,7 +385,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
-        JPU.emptyListOfOnixCodelist(ProductContentType.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>

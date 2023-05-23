@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixMediaFile;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,9 +62,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MediaFile}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link MediaFile}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link MediaFile}</li>
+ * <li>{@link Product} ⯈ {@link MediaFile}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link MediaFile}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link MediaFile}</li>
  * </ul>
  */
 public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, ImageAudioVideoFileTypes>, Serializable {
@@ -187,6 +188,12 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<MediaFile> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

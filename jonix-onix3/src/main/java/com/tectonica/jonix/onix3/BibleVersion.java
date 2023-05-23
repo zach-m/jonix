@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.BibleVersions;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,8 +72,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText} ⯈ {@link Bible} ⯈
- * {@link BibleVersion}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText} ⯈ {@link Bible} ⯈ {@link BibleVersion}</li>
  * </ul>
  */
 public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
@@ -137,5 +137,11 @@ public class BibleVersion implements OnixElement<BibleVersions>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<BibleVersion> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

@@ -33,6 +33,7 @@ import com.tectonica.jonix.common.struct.JonixSupplierOwnCoding;
 import com.tectonica.jonix.common.struct.JonixSupplyDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -73,7 +74,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail}</li>
  * </ul>
  */
 public class SupplyDetail implements OnixSuperComposite, Serializable {
@@ -204,6 +205,12 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SupplyDetail> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -420,8 +427,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return stocks;
     }
 
-    private ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums =
-        JPU.emptyListOfOnixElement(OrderQuantityMinimum.class);
+    private ListOfOnixElement<OrderQuantityMinimum, Integer> orderQuantityMinimums = ListOfOnixElement.empty();
 
     /**
      * <p>

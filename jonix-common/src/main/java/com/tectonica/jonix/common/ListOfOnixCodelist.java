@@ -41,10 +41,6 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
     private List<OnixCodelist.Pair> cachedPairs = null;
     private Map<String, String> cachedPairsMap = null;
 
-    public ListOfOnixCodelist(Class<E> clazz) {
-        super(clazz);
-    }
-
     /**
      * Given the {@link OnixCodelist}s stored in this container, this method returns a {@code String}-based
      * {@code (code,description)} list of tuples. It is a "type-free" representation of the codelists, suitable for
@@ -76,7 +72,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
 
     /**
      * @return a non-null, possibly empty, set of the {@code code} field of the {@link OnixCodelist}s stored in this
-     *     container
+     *         container
      */
     public Set<String> codes() {
         return pairsMap().keySet();
@@ -84,7 +80,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
 
     /**
      * @return a non-null, possibly empty, collection of the {@code description} field of the {@link OnixCodelist}s
-     *     stored in this container
+     *         stored in this container
      */
     public Collection<String> descriptions() {
         return pairsMap().values();
@@ -107,5 +103,12 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
 
     public OnixCodelist.Pair firstPairOrNull() {
         return (size() == 0) ? null : get(0).__v().pair();
+    }
+
+    private static final ListOfOnixElement<OnixElement<OnixCodelist>, OnixCodelist> EMPTY = new ListOfOnixCodelist<>();
+
+    @SuppressWarnings("unchecked")
+    public static <X extends OnixElement<Y>, Y extends OnixCodelist> ListOfOnixCodelist<X, Y> emptyList() {
+        return (ListOfOnixCodelist<X, Y>) EMPTY;
     }
 }

@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -66,7 +67,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail}</li>
  * </ul>
  *
  * @since Onix-3.08
@@ -144,6 +145,12 @@ public class ProductionDetail implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductionDetail> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

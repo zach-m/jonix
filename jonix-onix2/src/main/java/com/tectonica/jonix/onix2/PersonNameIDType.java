@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,34 +71,30 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
+ * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
  * {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
- * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier}
- * ⯈ {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
- * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
- * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
  * {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈
- * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * <li>{@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
  * {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier}
- * ⯈ {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * <li>{@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
  * {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
  * {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * <li>{@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
  * {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link PersonNameIdentifier} ⯈
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier} ⯈
  * {@link PersonNameIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈
- * {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
+ * <li>{@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link PersonNameIdentifier} ⯈ {@link PersonNameIDType}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link PersonNameIdentifier} ⯈
+ * {@link PersonNameIDType}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -173,5 +170,11 @@ public class PersonNameIDType implements OnixElement<PersonNameIdentifierTypes>,
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PersonNameIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -66,9 +67,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link FaxNumber}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link FaxNumber}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link FaxNumber}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link FaxNumber}</li>
+ * <li>{@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link FaxNumber}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link FaxNumber}</li>
  * </ul>
  */
 public class FaxNumber implements OnixElement<String>, Serializable {
@@ -150,5 +151,11 @@ public class FaxNumber implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<FaxNumber> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

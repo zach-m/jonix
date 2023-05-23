@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link Tax}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Tax}</li>
  * </ul>
  */
 public class Tax implements OnixSuperComposite, Serializable {
@@ -172,6 +172,12 @@ public class Tax implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Tax> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -270,8 +276,7 @@ public class Tax implements OnixSuperComposite, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixElement<PricePartDescription, String> pricePartDescriptions =
-        JPU.emptyListOfOnixElement(PricePartDescription.class);
+    private ListOfOnixElement<PricePartDescription, String> pricePartDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>

@@ -24,6 +24,7 @@ import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -69,16 +70,16 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link Discount} ⯈ {@link Quantity}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link PriceConstraint} ⯈ {@link PriceConstraintLimit} ⯈ {@link Quantity}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link Quantity}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Discount} ⯈
+ * {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceConstraint} ⯈
+ * {@link PriceConstraintLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition} ⯈
+ * {@link PriceConditionQuantity} ⯈ {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit} ⯈
+ * {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint} ⯈
  * {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint}
- * ⯈ {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
  * </ul>
  */
 public class Quantity implements OnixElement<Double>, Serializable {
@@ -152,5 +153,11 @@ public class Quantity implements OnixElement<Double>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Quantity> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

@@ -33,6 +33,7 @@ import com.tectonica.jonix.common.struct.JonixSpecificationBundleName;
 import com.tectonica.jonix.common.struct.JonixSpecificationFeature;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -86,10 +87,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link BodyManifest}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link BodyManifest}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link BodyManifest}</li>
  * </ul>
  *
  * @since Onix-3.08
@@ -185,6 +185,12 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<BodyManifest> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -226,7 +232,7 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<SpecificationDetail, SpecificationDetails> specificationDetails =
-        JPU.emptyListOfOnixCodelist(SpecificationDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -258,8 +264,7 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
         return specificationFeatures;
     }
 
-    private ListOfOnixElement<SpecificationDescription, String> specificationDescriptions =
-        JPU.emptyListOfOnixElement(SpecificationDescription.class);
+    private ListOfOnixElement<SpecificationDescription, String> specificationDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>

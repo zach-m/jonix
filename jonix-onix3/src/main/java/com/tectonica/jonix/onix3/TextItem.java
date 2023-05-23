@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.struct.JonixPageRun;
 import com.tectonica.jonix.common.struct.JonixTextItemIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,7 +65,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem}</li>
  * </ul>
  */
 public class TextItem implements OnixSuperComposite, Serializable {
@@ -151,6 +152,12 @@ public class TextItem implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<TextItem> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

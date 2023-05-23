@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixPublishingDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,7 +65,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail}</li>
  * </ul>
  */
 public class PublishingDetail implements OnixSuperComposite, Serializable {
@@ -186,6 +187,12 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<PublishingDetail> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -294,8 +301,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return publishers;
     }
 
-    private ListOfOnixElement<CityOfPublication, String> cityOfPublications =
-        JPU.emptyListOfOnixElement(CityOfPublication.class);
+    private ListOfOnixElement<CityOfPublication, String> cityOfPublications = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -335,8 +341,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         return productContacts;
     }
 
-    private ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes =
-        JPU.emptyListOfOnixElement(PublishingStatusNote.class);
+    private ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes = ListOfOnixElement.empty();
 
     /**
      * <p>

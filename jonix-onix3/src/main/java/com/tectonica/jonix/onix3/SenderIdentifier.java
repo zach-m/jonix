@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixSenderIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,7 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier}</li>
+ * <li>{@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier}</li>
  * </ul>
  */
 public class SenderIdentifier
@@ -145,6 +146,12 @@ public class SenderIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SenderIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

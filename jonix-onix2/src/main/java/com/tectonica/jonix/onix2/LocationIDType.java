@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link LocationIdentifier} ⯈
- * {@link LocationIDType}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link LocationIdentifier} ⯈ {@link LocationIDType}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -147,5 +147,11 @@ public class LocationIDType implements OnixElement<SupplierIdentifierTypes>, Ser
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<LocationIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

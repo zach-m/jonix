@@ -34,6 +34,7 @@ import com.tectonica.jonix.common.struct.JonixEventIdentifier;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -77,7 +78,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent}</li>
  * </ul>
  *
  * @since Onix-3.07
@@ -209,6 +210,12 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<PromotionalEvent> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -218,7 +225,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixCodelist<EventType, EventTypes> eventTypes = JPU.emptyListOfOnixCodelist(EventType.class);
+    private ListOfOnixCodelist<EventType, EventTypes> eventTypes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -232,8 +239,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
         return eventTypes;
     }
 
-    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences =
-        JPU.emptyListOfOnixCodelist(ContentAudience.class);
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -247,7 +253,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
-    private ListOfOnixElement<EventName, String> eventNames = JPU.emptyListOfOnixElement(EventName.class);
+    private ListOfOnixElement<EventName, String> eventNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -366,8 +372,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
         return contributors;
     }
 
-    private ListOfOnixElement<ContributorStatement, String> contributorStatements =
-        JPU.emptyListOfOnixElement(ContributorStatement.class);
+    private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -388,8 +393,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
         return contributorStatements;
     }
 
-    private ListOfOnixElement<EventDescription, String> eventDescriptions =
-        JPU.emptyListOfOnixElement(EventDescription.class);
+    private ListOfOnixElement<EventDescription, String> eventDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>

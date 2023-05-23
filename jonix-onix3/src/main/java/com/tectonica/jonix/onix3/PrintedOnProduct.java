@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.PrintedOnProducts;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,8 +72,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link PrintedOnProduct}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PrintedOnProduct}</li>
  * </ul>
  */
 public class PrintedOnProduct implements OnixElement<PrintedOnProducts>, Serializable {
@@ -137,5 +137,11 @@ public class PrintedOnProduct implements OnixElement<PrintedOnProducts>, Seriali
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PrintedOnProduct> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

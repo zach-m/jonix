@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.struct.JonixPrize;
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -58,7 +59,7 @@ import java.util.Collections;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Prize}</li>
+ * <li>{@link Product} ⯈ {@link Prize}</li>
  * </ul>
  */
 public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
@@ -158,6 +159,12 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Prize> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

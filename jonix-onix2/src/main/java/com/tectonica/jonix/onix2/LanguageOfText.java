@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,7 +72,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link LanguageOfText}</li>
+ * <li>{@link Product} ⯈ {@link LanguageOfText}</li>
  * </ul>
  *
  * @deprecated
@@ -148,5 +149,11 @@ public class LanguageOfText implements OnixElement<Languages>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<LanguageOfText> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

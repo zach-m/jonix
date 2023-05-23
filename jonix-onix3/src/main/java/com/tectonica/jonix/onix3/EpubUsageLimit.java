@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixEpubUsageLimit;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -58,10 +59,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint} ⯈
  * {@link EpubUsageLimit}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint}
- * ⯈ {@link EpubUsageLimit}</li>
  * </ul>
  */
 public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, Serializable {
@@ -141,6 +141,12 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<EpubUsageLimit> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

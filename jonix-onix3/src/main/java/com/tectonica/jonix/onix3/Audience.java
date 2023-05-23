@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixAudience;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,7 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Audience}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Audience}</li>
  * </ul>
  */
 public class Audience implements OnixDataCompositeWithKey<JonixAudience, AudienceCodeTypes>, Serializable {
@@ -153,6 +154,12 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
         return exists;
     }
 
+    public void ifExists(Consumer<Audience> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -226,8 +233,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
         return audienceCodeTypeName;
     }
 
-    private ListOfOnixElement<AudienceHeadingText, String> audienceHeadingTexts =
-        JPU.emptyListOfOnixElement(AudienceHeadingText.class);
+    private ListOfOnixElement<AudienceHeadingText, String> audienceHeadingTexts = ListOfOnixElement.empty();
 
     /**
      * <p>

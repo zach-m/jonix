@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -75,7 +76,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link DefaultLanguageOfText}</li>
+ * <li>{@link Header} ⯈ {@link DefaultLanguageOfText}</li>
  * </ul>
  *
  * @deprecated
@@ -143,5 +144,11 @@ public class DefaultLanguageOfText implements OnixElement<Languages>, Serializab
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<DefaultLanguageOfText> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

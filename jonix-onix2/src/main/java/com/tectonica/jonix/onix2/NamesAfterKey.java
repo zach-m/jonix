@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -67,24 +68,20 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
- * {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈
- * {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈
- * {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link NamesAfterKey}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈
- * {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link NamesAfterKey}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link NamesAfterKey}</li>
  * </ul>
  */
 public class NamesAfterKey implements OnixElement<String>, Serializable {
@@ -166,5 +163,11 @@ public class NamesAfterKey implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<NamesAfterKey> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner} ⯈
- * {@link CopyrightOwnerIdentifier} ⯈ {@link CopyrightOwnerIDType}</li>
+ * <li>{@link Product} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier} ⯈
+ * {@link CopyrightOwnerIDType}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -147,5 +148,11 @@ public class CopyrightOwnerIDType implements OnixElement<NameIdentifierTypes>, S
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<CopyrightOwnerIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

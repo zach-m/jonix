@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixLanguage;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,8 +61,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Language}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Language}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Language}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Language}</li>
  * </ul>
  */
 public class Language implements OnixDataCompositeWithKey<JonixLanguage, LanguageRoles>, Serializable {
@@ -152,6 +153,12 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Language> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

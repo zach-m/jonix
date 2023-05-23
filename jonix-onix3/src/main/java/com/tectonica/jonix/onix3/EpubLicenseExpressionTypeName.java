@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -72,12 +73,12 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate} ⯈ {@link EpubLicenseExpression} ⯈
+ * {@link EpubLicenseExpressionTypeName}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate} ⯈
  * {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionTypeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate}
- * ⯈ {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionTypeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link EpubLicenseWithoutDate} ⯈ {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionTypeName}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link EpubLicenseWithoutDate} ⯈
+ * {@link EpubLicenseExpression} ⯈ {@link EpubLicenseExpressionTypeName}</li>
  * </ul>
  *
  * @since Onix-3.02
@@ -156,5 +157,11 @@ public class EpubLicenseExpressionTypeName implements OnixElement<String>, Seria
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<EpubLicenseExpressionTypeName> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

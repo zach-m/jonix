@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.common;
 
 public enum OnixVersion {
-    ONIX2,
-    ONIX3
+    ONIX2, ONIX3
 }

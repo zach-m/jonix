@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -78,7 +79,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DeletionText}</li>
+ * <li>{@link Product} ⯈ {@link DeletionText}</li>
  * </ul>
  */
 public class DeletionText implements OnixElement<String>, Serializable {
@@ -154,5 +155,11 @@ public class DeletionText implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<DeletionText> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.codelist.WorkIdentifierTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link WorkIdentifier} ⯈ {@link WorkIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link WorkIdentifier} ⯈ {@link WorkIDType}</li>
+ * <li>{@link Product} ⯈ {@link WorkIdentifier} ⯈ {@link WorkIDType}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link WorkIdentifier} ⯈ {@link WorkIDType}</li>
  * </ul>
  */
 public class WorkIDType implements OnixElement<WorkIdentifierTypes>, Serializable {
@@ -145,5 +146,11 @@ public class WorkIDType implements OnixElement<WorkIdentifierTypes>, Serializabl
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<WorkIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

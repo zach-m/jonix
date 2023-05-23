@@ -24,6 +24,7 @@ import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -68,14 +69,12 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈ {@link ContactName}</li>
+ * <li>{@link Header} ⯈ {@link Sender} ⯈ {@link ContactName}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈ {@link ContactName}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link ProductContact} ⯈
  * {@link ContactName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link ContactName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈
- * {@link ContactName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
- * {@link ProductContact} ⯈ {@link ContactName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Addressee} ⯈ {@link ContactName}</li>
+ * <li>{@link Header} ⯈ {@link Addressee} ⯈ {@link ContactName}</li>
  * </ul>
  */
 public class ContactName implements OnixElement<String>, Serializable {
@@ -148,5 +147,11 @@ public class ContactName implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ContactName> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

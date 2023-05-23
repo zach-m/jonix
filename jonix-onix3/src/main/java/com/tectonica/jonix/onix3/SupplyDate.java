@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.SupplyDateRoles;
 import com.tectonica.jonix.common.struct.JonixSupplyDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -59,7 +60,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyDate}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyDate}</li>
  * </ul>
  */
 public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, SupplyDateRoles>, Serializable {
@@ -138,6 +139,12 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SupplyDate> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

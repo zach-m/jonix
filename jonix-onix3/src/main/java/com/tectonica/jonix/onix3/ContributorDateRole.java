@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,14 +71,14 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ContributorDate}
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ContributorDate} ⯈
+ * {@link ContributorDateRole}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link ContributorDate} ⯈
+ * {@link ContributorDateRole}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈
+ * {@link ContributorDate} ⯈ {@link ContributorDateRole}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈ {@link ContributorDate}
  * ⯈ {@link ContributorDateRole}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
- * {@link ContributorDate} ⯈ {@link ContributorDateRole}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
- * ⯈ {@link ContributorDate} ⯈ {@link ContributorDateRole}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
- * {@link ContributorDate} ⯈ {@link ContributorDateRole}</li>
  * </ul>
  */
 public class ContributorDateRole implements OnixElement<PersonOrganizationDateRoles>, Serializable {
@@ -142,5 +143,11 @@ public class ContributorDateRole implements OnixElement<PersonOrganizationDateRo
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ContributorDateRole> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

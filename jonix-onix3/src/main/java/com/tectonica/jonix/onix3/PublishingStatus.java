@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.PublishingStatuss;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -98,7 +99,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingStatus}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingStatus}</li>
  * </ul>
  */
 public class PublishingStatus implements OnixElement<PublishingStatuss>, Serializable {
@@ -163,5 +164,11 @@ public class PublishingStatus implements OnixElement<PublishingStatuss>, Seriali
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PublishingStatus> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

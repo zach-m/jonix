@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.CollectionFrequencys;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
- * {@link CollectionFrequency}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link CollectionFrequency}</li>
  * </ul>
  *
  * @since Onix-3.10
@@ -138,5 +138,11 @@ public class CollectionFrequency implements OnixElement<CollectionFrequencys>, S
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<CollectionFrequency> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

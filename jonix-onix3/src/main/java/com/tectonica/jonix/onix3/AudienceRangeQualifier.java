@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,8 +72,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AudienceRange} ⯈
- * {@link AudienceRangeQualifier}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AudienceRange} ⯈ {@link AudienceRangeQualifier}</li>
  * </ul>
  */
 public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifiers>, Serializable {
@@ -137,5 +137,11 @@ public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifie
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AudienceRangeQualifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

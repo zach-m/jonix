@@ -31,6 +31,7 @@ import com.tectonica.jonix.common.struct.JonixProductFormFeature;
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,9 +63,9 @@ import java.util.Collections;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductFormFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductFormFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductFormFeature}</li>
+ * <li>{@link Product} ⯈ {@link ProductFormFeature}</li>
+ * <li>{@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductFormFeature}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductFormFeature}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -160,6 +161,12 @@ public class ProductFormFeature
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductFormFeature> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

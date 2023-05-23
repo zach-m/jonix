@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.TextItemIdentifierTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈
- * {@link TextItemIdentifier} ⯈ {@link TextItemIDType}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link TextItemIdentifier} ⯈
+ * {@link TextItemIDType}</li>
  * </ul>
  */
 public class TextItemIDType implements OnixElement<TextItemIdentifierTypes>, Serializable {
@@ -136,5 +137,11 @@ public class TextItemIDType implements OnixElement<TextItemIdentifierTypes>, Ser
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<TextItemIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

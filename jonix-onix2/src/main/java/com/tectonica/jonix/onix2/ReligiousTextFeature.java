@@ -31,6 +31,7 @@ import com.tectonica.jonix.common.struct.JonixReligiousTextFeature;
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -59,7 +60,7 @@ import java.util.Collections;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ReligiousText} ⯈ {@link ReligiousTextFeature}</li>
+ * <li>{@link Product} ⯈ {@link ReligiousText} ⯈ {@link ReligiousTextFeature}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -155,6 +156,12 @@ public class ReligiousTextFeature
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ReligiousTextFeature> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

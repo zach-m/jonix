@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.codelist.SpecificationFeatureTypes;
 import com.tectonica.jonix.common.struct.JonixSpecificationFeature;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -63,18 +64,18 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link CoverManifest} ⯈ {@link SpecificationFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link CoverManifest} ⯈ {@link SpecificationFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link BodyManifest} ⯈ {@link SpecificationFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link CoverManifest} ⯈
+ * {@link SpecificationFeature}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link BodyManifest} ⯈ {@link SpecificationFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link InsertManifest} ⯈ {@link SpecificationFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link BodyManifest} ⯈
+ * {@link SpecificationFeature}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link InsertManifest} ⯈ {@link SpecificationFeature}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link InsertManifest} ⯈
+ * {@link SpecificationFeature}</li>
  * </ul>
  *
  * @since Onix-3.08
@@ -164,6 +165,12 @@ public class SpecificationFeature
         return exists;
     }
 
+    public void ifExists(Consumer<SpecificationFeature> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -204,7 +211,7 @@ public class SpecificationFeature
     }
 
     private ListOfOnixElement<SpecificationFeatureDescription, String> specificationFeatureDescriptions =
-        JPU.emptyListOfOnixElement(SpecificationFeatureDescription.class);
+        ListOfOnixElement.empty();
 
     /**
      * <p>

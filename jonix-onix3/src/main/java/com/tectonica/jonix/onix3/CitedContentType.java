@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.CitedContentTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,10 +71,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
  * {@link CitedContentType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈
- * {@link CitedContentType}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈ {@link CitedContentType}</li>
  * </ul>
  */
 public class CitedContentType implements OnixElement<CitedContentTypes>, Serializable {
@@ -138,5 +138,11 @@ public class CitedContentType implements OnixElement<CitedContentTypes>, Seriali
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<CitedContentType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

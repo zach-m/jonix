@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.UnpricedItemTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -76,10 +77,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈
- * {@link UnpricedItemType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link UnpricedItemType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link UnpricedItemType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link UnpricedItemType}</li>
  * </ul>
  */
 public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Serializable {
@@ -144,5 +143,11 @@ public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Seriali
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<UnpricedItemType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

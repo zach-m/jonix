@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.QuantityUnits;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link QuantityUnit}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition} ⯈
+ * {@link PriceConditionQuantity} ⯈ {@link QuantityUnit}</li>
  * </ul>
  */
 public class QuantityUnit implements OnixElement<QuantityUnits>, Serializable {
@@ -136,5 +137,11 @@ public class QuantityUnit implements OnixElement<QuantityUnits>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<QuantityUnit> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

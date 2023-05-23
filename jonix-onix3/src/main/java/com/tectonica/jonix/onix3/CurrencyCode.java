@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.CurrencyCodes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -75,10 +76,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link ComparisonProductPrice} ⯈ {@link CurrencyCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link ComparisonProductPrice} ⯈
  * {@link CurrencyCode}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link CurrencyCode}</li>
  * </ul>
  */
 public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
@@ -143,5 +143,11 @@ public class CurrencyCode implements OnixElement<CurrencyCodes>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<CurrencyCode> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

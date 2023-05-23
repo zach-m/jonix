@@ -24,6 +24,7 @@ import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -65,8 +66,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Extent} ⯈
- * {@link ExtentValueRoman}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Extent} ⯈ {@link ExtentValueRoman}</li>
  * </ul>
  */
 public class ExtentValueRoman implements OnixElement<String>, Serializable {
@@ -139,5 +139,11 @@ public class ExtentValueRoman implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ExtentValueRoman> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

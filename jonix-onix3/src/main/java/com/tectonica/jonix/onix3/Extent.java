@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixExtent;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,7 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Extent}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Extent}</li>
  * </ul>
  */
 public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes>, Serializable {
@@ -147,6 +148,12 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Extent> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

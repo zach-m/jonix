@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TitleTypes;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,12 +72,12 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Title} ⯈ {@link TitleType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Title} ⯈ {@link TitleType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link Title} ⯈ {@link TitleType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Title} ⯈ {@link TitleType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Title} ⯈ {@link TitleType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Title} ⯈ {@link TitleType}</li>
+ * <li>{@link Product} ⯈ {@link Title} ⯈ {@link TitleType}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Title} ⯈ {@link TitleType}</li>
+ * <li>{@link Product} ⯈ {@link Set} ⯈ {@link Title} ⯈ {@link TitleType}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Title} ⯈ {@link TitleType}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Title} ⯈ {@link TitleType}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Title} ⯈ {@link TitleType}</li>
  * </ul>
  */
 public class TitleType implements OnixElement<TitleTypes>, Serializable {
@@ -150,5 +151,11 @@ public class TitleType implements OnixElement<TitleTypes>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<TitleType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

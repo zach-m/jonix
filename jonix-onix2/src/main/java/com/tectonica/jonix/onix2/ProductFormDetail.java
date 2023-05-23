@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,9 +72,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductFormDetail}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductFormDetail}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductFormDetail}</li>
+ * <li>{@link Product} ⯈ {@link ProductFormDetail}</li>
+ * <li>{@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductFormDetail}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductFormDetail}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -149,5 +150,11 @@ public class ProductFormDetail implements OnixElement<ProductFormDetailsList78>,
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductFormDetail> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

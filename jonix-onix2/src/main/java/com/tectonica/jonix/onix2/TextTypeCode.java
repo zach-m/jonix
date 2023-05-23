@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,10 +71,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link OtherText} ⯈ {@link TextTypeCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText} ⯈ {@link TextTypeCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextTypeCode}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextTypeCode}</li>
+ * <li>{@link Product} ⯈ {@link OtherText} ⯈ {@link TextTypeCode}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link OtherText} ⯈ {@link TextTypeCode}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextTypeCode}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link OtherText} ⯈ {@link TextTypeCode}</li>
  * </ul>
  */
 public class TextTypeCode implements OnixElement<OtherTextTypes>, Serializable {
@@ -147,5 +148,11 @@ public class TextTypeCode implements OnixElement<OtherTextTypes>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<TextTypeCode> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

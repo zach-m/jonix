@@ -38,6 +38,7 @@ import com.tectonica.jonix.common.struct.JonixPrize;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -77,11 +78,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
- * {@link Contributor}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor}</li>
  * </ul>
  */
 public class Contributor implements OnixSuperComposite, Serializable {
@@ -262,6 +262,12 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Contributor> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -301,8 +307,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return keyNames;
     }
 
-    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles =
-        JPU.emptyListOfOnixCodelist(ContributorRole.class);
+    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -334,7 +339,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private ListOfOnixElement<CorporateName, String> corporateNames = JPU.emptyListOfOnixElement(CorporateName.class);
+    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -512,7 +517,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return unnamedPersons;
     }
 
-    private ListOfOnixCodelist<FromLanguage, Languages> fromLanguages = JPU.emptyListOfOnixCodelist(FromLanguage.class);
+    private ListOfOnixCodelist<FromLanguage, Languages> fromLanguages = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -528,7 +533,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return fromLanguages;
     }
 
-    private ListOfOnixCodelist<ToLanguage, Languages> toLanguages = JPU.emptyListOfOnixCodelist(ToLanguage.class);
+    private ListOfOnixCodelist<ToLanguage, Languages> toLanguages = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -544,8 +549,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return toLanguages;
     }
 
-    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds =
-        JPU.emptyListOfOnixElement(CorporateNameInverted.class);
+    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -639,8 +643,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return prizes;
     }
 
-    private ListOfOnixElement<BiographicalNote, String> biographicalNotes =
-        JPU.emptyListOfOnixElement(BiographicalNote.class);
+    private ListOfOnixElement<BiographicalNote, String> biographicalNotes = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -676,8 +679,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return websites;
     }
 
-    private ListOfOnixElement<ContributorDescription, String> contributorDescriptions =
-        JPU.emptyListOfOnixElement(ContributorDescription.class);
+    private ListOfOnixElement<ContributorDescription, String> contributorDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>

@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.UnitOfUsages;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,10 +71,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit} ⯈
+ * {@link EpubUsageUnit}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint} ⯈
  * {@link EpubUsageLimit} ⯈ {@link EpubUsageUnit}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint}
- * ⯈ {@link EpubUsageLimit} ⯈ {@link EpubUsageUnit}</li>
  * </ul>
  */
 public class EpubUsageUnit implements OnixElement<UnitOfUsages>, Serializable {
@@ -138,5 +139,11 @@ public class EpubUsageUnit implements OnixElement<UnitOfUsages>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<EpubUsageUnit> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

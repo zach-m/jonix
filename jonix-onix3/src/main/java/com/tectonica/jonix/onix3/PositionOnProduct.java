@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.PositionOnProducts;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -72,9 +73,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Barcode} ⯈ {@link PositionOnProduct}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link PositionOnProduct}</li>
+ * <li>{@link Product} ⯈ {@link Barcode} ⯈ {@link PositionOnProduct}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PositionOnProduct}</li>
  * </ul>
  */
 public class PositionOnProduct implements OnixElement<PositionOnProducts>, Serializable {
@@ -139,5 +139,11 @@ public class PositionOnProduct implements OnixElement<PositionOnProducts>, Seria
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PositionOnProduct> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

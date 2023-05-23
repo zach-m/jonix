@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,8 +65,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedProduct}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedProduct}</li>
+ * <li>{@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedProduct}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedProduct}</li>
  * </ul>
  *
  * @since Onix-3.03
@@ -157,6 +158,12 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<RelatedProduct> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -167,7 +174,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private ListOfOnixCodelist<ProductRelationCode, ProductRelations> productRelationCodes =
-        JPU.emptyListOfOnixCodelist(ProductRelationCode.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -220,7 +227,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
-        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>

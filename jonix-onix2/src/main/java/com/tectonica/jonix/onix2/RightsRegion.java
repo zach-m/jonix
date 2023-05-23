@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -72,7 +73,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SalesRights} ⯈ {@link RightsRegion}</li>
+ * <li>{@link Product} ⯈ {@link SalesRights} ⯈ {@link RightsRegion}</li>
  * </ul>
  *
  * @deprecated
@@ -149,5 +150,11 @@ public class RightsRegion implements OnixElement<RightsRegions>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<RightsRegion> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

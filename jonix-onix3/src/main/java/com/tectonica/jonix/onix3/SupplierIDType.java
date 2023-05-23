@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.SupplierIdentifierTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,10 +71,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈
- * {@link SupplierIdentifier} ⯈ {@link SupplierIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈
- * {@link SupplierIdentifier} ⯈ {@link SupplierIDType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link SupplierIdentifier}
+ * ⯈ {@link SupplierIDType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈ {@link SupplierIdentifier} ⯈
+ * {@link SupplierIDType}</li>
  * </ul>
  */
 public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Serializable {
@@ -138,5 +139,11 @@ public class SupplierIDType implements OnixElement<SupplierIdentifierTypes>, Ser
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SupplierIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

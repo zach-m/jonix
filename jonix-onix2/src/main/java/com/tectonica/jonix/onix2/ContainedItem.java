@@ -37,6 +37,7 @@ import com.tectonica.jonix.common.struct.JonixProductFormFeature;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -74,7 +75,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem}</li>
+ * <li>{@link Product} ⯈ {@link ContainedItem}</li>
  * </ul>
  */
 public class ContainedItem implements OnixSuperComposite, Serializable {
@@ -206,6 +207,12 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ContainedItem> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -352,7 +359,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
-        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -385,8 +392,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails =
-        JPU.emptyListOfOnixCodelist(BookFormDetail.class);
+    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -404,7 +410,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
-        JPU.emptyListOfOnixCodelist(ProductContentType.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>

@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixTitle;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,12 +65,12 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Title}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Title}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link Title}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Title}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Title}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Title}</li>
+ * <li>{@link Product} ⯈ {@link Title}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Title}</li>
+ * <li>{@link Product} ⯈ {@link Set} ⯈ {@link Title}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Title}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Title}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Title}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -179,6 +180,12 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Title> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

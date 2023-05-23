@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -66,8 +67,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PlaceAsSubject}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PlaceAsSubject}</li>
+ * <li>{@link Product} ⯈ {@link PlaceAsSubject}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link PlaceAsSubject}</li>
  * </ul>
  */
 public class PlaceAsSubject implements OnixElement<String>, Serializable {
@@ -149,5 +150,11 @@ public class PlaceAsSubject implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PlaceAsSubject> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

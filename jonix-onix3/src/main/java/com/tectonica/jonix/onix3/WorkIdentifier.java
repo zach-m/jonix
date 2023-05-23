@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.common.struct.JonixWorkIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,10 +61,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedWork} ⯈
- * {@link WorkIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedWork} ⯈
- * {@link WorkIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedWork} ⯈ {@link WorkIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedWork} ⯈ {@link WorkIdentifier}</li>
  * </ul>
  */
 public class WorkIdentifier
@@ -148,6 +147,12 @@ public class WorkIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<WorkIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

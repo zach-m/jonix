@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.StockQuantityCodeTypes;
 import com.tectonica.jonix.common.struct.JonixStockQuantityCoded;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,8 +62,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
- * {@link StockQuantityCoded}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link StockQuantityCoded}</li>
  * </ul>
  */
 public class StockQuantityCoded
@@ -147,6 +147,12 @@ public class StockQuantityCoded
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<StockQuantityCoded> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

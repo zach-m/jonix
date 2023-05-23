@@ -29,8 +29,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 // CHECKSTYLE:OFF
-public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>
-    extends ListOfOnixDataComposite<C, S> {
+public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
+    K extends Enum<K> & OnixCodelist> extends ListOfOnixDataComposite<C, S> {
     private static final long serialVersionUID = 1L;
 
     final Class<C> clazz;

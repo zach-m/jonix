@@ -24,6 +24,7 @@ import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -77,7 +78,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketReference}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketReference}</li>
  * </ul>
  *
  * @since Onix-3.10
@@ -152,5 +153,11 @@ public class MarketReference implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<MarketReference> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

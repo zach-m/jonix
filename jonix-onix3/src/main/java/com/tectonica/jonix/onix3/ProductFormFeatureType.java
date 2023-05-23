@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,10 +71,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature} ⯈ {@link ProductFormFeatureType}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link ProductFormFeature} ⯈
  * {@link ProductFormFeatureType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
- * {@link ProductFormFeature} ⯈ {@link ProductFormFeatureType}</li>
  * </ul>
  */
 public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTypes>, Serializable {
@@ -138,5 +138,11 @@ public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTyp
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductFormFeatureType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

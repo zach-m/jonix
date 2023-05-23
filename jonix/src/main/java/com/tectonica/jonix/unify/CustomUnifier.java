@@ -20,7 +20,7 @@
 package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.JonixRecord;
-import com.tectonica.jonix.OnixVersion;
+import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.common.OnixProduct;
 

@@ -35,6 +35,7 @@ import com.tectonica.jonix.common.struct.JonixBatchBonus;
 import com.tectonica.jonix.common.struct.JonixDiscountCoded;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,8 +65,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price}</li>
  * </ul>
  */
 public class Price implements OnixSuperComposite, Serializable {
@@ -255,6 +256,12 @@ public class Price implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Price> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -277,7 +284,7 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceAmount;
     }
 
-    private ListOfOnixCodelist<CountryCode, Countrys> countryCodes = JPU.emptyListOfOnixCodelist(CountryCode.class);
+    private ListOfOnixCodelist<CountryCode, Countrys> countryCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>

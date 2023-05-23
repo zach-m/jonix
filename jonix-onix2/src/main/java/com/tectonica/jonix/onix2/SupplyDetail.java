@@ -38,6 +38,7 @@ import com.tectonica.jonix.common.struct.JonixSupplierIdentifier;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -67,7 +68,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail}</li>
  * </ul>
  */
 public class SupplyDetail implements OnixSuperComposite, Serializable {
@@ -281,6 +282,12 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<SupplyDetail> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -331,8 +338,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return availabilityCode;
     }
 
-    private ListOfOnixElement<SupplyToCountry, java.util.Set<Countrys>> supplyToCountrys =
-        JPU.emptyListOfOnixElement(SupplyToCountry.class);
+    private ListOfOnixElement<SupplyToCountry, java.util.Set<Countrys>> supplyToCountrys = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -698,8 +704,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return supplierIdentifiers;
     }
 
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers =
-        JPU.emptyListOfOnixElement(TelephoneNumber.class);
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -713,7 +718,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return telephoneNumbers;
     }
 
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = JPU.emptyListOfOnixElement(FaxNumber.class);
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -727,7 +732,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return faxNumbers;
     }
 
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = JPU.emptyListOfOnixElement(EmailAddress.class);
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -755,8 +760,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         return websites;
     }
 
-    private ListOfOnixCodelist<SupplyToRegion, SupplytoRegions> supplyToRegions =
-        JPU.emptyListOfOnixCodelist(SupplyToRegion.class);
+    private ListOfOnixCodelist<SupplyToRegion, SupplytoRegions> supplyToRegions = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -774,7 +778,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<Countrys>> supplyToCountryExcludeds =
-        JPU.emptyListOfOnixElement(SupplyToCountryExcluded.class);
+        ListOfOnixElement.empty();
 
     /**
      * <p>

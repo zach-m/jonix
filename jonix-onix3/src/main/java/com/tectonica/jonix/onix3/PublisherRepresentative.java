@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.struct.JonixAgentIdentifier;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -63,8 +64,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
- * {@link PublisherRepresentative}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link PublisherRepresentative}</li>
  * </ul>
  */
 public class PublisherRepresentative implements OnixSuperComposite, Serializable {
@@ -166,6 +166,12 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
         return exists;
     }
 
+    public void ifExists(Consumer<PublisherRepresentative> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -222,8 +228,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
         return agentName;
     }
 
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers =
-        JPU.emptyListOfOnixElement(TelephoneNumber.class);
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -238,7 +243,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
         return telephoneNumbers;
     }
 
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = JPU.emptyListOfOnixElement(FaxNumber.class);
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -253,7 +258,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
         return faxNumbers;
     }
 
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = JPU.emptyListOfOnixElement(EmailAddress.class);
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
 
     /**
      * <p>

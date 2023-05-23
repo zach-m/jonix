@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.codelist.ReligiousTextFeatureTypes;
 import com.tectonica.jonix.common.struct.JonixReligiousTextFeature;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,7 +65,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText}</li>
  * </ul>
  */
 public class ReligiousText implements OnixSuperComposite, Serializable {
@@ -147,6 +148,12 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ReligiousText> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

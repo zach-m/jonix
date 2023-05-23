@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -66,21 +67,21 @@ import java.util.Collections;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Publisher} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link Conference} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link Publisher} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link Publisher} ⯈ {@link Website}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Publisher} ⯈ {@link Website}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -174,6 +175,12 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Website> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

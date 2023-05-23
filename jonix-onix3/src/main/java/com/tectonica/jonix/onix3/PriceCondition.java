@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.struct.JonixPriceConditionQuantity;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,8 +63,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link PriceCondition}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition}</li>
  * </ul>
  */
 public class PriceCondition implements OnixSuperComposite, Serializable {
@@ -147,6 +147,12 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PriceCondition> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

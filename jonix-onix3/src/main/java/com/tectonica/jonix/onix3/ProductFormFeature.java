@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixProductFormFeature;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,9 +63,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈
- * {@link ProductFormFeature}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link ProductFormFeature}</li>
  * </ul>
  */
 public class ProductFormFeature
@@ -152,6 +152,12 @@ public class ProductFormFeature
         return exists;
     }
 
+    public void ifExists(Consumer<ProductFormFeature> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -192,7 +198,7 @@ public class ProductFormFeature
     }
 
     private ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions =
-        JPU.emptyListOfOnixElement(ProductFormFeatureDescription.class);
+        ListOfOnixElement.empty();
 
     /**
      * <p>

@@ -24,6 +24,7 @@ import com.tectonica.jonix.common.OnixFlag;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -67,7 +68,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link NoProduct}</li>
+ * <li>{@link NoProduct}</li>
  * </ul>
  *
  * @since Onix-3.02
@@ -118,5 +119,11 @@ public class NoProduct implements OnixFlag, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<NoProduct> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

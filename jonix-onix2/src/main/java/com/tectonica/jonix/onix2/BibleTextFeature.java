@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ReligiousText} ⯈ {@link Bible} ⯈ {@link BibleTextFeature}</li>
+ * <li>{@link Product} ⯈ {@link ReligiousText} ⯈ {@link Bible} ⯈ {@link BibleTextFeature}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -146,5 +147,11 @@ public class BibleTextFeature implements OnixElement<BibleTextFeatures>, Seriali
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<BibleTextFeature> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

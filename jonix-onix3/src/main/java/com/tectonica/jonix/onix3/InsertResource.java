@@ -35,6 +35,7 @@ import com.tectonica.jonix.common.struct.JonixResourceFileFeature;
 import com.tectonica.jonix.common.struct.JonixResourceIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -72,10 +73,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link InsertManifest} ⯈ {@link InsertResource}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link InsertManifest} ⯈ {@link InsertResource}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link InsertManifest} ⯈
+ * {@link InsertResource}</li>
  * </ul>
  *
  * @since Onix-3.08
@@ -196,6 +197,12 @@ public class InsertResource implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<InsertResource> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -205,8 +212,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<ResourceFileLink, String> resourceFileLinks =
-        JPU.emptyListOfOnixElement(ResourceFileLink.class);
+    private ListOfOnixElement<ResourceFileLink, String> resourceFileLinks = ListOfOnixElement.empty();
 
     /**
      * Jonix-Comment: this list is required to contain at least one item
@@ -287,7 +293,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ResourceFileDetail, ResourceFileDetails> resourceFileDetails =
-        JPU.emptyListOfOnixCodelist(ResourceFileDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * Jonix-Comment: this list may be empty
@@ -310,8 +316,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
         return resourceFileFeatures;
     }
 
-    private ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions =
-        JPU.emptyListOfOnixElement(ResourceFileDescription.class);
+    private ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions = ListOfOnixElement.empty();
 
     /**
      * Jonix-Comment: this list may be empty
@@ -322,7 +327,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixElement<ResourceFileContentDescription, String> resourceFileContentDescriptions =
-        JPU.emptyListOfOnixElement(ResourceFileContentDescription.class);
+        ListOfOnixElement.empty();
 
     /**
      * Jonix-Comment: this list may be empty

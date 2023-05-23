@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.ResourceFeatureTypes;
 import com.tectonica.jonix.common.struct.JonixResourceFeature;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -67,13 +68,11 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
- * {@link EventOccurrence} ⯈ {@link SupportingResource}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
- * {@link SupportingResource}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource}</li>
  * </ul>
  */
 public class SupportingResource implements OnixSuperComposite, Serializable {
@@ -175,6 +174,12 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<SupportingResource> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -212,8 +217,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return resourceMode;
     }
 
-    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences =
-        JPU.emptyListOfOnixCodelist(ContentAudience.class);
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>

@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixBarcode;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -59,7 +60,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Barcode}</li>
+ * <li>{@link Product} ⯈ {@link Barcode}</li>
  * </ul>
  */
 public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
@@ -138,6 +139,12 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Barcode> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Language} ⯈ {@link LanguageRole}</li>
+ * <li>{@link Product} ⯈ {@link Language} ⯈ {@link LanguageRole}</li>
  * </ul>
  */
 public class LanguageRole implements OnixElement<LanguageRoles>, Serializable {
@@ -144,5 +145,11 @@ public class LanguageRole implements OnixElement<LanguageRoles>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<LanguageRole> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

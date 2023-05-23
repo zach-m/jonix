@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.SubjectSchemeIdentifiers;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -76,9 +77,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Subject} ⯈
- * {@link SubjectSchemeIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Subject} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Subject} ⯈ {@link SubjectSchemeIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Subject} ⯈
  * {@link SubjectSchemeIdentifier}</li>
  * </ul>
  */
@@ -144,5 +144,11 @@ public class SubjectSchemeIdentifier implements OnixElement<SubjectSchemeIdentif
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SubjectSchemeIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

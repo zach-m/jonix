@@ -24,4 +24,7 @@ package com.tectonica.jonix.common;
  * an ONIX Header
  */
 public interface OnixHeader extends OnixComposite.OnixSuperComposite {
+    OnixVersion onixVersion();
+
+    String onixRelease();
 }

@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,10 +72,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link ParentIdentifier} ⯈ {@link SeriesIDType}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link ParentIdentifier} ⯈ {@link SeriesIDType}</li>
  * </ul>
  */
 public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {
@@ -148,5 +149,11 @@ public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Seriali
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SeriesIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixAddresseeIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,7 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeIdentifier}</li>
+ * <li>{@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeIdentifier}</li>
  * </ul>
  */
 public class AddresseeIdentifier
@@ -145,6 +146,12 @@ public class AddresseeIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AddresseeIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

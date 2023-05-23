@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.struct.JonixAVItemIdentifier;
 import com.tectonica.jonix.common.struct.JonixTimeRun;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -63,7 +64,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem}</li>
  * </ul>
  *
  * @since Onix-3.05
@@ -152,6 +153,12 @@ public class AVItem implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AVItem> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

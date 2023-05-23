@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixAudience;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -58,7 +59,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Audience}</li>
+ * <li>{@link Product} ⯈ {@link Audience}</li>
  * </ul>
  */
 public class Audience implements OnixDataCompositeWithKey<JonixAudience, AudienceCodeTypes>, Serializable {
@@ -150,6 +151,12 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Audience> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

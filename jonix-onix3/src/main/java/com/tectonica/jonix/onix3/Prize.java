@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixPrize;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,14 +61,11 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
- * {@link Prize}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
- * ⯈ {@link Prize}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
- * {@link Prize}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Prize}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈ {@link Prize}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈ {@link Prize}</li>
  * </ul>
  *
  * @since Onix-3.03
@@ -178,6 +176,12 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Prize> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -187,7 +191,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<PrizeName, String> prizeNames = JPU.emptyListOfOnixElement(PrizeName.class);
+    private ListOfOnixElement<PrizeName, String> prizeNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -274,7 +278,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return prizeCode;
     }
 
-    private ListOfOnixElement<AwardingBody, String> awardingBodys = JPU.emptyListOfOnixElement(AwardingBody.class);
+    private ListOfOnixElement<AwardingBody, String> awardingBodys = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -289,8 +293,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return awardingBodys;
     }
 
-    private ListOfOnixElement<PrizeStatement, String> prizeStatements =
-        JPU.emptyListOfOnixElement(PrizeStatement.class);
+    private ListOfOnixElement<PrizeStatement, String> prizeStatements = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -312,7 +315,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return prizeStatements;
     }
 
-    private ListOfOnixElement<PrizeJury, String> prizeJurys = JPU.emptyListOfOnixElement(PrizeJury.class);
+    private ListOfOnixElement<PrizeJury, String> prizeJurys = ListOfOnixElement.empty();
 
     /**
      * <p>

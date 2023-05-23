@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.SalesRightsTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -75,7 +76,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ROWSalesRightsType}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ROWSalesRightsType}</li>
  * </ul>
  */
 public class ROWSalesRightsType implements OnixElement<SalesRightsTypes>, Serializable {
@@ -140,5 +141,11 @@ public class ROWSalesRightsType implements OnixElement<SalesRightsTypes>, Serial
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ROWSalesRightsType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

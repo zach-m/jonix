@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,10 +71,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈ {@link ProductContactIdentifier} ⯈
+ * {@link ProductContactIDType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link ProductContact} ⯈
  * {@link ProductContactIdentifier} ⯈ {@link ProductContactIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈
- * {@link ProductContact} ⯈ {@link ProductContactIdentifier} ⯈ {@link ProductContactIDType}</li>
  * </ul>
  *
  * @since Onix-3.01
@@ -140,5 +141,11 @@ public class ProductContactIDType implements OnixElement<NameIdentifierTypes>, S
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductContactIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

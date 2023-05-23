@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductClassification} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductClassification} ⯈
  * {@link ProductClassificationType}</li>
  * </ul>
  */
@@ -137,5 +138,11 @@ public class ProductClassificationType implements OnixElement<ProductClassificat
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductClassificationType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

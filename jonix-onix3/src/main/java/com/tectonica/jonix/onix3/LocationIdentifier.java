@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.common.struct.JonixLocationIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,8 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
- * {@link LocationIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link LocationIdentifier}</li>
  * </ul>
  */
 public class LocationIdentifier
@@ -146,6 +146,12 @@ public class LocationIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<LocationIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

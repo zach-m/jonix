@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixBatchBonus;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -58,9 +59,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link BatchBonus}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
- * {@link BatchBonus}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link BatchBonus}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈ {@link BatchBonus}</li>
  * </ul>
  */
 public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializable {
@@ -148,6 +148,12 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<BatchBonus> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

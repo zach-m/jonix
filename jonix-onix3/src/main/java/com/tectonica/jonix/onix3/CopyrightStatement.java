@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -63,9 +64,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈
- * {@link CopyrightStatement}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement}</li>
  * </ul>
  *
  * @since Onix-3.10
@@ -153,6 +153,12 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<CopyrightStatement> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -162,7 +168,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<CopyrightYear, String> copyrightYears = JPU.emptyListOfOnixElement(CopyrightYear.class);
+    private ListOfOnixElement<CopyrightYear, String> copyrightYears = ListOfOnixElement.empty();
 
     /**
      * <p>

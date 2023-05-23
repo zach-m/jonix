@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixHeader;
+import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -32,6 +33,7 @@ import com.tectonica.jonix.common.struct.JonixAddresseeIdentifier;
 import com.tectonica.jonix.common.struct.JonixSenderIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -64,7 +66,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Header}</li>
+ * <li>{@link Header}</li>
  * </ul>
  */
 public class Header implements OnixHeader, Serializable {
@@ -76,6 +78,9 @@ public class Header implements OnixHeader, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
     /////////////////////////////////////////////////////////////////////////////////
+
+    private final OnixVersion onixVersion;
+    private final String onixRelease;
 
     public TextFormats textformat;
 
@@ -101,18 +106,21 @@ public class Header implements OnixHeader, Serializable {
     private boolean initialized;
     private final boolean exists;
     private final org.w3c.dom.Element element;
-    public static final Header EMPTY = new Header();
 
-    public Header() {
-        exists = false;
-        element = null;
-        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    /**
+     * WARNING: This constructor is for backward compatibility only. will yield an exception on {@link #onixRelease()}
+     * and {@link #onixVersion()}.
+     */
+    public Header(org.w3c.dom.Element element) {
+        this(element, null, null);
     }
 
-    public Header(org.w3c.dom.Element element) {
+    public Header(org.w3c.dom.Element element, OnixVersion onixVersion, String onixRelease) {
         exists = true;
         initialized = false;
         this.element = element;
+        this.onixVersion = onixVersion;
+        this.onixRelease = onixRelease;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
@@ -120,6 +128,22 @@ public class Header implements OnixHeader, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public OnixVersion onixVersion() {
+        if (onixVersion == null) {
+            throw new RuntimeException("Uninitialized onixVersion");
+        }
+        return onixVersion;
+    }
+
+    @Override
+    public String onixRelease() {
+        if (onixRelease == null) {
+            throw new RuntimeException("Uninitialized onixRelease");
+        }
+        return onixRelease;
     }
 
     @Override
@@ -228,6 +252,12 @@ public class Header implements OnixHeader, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Header> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

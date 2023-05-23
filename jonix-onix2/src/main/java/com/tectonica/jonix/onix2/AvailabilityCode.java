@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -82,7 +83,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link AvailabilityCode}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link AvailabilityCode}</li>
  * </ul>
  */
 public class AvailabilityCode implements OnixElement<AvailabilityStatuss>, Serializable {
@@ -156,5 +157,11 @@ public class AvailabilityCode implements OnixElement<AvailabilityStatuss>, Seria
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AvailabilityCode> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

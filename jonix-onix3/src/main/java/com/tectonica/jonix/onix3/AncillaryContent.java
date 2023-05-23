@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixAncillaryContent;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,7 +62,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AncillaryContent}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AncillaryContent}</li>
  * </ul>
  */
 public class AncillaryContent
@@ -149,6 +150,12 @@ public class AncillaryContent
         return exists;
     }
 
+    public void ifExists(Consumer<AncillaryContent> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -187,7 +194,7 @@ public class AncillaryContent
     }
 
     private ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions =
-        JPU.emptyListOfOnixElement(AncillaryContentDescription.class);
+        ListOfOnixElement.empty();
 
     /**
      * <p>

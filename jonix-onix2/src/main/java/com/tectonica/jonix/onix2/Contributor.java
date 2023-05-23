@@ -40,6 +40,7 @@ import com.tectonica.jonix.common.struct.JonixPersonNameIdentifier;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -74,11 +75,11 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor}</li>
+ * <li>{@link Product} ⯈ {@link Contributor}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Contributor}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Contributor}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Contributor}</li>
  * </ul>
  */
 public class Contributor implements OnixSuperComposite, Serializable {
@@ -268,6 +269,12 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Contributor> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -291,8 +298,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return personName;
     }
 
-    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles =
-        JPU.emptyListOfOnixCodelist(ContributorRole.class);
+    private ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -574,7 +580,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return unnamedPersons;
     }
 
-    private ListOfOnixCodelist<LanguageCode, Languages> languageCodes = JPU.emptyListOfOnixCodelist(LanguageCode.class);
+    private ListOfOnixCodelist<LanguageCode, Languages> languageCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -667,7 +673,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return websites;
     }
 
-    private ListOfOnixCodelist<CountryCode, Countrys> countryCodes = JPU.emptyListOfOnixCodelist(CountryCode.class);
+    private ListOfOnixCodelist<CountryCode, Countrys> countryCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -681,8 +687,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return countryCodes;
     }
 
-    private ListOfOnixElement<RegionCode, java.util.Set<String>> regionCodes =
-        JPU.emptyListOfOnixElement(RegionCode.class);
+    private ListOfOnixElement<RegionCode, java.util.Set<String>> regionCodes = ListOfOnixElement.empty();
 
     /**
      * <p>

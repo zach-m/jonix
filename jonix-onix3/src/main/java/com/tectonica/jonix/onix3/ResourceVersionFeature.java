@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.codelist.ResourceVersionFeatureTypes;
 import com.tectonica.jonix.common.struct.JonixResourceVersionFeature;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,14 +63,14 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}
- * ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
  * {@link ResourceVersion} ⯈ {@link ResourceVersionFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
- * {@link EventOccurrence} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈
+ * {@link ResourceVersionFeature}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link ResourceVersionFeature}</li>
  * </ul>
  */
 public class ResourceVersionFeature
@@ -156,6 +157,12 @@ public class ResourceVersionFeature
         return exists;
     }
 
+    public void ifExists(Consumer<ResourceVersionFeature> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -194,7 +201,7 @@ public class ResourceVersionFeature
         return featureValue;
     }
 
-    private ListOfOnixElement<FeatureNote, String> featureNotes = JPU.emptyListOfOnixElement(FeatureNote.class);
+    private ListOfOnixElement<FeatureNote, String> featureNotes = ListOfOnixElement.empty();
 
     /**
      * <p>

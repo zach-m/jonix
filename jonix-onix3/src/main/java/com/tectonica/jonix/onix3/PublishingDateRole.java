@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.PublishingDateRoles;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -75,8 +76,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingDate} ⯈
- * {@link PublishingDateRole}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingDate} ⯈ {@link PublishingDateRole}</li>
  * </ul>
  */
 public class PublishingDateRole implements OnixElement<PublishingDateRoles>, Serializable {
@@ -141,5 +141,11 @@ public class PublishingDateRole implements OnixElement<PublishingDateRoles>, Ser
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PublishingDateRole> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

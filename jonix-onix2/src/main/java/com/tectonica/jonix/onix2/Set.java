@@ -33,6 +33,7 @@ import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 import com.tectonica.jonix.common.struct.JonixTitle;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,7 +62,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set}</li>
+ * <li>{@link Product} ⯈ {@link Set}</li>
  * </ul>
  */
 public class Set implements OnixSuperComposite, Serializable {
@@ -181,6 +182,12 @@ public class Set implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Set> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

@@ -33,6 +33,7 @@ import com.tectonica.jonix.common.struct.JonixStockQuantityCoded;
 import com.tectonica.jonix.common.struct.JonixVelocity;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock}</li>
  * </ul>
  */
 public class Stock implements OnixSuperComposite, Serializable {
@@ -183,6 +184,12 @@ public class Stock implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Stock> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -279,7 +286,7 @@ public class Stock implements OnixSuperComposite, Serializable {
         return locationIdentifiers;
     }
 
-    private ListOfOnixElement<LocationName, String> locationNames = JPU.emptyListOfOnixElement(LocationName.class);
+    private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
 
     /**
      * <p>

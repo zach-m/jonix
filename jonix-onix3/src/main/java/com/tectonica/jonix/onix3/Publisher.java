@@ -31,6 +31,7 @@ import com.tectonica.jonix.common.struct.JonixPublisherIdentifier;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -68,8 +69,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher}</li>
  * </ul>
  *
  * @since Onix-3.10
@@ -164,6 +165,12 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Publisher> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -204,7 +211,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
         return publisherIdentifiers;
     }
 
-    private ListOfOnixElement<PublisherName, String> publisherNames = JPU.emptyListOfOnixElement(PublisherName.class);
+    private ListOfOnixElement<PublisherName, String> publisherNames = ListOfOnixElement.empty();
 
     /**
      * <p>

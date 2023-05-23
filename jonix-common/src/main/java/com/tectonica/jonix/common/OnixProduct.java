@@ -24,4 +24,7 @@ package com.tectonica.jonix.common;
  * an ONIX Product
  */
 public interface OnixProduct extends OnixComposite.OnixSuperComposite {
+    OnixVersion onixVersion();
+
+    String onixRelease();
 }

@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier} ⯈ {@link SenderIDType}</li>
+ * <li>{@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier} ⯈ {@link SenderIDType}</li>
  * </ul>
  */
 public class SenderIDType implements OnixElement<NameIdentifierTypes>, Serializable {
@@ -135,5 +136,11 @@ public class SenderIDType implements OnixElement<NameIdentifierTypes>, Serializa
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SenderIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

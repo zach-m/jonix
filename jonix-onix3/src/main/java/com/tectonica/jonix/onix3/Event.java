@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,7 +62,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event}</li>
  * </ul>
  *
  * @since Onix-3.03
@@ -172,6 +173,12 @@ public class Event implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<Event> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -196,7 +203,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventRole;
     }
 
-    private ListOfOnixElement<EventName, String> eventNames = JPU.emptyListOfOnixElement(EventName.class);
+    private ListOfOnixElement<EventName, String> eventNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -239,7 +246,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventDate;
     }
 
-    private ListOfOnixElement<EventAcronym, String> eventAcronyms = JPU.emptyListOfOnixElement(EventAcronym.class);
+    private ListOfOnixElement<EventAcronym, String> eventAcronyms = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -255,7 +262,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventAcronyms;
     }
 
-    private ListOfOnixElement<EventTheme, String> eventThemes = JPU.emptyListOfOnixElement(EventTheme.class);
+    private ListOfOnixElement<EventTheme, String> eventThemes = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -271,7 +278,7 @@ public class Event implements OnixSuperComposite, Serializable {
         return eventThemes;
     }
 
-    private ListOfOnixElement<EventPlace, String> eventPlaces = JPU.emptyListOfOnixElement(EventPlace.class);
+    private ListOfOnixElement<EventPlace, String> eventPlaces = ListOfOnixElement.empty();
 
     /**
      * <p>

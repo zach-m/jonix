@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixRecordSourceIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -59,7 +60,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RecordSourceIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link RecordSourceIdentifier}</li>
  * </ul>
  */
 public class RecordSourceIdentifier
@@ -144,6 +145,12 @@ public class RecordSourceIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<RecordSourceIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

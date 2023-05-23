@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈
- * {@link CollectionIdentifier} ⯈ {@link CollectionIDType}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link CollectionIdentifier} ⯈
+ * {@link CollectionIDType}</li>
  * </ul>
  */
 public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {
@@ -136,5 +137,11 @@ public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Ser
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<CollectionIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

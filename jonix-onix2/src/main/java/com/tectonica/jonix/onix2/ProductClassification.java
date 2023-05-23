@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixProductClassification;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,7 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductClassification}</li>
+ * <li>{@link Product} ⯈ {@link ProductClassification}</li>
  * </ul>
  */
 public class ProductClassification
@@ -154,6 +155,12 @@ public class ProductClassification
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductClassification> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

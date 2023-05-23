@@ -31,6 +31,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,7 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Conference}</li>
+ * <li>{@link Product} ⯈ {@link Conference}</li>
  * </ul>
  *
  * @since Onix-2.1
@@ -178,6 +179,12 @@ public class Conference implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Conference> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.unify.BaseRecord;
 import com.tectonica.jonix.unify.BaseUnifier;
 import com.tectonica.jonix.unify.CustomUnifier;
@@ -389,8 +390,8 @@ public class JonixRecords implements Iterable<JonixRecord> {
             // TODO: allow onixMessage = null, and check that it works on empty files
             if (!onixMessage.getName().getLocalPart()
                 .equalsIgnoreCase("ONIXMessage")) { // TODO: check if should be 'equals'
-                throw new RuntimeException("source doesn't start with the mandatory <ONIXMessage> tag. Found <"
-                    + onixMessage.getName().getLocalPart() + ">");
+                throw new RuntimeException("source doesn't start with the mandatory <ONIXMessage> tag. Found <" +
+                    onixMessage.getName().getLocalPart() + ">");
             }
 
             // given the <ONIXMessage>, determine the ONIX version (provided as an attribute of the tag)
@@ -405,14 +406,15 @@ public class JonixRecords implements Iterable<JonixRecord> {
                 throw new RuntimeException(
                     "source doesn't comply with either ONIX2 or ONIX3, release is: " + release.getValue());
             }
-            currentSource.onixRelease = release;
+            currentSource.onixRelease = release == null ? "2.1" : release.getValue();
 
             // read the first chunk (level-2 element), which should either be a <Product> or <Header>
             Element firstElement = ctx.nextChunk();
             // TODO: allow firstProduct = null, and check that it works on files with no tags under OnixMessage
             boolean hasHeader = firstElement.getNodeName().equalsIgnoreCase("Header");
             if (hasHeader) {
-                currentSource.header = JonixFactory.headerFromElement(firstElement, currentSource.onixVersion);
+                currentSource.header =
+                    JonixFactory.headerFromElement(firstElement, currentSource.onixVersion, currentSource.onixRelease);
             }
 
             // fire 'onSourceStart' event
@@ -474,7 +476,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
                     currentSource.sourceProductCount.incrementAndGet();
                     return new JonixRecord(globalConfig, currentSource,
-                        JonixFactory.productFromElement(product, currentSource.onixVersion),
+                        JonixFactory.productFromElement(product, currentSource.onixVersion, currentSource.onixRelease),
                         globalProductCount.incrementAndGet());
                 }
             };

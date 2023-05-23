@@ -21,6 +21,7 @@ package com.tectonica.jonix;
 
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.common.OnixProduct;
+import com.tectonica.jonix.common.OnixVersion;
 import org.w3c.dom.Element;
 
 /**
@@ -30,23 +31,23 @@ import org.w3c.dom.Element;
 class JonixFactory {
     // TODO: these type of factory services should be externalized as SPI some day..
 
-    static OnixProduct productFromElement(Element productElement, OnixVersion onixVersion) {
+    static OnixProduct productFromElement(Element productElement, OnixVersion onixVersion, String onixRelease) {
         switch (onixVersion) {
             case ONIX2:
-                return new com.tectonica.jonix.onix2.Product(productElement);
+                return new com.tectonica.jonix.onix2.Product(productElement, onixVersion, onixRelease);
             case ONIX3:
-                return new com.tectonica.jonix.onix3.Product(productElement);
+                return new com.tectonica.jonix.onix3.Product(productElement, onixVersion, onixRelease);
             default:
                 throw new UnsupportedOperationException();
         }
     }
 
-    static OnixHeader headerFromElement(Element headerElement, OnixVersion onixVersion) {
+    static OnixHeader headerFromElement(Element headerElement, OnixVersion onixVersion, String onixRelease) {
         switch (onixVersion) {
             case ONIX2:
-                return new com.tectonica.jonix.onix2.Header(headerElement);
+                return new com.tectonica.jonix.onix2.Header(headerElement, onixVersion, onixRelease);
             case ONIX3:
-                return new com.tectonica.jonix.onix3.Header(headerElement);
+                return new com.tectonica.jonix.onix3.Header(headerElement, onixVersion, onixRelease);
             default:
                 throw new UnsupportedOperationException();
         }

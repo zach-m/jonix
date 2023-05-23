@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,14 +71,11 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductIdentifier} ⯈
- * {@link ProductIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale} ⯈ {@link ProductIdentifier} ⯈
- * {@link ProductIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductIdentifier} ⯈
- * {@link ProductIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Set} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
+ * <li>{@link Product} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
+ * <li>{@link Product} ⯈ {@link ContainedItem} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
+ * <li>{@link Product} ⯈ {@link NotForSale} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
+ * <li>{@link Product} ⯈ {@link RelatedProduct} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
+ * <li>{@link Product} ⯈ {@link Set} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
  * </ul>
  */
 public class ProductIDType implements OnixElement<ProductIdentifierTypes>, Serializable {
@@ -151,5 +149,11 @@ public class ProductIDType implements OnixElement<ProductIdentifierTypes>, Seria
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ProductIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

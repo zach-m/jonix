@@ -31,6 +31,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixPersonNameIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,13 +63,13 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Contributor} ⯈ {@link Name}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name}</li>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name}</li>
- * <li>{@link ONIXMessage} ⯈ {@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name}</li>
+ * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link Name}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Name}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name}</li>
+ * <li>{@link MainSeriesRecord} ⯈ {@link Contributor} ⯈ {@link Name}</li>
+ * <li>{@link Product} ⯈ {@link Series} ⯈ {@link Contributor} ⯈ {@link Name}</li>
+ * <li>{@link Product} ⯈ {@link PersonAsSubject} ⯈ {@link Name}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link PersonAsSubject} ⯈ {@link Name}</li>
  * </ul>
  */
 public class Name implements OnixSuperComposite, Serializable {
@@ -196,6 +197,12 @@ public class Name implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Name> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

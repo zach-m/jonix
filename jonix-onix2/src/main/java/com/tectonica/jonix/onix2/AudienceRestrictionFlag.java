@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -71,7 +72,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link AudienceRestrictionFlag}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link AudienceRestrictionFlag}</li>
  * </ul>
  */
 public class AudienceRestrictionFlag implements OnixElement<AudienceRestrictionFlags>, Serializable {
@@ -145,5 +146,11 @@ public class AudienceRestrictionFlag implements OnixElement<AudienceRestrictionF
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AudienceRestrictionFlag> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

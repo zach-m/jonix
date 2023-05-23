@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixProduct;
+import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
@@ -33,6 +34,7 @@ import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 import com.tectonica.jonix.common.struct.JonixRecordSourceIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -79,7 +81,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product}</li>
+ * <li>{@link Product}</li>
  * </ul>
  */
 public class Product implements OnixProduct, Serializable {
@@ -91,6 +93,9 @@ public class Product implements OnixProduct, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
     /////////////////////////////////////////////////////////////////////////////////
+
+    private final OnixVersion onixVersion;
+    private final String onixRelease;
 
     /**
      * (type: dt.DateOrDateTime)
@@ -111,21 +116,40 @@ public class Product implements OnixProduct, Serializable {
     private boolean initialized;
     private final boolean exists;
     private final org.w3c.dom.Element element;
-    public static final Product EMPTY = new Product();
 
-    public Product() {
-        exists = false;
-        element = null;
-        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    /**
+     * WARNING: This constructor is for backward compatibility only. will yield an exception on {@link #onixRelease()}
+     * and {@link #onixVersion()}.
+     */
+    public Product(org.w3c.dom.Element element) {
+        this(element, null, null);
     }
 
-    public Product(org.w3c.dom.Element element) {
+    public Product(org.w3c.dom.Element element, OnixVersion onixVersion, String onixRelease) {
         exists = true;
         initialized = false;
         this.element = element;
+        this.onixVersion = onixVersion;
+        this.onixRelease = onixRelease;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+    }
+
+    @Override
+    public OnixVersion onixVersion() {
+        if (onixVersion == null) {
+            throw new RuntimeException("Uninitialized onixVersion");
+        }
+        return onixVersion;
+    }
+
+    @Override
+    public String onixRelease() {
+        if (onixRelease == null) {
+            throw new RuntimeException("Uninitialized onixRelease");
+        }
+        return onixRelease;
     }
 
     @Override
@@ -214,6 +238,12 @@ public class Product implements OnixProduct, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Product> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -465,7 +495,7 @@ public class Product implements OnixProduct, Serializable {
         return productionDetail;
     }
 
-    private ListOfOnixElement<DeletionText, String> deletionTexts = JPU.emptyListOfOnixElement(DeletionText.class);
+    private ListOfOnixElement<DeletionText, String> deletionTexts = ListOfOnixElement.empty();
 
     /**
      * <p>

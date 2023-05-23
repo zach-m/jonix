@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixSubject;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,8 +62,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Subject}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Subject}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Subject}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Subject}</li>
  * </ul>
  */
 public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
@@ -157,6 +158,12 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Subject> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -255,8 +262,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         return subjectSchemeVersion;
     }
 
-    private ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts =
-        JPU.emptyListOfOnixElement(SubjectHeadingText.class);
+    private ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts = ListOfOnixElement.empty();
 
     /**
      * <p>

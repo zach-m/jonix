@@ -20,8 +20,8 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.common.OnixHeader;
+import com.tectonica.jonix.common.OnixVersion;
 
-import javax.xml.stream.events.Attribute;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -58,7 +58,7 @@ public class JonixSource {
     // set externally AFTER construction
     OnixVersion onixVersion;
 
-    Attribute onixRelease;
+    String onixRelease;
 
     // set externally AFTER construction (if available)
     OnixHeader header;
@@ -102,7 +102,7 @@ public class JonixSource {
         return onixVersion;
     }
 
-    public Attribute onixRelease() {
+    public String onixRelease() {
         return onixRelease;
     }
 

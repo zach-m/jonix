@@ -32,6 +32,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixAudienceRange;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,7 +63,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link AudienceRange}</li>
+ * <li>{@link Product} ⯈ {@link AudienceRange}</li>
  * </ul>
  */
 public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Serializable {
@@ -156,6 +157,12 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
         return exists;
     }
 
+    public void ifExists(Consumer<AudienceRange> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -181,7 +188,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
     }
 
     private ListOfOnixCodelist<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions =
-        JPU.emptyListOfOnixCodelist(AudienceRangePrecision.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -195,8 +202,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
         return audienceRangePrecisions;
     }
 
-    private ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues =
-        JPU.emptyListOfOnixElement(AudienceRangeValue.class);
+    private ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues = ListOfOnixElement.empty();
 
     /**
      * <p>

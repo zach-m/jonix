@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,10 +71,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈
- * {@link PublisherIdentifier} ⯈ {@link PublisherIDType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈
- * {@link PublisherIdentifier} ⯈ {@link PublisherIDType}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈ {@link PublisherIdentifier} ⯈
+ * {@link PublisherIDType}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link PublisherIdentifier} ⯈
+ * {@link PublisherIDType}</li>
  * </ul>
  */
 public class PublisherIDType implements OnixElement<NameIdentifierTypes>, Serializable {
@@ -138,5 +139,11 @@ public class PublisherIDType implements OnixElement<NameIdentifierTypes>, Serial
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PublisherIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

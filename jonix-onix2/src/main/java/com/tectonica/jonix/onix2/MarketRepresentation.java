@@ -36,6 +36,7 @@ import com.tectonica.jonix.common.struct.JonixMarketDate;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -65,7 +66,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation}</li>
+ * <li>{@link Product} ⯈ {@link MarketRepresentation}</li>
  * </ul>
  *
  * @since Onix-2.12
@@ -202,6 +203,12 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<MarketRepresentation> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -334,8 +341,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return marketPublishingStatus;
     }
 
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers =
-        JPU.emptyListOfOnixElement(TelephoneNumber.class);
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -348,7 +354,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return telephoneNumbers;
     }
 
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = JPU.emptyListOfOnixElement(FaxNumber.class);
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -361,7 +367,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         return faxNumbers;
     }
 
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = JPU.emptyListOfOnixElement(EmailAddress.class);
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
 
     /**
      * <p>

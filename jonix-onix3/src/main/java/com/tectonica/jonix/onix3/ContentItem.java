@@ -31,6 +31,7 @@ import com.tectonica.jonix.common.struct.JonixLanguage;
 import com.tectonica.jonix.common.struct.JonixSubject;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -66,7 +67,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem}</li>
  * </ul>
  */
 public class ContentItem implements OnixSuperComposite, Serializable {
@@ -221,6 +222,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ContentItem> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -386,8 +393,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return titleDetails;
     }
 
-    private ListOfOnixElement<ContributorStatement, String> contributorStatements =
-        JPU.emptyListOfOnixElement(ContributorStatement.class);
+    private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
 
     /**
      * <p>

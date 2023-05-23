@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixNameIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -77,17 +78,15 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link AlternativeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈
  * {@link AlternativeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor}
- * ⯈ {@link AlternativeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
  * {@link AlternativeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈
- * {@link AlternativeName}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈ {@link AlternativeName}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
  * {@link AlternativeName}</li>
  * </ul>
  */
@@ -218,6 +217,12 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<AlternativeName> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -282,7 +287,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private ListOfOnixElement<CorporateName, String> corporateNames = JPU.emptyListOfOnixElement(CorporateName.class);
+    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -416,8 +421,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds =
-        JPU.emptyListOfOnixElement(CorporateNameInverted.class);
+    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
 
     /**
      * <p>

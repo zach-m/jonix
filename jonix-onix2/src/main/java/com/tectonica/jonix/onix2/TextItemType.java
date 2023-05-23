@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextItemTypes;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link TextItemType}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link TextItemType}</li>
  * </ul>
  */
 public class TextItemType implements OnixElement<TextItemTypes>, Serializable {
@@ -144,5 +145,11 @@ public class TextItemType implements OnixElement<TextItemTypes>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<TextItemType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

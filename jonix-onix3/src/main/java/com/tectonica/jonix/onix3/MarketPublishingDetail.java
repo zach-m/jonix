@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixMarketDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,7 +63,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail}</li>
  * </ul>
  */
 public class MarketPublishingDetail implements OnixSuperComposite, Serializable {
@@ -177,6 +178,12 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         return exists;
     }
 
+    public void ifExists(Consumer<MarketPublishingDetail> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -231,7 +238,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
     }
 
     private ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes =
-        JPU.emptyListOfOnixElement(MarketPublishingStatusNote.class);
+        ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -265,8 +272,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         return marketDates;
     }
 
-    private ListOfOnixElement<PromotionCampaign, String> promotionCampaigns =
-        JPU.emptyListOfOnixElement(PromotionCampaign.class);
+    private ListOfOnixElement<PromotionCampaign, String> promotionCampaigns = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -281,8 +287,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         return promotionCampaigns;
     }
 
-    private ListOfOnixElement<InitialPrintRun, String> initialPrintRuns =
-        JPU.emptyListOfOnixElement(InitialPrintRun.class);
+    private ListOfOnixElement<InitialPrintRun, String> initialPrintRuns = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -298,7 +303,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         return initialPrintRuns;
     }
 
-    private ListOfOnixElement<ReprintDetail, String> reprintDetails = JPU.emptyListOfOnixElement(ReprintDetail.class);
+    private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -314,7 +319,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         return reprintDetails;
     }
 
-    private ListOfOnixElement<CopiesSold, String> copiesSolds = JPU.emptyListOfOnixElement(CopiesSold.class);
+    private ListOfOnixElement<CopiesSold, String> copiesSolds = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -330,8 +335,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         return copiesSolds;
     }
 
-    private ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions =
-        JPU.emptyListOfOnixElement(BookClubAdoption.class);
+    private ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions = ListOfOnixElement.empty();
 
     /**
      * <p>

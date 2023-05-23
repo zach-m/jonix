@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.codelist.ReturnsConditionsCodeTypes;
 import com.tectonica.jonix.common.struct.JonixReturnsConditions;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,8 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈
- * {@link ReturnsConditions}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link ReturnsConditions}</li>
  * </ul>
  */
 public class ReturnsConditions
@@ -152,6 +152,12 @@ public class ReturnsConditions
         return exists;
     }
 
+    public void ifExists(Consumer<ReturnsConditions> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -204,7 +210,7 @@ public class ReturnsConditions
         return returnsCodeTypeName;
     }
 
-    private ListOfOnixElement<ReturnsNote, String> returnsNotes = JPU.emptyListOfOnixElement(ReturnsNote.class);
+    private ListOfOnixElement<ReturnsNote, String> returnsNotes = ListOfOnixElement.empty();
 
     /**
      * <p>

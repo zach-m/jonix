@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -68,7 +69,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link FromEmail}</li>
+ * <li>{@link Header} ⯈ {@link FromEmail}</li>
  * </ul>
  */
 public class FromEmail implements OnixElement<String>, Serializable {
@@ -150,5 +151,11 @@ public class FromEmail implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<FromEmail> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

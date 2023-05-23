@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixMeasure;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -62,10 +63,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Measure}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link Measure}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link Measure}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Measure}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link Measure}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
+ * {@link Measure}</li>
  * </ul>
  */
 public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTypes>, Serializable {
@@ -148,6 +149,12 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Measure> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixSupplyContactIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,7 +62,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact}</li>
  * </ul>
  *
  * @since Onix-3.04
@@ -164,6 +165,12 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<SupplyContact> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -234,8 +241,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
         return contactName;
     }
 
-    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers =
-        JPU.emptyListOfOnixElement(TelephoneNumber.class);
+    private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -250,7 +256,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
         return telephoneNumbers;
     }
 
-    private ListOfOnixElement<FaxNumber, String> faxNumbers = JPU.emptyListOfOnixElement(FaxNumber.class);
+    private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -265,7 +271,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
         return faxNumbers;
     }
 
-    private ListOfOnixElement<EmailAddress, String> emailAddresss = JPU.emptyListOfOnixElement(EmailAddress.class);
+    private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
 
     /**
      * <p>

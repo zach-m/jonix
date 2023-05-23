@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixOccurrenceDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,8 +61,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈
- * {@link EventOccurrence} ⯈ {@link OccurrenceDate}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
+ * {@link OccurrenceDate}</li>
  * </ul>
  *
  * @since Onix-3.07
@@ -144,6 +145,12 @@ public class OccurrenceDate
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<OccurrenceDate> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

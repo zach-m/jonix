@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixParentIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +44,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link SubSeriesRecord} ⯈ {@link ParentIdentifier}</li>
+ * <li>{@link SubSeriesRecord} ⯈ {@link ParentIdentifier}</li>
  * </ul>
  */
 public class ParentIdentifier
@@ -137,6 +138,12 @@ public class ParentIdentifier
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ParentIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.VelocityMetrics;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈
- * {@link Velocity} ⯈ {@link VelocityMetric}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link Velocity} ⯈
+ * {@link VelocityMetric}</li>
  * </ul>
  *
  * @since Onix-3.02
@@ -138,5 +139,11 @@ public class VelocityMetric implements OnixElement<VelocityMetrics>, Serializabl
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<VelocityMetric> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -68,7 +69,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link SupplyDetail} ⯈ {@link IntermediaryAvailabilityCode}</li>
+ * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link IntermediaryAvailabilityCode}</li>
  * </ul>
  *
  * @deprecated
@@ -154,5 +155,11 @@ public class IntermediaryAvailabilityCode implements OnixElement<String>, Serial
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<IntermediaryAvailabilityCode> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

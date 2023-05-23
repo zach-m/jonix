@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixContentDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -65,8 +66,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent}</li>
  * </ul>
  */
 public class TextContent implements OnixSuperComposite, Serializable {
@@ -187,6 +188,12 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<TextContent> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -210,8 +217,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return textType;
     }
 
-    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences =
-        JPU.emptyListOfOnixCodelist(ContentAudience.class);
+    private ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -225,7 +231,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return contentAudiences;
     }
 
-    private ListOfOnixElement<Text, String> texts = JPU.emptyListOfOnixElement(Text.class);
+    private ListOfOnixElement<Text, String> texts = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -315,7 +321,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return textSourceCorporate;
     }
 
-    private ListOfOnixElement<TextAuthor, String> textAuthors = JPU.emptyListOfOnixElement(TextAuthor.class);
+    private ListOfOnixElement<TextAuthor, String> textAuthors = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -329,8 +335,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return textAuthors;
     }
 
-    private ListOfOnixElement<TextSourceDescription, String> textSourceDescriptions =
-        JPU.emptyListOfOnixElement(TextSourceDescription.class);
+    private ListOfOnixElement<TextSourceDescription, String> textSourceDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -348,7 +353,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return textSourceDescriptions;
     }
 
-    private ListOfOnixElement<SourceTitle, String> sourceTitles = JPU.emptyListOfOnixElement(SourceTitle.class);
+    private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -364,8 +369,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
         return sourceTitles;
     }
 
-    private ListOfOnixElement<TextSourceLink, String> textSourceLinks =
-        JPU.emptyListOfOnixElement(TextSourceLink.class);
+    private ListOfOnixElement<TextSourceLink, String> textSourceLinks = ListOfOnixElement.empty();
 
     /**
      * <p>

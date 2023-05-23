@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.MeasureTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,11 +71,10 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Measure} ⯈ {@link MeasureType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link Measure} ⯈
- * {@link MeasureType}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈
- * {@link SupplementManifest} ⯈ {@link Measure} ⯈ {@link MeasureType}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Measure} ⯈ {@link MeasureType}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link Measure} ⯈ {@link MeasureType}</li>
+ * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
+ * {@link Measure} ⯈ {@link MeasureType}</li>
  * </ul>
  */
 public class MeasureType implements OnixElement<MeasureTypes>, Serializable {
@@ -139,5 +139,11 @@ public class MeasureType implements OnixElement<MeasureTypes>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<MeasureType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

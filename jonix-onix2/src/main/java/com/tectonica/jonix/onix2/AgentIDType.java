@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link AgentIdentifier} ⯈
- * {@link AgentIDType}</li>
+ * <li>{@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link AgentIdentifier} ⯈ {@link AgentIDType}</li>
  * </ul>
  *
  * @since Onix-2.12
@@ -147,5 +147,11 @@ public class AgentIDType implements OnixElement<SupplierIdentifierTypes>, Serial
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AgentIDType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

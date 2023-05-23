@@ -31,6 +31,7 @@ import com.tectonica.jonix.common.struct.JonixNameIdentifier;
 import com.tectonica.jonix.common.struct.JonixSubjectDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -79,8 +80,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject}</li>
  * </ul>
  */
 public class NameAsSubject implements OnixSuperComposite, Serializable {
@@ -221,6 +222,12 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<NameAsSubject> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -271,7 +278,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private ListOfOnixElement<CorporateName, String> corporateNames = JPU.emptyListOfOnixElement(CorporateName.class);
+    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -419,8 +426,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds =
-        JPU.emptyListOfOnixElement(CorporateNameInverted.class);
+    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
 
     /**
      * <p>

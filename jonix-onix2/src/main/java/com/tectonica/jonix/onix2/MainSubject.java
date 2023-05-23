@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixMainSubject;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -58,7 +59,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MainSubject}</li>
+ * <li>{@link Product} ⯈ {@link MainSubject}</li>
  * </ul>
  */
 public class MainSubject implements OnixDataComposite<JonixMainSubject>, Serializable {
@@ -154,6 +155,12 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<MainSubject> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

@@ -28,6 +28,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -65,7 +66,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link EpubSourceVersion}</li>
+ * <li>{@link Product} ⯈ {@link EpubSourceVersion}</li>
  * </ul>
  */
 public class EpubSourceVersion implements OnixElement<String>, Serializable {
@@ -147,5 +148,11 @@ public class EpubSourceVersion implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<EpubSourceVersion> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

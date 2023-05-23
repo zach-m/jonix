@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixImprintIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -61,7 +62,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint}</li>
  * </ul>
  */
 public class Imprint implements OnixSuperComposite, Serializable {
@@ -140,6 +141,12 @@ public class Imprint implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Imprint> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

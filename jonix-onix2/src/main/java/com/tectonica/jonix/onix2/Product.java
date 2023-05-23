@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixProduct;
+import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.common.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.common.codelist.AudienceTypes;
 import com.tectonica.jonix.common.codelist.BarcodeIndicatorsList6;
@@ -70,6 +71,7 @@ import com.tectonica.jonix.common.struct.JonixWebsite;
 import com.tectonica.jonix.common.struct.JonixWorkIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -101,7 +103,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product}</li>
+ * <li>{@link Product}</li>
  * </ul>
  */
 public class Product implements OnixProduct, Serializable {
@@ -113,6 +115,9 @@ public class Product implements OnixProduct, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
     /////////////////////////////////////////////////////////////////////////////////
+
+    private final OnixVersion onixVersion;
+    private final String onixRelease;
 
     public TextFormats textformat;
 
@@ -138,18 +143,21 @@ public class Product implements OnixProduct, Serializable {
     private boolean initialized;
     private final boolean exists;
     private final org.w3c.dom.Element element;
-    public static final Product EMPTY = new Product();
 
-    public Product() {
-        exists = false;
-        element = null;
-        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    /**
+     * WARNING: This constructor is for backward compatibility only. will yield an exception on {@link #onixRelease()}
+     * and {@link #onixVersion()}.
+     */
+    public Product(org.w3c.dom.Element element) {
+        this(element, null, null);
     }
 
-    public Product(org.w3c.dom.Element element) {
+    public Product(org.w3c.dom.Element element, OnixVersion onixVersion, String onixRelease) {
         exists = true;
         initialized = false;
         this.element = element;
+        this.onixVersion = onixVersion;
+        this.onixRelease = onixRelease;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
@@ -157,6 +165,22 @@ public class Product implements OnixProduct, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public OnixVersion onixVersion() {
+        if (onixVersion == null) {
+            throw new RuntimeException("Uninitialized onixVersion");
+        }
+        return onixVersion;
+    }
+
+    @Override
+    public String onixRelease() {
+        if (onixRelease == null) {
+            throw new RuntimeException("Uninitialized onixRelease");
+        }
+        return onixRelease;
     }
 
     @Override
@@ -789,6 +813,12 @@ public class Product implements OnixProduct, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<Product> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -2465,7 +2495,7 @@ public class Product implements OnixProduct, Serializable {
         return productIdentifiers;
     }
 
-    private ListOfOnixCodelist<Barcode, BarcodeIndicatorsList6> barcodes = JPU.emptyListOfOnixCodelist(Barcode.class);
+    private ListOfOnixCodelist<Barcode, BarcodeIndicatorsList6> barcodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2480,7 +2510,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails =
-        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2510,8 +2540,7 @@ public class Product implements OnixProduct, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails =
-        JPU.emptyListOfOnixCodelist(BookFormDetail.class);
+    private ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2529,7 +2558,7 @@ public class Product implements OnixProduct, Serializable {
     }
 
     private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
-        JPU.emptyListOfOnixCodelist(ProductContentType.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2612,7 +2641,7 @@ public class Product implements OnixProduct, Serializable {
         return sets;
     }
 
-    private ListOfOnixElement<FormerTitle, String> formerTitles = JPU.emptyListOfOnixElement(FormerTitle.class);
+    private ListOfOnixElement<FormerTitle, String> formerTitles = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -2691,8 +2720,7 @@ public class Product implements OnixProduct, Serializable {
         return conferences;
     }
 
-    private ListOfOnixCodelist<EditionTypeCode, EditionTypes> editionTypeCodes =
-        JPU.emptyListOfOnixCodelist(EditionTypeCode.class);
+    private ListOfOnixCodelist<EditionTypeCode, EditionTypes> editionTypeCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2706,8 +2734,7 @@ public class Product implements OnixProduct, Serializable {
         return editionTypeCodes;
     }
 
-    private ListOfOnixCodelist<LanguageOfText, Languages> languageOfTexts =
-        JPU.emptyListOfOnixCodelist(LanguageOfText.class);
+    private ListOfOnixCodelist<LanguageOfText, Languages> languageOfTexts = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2767,7 +2794,7 @@ public class Product implements OnixProduct, Serializable {
         return illustrationss;
     }
 
-    private ListOfOnixElement<MapScale, String> mapScales = JPU.emptyListOfOnixElement(MapScale.class);
+    private ListOfOnixElement<MapScale, String> mapScales = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -2824,8 +2851,7 @@ public class Product implements OnixProduct, Serializable {
         return personAsSubjects;
     }
 
-    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects =
-        JPU.emptyListOfOnixElement(CorporateBodyAsSubject.class);
+    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -2839,8 +2865,7 @@ public class Product implements OnixProduct, Serializable {
         return corporateBodyAsSubjects;
     }
 
-    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects =
-        JPU.emptyListOfOnixElement(PlaceAsSubject.class);
+    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -2854,8 +2879,7 @@ public class Product implements OnixProduct, Serializable {
         return placeAsSubjects;
     }
 
-    private ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes =
-        JPU.emptyListOfOnixCodelist(AudienceCode.class);
+    private ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -2928,7 +2952,7 @@ public class Product implements OnixProduct, Serializable {
         return otherTexts;
     }
 
-    private ListOfOnixElement<ReviewQuote, String> reviewQuotes = JPU.emptyListOfOnixElement(ReviewQuote.class);
+    private ListOfOnixElement<ReviewQuote, String> reviewQuotes = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -3031,8 +3055,7 @@ public class Product implements OnixProduct, Serializable {
         return publishers;
     }
 
-    private ListOfOnixElement<CityOfPublication, String> cityOfPublications =
-        JPU.emptyListOfOnixElement(CityOfPublication.class);
+    private ListOfOnixElement<CityOfPublication, String> cityOfPublications = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -3052,8 +3075,7 @@ public class Product implements OnixProduct, Serializable {
         return cityOfPublications;
     }
 
-    private ListOfOnixElement<CopublisherName, String> copublisherNames =
-        JPU.emptyListOfOnixElement(CopublisherName.class);
+    private ListOfOnixElement<CopublisherName, String> copublisherNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -3073,7 +3095,7 @@ public class Product implements OnixProduct, Serializable {
         return copublisherNames;
     }
 
-    private ListOfOnixElement<SponsorName, String> sponsorNames = JPU.emptyListOfOnixElement(SponsorName.class);
+    private ListOfOnixElement<SponsorName, String> sponsorNames = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -3218,7 +3240,7 @@ public class Product implements OnixProduct, Serializable {
         return marketRepresentations;
     }
 
-    private ListOfOnixElement<ReprintDetail, String> reprintDetails = JPU.emptyListOfOnixElement(ReprintDetail.class);
+    private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
 
     /**
      * <p>

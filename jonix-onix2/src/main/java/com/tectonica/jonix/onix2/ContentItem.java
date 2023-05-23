@@ -42,6 +42,7 @@ import com.tectonica.jonix.common.struct.JonixWebsite;
 import com.tectonica.jonix.common.struct.JonixWorkIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,7 +71,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem}</li>
  * </ul>
  */
 public class ContentItem implements OnixSuperComposite, Serializable {
@@ -214,6 +215,12 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<ContentItem> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -409,8 +416,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return personAsSubjects;
     }
 
-    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects =
-        JPU.emptyListOfOnixElement(CorporateBodyAsSubject.class);
+    private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -424,8 +430,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return corporateBodyAsSubjects;
     }
 
-    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects =
-        JPU.emptyListOfOnixElement(PlaceAsSubject.class);
+    private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects = ListOfOnixElement.empty();
 
     /**
      * <p>

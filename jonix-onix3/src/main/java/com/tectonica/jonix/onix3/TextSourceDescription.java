@@ -26,6 +26,7 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.TextFormats;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -76,10 +77,9 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
  * {@link TextSourceDescription}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈
- * {@link TextSourceDescription}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSourceDescription}</li>
  * </ul>
  *
  * @since Onix-3.07
@@ -161,5 +161,11 @@ public class TextSourceDescription implements OnixElement<String>, Serializable 
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<TextSourceDescription> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

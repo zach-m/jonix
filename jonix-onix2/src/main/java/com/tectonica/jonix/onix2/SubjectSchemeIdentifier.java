@@ -29,6 +29,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -81,9 +82,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link Subject} ⯈ {@link SubjectSchemeIdentifier}</li>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ContentItem} ⯈ {@link Subject} ⯈
- * {@link SubjectSchemeIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link Subject} ⯈ {@link SubjectSchemeIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link Subject} ⯈ {@link SubjectSchemeIdentifier}</li>
  * </ul>
  */
 public class SubjectSchemeIdentifier implements OnixElement<SubjectSchemeIdentifiers>, Serializable {
@@ -157,5 +157,11 @@ public class SubjectSchemeIdentifier implements OnixElement<SubjectSchemeIdentif
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<SubjectSchemeIdentifier> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

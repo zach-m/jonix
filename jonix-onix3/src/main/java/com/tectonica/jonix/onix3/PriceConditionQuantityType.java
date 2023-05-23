@@ -25,6 +25,7 @@ import com.tectonica.jonix.common.codelist.PriceConditionQuantityTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -70,8 +71,8 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link PriceCondition} ⯈ {@link PriceConditionQuantity} ⯈ {@link PriceConditionQuantityType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition} ⯈
+ * {@link PriceConditionQuantity} ⯈ {@link PriceConditionQuantityType}</li>
  * </ul>
  */
 public class PriceConditionQuantityType implements OnixElement<PriceConditionQuantityTypes>, Serializable {
@@ -137,5 +138,11 @@ public class PriceConditionQuantityType implements OnixElement<PriceConditionQua
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<PriceConditionQuantityType> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

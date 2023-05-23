@@ -24,6 +24,7 @@ import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -66,7 +67,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeName}</li>
+ * <li>{@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeName}</li>
  * </ul>
  */
 public class AddresseeName implements OnixElement<String>, Serializable {
@@ -139,5 +140,11 @@ public class AddresseeName implements OnixElement<String>, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<AddresseeName> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 }

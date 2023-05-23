@@ -33,6 +33,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -63,7 +64,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link NotForSale}</li>
+ * <li>{@link Product} ⯈ {@link NotForSale}</li>
  * </ul>
  */
 public class NotForSale implements OnixSuperComposite, Serializable {
@@ -169,6 +170,12 @@ public class NotForSale implements OnixSuperComposite, Serializable {
         return exists;
     }
 
+    public void ifExists(Consumer<NotForSale> action) {
+        if (exists) {
+            action.accept(this);
+        }
+    }
+
     @Override
     public org.w3c.dom.Element getXmlElement() {
         return element;
@@ -178,8 +185,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys =
-        JPU.emptyListOfOnixElement(RightsCountry.class);
+    private ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys = ListOfOnixElement.empty();
 
     /**
      * <p>

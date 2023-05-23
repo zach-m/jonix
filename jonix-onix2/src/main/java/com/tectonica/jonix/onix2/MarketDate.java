@@ -30,6 +30,7 @@ import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixMarketDate;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -60,7 +61,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link MarketDate}</li>
+ * <li>{@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link MarketDate}</li>
  * </ul>
  *
  * @since Onix-2.12
@@ -154,6 +155,12 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<MarketDate> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override

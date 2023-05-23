@@ -50,6 +50,7 @@ import com.tectonica.jonix.common.struct.JonixProductFormFeature;
 import com.tectonica.jonix.common.struct.JonixSubject;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -85,7 +86,7 @@ import java.io.Serializable;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link ONIXMessage} ⯈ {@link Product} ⯈ {@link DescriptiveDetail}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail}</li>
  * </ul>
  */
 public class DescriptiveDetail implements OnixSuperComposite, Serializable {
@@ -337,6 +338,12 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     @Override
     public boolean exists() {
         return exists;
+    }
+
+    public void ifExists(Consumer<DescriptiveDetail> action) {
+        if (exists) {
+            action.accept(this);
+        }
     }
 
     @Override
@@ -654,7 +661,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails =
-        JPU.emptyListOfOnixCodelist(ProductFormDetail.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -686,8 +693,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return productFormFeatures;
     }
 
-    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions =
-        JPU.emptyListOfOnixElement(ProductFormDescription.class);
+    private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -705,7 +711,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes =
-        JPU.emptyListOfOnixCodelist(ProductContentType.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -737,7 +743,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixCodelist<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections =
-        JPU.emptyListOfOnixCodelist(EpubTechnicalProtection.class);
+        ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -779,7 +785,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return epubLicenses;
     }
 
-    private ListOfOnixElement<MapScale, Integer> mapScales = JPU.emptyListOfOnixElement(MapScale.class);
+    private ListOfOnixElement<MapScale, Integer> mapScales = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -858,8 +864,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return collections;
     }
 
-    private ListOfOnixElement<ContributorStatement, String> contributorStatements =
-        JPU.emptyListOfOnixElement(ContributorStatement.class);
+    private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -893,7 +898,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return events;
     }
 
-    private ListOfOnixCodelist<EditionType, EditionTypes> editionTypes = JPU.emptyListOfOnixCodelist(EditionType.class);
+    private ListOfOnixCodelist<EditionType, EditionTypes> editionTypes = ListOfOnixCodelist.emptyList();
 
     /**
      * <p>
@@ -907,8 +912,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return editionTypes;
     }
 
-    private ListOfOnixElement<EditionStatement, String> editionStatements =
-        JPU.emptyListOfOnixElement(EditionStatement.class);
+    private ListOfOnixElement<EditionStatement, String> editionStatements = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -959,8 +963,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return extents;
     }
 
-    private ListOfOnixElement<IllustrationsNote, String> illustrationsNotes =
-        JPU.emptyListOfOnixElement(IllustrationsNote.class);
+    private ListOfOnixElement<IllustrationsNote, String> illustrationsNotes = ListOfOnixElement.empty();
 
     /**
      * <p>
@@ -1071,8 +1074,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return audienceRanges;
     }
 
-    private ListOfOnixElement<AudienceDescription, String> audienceDescriptions =
-        JPU.emptyListOfOnixElement(AudienceDescription.class);
+    private ListOfOnixElement<AudienceDescription, String> audienceDescriptions = ListOfOnixElement.empty();
 
     /**
      * <p>
