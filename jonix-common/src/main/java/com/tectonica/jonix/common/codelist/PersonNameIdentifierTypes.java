@@ -21,6 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.Optional;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -100,5 +102,13 @@ public enum PersonNameIdentifierTypes implements OnixCodelist, CodeList101 {
             }
         }
         return null;
+    }
+
+    public static Optional<PersonNameIdentifierTypes> byCodeOptional(String code) {
+        return Optional.ofNullable(byCode(code));
+    }
+
+    public static String codeToDesciption(String code) {
+        return byCodeOptional(code).map(c -> c.description).orElse(null);
     }
 }

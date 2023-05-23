@@ -21,6 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.Optional;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
@@ -84,5 +86,13 @@ public enum ImageAudioVideoFileLinkTypes implements OnixCodelist, CodeList40 {
             }
         }
         return null;
+    }
+
+    public static Optional<ImageAudioVideoFileLinkTypes> byCodeOptional(String code) {
+        return Optional.ofNullable(byCode(code));
+    }
+
+    public static String codeToDesciption(String code) {
+        return byCodeOptional(code).map(c -> c.description).orElse(null);
     }
 }

@@ -23,6 +23,7 @@ import com.tectonica.jonix.common.OnixCodelist;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -139,5 +140,13 @@ public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
             return null;
         }
         return map().get(code);
+    }
+
+    public static Optional<SupplierIdentifierTypes> byCodeOptional(String code) {
+        return Optional.ofNullable(byCode(code));
+    }
+
+    public static String codeToDesciption(String code) {
+        return byCodeOptional(code).map(c -> c.description).orElse(null);
     }
 }
