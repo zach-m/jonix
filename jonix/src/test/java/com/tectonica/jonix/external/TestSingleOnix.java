@@ -73,7 +73,7 @@ public class TestSingleOnix {
             entered = true;
             assertEquals(expectedOnixVersion, record.source.onixVersion());
 
-            String json = JonixJson.productToJson(record.product, false);
+            String json = JonixJson.toJson(record.product, false);
             LOGGER.debug("API: {}", json); // or: JonixJson.productToJson(record.product);
             assertEquals(expectedLength, json.length());
         }
@@ -120,7 +120,7 @@ public class TestSingleOnix {
             product = new com.tectonica.jonix.onix3.Product(productElem);
         }
 
-        String json = JonixJson.productToJson(product, false);
+        String json = JonixJson.toJson(product, false);
         LOGGER.debug("DOM: {}", json); // or: JonixJson.productToJson(product);
         assertEquals(expectedLength, json.length());
     }

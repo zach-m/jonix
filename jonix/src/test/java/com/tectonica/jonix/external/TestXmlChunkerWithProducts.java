@@ -86,7 +86,7 @@ public class TestXmlChunkerWithProducts {
 
                     // in rare cases where there is no title, we print the entire product record (as JSON)
                     if (!title.isPresent()) {
-                        LOGGER.debug(JonixJson.productToJson(product, false));
+                        LOGGER.debug(JonixJson.toJson(product, false));
                     }
                 }
                 return true;

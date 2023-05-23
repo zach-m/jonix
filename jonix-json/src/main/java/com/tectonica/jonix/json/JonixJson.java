@@ -31,8 +31,8 @@ import java.util.Objects;
 /**
  * Helper class for JSON serialization service of Jonix objects.
  * <p>
- * The fundamental APIs are the generic {@link #objectToJson(Object)} and the very-specific {@link
- * #productToJson(OnixProduct)}.
+ * The fundamental APIs are the generic {@link #objectToJson(Object)} and the very-specific
+ * {@link #productToJson(OnixProduct)}.
  */
 public class JonixJson {
     private static final ObjectMapper PRODUCT_OBJECT_MAPPER = new JonixProductObjectMapper(true);
@@ -40,17 +40,44 @@ public class JonixJson {
     private static final ObjectMapper PUBLIC_FIELDS_MAPPER = new JonixPublicFieldsObjectMapper();
 
     /**
-     * Creates a JSON string from the given {@link OnixProduct} (i.e. low-level xml-parsed ONIX Product record).
+     * Creates a JSON representation of an object using either its public fields or its {@link OnixProduct} accessors,
+     * depending on its actual type.
      * <p>
-     * This specific is needed in addition to the generic {@link #objectToJson(Object)} because {@link OnixProduct}s are
-     * populated "lazily". In other words, their internal fields get populated with actual values only when accessed
-     * explicitly (via accessor methods, that induce the population of the {@link OnixComposite} they refer to). This is
-     * a design choice to make Jonix more performant and less memory hungry. However, for the underlying JSON
-     * serialization framework (<code>Jackson</code> is this case), this laziness presents a problem, as no accessors
-     * are explicitly invoked, and the (private) fields are accessed directly. So some advanced configuration of the
-     * <code>Jackson</code> serializer is needed, which is exactly what this API is all about.
+     * See {@link #productToJson(OnixProduct, boolean)} and {@link #objectToJson(Object)} for more details.
      *
-     * @param onixProduct the ONIX Product to serialize to JSON
+     * @param object object to serialize as JSON using its public fields or its {@link OnixProduct} accessors
+     * @param indent whether the returned JSON string should be indented
+     * @return JSON representation of the object
+     */
+    public static String toJson(Object object, boolean indent) {
+        if (object instanceof OnixProduct) {
+            return productToJson((OnixProduct) object, indent);
+        }
+        return objectToJson(object);
+    }
+
+    /**
+     * @param object object to serialize as JSON using its public fields or its {@link OnixProduct} accessors
+     * @return indented JSON representation of the object
+     * @see #toJson(Object, boolean)
+     */
+    public static String toJson(Object object) {
+        return toJson(object, true);
+    }
+
+    /**
+     * Creates a JSON representation of an {@link OnixProduct} object (i.e. low-level xml-parsed ONIX Product record).
+     * <p>
+     * This JSON serializer is needed in addition to the more generic {@link #objectToJson(Object)} because
+     * {@link OnixProduct}s are populated "lazily". In other words, their internal fields get populated with actual
+     * values only when accessed explicitly (via accessor methods, that induce the population of the
+     * {@link OnixComposite} they refer to). This is a design choice to make Jonix more performant and less memory
+     * hungry. However, for the underlying JSON serialization framework ({@code Jackson} is this case), this laziness
+     * presents a problem, as no accessors are explicitly invoked, and nothing triggers population of the (private)
+     * fields that are accessed directly during serialization. Therefore, some advanced configuration of the
+     * {@code Jackson} serializer is required, which is exactly what this API does.
+     *
+     * @param onixProduct an {@link OnixProduct} object to serialize as JSON
      * @param indent      whether the returned JSON should be indented
      * @return JSON representation of the product
      */
@@ -64,14 +91,20 @@ public class JonixJson {
         }
     }
 
+    /**
+     * @param onixProduct an {@code OnixProduct} object to serialize as JSON
+     * @return indented JSON representation of the product
+     * @see #productToJson(OnixProduct, boolean)
+     */
     public static String productToJson(OnixProduct onixProduct) {
         return productToJson(onixProduct, true);
     }
 
     /**
-     * Creates a JSON string, based on the given Object's public fields (suitable for <code>BaseProduct</code> family)
+     * Creates a JSON representation of an object using its public fields (i.e. NOT its getters or similar), therefore
+     * is suitable for the {@code BaseProduct} family.
      *
-     * @param object Any Java object whose serializable values are stored in public fields (not getters or other)
+     * @param object Any Java object whose serializable values are stored in public fields
      * @return JSON representation of the object
      */
     public static String objectToJson(Object object) {

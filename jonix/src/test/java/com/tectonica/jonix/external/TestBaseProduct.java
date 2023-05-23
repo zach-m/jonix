@@ -94,9 +94,9 @@ public class TestBaseProduct {
                     // create a unified-version of the product
                     final BaseProduct bp = new BaseProduct2(product);
                     LOGGER.debug("RAW ONIX2  --------------------------------------------------------------");
-                    LOGGER.debug(JonixJson.productToJson(product, false));
+                    LOGGER.debug(JonixJson.toJson(product, false));
                     LOGGER.debug("BASIC ONIX2  ------------------------------------------------------------");
-                    LOGGER.debug(JonixJson.objectToJson(bp));
+                    LOGGER.debug(JonixJson.toJson(bp));
                 }
                 return true;
             }
@@ -130,7 +130,7 @@ public class TestBaseProduct {
                     final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
                     BaseProduct bp = new BaseProduct3(product);
                     LOGGER.debug("RAW ONIX3  --------------------------------------------------------------");
-                    LOGGER.debug(JonixJson.productToJson(product, false));
+                    LOGGER.debug(JonixJson.toJson(product, false));
                     LOGGER.debug("BASIC ONIX3  ------------------------------------------------------------");
                     LOGGER.debug(jsonDirect = JonixJson.objectToJson(bp));
                 }
@@ -145,6 +145,20 @@ public class TestBaseProduct {
 
         // compare the JSON received in both methods
         assertEquals(jsonDirect, jsonViaReader);
+    }
+
+    @Test
+    public void readSingleProductOfOnix31_Ref_Short() {
+        String onix31_ref = "/samples/Onix3.1-single-ref.xml";
+        String onix31_short = "/samples/Onix3.1-single-short.xml";
+        String refJson = Jonix.source(getClass().getResourceAsStream(onix31_ref))
+            .onSourceStart(src -> assertEquals(src.onixRelease().getValue(), "3.1")).stream()
+            .map(record -> JonixJson.toJson(record.product)).findFirst().orElse(null);
+        String shortJson = Jonix.source(getClass().getResourceAsStream(onix31_short)).stream()
+            .map(record -> JonixJson.toJson(record.product)).findFirst().orElse(null);
+        //System.out.println(refJson);
+        //System.out.println(shortJson);
+        assertEquals(refJson, shortJson);
     }
 
     @Test
@@ -163,33 +177,32 @@ public class TestBaseProduct {
         }
         final Target target = new Target();
         Jonix.source(folder, "*.xml", false).onSourceStart(jonixSource -> {
-                System.out.println("Validating " + jonixSource);
-                assert jonixSource.file != null;
-                target.readJson(jonixSource.file.getAbsolutePath().replace(".xml", ".json"));
-            }).stream()
-            .forEach(record -> {
+            System.out.println("Validating " + jonixSource);
+            assert jonixSource.file != null;
+            target.readJson(jonixSource.file.getAbsolutePath().replace(".xml", ".json"));
+        }).stream().forEach(record -> {
 
-                //BaseRecord baseRecord = JonixUnifier.unifyRecord(record);
-                //String isbn13 = baseRecord.product.info.findProductId(ProductIdentifierTypes.ISBN_13);
-                //String title = baseRecord.product.getLabel();
-                //System.out.println(JonixJson.objectToJson(baseRecord.product));
+            //BaseRecord baseRecord = JonixUnifier.unifyRecord(record);
+            //String isbn13 = baseRecord.product.info.findProductId(ProductIdentifierTypes.ISBN_13);
+            //String title = baseRecord.product.getLabel();
+            //System.out.println(JonixJson.objectToJson(baseRecord.product));
 
-                //System.out.println(record.productCount() +" | " + record.source.productCount());
-                //if (record.productCount() == 10) {
-                //    System.out.println("Breaking current source");
-                //    record.breakCurrentSource();
-                //} else if (record.productCount() == 30) {
-                //    System.out.println("Breaking stream");
-                //    record.breakStream();
-                //}
+            //System.out.println(record.productCount() +" | " + record.source.productCount());
+            //if (record.productCount() == 10) {
+            //    System.out.println("Breaking current source");
+            //    record.breakCurrentSource();
+            //} else if (record.productCount() == 30) {
+            //    System.out.println("Breaking stream");
+            //    record.breakStream();
+            //}
 
-                String json = JonixJson.productToJson(record.product, false);
-                String targetJson = target.jsons.get(0);
-                //System.out.println("ACTUAL:   " + json);
-                //System.out.println("EXPECTED: " + targetJson);
-                assertEquals("Difference in source " + record.source, targetJson.length(), json.length());
-                target.jsons.remove(0);
-            });
+            String json = JonixJson.toJson(record.product, false);
+            String targetJson = target.jsons.get(0);
+            //System.out.println("ACTUAL:   " + json);
+            //System.out.println("EXPECTED: " + targetJson);
+            assertEquals("Difference in source " + record.source, targetJson.length(), json.length());
+            target.jsons.remove(0);
+        });
     }
 
     @Test
