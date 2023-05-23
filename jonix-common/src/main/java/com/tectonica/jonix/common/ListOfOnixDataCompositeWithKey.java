@@ -26,11 +26,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 // CHECKSTYLE:OFF
-public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
-    K extends Enum<K> & OnixCodelist> extends ListOfOnixDataComposite<C, S> {
+public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>
+    extends ListOfOnixDataComposite<C, S> {
     private static final long serialVersionUID = 1L;
 
     final Class<C> clazz;
@@ -62,6 +63,10 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
         return Optional.empty();
     }
 
+    public C findOrEmpty(K structKey) {
+        return find(structKey).orElse(JPU.newInstance(clazz));
+    }
+
     /**
      * Scans the items (i.e. Data Composite) in this list, searching for the one that has the given key. If such item
      * exists, it's converted into its corresponding {@link JonixStruct}.
@@ -74,13 +79,7 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
     }
 
     public ListOfOnixDataCompositeWithKey<C, S, K> findAll(Set<K> structKeys) {
-        ListOfOnixDataCompositeWithKey<C, S, K> matches = new ListOfOnixDataCompositeWithKey<>(clazz);
-        forEach(item -> {
-            if (structKeys == null || structKeys.contains(item.structKey())) {
-                matches.add(item);
-            }
-        });
-        return matches;
+        return filter(c -> structKeys.contains(c.structKey()));
     }
 
     @SuppressWarnings("unchecked")
@@ -113,5 +112,12 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
     public Optional<S> findAnyAsStructs(Set<K> structKeys) {
         return findAny(structKeys).map(OnixComposite.OnixDataComposite::asStruct);
     }
+
+    public ListOfOnixDataCompositeWithKey<C, S, K> filter(Predicate<C> predicate) {
+        ListOfOnixDataCompositeWithKey<C, S, K> matches = new ListOfOnixDataCompositeWithKey<>(clazz);
+        this.stream().filter(predicate).forEach(matches::add);
+        return matches;
+    }
+
 }
 // CHECKSTYLE:ON

@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends JonixStruct> extends ArrayList<C> {
     private static final long serialVersionUID = 1L;
@@ -75,5 +76,11 @@ public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends J
 
     public S firstOrEmptyAsStruct() {
         return (size() == 0) ? JPU.newInstance(clazz).asStruct() : get(0).asStruct();
+    }
+
+    public ListOfOnixDataComposite<C, S> filter(Predicate<C> predicate) {
+        ListOfOnixDataComposite<C, S> matches = new ListOfOnixDataComposite<>(clazz);
+        this.stream().filter(predicate).forEach(matches::add);
+        return matches;
     }
 }

@@ -22,6 +22,7 @@ package com.tectonica.jonix.common;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class ListOfOnixComposite<C extends OnixComposite> extends ArrayList<C> {
     private static final long serialVersionUID = 1L;
@@ -44,5 +45,11 @@ public class ListOfOnixComposite<C extends OnixComposite> extends ArrayList<C> {
 
     public C firstOrEmpty() {
         return (size() == 0) ? JPU.newInstance(clazz) : get(0);
+    }
+
+    public ListOfOnixComposite<C> filter(Predicate<C> predicate) {
+        ListOfOnixComposite<C> matches = new ListOfOnixComposite<>(clazz);
+        this.stream().filter(predicate).forEach(matches::add);
+        return matches;
     }
 }

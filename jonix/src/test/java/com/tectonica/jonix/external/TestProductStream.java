@@ -20,6 +20,11 @@
 package com.tectonica.jonix.external;
 
 import com.tectonica.jonix.Jonix;
+import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
+import com.tectonica.jonix.common.codelist.ResourceContentTypes;
+import com.tectonica.jonix.common.codelist.ResourceForms;
+import com.tectonica.jonix.common.codelist.ResourceVersionFeatureTypes;
+import com.tectonica.jonix.common.codelist.SupportingResourceFileFormats;
 import com.tectonica.jonix.json.JonixJson;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
@@ -42,6 +47,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class TestProductStream {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestProductStream.class);
@@ -109,6 +116,39 @@ public class TestProductStream {
         //System.out.println(refJson);
         //System.out.println(shortJson);
         assertEquals(refJson, shortJson);
+    }
+
+    @Test
+    public void testNullFreeDive() {
+        String onix31_ref = "/Onix3.1-single-ref.xml";
+        Jonix.source(getClass().getResourceAsStream(onix31_ref)).stream().findFirst().map(r -> r.product)
+            .map(Jonix::toProduct3).ifPresent(product -> {
+                System.out.println(product.onixVersion() + " ; " + product.onixRelease());
+
+                // lookup using matching() and firstOrEmpty()
+                String coverLink = product.collateralDetail().supportingResources()
+                    .filter(sr -> sr.resourceContentType().value == ResourceContentTypes.Front_cover).firstOrEmpty()
+                    .resourceVersions().filter(rv -> rv.resourceForm().value == ResourceForms.Downloadable_file).first()
+                    .map(rv -> rv.resourceLinks().firstValueOrNull()).orElse(null);
+
+                // look for non-existing value
+                String md5_hash =
+                    product.collateralDetail().supportingResources().firstOrEmpty().resourceVersions().firstOrEmpty()
+                        .resourceVersionFeatures().findOrEmpty(ResourceVersionFeatureTypes.MD5_hash_value)
+                        .featureValue().value;
+
+                // look for non-existing value
+                NameIdentifierTypes clearlyNull =
+                    product.descriptiveDetail().contributors().firstOrEmpty().alternativeNames().firstOrEmpty()
+                        .nameIdentifiers().findAll(NameIdentifierTypes.SAN).firstOrEmpty().nameIDType().value;
+
+                //System.out.println(coverLink);
+                //System.out.println(SupportingResourceFileFormats.codeToDesciption(md5_hash));
+                //System.out.println(clearlyNull);
+                assertNotNull(coverLink);
+                assertNull(SupportingResourceFileFormats.codeToDesciption(md5_hash));
+                assertNull(clearlyNull);
+            });
     }
 
     @Test

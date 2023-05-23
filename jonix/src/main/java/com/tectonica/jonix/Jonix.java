@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.unify.BaseTabulation;
 import com.tectonica.jonix.util.GlobScanner;
 
@@ -39,8 +40,8 @@ public class Jonix {
      * <a href="http://www.editeur.org/93/Release-3.0-Downloads">Onix3</a>). The resulting {@link JonixRecords} can be
      * used to iterate over the ONIX records contained in the source.
      * <p>
-     * NOTE: only one {@link InputStream} is allowed in a {@link JonixRecords}. It is possible, however, to add files
-     * as additional ONIX sources before starting iteration.
+     * NOTE: only one {@link InputStream} is allowed in a {@link JonixRecords}. It is possible, however, to add files as
+     * additional ONIX sources before starting iteration.
      *
      * @param inputStream non-null {@link InputStream} with ONIX content
      * @return a {@link JonixRecords} for iterating over the ONIX content
@@ -164,4 +165,13 @@ public class Jonix {
         }
     }
 
+    public static com.tectonica.jonix.onix2.Product toProduct2(OnixProduct onixProduct) {
+        assert onixProduct instanceof com.tectonica.jonix.onix2.Product;
+        return (com.tectonica.jonix.onix2.Product) onixProduct;
+    }
+
+    public static com.tectonica.jonix.onix3.Product toProduct3(OnixProduct onixProduct) {
+        assert onixProduct instanceof com.tectonica.jonix.onix3.Product;
+        return (com.tectonica.jonix.onix3.Product) onixProduct;
+    }
 }
