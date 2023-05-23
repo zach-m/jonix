@@ -46,7 +46,7 @@ public class JonixJson {
      * See {@link #productToJson(OnixProduct, boolean)} and {@link #objectToJson(Object)} for more details.
      *
      * @param object object to serialize as JSON using its public fields or its {@link OnixProduct} accessors
-     * @param indent whether the returned JSON string should be indented
+     * @param indent whether the returned JSON string should be indented ({@link OnixProduct} only)
      * @return JSON representation of the object
      */
     public static String toJson(Object object, boolean indent) {

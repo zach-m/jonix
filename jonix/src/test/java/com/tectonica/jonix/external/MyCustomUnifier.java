@@ -21,17 +21,20 @@ package com.tectonica.jonix.external;
 
 import com.tectonica.jonix.JonixRecord;
 import com.tectonica.jonix.JonixSource;
-import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.unify.CustomUnifier;
 import com.tectonica.jonix.unify.UnifiedProduct;
 import com.tectonica.jonix.unify.UnifiedRecord;
 import com.tectonica.jonix.unify.base.BaseHeader;
+import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix2.BaseHeader2;
 import com.tectonica.jonix.unify.base.onix3.BaseHeader3;
 
 /**
- * This class demonstrates how to write a {@link CustomUnifier} for your own needs from scratch.
+ * This class demonstrates how to write a {@link CustomUnifier} for your own needs from scratch. Using this approach you
+ * can extract only the fields you're interested in. If, however, you're looking to start from the various fields
+ * extracted by {@link BaseProduct} and then add a few of your own, take a look at {@link MyCustomBaseUnifier1} and
+ * {@link MyCustomBaseUnifier2}.
  * <p>
  * Make sure to put your code in the 3 places where the comments indicate {@code TODO}. It is also advised to separate
  * {@code MyProduct}, {@code MyProduct2} and {@code MyProduct3} to separate files.
@@ -41,9 +44,9 @@ import com.tectonica.jonix.unify.base.onix3.BaseHeader3;
  * Jonix.source(...).streamUnified(MyUnifer.unifier).forEach(record -> ...)
  * </pre>
  */
-public class MyUnifier implements CustomUnifier<MyUnifier.MyProduct, BaseHeader, MyUnifier.MyRecord> {
+public class MyCustomUnifier implements CustomUnifier<MyCustomUnifier.MyProduct, BaseHeader, MyCustomUnifier.MyRecord> {
 
-    public static final MyUnifier unifier = new MyUnifier(); // usage: Jonix.source().streamUnified(MyUnifer.unifier)
+    public static final MyCustomUnifier unifier = new MyCustomUnifier(); // usage: Jonix.source().streamUnified(MyUnifer.unifier)
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // USER CODE - REPLACE THE TODOs in BASE-CLASS AND TWO SUB-CLASSES

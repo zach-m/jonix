@@ -21,7 +21,7 @@ package com.tectonica.jonix.external;
 
 import com.tectonica.jonix.JonixRecord;
 import com.tectonica.jonix.JonixSource;
-import com.tectonica.jonix.common.OnixProduct;
+import com.tectonica.jonix.common.codelist.ProductForms;
 import com.tectonica.jonix.unify.CustomUnifier;
 import com.tectonica.jonix.unify.UnifiedRecord;
 import com.tectonica.jonix.unify.base.BaseHeader;
@@ -33,7 +33,10 @@ import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 
 /**
  * This class demonstrates how to write a {@link CustomUnifier} for your own needs, adding to the existing fields
- * extracted by {@link BaseProduct}.
+ * extracted by {@link BaseProduct}.The approach presented here is simplistic and meant for small additions in to the
+ * {@link BaseProduct} class. All the added fields will be held by the {@link BaseProduct} itself, which we subclass
+ * directly. If you want a higher granularity, i.e. scatter the extracted fields to the various {@code Base*} classes,
+ * take a look at {@link MyCustomBaseUnifier2}.
  * <p>
  * Make sure to put your code in the 3 places where the comments indicate {@code TODO}. It is also advised to separate
  * {@code MyBaseProduct}, {@code MyBaseProduct2} and {@code MyBaseProduct3} to separate files.
@@ -43,10 +46,10 @@ import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
  * Jonix.source(...).streamUnified(MyUnifierExtendingBase.unifier).forEach(record -> ...)
  * </pre>
  */
-public class MyUnifierExtendingBase
-    implements CustomUnifier<MyUnifierExtendingBase.MyBaseProduct, BaseHeader, MyUnifierExtendingBase.MyBaseRecord> {
+public class MyCustomBaseUnifier1
+    implements CustomUnifier<MyCustomBaseUnifier1.MyBaseProduct, BaseHeader, MyCustomBaseUnifier1.MyBaseRecord> {
 
-    public static final MyUnifierExtendingBase unifier = new MyUnifierExtendingBase();
+    public static final MyCustomBaseUnifier1 unifier = new MyCustomBaseUnifier1();
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // USER CODE - REPLACE THE TODOs in BASE-CLASS AND TWO SUB-CLASSES
@@ -55,7 +58,7 @@ public class MyUnifierExtendingBase
     public static class MyBaseProduct extends BaseProduct {
         // TODO declare unified fields, for example:
 
-        public String extraFields;
+        public String productFormCode;
     }
 
     public static class MyBaseProduct2 extends MyBaseProduct {
@@ -64,7 +67,7 @@ public class MyUnifierExtendingBase
 
             // TODO populate fields of base-class. In our example:
 
-            extraFields = "FromOnix2";
+            productFormCode = product.productForm().value().map(fv -> fv.code).orElse(null);
         }
     }
 
@@ -74,7 +77,7 @@ public class MyUnifierExtendingBase
 
             // TODO populate fields of base-class. In our example:
 
-            extraFields = "FromOnix3";
+            productFormCode = product.descriptiveDetail().productForm().value().map(ProductForms::getCode).orElse(null);
         }
     }
 
