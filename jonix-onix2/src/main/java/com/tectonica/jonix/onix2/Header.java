@@ -108,18 +108,18 @@ public class Header implements OnixHeader, Serializable {
     private final org.w3c.dom.Element element;
 
     /**
-     * WARNING: This constructor is for backward compatibility only. will yield an exception on {@link #onixRelease()}
-     * and {@link #onixVersion()}.
+     * This constructor is for backward compatibility. For future proofing, it's recommended to use the other
+     * constructor, passing onixRelease label.
      */
     public Header(org.w3c.dom.Element element) {
-        this(element, null, null);
+        this(element, null);
     }
 
-    public Header(org.w3c.dom.Element element, OnixVersion onixVersion, String onixRelease) {
+    public Header(org.w3c.dom.Element element, String onixRelease) {
         exists = true;
         initialized = false;
         this.element = element;
-        this.onixVersion = onixVersion;
+        this.onixVersion = OnixVersion.ONIX2;
         this.onixRelease = onixRelease;
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
@@ -132,17 +132,11 @@ public class Header implements OnixHeader, Serializable {
 
     @Override
     public OnixVersion onixVersion() {
-        if (onixVersion == null) {
-            throw new RuntimeException("Uninitialized onixVersion");
-        }
         return onixVersion;
     }
 
     @Override
     public String onixRelease() {
-        if (onixRelease == null) {
-            throw new RuntimeException("Uninitialized onixRelease");
-        }
         return onixRelease;
     }
 

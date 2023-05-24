@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.common.OnixProduct;
 import com.tectonica.jonix.unify.BaseTabulation;
 import com.tectonica.jonix.util.GlobScanner;
@@ -173,5 +174,15 @@ public class Jonix {
     public static com.tectonica.jonix.onix3.Product toProduct3(OnixProduct onixProduct) {
         assert onixProduct instanceof com.tectonica.jonix.onix3.Product;
         return (com.tectonica.jonix.onix3.Product) onixProduct;
+    }
+
+    public static com.tectonica.jonix.onix2.Header toHeader2(OnixHeader onixHeader) {
+        assert onixHeader instanceof com.tectonica.jonix.onix2.Header;
+        return (com.tectonica.jonix.onix2.Header) onixHeader;
+    }
+
+    public static com.tectonica.jonix.onix3.Header toHeader3(OnixHeader onixHeader) {
+        assert onixHeader instanceof com.tectonica.jonix.onix3.Header;
+        return (com.tectonica.jonix.onix3.Header) onixHeader;
     }
 }

@@ -34,9 +34,9 @@ class JonixFactory {
     static OnixProduct productFromElement(Element productElement, OnixVersion onixVersion, String onixRelease) {
         switch (onixVersion) {
             case ONIX2:
-                return new com.tectonica.jonix.onix2.Product(productElement, onixVersion, onixRelease);
+                return new com.tectonica.jonix.onix2.Product(productElement, onixRelease);
             case ONIX3:
-                return new com.tectonica.jonix.onix3.Product(productElement, onixVersion, onixRelease);
+                return new com.tectonica.jonix.onix3.Product(productElement, onixRelease);
             default:
                 throw new UnsupportedOperationException();
         }
@@ -45,9 +45,9 @@ class JonixFactory {
     static OnixHeader headerFromElement(Element headerElement, OnixVersion onixVersion, String onixRelease) {
         switch (onixVersion) {
             case ONIX2:
-                return new com.tectonica.jonix.onix2.Header(headerElement, onixVersion, onixRelease);
+                return new com.tectonica.jonix.onix2.Header(headerElement, onixRelease);
             case ONIX3:
-                return new com.tectonica.jonix.onix3.Header(headerElement, onixVersion, onixRelease);
+                return new com.tectonica.jonix.onix3.Header(headerElement, onixRelease);
             default:
                 throw new UnsupportedOperationException();
         }

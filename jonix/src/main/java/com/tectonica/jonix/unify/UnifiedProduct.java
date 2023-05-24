@@ -19,21 +19,14 @@
 
 package com.tectonica.jonix.unify;
 
-import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.common.OnixProduct;
 
 import java.io.Serializable;
 
 public abstract class UnifiedProduct implements Serializable {
     transient OnixProduct rawProduct;
-    OnixVersion rawProductVersion;
 
     public OnixProduct getRawProduct() {
         return rawProduct;
-    }
-
-    public OnixVersion getOnixVersion() {
-        // TODO consider adding OnixProduct.getOnixVersion() instead
-        return rawProductVersion;
     }
 }

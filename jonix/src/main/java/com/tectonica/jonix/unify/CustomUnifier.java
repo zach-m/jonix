@@ -19,36 +19,38 @@
 
 package com.tectonica.jonix.unify;
 
+import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.JonixRecord;
-import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.common.OnixProduct;
 
 public interface CustomUnifier<P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> {
     default P unifiedProduct(OnixProduct onixProduct) {
-        if (onixProduct instanceof com.tectonica.jonix.onix2.Product) {
-            P product2 = extractProduct2((com.tectonica.jonix.onix2.Product) onixProduct);
-            product2.rawProduct = onixProduct;
-            product2.rawProductVersion = OnixVersion.ONIX2;
-            return product2;
+        switch (onixProduct.onixVersion()) {
+            case ONIX2:
+                P product2 = extractProduct2(Jonix.toProduct2(onixProduct));
+                product2.rawProduct = onixProduct;
+                return product2;
+            case ONIX3:
+                P product3 = extractProduct3(Jonix.toProduct3(onixProduct));
+                product3.rawProduct = onixProduct;
+                return product3;
+            default:
+                throw new UnsupportedOperationException(
+                    "Wrong Product class passed: " + onixProduct.getClass().getName());
         }
-        if (onixProduct instanceof com.tectonica.jonix.onix3.Product) {
-            P product3 = extractProduct3((com.tectonica.jonix.onix3.Product) onixProduct);
-            product3.rawProduct = onixProduct;
-            product3.rawProductVersion = OnixVersion.ONIX3;
-            return product3;
-        }
-        throw new UnsupportedOperationException("Wrong Product class passed: " + onixProduct.getClass().getName());
     }
 
     default H unifiedHeader(OnixHeader onixHeader) {
-        if (onixHeader instanceof com.tectonica.jonix.onix2.Header) {
-            return extractHeader2((com.tectonica.jonix.onix2.Header) onixHeader);
+        switch (onixHeader.onixVersion()) {
+            case ONIX2:
+                return extractHeader2(Jonix.toHeader2(onixHeader));
+            case ONIX3:
+                return extractHeader3(Jonix.toHeader3(onixHeader));
+            default:
+                throw new UnsupportedOperationException(
+                    "Wrong Product class passed: " + onixHeader.getClass().getName());
         }
-        if (onixHeader instanceof com.tectonica.jonix.onix3.Header) {
-            return extractHeader3((com.tectonica.jonix.onix3.Header) onixHeader);
-        }
-        throw new UnsupportedOperationException("Wrong Product class passed: " + onixHeader.getClass().getName());
     }
 
     R unifiedRecord(JonixRecord record);
