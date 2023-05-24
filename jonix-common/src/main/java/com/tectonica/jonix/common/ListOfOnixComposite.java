@@ -39,14 +39,32 @@ public class ListOfOnixComposite<C extends OnixComposite> extends ArrayList<C> {
         return clazz;
     }
 
+    /**
+     * @return an {@link Optional} of the first {@link OnixComposite} listed, if any
+     */
     public Optional<C> first() {
         return (size() == 0) ? Optional.empty() : Optional.of(get(0));
     }
 
+    /**
+     * @return the first {@link OnixComposite} listed, if any, or an "empty" instance (whose
+     *     {@link OnixComposite#exists()} is {@code false}), which can be further traversed by your code (as if it
+     *     exists in the ONIX source), with all underlying data fields eventually yielding "non-existing" value
+     */
     public C firstOrEmpty() {
-        return (size() == 0) ? JPU.newInstance(clazz) : get(0);
+        return (size() == 0) ? JPU.emptyInstance(clazz) : get(0);
     }
 
+    /**
+     * Given this list of {@link OnixComposite}s, this method creates a new list containing only a subset of items, or
+     * none, conforming to the condition passed in the {@link Predicate} object.
+     * <p>
+     * Note that this method is different from {@code .stream().filter()} in that it returns a list of the same original
+     * type (i.e. {@link ListOfOnixComposite}), and not a generic Java {@link List}. This allows the caller to apply
+     * methods such as {@link #firstOrEmpty()} on the returned list.
+     *
+     * @return a non-null, possibly empty, sublist of items meeting the predicate condition
+     */
     public ListOfOnixComposite<C> filter(Predicate<C> predicate) {
         ListOfOnixComposite<C> matches = new ListOfOnixComposite<>(clazz);
         this.stream().filter(predicate).forEach(matches::add);

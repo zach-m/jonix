@@ -32,7 +32,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.StringWriter;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,15 +63,12 @@ public class JPU {
         return (Element) item;
     }
 
-    public static <C> C newInstance(Class<C> clazz) {
-        // CHECKSTYLE:OFF
+    public static <C extends OnixTag> C emptyInstance(Class<C> clazz) {
         try {
-            return clazz.getDeclaredConstructor().newInstance();
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
-            NoSuchMethodException e) {
+            return (C) clazz.getField("EMPTY").get(null);
+        } catch (IllegalAccessException | NoSuchFieldException e) {
             throw new RuntimeException(e);
         }
-        // CHECKSTYLE:ON
     }
 
     @FunctionalInterface
@@ -160,23 +156,22 @@ public class JPU {
         return out;
     }
 
-    public static <E extends OnixElement<V>, V extends OnixCodelist> ListOfOnixCodelist<E, V>
-        addToList(ListOfOnixCodelist<E, V> in, E item) {
+    public static <E extends OnixElement<V>, V extends OnixCodelist> ListOfOnixCodelist<E, V> addToList(
+        ListOfOnixCodelist<E, V> in, E item) {
         ListOfOnixCodelist<E, V> out = (in.size() > 0) ? in : new ListOfOnixCodelist<>();
         out.add(item);
         return out;
     }
 
-    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S>
-        addToList(ListOfOnixDataComposite<C, S> in, C item) {
+    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> addToList(
+        ListOfOnixDataComposite<C, S> in, C item) {
         ListOfOnixDataComposite<C, S> out = (in.size() > 0) ? in : new ListOfOnixDataComposite<>(in.clazz);
         out.add(item);
         return out;
     }
 
-    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
-        K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K>
-        addToList(ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
+    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K> addToList(
+        ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
         ListOfOnixDataCompositeWithKey<C, S, K> out =
             (in.size() > 0) ? in : new ListOfOnixDataCompositeWithKey<>(in.clazz);
         out.add(item);
@@ -194,15 +189,14 @@ public class JPU {
         new HashMap<>();
     private static final Map<Class<?>, ListOfOnixComposite<?>> emptyListOfOnixComposites = new HashMap<>();
 
-    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S>
-        emptyListOfOnixDataComposite(Class<C> clazz) {
+    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> emptyListOfOnixDataComposite(
+        Class<C> clazz) {
         return (ListOfOnixDataComposite<C, S>) emptyListOfOnixDataComposites.computeIfAbsent(clazz,
             c -> new ListOfOnixDataComposite<>(clazz));
     }
 
-    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
-        K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K>
-        emptyListOfOnixDataCompositeWithKey(Class<C> clazz) {
+    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K> emptyListOfOnixDataCompositeWithKey(
+        Class<C> clazz) {
         return (ListOfOnixDataCompositeWithKey<C, S, K>) emptyListOfOnixDataCompositeWithKeys.computeIfAbsent(clazz,
             c -> new ListOfOnixDataCompositeWithKey<>(clazz));
     }
@@ -234,7 +228,8 @@ public class JPU {
     }
 
     /**
-     * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes, etc.
+     * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes,
+     * etc.
      */
     public static Double convertStringToDoubleSafe(String s) {
         try {

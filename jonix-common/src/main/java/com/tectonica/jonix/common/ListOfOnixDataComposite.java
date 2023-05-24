@@ -70,14 +70,32 @@ public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends J
         return first().map(OnixDataComposite::asStruct);
     }
 
+    /**
+     * @return the first {@link OnixDataComposite} listed, if any, or an "empty" instance (whose
+     *     {@link OnixDataComposite#exists()} is {@code false}), which can be further traversed by your code (as if it
+     *     exists in the ONIX source), with all underlying data fields eventually yielding "non-existing" value
+     */
     public C firstOrEmpty() {
-        return (size() == 0) ? JPU.newInstance(clazz) : get(0);
+        return (size() == 0) ? JPU.emptyInstance(clazz) : get(0);
     }
 
+    /**
+     * @return same as {@link #firstOrEmpty()} but wraps this {@link OnixDataComposite} as a {@link JonixStruct}
+     */
     public S firstOrEmptyAsStruct() {
-        return (size() == 0) ? JPU.newInstance(clazz).asStruct() : get(0).asStruct();
+        return firstOrEmpty().asStruct();
     }
 
+    /**
+     * Given this list of {@link OnixDataComposite}s, this method creates a new list containing only a subset of items,
+     * or none, conforming to the condition passed in the {@link Predicate} object.
+     * <p>
+     * Note that this method is different from {@code .stream().filter()} in that it returns a list of the same original
+     * type (i.e. {@link ListOfOnixDataComposite}), and not a generic Java {@link List}. This allows the caller to apply
+     * methods such as {@link #firstOrEmpty()} on the returned list.
+     *
+     * @return a non-null, possibly empty, sublist of items meeting the predicate condition
+     */
     public ListOfOnixDataComposite<C, S> filter(Predicate<C> predicate) {
         ListOfOnixDataComposite<C, S> matches = new ListOfOnixDataComposite<>(clazz);
         this.stream().filter(predicate).forEach(matches::add);

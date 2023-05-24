@@ -226,6 +226,10 @@ public class JonixRecords implements Iterable<JonixRecord> {
         return this;
     }
 
+    /**
+     * This method sets the streaming policy when invalid sources are encountered (e.g. file not found). The default
+     * behavior is to stop streaming when such error occurs.
+     */
     public JonixRecords failOnInvalidFile(boolean fail) {
         failOnInvalidFile = fail;
         return this;

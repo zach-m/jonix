@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.common;
 
+import com.tectonica.jonix.common.OnixCodelist.Pair;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -38,7 +40,7 @@ import java.util.Set;
 public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist> extends ListOfOnixElement<E, V> {
     private static final long serialVersionUID = 1L;
 
-    private List<OnixCodelist.Pair> cachedPairs = null;
+    private List<Pair> cachedPairs = null;
     private Map<String, String> cachedPairsMap = null;
 
     /**
@@ -48,7 +50,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
      *
      * @return a non-null, possibly empty, list of code+description pairs
      */
-    public List<OnixCodelist.Pair> pairs() {
+    public List<Pair> pairs() {
         if (cachedPairs == null) {
             cachedPairs = pairsInto(new ArrayList<>(this.size()));
         }
@@ -71,37 +73,44 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
     }
 
     /**
-     * @return a non-null, possibly empty, set of the {@code code} field of the {@link OnixCodelist}s stored in this
-     *         container
+     * @return a non-null, possibly empty, set of all the {@link OnixCodelist}'s {@code code}s stored in this container
      */
     public Set<String> codes() {
         return pairsMap().keySet();
     }
 
     /**
-     * @return a non-null, possibly empty, collection of the {@code description} field of the {@link OnixCodelist}s
-     *         stored in this container
+     * @return a non-null, possibly empty, set of all the {@link OnixCodelist}'s {@code descriptions}s stored in this
+     *     container
      */
     public Collection<String> descriptions() {
         return pairsMap().values();
     }
 
     /**
-     * stores into a given {@link Collection} the {@code (String,String)} code-description pairs stored within the
-     * elements of this list
+     * stores into a given {@link Collection} the {@code (String,String)} code+description pairs stored within the
+     * elements of this container
      *
      * @return the same passed collection, after being populated
      */
-    public <C extends Collection<OnixCodelist.Pair>> C pairsInto(C collection) {
+    public <C extends Collection<Pair>> C pairsInto(C collection) {
         forEach(item -> collection.add(item.__v().pair()));
         return collection;
     }
 
-    public Optional<OnixCodelist.Pair> firstPair() {
+    /**
+     * @return an {@link Optional} of the first {@link OnixCodelist} listed, if any, wrapped as a code+description
+     *     {@link Pair}
+     */
+    public Optional<Pair> firstPair() {
         return (size() == 0) ? Optional.empty() : Optional.of(get(0).__v().pair());
     }
 
-    public OnixCodelist.Pair firstPairOrNull() {
+    /**
+     * @return the first {@link OnixCodelist} listed, if any, wrapped as a code+description {@link Pair}, or
+     *     {@code null} if none is listed
+     */
+    public Pair firstPairOrNull() {
         return (size() == 0) ? null : get(0).__v().pair();
     }
 
