@@ -42,7 +42,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Also, it provides a key-value map, that the caller can use during iteration for applicative purposes.
  */
 public class JonixSource {
-    // final and mandatory fields, representing the essence of the source
+    private final JonixRecords records;
 
     /**
      * Mandatory, non-null member, represented by this source (even it the user passed a {@link File} object)
@@ -72,14 +72,16 @@ public class JonixSource {
     // internal, packaged-protected variable, managed during iteration over the source
     AtomicInteger sourceProductCount = new AtomicInteger(0);
 
-    JonixSource(InputStream stream) {
-        this.stream = Objects.requireNonNull(stream);
+    JonixSource(InputStream stream, JonixRecords records) {
+        this.records = Objects.requireNonNull(records);
         this.file = null;
+        this.stream = Objects.requireNonNull(stream);
     }
 
-    JonixSource(File file) throws IOException {
+    JonixSource(File file, JonixRecords records) throws IOException {
+        this.records = Objects.requireNonNull(records);
+        this.file = Objects.requireNonNull(file);
         this.stream = Files.newInputStream(file.toPath());
-        this.file = file;
     }
 
     public boolean isStreamBased() {
@@ -111,6 +113,13 @@ public class JonixSource {
      */
     public int productCount() {
         return sourceProductCount.get();
+    }
+
+    /**
+     * @return the ordinal number of the current product, counting from the beginning of this stream
+     */
+    public int productGlobalCount() {
+        return records.globalProductCount.get();
     }
 
     /**

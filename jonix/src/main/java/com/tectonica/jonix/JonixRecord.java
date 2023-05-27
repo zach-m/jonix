@@ -57,24 +57,14 @@ public class JonixRecord {
 
     public final JonixSource source;
     public final OnixProduct product;
-    private final int globalProductCount;
 
-    protected JonixRecord(Map<String, Object> globalConfig, JonixSource source, OnixProduct product,
-                          int globalProductCount) {
+    protected JonixRecord(Map<String, Object> globalConfig, JonixSource source, OnixProduct product) {
         assert globalConfig != null;
         assert source != null;
         assert product != null;
         this.globalConfig = globalConfig;
         this.source = source;
         this.product = product;
-        this.globalProductCount = globalProductCount;
-    }
-
-    /**
-     * @return the ordinal number of the current product, counting from the beginning of the stream
-     */
-    public int productCount() {
-        return globalProductCount;
     }
 
     /**

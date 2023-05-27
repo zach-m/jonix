@@ -330,7 +330,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
             nextFiles = new ArrayList<>(files); // possibly an empty list
             try {
                 if (inputStream != null) {
-                    currentSourceIterator = sourceIterator(new JonixSource(inputStream));
+                    currentSourceIterator = sourceIterator(new JonixSource(inputStream, JonixRecords.this));
                 }
             } catch (Exception e) {
                 handleInvalidFileException(e);
@@ -360,7 +360,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
                 // open the next file, which could possibly contain no records to iterate over
                 try {
                     File file = nextFiles.remove(0);
-                    currentSourceIterator = sourceIterator(new JonixSource(file));
+                    currentSourceIterator = sourceIterator(new JonixSource(file, JonixRecords.this));
                     hasNext = currentSourceIterator.hasNext();
                 } catch (Exception e) {
                     handleInvalidFileException(e);
@@ -473,16 +473,14 @@ public class JonixRecords implements Iterable<JonixRecord> {
                     Element product = nextProduct;
                     try {
                         nextProduct = ctx.nextChunk();
+                        // TODO: verify the product is indeed <Product> ?
+                        globalProductCount.incrementAndGet();
+                        currentSource.sourceProductCount.incrementAndGet();
                     } catch (XMLStreamException e) {
                         throw new RuntimeException(e);
                     }
-
-                    // TODO: verify the product is indeed <Product> ?
-
-                    currentSource.sourceProductCount.incrementAndGet();
                     return new JonixRecord(globalConfig, currentSource,
-                        JonixFactory.productFromElement(product, currentSource.onixVersion, currentSource.onixRelease),
-                        globalProductCount.incrementAndGet());
+                        JonixFactory.productFromElement(product, currentSource.onixVersion, currentSource.onixRelease));
                 }
             };
         }
