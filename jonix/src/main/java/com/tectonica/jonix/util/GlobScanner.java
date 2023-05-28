@@ -30,13 +30,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GlobScanner {
-    public static List<File> scan(File folder, String glob, boolean recursive) throws IOException {
+    public static List<File> scan(File folder, String glob, boolean recursive) {
         FileSystem fs = folder.toPath().getFileSystem();
         final PathMatcher matcher = (glob == null || glob.equals("*")) ? null : fs.getPathMatcher("glob:" + glob);
 
         List<File> files = new ArrayList<>();
-        internalScan(folder, matcher, files, recursive);
-        return files;
+        try {
+            internalScan(folder, matcher, files, recursive);
+            return files;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void internalScan(File parentDirectory, PathMatcher matcher, List<File> files, boolean recursive)

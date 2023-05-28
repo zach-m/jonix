@@ -21,11 +21,15 @@ package com.tectonica.jonix;
 
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.common.OnixProduct;
+import com.tectonica.jonix.common.OnixVersion;
+import com.tectonica.jonix.unify.BaseRecord;
 import com.tectonica.jonix.unify.BaseTabulation;
+import com.tectonica.jonix.unify.JonixUnifier;
+import com.tectonica.jonix.unify.base.BaseHeader;
+import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.util.GlobScanner;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
@@ -101,8 +105,102 @@ public class Jonix {
      * @param recursive whether or not to scan the sub-folders in the parent folder recursively
      * @return a {@link JonixRecords} for iterating over the ONIX content
      */
-    public static JonixRecords source(File folder, String glob, boolean recursive) throws IOException {
+    public static JonixRecords source(File folder, String glob, boolean recursive) {
         return new JonixRecords(GlobScanner.scan(folder, glob, recursive));
+    }
+
+    /**
+     * Convenience method to assist in casting a &lt;Product&gt; object (as returned in a {@link JonixRecords}
+     * {@code stream}) into an ONIX-2 class (i.e {@link com.tectonica.jonix.onix2.Product})
+     *
+     * @param onixProduct concrete {@link OnixProduct} object, which requires casting for further processing
+     * @return ONIX-2 type-casted object
+     */
+    public static com.tectonica.jonix.onix2.Product toProduct2(OnixProduct onixProduct) {
+        assert onixProduct.onixVersion() == OnixVersion.ONIX2;
+        assert onixProduct instanceof com.tectonica.jonix.onix2.Product;
+        return (com.tectonica.jonix.onix2.Product) onixProduct;
+    }
+
+    /**
+     * Convenience method to assist in casting a &lt;Product&gt; object (as returned in a {@link JonixRecords}
+     * {@code stream}) into an ONIX-2 class (i.e {@link com.tectonica.jonix.onix2.Product})
+     *
+     * @param jonixRecord a {@link JonixRecord} holding a concrete {@link OnixProduct} object, which requires casting
+     *                    for further processing
+     * @return ONIX-2 type-casted object
+     */
+    public static com.tectonica.jonix.onix2.Product toProduct2(JonixRecord jonixRecord) {
+        return toProduct2(jonixRecord.product);
+    }
+
+    /**
+     * Convenience method to assist in casting a &lt;Product&gt; object (as returned in a {@link JonixRecords}
+     * {@code stream}) into an ONIX-3 class (i.e {@link com.tectonica.jonix.onix3.Product})
+     *
+     * @param onixProduct concrete {@link OnixProduct} object, which requires casting for further processing
+     * @return ONIX-3 type-casted object
+     */
+    public static com.tectonica.jonix.onix3.Product toProduct3(OnixProduct onixProduct) {
+        assert onixProduct.onixVersion() == OnixVersion.ONIX3;
+        assert onixProduct instanceof com.tectonica.jonix.onix3.Product;
+        return (com.tectonica.jonix.onix3.Product) onixProduct;
+    }
+
+    /**
+     * Convenience method to assist in casting a &lt;Product&gt; object (as returned in a {@link JonixRecords}
+     * {@code stream}) into an ONIX-3 class (i.e {@link com.tectonica.jonix.onix3.Product})
+     *
+     * @param jonixRecord a {@link JonixRecord} holding a concrete {@link OnixProduct} object, which requires casting
+     *                    for further processing
+     * @return ONIX-3 type-casted object
+     */
+    public static com.tectonica.jonix.onix3.Product toProduct3(JonixRecord jonixRecord) {
+        return toProduct3(jonixRecord.product);
+    }
+
+    /**
+     * Convenience method to assist in casting a &lt;Header&gt; object (e.g. as passed in
+     * {@link JonixRecords#onSourceStart(JonixRecords.OnSourceEvent)}) into an ONIX-2 class (i.e
+     * {@link com.tectonica.jonix.onix2.Header})
+     *
+     * @param onixHeader concrete {@link OnixHeader} object, which requires casting for further processing
+     * @return ONIX-2 type-casted object
+     */
+    public static com.tectonica.jonix.onix2.Header toHeader2(OnixHeader onixHeader) {
+        assert onixHeader.onixVersion() == OnixVersion.ONIX2;
+        assert onixHeader instanceof com.tectonica.jonix.onix2.Header;
+        return (com.tectonica.jonix.onix2.Header) onixHeader;
+    }
+
+    /**
+     * Convenience method to assist in casting a &lt;Header&gt; object (e.g. as passed in
+     * {@link JonixRecords#onSourceStart(JonixRecords.OnSourceEvent)}) into an ONIX-3 class (i.e
+     * {@link com.tectonica.jonix.onix3.Header})
+     *
+     * @param onixHeader concrete {@link OnixHeader} object, which requires casting for further processing
+     * @return ONIX-3 type-casted object
+     */
+    public static com.tectonica.jonix.onix3.Header toHeader3(OnixHeader onixHeader) {
+        assert onixHeader.onixVersion() == OnixVersion.ONIX3;
+        assert onixHeader instanceof com.tectonica.jonix.onix3.Header;
+        return (com.tectonica.jonix.onix3.Header) onixHeader;
+    }
+
+    public static BaseRecord toBaseRecord(JonixRecord jonixRecord) {
+        return JonixUnifier.unifyRecord(jonixRecord);
+    }
+
+    public static BaseProduct toBaseProduct(OnixProduct onixProduct) {
+        return JonixUnifier.unifyProduct(onixProduct);
+    }
+
+    public static BaseProduct toBaseProduct(JonixRecord jonixRecord) {
+        return toBaseProduct(jonixRecord.product);
+    }
+
+    public static BaseHeader toBaseHeader(OnixHeader onixHeader) {
+        return JonixUnifier.unifyHeader(onixHeader);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -164,25 +262,5 @@ public class Jonix {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static com.tectonica.jonix.onix2.Product toProduct2(OnixProduct onixProduct) {
-        assert onixProduct instanceof com.tectonica.jonix.onix2.Product;
-        return (com.tectonica.jonix.onix2.Product) onixProduct;
-    }
-
-    public static com.tectonica.jonix.onix3.Product toProduct3(OnixProduct onixProduct) {
-        assert onixProduct instanceof com.tectonica.jonix.onix3.Product;
-        return (com.tectonica.jonix.onix3.Product) onixProduct;
-    }
-
-    public static com.tectonica.jonix.onix2.Header toHeader2(OnixHeader onixHeader) {
-        assert onixHeader instanceof com.tectonica.jonix.onix2.Header;
-        return (com.tectonica.jonix.onix2.Header) onixHeader;
-    }
-
-    public static com.tectonica.jonix.onix3.Header toHeader3(OnixHeader onixHeader) {
-        assert onixHeader instanceof com.tectonica.jonix.onix3.Header;
-        return (com.tectonica.jonix.onix3.Header) onixHeader;
     }
 }
