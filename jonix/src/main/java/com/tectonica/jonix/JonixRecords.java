@@ -27,6 +27,7 @@ import com.tectonica.jonix.unify.JonixUnifier;
 import com.tectonica.jonix.unify.UnifiedHeader;
 import com.tectonica.jonix.unify.UnifiedProduct;
 import com.tectonica.jonix.unify.UnifiedRecord;
+import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix2.BaseFactory2;
 import com.tectonica.jonix.unify.base.onix3.BaseFactory3;
 import com.tectonica.jonix.util.GlobScanner;
@@ -195,6 +196,8 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
     boolean skipSourceRequested;
 
+    private boolean openOnlyHeadersRequested;
+
     private String encoding = "UTF-8";
 
     /**
@@ -296,24 +299,50 @@ public class JonixRecords implements Iterable<JonixRecord> {
         return this;
     }
 
-    //public Stream<JonixRecord> setFactory2
-
+    /**
+     * @return a {@link Stream} of records, each containing a new {@code Product} object and a reference to the source
+     *     from which it was taken
+     */
     public Stream<JonixRecord> stream() {
         return StreamSupport.stream(spliterator(), false);
     }
 
+    /**
+     * @return a {@link Stream} of records, each containing a new {@link BaseProduct} object and a reference to the
+     *     source from which it was taken
+     */
     public Stream<BaseRecord> streamUnified() {
         return stream().map(JonixUnifier::unifyRecord);
     }
 
+    /**
+     * @return a {@link Stream} of records, each containing a new {@link BaseProduct} object (which was created using
+     *     the given factories) and a reference to the source from which it was taken
+     */
     public Stream<BaseRecord> streamUnified(BaseFactory2 baseFactory2, BaseFactory3 baseFactory3) {
         BaseUnifier customBaseUnifier = new BaseUnifier(baseFactory2, baseFactory3);
         return stream().map(record -> JonixUnifier.unifyRecord(record, customBaseUnifier));
     }
 
+    /**
+     * @return a {@link Stream} of records, each containing a new custom {@code Product} object (which was created using
+     *     the given {@link CustomUnifier}) and a reference to the source from which it was taken
+     */
     public <P extends UnifiedProduct, H extends UnifiedHeader, R extends UnifiedRecord<P>> Stream<R> streamUnified(
         CustomUnifier<P, H, R> unifier) {
         return stream().map(record -> JonixUnifier.unifyRecord(record, unifier));
+    }
+
+    /**
+     * This will "peek" into the {@code Header}s of the indicated ONIX sources, without processing the {@code Product}s.
+     * The {@code onSourceStart()} events will be fired as a result, allowing to handle the header information.
+     */
+    public void scanHeaders() {
+        openOnlyHeadersRequested = true;
+        stream().forEach(jonixRecord -> {
+            // do nothing, just open the sources one after the other
+        });
+        openOnlyHeadersRequested = false;
     }
 
     @Override
@@ -434,6 +463,10 @@ public class JonixRecords implements Iterable<JonixRecord> {
                 if (skipSourceRequested) {
                     return null;
                 }
+            }
+
+            if (openOnlyHeadersRequested) {
+                return null;
             }
 
             if (hasHeader) {

@@ -158,4 +158,16 @@ public class TestReadMeCode {
             //}
         });
     }
+
+    @Test
+    @Ignore
+    public void test5() {
+        JonixRecords jonixRecords =
+            Jonix.source(new File("C:\\DEV-ZACH\\Jonix\\jonix\\jonix\\src\\test\\resources\\samples"), "onix*.xml",
+                    false) //
+                .onSourceStart(src -> System.out.printf("%s [%s]%n", src.sourceName(), src.onixRelease()));
+        jonixRecords.scanHeaders();
+        System.out.println("----------------------------------------------------------------------------------");
+        jonixRecords.stream().map(Jonix::toBaseProduct).forEach(p -> System.out.println(p.info.recordReference));
+    }
 }
