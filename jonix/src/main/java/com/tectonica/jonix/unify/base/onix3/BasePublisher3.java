@@ -36,6 +36,6 @@ public class BasePublisher3 extends BasePublisher {
 
     public static void extract(Publisher i, BasePublisher dest) {
         dest.publishingRole = i.publishingRole().value;
-        dest.publisherName = i.publisherNames().firstValue().orElse(null);
+        dest.publisherName = i.publisherName().value;
     }
 }
