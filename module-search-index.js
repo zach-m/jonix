@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"jonix"},{"l":"jonix.common"},{"l":"jonix.json"},{"l":"jonix.onix2"},{"l":"jonix.onix3"},{"l":"jonix.xml"}]
+moduleSearchIndex = [{"l":"jonix"},{"l":"jonix.common"},{"l":"jonix.json"},{"l":"jonix.onix2"},{"l":"jonix.onix3"},{"l":"jonix.xml"}];updateSearchResults();
