@@ -37,6 +37,7 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
 import com.tectonica.jonix.common.struct.JonixPersonDate;
 import com.tectonica.jonix.common.struct.JonixPersonNameIdentifier;
+import com.tectonica.jonix.common.struct.JonixProfessionalAffiliation;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
@@ -644,8 +645,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return personDates;
     }
 
-    private ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations =
-        JPU.emptyListOfOnixComposite(ProfessionalAffiliation.class);
+    private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations =
+        JPU.emptyListOfOnixDataComposite(ProfessionalAffiliation.class);
 
     /**
      * <p>
@@ -654,7 +655,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations() {
+    public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations() {
         _initialize();
         return professionalAffiliations;
     }

@@ -132,6 +132,10 @@ public class SubjectDate
                 case Date.shortname:
                     date = new Date(e);
                     break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
+                    break;
                 default:
                     break;
             }
@@ -181,7 +185,8 @@ public class SubjectDate
      * <p>
      * The date specified in the &lt;SubjectDateRole&gt; field. Mandatory in each occurrence of the &lt;SubjectDate&gt;
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
-     * then the default format is YYYYMMDD.
+     * then &lt;DateFormat&gt; indicates the format of the date; if both dateformat attribute and &lt;DateFormat&gt;
+     * element are missing, the default format is YYYYMMDD.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -190,11 +195,26 @@ public class SubjectDate
         return date;
     }
 
+    private DateFormat dateFormat = DateFormat.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and not repeatable.
+     * Deprecated – where possible, use the <i>dateformat</i> attribute instead.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public DateFormat dateFormat() {
+        _initialize();
+        return dateFormat;
+    }
+
     @Override
     public JonixSubjectDate asStruct() {
         _initialize();
         JonixSubjectDate struct = new JonixSubjectDate();
         struct.subjectDateRole = subjectDateRole.value;
+        struct.dateFormat = dateFormat.value;
         struct.date = date.value;
         return struct;
     }

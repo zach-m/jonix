@@ -21,6 +21,7 @@ package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
 import com.tectonica.jonix.common.JonixStruct;
+import com.tectonica.jonix.common.codelist.DateFormats;
 import com.tectonica.jonix.common.codelist.PublishingDateRoles;
 
 import java.io.Serializable;
@@ -45,11 +46,13 @@ public class JonixMarketDate implements JonixKeyedStruct<PublishingDateRoles>, S
     public PublishingDateRoles marketDateRole;
 
     /**
-     * Raw Format: As specified by the value in the dateformat attribute, or the default YYYYMMDD
+     * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
      * <p>
      * (type: dt.NonEmptyString)
      */
     public String date;
+
+    public DateFormats dateFormat;
 
     @Override
     public PublishingDateRoles key() {

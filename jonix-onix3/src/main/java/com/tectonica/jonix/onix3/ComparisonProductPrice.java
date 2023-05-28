@@ -81,6 +81,8 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link ComparisonProductPrice}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
  * {@link ComparisonProductPrice}</li>
  * </ul>
@@ -230,8 +232,8 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
     /**
      * <p>
      * An ONIX code indicating the type of the comparison price in the &lt;PriceAmount&gt; element within the
-     * &lt;ComparisonProductPrice&gt; composite. Mandatory, unless a &lt;DefaultPriceType&gt; has been specified in the
-     * message header although use of such a default is deprecated. Non-repeating.
+     * &lt;ComparisonProductPrice&gt; composite. Optional if a &lt;DefaultPriceType&gt; has been specified in the
+     * message header, otherwise mandatory. Non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -244,7 +246,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
 
     /**
      * <p>
-     * An ONIX code identifying the currency in which the &lt;PriceAmount&gt; in an occurrence of the
+     * An ISO standard code identifying the currency in which the &lt;PriceAmount&gt; in an occurrence of the
      * &lt;ComparisonProductPrice&gt; composite is stated. Optional and non-repeating, but required if the currency is
      * not the default currency for the ONIX message. To avoid any possible ambiguity, it is strongly recommended that
      * the currency should be stated here.

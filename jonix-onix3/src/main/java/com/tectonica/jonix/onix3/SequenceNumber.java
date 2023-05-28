@@ -62,37 +62,18 @@ import java.util.function.Consumer;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link SupportingResource}&gt;</li>
  * <li>&lt;{@link SupplementManifest}&gt;</li>
- * <li>&lt;{@link Prize}&gt;</li>
  * <li>&lt;{@link CoverResource}&gt;</li>
  * <li>&lt;{@link BodyResource}&gt;</li>
- * <li>&lt;{@link TextContent}&gt;</li>
  * <li>&lt;{@link TitleElement}&gt;</li>
  * <li>&lt;{@link ContributorReference}&gt;</li>
- * <li>&lt;{@link CitedContent}&gt;</li>
  * <li>&lt;{@link InsertResource}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
- * {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
- * {@link SupportingResource} ⯈ {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
- * {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
- * {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈ {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
- * {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
- * {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
  * {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link CoverManifest} ⯈ {@link CoverResource} ⯈ {@link SequenceNumber}</li>
@@ -102,8 +83,6 @@ import java.util.function.Consumer;
  * {@link BodyManifest} ⯈ {@link BodyResource} ⯈ {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link BodyManifest} ⯈
  * {@link BodyResource} ⯈ {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail} ⯈ {@link TitleElement} ⯈
  * {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TitleDetail} ⯈ {@link TitleElement} ⯈
@@ -112,9 +91,6 @@ import java.util.function.Consumer;
  * {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link ContributorReference} ⯈
  * {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈
- * {@link SequenceNumber}</li>
- * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈ {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
  * {@link InsertManifest} ⯈ {@link InsertResource} ⯈ {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link InsertManifest} ⯈
@@ -161,7 +137,7 @@ public class SequenceNumber implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer, 1, 2, 3 etc, suggested maximum length 3 digits
      * <p>
-     * (type: dt.PositiveInteger)
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

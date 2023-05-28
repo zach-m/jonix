@@ -23,7 +23,7 @@ import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixAffiliationIdentifier;
+import com.tectonica.jonix.common.struct.JonixConferenceSponsorIdentifier;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -33,21 +33,19 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Affiliation identifier composite</h1>
+ * <h1>Conference sponsor identifier composite</h1>
  * <p>
- * A group of data elements which together define an identifier for an organization to which the contributor to the
- * product was affiliated <em>at the time of its creation</em>, and – if the &lt;ProfessionalPosition&gt; element is
- * also present – where the contributor held that position. Optional, and repeatable to specify organization identifiers
- * of different types for the same organization.
+ * An optional and repeatable group of data elements which together carry a coded identifier for a sponsor of a
+ * conference.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;AffiliationIdentifier&gt;</tt></td>
+ * <td><tt>&lt;ConferenceSponsorIdentifier&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;affiliationidentifier&gt;</tt></td>
+ * <td><tt>&lt;conferencesponsoridentifier&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
@@ -57,33 +55,24 @@ import java.util.function.Consumer;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>
+ * <li>&lt;{@link ConferenceSponsor}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
- * {@link AffiliationIdentifier}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
- * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier}</li>
- * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈
- * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
- * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈ {@link ProfessionalAffiliation} ⯈
- * {@link AffiliationIdentifier}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
- * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor} ⯈
+ * {@link ConferenceSponsorIdentifier}</li>
  * </ul>
  *
- * @since Onix-3.10
+ * @deprecated
  */
-public class AffiliationIdentifier
-    implements OnixDataCompositeWithKey<JonixAffiliationIdentifier, NameIdentifierTypes>, Serializable {
+@Deprecated
+public class ConferenceSponsorIdentifier
+    implements OnixDataCompositeWithKey<JonixConferenceSponsorIdentifier, NameIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "AffiliationIdentifier";
-    public static final String shortname = "affiliationidentifier";
+    public static final String refname = "ConferenceSponsorIdentifier";
+    public static final String shortname = "conferencesponsoridentifier";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -108,15 +97,15 @@ public class AffiliationIdentifier
     private boolean initialized;
     private final boolean exists;
     private final org.w3c.dom.Element element;
-    public static final AffiliationIdentifier EMPTY = new AffiliationIdentifier();
+    public static final ConferenceSponsorIdentifier EMPTY = new ConferenceSponsorIdentifier();
 
-    public AffiliationIdentifier() {
+    public ConferenceSponsorIdentifier() {
         exists = false;
         element = null;
         initialized = true; // so that no further processing will be done on this intentionally-empty object
     }
 
-    public AffiliationIdentifier(org.w3c.dom.Element element) {
+    public ConferenceSponsorIdentifier(org.w3c.dom.Element element) {
         exists = true;
         initialized = false;
         this.element = element;
@@ -135,9 +124,9 @@ public class AffiliationIdentifier
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case AffiliationIDType.refname:
-                case AffiliationIDType.shortname:
-                    affiliationIDType = new AffiliationIDType(e);
+                case ConferenceSponsorIDType.refname:
+                case ConferenceSponsorIDType.shortname:
+                    conferenceSponsorIDType = new ConferenceSponsorIDType(e);
                     break;
                 case IDValue.refname:
                 case IDValue.shortname:
@@ -154,15 +143,15 @@ public class AffiliationIdentifier
     }
 
     /**
-     * @return whether this tag (&lt;AffiliationIdentifier&gt; or &lt;affiliationidentifier&gt;) is explicitly provided
-     *         in the ONIX XML
+     * @return whether this tag (&lt;ConferenceSponsorIdentifier&gt; or &lt;conferencesponsoridentifier&gt;) is
+     *         explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<AffiliationIdentifier> action) {
+    public void ifExists(Consumer<ConferenceSponsorIdentifier> action) {
         if (exists) {
             action.accept(this);
         }
@@ -177,25 +166,25 @@ public class AffiliationIdentifier
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private AffiliationIDType affiliationIDType = AffiliationIDType.EMPTY;
+    private ConferenceSponsorIDType conferenceSponsorIDType = ConferenceSponsorIDType.EMPTY;
 
     /**
      * <p>
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
-     * in each occurrence of the &lt;AffiliationIdentifier&gt; composite, and non-repeating.
+     * in each occurrence of the &lt;ConferenceSponsorIdentifier&gt; composite, and non-repeating.
      * </p>
      * Jonix-Comment: this field is required
      */
-    public AffiliationIDType affiliationIDType() {
+    public ConferenceSponsorIDType conferenceSponsorIDType() {
         _initialize();
-        return affiliationIDType;
+        return conferenceSponsorIDType;
     }
 
     private IDValue idValue = IDValue.EMPTY;
 
     /**
      * <p>
-     * A code value taken from the scheme specified in the &lt;AffiliationIDType&gt; element. Mandatory in each
+     * A code value taken from the scheme specified in the &lt;ConferenceSponsorIDType&gt; element. Mandatory in each
      * occurrence of the composite, and non-repeating.
      * </p>
      * Jonix-Comment: this field is required
@@ -209,9 +198,8 @@ public class AffiliationIdentifier
 
     /**
      * <p>
-     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
-     * there is no individual ID type code). Must be included when, and only when, the code in the
-     * &lt;AffiliationIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
+     * A name which identifies a proprietary identifier scheme when, and only when, the code in the
+     * &lt;ConferenceSponsorIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -221,10 +209,10 @@ public class AffiliationIdentifier
     }
 
     @Override
-    public JonixAffiliationIdentifier asStruct() {
+    public JonixConferenceSponsorIdentifier asStruct() {
         _initialize();
-        JonixAffiliationIdentifier struct = new JonixAffiliationIdentifier();
-        struct.affiliationIDType = affiliationIDType.value;
+        JonixConferenceSponsorIdentifier struct = new JonixConferenceSponsorIdentifier();
+        struct.conferenceSponsorIDType = conferenceSponsorIDType.value;
         struct.idTypeName = idTypeName.value;
         struct.idValue = idValue.value;
         return struct;
@@ -232,6 +220,6 @@ public class AffiliationIdentifier
 
     @Override
     public NameIdentifierTypes structKey() {
-        return affiliationIDType().value;
+        return conferenceSponsorIDType().value;
     }
 }

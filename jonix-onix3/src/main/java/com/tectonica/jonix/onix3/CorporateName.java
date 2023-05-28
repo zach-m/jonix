@@ -35,12 +35,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Corporate contributor name</h1>
  * <p>
- * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in normal
- * order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel names for a
- * single organization in multiple languages (<i>eg</i> ‘World Health Organization’ and
- * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional for
- * a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
- * repeated.
+ * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
+ * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -57,7 +53,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;n</td>
+ * <td>0&#8230;1</td>
  * </tr>
  * <tr>
  * <td>Attributes</td>
@@ -73,6 +69,7 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link AlternativeName}&gt;</li>
  * <li>&lt;{@link CopyrightOwner}&gt;</li>
+ * <li>&lt;{@link ConferenceSponsor}&gt;</li>
  * <li>&lt;{@link EventSponsor}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
@@ -92,9 +89,9 @@ import java.util.function.Consumer;
  * {@link CorporateName}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈ {@link AlternativeName} ⯈
  * {@link CorporateName}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement} ⯈
- * {@link CopyrightOwner} ⯈ {@link CorporateName}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner} ⯈
+ * {@link CorporateName}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor} ⯈
  * {@link CorporateName}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventSponsor} ⯈ {@link CorporateName}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈

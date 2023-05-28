@@ -20,14 +20,12 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.common.struct.JonixSupplierIdentifier;
-import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -144,10 +142,6 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
                 case EmailAddress.shortname:
                     emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
                     break;
-                case Website.refname:
-                case Website.shortname:
-                    websites = JPU.addToList(websites, new Website(e));
-                    break;
                 default:
                     break;
             }
@@ -242,7 +236,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An e‑mail address for a supply source from which the product may be ordered by a trade customer. Optional and
+     * An e-mail address for a supply source from which the product may be ordered by a trade customer. Optional and
      * repeatable.
      * </p>
      * Jonix-Comment: this list may be empty
@@ -250,20 +244,5 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
         _initialize();
         return emailAddresss;
-    }
-
-    private ListOfOnixDataComposite<Website, JonixWebsite> websites = JPU.emptyListOfOnixDataComposite(Website.class);
-
-    /**
-     * <p>
-     * An optional group of data elements which together identify and provide a pointer to a website which is related to
-     * the organization identified in an occurrence of the &lt;NewSupplier&gt; composite. Repeatable in order to provide
-     * links to multiple websites.
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        _initialize();
-        return websites;
     }
 }

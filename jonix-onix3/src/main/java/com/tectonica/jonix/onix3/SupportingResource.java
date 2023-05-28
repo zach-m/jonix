@@ -62,6 +62,7 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link CollateralDetail}&gt;</li>
+ * <li>&lt;{@link Reissue}&gt;</li>
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
@@ -70,6 +71,8 @@ import java.util.function.Consumer;
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link SupportingResource}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource}</li>
@@ -146,10 +149,6 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
                 case ResourceVersion.refname:
                 case ResourceVersion.shortname:
                     resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(e));
-                    break;
-                case SequenceNumber.refname:
-                case SequenceNumber.shortname:
-                    sequenceNumber = new SequenceNumber(e);
                     break;
                 case Territory.refname:
                 case Territory.shortname:
@@ -247,37 +246,16 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         return resourceVersions;
     }
 
-    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
-
-    /**
-     * <p>
-     * A number which specifies a single overall sequence of supporting resources. Optional and non-repeating. It is
-     * strongly recommended that if <em>any</em> occurrence of the &lt;SupportingResource&gt; composite of a specific
-     * &lt;ResourceContentType&gt; carries a &lt;SequenceNumber&gt;, then all of that type should carry a
-     * &lt;SequenceNumber&gt; – though there is no requirement to number supporting resources where there is a single
-     * instance of that type.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SequenceNumber sequenceNumber() {
-        _initialize();
-        return sequenceNumber;
-    }
-
     private Territory territory = Territory.EMPTY;
 
     /**
      * <p>
      * A group of data elements which together define a territory for which the supporting resource is specifically
      * intended. Optional in each occurrence of the &lt;SupportingResource&gt; composite, and non-repeating. If omitted,
-     * the supporting resource is intended for use wherever the product may be sold (see Territorial sales rights in
+     * the supporting resource is intended for use wherever the product may be sold (see
      * <a href="#onixmessage_product_publishingdetail_p21">Group&nbsp;P.21</a>). If included, the resource should be
-     * used by recipients in the specified territory only, and in preference to any supporting resource that lacks a
-     * specified territory.
-     * </p>
-     * <p>
-     * For valid combinations of &lt;CountriesIncluded&gt;, &lt;RegionsIncluded&gt; <i>etc</i> within &lt;Territory&gt;,
-     * see the notes describing the use of &lt;Territory&gt; within Group P.21.
+     * used by recipients in the specified territory in preference to any supporting resource that lacks a specified
+     * territory.
      * </p>
      * <p>
      * Care should be taken to avoid ambiguities (for example two different cover images marked for use in the same

@@ -34,9 +34,9 @@ import java.util.function.Consumer;
  * <h1>Product form feature value</h1>
  * <p>
  * A controlled value that describes a product form feature. Presence or absence of this element depends on the
- * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i> color of cover binding) require an
- * accompanying value, while some (<i>eg</i> text font) require free text in &lt;ProductFormFeatureDescription&gt;.
- * Others may have both code value and free text. Non-repeating.
+ * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i> thumb index) do not require an
+ * accompanying value, while others (<i>eg</i> text font) require free text in &lt;ProductFormFeatureDescription&gt;;
+ * and others may have both code and free text. Non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -61,8 +61,8 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td></td>
- * <td>For text font, use free text in &lt;ProductFormFeatureDescription&gt;, which should include a font name for the
- * main body text. &lt;ProductFormFeatureValue&gt; may include the body text size in points</td>
+ * <td>For text font, use free text in &lt;ProductFormFeatureDescription&gt;, which may include font name and/or
+ * size</td>
  * </tr>
  * <tr>
  * <td></td>
@@ -85,7 +85,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td></td>
- * <td>For specific versions of common e-publication file formats, (eg the IDPF's EPUB 3.0.1), use
+ * <td>For specific versions of common e-publication file formats, (eg the IDPF's EPUB 2.0.1), use
  * &lt;ProductFormFeatureType&gt; code 15 and a value from List 220. For e-publication formats not covered in List 220,
  * use &lt;ProductFormFeatureType&gt; code 10 and a period-separated list of numbers (eg '7', '1.5' or '3.10.7') in
  * &lt;ProductFormFeatureValue&gt;</td>

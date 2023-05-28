@@ -101,7 +101,7 @@ public class MessageNumber implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer, suggested maximum length 8 digits
      * <p>
-     * (type: dt.PositiveInteger)
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

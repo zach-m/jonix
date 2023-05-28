@@ -55,16 +55,15 @@ import java.util.function.Consumer;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link EpubLicenseWithDate}&gt;</li>
- * <li>&lt;{@link EpubLicenseWithoutDate}&gt;</li>
+ * <li>&lt;{@link EpubLicense}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate} ⯈ {@link EpubLicenseExpression}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate} ⯈
- * {@link EpubLicenseExpression}</li>
- * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link EpubLicenseWithoutDate} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense} ⯈ {@link EpubLicenseExpression}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link EpubLicense} ⯈ {@link EpubLicenseExpression}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link EpubLicense} ⯈
  * {@link EpubLicenseExpression}</li>
  * </ul>
  *

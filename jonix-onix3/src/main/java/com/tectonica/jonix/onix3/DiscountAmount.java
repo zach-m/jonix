@@ -69,6 +69,8 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link Discount} ⯈ {@link DiscountAmount}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Discount} ⯈
  * {@link DiscountAmount}</li>
  * </ul>
@@ -106,7 +108,7 @@ public class DiscountAmount implements OnixElement<Double>, Serializable {
      * Raw Format: Positive real number, with explicit decimal point when required, or zero, suggested maximum length 12
      * characters
      * <p>
-     * (type: dt.PositiveDecimalOrZero)
+     * (type: dt.PositiveDecimal)
      */
     public Double value;
 

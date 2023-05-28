@@ -34,7 +34,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Copyright statement type</h1>
  * <p>
- * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or neighboring
+ * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or neighbouring
  * right. If omitted, the default is that the statement represents a copyright.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -71,8 +71,6 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement} ⯈
- * {@link CopyrightType}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightType}</li>
  * </ul>
  *

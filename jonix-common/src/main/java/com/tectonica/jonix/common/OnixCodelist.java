@@ -29,7 +29,7 @@ public interface OnixCodelist {
 
     /**
      * @return a tuple of two {@link String}s: {@code code} and {@code description} of this codelist value. could be
-     *     very useful for unification (i.e. when dealing with sources of mixed ONIX versions)
+     *         very useful for unification (i.e. when dealing with sources of mixed ONIX versions)
      */
     default Pair pair() {
         return new Pair(getCode(), getDescription());

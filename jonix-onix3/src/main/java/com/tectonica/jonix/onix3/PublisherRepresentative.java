@@ -232,9 +232,8 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
     /**
      * <p>
-     * A telephone number of an agent or local publisher. Optional and repeatable. Use to provide contact details for
-     * the organization as a whole, but prefer &lt;ProductContact&gt; for individual functions or contacts within the
-     * organization.
+     * A telephone number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor
+     * of providing contact details in the &lt;ProductContact&gt; composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -247,9 +246,8 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
     /**
      * <p>
-     * A fax number of an agent or local publisher. Optional and repeatable. Use to provide contact details for the
-     * organization as a whole, but prefer &lt;ProductContact&gt; for individual functions or contacts within the
-     * organization.
+     * A fax number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of
+     * providing contact details in the &lt;ProductContact&gt; composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -262,9 +260,8 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
     /**
      * <p>
-     * An e‑mail address for an agent or local publisher. Optional and repeatable. Use to provide contact details for
-     * the organization as a whole, but prefer &lt;ProductContact&gt; for individual functions or contacts within the
-     * organization.
+     * An e-mail address for an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor
+     * of providing contact details in the &lt;ProductContact&gt; composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */

@@ -35,13 +35,9 @@ import java.util.function.Consumer;
  * <h1>Regions included</h1>
  * <p>
  * One or more ONIX codes identifying regions included in the territory. A region is an area which is not a country, but
- * which is precisely defined in geographical terms, <i>eg</i> the World, Northern Ireland, Australian Capital
- * Territory. Successive codes must be separated by spaces. Optional and non-repeating, but either
- * &lt;CountriesIncluded&gt; or &lt;RegionsIncluded&gt; is mandatory in each occurrence of the &lt;Territory&gt;
- * composite.
- * </p>
- * <p>
- * Note that if used, the ‘WORLD’ region code cannot be combined with other region codes.
+ * which is precisely defined in geographical terms, <i>eg</i> World, Northern Ireland, Australian Capital Territory.
+ * Successive codes must be separated by spaces. Optional and non-repeating, but either &lt;CountriesIncluded&gt; or
+ * &lt;RegionsIncluded&gt; is mandatory in each occurrence of the &lt;Territory&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -84,6 +80,8 @@ import java.util.function.Consumer;
  * {@link RegionsIncluded}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link Territory} ⯈
  * {@link RegionsIncluded}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link SupportingResource} ⯈
+ * {@link Territory} ⯈ {@link RegionsIncluded}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link RegionsIncluded}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
@@ -97,6 +95,8 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈ {@link Territory} ⯈
  * {@link RegionsIncluded}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link Territory} ⯈ {@link RegionsIncluded}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link Territory} ⯈ {@link RegionsIncluded}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Territory} ⯈
  * {@link RegionsIncluded}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link Territory} ⯈

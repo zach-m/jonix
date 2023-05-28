@@ -60,7 +60,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;WorkIDType&gt;11&lt;/WorkIDType&gt;</tt> (ISTC - though note the ISTC standard has been withdrawn)</td>
+ * <td><tt>&lt;WorkIDType&gt;11&lt;/WorkIDType&gt;</tt> (ISTC)</td>
  * </tr>
  * </table>
  * <p/>

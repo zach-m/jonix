@@ -34,8 +34,8 @@ import java.util.function.Consumer;
  * <h1>Sender name</h1>
  * <p>
  * The name of the sender organization, which should always be stated in a standard form agreed with the addressee.
- * Optional and non-repeating<del datetime="2023-03-06">;</del><ins datetime="2023-03-06">,</ins> but <em>either</em> a
- * &lt;SenderName&gt; element <em>or</em> a &lt;SenderIdentifier&gt; composite <em>must</em> be included.
+ * Optional and non-repeating; but <em>either</em> a &lt;SenderName&gt; element <em>or</em> a &lt;SenderIdentifier&gt;
+ * composite <em>must</em> be included.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

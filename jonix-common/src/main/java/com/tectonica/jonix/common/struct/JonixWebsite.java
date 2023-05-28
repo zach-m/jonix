@@ -41,7 +41,7 @@ public class JonixWebsite implements JonixStruct, Serializable {
 
     /**
      * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML, XML, JSON within ONIX text fields
+     * Using XHTML, HTML or XML with ONIX text fields
      * <p>
      * (type: XHTML)
      */
@@ -50,7 +50,7 @@ public class JonixWebsite implements JonixStruct, Serializable {
     /**
      * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
      * maximum length 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters
-     * should be 'URL-encoded'. Any ampersand used to separate parameters in the URL must be expressed as &amp;amp;
+     * should be 'URL-encoded'
      * <p>
      * (type: dt.NonEmptyURI)
      */

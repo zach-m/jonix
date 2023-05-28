@@ -188,7 +188,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
 
     /**
      * <p>
-     * An ONIX code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
+     * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
      * non-repeating.
      * </p>
      * Jonix-Comment: this field is required
@@ -202,8 +202,8 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
 
     /**
      * <p>
-     * An ONIX code identifying a country when this specifies a variant of the language, <i>eg</i> US English. Optional
-     * and non-repeating.
+     * A code identifying the country when this specifies a variant of the language, <i>eg</i> US English. Optional and
+     * non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -219,9 +219,8 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * An ONIX code identifying the region when this specifies a variant of the language <i>eg</i> Flemish – Dutch as
      * used in the Flemish region of Belgium. Optional and non-repeatable. A region is an area which is not a country
      * (in the sense that it does not have a distinct country code), but which is precisely defined in geographical
-     * terms, <i>eg</i> Quebec, Scotland. In general, if a region is specified, the country may be omitted. If both
-     * country and region are specified, the region must be within the country. Note that US States have region codes,
-     * while US overseas territories have distinct ISO Country Codes.
+     * terms, <i>eg</i> Quebec, Scotland. If both country and region are specified, the region must be within the
+     * country. Note that US States have region codes, while US overseas territories have distinct ISO Country Codes.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -234,7 +233,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
 
     /**
      * <p>
-     * An ONIX code identifying the script in which the language is represented. Optional and non-repeating.
+     * A code identifying the script in which the language is represented. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */

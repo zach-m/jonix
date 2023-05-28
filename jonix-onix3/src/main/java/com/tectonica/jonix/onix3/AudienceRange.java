@@ -167,8 +167,8 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
 
     /**
      * <p>
-     * An ONIX code specifying the attribute (interest age, school grade <i>etc</i>) which is measured by the value in
-     * the &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and
+     * An ONIX code specifying the attribute (age, school grade <i>etc</i>) which is measured by the value in the
+     * &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and
      * non-repeating.
      * </p>
      * Jonix-Comment: this field is required

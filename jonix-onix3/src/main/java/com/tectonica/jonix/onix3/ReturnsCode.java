@@ -43,7 +43,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>For values defined by BISAC for US use, see List 66. For other uses, see List 204</td>
+ * <td>for values defined by BISAC for US use, see List 66. For other uses see List 204</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>

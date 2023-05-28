@@ -71,6 +71,7 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRestriction} ⯈ {@link StartDate}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction} ⯈ {@link StartDate}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRestriction} ⯈
  * {@link StartDate}</li>

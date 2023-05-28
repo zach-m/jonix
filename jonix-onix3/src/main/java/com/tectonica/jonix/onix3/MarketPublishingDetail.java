@@ -126,6 +126,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
                 case MarketPublishingStatus.shortname:
                     marketPublishingStatus = new MarketPublishingStatus(e);
                     break;
+                case PromotionContact.refname:
+                case PromotionContact.shortname:
+                    promotionContact = new PromotionContact(e);
+                    break;
                 case PublisherRepresentative.refname:
                 case PublisherRepresentative.shortname:
                     publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(e));
@@ -207,6 +211,21 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         return marketPublishingStatus;
     }
 
+    private PromotionContact promotionContact = PromotionContact.EMPTY;
+
+    /**
+     * <p>
+     * Free text giving the name, department, phone number, e-mail address etc for a promotional contact person for the
+     * product. Optional and non-repeating. Deprecated, in favor of providing this information via the
+     * &lt;ProductContact&gt; composite.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public PromotionContact promotionContact() {
+        _initialize();
+        return promotionContact;
+    }
+
     private ListOfOnixComposite<PublisherRepresentative> publisherRepresentatives =
         JPU.emptyListOfOnixComposite(PublisherRepresentative.class);
 
@@ -262,8 +281,8 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * <p>
      * A group of data elements which together specify a date associated with the publishing status of the product in a
      * specified market, <i>eg</i> ‘local publication date’. Optional, but if known, a date of publication <em>must</em>
-     * be specified either here as a ‘local publication date’ or in P.20. Other dates relating to the publication of the
-     * product in the specific market may be sent in further repeats of the composite.
+     * be specified either here as a ‘local pubdate’ or in P.20. Other dates relating to the publication of the product
+     * in the specific market may be sent in further repeats of the composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -311,6 +330,12 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * repeatable if parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a
      * single instance of &lt;ReprintDetail&gt;, but must be included in each instance if &lt;ReprintDetail&gt; is
      * repeated.
+     * </p>
+     * <p>
+     * (For compatibility purposes, &lt;ReprintDetail&gt; is also repeatable – without the <i>language</i> attribute, or
+     * with the same <i>language</i> attribute – to give information about successive reprintings, but this is
+     * deprecated in favor of a single &lt;ReprintDetail&gt; instance [or a single instance per language] and use of the
+     * XHTML &lt;dl&gt; list structure.)
      * </p>
      * Jonix-Comment: this list may be empty
      */

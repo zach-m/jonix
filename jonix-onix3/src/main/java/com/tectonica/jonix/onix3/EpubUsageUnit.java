@@ -73,8 +73,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit} ⯈
  * {@link EpubUsageUnit}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint} ⯈
- * {@link EpubUsageLimit} ⯈ {@link EpubUsageUnit}</li>
  * </ul>
  */
 public class EpubUsageUnit implements OnixElement<UnitOfUsages>, Serializable {

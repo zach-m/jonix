@@ -40,9 +40,9 @@ import java.util.function.Consumer;
  * present in each occurrence of the &lt;Subject&gt; composite.
  * </p>
  * <p>
- * Optional, and repeatable if the heading text is sent in multiple languages. The <i>language</i> attribute is optional
- * for a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance if
- * &lt;SubjectHeadingText&gt; is repeated.
+ * Optional, and repeatable if the text is sent in multiple languages. The <i>language</i> attribute is optional for a
+ * single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance if &lt;SubjectHeadingText&gt; is
+ * repeated.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

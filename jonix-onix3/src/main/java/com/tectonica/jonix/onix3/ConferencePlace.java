@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.CollectionFrequencys;
+import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,55 +32,55 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Collection frequency</h1>
+ * <h1>Conference place</h1>
  * <p>
- * An ONIX code specifying the approximate or expected publication frequency for addition of new products to the
- * collection. Optional, and non-repeating.
+ * The place of a conference to which the product is related. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed-length text, one alphabetic character</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 259</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;CollectionFrequency&gt;</tt></td>
+ * <td><tt>&lt;ConferencePlace&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;x582&gt;</tt></td>
+ * <td><tt>&lt;b055&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>1</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x582&gt;q&lt;/x582&gt;</tt> (Four times per year)</td>
+ * <td><tt>&lt;ConferencePlace&gt;Aix-les-Bains, France&lt;/ConferencePlace&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link Collection}&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link CollectionFrequency}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferencePlace}</li>
  * </ul>
  *
- * @since Onix-3.10
+ * @deprecated
  */
-public class CollectionFrequency implements OnixElement<CollectionFrequencys>, Serializable {
+@Deprecated
+public class ConferencePlace implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "CollectionFrequency";
-    public static final String shortname = "x582";
+    public static final String refname = "ConferencePlace";
+    public static final String shortname = "b055";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -98,17 +98,27 @@ public class CollectionFrequency implements OnixElement<CollectionFrequencys>, S
 
     public RecordSourceTypes sourcetype;
 
+    public Languages language;
+
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public CollectionFrequencys value;
+    /**
+     * This is the raw content of ConferencePlace. Could be null if {@code exists() == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
+     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * <p>
+     * (type: dt.NonEmptyString)
+     */
+    public String value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public CollectionFrequencys __v() {
+    public String __v() {
         return value;
     }
 
@@ -117,30 +127,31 @@ public class CollectionFrequency implements OnixElement<CollectionFrequencys>, S
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final CollectionFrequency EMPTY = new CollectionFrequency();
+    public static final ConferencePlace EMPTY = new ConferencePlace();
 
-    public CollectionFrequency() {
+    public ConferencePlace() {
         exists = false;
     }
 
-    public CollectionFrequency(org.w3c.dom.Element element) {
+    public ConferencePlace(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
-        value = CollectionFrequencys.byCode(JPU.getContentAsString(element));
+        value = JPU.getContentAsString(element);
     }
 
     /**
-     * @return whether this tag (&lt;CollectionFrequency&gt; or &lt;x582&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;ConferencePlace&gt; or &lt;b055&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<CollectionFrequency> action) {
+    public void ifExists(Consumer<ConferencePlace> action) {
         if (exists) {
             action.accept(this);
         }

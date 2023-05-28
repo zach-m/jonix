@@ -36,11 +36,8 @@ import java.util.function.Consumer;
  * <h1>Corporate contributor name, inverted</h1>
  * <p>
  * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with the
- * element used for alphabetical sorting placed first. Optional: see Group&nbsp;P.7 introductory text for valid options.
- * Repeatable, to provide parallel names for a single organization in multiple languages (<i>eg</i> ‘Polar Research
- * Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The <i>language</i> attribute is optional
- * for a single instance of &lt;CorporateNameInverted&gt;, but must be included in each instance if
- * &lt;CorporateNameInverted&gt; is repeated.
+ * element used for alphabetical sorting placed first. Optional and non-repeating: see Group&nbsp;P.7 introductory text
+ * for valid options.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -57,7 +54,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;n</td>
+ * <td>0&#8230;1</td>
  * </tr>
  * <tr>
  * <td>Attributes</td>

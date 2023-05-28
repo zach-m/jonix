@@ -34,19 +34,19 @@ import java.util.function.Consumer;
 /**
  * <h1>Country of manufacture</h1>
  * <p>
- * An ONIX code identifying the country of manufacture of a single-item product, or of a multiple-item product when all
+ * An ISO code identifying the country of manufacture of a single-item product, or of a multiple-item product when all
  * items are manufactured in the same country. This information is needed in some countries to meet regulatory
  * requirements. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, two letters, based on ISO 3166-1. Note that ISO 3166-1 specifies that country codes shall be sent
- * as upper case only</td>
+ * <td>Fixed length, two letters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case
+ * only</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>List 91</td>
+ * <td>ISO 3166-1 two-letter country codes, see List 91</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>

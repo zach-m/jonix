@@ -132,6 +132,10 @@ public class OccurrenceDate
                 case Date.shortname:
                     date = new Date(e);
                     break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
+                    break;
                 default:
                     break;
             }
@@ -182,9 +186,10 @@ public class OccurrenceDate
      * <p>
      * The date specified in the &lt;OccurrenceDateRole&gt; field. Mandatory in each occurrence of the
      * &lt;OccurrenceDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the
-     * attribute is missing, then the default format is YYYYMMDDThhmm (local time at the venue). Note that this date
-     * format may include a time zone offset (Z for times in UTC, or ±hhmm), and this should always be included where
-     * there is any doubt, <i>eg</i> when the event is available online.
+     * attribute is missing, then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i>
+     * attribute and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDDThhmm (local time at the
+     * venue). Note that this date format may include a time zone offset (Z for times in UTC, or ±hhmm), and this should
+     * always be included where there is any doubt, <i>eg</i> when the event is available online.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -193,11 +198,26 @@ public class OccurrenceDate
         return date;
     }
 
+    private DateFormat dateFormat = DateFormat.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and not repeatable.
+     * Deprecated – where possible, use the <i>dateformat</i> attribute instead.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public DateFormat dateFormat() {
+        _initialize();
+        return dateFormat;
+    }
+
     @Override
     public JonixOccurrenceDate asStruct() {
         _initialize();
         JonixOccurrenceDate struct = new JonixOccurrenceDate();
         struct.occurrenceDateRole = occurrenceDateRole.value;
+        struct.dateFormat = dateFormat.value;
         struct.date = date.value;
         return struct;
     }

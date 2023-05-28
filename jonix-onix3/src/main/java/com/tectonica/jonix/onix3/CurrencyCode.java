@@ -34,21 +34,20 @@ import java.util.function.Consumer;
 /**
  * <h1>Currency code</h1>
  * <p>
- * An ONIX code identifying the currency in which all monetary amounts in an occurrence of the &lt;Price&gt; composite
- * are stated. Optional and non-repeating, but required if the currency is not the default currency for the message
- * (this default may be set in &lt;DefaultCurrencyCode&gt; – but doing so is deprecated). All ONIX messages must include
- * an explicit statement of the currency used for any prices. To avoid any possible ambiguity, it is strongly
- * recommended that the currency should be stated here for each individual price.
+ * An ISO standard code identifying the currency in which all monetary amounts in an occurrence of the &lt;Price&gt;
+ * composite are stated. Optional and non-repeating, but required if the currency is not the default currency for the
+ * message (which may be set in &lt;DefaultCurrencyCode&gt;). All ONIX messages must include an explicit statement of
+ * the currency used for any prices. To avoid any possible ambiguity, it is strongly recommended that the currency
+ * should be repeated here for each individual price.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, three letters, based on ISO 4217. Note that ISO 4217 specifies that currency codes shall be sent as
- * upper case only</td>
+ * <td>Fixed length, three letters</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>List 96</td>
+ * <td>ISO 4217 currency codes List 96</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -76,7 +75,11 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link ComparisonProductPrice} ⯈ {@link CurrencyCode}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link ComparisonProductPrice} ⯈
+ * {@link CurrencyCode}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
  * {@link CurrencyCode}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link CurrencyCode}</li>
  * </ul>

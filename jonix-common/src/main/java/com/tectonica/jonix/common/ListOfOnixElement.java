@@ -55,7 +55,7 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
 
     /**
      * @return an {@link Optional} of the first {@link OnixElement} listed, if any. Since {@link OnixElement} contains a
-     *     {@code value} and some (less-interesting) attributes, a more typical API is {@link #firstValue()}.
+     *         {@code value} and some (less-interesting) attributes, a more typical API is {@link #firstValue()}.
      */
     public Optional<E> first() {
         return (size() == 0) ? Optional.empty() : Optional.of(get(0));

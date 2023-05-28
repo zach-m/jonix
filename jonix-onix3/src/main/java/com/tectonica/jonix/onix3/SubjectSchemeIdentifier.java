@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Subject scheme identifier</h1>
  * <p>
- * An ONIX code which identifies the category or subject heading scheme which is used in an occurrence of the
- * &lt;Subject&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.
+ * An ONIX code which identifies the category scheme which is used in an occurrence of the &lt;Subject&gt; composite.
+ * Mandatory in each occurrence of the composite, and non-repeating.
  * </p>
  * <p>
  * For category schemes that use code values, use the associated &lt;SubjectCode&gt; element to carry the value (if so

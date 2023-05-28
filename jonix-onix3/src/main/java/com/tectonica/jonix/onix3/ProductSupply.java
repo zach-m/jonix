@@ -34,17 +34,11 @@ import java.util.function.Consumer;
 /**
  * <h1>Product supply composite</h1>
  * <p>
- * The product supply block covers data Groups P.24 to P.26, specifying a market, the publishing status and
- * representation detail of the product in that market, and the supply arrangements for the product in that market. The
- * &lt;ProductSupply&gt; composite is repeatable within the block to describe multiple markets. At least one occurrence
- * is expected in a &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the
- * record is a partial update notice which carries only those blocks in which changes have occurred.
- * </p>
- * <p>
- * Note that for many products with simple supply arrangements and a single market, many details of that market are
- * ‘inherited’ from Block&nbsp;4 and need not be repeated.
- * </p>
- * <p>
+ * The product supply block covers data Groups P.24 to P.26, specifying a market, the publishing status of the product
+ * in that market, and the supply arrangements for the product in that market. The block is repeatable to describe
+ * multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the &lt;NotificationType&gt;
+ * in Group&nbsp;P.1 indicates that the record is a partial update notice which carries only those blocks in which
+ * changes have occurred.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -127,9 +121,9 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
             switch (name) {
-                case MarketReference.refname:
-                case MarketReference.shortname:
-                    marketReference = new MarketReference(e);
+                case SupplyDetail.refname:
+                case SupplyDetail.shortname:
+                    supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
                     break;
                 case MarketPublishingDetail.refname:
                 case MarketPublishingDetail.shortname:
@@ -138,10 +132,6 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
                 case Market.refname:
                 case Market.shortname:
                     markets = JPU.addToList(markets, new Market(e));
-                    break;
-                case SupplyDetail.refname:
-                case SupplyDetail.shortname:
-                    supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
                     break;
                 default:
                     break;
@@ -172,29 +162,19 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
     // MEMBERS
     /////////////////////////////////////////////////////////////////////////////////
 
-    private MarketReference marketReference = MarketReference.EMPTY;
+    private ListOfOnixComposite<SupplyDetail> supplyDetails = JPU.emptyListOfOnixComposite(SupplyDetail.class);
 
     /**
      * <p>
-     * For every market, a single market reference which will uniquely identify the &lt;ProductSupply&gt; composite
-     * which describes the market within this Product record, and which will remain as its permanent identifier every
-     * time you send an update.
+     * A group of data elements which together give details of a supply source, and price and availability from that
+     * source. Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to give details of
+     * multiple supply sources.
      * </p>
-     * <p>
-     * The Market reference is optional and non-repeating, but it is strongly recommended unless there is only a single
-     * market. It is intended to be used to label each repeat of &lt;ProductSupply&gt; for use in subsequent partial
-     * updates and reporting.
-     * </p>
-     * <p>
-     * Note that the scope of the Market reference is limited to a single Product record –&nbsp;a geographically
-     * identical market for a different product may have a different Market reference, and a geographically different
-     * market in another Product record may use the same reference.
-     * </p>
-     * Jonix-Comment: this field is optional
+     * Jonix-Comment: this list is required to contain at least one item
      */
-    public MarketReference marketReference() {
+    public ListOfOnixComposite<SupplyDetail> supplyDetails() {
         _initialize();
-        return marketReference;
+        return supplyDetails;
     }
 
     private MarketPublishingDetail marketPublishingDetail = MarketPublishingDetail.EMPTY;
@@ -231,26 +211,5 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
     public ListOfOnixComposite<Market> markets() {
         _initialize();
         return markets;
-    }
-
-    private ListOfOnixComposite<SupplyDetail> supplyDetails = JPU.emptyListOfOnixComposite(SupplyDetail.class);
-
-    /**
-     * <p>
-     * A group of data elements which together give details of a supply source, and price and availability from that
-     * source. Mandatory in each ordinary occurrence of the &lt;ProductSupply&gt; block, and repeatable to give details
-     * of multiple supply sources.
-     * </p>
-     * <p>
-     * Exceptionally, &lt;SupplyDetail&gt; may be omitted only within a partial or ‘block update’ (Notification or
-     * update type 04, see P.1.2) where a &lt;MarketReference&gt; is supplied, when the intention is to remove all
-     * previously-supplied Supply details for the referenced market (for example when one market is being merged into
-     * another).
-     * </p>
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixComposite<SupplyDetail> supplyDetails() {
-        _initialize();
-        return supplyDetails;
     }
 }

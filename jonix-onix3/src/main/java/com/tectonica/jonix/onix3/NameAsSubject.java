@@ -21,13 +21,14 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixComposite;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
 import com.tectonica.jonix.common.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixNameIdentifier;
+import com.tectonica.jonix.common.struct.JonixProfessionalAffiliation;
 import com.tectonica.jonix.common.struct.JonixSubjectDate;
 
 import java.io.Serializable;
@@ -53,10 +54,6 @@ import java.util.function.Consumer;
  * &lt;NameIdentifier&gt; composite; <em>or</em></li>
  * <li>an occurrence of the &lt;NameIdentifier&gt; composite without any accompanying name element(s).</li>
  * </ul>
- * <p>
- * The name of a person (not of a corporation) may optionally be followed by details of that person’s professional
- * affiliation.
- * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Reference name</td>
@@ -148,13 +145,13 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
                 case KeyNames.shortname:
                     keyNames = new KeyNames(e);
                     break;
+                case CorporateName.refname:
+                case CorporateName.shortname:
+                    corporateName = new CorporateName(e);
+                    break;
                 case NameIdentifier.refname:
                 case NameIdentifier.shortname:
                     nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
-                    break;
-                case CorporateName.refname:
-                case CorporateName.shortname:
-                    corporateNames = JPU.addToList(corporateNames, new CorporateName(e));
                     break;
                 case NameType.refname:
                 case NameType.shortname:
@@ -192,9 +189,13 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
                 case TitlesAfterNames.shortname:
                     titlesAfterNames = new TitlesAfterNames(e);
                     break;
+                case Gender.refname:
+                case Gender.shortname:
+                    gender = new Gender(e);
+                    break;
                 case CorporateNameInverted.refname:
                 case CorporateNameInverted.shortname:
-                    corporateNameInverteds = JPU.addToList(corporateNameInverteds, new CorporateNameInverted(e));
+                    corporateNameInverted = new CorporateNameInverted(e);
                     break;
                 case AlternativeName.refname:
                 case AlternativeName.shortname:
@@ -267,6 +268,20 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return keyNames;
     }
 
+    private CorporateName corporateName = CorporateName.EMPTY;
+
+    /**
+     * <p>
+     * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
+     * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
+     * </p>
+     * Jonix-Comment: this field is required
+     */
+    public CorporateName corporateName() {
+        _initialize();
+        return corporateName;
+    }
+
     private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers =
         JPU.emptyListOfOnixDataCompositeWithKey(NameIdentifier.class);
 
@@ -278,30 +293,12 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return nameIdentifiers;
     }
 
-    private ListOfOnixElement<CorporateName, String> corporateNames = ListOfOnixElement.empty();
-
-    /**
-     * <p>
-     * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in
-     * normal order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel
-     * names for a single organization in multiple languages (<i>eg</i> ‘World Health Organization’ and
-     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional
-     * for a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
-     * repeated.
-     * </p>
-     * Jonix-Comment: this list is required to contain at least one item
-     */
-    public ListOfOnixElement<CorporateName, String> corporateNames() {
-        _initialize();
-        return corporateNames;
-    }
-
     private NameType nameType = NameType.EMPTY;
 
     /**
      * <p>
      * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
-     * ‘unspecified’ (<i>ie</i> the name as it is presented on the book).
+     * ‘unspecified’.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -426,22 +423,34 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return titlesAfterNames;
     }
 
-    private ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds = ListOfOnixElement.empty();
+    private Gender gender = Gender.EMPTY;
+
+    /**
+     * <p>
+     * An optional ONIX code specifying the gender of a personal contributor. Not repeatable. Note that this indicates
+     * the gender of the contributor’s public identity (which may be pseudonymous) based on designations used in ISO
+     * 5218, rather than the gender identity, biological sex or sexuality of a natural person.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public Gender gender() {
+        _initialize();
+        return gender;
+    }
+
+    private CorporateNameInverted corporateNameInverted = CorporateNameInverted.EMPTY;
 
     /**
      * <p>
      * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with
-     * the element used for alphabetical sorting placed first. Optional: see Group&nbsp;P.7 introductory text for valid
-     * options. Repeatable, to provide parallel names for a single organization in multiple languages (<i>eg</i> ‘Polar
-     * Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The <i>language</i>
-     * attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but must be included in each
-     * instance if &lt;CorporateNameInverted&gt; is repeated.
+     * the element used for alphabetical sorting placed first. Optional and non-repeating: see Group&nbsp;P.7
+     * introductory text for valid options.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * Jonix-Comment: this field is optional
      */
-    public ListOfOnixElement<CorporateNameInverted, String> corporateNameInverteds() {
+    public CorporateNameInverted corporateNameInverted() {
         _initialize();
-        return corporateNameInverteds;
+        return corporateNameInverted;
     }
 
     private ListOfOnixComposite<AlternativeName> alternativeNames = JPU.emptyListOfOnixComposite(AlternativeName.class);
@@ -474,8 +483,8 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
         return subjectDates;
     }
 
-    private ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations =
-        JPU.emptyListOfOnixComposite(ProfessionalAffiliation.class);
+    private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations =
+        JPU.emptyListOfOnixDataComposite(ProfessionalAffiliation.class);
 
     /**
      * <p>
@@ -484,7 +493,7 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations() {
+    public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations() {
         _initialize();
         return professionalAffiliations;
     }

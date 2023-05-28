@@ -34,20 +34,20 @@ import java.util.function.Consumer;
 /**
  * <h1>Countries excluded</h1>
  * <p>
- * One or more ONIX codes identifying countries excluded from the territory. Successive codes must be separated by
- * spaces. Optional and non-repeating, and can only occur if the &lt;RegionsIncluded&gt; element is also present and
- * includes a supra-national region code (such as ‘WORLD’).
+ * One or more ISO standard codes identifying countries excluded from the territory. Successive codes must be separated
+ * by spaces. Optional and non-repeating, and can only occur if the &lt;RegionsIncluded&gt; element is also present and
+ * includes a supra-national region code (such as ‘World’).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>One or more fixed-length codes based on ISO 3166-1, each consisting of two upper case letters, and with
- * successive codes being separated by spaces. Suggested maximum length 750 characters. Note that ISO 3166-1 specifies
- * that country codes shall be sent as upper case only</td>
+ * <td>One or more fixed-length codes, each consisting of two upper case letters, and with successive codes being
+ * separated by spaces. Suggested maximum length 750 characters. Note that ISO 3166-1 specifies that country codes shall
+ * be sent as upper case only</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>List 91</td>
+ * <td>ISO 3166-1 two-letter country codes List 91</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -78,6 +78,8 @@ import java.util.function.Consumer;
  * {@link CountriesExcluded}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link Territory} ⯈
  * {@link CountriesExcluded}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link SupportingResource} ⯈
+ * {@link Territory} ⯈ {@link CountriesExcluded}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link CountriesExcluded}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
@@ -91,6 +93,8 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈ {@link Territory} ⯈
  * {@link CountriesExcluded}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link Territory} ⯈ {@link CountriesExcluded}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link Territory} ⯈ {@link CountriesExcluded}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Territory} ⯈
  * {@link CountriesExcluded}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link Territory} ⯈

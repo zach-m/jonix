@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Price type code</h1>
  * <p>
  * An ONIX code indicating the type of the price in the &lt;PriceAmount&gt; field within the &lt;Price&gt; composite.
- * Mandatory unless a &lt;DefaultPriceType&gt; has been specified in the message header, and non-repeating.
+ * Optional, provided that a &lt;DefaultPriceType&gt; has been specified in the message header, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -72,7 +72,11 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link ComparisonProductPrice} ⯈ {@link PriceType}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link ComparisonProductPrice} ⯈
+ * {@link PriceType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
  * {@link PriceType}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceType}</li>
  * </ul>

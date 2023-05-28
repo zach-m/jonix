@@ -31,11 +31,10 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Product contact fax number</h1>
+ * <h1>Agent fax number</h1>
  * <p>
- * A fax number for the contact person in the product contact organization who is responsible for the product, wherever
- * possible including the plus sign and the international dialing code. Optional, and repeatable to provide multiple
- * numbers for the same contact.
+ * A fax number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of
+ * providing contact details in the &lt;ProductContact&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -56,33 +55,28 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;FaxNumber&gt;+44 20 7946 0921&lt;/FaxNumber&gt;</tt></td>
+ * <td><tt>&lt;FaxNumber&gt;+44 20 8843 8744&lt;/FaxNumber&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link SupplyContact}&gt;</li>
  * <li>&lt;{@link NewSupplier}&gt;</li>
- * <li>&lt;{@link ProductContact}&gt;</li>
  * <li>&lt;{@link Supplier}&gt;</li>
  * <li>&lt;{@link PublisherRepresentative}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈ {@link FaxNumber}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link FaxNumber}</li>
- * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈ {@link FaxNumber}</li>
- * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link ProductContact} ⯈
- * {@link FaxNumber}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈ {@link FaxNumber}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link PublisherRepresentative} ⯈
  * {@link FaxNumber}</li>
  * </ul>
  *
- * @since Onix-3.10
+ * @deprecated
  */
+@Deprecated
 public class FaxNumber implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 

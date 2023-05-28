@@ -56,7 +56,7 @@ import java.util.function.Consumer;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link NewSupplier}&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
  * <li>&lt;{@link Supplier}&gt;</li>
  * <li>&lt;{@link Publisher}&gt;</li>
  * <li>&lt;{@link Event}&gt;</li>
@@ -68,9 +68,8 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link Website}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link Website}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈ {@link Website}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈ {@link Website}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Website}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link Website}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈

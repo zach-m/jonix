@@ -44,7 +44,7 @@ public class JonixProductContactIdentifier implements JonixKeyedStruct<NameIdent
     public NameIdentifierTypes productContactIDType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum 100 characters
+     * Raw Format: Variable length text, suggested maximum 50 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

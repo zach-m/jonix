@@ -220,7 +220,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A telephone number of the contact person in the addressee organization, wherever possible including the plus sign
-     * and the international dialing code. Optional, and non-repeating.
+     * and the international dialling code. Optional, and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -233,7 +233,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A text field giving the e‑mail address for a contact person in the addressee organization. Optional and
+     * A text field giving the e-mail address for a contact person in the addressee organization. Optional and
      * non-repeating.
      * </p>
      * Jonix-Comment: this field is optional

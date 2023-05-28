@@ -43,14 +43,8 @@ import java.util.function.Consumer;
  * <h1>Supply detail composite</h1>
  * <p>
  * A group of data elements which together give details of a supply source, and price and availability from that source.
- * Mandatory in each ordinary occurrence of the &lt;ProductSupply&gt; block, and repeatable to give details of multiple
- * supply sources.
- * </p>
- * <p>
- * Exceptionally, &lt;SupplyDetail&gt; may be omitted only within a partial or ‘block update’ (Notification or update
- * type 04, see P.1.2) where a &lt;MarketReference&gt; is supplied, when the intention is to remove all
- * previously-supplied Supply details for the referenced market (for example when one market is being merged into
- * another).
+ * Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to give details of multiple supply
+ * sources.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -63,7 +57,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;n</td>
+ * <td>1&#8230;n</td>
  * </tr>
  * </table>
  * <p/>
@@ -165,6 +159,10 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
                 case UnpricedItemType.shortname:
                     unpricedItemType = new UnpricedItemType(e);
                     break;
+                case Reissue.refname:
+                case Reissue.shortname:
+                    reissue = new Reissue(e);
+                    break;
                 case SupplyContact.refname:
                 case SupplyContact.shortname:
                     supplyContacts = JPU.addToList(supplyContacts, new SupplyContact(e));
@@ -254,7 +252,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The expected average number of business days from receipt of order to dispatch (for items ‘manufactured on
+     * The expected average number of business days from receipt of order to despatch (for items ‘manufactured on
      * demand’ or ‘only to order’). Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
@@ -345,6 +343,45 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     public UnpricedItemType unpricedItemType() {
         _initialize();
         return unpricedItemType;
+    }
+
+    private Reissue reissue = Reissue.EMPTY;
+
+    /**
+     * <p>
+     * An optional and non-repeating group of data elements which together specify that a product is to be reissued
+     * within the market to which the &lt;SupplyDetail&gt; composite applies.
+     * </p>
+     * <p>
+     * The entire &lt;Reissue&gt; composite is deprecated. Suppliers should supply information about planned reissues in
+     * other parts of the Product record – the date of a planned reissue in &lt;PublishingDate&gt; and/or in
+     * &lt;MarketDate&gt;, and new collateral material alongside old collateral in
+     * <a href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral items may be associated with
+     * appropriate end and start dates using &lt;ContentDate&gt;.
+     * </p>
+     * <p>
+     * The &lt;Reissue&gt; composite was (prior to deprecation) used only when the publisher intended to re-launch the
+     * product under the same ISBN. There are two possible cases:
+     * </p>
+     * <ol>
+     * <li>When the product is unavailable during the period immediately before reissue. In this case,
+     * &lt;ProductAvailability&gt; should carry the value 33 for ‘unavailable, awaiting reissue’, and the ONIX record
+     * can be updated to describe the reissued product as soon as details can be made available;</li>
+     * <li>When the product is still available during the period up to the reissue date. In this case, the ONIX record
+     * should continue to describe the existing product and the &lt;ProductAvailability&gt; value should continue to
+     * record the product as ‘available’ (<i>eg</i> code 21) right up to the reissue date. At that date, the record
+     * should be updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining
+     * unchanged.</li>
+     * </ol>
+     * <p>
+     * After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record, carrying
+     * only the &lt;ReissueDate&gt; element, which will then indicate ‘date last reissued’.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public Reissue reissue() {
+        _initialize();
+        return reissue;
     }
 
     private ListOfOnixComposite<SupplyContact> supplyContacts = JPU.emptyListOfOnixComposite(SupplyContact.class);

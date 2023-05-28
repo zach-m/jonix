@@ -45,19 +45,14 @@ import java.util.function.Consumer;
  * <p>
  * A product is described by a group of data elements beginning with an XML label &lt;Product&gt; and ending with an XML
  * label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two labels constitutes an
- * ONIX Product record. The Product record is the fundamental unit within an ONIX Product Information message. In almost
- * every case, each Product record describes an individually tradable item; and in all circumstances, each tradable item
- * identified by a recognized product identifier should be described by one, and only one, ONIX Product record.
+ * ONIX product record. The product record is the fundamental unit within an ONIX Product Information message. In almost
+ * every case, each product record describes an individually tradable item; and in all circumstances, each tradable item
+ * identified by a recognized product identifier should be described by one, and only one, ONIX product record.
  * </p>
  * <p>
- * In ONIX&nbsp;3.0<ins datetime="2023-03-06">and later</ins>, a Product record has a mandatory ‘preamble’ comprising
- * data Groups P.1 and P.2, and carrying data that identifies the record and the product to which it refers. This is
- * followed by up to eight ‘blocks’, each of which is optional. Of these blocks, Blocks 1 to 5, plus 7 and 8 are not
- * repeatable. Block 6 <em>appears</em> to be repeatable, but it is often more useful to think of a singular Block 6
- * comprising all repeats of its contained &lt;ProductSupply&gt; composites. In special circumstances – with partial
- * (‘Block’) updates and only when &lt;MarketReference&gt; is used to label each individual &lt;ProductSupply&gt;
- * composite – Block&nbsp;6 can be thought of as a truly repeatable block, each repeat consisting of a single
- * &lt;ProductSupply&gt; composite.
+ * In ONIX&nbsp;3.0, a &lt;Product&gt; record has a mandatory ‘preamble’ comprising data Groups P.1 and P.2, and
+ * carrying data that identifies the record and the product to which it refers. This is followed by up to seven
+ * ‘blocks’, each optional, some of which are repeatable.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -257,13 +252,12 @@ public class Product implements OnixProduct, Serializable {
      * which you send out about that product, and which will remain as its permanent identifier every time you send an
      * update. It doesn’t matter what reference you choose, provided that it is unique and permanent. This record
      * reference doesn’t identify the <em>product</em> – even though you may choose to use the ISBN or another product
-     * identifier as a part of your record reference – it identifies <em>your information record about the product</em>,
-     * so that the person to whom you are sending an update can match it with what you have previously sent. It is not
-     * recommended to use a product identifier as the whole of the record reference. A good way of generating references
-     * which are not part of a recognized product identification scheme but which can be guaranteed to be unique is to
-     * prefix a product identifier or a meaningless row ID from your internal database with a reversed Internet domain
-     * name which is registered to your organization (reversal prevents the record reference appearing to be a
-     * resolvable URL). Alternatively, use a UUID.
+     * identifier as a part or the whole of your record reference – it identifies <em>your information record about the
+     * product</em>, so that the person to whom you are sending an update can match it with what you have previously
+     * sent. A good way of generating references which are not part of a recognized product identification scheme but
+     * which can be guaranteed to be unique is to prefix a product identifier or a meaningless row ID from your internal
+     * database with a reversed Internet domain name which is registered to your organization (reversal prevents the
+     * record reference appearing to be a resolvable URL). Alternatively, use a UUID.
      * </p>
      * <p>
      * This field is mandatory and non-repeating.
@@ -300,17 +294,16 @@ public class Product implements OnixProduct, Serializable {
      * or vendors) to be sent as part of the ONIX record.
      * </p>
      * <p>
-     * ISBN-13 numbers in their unhyphenated form constitute a range of&nbsp;GTIN-13 numbers that has been reserved for
-     * the international book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should
-     * be <em>mandatory</em> in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13
-     * labelled as a GTIN-13 number (<i>ie</i> as &lt;ProductIDType&gt; code 03), since this is how the ISBN-13 will be
-     * used in book trade transactions. For many ONIX applications this will also be sufficient.
+     * ISBN-13 numbers in their unhyphenated form constitute a range of EAN.UCC&nbsp;GTIN-13 numbers that has been
+     * reserved for the international book trade. Effective from 1 January 2007, it was agreed by ONIX national groups
+     * that it should be <em>mandatory</em> in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to
+     * include the ISBN-13 labelled as an EAN.UCC GTIN-13 number (ProductIDType code 03), since this is how the ISBN-13
+     * will be used in book trade transactions. For many ONIX applications this will also be sufficient.
      * </p>
      * <p>
      * For some ONIX applications, however, particularly when data is to be supplied to the library sector, there may be
-     * reasons why the ISBN-13 must <em>also</em> be sent labelled distinctively as an ISBN-13 (<i>ie</i> as
-     * &lt;ProductIDType&gt; code 15). Users should consult ‘good practice’ guidelines and/or discuss with their trading
-     * partners.
+     * reasons why the ISBN-13 must <em>also</em> be sent labelled distinctively as an ISBN-13 (ProductIDType code 15).
+     * Users should consult ‘good practice’ guidelines and/or discuss with their trading partners.
      * </p>
      * <p>
      * Note that for some identifiers such as ISBN, punctuation (typically hyphens or spaces for ISBNs) is used to
@@ -473,7 +466,7 @@ public class Product implements OnixProduct, Serializable {
      * The Production detail block comprises the single data Group P.28. The block as a whole is non-repeating. It is
      * optional within the &lt;Product&gt; record, and is used only when there is a requirement to communicate
      * specification and file manifest detail relating to intermediary services within the supply chain, for example
-     * manufacturing on demand, e‑book conversion services or distribution of digital audio. It is not expected to be
+     * manufacturing on demand, e-book conversion services or distribution of digital audio. It is not expected to be
      * present in most ONIX messages – though recipients not requiring the data should be able to ignore the entire
      * block if it is supplied.
      * </p>
@@ -499,11 +492,6 @@ public class Product implements OnixProduct, Serializable {
      * &lt;DeletionText&gt; is repeated. Note that it refers to the reason why the <em>record</em> is being deleted, not
      * the reason why a <em>product</em> has been ‘deleted’ (in industries which use this terminology when a product is
      * withdrawn).
-     * </p>
-     * <p>
-     * A product cancellation or abandonment prior to publication, or a product becoming unavailable (<i>eg</i> as a
-     * result of being Out of print) are changes of &lt;PublishingStatus&gt; or of &lt;ProductAvailability&gt;, not
-     * reasons for deletion.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -548,18 +536,11 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * The product supply block covers data Groups P.24 to P.26, specifying a market, the publishing status and
-     * representation detail of the product in that market, and the supply arrangements for the product in that market.
-     * The &lt;ProductSupply&gt; composite is repeatable within the block to describe multiple markets. At least one
-     * occurrence is expected in a &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1
-     * indicates that the record is a partial update notice which carries only those blocks in which changes have
-     * occurred.
-     * </p>
-     * <p>
-     * Note that for many products with simple supply arrangements and a single market, many details of that market are
-     * ‘inherited’ from Block&nbsp;4 and need not be repeated.
-     * </p>
-     * <p>
+     * The product supply block covers data Groups P.24 to P.26, specifying a market, the publishing status of the
+     * product in that market, and the supply arrangements for the product in that market. The block is repeatable to
+     * describe multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the
+     * &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a partial update notice which carries
+     * only those blocks in which changes have occurred.
      * </p>
      * Jonix-Comment: this list may be empty
      */

@@ -44,7 +44,7 @@ import java.util.function.Consumer;
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML, XML, JSON within ONIX text fields</td>
+ * XHTML, HTML or XML with ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -75,11 +75,9 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link Website} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link Website} ⯈
  * {@link WebsiteDescription}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈ {@link Website} ⯈
- * {@link WebsiteDescription}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
  * {@link WebsiteDescription}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
  * {@link WebsiteDescription}</li>
@@ -135,7 +133,7 @@ public class WebsiteDescription implements OnixElement<String>, Serializable {
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML, XML, JSON within ONIX text fields
+     * Using XHTML, HTML or XML with ONIX text fields
      * <p>
      * (type: XHTML)
      */

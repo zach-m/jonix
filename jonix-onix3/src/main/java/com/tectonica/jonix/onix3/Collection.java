@@ -40,13 +40,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Collection composite</h1>
  * <p>
- * An optional group of data elements which carry attributes of a collection of which the product is part. (For a
- * publisher collection, these attributes may or may not include the collection title.) The composite is repeatable, to
- * provide details when the product belongs to multiple collections.
- * </p>
- * <p>
- * Collection-related data elements within a &lt;Collection&gt; composite that does not carry collection title
- * information must relate to a publisher collection whose title is included in Group&nbsp;P.6.
+ * An optional group of data elements which carry attributes of a collection of which the product is part. The composite
+ * is repeatable, to provide details when the product belongs to multiple collections.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -137,10 +132,6 @@ public class Collection implements OnixSuperComposite, Serializable {
                 case Contributor.shortname:
                     contributors = JPU.addToList(contributors, new Contributor(e));
                     break;
-                case CollectionFrequency.refname:
-                case CollectionFrequency.shortname:
-                    collectionFrequency = new CollectionFrequency(e);
-                    break;
                 case SourceName.refname:
                 case SourceName.shortname:
                     sourceName = new SourceName(e);
@@ -214,29 +205,15 @@ public class Collection implements OnixSuperComposite, Serializable {
      * <p>
      * A group of data elements which together describe a personal or corporate contributor to a collection. Optional,
      * and repeatable to describe multiple contributors. <strong>The &lt;Contributor&gt; composite is included here for
-     * use only by those ONIX communities whose national practice requires contributors to the collection as a whole
-     * (<i>eg</i> Series editors) to be identified at collection level. In many countries, including the UK, USA, Canada
-     * and Spain, the required practice is to identify all contributors at product level in Group&nbsp;P.7.</strong>
+     * use only by those ONIX communities whose national practice requires contributors to be identified at collection
+     * level. In many countries, including the UK, USA, Canada and Spain, the required practice is to identify all
+     * contributors at product level in Group&nbsp;P.7.</strong>
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
         return contributors;
-    }
-
-    private CollectionFrequency collectionFrequency = CollectionFrequency.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code specifying the approximate or expected publication frequency for addition of new products to the
-     * collection. Optional, and non-repeating.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public CollectionFrequency collectionFrequency() {
-        _initialize();
-        return collectionFrequency;
     }
 
     private SourceName sourceName = SourceName.EMPTY;
@@ -263,8 +240,8 @@ public class Collection implements OnixSuperComposite, Serializable {
      * </p>
      * <p>
      * <strong>The &lt;NoContributor/&gt; element is provided here for use only by those ONIX communities whose national
-     * practice requires contributors to the collection to be identified at collection level.</strong> It should not be
-     * sent in a context where collection contributors are normally identified in Group&nbsp;P.6.
+     * practice requires contributors to be identified at collection level.</strong> It should not be sent in a context
+     * where collection contributors are normally identified in Group&nbsp;P.6.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -345,8 +322,8 @@ public class Collection implements OnixSuperComposite, Serializable {
      * </p>
      * <p>
      * <strong>The &lt;ContributorStatement&gt; element is provided here for use only by those ONIX communities whose
-     * national practice requires contributors to the collection to be identified at collection level.</strong> It
-     * should not be sent in a context where collection contributors are normally identified in Group&nbsp;P.6.
+     * national practice requires contributors to be identified at collection level.</strong> It should not be sent in a
+     * context where collection contributors are normally identified in Group&nbsp;P.6.
      * </p>
      * Jonix-Comment: this list may be empty
      */

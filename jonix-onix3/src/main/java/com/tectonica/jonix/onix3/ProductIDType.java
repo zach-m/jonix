@@ -82,12 +82,18 @@ import java.util.function.Consumer;
  * {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link ProductIdentifier} ⯈
  * {@link ProductIDType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈ {@link Tax} ⯈
+ * {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Tax} ⯈
  * {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link ComparisonProductPrice} ⯈
  * {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link ProductIdentifier} ⯈
  * {@link ProductIDType}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link PriceCondition} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition} ⯈
  * {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>
  * </ul>

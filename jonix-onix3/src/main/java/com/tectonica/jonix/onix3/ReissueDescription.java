@@ -23,6 +23,7 @@ import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextFormats;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -32,61 +33,57 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Text source link</h1>
+ * <h1>Reissue description</h1>
  * <p>
- * A URL which provides a link to a full text accessible in digital form, from which the supporting text in &lt;Text&gt;
- * is an extract. Use, for example, to link to an original review. Optional, and repeatable if the resource can be
- * linked in more than one way, <i>eg</i> by URL or DOI, or where a linked full text is available in multiple parallel
- * languages. Where multiple languages are used, all repeats must carry the <i>language</i> attribute.
+ * Text explaining the nature of the reissue. Optional and non-repeating. Deprecated.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum length
- * 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters should be
- * 'URL-encoded'. Any ampersand used to separate parameters in the URL must be expressed as &amp;amp;</td>
+ * <td>Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;TextSourceLink&gt;</tt></td>
+ * <td><tt>&lt;ReissueDescription&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;x581&gt;</tt></td>
+ * <td><tt>&lt;j366&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;n</td>
+ * <td>0&#8230;1</td>
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language</td>
+ * <td>language, textformat</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x581&gt;https://www.nytimes.com/archives/2012-08-04/Berni%e8res.htm&lt;/x581&gt;</tt> (note URL-encoding
- * of &#232;)</td>
+ * <td><tt>&lt;j366&gt;Timed to coincide 'day and date' with theatrical release of film.&lt;/j366&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link TextContent}&gt;</li>
+ * <li>&lt;{@link Reissue}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSourceLink}</li>
- * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSourceLink}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈
+ * {@link ReissueDescription}</li>
  * </ul>
  *
- * @since Onix-3.10
+ * @deprecated
  */
-public class TextSourceLink implements OnixElement<String>, Serializable {
+@Deprecated
+public class ReissueDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "TextSourceLink";
-    public static final String shortname = "x581";
+    public static final String refname = "ReissueDescription";
+    public static final String shortname = "j366";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -106,19 +103,20 @@ public class TextSourceLink implements OnixElement<String>, Serializable {
 
     public Languages language;
 
+    public TextFormats textformat;
+
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of TextSourceLink. Could be null if {@code exists() == false}. Use {@link #value()}
+     * This is the raw content of ReissueDescription. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
-     * maximum length 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters
-     * should be 'URL-encoded'. Any ampersand used to separate parameters in the URL must be expressed as &amp;amp;
+     * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML or XML with ONIX text fields
      * <p>
-     * (type: dt.NonEmptyURI)
+     * (type: XHTML)
      */
     public String value;
 
@@ -135,31 +133,32 @@ public class TextSourceLink implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final TextSourceLink EMPTY = new TextSourceLink();
+    public static final ReissueDescription EMPTY = new ReissueDescription();
 
-    public TextSourceLink() {
+    public ReissueDescription() {
         exists = false;
     }
 
-    public TextSourceLink(org.w3c.dom.Element element) {
+    public ReissueDescription(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
-        value = JPU.getContentAsString(element);
+        value = JPU.getChildXHTML(element, true);
     }
 
     /**
-     * @return whether this tag (&lt;TextSourceLink&gt; or &lt;x581&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;ReissueDescription&gt; or &lt;j366&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<TextSourceLink> action) {
+    public void ifExists(Consumer<ReissueDescription> action) {
         if (exists) {
             action.accept(this);
         }

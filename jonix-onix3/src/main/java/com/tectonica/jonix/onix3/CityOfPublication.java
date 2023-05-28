@@ -39,9 +39,6 @@ import java.util.function.Consumer;
  * publication.
  * </p>
  * <p>
- * Where necessary to avoid ambiguity, a state, province or region may be included – for example ‘Springfield,&nbsp;IL’.
- * </p>
- * <p>
  * A place of publication is normally given in the form in which it appears on the title page. If the place name appears
  * in more than one language, &lt;CityOfPublication&gt; may be repeated. The <i>language</i> attribute is optional with
  * a single instance of &lt;CityOfPublication&gt;, but must be included in each instance if &lt;CityOfPublication&gt; is

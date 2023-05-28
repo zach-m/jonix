@@ -40,7 +40,7 @@ public class JonixTitleElement implements JonixStruct, Serializable {
     /**
      * Raw Format: Positive integer, 1, 2, 3 etc, suggested maximum length 3 digits
      * <p>
-     * (type: dt.PositiveInteger)
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer sequenceNumber;
 

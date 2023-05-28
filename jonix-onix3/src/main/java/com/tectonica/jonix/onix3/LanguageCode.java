@@ -34,18 +34,17 @@ import java.util.function.Consumer;
 /**
  * <h1>Language code</h1>
  * <p>
- * An ONIX code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
- * non-repeating.
+ * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, three lower-case letters, based on ISO 639-2/B. Note that ISO 639 specifies that these codes should
- * always be in lower-case</td>
+ * <td>Fixed length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
+ * lower-case</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>List 74</td>
+ * <td>ISO 639-2/B List 74</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>

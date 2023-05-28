@@ -48,7 +48,7 @@ public class JonixOnOrderDetail implements JonixStruct, Serializable {
     /**
      * Raw Format: Positive integer or zero, suggested maximum length 7 digits
      * <p>
-     * (type: dt.PositiveIntegerOrZero)
+     * (type: dt.PositiveInteger)
      */
     public Integer onOrder;
 }

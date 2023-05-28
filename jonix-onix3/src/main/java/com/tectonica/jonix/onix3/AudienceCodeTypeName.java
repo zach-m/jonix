@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Audience code type name</h1>
  * <p>
- * A name which identifies a proprietary audience scheme when the code in &lt;AudienceCodeType&gt; indicates a
- * proprietary scheme, <i>eg</i> a vendor’s own coding scheme. Optional and non-repeating.
+ * A name which identifies a proprietary audience code when the code in &lt;AudienceCodeType&gt; indicates a proprietary
+ * scheme, <i>eg</i> a vendor’s own code. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -57,10 +57,6 @@ import java.util.function.Consumer;
  * <tr>
  * <td>Attributes</td>
  * <td>language</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td><tt>&lt;b205&gt;Fortnightly Books target selector&lt;/b205&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

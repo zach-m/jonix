@@ -178,9 +178,9 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of data elements which together carry a supporting text related to the product, repeatable in
-     * order to deliver multiple texts (often of different types, though for some text types there many be multiple
-     * instances of that type).
+     * An optional group of data elements which together carry text related to the product, repeatable in order to
+     * deliver multiple texts (often of different types, though for some text types there many be multiple instances of
+     * that type).
      * </p>
      * Jonix-Comment: this list may be empty
      */

@@ -35,13 +35,10 @@ import java.util.function.Consumer;
  * <h1>Product form code</h1>
  * <p>
  * An ONIX code which indicates the primary form of a product. Mandatory in an occurrence of &lt;DescriptiveDetail&gt;,
- * and non-repeating.
- * </p>
- * <p>
- * Note that in ONIX&nbsp;3.0 and later, the handling of multiple-item and multi-component products requires that the
- * form of the contained items or components is specified only in the &lt;ProductPart&gt; composite (equivalent to
- * &lt;Contained Item&gt; in earlier releases of ONIX). &lt;ProductPart&gt; forms Group&nbsp;P.4 and <em>must</em> be
- * included for full description of any multiple-item or multi-component product.
+ * and non-repeating. In ONIX&nbsp;3.0, the handling of multiple-item products has been changed so that the form of the
+ * contained items is now specified only in the &lt;ProductPart&gt; composite (equivalent to &lt;Contained Item&gt; in
+ * ONIX&nbsp;2.1, and now forming Group&nbsp;P.4), which <em>must</em> be included for full description of any
+ * multiple-item product.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

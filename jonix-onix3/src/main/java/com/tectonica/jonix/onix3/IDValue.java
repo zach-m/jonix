@@ -64,8 +64,8 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SupplyContactIdentifier}&gt;</li>
  * <li>&lt;{@link ResourceIdentifier}&gt;</li>
  * <li>&lt;{@link EventSponsorIdentifier}&gt;</li>
- * <li>&lt;{@link AffiliationIdentifier}&gt;</li>
  * <li>&lt;{@link FundingIdentifier}&gt;</li>
+ * <li>&lt;{@link ConferenceSponsorIdentifier}&gt;</li>
  * <li>&lt;{@link ImprintIdentifier}&gt;</li>
  * <li>&lt;{@link LocationIdentifier}&gt;</li>
  * <li>&lt;{@link PublisherIdentifier}&gt;</li>
@@ -109,26 +109,12 @@ import java.util.function.Consumer;
  * {@link EventSponsor} ⯈ {@link EventSponsorIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventSponsor} ⯈
  * {@link EventSponsorIdentifier} ⯈ {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
- * {@link AffiliationIdentifier} ⯈ {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
- * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈
- * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
- * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈ {@link ProfessionalAffiliation} ⯈
- * {@link AffiliationIdentifier} ⯈ {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
- * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈ {@link Funding} ⯈
- * {@link FundingIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Funding} ⯈ {@link FundingIdentifier} ⯈
  * {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor} ⯈
+ * {@link ConferenceSponsorIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈ {@link ImprintIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link LocationIdentifier} ⯈
- * {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈ {@link PublisherIdentifier} ⯈
  * {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link PublisherIdentifier} ⯈
  * {@link IDValue}</li>
@@ -140,6 +126,8 @@ import java.util.function.Consumer;
  * {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link CoverManifest} ⯈
  * {@link CoverResource} ⯈ {@link SalesOutlet} ⯈ {@link SalesOutletIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet} ⯈
+ * {@link SalesOutletIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet} ⯈
  * {@link SalesOutletIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet}
@@ -172,12 +160,18 @@ import java.util.function.Consumer;
  * {@link ProductIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link ProductIdentifier} ⯈
  * {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈ {@link Tax} ⯈
+ * {@link ProductIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Tax} ⯈
  * {@link ProductIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link ComparisonProductPrice} ⯈
  * {@link ProductIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link ProductIdentifier} ⯈
  * {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link PriceCondition} ⯈ {@link ProductIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition} ⯈
  * {@link ProductIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link CollectionIdentifier} ⯈
@@ -211,8 +205,6 @@ import java.util.function.Consumer;
  * {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link ProductContact} ⯈
  * {@link ProductContactIdentifier} ⯈ {@link IDValue}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement} ⯈
- * {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner} ⯈
  * {@link CopyrightOwnerIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link TextItemIdentifier} ⯈
@@ -222,6 +214,8 @@ import java.util.function.Consumer;
  * ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈ {@link SupplierIdentifier} ⯈
  * {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link PriceIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceIdentifier} ⯈
  * {@link IDValue}</li>
  * </ul>

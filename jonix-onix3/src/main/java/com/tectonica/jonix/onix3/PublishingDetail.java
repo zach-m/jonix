@@ -172,6 +172,10 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
                 case SalesRights.shortname:
                     salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
                     break;
+                case SalesRestriction.refname:
+                case SalesRestriction.shortname:
+                    salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+                    break;
                 default:
                     break;
             }
@@ -221,8 +225,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code identifying the country where the product is published (<i>ie</i> where the publisher is based).
-     * Optional and non-repeating.
+     * A code identifying the country where the product is published. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -310,10 +313,6 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * cities of publication.
      * </p>
      * <p>
-     * Where necessary to avoid ambiguity, a state, province or region may be included – for example
-     * ‘Springfield,&nbsp;IL’.
-     * </p>
-     * <p>
      * A place of publication is normally given in the form in which it appears on the title page. If the place name
      * appears in more than one language, &lt;CityOfPublication&gt; may be repeated. The <i>language</i> attribute is
      * optional with a single instance of &lt;CityOfPublication&gt;, but must be included in each instance if
@@ -332,7 +331,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * <p>
      * An optional group of data elements which together specify an organization (which may or may not be the publisher)
      * responsible for dealing with enquiries related to the product. Repeatable in order to specify multiple
-     * responsible organizations.
+     * responsible organisations.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -380,8 +379,8 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional and repeatable group of data elements which together represent a summary copyright or neighboring
-     * right statement for the product. At least one &lt;CopyrightYear&gt; or one instance of the &lt;CopyrightOwner&gt;
+     * An optional and repeatable group of data elements which together represent a copyright or neighbouring right
+     * statement for the product. At least one &lt;CopyrightYear&gt; or one instance of the &lt;CopyrightOwner&gt;
      * composite must be sent within an instance of the composite, but it is recommended that all elements in the
      * composite are explicitly populated. The Copyright statement may be repeated to provide a full structured rights
      * statement listing year(s) and rights holder(s).
@@ -400,13 +399,29 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together identify territorial sales rights which a
      * publisher chooses to exercise in a product. When specifying a territory in which the product is not for sale, the
      * publisher and product ID for an edition which is available in the specified territory can optionally be included.
-     * (In releases prior to 3.0, this functionality was provided in a &lt;NotForSale&gt; composite, which is now
-     * redundant and has been deleted.) See examples at the end of the sales rights composite.
+     * (In previous releases, this functionality was provided in a &lt;NotForSale&gt; composite, which is now redundant
+     * and has been deleted.) See examples at the end of the sales rights composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixComposite<SalesRights> salesRightss() {
         _initialize();
         return salesRightss;
+    }
+
+    private ListOfOnixComposite<SalesRestriction> salesRestrictions =
+        JPU.emptyListOfOnixComposite(SalesRestriction.class);
+
+    /**
+     * <p>
+     * A group of data elements which together identify a non-territorial sales restriction which a publisher applies to
+     * a product. Optional and repeatable, but deprecated in this context, in favor of using &lt;SalesRestriction&gt;
+     * within &lt;SalesRights&gt; (P.21.5a to P.21.5h).
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixComposite<SalesRestriction> salesRestrictions() {
+        _initialize();
+        return salesRestrictions;
     }
 }

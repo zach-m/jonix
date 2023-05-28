@@ -27,6 +27,7 @@ import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.AudienceCodeTypes;
+import com.tectonica.jonix.common.codelist.AudienceTypes;
 import com.tectonica.jonix.common.codelist.EditionTypes;
 import com.tectonica.jonix.common.codelist.EpublicationTechnicalProtections;
 import com.tectonica.jonix.common.codelist.ExtentTypes;
@@ -177,6 +178,10 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case CountryOfManufacture.shortname:
                     countryOfManufacture = new CountryOfManufacture(e);
                     break;
+                case EpubLicense.refname:
+                case EpubLicense.shortname:
+                    epubLicense = new EpubLicense(e);
+                    break;
                 case NoCollection.refname:
                 case NoCollection.shortname:
                     noCollection = new NoCollection(e);
@@ -249,10 +254,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case EpubUsageConstraint.shortname:
                     epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(e));
                     break;
-                case EpubLicenseWithDate.refname:
-                case EpubLicenseWithDate.shortname:
-                    epubLicenses = JPU.addToList(epubLicenses, new EpubLicenseWithDate(e));
-                    break;
                 case MapScale.refname:
                 case MapScale.shortname:
                     mapScales = JPU.addToList(mapScales, new MapScale(e));
@@ -276,6 +277,10 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case Event.refname:
                 case Event.shortname:
                     events = JPU.addToList(events, new Event(e));
+                    break;
+                case Conference.refname:
+                case Conference.shortname:
+                    conferences = JPU.addToList(conferences, new Conference(e));
                     break;
                 case EditionType.refname:
                 case EditionType.shortname:
@@ -308,6 +313,10 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case NameAsSubject.refname:
                 case NameAsSubject.shortname:
                     nameAsSubjects = JPU.addToList(nameAsSubjects, new NameAsSubject(e));
+                    break;
+                case AudienceCode.refname:
+                case AudienceCode.shortname:
+                    audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(e));
                     break;
                 case Audience.refname:
                 case Audience.shortname:
@@ -359,8 +368,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code which indicates whether a product consists of a single item or multiple items or components.
-     * Mandatory in an occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.
+     * An ONIX code which indicates whether a product consists of a single item or multiple items. Mandatory in an
+     * occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -374,13 +383,10 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code which indicates the primary form of a product. Mandatory in an occurrence of
-     * &lt;DescriptiveDetail&gt;, and non-repeating.
-     * </p>
-     * <p>
-     * Note that in ONIX&nbsp;3.0 and later, the handling of multiple-item and multi-component products requires that
-     * the form of the contained items or components is specified only in the &lt;ProductPart&gt; composite (equivalent
-     * to &lt;Contained Item&gt; in earlier releases of ONIX). &lt;ProductPart&gt; forms Group&nbsp;P.4 and
-     * <em>must</em> be included for full description of any multiple-item or multi-component product.
+     * &lt;DescriptiveDetail&gt;, and non-repeating. In ONIX&nbsp;3.0, the handling of multiple-item products has been
+     * changed so that the form of the contained items is now specified only in the &lt;ProductPart&gt; composite
+     * (equivalent to &lt;Contained Item&gt; in ONIX&nbsp;2.1, and now forming Group&nbsp;P.4), which <em>must</em> be
+     * included for full description of any multiple-item product.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -465,7 +471,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code identifying the country of manufacture of a single-item product, or of a multiple-item product when
+     * An ISO code identifying the country of manufacture of a single-item product, or of a multiple-item product when
      * all items are manufactured in the same country. This information is needed in some countries to meet regulatory
      * requirements. Optional and non-repeating.
      * </p>
@@ -474,6 +480,20 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     public CountryOfManufacture countryOfManufacture() {
         _initialize();
         return countryOfManufacture;
+    }
+
+    private EpubLicense epubLicense = EpubLicense.EMPTY;
+
+    /**
+     * <p>
+     * An optional and non-repeatable composite carrying the name or title of the license governing use of the product,
+     * and a link to the license terms in eye-readable or machine-readable form.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public EpubLicense epubLicense() {
+        _initialize();
+        return epubLicense;
     }
 
     private NoCollection noCollection = NoCollection.EMPTY;
@@ -564,8 +584,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The number of a numbered edition. Optional and non-repeating. Normally sent only for the second and subsequent
-     * editions, but by agreement between parties to an ONIX exchange or when a first and a subsequent edition are
-     * available at the same time, a first edition may be explicitly numbered.
+     * editions of a work, but by agreement between parties to an ONIX exchange a first edition may be explicitly
+     * numbered.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -595,7 +615,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An empty element that provides a positive indication that a product does not carry any edition information.
-     * Intended to be used in an ONIX accreditation scheme to confirm that edition information is being consistently
+     * Intended to be used an ONIX accreditation scheme to confirm that edition information is being consistently
      * supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no instances
      * of any of the four preceding Edition elements.
      * </p>
@@ -774,17 +794,6 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return epubUsageConstraints;
     }
 
-    private ListOfOnixComposite<EpubLicenseWithDate> epubLicenses =
-        JPU.emptyListOfOnixComposite(EpubLicenseWithDate.class);
-
-    /**
-     * Jonix-Comment: this list may be empty
-     */
-    public ListOfOnixComposite<EpubLicenseWithDate> epubLicenses() {
-        _initialize();
-        return epubLicenses;
-    }
-
     private ListOfOnixElement<MapScale, Integer> mapScales = ListOfOnixElement.empty();
 
     /**
@@ -828,8 +837,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * or multi-item products and packs to specify (for example) the item(s) and item quantities included in a combined
      * book plus audiobook product, a multi-volume set, a filled dumpbin, or a classroom pack. In other cases, where
      * parts are not individually identified, it is used to state the product form(s) and the quantity or quantities of
-     * each form contained within the product. The composite must be repeated for each individually-identified item or
-     * component, or for each unidentified type of item or component.
+     * each form contained within the product. The composite must be repeated for each item or component.
      * </p>
      * <p>
      * Each instance of the &lt;ProductPart&gt; composite must carry a &lt;ProductForm&gt; code and a quantity, even if
@@ -849,13 +857,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of data elements which carry attributes of a collection of which the product is part. (For a
-     * publisher collection, these attributes may or may not include the collection title.) The composite is repeatable,
-     * to provide details when the product belongs to multiple collections.
-     * </p>
-     * <p>
-     * Collection-related data elements within a &lt;Collection&gt; composite that does not carry collection title
-     * information must relate to a publisher collection whose title is included in Group&nbsp;P.6.
+     * An optional group of data elements which carry attributes of a collection of which the product is part. The
+     * composite is repeatable, to provide details when the product belongs to multiple collections.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -896,6 +899,24 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     public ListOfOnixComposite<Event> events() {
         _initialize();
         return events;
+    }
+
+    private ListOfOnixComposite<Conference> conferences = JPU.emptyListOfOnixComposite(Conference.class);
+
+    /**
+     * <p>
+     * A group of data elements which together describe a conference to which the product is related. Optional, and
+     * repeatable if the product contains material from two or more conferences.
+     * </p>
+     * <p>
+     * The whole of the &lt;Conference&gt; composite is deprecated, in favor of the &lt;Event&gt; composite which has an
+     * equivalent structure.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixComposite<Conference> conferences() {
+        _initialize();
+        return conferences;
     }
 
     private ListOfOnixCodelist<EditionType, EditionTypes> editionTypes = ListOfOnixCodelist.emptyList();
@@ -953,8 +974,9 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A group of data elements which together describe an extent pertaining to the product. Optional, but in practice
-     * required for most products, <i>eg</i> to give the number of pages in a printed book or paginated e‑book, or to
-     * give the running time of an audiobook. Repeatable to specify different extent types or units.
+     * required for most products, <i>eg</i> to give the number of pages in a printed book or paginated
+     * <span class="nobreak">e-book</span>, or to give the running time of an audiobook. Repeatable to specify different
+     * extent types or units.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -1002,9 +1024,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of data elements which together specify a subject classification, category or subject heading.
-     * Repeatable, both to express multiple subject categories or headings in a scheme, and to specify subjects using
-     * multiple schemes.
+     * An optional and repeatable group of data elements which together specify a subject classification or subject
+     * heading.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -1031,15 +1052,27 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * &lt;NameIdentifier&gt; composite; <em>or</em></li>
      * <li>an occurrence of the &lt;NameIdentifier&gt; composite without any accompanying name element(s).</li>
      * </ul>
-     * <p>
-     * The name of a person (not of a corporation) may optionally be followed by details of that person’s professional
-     * affiliation.
-     * </p>
      * Jonix-Comment: this list may be empty
      */
     public ListOfOnixComposite<NameAsSubject> nameAsSubjects() {
         _initialize();
         return nameAsSubjects;
+    }
+
+    private ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes = ListOfOnixCodelist.emptyList();
+
+    /**
+     * <p>
+     * An ONIX code, originally derived from BISAC and BIC lists, which identifies the broad audience or readership for
+     * which a product is intended. Optional, and repeatable if the product is intended for two or more groups.
+     * Deprecated, in favor of providing the same information within the &lt;Audience&gt; composite using code 01 from
+     * List 29.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes() {
+        _initialize();
+        return audienceCodes;
     }
 
     private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences =
@@ -1048,7 +1081,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together describe an audience to which the product is directed.
-     * Repeatable, both to specify multiple distinct audiences, and to express audiences using multiple schemes.
+     * Repeatable to specify multiple distinct audiences.
      * </p>
      * Jonix-Comment: this list may be empty
      */

@@ -137,10 +137,6 @@ public class CitedContent implements OnixSuperComposite, Serializable {
                 case SourceTitle.shortname:
                     sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
                     break;
-                case SequenceNumber.refname:
-                case SequenceNumber.shortname:
-                    sequenceNumber = new SequenceNumber(e);
-                    break;
                 case Territory.refname:
                 case Territory.shortname:
                     territory = new Territory(e);
@@ -247,37 +243,16 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         return sourceTitles;
     }
 
-    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
-
-    /**
-     * <p>
-     * A number which specifies a single overall sequence of cited content. Optional and non-repeating. It is strongly
-     * recommended that if <em>any</em> occurrence of the &lt;CitedContent&gt; composite of a specific
-     * &lt;CitedContentType&gt; carries a &lt;SequenceNumber&gt;, then all of that type should carry a
-     * &lt;SequenceNumber&gt; – though there is no requirement to number cited content where there is a single instance
-     * of that type.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public SequenceNumber sequenceNumber() {
-        _initialize();
-        return sequenceNumber;
-    }
-
     private Territory territory = Territory.EMPTY;
 
     /**
      * <p>
      * A group of data elements which together define a territory for which the cited content is specifically intended.
      * Optional in each occurrence of the &lt;CitedContent&gt; composite, and non-repeating. If omitted, the content is
-     * intended to be cited (linked to) wherever the product may be sold (see Territorial sales rights in
+     * intended to be cited (linked to) wherever the product may be sold (see
      * <a href="#onixmessage_product_publishingdetail_p21">Group&nbsp;P.21</a>). If included, the content should be
-     * cited by recipients in the specified territory only, and in preference to any cited content that lacks a
-     * specified territory.
-     * </p>
-     * <p>
-     * For valid combinations of &lt;CountriesIncluded&gt;, &lt;RegionsIncluded&gt; <i>etc</i> within &lt;Territory&gt;,
-     * see the notes describing the use of &lt;Territory&gt; within Group&nbsp;P.21.
+     * cited by recipients in the specified territory in preference to any cited content that lacks a specified
+     * territory.
      * </p>
      * <p>
      * Care should be taken to avoid ambiguities (for example two different citations of the same type marked for use in

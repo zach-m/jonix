@@ -41,7 +41,7 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 100 characters</td>
+ * <td>Variable length text, suggested maximum length 50 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -72,6 +72,8 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link PriceCoded} ⯈ {@link PriceCodeTypeName}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCoded} ⯈
  * {@link PriceCodeTypeName}</li>
  * </ul>
@@ -108,7 +110,7 @@ public class PriceCodeTypeName implements OnixElement<String>, Serializable {
      * This is the raw content of PriceCodeTypeName. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * Raw Format: Variable length text, suggested maximum length 50 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

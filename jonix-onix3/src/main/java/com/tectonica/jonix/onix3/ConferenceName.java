@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -31,63 +32,56 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Market reference</h1>
+ * <h1>Conference name</h1>
  * <p>
- * For every market, a single market reference which will uniquely identify the &lt;ProductSupply&gt; composite which
- * describes the market within this Product record, and which will remain as its permanent identifier every time you
- * send an update.
- * </p>
- * <p>
- * The Market reference is optional and non-repeating, but it is strongly recommended unless there is only a single
- * market. It is intended to be used to label each repeat of &lt;ProductSupply&gt; for use in subsequent partial updates
- * and reporting.
- * </p>
- * <p>
- * Note that the scope of the Market reference is limited to a single Product record –&nbsp;a geographically identical
- * market for a different product may have a different Market reference, and a geographically different market in
- * another Product record may use the same reference.
+ * The name of a conference or conference series to which the product is related. This element is mandatory in each
+ * occurrence of the &lt;Conference&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length alphanumeric, suggested maximum length 100 characters</td>
+ * <td>Variable length text, suggested maximum length 200 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;MarketReference&gt;</tt></td>
+ * <td><tt>&lt;ConferenceName&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;x587&gt;</tt></td>
+ * <td><tt>&lt;b052&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;1</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x587&gt;jp.kadokawa.onix.market.&#12450;&#12472;&#12450;&#22826;&#24179;&#27915;1&lt;/x587&gt;</tt>
- * (Asia-Pacific 1)</td>
+ * <td><tt>&lt;b052&gt;United Nations Climate Change Conference&lt;/b052&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link ProductSupply}&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketReference}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferenceName}</li>
  * </ul>
  *
- * @since Onix-3.10
+ * @deprecated
  */
-public class MarketReference implements OnixElement<String>, Serializable {
+@Deprecated
+public class ConferenceName implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "MarketReference";
-    public static final String shortname = "x587";
+    public static final String refname = "ConferenceName";
+    public static final String shortname = "b052";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -105,15 +99,17 @@ public class MarketReference implements OnixElement<String>, Serializable {
 
     public RecordSourceTypes sourcetype;
 
+    public Languages language;
+
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of MarketReference. Could be null if {@code exists() == false}. Use {@link #value()}
+     * This is the raw content of ConferenceName. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length alphanumeric, suggested maximum length 100 characters
+     * Raw Format: Variable length text, suggested maximum length 200 characters
      * <p>
      * (type: dt.NonEmptyString)
      */
@@ -132,30 +128,31 @@ public class MarketReference implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final MarketReference EMPTY = new MarketReference();
+    public static final ConferenceName EMPTY = new ConferenceName();
 
-    public MarketReference() {
+    public ConferenceName() {
         exists = false;
     }
 
-    public MarketReference(org.w3c.dom.Element element) {
+    public ConferenceName(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        language = Languages.byCode(JPU.getAttribute(element, "language"));
 
         value = JPU.getContentAsString(element);
     }
 
     /**
-     * @return whether this tag (&lt;MarketReference&gt; or &lt;x587&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;ConferenceName&gt; or &lt;b052&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<MarketReference> action) {
+    public void ifExists(Consumer<ConferenceName> action) {
         if (exists) {
             action.accept(this);
         }

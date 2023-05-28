@@ -185,8 +185,8 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </ul>
      * <p>
      * Note that the high-level specifications such as the Product form and size are carried in
-     * <a href="#onixmessage_product_b1">Block 1</a> – the manifest specifications are more detailed in nature, and must
-     * be consistent with the high-level specifications.
+     * <a href="#onix_product_descriptivedetail">Block 1</a> – the manifest specifications are more detailed in nature,
+     * and must be consistent with the high-level specifications.
      * </p>
      * <p>
      * Technical specifications in the manifest can be provided either as a pre-defined and named ‘bundle’ encompassing
@@ -218,8 +218,8 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </ul>
      * <p>
      * Note that the high-level specifications such as the Product form or overall size are carried in
-     * <a href="#onixmessage_product_b1">Block 1</a> – the manifest specifications are more detailed in nature, and must
-     * be consistent with the high-level specifications.
+     * <a href="#onix_product_descriptivedetail">Block 1</a> – the manifest specifications are more detailed in nature,
+     * and must be consistent with the high-level specifications.
      * </p>
      * <p>
      * Technical specifications in the manifest can be provided either as a pre-defined and named ‘bundle’ encompassing
@@ -273,8 +273,8 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </ul>
      * <p>
      * Note that the high-level specifications such as the Product form, trimmed page size or file type for final
-     * delivery are carried in <a href="#onixmessage_product_b1">Block&nbsp;1</a> – the manifest specifications are more
-     * detailed in nature, and must be consistent with the high-level specifications.
+     * delivery are carried in <a href="#onix_product_descriptivedetail">Block&nbsp;1</a> – the manifest specifications
+     * are more detailed in nature, and must be consistent with the high-level specifications.
      * </p>
      * <p>
      * Technical specifications in the manifest can be provided either as a pre-defined and named ‘bundle’ encompassing

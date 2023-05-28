@@ -44,7 +44,7 @@ import java.util.function.Consumer;
  * <td>Format</td>
  * <td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum length
  * 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters should be
- * 'URL-encoded'. Any ampersand used to separate parameters in the URL must be expressed as &amp;amp;</td>
+ * 'URL-encoded'</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -75,11 +75,8 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link Website} ⯈
- * {@link WebsiteLink}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link Website} ⯈ {@link WebsiteLink}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier} ⯈ {@link Website} ⯈
- * {@link WebsiteLink}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈ {@link Website} ⯈
  * {@link WebsiteLink}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link Website} ⯈ {@link WebsiteLink}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link Website} ⯈ {@link WebsiteLink}</li>
@@ -131,7 +128,7 @@ public class WebsiteLink implements OnixElement<String>, Serializable {
      * <p>
      * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
      * maximum length 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters
-     * should be 'URL-encoded'. Any ampersand used to separate parameters in the URL must be expressed as &amp;amp;
+     * should be 'URL-encoded'
      * <p>
      * (type: dt.NonEmptyURI)
      */

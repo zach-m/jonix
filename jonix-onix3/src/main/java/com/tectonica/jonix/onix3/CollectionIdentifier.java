@@ -129,10 +129,6 @@ public class CollectionIdentifier
                 case IDValue.shortname:
                     idValue = new IDValue(e);
                     break;
-                case CollectionElementLevel.refname:
-                case CollectionElementLevel.shortname:
-                    collectionElementLevel = new CollectionElementLevel(e);
-                    break;
                 case IDTypeName.refname:
                 case IDTypeName.shortname:
                     idTypeName = new IDTypeName(e);
@@ -195,26 +191,6 @@ public class CollectionIdentifier
         return idValue;
     }
 
-    private CollectionElementLevel collectionElementLevel = CollectionElementLevel.EMPTY;
-
-    /**
-     * <p>
-     * An ONIX code indicating the level of the collection title element (collection level or sub-collection level) to
-     * which the identifier in the &lt;IDValue&gt; element is assigned. Optional in each occurrence of the
-     * &lt;CollectionIdentifier&gt; composite, and non-repeating.
-     * </p>
-     * <p>
-     * When used, the specified level must match the level of a &lt;TitleElement&gt; within the same Collection
-     * composite, or –&nbsp;is there is no &lt;TitleDetail&gt; within the Collection composite – the level of a
-     * &lt;TitleElement&gt; within Group&nbsp;P.6.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public CollectionElementLevel collectionElementLevel() {
-        _initialize();
-        return collectionElementLevel;
-    }
-
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
@@ -235,7 +211,6 @@ public class CollectionIdentifier
         _initialize();
         JonixCollectionIdentifier struct = new JonixCollectionIdentifier();
         struct.collectionIDType = collectionIDType.value;
-        struct.collectionElementLevel = collectionElementLevel.value;
         struct.idTypeName = idTypeName.value;
         struct.idValue = idValue.value;
         return struct;

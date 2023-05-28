@@ -43,8 +43,8 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using XHTML, HTML,
- * XML, JSON within ONIX text fields</td>
+ * <td>Variable length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using XHTML, HTML
+ * or XML with ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -113,7 +113,7 @@ public class PublishingStatusNote implements OnixElement<String>, Serializable {
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
-     * XHTML, HTML, XML, JSON within ONIX text fields
+     * XHTML, HTML or XML with ONIX text fields
      * <p>
      * (type: XHTML)
      */

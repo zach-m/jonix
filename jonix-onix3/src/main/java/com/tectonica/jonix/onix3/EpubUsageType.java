@@ -72,8 +72,6 @@ import java.util.function.Consumer;
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageType}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint} ⯈
- * {@link EpubUsageType}</li>
  * </ul>
  */
 public class EpubUsageType implements OnixElement<UsageTypes>, Serializable {

@@ -76,11 +76,13 @@ import java.util.function.Consumer;
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link Reissue}&gt;</li>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price}</li>
  * </ul>
  */
@@ -148,9 +150,9 @@ public class Price implements OnixSuperComposite, Serializable {
                 case PriceQualifier.shortname:
                     priceQualifier = new PriceQualifier(e);
                     break;
-                case EpubLicenseWithoutDate.refname:
-                case EpubLicenseWithoutDate.shortname:
-                    epubLicense = new EpubLicenseWithoutDate(e);
+                case EpubLicense.refname:
+                case EpubLicense.shortname:
+                    epubLicense = new EpubLicense(e);
                     break;
                 case PricePer.refname:
                 case PricePer.shortname:
@@ -187,6 +189,10 @@ public class Price implements OnixSuperComposite, Serializable {
                 case Territory.refname:
                 case Territory.shortname:
                     territory = new Territory(e);
+                    break;
+                case CurrencyZone.refname:
+                case CurrencyZone.shortname:
+                    currencyZone = new CurrencyZone(e);
                     break;
                 case PrintedOnProduct.refname:
                 case PrintedOnProduct.shortname:
@@ -274,7 +280,7 @@ public class Price implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code indicating the type of the price in the &lt;PriceAmount&gt; field within the &lt;Price&gt;
-     * composite. Mandatory unless a &lt;DefaultPriceType&gt; has been specified in the message header, and
+     * composite. Optional, provided that a &lt;DefaultPriceType&gt; has been specified in the message header, and
      * non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
@@ -298,12 +304,16 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceQualifier;
     }
 
-    private EpubLicenseWithoutDate epubLicense = EpubLicenseWithoutDate.EMPTY;
+    private EpubLicense epubLicense = EpubLicense.EMPTY;
 
     /**
+     * <p>
+     * An optional and non-repeatable composite carrying the name or title of the usage license forming part of the
+     * commercial offer for the product, and a link to the license terms in eye-readable or machine-readable form.
+     * </p>
      * Jonix-Comment: this field is optional
      */
-    public EpubLicenseWithoutDate epubLicense() {
+    public EpubLicense epubLicense() {
         _initialize();
         return epubLicense;
     }
@@ -437,11 +447,11 @@ public class Price implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code identifying the currency in which all monetary amounts in an occurrence of the &lt;Price&gt;
+     * An ISO standard code identifying the currency in which all monetary amounts in an occurrence of the &lt;Price&gt;
      * composite are stated. Optional and non-repeating, but required if the currency is not the default currency for
-     * the message (this default may be set in &lt;DefaultCurrencyCode&gt; – but doing so is deprecated). All ONIX
-     * messages must include an explicit statement of the currency used for any prices. To avoid any possible ambiguity,
-     * it is strongly recommended that the currency should be stated here for each individual price.
+     * the message (which may be set in &lt;DefaultCurrencyCode&gt;). All ONIX messages must include an explicit
+     * statement of the currency used for any prices. To avoid any possible ambiguity, it is strongly recommended that
+     * the currency should be repeated here for each individual price.
      * </p>
      * Jonix-Comment: this field is optional
      */
@@ -458,12 +468,8 @@ public class Price implements OnixSuperComposite, Serializable {
      * the &lt;Price&gt; composite is applicable. Optional and non-repeating.
      * </p>
      * <p>
-     * For valid combinations of &lt;CountriesIncluded&gt;, &lt;RegionsIncluded&gt; <i>etc</i> within &lt;Territory&gt;,
-     * see the notes describing the use of &lt;Territory&gt; within Group P.21.
-     * </p>
-     * <p>
-     * <strong>Additional guidance on the description of price territories in ONIX&nbsp;3.0 and 3.1 will be found in a
-     * separate document <cite>ONIX for Books Product Information Message: How to Specify Markets and Suppliers in ONIX
+     * <strong>Additional guidance on the description of price territories in ONIX&nbsp;3.0 will be found in a separate
+     * document <cite>ONIX for Books Product Information Message: How to Specify Markets and Suppliers in ONIX
      * 3</cite>.</strong>
      * </p>
      * Jonix-Comment: this field is optional
@@ -471,6 +477,20 @@ public class Price implements OnixSuperComposite, Serializable {
     public Territory territory() {
         _initialize();
         return territory;
+    }
+
+    private CurrencyZone currencyZone = CurrencyZone.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code identifying a currency zone in which the price stated in an occurrence of the &lt;Price&gt;
+     * composite is applicable. Optional and non-repeating. Deprecated – use Country or Region codes instead.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public CurrencyZone currencyZone() {
+        _initialize();
+        return currencyZone;
     }
 
     private PrintedOnProduct printedOnProduct = PrintedOnProduct.EMPTY;
@@ -508,10 +528,10 @@ public class Price implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of elements that provide an identifier, reference or persistent label for a particular price.
-     * For products that may be available at potentially many different prices, to different groups of purchasers or
-     * under different terms and conditions, this identifier may then be used in subsequent revenue reporting to specify
-     * which price the product was traded at.
+     * An optional group of elements that provide an identifier for a particular price. For products that may be
+     * available at potentially many different prices, to different groups of purchasers or under different terms and
+     * conditions, this identifier may then be used in subsequent revenue reporting to specify which price the product
+     * was traded at.
      * </p>
      * <p>
      * Note that the price identifier will always be proprietary and must be unique across multiple pricing options for
@@ -626,8 +646,7 @@ public class Price implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together define a discount code from a specified scheme, and repeatable
-     * to allow different discount code schemes to be supported without defining additional data elements. For prices
-     * specified as Agency prices in &lt;PriceType&gt;, this code is interpreted as a ‘commission code’.
+     * to allow different discount code schemes to be supported without defining additional data elements.
      * </p>
      * <p>
      * A discount code is generally used when the exact percentage discount (or commission, in an agency business model)
@@ -648,7 +667,7 @@ public class Price implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together define a discount either as a percentage or as an absolute
-     * amount. Repeatable in order to specify a more complex arrangement such as a progressive or tiered discount. Used
+     * amount. Repeatable in order to specify a more compex arrangement such as a progressive or tiered discount. Used
      * only when an ONIX message is sent within the context of a specific trading relationship.
      * </p>
      * Jonix-Comment: this list may be empty
@@ -724,9 +743,6 @@ public class Price implements OnixSuperComposite, Serializable {
      * <p>
      * An optional group of data elements which together specify a date associated with a price, repeatable in order to
      * specify multiple associated dates.
-     * </p>
-     * <p>
-     * Note that if no dates are specified, the price is effective at the time the ONIX message is sent.
      * </p>
      * Jonix-Comment: this list may be empty
      */

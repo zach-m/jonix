@@ -103,7 +103,7 @@ public class NumberOfIllustrations implements OnixElement<Integer>, Serializable
      * <p>
      * Raw Format: Positive integer or zero, suggested maximum length 6 digits
      * <p>
-     * (type: dt.PositiveIntegerOrZero)
+     * (type: dt.PositiveInteger)
      */
     public Integer value;
 

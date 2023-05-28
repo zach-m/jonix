@@ -35,22 +35,21 @@ import java.util.function.Consumer;
 /**
  * <h1>Biographical note</h1>
  * <p>
- * A biographical note about a contributor to the product. (See the &lt;TextContent&gt; composite in
- * Group&nbsp;<a href="#onixmessage_product_collateraldetail_p14">P.14</a> for a biographical note covering all
- * contributors to a product in a single text.) Optional, and repeatable to provide parallel biographical notes in
- * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;BiographicalNote&gt;, but
- * must be included in each instance if &lt;BiographicalNote&gt; is repeated. May occur with a person name or with a
- * corporate name. A biographical note in ONIX should <em>always</em> contain the name of the person or body concerned,
- * and it should <em>always</em> be presented as a piece of continuous text consisting of full sentences. Some
- * recipients of ONIX data feeds will not accept text which has embedded URLs. A contributor website link can be sent
- * using the &lt;Website&gt; composite below.
+ * A biographical note about a contributor to the product. (See the &lt;TextContent&gt; composite in Group&nbsp;P.14 for
+ * a biographical note covering all contributors to a product in a single text.) Optional, and repeatable to provide
+ * parallel biographical notes in multiple languages. The <i>language</i> attribute is optional for a single instance of
+ * &lt;BiographicalNote&gt;, but must be included in each instance if &lt;BiographicalNote&gt; is repeated. May occur
+ * with a person name or with a corporate name. A biographical note in ONIX should <em>always</em> contain the name of
+ * the person or body concerned, and it should <em>always</em> be presented as a piece of continuous text consisting of
+ * full sentences. Some recipients of ONIX data feeds will not accept text which has embedded URLs. A contributor
+ * website link can be sent using the &lt;Website&gt; composite below.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, no suggested maximum length (since there is no suggested length for the text in a
  * &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this element
- * - see Using XHTML, HTML, XML, JSON within ONIX text fields</td>
+ * - see Using XHTML, HTML or XML with ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -142,7 +141,7 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
      * <p>
      * Raw Format: Variable length text, no suggested maximum length (since there is no suggested length for the text in
      * a &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this
-     * element - see Using XHTML, HTML, XML, JSON within ONIX text fields
+     * element - see Using XHTML, HTML or XML with ONIX text fields
      * <p>
      * (type: XHTML)
      */

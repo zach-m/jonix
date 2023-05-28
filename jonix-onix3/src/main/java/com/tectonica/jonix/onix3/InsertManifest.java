@@ -51,8 +51,8 @@ import java.util.function.Consumer;
  * </ul>
  * <p>
  * Note that the high-level specifications such as the Product form, trimmed page size or file type for final delivery
- * are carried in <a href="#onixmessage_product_b1">Block&nbsp;1</a> – the manifest specifications are more detailed in
- * nature, and must be consistent with the high-level specifications.
+ * are carried in <a href="#onix_product_descriptivedetail">Block&nbsp;1</a> – the manifest specifications are more
+ * detailed in nature, and must be consistent with the high-level specifications.
  * </p>
  * <p>
  * Technical specifications in the manifest can be provided either as a pre-defined and named ‘bundle’ encompassing all

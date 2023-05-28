@@ -233,8 +233,8 @@ public class Supplier implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A telephone number of a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable. Use to provide contact details for the organization as a whole, but prefer &lt;SupplyContact&gt; for
-     * individual functions or contacts within the organization.
+     * repeatable. Deprecated in this context, in favor of providing contact details in the &lt;SupplyContact&gt;
+     * composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -248,8 +248,8 @@ public class Supplier implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A fax number of a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable. Use to provide contact details for the organization as a whole, but prefer &lt;SupplyContact&gt; for
-     * individual functions or contacts within the organization.
+     * repeatable. Deprecated in this context, in favor of providing contact details in the &lt;SupplyContact&gt;
+     * composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */
@@ -262,9 +262,9 @@ public class Supplier implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An e‑mail address for a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable. Use to provide contact details for the organization as a whole, but prefer &lt;SupplyContact&gt; for
-     * individual functions or contacts within the organization.
+     * An e-mail address for a supply source from which the product may be ordered by a trade customer. Optional and
+     * repeatable. Deprecated in this context, in favor of providing contact details in the &lt;SupplyContact&gt;
+     * composite.
      * </p>
      * Jonix-Comment: this list may be empty
      */

@@ -44,7 +44,7 @@ import java.util.function.Consumer;
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML, XML, JSON within ONIX text fields</td>
+ * XHTML, HTML or XML with ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -80,6 +80,8 @@ import java.util.function.Consumer;
  * {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈ {@link FeatureNote}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈
  * {@link ResourceVersionFeature} ⯈ {@link FeatureNote}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈ {@link FeatureNote}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ResourceVersionFeature} ⯈ {@link FeatureNote}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
@@ -88,6 +90,8 @@ import java.util.function.Consumer;
  * {@link ResourceFeature} ⯈ {@link FeatureNote}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceFeature} ⯈
  * {@link FeatureNote}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceFeature} ⯈ {@link FeatureNote}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource} ⯈ {@link ResourceFeature} ⯈ {@link FeatureNote}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
@@ -129,7 +133,7 @@ public class FeatureNote implements OnixElement<String>, Serializable {
      * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML, XML, JSON within ONIX text fields
+     * Using XHTML, HTML or XML with ONIX text fields
      * <p>
      * (type: XHTML)
      */

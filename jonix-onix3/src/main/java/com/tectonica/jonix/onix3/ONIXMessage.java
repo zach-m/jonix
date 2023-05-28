@@ -33,5 +33,5 @@ public class ONIXMessage implements Serializable {
 
     public static final String refname = "ONIXMessage";
     public static final String shortname = "ONIXmessage";
-    public static final String release = "3.1";
+    public static final String release = "3.0";
 }

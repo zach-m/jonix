@@ -20,7 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixFlag;
+import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -31,26 +31,22 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Main audience flag</h1>
+ * <h1>Conference number</h1>
  * <p>
- * An empty element that identifies an instance of the &lt;Audience&gt; composite as representing the primary or main
- * audience for the product. The main audience may be expressed in more than one audience scheme, <i>ie</i> there may be
- * two or more instances of the &lt;Audience&gt; composite, using different schemes, each carrying the
- * &lt;MainAudience/&gt; flag, so long as there is only one main audience <em>per scheme</em> (<i>ie</i> per value of
- * &lt;AudienceCodeType&gt;). Optional and non-repeating in each occurrence of the &lt;Audience&gt; composite.
+ * The number of a conference to which the product is related, within a conference series. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>XML empty element</td>
+ * <td>Positive integer, suggested maximum length 4 digits</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;MainAudience&gt;</tt></td>
+ * <td><tt>&lt;ConferenceNumber&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;x583&gt;</tt></td>
+ * <td><tt>&lt;b053&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
@@ -58,27 +54,28 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;x583/&gt;</tt></td>
+ * <td><tt>&lt;b053&gt;22&lt;/b053&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link Audience}&gt;</li>
+ * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Audience} ⯈ {@link MainAudience}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferenceNumber}</li>
  * </ul>
  *
- * @since Onix-3.10
+ * @deprecated
  */
-public class MainAudience implements OnixFlag, Serializable {
+@Deprecated
+public class ConferenceNumber implements OnixElement<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "MainAudience";
-    public static final String shortname = "x583";
+    public static final String refname = "ConferenceNumber";
+    public static final String shortname = "b053";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -97,32 +94,56 @@ public class MainAudience implements OnixFlag, Serializable {
     public RecordSourceTypes sourcetype;
 
     /////////////////////////////////////////////////////////////////////////////////
-    // CONSTRUCTORS
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * This is the raw content of ConferenceNumber. Could be null if {@code exists() == false}. Use {@link #value()}
+     * instead if you want to get this as an {@link java.util.Optional}.
+     * <p>
+     * Raw Format: Positive integer, suggested maximum length 4 digits
+     * <p>
+     * (type: dt.StrictPositiveInteger)
+     */
+    public Integer value;
+
+    /**
+     * Internal API, use the {@link #value()} method or the {@link #value} field instead
+     */
+    @Override
+    public Integer __v() {
+        return value;
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final MainAudience EMPTY = new MainAudience();
+    public static final ConferenceNumber EMPTY = new ConferenceNumber();
 
-    public MainAudience() {
+    public ConferenceNumber() {
         exists = false;
     }
 
-    public MainAudience(org.w3c.dom.Element element) {
+    public ConferenceNumber(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+
+        value = JPU.getContentAsInteger(element);
     }
 
     /**
-     * @return whether this tag (&lt;MainAudience&gt; or &lt;x583&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;ConferenceNumber&gt; or &lt;b053&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<MainAudience> action) {
+    public void ifExists(Consumer<ConferenceNumber> action) {
         if (exists) {
             action.accept(this);
         }

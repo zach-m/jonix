@@ -49,8 +49,7 @@ import java.util.function.Consumer;
  * packs to specify (for example) the item(s) and item quantities included in a combined book plus audiobook product, a
  * multi-volume set, a filled dumpbin, or a classroom pack. In other cases, where parts are not individually identified,
  * it is used to state the product form(s) and the quantity or quantities of each form contained within the product. The
- * composite must be repeated for each individually-identified item or component, or for each unidentified type of item
- * or component.
+ * composite must be repeated for each item or component.
  * </p>
  * <p>
  * Each instance of the &lt;ProductPart&gt; composite must carry a &lt;ProductForm&gt; code and a quantity, even if the
@@ -305,7 +304,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code identifying the country in which a product part was manufactured, if different product parts were
+     * A code identifying the country in which a product part was manufactured, if different product parts were
      * manufactured in different countries. This information is needed in some countries to meet regulatory
      * requirements. Optional and non-repeating.
      * </p>

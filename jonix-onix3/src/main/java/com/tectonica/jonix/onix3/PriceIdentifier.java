@@ -35,10 +35,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Price identifier composite</h1>
  * <p>
- * An optional group of elements that provide an identifier, reference or persistent label for a particular price. For
- * products that may be available at potentially many different prices, to different groups of purchasers or under
- * different terms and conditions, this identifier may then be used in subsequent revenue reporting to specify which
- * price the product was traded at.
+ * An optional group of elements that provide an identifier for a particular price. For products that may be available
+ * at potentially many different prices, to different groups of purchasers or under different terms and conditions, this
+ * identifier may then be used in subsequent revenue reporting to specify which price the product was traded at.
  * </p>
  * <p>
  * Note that the price identifier will always be proprietary and must be unique across multiple pricing options for one
@@ -70,6 +69,8 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link PriceIdentifier}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceIdentifier}</li>
  * </ul>
  *

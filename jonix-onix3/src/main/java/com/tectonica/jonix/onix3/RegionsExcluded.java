@@ -37,7 +37,7 @@ import java.util.function.Consumer;
  * One or more ONIX codes identifying regions excluded from the territory. Successive codes must be separated by spaces.
  * Optional and non-repeating, and can only occur if the &lt;CountriesIncluded&gt; element is also present (and
  * specifies countries of which the excluded regions are a part), or if &lt;RegionsIncluded&gt; is present and includes
- * a supra-national region code (such as ‘WORLD’).
+ * a supra-national region code (such as ‘World’).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -80,6 +80,8 @@ import java.util.function.Consumer;
  * {@link RegionsExcluded}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link Territory} ⯈
  * {@link RegionsExcluded}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link SupportingResource} ⯈
+ * {@link Territory} ⯈ {@link RegionsExcluded}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource} ⯈ {@link Territory} ⯈ {@link RegionsExcluded}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
@@ -93,6 +95,8 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link CitedContent} ⯈ {@link Territory} ⯈
  * {@link RegionsExcluded}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link Territory} ⯈ {@link RegionsExcluded}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link Territory} ⯈ {@link RegionsExcluded}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Territory} ⯈
  * {@link RegionsExcluded}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link Territory} ⯈

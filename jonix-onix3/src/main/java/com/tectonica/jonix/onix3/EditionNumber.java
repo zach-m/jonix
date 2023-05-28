@@ -34,8 +34,7 @@ import java.util.function.Consumer;
  * <h1>Edition number</h1>
  * <p>
  * The number of a numbered edition. Optional and non-repeating. Normally sent only for the second and subsequent
- * editions, but by agreement between parties to an ONIX exchange or when a first and a subsequent edition are available
- * at the same time, a first edition may be explicitly numbered.
+ * editions of a work, but by agreement between parties to an ONIX exchange a first edition may be explicitly numbered.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -102,7 +101,7 @@ public class EditionNumber implements OnixElement<Integer>, Serializable {
      * <p>
      * Raw Format: Positive integer, suggested maximum length 4 digits
      * <p>
-     * (type: dt.PositiveInteger)
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 

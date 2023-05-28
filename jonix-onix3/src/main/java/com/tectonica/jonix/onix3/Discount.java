@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Discount composite</h1>
  * <p>
  * An optional group of data elements which together define a discount either as a percentage or as an absolute amount.
- * Repeatable in order to specify a more complex arrangement such as a progressive or tiered discount. Used only when an
+ * Repeatable in order to specify a more compex arrangement such as a progressive or tiered discount. Used only when an
  * ONIX message is sent within the context of a specific trading relationship.
  * </p>
  * <table border='1' cellpadding='3'>
@@ -60,6 +60,8 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link Discount}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Discount}</li>
  * </ul>
  */

@@ -41,17 +41,16 @@ import java.util.function.Consumer;
  * sent as part of the ONIX record.
  * </p>
  * <p>
- * ISBN-13 numbers in their unhyphenated form constitute a range of&nbsp;GTIN-13 numbers that has been reserved for the
- * international book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should be
- * <em>mandatory</em> in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled
- * as a GTIN-13 number (<i>ie</i> as &lt;ProductIDType&gt; code 03), since this is how the ISBN-13 will be used in book
+ * ISBN-13 numbers in their unhyphenated form constitute a range of EAN.UCC&nbsp;GTIN-13 numbers that has been reserved
+ * for the international book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should
+ * be <em>mandatory</em> in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13
+ * labelled as an EAN.UCC GTIN-13 number (ProductIDType code 03), since this is how the ISBN-13 will be used in book
  * trade transactions. For many ONIX applications this will also be sufficient.
  * </p>
  * <p>
  * For some ONIX applications, however, particularly when data is to be supplied to the library sector, there may be
- * reasons why the ISBN-13 must <em>also</em> be sent labelled distinctively as an ISBN-13 (<i>ie</i> as
- * &lt;ProductIDType&gt; code 15). Users should consult ‘good practice’ guidelines and/or discuss with their trading
- * partners.
+ * reasons why the ISBN-13 must <em>also</em> be sent labelled distinctively as an ISBN-13 (ProductIDType code 15).
+ * Users should consult ‘good practice’ guidelines and/or discuss with their trading partners.
  * </p>
  * <p>
  * Note that for some identifiers such as ISBN, punctuation (typically hyphens or spaces for ISBNs) is used to enhance
@@ -96,11 +95,17 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedProduct} ⯈
  * {@link ProductIdentifier}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈ {@link Tax} ⯈
+ * {@link ProductIdentifier}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Tax} ⯈
  * {@link ProductIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link ComparisonProductPrice} ⯈ {@link ProductIdentifier}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link ComparisonProductPrice} ⯈
  * {@link ProductIdentifier}</li>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link ProductIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
+ * {@link PriceCondition} ⯈ {@link ProductIdentifier}</li>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition} ⯈
  * {@link ProductIdentifier}</li>
  * </ul>

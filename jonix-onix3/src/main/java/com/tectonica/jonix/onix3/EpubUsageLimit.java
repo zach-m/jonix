@@ -60,8 +60,6 @@ import java.util.function.Consumer;
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint} ⯈
- * {@link EpubUsageLimit}</li>
  * </ul>
  */
 public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, Serializable {

@@ -30,8 +30,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 // CHECKSTYLE:OFF
-public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>
-    extends ListOfOnixDataComposite<C, S> {
+public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>,
+    K extends Enum<K> & OnixCodelist> extends ListOfOnixDataComposite<C, S> {
     private static final long serialVersionUID = 1L;
 
     final Class<C> clazz;
@@ -107,8 +107,9 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
 
     /**
      * @return the first {@link OnixDataCompositeWithKey} listed, if any, or an "empty" instance (whose
-     *     {@link OnixDataCompositeWithKey#exists()} is {@code false}), which can be further traversed by your code (as
-     *     if it exists in the ONIX source), with all underlying data fields eventually yielding "non-existing" value
+     *         {@link OnixDataCompositeWithKey#exists()} is {@code false}), which can be further traversed by your code
+     *         (as if it exists in the ONIX source), with all underlying data fields eventually yielding "non-existing"
+     *         value
      */
     public C findOrEmpty(K structKey) {
         return find(structKey).orElse(JPU.emptyInstance(clazz));

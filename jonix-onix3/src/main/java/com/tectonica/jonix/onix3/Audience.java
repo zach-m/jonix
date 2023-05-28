@@ -36,8 +36,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Audience composite</h1>
  * <p>
- * An optional group of data elements which together describe an audience to which the product is directed. Repeatable,
- * both to specify multiple distinct audiences, and to express audiences using multiple schemes.
+ * An optional group of data elements which together describe an audience to which the product is directed. Repeatable
+ * to specify multiple distinct audiences.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -128,10 +128,6 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
                 case AudienceCodeValue.shortname:
                     audienceCodeValue = new AudienceCodeValue(e);
                     break;
-                case MainAudience.refname:
-                case MainAudience.shortname:
-                    mainAudience = new MainAudience(e);
-                    break;
                 case AudienceCodeTypeName.refname:
                 case AudienceCodeTypeName.shortname:
                     audienceCodeTypeName = new AudienceCodeTypeName(e);
@@ -198,33 +194,12 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
         return audienceCodeValue;
     }
 
-    private MainAudience mainAudience = MainAudience.EMPTY;
-
-    /**
-     * <p>
-     * An empty element that identifies an instance of the &lt;Audience&gt; composite as representing the primary or
-     * main audience for the product. The main audience may be expressed in more than one audience scheme, <i>ie</i>
-     * there may be two or more instances of the &lt;Audience&gt; composite, using different schemes, each carrying the
-     * &lt;MainAudience/&gt; flag, so long as there is only one main audience <em>per scheme</em> (<i>ie</i> per value
-     * of &lt;AudienceCodeType&gt;). Optional and non-repeating in each occurrence of the &lt;Audience&gt; composite.
-     * </p>
-     * Jonix-Comment: this field is optional
-     */
-    public MainAudience mainAudience() {
-        _initialize();
-        return mainAudience;
-    }
-
-    public boolean isMainAudience() {
-        return (mainAudience().exists());
-    }
-
     private AudienceCodeTypeName audienceCodeTypeName = AudienceCodeTypeName.EMPTY;
 
     /**
      * <p>
-     * A name which identifies a proprietary audience scheme when the code in &lt;AudienceCodeType&gt; indicates a
-     * proprietary scheme, <i>eg</i> a vendor’s own coding scheme. Optional and non-repeating.
+     * A name which identifies a proprietary audience code when the code in &lt;AudienceCodeType&gt; indicates a
+     * proprietary scheme, <i>eg</i> a vendor’s own code. Optional and non-repeating.
      * </p>
      * Jonix-Comment: this field is optional
      */

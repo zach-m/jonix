@@ -130,6 +130,10 @@ public class PublishingDate
                 case Date.shortname:
                     date = new Date(e);
                     break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
+                    break;
                 default:
                     break;
             }
@@ -180,7 +184,8 @@ public class PublishingDate
      * <p>
      * The date specified in the &lt;PublishingDateRole&gt; field. Mandatory in each occurrence of the
      * &lt;PublishingDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the
-     * attribute is missing, then the default format is YYYYMMDD.
+     * attribute is missing, then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i>
+     * attribute and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -189,11 +194,27 @@ public class PublishingDate
         return date;
     }
 
+    private DateFormat dateFormat = DateFormat.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of the
+     * &lt;PublishingDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
+     * attribute instead.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public DateFormat dateFormat() {
+        _initialize();
+        return dateFormat;
+    }
+
     @Override
     public JonixPublishingDate asStruct() {
         _initialize();
         JonixPublishingDate struct = new JonixPublishingDate();
         struct.publishingDateRole = publishingDateRole.value;
+        struct.dateFormat = dateFormat.value;
         struct.date = date.value;
         return struct;
     }

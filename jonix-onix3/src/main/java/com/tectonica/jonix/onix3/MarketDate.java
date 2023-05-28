@@ -37,8 +37,8 @@ import java.util.function.Consumer;
  * <p>
  * A group of data elements which together specify a date associated with the publishing status of the product in a
  * specified market, <i>eg</i> ‘local publication date’. Optional, but if known, a date of publication <em>must</em> be
- * specified either here as a ‘local publication date’ or in P.20. Other dates relating to the publication of the
- * product in the specific market may be sent in further repeats of the composite.
+ * specified either here as a ‘local pubdate’ or in P.20. Other dates relating to the publication of the product in the
+ * specific market may be sent in further repeats of the composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -129,6 +129,10 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
                 case Date.shortname:
                     date = new Date(e);
                     break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
+                    break;
                 default:
                     break;
             }
@@ -178,7 +182,8 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * <p>
      * The date specified in the &lt;MarketDateRole&gt; field. Mandatory in each occurrence of the &lt;MarketDate&gt;
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
-     * then the default format is YYYYMMDD.
+     * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
+     * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
      * </p>
      * Jonix-Comment: this field is required
      */
@@ -187,12 +192,28 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
         return date;
     }
 
+    private DateFormat dateFormat = DateFormat.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional in each occurrence of the
+     * &lt;MarketDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i> attribute
+     * instead.
+     * </p>
+     * Jonix-Comment: this field is optional
+     */
+    public DateFormat dateFormat() {
+        _initialize();
+        return dateFormat;
+    }
+
     @Override
     public JonixMarketDate asStruct() {
         _initialize();
         JonixMarketDate struct = new JonixMarketDate();
         struct.marketDateRole = marketDateRole.value;
         struct.date = date.value;
+        struct.dateFormat = dateFormat.value;
         return struct;
     }
 

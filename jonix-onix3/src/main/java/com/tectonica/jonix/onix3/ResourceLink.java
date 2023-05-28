@@ -43,7 +43,7 @@ import java.util.function.Consumer;
  * <td>Format</td>
  * <td>Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested maximum length
  * 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters should be
- * 'URL-encoded'. Any ampersand used to separate parameters in the URL must be expressed as &amp;amp;</td>
+ * 'URL-encoded'</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -81,6 +81,8 @@ import java.util.function.Consumer;
  * {@link ResourceVersion} ⯈ {@link ResourceLink}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈
  * {@link ResourceLink}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link ResourceLink}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link ResourceLink}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
@@ -121,7 +123,7 @@ public class ResourceLink implements OnixElement<String>, Serializable {
      * <p>
      * Raw Format: Uniform Resource Locator, expressed in full URI syntax in accordance with W3C standards, suggested
      * maximum length 300 characters. Note that non-ASCII characters, spaces and a handful of other special characters
-     * should be 'URL-encoded'. Any ampersand used to separate parameters in the URL must be expressed as &amp;amp;
+     * should be 'URL-encoded'
      * <p>
      * (type: dt.NonEmptyURI)
      */

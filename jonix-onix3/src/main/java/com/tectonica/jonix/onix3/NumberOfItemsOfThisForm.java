@@ -103,7 +103,7 @@ public class NumberOfItemsOfThisForm implements OnixElement<Integer>, Serializab
      * <p>
      * Raw Format: Positive integer, suggested maximum length 4 digits
      * <p>
-     * (type: dt.PositiveInteger)
+     * (type: dt.StrictPositiveInteger)
      */
     public Integer value;
 
