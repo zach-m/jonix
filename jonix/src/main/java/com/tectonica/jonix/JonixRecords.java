@@ -487,7 +487,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
             // the context now points to the first product in the input-stream, we can start iterate
             final Element firstProduct = firstElement;
-            return new Iterator<>() {
+            return new Iterator<JonixRecord>() {
                 Element nextProduct = firstProduct;
 
                 @Override
