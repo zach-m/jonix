@@ -193,6 +193,8 @@ public class JonixRecords implements Iterable<JonixRecord> {
     private final List<OnSourceEvent> onSourceEndEvents = new ArrayList<>();
     private final Map<String, Object> globalConfig = new HashMap<>();
 
+    boolean skipSourceRequested;
+
     private String encoding = "UTF-8";
 
     /**
@@ -345,7 +347,11 @@ public class JonixRecords implements Iterable<JonixRecord> {
             while (!hasNext) {
                 // before switching to the next file, fire 'onSourceEnd' event for existing source
                 if (currentSource != null) {
-                    onSourceEndEvents.forEach(e -> e.onSource(currentSource));
+                    if (skipSourceRequested) {
+                        skipSourceRequested = false;
+                    } else {
+                        onSourceEndEvents.forEach(e -> e.onSource(currentSource));
+                    }
                 }
 
                 // if there are no remaining files to open, we can return false, concluding the entire iteration
@@ -361,7 +367,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
                 try {
                     File file = nextFiles.remove(0);
                     currentSourceIterator = sourceIterator(new JonixSource(file, JonixRecords.this));
-                    hasNext = currentSourceIterator.hasNext();
+                    hasNext = currentSourceIterator != null && currentSourceIterator.hasNext();
                 } catch (Exception e) {
                     handleInvalidFileException(e);
                 }
@@ -422,8 +428,13 @@ public class JonixRecords implements Iterable<JonixRecord> {
                     JonixFactory.headerFromElement(firstElement, currentSource.onixVersion, currentSource.onixRelease);
             }
 
-            // fire 'onSourceStart' event
-            onSourceStartEvents.forEach(e -> e.onSource(currentSource));
+            // fire 'onSourceStart' events, allowing the even handler to skip to the next source
+            for (OnSourceEvent e : onSourceStartEvents) {
+                e.onSource(currentSource);
+                if (skipSourceRequested) {
+                    return null;
+                }
+            }
 
             if (hasHeader) {
                 // if the first chunk (level-2 element) was a <Header>, the next one must be a <Product>

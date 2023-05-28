@@ -123,6 +123,14 @@ public class JonixSource {
     }
 
     /**
+     * Call this in an event triggered by {@code .onSourceStart()} if you wish to skip the current source and move on to
+     * the next one
+     */
+    public void skipSource() {
+        records.skipSourceRequested = true;
+    }
+
+    /**
      * Stores an object for later use during the streaming OF THIS SOURCE (as opposed to the more general
      * {@link JonixRecords#store(String, Object)} which stores an object for use throughout the entire streaming). The
      * stored object can be retrieved with {@link #retrieve(String)}.
