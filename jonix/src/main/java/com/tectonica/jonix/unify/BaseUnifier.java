@@ -45,8 +45,8 @@ public class BaseUnifier implements CustomUnifier<BaseProduct, BaseHeader, BaseR
     }
 
     @Override
-    public BaseRecord unifiedRecord(JonixRecord record) {
-        return new BaseRecord(record.source, unifiedProduct(record.product));
+    public BaseRecord unifiedRecord(JonixRecord rawRecord) {
+        return new BaseRecord(rawRecord, unifiedProduct(rawRecord.product));
     }
 
     @Override

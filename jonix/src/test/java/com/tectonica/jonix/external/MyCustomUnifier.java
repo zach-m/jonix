@@ -87,14 +87,14 @@ public class MyCustomUnifier implements CustomUnifier<MyCustomUnifier.MyProduct,
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static class MyRecord extends UnifiedRecord<MyProduct> {
-        public MyRecord(JonixSource source, MyProduct product) {
-            super(source, product);
+        public MyRecord(JonixRecord rawRecord, MyProduct product) {
+            super(rawRecord, product);
         }
     }
 
     @Override
-    public MyRecord unifiedRecord(JonixRecord record) {
-        return new MyRecord(record.source, unifiedProduct(record.product));
+    public MyRecord unifiedRecord(JonixRecord rawRecord) {
+        return new MyRecord(rawRecord, unifiedProduct(rawRecord.product));
     }
 
     @Override

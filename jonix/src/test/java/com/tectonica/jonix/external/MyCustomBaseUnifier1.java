@@ -86,14 +86,14 @@ public class MyCustomBaseUnifier1
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static class MyBaseRecord extends UnifiedRecord<MyBaseProduct> {
-        public MyBaseRecord(JonixSource source, MyBaseProduct product) {
-            super(source, product);
+        public MyBaseRecord(JonixRecord rawRecord, MyBaseProduct product) {
+            super(rawRecord, product);
         }
     }
 
     @Override
-    public MyBaseRecord unifiedRecord(JonixRecord record) {
-        return new MyBaseRecord(record.source, unifiedProduct(record.product));
+    public MyBaseRecord unifiedRecord(JonixRecord rawRecord) {
+        return new MyBaseRecord(rawRecord, unifiedProduct(rawRecord.product));
     }
 
     @Override
