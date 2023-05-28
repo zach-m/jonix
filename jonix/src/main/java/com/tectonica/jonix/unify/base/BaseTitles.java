@@ -34,7 +34,7 @@ import java.util.List;
 public abstract class BaseTitles extends LazyList<BaseTitle> {
     public String findTitleText(TitleTypes requestedType) {
         BaseTitle title = findTitle(requestedType);
-        return (title == null) ? null : title.titleText;
+        return (title == null) ? null : (title.titleText == null ? title.titleWithoutPrefix : title.titleText);
     }
 
     public BaseTitle findTitle(TitleTypes requestedType) {
