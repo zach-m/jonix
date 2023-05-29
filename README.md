@@ -119,8 +119,7 @@ The example above uses the [BaseProduct](http://zach-m.github.io/jonix/jonix/com
 class, which processes ONIX-2 and ONIX-3 sources differently, according to their schema, and stores the most common 
 fields in its public fields, such as `info`, `description`, `subjects`, etc. 
 
-If, however, you need a more complicated extraction, specific to your needs and your sources, you can avoid using this 
-type of "common denominator" class, and process the raw fields by yourself, like that:
+If, however, you need a more complicated extraction, specific to your needs and sources, this "one-size-fits-all" approach may not be right for you. Instead, you may want to process the raw fields by yourself, as follows:
 
 ```java
 Jonix.source(new File("/path/to/folder-with-mixed-onix-files"), "*.xml", false)
@@ -136,9 +135,14 @@ Jonix.source(new File("/path/to/folder-with-mixed-onix-files"), "*.xml", false)
      });
 ```
 
-Following is an example of how to process ALL ONIX-3 source, with some non-standard logic. In particular, the `authors`
+Next is an example of how to process ALL ONIX-3 sources, with some non-standard logic. In particular, the `authors`
 are extracted in a more elaborate way compared to `BaseProduct.contributors`, and the `frontCoverImageLink` which 
-doesn't exist at all in `BaseProduct` is extracted as part of the processing.
+doesn't exist at all in `BaseProduct` is extracted here as well.
+
+> Pay careful attention to the usage of `.firstOrEmpty()` and `orElse()`, espeically in the extraction of `title`, `authors` and `frontCoverImageLink`.
+> They demostrate the Jonix fluent API, where if a certain element doesn't exist in the ONIX XML source (and certainly not its children elements),
+> we still apply the same logic as if it does (counting on `null` terminal values if it doesn't). This syntax eliminates the need for cumbersone `if-else`
+> blocks (testing for existence of elements), and leaves us with concise and clean expressions.
 
 ```java
 Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
