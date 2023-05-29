@@ -1,10 +1,10 @@
 # ![jonix](JONIX.png)
 
 > NOTE: version `2023-05` presents the single most important leap for Jonix in a decade. Its APIs have been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
-> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were added to `List`s of composites, eliminating many previously-required `null`/`exists()` checks.
+> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were added to the `List`s of composites, eliminating many previously-required `null`/`exists()` checks.
 > For streaming control (typically via `Jonix.stream()`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
-> While building the `JonixRecords` for the stream, `failOnInvalidFile()` and `scanHeaders()` are now availble.
-> For convenience, `pair()` was added to all Codelist Enums for ease of unification, and for distinction between ONIX version 3.0 and 3.1, `.onixVersion()` and `.onixRelease()` were added to `Product` and `Header`. See newly-crafted examples below.
+> While setting up the `JonixRecords` for the stream, `failOnInvalidFile()` and `scanHeaders()` are now availble.
+> For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixVersion()` and `.onixRelease()` were added to `Product` and `Header`. See newly-crafted examples below.
 
 Jonix is a commercial-grade open source Java library for extracting data from [ONIX for Books](https://www.editeur.org/83/Overview/) sources.
 
