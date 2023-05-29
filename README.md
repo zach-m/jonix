@@ -1,11 +1,17 @@
 # ![jonix](JONIX.png)
 
+> NOTE: version `2023-05` presents the single most important leap for Jonix functionality in a decade. Its APIs have been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
+> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were added to lists of composites, eliminating many previously-required `null`/`empty()` checks.
+> For streaming control (having called `Jonix.stream()`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
+> While building the `JonixRecords` for the stream, `failOnInvalidFile()` and `scanHeaders()` are now availble.
+> For convenience, `pair()` was added to all Codelist Enums for ease of unification, and for distinction between ONIX version 3.0 and 3.1, `.onixVersion()` and `.onixRelease()` were added to `Product` and `Header`. See newly-crafted examples below.
+
 Jonix is a commercial-grade open source Java library for extracting data from [ONIX for Books](https://www.editeur.org/83/Overview/) sources.
 
-It comprises of various services for efficient processing of ONIX sources, emphasizing on:
-- high-performance (speed and memory)
-- fluent, intuitive and type-safe APIs
-- extensibility
+It comprises of various services for efficient processing of ONIX sources, emphasizing:
+- High-performance (speed and memory)
+- Fluent, intuitive and type-safe APIs
+- Extensibility
 
 It is NOT a thin XML-processing wrapper, nor is it `XPath` in disguise. It was built from scratch specifically for 
 ONIX files, and accordingly it gets updated whenever a new schema of ONIX is published (4 times a year).
@@ -21,9 +27,7 @@ ONIX files, and accordingly it gets updated whenever a new schema of ONIX is pub
 | `2022-11`         | 3.0.08       | 59             |
 | `2022-08`         | 3.0.08       | 58             |
 
-# Usage
-
-API documentation can be found [here](https://zach-m.github.io/jonix).
+API documentation for latest release can be found [here](https://zach-m.github.io/jonix).
 
 ## 1. Stable Release (from Central repository)
 
@@ -85,17 +89,18 @@ Jonix.source(new File("/path/to/folder-with-onix-files"), "*.xml", false)
      .source(new File("/path/to/file-with-short-style-onix-2.xml"))
      .source(new File("/path/to/file-with-reference-style-onix-3.onx"))
      .onSourceStart(src -> {
-         // after the <Header> of the current ONIX source has been processed, we take a look at the source properties
+         // after the <Header> of current source was processed, we look at the source's properties
          System.out.printf(">> Opening %s (ONIX release %s)%n", src.sourceName(), src.onixRelease());
          src.header().map(Jonix::toBaseHeader)
              .ifPresent(header -> System.out.printf(">> Sent from: %s%n", header.senderName));
      })
      .onSourceEnd(src -> {
          // we finalize the processing of the ONIX source
-         System.out.printf("<< Processed %d products (total %d) %n", src.productCount(), src.productGlobalCount());
+         System.out.printf("<< Processed %d products (total %d) %n", 
+	     src.productCount(), src.productGlobalCount());
      })
      .stream() // iterates over all the products contained in all ONIX sources
-     .map(Jonix::toBaseProduct) // transforms any ONIX-2 or ONIX-3 product into a unified, version-agnostic, object
+     .map(Jonix::toBaseProduct) // transforms ONIX-2/3 product into a unified version-agnostic object
      .forEach(product -> {
          String ref = product.info.recordReference;
          String isbn13 = product.info.findProductId(ProductIdentifierTypes.ISBN_13);
@@ -106,7 +111,7 @@ Jonix.source(new File("/path/to/folder-with-onix-files"), "*.xml", false)
          System.out.println("isbn13              = " + isbn13);
          System.out.println("title               = " + title);
          System.out.println("authors             = " + authors);
-         System.out.println("--------------------------------------------------------------------------------");
+         System.out.println("----------------------------------------------------------");
      });
 ```
 
@@ -152,12 +157,16 @@ Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
          // take the information you need from the current product
          String ref = product.recordReference().value;
  
-         String isbn13 = product.productIdentifiers().find(ProductIdentifierTypes.ISBN_13)
-             .map(pi -> pi.idValue().value).orElse(null);
+         String isbn13 = product.productIdentifiers()
+	                        .find(ProductIdentifierTypes.ISBN_13)
+				.map(pi -> pi.idValue().value)
+				.orElse(null);
  
          String title = product.descriptiveDetail().titleDetails()
-             .filter(td -> td.titleType().value == TitleTypes.Distinctive_title_book).firstOrEmpty()
-             .titleElements().firstOrEmpty()
+             .filter(td -> td.titleType().value == TitleTypes.Distinctive_title_book)
+	     .firstOrEmpty()
+             .titleElements()
+	     .firstOrEmpty()
              .titleWithoutPrefix().value;
  
          List<String> authors = product.descriptiveDetail().contributors()
@@ -169,8 +178,11 @@ Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
              .collect(Collectors.toList());
  
          String frontCoverImageLink = product.collateralDetail().supportingResources()
-             .filter(sr -> sr.resourceContentType().value == ResourceContentTypes.Front_cover).firstOrEmpty()
-             .resourceVersions().filter(rv -> rv.resourceForm().value == ResourceForms.Downloadable_file).first()
+             .filter(sr -> sr.resourceContentType().value == ResourceContentTypes.Front_cover)
+	     .firstOrEmpty()
+             .resourceVersions()
+	     .filter(rv -> rv.resourceForm().value == ResourceForms.Downloadable_file)
+	     .first()
              .map(rv -> rv.resourceLinks().firstValueOrNull())
              .orElse(null);
  
@@ -179,7 +191,7 @@ Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
          System.out.println("title               = " + title);
          System.out.println("authors             = " + authors);
          System.out.println("frontCoverImageLink = " + frontCoverImageLink);
-         System.out.println("--------------------------------------------------------------------------------");
+         System.out.println("-----------------------------------------------------");
      });
 ```
 
@@ -258,7 +270,10 @@ type using `streamUnified()`:
 > Note that calling `streamUnified()` is identical to `.stream().map(Jonix::toBaseProduct)` which we used above
 
 ```java
-Set<PriceTypes> requestedPrices = JonixUtil.setOf(PriceTypes.RRP_including_tax, PriceTypes.RRP_excluding_tax);
+Set<PriceTypes> requestedPrices = JonixUtil.setOf(
+    PriceTypes.RRP_including_tax, 
+    PriceTypes.RRP_excluding_tax
+);
 
 JonixRecords records = Jonix.source(new File("/path/to/folder-with-onix-files"), "onix*.xml", false);
 
@@ -269,7 +284,8 @@ records.streamUnified()
         List<String> authors = product.contributors.getDisplayNames(ContributorRoles.By_author);
         List<BasePrice> prices = product.supplyDetails.findPrices(requestedPrices);
         List<String> priceLabels =
-            prices.stream().map(bp -> bp.priceAmountAsStr + " " + bp.currencyCode.code).collect(Collectors.toList());
+            prices.stream().map(bp -> bp.priceAmountAsStr + " " + bp.currencyCode.code)
+	                   .collect(Collectors.toList());
         System.out.printf("The book '%s' by %s costs: %s%n", title, authors, priceLabels);
     });
 ```
