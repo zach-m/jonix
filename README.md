@@ -139,7 +139,7 @@ Jonix.source(new File("/path/to/folder-with-mixed-onix-files"), "*.xml", false)
      });
 ```
 
-## Jonix fluent API
+## Fluent APIs
 
 Next example shows how to process ALL ONIX-3 sources, with some non-standard logic. In particular, the `authors`
 are extracted in a more elaborate way compared to `BaseProduct.contributors`, and the `frontCoverImageLink` which 
@@ -223,8 +223,7 @@ The following example, for converting a list of ONIX files into CSV files, demon
 - use of `store()` and `retrieve()` of the `JonixSource` to pass variables between event handlers on the same source (the `csv` object in this case)
 - use of `breakStream()`, `productCount()` and `productGlobalCount()` to monitor and control the streaming progress
 - use of Custom Unification of `MyProduct` with `MyUnifier` (see previous section)
-- use of `product.onixVersion()` to properly cast with `Jonix.toProduct2()`/`Jonix.toProduct3()`
-- typical error handling
+- ideas for error handling, including `JonixJson.toJson()` and `recordReferenceOf()`
 
 ```java
 public static void onixToCsv(List<String> fileNames) {
@@ -275,10 +274,12 @@ public static String recordReferenceOf(OnixProduct product) {
 }
 ```
 
-## Scanning headers only
+## Scanning headers
 
 If prior to opening an ONIX file, its header needs to be examined, use `scanHeaders()`.
+This is particularly useful when a bulk of ONIX files needs to be pre-scanned for display/sorting/filtering purposes.
 The following example provides a simple function that returns the (unified) `BaseHeader` of any ONIX file name.
+Can be easily extended to a support multiple files as input.
 
 ```java
 public static BaseHeader headerOf(String onixFileName) {
