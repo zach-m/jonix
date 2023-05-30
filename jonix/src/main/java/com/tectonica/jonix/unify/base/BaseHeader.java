@@ -19,9 +19,12 @@
 
 package com.tectonica.jonix.unify.base;
 
+import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.unify.UnifiedHeader;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,6 +48,13 @@ public abstract class BaseHeader extends UnifiedHeader {
 
     public BaseHeader(OnixHeader rawHeader) {
         super(rawHeader);
+    }
+
+    public static BaseHeader headerOf(String onixFileName) {
+        List<BaseHeader> holder = new ArrayList<>(1);
+        Jonix.source(new File(onixFileName))
+            .onSourceStart(src -> src.header().map(Jonix::toBaseHeader).ifPresent(holder::add)).scanHeaders();
+        return holder.isEmpty() ? null : holder.get(0);
     }
 
     @Override

@@ -337,12 +337,13 @@ public class JonixRecords implements Iterable<JonixRecord> {
      * This will "peek" into the {@code Header}s of the indicated ONIX sources, without processing the {@code Product}s.
      * The {@code onSourceStart()} events will be fired as a result, allowing to handle the header information.
      */
-    public void scanHeaders() {
+    public JonixRecords scanHeaders() {
         openOnlyHeadersRequested = true;
         stream().forEach(jonixRecord -> {
             // do nothing, just open the sources one after the other
         });
         openOnlyHeadersRequested = false;
+        return this; // TODO reuse for another stream() might be problematic if constructed from inputStream
     }
 
     @Override
