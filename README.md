@@ -284,7 +284,7 @@ The following example provides a simple function that returns the (unified) `Bas
 public static BaseHeader headerOf(String onixFileName) {
     List<BaseHeader> holder = new ArrayList<>(1);
     Jonix.source(new File(onixFileName))
-        .onSourceStart(src -> src.header().ifPresent(h -> holder.add(Jonix.toBaseHeader(h))))
+        .onSourceStart(src -> src.header().map(Jonix::toBaseHeader).ifPresent(holder::add))
         .scanHeaders();
     return holder.isEmpty() ? null : holder.get(0);
 }
