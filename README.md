@@ -229,17 +229,18 @@ The following example, for converting a list of ONIX files into CSV files, demon
 ```java
 public static void onixToCsv(List<String> fileNames) {
     Jonix.source(fileNames.stream().map(File::new).toList())
-        .onSourceStart(src -> {
-            String csvFileName = src.sourceName();
+        .onSourceStart(source -> {
+            String csvFileName = source.sourceName();
             System.out.println("Creating " + csvFileName + "..");
             final CsvWriter csv = new CsvWriter(csvFileName);
             csv.writeCsvHeader();
-            src.store("csv", csv);
+            source.store("csv", csv);
         })
-        .onSourceEnd(src -> {
-            final CsvWriter csv = src.retrieve("csv");
+        .onSourceEnd(source -> {
+            final CsvWriter csv = source.retrieve("csv");
             csv.close();
-            System.out.printf("Processed %d / %d products%n", src.productCount(), src.productGlobalCount());
+            System.out.printf("Processed %d / %d products%n", 
+	                      source.productCount(), source.productGlobalCount());
         })
         .stream()
         .forEach(rec -> {
@@ -251,7 +252,8 @@ public static void onixToCsv(List<String> fileNames) {
             } catch (Exception e) {
                 // e.printStackTrace();
                 // System.err.println(JonixJson.toJson(product));
-                System.err.printf("ERROR in #REF [%s]: %s%n", recordReferenceOf(product), e.getMessage());
+                System.err.printf("ERROR in #REF [%s]: %s%n", 
+		                  recordReferenceOf(product), e.getMessage());
                 // don't re-throw, don't break source, just continue to the next product..
             }
             if (rec.source.productCount() == 50) {
