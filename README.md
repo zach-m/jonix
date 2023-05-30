@@ -1,10 +1,10 @@
 # ![jonix](JONIX.png)
 
 > NOTE: version `2023-05` presents the single most important leap for Jonix in a decade. Its APIs have been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
-> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were added to the `List`s of composites, eliminating many previously-required `null`/`exists()` checks.
-> For streaming control (typically via `Jonix.stream()`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
-> While setting up the `JonixRecords` for the stream, `failOnInvalidFile()` and `scanHeaders()` are now availble.
-> For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixVersion()` and `.onixRelease()` were added to `Product` and `Header`. See newly-crafted examples below.
+> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were added to the Lists of composites, eliminating many previously-unavoidable `null`/`exists()` checks.
+> For streaming control (e.g. `Jonix.stream()...`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` object passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
+> The `JonixRecords` object now offers `scanHeaders()` for `Header`-only peek of the ONIX sources. It also has `failOnInvalidFile()` method to replace a configuration flag with the same name.
+> For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixRelease()` and `.onixVersion()` were added to top-level `Product` and `Header` classes. See newly-crafted examples below.
 
 Jonix is a commercial-grade open source Java library for extracting data from [ONIX for Books](https://www.editeur.org/83/Overview/) sources.
 
@@ -81,6 +81,8 @@ Once completed, Jonix should be available to use as a maven dependency on your l
 
 # Quick Start
 
+## Version-agnostic extraction of common fields
+
 If you need to extract common fields from diversified ONIX sources (mixture of ONIX-2 and ONIX-3, `reference` and 
 `short` format (see [here](https://www.editeur.org/74/FAQs/#q10))), the following example should help:
 
@@ -115,6 +117,8 @@ Jonix.source(new File("/path/to/folder-with-onix-files"), "*.xml", false)
      });
 ```
 
+## Version-specific extraction
+
 The example above uses the [BaseProduct](http://zach-m.github.io/jonix/jonix/com/tectonica/jonix/unify/base/BaseProduct.html)
 class, which processes ONIX-2 and ONIX-3 sources differently, according to their schema, and stores the most common 
 fields in its public fields, such as `info`, `description`, `subjects`, etc. 
@@ -135,7 +139,9 @@ Jonix.source(new File("/path/to/folder-with-mixed-onix-files"), "*.xml", false)
      });
 ```
 
-Next is an example of how to process ALL ONIX-3 sources, with some non-standard logic. In particular, the `authors`
+## Jonix fluent API
+
+Next example shows how to process ALL ONIX-3 sources, with some non-standard logic. In particular, the `authors`
 are extracted in a more elaborate way compared to `BaseProduct.contributors`, and the `frontCoverImageLink` which 
 doesn't exist at all in `BaseProduct` is extracted here as well.
 
@@ -199,6 +205,8 @@ Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
      });
 ```
 
+## Custom Unification
+
 Additionally, if your project requires delicate handling of many ONIX fields, you may want to consider replacing the
 `BaseProduct` class with your own version altogether. This will allow you, or your team members, to write simple, 
 version-agnostic streaming scripts, like the one at the top of this section, leaving the extraction details outside of
@@ -208,6 +216,64 @@ This feature of Jonix is known as Custom Unification, and there are 3 examples i
 - Extend the `BaseProduct` with some additional global fields, see [MyCustomBaseUnifier1](https://github.com/zach-m/jonix/blob/master/jonix/src/test/java/com/tectonica/jonix/external/MyCustomBaseUnifier1.java)
 - Extend individual members and sub-members of `BaseProduct` (such as `description`, `title`, etc.), see [MyCustomBaseUnifier2](https://github.com/zach-m/jonix/blob/master/jonix/src/test/java/com/tectonica/jonix/external/MyCustomBaseUnifier2.java)
 - Create a whole new replacement for `BaseProduct`, extracting only the fields you're interested in, see [MyCustomUnifier](https://github.com/zach-m/jonix/blob/master/jonix/src/test/java/com/tectonica/jonix/external/MyCustomUnifier.java)
+
+## Streaming aids
+
+The following example, for converting a list of ONIX files into CSV files, demonstrates several features:
+- use of `store()` and `retrieve()` of the `JonixSource` to pass variables between event handlers on the same source (the `csv` object in this case)
+- use of `breakStream()`, `productCount()` and `productGlobalCount()` to monitor and control the streaming progress
+- use of Custom Unification of `MyProduct` with `MyUnifier` (see previous section)
+- use of `product.onixVersion()` to properly cast with `Jonix.toProduct2()`/`Jonix.toProduct3()`
+- typical error handling
+
+```java
+public static void onixToCsv(List<String> fileNames) {
+    Jonix.source(fileNames.stream().map(File::new).toList())
+        .onSourceStart(src -> {
+            String csvFileName = src.sourceName();
+            System.out.println("Creating " + csvFileName + "..");
+            final CsvWriter csv = new CsvWriter(csvFileName);
+            csv.writeCsvHeader();
+            src.store("csv", csv);
+        })
+        .onSourceEnd(src -> {
+            final CsvWriter csv = src.retrieve("csv");
+            csv.close();
+            System.out.printf("Processed %d / %d products%n", src.productCount(), src.productGlobalCount());
+        })
+        .stream()
+        .forEach(rec -> {
+            final OnixProduct product = rec.product;
+            final CsvWriter csv = rec.source.retrieve("csv");
+            try {
+                MyProduct mp = JonixUnifier.unifyProduct(product, MyUnifier.unifier);
+                csv.writeCsvLine(mp.toCsvColumns());
+            } catch (Exception e) {
+                // e.printStackTrace();
+                // System.err.println(JonixJson.toJson(product));
+                System.err.printf("ERROR in #REF [%s]: %s%n", recordReferenceOf(product), e.getMessage());
+                // don't re-throw, don't break source, just continue to the next product..
+            }
+            if (rec.source.productCount() == 50) {
+                rec.breakStream();
+            }
+        });
+}
+
+public static String recordReferenceOf(OnixProduct product) {
+    final String ref;
+    if (product.onixVersion() == OnixVersion.ONIX2) {
+        ref = Jonix.toProduct2(product).recordReference().value;
+    } else if (product.onixVersion() == OnixVersion.ONIX3) {
+        ref = Jonix.toProduct3(product).recordReference().value;
+    } else {
+        throw new RuntimeException("Unexpected type: " + product.getClass().getName());
+    }
+    return (ref == null) ? "N/A" : ref;
+}
+```
+
+# Extras
 
 ## Low-Level APIs
 
