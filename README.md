@@ -275,7 +275,22 @@ public static String recordReferenceOf(OnixProduct product) {
 }
 ```
 
-# Extras
+## Scanning headers only
+
+If prior to opening an ONIX file, its header needs to be examined, use `scanHeaders()`.
+The following example provides a simple function that returns the (unified) `BaseHeader` of any ONIX file name.
+
+```java
+public static BaseHeader headerOf(String onixFileName) {
+    List<BaseHeader> holder = new ArrayList<>(1);
+    Jonix.source(new File(onixFileName))
+        .onSourceStart(src -> src.header().ifPresent(h -> holder.add(Jonix.toBaseHeader(h))))
+        .scanHeaders();
+    return holder.isEmpty() ? null : holder.get(0);
+}
+```
+
+# Extra Docs
 
 ## Low-Level APIs
 
