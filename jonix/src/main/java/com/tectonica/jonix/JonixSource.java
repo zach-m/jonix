@@ -92,7 +92,7 @@ public class JonixSource {
      * @return the absolute path of the file (if this source pertains to a file), or some text label representing the
      *     stream if {@link #isStreamBased()}.
      */
-    public String sourceName() {
+    public String getAbsoluteFilePath() {
         return file != null ? file.getAbsolutePath() : stream.toString();
     }
 

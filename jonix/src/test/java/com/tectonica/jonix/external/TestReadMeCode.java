@@ -49,7 +49,7 @@ public class TestReadMeCode {
             .source(new File("C:\\DEV-ZACH\\Jonix\\jonix\\jonix\\src\\test\\resources\\samples"), "*.xml", false) //
             .onSourceStart(src -> {
                 // after the <Header> of the current ONIX source has been processed, we take a look at the source properties
-                System.out.printf(">> Opening %s (ONIX release %s)%n", src.sourceName(), src.onixRelease());
+                System.out.printf(">> Opening %s (ONIX release %s)%n", src.getAbsoluteFilePath(), src.onixRelease());
                 src.header().map(Jonix::toBaseHeader)
                     .ifPresent(header -> System.out.printf(">> Sent from: %s%n", header.senderName));
             }).onSourceEnd(src -> {
@@ -84,7 +84,7 @@ public class TestReadMeCode {
                     src.skipSource();
                 }
             }).onSourceEnd(src -> {
-                System.out.printf("<< Processed %d products from %s %n", src.productCount(), src.sourceName());
+                System.out.printf("<< Processed %d products from %s %n", src.productCount(), src.getAbsoluteFilePath());
             }).stream() // iterate over the products contained in all ONIX sources
             .map(Jonix::toProduct3).forEach(product -> {
                 // take the information you need from the current product
@@ -165,7 +165,7 @@ public class TestReadMeCode {
         JonixRecords jonixRecords =
             Jonix.source(new File("C:\\DEV-ZACH\\Jonix\\jonix\\jonix\\src\\test\\resources\\samples"), "onix*.xml",
                     false) //
-                .onSourceStart(src -> System.out.printf("%s [%s]%n", src.sourceName(), src.onixRelease()));
+                .onSourceStart(src -> System.out.printf("%s [%s]%n", src.getAbsoluteFilePath(), src.onixRelease()));
         jonixRecords.scanHeaders();
         System.out.println("----------------------------------------------------------------------------------");
         jonixRecords.stream().map(Jonix::toBaseProduct).forEach(p -> System.out.println(p.info.recordReference));
