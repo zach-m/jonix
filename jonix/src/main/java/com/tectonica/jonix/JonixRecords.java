@@ -410,7 +410,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
             if (failOnInvalidFile) {
                 throw new RuntimeException(e);
             } else {
-                LOGGER.warn("Error processing " + currentSource.sourceName(), e);
+                LOGGER.warn("Error processing " + currentSource.getAbsoluteFilePath(), e);
             }
         }
 

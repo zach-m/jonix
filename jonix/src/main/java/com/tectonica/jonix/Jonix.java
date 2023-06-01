@@ -206,17 +206,17 @@ public class Jonix {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private static void usage() {
-        p("Usage:");
-        p("        java -jar jonix.jar OUTPUT [DIRECTORY] [PATTERN]");
-        p("or:     java -jar jonix.jar OUTPUT INPUT");
-        p("");
-        p("Creates a comma-delimited file named OUTPUT, listing all the ONIX records found in either:");
-        p("- any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)");
-        p("- the single file INPUT");
-        p("");
+        print("Usage:");
+        print("        java -jar jonix.jar OUTPUT [DIRECTORY] [PATTERN]");
+        print("or:     java -jar jonix.jar OUTPUT INPUT");
+        print("");
+        print("Creates a comma-delimited file named OUTPUT, listing all the ONIX records found in either:");
+        print("- any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)");
+        print("- the single file INPUT");
+        print("");
     }
 
-    private static void p(String s) {
+    private static void print(String s) {
         System.out.println(s);
     }
 
