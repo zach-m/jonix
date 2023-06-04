@@ -1,7 +1,7 @@
 # ![jonix](JONIX.png)
 
 > NOTE: version `2023-05` presents the single most important leap for Jonix in a decade. The API has been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
-> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were added to the Lists of composites, eliminating many previously-unavoidable `null`/`exists()` checks.
+> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were introduced for Lists of composites, eliminating many previously-unavoidable `null`/`exists()` checks.
 > For streaming control (e.g. `Jonix.source()...stream()...`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` object passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
 > The `JonixRecords` object now offers `scanHeaders()` for `Header`-only peek of the ONIX sources. It also has `failOnInvalidFile()` method to replace a configuration flag with the same name.
 > For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixRelease()` and `.onixVersion()` were added to top-level `Product` and `Header` classes. See newly-crafted examples below.
@@ -15,6 +15,15 @@ It comprises of various services for efficient processing of ONIX sources, empha
 
 It is NOT a thin XML-processing wrapper, nor is it `XPath` in disguise. It was built from scratch specifically for 
 ONIX files, and accordingly it gets updated whenever a new schema of ONIX is published (4 times a year).
+
+With Jonix, each ONIX element is represented by a dedicated Java class (code is auto-generated from the official schema),
+which gives type-safe access to the data contained by that element. The Java classes have a clear and intuitive API, where
+methods never return `null`, while public fields (containing values at the terminal nodes) may.
+
+Different ONIX elements play different roles. Some are simple data elements, containing a single value (and optionally some attributes),
+others are "Composites", containing other elements (some of which may be composites by themselves), and others are merely flags.
+The [Jonix Object Model](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/package-summary.html) makes
+clear distinction betweem these types and offers different APIs for different types.
 
 ### Recent Versions
 
@@ -324,9 +333,11 @@ to avoid confusion.
 	[Flag](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/OnixFlag.html). 
 
 > Classes in Jonix that represent ONIX tags are generated automatically from the official schema 
-([here](https://www.editeur.org/93/Release-3.0-Downloads/#Specifications) 
-and [here](https://www.editeur.org/15/Archived-Previous-Releases/#2.1%20Downloads)). 
-There are over 400 classes behind each ONIX version (2 and 3) and almost 200 enumerators representing the Codelists.
+> ([here](https://www.editeur.org/93/Release-3.0-Downloads/#Specifications) and [here](https://www.editeur.org/15/Archived-Previous-Releases/#2.1%20Downloads)). 
+> There are over [500 classes](https://zach-m.github.io/jonix/jonix.onix3/com/tectonica/jonix/onix3/package-summary.html)
+> for ONIX-3 (and over [430 classes](https://zach-m.github.io/jonix/jonix.onix2/com/tectonica/jonix/onix2/package-summary.html)
+> for ONIX-2) and almost [200 enumerators](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/codelist/package-summary.html)
+> representing the Codelists.
 
 ## High-Level APIs
 
