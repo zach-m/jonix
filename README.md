@@ -13,11 +13,11 @@ It comprises of various services for efficient processing of ONIX sources, empha
 - Fluent, intuitive and type-safe APIs
 - Extensibility
 
-It is NOT a thin XML-processing wrapper, nor is it `XPath` in disguise. It was built from scratch specifically for 
+Jonix is NOT a thin XML-processing wrapper, nor is it `XPath` in disguise. It was built from scratch specifically for 
 ONIX files, and accordingly it gets updated whenever a new schema of ONIX is published (4 times a year).
 
 With Jonix, each ONIX element is represented by a dedicated Java class (code is auto-generated from the official schema),
-which gives type-safe access to the data contained by that element. The Java classes have a clear and intuitive API, where
+providing type-safe access to the data stored in that element. The Java classes have a clear and intuitive API, where
 methods never return `null`, while public fields (containing values at the terminal nodes) may.
 
 Different ONIX elements play different roles. Some are simple data elements, containing a single value (and optionally some attributes),
