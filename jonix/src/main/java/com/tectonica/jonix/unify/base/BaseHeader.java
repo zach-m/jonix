@@ -60,11 +60,11 @@ public abstract class BaseHeader extends UnifiedHeader {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("FromCompany: ").append(senderName).append("\n");
-        sb.append("FromPerson:  ").append(senderContactName).append("\n");
-        sb.append("FromEmail:   ").append(senderEmail).append("\n");
-        sb.append("ToCompany:   ").append(addressees).append("\n");
-        sb.append("SentDate:    ").append(sentDateTime);
+        sb.append("SenderName:        ").append(senderName).append("\n");
+        sb.append("SenderContactName: ").append(senderContactName).append("\n");
+        sb.append("SenderEmail:       ").append(senderEmail).append("\n");
+        sb.append("Addressees:        ").append(addressees).append("\n");
+        sb.append("SentDateTime:      ").append(sentDateTime);
         return sb.toString();
     }
 }
