@@ -92,8 +92,8 @@ Once completed, Jonix should be available to use as a maven dependency on your l
 
 ## Version-agnostic extraction of common fields
 
-If you need to extract common fields from diversified ONIX sources (mixture of ONIX-2 and ONIX-3, `reference` and 
-`short` format (see [here](https://www.editeur.org/74/FAQs/#q10))), the following example should help:
+If you need to extract common fields from sources of mixed ONIX variants (ONIX-2 alongside ONIX-3, `reference`
+alongside `short` format (see [here](https://www.editeur.org/74/FAQs/#q10))), the following example should help:
 
 ```java
 Jonix.source(new File("/path/to/folder-with-onix-files"), "*.xml", false)
@@ -132,7 +132,8 @@ The example above uses the [BaseProduct](http://zach-m.github.io/jonix/jonix/com
 class, which processes ONIX-2 and ONIX-3 sources differently, according to their schema, and stores the most common 
 fields in its public fields, such as `info`, `description`, `subjects`, etc. 
 
-If, however, you need a more complicated extraction, specific to your needs and sources, this "one-size-fits-all" approach may not be right for you. Instead, you may want to process the raw fields by yourself, as follows:
+If, however, you need a more complicated extraction, specific to your needs and sources, this "one-size-fits-all" approach may
+not be right for you. Instead, you may want to process the raw fields by yourself, as follows:
 
 ```java
 Jonix.source(new File("/path/to/folder-with-mixed-onix-files"), "*.xml", false)
@@ -150,9 +151,9 @@ Jonix.source(new File("/path/to/folder-with-mixed-onix-files"), "*.xml", false)
 
 ## Fluent APIs
 
-Next example shows how to process ALL ONIX-3 sources, with some non-standard logic. In particular, the `authors`
-are extracted in a more elaborate way compared to `BaseProduct.contributors`, and the `frontCoverImageLink` which 
-doesn't exist at all in `BaseProduct` is extracted here as well.
+Next example shows how to process a folder containing ALL ONIX-3 sources, with some non-standard logic.
+In particular, the `authors` are extracted in a more elaborate way compared to `BaseProduct.contributors`, 
+and the `frontCoverImageLink` which doesn't exist at all in `BaseProduct` is extracted here as well.
 
 > Pay careful attention to the usage of `.firstOrEmpty()` and `orElse()`, espeically in the extraction of `title`, `authors` and `frontCoverImageLink`.
 > They demostrate the Jonix fluent API, where if a certain element doesn't exist in the ONIX XML source (and certainly not its children elements),
@@ -173,7 +174,7 @@ Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
      .stream() // iterate over the products contained in all ONIX sources
      .map(Jonix::toProduct3)
      .forEach(product -> {
-         // take the information you need from the current product
+         // take the requested information from the current product
          String ref = product.recordReference().value;
  
          String isbn13 = product.productIdentifiers()
@@ -193,7 +194,8 @@ Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
              .stream()
              .map(c -> c.personName().value().orElse(
                        c.nameIdentifiers().find(NameIdentifierTypes.Proprietary)
-                                          .map(ni -> ni.idTypeName().value).orElse("N/A")))
+                                          .map(ni -> ni.idTypeName().value)
+					  .orElse("N/A")))
              .collect(Collectors.toList());
  
          String frontCoverImageLink = product.collateralDetail().supportingResources()
@@ -216,10 +218,10 @@ Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
 
 ## Custom Unification
 
-Additionally, if your project requires delicate handling of many ONIX fields, you may want to consider replacing the
+If your project requires delicate handling of many ONIX fields, you may want to consider replacing the
 `BaseProduct` class with your own version altogether. This will allow you, or your team members, to write simple, 
-version-agnostic streaming scripts, like the one at the top of this section, leaving the extraction details outside of
-the business logic.
+version-agnostic streaming scripts, like the one at the top of this section, leaving the extraction details separate
+from the business logic.
 
 This feature of Jonix is known as Custom Unification, and there are 3 examples included in the project:
 - Extend the `BaseProduct` with some additional global fields, see [MyCustomBaseUnifier1](https://github.com/zach-m/jonix/blob/master/jonix/src/test/java/com/tectonica/jonix/external/MyCustomBaseUnifier1.java)
@@ -300,7 +302,7 @@ public static BaseHeader headerOf(String onixFileName) {
 }
 ```
 
-# Extra Docs
+# Older Docs
 
 ## Low-Level APIs
 
