@@ -129,8 +129,8 @@ Jonix.source(new File("/path/to/folder-with-onix-files"), "*.xml", false)
 ## Version-specific extraction
 
 The example above uses the [BaseProduct](http://zach-m.github.io/jonix/jonix/com/tectonica/jonix/unify/base/BaseProduct.html)
-class, which processes ONIX-2 and ONIX-3 sources differently, according to their schema, and stores the most common 
-fields in its public fields, such as `info`, `description`, `subjects`, etc. 
+class, which processes ONIX-2 and ONIX-3 sources differently, each according to its schema, and extracts the most essential 
+information into its public fields, such as `info`, `description`, `subjects`, etc. 
 
 If, however, you need a more complicated extraction, specific to your needs and sources, this "one-size-fits-all" approach may
 not be right for you. Instead, you may want to process the raw fields by yourself, as follows:
@@ -155,7 +155,7 @@ Next example shows how to process a folder containing ALL ONIX-3 sources, with s
 In particular, the `authors` are extracted in a more elaborate way compared to `BaseProduct.contributors`, 
 and the `frontCoverImageLink` which doesn't exist at all in `BaseProduct` is extracted here as well.
 
-> Pay careful attention to the usage of `.firstOrEmpty()` and `orElse()`, espeically in the extraction of `title`, `authors` and `frontCoverImageLink`.
+> Pay careful attention to the usage of `.firstOrEmpty()`, `orElse()` and `flatMap()`, espeically in the extraction of `title`, `authors` and `frontCoverImageLink`.
 > They demostrate the Jonix fluent API, where if a certain element doesn't exist in the ONIX XML source (and certainly not its children elements),
 > we still apply the same logic as if it does (counting on `null` terminal values if it doesn't). This syntax eliminates the need for cumbersone `if-else`
 > blocks (testing for existence of elements), and leaves us with concise and clean expressions.
@@ -163,8 +163,8 @@ and the `frontCoverImageLink` which doesn't exist at all in `BaseProduct` is ext
 ```java
 Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
      .onSourceStart(src -> {
-         // safeguard: we skip ONIX-2 files
-         if (src.onixVersion() == OnixVersion.ONIX2) {
+         // safeguard: we skip non-ONIX-3 files
+         if (src.onixVersion() != OnixVersion.ONIX3) {
              src.skipSource();
          }
      })
@@ -194,7 +194,7 @@ Jonix.source(new File("/path/to/all-onix3-folder"), "*.xml", false)
              .stream()
              .map(c -> c.personName().value().orElse(
                        c.nameIdentifiers().find(NameIdentifierTypes.Proprietary)
-                                          .map(ni -> ni.idTypeName().value)
+                                          .flatMap(ni -> ni.idTypeName().value())
 					  .orElse("N/A")))
              .collect(Collectors.toList());
  
