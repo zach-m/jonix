@@ -42,7 +42,7 @@ interface CodeList30 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist30">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist30">ONIX
  *      Codelist 30 in Reference Guide</a>
  */
 public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
@@ -63,7 +63,8 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
 
     /**
      * For use up to 36 months only, or up to 42 months in Audience range value (2) only: values in
-     * &lt;AudienceRangeValue&gt; must be integers
+     * &lt;AudienceRangeValue&gt; must be integers. Should not be used when an Audience range with qualifier code 17 is
+     * present
      */
     Interest_age_months("16", "Interest age, months"),
 

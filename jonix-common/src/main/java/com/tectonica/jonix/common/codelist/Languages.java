@@ -42,7 +42,7 @@ interface CodeList74 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -1318,11 +1318,12 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Picard("pcd", "Picard"),
 
     /**
-     * Guajiro. ONIX local code, equivalent of guc in ISO 639-3. Only for use in ONIX 3.0 or later
+     * ONIX local code for graphical symbols used in augmentative and alternative communication and education, not
+     * listed in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Wayuu("guc", "Wayuu"),
+    Picture_Communication_Symbols_PCS("qsp", "Picture Communication Symbols (PCS)"),
 
     /**
      * ONIX local code for Italian dialect, equivalent to pms in ISO 639-3. Only for use in ONIX 3.0 or later
@@ -1741,9 +1742,24 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Washo("was", "Washo"),
 
+    /**
+     * Guajiro. ONIX local code, equivalent of guc in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Wayuu("guc", "Wayuu"),
+
     Welsh("wel", "Welsh"),
 
     Western_Frisian("fry", "Western Frisian"),
+
+    /**
+     * ONIX local code for graphical symbols used in augmentative and alternative communication and education, not
+     * listed in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Widgit_symbols("qsw", "Widgit symbols"),
 
     Wolaitta_Wolaytta("wal", "Wolaitta; Wolaytta"),
 

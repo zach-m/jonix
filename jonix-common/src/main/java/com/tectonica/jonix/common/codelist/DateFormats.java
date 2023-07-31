@@ -42,7 +42,7 @@ interface CodeList55 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist55">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist55">ONIX
  *      Codelist 55 in Reference Guide</a>
  */
 public enum DateFormats implements OnixCodelist, CodeList55 {
@@ -107,7 +107,7 @@ public enum DateFormats implements OnixCodelist, CodeList55 {
     YYYYYYYY("11", "YYYYYYYY"),
 
     /**
-     * For complex, approximate or uncertain dates, or dates BCE
+     * For complex, approximate or uncertain dates, or dates BCE. Suggested maximum length 100 characters
      */
     Text_string("12", "Text string"),
 
@@ -143,7 +143,8 @@ public enum DateFormats implements OnixCodelist, CodeList55 {
     YYYY_H("25", "YYYY (H)"),
 
     /**
-     * For complex, approximate or uncertain dates (Hijri calendar), text would usually be in Arabic script
+     * For complex, approximate or uncertain dates (Hijri calendar), text would usually be in Arabic script. Suggested
+     * maximum length 100 characters
      */
     Text_string_H("32", "Text string (H)");
 

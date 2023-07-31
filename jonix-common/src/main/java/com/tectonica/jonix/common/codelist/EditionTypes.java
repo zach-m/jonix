@@ -42,7 +42,7 @@ interface CodeList21 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -89,6 +89,14 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * Braille edition
      */
     Braille_edition("BRL", "Braille edition"),
+
+    /**
+     * Product sold at lower price than other editions, usually with lower quality paper or binding to reduce production
+     * costs. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Budget_edition("BUD", "Budget edition"),
 
     /**
      * An edition in which two or more works also published separately are combined in a single volume; AKA 'omnibus

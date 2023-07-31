@@ -42,7 +42,7 @@ interface CodeList59 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist59">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist59">ONIX
  *      Codelist 59 in Reference Guide</a>
  */
 public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
@@ -93,15 +93,15 @@ public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
      * Price valid for a specified period prior to publication. Orders placed prior to the end of the period are
      * guaranteed to be delivered to the retailer before the nominal publication date. The price may or may not be
      * different from the 'normal' price, which carries no such delivery guarantee. Must be accompanied by a
-     * &lt;PriceEffectiveUntil&gt; date (or equivalent &lt;PriceDate&gt; composite in ONIX 3), and should also be
-     * accompanied by a 'normal' price
+     * &lt;PriceEffectiveUntil&gt; date (or equivalent &lt;PriceDate&gt; composite in ONIX 3.0 or later), and should
+     * also be accompanied by a 'normal' price
      */
     Reservation_order_price("07", "Reservation order price"),
 
     /**
      * Temporary 'Special offer' price. Must be accompanied by &lt;PriceEffectiveFrom&gt; and
-     * &lt;PriceEffectiveUntil&gt; dates (or equivalent &lt;PriceDate&gt; composites in ONIX 3), and may also be
-     * accompanied by a 'normal' price
+     * &lt;PriceEffectiveUntil&gt; dates (or equivalent &lt;PriceDate&gt; composites in ONIX 3.0 or later), and may also
+     * be accompanied by a 'normal' price
      */
     Promotional_offer_price("08", "Promotional offer price"),
 

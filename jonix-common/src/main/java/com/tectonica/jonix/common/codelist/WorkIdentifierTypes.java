@@ -42,7 +42,7 @@ interface CodeList16 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist16">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist16">ONIX
  *      Codelist 16 in Reference Guide</a>
  */
 public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
@@ -92,10 +92,12 @@ public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
     OWI("33", "OWI"),
 
     /**
-     * International Standard Content Code, a 'similarity hash' identifier derived algorithmically from the content
-     * itself (see https://iscc.codes). &lt;IDValue&gt; is the 27-character case-sensitive string (including one hyphen)
-     * comprising the Meta-ID and Content-ID components of a full ISCC generated from a digital manifestation of the
-     * work. Only for use in ONIX 3.0 or later
+     * International Standard Content Code, a 'similarity hash' derived algorithmically from the content itself (see
+     * https://iscc.codes). &lt;IDValue&gt; is a sequence comprising the Meta-Code and Content-Code ISCC-UNITSs
+     * generated from a digital manifestation of the work, as a variable-length case-insensitive alphanumeric string (or
+     * 27 characters including one hyphen if using ISCC v1.0, but this is deprecated). Note alphabetic characters in
+     * v1.x ISCCs use Base32 encoding and are conventionally upper case. The 'ISCC:' prefix is omitted. Only for use in
+     * ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

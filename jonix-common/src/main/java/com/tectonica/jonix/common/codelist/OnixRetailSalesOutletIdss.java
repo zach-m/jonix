@@ -42,7 +42,7 @@ interface CodeList139 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -129,6 +129,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Bed_Bath_and_Beyond("BBB", "Bed Bath and Beyond"),
 
     Best_Buy("BST", "Best Buy"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Biblio_on_Demand("BOD", "Biblio-on-Demand"),
 
     /**
      * Formerly 3M Cloud Library
@@ -261,6 +268,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * Deprecated
      */
     British_Bookshops("BRT", "British Bookshops"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Cairn("CAI", "Cairn"),
 
     Casa_del_Libro("CDL", "Casa del Libro"),
 

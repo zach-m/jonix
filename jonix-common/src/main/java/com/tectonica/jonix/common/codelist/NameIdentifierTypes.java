@@ -42,7 +42,7 @@ interface CodeList44 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -264,7 +264,15 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    EORI("41", "EORI");
+    EORI("41", "EORI"),
+
+    /**
+     * Legal Entity Identifier, administered by the Global LEI Foundation, as 20 alphanumeric characters without spaces
+     * or hyphens. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    LEI("42", "LEI");
 
     public final String code;
     public final String description;

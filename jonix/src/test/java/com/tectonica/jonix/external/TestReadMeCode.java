@@ -101,7 +101,7 @@ public class TestReadMeCode {
                 List<String> authors = product.descriptiveDetail().contributors()
                     .filter(c -> c.contributorRoles().values().contains(ContributorRoles.By_author)).stream().map(
                         c -> c.personName().value().orElse(
-                            c.nameIdentifiers().find(NameIdentifierTypes.Proprietary).map(ni -> ni.idTypeName().value)
+                            c.nameIdentifiers().find(NameIdentifierTypes.Proprietary).flatMap(ni -> ni.idTypeName().value())
                                 .orElse("N/A"))).collect(Collectors.toList());
 
                 String frontCoverImageLink = product.collateralDetail().supportingResources()

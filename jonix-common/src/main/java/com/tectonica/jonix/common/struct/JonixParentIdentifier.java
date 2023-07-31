@@ -21,7 +21,7 @@ package com.tectonica.jonix.common.struct;
 
 import com.tectonica.jonix.common.JonixKeyedStruct;
 import com.tectonica.jonix.common.JonixStruct;
-import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
+import com.tectonica.jonix.common.codelist.CollectionIdentifierTypes;
 
 import java.io.Serializable;
 
@@ -35,13 +35,13 @@ import java.io.Serializable;
  * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
  */
 @SuppressWarnings("serial")
-public class JonixParentIdentifier implements JonixKeyedStruct<SeriesIdentifierTypes>, Serializable {
+public class JonixParentIdentifier implements JonixKeyedStruct<CollectionIdentifierTypes>, Serializable {
     public static final JonixParentIdentifier EMPTY = new JonixParentIdentifier();
 
     /**
      * the key of this struct (by which it can be looked up)
      */
-    public SeriesIdentifierTypes seriesIDType;
+    public CollectionIdentifierTypes seriesIDType;
 
     /**
      * Raw Format: Free text, suggested maximum length 50 characters
@@ -58,7 +58,7 @@ public class JonixParentIdentifier implements JonixKeyedStruct<SeriesIdentifierT
     public String idValue;
 
     @Override
-    public SeriesIdentifierTypes key() {
+    public CollectionIdentifierTypes key() {
         return seriesIDType;
     }
 }

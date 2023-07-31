@@ -42,7 +42,7 @@ interface CodeList80 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist80">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist80">ONIX
  *      Codelist 80 in Reference Guide</a>
  */
 public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
@@ -80,9 +80,9 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
 
     /**
      * Individual item, items or set in card box with separate or hinged lid: not to be confused with the commonly-used
-     * 'boxed set'
+     * 'boxed set' which is more likely to be packaged in a slip case
      */
-    In_box("09", "In box"),
+    In_box_with_lid("09", "In box (with lid)"),
 
     /**
      * Slip-case for single item only (de: 'Schuber')
@@ -155,7 +155,15 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
     /**
      * Individual item, items or set in metal box or can with separate or hinged lid
      */
-    In_tin("24", "In tin");
+    In_tin("24", "In tin"),
+
+    /**
+     * (ja: koguchi tome) Peelable sticker or tape sealing the foredge of a book to prevent pre-purchase reading of the
+     * content. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    With_browse_prevention_tape("25", "With browse-prevention tape");
 
     public final String code;
     public final String description;

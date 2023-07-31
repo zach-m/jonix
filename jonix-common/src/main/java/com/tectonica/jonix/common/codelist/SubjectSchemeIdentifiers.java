@@ -42,7 +42,7 @@ interface CodeList27 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -102,7 +102,6 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * For all BIC subject codes and qualifiers, see https://bic.org.uk/resources/BIC-Standard-Subject-Categories/
-     * 
      */
     BIC_subject_category("12", "BIC subject category"),
 
@@ -134,7 +133,6 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * See PA/BIC CBMC guidelines at https://bic.org.uk/resources/childrens-books-marketing-classifications/
-     * 
      */
     BIC_childrens_book_marketing_category("21", "BIC children’s book marketing category"),
 
@@ -520,7 +518,6 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     /**
      * UK Standard Library Categories, the successor to BIC's E4L classification scheme. See
      * https://bic.org.uk/resources/uk-standard-library-categories/
-     * 
      */
     BIC_UKSLC("92", "BIC UKSLC"),
 

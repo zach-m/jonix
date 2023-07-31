@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeWithKey;
+import com.tectonica.jonix.common.codelist.CollectionIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
 import com.tectonica.jonix.common.struct.JonixCollectionIdentifier;
 
 import java.io.Serializable;
@@ -65,7 +65,7 @@ import java.util.function.Consumer;
  * </ul>
  */
 public class CollectionIdentifier
-    implements OnixDataCompositeWithKey<JonixCollectionIdentifier, SeriesIdentifierTypes>, Serializable {
+    implements OnixDataCompositeWithKey<JonixCollectionIdentifier, CollectionIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "CollectionIdentifier";
@@ -242,7 +242,7 @@ public class CollectionIdentifier
     }
 
     @Override
-    public SeriesIdentifierTypes structKey() {
+    public CollectionIdentifierTypes structKey() {
         return collectionIDType().value;
     }
 }

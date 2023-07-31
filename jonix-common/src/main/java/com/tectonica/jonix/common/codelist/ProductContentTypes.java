@@ -42,34 +42,53 @@ interface CodeList81 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     /**
-     * Readable text of the main work: this value is required, together with applicable &lt;ProductForm&gt; and
+     * Readable text of the main content: this value is required, together with applicable &lt;ProductForm&gt; and
      * &lt;ProductFormDetail&gt; values, to designate an e-book or other digital or physical product whose primary
-     * content is eye-readable text
+     * content is text. Note 'text' is 'text-as-text', not 'text as an image' or images of text
      */
-    Text_eye_readable("10", "Text (eye-readable)"),
+    Text("10", "Text"),
 
     /**
-     * E-publication contains a significant number of actionable cross-references, hyperlinked notes and annotations, or
-     * with other actionable links between largely textual elements (eg quiz/test questions, 'choose your own ending'
-     * etc)
+     * E-publication contains a significant number of actionable (clickable) cross-references, hyperlinked notes and
+     * annotations, or with other actionable links between largely textual elements (eg quiz/test questions, 'choose
+     * your own ending' etc)
      */
     Extensive_links_between_internal_content("15", "Extensive links between internal content"),
 
     /**
-     * E-publication contains a significant number of actionable (clickable) web links
+     * E-publication contains a significant number of actionable (clickable) web links to external content, downloadable
+     * resources, supplementary material, etc
      */
     Extensive_links_to_external_content("14", "Extensive links to external content"),
 
     /**
-     * Publication contains additional textual content such as interview, feature article, essay, bibliography,
-     * quiz/test, other background material or text that is not included in a primary or 'unenhanced' version
+     * Publication contains actionable (clickable) links to external interactive content. Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
      */
-    Additional_eye_readable_text_not_part_of_main_work("16", "Additional eye-readable text not part of main work"),
+    Links_to_external_interactive_content("51", "Links to external interactive content"),
+
+    /**
+     * Publication contains additional textual content such as an interview, feature article, essay, bibliography,
+     * quiz/test, other background material, or text that is not included in a primary or 'unenhanced' version. Note
+     * 'text' is 'text-as-text', not 'text as an image' or images of text
+     */
+    Additional_text_not_part_of_main_content("16", "Additional text not part of main content"),
+
+    /**
+     * Including text-as-text embedded in diagrams, charts, or within images containing speech balloons, thought
+     * bubbles, captions etc. Note this does not include 'text as an image' or images of text (for which see code 49).
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Text_within_images("45", "Text within images"),
 
     /**
      * Publication contains a significant number of web links (printed URLs, QR codes etc). Only for use in ONIX 3.0 or
@@ -80,14 +99,14 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Additional_eye_readable_links_to_external_content("41", "Additional eye-readable links to external content"),
 
     /**
-     * eg Teaser chapter
+     * Publication contains supplementary text as promotional content such as, for example, a teaser chapter
      */
     Promotional_text_for_other_book_product("17", "Promotional text for other book product"),
 
     Musical_notation("11", "Musical notation"),
 
     /**
-     * Use only when no more detailed specification is provided
+     * Includes any type of illustrations. Use only when no more detailed specification is provided
      */
     Still_images_graphics("07", "Still images / graphics"),
 
@@ -108,6 +127,29 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Additional_images_graphics_not_part_of_main_work("20", "Additional images / graphics not part of main work"),
 
     Maps_and_or_other_cartographic_content("12", "Maps and/or other cartographic content"),
+
+    /**
+     * Indicates that the publication contains chemical notations, formulae. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Chemical_content("47", "Chemical content"),
+
+    /**
+     * Indicates that the publication contains mathematical notation, equations, formulae. Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Mathematical_content("48", "Mathematical content"),
+
+    /**
+     * Publication contains visual content that is purely decorative and are not necessary to understanding of the
+     * content. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Decorative_images_or_graphics("46", "Decorative images or graphics"),
 
     /**
      * eg Questions or student exercises, problems, quizzes or tests (as an integral part of the work). Only for use in
@@ -138,9 +180,17 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Music_recording("03", "Music recording"),
 
     /**
-     * Audio recording of other sound, eg birdsong
+     * Audio recording of other sound, eg birdsong, sound effects, ASMR material
      */
     Other_audio("04", "Other audio"),
+
+    /**
+     * At least some text - including text within other images - is 'text as an image' (ie a picture of text). Only for
+     * use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Images_of_text("49", "Images of text"),
 
     /**
      * Audio recording of a reading, performance or dramatization of part of the work
@@ -148,10 +198,11 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Partial_performance_spoken_word("21", "Partial performance – spoken word"),
 
     /**
-     * Product is enhanced with audio recording of full or partial reading, performance, dramatization, interview,
-     * background documentary or other audio content not included in the primary or 'unenhanced' version
+     * Product includes additional pre-recorded audio of any supplementary material such as full or partial reading,
+     * lecture, performance, dramatization, interview, background documentary or other audio content not included in the
+     * primary or 'unenhanced' version
      */
-    Additional_audio_content_not_part_of_main_work("22", "Additional audio content not part of main work"),
+    Additional_audio_content_not_part_of_main_content("22", "Additional audio content not part of main content"),
 
     /**
      * eg Reading of teaser chapter
@@ -165,6 +216,14 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Video("06", "Video"),
 
     Video_recording_of_a_reading("26", "Video recording of a reading"),
+
+    /**
+     * Publication contains video material with no audio recording or narration (but may have music or textual
+     * subtitles) . Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Video_content_without_audio("50", "Video content without audio"),
 
     /**
      * Video recording of a drama or other performance, including musical performance
@@ -225,7 +284,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Data_set_plus_software("33", "Data set plus software"),
 
     /**
-     * Entire pages or blank spaces, forms, boxes etc, intended to be filled in by the reader
+     * Entire pages or blank spaces, forms, boxes, write-in pages etc, intended to be filled in by the reader
      */
     Blank_pages_or_spaces("34", "Blank pages or spaces"),
 
@@ -235,7 +294,8 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Advertising_content("35", "Advertising content"),
 
     /**
-     * 'Back ads' - promotional pages for other books (that do not include sample content, cf codes 17, 23)
+     * 'Back ads' - promotional content for other books (that does not include sample content of those books, cf codes
+     * 17, 23)
      */
     Advertising_first_party("37", "Advertising – first party"),
 

@@ -48,8 +48,8 @@ public class ListOfOnixComposite<C extends OnixComposite> extends ArrayList<C> {
 
     /**
      * @return the first {@link OnixComposite} listed, if any, or an "empty" instance (whose
-     *     {@link OnixComposite#exists()} is {@code false}), which can be further traversed by your code (as if it
-     *     exists in the ONIX source), with all underlying data fields eventually yielding "non-existing" value
+     *         {@link OnixComposite#exists()} is {@code false}), which can be further traversed by your code (as if it
+     *         exists in the ONIX source), with all underlying data fields eventually yielding "non-existing" value
      */
     public C firstOrEmpty() {
         return (size() == 0) ? JPU.emptyInstance(clazz) : get(0);

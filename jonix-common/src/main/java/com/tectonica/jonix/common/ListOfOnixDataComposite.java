@@ -72,8 +72,8 @@ public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends J
 
     /**
      * @return the first {@link OnixDataComposite} listed, if any, or an "empty" instance (whose
-     *     {@link OnixDataComposite#exists()} is {@code false}), which can be further traversed by your code (as if it
-     *     exists in the ONIX source), with all underlying data fields eventually yielding "non-existing" value
+     *         {@link OnixDataComposite#exists()} is {@code false}), which can be further traversed by your code (as if
+     *         it exists in the ONIX source), with all underlying data fields eventually yielding "non-existing" value
      */
     public C firstOrEmpty() {
         return (size() == 0) ? JPU.emptyInstance(clazz) : get(0);

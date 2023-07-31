@@ -140,4 +140,12 @@ public class DiscountType implements OnixElement<DiscountTypes>, Serializable {
             action.accept(this);
         }
     }
+
+    public String codeOrNull() {
+        return value == null ? null : value.code;
+    }
+
+    public String descriptionOrNull() {
+        return value == null ? null : value.description;
+    }
 }

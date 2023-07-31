@@ -42,7 +42,7 @@ interface CodeList17 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -486,6 +486,13 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Introduces and links other contributors and material, eg within a documentary
      */
     Presenter("E10", "Presenter"),
+
+    /**
+     * Reader of recorded introduction (or other 'front matter') in an audiobook. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Introduction_read_by("E11", "Introduction read by"),
 
     /**
      * Other type of performer not specified above: use for a recorded performance which does not fit a category above,

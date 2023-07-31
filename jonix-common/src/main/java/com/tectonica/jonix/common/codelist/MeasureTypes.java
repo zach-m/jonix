@@ -42,7 +42,7 @@ interface CodeList48 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist48">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist48">ONIX
  *      Codelist 48 in Reference Guide</a>
  */
 public enum MeasureTypes implements OnixCodelist, CodeList48 {
@@ -69,17 +69,13 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
     Thickness("03", "Thickness"),
 
     /**
-     * 
      * Overall height (code 01) is preferred for general use, as it includes the board overhang for hardbacks
-     * 
      */
     Page_trim_height("04", "Page trim height"),
 
     /**
-     * 
      * Overall width (code 02) is preferred for general use, as it includes the board overhang and spine thickness for
      * hardbacks
-     * 
      */
     Page_trim_width("05", "Page trim width"),
 

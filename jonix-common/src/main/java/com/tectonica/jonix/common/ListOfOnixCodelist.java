@@ -81,7 +81,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
 
     /**
      * @return a non-null, possibly empty, set of all the {@link OnixCodelist}'s {@code descriptions}s stored in this
-     *     container
+     *         container
      */
     public Collection<String> descriptions() {
         return pairsMap().values();
@@ -100,7 +100,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
 
     /**
      * @return an {@link Optional} of the first {@link OnixCodelist} listed, if any, wrapped as a code+description
-     *     {@link Pair}
+     *         {@link Pair}
      */
     public Optional<Pair> firstPair() {
         return (size() == 0) ? Optional.empty() : Optional.of(get(0).__v().pair());
@@ -108,7 +108,7 @@ public class ListOfOnixCodelist<E extends OnixElement<V>, V extends OnixCodelist
 
     /**
      * @return the first {@link OnixCodelist} listed, if any, wrapped as a code+description {@link Pair}, or
-     *     {@code null} if none is listed
+     *         {@code null} if none is listed
      */
     public Pair firstPairOrNull() {
         return (size() == 0) ? null : get(0).__v().pair();

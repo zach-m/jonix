@@ -144,4 +144,12 @@ public class BibleTextOrganization implements OnixElement<BibleTextOrganizations
             action.accept(this);
         }
     }
+
+    public String codeOrNull() {
+        return value == null ? null : value.code;
+    }
+
+    public String descriptionOrNull() {
+        return value == null ? null : value.description;
+    }
 }

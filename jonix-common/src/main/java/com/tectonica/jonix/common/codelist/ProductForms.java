@@ -42,7 +42,7 @@ interface CodeList150 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
@@ -698,7 +698,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_point_of_sale("XZ", "Other point of sale"),
 
     /**
-     * General merchandise - unspecified
+     * General merchandise, book accessories and non-book products - unspecified
      */
     General_merchandise("ZA", "General merchandise"),
 
@@ -784,7 +784,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Handicraft_kit("ZP", "Handicraft kit"),
 
     /**
-     * Other toy, game and puzzle items not specified by ZB to ZN, generally accessories to other products etc. Further
+     * Other toy, game and puzzle items not specified by ZB to ZQ, generally accessories to other products etc. Further
      * detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt;
      * are unlikely to be sufficient
      * <p>
@@ -793,15 +793,16 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_toy_game_accessories("ZX", "Other toy/game accessories"),
 
     /**
-     * Other apparel items not specified by ZB to ZN, including branded, promotional or tie-in scarves, caps, aprons,
+     * Other apparel items not specified by ZB to ZQ, including branded, promotional or tie-in scarves, caps, aprons,
      * dress-up costumes etc. Further detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt;
      * and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_apparel("ZY", "Other apparel"),
 
     /**
-     * Other merchandise not specified by ZB to ZY. Further detail is expected in &lt;ProductFormDescription&gt;, as
-     * &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be sufficient
+     * Other branded, promotional or tie-in merchandise not specified by ZB to ZY. Further detail is expected in
+     * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
+     * sufficient
      */
     Other_merchandise("ZZ", "Other merchandise");
 

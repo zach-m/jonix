@@ -42,7 +42,7 @@ interface CodeList175 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -188,6 +188,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Background_music("A311", "Background music"),
 
     /**
+     * Pre-recorded audiobook narration does not contain any background sounds, including music, sound effects, etc,
+     * though music and effects may be present if isolated from the speech (ie the sounds do not overlap)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Without_background_sounds("A312", "Without background sounds"),
+
+    /**
      * Constant or average bit rate (eg of an mp3 or AAC audio file) 64kbits/second or more. Note the bit rate is the
      * total across all channels, not a per channel rate
      * <p>
@@ -241,6 +249,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Six-channel audio (including low-frequency channel)
      */
     Surround_5_1("A451", "Surround 5.1"),
+
+    /**
+     * Multi-channel 'spatial' audio (eg for 7.1.4 speaker arrangements or processed for headphone delivery)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Dolby_Atmos("A471", "Dolby Atmos"),
 
     /**
      * In North America, a category of paperback characterized partly by page size (typically from 6&#190; up to
@@ -418,7 +433,6 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Pocket-sized format, usually less than about 205mm high, without necessarily implying a particular trade category
      * (de: ,Taschenbuch'; it: &#171;Tascabile / Supertascabile&#187;; es: &#171;libro de bolsillo&#187;; fr:
      * &#171;&#160;livre de poche&#160;&#187; etc). Use with Product form code BB or BC. See also List 12 code 04
-     * 
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -492,7 +506,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Press_out_puzzle_pieces("B216", "Press-out puzzle pieces"),
 
     /**
-     * Children's picture book: use with applicable Product Form code
+     * Picture book, generally for children, with few words per illustration: use with applicable Product Form code
      */
     Picture_book("B221", "Picture book"),
 
@@ -508,6 +522,15 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * engineering)
      */
     Pull_the_tab_book("B223", "Pull-the-tab book"),
+
+    /**
+     * Picture book, generally for children though also used in augmentative and alternative education, without text in
+     * the body of the book. Also 'silent books', wordless graphic novels and comic books: use with applicable Product
+     * Form code
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Wordless_book("B224", "‘Wordless’ book"),
 
     /**
      * Use with Product Form code BD, BN or PM
@@ -844,9 +867,57 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Flipped_manga_format("B604", "Flipped manga format"),
 
     /**
+     * A book in which half the content is read the other way round from 'back' to 'front'. A variant on 'flip-book' or
+     * 't&#234;te-b&#234;che' (fr) binding where the text is in two languages with different page progression (eg
+     * English and Arabic) and neither needs to be upside down, it has two front covers and a single spine. Usually an
+     * omnibus of a work and a derived translated work
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Variant_turn_around_book("B605", "Variant turn-around book"),
+
+    /**
+     * Pages are ordered left to right (the left page in a spread is read before the right). Note this does not
+     * specifically mean text on the page is also read left to right
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Page_progression_LTR("B606", "Page progression LTR"),
+
+    /**
+     * Pages are ordered right to left
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Page_progression_RTL("B607", "Page progression RTL"),
+
+    /**
+     * Pages are ordered top to bottom, with the spine oriented horizontally. See also Dwarsligger (code B118), a
+     * proprietary variation of this format
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Page_progression_TTB("B608", "Page progression TTB"),
+
+    /**
+     * Pages are ordered bottom to top, with the spine oriented horizontally, or in a way for which there is no other
+     * code
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Page_progression_other("B609", "Page progression other"),
+
+    /**
      * Text shows syllable breaks
      */
     Syllabification("B610", "Syllabification"),
+
+    /**
+     * For bicameral scripts, body text is upper case only
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Upper_case_only("B611", "Upper case only"),
 
     /**
      * Single letters only. Was formerly identified as UK Braille Grade 1
@@ -1393,6 +1464,21 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Content_removed("E204", "Content removed"),
 
     /**
+     * (Mostly fixed-format) e-publication contains visible page numbers. Use with List 196 code 19 if numbering has a
+     * print-equivalent
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Visible_page_numbering("E205", "Visible page numbering"),
+
+    /**
+     * For e-publications only, pages may be rendered LTR or RTL (see B606 to B609)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    No_preferred_page_progression("E206", "No preferred page progression"),
+
+    /**
      * Use for fixed-format e-books optimised for landscape display. Also include an indication of the optimal screen
      * aspect ratio
      */
@@ -1410,6 +1496,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     Square("E212", "Square"),
+
+    /**
+     * Use for fixed-format e-publications optimised for vertical scrolling display ('webtoon format')
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Vertical_scrolling("E213", "Vertical scrolling"),
 
     /**
      * (1.25:1) Use for fixed-format e-books optimised for displays with a 5:4 aspect ratio (eg 1280x1024 pixels etc,
@@ -1465,22 +1558,68 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Laminated("L101", "Laminated"),
 
     /**
-     * Large format. Use with Product Form code PC or PF
+     * (de: Nutzkalendarium) Calendar or diary has spaces intended for entering birthdays, appointments, notes etc. Use
+     * with other calendar / diary type codes
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Calendar_with_write_in_space("P091", "Calendar with write-in space"),
+
+    /**
+     * (de: Schmuckkalendarium) Calendar or diary has no spaces intended for entering birthdays, appointments, notes
+     * etc. Use with other calendar / diary type codes
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Calendar_without_write_in_space("P092", "Calendar without write-in space"),
+
+    /**
+     * (de: Mehrmonatskalender) Calendar has multiple months (but not whole year) per page or view. Use with other
+     * calendar / diary type codes when the time period per sheet, page or view is not the expected arrangement
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Multiple_months_per_page("P096", "Multiple months per page"),
+
+    /**
+     * (de: Monatskalender) Calendar has one month per page or view
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    One_month_per_page("P097", "One month per page"),
+
+    /**
+     * (de: Wochenkalender) Calendar has one week per page or view
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    One_week_per_page("P098", "One week per page"),
+
+    /**
+     * (de: Tageskalender) Calendar has one day per page or view
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    One_day_per_page("P099", "One day per page"),
+
+    /**
+     * Large format, usually one week per page or view. Use with Product Form code PC or PF
      */
     Desk_calendar_or_diary("P101", "Desk calendar or diary"),
 
     /**
-     * Small format. Use with Product Form code PC or PF
+     * Small format, usually one week per page or view. Use with Product Form code PC or PF
      */
     Mini_calendar_or_pocket_diary("P102", "Mini calendar or pocket diary"),
 
     /**
-     * Usually with time-of-day subdivisions (rather than just days). Use with Product Form code PC or PF
+     * Day planner. Usually one day per page or view, with time-of-day subdivisions (rather than just days) or adequate
+     * space to add them. Use with Product Form code PC or PF
      */
     Engagement_calendar_or_Appointment_diary("P103", "Engagement calendar or Appointment diary"),
 
     /**
-     * Eg tear-off calendars. Use with Product Form code PC
+     * Eg tear-off calendars (one day per sheet). Use with Product Form code PC
      */
     Day_by_day_calendar("P104", "Day by day calendar"),
 
@@ -1490,17 +1629,18 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Poster_calendar("P105", "Poster calendar"),
 
     /**
-     * Large calendar intended for hanging, usually one page per month. Use with Product Form code PC
+     * Large calendar intended for hanging, usually one month per page or view, with illustrations. Use with Product
+     * Form code PC
      */
     Wall_calendar("P106", "Wall calendar"),
 
     /**
-     * Usually undated. Use with Product Form code PC or PF
+     * Usually undated. Use with Product Form code PC or PF, and can be combined with other calendar/diary type codes
      */
     Perpetual_calendar_or_diary("P107", "Perpetual calendar or diary"),
 
     /**
-     * Use with Product Form code PC
+     * Use with Product Form code PC, and can be combined with other calendar/diary type codes
      */
     Advent_calendar("P108", "Advent calendar"),
 
@@ -1510,7 +1650,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Bookmark_calendar("P109", "Bookmark calendar"),
 
     /**
-     * Mid-year diary, start and end aligned with the academic year. Use with Product Form code PC or PF
+     * Mid-year diary, start and end aligned with the academic year. Use with Product Form code PC or PF, and can be
+     * combined with other calendar/diary type codes
      */
     Student_or_Academic_calendar_or_diary("P110", "Student or Academic calendar or diary"),
 
@@ -1550,6 +1691,30 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     Postcard_calendar("P116", "Postcard calendar"),
+
+    /**
+     * Wall calendar without illustrations, usually one page per month, intended to be used by adding your own images
+     * (de: Bastelkalender). Use with Product Form code PC
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Blank_calendar("P131", "Blank calendar"),
+
+    /**
+     * Very large wall calendar intended for hanging, usually one page per month, wide landscape orientation, with
+     * illustrations. Use with Product Form code PC
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Panoramic_calendar("P132", "Panoramic calendar"),
+
+    /**
+     * Very large wall calendar intended for hanging, usually one page per month, narrow portrait orientation, with
+     * illustrations. Use with Product Form code PC
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Columnar_calendar("P133", "Columnar calendar"),
 
     /**
      * Kamishibai / Cantastoria cards

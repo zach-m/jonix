@@ -42,7 +42,7 @@ interface CodeList15 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist15">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist15">ONIX
  *      Codelist 15 in Reference Guide</a>
  */
 public enum TitleTypes implements OnixCodelist, CodeList15 {
@@ -124,7 +124,7 @@ public enum TitleTypes implements OnixCodelist, CodeList15 {
     Alternative_title("14", "Alternative title"),
 
     /**
-     * An alternative title that appears on the spine of a book
+     * An alternative title that appears on the spine of a book. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

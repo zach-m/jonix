@@ -42,7 +42,7 @@ interface CodeList250 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist250">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist250">ONIX
  *      Codelist 250 in Reference Guide</a>
  */
 public enum ResourceIdentifierTypes implements OnixCodelist, CodeList250 {
@@ -54,8 +54,10 @@ public enum ResourceIdentifierTypes implements OnixCodelist, CodeList250 {
 
     /**
      * International Standard Content Code, a 'similarity hash' derived algorithmically from the resource content itself
-     * (see https://iscc.codes). &lt;IDValue&gt; is the 55-character case-sensitive string (including three hyphens)
-     * forming the ISCC of the resource file
+     * (see https://iscc.codes). &lt;IDValue&gt; is the ISCC-CODE generated from a digital manifestation of the work, as
+     * a variable-length case-insensitive alphanumeric string (or 55 characters including three hyphens if using ISCC
+     * v1.0, but this is deprecated). Note alphabetic characters in v1.x ISCCs use Base32 encoding and are
+     * conventionally upper case. The 'ISCC:' prefix is omitted. Only for use in ONIX 3.0 or later
      */
     ISCC("09", "ISCC");
 

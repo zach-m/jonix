@@ -28,30 +28,60 @@ import java.util.Optional;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 244 (Event identifier type)
+ * marker interface to assist in IDE navigation to code-list 262 (Carbon/GHG emissions certification scheme)
  */
-interface CodeList244 {
+interface CodeList262 {
 }
 
 /**
- * <code>Enum</code> that corresponds to ONIX <b>Codelist 244</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 262</b>
  * <p>
- * Description: Event identifier type
+ * Description: Carbon/GHG emissions certification scheme
  * <p>
  * Jonix-Comment: Introduced in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist244">ONIX
- *      Codelist 244 in Reference Guide</a>
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist262">ONIX
+ *      Codelist 262 in Reference Guide</a>
  */
-public enum EventIdentifierTypes implements OnixCodelist, CodeList244 {
-    Proprietary("01", "Proprietary");
+public enum CarbonGhgEmissionsCertificationSchemes implements OnixCodelist, CodeList262 {
+    /**
+     * Product carries - or is eligible to carry - Blue Angel labelling. See https://www.blauer-engel.de
+     */
+    Blue_Angel("101", "Blue Angel"),
+
+    /**
+     * Product carries - or is eligible to carry - C2C labelling. Has bronze, silver, gold and platinum levels. See
+     * c2ccertified.org
+     */
+    Cradle_to_Cradle("102", "Cradle to Cradle"),
+
+    /**
+     * See https://www.nordic-swan-ecolabel.org
+     */
+    Nordic_Swan("103", "Nordic Swan"),
+
+    /**
+     * See climatepartner.com and climate-id.com
+     */
+    Klimaneutral("104", "Klimaneutral"),
+
+    /**
+     * See www.ecolabel.eu
+     */
+    EU_Ecolabel("105", "EU Ecolabel"),
+
+    /**
+     * Indicates the product is certified as vegan (does not use animal products, for example in binding or adhesives).
+     * See v-label.com
+     */
+    V_Label("501", "V-Label");
 
     public final String code;
     public final String description;
 
-    EventIdentifierTypes(String code, String description) {
+    CarbonGhgEmissionsCertificationSchemes(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -66,11 +96,11 @@ public enum EventIdentifierTypes implements OnixCodelist, CodeList244 {
         return description;
     }
 
-    public static EventIdentifierTypes byCode(String code) {
+    public static CarbonGhgEmissionsCertificationSchemes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (EventIdentifierTypes e : values()) {
+        for (CarbonGhgEmissionsCertificationSchemes e : values()) {
             if (e.code.equals(code)) {
                 return e;
             }
@@ -78,7 +108,7 @@ public enum EventIdentifierTypes implements OnixCodelist, CodeList244 {
         return null;
     }
 
-    public static Optional<EventIdentifierTypes> byCodeOptional(String code) {
+    public static Optional<CarbonGhgEmissionsCertificationSchemes> byCodeOptional(String code) {
         return Optional.ofNullable(byCode(code));
     }
 
