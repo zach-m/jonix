@@ -28,7 +28,9 @@ clear distinction betweem these types and offers different APIs for different ty
 ### Recent Versions
 
 | Maven Version     | Onix version | Codelist Issue |
-| ----------------- | ------------ | -------------- |
+|-------------------| ------------ |----------------|
+| `2023-07`         | 3.1.00       | 62             |
+| `2023-07-onix308` | 3.0.08       | 62             |
 | `2023-05`         | 3.1.00       | 61             |
 | `2023-05-onix308` | 3.0.08       | 61             |
 | `2023-04`         | 3.1.00       | 61             |
@@ -45,7 +47,7 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2023-05</version>
+    <version>2023-07</version>
 </dependency>
 ```
 
@@ -55,16 +57,16 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2023-05-onix308</version>
+    <version>2023-07-onix308</version>
 </dependency>
 ```
 
 Gradle
 ```
-implementation group: 'com.tectonica', name: 'jonix', version: '2023-05'
+implementation group: 'com.tectonica', name: 'jonix', version: '2023-07'
 ```
 
-For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2023-05>
+For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2023-07>
 
 ## 2. Latest Release (from latest source code)
 
