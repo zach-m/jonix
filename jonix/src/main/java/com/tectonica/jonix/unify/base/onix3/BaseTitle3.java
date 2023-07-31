@@ -39,8 +39,19 @@ public class BaseTitle3 extends BaseTitle {
         // TODO: check out the TitleElementLevel of the TitleElement, especially in collections
         TitleElement titleElement = title.titleElements().get(0); // at least 1 is mandatory
         dest.titleType = title.titleType().value;
+
+        // <TitleWithoutPrefix> is mandatory in ONIX-3
+        if (titleElement.titleWithoutPrefix().exists()) {
+            dest.prefix = titleElement.titlePrefix().value; // might be null if <NoPrefix/>
+            dest.titleWithoutPrefix = noBreaks(titleElement.titleWithoutPrefix().value);
+        } else {
+            dest.prefix = null;
+            dest.titleWithoutPrefix = null;
+        }
+
+        // <TitleText> is deprecated in ONIX-3, here for backward compatibility
         dest.titleText = noBreaks(titleElement.titleText().value);
-        dest.titleWithoutPrefix = noBreaks(titleElement.titleWithoutPrefix().value);
+
         dest.subtitle = noBreaks(titleElement.subtitle().value);
     }
 }

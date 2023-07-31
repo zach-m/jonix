@@ -34,8 +34,22 @@ import java.io.Serializable;
 public abstract class BaseTitle implements Serializable {
     public TitleTypes titleType;
     public String titleText;
+    public String prefix;
     public String titleWithoutPrefix;
     public String subtitle;
+
+    public String getTitleText(boolean excludingPrefix) {
+        if (titleWithoutPrefix != null) {
+            final String pfx;
+            if (!excludingPrefix && (prefix != null)) {
+                pfx = prefix.trim() + " ";
+            } else {
+                pfx = "";
+            }
+            return pfx + titleWithoutPrefix;
+        }
+        return titleText; // for ONIX-2
+    }
 
     protected static String noBreaks(String s) {
         return (s == null || s.isEmpty()) ? s : s.replaceAll("[\\t\\n\\r]", " ").trim();

@@ -19,9 +19,12 @@
 
 package com.tectonica.jonix.unify.base;
 
+import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.common.OnixHeader;
 import com.tectonica.jonix.unify.UnifiedHeader;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,14 +50,21 @@ public abstract class BaseHeader extends UnifiedHeader {
         super(rawHeader);
     }
 
+    public static BaseHeader headerOf(String onixFileName) {
+        List<BaseHeader> holder = new ArrayList<>(1);
+        Jonix.source(new File(onixFileName))
+            .onSourceStart(src -> src.header().map(Jonix::toBaseHeader).ifPresent(holder::add)).scanHeaders();
+        return holder.isEmpty() ? null : holder.get(0);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("FromCompany: ").append(senderName).append("\n");
-        sb.append("FromPerson:  ").append(senderContactName).append("\n");
-        sb.append("FromEmail:   ").append(senderEmail).append("\n");
-        sb.append("ToCompany:   ").append(addressees).append("\n");
-        sb.append("SentDate:    ").append(sentDateTime);
+        sb.append("SenderName:        ").append(senderName).append("\n");
+        sb.append("SenderContactName: ").append(senderContactName).append("\n");
+        sb.append("SenderEmail:       ").append(senderEmail).append("\n");
+        sb.append("Addressees:        ").append(addressees).append("\n");
+        sb.append("SentDateTime:      ").append(sentDateTime);
         return sb.toString();
     }
 }

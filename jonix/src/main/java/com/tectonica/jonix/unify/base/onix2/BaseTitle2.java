@@ -36,8 +36,19 @@ public class BaseTitle2 extends BaseTitle {
 
     public static void extract(Title title, BaseTitle dest) {
         dest.titleType = title.titleType().value;
+
+        // <TitleText> is mandatory in ONIX-2
         dest.titleText = noBreaks(title.titleText().value);
-        dest.titleWithoutPrefix = noBreaks(title.titleWithoutPrefix().value);
+
+        // <TitleWithoutPrefix> is optional in ONIX-2
+        if (title.titleWithoutPrefix().exists()) {
+            dest.prefix = title.titlePrefix().value;
+            dest.titleWithoutPrefix = noBreaks(title.titleWithoutPrefix().value);
+        } else {
+            dest.prefix = null;
+            dest.titleWithoutPrefix = null;
+        }
+
         dest.subtitle = noBreaks(title.subtitle().value);
     }
 }

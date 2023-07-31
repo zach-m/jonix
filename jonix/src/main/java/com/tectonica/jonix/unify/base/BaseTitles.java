@@ -25,16 +25,20 @@ import com.tectonica.jonix.unify.base.util.LazyList;
 import java.util.List;
 
 /**
- * A {@link List} containing the multiple instances of ONIX2 &lt;Title&gt; / ONIX3 &lt;TitleDetail&gt; that may exist
- * in a product or a collection (series)
+ * A {@link List} containing the multiple instances of ONIX2 &lt;Title&gt; / ONIX3 &lt;TitleDetail&gt; that may exist in
+ * a product or a collection (series)
  *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
 public abstract class BaseTitles extends LazyList<BaseTitle> {
     public String findTitleText(TitleTypes requestedType) {
+        return findTitleText(requestedType, false);
+    }
+
+    public String findTitleText(TitleTypes requestedType, boolean excludingPrefix) {
         BaseTitle title = findTitle(requestedType);
-        return (title == null) ? null : (title.titleText == null ? title.titleWithoutPrefix : title.titleText);
+        return (title == null) ? null : title.getTitleText(excludingPrefix);
     }
 
     public BaseTitle findTitle(TitleTypes requestedType) {
