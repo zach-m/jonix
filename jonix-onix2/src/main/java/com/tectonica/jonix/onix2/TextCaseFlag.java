@@ -163,4 +163,12 @@ public class TextCaseFlag implements OnixElement<TextCaseFlags>, Serializable {
             action.accept(this);
         }
     }
+
+    public String codeOrNull() {
+        return value == null ? null : value.code;
+    }
+
+    public String descriptionOrNull() {
+        return value == null ? null : value.description;
+    }
 }

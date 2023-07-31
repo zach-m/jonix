@@ -42,7 +42,7 @@ interface CodeList121 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist121">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist121">ONIX
  *      Codelist 121 in Reference Guide</a>
  */
 public enum TextScripts implements OnixCodelist, CodeList121 {
@@ -190,9 +190,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Dives_Akuru("Diak", "Dives Akuru"),
 
     /**
-     * 
      * Only for use in ONIX 3.0 or later
-     * 
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -244,9 +242,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Glagolitic("Glag", "Glagolitic"),
 
     /**
-     * 
      * Only for use in ONIX 3.0 or later
-     * 
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -396,9 +392,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Khitan_large_script("Kitl", "Khitan large script"),
 
     /**
-     * 
      * Only for use in ONIX 3.0 or later
-     * 
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

@@ -42,7 +42,7 @@ interface CodeList175 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_61.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -418,7 +418,6 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Pocket-sized format, usually less than about 205mm high, without necessarily implying a particular trade category
      * (de: ,Taschenbuch'; it: &#171;Tascabile / Supertascabile&#187;; es: &#171;libro de bolsillo&#187;; fr:
      * &#171;&#160;livre de poche&#160;&#187; etc). Use with Product form code BB or BC. See also List 12 code 04
-     * 
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
