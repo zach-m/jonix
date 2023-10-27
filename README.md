@@ -1,17 +1,17 @@
 # ![jonix](JONIX.png)
 
-> NOTE: version `2023-05` presents the single most important leap for Jonix in a decade. The API has been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
-> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were introduced for Lists of composites, eliminating many previously-unavoidable `null`/`exists()` checks.
-> For streaming control (e.g. `Jonix.source()...stream()...`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` object passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
-> The `JonixRecords` object now offers `scanHeaders()` for `Header`-only peek of the ONIX sources. It also has `failOnInvalidFile()` method to replace a configuration flag with the same name.
-> For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixRelease()` and `.onixVersion()` were added to top-level `Product` and `Header` classes. See newly-crafted examples below.
-
 Jonix is a commercial-grade open source Java library for extracting data from [ONIX for Books](https://www.editeur.org/83/Overview/) sources.
 
 It comprises of various services for efficient processing of ONIX sources, emphasizing:
 - High-performance (speed and memory)
 - Fluent, intuitive and type-safe APIs
 - Extensibility
+
+> NOTE: version `2023-05` presents the single most important leap for Jonix in a decade. The API has been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
+> In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were introduced for Lists of composites, eliminating many previously-unavoidable `null`/`exists()` checks.
+> For streaming control (e.g. `Jonix.source()...stream()...`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` object passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
+> The `JonixRecords` object now offers `scanHeaders()` for `Header`-only peek of the ONIX sources. It also has `failOnInvalidFile()` method to replace a configuration flag with the same name.
+> For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixRelease()` and `.onixVersion()` were added to top-level `Product` and `Header` classes. See newly-crafted examples below.
 
 Jonix is NOT a thin XML-processing wrapper, nor is it `XPath` in disguise. It was built from scratch specifically for 
 ONIX files, and accordingly it gets updated whenever a new schema of ONIX is published (4 times a year).
@@ -29,6 +29,8 @@ clear distinction betweem these types and offers different APIs for different ty
 
 | Maven Version     | Onix version | Codelist Issue |
 |-------------------| ------------ |----------------|
+| `2023-10`         | 3.1.00       | 63             |
+| `2023-10-onix308` | 3.0.08       | 63             |
 | `2023-07`         | 3.1.00       | 62             |
 | `2023-07-onix308` | 3.0.08       | 62             |
 | `2023-05`         | 3.1.00       | 61             |
@@ -47,7 +49,7 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2023-07</version>
+    <version>2023-10</version>
 </dependency>
 ```
 
@@ -57,16 +59,16 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2023-07-onix308</version>
+    <version>2023-10-onix308</version>
 </dependency>
 ```
 
 Gradle
 ```
-implementation group: 'com.tectonica', name: 'jonix', version: '2023-07'
+implementation group: 'com.tectonica', name: 'jonix', version: '2023-10'
 ```
 
-For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2023-07>
+For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2023-10>
 
 ## 2. Latest Release (from latest source code)
 
