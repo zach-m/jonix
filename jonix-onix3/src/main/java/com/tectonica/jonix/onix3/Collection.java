@@ -24,9 +24,9 @@ import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.CollectionIdentifierTypes;
 import com.tectonica.jonix.common.codelist.CollectionSequenceTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
 import com.tectonica.jonix.common.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.common.struct.JonixCollectionSequence;
 
@@ -255,7 +255,7 @@ public class Collection implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier,
-        SeriesIdentifierTypes> collectionIdentifiers =
+        CollectionIdentifierTypes> collectionIdentifiers =
             JPU.emptyListOfOnixDataCompositeWithKey(CollectionIdentifier.class);
 
     /**
@@ -266,7 +266,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, SeriesIdentifierTypes>
+    public ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, CollectionIdentifierTypes>
         collectionIdentifiers() {
         _initialize();
         return collectionIdentifiers;

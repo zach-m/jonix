@@ -42,7 +42,7 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see Using
+ * <td>Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see Using
  * XHTML, HTML or XML with ONIX text fields</td>
  * </tr>
  * <tr>
@@ -107,8 +107,8 @@ public class AudienceDescription implements OnixElement<String>, Serializable {
      * This is the raw content of AudienceDescription. Could be null if {@code exists() == false}. Use {@link #value()}
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
-     * see Using XHTML, HTML or XML with ONIX text fields
+     * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML or XML with ONIX text fields
      * <p>
      * (type: XHTML)
      */

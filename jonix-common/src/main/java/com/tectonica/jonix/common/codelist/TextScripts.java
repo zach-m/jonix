@@ -42,7 +42,7 @@ interface CodeList121 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist121">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist121">ONIX
  *      Codelist 121 in Reference Guide</a>
  */
 public enum TextScripts implements OnixCodelist, CodeList121 {
@@ -680,6 +680,22 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Inscriptional_Parthian("Prti", "Inscriptional Parthian"),
 
     Reserved_for_private_use_start("Qaaa", "Reserved for private use (start)"),
+
+    /**
+     * ONIX local code for graphical symbols used in augmentative and alternative communication and education, not
+     * listed in ISO 15924. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Picture_Communication_Symbols_PCS("Qabp", "Picture Communication Symbols (PCS)"),
+
+    /**
+     * ONIX local code for graphical symbols used in augmentative and alternative communication and education, not
+     * listed in ISO 15924. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Widgit_symbols("Qabw", "Widgit symbols"),
 
     Reserved_for_private_use_end("Qabx", "Reserved for private use (end)"),
 

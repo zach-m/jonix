@@ -42,7 +42,7 @@ interface CodeList204 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist204">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist204">ONIX
  *      Codelist 204 in Reference Guide</a>
  */
 public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
@@ -90,7 +90,8 @@ public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
 
     /**
      * Contact supplier for applicable cover returns authorization process. As for code 03, but only returns of stripped
-     * covers will be accepted. Only for use in ONIX 3.0 or later
+     * covers will be accepted. An additional barcode will likely be required on cover 2 (inside front cover) to
+     * facilitate scanning of returned covers. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

@@ -21,9 +21,9 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.CollectionIdentifierTypes;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
 import com.tectonica.jonix.common.codelist.TextCaseFlags;
 import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
@@ -78,7 +78,7 @@ import java.util.function.Consumer;
  * <li>{@link SubSeriesRecord} ⯈ {@link ParentIdentifier} ⯈ {@link SeriesIDType}</li>
  * </ul>
  */
-public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {
+public class SeriesIDType implements OnixElement<CollectionIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "SeriesIDType";
@@ -109,13 +109,13 @@ public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Seriali
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public SeriesIdentifierTypes value;
+    public CollectionIdentifierTypes value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SeriesIdentifierTypes __v() {
+    public CollectionIdentifierTypes __v() {
         return value;
     }
 
@@ -140,7 +140,7 @@ public class SeriesIDType implements OnixElement<SeriesIdentifierTypes>, Seriali
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
 
-        value = SeriesIdentifierTypes.byCode(JPU.getContentAsString(element));
+        value = CollectionIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
     /**

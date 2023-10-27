@@ -30,7 +30,7 @@ import java.util.Optional;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 13 (Series identifier type)
+ * marker interface to assist in IDE navigation to code-list 13 (Collection identifier type)
  */
 interface CodeList13 {
 }
@@ -38,14 +38,14 @@ interface CodeList13 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 13</b>
  * <p>
- * Description: Series identifier type
+ * Description: Collection identifier type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist13">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist13">ONIX
  *      Codelist 13 in Reference Guide</a>
  */
-public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
+public enum CollectionIdentifierTypes implements OnixCodelist, CodeList13 {
     /**
      * For example, publisher's own series ID. Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
@@ -82,9 +82,18 @@ public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
     ISBN_13("15", "ISBN-13"),
 
     /**
-     * Uniform Resource Name
+     * Uniform Resource Name using full URN syntax, eg urn:issn:1476-4687 - though where a specific code for the
+     * identifier type is available, use of that code (ie code 02 for ISSN) is preferred
      */
     URN("22", "URN"),
+
+    /**
+     * Japanese magazine identifier, similar in scope to ISSN. Five digits to identify the periodical, without any
+     * hyphen or two digit extension. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    JP_Magazine_ID("27", "JP Magazine ID"),
 
     /**
      * French National Bibliography series ID. Identifiant des publications en s&#233;rie maintenu par la
@@ -108,7 +117,7 @@ public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
     public final String code;
     public final String description;
 
-    SeriesIdentifierTypes(String code, String description) {
+    CollectionIdentifierTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -123,16 +132,16 @@ public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
         return description;
     }
 
-    private static volatile Map<String, SeriesIdentifierTypes> map;
+    private static volatile Map<String, CollectionIdentifierTypes> map;
 
-    private static Map<String, SeriesIdentifierTypes> map() {
-        Map<String, SeriesIdentifierTypes> result = map;
+    private static Map<String, CollectionIdentifierTypes> map() {
+        Map<String, CollectionIdentifierTypes> result = map;
         if (result == null) {
-            synchronized (SeriesIdentifierTypes.class) {
+            synchronized (CollectionIdentifierTypes.class) {
                 result = map;
                 if (result == null) {
                     result = new HashMap<>();
-                    for (SeriesIdentifierTypes e : values()) {
+                    for (CollectionIdentifierTypes e : values()) {
                         result.put(e.code, e);
                     }
                     map = result;
@@ -142,14 +151,14 @@ public enum SeriesIdentifierTypes implements OnixCodelist, CodeList13 {
         return result;
     }
 
-    public static SeriesIdentifierTypes byCode(String code) {
+    public static CollectionIdentifierTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
         return map().get(code);
     }
 
-    public static Optional<SeriesIdentifierTypes> byCodeOptional(String code) {
+    public static Optional<CollectionIdentifierTypes> byCodeOptional(String code) {
         return Optional.ofNullable(byCode(code));
     }
 

@@ -42,12 +42,12 @@ interface CodeList46 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist46">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist46">ONIX
  *      Codelist 46 in Reference Guide</a>
  */
 public enum SalesRightsTypes implements OnixCodelist, CodeList46 {
     /**
-     * May only be used with the ONIX 3 &lt;ROWSalesRightsType&gt; element
+     * May only be used with the &lt;ROWSalesRightsType&gt; element
      */
     Sales_rights_unknown_or_unstated_for_any_reason("00", "Sales rights unknown or unstated for any reason"),
 
@@ -77,13 +77,13 @@ public enum SalesRightsTypes implements OnixCodelist, CodeList46 {
     // CHECKSTYLE:ON
 
     /**
-     * Only for use with ONIX 3. Deprecated
+     * Only for use with ONIX 3.0. Deprecated
      */
     For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("07",
         "For sale with exclusive rights in the specified countries or territories (sales restriction applies)"),
 
     /**
-     * Only for use with ONIX 3. Deprecated
+     * Only for use with ONIX 3.0. Deprecated
      */
     For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("08",
         "For sale with non-exclusive rights in the specified countries or territories (sales restriction applies)");

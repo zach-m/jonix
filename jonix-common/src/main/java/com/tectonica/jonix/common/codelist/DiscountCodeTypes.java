@@ -40,14 +40,14 @@ interface CodeList100 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist100">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist100">ONIX
  *      Codelist 100 in Reference Guide</a>
  */
 public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
     /**
      * UK publisher's or distributor's discount group code in a format specified by BIC to ensure uniqueness (a
      * five-letter prefix allocated by BIC, plus one to three alphanumeric characters - normally digits - chosen by the
-     * supplier)
+     * supplier). See https://bic.org.uk/resources/discount-group-codes/
      */
     BIC_discount_group_code("01", "BIC discount group code"),
 

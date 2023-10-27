@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.CollectionIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -75,7 +75,7 @@ import java.util.function.Consumer;
  * {@link CollectionIDType}</li>
  * </ul>
  */
-public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {
+public class CollectionIDType implements OnixElement<CollectionIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "CollectionIDType";
@@ -101,13 +101,13 @@ public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Ser
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public SeriesIdentifierTypes value;
+    public CollectionIdentifierTypes value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public SeriesIdentifierTypes __v() {
+    public CollectionIdentifierTypes __v() {
         return value;
     }
 
@@ -128,7 +128,7 @@ public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Ser
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
-        value = SeriesIdentifierTypes.byCode(JPU.getContentAsString(element));
+        value = CollectionIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
     /**

@@ -42,14 +42,14 @@ interface CodeList150 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
     Undefined("00", "Undefined"),
 
     /**
-     * Audio recording - detail unspecified
+     * Audio recording - detail unspecified. Use only when the form is unkown or no other A* code applies
      */
     Audio("AA", "Audio"),
 
@@ -138,7 +138,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_audio_format("AZ", "Other audio format"),
 
     /**
-     * Book - detail unspecified
+     * Book - detail unspecified. Use only when the form is unknown or no other B* code applies
      */
     Book("BA", "Book"),
 
@@ -230,7 +230,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_book_format("BZ", "Other book format"),
 
     /**
-     * Sheet map - detail unspecified
+     * Sheet map - detail unspecified. Use only when the form is unknown or no other C* code applies
      */
     Sheet_map("CA", "Sheet map"),
 
@@ -256,7 +256,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_cartographic("CZ", "Other cartographic"),
 
     /**
-     * Digital content delivered on a physical carrier (detail unspecified)
+     * Digital content delivered on a physical carrier (detail unspecified). Use only when the form is unknown or no
+     * other D* code applies
      */
     Digital_on_physical_carrier("DA", "Digital (on physical carrier)"),
 
@@ -304,7 +305,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_digital_carrier("DZ", "Other digital carrier"),
 
     /**
-     * Digital content delivered electronically (delivery method unspecified)
+     * Digital content delivered electronically (delivery method unspecified). Use only when the form is unknown or no
+     * other E* code applies
      */
     Digital_delivered_electronically("EA", "Digital (delivered electronically)"),
 
@@ -324,7 +326,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Digital_download("ED", "Digital download"),
 
     /**
-     * Film or transparency - detail unspecified
+     * Film or transparency - detail unspecified. Use only when the form is unknown or no other F* code applies
      */
     Film_or_transparency("FA", "Film or transparency"),
 
@@ -356,7 +358,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_film_or_transparency_format("FZ", "Other film or transparency format"),
 
     /**
-     * Digital product license (delivery method not encoded)
+     * Digital product license (delivery method unspecified). Use only when the form is unknown or no other L* code
+     * applies
      */
     Digital_product_license("LA", "Digital product license"),
 
@@ -373,7 +376,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Digital_product_license_code("LC", "Digital product license code"),
 
     /**
-     * Microform - detail unspecified
+     * Microform - detail unspecified. Use only when the form is unknown or no other M* code applies
      */
     Microform("MA", "Microform"),
 
@@ -391,7 +394,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_microform("MZ", "Other microform"),
 
     /**
-     * Miscellaneous printed material - detail unspecified
+     * Miscellaneous printed material - detail unspecified. Use only when the form is unknown or no other P* code
+     * applies
      */
     Miscellaneous_print("PA", "Miscellaneous print"),
 
@@ -505,7 +509,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_printed_item("PZ", "Other printed item"),
 
     /**
-     * Presentation unspecified: format of product components must be given in &lt;ProductPart&gt;
+     * Presentation unspecified: format of product components must be given in &lt;ProductPart&gt;. Use only when the
+     * packaging of the product is unknown or no other S* code applies
      */
     Multiple_component_retail_product("SA", "Multiple-component retail product"),
 
@@ -547,7 +552,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Multiple_component_retail_product_entirely_digital("SG", "Multiple-component retail product, entirely digital"),
 
     /**
-     * Video - detail unspecified
+     * Video - detail unspecified. Use only when the form is unknown or no other V* code applies
      */
     Video("VA", "Video"),
 
@@ -608,7 +613,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_video_format("VZ", "Other video format"),
 
     /**
-     * Trade-only material (unspecified)
+     * Trade-only material (unspecified). Use only when the form is unknown or no other X* code applies
      */
     Trade_only_material("XA", "Trade-only material"),
 
@@ -698,7 +703,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_point_of_sale("XZ", "Other point of sale"),
 
     /**
-     * General merchandise - unspecified
+     * General merchandise, book accessories and non-book products - unspecified. Use only when the form is unknown or
+     * no other X* code applies
      */
     General_merchandise("ZA", "General merchandise"),
 
@@ -784,7 +790,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Handicraft_kit("ZP", "Handicraft kit"),
 
     /**
-     * Other toy, game and puzzle items not specified by ZB to ZN, generally accessories to other products etc. Further
+     * Other toy, game and puzzle items not specified by ZB to ZQ, generally accessories to other products etc. Further
      * detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt;
      * are unlikely to be sufficient
      * <p>
@@ -793,15 +799,16 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_toy_game_accessories("ZX", "Other toy/game accessories"),
 
     /**
-     * Other apparel items not specified by ZB to ZN, including branded, promotional or tie-in scarves, caps, aprons,
+     * Other apparel items not specified by ZB to ZQ, including branded, promotional or tie-in scarves, caps, aprons,
      * dress-up costumes etc. Further detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt;
      * and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_apparel("ZY", "Other apparel"),
 
     /**
-     * Other merchandise not specified by ZB to ZY. Further detail is expected in &lt;ProductFormDescription&gt;, as
-     * &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be sufficient
+     * Other branded, promotional or tie-in merchandise not specified by ZB to ZY. Further detail is expected in
+     * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
+     * sufficient
      */
     Other_merchandise("ZZ", "Other merchandise");
 

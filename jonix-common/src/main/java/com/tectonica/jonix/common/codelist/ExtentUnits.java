@@ -42,12 +42,14 @@ interface CodeList24 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist24">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist24">ONIX
  *      Codelist 24 in Reference Guide</a>
  */
 public enum ExtentUnits implements OnixCodelist, CodeList24 {
     /**
-     * For example a count of the individual number of cards in a pack. Only for use in ONIX 3.0 or later
+     * Unbound sheets or leaves, where 'pages' is not appropriate, for example a count of the individual number of cards
+     * in a pack. Only for use in ONIX 3.0 or later. For number of pieces in eg a jigsaw, kit, board game, see
+     * &lt;ProductFormFeature&gt; and code 22 from list 79
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

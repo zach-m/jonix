@@ -42,7 +42,7 @@ interface CodeList19 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist19">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
@@ -86,7 +86,15 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Synthesised_voice_based_on_real_voice_actor("08", "Synthesised voice – based on real voice actor");
+    Synthesised_voice_based_on_real_voice_actor("08", "Synthesised voice – based on real voice actor"),
+
+    /**
+     * Use when the creator (of text, of images etc) is a generative AI model or technique. Note, can also be combined
+     * with the role 'assisted by'. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    AI_Artificial_intelligence("09", "AI (Artificial intelligence)");
 
     public final String code;
     public final String description;

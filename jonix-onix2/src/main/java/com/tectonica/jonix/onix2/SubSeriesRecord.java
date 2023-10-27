@@ -23,10 +23,10 @@ import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.CollectionIdentifierTypes;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.OtherTextTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.SeriesIdentifierTypes;
 import com.tectonica.jonix.common.codelist.TextCaseFlags;
 import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TitleTypes;
@@ -278,7 +278,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
     }
 
     private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier,
-        SeriesIdentifierTypes> seriesIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(SeriesIdentifier.class);
+        CollectionIdentifierTypes> seriesIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(SeriesIdentifier.class);
 
     /**
      * <p>
@@ -288,7 +288,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list is required to contain at least one item
      */
-    public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes>
+    public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, CollectionIdentifierTypes>
         seriesIdentifiers() {
         _initialize();
         return seriesIdentifiers;

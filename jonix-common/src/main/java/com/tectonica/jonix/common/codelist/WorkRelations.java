@@ -42,7 +42,7 @@ interface CodeList164 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist164">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist164">ONIX
  *      Codelist 164 in Reference Guide</a>
  */
 public enum WorkRelations implements OnixCodelist, CodeList164 {
@@ -258,7 +258,26 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * Jonix-Comment: Introduced in Onix3
      */
     Derived_from_this_by_subtraction_of_non_text_material("51",
-        "Derived from this by subtraction (of non-text material)");
+        "Derived from this by subtraction (of non-text material)"),
+
+    /**
+     * Product A is or includes a manifestation of an expression of LRM work X. Do not use, except as a workaround for
+     * differences between LRM works and expressions, and ONIX works in LRM library practice, and always also include a
+     * relationship to an ONIX work using code 01
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Manifestation_of_LRM_work("98", "Manifestation of LRM work"),
+
+    /**
+     * Product A is or includes a manifestation of an LRM expression with the same content, same agents and in the same
+     * modality (text, audio, video etc) as work X. Do not use, except as a workaround for differences between LRM
+     * expressions and ONIX works in LRM library practice, and always also include a relationship to an ONIX work using
+     * code 01
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Manifestation_of_LRM_expression("99", "Manifestation of LRM expression");
 
     public final String code;
     public final String description;

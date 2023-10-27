@@ -42,7 +42,7 @@ interface CodeList96 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist96">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -842,7 +842,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Slovak_Koruna("SKK", "Slovak Koruna"),
 
     /**
-     * Sierra Leone (from April 2022)
+     * Sierra Leone (from April 2022). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

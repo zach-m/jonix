@@ -42,7 +42,7 @@ interface CodeList79 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -60,14 +60,15 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Color_of_spine("26", "Color of spine"),
 
     /**
-     * On cover or spine. For Product Form Feature values see metallic colors from code list 98
+     * On cover or spine. For Product Form Feature values see metallic colors from code list 98. Only for use in ONIX
+     * 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Color_of_foil("27", "Color of foil"),
 
     /**
-     * For Product Form Feature values see code list 98
+     * Sprayed / gilded edges. For Product Form Feature values see code list 98
      */
     Color_of_page_edge("02", "Color of page edge"),
 
@@ -200,7 +201,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * Number of pieces, eg for jigsaws, puzzles, kits, board games. &lt;ProductFormFeatureValue&gt; is an integer. Only
-     * for use in ONIX 3.0 or later
+     * for use in ONIX 3.0 or later. For pieces like cards in a pack, see &lt;Extent&gt; and code 00 from List 24
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -334,6 +335,60 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement
      */
     Paper_produced_by_green_technology("40", "Paper produced by ‘green’ technology"),
+
+    /**
+     * &lt;ProductFormFeatureValue&gt; is a code from List 262 identifying the particular certification scheme.
+     * &lt;ProductFormFeatureDescription&gt; may be a descriptor for some part, schedule or annex of the certification
+     * scheme, where necessary. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Carbon_GHG_emission_certification_scheme("41", "Carbon/GHG emission certification scheme"),
+
+    /**
+     * &lt;ProductFormFeatureValue&gt; is a code from List 262 identifying a particular certification scheme.
+     * &lt;ProductFormFeatureDescription&gt; is a certificate or license number used to certify compliance with the
+     * scheme. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Carbon_GHG_emission_certification_license_number("42", "Carbon/GHG emission certification / license number"),
+
+    /**
+     * &lt;ProductFormFeatureValue&gt; is a code from List 262 identifying a particular certification scheme.
+     * &lt;ProductFormFeatureDescription&gt; is a URL linking to a web page certifying compliance with the scheme. Only
+     * for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Carbon_GHG_emission_certification_URL("43", "Carbon/GHG emission certification URL"),
+
+    /**
+     * &lt;ProductFormFeatureValue&gt; is a code from List 262 identifying a particular certification scheme.
+     * &lt;ProductFormFeatureDescription&gt; is a number specifying certified GHG emissions per copy of the product,
+     * measured in kilograms of Carbon dioxide equivalent (CO&#8322;e) using the Scope 3 methodology of the scheme. Only
+     * for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Carbon_GHG_Scope_3_certified_Carbon_dioxide_equivalent_emission("44",
+        "Carbon/GHG Scope 3 certified Carbon dioxide equivalent emission"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Carbon_GHG_Scope_2_certified_Carbon_dioxide_equivalent_emission("45",
+        "Carbon/GHG Scope 2 certified Carbon dioxide equivalent emission"),
+
+    /**
+     * Scope 1 emission certifications are not recommended for use. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Carbon_GHG_Scope_1_certified_Carbon_dioxide_equivalent_emission("46",
+        "Carbon/GHG Scope 1 certified Carbon dioxide equivalent emission"),
 
     /**
      * DEPRECATED - use code 12 and List 143

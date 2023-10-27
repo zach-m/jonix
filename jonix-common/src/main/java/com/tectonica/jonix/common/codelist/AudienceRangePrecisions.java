@@ -40,14 +40,24 @@ interface CodeList31 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist31">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist31">ONIX
  *      Codelist 31 in Reference Guide</a>
  */
 public enum AudienceRangePrecisions implements OnixCodelist, CodeList31 {
+    /**
+     * May only be used in Audience range precision (1), and when no Audience range precision (2) is present
+     */
     Exact("01", "Exact"),
 
+    /**
+     * May only be used in Audience range precision (1)
+     */
     From("03", "From"),
 
+    /**
+     * May be used in Audience range precision (1) when no Audience range precision (2) is present, or in Audience range
+     * precision (2) when Audience range precision (1) is code 03
+     */
     To("04", "To");
 
     public final String code;

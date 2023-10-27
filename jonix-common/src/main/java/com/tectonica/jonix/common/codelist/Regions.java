@@ -42,7 +42,7 @@ interface CodeList49 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist49">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist49">ONIX
  *      Codelist 49 in Reference Guide</a>
  */
 public enum Regions implements OnixCodelist, CodeList49 {
@@ -1056,13 +1056,13 @@ public enum Regions implements OnixCodelist, CodeList49 {
      * writing, this is a synonym for 'AT BE CY EE FI FR DE ES GR HR IE IT LT LU LV MT NL PT SI SK' (the official
      * Eurozone 20), plus 'AD MC SM VA ME' and Kosovo (other Euro-using countries in continental Europe). Note some
      * other territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
-     * specified separately. ONLY valid in ONIX 3, and ONLY within P.26 - and this use is itself DEPRECATED. Use of an
+     * specified separately. ONLY valid in ONIX 3.0, and ONLY within P.26 - and this use is itself DEPRECATED. Use of an
      * explicit list of countries instead of ECZ is strongly encouraged
      */
     Eurozone("ECZ", "Eurozone"),
 
     /**
-     * In ONIX 3, may ONLY be used in &lt;RegionsIncluded&gt;
+     * In ONIX 3.0 and later, may ONLY be used in &lt;RegionsIncluded&gt;
      */
     World("WORLD", "World"),
 

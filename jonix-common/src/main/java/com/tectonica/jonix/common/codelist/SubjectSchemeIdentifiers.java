@@ -42,7 +42,7 @@ interface CodeList27 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -189,7 +189,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     NUGI("31", "NUGI"),
 
     /**
-     * Nederlandstalige Uniforme Rubrieksindeling (Dutch book trade classification, from 2002, see
+     * Nederlandstalige Uniforme Rubrieksindeling (Dutch book trade classification, from 2002), see
      * http://www.boek.nl/nur (in Dutch)
      */
     NUR("32", "NUR"),
@@ -428,7 +428,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * BIC E4Libraries Category Headings, formerly at http://www.bic.org.uk/51/E4libraries-Subject-Category-Headings/
-     * but replaced by UK Standard Library Categories (code 92) Deprecated
+     * but replaced by UK Standard Library Categories (code 92), Deprecated
      */
     BIC_E4L("75", "BIC E4L"),
 
@@ -509,9 +509,9 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Season_and_Event_Indicator("90", "Season and Event Indicator"),
 
     /**
-     * Gemeinsame Normdatei - Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
-     * (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference to the
-     * older codes
+     * (de: Gemeinsame Normdatei) Integrated Authority File used in the German-speaking countries. See
+     * https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html (English). Combines the PND, SWD and GKD
+     * into a single authority file, and should be used in preference to the older codes
      */
     GND("91", "GND"),
 
