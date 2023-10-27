@@ -40,7 +40,7 @@ interface CodeList168 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist168">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist168">ONIX
  *      Codelist 168 in Reference Guide</a>
  */
 public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {

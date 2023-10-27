@@ -42,7 +42,7 @@ interface CodeList141 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist141">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist141">ONIX
  *      Codelist 141 in Reference Guide</a>
  */
 public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
@@ -52,7 +52,8 @@ public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
 
     /**
      * Barcode uses 13-digit EAN symbology (version NR without 5-digit extension). See (eg)
-     * https://bic.org.uk/wp-content/uploads/2022/11/2019.05.31-Bar-Coding-for-Books-rev-09.pdf
+     * https://bic.org.uk/wp-content/uploads/2022/11/2019.05.31-Bar-Coding-for-Books-rev-09.pdf or
+     * https://www.bisg.org/barcoding-guidelines-for-the-us-book-industry
      */
     GTIN_13("02", "GTIN-13"),
 

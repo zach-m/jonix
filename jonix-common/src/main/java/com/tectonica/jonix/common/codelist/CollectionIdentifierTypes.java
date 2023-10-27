@@ -42,7 +42,7 @@ interface CodeList13 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist13">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist13">ONIX
  *      Codelist 13 in Reference Guide</a>
  */
 public enum CollectionIdentifierTypes implements OnixCodelist, CodeList13 {
@@ -82,7 +82,7 @@ public enum CollectionIdentifierTypes implements OnixCodelist, CodeList13 {
     ISBN_13("15", "ISBN-13"),
 
     /**
-     * Uniform Resource Name using full URN syntax, eg urn:issn:1476-4687 -- though where a specific code for the
+     * Uniform Resource Name using full URN syntax, eg urn:issn:1476-4687 - though where a specific code for the
      * identifier type is available, use of that code (ie code 02 for ISSN) is preferred
      */
     URN("22", "URN"),

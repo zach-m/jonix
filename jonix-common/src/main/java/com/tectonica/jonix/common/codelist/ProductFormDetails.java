@@ -42,7 +42,7 @@ interface CodeList175 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -453,6 +453,20 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      */
     Mass_market_max_paperback("B135", "Mass market max paperback"),
 
+    /**
+     * Standard 10.25 x 6.625in size approx (260 x 170mm)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Comic_book_size_US("B139", "Comic book size (US)"),
+
+    /**
+     * Standard 240 x 320mm size approx
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Comic_album_size_Euro("B140", "Comic album size (Euro)"),
+
     Coloring_join_the_dot_book("B201", "Coloring / join-the-dot book"),
 
     Lift_the_flap_book("B202", "Lift-the-flap book"),
@@ -676,6 +690,20 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Vellum("B406", "Vellum"),
 
     /**
+     * Decorative or functional
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Head_and_tail_bands("B407", "Head and tail bands"),
+
+    /**
+     * Illustrated or abstract printed endpapers, but not those solely of colored paper
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Decorated_endpapers("B408", "Decorated endpapers"),
+
+    /**
      * Cloth, not necessarily over boards - cf B401
      */
     Cloth("B409", "Cloth"),
@@ -690,7 +718,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * AKA 'flexibound': use with Product Form code BC
      */
-    Flexible_plastic_vinyl_cover("B412", "Flexible plastic/vinyl cover"),
+    Flexible_plastic_vinyl_cover("B412", "Flexible plastic / vinyl cover"),
 
     /**
      * Separate outer plastic cover, often transparent and allowing the cover to show through. Typically has pockets
@@ -1629,8 +1657,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Poster_calendar("P105", "Poster calendar"),
 
     /**
-     * Large calendar intended for hanging, usually one month per page or view, with illustrations. Use with Product
-     * Form code PC
+     * Large calendar usually intended for hanging from the spine, typically one page per view and one month per view,
+     * with illustrations. See also P134. Use with Product Form code PC
      */
     Wall_calendar("P106", "Wall calendar"),
 
@@ -1715,6 +1743,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     Columnar_calendar("P133", "Columnar calendar"),
+
+    /**
+     * (de: Broschurkalender) Wall calendar, usually intended for hanging from a page edge, typically two pages per view
+     * and one month per view, with illustrations. See also P106. Use with Product Form code PC
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Square_calendar("P134", "Square calendar"),
 
     /**
      * Kamishibai / Cantastoria cards

@@ -42,7 +42,7 @@ interface CodeList262 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist262">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist262">ONIX
  *      Codelist 262 in Reference Guide</a>
  */
 public enum CarbonGhgEmissionsCertificationSchemes implements OnixCodelist, CodeList262 {
@@ -63,9 +63,9 @@ public enum CarbonGhgEmissionsCertificationSchemes implements OnixCodelist, Code
     Nordic_Swan("103", "Nordic Swan"),
 
     /**
-     * See climatepartner.com and climate-id.com
+     * See https://www.climatepartner.com/en/take-action/measure-carbon-footprints/product-carbon-footprint-pcf
      */
-    Klimaneutral("104", "Klimaneutral"),
+    ClimatePartner("104", "ClimatePartner"),
 
     /**
      * See www.ecolabel.eu

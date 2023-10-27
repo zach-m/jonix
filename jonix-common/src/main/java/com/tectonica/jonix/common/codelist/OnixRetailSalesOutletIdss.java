@@ -42,7 +42,7 @@ interface CodeList139 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -335,6 +335,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Cyberlibris("CYB", "Cyberlibris"),
 
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Daunt_Books("DAU", "Daunt Books"),
+
     De_Marque("DEM", "De Marque"),
 
     Dicks_Sporting_Goods("DSG", "Dick’s Sporting Goods"),
@@ -365,7 +372,10 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Electre("ELE", "Electre"),
 
-    Elib_se("ELB", "Elib.se"),
+    /**
+     * Formerly Axiell Elib.se
+     */
+    Publizon("ELB", "Publizon"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -762,6 +772,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     SmashWords("SMW", "SmashWords"),
 
     Sony("SNY", "Sony"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Spotify("SPO", "Spotify"),
 
     Staples("STP", "Staples"),
 

@@ -42,21 +42,25 @@ interface CodeList15 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist15">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist15">ONIX
  *      Codelist 15 in Reference Guide</a>
  */
 public enum TitleTypes implements OnixCodelist, CodeList15 {
     Undefined("00", "Undefined"),
 
     /**
-     * The full text of the distinctive title of the item, without abbreviation or abridgement. For books, where the
-     * title alone is not distinctive, elements may be taken from a set or series title and part number etc to create a
-     * distinctive title. Where the item is an omnibus edition containing two or more works by the same author, and
-     * there is no separate combined title, a distinctive title may be constructed by concatenating the individual
-     * titles, with suitable punctuation, as in 'Pride and prejudice / Sense and sensibility / Northanger Abbey'
+     * The full text of the distinctive title of the item, without abbreviation or abridgement. For books, generally
+     * taken from the title page (see codes 11-14 where an alternative title is provided on cover or spine). Where the
+     * item is an omnibus edition containing two or more works by the same author, and there is no separate combined
+     * title, a distinctive title may be constructed (by the sender) by concatenating the individual titles, with
+     * suitable punctuation, as in 'Pride and prejudice / Sense and sensibility / Northanger Abbey'. Where the title
+     * alone is not distinctive, recipients may add elements may be taken from a set or series collection title and part
+     * number etc to create a distinctive title - but these elements should be provided separately by the sender
      */
+    // CHECKSTYLE:OFF
     Distinctive_title_book("01",
-        "Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)"),
+        "Distinctive title (book); Cover title (serial); Title onf item or collection (serial content item or reviewed resource)"),
+    // CHECKSTYLE:ON
 
     /**
      * Serials only

@@ -42,7 +42,7 @@ interface CodeList145 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist145">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist145">ONIX
  *      Codelist 145 in Reference Guide</a>
  */
 public enum UsageTypes implements OnixCodelist, CodeList145 {
@@ -120,7 +120,18 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Preview_on_premises("10", "Preview on premises");
+    Preview_on_premises("10", "Preview on premises"),
+
+    /**
+     * Make use of the content of the product (text, images, audio etc) for extraction of useful (and possibly new)
+     * information through automated computer analysis. By convention, use 01 or 03 in &lt;EpubUsageStatus&gt;. Note 03
+     * should be regarded as 'prohibited to the full extent allowed by law', or otherwise expressly reserved by the
+     * rightsholder, as in some jurisdictions, TDM may be subject to copyright exception (eg for not-for-profit
+     * purposes), subject to optional reservation, or allowed under 'fair use' doctrine
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Text_and_data_mining("11", "Text and data mining");
 
     public final String code;
     public final String description;

@@ -40,7 +40,7 @@ interface CodeList66 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist66">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist66">ONIX
  *      Codelist 66 in Reference Guide</a>
  */
 public enum BisacReturnableIndicators implements OnixCodelist, CodeList66 {
@@ -48,6 +48,10 @@ public enum BisacReturnableIndicators implements OnixCodelist, CodeList66 {
 
     Yes_returnable_full_copies_only("Y", "Yes, returnable, full copies only"),
 
+    /**
+     * Note the product barcode should be repeated (with triangular 'strippable' indicator) on cover 2 (inside front
+     * cover) to facilitate scanning of returned stripped covers
+     */
     Yes_returnable_stripped_cover("S", "Yes, returnable, stripped cover"),
 
     /**

@@ -42,7 +42,7 @@ interface CodeList196 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -105,7 +105,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Unknown_accessibility("08", "Unknown accessibility"),
 
     /**
-     * Known to lack significant features required for broad accessibility. Only for use in ONIX 3.0 or later
+     * Known to lack significant features required for broad accessibility. Details of and reasons for limitations on
+     * accessibility can be given in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -238,14 +239,15 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
         "Use of high contrast between text and background color"),
 
     /**
-     * foreground and background audio Foreground audio content (eg voice) is presented with no or low background noise
-     * (eg ambient sounds, music), at least 20dB below the level of the foreground, or background noise can be switched
-     * off (eg via an alternative audio track). Brief and occasional sound effects may be as loud as foreground voice so
-     * long as they are isolated from the foreground
+     * Foreground audio content (eg voice) is presented with no or low background noise (eg ambient sounds, music), at
+     * least 20dB below the level of the foreground, or background noise can be switched off (eg via an alternative
+     * audio track). Brief and occasional sound effects may be as loud as foreground voice so long as they are isolated
+     * from the foreground
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Use_of_high_contrast_between("27", "Use of high contrast between"),
+    Use_of_high_contrast_between_foreground_and_background_audio("27",
+        "Use of high contrast between foreground and background audio"),
 
     /**
      * All or substantially all non-text content has full alternative descriptions as pre-recorded audio. Note this
@@ -373,7 +375,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    EEA_Exception1_Micro_enterprises("75", "EEA Exception1 – Micro-enterprises"),
+    EEA_Exception_1_Micro_enterprises("75", "EEA Exception 1 – Micro-enterprises"),
 
     /**
      * Digital product falls under European Accessibility Act exception for Disproportionate burden (as defined by

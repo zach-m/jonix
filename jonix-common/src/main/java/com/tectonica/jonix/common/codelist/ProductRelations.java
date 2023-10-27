@@ -42,7 +42,7 @@ interface CodeList51 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist51">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist51">ONIX
  *      Codelist 51 in Reference Guide</a>
  */
 public enum ProductRelations implements OnixCodelist, CodeList51 {
@@ -120,7 +120,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
 
     /**
      * &lt;Product&gt; is an epublication based on printed product &lt;RelatedProduct&gt;. The related product is the
-     * source of any print-equivalent page numbering present in the epublication
+     * source of any print-equivalent page numbering present in the epublication (inverse of code 27)
      */
     Epublication_based_on_print_product("13", "Epublication based on (print product)"),
 

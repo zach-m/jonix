@@ -42,7 +42,7 @@ interface CodeList44 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -61,8 +61,14 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      */
     DNB_publisher_identifier("03", "DNB publisher identifier"),
 
+    /**
+     * (de: Verkehrsnummer des B&#246;rsenverein des deutschen Buchhandels)
+     */
     Borsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"),
 
+    /**
+     * (de: MVB-Kennnummer)
+     */
     German_ISBN_Agency_publisher_identifier("05", "German ISBN Agency publisher identifier"),
 
     /**
@@ -272,7 +278,24 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    LEI("42", "LEI");
+    LEI("42", "LEI"),
+
+    /**
+     * French business identifier, issued by the National Institute of Statistics and Economic Studies (INSEE). 9
+     * digits, without spaces. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    SIREN("43", "SIREN"),
+
+    /**
+     * French business and location identifier, issued by the National Institute of Statistics and Economic Studies
+     * (INSEE). 14 digits (the SIREN plus a further five digits), without spaces, or occasionally an alphanumeric code.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    SIRET("44", "SIRET");
 
     public final String code;
     public final String description;

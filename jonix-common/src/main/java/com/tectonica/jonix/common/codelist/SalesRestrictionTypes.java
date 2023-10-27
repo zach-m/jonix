@@ -42,7 +42,7 @@ interface CodeList71 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist71">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
@@ -165,6 +165,24 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * Jonix-Comment: Introduced in Onix3
      */
     Except_through_POD("19", "Except through POD"),
+
+    /**
+     * Sales rights (or market distribution rights) apply to all supplies through retailers, and to the designated
+     * subscription services, which must be identified or named in an instance of the &lt;SalesOutlet&gt; composite.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Except_to_some_subscription_services("20", "Except to some subscription services"),
+
+    /**
+     * Sales rights (or market distribution rights) apply to supplies to the designated subscription service(s), which
+     * must be identified or named in an instance of the &lt;SalesOutlet&gt; composite. Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Subscription_service_exclusive("21", "Subscription service exclusive"),
 
     /**
      * Positive indication that no sales restrictions apply, for example to indicate the product may be sold both online

@@ -42,7 +42,7 @@ interface CodeList142 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist142">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist142">ONIX
  *      Codelist 142 in Reference Guide</a>
  */
 public enum PositionOnProducts implements OnixCodelist, CodeList142 {
@@ -52,7 +52,7 @@ public enum PositionOnProducts implements OnixCodelist, CodeList142 {
     Unknown_unspecified("00", "Unknown / unspecified"),
 
     /**
-     * The back cover of a book
+     * The back cover of a book (or book jacket) - the recommended position
      */
     Cover_4("01", "Cover 4"),
 

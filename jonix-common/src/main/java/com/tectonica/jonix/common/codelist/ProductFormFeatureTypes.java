@@ -42,7 +42,7 @@ interface CodeList79 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -68,7 +68,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Color_of_foil("27", "Color of foil"),
 
     /**
-     * For Product Form Feature values see code list 98
+     * Sprayed / gilded edges. For Product Form Feature values see code list 98
      */
     Color_of_page_edge("02", "Color of page edge"),
 
@@ -201,7 +201,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
 
     /**
      * Number of pieces, eg for jigsaws, puzzles, kits, board games. &lt;ProductFormFeatureValue&gt; is an integer. Only
-     * for use in ONIX 3.0 or later
+     * for use in ONIX 3.0 or later. For pieces like cards in a pack, see &lt;Extent&gt; and code 00 from List 24
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

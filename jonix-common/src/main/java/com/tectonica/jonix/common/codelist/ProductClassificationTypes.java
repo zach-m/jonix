@@ -42,13 +42,15 @@ interface CodeList9 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_62.html#codelist9">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     /**
-     * World Customs Organization Harmonized Commodity Coding and Description System. Use 6 (or occasionally 8 or 10)
-     * digits, without punctuation
+     * World Customs Organization Harmonized Commodity Coding and Description System, the basis of most other commodity
+     * code schemes. Use 6 digits, without punctuation. See
+     * https://www.wcoomd.org/en/topics/nomenclature/instrument-and-tools/hs-nomenclature-2022-edition.aspx and
+     * https://www.wcotradetools.org/en/harmonized-system
      */
     WCO_Harmonized_System("01", "WCO Harmonized System"),
 
@@ -60,7 +62,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
 
     /**
      * UK Revenue and Customs classifications, based on the Harmonized System (8 or 10 digits, without punctuation, for
-     * export and import respectively)
+     * exports from and imports into the UK respectively). See https://www.gov.uk/trade-tariff
      */
     HMRC("03", "HMRC"),
 
@@ -70,7 +72,9 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     Warenverzeichnis_fur_die_Auenhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"),
 
     /**
-     * EU TARIC codes, an extended version of the Harmonized System. Use 10 digits, without punctuation
+     * EU TARIC codes, an extended version of the Harmonized System primarily for imports into the EU. Use 10 digits,
+     * without punctuation. See
+     * https://taxation-customs.ec.europa.eu/customs-4/calculation-customs-duties/customs-tariff/eu-customs-tariff-taric_en
      */
     TARIC("05", "TARIC"),
 
@@ -141,6 +145,15 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * Jonix-Comment: Introduced in Onix3
      */
     Clave_SAT("15", "Clave SAT"),
+
+    /**
+     * EU Combined Nomenclature commodity codes, an extended version of the Harmonized System primarily for exports from
+     * the EU. Use 8 digits, without punctuation. Only for use in ONIX 3.0 or later. See
+     * https://trade.ec.europa.eu/access-to-markets/en/content/combined-nomenclature-0
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    CN("16", "CN"),
 
     /**
      * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)
