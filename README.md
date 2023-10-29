@@ -63,13 +63,6 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 </dependency>
 ```
 
-Gradle
-```
-implementation group: 'com.tectonica', name: 'jonix', version: '2023-10'
-```
-
-For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2023-10>
-
 ## 2. Latest Release (from latest source code)
 
 To build locally from source:
