@@ -7,7 +7,7 @@ It comprises of various services for efficient processing of ONIX sources, empha
 - Fluent, intuitive and type-safe APIs
 - Extensibility
 
-> NOTE: version `2023-05` presents the single most important leap for Jonix in a decade. The API has been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
+> NOTE: version `2023-05` features the most significant leap for Jonix in a decade. The API has been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
 > In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were introduced for Lists of composites, eliminating many previously-unavoidable `null`/`exists()` checks.
 > For streaming control (e.g. `Jonix.source()...stream()...`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` object passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
 > The `JonixRecords` object now offers `scanHeaders()` for `Header`-only peek of the ONIX sources. It also has `failOnInvalidFile()` method to replace a configuration flag with the same name.
