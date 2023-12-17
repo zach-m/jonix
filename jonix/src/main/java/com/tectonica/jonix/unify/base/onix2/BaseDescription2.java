@@ -38,7 +38,7 @@ public class BaseDescription2 extends BaseDescription {
 
     public static void extract(Product product, BaseDescription dest) {
         dest.editionType = product.editionTypeCodes().firstValue().orElse(null);
-        dest.editionNumber = JPU.convertStringToInteger(product.editionNumber().value);
+        dest.editionNumber = JPU.convertStringToIntegerSafe(product.editionNumber().value);
         dest.productForm = product.productForm().value().map(fv -> fv.description).orElse(null);
         dest.numberOfPages = product.numberOfPages().value;
         dest.languages = product.languages().asStructs(); // TODO: lazify
