@@ -7,7 +7,7 @@ It comprises of various services for efficient processing of ONIX sources, empha
 - Fluent, intuitive and type-safe APIs
 - Extensibility
 
-> NOTE: version `2023-05` presents the single most important leap for Jonix in a decade. The API has been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
+> NOTE: version `2023-05` features the most significant leap for Jonix in a decade. The API has been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
 > In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were introduced for Lists of composites, eliminating many previously-unavoidable `null`/`exists()` checks.
 > For streaming control (e.g. `Jonix.source()...stream()...`), the `JonixSource` passed by the framework now has `productCount()` and `productGlobalCount()`, as well as `skipSource()` to use inside `.onSourceStart()`. Additionally, the `JonixRecord` object passed by the stream, now supports `breakStream()` and `breakCurrentSource()`.
 > The `JonixRecords` object now offers `scanHeaders()` for `Header`-only peek of the ONIX sources. It also has `failOnInvalidFile()` method to replace a configuration flag with the same name.
@@ -62,13 +62,6 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
     <version>2023-10-onix308</version>
 </dependency>
 ```
-
-Gradle
-```
-implementation group: 'com.tectonica', name: 'jonix', version: '2023-10'
-```
-
-For other tools see <https://mvnrepository.com/artifact/com.tectonica/jonix/2023-10>
 
 ## 2. Latest Release (from latest source code)
 
