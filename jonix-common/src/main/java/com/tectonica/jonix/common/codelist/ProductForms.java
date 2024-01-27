@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,14 +42,15 @@ interface CodeList150 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
     Undefined("00", "Undefined"),
 
     /**
-     * Audio recording - detail unspecified. Use only when the form is unkown or no other A* code applies
+     * Audio recording - detail unspecified. Use only when the form is unknown and no further detail can be provided.
+     * Prefer AZ plus &lt;ProductFormDescription&gt; if detail is available but no other A* code applies
      */
     Audio("AA", "Audio"),
 
@@ -132,13 +133,14 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Online_audio_file("AO", "Online audio file"),
 
     /**
-     * Other audio format not specified by AB to AM. Further detail is expected in &lt;ProductFormDescription&gt;, as
+     * Other audio format not specified by AB to AO. Further detail is expected in &lt;ProductFormDescription&gt;, as
      * &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be sufficient
      */
     Other_audio_format("AZ", "Other audio format"),
 
     /**
-     * Book - detail unspecified. Use only when the form is unknown or no other B* code applies
+     * Book - detail unspecified. Use only when the form is unknown and no further detail can be provided. Prefer BZ
+     * plus &lt;ProductFormDescription&gt; if detail is available but no other B* code applies
      */
     Book("BA", "Book"),
 
@@ -230,7 +232,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_book_format("BZ", "Other book format"),
 
     /**
-     * Sheet map - detail unspecified. Use only when the form is unknown or no other C* code applies
+     * Sheet map - detail unspecified. Use only when the form is unknown and no further detail can be provided. Prefer
+     * CZ plus &lt;ProductFormDescription&gt; if detail is available but no other C* code applies
      */
     Sheet_map("CA", "Sheet map"),
 
@@ -256,8 +259,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_cartographic("CZ", "Other cartographic"),
 
     /**
-     * Digital content delivered on a physical carrier (detail unspecified). Use only when the form is unknown or no
-     * other D* code applies
+     * Digital content delivered on a physical carrier (detail unspecified). Use only when the form is unknown and no
+     * further detail can be provided. Prefer DZ plus &lt;ProductFormDescription&gt; if detail is available but no other
+     * D* code applies
      */
     Digital_on_physical_carrier("DA", "Digital (on physical carrier)"),
 
@@ -305,8 +309,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_digital_carrier("DZ", "Other digital carrier"),
 
     /**
-     * Digital content delivered electronically (delivery method unspecified). Use only when the form is unknown or no
-     * other E* code applies
+     * Digital content delivered electronically (delivery method unspecified). Use only when the form and delivery
+     * method is unknown, or when no other E* code applies and the delivery method is described in
+     * &lt;ProductFormDescription&gt;. Note, use &lt;ProductFormDetail&gt; to specify file format
      */
     Digital_delivered_electronically("EA", "Digital (delivered electronically)"),
 
@@ -326,7 +331,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Digital_download("ED", "Digital download"),
 
     /**
-     * Film or transparency - detail unspecified. Use only when the form is unknown or no other F* code applies
+     * Film or transparency - detail unspecified. Use only when the form is unknown and no further detail can be
+     * provided. Prefer FZ plus &lt;ProductFormDescription&gt; if detail is available but no other F* code applies
      */
     Film_or_transparency("FA", "Film or transparency"),
 
@@ -358,8 +364,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_film_or_transparency_format("FZ", "Other film or transparency format"),
 
     /**
-     * Digital product license (delivery method unspecified). Use only when the form is unknown or no other L* code
-     * applies
+     * Digital product license (delivery method unspecified). Use only when the form is unknown, or when no other L*
+     * code applies and the delivery method is described in &lt;ProductFormDescription&gt;
      */
     Digital_product_license("LA", "Digital product license"),
 
@@ -376,7 +382,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Digital_product_license_code("LC", "Digital product license code"),
 
     /**
-     * Microform - detail unspecified. Use only when the form is unknown or no other M* code applies
+     * Microform - detail unspecified. Use only when the form is unknown and no further detail can be provided. Prefer
+     * MZ plus &lt;ProductFormDescription&gt; if detail is available but no other M* code applies
      */
     Microform("MA", "Microform"),
 
@@ -394,8 +401,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_microform("MZ", "Other microform"),
 
     /**
-     * Miscellaneous printed material - detail unspecified. Use only when the form is unknown or no other P* code
-     * applies
+     * Miscellaneous printed material - detail unspecified. Use only when the form is unknown and no further detail can
+     * be provided. Prefer PZ plus &lt;ProductFormDescription&gt; if detail is available but no other P* code applies
      */
     Miscellaneous_print("PA", "Miscellaneous print"),
 
@@ -510,7 +517,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
 
     /**
      * Presentation unspecified: format of product components must be given in &lt;ProductPart&gt;. Use only when the
-     * packaging of the product is unknown or no other S* code applies
+     * packaging of the product is unknown, or when no other S* code applies and the presentation is described in
+     * &lt;ProductFormDescription&gt;
      */
     Multiple_component_retail_product("SA", "Multiple-component retail product"),
 
@@ -552,7 +560,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Multiple_component_retail_product_entirely_digital("SG", "Multiple-component retail product, entirely digital"),
 
     /**
-     * Video - detail unspecified. Use only when the form is unknown or no other V* code applies
+     * Video - detail unspecified. Use only when the form is unknown and no further detail can be provided. Prefer VZ
+     * plus &lt;ProductFormDescription&gt; if detail is available but no other V* code applies
      */
     Video("VA", "Video"),
 
@@ -613,7 +622,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_video_format("VZ", "Other video format"),
 
     /**
-     * Trade-only material (unspecified). Use only when the form is unknown or no other X* code applies
+     * Trade-only material (unspecified). Use only when the form is unknown and no further detail can be provided.
+     * Prefer XZ plus &lt;ProductFormDescription&gt; if detail is available but no other X* code applies
      */
     Trade_only_material("XA", "Trade-only material"),
 
@@ -703,8 +713,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Other_point_of_sale("XZ", "Other point of sale"),
 
     /**
-     * General merchandise, book accessories and non-book products - unspecified. Use only when the form is unknown or
-     * no other X* code applies
+     * General merchandise, book accessories and non-book products - unspecified. Use only when the form is unknown and
+     * no further detail can be provided. Prefer ZX, ZY or ZZ, plus &lt;ProductFormDescription&gt; if detail is
+     * available but no other Z* code applies
      */
     General_merchandise("ZA", "General merchandise"),
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList151 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist151">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist151">ONIX
  *      Codelist 151 in Reference Guide</a>
  */
 public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
@@ -76,14 +76,14 @@ public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
     Citizen_of("08", "Citizen of"),
 
     /**
-     * The place of legal registration of an organisation
+     * The place of legal registration of an organization
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Registered_in("09", "Registered in"),
 
     /**
-     * The place an organisation or part of an organisation is based or operates from
+     * The place an organization or part of an organization is based or operates from
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

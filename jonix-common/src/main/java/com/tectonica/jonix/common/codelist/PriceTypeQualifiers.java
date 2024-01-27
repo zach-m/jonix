@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList59 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist59">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist59">ONIX
  *      Codelist 59 in Reference Guide</a>
  */
 public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
@@ -128,7 +128,7 @@ public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
     Corporate_price("12", "Corporate price"),
 
     /**
-     * Price for sale to organisations or services offering consumers subscription access to a library of books
+     * Price for sale to organizations or services offering consumers subscription access to a library of books
      */
     Subscription_service_price("13", "Subscription service price"),
 

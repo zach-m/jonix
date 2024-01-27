@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,15 +42,17 @@ interface CodeList196 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
     /**
      * &lt;ProductFormFeatureDescription&gt; contains a short explanatory summary of the accessibility of the product,
-     * consistent with the more specific conformance and feature details provided. The summary should note both the
-     * accessibility features provided and any potential deficiencies. More detailed information may be provided in an
-     * external file using codes 94-96. Only for use in ONIX 3.0 or later
+     * or the URL of a web page comprising such a summary, consistent with the more specific conformance, feature and
+     * certification details provided. The summary should note both the accessibility features provided and any
+     * potential deficiencies. The summary does not remove the requirement for full structured accessibility data, but
+     * should be considered a fall-back option if more structured detail cannot be provided or used. Further detailed
+     * information may be provided in an external file using codes 94-96. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -223,7 +225,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * For readers with color vision deficiency, use of color (eg in diagrams, graphs and charts, in prompts or on
-     * buttons inviting a response) is not the sole means of graphical distinction or of conveying information
+     * buttons inviting a response) is not the sole means of graphical distinction or of conveying information. Only for
+     * use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -231,7 +234,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
         "Use of color is not sole means of conveying information"),
 
     /**
-     * Body text is presented with a contrast ratio of at least 4.5:1 (or 3:1 for large/heading text)
+     * Body text is presented with a contrast ratio of at least 4.5:1 (or 3:1 for large/heading text). Only for use in
+     * ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -242,7 +246,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * Foreground audio content (eg voice) is presented with no or low background noise (eg ambient sounds, music), at
      * least 20dB below the level of the foreground, or background noise can be switched off (eg via an alternative
      * audio track). Brief and occasional sound effects may be as loud as foreground voice so long as they are isolated
-     * from the foreground
+     * from the foreground. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -255,7 +259,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * should include full alternative descriptions (eg audio-described video) and transcript, subtitles or captions
      * (whether closed or open) suitable for hearing-impaired as well as for visually-impaired readers. (Purely
      * decorative non-text content can be ignored, but the accessibility of resources delivered via a network connection
-     * rather than as part of the e-publication package must be included)
+     * rather than as part of the e-publication package must be included). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -264,7 +268,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     /**
      * All levels of heading and other structural elements of the content are correctly marked up and (if applicable)
      * numbered, to enable fast next heading / previous heading, next chapter / previous chapter navigation without
-     * returning to the table of contents
+     * returning to the table of contents. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -354,13 +358,26 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Link_purposes_clear("40", "Link purposes clear"),
 
     /**
-     * Sometimes termed 'screen reader-friendly'. All contents of the digital publication necessary to understanding,
-     * including text, images (via their alternative descriptions), audio material, is fully accessible via suitable
-     * reading devices, for example text- to-speech screen readers or tactile reading devices ('Braille displays'), and
-     * nothing in the digital publication prevents or blocks the use of alternative reading modes. The entire
-     * publication can be 'read' using only text via sound or touch, and does not require visual perception. NB this
-     * implies that all &lt;ProductContent&gt; types listed can be accessed without sight. For use in ONIX 3.0 or later
-     * only
+     * All contents of the digital publication necessary to use and understanding, including any text, images (via
+     * alternative descriptions), video (via audio description) is fully accessible via suitable audio reproduction. The
+     * entire publication can be navigated and 'read' using only pre-recorded sound, and does not require visual or
+     * tactile perception. NB this implies that all &lt;ProductContent&gt; types listed can be accessed without sight.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    All_non_decorative_content_supports_reading_via_pre_recorded_audio("51",
+        "All non-decorative content supports reading via pre-recorded audio"),
+
+    /**
+     * Sometimes termed 'screen reader-friendly', and fully supports multiple forms of non-visual reading. All contents
+     * of the digital publication necessary to use and understanding, including text, images (via their alternative
+     * descriptions), audio and video material (via their transcripts, descriptions, captions or subtitles) are fully
+     * accessible via suitable reading devices, for example text-to-speech screen readers or tactile reading devices
+     * ('Braille displays'), and nothing in the digital publication prevents or blocks the use of alternative reading
+     * modes. The entire publication can be navigated and 'read' using only text rendered via sound or touch, and does
+     * not require visual perception. NB this implies that all &lt;ProductContent&gt; types listed can be accessed
+     * without sight. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -447,7 +464,29 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     WCAG_level_AAA("86", "WCAG level AAA"),
 
     /**
-     * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page belonging to an organisation responsible for
+     * &lt;ProductFormFeatureDescription&gt; contains a date in the YYYYMMDD format of the latest assessment or
+     * re-assessment of the accessibility of the product. (Note that changes to or re-confirmation of individual
+     * accessibility features, standards conformance or certification may be highlighted with a timestamp attribute on
+     * the relevant repeat of &lt;ProductFormFeature&gt;). Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Latest_accessibility_assessment_date("91", "Latest accessibility assessment date"),
+
+    /**
+     * &lt;ProductFormFeatureDescription&gt; contains a short addendum to the accessibility detail of the product, or
+     * the URL of a web page comprising such an addendum, providing further details of the specific conformance and
+     * features derails provided. The addendum should be considered additional to the more structured data. A complete
+     * Accessibility summary (including information that is duplicated in the structured data) should be provided using
+     * code 00. Further detailed information may be provided in an external file using codes 94-96. Only for use in ONIX
+     * 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Accessibility_addendum("92", "Accessibility addendum"),
+
+    /**
+     * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page belonging to an organization responsible for
      * compliance testing and certification of the product - typically a 'home page' or a page describing the
      * certification scheme itself. Only for use in ONIX 3.0 or later
      * <p>

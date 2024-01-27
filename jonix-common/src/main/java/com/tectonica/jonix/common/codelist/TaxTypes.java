@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -40,19 +40,19 @@ interface CodeList171 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist171">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist171">ONIX
  *      Codelist 171 in Reference Guide</a>
  */
 public enum TaxTypes implements OnixCodelist, CodeList171 {
     /**
-     * Value-added tax (TVA, IVA, MwSt etc)
+     * TVA, IVA, MwSt, GST etc, levied incrementally at all parts of the supply chain
      */
-    VAT("01", "VAT"),
+    VAT_Value_added_tax("01", "VAT (Value-added tax)"),
 
     /**
-     * General sales tax
+     * General sales tax, levied on retail sales
      */
-    GST("02", "GST"),
+    GST_Sales_tax("02", "GST (Sales tax)"),
 
     /**
      * 'Green' or eco-tax, levied to encourage responsible production or disposal, used only where this is identified

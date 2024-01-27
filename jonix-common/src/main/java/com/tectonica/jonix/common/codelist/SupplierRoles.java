@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList93 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist93">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist93">ONIX
  *      Codelist 93 in Reference Guide</a>
  */
 public enum SupplierRoles implements OnixCodelist, CodeList93 {
@@ -66,7 +66,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
     Wholesaler_to_retailers("04", "Wholesaler to retailers"),
 
     /**
-     * DEPRECATED - use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0 or later) to
+     * Deprecated - use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0 or later) to
      * specify a sales agent
      */
     Sales_agent("05", "Sales agent"),

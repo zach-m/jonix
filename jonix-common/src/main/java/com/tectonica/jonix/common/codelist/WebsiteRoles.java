@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList73 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -226,24 +226,26 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     URL_of_full_metadata_description("40", "URL of full metadata description"),
 
     /**
-     * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar URL for the product
-     * or work
+     * For example, a Facebook, Instagram, Youtube, Pinterest, Tiktok (including Booktok), Twitter (latterly, X) or
+     * similar URL for the product or work
      */
     Social_networking_URL_for_specific_work_or_product("41", "Social networking URL for specific work or product"),
 
     /**
-     * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page
+     * For example, a Facebook, Instagram, Youtube, Pinterest, Tiktok (including Booktok), Twitter (latterly, X) or
+     * similar page
      */
     Authors_social_networking_URL("42", "Author’s social networking URL"),
 
     /**
-     * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page
+     * For example, a Facebook, Instagram, Youtube, Pinterest, Tiktok (including Booktok), Twitter (latterly, X) or
+     * similar page
      */
     Publishers_social_networking_URL("43", "Publisher’s social networking URL"),
 
     /**
-     * For example, a Facebook, Google+, Instagram, Youtube, Pinterest, Tiktok, Twitter or similar page. Use only in the
-     * context of a specific content item (eg within &lt;ContentItem&gt;)
+     * For example, a Facebook, Instagram, Youtube, Pinterest, Tiktok (including Booktok), Twitter (latterly, X) or
+     * similar page. Use only in the context of a specific content item (eg within &lt;ContentItem&gt;)
      */
     Social_networking_URL_for_specific_article_chapter_or_content_item("44",
         "Social networking URL for specific article, chapter or content item"),
@@ -264,7 +266,8 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
 
     /**
      * The URL of the publisher's preservation service, or a more specific URL for access to its preservation metadata,
-     * to provide confirmation of the preservation status of the product. Only for use in ONIX 3.0 or later
+     * to provide confirmation of the preservation status of the product. &lt;WebsiteDescription&gt; may contain the
+     * name of the service. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -272,8 +275,8 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
 
     /**
      * The URL of the preservation service (eg https://clockss.org), or a more specific URL for access to its
-     * preservation metadata, to provide confirmation of the preservation status of the product. Only for use in ONIX
-     * 3.0 or later
+     * preservation metadata, to provide confirmation of the preservation status of the product.
+     * &lt;WebsiteDescription&gt; may contain the name of the service. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -290,12 +293,22 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
 
     /**
      * The URL of a web page describing the environmental and sustainability policies, carbon neutrality status, etc of
-     * the organisation (publisher, supplier etc). Only for use in ONIX 3.0 or later
+     * the organization (publisher, supplier etc). For environmental sustainability of the product itself, see List 79.
+     * Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
-    Organisations_website_for_environmental_responsibility_statement("50",
-        "Organisation’s website for environmental responsibility statement");
+    Organizations_website_for_environmental_responsibility_statement("50",
+        "Organization’s website for environmental responsibility statement"),
+
+    /**
+     * The URL of a digital legal deposit service (eg https://www.legaldeposit.org.uk), or a more specific URL for
+     * access to its preservation metadata, to provide confirmation of the digital legal deposit status of the product.
+     * &lt;WebsiteDescription&gt; may contain the name of the service. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Legal_deposit_website_for_digital_preservation("51", "Legal deposit website for digital preservation");
 
     public final String code;
     public final String description;

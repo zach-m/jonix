@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList21 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -64,7 +64,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Adapted_edition("ADP", "Adapted edition"),
 
     /**
-     * Do not use. This code is now DEPRECATED, but is retained in the list for reasons of backwards compatibility
+     * Do not use. Deprecated, but retained in the list for reasons of backwards compatibility. Not for use in ONIX 3.0
+     * or later
      */
     Alternate("ALT", "Alternate"),
 
@@ -115,8 +116,9 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Coursepack("CSP", "Coursepack"),
 
     /**
-     * A digital product that, at the time of publication, has or had no print counterpart and that is or was not
-     * expected to have a print counterpart for a reasonable time (recommended at least 30 days following publication)
+     * A digital product that, at the time of publication, has or had no physical counterpart and that is or was not
+     * expected to have a physical counterpart for a reasonable time (recommended at least 30 days following
+     * publication)
      */
     Digital_original("DGO", "Digital original"),
 
@@ -204,8 +206,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     New_edition("NED", "New edition"),
 
     /**
-     * A limited edition in which each copy is individually numbered, and the actual number of copies is strictly
-     * limited. Note that the supplier may limit the number of orders fulfilled per retail outlet. Use
+     * A limited or collectors' edition in which each copy is individually numbered, and the actual number of copies is
+     * strictly limited. Note that the supplier may limit the number of orders fulfilled per retail outlet. Use
      * &lt;EditionStatement&gt; to give details of the number of copies printed
      */
     Edition_with_numbered_copies("NUM", "Edition with numbered copies"),
@@ -278,9 +280,9 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Ultra_large_print_edition("ULP", "Ultra large print edition"),
 
     /**
-     * A limited edition in which each copy is not individually numbered - but where the actual number of copies is
-     * strictly limited. Note that the supplier may limit the number of orders fulfilled per retail outlet. Use
-     * &lt;EditionStatement&gt; to give details of the number of copies printed
+     * A limited or collectors' edition in which each copy is not individually numbered - but where the actual number of
+     * copies is strictly limited. Note that the supplier may limit the number of orders fulfilled per retail outlet.
+     * Use &lt;EditionStatement&gt; to give details of the number of copies printed
      */
     Edition_with_unnumbered_copies("UNN", "Edition with unnumbered copies"),
 

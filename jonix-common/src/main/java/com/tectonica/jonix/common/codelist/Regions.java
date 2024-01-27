@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList49 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist49">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist49">ONIX
  *      Codelist 49 in Reference Guide</a>
  */
 public enum Regions implements OnixCodelist, CodeList49 {
@@ -532,19 +532,19 @@ public enum Regions implements OnixCodelist, CodeList49 {
     UK_airports("GB-APS", "UK airports"),
 
     /**
-     * DEPRECATED, replaced by country codes GG - Guernsey, and JE - Jersey from List 91
+     * Deprecated, replaced by country codes GG - Guernsey, and JE - Jersey from List 91
      */
     Channel_Islands("GB-CHA", "Channel Islands"),
 
     England("GB-ENG", "England"),
 
     /**
-     * UK excluding Northern Ireland. DEPRECATED - use separate region codes GB-ENG, GB-SCT, GB-WLS instead
+     * UK excluding Northern Ireland. Deprecated - use separate region codes GB-ENG, GB-SCT, GB-WLS instead
      */
     England_Wales_Scotland("GB-EWS", "England, Wales, Scotland"),
 
     /**
-     * DEPRECATED, replaced by country code IM - Isle of Man from List 91
+     * Deprecated, replaced by country code IM - Isle of Man from List 91
      */
     Isle_of_Man("GB-IOM", "Isle of Man"),
 
@@ -1056,7 +1056,7 @@ public enum Regions implements OnixCodelist, CodeList49 {
      * writing, this is a synonym for 'AT BE CY EE FI FR DE ES GR HR IE IT LT LU LV MT NL PT SI SK' (the official
      * Eurozone 20), plus 'AD MC SM VA ME' and Kosovo (other Euro-using countries in continental Europe). Note some
      * other territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
-     * specified separately. ONLY valid in ONIX 3.0, and ONLY within P.26 - and this use is itself DEPRECATED. Use of an
+     * specified separately. ONLY valid in ONIX 3.0, and ONLY within P.26 - and this use is itself Deprecated. Use of an
      * explicit list of countries instead of ECZ is strongly encouraged
      */
     Eurozone("ECZ", "Eurozone"),

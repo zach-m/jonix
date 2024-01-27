@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList9 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist9">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
@@ -154,6 +154,31 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * Jonix-Comment: Introduced in Onix3
      */
     CN("16", "CN"),
+
+    /**
+     * Canadian Customs Tariff scheme, 8 or 10 digits for imports into and exports from Canada. Only for use in ONIX 3.0
+     * or later. See https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    CCT("17", "CCT"),
+
+    /**
+     * Australian 'Working tariff'. Combined Australian Customs Tariff Nomenclature and Statistical Classification. Only
+     * for use in ONIX 3.0 or later. See
+     * https://www.abf.gov.au/importing-exporting-and-manufacturing/tariff-classification
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    CACT("18", "CACT"),
+
+    /**
+     * Mexican N&#250;mero de Identificaci&#243;n Comercial, 10 digits for imports into and exports from Mexico. Only
+     * for use in ONIX 3.0 or later. See https://www.snice.gob.mx/cs/avi/snice/nico.ligie.html
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    NICO("19", "NICO"),
 
     /**
      * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)

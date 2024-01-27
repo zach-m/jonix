@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList96 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist96">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -52,7 +52,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     UAE_Dirham("AED", "UAE Dirham"),
 
     /**
-     * Afghanistan. DEPRECATED, replaced by AFN
+     * Afghanistan. Deprecated, replaced by AFN
      */
     Afghani("AFA", "Afghani"),
 
@@ -130,7 +130,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Belgian_Franc("BEF", "Belgian Franc"),
 
     /**
-     * DEPRECATED, replaced by BGN
+     * Deprecated, replaced by BGN
      */
     Bulgarian_Lev("BGL", "Bulgarian Lev"),
 
@@ -624,7 +624,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
 
     /**
      * Mauritania (prices normally quoted with 0 or 1 decimal place - 1 khoums = UM0.2). Was interchangeable with MRU
-     * (New) Ouguiya at rate of 10:1 until June 2018. DEPRECATED, use MRU instead
+     * (New) Ouguiya at rate of 10:1 until June 2018. Deprecated, use MRU instead
      */
     _Old_("MRO", "(Old) Ouguiya"),
 
@@ -780,7 +780,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Russian_Ruble("RUB", "Russian Ruble"),
 
     /**
-     * DEPRECATED, replaced by RUB
+     * Deprecated, replaced by RUB
      */
     Russian_Ruble_("RUR", "Russian Ruble"),
 
@@ -871,7 +871,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
 
     /**
      * S&#227;o Tome and Principe (prices normally quoted as integers). Was interchangeable with STN (New) Dobra at rate
-     * of 1000:1 until June 2018. DEPRECATED, use STN instead
+     * of 1000:1 until June 2018. Deprecated, use STN instead
      */
     _Old__("STD", "(Old) Dobra"),
 
@@ -1046,7 +1046,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Yemeni_Rial("YER", "Yemeni Rial"),
 
     /**
-     * DEPRECATED, replaced by CSD
+     * Deprecated, replaced by CSD
      */
     Yugoslavian_Dinar("YUM", "Yugoslavian Dinar"),
 

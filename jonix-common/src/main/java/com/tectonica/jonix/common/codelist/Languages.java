@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList74 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -445,7 +445,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Croatian("hrv", "Croatian"),
 
     /**
-     * DEPRECATED - use hrv
+     * Deprecated - use hrv
      */
     Croatian_("scr", "Croatian"),
 
@@ -502,6 +502,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Dyula("dyu", "Dyula"),
 
     Dzongkha("dzo", "Dzongkha"),
+
+    /**
+     * ONIX local code, equivalent to ike in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Eastern_Canadian_Inuktitut("ike", "Eastern Canadian Inuktitut"),
 
     Eastern_Frisian("frs", "Eastern Frisian"),
 
@@ -796,13 +803,6 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Inuktitut("iku", "Inuktitut"),
 
     /**
-     * ONIX local code, equivalent to ike in ISO 639-3. Only for use in ONIX 3.0 or later
-     * <p>
-     * Jonix-Comment: Introduced in Onix3
-     */
-    Eastern_Canadian_Inuktitut("ike", "Eastern Canadian Inuktitut"),
-
-    /**
      * Macrolanguage
      */
     Inupiaq("ipk", "Inupiaq"),
@@ -934,6 +934,22 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Kinyarwanda("kin", "Kinyarwanda"),
 
     Kirghiz_Kyrgyz("kir", "Kirghiz; Kyrgyz"),
+
+    /**
+     * Kisi (Guinean language). ONIX local code, equivalent to kqs in ISO 639-3. Only for use in ONIX 3.0 or later. Do
+     * not confuse with Kisi (Tanzanian language)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Kissi_Northern("kqs", "Kissi, Northern"),
+
+    /**
+     * Kisi (Liberian language). ONIX local code, equivalent to kss in ISO 639-3. Only for use in ONIX 3.0 or later. Do
+     * not confuse with Kisi (Tanzanian language)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Kissi_Southern("kss", "Kissi, Southern"),
 
     /**
      * Artificial language
@@ -1189,7 +1205,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Moksha("mdf", "Moksha"),
 
     /**
-     * DEPRECATED - use rum
+     * Deprecated - use rum
      */
     Moldavian_Moldovan("mol", "Moldavian; Moldovan"),
 
@@ -1293,6 +1309,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Niuean("niu", "Niuean"),
 
     Nogai("nog", "Nogai"),
+
+    /**
+     * Normand, of which Guern&#233;siais, J&#232;rriais are distinct dialects. ONIX local code (not distinguished from
+     * nrf in ISO 639-3). Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Norman_French("qnf", "Norman French"),
 
     /**
      * Collective name
@@ -1496,9 +1520,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Romansh("roh", "Romansh"),
 
     /**
-     * Macrolanguage
+     * Romani. Macrolanguage
      */
-    Romany_Romani("rom", "Romany, Romani"),
+    Romany("rom", "Romany"),
 
     Rundi("run", "Rundi"),
 
@@ -1559,7 +1583,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Semitic_languages("sem", "Semitic languages"),
 
     /**
-     * DEPRECATED - use srp
+     * Deprecated - use srp
      */
     Serbian("scc", "Serbian"),
 
@@ -1782,6 +1806,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Tonga_Nyasa("tog", "Tonga (Nyasa)"),
 
     Tongan("ton", "Tongan"),
+
+    /**
+     * ONIX local code for Norwegian Scandoromani variant, equivalent to rmg in ISO 639-3. Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Traveler_Norwegian("rmg", "Traveler Norwegian"),
 
     /**
      * ONIX local code, equivalent to tsd in ISO 639-3. Only for use in ONIX 3.0 or later
