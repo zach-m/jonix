@@ -149,7 +149,7 @@ public class RightsTerritory implements OnixElement<java.util.Set<Regions>>, Ser
         sourcename = JPU.getAttribute(element, "sourcename");
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).split(" +")) {
+        for (String split : JPU.getContentAsString(element).split("\\s+")) {
             value.add(Regions.byCode(split));
         }
     }

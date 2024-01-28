@@ -157,7 +157,7 @@ public class CountriesIncluded implements OnixElement<java.util.Set<Countrys>>, 
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).split(" +")) {
+        for (String split : JPU.getContentAsString(element).split("\\s+")) {
             value.add(Countrys.byCode(split));
         }
     }

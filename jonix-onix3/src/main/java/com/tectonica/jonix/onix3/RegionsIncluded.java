@@ -159,7 +159,7 @@ public class RegionsIncluded implements OnixElement<java.util.Set<Regions>>, Ser
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).split(" +")) {
+        for (String split : JPU.getContentAsString(element).split("\\s+")) {
             value.add(Regions.byCode(split));
         }
     }
