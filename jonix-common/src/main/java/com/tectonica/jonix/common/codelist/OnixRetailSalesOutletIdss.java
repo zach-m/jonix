@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList139 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -499,7 +499,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Izneo("IZN", "Izneo"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Only for use in ONIX 3.0 or later. Deprecated
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -532,10 +532,17 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Kirjastopalvelu("KPV", "Kirjastopalvelu"),
 
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Kirja_fi("KRJ", "Kirja.fi"),
+
     KNFB_Blio("KNB", "KNFB/Blio"),
 
     /**
-     * Deprecate
+     * Deprecated
      */
     Kno_Inc("KNO", "Kno Inc"),
 
@@ -560,6 +567,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * Jonix-Comment: Introduced in Onix3
      */
     Legible_com("LEG", "Legible.com"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Lexplore("LEX", "Lexplore"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -799,14 +813,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Suomalainen_Kirjakauppa("SKK", "Suomalainen Kirjakauppa"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Only for use in ONIX 3.0 or later. Deprecated
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Suomalainen_Plus("SPL", "Suomalainen Plus"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Only for use in ONIX 3.0 or later. Deprecated
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */

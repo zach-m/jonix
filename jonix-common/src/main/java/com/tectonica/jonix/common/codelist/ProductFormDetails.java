@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList175 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -365,7 +365,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     _46_size("B119", "46 size"),
 
     /**
-     * Japanese format, 188 x 127mm
+     * Japanese format, approximately 188 x 127mm
      */
     _46_Henkei_size("B120", "46-Henkei size"),
 
@@ -375,22 +375,22 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     A4("B121", "A4"),
 
     /**
-     * Japanese format, 297 x 210mm
+     * Japanese format, approximately 297 x 210mm
      */
     A4_Henkei_size("B122", "A4-Henkei size"),
 
     /**
-     * Japanese format, 210 x 146mm
+     * Japanese format, approximately 210 x 146mm
      */
     A5_Henkei_size("B123", "A5-Henkei size"),
 
     /**
-     * Japanese format, 257 x 182mm
+     * Japanese format, approximately 257 x 182mm
      */
     B5_Henkei_size("B124", "B5-Henkei size"),
 
     /**
-     * Japanese format, 182 x 128mm
+     * Japanese format, approximately 182 x 128mm
      */
     B6_Henkei_size("B125", "B6-Henkei size"),
 
@@ -466,6 +466,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     Comic_album_size_Euro("B140", "Comic album size (Euro)"),
+
+    /**
+     * Japanese format, approximately 364 x 257 mm
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    B4_Henkei_size("B141", "B4-Henkei size"),
 
     Coloring_join_the_dot_book("B201", "Coloring / join-the-dot book"),
 
@@ -867,6 +874,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Splashproof("B521", "Splashproof"),
 
     /**
+     * Pages composed of 'mineral paper' comprised of HDPE plastic and ground calcium carbonate, eg Stonepaper
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Mineral_paper("B522", "Mineral paper"),
+
+    /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
      * 'flip-book' or 't&#234;te-b&#234;che' (Fr) binding, it has two front covers and a single spine. Usually an
      * omnibus of two works
@@ -1138,7 +1152,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Sony_PlayStation_Portable_PSP("D316", "Sony PlayStation Portable (PSP)"),
 
     /**
-     * Use with Product Form code DB, DI, DO or E* as applicable. DEPRECATED
+     * Use with Product Form code DB, DI, DO or E* as applicable. Deprecated - use D313
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
@@ -1885,6 +1899,20 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jonix-Comment: Introduced in Onix3
      */
     _3D_video("V207", "3D video"),
+
+    /**
+     * Or subtitles
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Closed_captions("V210", "Closed captions"),
+
+    /**
+     * 'Burnt-in' or hard captions or subtitles
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Open_captions("V211", "Open captions"),
 
     /**
      * Licensed for use in domestic contexts only

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -159,7 +159,7 @@ public class RegionsIncluded implements OnixElement<java.util.Set<Regions>>, Ser
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
         value = new java.util.HashSet<>();
-        for (String split : JPU.getContentAsString(element).split(" +")) {
+        for (String split : JPU.getContentAsString(element).split("\\s+")) {
             value.add(Regions.byCode(split));
         }
     }

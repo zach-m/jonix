@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -50,14 +50,13 @@ import java.util.function.Consumer;
  * identified by a recognized product identifier should be described by one, and only one, ONIX Product record.
  * </p>
  * <p>
- * In ONIX&nbsp;3.0<ins datetime="2023-03-06">and later</ins>, a Product record has a mandatory ‘preamble’ comprising
- * data Groups P.1 and P.2, and carrying data that identifies the record and the product to which it refers. This is
- * followed by up to eight ‘blocks’, each of which is optional. Of these blocks, Blocks 1 to 5, plus 7 and 8 are not
- * repeatable. Block 6 <em>appears</em> to be repeatable, but it is often more useful to think of a singular Block 6
- * comprising all repeats of its contained &lt;ProductSupply&gt; composites. In special circumstances – with partial
- * (‘Block’) updates and only when &lt;MarketReference&gt; is used to label each individual &lt;ProductSupply&gt;
- * composite – Block&nbsp;6 can be thought of as a truly repeatable block, each repeat consisting of a single
- * &lt;ProductSupply&gt; composite.
+ * In ONIX&nbsp;3.0 and later, a Product record has a mandatory ‘preamble’ comprising data Groups P.1 and P.2, and
+ * carrying data that identifies the record and the product to which it refers. This is followed by up to eight
+ * ‘blocks’, each of which is optional. Of these blocks, Blocks 1 to 5, plus 7 and 8 are not repeatable. Block 6
+ * <em>appears</em> to be repeatable, but it is often more useful to think of a singular Block 6 comprising all repeats
+ * of its contained &lt;ProductSupply&gt; composites. In special circumstances – with partial (‘Block’) updates and only
+ * when &lt;MarketReference&gt; is used to label each individual &lt;ProductSupply&gt; composite – Block&nbsp;6 can be
+ * thought of as a truly repeatable block, each repeat consisting of a single &lt;ProductSupply&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

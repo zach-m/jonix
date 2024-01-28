@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList45 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist45">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist45">ONIX
  *      Codelist 45 in Reference Guide</a>
  */
 public enum PublishingRoles implements OnixCodelist, CodeList45 {
@@ -119,20 +119,20 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
     Funding_body("16", "Funding body"),
 
     /**
-     * Organisation responsible for printing a printed product. Supplied primarily to meet legal deposit requirements,
-     * and may apply only to the first impression. The organisation may also be responsible for binding, when a separate
+     * Organization responsible for printing a printed product. Supplied primarily to meet legal deposit requirements,
+     * and may apply only to the first impression. The organization may also be responsible for binding, when a separate
      * binder is not specified
      */
     Printer("17", "Printer"),
 
     /**
-     * Organisation responsible for binding a printed product (where distinct from the printer). Supplied primarily to
+     * Organization responsible for binding a printed product (where distinct from the printer). Supplied primarily to
      * meet legal deposit requirements, and may apply only to the first impression
      */
     Binder("18", "Binder"),
 
     /**
-     * Organisation primarily responsible for physical manufacture of a product, when neither Printer nor Binder is
+     * Organization primarily responsible for physical manufacture of a product, when neither Printer nor Binder is
      * directly appropriate (for example, with disc or tape products, or digital products on a physical carrier)
      */
     Manufacturer("19", "Manufacturer"),

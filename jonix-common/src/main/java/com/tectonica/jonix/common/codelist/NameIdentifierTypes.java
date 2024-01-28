@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList44 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -52,7 +52,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     Proprietary("01", "Proprietary"),
 
     /**
-     * DEPRECATED - use 01
+     * Deprecated - use code 01
      */
     Proprietary_("02", "Proprietary"),
 
@@ -62,7 +62,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     DNB_publisher_identifier("03", "DNB publisher identifier"),
 
     /**
-     * (de: Verkehrsnummer des B&#246;rsenverein des deutschen Buchhandels)
+     * (de: Verkehrsnummer ded B&#246;rsenverein des deutschen Buchhandels)
      */
     Borsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"),
 
@@ -118,7 +118,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     /**
      * Personennamendatei - person name authority file used by Deutsche Nationalbibliothek and in other German-speaking
      * countries. See http://www.dnb.de/standardisierung/normdateien/pnd.htm (German) or
-     * http://www.dnb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favor of the GND
+     * http://www.dnb.de/eng/standardisierung/normdateien/pnd.htm (English). Deprecated in favor of the GND
      */
     PND("17", "PND"),
 
@@ -135,7 +135,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     /**
      * Gemeinsame K&#246;rperschaftsdatei - Corporate Body Authority File in the German-speaking countries. See
      * http://www.dnb.de/standardisierung/normdateien/gkd.htm (German) or
-     * http://www.dnb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favor of the GND
+     * http://www.dnb.de/eng/standardisierung/normdateien/gkd.htm (English). Deprecated in favor of the GND
      */
     GKD("20", "GKD"),
 
@@ -257,7 +257,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     IPI("39", "IPI"),
 
     /**
-     * Research organisation registry identifier (see https://ror.org), leading 0 followed by 8 alphanumeric characters
+     * Research organization registry identifier (see https://ror.org), leading 0 followed by 8 alphanumeric characters
      * (including 2-digit checksum). Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3

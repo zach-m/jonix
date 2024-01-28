@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,17 +42,17 @@ interface CodeList32 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist32">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist32">ONIX
  *      Codelist 32 in Reference Guide</a>
  */
 public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
     /**
-     * For example AD or HL. DEPRECATED in ONIX 3 - use code 06 instead
+     * For example AD or HL. Deprecated in ONIX 3 - use code 06 instead
      */
     Lexile_code("01", "Lexile code"),
 
     /**
-     * For example 880L. DEPRECATED in ONIX 3 - use code 06 instead
+     * For example 880L. Deprecated in ONIX 3 - use code 06 instead
      */
     Lexile_number("02", "Lexile number"),
 

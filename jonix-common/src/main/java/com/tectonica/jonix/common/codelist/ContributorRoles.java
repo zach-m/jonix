@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList17 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -259,7 +259,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Comic_script_by("A45", "Comic script by"),
 
     /**
-     * Renders final comic book line art based on work of the illustrator or penciller. Preferred to code A40
+     * Renders final comic book line art based on work of the illustrator or penciller (code A12). Preferred to code A40
      */
     Inker("A46", "Inker"),
 
@@ -270,9 +270,25 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
 
     /**
      * Creates comic book text balloons and other text elements (where this is a distinct role from script writer and/or
-     * illustrator), or calligraphy in non-comic products
+     * illustrator), or creates calligraphy in non-comic products
      */
     Letterer("A48", "Letterer"),
+
+    /**
+     * Renders final comic book cover line art based on work of the cover designer (code A36), where different from the
+     * inker of the interior line art. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Cover_inker("A49", "Cover inker"),
+
+    /**
+     * Provides comic book cover color art and effects, where different from the colorist of the interior art and
+     * effects. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Cover_colorist("A50", "Cover colorist"),
 
     /**
      * Person or organization responsible for performing research on which the work is based. Only for use in ONIX 3.0
@@ -281,6 +297,13 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Jonix-Comment: Introduced in Onix3
      */
     Research_by("A51", "Research by"),
+
+    /**
+     * (for comic books). Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Original_character_design("A52", "Original character design"),
 
     /**
      * Other type of primary creator not specified above
@@ -327,7 +350,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Managing_editor("B16", "Managing editor"),
 
     /**
-     * Usually the founder editor of a serial publication: Begruendet von
+     * Usually the founder editor of a serial publication (de: Begruendet von)
      */
     Founded_by("B17", "Founded by"),
 
@@ -350,8 +373,8 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     General_rapporteur("B23", "General rapporteur"),
 
     /**
-     * An editor who is responsible for establishing the text used in an edition of a literary work, where this is
-     * recognised as a distinctive role (in Spain, 'editor literario')
+     * Editor who is responsible for establishing the text used in an edition of a literary work, where this is
+     * recognised as a distinctive role (es: editor literario)
      */
     Literary_editor("B24", "Literary editor"),
 
@@ -460,7 +483,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
 
     /**
      * Where the narrator is a character in a dramatized production (including a voice actor in an audio production).
-     * For the 'narrator' of a non-dramatized audiobook, see code E07
+     * For the 'narrator' of a non-dramatized audiobook, use code E07
      */
     Narrator("E03", "Narrator"),
 
@@ -540,6 +563,14 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Jonix-Comment: Introduced in Onix3
      */
     Peer_reviewed("Z04", "Peer reviewed"),
+
+    /**
+     * May be associated with any contributor role, and placement should therefore be controlled by contributor sequence
+     * numbering. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Posthumously_completed_by("Z05", "Posthumously completed by"),
 
     /**
      * For use ONLY with 'et al' or 'Various' within &lt;UnnamedPersons&gt;, where the roles of the multiple

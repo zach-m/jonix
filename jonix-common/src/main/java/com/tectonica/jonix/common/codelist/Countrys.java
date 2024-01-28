@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList91 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist91">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist91">ONIX
  *      Codelist 91 in Reference Guide</a>
  */
 public enum Countrys implements OnixCodelist, CodeList91 {
@@ -157,7 +157,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
     Costa_Rica("CR", "Costa Rica"),
 
     /**
-     * DEPRECATED, replaced by ME - Montenegro and RS - Serbia
+     * Deprecated, replaced by ME - Montenegro and RS - Serbia
      */
     Serbia_and_Montenegro("CS", "Serbia and Montenegro"),
 
@@ -566,7 +566,7 @@ public enum Countrys implements OnixCodelist, CodeList91 {
     Mayotte("YT", "Mayotte"),
 
     /**
-     * DEPRECATED, replaced by ME - Montenegro and RS - Serbia
+     * Deprecated, replaced by ME - Montenegro and RS - Serbia
      */
     Yugoslavia("YU", "Yugoslavia"),
 

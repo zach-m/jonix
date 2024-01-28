@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList5 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist5">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist5">ONIX
  *      Codelist 5 in Reference Guide</a>
  */
 public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
@@ -54,7 +54,7 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
 
     /**
      * International Standard Book Number, pre-2007 (10 digits, or 9 digits plus X, without spaces or hyphens) - now
-     * DEPRECATED in ONIX for Books, except where providing historical information for compatibility with legacy
+     * Deprecated in ONIX for Books, except where providing historical information for compatibility with legacy
      * systems. It should only be used in relation to products published before 2007 - when ISBN-13 superseded it - and
      * should never be used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13)
      */
@@ -71,7 +71,7 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
     UPC("04", "UPC"),
 
     /**
-     * International Standard Music Number, pre-2008 (M plus nine digits, without spaces or hyphens) - now DEPRECATED in
+     * International Standard Music Number, pre-2008 (M plus nine digits, without spaces or hyphens) - now Deprecated in
      * ONIX for Books, except where providing historical information for compatibility with legacy systems. It should
      * only be used in relation to products published before 2008 - when ISMN-13 superseded it - and should never be
      * used as the ONLY identifier (it should always be accompanied by the correct GTIN-12 / ISMN-13)

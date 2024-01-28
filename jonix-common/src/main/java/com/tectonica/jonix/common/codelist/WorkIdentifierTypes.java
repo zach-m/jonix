@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList16 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist16">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist16">ONIX
  *      Codelist 16 in Reference Guide</a>
  */
 public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
@@ -52,7 +52,7 @@ public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
     Proprietary("01", "Proprietary"),
 
     /**
-     * 10-character ISBN of manifestation of work, when this is the only work identifier available - now DEPRECATED in
+     * 10-character ISBN of manifestation of work, when this is the only work identifier available - now Deprecated in
      * ONIX for Books, except where providing historical information for compatibility with legacy systems. It should
      * only be used in relation to products published before 2007 - when ISBN-13 superseded it - and should never be
      * used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13 of the

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -42,7 +42,7 @@ interface CodeList30 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_63.html#codelist30">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist30">ONIX
  *      Codelist 30 in Reference Guide</a>
  */
 public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
@@ -96,17 +96,17 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     Italian_school_grade("22", "Italian school grade"),
 
     /**
-     * DEPRECATED - assigned in error: see List 29
+     * Deprecated - assigned in error: see List 29
      */
     Schulform("23", "Schulform"),
 
     /**
-     * DEPRECATED - assigned in error: see List 29
+     * Deprecated - assigned in error: see List 29
      */
     Bundesland("24", "Bundesland"),
 
     /**
-     * DEPRECATED - assigned in error: see List 29
+     * Deprecated - assigned in error: see List 29
      */
     Ausbildungsberuf("25", "Ausbildungsberuf"),
 

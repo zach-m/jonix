@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2023 Zach Melamed
+ * Copyright (C) 2012-2024 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -36,11 +36,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Header composite</h1>
  * <p>
- * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books
- * message<ins datetime="2023-03-06">to provide metadata about the message itself</ins>, and
- * non-repeating.<del datetime="2023-03-06">In ONIX&nbsp;3.0, a number of redundant elements have been deleted, and the
- * Sender and Addressee structures and the name and format of the &lt;SentDateTime&gt; element have been made consistent
- * with other current ONIX formats.</del>
+ * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books message to
+ * provide metadata about the message itself, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
