@@ -21,7 +21,6 @@ package com.tectonica.jonix.jackson;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.tectonica.jonix.common.OnixTag;
@@ -29,9 +28,14 @@ import com.tectonica.jonix.common.OnixTag;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
-public class JonixProductObjectMapper extends ObjectMapper {
+public class JonixProductObjectMapper extends JonixSortableObjectMapper {
 
     public JonixProductObjectMapper(boolean indent) {
+        this(indent, false);
+    }
+
+    public JonixProductObjectMapper(boolean indent, boolean sortSets) {
+        super(sortSets);
         addMixIn(OnixTag.class, JonixOnixTagFilter.OnixTagMixIn.class);
         setFilterProvider(
             new SimpleFilterProvider().addFilter(JonixOnixTagFilter.FILTER_NAME, new JonixOnixTagFilter()));
