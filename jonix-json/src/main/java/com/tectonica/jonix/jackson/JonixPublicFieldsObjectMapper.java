@@ -23,14 +23,19 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
-public class JonixPublicFieldsObjectMapper extends ObjectMapper {
+public class JonixPublicFieldsObjectMapper extends JonixSortableObjectMapper {
     public JonixPublicFieldsObjectMapper() {
+        this(false);
+    }
+
+    public JonixPublicFieldsObjectMapper(boolean sortSets) {
+        super(sortSets);
+
         // configure to use public fields only, consistent with Jonix design
         setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.PUBLIC_ONLY);
         setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE);

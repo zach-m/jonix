@@ -37,6 +37,8 @@ import java.util.Objects;
 public class JonixJson {
     private static final ObjectMapper PRODUCT_OBJECT_MAPPER = new JonixProductObjectMapper(true);
     private static final ObjectMapper PRODUCT_OBJECT_MAPPER_NO_IDENT = new JonixProductObjectMapper(false);
+    private static final ObjectMapper PRODUCT_OBJECT_MAPPER_SORTED = new JonixProductObjectMapper(true, true);
+    private static final ObjectMapper PRODUCT_OBJECT_MAPPER_NO_IDENT_SORTED = new JonixProductObjectMapper(false, true);
     private static final ObjectMapper PUBLIC_FIELDS_MAPPER = new JonixPublicFieldsObjectMapper();
 
     /**
@@ -52,6 +54,24 @@ public class JonixJson {
     public static String toJson(Object object, boolean indent) {
         if (object instanceof OnixProduct) {
             return productToJson((OnixProduct) object, indent);
+        }
+        return objectToJson(object);
+    }
+
+    /**
+     * Creates a JSON representation of an object using either its public fields or its {@link OnixProduct} accessors,
+     * depending on its actual type.
+     * <p>
+     * See {@link #productToJson(OnixProduct, boolean, boolean)} and {@link #objectToJson(Object)} for more details.
+     *
+     * @param object   object to serialize as JSON using its public fields or its {@link OnixProduct} accessors
+     * @param indent   whether the returned JSON string should be indented ({@link OnixProduct} only)
+     * @param sortSets whether the returned JSON string should have its sets sorted ({@link OnixProduct} only)
+     * @return JSON representation of the object
+     */
+    public static String toJson(Object object, boolean indent, boolean sortSets) {
+        if (object instanceof OnixProduct) {
+            return productToJson((OnixProduct) object, indent, sortSets);
         }
         return objectToJson(object);
     }
@@ -85,6 +105,38 @@ public class JonixJson {
         Objects.requireNonNull(onixProduct)._initialize();
         try {
             ObjectMapper mapper = indent ? PRODUCT_OBJECT_MAPPER : PRODUCT_OBJECT_MAPPER_NO_IDENT;
+            return mapper.writeValueAsString(onixProduct);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Creates a JSON representation of an {@link OnixProduct} object (i.e. low-level xml-parsed ONIX Product record).
+     * <p>
+     * This JSON serializer is needed in addition to the more generic {@link #objectToJson(Object)} because
+     * {@link OnixProduct}s are populated "lazily". In other words, their internal fields get populated with actual
+     * values only when accessed explicitly (via accessor methods, that induce the population of the
+     * {@link OnixComposite} they refer to). This is a design choice to make Jonix more performant and less memory
+     * hungry. However, for the underlying JSON serialization framework ({@code Jackson} is this case), this laziness
+     * presents a problem, as no accessors are explicitly invoked, and nothing triggers population of the (private)
+     * fields that are accessed directly during serialization. Therefore, some advanced configuration of the
+     * {@code Jackson} serializer is required, which is exactly what this API does.
+     *
+     * @param onixProduct an {@link OnixProduct} object to serialize as JSON
+     * @param indent      whether the returned JSON should be indented
+     * @param sortSets    whether the returned JSON should have its sets sorted
+     * @return JSON representation of the product
+     */
+    public static String productToJson(OnixProduct onixProduct, boolean indent, boolean sortSets) {
+        Objects.requireNonNull(onixProduct)._initialize();
+        try {
+            final ObjectMapper mapper;
+            if (sortSets) {
+                mapper = indent ? PRODUCT_OBJECT_MAPPER_SORTED : PRODUCT_OBJECT_MAPPER_NO_IDENT_SORTED;
+            } else {
+                mapper = indent ? PRODUCT_OBJECT_MAPPER : PRODUCT_OBJECT_MAPPER_NO_IDENT;
+            }
             return mapper.writeValueAsString(onixProduct);
         } catch (IOException e) {
             throw new RuntimeException(e);
