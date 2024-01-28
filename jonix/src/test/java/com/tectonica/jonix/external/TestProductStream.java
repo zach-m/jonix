@@ -186,11 +186,13 @@ public class TestProductStream {
             //    record.breakStream();
             //}
 
-            String json = JonixJson.toJson(record.product, false);
+            String json = JonixJson.toJson(record.product, false, true);
             String targetJson = target.jsons.get(0);
+            //System.out.println(json);
             //System.out.println("ACTUAL:   " + json);
             //System.out.println("EXPECTED: " + targetJson);
             assertEquals("Difference in source " + record.source, targetJson.length(), json.length());
+            assertEquals("Difference in source " + record.source, targetJson, json);
             target.jsons.remove(0);
         });
     }
