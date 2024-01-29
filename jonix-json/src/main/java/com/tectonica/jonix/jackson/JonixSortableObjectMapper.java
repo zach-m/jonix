@@ -35,7 +35,7 @@ public class JonixSortableObjectMapper extends ObjectMapper {
     public JonixSortableObjectMapper(boolean sortSets) {
         if (sortSets) {
             SimpleModule module = new SimpleModule();
-            module.addSerializer(Set.class, new JsonSerializer<>() {
+            module.addSerializer(Set.class, new JsonSerializer<Set>() {
                 @Override
                 public void serialize(Set set, JsonGenerator gen, SerializerProvider serializers) throws IOException {
                     if (set == null) {
