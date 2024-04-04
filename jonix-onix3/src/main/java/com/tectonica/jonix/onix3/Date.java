@@ -129,10 +129,23 @@ import java.util.function.Consumer;
  * {@link Date}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link OccurrenceDate} ⯈ {@link Date}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate} ⯈ {@link EpubLicenseDate} ⯈
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈
  * {@link Date}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate} ⯈
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDateType} ⯈
  * {@link EpubLicenseDate} ⯈ {@link Date}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
+ * {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈ {@link Date}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link EpubLicenseWithDateType} ⯈
+ * {@link EpubLicenseDate} ⯈ {@link Date}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈ {@link Date}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈
+ * {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈ {@link Date}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈
+ * {@link Date}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈ {@link Date}</li>
  * </ul>
  *
  * @since Onix-3.10

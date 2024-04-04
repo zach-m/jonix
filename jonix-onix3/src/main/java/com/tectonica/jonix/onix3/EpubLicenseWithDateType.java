@@ -41,15 +41,28 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
+ * <li>&lt;{@link TextContent}&gt;</li>
+ * <li>&lt;{@link ResourceVersion}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDate}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDate}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDateType}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDateType}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
+ * {@link EpubLicenseWithDateType}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link EpubLicenseWithDateType}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈
+ * {@link EpubLicenseWithDateType}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType}</li>
  * </ul>
  */
-public class EpubLicenseWithDate implements OnixSuperComposite, Serializable {
+public class EpubLicenseWithDateType implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "EpubLicense";
@@ -78,15 +91,15 @@ public class EpubLicenseWithDate implements OnixSuperComposite, Serializable {
     private boolean initialized;
     private final boolean exists;
     private final org.w3c.dom.Element element;
-    public static final EpubLicenseWithDate EMPTY = new EpubLicenseWithDate();
+    public static final EpubLicenseWithDateType EMPTY = new EpubLicenseWithDateType();
 
-    public EpubLicenseWithDate() {
+    public EpubLicenseWithDateType() {
         exists = false;
         element = null;
         initialized = true; // so that no further processing will be done on this intentionally-empty object
     }
 
-    public EpubLicenseWithDate(org.w3c.dom.Element element) {
+    public EpubLicenseWithDateType(org.w3c.dom.Element element) {
         exists = true;
         initialized = false;
         this.element = element;
@@ -124,15 +137,15 @@ public class EpubLicenseWithDate implements OnixSuperComposite, Serializable {
     }
 
     /**
-     * @return whether this tag (&lt;EpubLicenseWithDate&gt; or &lt;epublicense&gt;) is explicitly provided in the ONIX
-     *         XML
+     * @return whether this tag (&lt;EpubLicenseWithDateType&gt; or &lt;epublicense&gt;) is explicitly provided in the
+     *         ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<EpubLicenseWithDate> action) {
+    public void ifExists(Consumer<EpubLicenseWithDateType> action) {
         if (exists) {
             action.accept(this);
         }

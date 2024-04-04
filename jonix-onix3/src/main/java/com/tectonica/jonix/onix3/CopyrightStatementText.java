@@ -33,37 +33,31 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Collection contributor statement</h1>
+ * <h1>Copyright statement text (content item)</h1>
  * <p>
- * Free text showing how the collection authorship should be described in an online display, when a standard
- * concatenation of individual collection contributor elements would not give a satisfactory presentation. Optional but
- * must only be used if one or more instances of &lt;Contributor&gt; are present within &lt;Collection&gt;, and
- * repeatable where parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a
- * single instance of &lt;ContributorStatement&gt;, but must be included in each instance if
- * &lt;ContributorStatement&gt; is repeated. When the &lt;ContributorStatement&gt; element is sent, the recipient should
- * use it to replace all name detail sent in the &lt;Contributor&gt; composites within &lt;Collection&gt; <em>for
- * display purposes only</em>. It does not replace the &lt;Contributor&gt; composite (or any element within it) for
- * individual contributors. The individual name detail <em>must</em> also be sent in one or more &lt;Contributor&gt;
- * composites for indexing and retrieval purposes.
- * </p>
- * <p>
- * <strong>The &lt;ContributorStatement&gt; element is provided here for use only by those ONIX communities whose
- * national practice requires contributors to the collection to be identified at collection level.</strong> It should
- * not be sent in a context where collection contributors are normally identified in Group&nbsp;P.6.
+ * Free text showing how the copyright of the content item should be described, when a standard concatenation of
+ * individual copyright statements would not give a satisfactory presentation. Optional but must only be used if one or
+ * more instances of &lt;CopyrightStatement&gt; are present, and repeatable if parallel text is provided in multiple
+ * languages. The <i>language</i> attribute is optional for a single instance of &lt;CopyrightStatementText&gt;, but
+ * must be included in each instance if &lt;CopyrightStatementText&gt; is repeated. When the
+ * &lt;CopyrightStatementText&gt; field is sent, the receiver should use it to replace all detail for the content item
+ * sent in the &lt;CopyrightStatement&gt; composite <em>for display purposes only</em>. It does not replace the
+ * &lt;CopyrightStatement&gt; element. The individual rightsholder detail <em>must</em> also be sent in one or more
+ * &lt;CopyrightStatement&gt; composites for indexing and retrieval purposes.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see Using
+ * <td>Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see Using
  * XHTML, HTML, XML, JSON within ONIX text fields</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;ContributorStatement&gt;</tt></td>
+ * <td><tt>&lt;CopyrightStatementText&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;b049&gt;</tt></td>
+ * <td><tt>&lt;x588&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
@@ -75,33 +69,29 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;b049&gt;Series conceived and edited by Samantha and Darrin Stephens&lt;/b049&gt;</tt></td>
+ * <td><tt>&lt;CopyrightStatementText textformat=&quot;05&quot;&gt;&lt;p&gt;Text &#169; 2023 Amelia Winstanley, music &#169; and &#8471; 2021 Three sisters&lt;/p&gt;&lt;/CopyrightStatementText&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
- * <li>&lt;{@link PromotionalEvent}&gt;</li>
- * <li>&lt;{@link Collection}&gt;</li>
+ * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ContributorStatement}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link ContributorStatement}</li>
- * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link ContributorStatement}</li>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link ContributorStatement}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatementText}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatementText}</li>
  * </ul>
  *
- * @since Onix-3.01
+ * @since Onix-3.11
  */
-public class ContributorStatement implements OnixElement<String>, Serializable {
+public class CopyrightStatementText implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "ContributorStatement";
-    public static final String shortname = "b049";
+    public static final String refname = "CopyrightStatementText";
+    public static final String shortname = "x588";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -128,11 +118,11 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This is the raw content of ContributorStatement. Could be null if {@code exists() == false}. Use {@link #value()}
-     * instead if you want to get this as an {@link java.util.Optional}.
+     * This is the raw content of CopyrightStatementText. Could be null if {@code exists() == false}. Use
+     * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
-     * see Using XHTML, HTML, XML, JSON within ONIX text fields
+     * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML, XML, JSON within ONIX text fields
      * <p>
      * (type: XHTML)
      */
@@ -151,13 +141,13 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final ContributorStatement EMPTY = new ContributorStatement();
+    public static final CopyrightStatementText EMPTY = new CopyrightStatementText();
 
-    public ContributorStatement() {
+    public CopyrightStatementText() {
         exists = false;
     }
 
-    public ContributorStatement(org.w3c.dom.Element element) {
+    public CopyrightStatementText(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
@@ -169,14 +159,14 @@ public class ContributorStatement implements OnixElement<String>, Serializable {
     }
 
     /**
-     * @return whether this tag (&lt;ContributorStatement&gt; or &lt;b049&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;CopyrightStatementText&gt; or &lt;x588&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<ContributorStatement> action) {
+    public void ifExists(Consumer<CopyrightStatementText> action) {
         if (exists) {
             action.accept(this);
         }

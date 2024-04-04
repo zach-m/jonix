@@ -74,6 +74,18 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageStatus}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint} ⯈
  * {@link EpubUsageStatus}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link EpubUsageConstraint}
+ * ⯈ {@link EpubUsageStatus}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link EpubUsageConstraint} ⯈
+ * {@link EpubUsageStatus}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageStatus}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈
+ * {@link EpubUsageConstraint} ⯈ {@link EpubUsageStatus}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageStatus}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageStatus}</li>
  * </ul>
  */
 public class EpubUsageStatus implements OnixElement<UsageStatuss>, Serializable {

@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.EpublicationLicenseDateRoles;
+import com.tectonica.jonix.common.codelist.PrizeIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,10 +32,10 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Digital product license date role code</h1>
+ * <h1>Prize identifier type</h1>
  * <p>
- * An ONIX code indicating the significance of the date in relation to the license. Mandatory in each occurrence of the
- * &lt;EpubLicenseDate&gt; composite, and non-repeating.
+ * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in each
+ * occurrence of the &lt;PrizeIdentifier&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -44,15 +44,15 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>List 260</td>
+ * <td>List 263</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
- * <td><tt>&lt;EpubLicenseDateRole&gt;</tt></td>
+ * <td><tt>&lt;PrizeIDType&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Short tag</td>
- * <td><tt>&lt;x585&gt;</tt></td>
+ * <td><tt>&lt;x589&gt;</tt></td>
  * </tr>
  * <tr>
  * <td>Cardinality</td>
@@ -60,45 +60,35 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;EpubLicenseDateRole&gt;14&lt;/EpubLicenseDateRole&gt;</tt> (license becomes effective)</td>
+ * <td><tt>&lt;x589&gt;01&lt;/x589&gt;</tt> (Proprietary)</td>
  * </tr>
  * </table>
  * <p/>
  * This tag may be included in the following composites:
  * <ul>
- * <li>&lt;{@link EpubLicenseDate}&gt;</li>
+ * <li>&lt;{@link PrizeIdentifier}&gt;</li>
  * </ul>
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈
- * {@link EpubLicenseDateRole}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubLicenseWithDateType} ⯈
- * {@link EpubLicenseDate} ⯈ {@link EpubLicenseDateRole}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
- * {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈ {@link EpubLicenseDateRole}</li>
- * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link EpubLicenseWithDateType} ⯈
- * {@link EpubLicenseDate} ⯈ {@link EpubLicenseDateRole}</li>
- * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
- * {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈
- * {@link EpubLicenseDateRole}</li>
- * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈
- * {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈ {@link EpubLicenseDateRole}</li>
- * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
- * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈
- * {@link EpubLicenseDateRole}</li>
- * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
- * {@link ResourceVersion} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate} ⯈
- * {@link EpubLicenseDateRole}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeIdentifier} ⯈ {@link PrizeIDType}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈ {@link PrizeIdentifier} ⯈
+ * {@link PrizeIDType}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeIdentifier} ⯈ {@link PrizeIDType}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeIdentifier} ⯈ {@link PrizeIDType}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeIdentifier} ⯈ {@link PrizeIDType}</li>
  * </ul>
  *
- * @since Onix-3.10
+ * @since Onix-3.11
  */
-public class EpubLicenseDateRole implements OnixElement<EpublicationLicenseDateRoles>, Serializable {
+public class PrizeIDType implements OnixElement<PrizeIdentifierTypes>, Serializable {
     private static final long serialVersionUID = 1L;
 
-    public static final String refname = "EpubLicenseDateRole";
-    public static final String shortname = "x585";
+    public static final String refname = "PrizeIDType";
+    public static final String shortname = "x589";
 
     /////////////////////////////////////////////////////////////////////////////////
     // ATTRIBUTES
@@ -120,13 +110,13 @@ public class EpubLicenseDateRole implements OnixElement<EpublicationLicenseDateR
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    public EpublicationLicenseDateRoles value;
+    public PrizeIdentifierTypes value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public EpublicationLicenseDateRoles __v() {
+    public PrizeIdentifierTypes __v() {
         return value;
     }
 
@@ -135,30 +125,30 @@ public class EpubLicenseDateRole implements OnixElement<EpublicationLicenseDateR
     /////////////////////////////////////////////////////////////////////////////////
 
     private final boolean exists;
-    public static final EpubLicenseDateRole EMPTY = new EpubLicenseDateRole();
+    public static final PrizeIDType EMPTY = new PrizeIDType();
 
-    public EpubLicenseDateRole() {
+    public PrizeIDType() {
         exists = false;
     }
 
-    public EpubLicenseDateRole(org.w3c.dom.Element element) {
+    public PrizeIDType(org.w3c.dom.Element element) {
         exists = true;
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
-        value = EpublicationLicenseDateRoles.byCode(JPU.getContentAsString(element));
+        value = PrizeIdentifierTypes.byCode(JPU.getContentAsString(element));
     }
 
     /**
-     * @return whether this tag (&lt;EpubLicenseDateRole&gt; or &lt;x585&gt;) is explicitly provided in the ONIX XML
+     * @return whether this tag (&lt;PrizeIDType&gt; or &lt;x589&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<EpubLicenseDateRole> action) {
+    public void ifExists(Consumer<PrizeIDType> action) {
         if (exists) {
             action.accept(this);
         }

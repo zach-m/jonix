@@ -40,14 +40,22 @@ interface CodeList228 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist228">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist228">ONIX
  *      Codelist 228 in Reference Guide</a>
  */
 public enum GrantIdentifierTypes implements OnixCodelist, CodeList228 {
     /**
      * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary");
+    Proprietary("01", "Proprietary"),
+
+    /**
+     * Digital Object Identifier (variable length and character set, beginning '10.' and without https://doi.org/ or the
+     * older http://dx.doi.org/)
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    DOI("06", "DOI");
 
     public final String code;
     public final String description;

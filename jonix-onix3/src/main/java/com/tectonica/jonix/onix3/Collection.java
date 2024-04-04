@@ -334,13 +334,14 @@ public class Collection implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * Free text showing how the collection authorship should be described in an online display, when a standard
-     * concatenation of individual collection contributor elements would not give a satisfactory presentation. Optional,
-     * and repeatable where parallel text is provided in multiple languages. The <i>language</i> attribute is optional
-     * for a single instance of &lt;ContributorStatement&gt;, but must be included in each instance if
+     * concatenation of individual collection contributor elements would not give a satisfactory presentation. Optional
+     * but must only be used if one or more instances of &lt;Contributor&gt; are present within &lt;Collection&gt;, and
+     * repeatable where parallel text is provided in multiple languages. The <i>language</i> attribute is optional for a
+     * single instance of &lt;ContributorStatement&gt;, but must be included in each instance if
      * &lt;ContributorStatement&gt; is repeated. When the &lt;ContributorStatement&gt; element is sent, the recipient
      * should use it to replace all name detail sent in the &lt;Contributor&gt; composites within &lt;Collection&gt;
-     * <em>for display purposes only</em>. It does not replace the &lt;BiographicalNote&gt; element (or any other
-     * element) for individual contributors. The individual name detail <em>must</em> also be sent in one or more
+     * <em>for display purposes only</em>. It does not replace the &lt;Contributor&gt; composite (or any element within
+     * it) for individual contributors. The individual name detail <em>must</em> also be sent in one or more
      * &lt;Contributor&gt; composites for indexing and retrieval purposes.
      * </p>
      * <p>

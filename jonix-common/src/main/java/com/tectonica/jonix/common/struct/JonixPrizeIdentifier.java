@@ -19,50 +19,46 @@
 
 package com.tectonica.jonix.common.struct;
 
+import com.tectonica.jonix.common.JonixKeyedStruct;
 import com.tectonica.jonix.common.JonixStruct;
-import com.tectonica.jonix.common.codelist.Countrys;
-import com.tectonica.jonix.common.codelist.PrizeOrAwardAchievements;
+import com.tectonica.jonix.common.codelist.PrizeIdentifierTypes;
 
 import java.io.Serializable;
-import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * This class is a {@link JonixStruct} that represents both Onix2 <code>&lt;Prize></code> and Onix3
- * <code>&lt;Prize></code>.
+ * This class is a {@link JonixStruct} that represents Onix3 <code>&lt;PrizeIdentifier></code>.
  * <p>
  * It can be retrieved from the composite by invoking its <code>asStruct()</code> method.
  */
 @SuppressWarnings("serial")
-public class JonixPrize implements JonixStruct, Serializable {
-    public static final JonixPrize EMPTY = new JonixPrize();
-
-    public PrizeOrAwardAchievements prizeCode;
-
-    public Countrys prizeCountry;
+public class JonixPrizeIdentifier implements JonixKeyedStruct<PrizeIdentifierTypes>, Serializable {
+    public static final JonixPrizeIdentifier EMPTY = new JonixPrizeIdentifier();
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML, XML, JSON within ONIX text fields
-     * <p>
-     * (type: XHTML)
+     * the key of this struct (by which it can be looked up)
      */
-    public List<String> prizeJurys;
+    public PrizeIdentifierTypes prizeIDType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 100 characters
+     * Raw Format: Variable length text, suggested maximum 100 characters
      * <p>
      * (type: dt.NonEmptyString)
      */
-    public List<String> prizeNames;
+    public String idTypeName;
 
     /**
-     * Raw Format: Four digits, YYYY
+     * Raw Format: According to the identifier type specified in &lt;SenderIDType&gt;
      * <p>
-     * (type: dt.Year)
+     * (type: dt.NonEmptyString)
      */
-    public String prizeYear;
+    public String idValue;
+
+    @Override
+    public PrizeIdentifierTypes key() {
+        return prizeIDType;
+    }
 }

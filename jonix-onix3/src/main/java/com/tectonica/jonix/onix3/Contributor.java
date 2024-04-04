@@ -34,7 +34,6 @@ import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.struct.JonixContributorDate;
 import com.tectonica.jonix.common.struct.JonixContributorPlace;
 import com.tectonica.jonix.common.struct.JonixNameIdentifier;
-import com.tectonica.jonix.common.struct.JonixPrize;
 import com.tectonica.jonix.common.struct.JonixWebsite;
 
 import java.io.Serializable;
@@ -628,7 +627,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
         return professionalAffiliations;
     }
 
-    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = JPU.emptyListOfOnixDataComposite(Prize.class);
+    private ListOfOnixComposite<Prize> prizes = JPU.emptyListOfOnixComposite(Prize.class);
 
     /**
      * <p>
@@ -638,7 +637,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
+    public ListOfOnixComposite<Prize> prizes() {
         _initialize();
         return prizes;
     }

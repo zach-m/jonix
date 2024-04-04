@@ -42,7 +42,7 @@ interface CodeList258 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist258">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist258">ONIX
  *      Codelist 258 in Reference Guide</a>
  */
 public enum SpecialFinishs implements OnixCodelist, CodeList258 {

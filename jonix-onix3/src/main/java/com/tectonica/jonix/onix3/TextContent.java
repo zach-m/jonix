@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
 import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
@@ -169,6 +170,14 @@ public class TextContent implements OnixSuperComposite, Serializable {
                 case TextSourceLink.refname:
                 case TextSourceLink.shortname:
                     textSourceLinks = JPU.addToList(textSourceLinks, new TextSourceLink(e));
+                    break;
+                case EpubUsageConstraint.refname:
+                case EpubUsageConstraint.shortname:
+                    epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(e));
+                    break;
+                case EpubLicenseWithDateType.refname:
+                case EpubLicenseWithDateType.shortname:
+                    epubLicenses = JPU.addToList(epubLicenses, new EpubLicenseWithDateType(e));
                     break;
                 case ContentDate.refname:
                 case ContentDate.shortname:
@@ -384,6 +393,33 @@ public class TextContent implements OnixSuperComposite, Serializable {
     public ListOfOnixElement<TextSourceLink, String> textSourceLinks() {
         _initialize();
         return textSourceLinks;
+    }
+
+    private ListOfOnixComposite<EpubUsageConstraint> epubUsageConstraints =
+        JPU.emptyListOfOnixComposite(EpubUsageConstraint.class);
+
+    /**
+     * <p>
+     * An optional group of data elements which together describe a usage constraint on the supporting text sent in
+     * &lt;Text&gt; (or the absence of such a constraint). Repeatable in order to describe multiple constraints on
+     * usage.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixComposite<EpubUsageConstraint> epubUsageConstraints() {
+        _initialize();
+        return epubUsageConstraints;
+    }
+
+    private ListOfOnixComposite<EpubLicenseWithDateType> epubLicenses =
+        JPU.emptyListOfOnixComposite(EpubLicenseWithDateType.class);
+
+    /**
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixComposite<EpubLicenseWithDateType> epubLicenses() {
+        _initialize();
+        return epubLicenses;
     }
 
     private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =

@@ -168,6 +168,10 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
                 case CopyrightStatement.shortname:
                     copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
                     break;
+                case CopyrightStatementText.refname:
+                case CopyrightStatementText.shortname:
+                    copyrightStatementTexts = JPU.addToList(copyrightStatementTexts, new CopyrightStatementText(e));
+                    break;
                 case SalesRights.refname:
                 case SalesRights.shortname:
                     salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
@@ -391,6 +395,27 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
     public ListOfOnixComposite<CopyrightStatement> copyrightStatements() {
         _initialize();
         return copyrightStatements;
+    }
+
+    private ListOfOnixElement<CopyrightStatementText, String> copyrightStatementTexts = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Free text showing how the copyright should be described, when a standard concatenation of individual copyright
+     * statements would not give a satisfactory presentation. Optional but must only be used if one or more instances of
+     * &lt;CopyrightStatement&gt; are present, and repeatable if parallel text is provided in multiple languages. The
+     * <i>language</i> attribute is optional for a single instance of &lt;CopyrightStatementText&gt;, but must be
+     * included in each instance if &lt;CopyrightStatementText&gt; is repeated. When the &lt;CopyrightStatementText&gt;
+     * field is sent, the receiver should use it to replace all detail sent in the &lt;CopyrightStatement&gt; composite
+     * <em>for display purposes only</em>. It does not replace the &lt;CopyrightStatement&gt; element. The individual
+     * name detail <em>must</em> also be sent in one or more &lt;CopyrightStatement&gt; composites for indexing and
+     * retrieval purposes.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<CopyrightStatementText, String> copyrightStatementTexts() {
+        _initialize();
+        return copyrightStatementTexts;
     }
 
     private ListOfOnixComposite<SalesRights> salesRightss = JPU.emptyListOfOnixComposite(SalesRights.class);

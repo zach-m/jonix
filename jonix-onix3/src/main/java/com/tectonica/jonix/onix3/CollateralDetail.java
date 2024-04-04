@@ -21,10 +21,8 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
 import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixPrize;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -220,7 +218,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
         return supportingResources;
     }
 
-    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = JPU.emptyListOfOnixDataComposite(Prize.class);
+    private ListOfOnixComposite<Prize> prizes = JPU.emptyListOfOnixComposite(Prize.class);
 
     /**
      * <p>
@@ -229,7 +227,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
+    public ListOfOnixComposite<Prize> prizes() {
         _initialize();
         return prizes;
     }

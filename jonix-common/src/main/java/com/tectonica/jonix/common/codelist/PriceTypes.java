@@ -42,7 +42,7 @@ interface CodeList58 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist58">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist58">ONIX
  *      Codelist 58 in Reference Guide</a>
  */
 public enum PriceTypes implements OnixCodelist, CodeList58 {
@@ -225,6 +225,14 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * Jonix-Comment: Introduced in Onix3
      */
     Nominal_value_for_claims_purposes_excluding_tax("36", "Nominal value for claims purposes, excluding tax"),
+
+    /**
+     * Nominal value of copies (Declared Unit Value) for international customs declarations only. Only for use in ONIX
+     * 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Nominal_value_for_customs_purposes_excluding_tax("37", "Nominal value for customs purposes, excluding tax"),
 
     /**
      * For a product supplied on agency terms, the retail price set by the publisher, excluding any sales tax or

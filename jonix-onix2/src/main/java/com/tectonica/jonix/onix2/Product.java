@@ -60,7 +60,6 @@ import com.tectonica.jonix.common.struct.JonixMainSubject;
 import com.tectonica.jonix.common.struct.JonixMeasure;
 import com.tectonica.jonix.common.struct.JonixMediaFile;
 import com.tectonica.jonix.common.struct.JonixOtherText;
-import com.tectonica.jonix.common.struct.JonixPrize;
 import com.tectonica.jonix.common.struct.JonixProductClassification;
 import com.tectonica.jonix.common.struct.JonixProductFormFeature;
 import com.tectonica.jonix.common.struct.JonixProductIdentifier;
@@ -2994,7 +2993,7 @@ public class Product implements OnixProduct, Serializable {
         return productWebsites;
     }
 
-    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = JPU.emptyListOfOnixDataComposite(Prize.class);
+    private ListOfOnixComposite<Prize> prizes = JPU.emptyListOfOnixComposite(Prize.class);
 
     /**
      * <p>
@@ -3002,7 +3001,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
+    public ListOfOnixComposite<Prize> prizes() {
         _initialize();
         return prizes;
     }

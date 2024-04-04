@@ -148,9 +148,9 @@ public class Price implements OnixSuperComposite, Serializable {
                 case PriceQualifier.shortname:
                     priceQualifier = new PriceQualifier(e);
                     break;
-                case EpubLicenseWithoutDate.refname:
-                case EpubLicenseWithoutDate.shortname:
-                    epubLicense = new EpubLicenseWithoutDate(e);
+                case EpubLicenseType.refname:
+                case EpubLicenseType.shortname:
+                    epubLicense = new EpubLicenseType(e);
                     break;
                 case PricePer.refname:
                 case PricePer.shortname:
@@ -298,12 +298,12 @@ public class Price implements OnixSuperComposite, Serializable {
         return priceQualifier;
     }
 
-    private EpubLicenseWithoutDate epubLicense = EpubLicenseWithoutDate.EMPTY;
+    private EpubLicenseType epubLicense = EpubLicenseType.EMPTY;
 
     /**
      * Jonix-Comment: this field is optional
      */
-    public EpubLicenseWithoutDate epubLicense() {
+    public EpubLicenseType epubLicense() {
         _initialize();
         return epubLicense;
     }

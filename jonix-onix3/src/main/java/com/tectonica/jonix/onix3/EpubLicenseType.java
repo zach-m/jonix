@@ -42,11 +42,10 @@ import java.util.function.Consumer;
  * <p/>
  * Possible placements within ONIX message:
  * <ul>
- * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈
- * {@link EpubLicenseWithoutDate}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link EpubLicenseType}</li>
  * </ul>
  */
-public class EpubLicenseWithoutDate implements OnixSuperComposite, Serializable {
+public class EpubLicenseType implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "EpubLicense";
@@ -75,15 +74,15 @@ public class EpubLicenseWithoutDate implements OnixSuperComposite, Serializable 
     private boolean initialized;
     private final boolean exists;
     private final org.w3c.dom.Element element;
-    public static final EpubLicenseWithoutDate EMPTY = new EpubLicenseWithoutDate();
+    public static final EpubLicenseType EMPTY = new EpubLicenseType();
 
-    public EpubLicenseWithoutDate() {
+    public EpubLicenseType() {
         exists = false;
         element = null;
         initialized = true; // so that no further processing will be done on this intentionally-empty object
     }
 
-    public EpubLicenseWithoutDate(org.w3c.dom.Element element) {
+    public EpubLicenseType(org.w3c.dom.Element element) {
         exists = true;
         initialized = false;
         this.element = element;
@@ -117,15 +116,14 @@ public class EpubLicenseWithoutDate implements OnixSuperComposite, Serializable 
     }
 
     /**
-     * @return whether this tag (&lt;EpubLicenseWithoutDate&gt; or &lt;epublicense&gt;) is explicitly provided in the
-     *         ONIX XML
+     * @return whether this tag (&lt;EpubLicenseType&gt; or &lt;epublicense&gt;) is explicitly provided in the ONIX XML
      */
     @Override
     public boolean exists() {
         return exists;
     }
 
-    public void ifExists(Consumer<EpubLicenseWithoutDate> action) {
+    public void ifExists(Consumer<EpubLicenseType> action) {
         if (exists) {
             action.accept(this);
         }

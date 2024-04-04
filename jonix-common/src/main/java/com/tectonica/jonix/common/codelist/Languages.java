@@ -42,7 +42,7 @@ interface CodeList74 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -411,7 +411,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     /**
      * Macrolanguage. See also crj (Southern East Cree), crk (plains Cree), crl (Northern East Cree), crm (Moose Cree),
-     * cse (Swampy Cree), cwd (Woods Cree)
+     * csw (Swampy Cree), cwd (Woods Cree)
      */
     Cree("cre", "Cree"),
 
@@ -869,6 +869,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
      * (East Circassian)
      */
     Kabardian("kbd", "Kabardian"),
+
+    /**
+     * ONIX local code, equivalent to kbp in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Kabiye("kbp", "Kabiyè"),
 
     Kabyle("kab", "Kabyle"),
 

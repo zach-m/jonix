@@ -42,7 +42,7 @@ interface CodeList139 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -715,6 +715,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Pottery_Barn("PTB", "Pottery Barn"),
 
     /**
+     * Publio.pl. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Publio("PLO", "Publio"),
+
+    /**
      * Deprecated
      */
     Readbooks("RDB", "Readbooks"),
@@ -836,6 +843,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Target("TRG", "Target"),
 
     Tesco("TES", "Tesco"),
+
+    /**
+     * TikTok's in-app store. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    TikTok_Shop("TIK", "TikTok Shop"),
 
     /**
      * Only for use in ONIX 3.0 or later

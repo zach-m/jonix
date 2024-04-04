@@ -71,6 +71,7 @@ import java.util.function.Consumer;
  * <li>&lt;{@link PublisherIdentifier}&gt;</li>
  * <li>&lt;{@link SenderIdentifier}&gt;</li>
  * <li>&lt;{@link SalesOutletIdentifier}&gt;</li>
+ * <li>&lt;{@link PrizeIdentifier}&gt;</li>
  * <li>&lt;{@link AddresseeIdentifier}&gt;</li>
  * <li>&lt;{@link WorkIdentifier}&gt;</li>
  * <li>&lt;{@link AgentIdentifier}&gt;</li>
@@ -149,6 +150,15 @@ import java.util.function.Consumer;
  * {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link InsertManifest} ⯈
  * {@link InsertResource} ⯈ {@link SalesOutlet} ⯈ {@link SalesOutletIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈ {@link PrizeIdentifier} ⯈
+ * {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeIdentifier} ⯈ {@link IDValue}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈ {@link Prize} ⯈
+ * {@link PrizeIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedWork} ⯈ {@link WorkIdentifier} ⯈ {@link IDValue}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link RelatedWork} ⯈ {@link WorkIdentifier} ⯈

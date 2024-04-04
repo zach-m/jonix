@@ -158,9 +158,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case EpubUsageConstraint.shortname:
                     epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(e));
                     break;
-                case EpubLicenseWithDate.refname:
-                case EpubLicenseWithDate.shortname:
-                    epubLicenses = JPU.addToList(epubLicenses, new EpubLicenseWithDate(e));
+                case EpubLicenseWithDateType.refname:
+                case EpubLicenseWithDateType.shortname:
+                    epubLicenses = JPU.addToList(epubLicenses, new EpubLicenseWithDateType(e));
                     break;
                 case TitleDetail.refname:
                 case TitleDetail.shortname:
@@ -201,6 +201,10 @@ public class ContentItem implements OnixSuperComposite, Serializable {
                 case CopyrightStatement.refname:
                 case CopyrightStatement.shortname:
                     copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
+                    break;
+                case CopyrightStatementText.refname:
+                case CopyrightStatementText.shortname:
+                    copyrightStatementTexts = JPU.addToList(copyrightStatementTexts, new CopyrightStatementText(e));
                     break;
                 case RelatedWork.refname:
                 case RelatedWork.shortname:
@@ -368,13 +372,13 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         return epubUsageConstraints;
     }
 
-    private ListOfOnixComposite<EpubLicenseWithDate> epubLicenses =
-        JPU.emptyListOfOnixComposite(EpubLicenseWithDate.class);
+    private ListOfOnixComposite<EpubLicenseWithDateType> epubLicenses =
+        JPU.emptyListOfOnixComposite(EpubLicenseWithDateType.class);
 
     /**
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixComposite<EpubLicenseWithDate> epubLicenses() {
+    public ListOfOnixComposite<EpubLicenseWithDateType> epubLicenses() {
         _initialize();
         return epubLicenses;
     }
@@ -529,6 +533,16 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     public ListOfOnixComposite<CopyrightStatement> copyrightStatements() {
         _initialize();
         return copyrightStatements;
+    }
+
+    private ListOfOnixElement<CopyrightStatementText, String> copyrightStatementTexts = ListOfOnixElement.empty();
+
+    /**
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixElement<CopyrightStatementText, String> copyrightStatementTexts() {
+        _initialize();
+        return copyrightStatementTexts;
     }
 
     private ListOfOnixComposite<RelatedWork> relatedWorks = JPU.emptyListOfOnixComposite(RelatedWork.class);

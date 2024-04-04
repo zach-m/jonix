@@ -249,9 +249,9 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
                 case EpubUsageConstraint.shortname:
                     epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(e));
                     break;
-                case EpubLicenseWithDate.refname:
-                case EpubLicenseWithDate.shortname:
-                    epubLicenses = JPU.addToList(epubLicenses, new EpubLicenseWithDate(e));
+                case EpubLicenseWithDateType.refname:
+                case EpubLicenseWithDateType.shortname:
+                    epubLicenses = JPU.addToList(epubLicenses, new EpubLicenseWithDateType(e));
                     break;
                 case MapScale.refname:
                 case MapScale.shortname:
@@ -774,13 +774,13 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         return epubUsageConstraints;
     }
 
-    private ListOfOnixComposite<EpubLicenseWithDate> epubLicenses =
-        JPU.emptyListOfOnixComposite(EpubLicenseWithDate.class);
+    private ListOfOnixComposite<EpubLicenseWithDateType> epubLicenses =
+        JPU.emptyListOfOnixComposite(EpubLicenseWithDateType.class);
 
     /**
      * Jonix-Comment: this list may be empty
      */
-    public ListOfOnixComposite<EpubLicenseWithDate> epubLicenses() {
+    public ListOfOnixComposite<EpubLicenseWithDateType> epubLicenses() {
         _initialize();
         return epubLicenses;
     }
@@ -869,13 +869,14 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * Free text showing how the authorship should be described in an online display, when a standard concatenation of
-     * individual contributor elements would not give a satisfactory presentation. Optional, and repeatable if parallel
-     * text is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of
-     * &lt;ContributorStatement&gt;, but must be included in each instance if &lt;ContributorStatement&gt; is repeated.
-     * When the &lt;ContributorStatement&gt; field is sent, the receiver should use it to replace all name detail sent
-     * in the &lt;Contributor&gt; composite <em>for display purposes only</em>. It does not replace the
-     * &lt;BiographicalNote&gt; element. The individual name detail <em>must</em> also be sent in the
-     * &lt;Contributor&gt; composite for indexing and retrieval purposes.
+     * individual contributor elements would not give a satisfactory presentation. Optional but must only be used if one
+     * or more instances of &lt;Contributor&gt; are present, and repeatable if parallel text is provided in multiple
+     * languages. The <i>language</i> attribute is optional for a single instance of &lt;ContributorStatement&gt;, but
+     * must be included in each instance if &lt;ContributorStatement&gt; is repeated. When the
+     * &lt;ContributorStatement&gt; field is sent, the receiver should use it to replace all name detail sent in the
+     * &lt;Contributor&gt; composite <em>for display purposes only</em>. It does not replace the &lt;Contributor&gt;
+     * composite (or any element within it) for individual contributors. The individual name detail <em>must</em> also
+     * be sent in the &lt;Contributor&gt; composite for indexing and retrieval purposes.
      * </p>
      * Jonix-Comment: this list may be empty
      */

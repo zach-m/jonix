@@ -20,10 +20,12 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.PrizeIdentifierTypes;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixPrize;
+import com.tectonica.jonix.common.struct.JonixPrizeIdentifier;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -70,7 +72,7 @@ import java.util.function.Consumer;
  *
  * @since Onix-3.03
  */
-public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
+public class Prize implements OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Prize";
@@ -149,6 +151,10 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
                 case PrizeCode.refname:
                 case PrizeCode.shortname:
                     prizeCode = new PrizeCode(e);
+                    break;
+                case PrizeIdentifier.refname:
+                case PrizeIdentifier.shortname:
+                    prizeIdentifiers = JPU.addToList(prizeIdentifiers, new PrizeIdentifier(e));
                     break;
                 case AwardingBody.refname:
                 case AwardingBody.shortname:
@@ -278,6 +284,22 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         return prizeCode;
     }
 
+    private ListOfOnixDataCompositeWithKey<PrizeIdentifier, JonixPrizeIdentifier,
+        PrizeIdentifierTypes> prizeIdentifiers = JPU.emptyListOfOnixDataCompositeWithKey(PrizeIdentifier.class);
+
+    /**
+     * <p>
+     * A group of data elements which together specify an identifier for the Prize. The composite is optional, and
+     * repatable if more than one identifier for the same prize is sent.
+     * </p>
+     * Jonix-Comment: this list may be empty
+     */
+    public ListOfOnixDataCompositeWithKey<PrizeIdentifier, JonixPrizeIdentifier, PrizeIdentifierTypes>
+        prizeIdentifiers() {
+        _initialize();
+        return prizeIdentifiers;
+    }
+
     private ListOfOnixElement<AwardingBody, String> awardingBodys = ListOfOnixElement.empty();
 
     /**
@@ -328,17 +350,5 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     public ListOfOnixElement<PrizeJury, String> prizeJurys() {
         _initialize();
         return prizeJurys;
-    }
-
-    @Override
-    public JonixPrize asStruct() {
-        _initialize();
-        JonixPrize struct = new JonixPrize();
-        struct.prizeCode = prizeCode.value;
-        struct.prizeCountry = prizeCountry.value;
-        struct.prizeJurys = prizeJurys.values();
-        struct.prizeNames = prizeNames.values();
-        struct.prizeYear = prizeYear.value;
-        return struct;
     }
 }

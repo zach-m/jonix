@@ -20,16 +20,14 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeUncommon;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.TextCaseFlags;
 import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TransliterationSchemes;
-import com.tectonica.jonix.common.struct.JonixPrize;
 
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.function.Consumer;
 
 /*
@@ -62,7 +60,7 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link Prize}</li>
  * </ul>
  */
-public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
+public class Prize implements OnixDataCompositeUncommon, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Prize";
@@ -241,17 +239,5 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     public PrizeJury prizeJury() {
         _initialize();
         return prizeJury;
-    }
-
-    @Override
-    public JonixPrize asStruct() {
-        _initialize();
-        JonixPrize struct = new JonixPrize();
-        struct.prizeCode = prizeCode.value;
-        struct.prizeCountry = prizeCountry.value;
-        struct.prizeJurys = prizeJury.exists() ? Collections.singletonList(prizeJury.value) : Collections.emptyList();
-        struct.prizeNames = prizeName.exists() ? Collections.singletonList(prizeName.value) : Collections.emptyList();
-        struct.prizeYear = prizeYear.value;
-        return struct;
     }
 }

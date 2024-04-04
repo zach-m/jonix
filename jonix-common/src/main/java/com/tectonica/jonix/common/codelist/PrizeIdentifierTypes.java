@@ -28,37 +28,33 @@ import java.util.Optional;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 222 (Message status date role)
+ * marker interface to assist in IDE navigation to code-list 263 (Prize identifier type)
  */
-interface CodeList222 {
+interface CodeList263 {
 }
 
 /**
- * <code>Enum</code> that corresponds to ONIX <b>Codelist 222</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 263</b>
  * <p>
- * Description: Message status date role
+ * Description: Prize identifier type
+ * <p>
+ * Jonix-Comment: Introduced in Onix3
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist222">ONIX
- *      Codelist 222 in Reference Guide</a>
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist263">ONIX
+ *      Codelist 263 in Reference Guide</a>
  */
-public enum MessageStatusDateRoles implements OnixCodelist, CodeList222 {
+public enum PrizeIdentifierTypes implements OnixCodelist, CodeList263 {
     /**
-     * Expected or actual date of processing and ingestion of data to recipient's system
+     * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Ingest_date("01", "Ingest date"),
-
-    /**
-     * Expected or actual date for data to be available from the recipient's system to downstream supply chain partners
-     * (or where the recipient is a retailer, to consumers)
-     */
-    Export_date("02", "Export date");
+    Proprietary("01", "Proprietary");
 
     public final String code;
     public final String description;
 
-    MessageStatusDateRoles(String code, String description) {
+    PrizeIdentifierTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -73,11 +69,11 @@ public enum MessageStatusDateRoles implements OnixCodelist, CodeList222 {
         return description;
     }
 
-    public static MessageStatusDateRoles byCode(String code) {
+    public static PrizeIdentifierTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (MessageStatusDateRoles e : values()) {
+        for (PrizeIdentifierTypes e : values()) {
             if (e.code.equals(code)) {
                 return e;
             }
@@ -85,7 +81,7 @@ public enum MessageStatusDateRoles implements OnixCodelist, CodeList222 {
         return null;
     }
 
-    public static Optional<MessageStatusDateRoles> byCodeOptional(String code) {
+    public static Optional<PrizeIdentifierTypes> byCodeOptional(String code) {
         return Optional.ofNullable(byCode(code));
     }
 

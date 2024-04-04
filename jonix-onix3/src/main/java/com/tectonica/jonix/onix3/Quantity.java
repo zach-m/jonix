@@ -80,6 +80,19 @@ import java.util.function.Consumer;
  * {@link Quantity}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link EpubUsageConstraint} ⯈
  * {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link EpubUsageConstraint}
+ * ⯈ {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link EpubUsageConstraint} ⯈
+ * {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈
+ * {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
+ * {@link SupportingResource} ⯈ {@link ResourceVersion} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit} ⯈
+ * {@link Quantity}</li>
+ * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link SupportingResource} ⯈
+ * {@link ResourceVersion} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit} ⯈ {@link Quantity}</li>
  * </ul>
  */
 public class Quantity implements OnixElement<Double>, Serializable {
