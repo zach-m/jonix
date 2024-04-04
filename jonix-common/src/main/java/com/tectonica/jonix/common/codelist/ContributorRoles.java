@@ -42,7 +42,7 @@ interface CodeList17 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -177,6 +177,14 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Person who carried out experiments reported in the text
      */
     Experiments_by("A27", "Experiments by"),
+
+    /**
+     * Use with narratives drawn from an oral tradition, where no 'ownership' of the narrative is claimed. See also B33.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Interpreted_through("A28", "Interpreted through"),
 
     /**
      * Author of introduction and notes: see also A20 and A24
@@ -411,11 +419,19 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Original_editor("B31", "Original editor"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Where possible, use with B06 for the original translator. Only for use in ONIX 3.0 or later
      * <p>
      * Jonix-Comment: Introduced in Onix3
      */
     Translation_revised_by("B32", "Translation revised by"),
+
+    /**
+     * As told to. Use with narratives drawn from an oral tradition, and with B03 (Retold by), B07 (As told by) or A28
+     * (Interpreted through). Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Transcribed_by("B33", "Transcribed by"),
 
     /**
      * Other type of adaptation or editing not specified above

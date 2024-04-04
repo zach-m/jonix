@@ -42,7 +42,7 @@ interface CodeList44 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -204,7 +204,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
 
     /**
      * DOI used in CrossRef's Open Funder Registry list of academic research funding bodies, for example
-     * '10.13039/100004440' (Wellcome Trust). See http://www.crossref.org/fundingdata/registry.html
+     * '10.13039/100004440' (Wellcome Trust). See https://www.crossref.org/services/funder-registry/
      */
     FundRef_DOI("32", "FundRef DOI"),
 

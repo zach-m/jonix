@@ -42,7 +42,7 @@ interface CodeList24 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist24">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist24">ONIX
  *      Codelist 24 in Reference Guide</a>
  */
 public enum ExtentUnits implements OnixCodelist, CodeList24 {
@@ -113,7 +113,14 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
 
     Kbytes("18", "Kbytes"),
 
-    Mbytes("19", "Mbytes");
+    Mbytes("19", "Mbytes"),
+
+    /**
+     * Number of chapters (or other similar subdivisions) of the content. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Chapters("31", "Chapters");
 
     public final String code;
     public final String description;

@@ -42,7 +42,7 @@ interface CodeList178 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist178">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist178">ONIX
  *      Codelist 178 in Reference Guide</a>
  */
 public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
@@ -178,6 +178,20 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
      * Jonix-Comment: Introduced in Onix3
      */
     EPS("D508", "EPS"),
+
+    /**
+     * Google-developed image format
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    WebP("D509", "WebP"),
+
+    /**
+     * Scalable vector graphics
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    SVG("D510", "SVG"),
 
     /**
      * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum

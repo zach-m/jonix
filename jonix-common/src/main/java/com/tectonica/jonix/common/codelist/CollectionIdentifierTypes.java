@@ -42,7 +42,7 @@ interface CodeList13 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist13">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist13">ONIX
  *      Codelist 13 in Reference Guide</a>
  */
 public enum CollectionIdentifierTypes implements OnixCodelist, CodeList13 {
@@ -72,7 +72,8 @@ public enum CollectionIdentifierTypes implements OnixCodelist, CodeList13 {
     Electre_series_ID("05", "Electre series ID"),
 
     /**
-     * Digital Object Identifier (variable length and character set)
+     * Digital Object Identifier (variable length and character set, beginning '10.' and without https://doi.org/ or the
+     * older http://dx.doi.org/)
      */
     DOI("06", "DOI"),
 

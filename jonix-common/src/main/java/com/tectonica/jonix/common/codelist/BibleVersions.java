@@ -42,7 +42,7 @@ interface CodeList83 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist83">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist83">ONIX
  *      Codelist 83 in Reference Guide</a>
  */
 public enum BibleVersions implements OnixCodelist, CodeList83 {
@@ -329,6 +329,13 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
      * Jonix-Comment: Introduced in Onix3
      */
     Fauskanger_2015("NBK", "Fauskanger 2015"),
+
+    /**
+     * Norwegian Bible translation, 2024 update of Bibelen 2011. Only for use in ONIX 3.0 or later
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Bibelen_2011_rev_2024("NBL", "Bibelen 2011/rev. 2024"),
 
     /**
      * Norwegian Bible translation. Only for use in ONIX 3.0 or later

@@ -40,7 +40,7 @@ interface CodeList218 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist218">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist218">ONIX
  *      Codelist 218 in Reference Guide</a>
  */
 public enum LicenseExpressionTypes implements OnixCodelist, CodeList218 {
@@ -54,7 +54,15 @@ public enum LicenseExpressionTypes implements OnixCodelist, CodeList218 {
      */
     Professional_readable("02", "Professional readable"),
 
-    ONIX_PL("10", "ONIX-PL");
+    ONIX_PL("10", "ONIX-PL"),
+
+    /**
+     * Open Digital Rights Language (ODRL) in JSON-LD format. Used for example to express TDM licenses using the W3C TDM
+     * Reservation Protocol
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    ODRL("20", "ODRL");
 
     public final String code;
     public final String description;

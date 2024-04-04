@@ -42,7 +42,7 @@ interface CodeList27 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -428,7 +428,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * BIC E4Libraries Category Headings, formerly at http://www.bic.org.uk/51/E4libraries-Subject-Category-Headings/
-     * but replaced by UK Standard Library Categories (code 92), Deprecated
+     * but replaced by UK Standard Library Categories (code 92). Deprecated
      */
     BIC_E4L("75", "BIC E4L"),
 

@@ -40,7 +40,7 @@ interface CodeList149 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist149">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist149">ONIX
  *      Codelist 149 in Reference Guide</a>
  */
 public enum TitleElementLevels implements OnixCodelist, CodeList149 {
@@ -78,7 +78,17 @@ public enum TitleElementLevels implements OnixCodelist, CodeList149 {
      * The title element refers to an intermediate level of a bibliographic collection that is a subdivision of a
      * sub-collection (a third level of collective identity)
      */
-    Sub_subcollection("06", "Sub-subcollection");
+    Sub_subcollection("06", "Sub-subcollection"),
+
+    /**
+     * The title element names a 'universe', where parallel or intersecting narratives spanning multiple works and
+     * multiple characters occur in the same consistent fictional setting. It need not have a hierarchical relationship
+     * with title elements at other levels, in particular with master brands. Used primarily for comic books, but
+     * applicable to other fiction where appropriate
+     * <p>
+     * Jonix-Comment: Introduced in Onix3
+     */
+    Universe("07", "Universe");
 
     public final String code;
     public final String description;

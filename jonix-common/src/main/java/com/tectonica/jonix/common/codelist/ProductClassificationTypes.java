@@ -42,7 +42,7 @@ interface CodeList9 {
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_64.html#codelist9">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
@@ -108,9 +108,10 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     NCM("10", "NCM"),
 
     /**
-     * Common Procurement Vocabulary, uses to describe requirements for tender for public tendering and procurement
-     * within the EU. Code is a nine digit number (including the check digit). See
-     * http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=URISERV:l22008
+     * Common Procurement Vocabulary (2008), used to describe products and services for public tendering and procurement
+     * within the EU. Code is a nine digit number (including the check digit), and may also include a space plus an
+     * alphanumeric code of two letters and three digits (including the supplementary check digit) from the
+     * Supplementary Vocabulary. See https://simap.ted.europa.eu/web/simap/cpv
      */
     CPV("11", "CPV"),
 
