@@ -29,6 +29,8 @@ clear distinction betweem these types and offers different APIs for different ty
 
 | Maven Version     | Onix version | Codelist Issue |
 |-------------------|--------------|----------------|
+| `2024-04`         | 3.1.01       | 65             |
+| `2024-04-onix308` | 3.0.08       | 65             |
 | `2024-01`         | 3.1.00       | 64             |
 | `2024-01-onix308` | 3.0.08       | 64             |
 | `2023-10`         | 3.1.00       | 63             |
@@ -51,7 +53,7 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2024-01</version>
+    <version>2024-04</version>
 </dependency>
 ```
 
@@ -61,7 +63,7 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2024-01-onix308</version>
+    <version>2024-04-onix308</version>
 </dependency>
 ```
 
