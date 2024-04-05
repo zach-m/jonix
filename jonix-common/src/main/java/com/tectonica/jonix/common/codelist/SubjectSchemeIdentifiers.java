@@ -41,6 +41,7 @@ interface CodeList27 {
  * Description: Subject scheme identifier
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
@@ -623,7 +624,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Where multiple place names are sent, this should in a single instance of &lt;SubjectHeadingText&gt;, and multiple
      * names should be separated by semi-colons. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Key_place_names("B5", "Key place names"),
 
@@ -631,7 +632,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Faceted Application of Subject Terminology, OCLC subject scheme based on but different from LCSH (see code 04).
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     FAST("B6", "FAST"),
 
@@ -639,7 +640,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Next Generation Science Standards for K-12 education in the USA (https://www.nextgenscience.org).
      * &lt;SubjectCode&gt; is a code such as 4-PS3-2. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     NGSS("B7", "NGSS"),
 
@@ -647,14 +648,14 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * MVB classification of 'reading rationales', which classify unconscious motives that lead to a book purchase.
      * Categories are assigned and maintained by MVB. Only for use in ONIX 3.0 or later. See https://vlb.de/lesemotive
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     MVB_Lesemotive("B8", "MVB-Lesemotive"),
 
     /**
      * Finnish Suomalainen oppiaineluokitus. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     LOPS21_Subject_module("B9", "LOPS21 Subject module"),
 
@@ -662,7 +663,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Codes for Norwegian curriculum for primary and secondary education. Only for use in ONIX 3.0 or later. See
      * L&#230;replaner-LK20 at https://www.udir.no/om-udir/data/kl06-grep/
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Lreplaner_LK20("C0", "Læreplaner-LK20"),
 
@@ -670,7 +671,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Codes for competency aims in the Norwegian curriculum for primary and secondary education. Only for use in ONIX
      * 3.0 or later. See Kompetansem&#229;l-LK20 at https://www.udir.no/om-udir/data/kl06-grep/
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Kompetansemal_LK20("C1", "Kompetansemål-LK20"),
 
@@ -678,7 +679,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Codes for sets of competency aims in the Norwegian curriculum for primary and secondary education. Only for use
      * in ONIX 3.0 or later. See Kompetansem&#229;lsett-LK20 at https://www.udir.no/om-udir/data/kl06-grep/
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Kompetansemalsett_LK20("C2", "Kompetansemålsett-LK20"),
 
@@ -686,21 +687,21 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Codes for interdisciplinary topics in the Norwegian curriculum for primary and secondary education. Only for use
      * in ONIX 3.0 or later. See Tverrfaglige temaer-LK20 at https://www.udir.no/om-udir/data/kl06-grep/
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Tverrfaglige_temaer_LK20("C3", "Tverrfaglige temaer-LK20"),
 
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     CLIL_Type_darticle_scolaire("C4", "CLIL – Type d’article scolaire"),
 
     /**
      * Gestionnaire d'Acc&#232;s aux resources - see https://gar.education.fr/ Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     GAR_Type_pedagogique("C5", "GAR – Type pédagogique"),
 
@@ -709,7 +710,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Only for use in ONIX 3.0 or later. See
      * http://uis.unesco.org/sites/default/files/documents/international-standard-classification-of-education-fields-of-education-and-training-2013-detailed-field-descriptions-2015-en.pdf
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     ISCED_F("C6", "ISCED-F"),
 
@@ -717,7 +718,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * German category scheme for games, puzzles and toys. Only for use in ONIX 3.0 or later. See
      * https://www.ludologie.de/fileadmin/user_upload/PDFs/211126_Kategorisierung_von_Spielen_Puzzles_und_Spielwaren.pdf
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Klassifikationen_von_Spielen_Puzzles_und_Spielwaren("C7", "Klassifikationen von Spielen, Puzzles und Spielwaren"),
 
@@ -725,14 +726,14 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * National Library of Norway genre and form thesaurus. Only for use in ONIX 3.0 or later. See
      * https://www.nb.no/nbvok/ntsf
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     NBVok_NTSF("C8", "NBVok NTSF"),
 
     /**
      * Subject / genre code used in Japan. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     JPRO_Genre("C9", "JPRO Genre"),
 
@@ -741,7 +742,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * Finnish), https://finto.fi/kauno/sv/ (in Swedish), https://finto.fi/kauno/en/ (in English). Only for use in ONIX
      * 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     KAUNO("D0", "KAUNO"),
 
@@ -750,7 +751,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * (in Finnish), https://finto.fi/slm/sv/ (in Swedish), https://finto.fi/slm/en/ (in English). Only for use in ONIX
      * 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     SLM("D1", "SLM"),
 
@@ -759,7 +760,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * https://finto.fi/yso-paikat/fi/ (in Finnish), https://finto.fi/yso-paikat/sv/ (in Swedish),
      * https://finto.fi/yso-paikat/en/ (in English). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     YSO_places("D2", "YSO-places");
 

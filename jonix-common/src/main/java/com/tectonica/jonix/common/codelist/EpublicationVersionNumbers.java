@@ -41,6 +41,7 @@ interface CodeList220 {
  * Description: E-publication version number
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist220">ONIX
  *      Codelist 220 in Reference Guide</a>
@@ -69,14 +70,14 @@ public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
     /**
      * Use only with &lt;ProductFormDetail&gt; code E101
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     EPUB_3_2("101E", "EPUB 3.2"),
 
     /**
      * Use only with &lt;ProductFormDetail&gt; code E101
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     EPUB_3_3("101F", "EPUB 3.3"),
 
@@ -93,7 +94,7 @@ public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
     /**
      * Use only with &lt;ProductFormDetail&gt; code E116
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Kindle_KFX("116C", "Kindle KFX");
 

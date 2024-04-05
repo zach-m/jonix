@@ -41,6 +41,7 @@ interface CodeList143 {
  * Description: US CPSIA or other international hazard warning type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist143">ONIX
  *      Codelist 143 in Reference Guide</a>
@@ -50,7 +51,7 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
      * Product assessed but no known hazards or warnings applicable. May be applied to both digital and physical
      * products. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_known_hazards_or_warnings("00", "No known hazards or warnings"),
 
@@ -101,7 +102,7 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
     /**
      * Required on applicable products sold in the US
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     WARNING_STRANGULATION_HAZARD_Long_cord_Not_for_children_under_3_yrs_("08",
         "WARNING: STRANGULATION HAZARD – Long cord | Not for children under 3 yrs."),
@@ -109,7 +110,7 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
     /**
      * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_strangulation_hazard_warning_necessary("09", "No strangulation hazard warning necessary"),
 
@@ -123,7 +124,7 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
     /**
      * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_magnet_hazard_warning_necessary("12", "No magnet hazard warning necessary"),
 
@@ -131,42 +132,42 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
      * Product flashes, flickers or includes high-contrast static or moving patterns which may cause discomfort or
      * seizures in people with photosensitive epilepsy
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     WARNING_Flashing_hazard("13", "WARNING – Flashing hazard"),
 
     /**
      * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_flashing_hazard_warning_necessary("14", "No flashing hazard warning necessary"),
 
     /**
      * Product makes loud, sudden, repetitive or other sounds which may trigger seizures in sensitive people
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     WARNING_Sound_hazard("15", "WARNING – Sound hazard"),
 
     /**
      * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_sound_hazard_warning_necessary("16", "No sound hazard warning necessary"),
 
     /**
      * Products simulates (via visual effects) the experience of motion, which may cause nausea in sensitive people
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     WARNING_Motion_simulation_hazard("17", "WARNING – Motion simulation hazard"),
 
     /**
      * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_motion_simulation_hazard_warning_necessary("18", "No motion simulation hazard warning necessary"),
 
@@ -177,7 +178,7 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
      * more information, go to www.P65Warnings.ca.gov&#8221;. Note long-form warnings should be used here, even if a
      * short form warning is used on the product or packaging
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     // CHECKSTYLE:OFF
     WARNING_California_Proposition_65_carcinogenic_teratogenic_or_other_reproductively_harmful_chemical_hazard("21",
@@ -187,7 +188,7 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
     /**
      * To be used when a supplier wishes to make a clear statement that no such warning is applicable to product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_California_Proposition_65_hazard_warning_necessary("22",
         "No California Proposition 65 hazard warning necessary"),
@@ -196,7 +197,7 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
      * &lt;ProductFormFeatureDescripton&gt; carries the name of chemical that is the subject of a warning, taken from
      * the list at www.p65warnings.ca.gov/chemicals
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     California_Proposition_65_chemical_name("23", "California Proposition 65 chemical name");
 

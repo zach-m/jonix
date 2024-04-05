@@ -41,6 +41,7 @@ interface CodeList13 {
  * Description: Collection identifier type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist13">ONIX
  *      Codelist 13 in Reference Guide</a>
@@ -92,7 +93,7 @@ public enum CollectionIdentifierTypes implements OnixCodelist, CodeList13 {
      * Japanese magazine identifier, similar in scope to ISSN. Five digits to identify the periodical, without any
      * hyphen or two digit extension. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     JP_Magazine_ID("27", "JP Magazine ID"),
 
@@ -111,7 +112,7 @@ public enum CollectionIdentifierTypes implements OnixCodelist, CodeList13 {
      * International Standard Serial Number 'linking ISSN', used when distinct from the serial ISSN. Unhyphenated, 8
      * digits. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     ISSN_L("38", "ISSN-L");
 

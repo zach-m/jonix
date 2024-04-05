@@ -41,6 +41,7 @@ interface CodeList151 {
  * Description: Contributor place relator
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist151">ONIX
  *      Codelist 151 in Reference Guide</a>
@@ -49,7 +50,7 @@ public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
     /**
      * To express unknown relationship types (for use when expressing legacy ONIX 2.1 data in ONIX 3.0)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Associated_with("00", "Associated with"),
 
@@ -78,14 +79,14 @@ public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
     /**
      * The place of legal registration of an organization
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Registered_in("09", "Registered in"),
 
     /**
      * The place an organization or part of an organization is based or operates from
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Operating_from("10", "Operating from"),
 
@@ -93,7 +94,7 @@ public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
      * Contributor is eligible for national, regional or local marketing support. Use with country code, region code or
      * country/region plus location, as appropriate
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Eligible_for_geographical_marketing_programs("11", "Eligible for geographical marketing programs");
 

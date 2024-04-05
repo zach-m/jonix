@@ -41,6 +41,7 @@ interface CodeList68 {
  * Description: Market publishing status
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist68">ONIX
  *      Codelist 68 in Reference Guide</a>
@@ -161,7 +162,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * specific to downloadable and online digital products (where no 'stock' would remain in the supply chain). Only
      * for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Permanently_withdrawn_from_sale("17", "Permanently withdrawn from sale"),
 
@@ -170,7 +171,7 @@ public enum MarketPublishingStatuss implements OnixCodelist, CodeList68 {
      * they are not sold together as a single product - eg with Product composition code 11 - and are only available as
      * a number of individual items. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Active_but_not_sold_as_set("18", "Active, but not sold as set");
 

@@ -41,6 +41,7 @@ interface CodeList80 {
  * Description: Product packaging type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist80">ONIX
  *      Codelist 80 in Reference Guide</a>
@@ -82,7 +83,7 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
      * Use for products or product bundles supplied for retail sale in shrink-wrapped packaging, where the shrink-wrap
      * film is biodegradable. For non-degradable film, see code 21. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Shrink_wrapped_biodegradable("08", "Shrink-wrapped (biodegradable)"),
 
@@ -170,7 +171,7 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
      * (ja: koguchi tome) Peelable sticker or tape sealing the foredge of a book to prevent pre-purchase reading of the
      * content. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     With_browse_prevention_tape("25", "With browse-prevention tape");
 

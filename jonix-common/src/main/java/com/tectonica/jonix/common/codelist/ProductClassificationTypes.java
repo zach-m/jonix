@@ -41,6 +41,7 @@ interface CodeList9 {
  * Description: Product classification type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
@@ -119,7 +120,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * Polish Classification of Products and Services (2015). Use a single letter followed by 2 to 7 digits, without
      * punctuation. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     PKWiU("12", "PKWiU"),
 
@@ -127,7 +128,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * US HTS (or HTSA) commodity codes for import of goods into USA (10 digits, without punctuation). Only for use in
      * ONIX 3.0 or later. See https://hts.usitc.gov/current
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     HTSUS("13", "HTSUS"),
 
@@ -135,7 +136,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * US Schedule B commodity codes for export from USA (10 digits, without punctuation). Only for use in ONIX 3.0 or
      * later. See http://uscensus.prod.3ceonline.com
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     US_Schedule_B("14", "US Schedule B"),
 
@@ -143,7 +144,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * Mexican SAT classification, based on UN SPSC with later modifications (8 digits, without punctuation). Only for
      * use in ONIX 3.0 or later. See https://www.sat.gob.mx/consultas/53693/catalogo-de-productos-y-servicios
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Clave_SAT("15", "Clave SAT"),
 
@@ -152,7 +153,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * the EU. Use 8 digits, without punctuation. Only for use in ONIX 3.0 or later. See
      * https://trade.ec.europa.eu/access-to-markets/en/content/combined-nomenclature-0
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     CN("16", "CN"),
 
@@ -160,7 +161,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * Canadian Customs Tariff scheme, 8 or 10 digits for imports into and exports from Canada. Only for use in ONIX 3.0
      * or later. See https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     CCT("17", "CCT"),
 
@@ -169,7 +170,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * for use in ONIX 3.0 or later. See
      * https://www.abf.gov.au/importing-exporting-and-manufacturing/tariff-classification
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     CACT("18", "CACT"),
 
@@ -177,7 +178,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * Mexican N&#250;mero de Identificaci&#243;n Comercial, 10 digits for imports into and exports from Mexico. Only
      * for use in ONIX 3.0 or later. See https://www.snice.gob.mx/cs/avi/snice/nico.ligie.html
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     NICO("19", "NICO"),
 

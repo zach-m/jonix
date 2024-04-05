@@ -41,6 +41,7 @@ interface CodeList12 {
  * Description: Trade category
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist12">ONIX
  *      Codelist 12 in Reference Guide</a>
@@ -133,7 +134,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
      * In countries where recognised as a distinct trade category, eg Italy &#171;supertascabile&#187;. Only for use in
      * ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Superpocket_book("15", "Superpocket book"),
 
@@ -142,7 +143,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
      * where the primary features are illustrations, and these are more important than text. Sometimes called
      * 'coffee-table books' or 'art books' in English. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Beau_livre("16", "Beau-livre"),
 
@@ -150,7 +151,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
      * Category of audio products typically distinguished by being free of charge (but which may be monetised through
      * advertising content) and episodic. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Podcast("17", "Podcast"),
 
@@ -158,14 +159,14 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
      * Category of books or e-books which are single issues of a periodical publication, sold as independent products.
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Periodical("18", "Periodical"),
 
     /**
      * Publisher's or supplier's catalog (when treated as a product in its own right). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Catalog("19", "Catalog"),
 
@@ -173,7 +174,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
      * Category of books containing a linked group of plates, tables, diagrams, lists, often but not always combined
      * with maps or a geographical theme or approach. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Atlas("20", "Atlas");
 

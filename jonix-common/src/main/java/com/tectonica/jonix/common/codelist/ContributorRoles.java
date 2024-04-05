@@ -41,6 +41,7 @@ interface CodeList17 {
  * Description: Contributor role code
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
@@ -182,7 +183,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Use with narratives drawn from an oral tradition, where no 'ownership' of the narrative is claimed. See also B33.
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Interpreted_through("A28", "Interpreted through"),
 
@@ -286,7 +287,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Renders final comic book cover line art based on work of the cover designer (code A36), where different from the
      * inker of the interior line art. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Cover_inker("A49", "Cover inker"),
 
@@ -294,7 +295,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Provides comic book cover color art and effects, where different from the colorist of the interior art and
      * effects. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Cover_colorist("A50", "Cover colorist"),
 
@@ -302,14 +303,14 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Person or organization responsible for performing research on which the work is based. Only for use in ONIX 3.0
      * or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Research_by("A51", "Research by"),
 
     /**
      * (for comic books). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Original_character_design("A52", "Original character design"),
 
@@ -406,7 +407,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Historical_advisor("B30", "Historical advisor"),
 
@@ -414,14 +415,14 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Editor of the first edition (usually of a standard work) who is not an editor of the current edition. Only for
      * use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Original_editor("B31", "Original editor"),
 
     /**
      * Where possible, use with B06 for the original translator. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Translation_revised_by("B32", "Translation revised by"),
 
@@ -429,7 +430,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * As told to. Use with narratives drawn from an oral tradition, and with B03 (Retold by), B07 (As told by) or A28
      * (Interpreted through). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Transcribed_by("B33", "Transcribed by"),
 
@@ -481,7 +482,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     /**
      * Of a dance performance. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Choreographer("D04", "Choreographer"),
 
@@ -535,7 +536,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     /**
      * Reader of recorded introduction (or other 'front matter') in an audiobook. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Introduction_read_by("E11", "Introduction read by"),
 
@@ -568,7 +569,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     /**
      * For publication of laws, regulations, rulings etc. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Enacting_jurisdiction("Z03", "Enacting jurisdiction"),
 
@@ -576,7 +577,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * Use with &lt;UnnamedPersons&gt; code 02 as a 'flag' to indicate the publication is anonymously peer-reviewed.
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Peer_reviewed("Z04", "Peer reviewed"),
 
@@ -584,7 +585,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * May be associated with any contributor role, and placement should therefore be controlled by contributor sequence
      * numbering. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Posthumously_completed_by("Z05", "Posthumously completed by"),
 

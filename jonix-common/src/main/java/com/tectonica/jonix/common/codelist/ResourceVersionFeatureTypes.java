@@ -41,6 +41,7 @@ interface CodeList162 {
  * Description: Resource version feature type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist162">ONIX
  *      Codelist 162 in Reference Guide</a>
@@ -99,7 +100,7 @@ public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
      * v1.0, but this is deprecated). Note alphabetic characters in v1.x ISCCs use Base32 encoding and are
      * conventionally upper case. The 'ISCC:' prefix is omitted
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     ISCC("09", "ISCC");
 

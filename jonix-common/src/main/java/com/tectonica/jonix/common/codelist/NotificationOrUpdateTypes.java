@@ -41,6 +41,7 @@ interface CodeList1 {
  * Description: Notification or update type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist1">ONIX
  *      Codelist 1 in Reference Guide</a>
@@ -107,21 +108,21 @@ public enum NotificationOrUpdateTypes implements OnixCodelist, CodeList1 {
     /**
      * ONIX Books 2.1 supply update - &lt;SupplyDetail&gt; only (not used in ONIX 3.0)
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Update_SupplyDetail_only("12", "Update – SupplyDetail only"),
 
     /**
      * ONIX Books 2.1 supply update - &lt;MarketRepresentation&gt; only (not used in ONIX 3.0)
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Update_MarketRepresentation_only("13", "Update – MarketRepresentation only"),
 
     /**
      * ONIX Books 2.1 supply update - both &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; (not used in ONIX 3.0)
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Update_SupplyDetail_and_MarketRepresentation("14", "Update – SupplyDetail and MarketRepresentation");
 

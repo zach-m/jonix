@@ -41,6 +41,7 @@ interface CodeList145 {
  * Description: Usage type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist145">ONIX
  *      Codelist 145 in Reference Guide</a>
@@ -50,7 +51,7 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
      * Allows positive indication that there are no particular constraints (that can be specifed in
      * &lt;EpubUsageConstraint&gt;). By convention, use 01 in &lt;EpubUsageStatus&gt;
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_constraints("00", "No constraints"),
 
@@ -118,7 +119,7 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
      * retailer's store (eg while logged on to the store or library wifi). Also applies to patrons making use of
      * 'acquisition on demand' models in libraries
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Preview_on_premises("10", "Preview on premises"),
 
@@ -129,7 +130,7 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
      * rightsholder, as in some jurisdictions, TDM may be subject to copyright exception (eg for not-for-profit
      * purposes), subject to optional reservation, or allowed under 'fair use' doctrine
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Text_and_data_mining("11", "Text and data mining");
 

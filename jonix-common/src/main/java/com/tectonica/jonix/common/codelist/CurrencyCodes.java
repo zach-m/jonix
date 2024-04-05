@@ -41,6 +41,7 @@ interface CodeList96 {
  * Description: Currency code - based on ISO 4217
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
@@ -632,7 +633,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
      * Mauritania (prices normally quoted with 0 or 1 decimal place - 1 khoums = UM0.2). Replaced MRO (old) Ouguiya at
      * rate of 10:1 in June 2018. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Ouguiya("MRU", "Ouguiya"),
 
@@ -844,7 +845,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     /**
      * Sierra Leone (from April 2022). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Leone("SLE", "Leone"),
 
@@ -879,7 +880,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
      * S&#227;o Tome and Principe. Replaced STD (old) Dobra at rate of 1000:1 in June 2018. Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Dobra("STN", "Dobra"),
 
@@ -999,7 +1000,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
      * Venezuela (replaced VEF from August 2018 at rate of 100,000:1, and was redenominated by a further factor of
      * 1,000,000:1 in late 2021). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Bolivar_Soberano("VES", "Bolívar Soberano"),
 

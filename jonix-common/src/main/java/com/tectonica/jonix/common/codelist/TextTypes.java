@@ -41,6 +41,7 @@ interface CodeList153 {
  * Description: Text type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
@@ -180,7 +181,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     schema_org_snippet("24", "schema.org snippet"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Errata("25", "Errata"),
 
@@ -188,7 +189,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * Introduction, preface or the text of other preliminary material, sent as a single text field, which may be
      * structured using XHTML
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Introduction("26", "Introduction"),
 
@@ -196,7 +197,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * Secondary descriptive blurb taken from the cover/jacket flaps, or occasionally from the back cover or jacket,
      * used only when there are two separate texts and the primary text is included using code 05
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Secondary_cover_copy("27", "Secondary cover copy"),
 
@@ -204,63 +205,63 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * For use with dramatized audiobooks, filmed entertainment etc, for a cast list sent as a single text field, which
      * may or may not carry structure expressed using XHTML
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Full_cast_and_credit_list("28", "Full cast and credit list"),
 
     /**
      * Complete list of books by the author(s), supplied as a single text field, which may be structured using (X)HTML
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Bibliography("29", "Bibliography"),
 
     /**
      * Formal summary of content (normally used with academic and scholarly content only)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Abstract("30", "Abstract"),
 
     /**
      * Eg for a game, kit
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Rules_or_instructions("31", "Rules or instructions"),
 
     /**
      * Eg for a game, kit. Note: use code 04 for a Table of Contents of a book
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     List_of_contents("32", "List of contents"),
 
     /**
      * Length limited to a maximum of 350 characters
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Short_description_annotation_for_imprint("33", "Short description/annotation for imprint"),
 
     /**
      * Length unrestricted
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Description_for_imprint("34", "Description for imprint"),
 
     /**
      * Length limited to a maximum of 350 characters
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Short_description_annotation_for_publisher("35", "Short description/annotation for publisher"),
 
     /**
      * Length unrestricted
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Description_for_publisher("36", "Description for publisher"),
 
@@ -268,7 +269,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * (US) Reading line - line of usually explanatory copy on cover, somewhat like a subtitle but not on the title page
      * and added by the publisher, eg 'with 125 illustrated recipes'
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Cover_line("37", "Cover line");
 

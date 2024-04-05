@@ -41,6 +41,7 @@ interface CodeList42 {
  * Description: Text item type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist42">ONIX
  *      Codelist 42 in Reference Guide</a>
@@ -72,82 +73,82 @@ public enum TextItemTypes implements OnixCodelist, CodeList42 {
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Serial_item_miscellaneous_or_unspecified("10", "Serial item, miscellaneous or unspecified"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Research_article("11", "Research article"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Review_article("12", "Review article"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Letter("13", "Letter"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Short_communication("14", "Short communication"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Erratum("15", "Erratum"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Abstract("16", "Abstract"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Book_review_or_review_of_other_publication("17", "Book review (or review of other publication)"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Editorial("18", "Editorial"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Product_review("19", "Product review"),
 
     /**
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Index("20", "Index"),
 
     /**
      * For journals
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Obituary("21", "Obituary");
 

@@ -41,6 +41,7 @@ interface CodeList160 {
  * Description: Resource feature type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist160">ONIX
  *      Codelist 160 in Reference Guide</a>
@@ -87,7 +88,7 @@ public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
     /**
      * &lt;FeatureNote&gt; is Alternative text for the resource, which might be presented to visually-impaired readers
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Resource_alternative_text("07", "Resource alternative text"),
 
@@ -96,7 +97,7 @@ public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
      * Used when the resource - for example a 3D image of the product - includes a background, or if used with an alpha
      * channel, when the image is irregularly shaped or contains a semi-transparent shadow thrown against a background
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Background_color_of_image_resource("08", "Background color of image resource"),
 
@@ -104,7 +105,7 @@ public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
      * &lt;FeatureValue&gt; is an ONIX code from List 256 that describes an attribute of a product image resource (eg
      * perspective, content)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Attribute_of_product_image_resource("09", "Attribute of product image resource"),
 
@@ -112,7 +113,7 @@ public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
      * &lt;FeatureValue&gt; is a 24-bit RGB color in hexadecimal, eg ffc300 for a rich yellow-orange, used when the
      * resource supplier requests a specific background color be displayed behind the resource on a web page
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Background_color_of_page("10", "Background color of page");
 

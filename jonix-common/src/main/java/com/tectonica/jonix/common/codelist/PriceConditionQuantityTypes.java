@@ -39,6 +39,7 @@ interface CodeList168 {
  * Description: Price condition quantity type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist168">ONIX
  *      Codelist 168 in Reference Guide</a>
@@ -60,7 +61,7 @@ public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
      * for example when describing a price for this product which is valid if it is purchased along with any two from a
      * list of other products
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Number_of_linked_products("03", "Number of linked products"),
 
@@ -70,7 +71,7 @@ public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
      * the specified number of units of this product which is valid if they are purchased along with a number of copies
      * of another product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Number_of_copies_of_this_product("04", "Number of copies of this product"),
 
@@ -80,7 +81,7 @@ public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
      * composites. Use for example when describing a price for this product which is valid if it is purchased along with
      * any two from a list of other products
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Minimum_number_of_linked_products("05", "Minimum number of linked products"),
 
@@ -90,7 +91,7 @@ public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
      * describing a price that applies to the specified number of units of this product which is valid if they are
      * purchased along with a number of copies of another product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Maximum_number_of_copies_of_this_product("06", "Maximum number of copies of this product");
 

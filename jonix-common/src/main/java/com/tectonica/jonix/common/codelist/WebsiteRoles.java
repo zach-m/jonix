@@ -41,6 +41,7 @@ interface CodeList73 {
  * Description: Website role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
@@ -259,7 +260,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     /**
      * For example, a page providing details related to GDPR. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Publishers_or_third_party_website_for_privacy_statement("46",
         "Publisher’s or third party website for privacy statement"),
@@ -269,7 +270,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * to provide confirmation of the preservation status of the product. &lt;WebsiteDescription&gt; may contain the
      * name of the service. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Publishers_website_for_digital_preservation("47", "Publisher’s website for digital preservation"),
 
@@ -278,7 +279,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * preservation metadata, to provide confirmation of the preservation status of the product.
      * &lt;WebsiteDescription&gt; may contain the name of the service. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Third_party_website_for_digital_preservation("48", "Third-party website for digital preservation"),
 
@@ -286,7 +287,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * The URL of a web page describing the environmental and sustainability policy, or carbon neutrality status, that
      * applies to the specific product. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Product_website_for_environmental_responsibility_statement("49",
         "Product website for environmental responsibility statement"),
@@ -296,7 +297,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * the organization (publisher, supplier etc). For environmental sustainability of the product itself, see List 79.
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Organizations_website_for_environmental_responsibility_statement("50",
         "Organization’s website for environmental responsibility statement"),
@@ -306,7 +307,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * access to its preservation metadata, to provide confirmation of the digital legal deposit status of the product.
      * &lt;WebsiteDescription&gt; may contain the name of the service. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Legal_deposit_website_for_digital_preservation("51", "Legal deposit website for digital preservation");
 

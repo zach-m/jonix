@@ -41,6 +41,7 @@ interface CodeList22 {
  * Description: Language role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist22">ONIX
  *      Codelist 22 in Reference Guide</a>
@@ -102,7 +103,7 @@ public enum LanguageRoles implements OnixCodelist, CodeList22 {
      * Use for the language of any introductory text, prologue, etc, or epilogue, end matter, etc, where it is different
      * from the language of the main text. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Language_of_introduction_end_matter("13", "Language of introduction / end matter"),
 
@@ -111,7 +112,7 @@ public enum LanguageRoles implements OnixCodelist, CodeList22 {
      * material. Wherever possible, the language should also be listed as the subject of the book. Only for use in ONIX
      * 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Target_language_of_teaching_learning("14", "Target language of teaching / learning"),
 
@@ -120,21 +121,21 @@ public enum LanguageRoles implements OnixCodelist, CodeList22 {
      * the text, as an integral part of the text. This does not include 'loanwords', academic Latin, etc. Only for use
      * in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Additional_vocabulary_text_in_this_language("15", "Additional vocabulary / text in this language"),
 
     /**
      * Language to which specified rights apply
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Rights_language("04", "Rights language"),
 
     /**
      * Language to which specified rights do not apply
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Rights_excluded_language("05", "Rights-excluded language");
 

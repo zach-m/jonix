@@ -39,6 +39,7 @@ interface CodeList156 {
  * Description: Cited content type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist156">ONIX
  *      Codelist 156 in Reference Guide</a>
@@ -65,7 +66,7 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
      * For example a 'best books of the year' or '25 books you should have read' list, without regard to their
      * bestseller status
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Curated_list("05", "Curated list"),
 
@@ -73,7 +74,7 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
      * For example a third party podcast episode, social media message, newsletter issue, other commentary (see also
      * code 03 for very brief items)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Commentary_discussion("06", "Commentary / discussion");
 

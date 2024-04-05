@@ -39,6 +39,7 @@ interface CodeList230 {
  * Description: Price constraint type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist230">ONIX
  *      Codelist 230 in Reference Guide</a>
@@ -56,7 +57,7 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
      * and to 'subscription' models where the purchase is made on behalf of the reader. Generally used to specify
      * different preview percentages across different customer types
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Preview("01", "Preview"),
 
@@ -95,7 +96,7 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
      * retailer's store (eg while logged on to the store wifi). Also applies to borrowers making use of 'acquisition on
      * demand' models in libraries
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Preview_on_premises("10", "Preview on premises");
 

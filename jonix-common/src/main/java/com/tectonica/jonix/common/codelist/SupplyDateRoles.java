@@ -41,6 +41,7 @@ interface CodeList166 {
  * Description: Supply date role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist166">ONIX
  *      Codelist 166 in Reference Guide</a>
@@ -78,7 +79,7 @@ public enum SupplyDateRoles implements OnixCodelist, CodeList166 {
      * Latest date on which existing owners or licensees may download or re-download a copy of the product. Existing
      * users may continue to use their local copy of the product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Last_redownload_date("29", "Last redownload date"),
 
@@ -86,7 +87,7 @@ public enum SupplyDateRoles implements OnixCodelist, CodeList166 {
      * Date on which any required technical protection measures (DRM) support will be withdrawn. DRM-protected products
      * may not be usable after this date
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Last_TPM_date("30", "Last TPM date"),
 
@@ -95,7 +96,7 @@ public enum SupplyDateRoles implements OnixCodelist, CodeList166 {
      * primary distributor. For the distributor or wholesaler (the supplier) this is the 'goods in' date, as contrasted
      * with the Expected availability date, code 08, which is the 'goods out' date
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Expected_warehouse_date("34", "Expected warehouse date"),
 

@@ -41,6 +41,7 @@ interface CodeList57 {
  * Description: Unpriced item type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist57">ONIX
  *      Codelist 57 in Reference Guide</a>
@@ -76,7 +77,7 @@ public enum UnpricedItemTypes implements OnixCodelist, CodeList57 {
      * Price calculated as sum of individual prices of components listed as Product parts. Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Calculated_from_contents("07", "Calculated from contents"),
 
@@ -86,7 +87,7 @@ public enum UnpricedItemTypes implements OnixCodelist, CodeList57 {
      * but the particular supplier does not operate outside its domestic territory). Use code 04 when the supplier does
      * supply but has not set a price for part of the market. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Supplier_does_not_supply("08", "Supplier does not supply");
 

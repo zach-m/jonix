@@ -41,6 +41,7 @@ interface CodeList79 {
  * Description: Product form feature type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
@@ -55,7 +56,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Where it is different from the overall color of the cover (see code 01). For Product Form Feature values see code
      * list 98. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Color_of_spine("26", "Color of spine"),
 
@@ -63,7 +64,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * On cover or spine. For Product Form Feature values see metallic colors from code list 98. Only for use in ONIX
      * 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Color_of_foil("27", "Color of foil"),
 
@@ -162,7 +163,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * range of apps/devices) should be given in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Point_and_watch_device_app_compatibility("17", "‘Point and watch’ device/app compatibility"),
 
@@ -171,7 +172,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * passwords, location- or device-based recognition, authentication via third-party identity service etc) given in
      * &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     E_publication_authentication_and_access_control("18", "E-publication authentication and access control"),
 
@@ -179,7 +180,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Use to describe battery requirements, types, hazards and battery safety warnings. &lt;ProductFormFeatureValue&gt;
      * is a code from List 242. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Battery_type_and_safety("19", "Battery type and safety"),
 
@@ -187,7 +188,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Total capacity (of batteries in the product) in Watt hours. &lt;ProductFormFeatureValue&gt; is an integer or
      * decimal number (eg '45', not '45Wh'). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Battery_capacity("20", "Battery capacity"),
 
@@ -195,7 +196,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Use to describe regulation of the product for various purposes. &lt;ProductFormFeatureValue&gt; is a code from
      * List 243. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Dangerous_goods("21", "Dangerous goods"),
 
@@ -203,7 +204,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Number of pieces, eg for jigsaws, puzzles, kits, board games. &lt;ProductFormFeatureValue&gt; is an integer. Only
      * for use in ONIX 3.0 or later. For pieces like cards in a pack, see &lt;Extent&gt; and code 00 from List 24
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Game_pieces("22", "Game pieces"),
 
@@ -212,7 +213,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * required (exact) number as an integer OR a range (eg '2-6'), optionally accompanied by the number of players as
      * text (eg 'suitable for 2-6 players') in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Game_players("23", "Game players"),
 
@@ -221,7 +222,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * OR range (eg '60-90') in &lt;ProductFormFeatureValue&gt;, optionally accompanied by the playing time as text (eg
      * 'typically 60-90 minutes') in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Game_play_time("24", "Game play time"),
 
@@ -231,7 +232,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * http://data.education.fr/voc/scolomfr/scolomfr-voc-044) - and/or described in
      * &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Personal_data_requirements("25", "Personal data requirements"),
 
@@ -317,7 +318,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Vegetable-based or other environmentally-conscious inks and varnishes. &lt;ProductFormFeatureDescription&gt; may
      * carry free text with a more detailed statement. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Green_inks("38", "‘Green’ inks"),
 
@@ -326,7 +327,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement. Only for use in ONIX
      * 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Green_adhesives("39", "‘Green’ adhesives"),
 
@@ -341,7 +342,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeatureDescription&gt; may be a descriptor for some part, schedule or annex of the certification
      * scheme, where necessary. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_emission_certification_scheme("41", "Carbon/GHG emission certification scheme"),
 
@@ -350,7 +351,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeatureDescription&gt; is a certificate or license number used to certify compliance with the
      * scheme. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_emission_certification_license_number("42", "Carbon/GHG emission certification / license number"),
 
@@ -359,7 +360,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeatureDescription&gt; is a URL linking to a web page certifying compliance with the scheme. Only
      * for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_emission_certification_URL("43", "Carbon/GHG emission certification URL"),
 
@@ -369,7 +370,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * measured in kilograms of Carbon dioxide equivalent (CO&#8322;e) using the Scope 3 methodology of the scheme. Only
      * for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_Scope_3_certified_Carbon_dioxide_equivalent_emission("44",
         "Carbon/GHG Scope 3 certified Carbon dioxide equivalent emission"),
@@ -377,7 +378,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_Scope_2_certified_Carbon_dioxide_equivalent_emission("45",
         "Carbon/GHG Scope 2 certified Carbon dioxide equivalent emission"),
@@ -385,7 +386,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * Scope 1 emission certifications are not recommended for use. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_Scope_1_certified_Carbon_dioxide_equivalent_emission("46",
         "Carbon/GHG Scope 1 certified Carbon dioxide equivalent emission"),
@@ -393,7 +394,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * DEPRECATED - use code 12 and List 143
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     CPSIA_choking_hazard_warning("11", "CPSIA choking hazard warning");
 

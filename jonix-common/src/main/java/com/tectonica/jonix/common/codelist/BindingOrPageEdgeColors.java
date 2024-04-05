@@ -41,6 +41,7 @@ interface CodeList98 {
  * Description: Binding or page edge color
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist98">ONIX
  *      Codelist 98 in Reference Guide</a>
@@ -57,14 +58,14 @@ public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Celadon_Pale_green("CEL", "Celadon/Pale green"),
 
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Copper("CPR", "Copper"),
 

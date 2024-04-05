@@ -41,6 +41,7 @@ interface CodeList44 {
  * Description: Name identifier type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
@@ -94,7 +95,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     /**
      * Flemish supplier code. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Distributeurscode_Boekenbank("12", "Distributeurscode Boekenbank"),
 
@@ -227,7 +228,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * Nasjonalt autoritetsregister for navn - Norwegian national authority file for personal and corporate names. Only
      * for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Nasjonalt_autoritetsregister("36", "Nasjonalt autoritetsregister"),
 
@@ -235,7 +236,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * Global Research Identifier Database ID (see https://www.grid.ac). Only for use in ONIX 3.0 or later. Deprecated -
      * ROR is now generally preferred
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     GRID("37", "GRID"),
 
@@ -244,7 +245,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * R&#233;f&#233;rentiels pour l'enseignement sup&#233;rieur et la recherche). Only for use in ONIX 3.0 or later.
      * See https://www.idref.fr
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     IDRef("38", "IDRef"),
 
@@ -252,7 +253,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * Party ID from CISAC's proprietary Interested Party Information scheme, used primarily in rights and royalies
      * administration. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     IPI("39", "IPI"),
 
@@ -260,7 +261,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * Research organization registry identifier (see https://ror.org), leading 0 followed by 8 alphanumeric characters
      * (including 2-digit checksum). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     ROR("40", "ROR"),
 
@@ -268,7 +269,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * Economic Operators Registration and Identification, identifier for businesses that import into or export from the
      * EU. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     EORI("41", "EORI"),
 
@@ -276,7 +277,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * Legal Entity Identifier, administered by the Global LEI Foundation, as 20 alphanumeric characters without spaces
      * or hyphens. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     LEI("42", "LEI"),
 
@@ -284,7 +285,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * French business identifier, issued by the National Institute of Statistics and Economic Studies (INSEE). 9
      * digits, without spaces. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     SIREN("43", "SIREN"),
 
@@ -293,7 +294,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * (INSEE). 14 digits (the SIREN plus a further five digits), without spaces, or occasionally an alphanumeric code.
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     SIRET("44", "SIRET");
 

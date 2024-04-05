@@ -41,6 +41,7 @@ interface CodeList154 {
  * Description: Content audience
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist154">ONIX
  *      Codelist 154 in Reference Guide</a>
@@ -88,7 +89,7 @@ public enum ContentAudiences implements OnixCodelist, CodeList154 {
     /**
      * (Including vloggers, influencers etc) Where this is distinct from end customers or the Press
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Bloggers("10", "Bloggers");
 

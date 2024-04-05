@@ -41,6 +41,7 @@ interface CodeList155 {
  * Description: Content date role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist155">ONIX
  *      Codelist 155 in Reference Guide</a>
@@ -95,7 +96,7 @@ public enum ContentDateRoles implements OnixCodelist, CodeList155 {
      * Start date referenced by the supporting resource, for example, the 'earliest exam date' for an official
      * recommendation
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Associated_start_date("31", "Associated start date"),
 
@@ -103,7 +104,7 @@ public enum ContentDateRoles implements OnixCodelist, CodeList155 {
      * End date referenced by the supporting resource, for example, the 'latest exam date' for an official
      * recommendation
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Associated_end_date("32", "Associated end date");
 

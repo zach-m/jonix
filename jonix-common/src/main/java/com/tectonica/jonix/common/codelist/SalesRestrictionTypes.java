@@ -41,6 +41,7 @@ interface CodeList71 {
  * Description: Sales restriction type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
  *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
@@ -139,7 +140,7 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * Sales rights (or market distribution rights) apply to supplies other than to schools. Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Except_to_schools("16", "Except to schools"),
 
@@ -147,7 +148,7 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * POD copies may be manufactured at any time, either to fulfill a customer order immediately or to replace a
      * minimal stockholding (ie near-inventoryless). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Through_Inventoryless_POD("17", "Through Inventoryless POD"),
 
@@ -155,14 +156,14 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * POD copies may be manfactured only to fulfill a customer order immediately while out of stock and awaiting
      * delivery of further stock from the supplier. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Through_Stock_Protection_POD("18", "Through Stock Protection POD"),
 
     /**
      * Not eligible for POD. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Except_through_POD("19", "Except through POD"),
 
@@ -171,7 +172,7 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * subscription services, which must be identified or named in an instance of the &lt;SalesOutlet&gt; composite.
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Except_to_some_subscription_services("20", "Except to some subscription services"),
 
@@ -180,7 +181,7 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * must be identified or named in an instance of the &lt;SalesOutlet&gt; composite. Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Subscription_service_exclusive("21", "Subscription service exclusive"),
 
@@ -189,7 +190,7 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * and in bricks-and mortar retail, or to subscription services and non-subscription customers. Only for use in ONIX
      * 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_restrictions_on_sales("99", "No restrictions on sales");
 
