@@ -58,12 +58,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;OnOrder&gt; from the schema author:
+ * 
+ * <pre>
+ * Quantity of physical copies on order but not yet on hand
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link OnOrderDetail}&gt;</li>
  * <li>&lt;{@link Stock}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link OnOrderDetail} ⯈

@@ -59,11 +59,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SalesRights&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a geographical territory and the sales rights and restriction that apply in that territory
+ * &#9679; Modified cardinality of &lt;PublisherName&gt; at release 3.1
+ * &#9679; Added &lt;SalesRestriction&gt; at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights}</li>
@@ -182,7 +189,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * associated with it. Mandatory in each occurrence of the &lt;SalesRights&gt; composite, and non-repeating. Values
      * include: for sale with exclusive rights, for sale with non-exclusive rights, not for sale.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SalesRightsType salesRightsType() {
         _initialize();
@@ -197,7 +204,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * &lt;SalesRightsType&gt; are applicable. Mandatory in each occurrence of the &lt;SalesRights&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Territory territory() {
         _initialize();
@@ -212,7 +219,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * A group of data elements which together identify a non-territorial sales restriction which a publisher applies to
      * a product within a particular territory. Optional, and repeatable if more than a single restriction applies.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesRestriction> salesRestrictions() {
         _initialize();
@@ -229,7 +236,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * specify an equivalent product which <em>is</em> available to be sold in the territory in question. Repeatable
      * with different identifiers for the same product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -248,7 +255,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * repeated.. Except where they are essential to the recognized form of the name, it is recommended that suffixes
      * denoting incorporation (‘Co’, ‘Inc’, ‘Ltd’, ‘SA’, ‘GmbH’ <i>etc</i>) should be omitted.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<PublisherName, String> publisherNames() {
         _initialize();

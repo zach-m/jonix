@@ -65,11 +65,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EventIDType&gt; from the schema author:
+ * 
+ * <pre>
+ * Type of identifier for an event or an occurrence of an event promoting the product
+ * &#9679; Added at revision 3.0.7
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈

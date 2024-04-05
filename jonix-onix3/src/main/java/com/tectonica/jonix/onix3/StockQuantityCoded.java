@@ -55,11 +55,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;StockQuantityCoded&gt; from the schema author:
+ * 
+ * <pre>
+ * Container for coded expression of a supplier's stockholding
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link StockQuantityCoded}</li>
@@ -171,7 +176,7 @@ public class StockQuantityCoded
      * An ONIX code identifying the scheme from which the value in the &lt;StockQuantityCode&gt; element is taken.
      * Mandatory in each occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public StockQuantityCodeType stockQuantityCodeType() {
         _initialize();
@@ -185,7 +190,7 @@ public class StockQuantityCoded
      * A code value taken from the scheme specified in the &lt;StockQuantityCodeType&gt; element. Mandatory in each
      * occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public StockQuantityCode stockQuantityCode() {
         _initialize();
@@ -201,7 +206,7 @@ public class StockQuantityCoded
      * &lt;StockQuantityCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code.
      * Optional, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public StockQuantityCodeTypeName stockQuantityCodeTypeName() {
         _initialize();

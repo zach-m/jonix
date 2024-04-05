@@ -73,11 +73,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Product&gt; from the schema author:
+ * 
+ * <pre>
+ * Container for details of a single product
+ * &#9679; Added &lt;ProductionDetail&gt; (Block 8) at revision 3.0.8
+ * &#9679; Added &lt;PromotionDetail&gt; (Block 7) at revision 3.0.7
+ * &#9679; Modified cardinality of &lt;DeletionText&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product}</li>
@@ -267,7 +275,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * This field is mandatory and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public RecordReference recordReference() {
         _initialize();
@@ -281,7 +289,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code which indicates the type of notification or update which you are sending. Mandatory and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NotificationType notificationType() {
         _initialize();
@@ -317,7 +325,7 @@ public class Product implements OnixProduct, Serializable {
      * identifiers – for example DOI – the punctuation is an integral part of the identifier and must always be
      * included.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -332,7 +340,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code which indicates the type of source which has issued the ONIX record. Optional and non-repeating,
      * independently of the occurrence of any other field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceType recordSourceType() {
         _initialize();
@@ -346,7 +354,7 @@ public class Product implements OnixProduct, Serializable {
      * The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
      * occurrence of any other field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceName recordSourceName() {
         _initialize();
@@ -362,7 +370,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an
      * update notice which carries only those blocks in which changes have occurred.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DescriptiveDetail descriptiveDetail() {
         _initialize();
@@ -384,7 +392,7 @@ public class Product implements OnixProduct, Serializable {
      * <em>only</em> within a partial or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the
      * intention is to remove all previously-supplied collateral material.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CollateralDetail collateralDetail() {
         _initialize();
@@ -401,7 +409,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;PromotionalEvent&gt;. It may be empty <em>only</em> within a partial or ‘block update’ (Notification or
      * update type&nbsp;04, see&nbsp;P.1.2), when the intention is to remove all previously-supplied promotion detail.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PromotionDetail promotionDetail() {
         _initialize();
@@ -422,7 +430,7 @@ public class Product implements OnixProduct, Serializable {
      * <em>only</em> within a partial or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the
      * intention is to remove all previously-supplied content detail.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ContentDetail contentDetail() {
         _initialize();
@@ -438,7 +446,7 @@ public class Product implements OnixProduct, Serializable {
      * any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an
      * update notice which carries only those blocks in which changes have occurred.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublishingDetail publishingDetail() {
         _initialize();
@@ -458,7 +466,7 @@ public class Product implements OnixProduct, Serializable {
      * only within a partial or ‘block update’ (Notification or update type&nbsp;04, see&nbsp;P.1.2), when the intention
      * is to remove all previously-supplied information about related works and products.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RelatedMaterial relatedMaterial() {
         _initialize();
@@ -481,7 +489,7 @@ public class Product implements OnixProduct, Serializable {
      * only within a partial or ‘block update’ (Notification or update type 04, see P.1.2), when the intention is to
      * remove all previously-supplied manifest detail.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductionDetail productionDetail() {
         _initialize();
@@ -504,7 +512,7 @@ public class Product implements OnixProduct, Serializable {
      * result of being Out of print) are changes of &lt;PublishingStatus&gt; or of &lt;ProductAvailability&gt;, not
      * reasons for deletion.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<DeletionText, String> deletionTexts() {
         _initialize();
@@ -520,7 +528,7 @@ public class Product implements OnixProduct, Serializable {
      * A group of data elements which together define an identifier of the organization which is the source of the ONIX
      * record. Optional, and repeatable in order to send multiple identifiers for the same organization.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameIdentifierTypes>
         recordSourceIdentifiers() {
@@ -536,7 +544,7 @@ public class Product implements OnixProduct, Serializable {
      * to be used only in North America. Repeatable if more than one type of barcode is carried on a single product. The
      * absence of this composite does <em>not</em> mean that a product is not bar-coded.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes() {
         _initialize();
@@ -560,7 +568,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * <p>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ProductSupply> productSupplys() {
         _initialize();

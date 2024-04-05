@@ -64,11 +64,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AgentName&gt; from the schema author:
+ * 
+ * <pre>
+ * Name of a publisher's sales agent or other representative organization in a market
+ * &#9679; Added collationkey attribute at revision 3.0.7
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublisherRepresentative}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link PublisherRepresentative} ⯈

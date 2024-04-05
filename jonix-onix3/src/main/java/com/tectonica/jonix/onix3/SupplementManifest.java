@@ -69,11 +69,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SupplementManifest&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of the resource files needed to manufacture or package a supplement to a product
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductionManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest}</li>
@@ -218,7 +224,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates the primary form of a supplement. Mandatory in an occurrence of
      * &lt;SupplementManifest&gt;, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductForm productForm() {
         _initialize();
@@ -241,7 +247,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * However, relevant high-level specifications such as the Product form or overall size of the supplement are
      * carried within the &lt;SupplementManifest&gt; itself, rather than within Block&nbsp;1.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public BodyManifest bodyManifest() {
         _initialize();
@@ -260,7 +266,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * Note that with &lt;SalesOutlet&gt; below the provision of vendor-specific supplements can require the use of
      * duplicate sequence numbers.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SequenceNumber sequenceNumber() {
         _initialize();
@@ -283,7 +289,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * However, relevant high-level specifications such as the Product form or overall size of the supplement are
      * carried within the &lt;SupplementManifest&gt; itself, rather than within Block&nbsp;1.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CoverManifest coverManifest() {
         _initialize();
@@ -299,7 +305,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * &lt;SequenceNumber&gt; specified within the Supplement manifest). The empty &lt;NoSupplement/&gt; must be used –
      * and must only be used – when no &lt;BodyManifest&gt; is present within the Supplement manifest.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoSupplement noSupplement() {
         _initialize();
@@ -324,7 +330,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * all other – outlets, depending on the use of the supplement’s Sequence number. See the use of
      * &lt;SequenceNumber&gt; and &lt;SalesOutlet&gt; within the Cover resource composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesOutlet> salesOutlets() {
         _initialize();
@@ -341,7 +347,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * &lt;ProductPart&gt; composite within Group&nbsp;P.4. The composite is optional, but at least a proprietary
      * identifier for the supplement is recommended.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -357,7 +363,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * An ONIX code which provides added detail of the medium and/or format of a supplement. Optional, and repeatable in
      * order to provide multiple additional details.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
@@ -374,7 +380,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * &lt;ProductFormDescription&gt;, but must be included in each instance if &lt;ProductFormDescription&gt; is
      * repeated to provide parallel descriptions in multiple languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ProductFormDescription, String> productFormDescriptions() {
         _initialize();
@@ -390,7 +396,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * used to specify the overall dimensions of a physical supplement. Repeatable to provide multiple combinations of
      * dimension and unit.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
         _initialize();
@@ -413,7 +419,7 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * Part. However, relevant high-level specifications such as the Product form or overall size of the supplement are
      * carried within the &lt;SupplementManifest&gt; itself, rather than within Block 1.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<InsertManifest> insertManifests() {
         _initialize();

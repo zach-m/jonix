@@ -64,11 +64,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AVItemType&gt; from the schema author:
+ * 
+ * <pre>
+ * Type of an audiovisual content item (eg chapter, section, scene)
+ * &#9679; Added at revision 3.0.5
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AVItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈ {@link AVItemType}</li>

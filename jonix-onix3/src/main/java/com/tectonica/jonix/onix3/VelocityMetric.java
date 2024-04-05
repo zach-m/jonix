@@ -64,11 +64,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;VelocityMetric&gt; from the schema author:
+ * 
+ * <pre>
+ * Metric used to measure details of the rate of stock depletion, eg mean weekly shipments or sales over last 12 weeks
+ * &#9679; Added at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Velocity}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link Velocity} ⯈

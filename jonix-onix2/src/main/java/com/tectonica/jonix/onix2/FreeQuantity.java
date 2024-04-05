@@ -63,7 +63,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link BatchBonus}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link BatchBonus} ⯈ {@link FreeQuantity}</li>

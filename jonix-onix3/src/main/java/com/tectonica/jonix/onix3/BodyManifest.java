@@ -79,12 +79,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;BodyManifest&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of the resource files needed to manufacture or package the main body of a product
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplementManifest}&gt;</li>
  * <li>&lt;{@link ProductionManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -208,7 +214,7 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
      * composed. At least one resource is required in each &lt;BodyManifest&gt;, and the &lt;BodyResource&gt; composite
      * is repeatable to describe multiple resources.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<BodyResource> bodyResources() {
         _initialize();
@@ -224,7 +230,7 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
      * for creation of the body of the final Product or Product part. Bundle names are inevitably proprietary, so both a
      * Name type name and the Name value must be included.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<SpecificationBundleName, JonixSpecificationBundleName> specificationBundleNames() {
         _initialize();
@@ -239,7 +245,7 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
      * An ONIX code which specifies added detail of the medium and/or format of the body of the Product or Product part.
      * Optional, and repeatable in order to provide multiple additional details.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<SpecificationDetail, SpecificationDetails> specificationDetails() {
         _initialize();
@@ -256,7 +262,7 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
      * that is too specific to be covered in the &lt;SpecificationDetail&gt; element. Repeatable in order to describe
      * different aspects of the product form.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<SpecificationFeature, JonixSpecificationFeature, SpecificationFeatureTypes>
         specificationFeatures() {
@@ -274,7 +280,7 @@ public class BodyManifest implements OnixSuperComposite, Serializable {
      * &lt;SpecificationDescription&gt;, but must be included in each instance if &lt;SpecificationDescription&gt; is
      * repeated to provide parallel descriptions in multiple languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<SpecificationDescription, String> specificationDescriptions() {
         _initialize();

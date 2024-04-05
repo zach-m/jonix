@@ -64,11 +64,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductFormFeatureType&gt; from the schema author:
+ * 
+ * <pre>
+ * Type of Product form feature, eg color, text font, sustainability credentials
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductFormFeature}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature} ⯈ {@link ProductFormFeatureType}</li>

@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link SalesOutlet}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet} ⯈ {@link SalesOutletIdentifier}</li>
@@ -180,7 +179,7 @@ public class SalesOutletIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SalesOutletIDType salesOutletIDType() {
         _initialize();
@@ -194,7 +193,7 @@ public class SalesOutletIdentifier
      * A code value taken from the scheme specified in the &lt;SalesOutletIDType&gt; element. Mandatory in each
      * occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -208,7 +207,7 @@ public class SalesOutletIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in the
      * &lt;SalesOutletIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

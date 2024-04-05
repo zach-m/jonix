@@ -65,11 +65,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;MainSubject&gt; from the schema author:
+ * 
+ * <pre>
+ * Flag to indicate the primary subject (within a particular subject scheme), used when the product has more than one subject code from that subject scheme
+ * &#9679; XML empty element - must not contain data
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Subject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Subject} ⯈ {@link MainSubject}</li>

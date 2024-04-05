@@ -72,7 +72,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link CitedContent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈ {@link CitationNote}</li>

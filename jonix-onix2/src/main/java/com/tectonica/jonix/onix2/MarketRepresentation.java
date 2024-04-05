@@ -63,7 +63,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link MarketRepresentation}</li>
@@ -228,7 +227,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * occurrence of the &lt;MarketRepresentation&gt; composite must carry either an occurrence of &lt;MarketCountry&gt;
      * or an occurrence of &lt;MarketTerritory&gt;, to specify the market concerned. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MarketTerritory marketTerritory() {
         _initialize();
@@ -245,7 +244,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * at least one agent identifier, or an &lt;AgentName&gt;. Repeatable only if two or more identifiers are sent using
      * different schemes.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes>
         agentIdentifiers() {
@@ -260,7 +259,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * The name of an agent or local publisher. Optional and non-repeating; required if no agent identifier is sent in
      * an occurrence of the &lt;MarketRepresentation&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AgentName agentName() {
         _initialize();
@@ -274,7 +273,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * An ONIX code identifying the role of an agent in relation to the product in the specified market, <em>eg</em>
      * Exclusive sales agent, Local publisher, <em>etc</em>. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AgentRole agentRole() {
         _initialize();
@@ -291,7 +290,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * an occurrence of &lt;MarketCountry&gt; or an occurrence of &lt;MarketTerritory&gt;, to specify the market
      * concerned. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MarketCountry marketCountry() {
         _initialize();
@@ -306,7 +305,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * &lt;MarketTerritory&gt;. Successive codes are separated by spaces. Thus, a single occurrence of the element can
      * carry an unlimited number of country codes. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MarketCountryExcluded marketCountryExcluded() {
         _initialize();
@@ -320,7 +319,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * A free text field describing a non-geographical restriction of the market covered by a sales agent or local
      * publisher. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MarketRestrictionDetail marketRestrictionDetail() {
         _initialize();
@@ -334,7 +333,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the status of a published product in the market defined in an occurrence of the
      * &lt;MarketRepresentation&gt; composite. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MarketPublishingStatus marketPublishingStatus() {
         _initialize();
@@ -347,7 +346,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * <p>
      * A telephone number of an agent or local publisher. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
         _initialize();
@@ -360,7 +359,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * <p>
      * A fax number of an agent or local publisher. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
         _initialize();
@@ -373,7 +372,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * <p>
      * An email address for an agent or local publisher. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
         _initialize();
@@ -388,7 +387,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * is related to the agent or local publisher identified in an occurrence of the &lt;MarketRepresentation&gt;
      * composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();
@@ -404,7 +403,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * product in the market identified in an occurrence of the &lt;MarketRepresentation&gt; composite, <em>eg</em>
      * local publication date.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates() {
         _initialize();

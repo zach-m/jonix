@@ -60,6 +60,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Quantity&gt; from the schema author:
+ * 
+ * <pre>
+ * Number of copies, of words, of users, of days or months (according to the Quantity unit), used in usage and price constraints, discounts etc
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Discount}&gt;</li>
@@ -67,7 +73,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link PriceConditionQuantity}&gt;</li>
  * <li>&lt;{@link EpubUsageLimit}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link Discount} ⯈

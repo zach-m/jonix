@@ -54,11 +54,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SubjectDate&gt; from the schema author:
+ * 
+ * <pre>
+ * Date of the specified role relating to some aspect of the named subject
+ * &#9679; Removed &lt;DateFormat&gt; at release 3.1
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈ {@link SubjectDate}</li>
@@ -168,7 +175,7 @@ public class SubjectDate
      * An ONIX code indicating the significance of the date in relation to the subject name. Mandatory in each
      * occurrence of the &lt;SubjectDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SubjectDateRole subjectDateRole() {
         _initialize();
@@ -183,7 +190,7 @@ public class SubjectDate
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
      * then the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();

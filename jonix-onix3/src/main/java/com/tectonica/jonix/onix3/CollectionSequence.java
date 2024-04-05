@@ -54,11 +54,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CollectionSequence&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a product's sequential position in a collection
+ * &#9679; Added at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link CollectionSequence}</li>
@@ -172,7 +178,7 @@ public class CollectionSequence
      * An ONIX code identifying the type of ordering used for the product’s sequence number within the collection.
      * Mandatory and non-repeating within the &lt;CollectionSequence&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CollectionSequenceType collectionSequenceType() {
         _initialize();
@@ -194,7 +200,7 @@ public class CollectionSequence
      * where a product is the third in a sub-collection, and the sub-collections are in no particular order within the
      * collection.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CollectionSequenceNumber collectionSequenceNumber() {
         _initialize();
@@ -209,7 +215,7 @@ public class CollectionSequence
      * included when, and only when, the code in the &lt;CollectionSequenceType&gt; field indicates a proprietary
      * scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CollectionSequenceTypeName collectionSequenceTypeName() {
         _initialize();

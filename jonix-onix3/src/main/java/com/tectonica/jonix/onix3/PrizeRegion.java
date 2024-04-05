@@ -68,11 +68,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PrizeRegion&gt; from the schema author:
+ * 
+ * <pre>
+ * Region (part of a country) in which a prize is awarded
+ * &#9679; Added at revision 3.0.7
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Prize}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeRegion}</li>

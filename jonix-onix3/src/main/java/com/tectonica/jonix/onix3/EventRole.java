@@ -65,11 +65,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EventRole&gt; from the schema author:
+ * 
+ * <pre>
+ * Nature of an event which the product is about, eg conference, exhibition
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Event}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventRole}</li>

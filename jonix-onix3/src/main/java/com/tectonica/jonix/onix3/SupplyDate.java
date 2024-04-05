@@ -53,11 +53,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SupplyDate&gt; from the schema author:
+ * 
+ * <pre>
+ * Date of the specified role associated with the supply status of the product, eg expected ship date
+ * &#9679; Removed &lt;DateFormat&gt; at release 3.1
+ * &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyDate}</li>
@@ -163,7 +170,7 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
      * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;SupplyDate&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SupplyDateRole supplyDateRole() {
         _initialize();
@@ -178,7 +185,7 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
      * then the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();

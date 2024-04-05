@@ -53,12 +53,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SalesRestriction&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a non-geographical restriction on sales, applicable within the associated sales rights territory or market
+ * &#9679; Deprecated P.21.11-21.18 at revision 3.0.2, in favour of using &lt;SalesRestriction within &lt;SalesRights&gt; (P.21.5a)
+ * &#9679; Modified cardinality of &lt;SalesRestrictionNote&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Market}&gt;</li>
  * <li>&lt;{@link SalesRights}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market} ⯈ {@link SalesRestriction}</li>
@@ -180,7 +187,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies a non-territorial sales restriction. Mandatory in each occurrence of the
      * &lt;SalesRestriction&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SalesRestrictionType salesRestrictionType() {
         _initialize();
@@ -193,7 +200,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * <p>
      * The date from which a sales restriction is effective. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public StartDate startDate() {
         _initialize();
@@ -206,7 +213,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * <p>
      * The date until which a sales restriction is effective. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EndDate endDate() {
         _initialize();
@@ -221,7 +228,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * occurrence of the composite must include a &lt;SalesOutletIdentifier&gt; composite or a &lt;SalesOutletName&gt;
      * or both. Repeatable in order to identify multiple sales outlets subject to the restriction.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesOutlet> salesOutlets() {
         _initialize();
@@ -237,7 +244,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * is optional for a single instance of &lt;SalesRestrictionNote&gt;, but must be included in each instance if
      * &lt;SalesRestrictionNote&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes() {
         _initialize();

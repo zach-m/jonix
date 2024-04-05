@@ -60,11 +60,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NoPrefix&gt; from the schema author:
+ * 
+ * <pre>
+ * Positive indication that there is no prefix (eg A, The) at the beginning of a title element which is ignored for sorting purposes
+ * &#9679; XML empty element - must not contain data
+ * &#9679; Added at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleElement}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail} ⯈ {@link TitleElement} ⯈ {@link NoPrefix}</li>

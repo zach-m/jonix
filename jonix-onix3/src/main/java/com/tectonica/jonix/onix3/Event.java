@@ -55,11 +55,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Event&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of an event (eg conference, exhibition, sporting event) which the product is about
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event}</li>
@@ -196,7 +202,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * Proceedings of conference / Selected papers from conference / Programme for sporting event / Guide for art
      * exhibition. Mandatory and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EventRole eventRole() {
         _initialize();
@@ -213,7 +219,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * des Nations unies sur les changements climatiques&nbsp;»</span>). The <i>language</i> attribute is optional for a
      * single instance of &lt;EventName&gt;, but must be included in each instance if &lt;EventName&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<EventName, String> eventNames() {
         _initialize();
@@ -226,7 +232,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * <p>
      * The number of an event to which the product is related, within a series of events. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EventNumber eventNumber() {
         _initialize();
@@ -239,7 +245,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * <p>
      * The date of an event to which the product is related. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EventDate eventDate() {
         _initialize();
@@ -255,7 +261,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * <i>language</i> attribute is optional for a single instance of &lt;EventAcronym&gt;, but must be included in each
      * instance if &lt;EventAcronym&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EventAcronym, String> eventAcronyms() {
         _initialize();
@@ -271,7 +277,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * The <i>language</i> attribute is optional for a single instance of &lt;EventTheme&gt;, but must be included in
      * each instance if &lt;EventTheme&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EventTheme, String> eventThemes() {
         _initialize();
@@ -286,7 +292,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * for a single location in multiple languages. The <i>language</i> attribute is optional for a single instance of
      * &lt;EventPlace&gt;, but must be included in each instance if &lt;EventPlace&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EventPlace, String> eventPlaces() {
         _initialize();
@@ -302,7 +308,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * identifier and a name, must be present in each occurrence of the composite. The composite is repeatable in order
      * to specify multiple organizers and sponsors.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<EventSponsor> eventSponsors() {
         _initialize();
@@ -317,7 +323,7 @@ public class Event implements OnixSuperComposite, Serializable {
      * the event identified in an occurrence of the &lt;Event&gt; composite. Repeatable in order to provide links to
      * multiple websites.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();

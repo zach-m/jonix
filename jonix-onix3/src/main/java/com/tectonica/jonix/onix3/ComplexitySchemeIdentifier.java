@@ -64,11 +64,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ComplexitySchemeIdentifier&gt; from the schema author:
+ * 
+ * <pre>
+ * Type of measurement scheme used to measure comprehension difficulty of the content
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Complexity}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Complexity} ⯈ {@link ComplexitySchemeIdentifier}</li>

@@ -54,11 +54,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContributorPlace&gt; from the schema author:
+ * 
+ * <pre>
+ * Location with which a contributor is associated
+ * &#9679; Added &lt;LocationName&gt; at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ContributorPlace}</li>
@@ -179,7 +185,7 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
      * An ONIX code identifying the relationship between a contributor and a geographical location. Mandatory in each
      * occurrence of &lt;ContributorPlace&gt; and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ContributorPlaceRelator contributorPlaceRelator() {
         _initialize();
@@ -194,7 +200,7 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
      * non-repeatable. There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt; elements
      * in each occurrence of &lt;ContributorPlace&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CountryCode countryCode() {
         _initialize();
@@ -212,7 +218,7 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
      * country and region are specified, the region must be within the country. Note that US States have region codes,
      * while US overseas territories have distinct ISO Country Codes.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RegionCode regionCode() {
         _initialize();
@@ -229,7 +235,7 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
      * optional for a single instance of &lt;LocationName&gt;, but must be included in each instance if
      * &lt;LocationName&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<LocationName, String> locationNames() {
         _initialize();

@@ -69,11 +69,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ROWSalesRightsType&gt; from the schema author:
+ * 
+ * <pre>
+ * Sales rights applicable in any territory not explicitly associated with a sales rights type
+ * &#9679; Added at revision 3.0 (2010)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ROWSalesRightsType}</li>

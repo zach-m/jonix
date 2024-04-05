@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Illustrations}</li>
@@ -177,7 +176,7 @@ public class Illustrations
      * An ONIX code which identifies the type of illustration or other content to which an occurrence of the composite
      * refers. Mandatory in each occurrence of the &lt;Illustrations&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IllustrationType illustrationType() {
         _initialize();
@@ -191,7 +190,7 @@ public class Illustrations
      * Text describing the type of illustration or other content to which an occurrence of the composite refers, when a
      * code is insufficient. Optional and non-repeating. Required when &lt;IllustrationType&gt; carries the value 00.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IllustrationTypeDescription illustrationTypeDescription() {
         _initialize();
@@ -205,7 +204,7 @@ public class Illustrations
      * The number of illustrations or other content items of the type specified in &lt;IllustrationType&gt;. Optional
      * and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Number number() {
         _initialize();

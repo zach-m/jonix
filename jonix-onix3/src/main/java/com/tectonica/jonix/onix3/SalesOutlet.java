@@ -55,6 +55,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SalesOutlet&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a specific retail outlet, eg one associated with sales exclusivity
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplementManifest}&gt;</li>
@@ -62,7 +68,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SalesRestriction}&gt;</li>
  * <li>&lt;{@link InsertResource}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -184,7 +189,7 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together represent a coded identification of an organization, used here
      * to identify a sales outlet. Repeatable in order to specify multiple identifiers for the same sales outlet.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier, SalesOutletIdentifierTypes>
         salesOutletIdentifiers() {
@@ -198,7 +203,7 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
      * <p>
      * The name of a wholesale or retail sales outlet to which a sales restriction is linked. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SalesOutletName salesOutletName() {
         _initialize();

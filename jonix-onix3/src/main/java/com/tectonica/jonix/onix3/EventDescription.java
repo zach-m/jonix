@@ -67,12 +67,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EventDescription&gt; from the schema author:
+ * 
+ * <pre>
+ * Textual description of an occurrence of a particular event promoting the product
+ * &#9679; Added at revision 3.0.7
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈

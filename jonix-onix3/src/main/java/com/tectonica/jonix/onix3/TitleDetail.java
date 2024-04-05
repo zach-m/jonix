@@ -55,13 +55,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;TitleDetail&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a title of a product (or of a collection of products, or of a content item)
+ * &#9679; Added &lt;TitleStatement&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail}</li>
@@ -173,7 +179,7 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the type of a title. Mandatory in each occurrence of the &lt;TitleDetail&gt; composite,
      * and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TitleType titleType() {
         _initialize();
@@ -203,7 +209,7 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
      * at collection level. However, the composite structure in ONIX&nbsp;3.0 and 3.1 allows more complex combinations
      * of titles and part designations in multi-level collections to be correctly represented.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataComposite<TitleElement, JonixTitleElement> titleElements() {
         _initialize();
@@ -221,7 +227,7 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
      * display purposes only. The individual collection title element detail <em>must</em> also be sent, for indexing
      * and retrieval purposes.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitleStatement titleStatement() {
         _initialize();

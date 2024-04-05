@@ -67,6 +67,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Territory&gt; from the schema author:
+ * 
+ * <pre>
+ * Geographical area, for example an area within which a particular type of sales rights or restrictions apply
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>
@@ -76,7 +82,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Price}&gt;</li>
  * <li>&lt;{@link SalesRights}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
@@ -206,7 +211,7 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * spaces. Optional and non-repeating, but either &lt;CountriesIncluded&gt; or &lt;RegionsIncluded&gt; is mandatory
      * in each occurrence of the &lt;Territory&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CountriesIncluded countriesIncluded() {
         _initialize();
@@ -226,7 +231,7 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * <p>
      * Note that if used, the ‘WORLD’ region code cannot be combined with other region codes.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RegionsIncluded regionsIncluded() {
         _initialize();
@@ -242,7 +247,7 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * (and specifies countries of which the excluded regions are a part), or if &lt;RegionsIncluded&gt; is present and
      * includes a supra-national region code (such as ‘WORLD’).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RegionsExcluded regionsExcluded() {
         _initialize();
@@ -257,7 +262,7 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * spaces. Optional and non-repeating, and can only occur if the &lt;RegionsIncluded&gt; element is also present and
      * includes a supra-national region code (such as ‘WORLD’).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CountriesExcluded countriesExcluded() {
         _initialize();

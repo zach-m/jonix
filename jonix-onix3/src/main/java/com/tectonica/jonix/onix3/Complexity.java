@@ -52,11 +52,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Complexity&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of the difficulty of comprehension of the content
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Complexity}</li>
@@ -162,7 +167,7 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
      * An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken. Mandatory in each
      * occurrence of the &lt;Complexity&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ComplexitySchemeIdentifier complexitySchemeIdentifier() {
         _initialize();
@@ -176,7 +181,7 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
      * A code specifying the level of complexity of a text. Mandatory in each occurrence of the &lt;Complexity&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ComplexityCode complexityCode() {
         _initialize();

@@ -55,11 +55,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PromotionDetail&gt; from the schema author:
+ * 
+ * <pre>
+ * Block 7, container for data describing events arranged to promote the product (eg readings, author signings)
+ * &#9679; Added at revision 3.0.7
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PromotionDetail}</li>
@@ -175,7 +181,7 @@ public class PromotionDetail implements OnixSuperComposite, Serializable {
      * &lt;Contributor&gt;. If there are no contributors to the event of either type, an optional &lt;NoContributor/&gt;
      * flag may be included instead.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<PromotionalEvent> promotionalEvents() {
         _initialize();

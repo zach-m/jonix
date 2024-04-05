@@ -54,7 +54,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Prize}</li>
@@ -181,7 +180,7 @@ public class Prize implements OnixDataCompositeUncommon, Serializable {
      * The name of a prize or award which the product has received. Mandatory in each occurrence of the &lt;Prize&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PrizeName prizeName() {
         _initialize();
@@ -194,7 +193,7 @@ public class Prize implements OnixDataCompositeUncommon, Serializable {
      * <p>
      * The year in which a prize or award was given. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizeYear prizeYear() {
         _initialize();
@@ -207,7 +206,7 @@ public class Prize implements OnixDataCompositeUncommon, Serializable {
      * <p>
      * An ISO standard code identifying the country in which a prize or award is given. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizeCountry prizeCountry() {
         _initialize();
@@ -221,7 +220,7 @@ public class Prize implements OnixDataCompositeUncommon, Serializable {
      * An ONIX code indicating the achievement of the product in relation to a prize or award, <em>eg</em> winner,
      * runner-up, shortlisted. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizeCode prizeCode() {
         _initialize();
@@ -234,7 +233,7 @@ public class Prize implements OnixDataCompositeUncommon, Serializable {
      * <p>
      * Free text listing members of the jury that awarded the prize. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizeJury prizeJury() {
         _initialize();

@@ -79,6 +79,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContributorStatement&gt; from the schema author:
+ * 
+ * <pre>
+ * Text showing how the contributor names and roles should be arranged for display purposes
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
@@ -86,7 +92,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ContributorStatement}</li>

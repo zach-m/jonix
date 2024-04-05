@@ -55,12 +55,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProfessionalAffiliation&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a professional position held by a contributor to the product at the time of its creation
+ * &#9679; Added &lt;AffiliationIdentifier&gt; at release 3.1
+ * &#9679; Modified cardinality of &lt;ProfessionalPosition&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation}</li>
@@ -182,7 +189,7 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
      * instance of &lt;ProfessionalPosition&gt;, but must be included in each instance if &lt;ProfessionalPosition&gt;
      * is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<ProfessionalPosition, String> professionalPositions() {
         _initialize();
@@ -197,7 +204,7 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
      * if the &lt;ProfessionalPosition&gt; element is also present – where the contributor held that position. Optional
      * and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Affiliation affiliation() {
         _initialize();
@@ -215,7 +222,7 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
      * also present – where the contributor held that position. Optional, and repeatable to specify organization
      * identifiers of different types for the same organization.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<AffiliationIdentifier, JonixAffiliationIdentifier, NameIdentifierTypes>
         affiliationIdentifiers() {

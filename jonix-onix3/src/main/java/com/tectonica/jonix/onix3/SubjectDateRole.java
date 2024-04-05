@@ -64,11 +64,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SubjectDateRole&gt; from the schema author:
+ * 
+ * <pre>
+ * Type or role of the specified date relating to some aspect of the named subject
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SubjectDate}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈ {@link SubjectDate} ⯈

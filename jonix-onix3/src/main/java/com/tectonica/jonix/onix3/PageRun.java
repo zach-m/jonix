@@ -52,11 +52,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PageRun&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of the start and end pages of a textual content item
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link PageRun}</li>
@@ -163,7 +168,7 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
      * &lt;PageRun&gt; composite, and non-repeating. Note that here and in the &lt;LastPageNumber&gt; element a page
      * ‘number’ may be Arabic, Roman, or an alphanumeric string (<i>eg</i> L123).
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public FirstPageNumber firstPageNumber() {
         _initialize();
@@ -178,7 +183,7 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
      * last text page). This element is omitted if an item begins and ends on the same page; otherwise it should occur
      * once and only once in each occurrence of the &lt;PageRun&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public LastPageNumber lastPageNumber() {
         _initialize();

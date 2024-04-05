@@ -60,6 +60,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SequenceNumber&gt; from the schema author:
+ * 
+ * <pre>
+ * Ordinal number, eg of a contributor, indicating the required order (which may be different from the order of occurrence in the ONIX XML file itself)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>
@@ -74,7 +80,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link InsertResource}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈

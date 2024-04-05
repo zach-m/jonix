@@ -53,11 +53,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SupplierOwnCoding&gt; from the schema author:
+ * 
+ * <pre>
+ * Container for coded information using a proprietary scheme defined by the supplier organization
+ * &#9679; Added &lt;SupplierCodeTypeName&gt; at revison 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplierOwnCoding}</li>
@@ -169,7 +175,7 @@ public class SupplierOwnCoding
      * An ONIX code identifying the type of a supplier own code. Mandatory in each occurrence of the
      * &lt;SupplierOwnCoding&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SupplierCodeType supplierCodeType() {
         _initialize();
@@ -183,7 +189,7 @@ public class SupplierOwnCoding
      * A supplier-defined code of the type specified in the &lt;SupplierCodeType&gt; element. Mandatory in each
      * occurrence of the &lt;SupplierOwnCoding&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SupplierCodeValue supplierCodeValue() {
         _initialize();
@@ -196,7 +202,7 @@ public class SupplierOwnCoding
      * <p>
      * A name which identifies the proprietary coding scheme used. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SupplierCodeTypeName supplierCodeTypeName() {
         _initialize();

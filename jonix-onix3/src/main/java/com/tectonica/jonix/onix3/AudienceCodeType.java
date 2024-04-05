@@ -64,11 +64,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AudienceCodeType&gt; from the schema author:
+ * 
+ * <pre>
+ * Scheme used to codify audience or readership of a product, eg the ONIX audience code scheme
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Audience}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Audience} ⯈ {@link AudienceCodeType}</li>

@@ -66,11 +66,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PrimaryContentType&gt; from the schema author:
+ * 
+ * <pre>
+ * The primary type of content (eg text, audio, musical notation) included in the product
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link PrimaryContentType}</li>

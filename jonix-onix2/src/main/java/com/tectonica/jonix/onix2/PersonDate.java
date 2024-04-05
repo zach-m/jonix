@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link PersonDate}</li>
@@ -182,7 +181,7 @@ public class PersonDate implements OnixDataCompositeWithKey<JonixPersonDate, Per
      * An ONIX code indicating the significance of the date in relation to the contributor name. Mandatory in each
      * occurrence of the &lt;PersonDate&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PersonDateRole personDateRole() {
         _initialize();
@@ -196,7 +195,7 @@ public class PersonDate implements OnixDataCompositeWithKey<JonixPersonDate, Per
      * The date specified in the &lt;PersonDateRole&gt; field. Mandatory in each occurrence of the &lt;PersonDate&gt;
      * composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
@@ -210,7 +209,7 @@ public class PersonDate implements OnixDataCompositeWithKey<JonixPersonDate, Per
      * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and non-repeating. When
      * omitted, the format is assumed to be YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();

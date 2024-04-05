@@ -55,11 +55,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AncillaryContent&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of illustrations, maps, table of contents, index, bibliography or other ancillary content of a product
+ * &#9679; Modified cardinality of &lt;AncillaryContentDescription&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AncillaryContent}</li>
@@ -172,7 +178,7 @@ public class AncillaryContent
      * An ONIX code which identifies the type of illustration or other content to which an occurrence of the composite
      * refers. Mandatory in each occurrence of the &lt;AncillaryContent&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AncillaryContentType ancillaryContentType() {
         _initialize();
@@ -186,7 +192,7 @@ public class AncillaryContent
      * The number of illustrations or other content items of the type specified in &lt;AncillaryContentType&gt;.
      * Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Number number() {
         _initialize();
@@ -204,7 +210,7 @@ public class AncillaryContent
      * single instance of &lt;AncillaryContentDescription&gt;, but must be included in each instance if
      * &lt;AncillaryContentDescription&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions() {
         _initialize();

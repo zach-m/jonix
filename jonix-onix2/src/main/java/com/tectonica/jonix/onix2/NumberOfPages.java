@@ -74,7 +74,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link TextItem}&gt;</li>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link NumberOfPages}</li>

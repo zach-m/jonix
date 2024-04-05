@@ -35,11 +35,18 @@ import java.util.function.Consumer;
  */
 
 /**
+ * Technical notes about &lt;EpubLicenseType&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of an end user license agreement for a digital product
+ * &#9679; Is extended by OTHER complexType &lt;EpubLicenseWithDateType&gt;
+ * &#9679; Added at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link EpubLicenseType}</li>
@@ -141,7 +148,7 @@ public class EpubLicenseType implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames = ListOfOnixElement.empty();
 
     /**
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<EpubLicenseName, String> epubLicenseNames() {
         _initialize();
@@ -153,7 +160,7 @@ public class EpubLicenseType implements OnixSuperComposite, Serializable {
             JPU.emptyListOfOnixDataCompositeWithKey(EpubLicenseExpression.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes>
         epubLicenseExpressions() {

@@ -59,6 +59,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EmailAddress&gt; from the schema author:
+ * 
+ * <pre>
+ * E-mail address of a person or department within an organization (eg of a message sender or recipient, of a publisher or supplier contact)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContact}&gt;</li>
@@ -69,7 +75,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Addressee}&gt;</li>
  * <li>&lt;{@link PublisherRepresentative}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈

@@ -57,11 +57,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EpubLicenseDate&gt; from the schema author:
+ * 
+ * <pre>
+ * Date of the specified role relating to the e-publication license (eg from when is a license applied)
+ * &#9679; Added at release 3.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubLicenseWithDateType}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDateType} ⯈ {@link EpubLicenseDate}</li>
@@ -185,7 +191,7 @@ public class EpubLicenseDate
      * An ONIX code indicating the significance of the date in relation to the license. Mandatory in each occurrence of
      * the &lt;EpubLicenseDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EpubLicenseDateRole epubLicenseDateRole() {
         _initialize();
@@ -200,7 +206,7 @@ public class EpubLicenseDate
      * &lt;EpubLicenseDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if
      * the attribute is missing, then the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();

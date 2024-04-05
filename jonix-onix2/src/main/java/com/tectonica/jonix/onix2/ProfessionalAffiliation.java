@@ -55,7 +55,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation}</li>
@@ -177,7 +176,7 @@ public class ProfessionalAffiliation implements OnixDataCompositeUncommon, Seria
      * A professional position held by a contributor to the product at the time of its creation. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProfessionalPosition professionalPosition() {
         _initialize();
@@ -191,7 +190,7 @@ public class ProfessionalAffiliation implements OnixDataCompositeUncommon, Seria
      * An organisation to which a contributor to the product was affiliated at the time of its creation, and – if the
      * &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Affiliation affiliation() {
         _initialize();

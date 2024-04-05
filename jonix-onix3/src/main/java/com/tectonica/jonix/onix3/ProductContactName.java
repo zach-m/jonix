@@ -60,11 +60,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductContactName&gt; from the schema author:
+ * 
+ * <pre>
+ * Name of the organization responsible for answering particular types of enquiries about the product
+ * &#9679; Added at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductContact}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈ {@link ProductContactName}</li>

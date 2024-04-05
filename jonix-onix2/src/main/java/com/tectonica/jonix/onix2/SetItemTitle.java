@@ -65,7 +65,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Set}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Set} ⯈ {@link SetItemTitle}</li>

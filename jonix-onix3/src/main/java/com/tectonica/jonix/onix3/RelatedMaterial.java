@@ -58,11 +58,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;RelatedMaterial&gt; from the schema author:
+ * 
+ * <pre>
+ * Block 5, container for elements providing links to closely-related products and works
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link RelatedMaterial}</li>
@@ -170,7 +175,7 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
      * product described in the ONIX record. Repeatable in order to specify multiple works and their various
      * relationships to the product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<RelatedWork> relatedWorks() {
         _initialize();
@@ -185,7 +190,7 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
      * product described in the ONIX record. The composite is repeatable in order to specify different products which
      * each have a relationship to the product described.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<RelatedProduct> relatedProducts() {
         _initialize();

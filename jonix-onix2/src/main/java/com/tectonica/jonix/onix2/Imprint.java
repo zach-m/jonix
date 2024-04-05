@@ -55,7 +55,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Imprint}</li>
@@ -178,7 +177,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
      * An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt; element is taken.
      * Optional and non-repeating, but mandatory if the &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NameCodeType nameCodeType() {
         _initialize();
@@ -192,7 +191,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
      * A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and only if
      * &lt;NameCodeType&gt; is present, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NameCodeValue nameCodeValue() {
         _initialize();
@@ -207,7 +206,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
      * there is no name code in an occurrence of the &lt;Imprint&gt; composite, and optional if a name code is included.
      * Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ImprintName imprintName() {
         _initialize();
@@ -221,7 +220,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
      * A name which identifies a proprietary name code when the code in &lt;NameCodeType&gt; indicates a proprietary
      * scheme, <em>eg</em> a bibliographic agency’s own code. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NameCodeTypeName nameCodeTypeName() {
         _initialize();

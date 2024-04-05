@@ -59,7 +59,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link Reissue}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link MediaFile}</li>
@@ -212,7 +211,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * An ONIX code which identifies the type of image/audio/video file which is linked by the &lt;MediaFileLink&gt;
      * element. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MediaFileTypeCode mediaFileTypeCode() {
         _initialize();
@@ -227,7 +226,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * URL, DOI, filename <em>etc</em>. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MediaFileLinkTypeCode mediaFileLinkTypeCode() {
         _initialize();
@@ -242,7 +241,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * the &lt;MediaFileLinkTypeCode&gt;. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MediaFileLink mediaFileLink() {
         _initialize();
@@ -257,7 +256,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * used. Optional and non-repeating. The &lt;DownloadCaption&gt; element may be sent together with either or both of
      * fields &lt;DownloadCredit&gt;, or &lt;DownloadCopyrightNotice&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public DownloadCaption downloadCaption() {
         _initialize();
@@ -271,7 +270,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * An ONIX code which identifies the format of the image/audio/video file which is linked by the
      * &lt;MediaFileLink&gt; element. For image files, JPEG, GIF and TIF are supported. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MediaFileFormatCode mediaFileFormatCode() {
         _initialize();
@@ -285,7 +284,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * The resolution of an image file which is linked by the &lt;MediaFileLink&gt; element, expressed as dots or pixels
      * per inch. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ImageResolution imageResolution() {
         _initialize();
@@ -301,7 +300,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * If this field is sent, the individual elements &lt;DownloadCaption&gt;, &lt;DownloadCredit&gt;, and
      * &lt;DownloadCopyrightNotice&gt; must not be sent, and vice versa.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TextWithDownload textWithDownload() {
         _initialize();
@@ -315,7 +314,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * Text of a personal or corporate credit associated with a download file, and intended to be displayed whenever the
      * file content is used. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DownloadCredit downloadCredit() {
         _initialize();
@@ -329,7 +328,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * Text of a copyright notice associated with a download file, and intended to be displayed whenever the file
      * content is used. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DownloadCopyrightNotice downloadCopyrightNotice() {
         _initialize();
@@ -344,7 +343,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * sent alone, or with the &lt;TextWithDownload&gt; element, or with any combination of the &lt;DownloadCaption&gt;,
      * &lt;DownloadCredit&gt;, and &lt;DownloadCopyrightNotice&gt; elements.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DownloadTerms downloadTerms() {
         _initialize();
@@ -359,7 +358,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * non-repeating. This element is intended to allow the receiver of an updated ONIX record to determine whether it
      * is necessary to download a new copy of the file.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MediaFileDate mediaFileDate() {
         _initialize();

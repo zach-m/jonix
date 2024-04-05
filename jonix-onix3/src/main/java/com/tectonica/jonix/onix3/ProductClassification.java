@@ -56,11 +56,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductClassification&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a national or international trade classification (eg HMRC customs code, TARIC code, Schedule B code)
+ * &#9679; Added &lt;ProductClassificationTypeName&gt; at revision 3.0.7
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductClassification}</li>
@@ -176,7 +182,7 @@ public class ProductClassification
      * An ONIX code identifying the scheme from which the identifier in &lt;ProductClassificationCode&gt; is taken.
      * Mandatory in each occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductClassificationType productClassificationType() {
         _initialize();
@@ -190,7 +196,7 @@ public class ProductClassification
      * A classification code from the scheme specified in &lt;ProductClassificationType&gt;. Mandatory in each
      * occurrence of the &lt;ProductClassification&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductClassificationCode productClassificationCode() {
         _initialize();
@@ -206,7 +212,7 @@ public class ProductClassification
      * &lt;ProductClassificationType&gt; element indicates a proprietary scheme, <i>ie</i> the sender’s own category
      * scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductClassificationTypeName productClassificationTypeName() {
         _initialize();
@@ -222,7 +228,7 @@ public class ProductClassification
      * product classes within a particular scheme. If omitted, the product classification code applies to 100% of the
      * product.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Percent percent() {
         _initialize();

@@ -74,11 +74,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductPart&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a component which comprises part of the product. Note that components may also be product items in their own right
+ * &#9679; Added &lt;Measure&gt; at revision 3.0.6
+ * &#9679; Added &lt;ProductPackaging&gt; at revision 3.0.3
+ * &#9679; Modified cardinality of &lt;ProductFormDescription&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart}</li>
@@ -224,7 +232,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates the primary form of a product part. Mandatory in each occurrence of
      * &lt;ProductPart&gt;, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductForm productForm() {
         _initialize();
@@ -241,7 +249,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * &lt;ProductPart&gt; composite if &lt;NumberOfCopies&gt; is not present; and it must not be used if
      * &lt;ProductIdentifier&gt; is present.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NumberOfItemsOfThisForm numberOfItemsOfThisForm() {
         _initialize();
@@ -256,7 +264,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * product. For example, in a ‘book and toy’ or ‘book and DVD’ product, the book may be regarded as the primary
      * part. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrimaryPart primaryPart() {
         _initialize();
@@ -273,7 +281,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * <p>
      * An ONIX code which indicates the type of packaging used for the product part. Optional, and not repeatable.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductPackaging productPackaging() {
         _initialize();
@@ -294,7 +302,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * &lt;ProductIdentifier&gt;; but in exceptional circumstances, if the sender’s system is unable to provide an
      * identifier at this level, it may be sent with product form coding and without an ID.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NumberOfCopies numberOfCopies() {
         _initialize();
@@ -309,7 +317,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * manufactured in different countries. This information is needed in some countries to meet regulatory
      * requirements. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CountryOfManufacture countryOfManufacture() {
         _initialize();
@@ -326,7 +334,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * &lt;ProductPart&gt; specifies an individual item with its own identifier, and repeatable with different
      * identifiers for the same product part.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -342,7 +350,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * An ONIX code which provides added detail of the medium and/or format of a product part. Optional, and repeatable
      * in order to provide multiple additional details.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
@@ -360,7 +368,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * different aspects of the form of the product part. The composite is included here so that it can for example be
      * used to carry consumer protection data related to a product part.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
         productFormFeatures() {
@@ -377,7 +385,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * &lt;ProductFormDescription&gt;, but must be included in each instance if &lt;ProductFormDescription&gt; is
      * repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ProductFormDescription, String> productFormDescriptions() {
         _initialize();
@@ -392,7 +400,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates certain types of content which are closely related to but not strictly an attribute
      * of product form, <i>eg</i> audiobook. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
@@ -408,7 +416,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * used to specify the overall dimensions of a physical product part including its inner packaging (if any).
      * Repeatable to provide multiple combinations of dimension and unit.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
         _initialize();

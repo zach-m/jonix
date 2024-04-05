@@ -62,7 +62,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link OnOrderDetail}</li>
@@ -172,7 +171,7 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
      * The quantity of stock on order in a particular shipment. Mandatory in each occurrence of the
      * &lt;OnOrderDetail&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public OnOrder onOrder() {
         _initialize();
@@ -186,7 +185,7 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
      * The date on which a stock shipment is expected. Mandatory in each occurrence of the &lt;OnOrderDetail&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ExpectedDate expectedDate() {
         _initialize();
@@ -199,7 +198,7 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
      * <p>
      * An ONIX code which specifies the precision of the stock quantity in a shipment. Optional, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Proximity proximity() {
         _initialize();

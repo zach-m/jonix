@@ -68,7 +68,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Bible}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ReligiousText} ⯈ {@link Bible} ⯈ {@link BibleReferenceLocation}</li>

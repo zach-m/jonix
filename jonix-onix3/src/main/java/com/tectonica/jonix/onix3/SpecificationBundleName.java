@@ -53,13 +53,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SpecificationBundleName&gt; from the schema author:
+ * 
+ * <pre>
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverManifest}&gt;</li>
  * <li>&lt;{@link BodyManifest}&gt;</li>
  * <li>&lt;{@link InsertManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -179,7 +184,7 @@ public class SpecificationBundleName implements OnixDataComposite<JonixSpecifica
      * A name which identifies a particular proprietary naming scheme. Must be included to indicate the proprietary
      * naming scheme from which the &lt;SpecificationBundleNameValue&gt; is taken. Mandatory and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SpecificationBundleNameTypeName specificationBundleNameTypeName() {
         _initialize();
@@ -193,7 +198,7 @@ public class SpecificationBundleName implements OnixDataComposite<JonixSpecifica
      * The proprietary name of a ‘bundle’ of technical specifications, taken from the naming scheme in
      * &lt;SpecificationBundleNameTypeName&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SpecificationBundleNameValue specificationBundleNameValue() {
         _initialize();

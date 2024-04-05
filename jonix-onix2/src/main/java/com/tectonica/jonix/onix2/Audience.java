@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Audience}</li>
@@ -175,7 +174,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * An ONIX code which identifies the scheme from which the code in &lt;AudienceCodeValue&gt; is taken. Mandatory in
      * each occurrence of the &lt;Audience&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AudienceCodeType audienceCodeType() {
         _initialize();
@@ -189,7 +188,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Mandatory in each occurrence of the
      * &lt;Audience&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AudienceCodeValue audienceCodeValue() {
         _initialize();
@@ -203,7 +202,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * A name which identifies a proprietary audience code when the code in &lt;AudienceCodeType&gt; indicates a
      * proprietary scheme, <em>eg</em> a vendor’s own code. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AudienceCodeTypeName audienceCodeTypeName() {
         _initialize();

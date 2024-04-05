@@ -69,7 +69,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SeriesIdentifier}&gt;</li>
  * <li>&lt;{@link ParentIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link SubSeriesRecord} ⯈ {@link SeriesIdentifier} ⯈ {@link SeriesIDType}</li>

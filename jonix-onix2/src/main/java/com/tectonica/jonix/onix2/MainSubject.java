@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link MainSubject}</li>
@@ -185,7 +184,7 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
      * carry the text equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt;
      * element to carry the text of the subject heading.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier() {
         _initialize();
@@ -200,7 +199,7 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
      * Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
      * &lt;MainSubject&gt; composite. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SubjectCode subjectCode() {
         _initialize();
@@ -214,7 +213,7 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
      * A number which identifies a version or edition of the subject scheme specified in the associated
      * &lt;MainSubjectSchemeIdentifier&gt; element. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SubjectSchemeVersion subjectSchemeVersion() {
         _initialize();
@@ -230,7 +229,7 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
      * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;MainSubject&gt; composite.
      * Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SubjectHeadingText subjectHeadingText() {
         _initialize();

@@ -63,13 +63,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceFileLink&gt; from the schema author:
+ * 
+ * <pre>
+ * URL which provides a link to a resource required for manufacturing or packaging of the product
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverResource}&gt;</li>
  * <li>&lt;{@link BodyResource}&gt;</li>
  * <li>&lt;{@link InsertResource}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈

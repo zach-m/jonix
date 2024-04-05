@@ -54,11 +54,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;FundingIdentifier&gt; from the schema author:
+ * 
+ * <pre>
+ * Identifier for a particular tranche of funding
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Funding}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈ {@link Funding} ⯈
@@ -174,7 +180,7 @@ public class FundingIdentifier
      * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;FundingIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public FundingIDType fundingIDType() {
         _initialize();
@@ -188,7 +194,7 @@ public class FundingIdentifier
      * An identifier of the type specified in the &lt;FundingIDType&gt; element. Mandatory in each occurrence of the
      * &lt;FundingIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -203,7 +209,7 @@ public class FundingIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the &lt;FundingIDType&gt;
      * element indicates a proprietary scheme, <i>eg</i> a funder’s own code. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

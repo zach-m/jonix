@@ -73,11 +73,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PrizeStatement&gt; from the schema author:
+ * 
+ * <pre>
+ * Textual description of the prize or award, primarily for display purposes
+ * &#9679; Added at revision 3.0.2
+ * &#9679; Modified base type from NonEmptyString, added textformat attribute at revision 3.0.7
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Prize}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeStatement}</li>

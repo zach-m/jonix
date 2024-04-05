@@ -56,12 +56,20 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductContact&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a organization responsible for answering enquiries about the product
+ * &#9679; Added &lt;FaxNumber&gt;, changed cardinality of &lt;EmailAddress&gt; at release 3.1
+ * &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
+ * &#9679; Added at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact}</li>
@@ -192,7 +200,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the role played by the product contact in relation to the product – for example
      * answering enquiries related to sales or to promotion.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductContactRole productContactRole() {
         _initialize();
@@ -209,7 +217,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      * and repeatable if more than one identifier of different types is sent; but <em>either</em> a
      * &lt;ProductContactName&gt; <em>or</em> a &lt;ProductContactIdentifier&gt; <em>must</em> be included.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameIdentifierTypes>
         productContactIdentifiers() {
@@ -225,7 +233,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      * non-repeating; but <em>either</em> a &lt;ProductContactName&gt; element <em>or</em> a
      * &lt;ProductContactIdentifier&gt; composite <em>must</em> be included.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductContactName productContactName() {
         _initialize();
@@ -239,7 +247,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      * Free text giving the name, department, <i>etc</i> for a contact person in the product contact organization who is
      * responsible for the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ContactName contactName() {
         _initialize();
@@ -254,7 +262,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      * wherever possible including the plus sign and the international dialing code. Optional, and repeatable to provide
      * multiple numbers for the same contact.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
         _initialize();
@@ -269,7 +277,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      * wherever possible including the plus sign and the international dialing code. Optional, and repeatable to provide
      * multiple numbers for the same contact.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
         _initialize();
@@ -283,7 +291,7 @@ public class ProductContact implements OnixSuperComposite, Serializable {
      * A text field giving the e‑mail address for a contact person in the product contact organization who is
      * responsible for the product. Optional, and repeatable to provide multiple e‑mail addresses for the same contact.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
         _initialize();

@@ -73,12 +73,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CopyrightStatementText&gt; from the schema author:
+ * 
+ * <pre>
+ * Text showing how the copyright details should be arranged for display purposes
+ * &#9679; Added at revision 3.1.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatementText}</li>

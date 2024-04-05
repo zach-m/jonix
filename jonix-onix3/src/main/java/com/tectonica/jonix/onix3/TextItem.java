@@ -58,11 +58,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;TextItem&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a textual content item (eg a chapter)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem}</li>
@@ -176,7 +181,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the nature of a text item. Mandatory in each occurrence of the &lt;TextItem&gt;
      * composite, and non-repeatable.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TextItemType textItemType() {
         _initialize();
@@ -190,7 +195,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * The page extent of a text item within a paginated product. Optional and non-repeating, but normally expected when
      * the text item is being referenced as part of a structured table of contents.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NumberOfPages numberOfPages() {
         _initialize();
@@ -206,7 +211,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together define an identifier of a text item in accordance with a
      * specified scheme. The composite is optional.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes>
         textItemIdentifiers() {
@@ -221,7 +226,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together define a run of contiguous pages on which a text item appears.
      * The composite is optional, but may be repeated where the text item covers two or more separate page runs.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns() {
         _initialize();

@@ -71,7 +71,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link Language}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link LanguageCode}</li>

@@ -68,11 +68,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PublishingStatusNote&gt; from the schema author:
+ * 
+ * <pre>
+ * Textual description of the publishing status, when the coded Pubishing status is inadequate
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingStatusNote}</li>

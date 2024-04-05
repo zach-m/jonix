@@ -64,11 +64,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PrizeIDType&gt; from the schema author:
+ * 
+ * <pre>
+ * Type of identifier which uniquely identifies the prize, eg an ISNI or a proprietary identifier
+ * &#9679; Added at revision 3.1.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PrizeIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeIdentifier} ⯈ {@link PrizeIDType}</li>

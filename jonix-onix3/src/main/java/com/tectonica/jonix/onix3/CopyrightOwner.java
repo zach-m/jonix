@@ -55,11 +55,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CopyrightOwner&gt; from the schema author:
+ * 
+ * <pre>
+ * Name of and/or identifier for a copyright or neighbouring rightsholder
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CopyrightStatement}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement} ⯈
@@ -176,7 +181,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * repeatable if sending more than one identifier of different types. May be sent either instead of or as well as a
      * name.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameIdentifierTypes>
         copyrightOwnerIdentifiers() {
@@ -192,7 +197,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an identifier, or both a
      * name and an identifier.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PersonName personName() {
         _initialize();
@@ -207,7 +212,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * occurrence of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an
      * identifier, or both a name and an identifier.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CorporateName corporateName() {
         _initialize();

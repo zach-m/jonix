@@ -65,11 +65,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;UnnamedPersons&gt; from the schema author:
+ * 
+ * <pre>
+ * Positive indication that a contributor is unknown or anonymous, is a placeholder for 'et al' or 'Various' or is otherwise unknown or unnamed
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link UnnamedPersons}</li>

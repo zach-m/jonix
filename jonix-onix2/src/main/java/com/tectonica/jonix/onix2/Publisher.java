@@ -61,7 +61,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Publisher}</li>
@@ -196,7 +195,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * Optional and non-repeating, but mandatory if the &lt;Publisher&gt; composite does not carry a
      * &lt;PublisherName&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NameCodeType nameCodeType() {
         _initialize();
@@ -210,7 +209,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and only if
      * &lt;NameCodeType&gt; is present, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NameCodeValue nameCodeValue() {
         _initialize();
@@ -224,7 +223,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies a role played by an entity in the publishing of a product. Optional and
      * non-repeating. The default if the element is omitted is “publisher”.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublishingRole publishingRole() {
         _initialize();
@@ -238,7 +237,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * The name of an entity associated with the publishing of a product. Mandatory if there is no name code in an
      * occurrence of the &lt;Publisher&gt; composite, and optional if a name code is included. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublisherName publisherName() {
         _initialize();
@@ -252,7 +251,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * A name which identifies a proprietary name code when the code in &lt;NameCodeType&gt; indicates a proprietary
      * scheme, <em>eg</em> a bibliographic agency’s own code. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NameCodeTypeName nameCodeTypeName() {
         _initialize();
@@ -266,7 +265,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together identify and provide pointers to a website which is related to
      * the publisher identified in an occurrence of the &lt;Publisher&gt; composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();

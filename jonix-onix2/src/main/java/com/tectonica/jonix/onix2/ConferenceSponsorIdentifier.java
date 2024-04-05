@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link ConferenceSponsor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor} ⯈ {@link ConferenceSponsorIdentifier}</li>
@@ -179,7 +178,7 @@ public class ConferenceSponsorIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;ConferenceSponsorIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ConferenceSponsorIDType conferenceSponsorIDType() {
         _initialize();
@@ -193,7 +192,7 @@ public class ConferenceSponsorIdentifier
      * A code value taken from the scheme specified in the &lt;ConferenceSponsorIDType&gt; element. Mandatory in each
      * occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -207,7 +206,7 @@ public class ConferenceSponsorIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in the
      * &lt;ConferenceSponsorIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

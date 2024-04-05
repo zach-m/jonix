@@ -58,7 +58,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Conference}</li>
@@ -203,7 +202,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * The name of a conference or conference series to which the product is related. This element is mandatory in each
      * occurrence of the &lt;Conference&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ConferenceName conferenceName() {
         _initialize();
@@ -217,7 +216,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates the relationship between the product and a conference to which it is related,
      * <em>eg</em> Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceRole conferenceRole() {
         _initialize();
@@ -231,7 +230,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * An acronym used as a short form of the name of a conference or conference series given in the
      * &lt;ConferenceName&gt; element. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceAcronym conferenceAcronym() {
         _initialize();
@@ -245,7 +244,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * The number of a conference to which the product is related, within a conference series. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceNumber conferenceNumber() {
         _initialize();
@@ -259,7 +258,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * The thematic title of an individual conference in a series that has a series name in the &lt;ConferenceName&gt;
      * element. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceTheme conferenceTheme() {
         _initialize();
@@ -272,7 +271,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * <p>
      * The date of a conference to which the product is related. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceDate conferenceDate() {
         _initialize();
@@ -285,7 +284,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * <p>
      * The place of a conference to which the product is related. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferencePlace conferencePlace() {
         _initialize();
@@ -299,7 +298,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * <p>
      * A repeatable group of data elements which together identify a sponsor of a conference.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ConferenceSponsor> conferenceSponsors() {
         _initialize();
@@ -313,7 +312,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together identify and provide pointers to a website which is related to
      * the conference identified in an occurrence of the &lt;Conference&gt; composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();

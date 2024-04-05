@@ -57,11 +57,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AVItem&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of an audiovisual content item (eg a chapter) in a product
+ * &#9679; Added at revision 3.0.5
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem}</li>
@@ -177,7 +183,7 @@ public class AVItem implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the nature of an audio or audiovisual content item. Mandatory in each occurrence of
      * the &lt;AVItem&gt; composite, and non-repeatable.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AVItemType avItemType() {
         _initialize();
@@ -192,7 +198,7 @@ public class AVItem implements OnixSuperComposite, Serializable {
      * non-repeating, but normally expected when the AV content item is being referenced as part of a structured table
      * of contents.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AVDuration avDuration() {
         _initialize();
@@ -208,7 +214,7 @@ public class AVItem implements OnixSuperComposite, Serializable {
      * accordance with a specified identifier scheme. The composite is optional, and repeatable in order to provide
      * multiple identifiers for the content item.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<AVItemIdentifier, JonixAVItemIdentifier, AvItemIdentifierTypes>
         avItemIdentifiers() {
@@ -223,7 +229,7 @@ public class AVItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together define the time period which an AV item takes up. The
      * composite is optional, but may be repeated where the AV item covers two or more separate periods of time.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<TimeRun, JonixTimeRun> timeRuns() {
         _initialize();

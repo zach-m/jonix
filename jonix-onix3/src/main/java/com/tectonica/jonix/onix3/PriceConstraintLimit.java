@@ -52,11 +52,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceConstraintLimit&gt; from the schema author:
+ * 
+ * <pre>
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PriceConstraint}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceConstraint} ⯈
@@ -166,7 +171,7 @@ public class PriceConstraintLimit implements OnixDataComposite<JonixPriceConstra
      * A numeric value representing the maximum permitted quantity or limit of a particular type of constraint.
      * Mandatory in each occurrence of the &lt;PriceConstraintLimit&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Quantity quantity() {
         _initialize();
@@ -180,7 +185,7 @@ public class PriceConstraintLimit implements OnixDataComposite<JonixPriceConstra
      * An ONIX code for a unit in which a maximum permitted quantity or limit is stated. Mandatory in each occurrence of
      * the &lt;PriceConstraintLimit&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceConstraintUnit priceConstraintUnit() {
         _initialize();

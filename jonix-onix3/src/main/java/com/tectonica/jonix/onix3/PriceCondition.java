@@ -56,11 +56,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceCondition&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of condition that must be met to qualify for a particular price (eg ownership of a hardcover to qualify for purchase of an e-book at an advantageous price)
+ * &#9679; Added &lt;ProductIdentifier&gt; at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition}</li>
@@ -171,7 +177,7 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
      * An ONIX code identifying a type of price condition. Mandatory in each occurrence of the &lt;PriceCondition&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceConditionType priceConditionType() {
         _initialize();
@@ -187,7 +193,7 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together specify a price condition quantity, for example
      * a minimum number of copies, or a period of time for which updates are supplied or must be purchased.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public
         ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes>
@@ -205,7 +211,7 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
      * Optional, and used here if and only if &lt;PriceConditionType&gt; has a value that requires specification of a
      * linked product upon which the price is dependent. Repeatable with different identifiers for the same product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {

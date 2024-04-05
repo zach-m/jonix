@@ -70,11 +70,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AudienceHeadingText&gt; from the schema author:
+ * 
+ * <pre>
+ * Textual heading from a proprietary audience or readership code scheme
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Audience}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Audience} ⯈ {@link AudienceHeadingText}</li>

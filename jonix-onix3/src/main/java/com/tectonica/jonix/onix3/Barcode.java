@@ -53,11 +53,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Barcode&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a barcode (eg its symbology and position) on a product
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Barcode}</li>
@@ -163,7 +168,7 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
      * An ONIX code indicating whether, and in what form, a barcode is carried on a product. Mandatory in any instance
      * of the &lt;Barcode&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public BarcodeType barcodeType() {
         _initialize();
@@ -179,7 +184,7 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
      * ‘unknown’. Omitted if the &lt;BarcodeType&gt; element specifies that the product does not carry a barcode.
      * Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PositionOnProduct positionOnProduct() {
         _initialize();

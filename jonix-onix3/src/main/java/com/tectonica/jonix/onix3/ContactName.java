@@ -59,6 +59,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContactName&gt; from the schema author:
+ * 
+ * <pre>
+ * Name of a person or department within an organization
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContact}&gt;</li>
@@ -66,7 +72,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link ProductContact}&gt;</li>
  * <li>&lt;{@link Addressee}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈ {@link ContactName}</li>

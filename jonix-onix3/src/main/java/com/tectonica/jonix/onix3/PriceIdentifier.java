@@ -63,11 +63,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceIdentifier&gt; from the schema author:
+ * 
+ * <pre>
+ * Identifier for a specific price (usually a proprietary ID, used in subsequent revenue reporting)
+ * &#9679; Added at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceIdentifier}</li>
@@ -185,7 +191,7 @@ public class PriceIdentifier
      * There is no particular public ‘standard’ for price identifiers, so at present only proprietary identifiers may be
      * specified.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceIDType priceIDType() {
         _initialize();
@@ -199,7 +205,7 @@ public class PriceIdentifier
      * An identifier of the type specified in the &lt;PriceIDType&gt; element. Mandatory in each occurrence of the
      * &lt;PriceIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -215,7 +221,7 @@ public class PriceIdentifier
      * element indicates a proprietary scheme, <i>eg</i> a publisher’s own identifier scheme. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

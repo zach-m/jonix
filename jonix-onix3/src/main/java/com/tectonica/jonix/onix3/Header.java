@@ -56,11 +56,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Header&gt; from the schema author:
+ * 
+ * <pre>
+ * Container for message metadata
+ * &#9679; Deprecated &lt;DefaultLanguageOfText&gt;, &lt;DefaultPriceType&gt; and &lt;DefaultCurrency&gt; at release 3.1
+ * &#9679; Modified cardinality of &lt;MessageNote&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header}</li>
@@ -210,7 +217,7 @@ public class Header implements OnixHeader, Serializable {
      * A group of data elements which together specify the sender of an ONIX for Books message. Mandatory in any ONIX
      * for Books message, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Sender sender() {
         _initialize();
@@ -224,7 +231,7 @@ public class Header implements OnixHeader, Serializable {
      * The date on which the message is sent. Optionally, the time may be added, using the 24-hour clock, with an
      * explicit indication of the time zone if required, in a format based on ISO 8601. Mandatory and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SentDateTime sentDateTime() {
         _initialize();
@@ -238,7 +245,7 @@ public class Header implements OnixHeader, Serializable {
      * A monotonic sequence number of the messages in a series sent between trading partners, to enable the receiver to
      * check against gaps and duplicates. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MessageNumber messageNumber() {
         _initialize();
@@ -252,7 +259,7 @@ public class Header implements OnixHeader, Serializable {
      * A number which distinguishes any repeat transmissions of a message. If this element is used, the original is
      * numbered 1 and repeats are numbered 2, 3 <i>etc</i>. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MessageRepeat messageRepeat() {
         _initialize();
@@ -270,7 +277,7 @@ public class Header implements OnixHeader, Serializable {
      * explicitly in Group&nbsp;P.10. It is strongly recommended that the language of the text should be specified in
      * the &lt;Language&gt; composite for each product.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultLanguageOfText defaultLanguageOfText() {
         _initialize();
@@ -288,7 +295,7 @@ public class Header implements OnixHeader, Serializable {
      * explicitly. It is strongly recommended that the price type should be specified in the &lt;Price&gt; composite for
      * each individual price.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultPriceType defaultPriceType() {
         _initialize();
@@ -306,7 +313,7 @@ public class Header implements OnixHeader, Serializable {
      * explicitly. It is strongly recommended that the Currency code should be specified in the &lt;Price&gt; composite
      * for each individual price.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultCurrencyCode defaultCurrencyCode() {
         _initialize();
@@ -320,7 +327,7 @@ public class Header implements OnixHeader, Serializable {
      * A group of data elements which together specify the addressee of an ONIX for Books message. Optional, and
      * repeatable if there are several addressees.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Addressee> addressees() {
         _initialize();
@@ -335,7 +342,7 @@ public class Header implements OnixHeader, Serializable {
      * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;MessageNote&gt;, but
      * must be included in each instance if &lt;MessageNote&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<MessageNote, String> messageNotes() {
         _initialize();

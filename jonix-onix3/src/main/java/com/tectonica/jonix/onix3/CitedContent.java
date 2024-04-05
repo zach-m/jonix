@@ -57,12 +57,21 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CitedContent&gt; from the schema author:
+ * 
+ * <pre>
+ * Third-party material which may be cited primarily for marketing and promotional purposes
+ * &#9679; Added &lt;SequenceNumber&gt; at release 3.1
+ * &#9679; Added &lt;Territory&gt;, &lt;ReviewRating&gt; at revision 3.0.3
+ * &#9679; Modified cardinality of &lt;ListName&gt;, &lt;SourceTitle&gt; at revision 3.0.2
+ * &#9679; Modified cardinality of &lt;CitationNote&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link CollateralDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent}</li>
@@ -209,7 +218,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the type of content which is being cited. Mandatory in each occurrence of the
      * &lt;CitedContent&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CitedContentType citedContentType() {
         _initialize();
@@ -223,7 +232,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together specify a ‘star rating’ awarded as part of a review of the
      * publication, used where &lt;CitedContentType&gt; indicates the cited content is a review. Not repeatable.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReviewRating reviewRating() {
         _initialize();
@@ -240,7 +249,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * attribute is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if
      * &lt;SourceTitle&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<SourceTitle, String> sourceTitles() {
         _initialize();
@@ -257,7 +266,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * &lt;SequenceNumber&gt; – though there is no requirement to number cited content where there is a single instance
      * of that type.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SequenceNumber sequenceNumber() {
         _initialize();
@@ -287,7 +296,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * without specific &lt;Territory&gt; composites are intended for use only where no appropriate targeted citation is
      * present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Territory territory() {
         _initialize();
@@ -301,7 +310,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the type of source from which the cited material originated, <i>eg</i> radio, TV.
      * Optional, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SourceType sourceType() {
         _initialize();
@@ -315,7 +324,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * The position that a product has reached on a bestseller list specified in &lt;ListName&gt;. Optional and
      * non-repeating. The &lt;ListName&gt; element must also be present if &lt;PositionOnList&gt; is included.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PositionOnList positionOnList() {
         _initialize();
@@ -329,7 +338,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the audience for which a piece of cited content is intended. Optional and
      * repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
@@ -345,7 +354,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * languages. The <i>language</i> attribute is optional for a single instance of &lt;ListName&gt;, but must be
      * included in each instance if &lt;ListName&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ListName, String> listNames() {
         _initialize();
@@ -361,7 +370,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;CitationNote&gt;, but
      * must be included in each instance if &lt;CitationNote&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<CitationNote, String> citationNotes() {
         _initialize();
@@ -377,7 +386,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i>
      * attribute.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ResourceLink, String> resourceLinks() {
         _initialize();
@@ -392,7 +401,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together specify a date associated with cited content,
      * <i>eg</i> date on which it was published or broadcast.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
         _initialize();

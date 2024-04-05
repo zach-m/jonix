@@ -65,11 +65,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PartNumber&gt; from the schema author:
+ * 
+ * <pre>
+ * Part of the title of a book indicating the part designation within the whole, eg 'Part 1', 'Volume 3'
+ * &#9679; Added language, textscript attributes at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleElement}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail} ⯈ {@link TitleElement} ⯈

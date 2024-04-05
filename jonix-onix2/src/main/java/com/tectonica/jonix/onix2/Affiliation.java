@@ -68,7 +68,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>

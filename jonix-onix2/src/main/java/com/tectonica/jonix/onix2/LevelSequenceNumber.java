@@ -68,7 +68,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Set}&gt;</li>
  * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link LevelSequenceNumber}</li>

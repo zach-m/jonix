@@ -63,11 +63,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContributorReference&gt; from the schema author:
+ * 
+ * <pre>
+ * Reference to a contributor participating in a promotional event
+ * &#9679; Added at revision 3.0.7
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link ContributorReference}</li>
@@ -182,7 +188,7 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
      * Mandatory in each instance of the &lt;ContributorReference&gt; composite, and may be repeated if the same person
      * or corporate body has more than one role in relation to the event.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles() {
         _initialize();
@@ -201,7 +207,7 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
      * mandatory within each instance of the &lt;ContributorReference&gt; composite, and is repeatable to specify name
      * identifiers of different types for the same person or organization name.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {
         _initialize();
@@ -217,7 +223,7 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
      * within &lt;PromotionalEvent&gt; should carry a &lt;SequenceNumber&gt;. The sequence is independent of the
      * sequence of contributors to the product specified in Groups&nbsp;P.5, P.7 or&nbsp;P.18.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SequenceNumber sequenceNumber() {
         _initialize();

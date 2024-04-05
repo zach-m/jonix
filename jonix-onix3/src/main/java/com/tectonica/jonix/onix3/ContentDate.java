@@ -54,13 +54,20 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContentDate&gt; from the schema author:
+ * 
+ * <pre>
+ * Date of the specified role relating to some aspect of an item of collateral
+ * &#9679; Removed &lt;DateFormat&gt; at release 3.1
+ * &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>
  * <li>&lt;{@link CitedContent}&gt;</li>
  * <li>&lt;{@link ResourceVersion}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link ContentDate}</li>
@@ -177,7 +184,7 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * An ONIX code indicating the significance of the date in relation to the text content. Mandatory in each
      * occurrence of the &lt;ContentDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ContentDateRole contentDateRole() {
         _initialize();
@@ -192,7 +199,7 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
      * then the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();

@@ -55,11 +55,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Funding&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of funding (eg of a grant, of sponsorship) for the publication or for the underlying research on which the publication is based
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Publisher}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Publisher} ⯈ {@link Funding}</li>
@@ -166,7 +172,7 @@ public class Funding implements OnixSuperComposite, Serializable {
      * &lt;FundingIdentifier&gt; composite must occur in each instance of the &lt;Funding&gt; composite. Repeatable when
      * the grant or award has multiple identifiers.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<FundingIdentifier, JonixFundingIdentifier, GrantIdentifierTypes>
         fundingIdentifiers() {

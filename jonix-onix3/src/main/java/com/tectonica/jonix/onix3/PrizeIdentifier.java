@@ -53,11 +53,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PrizeIdentifier&gt; from the schema author:
+ * 
+ * <pre>
+ * An identifier which uniquely identifies the prize, eg an ISNI or a proprietary identifier
+ * &#9679; Added at revision 3.1.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Prize}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize} ⯈ {@link PrizeIdentifier}</li>
@@ -178,7 +184,7 @@ public class PrizeIdentifier
      * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in
      * each occurrence of the &lt;PrizeIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PrizeIDType prizeIDType() {
         _initialize();
@@ -192,7 +198,7 @@ public class PrizeIdentifier
      * An identifier of the type specified in the &lt;PrizeIDType&gt; element. Mandatory in each occurrence of the
      * &lt;PrizeIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -207,7 +213,7 @@ public class PrizeIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the &lt;PrizeIDType&gt;
      * element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

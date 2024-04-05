@@ -71,7 +71,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link NotForSale}&gt;</li>
  * <li>&lt;{@link Publisher}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublisherName}</li>

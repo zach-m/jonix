@@ -70,11 +70,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CollectionElementLevel&gt; from the schema author:
+ * 
+ * <pre>
+ * Hierarchical level of collection title element to which an identifier applies
+ * &#9679; Added at release 3.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CollectionIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link CollectionIdentifier} ⯈

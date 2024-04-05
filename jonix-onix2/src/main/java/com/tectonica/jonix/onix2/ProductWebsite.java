@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductWebsite}</li>
@@ -176,7 +175,7 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
      * A URL for a website carrying additional information related to the product, which is available to be viewed for
      * promotional purposes. Mandatory in each occurrence of the &lt;ProductWebsite&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductWebsiteLink productWebsiteLink() {
         _initialize();
@@ -190,7 +189,7 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
      * An ONIX code which identifies the role or purpose of the website which is linked through
      * &lt;ProductWebsiteLink&gt;. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public WebsiteRole websiteRole() {
         _initialize();
@@ -204,7 +203,7 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
      * Free text describing the nature of the website which is linked through &lt;ProductWebsiteLink&gt;. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductWebsiteDescription productWebsiteDescription() {
         _initialize();

@@ -53,11 +53,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Velocity&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of the rate of stock depletion
+ * &#9679; Added at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link Velocity}</li>
@@ -169,7 +175,7 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
      * An ONIX code that specifies how the rate of stock depletion is measured. Mandatory within the &lt;Velocity&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public VelocityMetric velocityMetric() {
         _initialize();
@@ -183,7 +189,7 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
      * The stock depletion rate (as a number of copies, rounded to the nearest integer), measured according to the
      * metric in &lt;VelocityMetric&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Rate rate() {
         _initialize();
@@ -196,7 +202,7 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
      * <p>
      * An ONIX code which specifies the precision of the rate of stock depletion. Optional, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Proximity proximity() {
         _initialize();

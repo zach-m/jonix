@@ -60,11 +60,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SenderName&gt; from the schema author:
+ * 
+ * <pre>
+ * Organization name for the sender of the ONIX message
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Sender}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link Sender} ⯈ {@link SenderName}</li>

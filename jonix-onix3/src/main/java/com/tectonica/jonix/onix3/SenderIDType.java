@@ -64,11 +64,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SenderIDType&gt; from the schema author:
+ * 
+ * <pre>
+ * Type of identifier for the sender of the ONIX message
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SenderIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier} ⯈ {@link SenderIDType}</li>

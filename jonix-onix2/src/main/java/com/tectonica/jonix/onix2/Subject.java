@@ -58,7 +58,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Product}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Subject}</li>
@@ -197,7 +196,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * whom product information is sent. Scheme code 24, with a name in the &lt;SubjectSchemeName&gt; element, may be
      * used to identify a proprietary scheme, <em>eg</em> one used by a bibliographic agency or wholesaler.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SubjectSchemeIdentifier subjectSchemeIdentifier() {
         _initialize();
@@ -212,7 +211,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the
      * &lt;Subject&gt; composite. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SubjectCode subjectCode() {
         _initialize();
@@ -226,7 +225,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * A name identifying a proprietary subject scheme when &lt;SubjectSchemeIdentifier&gt; is coded “24”. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SubjectSchemeName subjectSchemeName() {
         _initialize();
@@ -240,7 +239,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * A number which identifies a version or edition of the subject scheme specified in the associated
      * &lt;SubjectSchemeIdentifier&gt; element. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SubjectSchemeVersion subjectSchemeVersion() {
         _initialize();
@@ -257,7 +256,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;Subject&gt; composite.
      * Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SubjectHeadingText subjectHeadingText() {
         _initialize();

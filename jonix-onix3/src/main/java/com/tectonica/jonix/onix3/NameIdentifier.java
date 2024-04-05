@@ -55,6 +55,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NameIdentifier&gt; from the schema author:
+ * 
+ * <pre>
+ * Identifier for the name of a person, persona or corporate identity, eg for the name of a contributor, or a name as subject
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AlternativeName}&gt;</li>
@@ -62,7 +68,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈
@@ -196,7 +201,7 @@ public class NameIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;NameIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NameIDType nameIDType() {
         _initialize();
@@ -210,7 +215,7 @@ public class NameIdentifier
      * A code value taken from the scheme specified in the &lt;NameIDType&gt; element. Mandatory in each occurrence of
      * the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -225,7 +230,7 @@ public class NameIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the &lt;NameIDType&gt;
      * element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

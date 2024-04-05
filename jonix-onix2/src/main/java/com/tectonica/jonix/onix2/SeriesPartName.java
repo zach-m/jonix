@@ -39,7 +39,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link SubSeriesRecord} ⯈ {@link SeriesPartName}</li>

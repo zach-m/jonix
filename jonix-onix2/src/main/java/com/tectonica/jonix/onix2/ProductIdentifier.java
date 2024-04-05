@@ -80,7 +80,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link RelatedProduct}&gt;</li>
  * <li>&lt;{@link Set}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductIdentifier}</li>
@@ -205,7 +204,7 @@ public class ProductIdentifier
      * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductIDType productIDType() {
         _initialize();
@@ -219,7 +218,7 @@ public class ProductIdentifier
      * An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in each occurrence of the
      * &lt;ProductIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -234,7 +233,7 @@ public class ProductIdentifier
      * &lt;ProductIDType&gt; element indicates a proprietary scheme, <em>eg</em> a wholesaler’s own code. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

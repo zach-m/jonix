@@ -54,11 +54,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CopyrightOwnerIdentifier&gt; from the schema author:
+ * 
+ * <pre>
+ * Identifier for the copyright or neighbouring rightsholder
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CopyrightOwner}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CopyrightStatement} ⯈
@@ -173,7 +178,7 @@ public class CopyrightOwnerIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CopyrightOwnerIDType copyrightOwnerIDType() {
         _initialize();
@@ -187,7 +192,7 @@ public class CopyrightOwnerIdentifier
      * A code value taken from the scheme specified in the &lt;CopyrightOwnerIDType&gt; element. Mandatory in each
      * occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -202,7 +207,7 @@ public class CopyrightOwnerIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the
      * &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

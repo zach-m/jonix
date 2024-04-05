@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Language}</li>
@@ -176,7 +175,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * An ONIX code indicating the “role” of a language in the context of the ONIX record. Mandatory in each occurrence
      * of the &lt;Language&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public LanguageRole languageRole() {
         _initialize();
@@ -190,7 +189,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public LanguageCode languageCode() {
         _initialize();
@@ -204,7 +203,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * A code identifying the country when this specifies a variant of the language, <em>eg</em> US English. Optional
      * and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CountryCode countryCode() {
         _initialize();

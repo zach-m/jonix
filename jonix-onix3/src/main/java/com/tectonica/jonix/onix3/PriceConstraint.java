@@ -61,11 +61,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceConstraint&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a constraint on use of a product when purchased at a specific price
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceConstraint}</li>
@@ -178,7 +184,7 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
      * An ONIX code specifying a type of commercial term or constraint forming part of the commercial offer for a
      * digital product. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceConstraintType priceConstraintType() {
         _initialize();
@@ -193,7 +199,7 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
      * permitted with limit, prohibited. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceConstraintStatus priceConstraintStatus() {
         _initialize();
@@ -208,7 +214,7 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together specify a quantitative limit on a particular
      * type of contractual term or constraint.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<PriceConstraintLimit, JonixPriceConstraintLimit> priceConstraintLimits() {
         _initialize();

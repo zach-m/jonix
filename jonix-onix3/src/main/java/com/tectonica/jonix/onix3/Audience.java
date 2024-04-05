@@ -54,11 +54,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Audience&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a target audience or readership of a product
+ * &#9679; Added &lt;MainAudience/&gt; at release 3.1
+ * &#9679; Added &lt;AudienceHeadingText&gt; at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Audience}</li>
@@ -176,7 +183,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * An ONIX code which identifies the scheme from which the code in &lt;AudienceCodeValue&gt; is taken. Mandatory in
      * each occurrence of the &lt;Audience&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AudienceCodeType audienceCodeType() {
         _initialize();
@@ -191,7 +198,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * &lt;AudienceHeadingText&gt; or both must be present in each occurrence of the &lt;Audience&gt; composite.
      * Non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AudienceCodeValue audienceCodeValue() {
         _initialize();
@@ -208,7 +215,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * &lt;MainAudience/&gt; flag, so long as there is only one main audience <em>per scheme</em> (<i>ie</i> per value
      * of &lt;AudienceCodeType&gt;). Optional and non-repeating in each occurrence of the &lt;Audience&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MainAudience mainAudience() {
         _initialize();
@@ -226,7 +233,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * A name which identifies a proprietary audience scheme when the code in &lt;AudienceCodeType&gt; indicates a
      * proprietary scheme, <i>eg</i> a vendor’s own coding scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AudienceCodeTypeName audienceCodeTypeName() {
         _initialize();
@@ -246,7 +253,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * a single instance of &lt;AudienceHeadingText&gt;, but must be included in each instance if
      * &lt;AudienceHeadingText&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<AudienceHeadingText, String> audienceHeadingTexts() {
         _initialize();

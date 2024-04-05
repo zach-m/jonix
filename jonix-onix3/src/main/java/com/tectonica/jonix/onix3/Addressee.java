@@ -54,11 +54,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Addressee&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of the intended recipient organization(s) for the ONIX message
+ * &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link Addressee}</li>
@@ -178,7 +184,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * repeatable if more than one identifier of different types for the same addressee is sent; but <em>either</em> an
      * &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt; <em>must</em> be included.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes>
         addresseeIdentifiers() {
@@ -194,7 +200,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * addressee. Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element <em>or</em> a
      * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AddresseeName addresseeName() {
         _initialize();
@@ -208,7 +214,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * Free text giving the name, department, <i>etc</i> for a contact person in the addressee organization to whom the
      * message is to be directed. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ContactName contactName() {
         _initialize();
@@ -222,7 +228,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * A telephone number of the contact person in the addressee organization, wherever possible including the plus sign
      * and the international dialing code. Optional, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TelephoneNumber telephoneNumber() {
         _initialize();
@@ -236,7 +242,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * A text field giving the e‑mail address for a contact person in the addressee organization. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EmailAddress emailAddress() {
         _initialize();

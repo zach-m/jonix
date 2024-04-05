@@ -69,11 +69,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;DefaultCurrencyCode&gt; from the schema author:
+ * 
+ * <pre>
+ * Default currency in which a price is denominated, when an explicit currency is omitted from any prices in the message. Not recommended for use
+ * &#9679; Deprecated from release 3.1 - use explicit &lt;CurrencyCode&gt; instead
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link DefaultCurrencyCode}</li>

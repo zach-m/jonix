@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link TextItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link TextItemIdentifier}</li>
@@ -178,7 +177,7 @@ public class TextItemIdentifier
      * An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt; is taken. Mandatory in each
      * occurrence of the &lt;TextItemIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TextItemIDType textItemIDType() {
         _initialize();
@@ -192,7 +191,7 @@ public class TextItemIdentifier
      * An identifier of the type specified in &lt;TextItemIDType&gt;. Mandatory in each occurrence of the
      * &lt;TextItemIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -206,7 +205,7 @@ public class TextItemIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in &lt;TextItemIDType&gt;
      * indicates a proprietary scheme, <em>eg</em> a publisher’s own code. Optional and non-repeating
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

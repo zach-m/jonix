@@ -37,6 +37,14 @@ import java.util.function.Consumer;
  */
 
 /**
+ * Technical notes about &lt;EpubLicenseWithDateType&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of an end user license agreement for a digital product
+ * &#9679; Extends complexType &lt;EpubLicenseType&gt;
+ * &#9679; Added &lt;EpubLicenseDate&gt; at release 3.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
@@ -44,7 +52,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link TextContent}&gt;</li>
  * <li>&lt;{@link ResourceVersion}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicenseWithDateType}</li>
@@ -163,7 +170,7 @@ public class EpubLicenseWithDateType implements OnixSuperComposite, Serializable
     private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames = ListOfOnixElement.empty();
 
     /**
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<EpubLicenseName, String> epubLicenseNames() {
         _initialize();
@@ -175,7 +182,7 @@ public class EpubLicenseWithDateType implements OnixSuperComposite, Serializable
             JPU.emptyListOfOnixDataCompositeWithKey(EpubLicenseExpression.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes>
         epubLicenseExpressions() {
@@ -187,7 +194,7 @@ public class EpubLicenseWithDateType implements OnixSuperComposite, Serializable
         EpublicationLicenseDateRoles> epubLicenseDates = JPU.emptyListOfOnixDataCompositeWithKey(EpubLicenseDate.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<EpubLicenseDate, JonixEpubLicenseDate, EpublicationLicenseDateRoles>
         epubLicenseDates() {

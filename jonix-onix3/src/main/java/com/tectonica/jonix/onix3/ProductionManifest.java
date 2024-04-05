@@ -54,11 +54,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductionManifest&gt; from the schema author:
+ * 
+ * <pre>
+ * Container for a file manifest and manufacturing specification for a product or product part
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductionDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest}</li>
@@ -198,7 +204,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * <p>
      * The composite is mandatory and is not repeatable.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public BodyManifest bodyManifest() {
         _initialize();
@@ -234,7 +240,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </p>
      * <p>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CoverManifest coverManifest() {
         _initialize();
@@ -252,7 +258,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * omitted if there are no product parts. Where multiple product identifiers are provided in any one occurrence of
      * the &lt;ProductionManifest&gt; composite, they must all identify the same product part.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -287,7 +293,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * The composite is optional – it may be omitted where the Product or Product part has no inserts – and is
      * repeatable to provide manifest details for multiple inserts.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<InsertManifest> insertManifests() {
         _initialize();
@@ -311,7 +317,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * cover, body and insert manifests to provide a positive indication that a vendor-specific supplement has no
      * ‘generic’ alternative.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SupplementManifest> supplementManifests() {
         _initialize();

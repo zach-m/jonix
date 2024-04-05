@@ -61,12 +61,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NoResource&gt; from the schema author:
+ * 
+ * <pre>
+ * Positive indication that there is no generic equivalent to a vendor-specific resource required to manufacture or package a product cover, body or insert
+ * &#9679; XML empty element - must not contain data
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverResource}&gt;</li>
  * <li>&lt;{@link InsertResource}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈

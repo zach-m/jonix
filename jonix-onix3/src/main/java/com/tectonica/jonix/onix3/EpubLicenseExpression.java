@@ -53,12 +53,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EpubLicenseExpression&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a particular expression of an end user license
+ * &#9679; Added at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubLicenseType}&gt;</li>
  * <li>&lt;{@link EpubLicenseWithDateType}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link EpubLicenseType} ⯈
@@ -191,7 +197,7 @@ public class EpubLicenseExpression
      * &lt;EpubLicenseExpressionLink&gt; element. Mandatory within the &lt;EpubLicenseExpression&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EpubLicenseExpressionType epubLicenseExpressionType() {
         _initialize();
@@ -205,7 +211,7 @@ public class EpubLicenseExpression
      * The URI for the license expression. Mandatory in each instance of the &lt;EpubLicenseExpression&gt; composite,
      * and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EpubLicenseExpressionLink epubLicenseExpressionLink() {
         _initialize();
@@ -221,7 +227,7 @@ public class EpubLicenseExpression
      * encoding scheme. Optional and non-repeating, and must be included when (and only when) the
      * &lt;EpubLicenseExpressionType&gt; element indicates the expression is encoded in a proprietary way.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName() {
         _initialize();

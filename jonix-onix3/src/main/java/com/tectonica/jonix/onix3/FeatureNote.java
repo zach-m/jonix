@@ -68,12 +68,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;FeatureNote&gt; from the schema author:
+ * 
+ * <pre>
+ * Description of a feature of a resource
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ResourceVersionFeature}&gt;</li>
  * <li>&lt;{@link ResourceFeature}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈

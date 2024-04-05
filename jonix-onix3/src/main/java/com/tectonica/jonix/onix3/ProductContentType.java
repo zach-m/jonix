@@ -65,12 +65,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductContentType&gt; from the schema author:
+ * 
+ * <pre>
+ * A type of content included in the product (eg text, audio, musical notation). Repeatable if there are multiple content types. The primary (or only) content type should be specified in &lt;PrimaryContentType&gt;
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ProductPart}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductContentType}</li>

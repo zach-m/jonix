@@ -59,11 +59,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceVersion&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a specific version of a supporting resource used for marketing and promotional purposes, eg when the resource is an audio extract, the mp3 version of that extract, and when the resource is an image, the 200-pixel JPEG version of that image
+ * &#9679; Added &lt;EpubUsageConstraint&gt; and &lt;EpubLicense&gt; at revision 3.1.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
@@ -192,7 +198,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the form of a version of a supporting resource. Mandatory in each occurrence of the
      * &lt;ResourceVersion&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ResourceForm resourceForm() {
         _initialize();
@@ -208,7 +214,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * supporting resource is available in multiple parallel languages. Where multiple languages are used, all repeats
      * must carry the <i>language</i> attribute.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<ResourceLink, String> resourceLinks() {
         _initialize();
@@ -226,7 +232,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * resource version could be adequately described without specifying some of its features. Repeatable in order to
      * specify multiple features of the version of the resource.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public
         ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes>
@@ -243,7 +249,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together describe a usage constraint specific to a particular version of
      * the resource offered. Repeatable in order to describe multiple constraints on usage.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<EpubUsageConstraint> epubUsageConstraints() {
         _initialize();
@@ -254,7 +260,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         JPU.emptyListOfOnixComposite(EpubLicenseWithDateType.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<EpubLicenseWithDateType> epubLicenses() {
         _initialize();
@@ -270,7 +276,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * <i>eg</i> the date until which the resource version will be available for download. Repeatable to specify
      * different dates with their various roles.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
         _initialize();

@@ -57,11 +57,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Supplier&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a supplier of the product, eg a distributor or wholesaler which supplies to retailers (or for digital products, a retail platform)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Supplier}</li>
@@ -188,7 +193,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * exclusive distributor, <i>etc</i>. Mandatory in each occurrence of the &lt;Supplier&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SupplierRole supplierRole() {
         _initialize();
@@ -206,7 +211,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * data elements. Optional, but each occurrence of the &lt;Supplier&gt; composite must carry <em>either</em> at
      * least one supplier identifier, <em>or</em> a &lt;SupplierName&gt;, <em>or</em> both.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes>
         supplierIdentifiers() {
@@ -221,7 +226,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * The name of a supply source from which the product may be ordered by a trade customer. Optional and
      * non-repeating; required if no supplier identifier is sent.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SupplierName supplierName() {
         _initialize();
@@ -236,7 +241,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * repeatable. Use to provide contact details for the organization as a whole, but prefer &lt;SupplyContact&gt; for
      * individual functions or contacts within the organization.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
         _initialize();
@@ -251,7 +256,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * repeatable. Use to provide contact details for the organization as a whole, but prefer &lt;SupplyContact&gt; for
      * individual functions or contacts within the organization.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
         _initialize();
@@ -266,7 +271,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * repeatable. Use to provide contact details for the organization as a whole, but prefer &lt;SupplyContact&gt; for
      * individual functions or contacts within the organization.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
         _initialize();
@@ -281,7 +286,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * the organization identified in an occurrence of the &lt;Supplier&gt; composite. Repeatable in order to provide
      * links to multiple websites.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();

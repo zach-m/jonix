@@ -54,11 +54,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceFeature&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a particular feature of all versions of a supporting resource used for marketing and promotional purposes
+ * &#9679; Modified cardinality of &lt;FeatureNote&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
@@ -176,7 +182,7 @@ public class ResourceFeature
      * An ONIX code which specifies the feature described by an instance of the &lt;ResourceFeature&gt; composite.
      * Mandatory in each occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ResourceFeatureType resourceFeatureType() {
         _initialize();
@@ -191,7 +197,7 @@ public class ResourceFeature
      * &lt;ResourceFeatureType&gt;, since some features may not require an accompanying value, while others may require
      * free text in &lt;FeatureNote&gt;; and others may have both code and free text. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public FeatureValue featureValue() {
         _initialize();
@@ -208,7 +214,7 @@ public class ResourceFeature
      * a single instance of &lt;FeatureNote&gt;, but must be included in each instance if &lt;FeatureNote&gt; is
      * repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<FeatureNote, String> featureNotes() {
         _initialize();

@@ -64,6 +64,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContentAudience&gt; from the schema author:
+ * 
+ * <pre>
+ * Target audience of an item of marketing collateral (eg for consumers, for the booktrade etc)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>
@@ -71,7 +77,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link CitedContent}&gt;</li>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈

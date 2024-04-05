@@ -70,6 +70,13 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Date&gt; from the schema author:
+ * 
+ * <pre>
+ * Date on which a particular event of the type specified in the preceding date role happens
+ * &#9679; Added dateformat attribute at revision 3.0 (2010)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDate}&gt;</li>
@@ -83,7 +90,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link OccurrenceDate}&gt;</li>
  * <li>&lt;{@link EpubLicenseDate}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingDate} ⯈ {@link Date}</li>

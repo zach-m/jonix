@@ -52,11 +52,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;TimeRun&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of the start and end times of an audiovisual content item
+ * &#9679; Added at revision 3.0.5
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AVItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈ {@link TimeRun}</li>
@@ -165,7 +171,7 @@ public class TimeRun implements OnixDataComposite<JonixTimeRun>, Serializable {
      * continuous sequence of audiovisual content. Mandatory in each occurrence of the &lt;TimeRun&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public StartTime startTime() {
         _initialize();
@@ -180,7 +186,7 @@ public class TimeRun implements OnixDataComposite<JonixTimeRun>, Serializable {
      * sequence of audio or audiovisual content. Optional in each occurrence of the &lt;TimeRun&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EndTime endTime() {
         _initialize();

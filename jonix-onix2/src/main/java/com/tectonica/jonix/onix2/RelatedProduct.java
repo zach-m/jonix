@@ -74,7 +74,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link RelatedProduct}</li>
@@ -270,7 +269,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the nature of the relationship between two products, <em>eg</em> “replaced-by”.
      * Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public RelationCode relationCode() {
         _initialize();
@@ -285,7 +284,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * composite provides a more general method of handling identifiers, and is to be preferred. The &lt;ISBN&gt;
      * element is on no account to be used to carry a 13-digit ISBN.</strong>
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ISBN isbn() {
         _initialize();
@@ -299,7 +298,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * EAN.UCC-13 number of the related product. Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt;
      * composite provides a more general method of handling identifiers, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EAN13 ean13() {
         _initialize();
@@ -313,7 +312,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates the primary form of the product. Optional and non-repeating; required in any
      * occurrence of the &lt;RelatedProduct&gt; composite that does not carry a product identifier.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductForm productForm() {
         _initialize();
@@ -326,7 +325,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * <p>
      * An ONIX code which indicates the type of packaging used for the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductPackaging productPackaging() {
         _initialize();
@@ -341,7 +340,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * include the number and type of pieces contained in a multiple product, and/or a more detailed specification of
      * the product form. The field is optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductFormDescription productFormDescription() {
         _initialize();
@@ -357,7 +356,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * different forms (<em>eg</em> books and audio cassettes), the &lt;ContainedItem&gt; composite should be used – see
      * below. This field is optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NumberOfPieces numberOfPieces() {
         _initialize();
@@ -371,7 +370,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates a trade category which is somewhat related to but not properly an attribute of
      * product form. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TradeCategory tradeCategory() {
         _initialize();
@@ -385,7 +384,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * An ONIX code identifying the type of an epublication. This element is mandatory if and only if the
      * &lt;ProductForm&gt; code for the product is DG.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubType epubType() {
         _initialize();
@@ -399,7 +398,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * A version number which applies to a specific epublication type. Optional and non-repeating, and can occur only if
      * the &lt;EpubType&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubTypeVersion epubTypeVersion() {
         _initialize();
@@ -413,7 +412,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * A free text description of an epublication type. Optional and non-repeating, and can occur only if the
      * &lt;EpubType&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubTypeDescription epubTypeDescription() {
         _initialize();
@@ -428,7 +427,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * if the &lt;EpubType&gt; field is present. Note that where the epublication type is wholly defined by the delivery
      * format, this element effectively duplicates the &lt;EpubType&gt; field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubFormat epubFormat() {
         _initialize();
@@ -442,7 +441,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * A version number which applies to an epublication format. Optional and non-repeating, and can occur only if the
      * &lt;EpubFormat&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubFormatVersion epubFormatVersion() {
         _initialize();
@@ -456,7 +455,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * A free text description of an epublication format. Optional and non-repeating, and can occur only if the
      * &lt;EpubType&gt; field is present, but it does not require the presence of the &lt;EpubFormat&gt; field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubFormatDescription epubFormatDescription() {
         _initialize();
@@ -470,7 +469,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * A free text description of features of a product which are specific to its appearance as a particular
      * epublication type. Optional and non-repeatable, and can occur only if the &lt;EpubType&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubTypeNote epubTypeNote() {
         _initialize();
@@ -487,7 +486,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * defining additional data elements. <strong>See notes on the &lt;ProductIdentifier&gt; composite in
      * section&nbsp;PR.2 for details of the handling of ISBN-13.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -502,7 +501,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together identify and provide pointers to a website which
      * is relevant to the product identified in an occurrence of the &lt;RelatedProduct&gt; composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();
@@ -516,7 +515,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * <p>
      * An ONIX code which provides added detail of the medium and/or format of the product. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
         _initialize();
@@ -532,7 +531,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
      * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
         productFormFeatures() {
@@ -550,7 +549,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * element &lt;ProductFormDetail&gt;, and the code list will not be further developed. The field is retained only
      * for purposes of upwards compatibility, and its use is now to be deprecated.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails() {
         _initialize();
@@ -567,7 +566,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * where content is delivered in the form of a digital or analogue recording. It is not expected to be used for
      * books.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
@@ -583,7 +582,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * fields. Each occurrence of the composite must carry a publishing role code and either a name code or a name or
      * both. <strong>Please see Group&nbsp;PR.19 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Publisher> publishers() {
         _initialize();

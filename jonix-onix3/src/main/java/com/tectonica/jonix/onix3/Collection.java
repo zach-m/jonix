@@ -63,11 +63,20 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Collection&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a collection (eg a set or series, or a curated grouping of products)
+ * &#9679; Added &lt;CollectionFrequency&gt; at release 3.1
+ * &#9679; Added &lt;NoContributor&gt; (in gp.authorship) at revision 3.0.4
+ * &#9679; Added &lt;CollectionSequence&gt; and &lt;ContributorStatement&gt; (in gp.authorship) at revision 3.0.1
+ * &#9679; Modified cardinality of &lt;ContributorStatement&gt; at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection}</li>
@@ -201,7 +210,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the type of a collection: publisher collection, ascribed collection, or unspecified.
      * Mandatory in each occurrence of the &lt;Collection&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CollectionType collectionType() {
         _initialize();
@@ -218,7 +227,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * (<i>eg</i> Series editors) to be identified at collection level. In many countries, including the UK, USA, Canada
      * and Spain, the required practice is to identify all contributors at product level in Group&nbsp;P.7.</strong>
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
@@ -232,7 +241,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * An ONIX code specifying the approximate or expected publication frequency for addition of new products to the
      * collection. Optional, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CollectionFrequency collectionFrequency() {
         _initialize();
@@ -247,7 +256,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * identified and described by a supply chain organization other than the publisher), this element may be used to
      * carry the name of the organization responsible. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SourceName sourceName() {
         _initialize();
@@ -266,7 +275,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * practice requires contributors to the collection to be identified at collection level.</strong> It should not be
      * sent in a context where collection contributors are normally identified in Group&nbsp;P.6.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoContributor noContributor() {
         _initialize();
@@ -287,7 +296,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * composite is optional, and may only repeat if two or more identifiers of different types are sent for the same
      * collection. It is not permissible to have two identifiers of the same type.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, CollectionIdentifierTypes>
         collectionIdentifiers() {
@@ -305,7 +314,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * collection. Different ordinal positions may be specified using separate repeats of the composite – for example, a
      * product may be published first while also being third in narrative order within a collection.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence, CollectionSequenceTypes>
         collectionSequences() {
@@ -322,7 +331,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * part of the product title in P.6, in which case it should not be repeated in&nbsp;P.5. The composite is
      * repeatable with different title types.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<TitleDetail> titleDetails() {
         _initialize();
@@ -349,7 +358,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * national practice requires contributors to the collection to be identified at collection level.</strong> It
      * should not be sent in a context where collection contributors are normally identified in Group&nbsp;P.6.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();

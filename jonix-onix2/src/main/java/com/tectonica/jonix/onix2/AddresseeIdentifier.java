@@ -59,7 +59,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link AddresseeIdentifier}</li>
@@ -180,7 +179,7 @@ public class AddresseeIdentifier
      * An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken.
      * Mandatory in any occurrence of the &lt;AddresseeIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AddresseeIDType addresseeIDType() {
         _initialize();
@@ -194,7 +193,7 @@ public class AddresseeIdentifier
      * An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in any occurrence of the
      * &lt;AddresseeIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -211,7 +210,7 @@ public class AddresseeIdentifier
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

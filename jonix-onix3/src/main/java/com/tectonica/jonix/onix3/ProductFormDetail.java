@@ -64,6 +64,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductFormDetail&gt; from the schema author:
+ * 
+ * <pre>
+ * Additional detail of the digital or physical nature of the product and its features, in addition to the Product form
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
@@ -71,7 +77,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SupplementManifest}&gt;</li>
  * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormDetail}</li>

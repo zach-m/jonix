@@ -65,12 +65,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EpubLicenseName&gt; from the schema author:
+ * 
+ * <pre>
+ * Name or title of an end user license agreement
+ * &#9679; Added at revision 3.0.2
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubLicenseType}&gt;</li>
  * <li>&lt;{@link EpubLicenseWithDateType}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link EpubLicenseType} ⯈

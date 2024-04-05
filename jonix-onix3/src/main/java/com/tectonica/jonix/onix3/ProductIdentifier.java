@@ -73,6 +73,12 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductIdentifier&gt; from the schema author:
+ * 
+ * <pre>
+ * An identifier which uniquely identifies the product, eg an ISBN, GTIN etc
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
@@ -85,7 +91,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SalesRights}&gt;</li>
  * <li>&lt;{@link PriceCondition}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductIdentifier}</li>
@@ -211,7 +216,7 @@ public class ProductIdentifier
      * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;ProductIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductIDType productIDType() {
         _initialize();
@@ -225,7 +230,7 @@ public class ProductIdentifier
      * An identifier of the type specified in the &lt;ProductIDType&gt; element. Mandatory in each occurrence of the
      * &lt;ProductIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -240,7 +245,7 @@ public class ProductIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the &lt;ProductIDType&gt;
      * element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

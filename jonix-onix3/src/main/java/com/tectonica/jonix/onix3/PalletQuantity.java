@@ -60,11 +60,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PalletQuantity&gt; from the schema author:
+ * 
+ * <pre>
+ * The quantity on each pallet currently held in stock by the supplier
+ * &#9679; Added at revision 3.0.5
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link PalletQuantity}</li>

@@ -54,11 +54,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AddresseeIdentifier&gt; from the schema author:
+ * 
+ * <pre>
+ * An identifier for an intended recipient organization
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Addressee}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeIdentifier}</li>
@@ -170,7 +175,7 @@ public class AddresseeIdentifier
      * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in
      * each occurrence of the &lt;AddresseeIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AddresseeIDType addresseeIDType() {
         _initialize();
@@ -184,7 +189,7 @@ public class AddresseeIdentifier
      * An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in each occurrence of the
      * &lt;AddresseeIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -199,7 +204,7 @@ public class AddresseeIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the
      * &lt;AddresseeIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

@@ -56,13 +56,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EventSponsor&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a sponsoring organization linked to an event
+ * &#9679; Added at revision 3.0.3
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Event}&gt;</li>
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventSponsor}</li>
@@ -179,7 +185,7 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together carry a coded identifier for an organizer or
      * sponsor of an event.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<EventSponsorIdentifier, JonixEventSponsorIdentifier, NameIdentifierTypes>
         eventSponsorIdentifiers() {
@@ -195,7 +201,7 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
      * one of &lt;PersonName&gt; or &lt;CorporateName&gt; can be sent in each occurrence of the &lt;EventSponsor&gt;
      * composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PersonName personName() {
         _initialize();
@@ -210,7 +216,7 @@ public class EventSponsor implements OnixSuperComposite, Serializable {
      * non-repeating. Only one of &lt;PersonName&gt; or &lt;CorporateName&gt; can be sent in each occurrence of the
      * &lt;EventSponsor&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CorporateName corporateName() {
         _initialize();

@@ -55,11 +55,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;MarketDate&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a date associated with the publishing status of the product within a market
+ * &#9679; Removed &lt;DateFormat&gt; at release 3.1
+ * &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link MarketDate}</li>
@@ -165,7 +172,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MarketDateRole marketDateRole() {
         _initialize();
@@ -180,7 +187,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing,
      * then the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();

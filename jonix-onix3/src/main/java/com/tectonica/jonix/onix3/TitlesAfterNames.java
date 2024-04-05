@@ -65,13 +65,20 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;TitlesAfterNames&gt; from the schema author:
+ * 
+ * <pre>
+ * Part of a structured name (of a person or persona) - titles after the names, eg 'Duke of Edinburgh'
+ * &#9679; Added language attribute at revision 3.0.2
+ * &#9679; Added collationkey, textscript attributes at revision 3.0.1
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AlternativeName}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈

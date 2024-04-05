@@ -67,11 +67,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductFormFeatureDescription&gt; from the schema author:
+ * 
+ * <pre>
+ * Textual description of a product form feature, used when &lt;ProductFormFeatureValue&gt; is not adequate
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductFormFeature}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature} ⯈

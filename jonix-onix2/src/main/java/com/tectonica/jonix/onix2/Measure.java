@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Measure}</li>
@@ -176,7 +175,7 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * An ONIX code indicating the dimension which is specified by an occurrence of the measure composite. Mandatory in
      * each occurrence of the &lt;Measure&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MeasureTypeCode measureTypeCode() {
         _initialize();
@@ -190,7 +189,7 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * The number which represents the dimension specified in &lt;MeasureTypeCode&gt; in the measure units specified in
      * &lt;MeasureUnitCode&gt;. Mandatory in each occurrence of the &lt;Measure&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Measurement measurement() {
         _initialize();
@@ -205,7 +204,7 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * &lt;Measure&gt; composite, and non-repeating. This element must follow the dimension to which the measure unit
      * applies. See example below.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MeasureUnitCode measureUnitCode() {
         _initialize();

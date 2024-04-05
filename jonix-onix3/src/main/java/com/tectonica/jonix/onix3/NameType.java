@@ -70,7 +70,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈

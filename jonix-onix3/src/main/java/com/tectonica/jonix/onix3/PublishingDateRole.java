@@ -69,11 +69,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PublishingDateRole&gt; from the schema author:
+ * 
+ * <pre>
+ * Type or role of the specified date relating to some aspect of the product lifecycle
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDate}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingDate} ⯈ {@link PublishingDateRole}</li>

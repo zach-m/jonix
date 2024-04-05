@@ -62,7 +62,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Complexity}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Complexity} ⯈ {@link ComplexityCode}</li>

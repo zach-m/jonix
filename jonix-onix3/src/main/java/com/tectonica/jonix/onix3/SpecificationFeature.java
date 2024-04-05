@@ -55,13 +55,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SpecificationFeature&gt; from the schema author:
+ * 
+ * <pre>
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverManifest}&gt;</li>
  * <li>&lt;{@link BodyManifest}&gt;</li>
  * <li>&lt;{@link InsertManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -187,7 +192,7 @@ public class SpecificationFeature
      * An ONIX code which specifies the feature described by an instance of the &lt;SpecificationFeature&gt; composite,
      * <i>eg</i> paper color for the body. Mandatory in each occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SpecificationFeatureType specificationFeatureType() {
         _initialize();
@@ -203,7 +208,7 @@ public class SpecificationFeature
      * while others may require free text in &lt;SpecificationFeatureDescription&gt; and some may have both controlled
      * value and free text. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SpecificationFeatureValue specificationFeatureValue() {
         _initialize();
@@ -221,7 +226,7 @@ public class SpecificationFeature
      * <i>language</i> attribute is optional for a single instance of &lt;SpecificationFeatureDescription&gt;, but must
      * be included in each instance if &lt;SpecificationFeatureDescription&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<SpecificationFeatureDescription, String> specificationFeatureDescriptions() {
         _initialize();

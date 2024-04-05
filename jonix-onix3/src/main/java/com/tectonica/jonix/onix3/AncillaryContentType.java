@@ -64,11 +64,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AncillaryContentType&gt; from the schema author:
+ * 
+ * <pre>
+ * Type of ancillary content of a product, eg halftones, charts and graphs, glossary, bibliography
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AncillaryContent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link AncillaryContent} ⯈ {@link AncillaryContentType}</li>

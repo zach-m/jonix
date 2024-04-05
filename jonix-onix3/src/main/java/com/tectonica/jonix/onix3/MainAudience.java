@@ -62,11 +62,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;MainAudience&gt; from the schema author:
+ * 
+ * <pre>
+ * Flag to indicate the primary audience (within a particular audience scheme), used when the product has more than one audience code from that audience scheme
+ * &#9679; Added at release 3.1
+ * &#9679; XML empty element - must not contain data
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Audience}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Audience} ⯈ {@link MainAudience}</li>

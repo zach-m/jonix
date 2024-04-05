@@ -59,11 +59,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Market&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a 'market' or distribution territory, primarily its geographical extent but any sales restrictions applicable within that area
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductSupply}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link Market}</li>
@@ -173,7 +178,7 @@ public class Market implements OnixSuperComposite, Serializable {
      * For valid combinations of &lt;CountriesIncluded&gt;, &lt;RegionsIncluded&gt; <i>etc</i> within &lt;Territory&gt;,
      * see the notes describing the use of &lt;Territory&gt; within Group&nbsp;P.21.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Territory territory() {
         _initialize();
@@ -188,7 +193,7 @@ public class Market implements OnixSuperComposite, Serializable {
      * A group of data elements which together identify a non-territorial sales restriction which applies within a
      * geographical market. Optional, and repeatable if more than a single restriction applies.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesRestriction> salesRestrictions() {
         _initialize();

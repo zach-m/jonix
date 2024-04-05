@@ -62,11 +62,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;BodyResource&gt; from the schema author:
+ * 
+ * <pre>
+ * Details of a resource file needed to manufacture or package the main body of a product
+ * &#9679; Added at revision 3.0.8
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link BodyManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -206,7 +212,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * A URL which provides a link to a resource. Mandatory in each occurrence of the &lt;BodyResource&gt; composite,
      * and repeatable if the resource can be linked in more than one way, <i>eg</i> by HTTP, FTP and DOI URLs.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<ResourceFileLink, String> resourceFileLinks() {
         _initialize();
@@ -222,7 +228,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * that primary resources are numbered in ‘spine order’. Ancillary resources (<i>eg</i> an image file referenced by
      * a primary HTML file) should be numbered after the primary resources.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SequenceNumber sequenceNumber() {
         _initialize();
@@ -236,7 +242,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the role or purpose of the resource file which is specified in
      * &lt;ResourceFileLink&gt;. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ResourceRole resourceRole() {
         _initialize();
@@ -252,7 +258,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * A group of data elements which together specify an identifier of the resource, in accordance with the specified
      * scheme. The composite is optional, and repeatable to specify multiple identifiers for the resource.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceIdentifier, JonixResourceIdentifier, ResourceIdentifierTypes>
         resourceIdentifiers() {
@@ -269,7 +275,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * <i>eg</i> the file type of the resource. Optional, and repeatable in order to provide multiple additional
      * details.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ResourceFileDetail, ResourceFileDetails> resourceFileDetails() {
         _initialize();
@@ -286,7 +292,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * &lt;ResourceFileLink&gt; that is too specific to be covered in the &lt;ResourceFileDetail&gt; element. The
      * composite is repeatable in order to describe different aspects of the resource file.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceFileFeature, JonixResourceFileFeature, ResourceFileFeatureTypes>
         resourceFileFeatures() {
@@ -304,7 +310,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * &lt;ResourceFileDescription&gt;, but must be included in each instance if &lt;ResourceFileDescription&gt; is
      * repeated to provide parallel descriptions in multiple languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions() {
         _initialize();
@@ -330,7 +336,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * be included in each instance if &lt;ResourceFileContentDescription&gt; is repeated to provide parallel
      * descriptions in multiple languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ResourceFileContentDescription, String> resourceFileContentDescriptions() {
         _initialize();
@@ -346,7 +352,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * &lt;ResourceFileLink&gt;, <i>eg</i> date when the resource was last updated. Repeatable to specify different
      * dates with their various roles.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceFileDate, JonixResourceFileDate, ResourceFileDateRoles>
         resourceFileDates() {

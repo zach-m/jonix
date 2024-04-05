@@ -58,11 +58,19 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PublishingDetail&gt; from the schema author:
+ * 
+ * <pre>
+ * Block 4, container for information about describing branding, publishing and rights attached to the product
+ * &#9679; Added &lt;ProductContact&gt; at revision 3.0.1
+ * &#9679; Modified cardinality of &lt;PublishingStatusNote&gt; at revision 3.0.1
+ * &#9679; Added &lt;ROWSalesRightsType&gt; at revision 3.0 (2010)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail}</li>
@@ -214,7 +222,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * marketed. The composite must carry either a name identifier or a name or both, and is repeatable to specify
      * multiple imprints or brands.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<Imprint> imprints() {
         _initialize();
@@ -228,7 +236,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * An ONIX code identifying the country where the product is published (<i>ie</i> where the publisher is based).
      * Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CountryOfPublication countryOfPublication() {
         _initialize();
@@ -248,7 +256,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * indicate its likely reliability. See <a href="#message_attributes">Section 1</a> for further details of the
      * <i>datestamp</i> attribute.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublishingStatus publishingStatus() {
         _initialize();
@@ -263,7 +271,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * non-repeating. This element is used only in certain countries where there is a legal requirement to record
      * reprints.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public LatestReprintNumber latestReprintNumber() {
         _initialize();
@@ -282,7 +290,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * rights are genuinely unknown, or are unstated for any reason – in this case, data recipients must not assume
      * anything about the rights that are applicable.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ROWSalesRightsType rowSalesRightsType() {
         _initialize();
@@ -298,7 +306,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * occurrence of the composite must carry a publishing role code and either a name identifier or a name or both, and
      * the composite is repeatable in order to identify multiple entities.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Publisher> publishers() {
         _initialize();
@@ -323,7 +331,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * optional with a single instance of &lt;CityOfPublication&gt;, but must be included in each instance if
      * &lt;CityOfPublication&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<CityOfPublication, String> cityOfPublications() {
         _initialize();
@@ -338,7 +346,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * responsible for dealing with enquiries related to the product. Repeatable in order to specify multiple
      * responsible organizations.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ProductContact> productContacts() {
         _initialize();
@@ -355,7 +363,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * of &lt;PublishingStatusNote&gt;, but must be included in each instance if &lt;PublishingStatusNote&gt; is
      * repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes() {
         _initialize();
@@ -372,7 +380,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * pub date) <em>or</em> in &lt;MarketPublishingDetail&gt; (P.25). Other dates related to the publishing of a
      * product can be sent in further repeats of the composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<PublishingDate, JonixPublishingDate, PublishingDateRoles> publishingDates() {
         _initialize();
@@ -390,7 +398,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * composite are explicitly populated. The Copyright statement may be repeated to provide a full structured rights
      * statement listing year(s) and rights holder(s).
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<CopyrightStatement> copyrightStatements() {
         _initialize();
@@ -411,7 +419,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * name detail <em>must</em> also be sent in one or more &lt;CopyrightStatement&gt; composites for indexing and
      * retrieval purposes.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<CopyrightStatementText, String> copyrightStatementTexts() {
         _initialize();
@@ -428,7 +436,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (In releases prior to 3.0, this functionality was provided in a &lt;NotForSale&gt; composite, which is now
      * redundant and has been deleted.) See examples at the end of the sales rights composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesRights> salesRightss() {
         _initialize();

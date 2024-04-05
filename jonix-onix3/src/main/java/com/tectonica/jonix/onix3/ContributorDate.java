@@ -54,11 +54,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContributorDate&gt; from the schema author:
+ * 
+ * <pre>
+ * Date of the specified role relating to some aspect of the contributor
+ * &#9679; Removed &lt;DateFormat&gt; at release 3.1
+ * &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
+ * </pre>
+ * 
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ContributorDate}</li>
@@ -172,7 +179,7 @@ public class ContributorDate
      * An ONIX code indicating the significance of the date in relation to the contributor name. Mandatory in each
      * occurrence of the &lt;ContributorDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ContributorDateRole contributorDateRole() {
         _initialize();
@@ -187,7 +194,7 @@ public class ContributorDate
      * &lt;ContributorDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if
      * the attribute is missing, then the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
