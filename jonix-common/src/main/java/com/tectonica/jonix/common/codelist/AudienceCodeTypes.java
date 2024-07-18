@@ -41,8 +41,9 @@ interface CodeList29 {
  * Description: Audience code type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist29">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist29">ONIX
  *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -219,7 +220,7 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
      * use in ONIX 3.0 or later. See
      * http://uis.unesco.org/en/topic/international-standard-classification-education-isced
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     ISCED_2011("30", "ISCED 2011");
 

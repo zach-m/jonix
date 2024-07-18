@@ -54,6 +54,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Website&gt; from the schema author:
+ *
+ * Details of a website related to the product, contributor, publisher, supplier etc &#9679; Modified cardinality of
+ * &lt;WebsiteLink&gt; at revision 3.0.6 &#9679; Modified cardinality of &lt;WebsiteDescription&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Conference}&gt;</li>
@@ -65,7 +70,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link PublisherRepresentative}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link Website}</li>
@@ -189,7 +193,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * optional for a single instance of &lt;WebsiteLink&gt;, but must be included in each instance if
      * &lt;WebsiteLink&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<WebsiteLink, String> websiteLinks() {
         _initialize();
@@ -203,7 +207,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * An ONIX code which identifies the role or purpose of the website which is linked through the &lt;WebsiteLink&gt;
      * element. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public WebsiteRole websiteRole() {
         _initialize();
@@ -219,7 +223,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * optional for a single instance of &lt;WebsiteDescription&gt;, but must be included in each instance if
      * &lt;WebsiteDescription&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<WebsiteDescription, String> websiteDescriptions() {
         _initialize();

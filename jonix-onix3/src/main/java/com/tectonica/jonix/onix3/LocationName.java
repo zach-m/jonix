@@ -66,13 +66,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;LocationName&gt; from the schema author:
+ *
+ * Name of a city, town (or other location) associated with (eg) a stockholding warehouse, with an event, with a
+ * contributor
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>
  * <li>&lt;{@link ContributorPlace}&gt;</li>
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link LocationName}</li>

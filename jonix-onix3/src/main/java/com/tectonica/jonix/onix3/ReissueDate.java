@@ -65,11 +65,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ReissueDate&gt; from the schema author:
+ *
+ * Date of a planned reissue &#9679; Deprecated - use &lt;PublishingDate&gt; or &lt;SupplyDate&gt; instead &#9679; Added
+ * dateformat attribute at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Reissue}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link ReissueDate}</li>

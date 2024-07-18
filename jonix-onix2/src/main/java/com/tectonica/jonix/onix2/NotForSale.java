@@ -61,7 +61,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link NotForSale}</li>
@@ -196,7 +195,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * &lt;RightsCountry&gt; or &lt;RightsTerritory&gt; is mandatory in each occurrence of the&lt;NotForSale&gt;
      * composite.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys() {
         _initialize();
@@ -212,7 +211,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * separated by spaces, so that the element can carry an unlimited number of territory codes, for territories for
      * which details of another publisher’s product are given. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RightsTerritory rightsTerritory() {
         _initialize();
@@ -228,7 +227,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * more general method of handling this and other product codes, and is to be preferred. The &lt;ISBN&gt; element is
      * on no account to be used to carry a 13-digit ISBN.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ISBN isbn() {
         _initialize();
@@ -243,7 +242,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt; composite provides a more general method of
      * handling this and other product codes, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EAN13 ean13() {
         _initialize();
@@ -259,7 +258,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be
      * omitted.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublisherName publisherName() {
         _initialize();
@@ -276,7 +275,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * elements. <strong>See notes on the &lt;ProductIdentifier&gt; composite in section PR.2 for details of the
      * handling of ISBN-13.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {

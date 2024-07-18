@@ -41,8 +41,9 @@ interface CodeList83 {
  * Description: Bible version
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist83">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist83">ONIX
  *      Codelist 83 in Reference Guide</a>
  */
 public enum BibleVersions implements OnixCodelist, CodeList83 {
@@ -71,7 +72,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
      * (LBLA) Spanish translation by the Lockman Foundation, first published in 1986 and updated in 1995, 1997. Only for
      * use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Biblia_de_las_Americas("BLA", "Biblia de las Americas"),
 
@@ -80,7 +81,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
      * Latinoamericana de Hoy (NBLH), Nueva Biblia de los Hispanos (NBH), and Nueva Biblia Latinoamericana (NBL). Only
      * for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Nueva_Biblia_de_las_Americas("BLB", "Nueva Biblia de las Americas"),
 
@@ -319,28 +320,28 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     /**
      * Norwegian Bible translation. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Norsk_Bibel_88_rev_2007("NBJ", "Norsk Bibel 88/rev. 2007"),
 
     /**
      * Norwegian Bible translation with commentary. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Fauskanger_2015("NBK", "Fauskanger 2015"),
 
     /**
      * Norwegian Bible translation, 2024 update of Bibelen 2011. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Bibelen_2011_rev_2024("NBL", "Bibelen 2011/rev. 2024"),
 
     /**
      * Norwegian Bible translation. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Pollestad_2023("NBP", "Pollestad 2023"),
 

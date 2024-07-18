@@ -69,7 +69,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link ComponentTypeName}</li>

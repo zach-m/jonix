@@ -60,7 +60,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link AudienceRange}</li>
@@ -180,7 +179,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
      * &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AudienceRangeQualifier audienceRangeQualifier() {
         _initialize();
@@ -195,7 +194,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
      * An ONIX code specifying the “precision” of the value in the &lt;AudienceRangeValue&gt; element which follows
      * (From, To, Exact). Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions() {
         _initialize();
@@ -208,7 +207,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
      * <p>
      * A value indicating an exact position within a range, or the upper or lower end of a range.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues() {
         _initialize();

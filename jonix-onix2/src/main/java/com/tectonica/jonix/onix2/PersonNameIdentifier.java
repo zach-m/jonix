@@ -60,7 +60,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link PersonAsSubject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Contributor} ⯈ {@link Name} ⯈ {@link PersonNameIdentifier}</li>
@@ -197,7 +196,7 @@ public class PersonNameIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;PersonNameIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PersonNameIDType personNameIDType() {
         _initialize();
@@ -211,7 +210,7 @@ public class PersonNameIdentifier
      * A code value taken from the scheme specified in the &lt;PersonNameIDType&gt; element. Mandatory in each
      * occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -225,7 +224,7 @@ public class PersonNameIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in the
      * &lt;PersonNameIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

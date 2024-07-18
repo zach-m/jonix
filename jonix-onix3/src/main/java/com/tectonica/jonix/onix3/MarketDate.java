@@ -55,11 +55,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;MarketDate&gt; from the schema author:
+ *
+ * Details of a date associated with the publishing status of the product within a market &#9679; Modified cardinality
+ * of &lt;DateFormat&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link MarketDate}</li>
@@ -169,7 +173,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MarketDateRole marketDateRole() {
         _initialize();
@@ -185,7 +189,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
      * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
@@ -200,7 +204,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * &lt;MarketDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i> attribute
      * instead.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();

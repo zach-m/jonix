@@ -62,11 +62,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CollateralDetail&gt; from the schema author:
+ *
+ * Block 2, container for information and resources to support marketing the product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CollateralDetail}</li>
@@ -182,7 +185,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * deliver multiple texts (often of different types, though for some text types there many be multiple instances of
      * that type).
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<TextContent> textContents() {
         _initialize();
@@ -196,7 +199,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together describe a piece of cited content. The composite is repeatable
      * to describe and link to multiple items of cited material.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<CitedContent> citedContents() {
         _initialize();
@@ -213,7 +216,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * cover image in separate low and high resolution versions) should be specified in a single instance of the
      * composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SupportingResource> supportingResources() {
         _initialize();
@@ -227,7 +230,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together describe a prize or award won by the product or work, and
      * repeatable where it has gained multiple prizes or awards.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
         _initialize();

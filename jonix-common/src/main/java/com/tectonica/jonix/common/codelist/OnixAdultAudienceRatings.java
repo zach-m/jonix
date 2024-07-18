@@ -41,8 +41,9 @@ interface CodeList203 {
  * Description: ONIX Adult Audience rating
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist203">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist203">ONIX
  *      Codelist 203 in Reference Guide</a>
  */
 public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
@@ -88,21 +89,21 @@ public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
      * The publisher warns the product includes content involving sexual or extreme domestic abuse (including both
      * mental and physical abuse)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Content_warning_abuse("08", "Content warning (abuse)"),
 
     /**
      * The publisher warns the product includes content involving severe self-harm (including serious eating disorders)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Content_warning_self_harm("09", "Content warning (self-harm)"),
 
     /**
      * The publisher warns the product includes content involving extreme cruelty to animals
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Content_warning_animal_cruelty("10", "Content warning (animal cruelty)");
 

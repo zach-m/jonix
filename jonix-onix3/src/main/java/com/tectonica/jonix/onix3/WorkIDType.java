@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;WorkIDType&gt; from the schema author:
+ *
+ * Type of identifier of the work manifested in the product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link WorkIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedWork} ⯈ {@link WorkIdentifier} ⯈

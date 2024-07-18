@@ -62,7 +62,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * <li>&lt;{@link Series}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Title}</li>
@@ -205,7 +204,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * non-repeating. Additional types of title can now be defined by adding code values without requiring a new ONIX
      * release.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TitleType titleType() {
         _initialize();
@@ -221,7 +220,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * &lt;TitleText&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
      * transliteration, textcase</i>.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TitleText titleText() {
         _initialize();
@@ -240,7 +239,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * abbreviated title as a separate &lt;TitleType&gt; without using &lt;AbbreviatedLength&gt;, which is simpler, but
      * less informative.]
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AbbreviatedLength abbreviatedLength() {
         _initialize();
@@ -256,7 +255,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * attribute on any text element, and this method is preferred. See <cite>ONIX for Books – Product Information
      * Message – XML Message Specification</cite>, Section 4.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TextCaseFlag textCaseFlag() {
         _initialize();
@@ -274,7 +273,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * &lt;TitlePrefix&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
      * transliteration, textcase</i>.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitlePrefix titlePrefix() {
         _initialize();
@@ -290,7 +289,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * present. The &lt;TitleWithoutPrefix&gt; element may carry any of the following ONIX attributes: <i>textformat,
      * language, transliteration, textcase</i>.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitleWithoutPrefix titleWithoutPrefix() {
         _initialize();
@@ -306,7 +305,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * to be part of the title itself. Optional and non-repeating. The &lt;Subtitle&gt; element may carry any of the
      * following ONIX attributes: <i>textformat, language, transliteration, textcase</i>.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Subtitle subtitle() {
         _initialize();

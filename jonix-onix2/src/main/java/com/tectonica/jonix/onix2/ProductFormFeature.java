@@ -60,7 +60,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link ContainedItem}&gt;</li>
  * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductFormFeature}</li>
@@ -185,7 +184,7 @@ public class ProductFormFeature
      * An ONIX code which specifies the feature described by an instance of the &lt;ProductFormFeature&gt; composite,
      * <em>eg</em> binding color. Mandatory in each occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductFormFeatureType productFormFeatureType() {
         _initialize();
@@ -201,7 +200,7 @@ public class ProductFormFeature
      * accompanying value, while others (<em>eg</em> text font) require free text in
      * &lt;ProductFormFeatureDescription&gt;. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductFormFeatureValue productFormFeatureValue() {
         _initialize();
@@ -216,7 +215,7 @@ public class ProductFormFeature
      * &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text description may be added.
      * Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductFormFeatureDescription productFormFeatureDescription() {
         _initialize();

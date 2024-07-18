@@ -60,11 +60,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ComplexityCode&gt; from the schema author:
+ *
+ * Measurement of the comprehension difficulty of the content, according to the specified measurement scheme
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Complexity}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Complexity} ⯈ {@link ComplexityCode}</li>

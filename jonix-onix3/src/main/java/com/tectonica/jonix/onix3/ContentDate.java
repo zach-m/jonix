@@ -54,13 +54,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContentDate&gt; from the schema author:
+ *
+ * Date of the specified role relating to some aspect of an item of collateral &#9679; Modified cardinality of
+ * &lt;DateFormat&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>
  * <li>&lt;{@link CitedContent}&gt;</li>
  * <li>&lt;{@link ResourceVersion}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link ContentDate}</li>
@@ -183,7 +187,7 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * An ONIX code indicating the significance of the date in relation to the text content. Mandatory in each
      * occurrence of the &lt;ContentDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ContentDateRole contentDateRole() {
         _initialize();
@@ -199,7 +203,7 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
      * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
@@ -214,7 +218,7 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * &lt;ContentDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
      * attribute on the &lt;Date&gt; element instead.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();

@@ -54,7 +54,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor}</li>
@@ -175,7 +174,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * <p>
      * A repeatable group of data elements which together carry a coded identifier for a sponsor of a conference.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ConferenceSponsorIdentifier conferenceSponsorIdentifier() {
         _initialize();
@@ -188,7 +187,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * <p>
      * The name of a person, used here for a personal sponsor of a conference.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PersonName personName() {
         _initialize();
@@ -201,7 +200,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * <p>
      * The name of a corporate body, used here for a corporate sponsor of a conference.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CorporateName corporateName() {
         _initialize();

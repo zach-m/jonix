@@ -60,7 +60,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier}</li>
@@ -182,7 +181,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * elements. Optional, but each occurrence of the &lt;NewSupplier&gt; composite must carry <em>either</em> at least
      * one supplier identifier, <em>or</em> a &lt;SupplierName&gt;, <em>or</em> both.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes>
         supplierIdentifiers() {
@@ -197,7 +196,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * The name of a new supplier. Optional and non-repeating; required if no supplier identifier is sent in an
      * occurrence of the &lt;NewSupplier&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SupplierName supplierName() {
         _initialize();
@@ -211,7 +210,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * A telephone number of a supply source from which the product may be ordered by a trade customer. Optional and
      * repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
         _initialize();
@@ -225,7 +224,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * A fax number of a supply source from which the product may be ordered by a trade customer. Optional and
      * repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
         _initialize();
@@ -239,7 +238,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * An e-mail address for a supply source from which the product may be ordered by a trade customer. Optional and
      * repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
         _initialize();

@@ -64,13 +64,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Proximity&gt; from the schema author:
+ *
+ * Precision of a specified stock quantity (eg more than X, about X, exactly X) &#9679; Added at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link OnOrderDetail}&gt;</li>
  * <li>&lt;{@link Stock}&gt;</li>
  * <li>&lt;{@link Velocity}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Stock} ⯈ {@link OnOrderDetail} ⯈

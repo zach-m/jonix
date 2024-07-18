@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link ReligiousText}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ReligiousText} ⯈ {@link ReligiousTextFeature}</li>
@@ -180,7 +179,7 @@ public class ReligiousTextFeature
      * An ONIX code specifying a feature described in the associated &lt;ReligiousTextFeatureCode&gt; element. Mandatory
      * in each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReligiousTextFeatureType religiousTextFeatureType() {
         _initialize();
@@ -194,7 +193,7 @@ public class ReligiousTextFeature
      * An ONIX code describing a feature specified in the associated &lt;ReligiousTextFeatureType&gt; element. Mandatory
      * in each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReligiousTextFeatureCode religiousTextFeatureCode() {
         _initialize();
@@ -207,7 +206,7 @@ public class ReligiousTextFeature
      * <p>
      * Free text describing a feature that is not adequately defined by code values alone. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReligiousTextFeatureDescription religiousTextFeatureDescription() {
         _initialize();

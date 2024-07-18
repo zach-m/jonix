@@ -58,11 +58,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ConferenceNumber&gt; from the schema author:
+ *
+ * &#9679; Deprecated - use &lt;Event&gt; instead of &lt;Conference&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferenceNumber}</li>

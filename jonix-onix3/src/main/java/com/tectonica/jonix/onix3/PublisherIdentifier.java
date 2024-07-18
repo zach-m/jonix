@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PublisherIdentifier&gt; from the schema author:
+ *
+ * Identifier of an organisation responsible for publishing the product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Publisher}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link PublisherIdentifier}</li>
@@ -170,7 +173,7 @@ public class PublisherIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;PublisherIdentifier&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PublisherIDType publisherIDType() {
         _initialize();
@@ -184,7 +187,7 @@ public class PublisherIdentifier
      * A code value taken from the scheme specified in the &lt;PublisherIDType&gt; element. Mandatory in each occurrence
      * of the &lt;PublisherIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -199,7 +202,7 @@ public class PublisherIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the
      * &lt;PublisherIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

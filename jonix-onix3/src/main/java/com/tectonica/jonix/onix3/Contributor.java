@@ -69,6 +69,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Contributor&gt; from the schema author:
+ *
+ * Details of a person, persona or corporate identity - a contributor to the product (eg the author) &#9679; Added
+ * &lt;Gender&gt;, &lt;Prize&gt; at revision 3.0.3 &#9679; Modified to allow &lt;NameIdentifier&gt; and
+ * &lt;AlternativeName&gt; with &lt;UnnamedPersons&gt; at revision 3.0.3 &#9679; Modified cardinality of
+ * &lt;BiographicalNote&gt;, &lt;ContributorDescription&gt; at revision 3.0.1 &#9679; Added
+ * &lt;CorporateNameInverted&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
@@ -76,7 +84,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor}</li>
@@ -289,7 +296,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
      * Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PersonName personName() {
         _initialize();
@@ -305,7 +312,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
      * elements P.7.11 to P.7.18 are used.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public KeyNames keyNames() {
         _initialize();
@@ -319,7 +326,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
      * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CorporateName corporateName() {
         _initialize();
@@ -334,7 +341,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * in each occurrence of a &lt;Contributor&gt; composite, and may be repeated if the same person or corporate body
      * has more than one role in relation to the product.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixCodelist<ContributorRole, ContributorRoles> contributorRoles() {
         _initialize();
@@ -351,7 +358,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * introductory text for valid options. Repeatable to specify name identifiers of different types for the same
      * person or organization name.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {
         _initialize();
@@ -366,7 +373,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * strongly recommended that each occurrence of the &lt;Contributor&gt; composite should carry a
      * &lt;SequenceNumber&gt;.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SequenceNumber sequenceNumber() {
         _initialize();
@@ -380,7 +387,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
      * ‘unspecified’.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NameType nameType() {
         _initialize();
@@ -395,7 +402,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * alphabetical sorting placed first (‘inverted order’). Optional and non-repeating: see Group&nbsp;P.7 introductory
      * text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PersonNameInverted personNameInverted() {
         _initialize();
@@ -410,7 +417,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * and/or titles preceding a person’s names, <i>eg</i> ‘Professor’ or ‘HRH Prince’ or ‘Saint’. Optional and
      * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitlesBeforeNames titlesBeforeNames() {
         _initialize();
@@ -424,7 +431,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The second part of a structured name of a person who contributed to the creation of the product: name(s) and/or
      * initial(s) preceding a person’s key name(s), <i>eg</i> James J. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NamesBeforeKey namesBeforeKey() {
         _initialize();
@@ -440,7 +447,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * Beethoven. This element may also be used for titles that appear after given names and before key names, <i>eg</i>
      * ‘Lord’ in Alfred, Lord Tennyson. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrefixToKey prefixToKey() {
         _initialize();
@@ -454,7 +461,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The fifth part of a structured name of a person who contributed to the creation of the product: name suffix, or
      * name(s) following a person’s key name(s), <i>eg</i> ‘Ibrahim’ (in Anwar Ibrahim). Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NamesAfterKey namesAfterKey() {
         _initialize();
@@ -468,7 +475,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The sixth part of a structured name of a person who contributed to the creation of the product: a suffix
      * following a person’s key name(s), <i>eg</i> ‘Jr’ or ‘III’. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SuffixToKey suffixToKey() {
         _initialize();
@@ -482,7 +489,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The seventh part of a structured name of a person who contributed to the creation of the product: qualifications
      * and honors following a person’s names, <i>eg</i> ‘CBE FRS’. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public LettersAfterNames lettersAfterNames() {
         _initialize();
@@ -496,7 +503,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The eighth part of a structured name of a person who contributed to the creation of the product: titles following
      * a person’s names, <i>eg</i> ‘Duke of Edinburgh’. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitlesAfterNames titlesAfterNames() {
         _initialize();
@@ -511,7 +518,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * the gender of the contributor’s public identity (which may be pseudonymous) based on designations used in ISO
      * 5218, rather than the gender identity, biological sex or sexuality of a natural person.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Gender gender() {
         _initialize();
@@ -526,7 +533,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * the element used for alphabetical sorting placed first. Optional and non-repeating: see Group&nbsp;P.7
      * introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CorporateNameInverted corporateNameInverted() {
         _initialize();
@@ -541,7 +548,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * matter of editorial policy only a limited number of contributors are named. Optional and non-repeating: see
      * Group&nbsp;P.7 introductory text for valid options. Use here in preference to P.7.47, where it is deprecated.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public UnnamedPersons unnamedPersons() {
         _initialize();
@@ -557,7 +564,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * exact responsibility when a work involves translation from two or more languages. Optional, and repeatable in the
      * event that a single person has been responsible for translation from two or more languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<FromLanguage, Languages> fromLanguages() {
         _initialize();
@@ -573,7 +580,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * exact responsibility when a work involves translation into two or more languages. Optional, and repeatable in the
      * event that a single person has been responsible for translation to two or more languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ToLanguage, Languages> toLanguages() {
         _initialize();
@@ -602,7 +609,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * &lt;NameIdentifier&gt; composite; <em>or</em></li>
      * <li>an occurrence of the &lt;NameIdentifier&gt; composite without any accompanying name element(s).</li>
      * </ul>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<AlternativeName> alternativeNames() {
         _initialize();
@@ -618,7 +625,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * an occurrence of the &lt;Contributor&gt; composite, <i>eg</i> birth or death. Optional, and repeatable to allow
      * multiple dates to be specified.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ContributorDate, JonixContributorDate, PersonOrganizationDateRoles>
         contributorDates() {
@@ -634,7 +641,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together identify a contributor’s professional position and/or
      * affiliation, repeatable to allow multiple positions and affiliations to be specified.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations() {
         _initialize();
@@ -649,7 +656,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * work (rather than for this or other specific works or products). Repeatable to describe multiple prizes or
      * awards.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
         _initialize();
@@ -669,7 +676,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * piece of continuous text consisting of full sentences. Some recipients of ONIX data feeds will not accept text
      * which has embedded URLs. A contributor website link can be sent using the &lt;Website&gt; composite below.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<BiographicalNote, String> biographicalNotes() {
         _initialize();
@@ -684,7 +691,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * the person or organization identified in an occurrence of the &lt;Contributor&gt; composite. Repeatable to
      * provide links to multiple websites.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();
@@ -701,7 +708,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * &lt;ContributorDescription&gt; is repeated. It may be used with either a person or corporate name, to draw
      * attention to any aspect of a contributor’s background which supports the promotion of the book.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ContributorDescription, String> contributorDescriptions() {
         _initialize();
@@ -717,7 +724,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * associated, used to support ‘local interest’ promotions. Repeatable to identify multiple geographical locations,
      * each usually with a different relationship to the contributor.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<ContributorPlace, JonixContributorPlace> contributorPlaces() {
         _initialize();

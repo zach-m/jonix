@@ -41,8 +41,9 @@ interface CodeList162 {
  * Description: Resource version feature type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist162">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist162">ONIX
  *      Codelist 162 in Reference Guide</a>
  */
 public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
@@ -99,9 +100,20 @@ public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162 {
      * v1.0, but this is deprecated). Note alphabetic characters in v1.x ISCCs use Base32 encoding and are
      * conventionally upper case. The 'ISCC:' prefix is omitted
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
-    ISCC("09", "ISCC");
+    ISCC("09", "ISCC"),
+
+    /**
+     * &lt;ResourceVersionFeatureValue&gt; carries the previous filename of the supporting resource, necessary only when
+     * it is different from the last part of the path provided in &lt;ResourceLink&gt; and from the filename provided
+     * using &lt;ResourceVersionFeatureType&gt; code 04, and when the data sender suggests the recipient delete this old
+     * file. Note that the 'trigger' to update the resource and delete the old file is provided by the Resource
+     * version's &lt;ContentDate&gt;
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Previous_filename("10", "Previous filename");
 
     public final String code;
     public final String description;

@@ -53,12 +53,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EventIdentifier&gt; from the schema author:
+ *
+ * Identifier for an event &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
@@ -175,7 +178,7 @@ public class EventIdentifier
      * there is no suitable standard event identifier scheme, the only valid option is to use a proprietary identifier.
      * Mandatory in each occurrence of the &lt;EventIdentifier&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EventIDType eventIDType() {
         _initialize();
@@ -189,7 +192,7 @@ public class EventIdentifier
      * A code value taken from the scheme specified in the &lt;EventIDType&gt; element. Mandatory in each occurrence of
      * the &lt;EventIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -204,7 +207,7 @@ public class EventIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the &lt;EventIDType&gt;
      * element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

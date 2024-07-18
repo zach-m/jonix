@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductIDType&gt; from the schema author:
+ *
+ * Type of identifier which uniquely identifies the product, eg an ISBN, GTIN etc
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductIdentifier} ⯈ {@link ProductIDType}</li>

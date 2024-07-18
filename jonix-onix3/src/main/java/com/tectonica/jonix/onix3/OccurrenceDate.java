@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;OccurrenceDate&gt; from the schema author:
+ *
+ * Date related to an occurrence of a promotional event &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
@@ -173,7 +176,7 @@ public class OccurrenceDate
      * An ONIX code indicating the significance of the date, <i>eg</i> the date of the occurrence, last date of ticket
      * availability <i>etc</i>. Mandatory in each instance of the &lt;OccurrenceDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public OccurrenceDateRole occurrenceDateRole() {
         _initialize();
@@ -191,7 +194,7 @@ public class OccurrenceDate
      * venue). Note that this date format may include a time zone offset (Z for times in UTC, or ±hhmm), and this should
      * always be included where there is any doubt, <i>eg</i> when the event is available online.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
@@ -205,7 +208,7 @@ public class OccurrenceDate
      * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and not repeatable.
      * Deprecated – where possible, use the <i>dateformat</i> attribute instead.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();

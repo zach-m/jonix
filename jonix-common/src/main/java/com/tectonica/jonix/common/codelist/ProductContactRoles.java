@@ -41,15 +41,16 @@ interface CodeList198 {
  * Description: Product contact role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist198">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist198">ONIX
  *      Codelist 198 in Reference Guide</a>
  */
 public enum ProductContactRoles implements OnixCodelist, CodeList198 {
     /**
      * For queries and feedback concerning the metadata record itself
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Metadata_contact("00", "Metadata contact"),
 
@@ -86,23 +87,31 @@ public enum ProductContactRoles implements OnixCodelist, CodeList198 {
     /**
      * Eg for use where authorisation must be gained from the publisher rather than the distributor or wholesaler
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Return_authorisation_contact("07", "Return authorisation contact"),
 
     /**
      * Eg for legal deposit or long-term preservation
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     CIP_Legal_deposit_contact("08", "CIP / Legal deposit contact"),
 
     /**
      * Eg for subrights licensing, collective licensing
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
-    Rights_and_licensing_contact("09", "Rights and licensing contact");
+    Rights_and_licensing_contact("09", "Rights and licensing contact"),
+
+    /**
+     * Eg for EU General product safety regulation (GPSR) compliance. See
+     * https://commission.europa.eu/business-economy-euro/product-safety-and-requirements/product-safety/general-product-safety-regulation_en
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Product_safety_contact("10", "Product safety contact");
 
     public final String code;
     public final String description;

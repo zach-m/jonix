@@ -41,8 +41,9 @@ interface CodeList141 {
  * Description: Barcode indicator
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist141">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist141">ONIX
  *      Codelist 141 in Reference Guide</a>
  */
 public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
@@ -96,21 +97,21 @@ public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
     /**
      * EAN symbology (version NK, first digit of 5-digit extension is 0)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     GTIN_13_5_UK_Pound_Sterling_price_encoded("10", "GTIN-13+5 (UK Pound Sterling price encoded)"),
 
     /**
      * EAN symbology (version NK, price currency by local agreement)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     GTIN_13_5_other_price_encoded("11", "GTIN-13+5 (other price encoded)"),
 
     /**
      * EAN symbology (two-digit extension, normally indicating periodical issue number)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     GTIN_13_2("12", "GTIN-13+2");
 

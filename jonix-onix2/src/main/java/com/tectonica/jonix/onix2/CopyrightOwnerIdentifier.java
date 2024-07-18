@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link CopyrightOwner}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner} ⯈ {@link CopyrightOwnerIdentifier}</li>
@@ -180,7 +179,7 @@ public class CopyrightOwnerIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CopyrightOwnerIDType copyrightOwnerIDType() {
         _initialize();
@@ -194,7 +193,7 @@ public class CopyrightOwnerIdentifier
      * A code value taken from the scheme specified in the &lt;CopyrightOwnerIDType&gt; element. Mandatory in each
      * occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -208,7 +207,7 @@ public class CopyrightOwnerIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in the
      * &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

@@ -64,11 +64,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EditionType&gt; from the schema author:
+ *
+ * Type of an edition (eg bilingual, large print, abridged). Note some edition types are new manifestations, others
+ * indicate a manifesation of a new work
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EditionType}</li>

@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ImprintIdentifier&gt; from the schema author:
+ *
+ * Identifier for the publisher's imprint or brand
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Imprint}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈ {@link ImprintIdentifier}</li>
@@ -170,7 +173,7 @@ public class ImprintIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;ImprintIdentifier&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ImprintIDType imprintIDType() {
         _initialize();
@@ -184,7 +187,7 @@ public class ImprintIdentifier
      * A code value taken from the scheme specified in the &lt;ImprintIDType&gt; element. Mandatory in each occurrence
      * of the &lt;ImprintIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -199,7 +202,7 @@ public class ImprintIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the &lt;ImprintIDType&gt;
      * element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

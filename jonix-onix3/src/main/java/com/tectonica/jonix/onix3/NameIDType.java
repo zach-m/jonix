@@ -64,11 +64,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NameIDType&gt; from the schema author:
+ *
+ * Type of dentifier for the name of a person, persona or corporate identity, eg an ISNI or ORCID, or the publisher's
+ * proprietary internal identifier
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link NameIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈

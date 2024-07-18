@@ -71,11 +71,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;RecordReference&gt; from the schema author:
+ *
+ * Unique and persistent identifier for the metadata record (not for the product itself)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link RecordReference}</li>

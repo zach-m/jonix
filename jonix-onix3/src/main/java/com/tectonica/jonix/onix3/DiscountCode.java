@@ -59,11 +59,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;DiscountCode&gt; from the schema author:
+ *
+ * For trade discount, a code which refers to a row in a table of discounts shared in advance by the supplier. The code
+ * maps to the actual discount percentage (or absolute amount per copy) via the table
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DiscountCoded}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈

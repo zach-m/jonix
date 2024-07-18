@@ -68,11 +68,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;WebsiteLink&gt; from the schema author:
+ *
+ * URL of the website
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Website}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link Website} ⯈ {@link WebsiteLink}</li>

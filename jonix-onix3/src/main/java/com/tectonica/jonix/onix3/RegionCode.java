@@ -70,13 +70,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;RegionCode&gt; from the schema author:
+ *
+ * A sub-national region, eg one with which a contributor is associated, or from which a language variant is derived
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContributorPlace}&gt;</li>
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * <li>&lt;{@link Language}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ContributorPlace} ⯈

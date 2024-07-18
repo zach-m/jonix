@@ -65,11 +65,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ReissueDescription&gt; from the schema author:
+ *
+ * Textual description of a planned reissue &#9679; Deprecated - use &lt;TextContent&gt; with start and end dates
+ * instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Reissue}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈

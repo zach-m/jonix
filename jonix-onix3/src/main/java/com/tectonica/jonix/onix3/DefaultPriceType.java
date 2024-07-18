@@ -64,11 +64,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;DefaultPriceType&gt; from the schema author:
+ *
+ * Default type of a price (eg RRP ex tax, FRP inc tax), when an explicit price type is omitted from any prices in the
+ * message. Not recommended for use
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link DefaultPriceType}</li>

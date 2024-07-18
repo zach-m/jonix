@@ -64,11 +64,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SalesRestrictionNote&gt; from the schema author:
+ *
+ * Textual description of a sales restriction, eg one associated with sales exclusivity, usually when a coded
+ * restriction is inadequate
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SalesRestriction}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRestriction} ⯈ {@link SalesRestrictionNote}</li>

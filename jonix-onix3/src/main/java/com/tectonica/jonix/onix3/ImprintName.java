@@ -66,11 +66,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ImprintName&gt; from the schema author:
+ *
+ * Text name of the publisher's imprint or brand &#9679; Added collationkey attribute at revision 3.0.7 &#9679; Added
+ * language attribute at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Imprint}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈ {@link ImprintName}</li>

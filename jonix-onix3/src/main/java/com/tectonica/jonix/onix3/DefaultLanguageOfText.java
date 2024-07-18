@@ -66,11 +66,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;DefaultLanguageOfText&gt; from the schema author:
+ *
+ * Default language of the text in the product, when an explicit language of text is omitted from any products in the
+ * message. Not recommended for use
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link DefaultLanguageOfText}</li>

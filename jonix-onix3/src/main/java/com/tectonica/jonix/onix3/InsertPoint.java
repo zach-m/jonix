@@ -56,11 +56,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;InsertPoint&gt; from the schema author:
+ *
+ * &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link InsertManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -170,7 +173,7 @@ public class InsertPoint implements OnixDataCompositeWithKey<JonixInsertPoint, I
      * <p>
      * An ONIX code specifying the format in which the insertion point is included in &lt;InsertPointValue&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public InsertPointType insertPointType() {
         _initialize();
@@ -183,7 +186,7 @@ public class InsertPoint implements OnixDataCompositeWithKey<JonixInsertPoint, I
      * <p>
      * The point at which the insert must be positioned, in the format specified in &lt;InsertPointType&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public InsertPointValue insertPointValue() {
         _initialize();

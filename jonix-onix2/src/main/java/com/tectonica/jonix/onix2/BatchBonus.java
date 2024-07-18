@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link BatchBonus}</li>
@@ -172,7 +171,7 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
      * The number of copies which must be ordered to obtain the free copies specified in &lt;FreeQuantity&gt;. Mandatory
      * in each occurrence of the &lt;BatchBonus&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public BatchQuantity batchQuantity() {
         _initialize();
@@ -186,7 +185,7 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
      * The number of free copies which will be supplied with an order for the batch quantity specified in the
      * &lt;BatchQuantity&gt; field. Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public FreeQuantity freeQuantity() {
         _initialize();

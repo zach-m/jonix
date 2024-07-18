@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link SalesRestriction}</li>
@@ -178,7 +177,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies a non-territorial sales restriction. Mandatory in each occurrence of the
      * &lt;SalesRestriction&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SalesRestrictionType salesRestrictionType() {
         _initialize();
@@ -192,7 +191,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * A free text field describing an “unspecified” restriction, or giving more explanation of a coded restriction
      * type. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SalesRestrictionDetail salesRestrictionDetail() {
         _initialize();
@@ -207,7 +206,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * is linked. Each occurrence of the composite must include a &lt;SalesOutletIdentifier&gt; composite or a
      * &lt;SalesOutletName&gt; or both.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesOutlet> salesOutlets() {
         _initialize();

@@ -55,11 +55,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceCoded&gt; from the schema author:
+ *
+ * Details of a coded price applied to a product (ie a price not in a specific currency) &#9679; Added at revision 3.0
+ * (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
@@ -171,7 +175,7 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
      * An ONIX code identifying the scheme from which the value in the &lt;PriceCode&gt; element is taken. Mandatory in
      * an occurrence of the &lt;PriceCoded&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceCodeType priceCodeType() {
         _initialize();
@@ -185,7 +189,7 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
      * A price code from the scheme specified in the &lt;PriceCodeType&gt; element. Mandatory in each occurrence of the
      * &lt;PriceCoded&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceCode priceCode() {
         _initialize();
@@ -200,7 +204,7 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
      * &lt;PriceCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a retailer’s price banding scheme.
      * Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PriceCodeTypeName priceCodeTypeName() {
         _initialize();

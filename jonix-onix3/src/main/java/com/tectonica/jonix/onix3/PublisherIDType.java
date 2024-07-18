@@ -68,7 +68,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link PublisherIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher} ⯈ {@link PublisherIdentifier} ⯈

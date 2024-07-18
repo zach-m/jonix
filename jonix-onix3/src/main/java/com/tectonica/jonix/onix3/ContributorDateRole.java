@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContributorDateRole&gt; from the schema author:
+ *
+ * Type or role of the specified date relating to some aspect of the contributor
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContributorDate}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ContributorDate} ⯈

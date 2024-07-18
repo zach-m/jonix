@@ -60,7 +60,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link SalesRights}</li>
@@ -183,7 +182,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
      * An ONIX code which identifies the type of sales right or exclusion which applies in the territories which are
      * associated with it. Mandatory in each occurrence of the &lt;SalesRights&gt;composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SalesRightsType salesRightsType() {
         _initialize();
@@ -201,7 +200,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
      * &lt;RightsCountry&gt; or &lt;RightsTerritory&gt; or &lt;RightsRegion&gt; is mandatory in any occurrence of
      * the&lt;SalesRights&gt; composite.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<RightsCountry, java.util.Set<Countrys>> rightsCountrys() {
         _initialize();
@@ -217,7 +216,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
      * separated by spaces, so that the element can carry an unlimited number of territory codes, for territories that
      * share the sales rights specified in &lt;SalesRightsType&gt;. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RightsTerritory rightsTerritory() {
         _initialize();
@@ -234,7 +233,7 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
      * compatibility.</strong> See note on “Open Market” and “Airport” or “Airside” editions in the introduction to
      * Group&nbsp;PR.21.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<RightsRegion, RightsRegions> rightsRegions() {
         _initialize();

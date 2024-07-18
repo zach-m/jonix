@@ -58,11 +58,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ReligiousText&gt; from the schema author:
+ *
+ * Details of the special features of a religious text, eg the Bible, the Qur'an
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText}</li>
@@ -172,7 +175,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * An ONIX code indicating a religious text other than the Bible. Mandatory in each occurrence of the
      * &lt;ReligiousText&gt; composite that does <em>not</em> include a &lt;Bible&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReligiousTextIdentifier religiousTextIdentifier() {
         _initialize();
@@ -188,7 +191,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together specify and describe a feature of a religious text. Mandatory
      * if and only if &lt;ReligiousTextIdentifier&gt; is present.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes>
         religiousTextFeatures() {
@@ -204,7 +207,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * text. Mandatory in each occurrence of the &lt;ReligiousText&gt; composite that does <em>not</em> include a
      * &lt;ReligiousTextIdentifier&gt; element, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Bible bible() {
         _initialize();

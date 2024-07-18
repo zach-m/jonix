@@ -55,11 +55,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Extent&gt; from the schema author:
+ *
+ * Details of an extent (eg number of pages, duration) of a product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Extent}</li>
@@ -175,7 +178,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * the code lists, an extended set of values for &lt;ExtentType&gt; has been defined to allow more accurate
      * description of pagination.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ExtentType extentType() {
         _initialize();
@@ -191,7 +194,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * &lt;Extent&gt; composite; and it is very strongly recommended that &lt;ExtentValue&gt; should <em>always</em> be
      * included, even when the original product uses Roman numerals.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ExtentValue extentValue() {
         _initialize();
@@ -205,7 +208,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * An ONIX code indicating the unit used for the &lt;ExtentValue&gt; and the format in which the value is presented.
      * Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ExtentUnit extentUnit() {
         _initialize();
@@ -219,7 +222,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * The value of the extent expressed in Roman numerals. Optional, and non-repeating. Used only for page runs which
      * are numbered in Roman.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ExtentValueRoman extentValueRoman() {
         _initialize();

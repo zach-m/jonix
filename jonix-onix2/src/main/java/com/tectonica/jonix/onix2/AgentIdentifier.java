@@ -59,7 +59,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link MarketRepresentation}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link AgentIdentifier}</li>
@@ -182,7 +181,7 @@ public class AgentIdentifier
      * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;AgentIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AgentIDType agentIDType() {
         _initialize();
@@ -196,7 +195,7 @@ public class AgentIdentifier
      * An identifier of the type specified in the &lt;AgentIDType&gt; element. Mandatory in each occurrence of the
      * &lt;AgentIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -210,7 +209,7 @@ public class AgentIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in the &lt;AgentIDType&gt;
      * element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

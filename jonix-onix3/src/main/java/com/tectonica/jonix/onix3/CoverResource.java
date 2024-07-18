@@ -66,11 +66,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CoverResource&gt; from the schema author:
+ *
+ * Details of a resource file needed to manufacuture or package the cover of a product &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -219,7 +222,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * unless &lt;NoResource/&gt; is present, and repeatable if the resource can be linked in more than one way,
      * <i>eg</i> by HTTP, FTP and DOI URLs.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<ResourceFileLink, String> resourceFileLinks() {
         _initialize();
@@ -238,7 +241,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * Note that with &lt;SalesOutlet&gt; below, the provision of vendor-specific resources can require the use of
      * duplicate sequence numbers.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SequenceNumber sequenceNumber() {
         _initialize();
@@ -253,7 +256,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * &lt;ResourceFileLink&gt;. Optional and non-repeating, and may only be used when &lt;ResourceFileLink&gt; is
      * present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ResourceRole resourceRole() {
         _initialize();
@@ -269,7 +272,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * &lt;SequenceNumber&gt; specified within the manifest. The empty &lt;NoResource/&gt; must be used – and must only
      * be used – when no &lt;ResourceFileLink&gt; is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoResource noResource() {
         _initialize();
@@ -329,7 +332,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * resource is used for the publisher’s own direct sales, whereas the cover for other vendors consists of only two
      * resources (#1 and #3).
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesOutlet> salesOutlets() {
         _initialize();
@@ -346,7 +349,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * scheme. The composite is optional, and repeatable to specify multiple identifiers for the resource, but may only
      * be used when &lt;ResourceFileLink&gt; is present.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceIdentifier, JonixResourceIdentifier, ResourceIdentifierTypes>
         resourceIdentifiers() {
@@ -363,7 +366,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * <i>eg</i> the file type of the resource. Optional, and repeatable in order to provide multiple additional
      * details, but may only be used when &lt;ResourceFileLink&gt; is present.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ResourceFileDetail, ResourceFileDetails> resourceFileDetails() {
         _initialize();
@@ -381,7 +384,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * only be used when &lt;ResourceFileLink&gt; is present, and is repeatable in order to describe different aspects
      * of the resource file.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceFileFeature, JonixResourceFileFeature, ResourceFileFeatureTypes>
         resourceFileFeatures() {
@@ -400,7 +403,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * included in each instance if &lt;ResourceFileDescription&gt; is repeated to provide parallel descriptions in
      * multiple languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions() {
         _initialize();
@@ -426,7 +429,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * &lt;ResourceFileContentDescription&gt;, but must be included in each instance if
      * &lt;ResourceFileContentDescription&gt; is repeated to provide parallel descriptions in multiple languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ResourceFileContentDescription, String> resourceFileContentDescriptions() {
         _initialize();
@@ -442,7 +445,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * &lt;ResourceFileLink&gt;, <i>eg</i> date when the resource was last updated. Repeatable to specify different
      * dates with their various roles, but may only be used when &lt;ResourceFileLink&gt; is present.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceFileDate, JonixResourceFileDate, ResourceFileDateRoles>
         resourceFileDates() {

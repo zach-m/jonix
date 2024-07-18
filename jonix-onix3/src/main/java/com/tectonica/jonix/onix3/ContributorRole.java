@@ -65,12 +65,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContributorRole&gt; from the schema author:
+ *
+ * Role played by a contributor in creation of the product (eg writer, illustrator, editor), or in a promotional event
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContributorReference}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link ContributorReference} ⯈

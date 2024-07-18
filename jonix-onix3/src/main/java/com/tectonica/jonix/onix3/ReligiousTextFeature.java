@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ReligiousTextFeature&gt; from the schema author:
+ *
+ * &#9679; Modified cardinality of &lt;ReligiousTextFeatureDescription&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ReligiousText}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ReligiousText} ⯈ {@link ReligiousTextFeature}</li>
@@ -171,7 +174,7 @@ public class ReligiousTextFeature
      * An ONIX code specifying a feature described in the associated &lt;ReligiousTextFeatureCode&gt; element. Mandatory
      * in each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReligiousTextFeatureType religiousTextFeatureType() {
         _initialize();
@@ -185,7 +188,7 @@ public class ReligiousTextFeature
      * An ONIX code describing a feature specified in the associated &lt;ReligiousTextFeatureType&gt; element. Mandatory
      * in each occurrence of the &lt;ReligiousTextFeature&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReligiousTextFeatureCode religiousTextFeatureCode() {
         _initialize();
@@ -202,7 +205,7 @@ public class ReligiousTextFeature
      * single instance of &lt;ReligiousTextFeatureDescription&gt;, but must be included in each instance if
      * &lt;ReligiousTextFeatureDescription&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ReligiousTextFeatureDescription, String> religiousTextFeatureDescriptions() {
         _initialize();

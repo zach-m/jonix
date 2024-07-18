@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;WorkIdentifier&gt; from the schema author:
+ *
+ * Identifier of the work manifested in the product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link RelatedWork}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedWork} ⯈ {@link WorkIdentifier}</li>
@@ -171,7 +174,7 @@ public class WorkIdentifier
      * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;WorkIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public WorkIDType workIDType() {
         _initialize();
@@ -185,7 +188,7 @@ public class WorkIdentifier
      * An identifier of the type specified in the &lt;WorkIDType&gt; element. Mandatory in each occurrence of the
      * &lt;WorkIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -200,7 +203,7 @@ public class WorkIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the &lt;WorkIDType&gt;
      * element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

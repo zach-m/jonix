@@ -67,11 +67,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CountriesExcluded&gt; from the schema author:
+ *
+ * List of countries excluded from a territory (which must be defined using WORLD)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Territory}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈ {@link Territory} ⯈

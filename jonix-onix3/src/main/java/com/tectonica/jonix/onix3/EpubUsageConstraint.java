@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EpubUsageConstraint&gt; from the schema author:
+ *
+ * Details of a limitation on usage of a digital product (whether or not this constraint is enforced by DRM)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint}</li>
@@ -169,7 +172,7 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
      * An ONIX code specifying a usage of a digital product. Mandatory in each occurrence of the
      * &lt;EpubUsageConstraint&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EpubUsageType epubUsageType() {
         _initialize();
@@ -184,7 +187,7 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
      * with limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EpubUsageStatus epubUsageStatus() {
         _initialize();
@@ -199,7 +202,7 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together specify a quantitative limit on a particular type of usage of a
      * digital product. Repeatable in order to specify two or more limits on the usage type.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits() {
         _initialize();

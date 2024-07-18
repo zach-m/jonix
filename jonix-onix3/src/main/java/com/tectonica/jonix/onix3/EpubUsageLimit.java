@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link EpubUsageConstraint}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubUsageConstraint} ⯈ {@link EpubUsageLimit}</li>
@@ -163,7 +162,7 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
      * A numeric value representing the maximum permitted quantity of a particular type of usage. Mandatory in each
      * occurrence of the &lt;EpubUsageLimit&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Quantity quantity() {
         _initialize();
@@ -177,7 +176,7 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
      * An ONIX code for a unit in which a permitted usage quantity is stated. Mandatory in each occurrence of the
      * &lt;EpubUsageLimit&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EpubUsageUnit epubUsageUnit() {
         _initialize();

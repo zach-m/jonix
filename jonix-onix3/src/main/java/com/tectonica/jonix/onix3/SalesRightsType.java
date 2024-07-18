@@ -66,11 +66,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SalesRightsType&gt; from the schema author:
+ *
+ * The sales rights (eg for sale, not for sale) that apply in a territory
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SalesRights}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link SalesRights} ⯈ {@link SalesRightsType}</li>

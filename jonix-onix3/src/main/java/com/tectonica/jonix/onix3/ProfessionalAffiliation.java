@@ -53,12 +53,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProfessionalAffiliation&gt; from the schema author:
+ *
+ * Details of a professional position held by a contributor to the product at the time of its creation &#9679; Modified
+ * cardinality of &lt;ProfessionalPosition&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation}</li>
@@ -176,7 +180,7 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
      * instance of &lt;ProfessionalPosition&gt;, but must be included in each instance if &lt;ProfessionalPosition&gt;
      * is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<ProfessionalPosition, String> professionalPositions() {
         _initialize();
@@ -191,7 +195,7 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
      * if the &lt;ProfessionalPosition&gt; element is also present – where s/he held that position. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Affiliation affiliation() {
         _initialize();

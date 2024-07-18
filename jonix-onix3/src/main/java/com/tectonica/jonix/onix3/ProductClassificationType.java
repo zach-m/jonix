@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductClassificationType&gt; from the schema author:
+ *
+ * A specific trade classification scheme used to classify the product for national or international trade purposes
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductClassification}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductClassification} ⯈

@@ -60,11 +60,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductionDetail&gt; from the schema author:
+ *
+ * Block 8, container for file manifests and manufacturing specifications &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail}</li>
@@ -169,7 +172,7 @@ public class ProductionDetail implements OnixSuperComposite, Serializable {
      * <p>
      * A group of data elements which together carry manifest details for a single Product or Product part.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ProductionManifest> productionManifests() {
         _initialize();

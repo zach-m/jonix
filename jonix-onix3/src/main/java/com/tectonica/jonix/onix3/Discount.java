@@ -53,11 +53,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Discount&gt; from the schema author:
+ *
+ * Details of the trade discount offered by the supplier, as a percentage of the price or an absolute amount per copy
+ * &#9679; Added &lt;ToQuantity&gt; at revison 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
@@ -178,7 +182,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * and non-repeating; but either &lt;DiscountPercent&gt; or &lt;DiscountAmount&gt; or both must be present in each
      * occurrence of the &lt;Discount&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public DiscountPercent discountPercent() {
         _initialize();
@@ -192,7 +196,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * An ONIX code identifying a discount type or reason. Optional, and non-repeating. When omitted, the default is a
      * simple or rising discount (the discount is applied to all units in a qualifying order).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DiscountType discountType() {
         _initialize();
@@ -207,7 +211,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * omitted, the discount applies regardless of the order quantity (<i>ie</i> the minimum qualifying order quantity
      * is 1).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Quantity quantity() {
         _initialize();
@@ -223,7 +227,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * For the special case where there is no maximum (<i>ie</i> in the repeat of the &lt;Discount&gt; composite that
      * specifies the highest progressive discount), use zero.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ToQuantity toQuantity() {
         _initialize();
@@ -239,7 +243,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * &lt;Discount&gt; composite. Note that when both are present, they represent two different expressions of the same
      * discount – the discounts are not cumulative.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DiscountAmount discountAmount() {
         _initialize();

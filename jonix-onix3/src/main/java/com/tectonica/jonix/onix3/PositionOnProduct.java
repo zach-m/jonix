@@ -65,12 +65,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PositionOnProduct&gt; from the schema author:
+ *
+ * Position of a barcode or printed price on the product (eg back cover)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Barcode}&gt;</li>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Barcode} ⯈ {@link PositionOnProduct}</li>

@@ -63,11 +63,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PromotionContact&gt; from the schema author:
+ *
+ * Contact details for a organization responsible for answering enquiries about promotion of the product &#9679;
+ * Deprecated - use &lt;ProductContact&gt; instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link PromotionContact}</li>

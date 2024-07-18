@@ -58,11 +58,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Conference&gt; from the schema author:
+ *
+ * &#9679; Deprecated - use &lt;Event&gt; instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference}</li>
@@ -199,7 +202,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * The name of a conference or conference series to which the product is related. This element is mandatory in each
      * occurrence of the &lt;Conference&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ConferenceName conferenceName() {
         _initialize();
@@ -213,7 +216,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates the relationship between the product and a conference to which it is related,
      * <i>eg</i> Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceRole conferenceRole() {
         _initialize();
@@ -227,7 +230,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * An acronym used as a short form of the name of a conference or conference series given in the
      * &lt;ConferenceName&gt; element. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceAcronym conferenceAcronym() {
         _initialize();
@@ -241,7 +244,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * The number of a conference to which the product is related, within a conference series. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceNumber conferenceNumber() {
         _initialize();
@@ -257,7 +260,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * </p>
      * <p>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceTheme conferenceTheme() {
         _initialize();
@@ -270,7 +273,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * <p>
      * The date of a conference to which the product is related. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceDate conferenceDate() {
         _initialize();
@@ -283,7 +286,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * <p>
      * The place of a conference to which the product is related. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferencePlace conferencePlace() {
         _initialize();
@@ -299,7 +302,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * <em>Either</em> an identifier, <em>or</em> one or other of &lt;PersonName&gt; or &lt;CorporateName&gt;,
      * <em>or</em> both an identifier and a name, must be present in each occurrence of the composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ConferenceSponsor> conferenceSponsors() {
         _initialize();
@@ -314,7 +317,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * the conference identified in an occurrence of the &lt;Conference&gt; composite. Repeatable in order to provide
      * links to multiple websites.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();

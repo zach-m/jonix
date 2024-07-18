@@ -66,12 +66,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SourceTitle&gt; from the schema author:
+ *
+ * Title of the publication from which the text is taken, eg for a review &#9679; Added language attribute at revision
+ * 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>
  * <li>&lt;{@link CitedContent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link SourceTitle}</li>

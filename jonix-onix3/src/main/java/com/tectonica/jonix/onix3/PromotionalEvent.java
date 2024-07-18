@@ -71,11 +71,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PromotionalEvent&gt; from the schema author:
+ *
+ * Details of an event held to promote the product &#9679; Added &lt;SupportingResource&gt; at revision 3.0.8 &#9679;
+ * Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PromotionDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent}</li>
@@ -232,7 +236,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * A mandatory ONIX code which specifies the type of promotional event. Repeatable for promotional events which
      * combine different event types.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixCodelist<EventType, EventTypes> eventTypes() {
         _initialize();
@@ -246,7 +250,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the audience for which a promotional event is intended. Mandatory within in each
      * instance of the &lt;PromotionalEvent&gt; composite, and repeatable.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
@@ -262,7 +266,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * names for a single event in multiple languages. The <i>language</i> attribute is optional for a single instance
      * of &lt;EventName&gt;, but must be included in each instance if &lt;EventName&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<EventName, String> eventNames() {
         _initialize();
@@ -284,7 +288,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * Note that an instance of &lt;PromotionalEvent&gt; may also contain one or more &lt;Contributor&gt; composites –
      * the latter listing participants to the event <em>who are not contributors to the product</em>.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<ContributorReference> contributorReferences() {
         _initialize();
@@ -299,7 +303,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * occurence is mandatory within the &lt;PromotionalEvent&gt; composite, and &lt;EventOccurrence&gt; is repeatable
      * in order to list a group of more or less similar occurrences such as a series of book signings.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<EventOccurrence> eventOccurrences() {
         _initialize();
@@ -313,7 +317,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * An ONIX code which specifies the status of a promotional event. Optional within each instance of the
      * &lt;PromotionalEvent&gt; composite, and non-repeatable.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EventStatus eventStatus() {
         _initialize();
@@ -328,7 +332,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * and non-repeating. Must only be sent in a &lt;PromotionalEvent&gt; composite that has neither
      * &lt;ContributorReference&gt; nor &lt;Contributor&gt; composites.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoContributor noContributor() {
         _initialize();
@@ -347,7 +351,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together define an identifier for an event. The composite is repeatable
      * in order to specify multiple identifiers for the same event.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<EventIdentifier, JonixEventIdentifier, EventIdentifierTypes>
         eventIdentifiers() {
@@ -365,7 +369,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or P.18, in the same Product record). Repeatable to identify
      * multiple contributors.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
@@ -386,7 +390,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * name detail must also be sent in the &lt;ContributorReference&gt; and &lt;Contributor&gt; composites for indexing
      * and retrieval.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
@@ -401,7 +405,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;EventDescription&gt;,
      * but must be included in each instance if &lt;EventDescription&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EventDescription, String> eventDescriptions() {
         _initialize();
@@ -418,7 +422,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * resource (for example a cover image in separate low and high resolution versions) should be specified in a single
      * instance of the composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SupportingResource> supportingResources() {
         _initialize();
@@ -434,7 +438,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * &lt;CorporateName&gt;, or both an identifier and a name, must be present in each occurrence of the composite. The
      * composite is repeatable in order to specify multiple organizers and sponsors.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<EventSponsor> eventSponsors() {
         _initialize();
@@ -449,7 +453,7 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
      * the event in an instance of the &lt;PromotionalEvent&gt; composite. Repeatable to provide links to multiple
      * websites.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();

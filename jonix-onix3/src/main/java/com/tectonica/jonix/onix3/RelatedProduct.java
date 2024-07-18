@@ -57,12 +57,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;RelatedProduct&gt; from the schema author:
+ *
+ * Details of another product related in some way to the product &#9679; Added &lt;ProductForm&gt;,
+ * &lt;ProductFormDetail&gt; at revision 3.0 (2010) &#9679; Modified cardinality of &lt;ProductRelationCode&gt; at
+ * revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link RelatedMaterial}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedProduct}</li>
@@ -182,7 +187,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite, and repeatable where the related product
      * has multiple types of relationship to the product described.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixCodelist<ProductRelationCode, ProductRelations> productRelationCodes() {
         _initialize();
@@ -198,7 +203,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite. Repeatable only if two or more identifiers
      * for the same product are sent using different identifier schemes.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -219,7 +224,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * risk of contradictory data in separate data feeds. <em>This and the following element should not be supplied
      * unless specifically requested by a particular recipient.</em>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductForm productForm() {
         _initialize();
@@ -234,7 +239,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * An ONIX code which provides added detail of the medium and/or format of a related product. Optional and
      * repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();

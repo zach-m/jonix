@@ -58,7 +58,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductClassification}</li>
@@ -179,7 +178,7 @@ public class ProductClassification
      * An ONIX code identifying the scheme from which the identifier in &lt;ProductClassificationCode&gt; is taken.
      * Mandatory in any instance of the &lt;ProductClassification&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductClassificationType productClassificationType() {
         _initialize();
@@ -193,7 +192,7 @@ public class ProductClassification
      * A classification code from the scheme specified in &lt;ProductClassificationType&gt;. Mandatory in any instance
      * of the &lt;ProductClassification&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductClassificationCode productClassificationCode() {
         _initialize();
@@ -208,7 +207,7 @@ public class ProductClassification
      * Optional and non-repeating. Used when a mixed product (<em>eg</em> book and CD) belongs partly to two or more
      * product classifications.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Percent percent() {
         _initialize();

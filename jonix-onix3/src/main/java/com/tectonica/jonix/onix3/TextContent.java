@@ -57,12 +57,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;TextContent&gt; from the schema author:
+ *
+ * Details of a supporting text, primarily for marketing and promotional purposes &#9679; Added
+ * &lt;TextSourceDescription&gt; at revision 3.0.7 &#9679; Added &lt;Territory&gt;, &lt;ReviewRating&gt; at revision
+ * 3.0.3 &#9679; Modified cardinality of &lt;SourceTitle&gt; at revision 3.0.2 &#9679; Modified cardinality of
+ * &lt;Text&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * <li>&lt;{@link CollateralDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent}</li>
@@ -201,7 +207,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the type of text which is sent in the &lt;Text&gt; element. Mandatory in each
      * occurrence of the &lt;TextContent&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TextType textType() {
         _initialize();
@@ -215,7 +221,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the audience for which the text in the &lt;Text&gt; element is intended. Mandatory
      * in each occurrence of the &lt;TextContent&gt; composite, and repeatable.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
@@ -231,7 +237,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * attribute is optional for a single instance of &lt;Text&gt;, but must be included in each instance if
      * &lt;Text&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<Text, String> texts() {
         _initialize();
@@ -257,7 +263,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * those without specific &lt;Territory&gt; composites are intended for use only where no appropriate targeted text
      * is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Territory territory() {
         _initialize();
@@ -271,7 +277,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together specify a ‘star rating’ awarded as part of a review of the
      * publication, used when &lt;TextType&gt; indicates the text is a review. Not repeatable.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReviewRating reviewRating() {
         _initialize();
@@ -285,7 +291,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * The name of a company or corporate body responsible for the text sent in the &lt;Text&gt; element. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TextSourceCorporate textSourceCorporate() {
         _initialize();
@@ -299,7 +305,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i> if it is a review or promotional quote.
      * Optional, and repeatable if the text is jointly authored.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TextAuthor, String> textAuthors() {
         _initialize();
@@ -317,7 +323,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * &lt;TextSourceDescription&gt; is repeated. The description may be used with either a person or corporate name, to
      * draw attention to any aspect of the text source’s background which provides context for the text in &lt;Text&gt;.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TextSourceDescription, String> textSourceDescriptions() {
         _initialize();
@@ -333,7 +339,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if
      * &lt;SourceTitle&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<SourceTitle, String> sourceTitles() {
         _initialize();
@@ -349,7 +355,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * occurrence of the &lt;TextContent&gt; composite, <i>eg</i> date when quoted text was published. Repeatable to
      * specify different dates with their various roles.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
         _initialize();

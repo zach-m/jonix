@@ -60,11 +60,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EndTime&gt; from the schema author:
+ *
+ * The end time of a content item, relative to the beginning of the whole of the product's audio or video content (not
+ * to the beginning of a specific filc containing that audio or video content) &#9679; Added at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TimeRun}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈ {@link TimeRun} ⯈

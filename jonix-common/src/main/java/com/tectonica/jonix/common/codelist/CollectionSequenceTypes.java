@@ -39,8 +39,9 @@ interface CodeList197 {
  * Description: Collection sequence type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist197">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist197">ONIX
  *      Codelist 197 in Reference Guide</a>
  */
 public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
@@ -74,14 +75,14 @@ public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
     /**
      * Where it is different from the title order, publication order, narrative order etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Suggested_reading_order("06", "Suggested reading order"),
 
     /**
      * Where it is different from the title order, publication order, narrative order, reading order etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Suggested_display_order("07", "Suggested display order");
 

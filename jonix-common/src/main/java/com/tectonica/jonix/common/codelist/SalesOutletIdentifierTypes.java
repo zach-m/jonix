@@ -39,8 +39,9 @@ interface CodeList102 {
  * Description: Sales outlet identifier type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist102">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist102">ONIX
  *      Codelist 102 in Reference Guide</a>
  */
 public enum SalesOutletIdentifierTypes implements OnixCodelist, CodeList102 {
@@ -58,21 +59,21 @@ public enum SalesOutletIdentifierTypes implements OnixCodelist, CodeList102 {
     /**
      * 13-digit GS1 global location number (formerly EAN location number). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Retail_sales_outlet_GLN("04", "Retail sales outlet GLN"),
 
     /**
      * 7-digit Book trade Standard Address Number (US, UK etc). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Retail_sales_outlet_SAN("05", "Retail sales outlet SAN"),
 
     /**
      * DEPRECATED - use code 03
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     BIC_sales_outlet_ID_code("02", "BIC sales outlet ID code");
 

@@ -55,7 +55,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Complexity}</li>
@@ -169,7 +168,7 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
      * <p>
      * An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ComplexitySchemeIdentifier complexitySchemeIdentifier() {
         _initialize();
@@ -182,7 +181,7 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
      * <p>
      * A code specifying the level of complexity of a text.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ComplexityCode complexityCode() {
         _initialize();

@@ -57,11 +57,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PublisherRepresentative&gt; from the schema author:
+ *
+ * Details of an organisation appointed by the publisher to act on its behalf in a specific market, eg a 'local
+ * publisher', sales agent etc
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link PublisherRepresentative}</li>
@@ -189,7 +193,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * Exclusive sales agent, Local publisher, <i>etc</i>. Mandatory in each occurrence of the
      * &lt;PublisherRepresentative&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AgentRole agentRole() {
         _initialize();
@@ -206,7 +210,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * either at least one agent identifier, or an &lt;AgentName&gt;. Repeatable only if two or more identifiers are
      * sent using different schemes.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes>
         agentIdentifiers() {
@@ -221,7 +225,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * The name of an agent or local publisher. Optional and non-repeating; required if no agent identifier is sent in
      * an occurrence of the &lt;PublisherRepresentative&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AgentName agentName() {
         _initialize();
@@ -235,7 +239,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * A telephone number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor
      * of providing contact details in the &lt;ProductContact&gt; composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
         _initialize();
@@ -249,7 +253,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * A fax number of an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor of
      * providing contact details in the &lt;ProductContact&gt; composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
         _initialize();
@@ -263,7 +267,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * An e-mail address for an agent or local publisher. Optional and repeatable. Deprecated in this context, in favor
      * of providing contact details in the &lt;ProductContact&gt; composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
         _initialize();
@@ -278,7 +282,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * the agent or local publisher identified in an occurrence of the &lt;PublisherRepresentative&gt; composite.
      * Repeatable in order to provide links to multiple websites.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();

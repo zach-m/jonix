@@ -41,8 +41,9 @@ interface CodeList175 {
  * Description: Product form detail
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -100,7 +101,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Audiobook package format
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     W3C_Audiobook_format("A113", "W3C Audiobook format"),
 
@@ -175,7 +176,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Incidental sounds added to the audiobook narration (eg background environmental sounds)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Sound_effects("A310", "Sound effects"),
 
@@ -183,7 +184,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Incidental music added to the audiobook narration (eg to heighten atmosphere). Do not use where the music is a
      * primary part of the audio
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Background_music("A311", "Background music"),
 
@@ -191,7 +192,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Pre-recorded audiobook narration does not contain any background sounds, including music, sound effects, etc,
      * though music and effects may be present if isolated from the speech (ie the sounds do not overlap)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Without_background_sounds("A312", "Without background sounds"),
 
@@ -199,29 +200,29 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Constant or average bit rate (eg of an mp3 or AAC audio file) 64kbits/second or more. Note the bit rate is the
      * total across all channels, not a per channel rate
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _64kbits_s("A400", "64kbits/s"),
 
     /**
      * Constant or average bit rate 128bbits/second or more
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _128kbits_s("A401", "128kbits/s"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _192kbits_s("A402", "192kbits/s"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _256kbits_s("A403", "256kbits/s"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _320kbits_s("A404", "320kbits/s"),
 
@@ -253,7 +254,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Multi-channel 'spatial' audio (eg for 7.1.4 speaker arrangements or processed for headphone delivery)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Dolby_Atmos("A471", "Dolby Atmos"),
 
@@ -434,14 +435,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (de: ,Taschenbuch'; it: &#171;Tascabile / Supertascabile&#187;; es: &#171;libro de bolsillo&#187;; fr:
      * &#171;&#160;livre de poche&#160;&#187; etc). Use with Product form code BB or BC. See also List 12 code 04
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Pocket_sized("B133", "Pocket-sized"),
 
     /**
      * 210 x 148mm
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     A5("B134", "A5"),
 
@@ -449,28 +450,28 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * In North America, a category of paperback characterized partly by page size (typically 7&#8539; x 4&#190; inches)
      * and partly by target market and terms of trade. Use with Product Form code BC
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Mass_market_max_paperback("B135", "Mass market max paperback"),
 
     /**
      * Standard 10.25 x 6.625in size approx (260 x 170mm)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Comic_book_size_US("B139", "Comic book size (US)"),
 
     /**
      * Standard 240 x 320mm size approx
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Comic_album_size_Euro("B140", "Comic album size (Euro)"),
 
     /**
      * Japanese format, approximately 364 x 257 mm
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     B4_Henkei_size("B141", "B4-Henkei size"),
 
@@ -522,7 +523,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * A book containing pages with die-cut or press-out pieces that can be used as a jigsaw, puzzle pieces, etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Press_out_puzzle_pieces("B216", "Press-out puzzle pieces"),
 
@@ -549,7 +550,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * the body of the book. Also 'silent books', wordless graphic novels and comic books: use with applicable Product
      * Form code
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Wordless_book("B224", "‘Wordless’ book"),
 
@@ -647,12 +648,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Hardcover or softcover where interior spreads lay flat across the spine
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Lay_flat_binding("B318", "Lay-flat binding"),
 
     /**
-     * Covers do not use a distinctive stock, but are the same as the body pages
+     * Covers do not use a distinctive stock, but are the same as the body pages. Use for example with Product form BF,
+     * to indicate a pamphlet does not use a card or distinct paper cover. See also B416 (for card covers) and B418 (for
+     * distinct paper covers)
      */
     Self_covered("B400", "Self-covered"),
 
@@ -699,14 +702,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Decorative or functional
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Head_and_tail_bands("B407", "Head and tail bands"),
 
     /**
      * Illustrated or abstract printed endpapers, but not those solely of colored paper
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Decorated_endpapers("B408", "Decorated endpapers"),
 
@@ -745,22 +748,33 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Laminated_cover("B415", "Laminated cover"),
 
     /**
-     * With card cover (like a typical paperback). As distinct from a self-cover or more elaborate binding
+     * With card cover (like a typical paperback). As distinct from a self-cover or more elaborate binding. Use for
+     * example with Product form BF, to indicate a pamphlet is bound within a card cover. See also B400 (for
+     * self-covers) and B418 (for distinct paper covers)
      */
     Card_cover("B416", "Card cover"),
 
     /**
      * Printed both inside and outside the front and/or back cover
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Duplex_printed_cover("B417", "Duplex-printed cover"),
+
+    /**
+     * Cover uses a distinct, usually heavier (thicker) paper than the interior pages. Use for example with Product form
+     * BF, to indicate a pamphlet is bound within a paper cover. See also B400 (for self-covers) and B416 (for card
+     * covers)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Paper_cover("B418", "Paper cover"),
 
     /**
      * Cover or jacket finish may merit special handling or packaging during distribution and fulfilment, for example
      * because of gloss varnish which may hold fingerprints or matt laminate liable to scuffing
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Delicate_cover_jacket_finish("B420", "Delicate cover / jacket finish"),
 
@@ -839,14 +853,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Strap acts as closure or as page marker
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     With_elasticated_strap("B517", "With elasticated strap"),
 
     /**
      * For example, holographic sticker such as the banderol used in the Turkish book trade
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     With_serialized_authenticity_token("B518", "With serialized authenticity token"),
 
@@ -854,7 +868,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Jacket in the form of a pamphlet or poster, specifically intended to be removed and read or used separately from
      * the book
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     With_dust_jacket_poster("B519", "With dust jacket poster"),
 
@@ -862,23 +876,30 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Usually die-cut rounding to foredge corners of cover (and/or to foredge page corners). See B212 for elaborate
      * die-cutting
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Rounded_corners("B520", "Rounded corners"),
 
     /**
      * Water-resistant or 'waterproof' cover and pages
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Splashproof("B521", "Splashproof"),
 
     /**
      * Pages composed of 'mineral paper' comprised of HDPE plastic and ground calcium carbonate, eg Stonepaper
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Mineral_paper("B522", "Mineral paper"),
+
+    /**
+     * For example, cut-out claim form such as the 'text data request ticket' used in the Japanese book trade
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    With_accessibility_claim_ticket("B523", "With accessibility claim ticket"),
 
     /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
@@ -897,14 +918,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * same way up. Also known as 'dos-&#224;-dos' (Fr) binding, it has two front covers and two spines. Usually an
      * omnibus of two works
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Back_to_back_book("B603", "Back-to-back book"),
 
     /**
      * Manga with pages and panels in the sequence mirrored from Japanese-style design (thus flowing left-to-right)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Flipped_manga_format("B604", "Flipped manga format"),
 
@@ -914,7 +935,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * English and Arabic) and neither needs to be upside down, it has two front covers and a single spine. Usually an
      * omnibus of a work and a derived translated work
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Variant_turn_around_book("B605", "Variant turn-around book"),
 
@@ -922,14 +943,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Pages are ordered left to right (the left page in a spread is read before the right). Note this does not
      * specifically mean text on the page is also read left to right
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Page_progression_LTR("B606", "Page progression LTR"),
 
     /**
      * Pages are ordered right to left
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Page_progression_RTL("B607", "Page progression RTL"),
 
@@ -937,7 +958,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Pages are ordered top to bottom, with the spine oriented horizontally. See also Dwarsligger (code B118), a
      * proprietary variation of this format
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Page_progression_TTB("B608", "Page progression TTB"),
 
@@ -945,7 +966,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Pages are ordered bottom to top, with the spine oriented horizontally, or in a way for which there is no other
      * code
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Page_progression_other("B609", "Page progression other"),
 
@@ -957,7 +978,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * For bicameral scripts, body text is upper case only
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Upper_case_only("B611", "Upper case only"),
 
@@ -997,28 +1018,28 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Eg charts, diagrams, maps, that are embossed or textured for accessibility purposes
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Tactile_images("B750", "Tactile images"),
 
     /**
      * Image-changing effect, '3D' images, 'tilt cards', printed with tiny lenses
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Lenticular_images("B751", "Lenticular images"),
 
     /**
      * Stereoscopic 3D effect (eg of images) as viewed through red/green filters
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Anaglyph_images("B752", "Anaglyph images"),
 
     /**
      * Physical 3D relief (eg of a map, globe) reflects height of terrain etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Raised_3D_relief("C750", "Raised 3D relief"),
 
@@ -1154,56 +1175,56 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Use with Product Form code DB, DI, DO or E* as applicable. Deprecated - use D313
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Sony_PlayStation_3_("D317", "Sony PlayStation 3"),
 
     /**
      * Use with Product Form code DB, DI, DO or E* as applicable
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Sony_PlayStation_4("D318", "Sony PlayStation 4"),
 
     /**
      * Use with Product Form code DA or E* as applicable
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Sony_PlayStation_Vita("D319", "Sony PlayStation Vita"),
 
     /**
      * Use with Product Form code DB, DI, DO or E* as applicable
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Microsoft_Xbox_One("D320", "Microsoft Xbox One"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Nintendo_Switch("D321", "Nintendo Switch"),
 
     /**
      * Use with Product Form code DE or DB as applicable
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Nintendo_Wii_U("D322", "Nintendo Wii U"),
 
     /**
      * Use with Product Form code DB, DI, DO or E* as applicable
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Sony_PlayStation_5("D323", "Sony PlayStation 5"),
 
     /**
      * Use with Product Form code DB, DI, DO or E* as applicable
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Microsoft_Xbox_Series_X_S("D324", "Microsoft Xbox Series X / S"),
 
@@ -1451,14 +1472,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * (Braille-ready file) Electronic Braille file
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     BRF("E146", "BRF"),
 
     /**
      * Proprietary XML format for articles, see for example https://www.cairn.info/services-aux-editeurs.php
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Erudit("E147", "Erudit"),
 
@@ -1466,26 +1487,33 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * A format proprietary to Amazon for use with its Kindle reading devices or software readers. Essentially a PDF
      * embedded within a KF8 format file
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Amazon_Kindle_Print_Replica("E148", "Amazon Kindle Print Replica"),
 
     /**
      * Format for comic books, consisting primarily of sequentially-named PNG or JPEG images in a zip container
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Comic_Book_Archive("E149", "Comic Book Archive"),
 
     /**
-     * Use this and/or code E201 when a particular e-publication type (specified using codes E100 and upwards) has both
-     * fixed format and reflowable variants, to indicate which option is included in this product
+     * JONIX adds: Not included in Onix2
+     */
+    EPUB_A("E150", "EPUB/A"),
+
+    /**
+     * Use this and/or code E201 when a particular e-publication type (specified using codes E100 and upwards) is
+     * reflowable or has both fixed layout and reflowable sections or variants, to indicate which option is included in
+     * this product
      */
     Reflowable("E200", "Reflowable"),
 
     /**
-     * Use this and/or code E200 when a particular e-publication type (specified using codes E100 and upwards) has both
-     * fixed format and reflowable variants, to indicate which option is included in this product
+     * Use this and/or code E200 when a particular e-publication type (specified using codes E100 and upwards) is fixed
+     * layout or has both fixed layout and reflowable sections or variants, to indicate which option is included in this
+     * product
      */
     Fixed_format("E201", "Fixed format"),
 
@@ -1509,14 +1537,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (Mostly fixed-format) e-publication contains visible page numbers. Use with List 196 code 19 if numbering has a
      * print-equivalent
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Visible_page_numbering("E205", "Visible page numbering"),
 
     /**
      * For e-publications only, pages may be rendered LTR or RTL (see B606 to B609)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     No_preferred_page_progression("E206", "No preferred page progression"),
 
@@ -1535,14 +1563,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Use for fixed-format e-books optimised for a square display.
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Square("E212", "Square"),
 
     /**
      * Use for fixed-format e-publications optimised for vertical scrolling display ('webtoon format')
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Vertical_scrolling("E213", "Vertical scrolling"),
 
@@ -1581,7 +1609,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (2:1) Use for fixed-format e-books optimised for displays with an 18:9 aspect ratio (eg 2160x1080, 2880x1440
      * pixels etc)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _18_9("E226", "18:9"),
 
@@ -1589,7 +1617,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (2.37:1) Use for fixed-format e-books optimised for displays with an 21:9 (or 64:27) aspect ratio (eg 3840x1644
      * pixels etc)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _21_9("E227", "21:9"),
 
@@ -1603,7 +1631,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (de: Nutzkalendarium) Calendar or diary has spaces intended for entering birthdays, appointments, notes etc. Use
      * with other calendar / diary type codes
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Calendar_with_write_in_space("P091", "Calendar with write-in space"),
 
@@ -1611,7 +1639,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (de: Schmuckkalendarium) Calendar or diary has no spaces intended for entering birthdays, appointments, notes
      * etc. Use with other calendar / diary type codes
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Calendar_without_write_in_space("P092", "Calendar without write-in space"),
 
@@ -1619,28 +1647,28 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (de: Mehrmonatskalender) Calendar has multiple months (but not whole year) per page or view. Use with other
      * calendar / diary type codes when the time period per sheet, page or view is not the expected arrangement
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Multiple_months_per_page("P096", "Multiple months per page"),
 
     /**
      * (de: Monatskalender) Calendar has one month per page or view
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     One_month_per_page("P097", "One month per page"),
 
     /**
      * (de: Wochenkalender) Calendar has one week per page or view
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     One_week_per_page("P098", "One week per page"),
 
     /**
      * (de: Tageskalender) Calendar has one day per page or view
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     One_day_per_page("P099", "One day per page"),
 
@@ -1722,7 +1750,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Wall or poster calendar with entries for each family member. Use with Product Form code PC or PK
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Family_planner("P115", "Family planner"),
 
@@ -1730,7 +1758,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Calendar sheets detachable (usually perforated) and intended for mailing as postcards. Use with Product Form code
      * PC
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Postcard_calendar("P116", "Postcard calendar"),
 
@@ -1738,7 +1766,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Wall calendar without illustrations, usually one page per month, intended to be used by adding your own images
      * (de: Bastelkalender). Use with Product Form code PC
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Blank_calendar("P131", "Blank calendar"),
 
@@ -1746,7 +1774,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Very large wall calendar intended for hanging, usually one page per month, wide landscape orientation, with
      * illustrations. Use with Product Form code PC
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Panoramic_calendar("P132", "Panoramic calendar"),
 
@@ -1754,7 +1782,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Very large wall calendar intended for hanging, usually one page per month, narrow portrait orientation, with
      * illustrations. Use with Product Form code PC
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Columnar_calendar("P133", "Columnar calendar"),
 
@@ -1762,7 +1790,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * (de: Broschurkalender) Wall calendar, usually intended for hanging from a page edge, typically two pages per view
      * and one month per view, with illustrations. See also P106. Use with Product Form code PC
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Square_calendar("P134", "Square calendar"),
 
@@ -1775,14 +1803,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * For use to specify letter, word, image (etc) recognition cards for teaching reading or other classroom use. Use
      * with Product form code PD
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Flash_cards("P121", "Flash cards"),
 
     /**
      * Quick reference cards, revision cards, recipe cards etc. Use with Product form code PD
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Reference_cards("P122", "Reference cards"),
 
@@ -1790,21 +1818,21 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * For use to specify cards and card decks for gaming, collecting and trading etc. Use also for divination cards.
      * Use with Product form codes PD
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Recreation_cards("P123", "Recreation cards"),
 
     /**
      * And postcard packs / books. Use with Product form code PJ
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Postcards("P124", "Postcards"),
 
     /**
      * And greeting card packs. Use with Product form code PJ
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Greeting_cards("P125", "Greeting cards"),
 
@@ -1813,14 +1841,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * redeemed later. For example book token cards, gift cards. Note value additions and redemption may be in a
      * physical store or online
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Gift_cards("P126", "Gift cards"),
 
     /**
      * Blank certificate, award or achivement cards, Use with Product form code PD
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Certificate_cards("P127", "Certificate cards"),
 
@@ -1852,7 +1880,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Content is printed single-sided (for wallcharts and hanging maps, calendars, etc)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Single_sided("P305", "Single-sided"),
 
@@ -1860,7 +1888,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Content is printed double-sided (for wallcharts and hanging maps, calendars, etc, where double-sided may not
      * always be expected)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Double_sided("P306", "Double-sided"),
 
@@ -1882,37 +1910,52 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Up to 2K resolution (1920 or 2048 pixels wide) eg for Blu-Ray
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     HD("V205", "HD"),
 
     /**
      * Up to 4K resolution (3840 or 4096 pixels wide) eg for Ultra HD Blu-Ray
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     UHD("V206", "UHD"),
 
     /**
      * Eg for Blu-ray 3D
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _3D_video("V207", "3D video"),
 
     /**
      * Or subtitles
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Closed_captions("V210", "Closed captions"),
 
     /**
      * 'Burnt-in' or hard captions or subtitles
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Open_captions("V211", "Open captions"),
+
+    /**
+     * Full transcript of audio and audiovisual content included within the product supplied. See also List 158, where a
+     * transcript is a separate resource
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Transcript("V212", "Transcript"),
+
+    /**
+     * Full signing of audio and audiovisual content of the included within the product supplied
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Sign_language_interpretation("V213", "Sign language interpretation"),
 
     /**
      * Licensed for use in domestic contexts only
@@ -1928,49 +1971,49 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * Primary material composition (eg of kit or puzzle pieces, of gameplay tokens or tiles) is wood or has wooden
      * pieces/parts
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Wooden("Z101", "Wooden"),
 
     /**
      * Plastic or plastic pieces/parts
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Plastic("Z102", "Plastic"),
 
     /**
      * Card or board pieces/parts
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Board("Z103", "Board"),
 
     /**
      * Puzzle assembles into a 3D object
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     _3D_puzzle("Z111", "3D puzzle"),
 
     /**
      * Toy makes a noise. See B208 for noisy books
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Noisy_kit_puzzle_toy("Z112", "Noisy kit / puzzle / toy"),
 
     /**
      * Including finger / hand puppets, marionettes
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Puppet("Z113", "Puppet"),
 
     /**
      * Designed and sized for the very young, or those with visual impairments, limited motor skills, dementia etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Extra_large_pieces("Z121", "Extra large pieces");
 

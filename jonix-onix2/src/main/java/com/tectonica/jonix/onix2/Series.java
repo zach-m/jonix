@@ -60,7 +60,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Series}</li>
@@ -201,7 +200,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * occurrence of the &lt;Series&gt; composite. The &lt;Title&gt; composite provides a more comprehensive
      * representation of a series title, and allows alternative forms to be sent.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TitleOfSeries titleOfSeries() {
         _initialize();
@@ -219,7 +218,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * &lt;SeriesIdentifier&gt; composite on the next page provides a more general method of handling this and other
      * series identifiers, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SeriesISSN seriesISSN() {
         _initialize();
@@ -234,7 +233,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * Optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt; composite on the next page provides a more
      * general method of handling this and other series identifiers, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublisherSeriesCode publisherSeriesCode() {
         _initialize();
@@ -247,7 +246,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * <p>
      * The distinctive enumeration of a product within a series. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NumberWithinSeries numberWithinSeries() {
         _initialize();
@@ -261,7 +260,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * The nominal year of an annual publication. May be entered as either a single year YYYY or a span of two
      * consecutive years YYYY-YYYY. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public YearOfAnnual yearOfAnnual() {
         _initialize();
@@ -277,7 +276,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * is optional, and may only repeat if two or more identifiers of different types are sent. It is not permissible to
      * have two identifiers of the same type.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, CollectionIdentifierTypes>
         seriesIdentifiers() {
@@ -293,7 +292,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together give the text of a title, including a subtitle where
      * applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
         _initialize();
@@ -308,7 +307,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * The composite is optional in any occurrence of the &lt;Series&gt; composite. <strong>Please see Group&nbsp;PR.8
      * for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();

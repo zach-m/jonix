@@ -41,8 +41,9 @@ interface CodeList34 {
  * Description: Text format
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist34">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist34">ONIX
  *      Codelist 34 in Reference Guide</a>
  */
 public enum TextFormats implements OnixCodelist, CodeList34 {
@@ -77,55 +78,55 @@ public enum TextFormats implements OnixCodelist, CodeList34 {
     /**
      * DEPRECATED: use code 06 or 07 as appropriate
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     ASCII_text("00", "ASCII text"),
 
     /**
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     SGML("01", "SGML"),
 
     /**
      * DEPRECATED: was formerly assigned both to PDF and to XHTML
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     PDF("04", "PDF"),
 
     /**
      * Replaces 04 for the &lt;TextFormat&gt; element, but cannot of course be used as a textformat attribute
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     PDF_("08", "PDF"),
 
     /**
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Microsoft_rich_text_format_RTF("09", "Microsoft rich text format (RTF)"),
 
     /**
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Microsoft_Word_binary_format_DOC("10", "Microsoft Word binary format (DOC)"),
 
     /**
      * Office Open XML file format / OOXML / DOCX
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     ECMA_376_WordprocessingML("11", "ECMA 376 WordprocessingML"),
 
     /**
      * ISO Open Document Format
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     ISO_26300_ODF("12", "ISO 26300 ODF"),
 
     /**
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Corel_Wordperfect_binary_format_DOC("13", "Corel Wordperfect binary format (DOC)"),
 
@@ -133,14 +134,14 @@ public enum TextFormats implements OnixCodelist, CodeList34 {
      * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
      * (IDPF) [File extension .epub]
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     EPUB("14", "EPUB"),
 
     /**
      * XML Paper Specification
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     XPS("15", "XPS");
 

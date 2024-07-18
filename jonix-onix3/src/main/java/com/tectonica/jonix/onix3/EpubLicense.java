@@ -55,12 +55,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EpubLicense&gt; from the schema author:
+ *
+ * Details of an end user license agreement for a digital product &#9679; Added at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EpubLicense}</li>
@@ -172,7 +175,7 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
      * license name in multiple languages. The <i>language</i> attribute is optional for a single instance of
      * &lt;EpubLicenseName&gt;, but must be included in each instance if &lt;EpubLicenseName&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<EpubLicenseName, String> epubLicenseNames() {
         _initialize();
@@ -188,7 +191,7 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
      * An optional composite that carries details of a link to an expression of the license terms, which may be in
      * human-readable or machine-readable form. Repeatable when there is more than one expression of the license.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes>
         epubLicenseExpressions() {

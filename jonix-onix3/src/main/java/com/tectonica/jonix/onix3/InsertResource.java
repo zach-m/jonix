@@ -66,11 +66,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;InsertResource&gt; from the schema author:
+ *
+ * Details of a resource file needed to manufacture or package an insert &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link InsertManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -215,7 +218,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ResourceFileLink, String> resourceFileLinks = ListOfOnixElement.empty();
 
     /**
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<ResourceFileLink, String> resourceFileLinks() {
         _initialize();
@@ -232,7 +235,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
      * in ‘spine order’ (within the insert). Ancillary resources (<i>eg</i> an image file referenced by a primary HTML
      * file) should be numbered after the primary resources.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SequenceNumber sequenceNumber() {
         _initialize();
@@ -242,7 +245,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
     private ResourceRole resourceRole = ResourceRole.EMPTY;
 
     /**
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ResourceRole resourceRole() {
         _initialize();
@@ -258,7 +261,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
      * &lt;SequenceNumber&gt; specified within the manifest. The empty &lt;NoResource/&gt; must be used – and must only
      * be used – when no &lt;ResourceFileLink&gt; is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoResource noResource() {
         _initialize();
@@ -272,7 +275,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
     private ListOfOnixComposite<SalesOutlet> salesOutlets = JPU.emptyListOfOnixComposite(SalesOutlet.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesOutlet> salesOutlets() {
         _initialize();
@@ -284,7 +287,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
             JPU.emptyListOfOnixDataCompositeWithKey(ResourceIdentifier.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceIdentifier, JonixResourceIdentifier, ResourceIdentifierTypes>
         resourceIdentifiers() {
@@ -296,7 +299,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
         ListOfOnixCodelist.emptyList();
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ResourceFileDetail, ResourceFileDetails> resourceFileDetails() {
         _initialize();
@@ -308,7 +311,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
             JPU.emptyListOfOnixDataCompositeWithKey(ResourceFileFeature.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceFileFeature, JonixResourceFileFeature, ResourceFileFeatureTypes>
         resourceFileFeatures() {
@@ -319,7 +322,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
     private ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions = ListOfOnixElement.empty();
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ResourceFileDescription, String> resourceFileDescriptions() {
         _initialize();
@@ -330,7 +333,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
         ListOfOnixElement.empty();
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ResourceFileContentDescription, String> resourceFileContentDescriptions() {
         _initialize();
@@ -341,7 +344,7 @@ public class InsertResource implements OnixSuperComposite, Serializable {
         ResourceFileDateRoles> resourceFileDates = JPU.emptyListOfOnixDataCompositeWithKey(ResourceFileDate.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceFileDate, JonixResourceFileDate, ResourceFileDateRoles>
         resourceFileDates() {

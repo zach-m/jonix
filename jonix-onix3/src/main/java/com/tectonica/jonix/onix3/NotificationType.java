@@ -63,11 +63,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NotificationType&gt; from the schema author:
+ *
+ * Coded indication of the type of Product record (eg initial notification, pre- or post-publication update, block
+ * update, test update)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link NotificationType}</li>

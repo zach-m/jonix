@@ -68,7 +68,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentItem}</li>
@@ -240,7 +239,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * &lt;ContentItem&gt; composite which describes a text content item. (Similar composites are being defined for
      * other media, and the occurrence of one of them will be mandatory in any &lt;ContentItem&gt; composite.)
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TextItem textItem() {
         _initialize();
@@ -256,7 +255,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * &lt;DistinctiveTitle&gt; or in a &lt;Title&gt; composite) or both must be present in any occurrence of the
      * &lt;ContentItem&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ComponentTypeName componentTypeName() {
         _initialize();
@@ -275,7 +274,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * is strongly recommended for structured tables of contents. If used, it must occur once and only once in each
      * occurrence of the &lt;ContentItem&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public LevelSequenceNumber levelSequenceNumber() {
         _initialize();
@@ -289,7 +288,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * The number (if any) which is given to the content item in the product, in the form (<em>eg</em> Arabic or roman)
      * in which it is given in the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ComponentNumber componentNumber() {
         _initialize();
@@ -305,7 +304,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * &lt;ContentItem&gt; composite. <strong>The &lt;Title&gt; composite provides a more general method of handling all
      * forms of title, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DistinctiveTitle distinctiveTitle() {
         _initialize();
@@ -322,7 +321,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * for display purposes only. It does not replace any biographical notes sent in the composite. The individual
      * contributor elements must also be sent for indexing and retrieval.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ContributorStatement contributorStatement() {
         _initialize();
@@ -336,7 +335,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together identify and provide pointers to a website which is related to
      * a content item.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();
@@ -352,7 +351,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * type, used here to give alternate forms of title for a content item. <strong>Please see Group&nbsp;PR.7 for
      * details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
         _initialize();
@@ -367,7 +366,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A group of data elements which together define the identifier of a work which is manifested in the content item.
      * Optional and repeatable. <strong>Please see Group&nbsp;PR.7 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
         _initialize();
@@ -381,7 +380,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A group of data elements which together describe a personal or corporate contributor to a content item. Optional
      * and repeatable. <strong>Please see Group&nbsp;PR.8 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
@@ -395,7 +394,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together describe a subject of a content item. <strong>Please see
      * Group&nbsp;PR.13 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
         _initialize();
@@ -409,7 +408,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together identify a person as a subject of a content item.
      * <strong>Please see Group&nbsp;PR.13 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<PersonAsSubject> personAsSubjects() {
         _initialize();
@@ -423,7 +422,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * The name of a corporate body which is part of the subject of the content item. Optional, and repeatable if more
      * than one corporate body is involved.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects() {
         _initialize();
@@ -437,7 +436,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * The name of a place or region or geographical entity which is part of the subject of the content item. Optional,
      * and repeatable if the subject of the content item includes more than one place.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects() {
         _initialize();
@@ -452,7 +451,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together identify, and either include or provide pointers to, text
      * related to a content item. <strong>Please see Group&nbsp;PR.15 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts() {
         _initialize();
@@ -467,7 +466,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together identify and provide pointers to an image, audio or video file
      * related to a content item. <strong>Please see Group&nbsp;PR.16 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles() {
         _initialize();

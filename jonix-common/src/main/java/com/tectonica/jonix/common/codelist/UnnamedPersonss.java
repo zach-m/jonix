@@ -41,8 +41,9 @@ interface CodeList19 {
  * Description: Unnamed person(s)
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist19">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
@@ -84,7 +85,7 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
      * Use with Contributor role code E07 'read by', eg for audio books with digital narration, and provide name of
      * voice actor in &lt;AlternativeName&gt;. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Synthesised_voice_based_on_real_voice_actor("08", "Synthesised voice – based on real voice actor"),
 
@@ -92,7 +93,7 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
      * Use when the creator (of text, of images etc) is a generative AI model or technique. Note, can also be combined
      * with the role 'assisted by'. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     AI_Artificial_intelligence("09", "AI (Artificial intelligence)");
 

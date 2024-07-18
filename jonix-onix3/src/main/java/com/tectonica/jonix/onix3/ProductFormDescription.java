@@ -67,13 +67,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductFormDescription&gt; from the schema author:
+ *
+ * Text description of the product, used when the coded details do not adequately describe the product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ProductPart}&gt;</li>
  * <li>&lt;{@link SupplementManifest}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormDescription}</li>

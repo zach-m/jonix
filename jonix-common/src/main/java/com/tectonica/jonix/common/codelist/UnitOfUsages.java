@@ -41,8 +41,9 @@ interface CodeList147 {
  * Description: Unit of usage
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist147">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist147">ONIX
  *      Codelist 147 in Reference Guide</a>
  */
 public enum UnitOfUsages implements OnixCodelist, CodeList147 {
@@ -85,7 +86,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     /**
      * Maximum number of licensed individual users, independent of concurrency of use
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Users("15", "Users"),
 
@@ -93,7 +94,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * Maximum number of licensed concurrent classes of user. A 'class' is a group of learners attending a specific
      * course or lesson and generally taught as a group
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Concurrent_classes("19", "Concurrent classes"),
 
@@ -101,7 +102,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * Maximum number of licensed classes of learners, independent of concurrency of use and the number of users per
      * class
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Classes("20", "Classes"),
 
@@ -109,7 +110,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * Maximum number of licensed institutions, independend of concurrency of use and the number of classes or
      * individuals per institution
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Institutions("31", "Institutions"),
 
@@ -138,7 +139,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * Maximum amount of time in hours, minutes and seconds allowed in a permitted extract for a specified usage, in the
      * format HHHMMSS (7 digits, with leading zeros if necessary)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Hours_minutes_and_seconds("16", "Hours minutes and seconds"),
 
@@ -208,7 +209,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * of an audio or video product, in the format HHHMMSS or HHHMMSScc. Use with Time, Percentage of content, or End
      * time to specify time-based extract allowed in Preview
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Allowed_usage_start_time("17", "Allowed usage start time"),
 
@@ -217,21 +218,21 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
      * of an audio or video product, in the format HHHMMSS or HHHMMSScc. Use with Start time to specify time-based
      * extract allowed in Preview
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Allowed_usage_end_time("18", "Allowed usage end time"),
 
     /**
      * The date from which the usage constraint applies. &lt;Quantity&gt; is in the format YYYYMMDD
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Valid_from("98", "Valid from"),
 
     /**
      * The date until which the usage constraint applies. &lt;Quantity&gt; is in the format YYYYMMDD
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Valid_to("99", "Valid to");
 

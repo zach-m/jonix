@@ -53,12 +53,18 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Prize&gt; from the schema author:
+ *
+ * Details of a literary or other prize associated with the product or work, or with a contributor &#9679; Added
+ * &lt;PrizeRegion&gt; at revision 3.0.7 &#9679; Added &lt;PrizeStatement&gt; at revision 3.0.2 &#9679; Modified
+ * cardinality of &lt;PrizeName&gt; at revision 3.0.2 &#9679; Modified cardinality of &lt;PrizeJury&gt; at revision
+ * 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CollateralDetail}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link Prize}</li>
@@ -192,7 +198,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * <i>language</i> attribute is optional for a single instance of &lt;PrizeName&gt;, but must be included in each
      * instance if &lt;PrizeName&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<PrizeName, String> prizeNames() {
         _initialize();
@@ -205,7 +211,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * <p>
      * The year in which a prize or award was given. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizeYear prizeYear() {
         _initialize();
@@ -218,7 +224,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * <p>
      * An ISO standard code identifying the country in which a prize or award is given. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizeCountry prizeCountry() {
         _initialize();
@@ -234,7 +240,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * Labrador, Florida. If both country and region are specified, the region must be within the country. Note that US
      * States have region codes, while US overseas territories have distinct ISO Country Codes.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizeRegion prizeRegion() {
         _initialize();
@@ -248,7 +254,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * An ONIX code indicating the achievement of the product in relation to a prize or award, <i>eg</i> winner,
      * runner-up, shortlisted. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizeCode prizeCode() {
         _initialize();
@@ -270,7 +276,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * at minimum, the &lt;PrizeCode&gt; element, and whenever appropriate the &lt;PrizeYear&gt; element should be
      * supplied.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<PrizeStatement, String> prizeStatements() {
         _initialize();
@@ -285,7 +291,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * more than one language. The <i>language</i> attribute is optional for a single instance of &lt;PrizeJury&gt;, but
      * must be included in each instance if &lt;PrizeJury&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<PrizeJury, String> prizeJurys() {
         _initialize();

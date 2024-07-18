@@ -58,7 +58,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CopyrightStatement}</li>
@@ -176,7 +175,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * The copyright year as it appears in a copyright statement on the product. Mandatory in each occurrence of the
      * &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<CopyrightYear, String> copyrightYears() {
         _initialize();
@@ -191,7 +190,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * in each occurrence of the &lt;CopyrightStatement&gt; composite. Each occurrence of the &lt;CopyrightOwner&gt;
      * composite must carry a single name (personal or corporate), or an identifier, or both.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<CopyrightOwner> copyrightOwners() {
         _initialize();

@@ -64,12 +64,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SupplierName&gt; from the schema author:
+ *
+ * Organization name of a supplier of the product &#9679; Added collationkey attribute at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link NewSupplier}&gt;</li>
  * <li>&lt;{@link Supplier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈ {@link SupplierName}</li>

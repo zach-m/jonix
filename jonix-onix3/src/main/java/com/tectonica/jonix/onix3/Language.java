@@ -53,12 +53,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Language&gt; from the schema author:
+ *
+ * Details of a language and its relation to the product (eg language of text used, or original language from which the
+ * text was translated) &#9679; Added &lt;RegionCode at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Language}</li>
@@ -177,7 +181,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * An ONIX code indicating the ‘role’ of a language in the context of the ONIX record. Mandatory in each occurrence
      * of the &lt;Language&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public LanguageRole languageRole() {
         _initialize();
@@ -191,7 +195,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public LanguageCode languageCode() {
         _initialize();
@@ -205,7 +209,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * A code identifying the country when this specifies a variant of the language, <i>eg</i> US English. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CountryCode countryCode() {
         _initialize();
@@ -222,7 +226,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * terms, <i>eg</i> Quebec, Scotland. If both country and region are specified, the region must be within the
      * country. Note that US States have region codes, while US overseas territories have distinct ISO Country Codes.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RegionCode regionCode() {
         _initialize();
@@ -235,7 +239,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * <p>
      * A code identifying the script in which the language is represented. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ScriptCode scriptCode() {
         _initialize();

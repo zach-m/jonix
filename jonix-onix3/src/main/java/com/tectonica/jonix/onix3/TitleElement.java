@@ -67,11 +67,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;TitleElement&gt; from the schema author:
+ *
+ * Details of one element (or part) of a title of a product, collection or content item &#9679; Added &lt;NoPrefix&gt;
+ * at revision 3.0.2 &#9679; Added &lt;SequenceNumber&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail} ⯈ {@link TitleElement}</li>
@@ -208,7 +212,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * An ONIX code indicating the level of a title element: collection level, subcollection level, or product level.
      * Mandatory in each occurrence of the &lt;TitleElement&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TitleElementLevel titleElementLevel() {
         _initialize();
@@ -222,7 +226,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * When a title element includes a part designation within a larger whole (<i>eg</i> Part I, or Volume 3), this
      * field should be used to carry the number and its ‘caption’ as text. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PartNumber partNumber() {
         _initialize();
@@ -236,7 +240,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * The text of a title element without the title prefix; and excluding any subtitle. Optional and non-repeating; can
      * only be used if one of the &lt;NoPrefix/&gt; or &lt;TitlePrefix&gt; elements is also present.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TitleWithoutPrefix titleWithoutPrefix() {
         _initialize();
@@ -251,7 +255,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * the various title elements when constructing a complete title. Optional and non-repeating. It is strongly
      * recommended that each occurrence of the &lt;TitleElement&gt; composite should carry a &lt;SequenceNumber&gt;.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SequenceNumber sequenceNumber() {
         _initialize();
@@ -265,7 +269,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * When the year of an annual is part of a title, this field should be used to carry the year (or, if required, a
      * spread of years such as 2009–2010). Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public YearOfAnnual yearOfAnnual() {
         _initialize();
@@ -282,7 +286,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * distinguish an initial word or character string which is to be ignored for filing purposes, <i>eg</i> in library
      * systems and in some bookshop databases.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitlePrefix titlePrefix() {
         _initialize();
@@ -297,7 +301,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * ignored for sorting purposes. Optional and non-repeating, and must only be used when &lt;TitleWithoutPrefix&gt;
      * is used and no &lt;TitlePrefix&gt; element is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoPrefix noPrefix() {
         _initialize();
@@ -321,7 +325,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * it should state whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent
      * (using &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitleText titleText() {
         _initialize();
@@ -336,7 +340,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * occurrence of the &lt;TitleElement&gt; composite, and which amplify and explain the title element, but which are
      * not considered to be part of the title element itself. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Subtitle subtitle() {
         _initialize();

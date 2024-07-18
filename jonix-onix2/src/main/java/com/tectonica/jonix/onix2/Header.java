@@ -63,7 +63,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header}</li>
@@ -270,7 +269,7 @@ public class Header implements OnixHeader, Serializable {
      * An EAN location number which identifies the sender of an ONIX message. Optional and non-repeating; but either the
      * &lt;FromCompany&gt; element or a sender identifier using one or more elements from MH.1 to MH.5 must be included.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public FromEANNumber fromEANNumber() {
         _initialize();
@@ -284,7 +283,7 @@ public class Header implements OnixHeader, Serializable {
      * The date on which the message is sent. Optionally, the time may be added, using the 24-hour clock. Mandatory and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SentDate sentDate() {
         _initialize();
@@ -299,7 +298,7 @@ public class Header implements OnixHeader, Serializable {
      * non-repeating; but either the &lt;FromCompany&gt; element or a sender identifier using one or more elements from
      * MH.1 to MH.5 must be included.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public FromSAN fromSAN() {
         _initialize();
@@ -317,7 +316,7 @@ public class Header implements OnixHeader, Serializable {
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public FromCompany fromCompany() {
         _initialize();
@@ -334,7 +333,7 @@ public class Header implements OnixHeader, Serializable {
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public FromPerson fromPerson() {
         _initialize();
@@ -351,7 +350,7 @@ public class Header implements OnixHeader, Serializable {
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public FromEmail fromEmail() {
         _initialize();
@@ -364,7 +363,7 @@ public class Header implements OnixHeader, Serializable {
      * <p>
      * An EAN location number which identifies the addressee of an ONIX message. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ToEANNumber toEANNumber() {
         _initialize();
@@ -378,7 +377,7 @@ public class Header implements OnixHeader, Serializable {
      * A US book trade Standard Address Number which identifies the addressee of an ONIX message. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ToSAN toSAN() {
         _initialize();
@@ -395,7 +394,7 @@ public class Header implements OnixHeader, Serializable {
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ToCompany toCompany() {
         _initialize();
@@ -412,7 +411,7 @@ public class Header implements OnixHeader, Serializable {
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ToPerson toPerson() {
         _initialize();
@@ -426,7 +425,7 @@ public class Header implements OnixHeader, Serializable {
      * A sequence number of the messages in a series sent between trading partners, to enable the receiver to check
      * against gaps and duplicates. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MessageNumber messageNumber() {
         _initialize();
@@ -440,7 +439,7 @@ public class Header implements OnixHeader, Serializable {
      * A number which distinguishes any repeat transmissions of a message. If this element is used, the original is
      * numbered 1 and repeats are numbered 2, 3 <em>etc</em>. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MessageRepeat messageRepeat() {
         _initialize();
@@ -456,7 +455,7 @@ public class Header implements OnixHeader, Serializable {
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MessageNote messageNote() {
         _initialize();
@@ -472,7 +471,7 @@ public class Header implements OnixHeader, Serializable {
      * default will be assumed for all product records which do not specify a language in Group PR.11. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultLanguageOfText defaultLanguageOfText() {
         _initialize();
@@ -486,7 +485,7 @@ public class Header implements OnixHeader, Serializable {
      * An ONIX code indicating the default price type which is assumed for prices listed in the message, unless
      * explicitly stated otherwise in a &lt;Price&gt; composite in the product record. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultPriceTypeCode defaultPriceTypeCode() {
         _initialize();
@@ -500,7 +499,7 @@ public class Header implements OnixHeader, Serializable {
      * An ISO standard code indicating the currency which is assumed for prices listed in the message, unless explicitly
      * stated otherwise in a &lt;Price&gt; composite in the product record. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultCurrencyCode defaultCurrencyCode() {
         _initialize();
@@ -516,7 +515,7 @@ public class Header implements OnixHeader, Serializable {
      * -->. For most implementations, explicit coding of measure units with each occurrence of a measurement is to be
      * preferred.</strong> Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultLinearUnit defaultLinearUnit() {
         _initialize();
@@ -532,7 +531,7 @@ public class Header implements OnixHeader, Serializable {
      * implementations, explicit coding of units with each occurrence of a weight is to be preferred.</strong> Optional
      * and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultWeightUnit defaultWeightUnit() {
         _initialize();
@@ -551,7 +550,7 @@ public class Header implements OnixHeader, Serializable {
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DefaultClassOfTrade defaultClassOfTrade() {
         _initialize();
@@ -569,7 +568,7 @@ public class Header implements OnixHeader, Serializable {
      * composite is optional and repeatable; but either the &lt;FromCompany&gt; element or a sender identifier using one
      * or more elements from MH.1 to MH.5 must be included.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes>
         senderIdentifiers() {
@@ -587,7 +586,7 @@ public class Header implements OnixHeader, Serializable {
      * the composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
      * composite is optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameIdentifierTypes>
         addresseeIdentifiers() {

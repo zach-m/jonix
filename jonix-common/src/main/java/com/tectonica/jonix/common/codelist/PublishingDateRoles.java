@@ -41,8 +41,9 @@ interface CodeList163 {
  * Description: Publishing date role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -162,7 +163,7 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * product can be made available on a stream, where the streamed version becomes available later than the download.
      * For the download, see code 02 if it is embargoed or code 01 if there is no embargo
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Streaming_embargo_date("30", "Streaming embargo date"),
 
@@ -172,14 +173,14 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * subscription package until shome while after publication. For ordinary sales, see code 02 if there is a sales
      * embargo or code 01 if there is no embargo
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Subscription_embargo_date("31", "Subscription embargo date"),
 
     /**
      * Date by which CIP copy is required for inclusion in the product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     CIP_date("35", "CIP date");
 

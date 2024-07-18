@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SalesOutletName&gt; from the schema author:
+ *
+ * Name of a specific retail outlet, eg one associated with sales exclusivity
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SalesOutlet}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈

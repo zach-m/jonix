@@ -41,8 +41,9 @@ interface CodeList51 {
  * Description: Product relation
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist51">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist51">ONIX
  *      Codelist 51 in Reference Guide</a>
  */
 public enum ProductRelations implements OnixCodelist, CodeList51 {
@@ -70,7 +71,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * &lt;Product&gt; and &lt;RelatedProduct&gt; are companion products, intended to be used, or are usable, together
      * (is own inverse). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Has_companion_product("04", "Has companion product"),
 
@@ -281,7 +282,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * &lt;Product&gt; is an adapted (dramatized, abridged, novelized etc) version of &lt;RelatedProduct&gt; (inverse of
      * code 44). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Adapted_from("43", "Adapted from"),
 
@@ -289,7 +290,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * &lt;Product&gt; is the original from which &lt;RelatedProduct&gt; is adapted (dramatized etc) (inverse of code
      * 43). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Adapted_as("44", "Adapted as"),
 
@@ -298,7 +299,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * or at a reduced price (inverse of code 48). This may be dependent on retailer participation, upon price and upon
      * the quantity of the &lt;Product&gt; purchased. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Has_linked_product_offer("45", "Has linked product offer"),
 
@@ -306,7 +307,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * If ordered, &lt;Product&gt; may (at the supplier's discretion) be substituted and the &lt;RelatedProduct&gt;
      * supplied instead (inverse of code 47). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     May_be_substituted_by("46", "May be substituted by"),
 
@@ -314,7 +315,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * If ordered, &lt;RelatedProduct&gt; may (at the supplier's discretion) be substituted and the &lt;Product&gt;
      * supplied instead (inverse of code 46). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     May_be_substituted_for("47", "May be substituted for"),
 
@@ -323,7 +324,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * or at a reduced price (inverse of code 45). This may be dependent on retailer participation, upon price and upon
      * the quantity of the &lt;RelatedProduct&gt; purchased. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Is_linked_product_offer("48", "Is linked product offer"),
 
@@ -332,7 +333,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * &lt;Product&gt; record describes a package of electronic content which is available in multiple 'renderings'
      * (coded 000 in &lt;EpubTypeCode&gt;): NOT USED in ONIX 3.0
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Epublication_is_distributed_as("14", "Epublication is distributed as"),
 
@@ -341,7 +342,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * &lt;Product&gt; record describes a specific rendering of an epublication content package, to identify the
      * package: NOT USED in ONIX 3.0
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Epublication_is_a_rendering_of("15", "Epublication is a rendering of"),
 
@@ -349,7 +350,7 @@ public enum ProductRelations implements OnixCodelist, CodeList51 {
      * Use to give the ISBN of another book that had sales (both in terms of copy numbers and customer profile)
      * comparable to that the publisher or distributor estimates for the product. Use in ONIX 2.1 ONLY
      * <p>
-     * Jonix-Comment: Deprecated in Onix3
+     * JONIX adds: Deprecated in Onix3
      */
     Sales_expectation("36", "Sales expectation");
 

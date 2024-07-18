@@ -59,11 +59,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductClassificationCode&gt; from the schema author:
+ *
+ * Code from the specified trade classification scheme
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductClassification}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductClassification} ⯈

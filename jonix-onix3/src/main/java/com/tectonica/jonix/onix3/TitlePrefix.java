@@ -69,11 +69,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;TitlePrefix&gt; from the schema author:
+ *
+ * Prefix at the beginning of a title element which is ignored for sorting purposes, eg An, The &#9679; Added language
+ * attribute at revision 3.0.2 &#9679; Added collationkey, textscript attributes at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleElement}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link TitleDetail} ⯈ {@link TitleElement} ⯈

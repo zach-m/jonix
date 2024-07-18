@@ -63,7 +63,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * <li>&lt;{@link Series}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link SubSeriesRecord} ⯈ {@link NumberWithinSeries}</li>

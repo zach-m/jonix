@@ -64,12 +64,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;FeatureValue&gt; from the schema author:
+ *
+ * Coded or numerical description of a feature of a resource
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ResourceVersionFeature}&gt;</li>
  * <li>&lt;{@link ResourceFeature}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈

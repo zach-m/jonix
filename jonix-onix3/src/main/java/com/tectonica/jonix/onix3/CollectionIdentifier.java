@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CollectionIdentifier&gt; from the schema author:
+ *
+ * An identifier for a collection (for example an ISSN)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link CollectionIdentifier}</li>
@@ -170,7 +173,7 @@ public class CollectionIdentifier
      * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in
      * each occurrence of the &lt;CollectionIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CollectionIDType collectionIDType() {
         _initialize();
@@ -184,7 +187,7 @@ public class CollectionIdentifier
      * An identifier of the type specified in the &lt;CollectionIDType&gt; field. Mandatory in each occurrence of the
      * &lt;CollectionIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -199,7 +202,7 @@ public class CollectionIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in &lt;CollectionIDType&gt;
      * indicates a proprietary scheme, <i>eg</i> a publisher’s own code. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

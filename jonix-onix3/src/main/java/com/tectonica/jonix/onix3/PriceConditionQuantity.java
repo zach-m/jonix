@@ -57,7 +57,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link PriceCondition}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
@@ -172,7 +171,7 @@ public class PriceConditionQuantity
      * An ONIX code identifying a type of price condition quantity. Mandatory in each occurrence of the
      * &lt;PriceConditionQuantity&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceConditionQuantityType priceConditionQuantityType() {
         _initialize();
@@ -186,7 +185,7 @@ public class PriceConditionQuantity
      * A quantity associated with a price condition. Mandatory in each occurrence of the &lt;PriceConditionQuantity&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Quantity quantity() {
         _initialize();
@@ -200,7 +199,7 @@ public class PriceConditionQuantity
      * An ONIX code value specifying the unit in which a price condition quantity is stated. Mandatory in each
      * occurrence of the &lt;PriceConditionQuantity&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public QuantityUnit quantityUnit() {
         _initialize();

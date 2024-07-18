@@ -38,11 +38,12 @@ interface CodeList239 {
  * <p>
  * Description: Supply contact role
  * <p>
- * Jonix-Comment: Introduced in Onix3
+ * JONIX adds: Not included in Onix2
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist239">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist239">ONIX
  *      Codelist 239 in Reference Guide</a>
  */
 public enum SupplyContactRoles implements OnixCodelist, CodeList239 {
@@ -50,6 +51,13 @@ public enum SupplyContactRoles implements OnixCodelist, CodeList239 {
      * Eg for use where authorisation must be gained from the supplier (distributor or wholesaler)
      */
     Return_authorisation_contact("07", "Return authorisation contact"),
+
+    /**
+     * Eg for EU General product safety regulation (GPSR) compliance where the supplier acts on behalf of the publisher
+     * or publisher representative as an importer into the EU. See
+     * https://commission.europa.eu/business-economy-euro/product-safety-and-requirements/product-safety/general-product-safety-regulation_en
+     */
+    Product_safety_contact("10", "Product safety contact"),
 
     /**
      * For general enquiries

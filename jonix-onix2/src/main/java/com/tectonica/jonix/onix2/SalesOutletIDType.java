@@ -68,7 +68,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link SalesOutletIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet} ⯈ {@link SalesOutletIdentifier} ⯈

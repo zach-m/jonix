@@ -41,8 +41,9 @@ interface CodeList178 {
  * Description: Supporting resource file format
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist178">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist178">ONIX
  *      Codelist 178 in Reference Guide</a>
  */
 public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
@@ -154,42 +155,42 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     /**
      * Windows Bitmap format
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     BMP("D505", "BMP"),
 
     /**
      * JPEG 2000, improved Joint Photographic Experts Group format
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     JP2("D506", "JP2"),
 
     /**
      * Adobe Photoshop native file format, PSD or PSB
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     PSD("D507", "PSD"),
 
     /**
      * Image as Postscript or Encapsulated Postscript file (.ps or .eps)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     EPS("D508", "EPS"),
 
     /**
      * Google-developed image format
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     WebP("D509", "WebP"),
 
     /**
      * Scalable vector graphics
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     SVG("D510", "SVG"),
 

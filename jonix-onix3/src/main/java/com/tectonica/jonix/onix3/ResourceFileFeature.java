@@ -56,13 +56,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceFileFeature&gt; from the schema author:
+ *
+ * &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverResource}&gt;</li>
  * <li>&lt;{@link BodyResource}&gt;</li>
  * <li>&lt;{@link InsertResource}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -189,7 +192,7 @@ public class ResourceFileFeature
      * &lt;ResourceFileFeature&gt; composite, <i>eg</i> a checksum or hash for the resource file. Mandatory in each
      * occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ResourceFileFeatureType resourceFileFeatureType() {
         _initialize();
@@ -205,7 +208,7 @@ public class ResourceFileFeature
      * may require free text in &lt;ResourceFileFeatureDescription&gt; and some may have both code and free text.
      * Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ResourceFileFeatureValue resourceFileFeatureValue() {
         _initialize();
@@ -223,7 +226,7 @@ public class ResourceFileFeature
      * <i>language</i> attribute is optional for a single instance of &lt;ResourceFileFeatureDescription&gt;, but must
      * be included in each instance if &lt;ResourceFileFeatureDescription&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ResourceFileFeatureDescription, String> resourceFileFeatureDescriptions() {
         _initialize();

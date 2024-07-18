@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link SalesRestriction}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link SalesRestriction} ⯈ {@link SalesOutlet}</li>
@@ -173,7 +172,7 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
      * A group of data elements which together represent a coded identification of a person or organization, used here
      * to identify a sales outlet. Non-repeating in this context.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SalesOutletIdentifier salesOutletIdentifier() {
         _initialize();
@@ -186,7 +185,7 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
      * <p>
      * The name of a wholesale or retail sales outlet to which a sales restriction is linked. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SalesOutletName salesOutletName() {
         _initialize();

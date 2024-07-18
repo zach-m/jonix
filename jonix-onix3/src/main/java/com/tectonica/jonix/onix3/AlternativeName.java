@@ -69,12 +69,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AlternativeName&gt; from the schema author:
+ *
+ * Details of an alternative name for a personal or corporate contributor, or for a subject &#9679; Added &lt;Gender&gt;
+ * at revision 3.0.3 &#9679; Added &lt;CorporateNameInverted&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName}</li>
@@ -242,7 +246,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the type of the name sent in an occurrence of the &lt;AlternativeName&gt; composite.
      * Mandatory in each occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NameType nameType() {
         _initialize();
@@ -256,7 +260,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The name of a person who contributed to the creation of the product, unstructured, and presented in normal order.
      * Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PersonName personName() {
         _initialize();
@@ -272,7 +276,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
      * elements P.7.11 to P.7.18 are used.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public KeyNames keyNames() {
         _initialize();
@@ -286,7 +290,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The name of a corporate body which contributed to the creation of the product, unstructured. Optional and
      * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CorporateName corporateName() {
         _initialize();
@@ -297,7 +301,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
         JPU.emptyListOfOnixDataCompositeWithKey(NameIdentifier.class);
 
     /**
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameIdentifierTypes> nameIdentifiers() {
         _initialize();
@@ -312,7 +316,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * alphabetical sorting placed first (‘inverted order’). Optional and non-repeating: see Group&nbsp;P.7 introductory
      * text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PersonNameInverted personNameInverted() {
         _initialize();
@@ -327,7 +331,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * and/or titles preceding a person’s names, <i>eg</i> ‘Professor’ or ‘HRH Prince’ or ‘Saint’. Optional and
      * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitlesBeforeNames titlesBeforeNames() {
         _initialize();
@@ -341,7 +345,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The second part of a structured name of a person who contributed to the creation of the product: name(s) and/or
      * initial(s) preceding a person’s key name(s), <i>eg</i> James J. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NamesBeforeKey namesBeforeKey() {
         _initialize();
@@ -357,7 +361,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * Beethoven. This element may also be used for titles that appear after given names and before key names, <i>eg</i>
      * ‘Lord’ in Alfred, Lord Tennyson. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrefixToKey prefixToKey() {
         _initialize();
@@ -371,7 +375,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The fifth part of a structured name of a person who contributed to the creation of the product: name suffix, or
      * name(s) following a person’s key name(s), <i>eg</i> ‘Ibrahim’ (in Anwar Ibrahim). Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NamesAfterKey namesAfterKey() {
         _initialize();
@@ -385,7 +389,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The sixth part of a structured name of a person who contributed to the creation of the product: a suffix
      * following a person’s key name(s), <i>eg</i> ‘Jr’ or ‘III’. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SuffixToKey suffixToKey() {
         _initialize();
@@ -399,7 +403,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The seventh part of a structured name of a person who contributed to the creation of the product: qualifications
      * and honors following a person’s names, <i>eg</i> ‘CBE FRS’. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public LettersAfterNames lettersAfterNames() {
         _initialize();
@@ -413,7 +417,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The eighth part of a structured name of a person who contributed to the creation of the product: titles following
      * a person’s names, <i>eg</i> ‘Duke of Edinburgh’. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitlesAfterNames titlesAfterNames() {
         _initialize();
@@ -428,7 +432,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * the gender of the contributor’s public identity (which may be pseudonymous) based on designations used in ISO
      * 5218, rather than the gender identity, biological sex or sexuality of a natural person.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Gender gender() {
         _initialize();
@@ -443,7 +447,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * the element used for alphabetical sorting placed first. Optional and non-repeating: see Group&nbsp;P.7
      * introductory text for valid options.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CorporateNameInverted corporateNameInverted() {
         _initialize();

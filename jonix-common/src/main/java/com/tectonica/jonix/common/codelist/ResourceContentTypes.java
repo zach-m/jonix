@@ -41,8 +41,9 @@ interface CodeList158 {
  * Description: Resource content type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -223,14 +224,14 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Instructional_material("39", "Instructional material"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Errata("40", "Errata"),
 
     /**
      * Introduction, preface or other preliminary material in a separate resource file
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Introduction("41", "Introduction"),
 
@@ -240,21 +241,21 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * Resource&gt; for material (which need not be solely only) offered as a separate file resource for reproduction as
      * part of promotional material for the product and collection
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Collection_description("42", "Collection description"),
 
     /**
      * Complete list of books by the author(s), supplied as a separate resource file
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Bibliography("43", "Bibliography"),
 
     /**
      * Formal summary of content (normally used with academic and scholarly content only)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Abstract("44", "Abstract"),
 
@@ -264,21 +265,21 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * front cover image. Senders should ensure removal of the holding image from the record as soon as a cover image is
      * available. Recipients must ensure replacement of the holding image with the cover image when it is supplied
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Cover_holding_image("45", "Cover holding image"),
 
     /**
      * Eg for a game, kit
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Rules_or_instructions("46", "Rules or instructions"),
 
     /**
      * Full transcript of audio or video content of the product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Transcript("47", "Transcript"),
 
@@ -286,7 +287,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * For use with dramatised audiobooks, filmed entertainment etc, for a cast list sent as a separate resource file,
      * not in the ONIX record. Equivalent of code 28 in List 153
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Full_cast_and_credit_list("48", "Full cast and credit list"),
 
@@ -294,23 +295,30 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * Image - not specifically a cover image or artwork, contributor image, or logo - explicitly intended for use in
      * social media
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Image_for_social_media("49", "Image for social media"),
 
     /**
      * Eg downloadable worksheets, home learning materials
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Supplementary_learning_resources("50", "Supplementary learning resources"),
 
     /**
      * 2D, front or back flap image
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Cover_flap("51", "Cover flap"),
+
+    /**
+     * Image of any warning label or hazard warning text on product or packaging
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Warning_label("52", "Warning label"),
 
     /**
      * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.

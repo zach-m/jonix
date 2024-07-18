@@ -39,8 +39,9 @@ interface CodeList228 {
  * Description: Grant identifier type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist228">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist228">ONIX
  *      Codelist 228 in Reference Guide</a>
  */
 public enum GrantIdentifierTypes implements OnixCodelist, CodeList228 {
@@ -53,7 +54,7 @@ public enum GrantIdentifierTypes implements OnixCodelist, CodeList228 {
      * Digital Object Identifier (variable length and character set, beginning '10.' and without https://doi.org/ or the
      * older http://dx.doi.org/)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     DOI("06", "DOI");
 

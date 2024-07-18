@@ -100,7 +100,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product}</li>
@@ -840,7 +839,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * This field is mandatory and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public RecordReference recordReference() {
         _initialize();
@@ -854,7 +853,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code which indicates the type of notification or update which you are sending. Mandatory and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NotificationType notificationType() {
         _initialize();
@@ -871,7 +870,7 @@ public class Product implements OnixProduct, Serializable {
      * product codes, and is to be preferred. The &lt;ISBN&gt; element is on no account to be used to carry a 13-digit
      * ISBN.</strong>
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ISBN isbn() {
         _initialize();
@@ -892,7 +891,7 @@ public class Product implements OnixProduct, Serializable {
      * non-repeating. <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all
      * forms of title, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public DistinctiveTitle distinctiveTitle() {
         _initialize();
@@ -908,7 +907,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Conference&gt; composite on a later page provides a more general method of handling conference
      * detail, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ConferenceName conferenceName() {
         _initialize();
@@ -927,7 +926,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Imprint&gt; composite below provides a more general method of handling imprint identities, and is
      * to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ImprintName imprintName() {
         _initialize();
@@ -944,7 +943,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;Thickness&gt; is present. <strong>The &lt;Measure&gt; composite on a previous page provides a more general
      * method of handling measurements, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Height height() {
         _initialize();
@@ -957,7 +956,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A repeatable group of data elements which together describe a personal or corporate contributor to the product.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
@@ -973,7 +972,7 @@ public class Product implements OnixProduct, Serializable {
      * why the record is being deleted, not the reason why a product has been “deleted” (in industries which use this
      * terminology when a product is withdrawn).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DeletionCode deletionCode() {
         _initialize();
@@ -989,7 +988,7 @@ public class Product implements OnixProduct, Serializable {
      * why the record is being deleted, not the reason why a product has been “deleted” (in industries which use this
      * terminology when a product is withdrawn).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DeletionText deletionText() {
         _initialize();
@@ -1003,7 +1002,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code which indicates the type of source which has issued the ONIX record. Optional and non-repeating,
      * independently of the occurrence of any other field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceType recordSourceType() {
         _initialize();
@@ -1018,7 +1017,7 @@ public class Product implements OnixProduct, Serializable {
      * taken. Optional and non-repeating, but &lt;RecordSourceIdentifier&gt; must also be present if this field is
      * present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceIdentifierType recordSourceIdentifierType() {
         _initialize();
@@ -1033,7 +1032,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;RecordSourceIdentifierType&gt;. Optional and non-repeating, but &lt;RecordSourceIdentifierType&gt; must also
      * be present if this field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceIdentifier recordSourceIdentifier() {
         _initialize();
@@ -1047,7 +1046,7 @@ public class Product implements OnixProduct, Serializable {
      * The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
      * occurrence of any other field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceName recordSourceName() {
         _initialize();
@@ -1065,7 +1064,7 @@ public class Product implements OnixProduct, Serializable {
      * a later page provides a more general method of handling this and other product codes, and is to be
      * preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EAN13 ean13() {
         _initialize();
@@ -1081,7 +1080,7 @@ public class Product implements OnixProduct, Serializable {
      * supermarkets and other non-book-trade outlets. <strong>The &lt;ProductIdentifier&gt; composite on a later page
      * provides a more general method of handling this and other product codes, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public UPC upc() {
         _initialize();
@@ -1098,7 +1097,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;ProductIdentifier&gt; composite on a later page provides a more general method of handling this and other
      * product codes, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublisherProductNo publisherProductNo() {
         _initialize();
@@ -1113,7 +1112,7 @@ public class Product implements OnixProduct, Serializable {
      * non-repeating. <strong>The &lt;ProductIdentifier&gt; composite on a later page provides a more general method of
      * handling this and other product codes, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ISMN ismn() {
         _initialize();
@@ -1129,7 +1128,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;ProductIdentifier&gt; composite below provides a more general method of handling this and other product
      * codes, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DOI doi() {
         _initialize();
@@ -1146,7 +1145,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;ReplacesISBN&gt; element is retained only for upwards compatibility. This element is on no account to be used
      * to carry a 13-digit ISBN.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReplacesISBN replacesISBN() {
         _initialize();
@@ -1162,7 +1161,7 @@ public class Product implements OnixProduct, Serializable {
      * method of handling this type of link. This is now the preferred ONIX approach. The &lt;ReplacesISBN&gt; element
      * is retained only for upwards compatibility.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReplacesEAN13 replacesEAN13() {
         _initialize();
@@ -1175,7 +1174,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * An ONIX code which indicates the primary form of the product. Mandatory and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductForm productForm() {
         _initialize();
@@ -1188,7 +1187,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * An ONIX code which indicates the type of packaging used for the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductPackaging productPackaging() {
         _initialize();
@@ -1206,7 +1205,7 @@ public class Product implements OnixProduct, Serializable {
      * two or more occurrences of the &lt;ContainedItem&gt; composite to give a properly structured specification of
      * each media type.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductFormDescription productFormDescription() {
         _initialize();
@@ -1222,7 +1221,7 @@ public class Product implements OnixProduct, Serializable {
      * different forms (<em>eg</em> books and audio cassettes), the &lt;ContainedItem&gt; composite should be used – see
      * below. This field is optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NumberOfPieces numberOfPieces() {
         _initialize();
@@ -1236,7 +1235,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code which indicates a trade category which is somewhat related to but not properly an attribute of
      * product form. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TradeCategory tradeCategory() {
         _initialize();
@@ -1257,7 +1256,7 @@ public class Product implements OnixProduct, Serializable {
      * independently of the forms in which it is made available. Each available form can then be described by using the
      * &lt;RelatedProduct&gt; composite in Group&nbsp;PR.23.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubType epubType() {
         _initialize();
@@ -1271,7 +1270,7 @@ public class Product implements OnixProduct, Serializable {
      * A version number which applies to a specific epublication type. Optional and non-repeating, and can occur only if
      * the &lt;EpubType&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubTypeVersion epubTypeVersion() {
         _initialize();
@@ -1285,7 +1284,7 @@ public class Product implements OnixProduct, Serializable {
      * A free text description of an epublication type. Optional and non-repeating, and can occur only if the
      * &lt;EpubType&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubTypeDescription epubTypeDescription() {
         _initialize();
@@ -1300,7 +1299,7 @@ public class Product implements OnixProduct, Serializable {
      * if the &lt;EpubType&gt; field is present. Note that where the epublication type is wholly defined by the delivery
      * format, this element effectively duplicates the &lt;EpubType&gt; field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubFormat epubFormat() {
         _initialize();
@@ -1314,7 +1313,7 @@ public class Product implements OnixProduct, Serializable {
      * A version number which applies to an epublication format. Optional and non-repeating, and can occur only if the
      * &lt;EpubFormat&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubFormatVersion epubFormatVersion() {
         _initialize();
@@ -1328,7 +1327,7 @@ public class Product implements OnixProduct, Serializable {
      * A free text description of an epublication format. Optional and non-repeating, and can occur only if the
      * &lt;EpubType&gt; field is present, but it does not require the presence of the &lt;EpubFormat&gt; field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubFormatDescription epubFormatDescription() {
         _initialize();
@@ -1343,7 +1342,7 @@ public class Product implements OnixProduct, Serializable {
      * for conversion to one or more forms of deliverable. Optional and non-repeating, and can occur only if the
      * &lt;EpubType&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubSource epubSource() {
         _initialize();
@@ -1357,7 +1356,7 @@ public class Product implements OnixProduct, Serializable {
      * A version number which applies to an epublication source file format. Optional and non-repeating, and can occur
      * only if the &lt;EpubSource&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubSourceVersion epubSourceVersion() {
         _initialize();
@@ -1371,7 +1370,7 @@ public class Product implements OnixProduct, Serializable {
      * A free text description of an epublication source file format. Optional and non-repeating, and can occur only if
      * the &lt;EpubType&gt; field is present, but it does not require the presence of the &lt;EpubSource&gt; field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubSourceDescription epubSourceDescription() {
         _initialize();
@@ -1385,7 +1384,7 @@ public class Product implements OnixProduct, Serializable {
      * A free text description of features of a product which are specific to its appearance as a particular
      * epublication type. Optional and non-repeatable, and can occur only if the &lt;EpubType&gt; field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubTypeNote epubTypeNote() {
         _initialize();
@@ -1401,7 +1400,7 @@ public class Product implements OnixProduct, Serializable {
      * publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no instances of the
      * &lt;Series&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoSeries noSeries() {
         _initialize();
@@ -1421,7 +1420,7 @@ public class Product implements OnixProduct, Serializable {
      * preferred. See <cite>ONIX for Books – Product Information Message – XML Message Specification</cite>, Section
      * 4.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TextCaseFlag textCaseFlag() {
         _initialize();
@@ -1439,7 +1438,7 @@ public class Product implements OnixProduct, Serializable {
      * databases. <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all
      * forms of title, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitlePrefix titlePrefix() {
         _initialize();
@@ -1455,7 +1454,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all forms of
      * title, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TitleWithoutPrefix titleWithoutPrefix() {
         _initialize();
@@ -1471,7 +1470,7 @@ public class Product implements OnixProduct, Serializable {
      * distinctive title. Optional and non-repeating. <strong>The &lt;Title&gt; composite on a later page provides a
      * more general method of handling all forms of title, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Subtitle subtitle() {
         _initialize();
@@ -1486,7 +1485,7 @@ public class Product implements OnixProduct, Serializable {
      * non-repeating. <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all
      * forms of title, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TranslationOfTitle translationOfTitle() {
         _initialize();
@@ -1500,7 +1499,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code identifying a thesis type, when the ONIX record describes an item which was originally presented as
      * an academic thesis or dissertation. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ThesisType thesisType() {
         _initialize();
@@ -1514,7 +1513,7 @@ public class Product implements OnixProduct, Serializable {
      * The name of an academic institution to which a thesis was presented. Optional and non-repeating, but if this
      * element is present, &lt;ThesisType&gt; must also be present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ThesisPresentedTo thesisPresentedTo() {
         _initialize();
@@ -1528,7 +1527,7 @@ public class Product implements OnixProduct, Serializable {
      * The year in which a thesis was presented. Optional and non-repeating, but if this element is present,
      * &lt;ThesisType&gt; must also be present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ThesisYear thesisYear() {
         _initialize();
@@ -1545,7 +1544,7 @@ public class Product implements OnixProduct, Serializable {
      * does not replace the &lt;BiographicalNote&gt; element. The individual name detail must also be sent in the
      * &lt;Contributor&gt; composite for indexing and retrieval.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ContributorStatement contributorStatement() {
         _initialize();
@@ -1561,7 +1560,7 @@ public class Product implements OnixProduct, Serializable {
      * ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no other elements from
      * Group&nbsp;PR.8.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoContributor noContributor() {
         _initialize();
@@ -1580,7 +1579,7 @@ public class Product implements OnixProduct, Serializable {
      * is sent, no other fields from Group&nbsp;PR.9 must be sent. <strong>The &lt;Conference&gt; composite on a later
      * page provides a more general method of handling conference detail, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceDescription conferenceDescription() {
         _initialize();
@@ -1596,7 +1595,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;Conference&gt; composite on a later page provides a more general method of handling conference detail, and is
      * to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceRole conferenceRole() {
         _initialize();
@@ -1611,7 +1610,7 @@ public class Product implements OnixProduct, Serializable {
      * non-repeating. <strong>The &lt;Conference&gt; composite below provides a more general method of handling
      * conference detail, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceNumber conferenceNumber() {
         _initialize();
@@ -1626,7 +1625,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;Conference&gt; composite below provides a more general method of handling conference detail, and is to be
      * preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferenceDate conferenceDate() {
         _initialize();
@@ -1641,7 +1640,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;Conference&gt; composite below provides a more general method of handling conference detail, and is to be
      * preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ConferencePlace conferencePlace() {
         _initialize();
@@ -1656,7 +1655,7 @@ public class Product implements OnixProduct, Serializable {
      * editions of a work, but by agreement between parties to an ONIX exchange a first edition may be explicitly
      * numbered.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EditionNumber editionNumber() {
         _initialize();
@@ -1672,7 +1671,7 @@ public class Product implements OnixProduct, Serializable {
      * product identifier. Optional and non-repeating. If this field is used, an &lt;EditionNumber&gt; must also be
      * present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EditionVersionNumber editionVersionNumber() {
         _initialize();
@@ -1690,7 +1689,7 @@ public class Product implements OnixProduct, Serializable {
      * should not include aspects such as rights or market restrictions which are properly covered elsewhere in the ONIX
      * record.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EditionStatement editionStatement() {
         _initialize();
@@ -1706,7 +1705,7 @@ public class Product implements OnixProduct, Serializable {
      * supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no instances
      * of any of the four preceding Edition elements.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoEdition noEdition() {
         _initialize();
@@ -1727,7 +1726,7 @@ public class Product implements OnixProduct, Serializable {
      * accompanied by multiple repeats of the &lt;ReligiousTextFeature&gt; composite. This approach is adopted to enable
      * other devotional texts to be included if need arises without requiring a new ONIX release.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReligiousText religiousText() {
         _initialize();
@@ -1742,7 +1741,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Language&gt; composite on the next page provides a more general method of handling language
      * detail, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public OriginalLanguage originalLanguage() {
         _initialize();
@@ -1766,7 +1765,7 @@ public class Product implements OnixProduct, Serializable {
      * This field is optional, but it is normally required for a printed book unless the &lt;PagesRoman&gt; and
      * &lt;PagesArabic&gt; elements are used, and is non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NumberOfPages numberOfPages() {
         _initialize();
@@ -1782,7 +1781,7 @@ public class Product implements OnixProduct, Serializable {
      * sequences separately. For most ONIX applications, however, &lt;NumberOfPages&gt; will be preferred. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PagesRoman pagesRoman() {
         _initialize();
@@ -1795,7 +1794,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * The number of pages numbered in Arabic numerals. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PagesArabic pagesArabic() {
         _initialize();
@@ -1811,7 +1810,7 @@ public class Product implements OnixProduct, Serializable {
      * product information maintains only a simple numeric field, the &lt;NumberOfIllustrations&gt; element may be used.
      * Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NumberOfIllustrations numberOfIllustrations() {
         _initialize();
@@ -1826,7 +1825,7 @@ public class Product implements OnixProduct, Serializable {
      * The text may also include other content items, <em>eg</em> maps, bibliography, tables, index <em>etc</em>.
      * Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IllustrationsNote illustrationsNote() {
         _initialize();
@@ -1843,7 +1842,7 @@ public class Product implements OnixProduct, Serializable {
      * now officially reverted to “BISAC”, but the ONIX data element name cannot be changed for reasons of upwards
      * compatibility.</em>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public BASICMainSubject basicMainSubject() {
         _initialize();
@@ -1857,7 +1856,7 @@ public class Product implements OnixProduct, Serializable {
      * A number identifying the version of the BISAC subject categories used in &lt;BASICMainSubject&gt;. Optional and
      * non-repeating, and may only occur when &lt;BASICMainSubject&gt; is also present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public BASICVersion basicVersion() {
         _initialize();
@@ -1871,7 +1870,7 @@ public class Product implements OnixProduct, Serializable {
      * A BIC subject category code which identifies the main subject of the product. Optional and non-repeating.
      * Additional BIC subject category codes may be sent using the &lt;Subject&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public BICMainSubject bicMainSubject() {
         _initialize();
@@ -1885,7 +1884,7 @@ public class Product implements OnixProduct, Serializable {
      * A number identifying the version of the BIC subject category scheme used in &lt;BICMainSubject&gt;. Optional and
      * non-repeating, and may only occur when &lt;BICMainSubject&gt; is also present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public BICVersion bicVersion() {
         _initialize();
@@ -1900,7 +1899,7 @@ public class Product implements OnixProduct, Serializable {
      * conventions defined below. Optional and non-repeating. <strong>The &lt;AudienceRange&gt; composite on the next
      * page provides a more general method of handling grade and other ranges, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public USSchoolGrade usSchoolGrade() {
         _initialize();
@@ -1916,7 +1915,7 @@ public class Product implements OnixProduct, Serializable {
      * next page provides a more general method of handling interest age and other ranges, and is to be
      * preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public InterestAge interestAge() {
         _initialize();
@@ -1929,7 +1928,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * Free text describing the audience for which a product is intended. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AudienceDescription audienceDescription() {
         _initialize();
@@ -1948,7 +1947,7 @@ public class Product implements OnixProduct, Serializable {
      * The &lt;Annotation&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
      * transliteration, textcase</i>.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Annotation annotation() {
         _initialize();
@@ -1969,7 +1968,7 @@ public class Product implements OnixProduct, Serializable {
      * The &lt;MainDescription&gt; element may carry any of the following ONIX attributes: <i>textformat, language,
      * transliteration, textcase</i>.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MainDescription mainDescription() {
         _initialize();
@@ -1989,7 +1988,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover images,
      * and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CoverImageFormatCode coverImageFormatCode() {
         _initialize();
@@ -2006,7 +2005,7 @@ public class Product implements OnixProduct, Serializable {
      * The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover images, and is
      * to be preferred.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CoverImageLinkTypeCode coverImageLinkTypeCode() {
         _initialize();
@@ -2019,7 +2018,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A link to a front cover image file, using the link type specified in &lt;CoverImageLinkTypeCode&gt;.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CoverImageLink coverImageLink() {
         _initialize();
@@ -2037,7 +2036,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Prize&gt; composite below provides a more general method of handling prizes, and is to be
      * preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrizesDescription prizesDescription() {
         _initialize();
@@ -2058,7 +2057,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Publisher&gt; composite below provides a more general method of handling publisher identities,
      * and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublisherName publisherName() {
         _initialize();
@@ -2071,7 +2070,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A code identifying the country where the product is issued. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CountryOfPublication countryOfPublication() {
         _initialize();
@@ -2090,7 +2089,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
      * identities, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public OriginalPublisher originalPublisher() {
         _initialize();
@@ -2112,7 +2111,7 @@ public class Product implements OnixProduct, Serializable {
      * indicate its likely reliability. See <cite>ONIX for Books – Product Information Message – XML Message
      * Specification</cite>, Section 4, for details of the datestamp attribute.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublishingStatus publishingStatus() {
         _initialize();
@@ -2126,7 +2125,7 @@ public class Product implements OnixProduct, Serializable {
      * Free text that describes the status of a published product, when the code in &lt;PublishingStatus&gt; is
      * insufficient. Optional and non-repeating, but must be accompanied by the &lt;PublishingStatus&gt; element.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublishingStatusNote publishingStatusNote() {
         _initialize();
@@ -2140,7 +2139,7 @@ public class Product implements OnixProduct, Serializable {
      * Date when information about the product can be issued to the general public. (Some publishers issue advance
      * information under embargo.) Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AnnouncementDate announcementDate() {
         _initialize();
@@ -2154,7 +2153,7 @@ public class Product implements OnixProduct, Serializable {
      * Date when information about the product can be issued to the book trade, while remaining embargoed for the
      * general public. (Some publishers issue advance information under embargo.) Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TradeAnnouncementDate tradeAnnouncementDate() {
         _initialize();
@@ -2180,7 +2179,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublicationDate publicationDate() {
         _initialize();
@@ -2195,7 +2194,7 @@ public class Product implements OnixProduct, Serializable {
      * most recent. Optional and non-repeating, and may not occur if the &lt;CopyrightStatement&gt; composite is
      * present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CopyrightYear copyrightYear() {
         _initialize();
@@ -2209,7 +2208,7 @@ public class Product implements OnixProduct, Serializable {
      * The year when the work first appeared in any language or edition, if different from the copyright year. Optional
      * and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public YearFirstPublished yearFirstPublished() {
         _initialize();
@@ -2225,7 +2224,7 @@ public class Product implements OnixProduct, Serializable {
      * Message – XML Message Specification</cite>. Optional and non-repeating. <strong>The &lt;Measure&gt; composite on
      * a previous page provides a more general method of handling measurements, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Width width() {
         _initialize();
@@ -2241,7 +2240,7 @@ public class Product implements OnixProduct, Serializable {
      * Message – XML Message Specification</cite>. Optional and non-repeating. <strong>The &lt;Measure&gt; composite on
      * a previous page provides a more general method of handling measurements, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Thickness thickness() {
         _initialize();
@@ -2257,7 +2256,7 @@ public class Product implements OnixProduct, Serializable {
      * Specification</cite>. Optional and non-repeating. <strong>The &lt;Measure&gt; composite on a previous page
      * provides a more general method of handling weights, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Weight weight() {
         _initialize();
@@ -2272,7 +2271,7 @@ public class Product implements OnixProduct, Serializable {
      * allows such a statement to be sent. However, this practise is deprecated: structured information is always
      * greatly to be preferred. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Dimensions dimensions() {
         _initialize();
@@ -2287,7 +2286,7 @@ public class Product implements OnixProduct, Serializable {
      * non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more general method of
      * handling related items, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReplacedByISBN replacedByISBN() {
         _initialize();
@@ -2302,7 +2301,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more general method of handling related
      * items, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReplacedByEAN13 replacedByEAN13() {
         _initialize();
@@ -2317,7 +2316,7 @@ public class Product implements OnixProduct, Serializable {
      * and non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more general method of
      * handling related items, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AlternativeFormatISBN alternativeFormatISBN() {
         _initialize();
@@ -2332,7 +2331,7 @@ public class Product implements OnixProduct, Serializable {
      * non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more general method of
      * handling related items, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AlternativeFormatEAN13 alternativeFormatEAN13() {
         _initialize();
@@ -2349,7 +2348,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;RelatedProduct&gt; composite on a later page provides a more general method of handling related items, and is
      * to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AlternativeProductISBN alternativeProductISBN() {
         _initialize();
@@ -2366,7 +2365,7 @@ public class Product implements OnixProduct, Serializable {
      * composite on a later page provides a more general method of handling related items, and is to be
      * preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AlternativeProductEAN13 alternativeProductEAN13() {
         _initialize();
@@ -2379,7 +2378,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * The date on which the publisher put the current product out-of-print. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public OutOfPrintDate outOfPrintDate() {
         _initialize();
@@ -2392,7 +2391,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * Free text describing the promotion and adverting campaign for the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PromotionCampaign promotionCampaign() {
         _initialize();
@@ -2406,7 +2405,7 @@ public class Product implements OnixProduct, Serializable {
      * Free text giving the name, department, phone number, email address <em>etc</em> for a promotional contact person
      * for the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PromotionContact promotionContact() {
         _initialize();
@@ -2420,7 +2419,7 @@ public class Product implements OnixProduct, Serializable {
      * In advance information about a new book, free text detailing the number of copies which will be printed and any
      * related aspects of the initial publishing effort. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public InitialPrintRun initialPrintRun() {
         _initialize();
@@ -2434,7 +2433,7 @@ public class Product implements OnixProduct, Serializable {
      * Free text detailing the number of copies already sold, <em>eg</em> for a new paperback, the copies sold in
      * hardback. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CopiesSold copiesSold() {
         _initialize();
@@ -2447,7 +2446,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * Free text describing the adoption of the product as a book club selection. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public BookClubAdoption bookClubAdoption() {
         _initialize();
@@ -2481,7 +2480,7 @@ public class Product implements OnixProduct, Serializable {
      * the item also has an ISBN-10, why it may still be desirable to send the ISBN-10 even after the end of 2006. Users
      * should consult national “good practice” guidelines and/or discuss with their trading partners.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -2496,7 +2495,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code indicating whether a product is bar-coded. Optional, and repeatable if the product carries two or
      * more barcodes from different schemes. The absence of this field does NOT mean that a product is not bar-coded.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<Barcode, BarcodeIndicatorsList6> barcodes() {
         _initialize();
@@ -2510,7 +2509,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * An ONIX code which provides added detail of the medium and/or format of the product. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductFormDetail, ProductFormDetailsList78> productFormDetails() {
         _initialize();
@@ -2526,7 +2525,7 @@ public class Product implements OnixProduct, Serializable {
      * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
      * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
         productFormFeatures() {
@@ -2544,7 +2543,7 @@ public class Product implements OnixProduct, Serializable {
      * &lt;ProductFormDetail&gt;, and the code list will not be further developed. The field is retained only for
      * purposes of upwards compatibility, and its use is now to be deprecated.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<BookFormDetail, BookFormDetails> bookFormDetails() {
         _initialize();
@@ -2561,7 +2560,7 @@ public class Product implements OnixProduct, Serializable {
      * where content is delivered in the form of a digital or analogue recording. It is not expected to be used for
      * books.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
@@ -2584,7 +2583,7 @@ public class Product implements OnixProduct, Serializable {
      * product form code, or both. In other words, it is valid to send an instance of the composite with an identifier
      * and no product form code, or with a product form code and no identifier.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ContainedItem> containedItems() {
         _initialize();
@@ -2601,7 +2600,7 @@ public class Product implements OnixProduct, Serializable {
      * subject classification). The intended use is to enable national or international trade classifications (aka
      * commodity codes) to be carried in an ONIX record.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes>
         productClassifications() {
@@ -2615,7 +2614,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A repeatable group of data elements which together describe a series of which the product is part.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Series> seriess() {
         _initialize();
@@ -2628,7 +2627,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A repeatable group of data elements which together describe a set of which the product is part.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Set> sets() {
         _initialize();
@@ -2643,7 +2642,7 @@ public class Product implements OnixProduct, Serializable {
      * and repeatable if the work has had more than one former title. <strong>The &lt;Title&gt; composite below provides
      * a more general method of handling all forms of title, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<FormerTitle, String> formerTitles() {
         _initialize();
@@ -2664,7 +2663,7 @@ public class Product implements OnixProduct, Serializable {
      * <i>textformat, language, transliteration, textcase,</i> where these are shared by all text elements within the
      * composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
         _initialize();
@@ -2679,7 +2678,7 @@ public class Product implements OnixProduct, Serializable {
      * A group of data elements which together define the identifier of a work which is manifested in the product
      * described by an ONIX &lt;Product&gt; record. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
         _initialize();
@@ -2693,7 +2692,7 @@ public class Product implements OnixProduct, Serializable {
      * A repeatable group of data elements which together identify and provide pointers to a website which is related to
      * the work identified in an occurrence of the &lt;WorkIdentifier&gt; composite.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();
@@ -2707,7 +2706,7 @@ public class Product implements OnixProduct, Serializable {
      * A group of data elements which together describe a conference to which the product is related. Repeatable if the
      * product contains material from two or more conferences.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Conference> conferences() {
         _initialize();
@@ -2721,7 +2720,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
      * characteristics of two or more types (<em>eg</em> revised and annotated).
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<EditionTypeCode, EditionTypes> editionTypeCodes() {
         _initialize();
@@ -2736,7 +2735,7 @@ public class Product implements OnixProduct, Serializable {
      * in two or more languages. <strong>The &lt;Language&gt; composite on the next page provides a more general method
      * of handling language detail, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<LanguageOfText, Languages> languageOfTexts() {
         _initialize();
@@ -2751,7 +2750,7 @@ public class Product implements OnixProduct, Serializable {
      * A repeatable group of data elements which together represent a language, and specify its role and, where
      * required, whether it is a country variant.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
         _initialize();
@@ -2765,7 +2764,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A repeatable group of data elements which together describe an extent pertaining to the product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents() {
         _initialize();
@@ -2780,7 +2779,7 @@ public class Product implements OnixProduct, Serializable {
      * A repeatable group of data elements which together specify the number of illustrations or other content items of
      * a stated type which the product carries. Use of the &lt;Illustrations&gt; composite is optional.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes>
         illustrationss() {
@@ -2795,7 +2794,7 @@ public class Product implements OnixProduct, Serializable {
      * The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data element, without
      * spaces or punctuation. Optional, and repeatable if the product comprises maps with two or more different scales.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<MapScale, String> mapScales() {
         _initialize();
@@ -2810,7 +2809,7 @@ public class Product implements OnixProduct, Serializable {
      * An optional and repeatable group of data elements which together describe a main subject classification or
      * subject heading which is taken from a recognized scheme other than BISAC or BIC.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects() {
         _initialize();
@@ -2824,7 +2823,7 @@ public class Product implements OnixProduct, Serializable {
      * An optional and repeatable group of data elements which together describe a subject classification or subject
      * heading which is additional to the BISAC, BIC or other main subject category.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
         _initialize();
@@ -2838,7 +2837,7 @@ public class Product implements OnixProduct, Serializable {
      * An optional and repeatable group of data elements which together represent the name of a person who is part of
      * the subject of a product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<PersonAsSubject> personAsSubjects() {
         _initialize();
@@ -2852,7 +2851,7 @@ public class Product implements OnixProduct, Serializable {
      * The name of a corporate body which is part of the subject of the product. Optional, and repeatable if more than
      * one corporate body is involved.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects() {
         _initialize();
@@ -2866,7 +2865,7 @@ public class Product implements OnixProduct, Serializable {
      * The name of a place or region or geographical entity which is part of the subject of the product. Optional, and
      * repeatable if the subject of the product includes more than one place.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects() {
         _initialize();
@@ -2880,7 +2879,7 @@ public class Product implements OnixProduct, Serializable {
      * An ONIX code, derived from BISAC and BIC lists, which identifies the broad audience or readership for whom a
      * product is intended. Optional, and repeatable if the product is intended for two or more groups.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes() {
         _initialize();
@@ -2894,7 +2893,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A repeatable group of data elements which together describe an audience to which the product is directed.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences() {
         _initialize();
@@ -2910,7 +2909,7 @@ public class Product implements OnixProduct, Serializable {
      * which a product is intended. The composite can carry a single value from, to, or exact, or a pair of values with
      * an explicit from and to. See examples below.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges() {
         _initialize();
@@ -2924,7 +2923,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * An optional and repeatable group of data elements which together describe the level of complexity of a text.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys() {
         _initialize();
@@ -2939,7 +2938,7 @@ public class Product implements OnixProduct, Serializable {
      * An optional and repeatable group of data elements which together identify and either include, or provide pointers
      * to, text related to the product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts() {
         _initialize();
@@ -2957,7 +2956,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;OtherText&gt; composite on preceding pages provides a more general method of handling review
      * quotes, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ReviewQuote, String> reviewQuotes() {
         _initialize();
@@ -2972,7 +2971,7 @@ public class Product implements OnixProduct, Serializable {
      * A repeatable group of data elements which together identify and provide pointers to, an image, audio or video
      * file related to the product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles() {
         _initialize();
@@ -2987,7 +2986,7 @@ public class Product implements OnixProduct, Serializable {
      * An optional and repeatable group of data elements which together identify and provide pointers to a website which
      * is related to the product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites() {
         _initialize();
@@ -3000,7 +2999,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A repeatable group of data elements which together describe a prize or award won by the product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
         _initialize();
@@ -3013,7 +3012,7 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * A repeatable group of data elements which together describe a content item within a product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ContentItem> contentItems() {
         _initialize();
@@ -3027,7 +3026,7 @@ public class Product implements OnixProduct, Serializable {
      * A repeatable group of data elements which together identify an imprint or brand under which the product is
      * marketed. The composite must carry either a name code or a name or both.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Imprint> imprints() {
         _initialize();
@@ -3042,7 +3041,7 @@ public class Product implements OnixProduct, Serializable {
      * a product. The composite will allow additional publishing roles to be introduced without adding new fields. Each
      * occurrence of the composite must carry either a name code or a name or both.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Publisher> publishers() {
         _initialize();
@@ -3062,7 +3061,7 @@ public class Product implements OnixProduct, Serializable {
      * does not apply, use the form that appears first. Alternatively, some ONIX applications may follow their own
      * “house style”.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<CityOfPublication, String> cityOfPublications() {
         _initialize();
@@ -3082,7 +3081,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
      * identities, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<CopublisherName, String> copublisherNames() {
         _initialize();
@@ -3101,7 +3100,7 @@ public class Product implements OnixProduct, Serializable {
      * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
      * identities, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<SponsorName, String> sponsorNames() {
         _initialize();
@@ -3117,7 +3116,7 @@ public class Product implements OnixProduct, Serializable {
      * the product. Either a structured copyright statement or statements, or a copyright year in the separate
      * &lt;CopyrightYear&gt; element which follows the composite, but not both, may be sent.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<CopyrightStatement> copyrightStatements() {
         _initialize();
@@ -3132,7 +3131,7 @@ public class Product implements OnixProduct, Serializable {
      * exercise in a product. The &lt;SalesRights&gt; composite may occur once for each value of &lt;b089&gt;. See
      * examples at the end of Group&nbsp;PR.21.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesRights> salesRightss() {
         _initialize();
@@ -3147,7 +3146,7 @@ public class Product implements OnixProduct, Serializable {
      * for sale, together with the ISBN and/or other product identifier and/or the name of the publisher of the same
      * work in the specified country/ies.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<NotForSale> notForSales() {
         _initialize();
@@ -3162,7 +3161,7 @@ public class Product implements OnixProduct, Serializable {
      * A group of data elements which together identify a non-territorial sales restriction which a publisher applies to
      * a product. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SalesRestriction> salesRestrictions() {
         _initialize();
@@ -3177,7 +3176,7 @@ public class Product implements OnixProduct, Serializable {
      * An optional and repeatable group of data elements which together identify a measurement and the units in which it
      * is expressed.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
         _initialize();
@@ -3198,7 +3197,7 @@ public class Product implements OnixProduct, Serializable {
      * and either a product identifier or a &lt;ProductForm&gt; value. In other words, it is valid to list related
      * products by relationship and identifier only, or by relationship and form only.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<RelatedProduct> relatedProducts() {
         _initialize();
@@ -3212,7 +3211,7 @@ public class Product implements OnixProduct, Serializable {
      * A repeatable group of data elements which together give details of a trade supply source and the product price
      * and availability from that source.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SupplyDetail> supplyDetails() {
         _initialize();
@@ -3227,7 +3226,7 @@ public class Product implements OnixProduct, Serializable {
      * A group of data elements which together specify a territorial market and the identity of a sales agent or local
      * publisher responsible for marketing the product therein. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<MarketRepresentation> marketRepresentations() {
         _initialize();
@@ -3241,7 +3240,7 @@ public class Product implements OnixProduct, Serializable {
      * Free text used to give details of the reprint history as part of the promotion of a book. Optional, and
      * repeatable to give information about successive reprintings.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ReprintDetail, String> reprintDetails() {
         _initialize();

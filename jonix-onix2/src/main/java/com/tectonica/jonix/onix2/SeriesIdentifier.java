@@ -60,7 +60,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * <li>&lt;{@link Series}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link SubSeriesRecord} ⯈ {@link SeriesIdentifier}</li>
@@ -183,7 +182,7 @@ public class SeriesIdentifier
      * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;SeriesIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SeriesIDType seriesIDType() {
         _initialize();
@@ -197,7 +196,7 @@ public class SeriesIdentifier
      * An identifier of the type specified in the &lt;SeriesIDType&gt; field. Mandatory in each occurrence of the
      * &lt;SeriesIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -211,7 +210,7 @@ public class SeriesIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in the &lt;SeriesIDType&gt;
      * field indicates a proprietary scheme, <em>eg</em> a publisher’s own code. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

@@ -41,8 +41,9 @@ interface CodeList93 {
  * Description: Supplier role
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist93">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist93">ONIX
  *      Codelist 93 in Reference Guide</a>
  */
 public enum SupplierRoles implements OnixCodelist, CodeList93 {
@@ -108,7 +109,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
      * Intermediary as exclusive distributor to retailers and direct to consumers and/or institutional customers. Only
      * for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Exclusive_distributor_to_resellers_and_end_customers("13", "Exclusive distributor to resellers and end-customers"),
 
@@ -116,7 +117,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
      * Intermediary as non-exclusive distributor to retailers and direct to consumers and/or institutional customers.
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Non_exclusive_distributor_to_resellers_and_end_customers("14",
         "Non-exclusive distributor to resellers and end-customers"),
@@ -125,7 +126,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
      * Use only where exclusive/non-exclusive status is not known. Prefer codes 13 or 14 as appropriate whenever
      * possible. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Distributor_to_resellers_and_end_customers("15", "Distributor to resellers and end-customers");
 

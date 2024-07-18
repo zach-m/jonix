@@ -41,8 +41,9 @@ interface CodeList150 {
  * Description: Product form
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
@@ -113,7 +114,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     /**
      * Vinyl disc (analogue).
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     LP("AM", "LP"),
 
@@ -121,14 +122,14 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * Digital audio recording available both by download to the purchaser's own device(s) and by online (eg streamed)
      * access
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Downloadable_and_online_audio_file("AN", "Downloadable and online audio file"),
 
     /**
      * Digital audio recording available online (eg streamed), not downloadable to the purchaser's own device(s)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Online_audio_file("AO", "Online audio file"),
 
@@ -297,7 +298,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     /**
      * (Blu Ray ROM)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     BR_ROM("DO", "BR-ROM"),
 
@@ -498,14 +499,14 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     /**
      * Folded but unbound
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Leaflet("PU", "Leaflet"),
 
     /**
      * Ex libris' book labels and packs
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Book_plates("PV", "Book plates"),
 
@@ -555,7 +556,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * EPUB files, an EPUB with a PDF, an e-book with a license to access a range of online resources, etc. Format of
      * product components must be given in &lt;ProductPart&gt;
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Multiple_component_retail_product_entirely_digital("SG", "Multiple-component retail product, entirely digital"),
 
@@ -683,7 +684,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * intended for sale individually. ISBN (where applicable) and format of contained items must be given in
      * &lt;ProductPart&gt;. Use only when the pack is neither shrinp-wrapped nor boxed
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Pack_outer_packaging_unspecified("XN", "Pack (outer packaging unspecified)"),
 
@@ -691,7 +692,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * Spinner with contents. ISBN(s) (where applicable) and detail of contained items must be given in
      * &lt;ProductPart&gt;
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Spinner_filled("XO", "Spinner – filled"),
 
@@ -701,7 +702,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt; are unlikely to be
      * sufficient
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Other_point_of_sale_including_retail_product("XY", "Other point of sale – including retail product"),
 
@@ -774,21 +775,21 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     /**
      * For example, branded, promotional or tie-in plates, bowls etc (note for mugs and cups, use code ZK)
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Tableware("ZM", "Tableware"),
 
     /**
      * For example, branded, promotional or tie-in umbrella
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Umbrella("ZN", "Umbrella"),
 
     /**
      * Coloring set, including pens, chalks, etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Paints_crayons_pencils("ZO", "Paints, crayons, pencils"),
 
@@ -796,7 +797,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * Handicraft kit or set, eg sewing, crochet, weaving, basketry, beadwork, leather, wood or metalworking, pottery
      * and glassworking, candlemaking etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Handicraft_kit("ZP", "Handicraft kit"),
 
@@ -805,7 +806,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * detail is expected in &lt;ProductFormDescription&gt;, as &lt;ProductFormDetail&gt; and &lt;ProductFormFeature&gt;
      * are unlikely to be sufficient
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Other_toy_game_accessories("ZX", "Other toy/game accessories"),
 

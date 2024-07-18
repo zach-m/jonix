@@ -55,11 +55,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductSupply&gt; from the schema author:
+ *
+ * Container for data describing a market, and specific publishing and supply details of the product in that market.
+ * Note Block 6 consists of all &lt;ProductSupply&gt; containers together &#9679; Modified cardinality of
+ * &lt;SupplyDetail at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply}</li>
@@ -170,7 +175,7 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * source. Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable to give details of
      * multiple supply sources.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<SupplyDetail> supplyDetails() {
         _initialize();
@@ -184,7 +189,7 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * A group of data elements which together give details of the publishing status of a product within a specified
      * market. Optional and non-repeating within an occurrence of the &lt;ProductSupply&gt; block.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public MarketPublishingDetail marketPublishingDetail() {
         _initialize();
@@ -206,7 +211,7 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * market – for example where a product is sold throughout the European Union, but exclusive to a single retailer in
      * France.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Market> markets() {
         _initialize();

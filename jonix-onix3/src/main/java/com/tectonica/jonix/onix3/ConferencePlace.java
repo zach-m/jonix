@@ -63,11 +63,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ConferencePlace&gt; from the schema author:
+ *
+ * &#9679; Deprecated - use &lt;Event&gt; instead of &lt;Conference&gt; &#9679; Added language attribute at revision
+ * 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferencePlace}</li>

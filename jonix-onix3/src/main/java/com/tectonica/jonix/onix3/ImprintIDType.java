@@ -69,11 +69,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ImprintIDType&gt; from the schema author:
+ *
+ * Type of identifier for the publisher's imprint or brand, often a proprietary type
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ImprintIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint} ⯈ {@link ImprintIdentifier} ⯈

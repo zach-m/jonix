@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AgentIDType&gt; from the schema author:
+ *
+ * Type of identifier for the publisher's sales agent or other representative organization in a market, eg SAN, GLN
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AgentIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link PublisherRepresentative} ⯈

@@ -41,8 +41,9 @@ interface CodeList21 {
  * Description: Edition type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -95,7 +96,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * Product sold at lower price than other editions, usually with lower quality paper or binding to reduce production
      * costs. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Budget_edition("BUD", "Budget edition"),
 
@@ -138,7 +139,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * understood by those with intellectual disabilities. See https://www.inclusion-europe.eu/easy-to-read for
      * guidelines. See also SMP for editions with simplified language. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Easy_to_read_edition("ETR", "Easy-to-read edition"),
 
@@ -164,7 +165,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * Sometimes labelled 'dyslexia-friendly'. See also code SMP if the text itself is simplified, and codes LTE or ULP
      * if the type size is significantly larger than normal. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     High_readability_edition("HRE", "High readability edition"),
 
@@ -217,7 +218,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * other format, and that is or was not expected to have such a counterpart for a reasonable time (recommended at
      * least 30 days following publication). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Paperback_original("PBO", "Paperback original"),
 
@@ -301,7 +302,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
      * Readaloud edition - specifially intended and designed for reading aloud (to children). Only for use in ONIX 3.0
      * or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Vorlesebucher("VOR", "Vorlesebücher");
 

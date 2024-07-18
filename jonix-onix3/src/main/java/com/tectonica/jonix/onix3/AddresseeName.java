@@ -60,11 +60,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AddresseeName&gt; from the schema author:
+ *
+ * Name of an intended recipient organization
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Addressee}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link Addressee} ⯈ {@link AddresseeName}</li>

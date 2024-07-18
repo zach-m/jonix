@@ -39,8 +39,9 @@ interface CodeList165 {
  * Description: Supplier own code type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist165">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist165">ONIX
  *      Codelist 165 in Reference Guide</a>
  */
 public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
@@ -85,7 +86,7 @@ public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
      * name type indicates the specific intermediate order aggregation/routing platform and the code indicates the
      * eligibility
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Suppliers_order_routing_eligibility("07", "Supplier’s order routing eligibility");
 

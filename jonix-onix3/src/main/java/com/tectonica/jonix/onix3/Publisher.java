@@ -59,11 +59,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Publisher&gt; from the schema author:
+ *
+ * Details of an organisation responsible for publishing the product &#9679; Added &lt;Funding&gt; at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Publisher}</li>
@@ -181,7 +184,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies a role played by an entity in the publishing of a product. Mandatory in each
      * occurrence of the &lt;Publisher&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PublishingRole publishingRole() {
         _initialize();
@@ -197,7 +200,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * mandatory if the &lt;Publisher&gt; composite does not carry a &lt;PublisherName&gt;. The composite is repeatable
      * in order to specify multiple identifiers for the same publisher.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameIdentifierTypes>
         publisherIdentifiers() {
@@ -213,7 +216,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * in an occurrence of the &lt;Publisher&gt; composite, and optional if a publisher identifier is included.
      * Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PublisherName publisherName() {
         _initialize();
@@ -229,7 +232,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * the funder provides multiple grants or awards. Used only when &lt;PublishingRole&gt; indicates the role of a
      * funder.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Funding> fundings() {
         _initialize();
@@ -244,7 +247,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * the publisher identified in an occurrence of the &lt;Publisher&gt; composite. Repeatable in order to provide
      * links to multiple websites.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
         _initialize();

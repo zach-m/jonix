@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ReturnsConditions&gt; from the schema author:
+ *
+ * Details of the supplier's returns conditions &#9679; Added &lt;ReturnsNote&gt; at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link ReturnsConditions}</li>
@@ -174,7 +177,7 @@ public class ReturnsConditions
      * An ONIX code identifying the scheme from which the returns conditions code in &lt;ReturnsCode&gt; is taken.
      * Mandatory in each occurrence of the &lt;ReturnsConditions&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReturnsCodeType returnsCodeType() {
         _initialize();
@@ -188,7 +191,7 @@ public class ReturnsConditions
      * A returns conditions code from the scheme specified in &lt;ReturnsCodeType&gt;. Mandatory in each occurrence of
      * the &lt;ReturnsConditions&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReturnsCode returnsCode() {
         _initialize();
@@ -203,7 +206,7 @@ public class ReturnsConditions
      * &lt;ReturnsCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReturnsCodeTypeName returnsCodeTypeName() {
         _initialize();
@@ -219,7 +222,7 @@ public class ReturnsConditions
      * attribute is optional for a single instance of &lt;ReturnsNote&gt;, but must be included in each instance if
      * &lt;ReturnsNote&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ReturnsNote, String> returnsNotes() {
         _initialize();

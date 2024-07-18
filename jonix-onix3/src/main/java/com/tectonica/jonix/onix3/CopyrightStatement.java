@@ -56,11 +56,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CopyrightStatement&gt; from the schema author:
+ *
+ * Details of a copyright or neighbouring rights statement &#9679; Modified cardinality of &lt;CopyrightYear&gt; at
+ * revision 3.0.7 &#9679; Added &lt;CopyrightType&gt; at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link CopyrightStatement}</li>
@@ -172,7 +176,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * &lt;CopyrightStatement&gt; composite but may be omitted only if &lt;CopyrightOwner&gt; is present, and repeatable
      * if several years or periods are listed.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<CopyrightYear, String> copyrightYears() {
         _initialize();
@@ -186,7 +190,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or
      * neighbouring right. If omitted, the default is that the statement represents a copyright.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CopyrightType copyrightType() {
         _initialize();
@@ -201,7 +205,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * &lt;CopyrightYear&gt; is present. Each occurrence of the &lt;CopyrightOwner&gt; composite must carry a single
      * name (personal or corporate), or an identifier, or both.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<CopyrightOwner> copyrightOwners() {
         _initialize();

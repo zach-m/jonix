@@ -69,7 +69,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link MainSubject}&gt;</li>
  * <li>&lt;{@link Subject}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link MainSubject} ⯈ {@link SubjectCode}</li>

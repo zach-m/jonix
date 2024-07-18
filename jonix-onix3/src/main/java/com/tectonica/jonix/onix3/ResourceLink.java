@@ -67,12 +67,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceLink&gt; from the schema author:
+ *
+ * URL which provides access to cited content used for marketing and promotional purposes (eg a link to a bestseller
+ * list) &#9679; Added language attribute at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CitedContent}&gt;</li>
  * <li>&lt;{@link ResourceVersion}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link CitedContent} ⯈ {@link ResourceLink}</li>

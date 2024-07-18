@@ -65,6 +65,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;IDTypeName&gt; from the schema author:
+ *
+ * Type of an identifier - the name of the identifier scheme, used when the identifier comes from a proprietary rather
+ * than a standard identifier scheme
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContactIdentifier}&gt;</li>
@@ -92,7 +97,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SupplierIdentifier}&gt;</li>
  * <li>&lt;{@link PriceIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈

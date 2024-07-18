@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;AVItemIdentifier&gt; from the schema author:
+ *
+ * Identifier for an audiovisual content item (eg a chapter) &#9679; Added at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AVItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link AVItem} ⯈ {@link AVItemIdentifier}</li>
@@ -172,7 +175,7 @@ public class AVItemIdentifier
      * An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt; is taken. Mandatory in each
      * occurrence of the &lt;AVItemIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public AVItemIDType avItemIDType() {
         _initialize();
@@ -186,7 +189,7 @@ public class AVItemIdentifier
      * An identifier of the type specified in &lt;AVItemIDType&gt;. Mandatory in each occurrence of the
      * &lt;AVItemIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -201,7 +204,7 @@ public class AVItemIdentifier
      * there is no individual ID type code). Must be used when, and only when, the code in &lt;AVItemIDType&gt;
      * indicates a proprietary scheme, <i>eg</i> a publisher’s own code. Optional and non-repeating
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

@@ -73,7 +73,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link SupplyDetail} ⯈ {@link Reissue}</li>
@@ -198,7 +197,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * The date on which the product will be reissued, or (after reissue) the date when it was last reissued. Mandatory
      * in each occurrence of the &lt;Reissue&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReissueDate reissueDate() {
         _initialize();
@@ -211,7 +210,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * <p>
      * Text explaining the nature of the reissue. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReissueDescription reissueDescription() {
         _initialize();
@@ -226,7 +225,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * price that will apply when the product is reissued. <strong>Please see above, within Group&nbsp;PR.24, for
      * details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Price> prices() {
         _initialize();
@@ -242,7 +241,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * or video file, used here to indicate that there is a new cover or jacket image for a reissue. <strong>Please see
      * Group&nbsp;PR.16 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles() {
         _initialize();

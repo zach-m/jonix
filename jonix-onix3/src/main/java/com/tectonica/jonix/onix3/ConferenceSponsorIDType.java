@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ConferenceSponsorIDType&gt; from the schema author:
+ *
+ * &#9679; Deprecated - use &lt;EventSponsorIdentifier&gt; instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ConferenceSponsorIdentifier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor} ⯈

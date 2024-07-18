@@ -66,11 +66,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductClassificationTypeName&gt; from the schema author:
+ *
+ * Name of a proprietary trade classification scheme (which does not have its own code) used to classify the product for
+ * national or international trade purposes &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductClassification}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductClassification} ⯈

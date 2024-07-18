@@ -55,11 +55,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SupplyContact&gt; from the schema author:
+ *
+ * Details of an organization (which may or may not be the supplier) responsible for dealing with supply enquiries
+ * related to the product &#9679; Added &lt;TelephoneNumber&gt; at 3.0.8 &#9679; Added at revision 3.0.4
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact}</li>
@@ -183,7 +187,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the role played by the supply contact in relation to the product – for example
      * answering enquiries related to orders or to returns.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SupplyContactRole supplyContactRole() {
         _initialize();
@@ -200,7 +204,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
      * and repeatable if more than one identifier of different types is sent; but either a &lt;SupplyContactName&gt; or
      * a &lt;SupplyContactIdentifier&gt; <em>must</em> be included.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SupplyContactIdentifier, JonixSupplyContactIdentifier, NameIdentifierTypes>
         supplyContactIdentifiers() {
@@ -216,7 +220,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
      * non-repeating; but either a &lt;SupplyContactName&gt; element or a &lt;SupplyContactIdentifier&gt; composite must
      * be included.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SupplyContactName supplyContactName() {
         _initialize();
@@ -230,7 +234,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
      * Free text giving the name, department, <i>etc</i> for a contact person in the supply contact organization who is
      * responsible for the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ContactName contactName() {
         _initialize();
@@ -244,7 +248,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
      * A text field giving the e-mail address for a contact person in the supply contact organization who is responsible
      * for the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EmailAddress emailAddress() {
         _initialize();
@@ -259,7 +263,7 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
      * wherever possible including the plus sign and the international dialling code. Optional, and repeatable to
      * provide multiple numbers for the same contact.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
         _initialize();

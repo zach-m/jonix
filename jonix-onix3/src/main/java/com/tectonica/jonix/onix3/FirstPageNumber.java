@@ -60,11 +60,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;FirstPageNumber&gt; from the schema author:
+ *
+ * Start page of a textual content item
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PageRun}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈ {@link PageRun} ⯈

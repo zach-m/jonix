@@ -64,6 +64,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NoContributor&gt; from the schema author:
+ *
+ * Positive indication that there are no listed contributors to the product &#9679; XML empty element - must not contain
+ * data
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
@@ -71,7 +76,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * <li>&lt;{@link Collection}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NoContributor}</li>

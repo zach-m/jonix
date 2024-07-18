@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Extent}</li>
@@ -175,7 +174,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * An ONIX code which identifies the type of extent carried in the composite, <em>eg</em> running time for an audio
      * or video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ExtentType extentType() {
         _initialize();
@@ -189,7 +188,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * The numeric value of the extent specified in &lt;ExtentType&gt;. Mandatory in each occurrence of the
      * &lt;Extent&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ExtentValue extentValue() {
         _initialize();
@@ -203,7 +202,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * An ONIX code indicating the unit used for the &lt;ExtentValue&gt; and the format in which the value is presented.
      * Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ExtentUnit extentUnit() {
         _initialize();

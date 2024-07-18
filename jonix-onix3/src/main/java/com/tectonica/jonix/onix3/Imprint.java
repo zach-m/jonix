@@ -55,11 +55,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Imprint&gt; from the schema author:
+ *
+ * Details of the publisher's imprint or branding under which the product is marketed
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link Imprint}</li>
@@ -167,7 +170,7 @@ public class Imprint implements OnixSuperComposite, Serializable {
      * &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite is repeatable in order to specify
      * multiple identifiers for the same imprint or brand.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameIdentifierTypes>
         imprintIdentifiers() {
@@ -183,7 +186,7 @@ public class Imprint implements OnixSuperComposite, Serializable {
      * there is no imprint identifier in an occurrence of the &lt;Imprint&gt; composite, and optional if an imprint
      * identifier is included. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ImprintName imprintName() {
         _initialize();

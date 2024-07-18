@@ -55,11 +55,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ConferenceSponsor&gt; from the schema author:
+ *
+ * &#9679; Deprecated - use &lt;EventSponsor&gt; instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Conference}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Conference} ⯈ {@link ConferenceSponsor}</li>
@@ -176,7 +179,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together carry a coded identifier for a sponsor of a
      * conference.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier,
         NameIdentifierTypes> conferenceSponsorIdentifiers() {
@@ -192,7 +195,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * &lt;PersonName&gt; and &lt;CorporateName&gt; can be sent in each occurrence of the &lt;ConferenceSponsor&gt;
      * composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PersonName personName() {
         _initialize();
@@ -207,7 +210,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * one of &lt;PersonName&gt; and &lt;CorporateName&gt; can be sent in each occurrence of the
      * &lt;ConferenceSponsor&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CorporateName corporateName() {
         _initialize();

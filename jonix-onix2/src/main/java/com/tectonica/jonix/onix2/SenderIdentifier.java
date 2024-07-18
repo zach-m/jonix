@@ -60,7 +60,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link SenderIdentifier}</li>
@@ -181,7 +180,7 @@ public class SenderIdentifier
      * An ONIX code identifying the namespace from which the identifier in the &lt;IDValue&gt; element is taken.
      * Mandatory in any occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SenderIDType senderIDType() {
         _initialize();
@@ -195,7 +194,7 @@ public class SenderIdentifier
      * An identifier of the type specified in the &lt;SenderIDType&gt; element. Mandatory in any occurrence of the
      * &lt;SenderIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -212,7 +211,7 @@ public class SenderIdentifier
      * <p class="new214">
      * The text is not limited to ASCII characters.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

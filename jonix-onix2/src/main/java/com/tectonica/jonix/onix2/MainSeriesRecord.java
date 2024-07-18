@@ -47,7 +47,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link ONIXMessage}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link MainSeriesRecord}</li>
@@ -220,7 +219,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * <p>
      * This field is mandatory and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public RecordReference recordReference() {
         _initialize();
@@ -234,7 +233,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates the type of notification or update which you are sending. Mandatory and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public NotificationType notificationType() {
         _initialize();
@@ -250,7 +249,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * is optional, and may only repeat if two or more identifiers of different types are sent. It is not permissible to
      * have two identifiers of the same type.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, CollectionIdentifierTypes>
         seriesIdentifiers() {
@@ -262,7 +261,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
         JPU.emptyListOfOnixDataCompositeWithKey(Title.class);
 
     /**
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
         _initialize();
@@ -278,7 +277,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * why the record is being deleted, not the reason why a product has been “deleted” (in industries which use this
      * terminology when a product is withdrawn).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DeletionCode deletionCode() {
         _initialize();
@@ -294,7 +293,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * why the record is being deleted, not the reason why a product has been “deleted” (in industries which use this
      * terminology when a product is withdrawn).
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DeletionText deletionText() {
         _initialize();
@@ -308,7 +307,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates the type of source which has issued the ONIX record. Optional and non-repeating,
      * independently of the occurrence of any other field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceType recordSourceType() {
         _initialize();
@@ -323,7 +322,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * taken. Optional and non-repeating, but &lt;RecordSourceIdentifier&gt; must also be present if this field is
      * present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceIdentifierType recordSourceIdentifierType() {
         _initialize();
@@ -338,7 +337,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * &lt;RecordSourceIdentifierType&gt;. Optional and non-repeating, but &lt;RecordSourceIdentifierType&gt; must also
      * be present if this field is present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceIdentifier recordSourceIdentifier() {
         _initialize();
@@ -352,7 +351,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
      * The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
      * occurrence of any other field.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RecordSourceName recordSourceName() {
         _initialize();
@@ -362,7 +361,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
     private SubordinateEntries subordinateEntries = SubordinateEntries.EMPTY;
 
     /**
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SubordinateEntries subordinateEntries() {
         _initialize();
@@ -372,7 +371,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
     private ListOfOnixComposite<Contributor> contributors = JPU.emptyListOfOnixComposite(Contributor.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
@@ -383,7 +382,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
         JPU.emptyListOfOnixDataCompositeWithKey(OtherText.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts() {
         _initialize();
@@ -393,7 +392,7 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
     private ListOfOnixComposite<Publisher> publishers = JPU.emptyListOfOnixComposite(Publisher.class);
 
     /**
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Publisher> publishers() {
         _initialize();

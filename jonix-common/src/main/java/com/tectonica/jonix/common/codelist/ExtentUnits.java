@@ -41,8 +41,9 @@ interface CodeList24 {
  * Description: Extent unit
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist24">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist24">ONIX
  *      Codelist 24 in Reference Guide</a>
  */
 public enum ExtentUnits implements OnixCodelist, CodeList24 {
@@ -51,14 +52,14 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
      * in a pack. Only for use in ONIX 3.0 or later. For number of pieces in eg a jigsaw, kit, board game, see
      * &lt;ProductFormFeature&gt; and code 22 from list 79
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Physical_pieces("00", "Physical pieces"),
 
     /**
      * Approximate number of characters (including spaces) of natural language text. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Characters("01", "Characters"),
 
@@ -89,7 +90,7 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
      * (for example if the discs are Yellow Book CDs containing mp3 files). Note that disc breaks are not necessarily
      * aligned with structural breaks in the text (eg chapter breaks). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Discs("12", "Discs"),
 
@@ -118,7 +119,7 @@ public enum ExtentUnits implements OnixCodelist, CodeList24 {
     /**
      * Number of chapters (or other similar subdivisions) of the content. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Chapters("31", "Chapters");
 

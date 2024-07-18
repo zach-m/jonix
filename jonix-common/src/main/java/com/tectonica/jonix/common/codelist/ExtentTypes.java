@@ -41,8 +41,9 @@ interface CodeList23 {
  * Description: Extent type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist23">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist23">ONIX
  *      Codelist 23 in Reference Guide</a>
  */
 public enum ExtentTypes implements OnixCodelist, CodeList23 {
@@ -161,7 +162,7 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
      * In a pack of educational flash cards, playing cards, postcards, greeting cards etc. Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Number_of_cards("17", "Number of cards"),
 
@@ -169,7 +170,7 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
      * Count of the number of pages within the main content page count that are blank or substantially blank, intended
      * for the reader to fill in (eg in a journal). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Number_of_write_in_pages("18", "Number of write-in pages"),
 
@@ -184,7 +185,7 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
      * stored for use on a device, where this is different from the download filesize (see code 22), and expressed in
      * the specified extent unit. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Storage_filesize("23", "Storage filesize");
 

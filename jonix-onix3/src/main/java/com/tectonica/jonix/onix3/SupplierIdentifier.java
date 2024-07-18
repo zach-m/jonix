@@ -55,12 +55,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SupplierIdentifier&gt; from the schema author:
+ *
+ * Identifier for a supplier organization
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link NewSupplier}&gt;</li>
  * <li>&lt;{@link Supplier}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link NewSupplier} ⯈
@@ -175,7 +178,7 @@ public class SupplierIdentifier
      * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;SupplierIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SupplierIDType supplierIDType() {
         _initialize();
@@ -189,7 +192,7 @@ public class SupplierIdentifier
      * An identifier of the type specified in the &lt;SupplierIDType&gt; element. Mandatory in each occurrence of the
      * &lt;SupplierIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -205,7 +208,7 @@ public class SupplierIdentifier
      * &lt;SupplierIDType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

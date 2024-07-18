@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContributorPlaceRelator&gt; from the schema author:
+ *
+ * Type of association between a contributor and a location (eg born, lived, died there)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContributorPlace}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ContributorPlace} ⯈

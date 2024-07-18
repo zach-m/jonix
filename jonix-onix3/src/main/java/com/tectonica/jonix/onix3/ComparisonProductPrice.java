@@ -74,11 +74,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ComparisonProductPrice&gt; from the schema author:
+ *
+ * &#9679; Added at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
@@ -196,7 +199,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
      * The amount of the comparison product price. Mandatory and non-repeating within any occurrence of the
      * &lt;ComparisonProductPrice&gt; composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceAmount priceAmount() {
         _initialize();
@@ -219,7 +222,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
      * &lt;ProductRelationCode&gt; 06 (related product is alternative format with same content as product) and may in
      * many circumstances also be 13 (product is e-publication based on related product).
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -235,7 +238,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
      * &lt;ComparisonProductPrice&gt; composite. Optional if a &lt;DefaultPriceType&gt; has been specified in the
      * message header, otherwise mandatory. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PriceType priceType() {
         _initialize();
@@ -251,7 +254,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
      * not the default currency for the ONIX message. To avoid any possible ambiguity, it is strongly recommended that
      * the currency should be stated here.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CurrencyCode currencyCode() {
         _initialize();

@@ -53,11 +53,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;TextItemIdentifier&gt; from the schema author:
+ *
+ * Identifier for a textual content item (eg a chapter)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextItem} ⯈
@@ -170,7 +173,7 @@ public class TextItemIdentifier
      * An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt; is taken. Mandatory in each
      * occurrence of the &lt;TextItemIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TextItemIDType textItemIDType() {
         _initialize();
@@ -184,7 +187,7 @@ public class TextItemIdentifier
      * An identifier of the type specified in &lt;TextItemIDType&gt;. Mandatory in each occurrence of the
      * &lt;TextItemIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -199,7 +202,7 @@ public class TextItemIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in &lt;TextItemIDType&gt;
      * indicates a proprietary scheme, <i>eg</i> a publisher’s own code. Optional and non-repeating
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

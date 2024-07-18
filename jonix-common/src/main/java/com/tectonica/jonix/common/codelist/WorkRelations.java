@@ -41,8 +41,9 @@ interface CodeList164 {
  * Description: Work relation
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist164">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist164">ONIX
  *      Codelist 164 in Reference Guide</a>
  */
 public enum WorkRelations implements OnixCodelist, CodeList164 {
@@ -91,7 +92,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * &lt;RelatedWork&gt; must include an identifier for work X. See code 01 if the originality of X is unspecified or
      * unknown
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Manifestation_of_original_work("06", "Manifestation of original work"),
 
@@ -103,7 +104,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * derivation of X from W is unknown or unstated. The [abridged] parent work X may be identified using a separate
      * instance of &lt;RelatedWork&gt; with relation code 01
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_abridgement("21", "Derived from by abridgement"),
 
@@ -114,7 +115,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * unstated. The [annotated] parent work X may be identified using a separate instance of &lt;RelatedWork&gt; with
      * relation code 01
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_annotation("22", "Derived from by annotation"),
 
@@ -124,7 +125,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * may be identified using a separate instance of &lt;RelatedWork&gt; with code 23. The compiled parent work X may
      * be identified using a separate instance of &lt;Related&gt; work with relation code 01
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_compilation("23", "Derived from by compilation"),
 
@@ -133,7 +134,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * of &lt;RelatedWork&gt; must include an identifier for work W. &lt;EditionType&gt; of Product A would normally be
      * CRI
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_criticism("24", "Derived from by criticism"),
 
@@ -141,7 +142,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * The content of the work X is an excerpt from work W. The instance of &lt;RelatedWork&gt; must include an
      * identifier for [complete] work W
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_excerption("25", "Derived from by excerption"),
 
@@ -150,7 +151,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * &lt;RelatedWork&gt; must include an identifier for [unsuitable] work W. &lt;EditionType&gt; of Product A would
      * normally be EXP
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_expurgation("26", "Derived from by expurgation"),
 
@@ -159,7 +160,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * instance of &lt;RelatedWork&gt; must include an identifier for [unaugmented] work W. &lt;EditionType&gt; of
      * product A may be ILL, ENH etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_addition_of_non_text_material("27", "Derived from by addition (of non-text material)"),
 
@@ -168,7 +169,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * or replacement of text material]. The instance of &lt;RelatedWork&gt; must include an identifier for [unrevised]
      * work W. &lt;EditionType&gt; of product A may be REV, NED, etc, or A may be numbered
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_revision("28", "Derived from by revision"),
 
@@ -176,7 +177,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * The content of work W has been translated into another language to form work X. The instance of
      * &lt;RelatedWork&gt; must include an identifier for [untranslated] work W
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_via_translation("29", "Derived from via translation"),
 
@@ -185,7 +186,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * &lt;RelatedWork&gt; must include an identifier for [unadapted] work W. &lt;EditionType&gt; of product A would
      * normally be ADP, ACT etc
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_via_adaptation("30", "Derived from via adaptation"),
 
@@ -193,7 +194,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * The content of work W has been modified by the removal of significant non-textual elements to form work X. The
      * instance of &lt;RelatedWork&gt; must include an identifier for work W
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_by_subtraction_of_non_text_material("31", "Derived from by subtraction (of non-text material)"),
 
@@ -204,58 +205,58 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * work Y. See code 03 if the method of derivation of Y from X is unknown or unstated. The [unabridged] parent work
      * X may be identified using a separate instance of &lt;RelatedWork&gt; with relation code 01 or 06
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_by_abridgement("41", "Related work is derived from this by abridgement"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_by_annotation("42", "Related work is derived from this by annotation"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_by_compilation("43", "Related work is derived from this by compilation"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_by_criticism("44", "Related work is derived from this by criticism"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_by_excerption("45", "Related work is derived from this by excerption"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_by_expurgation("46", "Related work is derived from this by expurgation"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_by_addition_of_non_text_material("47",
         "Related work is derived from this by addition (of non-text material)"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_by_revision("48", "Related work is derived from this by revision"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_via_translation("49", "Related work is derived from this via translation"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Related_work_is_derived_from_this_via_adaptation("50", "Related work is derived from this via adaptation"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Derived_from_this_by_subtraction_of_non_text_material("51",
         "Derived from this by subtraction (of non-text material)"),
@@ -265,7 +266,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * differences between LRM works and expressions, and ONIX works in LRM library practice, and always also include a
      * relationship to an ONIX work using code 01
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Manifestation_of_LRM_work("98", "Manifestation of LRM work"),
 
@@ -275,7 +276,7 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * expressions and ONIX works in LRM library practice, and always also include a relationship to an ONIX work using
      * code 01
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Manifestation_of_LRM_expression("99", "Manifestation of LRM expression");
 

@@ -60,11 +60,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContentItem&gt; from the schema author:
+ *
+ * Details of a textual content item (eg a chapter) &#9679; Added &lt;AVItem&gt; at revision 3.0.5 &#9679; Added
+ * &lt;ContributorStatement&gt;, &lt;NoContributor&gt; (in gp.authorship), &lt;Language&gt; at revision 3.0.4 &#9679;
+ * Added &lt;RelatedProduct&gt; at revision 3.0.3 &#9679; Modified cardinality of &lt;ContributorStatement&gt; at
+ * revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem}</li>
@@ -231,7 +237,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
      * &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the &lt;ContentItem&gt;.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ComponentTypeName componentTypeName() {
         _initialize();
@@ -245,7 +251,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A group of data elements which together describe a personal or corporate contributor to a content item. Optional
      * and repeatable.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
@@ -266,7 +272,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * for structured tables of contents. If used, it must occur once and only once in each occurrence of the
      * &lt;ContentItem&gt; composite.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public LevelSequenceNumber levelSequenceNumber() {
         _initialize();
@@ -282,7 +288,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * which describes a particular content item. (Similar composites may be defined for other media, and the occurrence
      * of one of them will be mandatory in any &lt;ContentItem&gt; composite.)
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TextItem textItem() {
         _initialize();
@@ -297,7 +303,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * Exactly one of either the &lt;AVItem&gt; composite or the similar &lt;TextItem&gt; composite must occur in a
      * &lt;ContentItem&gt; composite which describes a content item.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public AVItem avItem() {
         _initialize();
@@ -311,7 +317,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * The number (if any) which is given to the content item in the product, in the form (<i>eg</i> Arabic or Roman) in
      * which it is given in the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ComponentNumber componentNumber() {
         _initialize();
@@ -325,7 +331,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * An empty element that provides a positive indication that a content item has no stated authorship. Optional and
      * non-repeating. Must only be sent in a &lt;ContentItem&gt; composite that has no &lt;Contributor&gt; elements.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoContributor noContributor() {
         _initialize();
@@ -343,7 +349,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together give the text of a title of a content item and specify its
      * type. Optional.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<TitleDetail> titleDetails() {
         _initialize();
@@ -363,7 +369,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * &lt;Contributor&gt; composite for display purposes only. The individual name detail must also be sent in the
      * &lt;Contributor&gt; composite for indexing and retrieval.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
@@ -378,7 +384,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together represent a language, and specify its role and,
      * where required, whether it is a country variant.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
         _initialize();
@@ -392,7 +398,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A group of data elements which together specify a subject classification or a subject heading relating to a
      * content item. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
         _initialize();
@@ -406,7 +412,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together represent the name of a person or organization –
      * real or fictional – that is part of the subject of a content item.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<NameAsSubject> nameAsSubjects() {
         _initialize();
@@ -419,7 +425,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * <p>
      * A group of data elements which together carry text related to a content item. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<TextContent> textContents() {
         _initialize();
@@ -432,7 +438,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * <p>
      * A group of data elements which together describe a piece of cited content. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<CitedContent> citedContents() {
         _initialize();
@@ -446,7 +452,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * <p>
      * A group of data elements which together describe a supporting resource. Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SupportingResource> supportingResources() {
         _initialize();
@@ -460,7 +466,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A group of data elements which together describe a work which has a specified relationship to a content item.
      * Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<RelatedWork> relatedWorks() {
         _initialize();
@@ -474,7 +480,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * A group of data elements which together describe a product which has a specified relationship to a content item.
      * Optional and repeatable.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<RelatedProduct> relatedProducts() {
         _initialize();

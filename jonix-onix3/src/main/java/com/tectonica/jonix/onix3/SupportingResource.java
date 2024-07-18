@@ -58,6 +58,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SupportingResource&gt; from the schema author:
+ *
+ * Details of a supporting resource used for marketing and promotional purposes, eg a cover image, author photo, sample
+ * of the content &#9679; Added &lt;Territory&gt; at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>
@@ -66,7 +71,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource}</li>
@@ -195,7 +199,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the type of content carried in a supporting resource. Mandatory in each occurrence of the
      * &lt;SupportingResource&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ResourceContentType resourceContentType() {
         _initialize();
@@ -209,7 +213,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * An ONIX code indicating the mode of the supporting resource, <i>eg</i> audio, video. Mandatory in each occurrence
      * of the &lt;SupportingResource&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ResourceMode resourceMode() {
         _initialize();
@@ -223,7 +227,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the audience for which the supporting resource is intended. Mandatory in each
      * occurrence of the &lt;SupportingResource&gt; composite, and repeatable.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixCodelist<ContentAudience, ContentAudiences> contentAudiences() {
         _initialize();
@@ -239,7 +243,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * &lt;SupportingResource&gt; composite, and the composite should be repeated as necessary if the resource is
      * offered in multiple versions.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<ResourceVersion> resourceVersions() {
         _initialize();
@@ -265,7 +269,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * specific &lt;Territory&gt; composites are intended for use only where no appropriate targeted resource is
      * present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Territory territory() {
         _initialize();
@@ -281,7 +285,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * versions in which the resource is offered. Optional, and repeatable in order to describe multiple features of the
      * resource.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes>
         resourceFeatures() {

@@ -41,8 +41,9 @@ interface CodeList30 {
  * Description: Audience range qualifier
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist30">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist30">ONIX
  *      Codelist 30 in Reference Guide</a>
  */
 public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
@@ -136,7 +137,7 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     /**
      * N&#237;vel de Educa&#231;&#227;o do Brasil, see List 238. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Brazil_Education_level("31", "Brazil Education level"),
 
@@ -144,14 +145,14 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
      * Basic French educational level classification. Values are defined by ScoLOMFR. Only for use in ONIX 3.0 or later.
      * See http://data.education.fr/voc/scolomfr/scolomfr-voc-012
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     French_educational_levels("32", "French educational levels"),
 
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Finnish_Upper_secondary_school_course_2021_("33", "Finnish Upper secondary school course (2021+)"),
 
@@ -160,7 +161,7 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
      * later. See http://data.education.fr/voc/scolomfr/scolomfr-voc-022 - Niveau &#233;ducatif d&#233;taill&#233;. See
      * also code 30
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Detailed_French_educational_levels("34", "Detailed French educational levels");
 

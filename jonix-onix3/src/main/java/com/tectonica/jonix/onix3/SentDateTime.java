@@ -68,11 +68,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SentDateTime&gt; from the schema author:
+ *
+ * The date, and optionally the exact time, the ONIX message was sent by the sender
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link SentDateTime}</li>

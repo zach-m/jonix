@@ -41,8 +41,9 @@ interface CodeList167 {
  * Description: Price condition type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist167">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist167">ONIX
  *      Codelist 167 in Reference Guide</a>
  */
 public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
@@ -70,7 +71,7 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
      * Use with &lt;PriceConditionQuantity&gt; and &lt;ProductIdentifier&gt;. Purchase at this price requires commitment
      * to purchase the specified linked product, which is not included in the price
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Linked_subsequent_purchase_price("04", "Linked subsequent purchase price"),
 
@@ -89,14 +90,14 @@ public enum PriceConditionTypes implements OnixCodelist, CodeList167 {
     /**
      * The rental or subscription will automatically renew at the end of the period unless actively cancelled
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Auto_renewing("07", "Auto-renewing"),
 
     /**
      * Purchase at this price includes the price of the specified other product
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Combined_price("08", "Combined price"),
 

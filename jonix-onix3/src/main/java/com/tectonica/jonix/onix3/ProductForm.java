@@ -67,6 +67,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductForm&gt; from the schema author:
+ *
+ * The primary form of a product, eg hardcover, softcover, e-book etc
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
@@ -74,7 +78,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SupplementManifest}&gt;</li>
  * <li>&lt;{@link RelatedProduct}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductForm}</li>

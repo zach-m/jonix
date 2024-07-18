@@ -59,7 +59,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link Set}</li>
@@ -208,7 +207,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * &lt;Set&gt; composite. The &lt;Title&gt; composite provides a more comprehensive representation of a set title,
      * and allows alternative forms to be sent.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public TitleOfSet titleOfSet() {
         _initialize();
@@ -223,7 +222,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * &lt;ProductIdentifier&gt; composite on the next page provides a more general method of handling this and other
      * product codes, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ISBNOfSet isbnOfSet() {
         _initialize();
@@ -238,7 +237,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * <strong>The &lt;ProductIdentifier&gt; composite on the next page provides a more general method of handling this
      * and other product codes, and is to be preferred.</strong>
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EAN13OfSet ean13OfSet() {
         _initialize();
@@ -254,7 +253,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * Optional and non-repeating. Note that this element is used for the first subdivision of a set which has two
      * levels, regardless of the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SetPartNumber setPartNumber() {
         _initialize();
@@ -271,7 +270,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * non-repeating. Note that this element is used for the first subdivision of a set which has two levels, regardless
      * of the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SetPartTitle setPartTitle() {
         _initialize();
@@ -285,7 +284,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * The distinctive enumeration of the product as an item within a set (or within a part of a set). Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ItemNumberWithinSet itemNumberWithinSet() {
         _initialize();
@@ -301,7 +300,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * non-repeating. The purpose of this element is to make it possible to describe structured sets in a normalized
      * way, since enumeration carried as &lt;ItemNumberWithinSet&gt; may take a wide variety of forms.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public LevelSequenceNumber levelSequenceNumber() {
         _initialize();
@@ -317,7 +316,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * product title in Group&nbsp;PR.7, but by entering it in this group it is possible to assure a correctly
      * structured entry for the set. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SetItemTitle setItemTitle() {
         _initialize();
@@ -333,7 +332,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * specified scheme, used here to carry the product identifier for a set. <strong>See notes on the
      * &lt;ProductIdentifier&gt; composite in section PR.2 for details of the handling of ISBN-13.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
         productIdentifiers() {
@@ -349,7 +348,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * A repeatable group of data elements which together give the text of a title, including a subtitle where
      * applicable, and specify its type. <strong>Please see Group&nbsp;PR.7 for details.</strong>
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
         _initialize();

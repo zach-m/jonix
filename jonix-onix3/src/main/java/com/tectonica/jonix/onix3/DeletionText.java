@@ -67,11 +67,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;DeletionText&gt; from the schema author:
+ *
+ * Text providing a reason for 'deletion' of a product (Notification type 05), when a Product record is supplied in
+ * error
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DeletionText}</li>

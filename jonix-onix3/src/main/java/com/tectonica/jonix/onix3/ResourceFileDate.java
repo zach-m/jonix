@@ -54,13 +54,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceFileDate&gt; from the schema author:
+ *
+ * &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverResource}&gt;</li>
  * <li>&lt;{@link BodyResource}&gt;</li>
  * <li>&lt;{@link InsertResource}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -185,7 +188,7 @@ public class ResourceFileDate
      * An ONIX code indicating the significance of the date in relation to the resource file. Mandatory in each
      * occurrence of the &lt;ResourceFileDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ResourceFileDateRole resourceFileDateRole() {
         _initialize();
@@ -201,7 +204,7 @@ public class ResourceFileDate
      * the attribute is missing, then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i>
      * attribute and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
@@ -215,7 +218,7 @@ public class ResourceFileDate
      * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and not repeatable.
      * Deprecated – where possible, use the <i>dateformat</i> attribute instead.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();

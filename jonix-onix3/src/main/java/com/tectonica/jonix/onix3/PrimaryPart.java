@@ -60,11 +60,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PrimaryPart&gt; from the schema author:
+ *
+ * Flag indicating the most important of a number of product components &#9679; XML empty element - must not contain
+ * data
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductPart}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductPart} ⯈ {@link PrimaryPart}</li>

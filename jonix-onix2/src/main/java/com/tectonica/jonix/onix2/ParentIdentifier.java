@@ -41,7 +41,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link SubSeriesRecord} ⯈ {@link ParentIdentifier}</li>
@@ -162,7 +161,7 @@ public class ParentIdentifier
      * An ONIX code identifying the scheme from which the identifier in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;SeriesIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SeriesIDType seriesIDType() {
         _initialize();
@@ -172,7 +171,7 @@ public class ParentIdentifier
     private IDValue idValue = IDValue.EMPTY;
 
     /**
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -182,7 +181,7 @@ public class ParentIdentifier
     private IDTypeName idTypeName = IDTypeName.EMPTY;
 
     /**
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

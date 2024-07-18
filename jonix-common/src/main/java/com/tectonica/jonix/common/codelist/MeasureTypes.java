@@ -41,8 +41,9 @@ interface CodeList48 {
  * Description: Measure type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist48">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist48">ONIX
  *      Codelist 48 in Reference Guide</a>
  */
 public enum MeasureTypes implements OnixCodelist, CodeList48 {
@@ -84,7 +85,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * volumetric unit - for example code cm = cubic centimetres (ie millilitres), and code oz = (US) fluid ounces. Only
      * for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Unit_volume("06", "Unit volume"),
 
@@ -93,7 +94,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * interpreted as a volumetric unit - for example code cm = cubic centimetres (ie millilitres), and code oz = (US)
      * fluid ounces. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Unit_capacity("07", "Unit capacity"),
 
@@ -133,7 +134,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * As height, but of the product without packaging (use only for products supplied in retail packaging, must also
      * supply overall size when packaged using code 01). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Unpackaged_height("14", "Unpackaged height"),
 
@@ -141,7 +142,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * As width, but of the product without packaging (use only for products supplied in retail packaging, must also
      * supply overall size when packaged using code 02). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Unpackaged_width("15", "Unpackaged width"),
 
@@ -149,7 +150,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * As thickness, but of the product without packaging (use only for products supplied in retail packaging, must also
      * supply overall size when packaged using code 03). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Unpackaged_thickness("16", "Unpackaged thickness"),
 
@@ -158,7 +159,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * provided using &lt;ProductFormFeature&gt;. A per-battery unit weight may be calculated from the number of
      * batteries if required. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Total_battery_weight("17", "Total battery weight"),
 
@@ -168,7 +169,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * Lithium). Details of the batteries must be provided using ProductFormFeature. A per-battery unit mass of Lithium
      * may be calculated from the number of batteries if required. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Total_weight_of_Lithium("18", "Total weight of Lithium"),
 
@@ -178,17 +179,17 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * the unassembled dimensions as supplied (including any retail or trade packaging) are also provided using codes
      * 01, 02 and 03. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Assembled_length("19", "Assembled length"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Assembled_width("20", "Assembled width"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Assembled_height("21", "Assembled height"),
 
@@ -197,7 +198,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * Unpackaged unit weight only for products supplied in retail packaging, and must also supply overall unit weight.
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Unpackaged_unit_weight("22", "Unpackaged unit weight"),
 
@@ -207,17 +208,17 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * orders nor deliveries have to be aligned with multiples of the pack quantity, but such orders and deliveries may
      * be more convenient to handle. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carton_length("23", "Carton length"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carton_width("24", "Carton width"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carton_height("25", "Carton height"),
 
@@ -226,7 +227,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * used only when the weight of individual copies (code 08) AND &lt;PackQuantity&gt; are supplied. Only for use in
      * ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Carton_weight("26", "Carton weight"),
 
@@ -236,17 +237,17 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * that neither orders nor deliveries have to be aligned with multiples of the pallet quantity, but such orders and
      * deliveries may be more convenient to handle. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Pallet_length("27", "Pallet length"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Pallet_width("28", "Pallet width"),
 
     /**
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Pallet_height("29", "Pallet height"),
 
@@ -255,7 +256,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
      * copies per pallet, and used only when the weight of individual copies (code 08) AND &lt;PalletQuantity&gt; are
      * supplied.Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Pallet_weight("30", "Pallet weight");
 

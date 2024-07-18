@@ -54,12 +54,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;RelatedWork&gt; from the schema author:
+ *
+ * Details of a work related to the product (eg is the work of which the product is a manifestation)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link RelatedMaterial}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link RelatedMaterial} ⯈ {@link RelatedWork}</li>
@@ -166,7 +169,7 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
      * An ONIX code which identifies the nature of the relationship between a product and a work. Mandatory in each
      * occurrence of the &lt;RelatedWork&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public WorkRelationCode workRelationCode() {
         _initialize();
@@ -182,7 +185,7 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
      * Mandatory in each occurrence of the &lt;RelatedWork&gt; composite, and repeatable if two or more identifiers for
      * the same work are sent using different identifier schemes (<i>eg</i> ISTC and DOI).
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
         _initialize();

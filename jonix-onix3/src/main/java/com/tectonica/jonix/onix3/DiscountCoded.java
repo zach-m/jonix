@@ -59,11 +59,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;DiscountCoded&gt; from the schema author:
+ *
+ * Details of the trade discount offered by the supplier, in a coded manner
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
@@ -175,7 +178,7 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * An ONIX code identifying the scheme from which the value in the &lt;DiscountCode&gt; element is taken. Mandatory
      * in each occurrence of the &lt;DiscountCoded&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public DiscountCodeType discountCodeType() {
         _initialize();
@@ -189,7 +192,7 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * A discount code from the scheme specified in the &lt;DiscountCodeType&gt; element. Mandatory in each occurrence
      * of the &lt;DiscountCoded&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public DiscountCode discountCode() {
         _initialize();
@@ -204,7 +207,7 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * &lt;DiscountCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
      * non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DiscountCodeTypeName discountCodeTypeName() {
         _initialize();

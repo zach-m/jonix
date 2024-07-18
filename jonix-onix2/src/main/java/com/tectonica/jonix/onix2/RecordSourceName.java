@@ -65,7 +65,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link SubSeriesRecord}&gt;</li>
  * <li>&lt;{@link MainSeriesRecord}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link RecordSourceName}</li>

@@ -53,11 +53,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EventSponsorIdentifier&gt; from the schema author:
+ *
+ * &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventSponsor}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Event} ⯈ {@link EventSponsor} ⯈
@@ -176,7 +179,7 @@ public class EventSponsorIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;EventSponsorIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public EventSponsorIDType eventSponsorIDType() {
         _initialize();
@@ -190,7 +193,7 @@ public class EventSponsorIdentifier
      * A code value taken from the scheme specified in the &lt;EventSponsorIDType&gt; element. Mandatory in each
      * occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -204,7 +207,7 @@ public class EventSponsorIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in the
      * &lt;EventSponsorIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

@@ -55,11 +55,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PublishingDate&gt; from the schema author:
+ *
+ * Date of the specified role relating to the lifecycle of the product, eg publication date, out-of-print date &#9679;
+ * Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link PublishingDate}</li>
@@ -171,7 +175,7 @@ public class PublishingDate
      * An ONIX code indicating the significance of the date, <i>eg</i> publication date, announcement date, latest
      * reprint date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PublishingDateRole publishingDateRole() {
         _initialize();
@@ -187,7 +191,7 @@ public class PublishingDate
      * attribute is missing, then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i>
      * attribute and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
@@ -202,7 +206,7 @@ public class PublishingDate
      * &lt;PublishingDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i>
      * attribute instead.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();

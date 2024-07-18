@@ -41,8 +41,9 @@ interface CodeList58 {
  * Description: Price type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist58">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist58">ONIX
  *      Codelist 58 in Reference Guide</a>
  */
 public enum PriceTypes implements OnixCodelist, CodeList58 {
@@ -213,7 +214,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * Nominal value of gratis copies (eg review, sample or evaluation copies) for international customs declarations
      * only, when a 'free of charge' price cannot be used. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Nominal_gratis_copy_value_for_customs_purposes_excluding_tax("35",
         "Nominal gratis copy value for customs purposes, excluding tax"),
@@ -222,7 +223,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * Nominal value of copies for claims purposes only (eg to account for copies lost during distribution). Only for
      * use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Nominal_value_for_claims_purposes_excluding_tax("36", "Nominal value for claims purposes, excluding tax"),
 
@@ -230,7 +231,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * Nominal value of copies (Declared Unit Value) for international customs declarations only. Only for use in ONIX
      * 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Nominal_value_for_customs_purposes_excluding_tax("37", "Nominal value for customs purposes, excluding tax"),
 

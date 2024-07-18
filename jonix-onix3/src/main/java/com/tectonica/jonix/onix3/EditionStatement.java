@@ -72,11 +72,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EditionStatement&gt; from the schema author:
+ *
+ * Text showing how the edition details should be arranged for display purposes &#9679; Modified base type from
+ * NonEmptyString, added textformat attribute at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link EditionStatement}</li>

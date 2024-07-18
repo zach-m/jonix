@@ -54,11 +54,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SenderIdentifier&gt; from the schema author:
+ *
+ * An identifier for the sender of the ONIX message
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Sender}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link Sender} ⯈ {@link SenderIdentifier}</li>
@@ -170,7 +173,7 @@ public class SenderIdentifier
      * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in
      * each occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SenderIDType senderIDType() {
         _initialize();
@@ -184,7 +187,7 @@ public class SenderIdentifier
      * An identifier of the type specified in the &lt;SenderIDType&gt; element. Mandatory in each occurrence of the
      * &lt;SenderIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -199,7 +202,7 @@ public class SenderIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the &lt;SenderIDType&gt;
      * element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

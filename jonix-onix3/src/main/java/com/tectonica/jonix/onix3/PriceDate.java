@@ -53,11 +53,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceDate&gt; from the schema author:
+ *
+ * Date of the specified role relating to the price &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0
+ * (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈
@@ -169,7 +173,7 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
      * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;PriceDate&gt;
      * composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public PriceDateRole priceDateRole() {
         _initialize();
@@ -185,7 +189,7 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
      * then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and
      * &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
@@ -200,7 +204,7 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
      * &lt;PriceDate&gt; composite, and non-repeating. Deprecated – where possible, use the <i>dateformat</i> attribute
      * instead.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();

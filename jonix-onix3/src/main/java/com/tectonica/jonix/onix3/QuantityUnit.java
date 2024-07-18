@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;QuantityUnit&gt; from the schema author:
+ *
+ * The units of a Quantity, eg copies, words, users, days or months, used in usage constraints, discounts etc
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PriceConditionQuantity}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue} ⯈ {@link Price} ⯈

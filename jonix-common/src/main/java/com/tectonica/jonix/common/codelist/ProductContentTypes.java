@@ -41,8 +41,9 @@ interface CodeList81 {
  * Description: Product content type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
+ * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
@@ -70,7 +71,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * Publication contains actionable (clickable) links to external interactive content. Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Links_to_external_interactive_content("51", "Links to external interactive content"),
 
@@ -86,7 +87,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * bubbles, captions etc. Note this does not include 'text as an image' or images of text (for which see code 49).
      * Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Text_within_images("45", "Text within images"),
 
@@ -94,7 +95,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * Publication contains a significant number of web links (printed URLs, QR codes etc). Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Additional_eye_readable_links_to_external_content("41", "Additional eye-readable links to external content"),
 
@@ -131,7 +132,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     /**
      * Indicates that the publication contains chemical notations, formulae. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Chemical_content("47", "Chemical content"),
 
@@ -139,7 +140,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * Indicates that the publication contains mathematical notation, equations, formulae. Only for use in ONIX 3.0 or
      * later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Mathematical_content("48", "Mathematical content"),
 
@@ -147,7 +148,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * Publication contains visual content that is purely decorative and are not necessary to understanding of the
      * content. Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Decorative_images_or_graphics("46", "Decorative images or graphics"),
 
@@ -155,7 +156,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * eg Questions or student exercises, problems, quizzes or tests (as an integral part of the work). Only for use in
      * ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Assessment_material("42", "Assessment material"),
 
@@ -188,7 +189,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * At least some text - including text within other images - is 'text as an image' (ie a picture of text). Only for
      * use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Images_of_text("49", "Images of text"),
 
@@ -221,7 +222,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * Publication contains video material with no audio recording or narration (but may have music or textual
      * subtitles) . Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Video_content_without_audio("50", "Video content without audio"),
 
@@ -231,12 +232,12 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Performance_visual("27", "Performance – visual"),
 
     /**
-     * eg animated diagrams, charts, graphs or other illustrations
+     * eg animated diagrams, charts, graphs or other illustrations (usually without sound)
      */
     Animated_interactive_illustrations("24", "Animated / interactive illustrations"),
 
     /**
-     * eg cartoon, animatic or CGI animation
+     * eg cartoon, animatic or CGI animation (usually includes sound)
      */
     Narrative_animation("25", "Narrative animation"),
 
@@ -312,7 +313,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * E-publication contains microprograms written (eg) in Javascript and executed within the reading system. Only for
      * use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Scripting("40", "Scripting"),
 
@@ -321,7 +322,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * entries [Note this should not include (eg) dictionary functionality that is part of the reading system.] Only for
      * use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Scripted_pop_ups("43", "Scripted pop-ups"),
 
@@ -330,7 +331,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * storytelling or giving information (eg graphic novels, comics and manga). May include text integrated into the
      * image (as speech and thought bubbles, textual 'sound' effects, captions etc). Only for use in ONIX 3.0 or later
      * <p>
-     * Jonix-Comment: Introduced in Onix3
+     * JONIX adds: Not included in Onix2
      */
     Sequential_art("44", "Sequential art");
 

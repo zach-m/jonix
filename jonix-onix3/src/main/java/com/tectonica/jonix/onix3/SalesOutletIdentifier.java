@@ -53,11 +53,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SalesOutletIdentifier&gt; from the schema author:
+ *
+ * Identifier for a specific retail outlet, eg one associated with sales exclusivity
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SalesOutlet}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductionDetail} ⯈ {@link ProductionManifest} ⯈ {@link SupplementManifest} ⯈
@@ -186,7 +189,7 @@ public class SalesOutletIdentifier
      * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory
      * in each occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public SalesOutletIDType salesOutletIDType() {
         _initialize();
@@ -200,7 +203,7 @@ public class SalesOutletIdentifier
      * A code value taken from the scheme specified in the &lt;SalesOutletIDType&gt; element. Mandatory in each
      * occurrence of the &lt;SalesOutletIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -215,7 +218,7 @@ public class SalesOutletIdentifier
      * there is no individual ID type code). Must be included when, and only when, the code in the
      * &lt;SalesOutletIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

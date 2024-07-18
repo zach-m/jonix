@@ -69,7 +69,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Product}&gt;</li>
  * <li>&lt;{@link Imprint}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ImprintName}</li>

@@ -55,12 +55,16 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProductFormFeature&gt; from the schema author:
+ *
+ * Additional detail of the digital or physical nature of the product and its features, in addition to the Product form
+ * and Product form details &#9679; Modified cardinality of &lt;ProductFormFeatureDescription&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>
  * <li>&lt;{@link ProductPart}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link ProductFormFeature}</li>
@@ -174,7 +178,7 @@ public class ProductFormFeature
      * An ONIX code which specifies the feature described by an instance of the &lt;ProductFormFeature&gt; composite,
      * <i>eg</i> binding color. Mandatory in each occurrence of the composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductFormFeatureType productFormFeatureType() {
         _initialize();
@@ -190,7 +194,7 @@ public class ProductFormFeature
      * accompanying value, while others (<i>eg</i> text font) require free text in
      * &lt;ProductFormFeatureDescription&gt;; and others may have both code and free text. Non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductFormFeatureValue productFormFeatureValue() {
         _initialize();
@@ -208,7 +212,7 @@ public class ProductFormFeature
      * attribute is optional for a single instance of &lt;ProductFormFeatureDescription&gt;, but must be included in
      * each instance if &lt;ProductFormFeatureDescription&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions() {
         _initialize();

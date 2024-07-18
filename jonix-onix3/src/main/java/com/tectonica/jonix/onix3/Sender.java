@@ -54,11 +54,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Sender&gt; from the schema author:
+ *
+ * Details of the sender of the ONIX message (which may be different from the source of individual records in the
+ * message) &#9679; Added &lt;TelephoneNumber&gt; at 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Header} ⯈ {@link Sender}</li>
@@ -178,7 +182,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * repeatable if more than one identifier of different types is sent; but <em>either</em> a &lt;SenderName&gt;
      * <em>or</em> a &lt;SenderIdentifier&gt; <em>must</em> be included.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameIdentifierTypes>
         senderIdentifiers() {
@@ -194,7 +198,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * Optional and non-repeating; but <em>either</em> a &lt;SenderName&gt; element <em>or</em> a
      * &lt;SenderIdentifier&gt; composite <em>must</em> be included.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public SenderName senderName() {
         _initialize();
@@ -208,7 +212,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * Free text giving the name, department, <i>etc</i> for a contact person in the sender organization who is
      * responsible for the content of the message. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ContactName contactName() {
         _initialize();
@@ -222,7 +226,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * A telephone number of the contact person in the sender organization, wherever possible including the plus sign
      * and the international dialling code. Optional, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TelephoneNumber telephoneNumber() {
         _initialize();
@@ -236,7 +240,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * A text field giving the e-mail address for a contact person in the sender organization who is responsible for the
      * content of the message. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EmailAddress emailAddress() {
         _initialize();

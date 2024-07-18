@@ -53,12 +53,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ReviewRating&gt; from the schema author:
+ *
+ * Details of a 'star rating' awarded as part of a review of the product &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>
  * <li>&lt;{@link CitedContent}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link ReviewRating}</li>
@@ -173,7 +176,7 @@ public class ReviewRating implements OnixDataComposite<JonixReviewRating>, Seria
      * The ‘star rating’ awarded as part of a review of the publication. Mandatory within an occurrence of the
      * &lt;ReviewRating&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Rating rating() {
         _initialize();
@@ -187,7 +190,7 @@ public class ReviewRating implements OnixDataComposite<JonixReviewRating>, Seria
      * The maximum possible rating that may be awarded as part of a review of the publication. Optional, but where used,
      * it must be greater than or equal to the specified &lt;Rating&gt;.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public RatingLimit ratingLimit() {
         _initialize();
@@ -202,7 +205,7 @@ public class ReviewRating implements OnixDataComposite<JonixReviewRating>, Seria
      * in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;RatingUnits&gt;,
      * but must be included in each instance if &lt;RatingUnits&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<RatingUnits, String> ratingUnitss() {
         _initialize();

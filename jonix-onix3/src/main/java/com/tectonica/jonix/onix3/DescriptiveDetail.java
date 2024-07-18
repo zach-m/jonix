@@ -80,11 +80,17 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;DescriptiveDetail&gt; from the schema author:
+ *
+ * Block 1, container for data describing the form and content of the product &#9679; Added &lt;Event&gt;, deprecated
+ * &lt;Conference&gt; at revision 3.0.3 &#9679; Added &lt;EpubLicence&gt; at revision 3.0.2 &#9679; Modified cardinality
+ * of &lt;ContributorStatement&gt;, &lt;EditionStatement&gt;, &lt;IllustrationsNote&gt;, &lt;AudienceDescription&gt; at
+ * revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail}</li>
@@ -371,7 +377,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates whether a product consists of a single item or multiple items. Mandatory in an
      * occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductComposition productComposition() {
         _initialize();
@@ -388,7 +394,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (equivalent to &lt;Contained Item&gt; in ONIX&nbsp;2.1, and now forming Group&nbsp;P.4), which <em>must</em> be
      * included for full description of any multiple-item product.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ProductForm productForm() {
         _initialize();
@@ -403,7 +409,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * element is mandatory in each occurrence of the &lt;DescriptiveDetail&gt; composite, to give the primary form of
      * the product title. The composite is repeatable with different title types.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<TitleDetail> titleDetails() {
         _initialize();
@@ -417,7 +423,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * A group of data elements which together describe a personal or corporate contributor to the product. Optional,
      * and repeatable to describe multiple contributors.
      * </p>
-     * Jonix-Comment: this list is required to contain at least one item
+     * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixComposite<Contributor> contributors() {
         _initialize();
@@ -430,7 +436,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * <p>
      * An ONIX code which indicates the type of outer packaging used for the product. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ProductPackaging productPackaging() {
         _initialize();
@@ -444,7 +450,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An ONIX code which indicates a trade category which is somewhat related to, but not properly an attribute of,
      * product form. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public TradeCategory tradeCategory() {
         _initialize();
@@ -460,7 +466,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * content types (<i>eg</i> text, audio, video) is the primary type for the product. Other content types may be
      * specified in the &lt;ProductContentType&gt;. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PrimaryContentType primaryContentType() {
         _initialize();
@@ -475,7 +481,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * all items are manufactured in the same country. This information is needed in some countries to meet regulatory
      * requirements. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CountryOfManufacture countryOfManufacture() {
         _initialize();
@@ -489,7 +495,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An optional and non-repeatable composite carrying the name or title of the license governing use of the product,
      * and a link to the license terms in eye-readable or machine-readable form.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EpubLicense epubLicense() {
         _initialize();
@@ -506,7 +512,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * in a record that has no instances of the &lt;Collection&gt; composite <em>and</em> has no collection level title
      * elements in Group&nbsp;P.6.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoCollection noCollection() {
         _initialize();
@@ -524,7 +530,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An ONIX code identifying a thesis type, when the ONIX record describes an item which was originally presented as
      * an academic thesis or dissertation. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ThesisType thesisType() {
         _initialize();
@@ -538,7 +544,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * The name of an academic institution to which a thesis was presented. Optional and non-repeating, but if this
      * element is present, &lt;ThesisType&gt; must also be present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ThesisPresentedTo thesisPresentedTo() {
         _initialize();
@@ -552,7 +558,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * The year in which a thesis was presented. Optional and non-repeating, but if this element is present,
      * &lt;ThesisType&gt; must also be present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ThesisYear thesisYear() {
         _initialize();
@@ -568,7 +574,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no other elements from
      * Group&nbsp;P.7.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoContributor noContributor() {
         _initialize();
@@ -587,7 +593,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * editions of a work, but by agreement between parties to an ONIX exchange a first edition may be explicitly
      * numbered.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EditionNumber editionNumber() {
         _initialize();
@@ -603,7 +609,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * product identifier. Optional and non-repeating. If this field is used, an &lt;EditionNumber&gt; must also be
      * present.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public EditionVersionNumber editionVersionNumber() {
         _initialize();
@@ -619,7 +625,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no instances
      * of any of the four preceding Edition elements.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NoEdition noEdition() {
         _initialize();
@@ -641,7 +647,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * composite. This approach is adopted to enable other devotional texts to be included if need arises without
      * requiring a new ONIX release.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReligiousText religiousText() {
         _initialize();
@@ -657,7 +663,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * preferred. This element has been added specifically to cater for a situation where a sender of product
      * information maintains only a yes/no flag, and it should not otherwise be used. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public Illustrated illustrated() {
         _initialize();
@@ -673,7 +679,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * sender of product information maintains only a simple numeric field, the &lt;NumberOfIllustrations&gt; element
      * may be used. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public NumberOfIllustrations numberOfIllustrations() {
         _initialize();
@@ -688,7 +694,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An ONIX code which provides added detail of the medium and/or format of the product. Optional, and repeatable in
      * order to provide multiple additional details.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductFormDetail, ProductFormDetails> productFormDetails() {
         _initialize();
@@ -705,7 +711,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Repeatable in order to describe
      * different aspects of the product form.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes>
         productFormFeatures() {
@@ -723,7 +729,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * &lt;ProductFormDescription&gt;, but must be included in each instance if &lt;ProductFormDescription&gt; is
      * repeated to provide parallel descriptions in multiple languages.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ProductFormDescription, String> productFormDescriptions() {
         _initialize();
@@ -739,7 +745,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * particular for digital products, to specify content types other than the primary type, or to list content types
      * when none is singled out as the primary type. Optional, and repeatable to list multiple content types.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<ProductContentType, ProductContentTypes> productContentTypes() {
         _initialize();
@@ -755,7 +761,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * used to specify the overall dimensions of a physical product including its packaging (if any). Repeatable to
      * provide multiple combinations of dimension and unit.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
         _initialize();
@@ -771,7 +777,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * repeatable if a product has two or more kinds of protection (<i>ie</i> different parts of a product are protected
      * in different ways).
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections() {
         _initialize();
@@ -787,7 +793,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * absence of such a constraint), whether enforced by DRM technical protection, inherent in the platform used, or
      * specified by license agreement. Repeatable in order to describe multiple constraints on usage.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<EpubUsageConstraint> epubUsageConstraints() {
         _initialize();
@@ -801,7 +807,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data element, without
      * spaces or punctuation. Optional, and repeatable if a product comprises maps with two or more different scales.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<MapScale, Integer> mapScales() {
         _initialize();
@@ -820,7 +826,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * product are classified differently within a single product classification scheme, or to provide classification
      * codes from multiple classification schemes.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes>
         productClassifications() {
@@ -846,7 +852,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * of <em>different</em> items of the same form, without identifying them individually, the quantity must be sent as
      * &lt;NumberOfItemsOfThisForm&gt;.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ProductPart> productParts() {
         _initialize();
@@ -860,7 +866,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An optional group of data elements which carry attributes of a collection of which the product is part. The
      * composite is repeatable, to provide details when the product belongs to multiple collections.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Collection> collections() {
         _initialize();
@@ -880,7 +886,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * &lt;BiographicalNote&gt; element. The individual name detail <em>must</em> also be sent in the
      * &lt;Contributor&gt; composite for indexing and retrieval purposes.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
         _initialize();
@@ -894,7 +900,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * A group of data elements which together describe an event to which the product is related. Optional, and
      * repeatable if the product contains material from or is related to two or more events.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Event> events() {
         _initialize();
@@ -912,7 +918,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * The whole of the &lt;Conference&gt; composite is deprecated, in favor of the &lt;Event&gt; composite which has an
      * equivalent structure.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Conference> conferences() {
         _initialize();
@@ -926,7 +932,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
      * characteristics of two or more types (<i>eg</i> ‘revised’ and ‘annotated’).
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<EditionType, EditionTypes> editionTypes() {
         _initialize();
@@ -946,7 +952,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * to describing features of the content of the edition, and should <em>not</em> include aspects such as rights or
      * market restrictions which are properly covered elsewhere in the ONIX record.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<EditionStatement, String> editionStatements() {
         _initialize();
@@ -961,7 +967,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * A group of data elements which together represent a language, and specify its role and, where required, whether
      * it is a country variant. Optional, and repeatable to specify multiple languages and their various roles.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
         _initialize();
@@ -978,7 +984,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * <span class="nobreak">e-book</span>, or to give the running time of an audiobook. Repeatable to specify different
      * extent types or units.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents() {
         _initialize();
@@ -995,7 +1001,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * for a single instance of &lt;IllustrationsNote&gt;, but must be included in each instance if
      * &lt;IllustrationsNote&gt; is repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<IllustrationsNote, String> illustrationsNotes() {
         _initialize();
@@ -1012,7 +1018,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * type which the product carries. Use of the &lt;AncillaryContent&gt; composite is optional, but is repeatable if
      * necessary to specify different types of content items.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<AncillaryContent, JonixAncillaryContent, IllustrationAndOtherContentTypes>
         ancillaryContents() {
@@ -1027,7 +1033,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together specify a subject classification or subject
      * heading.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
         _initialize();
@@ -1052,7 +1058,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * &lt;NameIdentifier&gt; composite; <em>or</em></li>
      * <li>an occurrence of the &lt;NameIdentifier&gt; composite without any accompanying name element(s).</li>
      * </ul>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<NameAsSubject> nameAsSubjects() {
         _initialize();
@@ -1068,7 +1074,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * Deprecated, in favor of providing the same information within the &lt;Audience&gt; composite using code 01 from
      * List 29.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixCodelist<AudienceCode, AudienceTypes> audienceCodes() {
         _initialize();
@@ -1083,7 +1089,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together describe an audience to which the product is directed.
      * Repeatable to specify multiple distinct audiences.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences() {
         _initialize();
@@ -1100,7 +1106,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * values with an explicit <em>from</em> and <em>to</em>. Repeatable to specify the audience range with different
      * qualifiers.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges() {
         _initialize();
@@ -1116,7 +1122,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * instance of &lt;AudienceDescription&gt;, but must be included in each instance if &lt;AudienceDescription&gt; is
      * repeated.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<AudienceDescription, String> audienceDescriptions() {
         _initialize();
@@ -1131,7 +1137,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * An optional group of data elements which together describe the level of complexity of a text. Repeatable to
      * specify the complexity using different schemes.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys() {
         _initialize();

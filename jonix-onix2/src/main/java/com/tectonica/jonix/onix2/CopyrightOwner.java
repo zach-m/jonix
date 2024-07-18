@@ -56,7 +56,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link CopyrightStatement}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link CopyrightStatement} ⯈ {@link CopyrightOwner}</li>
@@ -178,7 +177,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * A group of data elements which together represent a coded identification of a copyright owner. Optional, and
      * non-repeating. May be sent either instead of or as well as a name.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public CopyrightOwnerIdentifier copyrightOwnerIdentifier() {
         _initialize();
@@ -193,7 +192,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an identifier, or both a
      * name and an identifier.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public PersonName personName() {
         _initialize();
@@ -208,7 +207,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * occurrence of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an
      * identifier, or both a name and an identifier.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public CorporateName corporateName() {
         _initialize();

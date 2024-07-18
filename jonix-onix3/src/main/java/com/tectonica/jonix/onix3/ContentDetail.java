@@ -59,11 +59,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ContentDetail&gt; from the schema author:
+ *
+ * Block 3, container for information about the content of sections or chapters within the product &#9679; Modified
+ * cardinality of &lt;ContentItem&gt; at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ContentDetail}</li>
@@ -167,7 +171,7 @@ public class ContentDetail implements OnixSuperComposite, Serializable {
      * or update type 04, see P.1.2) when the intention is to remove all previously supplied content detail. When used
      * normally, it is repeatable for each content item within the product.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<ContentItem> contentItems() {
         _initialize();

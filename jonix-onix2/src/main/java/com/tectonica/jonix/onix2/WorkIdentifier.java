@@ -58,7 +58,6 @@ import java.util.function.Consumer;
  * <li>&lt;{@link Product}&gt;</li>
  * <li>&lt;{@link ContentItem}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link WorkIdentifier}</li>
@@ -180,7 +179,7 @@ public class WorkIdentifier
      * An ONIX code identifying the scheme from which the identifier in &lt;IDValue&gt; is taken. Mandatory in each
      * occurrence of the &lt;WorkIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public WorkIDType workIDType() {
         _initialize();
@@ -194,7 +193,7 @@ public class WorkIdentifier
      * An identifier of the type specified in &lt;WorkIDType&gt;. Mandatory in each occurrence of the
      * &lt;WorkIdentifier&gt; composite, and non-repeating.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public IDValue idValue() {
         _initialize();
@@ -208,7 +207,7 @@ public class WorkIdentifier
      * A name which identifies a proprietary identifier scheme when, and only when, the code in &lt;WorkIDType&gt;
      * indicates a proprietary scheme, <em>eg</em> a bibliographic agency’s own code. Optional and non-repeating.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public IDTypeName idTypeName() {
         _initialize();

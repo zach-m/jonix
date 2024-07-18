@@ -77,11 +77,15 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Reissue&gt; from the schema author:
+ *
+ * Details of a planned reissue of a product &#9679; Deprecated - use start and end dates in &lt;Price&gt;,
+ * &lt;TextContent&gt;, &lt;SupportingResource&gt; etc instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Reissue}</li>
@@ -198,7 +202,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * The date on which the product will be reissued, or (after reissue) the date when it was last reissued. Mandatory
      * in each occurrence of the &lt;Reissue&gt; composite, and non-repeating. Deprecated.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public ReissueDate reissueDate() {
         _initialize();
@@ -211,7 +215,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * <p>
      * Text explaining the nature of the reissue. Optional and non-repeating. Deprecated.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public ReissueDescription reissueDescription() {
         _initialize();
@@ -225,7 +229,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * An optional and repeatable group of data elements which together specify a unit price, used here to indicate a
      * price that will apply when the product is reissued. Deprecated in this context.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<Price> prices() {
         _initialize();
@@ -241,7 +245,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * indicate that there is a new cover or jacket image, or other supporting resource, for a forthcoming reissue.
      * Deprecated in this context.
      * </p>
-     * Jonix-Comment: this list may be empty
+     * JONIX adds: this list may be empty
      */
     public ListOfOnixComposite<SupportingResource> supportingResources() {
         _initialize();

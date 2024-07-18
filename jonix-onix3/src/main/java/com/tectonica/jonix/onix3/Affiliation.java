@@ -64,11 +64,14 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Affiliation&gt; from the schema author:
+ *
+ * Name of an organization to which a contributor is professionally affiliated
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈

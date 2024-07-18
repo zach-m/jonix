@@ -58,7 +58,6 @@ import java.util.function.Consumer;
  * <ul>
  * <li>&lt;{@link MarketRepresentation}&gt;</li>
  * </ul>
- * <p/>
  * Possible placements within ONIX message:
  * <ul>
  * <li>{@link Product} ⯈ {@link MarketRepresentation} ⯈ {@link MarketDate}</li>
@@ -179,7 +178,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
      * composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public MarketDateRole marketDateRole() {
         _initialize();
@@ -193,7 +192,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * The date specified in the &lt;MarketDateRole&gt; field. Mandatory in each occurrence of the &lt;MarketDate&gt;
      * composite.
      * </p>
-     * Jonix-Comment: this field is required
+     * JONIX adds: this field is required
      */
     public Date date() {
         _initialize();
@@ -207,7 +206,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and non-repeating. When
      * omitted, the format is assumed to be YYYYMMDD.
      * </p>
-     * Jonix-Comment: this field is optional
+     * JONIX adds: this field is optional
      */
     public DateFormat dateFormat() {
         _initialize();
