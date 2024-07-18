@@ -72,12 +72,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MarketReference&gt; from the schema author:
- * 
- * <pre>
- * Unique and persistent label for the metadata record for a market
- * &#9679; Added at release 3.1
- * </pre>
- * 
+ *
+ * Unique and persistent label for the metadata record for a market &#9679; Added at release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductSupply}&gt;</li>

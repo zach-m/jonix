@@ -65,11 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplierRole&gt; from the schema author:
- * 
- * <pre>
- * Type of supplier organization, eg distributor, wholesaler supplying retailers, or a retail platform for digital products
- * </pre>
- * 
+ *
+ * Type of supplier organization, eg distributor, wholesaler supplying retailers, or a retail platform for digital
+ * products
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Supplier}&gt;</li>

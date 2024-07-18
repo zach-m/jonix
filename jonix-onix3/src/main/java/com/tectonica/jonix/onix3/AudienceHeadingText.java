@@ -71,12 +71,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AudienceHeadingText&gt; from the schema author:
- * 
- * <pre>
- * Textual heading from a proprietary audience or readership code scheme
- * &#9679; Added at revision 3.0.8
- * </pre>
- * 
+ *
+ * Textual heading from a proprietary audience or readership code scheme &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Audience}&gt;</li>

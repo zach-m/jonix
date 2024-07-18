@@ -57,12 +57,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EventSponsor&gt; from the schema author:
- * 
- * <pre>
- * Details of a sponsoring organization linked to an event
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Details of a sponsoring organization linked to an event &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Event}&gt;</li>

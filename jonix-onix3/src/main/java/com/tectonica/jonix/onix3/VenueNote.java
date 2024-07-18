@@ -68,12 +68,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;VenueNote&gt; from the schema author:
- * 
- * <pre>
- * Text specific to the venue of a (physical) promotional event occurrence, eg accessibility details, ticketing requirements
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Text specific to the venue of a (physical) promotional event occurrence, eg accessibility details, ticketing
+ * requirements &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventOccurrence}&gt;</li>

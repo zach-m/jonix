@@ -58,12 +58,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EpubLicenseDate&gt; from the schema author:
- * 
- * <pre>
- * Date of the specified role relating to the e-publication license (eg from when is a license applied)
- * &#9679; Added at release 3.1
- * </pre>
- * 
+ *
+ * Date of the specified role relating to the e-publication license (eg from when is a license applied) &#9679; Added at
+ * release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubLicenseWithDateType}&gt;</li>

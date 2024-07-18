@@ -67,13 +67,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TitleWithoutPrefix&gt; from the schema author:
- * 
- * <pre>
- * Main text of a title element, without any prefix (eg An, The) which is ignored for sorting purposes, and without any subtitle
- * &#9679; Added language attribute at revision 3.0.2
- * &#9679; Added collationkey, textscript attributes at revision 3.0.1
- * </pre>
- * 
+ *
+ * Main text of a title element, without any prefix (eg An, The) which is ignored for sorting purposes, and without any
+ * subtitle &#9679; Added language attribute at revision 3.0.2 &#9679; Added collationkey, textscript attributes at
+ * revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleElement}&gt;</li>

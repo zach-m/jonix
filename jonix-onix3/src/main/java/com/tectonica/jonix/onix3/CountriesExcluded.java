@@ -68,11 +68,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CountriesExcluded&gt; from the schema author:
- * 
- * <pre>
+ *
  * List of countries excluded from a territory (which must be defined using WORLD)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Territory}&gt;</li>

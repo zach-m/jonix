@@ -56,12 +56,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PromotionDetail&gt; from the schema author:
- * 
- * <pre>
- * Block 7, container for data describing events arranged to promote the product (eg readings, author signings)
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Block 7, container for data describing events arranged to promote the product (eg readings, author signings) &#9679;
+ * Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

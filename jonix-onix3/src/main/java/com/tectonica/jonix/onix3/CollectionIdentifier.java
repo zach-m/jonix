@@ -55,12 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CollectionIdentifier&gt; from the schema author:
- * 
- * <pre>
- * An identifier for a collection (for example an ISSN or proprietary collection ID)
- * &#9679; Added &lt;CollectionElementLevel&gt; at release 3.1
- * </pre>
- * 
+ *
+ * An identifier for a collection (for example an ISSN or proprietary collection ID) &#9679; Added
+ * &lt;CollectionElementLevel&gt; at release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Collection}&gt;</li>

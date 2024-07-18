@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductContactIDType&gt; from the schema author:
- * 
- * <pre>
+ *
  * &#9679; Added at revision 3.0.1
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductContactIdentifier}&gt;</li>

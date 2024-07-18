@@ -74,12 +74,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CopyrightStatementText&gt; from the schema author:
- * 
- * <pre>
- * Text showing how the copyright details should be arranged for display purposes
- * &#9679; Added at revision 3.1.1
- * </pre>
- * 
+ *
+ * Text showing how the copyright details should be arranged for display purposes &#9679; Added at revision 3.1.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

@@ -61,17 +61,14 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContentItem&gt; from the schema author:
- * 
- * <pre>
- * Details of a textual content item (eg a chapter)
- * &#9679; Added &lt;CopyrightStatementText&gt; at revision 3.1.1
- * &#9679; Added &lt;EpubUsageConstraint&gt;, extended &lt;EpubLicense&gt;, &lt;Publisher&gt; and &lt;CopyrightStatement&gt; at release 3.1
- * &#9679; Added &lt;AVItem&gt; at revision 3.0.5
- * &#9679; Added &lt;ContributorStatement&gt;, &lt;NoContributor&gt; (in gp.authorship), &lt;Language&gt; at revision 3.0.4
- * &#9679; Added &lt;RelatedProduct&gt; at revision 3.0.3
- * &#9679; Modified cardinality of &lt;ContributorStatement&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of a textual content item (eg a chapter) &#9679; Added &lt;CopyrightStatementText&gt; at revision 3.1.1
+ * &#9679; Added &lt;EpubUsageConstraint&gt;, extended &lt;EpubLicense&gt;, &lt;Publisher&gt; and
+ * &lt;CopyrightStatement&gt; at release 3.1 &#9679; Added &lt;AVItem&gt; at revision 3.0.5 &#9679; Added
+ * &lt;ContributorStatement&gt;, &lt;NoContributor&gt; (in gp.authorship), &lt;Language&gt; at revision 3.0.4 &#9679;
+ * Added &lt;RelatedProduct&gt; at revision 3.0.3 &#9679; Modified cardinality of &lt;ContributorStatement&gt; at
+ * revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentDetail}&gt;</li>

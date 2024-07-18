@@ -43,7 +43,7 @@ interface CodeList143 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist143">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist143">ONIX
  *      Codelist 143 in Reference Guide</a>
  */
 public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelist, CodeList143 {
@@ -199,7 +199,28 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    California_Proposition_65_chemical_name("23", "California Proposition 65 chemical name");
+    California_Proposition_65_chemical_name("23", "California Proposition 65 chemical name"),
+
+    /**
+     * Flashing present but risk unknown or unassessed
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Flashing_risk_unknown("24", "Flashing risk unknown"),
+
+    /**
+     * Sound present but risk unknown or unassessed
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Sound_risk_unknown("25", "Sound risk unknown"),
+
+    /**
+     * Motion simulation present but risk unknown or unassessed
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Motion_simulation_risk_unknown("26", "Motion simulation risk unknown");
 
     public final String code;
     public final String description;

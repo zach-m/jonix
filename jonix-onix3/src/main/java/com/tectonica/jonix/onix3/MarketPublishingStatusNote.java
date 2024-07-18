@@ -70,12 +70,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MarketPublishingStatusNote&gt; from the schema author:
- * 
- * <pre>
- * Text description of the market-specific publishing status, where the Market publishing status is insufficient
- * &#9679; Added at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Text description of the market-specific publishing status, where the Market publishing status is insufficient &#9679;
+ * Added at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

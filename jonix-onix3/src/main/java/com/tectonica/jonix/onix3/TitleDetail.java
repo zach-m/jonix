@@ -56,12 +56,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TitleDetail&gt; from the schema author:
- * 
- * <pre>
- * Details of a title of a product (or of a collection of products, or of a content item)
- * &#9679; Added &lt;TitleStatement&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of a title of a product (or of a collection of products, or of a content item) &#9679; Added
+ * &lt;TitleStatement&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

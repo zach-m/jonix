@@ -64,11 +64,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AudienceDescription&gt; from the schema author:
- * 
- * <pre>
+ *
  * Textual description of a target audience or readership of a product for which a coded description is insufficient
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

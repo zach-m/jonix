@@ -43,7 +43,7 @@ interface CodeList73 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -77,7 +77,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
     Online_resource_available_content_page("05", "Online resource ‘available content’ page"),
 
     /**
-     * A webpage maintained by an author or other contributor about her/his publications and personal background
+     * A webpage maintained by an author or other contributor about their publications and personal background
      */
     Contributors_own_website("06", "Contributor’s own website"),
 
@@ -234,7 +234,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
 
     /**
      * For example, a Facebook, Instagram, Youtube, Pinterest, Tiktok (including Booktok), Twitter (latterly, X) or
-     * similar page
+     * similar page for the contributor
      */
     Authors_social_networking_URL("42", "Author’s social networking URL"),
 

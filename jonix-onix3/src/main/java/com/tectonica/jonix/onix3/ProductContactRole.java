@@ -65,12 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductContactRole&gt; from the schema author:
- * 
- * <pre>
- * Particular type of enquiry about the product (eg about accessibility, about review copies)
- * &#9679; Added at revision 3.0.1
- * </pre>
- * 
+ *
+ * Particular type of enquiry about the product (eg about accessibility, about review copies) &#9679; Added at revision
+ * 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductContact}&gt;</li>

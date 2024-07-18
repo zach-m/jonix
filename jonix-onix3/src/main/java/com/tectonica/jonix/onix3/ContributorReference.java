@@ -64,12 +64,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContributorReference&gt; from the schema author:
- * 
- * <pre>
- * Reference to a contributor participating in a promotional event
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Reference to a contributor participating in a promotional event &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>

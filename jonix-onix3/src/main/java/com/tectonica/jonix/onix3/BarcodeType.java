@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;BarcodeType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of barcode symbology
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Barcode}&gt;</li>

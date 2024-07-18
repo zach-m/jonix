@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ResourceIDType&gt; from the schema author:
- * 
- * <pre>
+ *
  * &#9679; Added at revision 3.0.8
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ResourceIdentifier}&gt;</li>

@@ -58,11 +58,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Supplier&gt; from the schema author:
- * 
- * <pre>
- * Details of a supplier of the product, eg a distributor or wholesaler which supplies to retailers (or for digital products, a retail platform)
- * </pre>
- * 
+ *
+ * Details of a supplier of the product, eg a distributor or wholesaler which supplies to retailers (or for digital
+ * products, a retail platform)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

@@ -43,7 +43,7 @@ interface CodeList74 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -1156,6 +1156,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Manx("glv", "Manx"),
 
+    /**
+     * Shimaore. ONIX local code, equivalent to swb in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Maore_Comorian("swb", "Maore Comorian"),
+
     Maori("mao", "Maori"),
 
     Mapudungun_Mapuche("arn", "Mapudungun; Mapuche"),
@@ -1188,7 +1195,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Mende("men", "Mende"),
 
-    Mikmaq_Micmac("mic", "Mi’kmaq; Micmac"),
+    Mikmaq_Micmac_Migmaw("mic", "Mi’kmaq; Micmac; Mi’gmaw"),
 
     /**
      * ONIX local code, equivalent to crg in ISO 639-3. Only for use in ONIX 3.0 or later
@@ -1484,6 +1491,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Prakrit_languages("pra", "Prakrit languages"),
 
     Provencal_Old_to_1500("pro", "Provençal, Old (to 1500); Occitan, Old (to 1500)"),
+
+    /**
+     * ONIX local code, equivalent to fuf in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Pular("fuf", "Pular"),
 
     /**
      * Macrolanguage

@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;LanguageRole&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of relationship between a language and the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Language}&gt;</li>

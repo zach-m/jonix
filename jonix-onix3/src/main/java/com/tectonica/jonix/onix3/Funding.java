@@ -56,12 +56,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Funding&gt; from the schema author:
- * 
- * <pre>
- * Details of funding (eg of a grant, of sponsorship) for the publication or for the underlying research on which the publication is based
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Details of funding (eg of a grant, of sponsorship) for the publication or for the underlying research on which the
+ * publication is based &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Publisher}&gt;</li>

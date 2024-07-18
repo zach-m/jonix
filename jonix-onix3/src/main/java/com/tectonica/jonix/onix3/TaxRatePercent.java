@@ -61,11 +61,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TaxRatePercent&gt; from the schema author:
- * 
- * <pre>
+ *
  * Rate of tax included in the &lt;PriceAmount&gt;, as a percentage of the &lt;TaxableAmount&gt;
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Tax}&gt;</li>

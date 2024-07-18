@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;DiscountCodeType&gt; from the schema author:
- * 
- * <pre>
- * Method used to obfustate the actual trade (business-to-business) discount percentage
- * </pre>
- * 
+ *
+ * Method used to obfustate the actual business-to-business discount percentage
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DiscountCoded}&gt;</li>

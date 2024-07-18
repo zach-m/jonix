@@ -62,13 +62,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EventOccurrence&gt; from the schema author:
- * 
- * <pre>
- * Details for a particular occurrence of an event promoting the product
- * &#9679; Added &lt;SupportingResource&gt; at revision 3.0.8
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Details for a particular occurrence of an event promoting the product &#9679; Added &lt;SupportingResource&gt; at
+ * revision 3.0.8 &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PromotionalEvent}&gt;</li>

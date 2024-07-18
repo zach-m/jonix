@@ -61,11 +61,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;FaxNumber&gt; from the schema author:
- * 
- * <pre>
- * Fax number of a person or department within an organization (eg of a message sender or recipient, of a publisher or supplier contact), ideally in full international format beginning with a +
- * </pre>
- * 
+ *
+ * Fax number of a person or department within an organization (eg of a message sender or recipient, of a publisher or
+ * supplier contact), ideally in full international format beginning with a +
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContact}&gt;</li>

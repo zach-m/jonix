@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;StartDate&gt; from the schema author:
- * 
- * <pre>
- * The initial date of applicability of a sales restriction
- * &#9679; Added dateformat attribute at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * The initial date of applicability of a sales restriction &#9679; Added dateformat attribute at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SalesRestriction}&gt;</li>

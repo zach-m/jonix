@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EpubUsageType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Particular type of usage of a digital product, eg text to speech, printing, lending
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubUsageConstraint}&gt;</li>

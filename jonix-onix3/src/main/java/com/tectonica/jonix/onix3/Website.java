@@ -55,13 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Website&gt; from the schema author:
- * 
- * <pre>
- * Details of a website related to the product, contributor, publisher, supplier etc
- * &#9679; Modified cardinality of &lt;WebsiteLink&gt; at revision 3.0.6
- * &#9679; Modified cardinality of &lt;WebsiteDescription&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of a website related to the product, contributor, publisher, supplier etc &#9679; Modified cardinality of
+ * &lt;WebsiteLink&gt; at revision 3.0.6 &#9679; Modified cardinality of &lt;WebsiteDescription&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link NewSupplier}&gt;</li>

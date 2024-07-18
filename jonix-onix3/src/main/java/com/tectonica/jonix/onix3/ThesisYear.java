@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ThesisYear&gt; from the schema author:
- * 
- * <pre>
- * Year in or date on which a thesis was presented
- * &#9679; Added dateformat attribute at revision 3.0.1
- * </pre>
- * 
+ *
+ * Year in or date on which a thesis was presented &#9679; Added dateformat attribute at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

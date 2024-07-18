@@ -71,11 +71,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EpubTechnicalProtection&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of technical protection (DRM) applied to a digital product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

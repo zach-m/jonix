@@ -43,7 +43,7 @@ interface CodeList27 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -511,6 +511,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
 
     /**
      * (de: Gemeinsame Normdatei) Integrated Authority File used in the German-speaking countries. See
+     * https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html (German) and
      * https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html (English). Combines the PND, SWD and GKD
      * into a single authority file, and should be used in preference to the older codes
      */
@@ -629,8 +630,9 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Key_place_names("B5", "Key place names"),
 
     /**
-     * Faceted Application of Subject Terminology, OCLC subject scheme based on but different from LCSH (see code 04).
-     * Only for use in ONIX 3.0 or later
+     * Faceted Application of Subject Terminology, OCLC subject scheme derived from LCSH (see code 04). See
+     * https://fast.oclc.org/fast/. Codes are up to 8 digits, for example 1726640 for Historical fiction (see
+     * https://id.worldcat.org/fast/1726640). Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

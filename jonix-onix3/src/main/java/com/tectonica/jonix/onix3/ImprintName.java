@@ -67,13 +67,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ImprintName&gt; from the schema author:
- * 
- * <pre>
- * Text name of the publisher's imprint or brand
- * &#9679; Added collationkey attribute at revision 3.0.7
- * &#9679; Added language attribute at revision 3.0.2
- * </pre>
- * 
+ *
+ * Text name of the publisher's imprint or brand &#9679; Added collationkey attribute at revision 3.0.7 &#9679; Added
+ * language attribute at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Imprint}&gt;</li>

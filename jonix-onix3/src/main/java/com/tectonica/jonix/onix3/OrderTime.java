@@ -60,11 +60,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;OrderTime&gt; from the schema author:
- * 
- * <pre>
- * Expected average number of business days from receipt of order to despatch (for items 'manufactured on demand' or 'only to order')
- * </pre>
- * 
+ *
+ * Expected average number of business days from receipt of order to despatch (for items 'manufactured on demand' or
+ * 'only to order')
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

@@ -61,12 +61,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EndTime&gt; from the schema author:
- * 
- * <pre>
- * The end time of a content item, relative to the beginning of the whole of the product's audio or video content (not to the beginning of a specific filc containing that audio or video content)
- * &#9679; Added at revision 3.0.5
- * </pre>
- * 
+ *
+ * The end time of a content item, relative to the beginning of the whole of the product's audio or video content (not
+ * to the beginning of a specific filc containing that audio or video content) &#9679; Added at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TimeRun}&gt;</li>

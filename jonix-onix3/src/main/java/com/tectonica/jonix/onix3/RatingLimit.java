@@ -60,12 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RatingLimit&gt; from the schema author:
- * 
- * <pre>
- * The upper limit of a 'star rating' scheme used as part of a review of the product
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * The upper limit of a 'star rating' scheme used as part of a review of the product &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ReviewRating}&gt;</li>

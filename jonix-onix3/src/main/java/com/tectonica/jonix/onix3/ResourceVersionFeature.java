@@ -57,12 +57,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ResourceVersionFeature&gt; from the schema author:
- * 
- * <pre>
- * Details of a particular feature of one version of a resource used for marketing and promotional purposes
- * &#9679; Modified cardinality of &lt;FeatureNote&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of a particular feature of one version of a resource used for marketing and promotional purposes &#9679;
+ * Modified cardinality of &lt;FeatureNote&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ResourceVersion}&gt;</li>

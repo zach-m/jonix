@@ -80,11 +80,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContributorStatement&gt; from the schema author:
- * 
- * <pre>
+ *
  * Text showing how the contributor names and roles should be arranged for display purposes
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

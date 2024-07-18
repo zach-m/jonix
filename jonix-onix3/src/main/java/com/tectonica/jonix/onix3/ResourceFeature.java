@@ -55,12 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ResourceFeature&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of a particular feature of all versions of a supporting resource used for marketing and promotional purposes
  * &#9679; Modified cardinality of &lt;FeatureNote&gt; at revision 3.0.1
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>

@@ -63,12 +63,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;NoCollection&gt; from the schema author:
- * 
- * <pre>
- * Positive indication that the product is not part of any collection
- * &#9679; XML empty element - must not contain data
- * </pre>
- * 
+ *
+ * Positive indication that the product is not part of any collection &#9679; XML empty element - must not contain data
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

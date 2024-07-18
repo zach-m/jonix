@@ -60,11 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ReligiousTextIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * Indication of a religious text other than the Christian Bible
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ReligiousText}&gt;</li>

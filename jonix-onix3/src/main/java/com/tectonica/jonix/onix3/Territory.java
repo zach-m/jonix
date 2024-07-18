@@ -68,11 +68,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Territory&gt; from the schema author:
- * 
- * <pre>
+ *
  * Geographical area, for example an area within which a particular type of sales rights or restrictions apply
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>

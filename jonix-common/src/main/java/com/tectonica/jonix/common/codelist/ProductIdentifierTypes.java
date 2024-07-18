@@ -43,7 +43,7 @@ interface CodeList5 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist5">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist5">ONIX
  *      Codelist 5 in Reference Guide</a>
  */
 public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
@@ -165,6 +165,17 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
      * Num&#233;ro de la notice bibliographique BNF
      */
     BNF_Control_number("31", "BNF Control number"),
+
+    /**
+     * International Standard Serial Number expressed as a GTIN-13, with optional 2- or 5-digit barcode extension (ie
+     * 13, 15 or 18 digits starting 977, without spaces or hyphens), and only when the extended ISSN is used
+     * specifically as a product identifier (ie when the two publisher-defined 'variant' digits within the ISSN-13
+     * itself and/or the 2- or 5-digit barcode extension are used to identify a single issue of a serial publication for
+     * separate sale). Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    ISSN_13("34", "ISSN-13"),
 
     /**
      * Archival Resource Key, as a URL (including the address of the ARK resolver provided by eg a national library)

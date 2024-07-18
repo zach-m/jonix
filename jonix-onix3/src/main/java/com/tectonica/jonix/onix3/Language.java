@@ -54,12 +54,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Language&gt; from the schema author:
- * 
- * <pre>
- * Details of a language and its relation to the product (eg language of text used, or original language from which the text was translated)
- * &#9679; Added &lt;RegionCode at revision 3.0.7
- * </pre>
- * 
+ *
+ * Details of a language and its relation to the product (eg language of text used, or original language from which the
+ * text was translated) &#9679; Added &lt;RegionCode at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

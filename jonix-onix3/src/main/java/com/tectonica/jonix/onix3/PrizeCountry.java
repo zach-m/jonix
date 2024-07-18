@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PrizeCountry&gt; from the schema author:
- * 
- * <pre>
+ *
  * Country in which a prize is awarded
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Prize}&gt;</li>

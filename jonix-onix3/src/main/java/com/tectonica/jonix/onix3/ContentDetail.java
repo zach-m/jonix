@@ -60,12 +60,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContentDetail&gt; from the schema author:
- * 
- * <pre>
- * Block 3, container for information about the content of sections or chapters within the product
- * &#9679; Modified cardinality of &lt;ContentItem&gt; at revision 3.0.5
- * </pre>
- * 
+ *
+ * Block 3, container for information about the content of sections or chapters within the product &#9679; Modified
+ * cardinality of &lt;ContentItem&gt; at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

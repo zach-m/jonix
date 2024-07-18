@@ -69,12 +69,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PrizeRegion&gt; from the schema author:
- * 
- * <pre>
- * Region (part of a country) in which a prize is awarded
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Region (part of a country) in which a prize is awarded &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Prize}&gt;</li>

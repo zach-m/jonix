@@ -43,14 +43,28 @@ interface CodeList263 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist263">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist263">ONIX
  *      Codelist 263 in Reference Guide</a>
  */
 public enum PrizeIdentifierTypes implements OnixCodelist, CodeList263 {
     /**
      * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary");
+    Proprietary("01", "Proprietary"),
+
+    /**
+     * Gemeinsame Normdatei - Joint Authority File in the German-speaking countries. See
+     * https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html (German) and
+     * https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html (English)
+     */
+    GND("91", "GND"),
+
+    /**
+     * Faceted Application of Subject Terminology, OCLC subject scheme derived from LCSH. See
+     * https://fast.oclc.org/fast/. Codes are up to 8 digits, for example 1430698 for the Booker Prize (see
+     * https://id.worldcat.org/fast/1430698)
+     */
+    FAST("B6", "FAST");
 
     public final String code;
     public final String description;

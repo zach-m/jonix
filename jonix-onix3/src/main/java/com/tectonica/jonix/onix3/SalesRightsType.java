@@ -67,11 +67,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SalesRightsType&gt; from the schema author:
- * 
- * <pre>
+ *
  * The sales rights (eg for sale, not for sale) that apply in a territory
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SalesRights}&gt;</li>

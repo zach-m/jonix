@@ -55,13 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContentDate&gt; from the schema author:
- * 
- * <pre>
- * Date of the specified role relating to some aspect of an item of collateral
- * &#9679; Removed &lt;DateFormat&gt; at release 3.1
- * &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Date of the specified role relating to some aspect of an item of collateral &#9679; Removed &lt;DateFormat&gt; at
+ * release 3.1 &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>

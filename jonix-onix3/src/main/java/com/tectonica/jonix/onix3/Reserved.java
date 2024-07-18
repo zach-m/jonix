@@ -60,12 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Reserved&gt; from the schema author:
- * 
- * <pre>
- * Quantity of physical copies on hand but unavailable to fulfil new orders
- * &#9679; Added at revision 3.0.4
- * </pre>
- * 
+ *
+ * Quantity of physical copies on hand but unavailable to fulfil new orders &#9679; Added at revision 3.0.4
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>

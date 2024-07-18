@@ -62,13 +62,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;NoProduct&gt; from the schema author:
- * 
- * <pre>
- * Positive indication that there are no product records in the message
- * &#9679; XML empty element - must not contain data
- * &#9679; Added at revision 3.0.2
- * </pre>
- * 
+ *
+ * Positive indication that there are no product records in the message &#9679; XML empty element - must not contain
+ * data &#9679; Added at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ONIXMessage}&gt;</li>

@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SubjectSchemeName&gt; from the schema author:
- * 
- * <pre>
+ *
  * Name of the proprietary subject scheme from which the code in &lt;SubjectCode&gt; is taken
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Subject}&gt;</li>

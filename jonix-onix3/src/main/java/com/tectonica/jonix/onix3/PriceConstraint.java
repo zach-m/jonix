@@ -62,12 +62,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PriceConstraint&gt; from the schema author:
- * 
- * <pre>
- * Details of a constraint on use of a product when purchased at a specific price
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Details of a constraint on use of a product when purchased at a specific price &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

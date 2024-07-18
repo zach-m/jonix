@@ -41,7 +41,7 @@ interface CodeList148 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist148">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist148">ONIX
  *      Codelist 148 in Reference Guide</a>
  */
 public enum CollectionTypes implements OnixCodelist, CodeList148 {
@@ -53,18 +53,18 @@ public enum CollectionTypes implements OnixCodelist, CodeList148 {
     /**
      * The collection is a bibliographic collection (eg a series or set (Fr. s&#233;rie)) defined and identified by a
      * publisher, either on the product itself or in product information supplied by the publisher. The books in the
-     * collection generally share a subject, narrative, design style or authorship. They may may have a specific order,
-     * or the collection may be unordered
+     * collection generally share a subject, narrative, design style or authorship. They may have a specific order, or
+     * the collection may be unordered
      */
     Publisher_collection("10", "Publisher collection"),
 
     /**
      * The collection is a bibliographic collection defined and identified by a publisher, either on the product itself
-     * or in product information supplied by the publisher, where the books in the collection have no specific order,
-     * shared subject, narrative, style or shared authorship, and are grouped by the publisher largely for marketing
-     * purposes. The collection has many of the characteristics of an imprint or marque. Used primarily in French book
-     * publishing, to distinguish between 's&#233;rie' (using the normal code 10) and 'collection' (code 11), and where
-     * the collection &#233;ditoriale is not an imprint
+     * or in product information supplied by the publisher, where the books in the collection have no specific order
+     * (other than order of publication), shared subject, narrative, style or shared authorship, and are grouped by the
+     * publisher largely for marketing purposes. The collection has many of the characteristics of an imprint or marque.
+     * Used primarily in French book publishing, to distinguish between 's&#233;rie' (using the normal code 10) and
+     * 'collection' (code 11), and where the collection &#233;ditoriale is not an imprint
      */
     Collection_editoriale("11", "Collection éditoriale"),
 

@@ -69,11 +69,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;FeatureNote&gt; from the schema author:
- * 
- * <pre>
+ *
  * Description of a feature of a resource
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ResourceVersionFeature}&gt;</li>

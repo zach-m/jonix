@@ -43,7 +43,7 @@ interface CodeList17 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -327,6 +327,9 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
 
     Abridged_by("B04", "Abridged by"),
 
+    /**
+     * See also B22 (Dramatized by)
+     */
     Adapted_by("B05", "Adapted by"),
 
     Translated_by("B06", "Translated by"),
@@ -374,6 +377,9 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
 
     General_editor("B21", "General editor"),
 
+    /**
+     * See also B05 (Adapted by)
+     */
     Dramatized_by("B22", "Dramatized by"),
 
     /**
@@ -433,6 +439,15 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * JONIX adds: Not included in Onix2
      */
     Transcribed_by("B33", "Transcribed by"),
+
+    /**
+     * Reader or editor responsible for ensuring the text is free of offensive, potentially offensive or insensitive
+     * language, is inclusive and free from bias, and avoids stereotypical characterization. Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Sensitivity_reader_editor("B34", "Sensitivity reader / editor"),
 
     /**
      * Other type of adaptation or editing not specified above

@@ -61,11 +61,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SourceName&gt; from the schema author:
- * 
- * <pre>
+ *
  * Organization name of the organization responsible for an ascribed collection
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Collection}&gt;</li>

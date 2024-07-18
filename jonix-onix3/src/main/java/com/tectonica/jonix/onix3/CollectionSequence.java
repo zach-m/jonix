@@ -55,12 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CollectionSequence&gt; from the schema author:
- * 
- * <pre>
- * Details of a product's sequential position in a collection
- * &#9679; Added at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of a product's sequential position in a collection &#9679; Added at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Collection}&gt;</li>

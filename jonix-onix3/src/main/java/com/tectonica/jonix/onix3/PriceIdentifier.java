@@ -64,12 +64,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PriceIdentifier&gt; from the schema author:
- * 
- * <pre>
- * Identifier for a specific price (usually a proprietary ID, used in subsequent revenue reporting)
- * &#9679; Added at revision 3.0.2
- * </pre>
- * 
+ *
+ * Identifier for a specific price (usually a proprietary ID, used in subsequent revenue reporting) &#9679; Added at
+ * revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

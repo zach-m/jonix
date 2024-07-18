@@ -53,11 +53,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Complexity&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of the difficulty of comprehension of the content
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

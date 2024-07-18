@@ -75,18 +75,13 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Price&gt; from the schema author:
- * 
- * <pre>
- * Details of a price applied to the product
- * &#9679; Removed &lt;CurrencyZone&gt; at release 3.1
- * &#9679; Added &lt;TaxExempt&gt; at revision 3.0.5
- * &#9679; Added &lt;EpubTechnicalProtection&gt; and &lt;EpubLicense&gt; at revision 3.0.4
- * &#9679; Added &lt;UnpricedItemType&gt;, &lt;PriceConstraint&gt;, &lt; at revision 3.0.3
- * &#9679; Added &lt;PriceIdentifier&gt; at revision 3.0.2
- * &#9679; Modified cardinality of &lt;PriceTypeDescription&gt; at revision 3.0.1
- * &#9679; Added &lt;PriceCoded&gt;, &lt;ComparisonProductPrice&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Details of a price applied to the product &#9679; Removed &lt;CurrencyZone&gt; at release 3.1 &#9679; Added
+ * &lt;TaxExempt&gt; at revision 3.0.5 &#9679; Added &lt;EpubTechnicalProtection&gt; and &lt;EpubLicense&gt; at revision
+ * 3.0.4 &#9679; Added &lt;UnpricedItemType&gt;, &lt;PriceConstraint&gt;, &lt; at revision 3.0.3 &#9679; Added
+ * &lt;PriceIdentifier&gt; at revision 3.0.2 &#9679; Modified cardinality of &lt;PriceTypeDescription&gt; at revision
+ * 3.0.1 &#9679; Added &lt;PriceCoded&gt;, &lt;ComparisonProductPrice&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

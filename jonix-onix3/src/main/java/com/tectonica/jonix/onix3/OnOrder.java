@@ -59,11 +59,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;OnOrder&gt; from the schema author:
- * 
- * <pre>
+ *
  * Quantity of physical copies on order but not yet on hand
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link OnOrderDetail}&gt;</li>

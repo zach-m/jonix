@@ -57,13 +57,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Header&gt; from the schema author:
- * 
- * <pre>
- * Container for message metadata
- * &#9679; Deprecated &lt;DefaultLanguageOfText&gt;, &lt;DefaultPriceType&gt; and &lt;DefaultCurrency&gt; at release 3.1
- * &#9679; Modified cardinality of &lt;MessageNote&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Container for message metadata &#9679; Deprecated &lt;DefaultLanguageOfText&gt;, &lt;DefaultPriceType&gt; and
+ * &lt;DefaultCurrency&gt; at release 3.1 &#9679; Modified cardinality of &lt;MessageNote&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ONIXMessage}&gt;</li>

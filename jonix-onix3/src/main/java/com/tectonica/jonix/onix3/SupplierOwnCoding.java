@@ -54,12 +54,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplierOwnCoding&gt; from the schema author:
- * 
- * <pre>
- * Container for coded information using a proprietary scheme defined by the supplier organization
- * &#9679; Added &lt;SupplierCodeTypeName&gt; at revison 3.0.2
- * </pre>
- * 
+ *
+ * Container for coded information using a proprietary scheme defined by the supplier organization &#9679; Added
+ * &lt;SupplierCodeTypeName&gt; at revison 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

@@ -67,12 +67,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EventAcronym&gt; from the schema author:
- * 
- * <pre>
- * Acronym or abbreviated name for a particular event which the product is about, eg COP26
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Acronym or abbreviated name for a particular event which the product is about, eg COP26 &#9679; Added at revision
+ * 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Event}&gt;</li>

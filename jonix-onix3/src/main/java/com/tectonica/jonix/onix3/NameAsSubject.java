@@ -73,16 +73,13 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;NameAsSubject&gt; from the schema author:
- * 
- * <pre>
- * Details of a person, persona or corporate identity that is the subject of the product
- * &#9679; Removed &lt;Gender&gt; at release 3.1
- * &#9679; Modified cardinality of corporate names at release 3.1
- * &#9679; Added &lt;AlternativeName&gt;, &lt;SubjectDate&gt;, &lt;ProfessionalAffiliation&gt;, &lt;Gender&gt; at revision 3.0.3
- * &#9679; Added &lt;CorporateNameInverted&gt; at revision 3.0 (2010)
- * &#9679; Modified cardinality of &lt;NameType&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Details of a person, persona or corporate identity that is the subject of the product &#9679; Removed &lt;Gender&gt;
+ * at release 3.1 &#9679; Modified cardinality of corporate names at release 3.1 &#9679; Added &lt;AlternativeName&gt;,
+ * &lt;SubjectDate&gt;, &lt;ProfessionalAffiliation&gt;, &lt;Gender&gt; at revision 3.0.3 &#9679; Added
+ * &lt;CorporateNameInverted&gt; at revision 3.0 (2010) &#9679; Modified cardinality of &lt;NameType&gt; at revision 3.0
+ * (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

@@ -63,11 +63,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;DiscountAmount&gt; from the schema author:
- * 
- * <pre>
- * Trade discount offered by the supplier, as an absolute amount per copy
- * </pre>
- * 
+ *
+ * Business-to-business discount offered by the supplier, as an absolute amount per copy
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Discount}&gt;</li>

@@ -68,16 +68,13 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplyDetail&gt; from the schema author:
- * 
- * <pre>
- * Container for data specifying a supplier operating in a market, the availability of the product from that supplier, and supplier's commercial terms including prices
- * &#9679; Removed &lt;Reissue&gt; at release 3.1
- * &#9679; Added &lt;PalletQuantity&gt; at revision 3.0.5
- * &#9679; Added &lt;SupplyContact&gt; at revision 3.0.4
- * &#9679; Added &lt;OrderQuantityMinimum&gt;, &lt;OrderQuantityMultiple&gt; at revision 3.0.3
- * &#9679; Modified cardinality of &lt;Supplier&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Container for data specifying a supplier operating in a market, the availability of the product from that supplier,
+ * and supplier's commercial terms including prices &#9679; Removed &lt;Reissue&gt; at release 3.1 &#9679; Added
+ * &lt;PalletQuantity&gt; at revision 3.0.5 &#9679; Added &lt;SupplyContact&gt; at revision 3.0.4 &#9679; Added
+ * &lt;OrderQuantityMinimum&gt;, &lt;OrderQuantityMultiple&gt; at revision 3.0.3 &#9679; Modified cardinality of
+ * &lt;Supplier&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductSupply}&gt;</li>

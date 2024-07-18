@@ -75,14 +75,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductPart&gt; from the schema author:
- * 
- * <pre>
- * Details of a component which comprises part of the product. Note that components may also be product items in their own right
- * &#9679; Added &lt;Measure&gt; at revision 3.0.6
- * &#9679; Added &lt;ProductPackaging&gt; at revision 3.0.3
+ *
+ * Details of a component which comprises part of the product. Note that components may also be product items in their
+ * own right &#9679; Added &lt;Measure&gt; at revision 3.0.6 &#9679; Added &lt;ProductPackaging&gt; at revision 3.0.3
  * &#9679; Modified cardinality of &lt;ProductFormDescription&gt; at revision 3.0.1
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

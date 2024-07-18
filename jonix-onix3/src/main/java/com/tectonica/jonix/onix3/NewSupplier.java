@@ -59,12 +59,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;NewSupplier&gt; from the schema author:
- * 
- * <pre>
- * Replacement supplier as the Supplier no longer supplies the product
- * &#9679; Added &lt;Website&gt; at release 3.1
- * </pre>
- * 
+ *
+ * Replacement supplier as the Supplier no longer supplies the product &#9679; Added &lt;Website&gt; at release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

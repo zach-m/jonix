@@ -62,12 +62,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;NoEdition&gt; from the schema author:
- * 
- * <pre>
- * Positive indication that there is no edition information relevant to the product
- * &#9679; XML empty element - must not contain data
- * </pre>
- * 
+ *
+ * Positive indication that there is no edition information relevant to the product &#9679; XML empty element - must not
+ * contain data
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

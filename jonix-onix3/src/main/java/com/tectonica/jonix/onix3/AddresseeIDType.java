@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AddresseeIDType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of identifier for an intended recipient organization, eg SAN, GLN
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AddresseeIdentifier}&gt;</li>

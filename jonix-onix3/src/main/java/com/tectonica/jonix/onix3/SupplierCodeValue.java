@@ -60,11 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplierCodeValue&gt; from the schema author:
- * 
- * <pre>
+ *
  * Value of proprietary code from the scheme in &lt;SupplierCodeTypeName (as defined by the supplier)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplierOwnCoding}&gt;</li>

@@ -71,11 +71,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductForm&gt; from the schema author:
- * 
- * <pre>
+ *
  * The primary form of a product, eg hardcover, softcover, e-book etc
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

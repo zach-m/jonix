@@ -66,11 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Affiliation&gt; from the schema author:
- * 
- * <pre>
+ *
  * Name of an organization to which a contributor is professionally affiliated
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>

@@ -58,15 +58,12 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CitedContent&gt; from the schema author:
- * 
- * <pre>
- * Third-party material which may be cited primarily for marketing and promotional purposes
- * &#9679; Added &lt;SequenceNumber&gt; at release 3.1
- * &#9679; Added &lt;Territory&gt;, &lt;ReviewRating&gt; at revision 3.0.3
- * &#9679; Modified cardinality of &lt;ListName&gt;, &lt;SourceTitle&gt; at revision 3.0.2
- * &#9679; Modified cardinality of &lt;CitationNote&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Third-party material which may be cited primarily for marketing and promotional purposes &#9679; Added
+ * &lt;SequenceNumber&gt; at release 3.1 &#9679; Added &lt;Territory&gt;, &lt;ReviewRating&gt; at revision 3.0.3 &#9679;
+ * Modified cardinality of &lt;ListName&gt;, &lt;SourceTitle&gt; at revision 3.0.2 &#9679; Modified cardinality of
+ * &lt;CitationNote&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

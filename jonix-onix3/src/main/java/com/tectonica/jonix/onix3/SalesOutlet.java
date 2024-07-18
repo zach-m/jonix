@@ -56,11 +56,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SalesOutlet&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of a specific retail outlet, eg one associated with sales exclusivity
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplementManifest}&gt;</li>

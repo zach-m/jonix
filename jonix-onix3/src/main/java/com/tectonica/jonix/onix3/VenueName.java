@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;VenueName&gt; from the schema author:
- * 
- * <pre>
- * Name of venue for a (physical) promotional event occurrence
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Name of venue for a (physical) promotional event occurrence &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventOccurrence}&gt;</li>

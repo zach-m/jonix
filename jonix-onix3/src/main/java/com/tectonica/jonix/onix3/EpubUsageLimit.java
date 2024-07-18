@@ -53,11 +53,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EpubUsageLimit&gt; from the schema author:
- * 
- * <pre>
+ *
  * Limitation placed on a particular type of allowed usage of a digital product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubUsageConstraint}&gt;</li>

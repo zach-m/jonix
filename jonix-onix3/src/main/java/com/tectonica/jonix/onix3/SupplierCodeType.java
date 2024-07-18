@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplierCodeType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of proprietary code scheme (as defined by the supplier)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplierOwnCoding}&gt;</li>

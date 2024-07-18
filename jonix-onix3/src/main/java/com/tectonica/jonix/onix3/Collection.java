@@ -64,15 +64,12 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Collection&gt; from the schema author:
- * 
- * <pre>
- * Details of a collection (eg a set or series, or a curated grouping of products)
- * &#9679; Added &lt;CollectionFrequency&gt; at release 3.1
- * &#9679; Added &lt;NoContributor&gt; (in gp.authorship) at revision 3.0.4
+ *
+ * Details of a collection (eg a set or series, or a curated grouping of products) &#9679; Added
+ * &lt;CollectionFrequency&gt; at release 3.1 &#9679; Added &lt;NoContributor&gt; (in gp.authorship) at revision 3.0.4
  * &#9679; Added &lt;CollectionSequence&gt; and &lt;ContributorStatement&gt; (in gp.authorship) at revision 3.0.1
  * &#9679; Modified cardinality of &lt;ContributorStatement&gt; at revision 3.0.1
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

@@ -64,11 +64,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductPackaging&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of outer packaging used for the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

@@ -66,12 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AwardingBody&gt; from the schema author:
- * 
- * <pre>
- * Name of organization awarding a prize
- * &#9679; Added at release 3.1
- * </pre>
- * 
+ *
+ * Name of organization awarding a prize &#9679; Added at release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Prize}&gt;</li>

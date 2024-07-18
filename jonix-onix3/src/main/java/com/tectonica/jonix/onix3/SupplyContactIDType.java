@@ -61,12 +61,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplyContactIDType&gt; from the schema author:
- * 
- * <pre>
- * Type of identifier for the supply contact organization
- * &#9679; Added at revision 3.0.4
- * </pre>
- * 
+ *
+ * Type of identifier for the supply contact organization &#9679; Added at revision 3.0.4
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContactIdentifier}&gt;</li>

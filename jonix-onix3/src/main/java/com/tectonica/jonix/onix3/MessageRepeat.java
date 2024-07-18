@@ -60,11 +60,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MessageRepeat&gt; from the schema author:
- * 
- * <pre>
- * Monotonic sequence number used if an ONIX message with a particular message number needs to be re-sent (the first repeat is 2)
- * </pre>
- * 
+ *
+ * Monotonic sequence number used if an ONIX message with a particular message number needs to be re-sent (the first
+ * repeat is 2)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>

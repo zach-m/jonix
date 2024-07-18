@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Extent&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of an extent (eg number of pages, duration) of a product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

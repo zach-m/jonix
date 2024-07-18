@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RelatedWork&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of a work related to the product (eg is the work of which the product is a manifestation)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link RelatedMaterial}&gt;</li>

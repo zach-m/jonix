@@ -73,14 +73,12 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TitleText&gt; from the schema author:
- * 
- * <pre>
- * Full text of a title element, but without any subtitle, used only when &lt;TitleWithoutPrefix&gt; and one of &lt;TitlePrefix&gt; or &lt;NoPrefix/&gt; cannot be used
- * &#9679; Deprecated from release 3.1 - use either &lt;TitlePrefix&gt; or &lt;NoPrefix&gt;, plus &lt;TitleWithoutPrefix&gt; instead
- * &#9679; Added textscript attribute at revision 3.0.2
- * &#9679; Added collationkey attribute at revision 3.0.1
- * </pre>
- * 
+ *
+ * Full text of a title element, but without any subtitle, used only when &lt;TitleWithoutPrefix&gt; and one of
+ * &lt;TitlePrefix&gt; or &lt;NoPrefix/&gt; cannot be used &#9679; Deprecated from release 3.1 - use either
+ * &lt;TitlePrefix&gt; or &lt;NoPrefix&gt;, plus &lt;TitleWithoutPrefix&gt; instead &#9679; Added textscript attribute
+ * at revision 3.0.2 &#9679; Added collationkey attribute at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleElement}&gt;</li>

@@ -58,12 +58,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AVItem&gt; from the schema author:
- * 
- * <pre>
- * Details of an audiovisual content item (eg a chapter) in a product
- * &#9679; Added at revision 3.0.5
- * </pre>
- * 
+ *
+ * Details of an audiovisual content item (eg a chapter) in a product &#9679; Added at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

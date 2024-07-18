@@ -65,13 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Tax&gt; from the schema author:
- * 
- * <pre>
- * Details of the type and amount of tax included within a Price amount
- * &#9679; Added &lt;PricePartDescription&gt; at revision 3.0.4
- * &#9679; Added &lt;ProductIdentifier&gt; at revision 3.0.3
- * </pre>
- * 
+ *
+ * Details of the type and amount of tax included within a Price amount &#9679; Added &lt;PricePartDescription&gt; at
+ * revision 3.0.4 &#9679; Added &lt;ProductIdentifier&gt; at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

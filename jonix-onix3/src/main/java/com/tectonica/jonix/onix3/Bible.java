@@ -59,11 +59,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Bible&gt; from the schema author:
- * 
- * <pre>
+ *
  * Container for details of a Bible
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ReligiousText}&gt;</li>

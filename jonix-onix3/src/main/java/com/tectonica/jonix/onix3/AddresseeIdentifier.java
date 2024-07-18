@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AddresseeIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * An identifier for an intended recipient organization
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Addressee}&gt;</li>

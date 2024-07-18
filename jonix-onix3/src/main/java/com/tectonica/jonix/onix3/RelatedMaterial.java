@@ -59,11 +59,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RelatedMaterial&gt; from the schema author:
- * 
- * <pre>
+ *
  * Block 5, container for elements providing links to closely-related products and works
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

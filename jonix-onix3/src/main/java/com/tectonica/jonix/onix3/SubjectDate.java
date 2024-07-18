@@ -55,13 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SubjectDate&gt; from the schema author:
- * 
- * <pre>
- * Date of the specified role relating to some aspect of the named subject
- * &#9679; Removed &lt;DateFormat&gt; at release 3.1
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Date of the specified role relating to some aspect of the named subject &#9679; Removed &lt;DateFormat&gt; at release
+ * 3.1 &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link NameAsSubject}&gt;</li>

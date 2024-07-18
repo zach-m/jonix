@@ -65,11 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContentDateRole&gt; from the schema author:
- * 
- * <pre>
- * Type or role of the specified date relating to some aspect of an item of collateral (eg date is an embargo date on use of the collateral item)
- * </pre>
- * 
+ *
+ * Type or role of the specified date relating to some aspect of an item of collateral (eg date is an embargo date on
+ * use of the collateral item)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentDate}&gt;</li>

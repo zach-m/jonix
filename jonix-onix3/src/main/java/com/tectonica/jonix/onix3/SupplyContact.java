@@ -56,14 +56,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplyContact&gt; from the schema author:
- * 
- * <pre>
- * Details of an organization (which may or may not be the supplier) responsible for dealing with supply enquiries related to the product
- * &#9679; Added &lt;FaxNumber&gt;, changed cardinality of &lt;EmailAddress&gt; at release 3.1
- * &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
- * &#9679; Added at revision 3.0.4
- * </pre>
- * 
+ *
+ * Details of an organization (which may or may not be the supplier) responsible for dealing with supply enquiries
+ * related to the product &#9679; Added &lt;FaxNumber&gt;, changed cardinality of &lt;EmailAddress&gt; at release 3.1
+ * &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8 &#9679; Added at revision 3.0.4
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

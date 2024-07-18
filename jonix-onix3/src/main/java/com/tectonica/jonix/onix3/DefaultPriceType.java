@@ -69,12 +69,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;DefaultPriceType&gt; from the schema author:
- * 
- * <pre>
- * Default type of a price (eg RRP ex tax, FRP inc tax), when an explicit price type is omitted from any prices in the message. Not recommended for use
- * &#9679; Deprecated from release 3.1 - use explicit &lt;PriceType&gt; instead
- * </pre>
- * 
+ *
+ * Default type of a price (eg RRP ex tax, FRP inc tax), when an explicit price type is omitted from any prices in the
+ * message. Not recommended for use &#9679; Deprecated from release 3.1 - use explicit &lt;PriceType&gt; instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>

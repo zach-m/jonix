@@ -66,11 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PositionOnProduct&gt; from the schema author:
- * 
- * <pre>
+ *
  * Position of a barcode or printed price on the product (eg back cover)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Barcode}&gt;</li>

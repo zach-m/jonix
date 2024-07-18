@@ -60,12 +60,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ResourceVersion&gt; from the schema author:
- * 
- * <pre>
- * Details of a specific version of a supporting resource used for marketing and promotional purposes, eg when the resource is an audio extract, the mp3 version of that extract, and when the resource is an image, the 200-pixel JPEG version of that image
- * &#9679; Added &lt;EpubUsageConstraint&gt; and &lt;EpubLicense&gt; at revision 3.1.1
- * </pre>
- * 
+ *
+ * Details of a specific version of a supporting resource used for marketing and promotional purposes, eg when the
+ * resource is an audio extract, the mp3 version of that extract, and when the resource is an image, the 200-pixel JPEG
+ * version of that image &#9679; Added &lt;EpubUsageConstraint&gt; and &lt;EpubLicense&gt; at revision 3.1.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>

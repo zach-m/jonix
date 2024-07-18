@@ -72,11 +72,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RecordReference&gt; from the schema author:
- * 
- * <pre>
+ *
  * Unique and persistent identifier for the metadata record (not for the product itself)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

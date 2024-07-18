@@ -68,14 +68,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TitleElement&gt; from the schema author:
- * 
- * <pre>
- * Details of one element (or part) of a title of a product, collection or content item
- * &#9679; Deprecated &lt;TitleText&gt; at release 3.1
- * &#9679; Added &lt;NoPrefix&gt; at revision 3.0.2
- * &#9679; Added &lt;SequenceNumber&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of one element (or part) of a title of a product, collection or content item &#9679; Deprecated
+ * &lt;TitleText&gt; at release 3.1 &#9679; Added &lt;NoPrefix&gt; at revision 3.0.2 &#9679; Added
+ * &lt;SequenceNumber&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleDetail}&gt;</li>

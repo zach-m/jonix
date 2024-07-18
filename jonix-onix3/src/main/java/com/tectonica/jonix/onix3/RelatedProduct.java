@@ -58,13 +58,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RelatedProduct&gt; from the schema author:
- * 
- * <pre>
- * Details of another product related in some way to the product
- * &#9679; Added &lt;ProductForm&gt;, &lt;ProductFormDetail&gt; at revision 3.0 (2010)
- * &#9679; Modified cardinality of &lt;ProductRelationCode&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Details of another product related in some way to the product &#9679; Added &lt;ProductForm&gt;,
+ * &lt;ProductFormDetail&gt; at revision 3.0 (2010) &#9679; Modified cardinality of &lt;ProductRelationCode&gt; at
+ * revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link RelatedMaterial}&gt;</li>

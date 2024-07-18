@@ -56,13 +56,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PublishingDate&gt; from the schema author:
- * 
- * <pre>
- * Date of the specified role relating to the lifecycle of the product, eg publication date, out-of-print date
- * &#9679; Removed &lt;DateFormat&gt; at release 3.1
- * &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Date of the specified role relating to the lifecycle of the product, eg publication date, out-of-print date &#9679;
+ * Removed &lt;DateFormat&gt; at release 3.1 &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>

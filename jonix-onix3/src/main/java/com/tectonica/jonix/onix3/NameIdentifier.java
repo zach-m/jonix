@@ -56,11 +56,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;NameIdentifier&gt; from the schema author:
- * 
- * <pre>
- * Identifier for the name of a person, persona or corporate identity, eg for the name of a contributor, or a name as subject
- * </pre>
- * 
+ *
+ * Identifier for the name of a person, persona or corporate identity, eg for the name of a contributor, or a name as
+ * subject
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AlternativeName}&gt;</li>

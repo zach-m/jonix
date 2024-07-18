@@ -59,11 +59,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TextItem&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of a textual content item (eg a chapter)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

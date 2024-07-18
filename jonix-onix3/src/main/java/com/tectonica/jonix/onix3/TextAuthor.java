@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TextAuthor&gt; from the schema author:
- * 
- * <pre>
+ *
  * Name of an author of a supporting text
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>

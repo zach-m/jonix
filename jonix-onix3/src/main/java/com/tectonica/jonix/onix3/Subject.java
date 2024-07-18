@@ -55,12 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Subject&gt; from the schema author:
- * 
- * <pre>
- * Details of the subject or aboutness of the product - a subject classification code or heading
- * &#9679; Modified cardinality of &lt;SubjectHeadingText&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of the subject or aboutness of the product - a subject classification code or heading &#9679; Modified
+ * cardinality of &lt;SubjectHeadingText&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

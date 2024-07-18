@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ImprintIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * Identifier for the publisher's imprint or brand
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Imprint}&gt;</li>

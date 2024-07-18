@@ -61,12 +61,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PrimaryPart&gt; from the schema author:
- * 
- * <pre>
- * Flag indicating the most important of a number of product components
- * &#9679; XML empty element - must not contain data
- * </pre>
- * 
+ *
+ * Flag indicating the most important of a number of product components &#9679; XML empty element - must not contain
+ * data
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductPart}&gt;</li>

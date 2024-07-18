@@ -70,11 +70,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContributorDescription&gt; from the schema author:
- * 
- * <pre>
+ *
  * Brief description of a contributor
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>

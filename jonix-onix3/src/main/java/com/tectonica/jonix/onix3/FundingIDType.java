@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;FundingIDType&gt; from the schema author:
- * 
- * <pre>
- * Type of identifier for a particular tranche of funding
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Type of identifier for a particular tranche of funding &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link FundingIdentifier}&gt;</li>

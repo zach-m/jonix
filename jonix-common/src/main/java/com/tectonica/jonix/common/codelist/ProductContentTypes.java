@@ -43,7 +43,7 @@ interface CodeList81 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
@@ -232,12 +232,12 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Performance_visual("27", "Performance – visual"),
 
     /**
-     * eg animated diagrams, charts, graphs or other illustrations
+     * eg animated diagrams, charts, graphs or other illustrations (usually without sound)
      */
     Animated_interactive_illustrations("24", "Animated / interactive illustrations"),
 
     /**
-     * eg cartoon, animatic or CGI animation
+     * eg cartoon, animatic or CGI animation (usually includes sound)
      */
     Narrative_animation("25", "Narrative animation"),
 

@@ -64,11 +64,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ReturnsCode&gt; from the schema author:
- * 
- * <pre>
+ *
  * Returns code taken from the stated returns coding scheme
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ReturnsConditions}&gt;</li>

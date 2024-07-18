@@ -66,11 +66,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductContentType&gt; from the schema author:
- * 
- * <pre>
- * A type of content included in the product (eg text, audio, musical notation). Repeatable if there are multiple content types. The primary (or only) content type should be specified in &lt;PrimaryContentType&gt;
- * </pre>
- * 
+ *
+ * A type of content included in the product (eg text, audio, musical notation). Repeatable if there are multiple
+ * content types. The primary (or only) content type should be specified in &lt;PrimaryContentType&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

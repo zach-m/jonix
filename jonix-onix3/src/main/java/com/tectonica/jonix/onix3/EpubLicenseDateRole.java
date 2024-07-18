@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EpubLicenseDateRole&gt; from the schema author:
- * 
- * <pre>
- * Type or role of the specified date relating to some aspect of the license
- * &#9679; Added at release 3.1
- * </pre>
- * 
+ *
+ * Type or role of the specified date relating to some aspect of the license &#9679; Added at release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubLicenseDate}&gt;</li>

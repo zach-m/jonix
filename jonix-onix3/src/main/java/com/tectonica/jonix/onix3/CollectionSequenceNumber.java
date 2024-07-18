@@ -68,12 +68,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CollectionSequenceNumber&gt; from the schema author:
- * 
- * <pre>
- * A product's sequential position, when the collection is ordered according to the collection sequence type
- * &#9679; Added at revision 3.0.1
- * </pre>
- * 
+ *
+ * A product's sequential position, when the collection is ordered according to the collection sequence type &#9679;
+ * Added at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CollectionSequence}&gt;</li>

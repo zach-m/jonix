@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SalesRestrictionType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of non-geographical sales restriction, eg sales limited to libraries only or a retailer exclusivity
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SalesRestriction}&gt;</li>

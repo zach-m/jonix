@@ -61,12 +61,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplyContactName&gt; from the schema author:
- * 
- * <pre>
- * Name for the organization responsible for dealing with supply enquiries related to the product
- * &#9679; Added at revision 3.0.4
- * </pre>
- * 
+ *
+ * Name for the organization responsible for dealing with supply enquiries related to the product &#9679; Added at
+ * revision 3.0.4
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContact}&gt;</li>

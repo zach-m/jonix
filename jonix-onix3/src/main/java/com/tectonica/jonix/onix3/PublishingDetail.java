@@ -59,14 +59,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PublishingDetail&gt; from the schema author:
- * 
- * <pre>
- * Block 4, container for information about describing branding, publishing and rights attached to the product
- * &#9679; Added &lt;ProductContact&gt; at revision 3.0.1
- * &#9679; Modified cardinality of &lt;PublishingStatusNote&gt; at revision 3.0.1
- * &#9679; Added &lt;ROWSalesRightsType&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Block 4, container for information about describing branding, publishing and rights attached to the product &#9679;
+ * Added &lt;ProductContact&gt; at revision 3.0.1 &#9679; Modified cardinality of &lt;PublishingStatusNote&gt; at
+ * revision 3.0.1 &#9679; Added &lt;ROWSalesRightsType&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

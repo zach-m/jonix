@@ -67,11 +67,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PrizeName&gt; from the schema author:
- * 
- * <pre>
+ *
  * Name of a literary prize, award, bursary etc
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Prize}&gt;</li>

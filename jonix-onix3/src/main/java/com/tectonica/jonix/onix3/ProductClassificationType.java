@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductClassificationType&gt; from the schema author:
- * 
- * <pre>
+ *
  * A specific trade classification scheme used to classify the product for national or international trade purposes
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductClassification}&gt;</li>

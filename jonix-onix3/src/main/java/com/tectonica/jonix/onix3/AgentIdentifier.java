@@ -56,11 +56,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AgentIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * An identifier for the publisher's sales agent or other representative organization in a market
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublisherRepresentative}&gt;</li>

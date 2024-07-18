@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Measure&gt; from the schema author:
- * 
- * <pre>
+ *
  * Detail of a physical measurement - a dimension of the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

@@ -69,12 +69,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EventName&gt; from the schema author:
- * 
- * <pre>
- * Name of an event or an occurrence of an event which the product is about
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Name of an event or an occurrence of an event which the product is about &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Event}&gt;</li>

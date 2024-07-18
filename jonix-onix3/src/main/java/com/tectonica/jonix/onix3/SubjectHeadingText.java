@@ -72,11 +72,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SubjectHeadingText&gt; from the schema author:
- * 
- * <pre>
- * Heading text associated with the code in &lt;SubjectCode&gt;, or the text of the subject heading where no code is available (eg for keywords)
- * </pre>
- * 
+ *
+ * Heading text associated with the code in &lt;SubjectCode&gt;, or the text of the subject heading where no code is
+ * available (eg for keywords)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Subject}&gt;</li>

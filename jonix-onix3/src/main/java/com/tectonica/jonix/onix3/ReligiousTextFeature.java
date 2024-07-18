@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ReligiousTextFeature&gt; from the schema author:
- * 
- * <pre>
+ *
  * &#9679; Modified cardinality of &lt;ReligiousTextFeatureDescription&gt; at revision 3.0.1
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ReligiousText}&gt;</li>

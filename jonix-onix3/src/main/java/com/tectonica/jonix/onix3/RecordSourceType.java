@@ -64,11 +64,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RecordSourceType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of the organization that is the source of the metadata record, eg a publisher, data aggregator, distributor
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

@@ -67,12 +67,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SourceTitle&gt; from the schema author:
- * 
- * <pre>
- * Title of the publication from which the text is taken, eg for a review
- * &#9679; Added language attribute at revision 3.0.2
- * </pre>
- * 
+ *
+ * Title of the publication from which the text is taken, eg for a review &#9679; Added language attribute at revision
+ * 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>

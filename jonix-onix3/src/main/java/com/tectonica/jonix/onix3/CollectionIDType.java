@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CollectionIDType&gt; from the schema author:
- * 
- * <pre>
+ *
  * The type of identifier for a collection
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CollectionIdentifier}&gt;</li>

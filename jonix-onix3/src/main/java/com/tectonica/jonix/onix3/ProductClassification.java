@@ -57,12 +57,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductClassification&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of a national or international trade classification (eg HMRC customs code, TARIC code, Schedule B code)
  * &#9679; Added &lt;ProductClassificationTypeName&gt; at revision 3.0.7
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

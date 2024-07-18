@@ -67,12 +67,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EventDate&gt; from the schema author:
- * 
- * <pre>
- * Date for an occurrence of a particular event which the product is about
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Date for an occurrence of a particular event which the product is about &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Event}&gt;</li>

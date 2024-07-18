@@ -59,11 +59,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CBO&gt; from the schema author:
- * 
- * <pre>
+ *
  * Number of physical copies on order but already committed to fulfillment of an existing order
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>

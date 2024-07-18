@@ -67,11 +67,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;StockQuantityCodeTypeName&gt; from the schema author:
- * 
- * <pre>
+ *
  * Name of proprietary type of code used for expression of a supplier's stockholding
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link StockQuantityCoded}&gt;</li>

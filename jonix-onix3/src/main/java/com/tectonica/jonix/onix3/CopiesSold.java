@@ -69,11 +69,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CopiesSold&gt; from the schema author:
- * 
- * <pre>
+ *
  * Textual description of the numbers of copies of the product sold, used as part of the promotion of the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

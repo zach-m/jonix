@@ -65,11 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ResourceMode&gt; from the schema author:
- * 
- * <pre>
- * Medium or 'mode' of a supporting resource used for marketing and promotional purposes, eg resource is an image, audio, textual etc
- * </pre>
- * 
+ *
+ * Medium or 'mode' of a supporting resource used for marketing and promotional purposes, eg resource is an image,
+ * audio, textual etc
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>

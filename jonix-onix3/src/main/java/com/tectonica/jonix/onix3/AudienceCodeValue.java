@@ -61,11 +61,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AudienceCodeValue&gt; from the schema author:
- * 
- * <pre>
+ *
  * Code taken from the specified audience coding scheme
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Audience}&gt;</li>

@@ -55,12 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContributorPlace&gt; from the schema author:
- * 
- * <pre>
- * Location with which a contributor is associated
- * &#9679; Added &lt;LocationName&gt; at revision 3.0.2
- * </pre>
- * 
+ *
+ * Location with which a contributor is associated &#9679; Added &lt;LocationName&gt; at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>

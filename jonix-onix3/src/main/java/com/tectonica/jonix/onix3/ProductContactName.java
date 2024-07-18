@@ -61,12 +61,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductContactName&gt; from the schema author:
- * 
- * <pre>
- * Name of the organization responsible for answering particular types of enquiries about the product
- * &#9679; Added at revision 3.0.1
- * </pre>
- * 
+ *
+ * Name of the organization responsible for answering particular types of enquiries about the product &#9679; Added at
+ * revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductContact}&gt;</li>

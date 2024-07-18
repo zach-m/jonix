@@ -55,12 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductionManifest&gt; from the schema author:
- * 
- * <pre>
- * Container for a file manifest and manufacturing specification for a product or product part
- * &#9679; Added at revision 3.0.8
- * </pre>
- * 
+ *
+ * Container for a file manifest and manufacturing specification for a product or product part &#9679; Added at revision
+ * 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductionDetail}&gt;</li>

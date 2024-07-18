@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PriceQualifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of price, beyond the detail in Price type, eg 'member price', customer type
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

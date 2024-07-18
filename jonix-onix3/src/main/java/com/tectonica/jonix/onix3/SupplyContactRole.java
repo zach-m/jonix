@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplyContactRole&gt; from the schema author:
- * 
- * <pre>
- * Role in relation to the product of a contact at the supplier
- * &#9679; Added at revision 3.0.4
- * </pre>
- * 
+ *
+ * Role in relation to the product of a contact at the supplier &#9679; Added at revision 3.0.4
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContact}&gt;</li>

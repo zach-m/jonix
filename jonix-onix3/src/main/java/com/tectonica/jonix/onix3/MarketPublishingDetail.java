@@ -57,15 +57,14 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MarketPublishingDetail&gt; from the schema author:
- * 
- * <pre>
- * Details of the market-specific publishing status, associated dates and publisher representation for the product within a 'market', particular where they differ from the relevant details in Block 4
- * &#9679; Removed &lt;PromotionContact&gt; at release 3.1
- * &#9679; Modified cardinality of &lt;PromotionCampaign&gt;, &lt;InitialPrintRun&gt;, &lt;CopiesSold&gt;, &lt;BookClubAdoption&gt; at revision 3.0.2
- * &#9679; Modified cardinality of &lt;MarketPublishingStatusNote&gt; at revision 3.0.1
- * &#9679; Modified cardinality of &lt;MarketDate&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Details of the market-specific publishing status, associated dates and publisher representation for the product
+ * within a 'market', particular where they differ from the relevant details in Block 4 &#9679; Removed
+ * &lt;PromotionContact&gt; at release 3.1 &#9679; Modified cardinality of &lt;PromotionCampaign&gt;,
+ * &lt;InitialPrintRun&gt;, &lt;CopiesSold&gt;, &lt;BookClubAdoption&gt; at revision 3.0.2 &#9679; Modified cardinality
+ * of &lt;MarketPublishingStatusNote&gt; at revision 3.0.1 &#9679; Modified cardinality of &lt;MarketDate&gt; at
+ * revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductSupply}&gt;</li>

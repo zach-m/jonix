@@ -80,12 +80,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;BodyManifest&gt; from the schema author:
- * 
- * <pre>
- * Details of the resource files needed to manufacture or package the main body of a product
- * &#9679; Added at revision 3.0.8
- * </pre>
- * 
+ *
+ * Details of the resource files needed to manufacture or package the main body of a product &#9679; Added at revision
+ * 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplementManifest}&gt;</li>

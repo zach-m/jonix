@@ -66,11 +66,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;IDTypeName&gt; from the schema author:
- * 
- * <pre>
- * Type of an identifier - the name of the identifier scheme, used when the identifier comes from a proprietary rather than a standard identifier scheme
- * </pre>
- * 
+ *
+ * Type of an identifier - the name of the identifier scheme, used when the identifier comes from a proprietary rather
+ * than a standard identifier scheme
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContactIdentifier}&gt;</li>

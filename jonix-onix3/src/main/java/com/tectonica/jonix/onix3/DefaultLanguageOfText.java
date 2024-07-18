@@ -70,12 +70,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;DefaultLanguageOfText&gt; from the schema author:
- * 
- * <pre>
- * Default language of the text in the product, when an explicit language of text is omitted from any products in the message. Not recommended for use
- * &#9679; Deprecated from release 3.1 - use explicit &lt;Language&gt; with role 01 instead
- * </pre>
- * 
+ *
+ * Default language of the text in the product, when an explicit language of text is omitted from any products in the
+ * message. Not recommended for use &#9679; Deprecated from release 3.1 - use explicit &lt;Language&gt; with role 01
+ * instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>

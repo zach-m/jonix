@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -653,7 +653,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Lay_flat_binding("B318", "Lay-flat binding"),
 
     /**
-     * Covers do not use a distinctive stock, but are the same as the body pages
+     * Covers do not use a distinctive stock, but are the same as the body pages. Use for example with Product form BF,
+     * to indicate a pamphlet does not use a card or distinct paper cover. See also B416 (for card covers) and B418 (for
+     * distinct paper covers)
      */
     Self_covered("B400", "Self-covered"),
 
@@ -746,7 +748,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Laminated_cover("B415", "Laminated cover"),
 
     /**
-     * With card cover (like a typical paperback). As distinct from a self-cover or more elaborate binding
+     * With card cover (like a typical paperback). As distinct from a self-cover or more elaborate binding. Use for
+     * example with Product form BF, to indicate a pamphlet is bound within a card cover. See also B400 (for
+     * self-covers) and B418 (for distinct paper covers)
      */
     Card_cover("B416", "Card cover"),
 
@@ -756,6 +760,15 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Duplex_printed_cover("B417", "Duplex-printed cover"),
+
+    /**
+     * Cover uses a distinct, usually heavier (thicker) paper than the interior pages. Use for example with Product form
+     * BF, to indicate a pamphlet is bound within a paper cover. See also B400 (for self-covers) and B416 (for card
+     * covers)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Paper_cover("B418", "Paper cover"),
 
     /**
      * Cover or jacket finish may merit special handling or packaging during distribution and fulfilment, for example
@@ -880,6 +893,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Mineral_paper("B522", "Mineral paper"),
+
+    /**
+     * For example, cut-out claim form such as the 'text data request ticket' used in the Japanese book trade
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    With_accessibility_claim_ticket("B523", "With accessibility claim ticket"),
 
     /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
@@ -1479,14 +1499,21 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Comic_Book_Archive("E149", "Comic Book Archive"),
 
     /**
-     * Use this and/or code E201 when a particular e-publication type (specified using codes E100 and upwards) has both
-     * fixed format and reflowable variants, to indicate which option is included in this product
+     * JONIX adds: Not included in Onix2
+     */
+    EPUB_A("E150", "EPUB/A"),
+
+    /**
+     * Use this and/or code E201 when a particular e-publication type (specified using codes E100 and upwards) is
+     * reflowable or has both fixed layout and reflowable sections or variants, to indicate which option is included in
+     * this product
      */
     Reflowable("E200", "Reflowable"),
 
     /**
-     * Use this and/or code E200 when a particular e-publication type (specified using codes E100 and upwards) has both
-     * fixed format and reflowable variants, to indicate which option is included in this product
+     * Use this and/or code E200 when a particular e-publication type (specified using codes E100 and upwards) is fixed
+     * layout or has both fixed layout and reflowable sections or variants, to indicate which option is included in this
+     * product
      */
     Fixed_format("E201", "Fixed format"),
 
@@ -1914,6 +1941,21 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Open_captions("V211", "Open captions"),
+
+    /**
+     * Full transcript of audio and audiovisual content included within the product supplied. See also List 158, where a
+     * transcript is a separate resource
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Transcript("V212", "Transcript"),
+
+    /**
+     * Full signing of audio and audiovisual content of the included within the product supplied
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Sign_language_interpretation("V213", "Sign language interpretation"),
 
     /**
      * Licensed for use in domestic contexts only

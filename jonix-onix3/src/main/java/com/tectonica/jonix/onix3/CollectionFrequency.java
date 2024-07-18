@@ -56,7 +56,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>1</td>
+ * <td>0&#8230;s1</td>
  * </tr>
  * <tr>
  * <td>Example</td>
@@ -65,12 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CollectionFrequency&gt; from the schema author:
- * 
- * <pre>
- * Intended frequency of publication of successive products in a collection, eg monthly, quarterly
- * &#9679; Added at release 3.1
- * </pre>
- * 
+ *
+ * Intended frequency of publication of successive products in a collection, eg monthly, quarterly &#9679; Added at
+ * release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Collection}&gt;</li>

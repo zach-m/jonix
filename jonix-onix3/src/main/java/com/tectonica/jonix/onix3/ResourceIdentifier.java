@@ -55,12 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ResourceIdentifier&gt; from the schema author:
- * 
- * <pre>
- * Unique identifier for a resource required for manufacturing or packaging of the product. Note this is likely to be a proprietary identifer used for disambiguation by the resource creator
- * &#9679; Added at revision 3.0.8
- * </pre>
- * 
+ *
+ * Unique identifier for a resource required for manufacturing or packaging of the product. Note this is likely to be a
+ * proprietary identifer used for disambiguation by the resource creator &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverResource}&gt;</li>

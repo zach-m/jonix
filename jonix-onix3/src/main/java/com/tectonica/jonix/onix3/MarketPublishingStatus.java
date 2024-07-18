@@ -65,11 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MarketPublishingStatus&gt; from the schema author:
- * 
- * <pre>
- * Market-specific publishing status of the product in the market, particular where it differs from the publishing status in Block 4
- * </pre>
- * 
+ *
+ * Market-specific publishing status of the product in the market, particular where it differs from the publishing
+ * status in Block 4
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

@@ -75,12 +75,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CityOfPublication&gt; from the schema author:
- * 
- * <pre>
- * City or town where the publisher is based
- * &#9679; Added language attribute at revision 3.0.2
- * </pre>
- * 
+ *
+ * City or town where the publisher is based &#9679; Added language attribute at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>

@@ -66,13 +66,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PersonName&gt; from the schema author:
- * 
- * <pre>
- * Simple and unstructured personal name of a contributor, in normal reading order (eg William Shakespeare)
- * &#9679; Added language attribute at revision 3.0.2
- * &#9679; Added collationkey, textscript attributes at revision 3.0.1
- * </pre>
- * 
+ *
+ * Simple and unstructured personal name of a contributor, in normal reading order (eg William Shakespeare) &#9679;
+ * Added language attribute at revision 3.0.2 &#9679; Added collationkey, textscript attributes at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AlternativeName}&gt;</li>

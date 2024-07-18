@@ -71,15 +71,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AlternativeName&gt; from the schema author:
- * 
- * <pre>
- * Details of an alternative name for a personal or corporate contributor, or for a subject
- * &#9679; Removed &lt;Gender&gt; at release 3.1
- * &#9679; Modified cardinality of corporate names at release 3.1
- * &#9679; Added &lt;Gender&gt; at revision 3.0.3
- * &#9679; Added &lt;CorporateNameInverted&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Details of an alternative name for a personal or corporate contributor, or for a subject &#9679; Removed
+ * &lt;Gender&gt; at release 3.1 &#9679; Modified cardinality of corporate names at release 3.1 &#9679; Added
+ * &lt;Gender&gt; at revision 3.0.3 &#9679; Added &lt;CorporateNameInverted&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>

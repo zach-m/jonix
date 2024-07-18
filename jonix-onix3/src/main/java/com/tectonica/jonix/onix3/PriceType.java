@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PriceType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of price, eg RRP exc or inc tax, FRP exc or inc tax
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ComparisonProductPrice}&gt;</li>

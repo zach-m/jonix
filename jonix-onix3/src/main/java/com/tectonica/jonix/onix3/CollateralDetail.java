@@ -61,11 +61,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CollateralDetail&gt; from the schema author:
- * 
- * <pre>
+ *
  * Block 2, container for information and resources to support marketing the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

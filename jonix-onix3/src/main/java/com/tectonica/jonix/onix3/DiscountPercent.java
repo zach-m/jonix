@@ -62,11 +62,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;DiscountPercent&gt; from the schema author:
- * 
- * <pre>
- * Trade discount offered by the supplier, as a percentage of the price
- * </pre>
- * 
+ *
+ * Business-to-business discount offered by the supplier, as a percentage of the price
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Discount}&gt;</li>

@@ -65,11 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EditionType&gt; from the schema author:
- * 
- * <pre>
- * Type of an edition (eg bilingual, large print, abridged). Note some edition types are new manifestations, others indicate a manifesation of a new work
- * </pre>
- * 
+ *
+ * Type of an edition (eg bilingual, large print, abridged). Note some edition types are new manifestations, others
+ * indicate a manifesation of a new work
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

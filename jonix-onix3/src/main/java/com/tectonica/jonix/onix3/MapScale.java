@@ -60,11 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MapScale&gt; from the schema author:
- * 
- * <pre>
+ *
  * Scale of a cartographic product - the denominator n when the scale is expressed as a fraction 1/n
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

@@ -56,11 +56,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CopyrightOwner&gt; from the schema author:
- * 
- * <pre>
+ *
  * Name of and/or identifier for a copyright or neighbouring rightsholder
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CopyrightStatement}&gt;</li>

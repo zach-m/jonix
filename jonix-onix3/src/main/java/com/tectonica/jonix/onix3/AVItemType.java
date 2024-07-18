@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AVItemType&gt; from the schema author:
- * 
- * <pre>
- * Type of an audiovisual content item (eg chapter, section, scene)
- * &#9679; Added at revision 3.0.5
- * </pre>
- * 
+ *
+ * Type of an audiovisual content item (eg chapter, section, scene) &#9679; Added at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AVItem}&gt;</li>

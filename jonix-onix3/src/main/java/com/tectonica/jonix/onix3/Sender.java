@@ -55,12 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Sender&gt; from the schema author:
- * 
- * <pre>
- * Details of the sender of the ONIX message (which may be different from the source of individual records in the message)
- * &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
- * </pre>
- * 
+ *
+ * Details of the sender of the ONIX message (which may be different from the source of individual records in the
+ * message) &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>

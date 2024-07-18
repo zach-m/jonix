@@ -67,11 +67,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CountryOfManufacture&gt; from the schema author:
- * 
- * <pre>
- * Country in which a product is manufactured (or the last country in which significant value was added)
- * </pre>
- * 
+ *
+ * Country in which a product is manufactured (or the last country in which significant value was added) &#9679; Do not
+ * confuse with Country of origin, an ill-defined term usually meaning where a particular shipment of goods ships from
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

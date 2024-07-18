@@ -66,11 +66,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AgentRole&gt; from the schema author:
- * 
- * <pre>
- * Role of a publisher's sales agent or other representative organization in relation to the product in the specified market
- * </pre>
- * 
+ *
+ * Role of a publisher's sales agent or other representative organization in relation to the product in the specified
+ * market
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublisherRepresentative}&gt;</li>

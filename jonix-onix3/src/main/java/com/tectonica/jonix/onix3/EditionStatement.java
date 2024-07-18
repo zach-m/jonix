@@ -73,12 +73,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EditionStatement&gt; from the schema author:
- * 
- * <pre>
- * Text showing how the edition details should be arranged for display purposes
- * &#9679; Modified base type from NonEmptyString, added textformat attribute at revision 3.0.2
- * </pre>
- * 
+ *
+ * Text showing how the edition details should be arranged for display purposes &#9679; Modified base type from
+ * NonEmptyString, added textformat attribute at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

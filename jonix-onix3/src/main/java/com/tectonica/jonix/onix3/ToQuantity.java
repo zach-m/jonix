@@ -62,12 +62,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ToQuantity&gt; from the schema author:
- * 
- * <pre>
- * Maximum quantity of copies eligible for a specified discount
- * &#9679; Added at revision 3.0.2
- * </pre>
- * 
+ *
+ * Maximum quantity of copies eligible for a specified discount &#9679; Added at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Discount}&gt;</li>

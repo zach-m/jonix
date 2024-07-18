@@ -59,13 +59,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupportingResource&gt; from the schema author:
- * 
- * <pre>
- * Details of a supporting resource used for marketing and promotional purposes, eg a cover image, author photo, sample of the content
- * &#9679; Added &lt;SequenceNumber&gt; at release 3.1
- * &#9679; Added &lt;Territory&gt; at revision 3.0.3
- * </pre>
- * 
+ *
+ * Details of a supporting resource used for marketing and promotional purposes, eg a cover image, author photo, sample
+ * of the content &#9679; Added &lt;SequenceNumber&gt; at release 3.1 &#9679; Added &lt;Territory&gt; at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

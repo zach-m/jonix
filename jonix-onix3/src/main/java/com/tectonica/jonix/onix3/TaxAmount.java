@@ -62,11 +62,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TaxAmount&gt; from the schema author:
- * 
- * <pre>
- * Amount of tax levied on the &lt;TaxableAmount&gt; and included in the &lt;PriceAmount&gt; -&#160;in effect, the tax added to the price before tax
- * </pre>
- * 
+ *
+ * Amount of tax levied on the &lt;TaxableAmount&gt; and included in the &lt;PriceAmount&gt; -&#160;in effect, the tax
+ * added to the price before tax
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Tax}&gt;</li>

@@ -66,11 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PrintedOnProduct&gt; from the schema author:
- * 
- * <pre>
+ *
  * Flag indicating whether a barcode or price is printed on a physical product or its outer packaging
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

@@ -53,11 +53,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;BatchBonus&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of bonus copies supplied (to the reseller) with a certain order quantity
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

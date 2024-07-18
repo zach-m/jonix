@@ -57,14 +57,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductContact&gt; from the schema author:
- * 
- * <pre>
- * Details of a organization responsible for answering enquiries about the product
- * &#9679; Added &lt;FaxNumber&gt;, changed cardinality of &lt;EmailAddress&gt; at release 3.1
- * &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
+ *
+ * Details of a organization responsible for answering enquiries about the product &#9679; Added &lt;FaxNumber&gt;,
+ * changed cardinality of &lt;EmailAddress&gt; at release 3.1 &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
  * &#9679; Added at revision 3.0.1
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>

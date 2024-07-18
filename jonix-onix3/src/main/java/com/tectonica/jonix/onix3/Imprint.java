@@ -56,11 +56,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Imprint&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of the publisher's imprint or branding under which the product is marketed
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>

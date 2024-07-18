@@ -126,11 +126,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductFormFeatureValue&gt; from the schema author:
- * 
- * <pre>
+ *
  * Controlled value specifying or describing a Product form feature
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductFormFeature}&gt;</li>

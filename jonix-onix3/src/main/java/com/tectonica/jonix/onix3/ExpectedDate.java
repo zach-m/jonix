@@ -66,12 +66,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ExpectedDate&gt; from the schema author:
- * 
- * <pre>
- * Date on which a stock shipment is expected to be delivered (to a supplier)
- * &#9679; Added dateformat attribute at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Date on which a stock shipment is expected to be delivered (to a supplier) &#9679; Added dateformat attribute at
+ * revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link OnOrderDetail}&gt;</li>

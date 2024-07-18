@@ -66,11 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductRelationCode&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of relationship between a product and a related product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link RelatedProduct}&gt;</li>

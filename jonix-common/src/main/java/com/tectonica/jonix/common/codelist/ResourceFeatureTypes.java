@@ -43,7 +43,7 @@ interface CodeList160 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist160">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist160">ONIX
  *      Codelist 160 in Reference Guide</a>
  */
 public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
@@ -72,16 +72,18 @@ public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
     Length_in_minutes("04", "Length in minutes"),
 
     /**
-     * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List
-     * 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
-     * 16-digit ISNI, which must match an ISNI given in an instance of &lt;Contributor&gt;
+     * Use to link resource such as a contributor image to a contributor unambiguously. Use for example with Resource
+     * Content types 04, 11-14 from List 158, particularly where the product has more than a single contributor.
+     * &lt;FeatureValue&gt; contains the 16-digit ISNI, which must match an ISNI given in an instance of
+     * &lt;Contributor&gt;
      */
     ISNI_of_resource_contributor("05", "ISNI of resource contributor"),
 
     /**
-     * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List
-     * 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
-     * proprietary ID, which must match a proprietary ID given in an instance of &lt;Contributor&gt;
+     * Use to link resource such as a contributor image to a contributor unambiguously. Use for example with Resource
+     * Content types 04, 11-14 from List 158, particularly where the product has more than a single contributor.
+     * &lt;FeatureValue&gt; contains the proprietary ID, which must match a proprietary ID given in an instance of
+     * &lt;Contributor&gt;
      */
     Proprietary_ID_of_resource_contributor("06", "Proprietary ID of resource contributor"),
 
@@ -103,7 +105,7 @@ public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
 
     /**
      * &lt;FeatureValue&gt; is an ONIX code from List 256 that describes an attribute of a product image resource (eg
-     * perspective, content)
+     * perspective of 3D view, content)
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -115,7 +117,17 @@ public enum ResourceFeatureTypes implements OnixCodelist, CodeList160 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Background_color_of_page("10", "Background color of page");
+    Background_color_of_page("10", "Background color of page"),
+
+    /**
+     * Use to link resource such as a contributor image to a contributor unambiguously, for example with Resource
+     * Content types 04, 11-14 from List 158, particularly where the product has more than a single contributor.
+     * &lt;FeatureValue&gt; contains the 16-digit ISNI, which must match an ORCID given in an instance of
+     * &lt;Contributor&gt;
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    ORCID_of_resource_contributor("11", "ORCID of resource contributor");
 
     public final String code;
     public final String description;

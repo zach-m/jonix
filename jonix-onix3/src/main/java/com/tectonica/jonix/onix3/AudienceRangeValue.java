@@ -62,11 +62,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AudienceRangeValue&gt; from the schema author:
- * 
- * <pre>
+ *
  * The measurement used for an audience or readership range (eg Grade 7, 11 years of age)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AudienceRange}&gt;</li>

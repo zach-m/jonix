@@ -54,12 +54,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Discount&gt; from the schema author:
- * 
- * <pre>
- * Details of the trade discount offered by the supplier, as a percentage of the price or an absolute amount per copy
- * &#9679; Added &lt;ToQuantity&gt; at revison 3.0.2
- * </pre>
- * 
+ *
+ * Details of the business-to-business discount offered by the supplier, as a percentage of the price or an absolute
+ * amount per copy &#9679; Added &lt;ToQuantity&gt; at revison 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

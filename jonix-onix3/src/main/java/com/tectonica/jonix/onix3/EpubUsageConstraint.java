@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EpubUsageConstraint&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of a potential limitation on usage of a digital product (whether or not this constraint is enforced by DRM)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

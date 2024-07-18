@@ -64,11 +64,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;NotificationType&gt; from the schema author:
- * 
- * <pre>
- * Coded indication of the type of Product record (eg initial notification, pre- or post-publication update, block update, test update)
- * </pre>
- * 
+ *
+ * Coded indication of the type of Product record (eg initial notification, pre- or post-publication update, block
+ * update, test update)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

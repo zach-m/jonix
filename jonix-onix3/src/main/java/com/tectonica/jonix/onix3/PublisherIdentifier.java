@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PublisherIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * Identifier of an organization responsible for publishing the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Publisher}&gt;</li>

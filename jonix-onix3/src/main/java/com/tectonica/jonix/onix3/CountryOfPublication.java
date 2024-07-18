@@ -66,11 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CountryOfPublication&gt; from the schema author:
- * 
- * <pre>
+ *
  * Country in which the publisher is based
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>

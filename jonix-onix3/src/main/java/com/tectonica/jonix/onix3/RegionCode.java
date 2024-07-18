@@ -71,11 +71,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RegionCode&gt; from the schema author:
- * 
- * <pre>
+ *
  * A sub-national region, eg one with which a contributor is associated, or from which a language variant is derived
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContributorPlace}&gt;</li>

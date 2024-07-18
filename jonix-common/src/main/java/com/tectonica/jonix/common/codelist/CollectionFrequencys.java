@@ -45,7 +45,7 @@ interface CodeList259 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist259">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist259">ONIX
  *      Codelist 259 in Reference Guide</a>
  */
 public enum CollectionFrequencys implements OnixCodelist, CodeList259 {
@@ -101,7 +101,10 @@ public enum CollectionFrequencys implements OnixCodelist, CodeList259 {
      */
     Weekly("w", "Weekly"),
 
-    More_frequently_than_weekly("d", "More frequently than weekly"),
+    /**
+     * At least twice a week
+     */
+    Daily_or_more_frequently_than_weekly("d", "Daily, or more frequently than weekly"),
 
     /**
      * Positive indication that the product is the last to be published in the collection, or that no further

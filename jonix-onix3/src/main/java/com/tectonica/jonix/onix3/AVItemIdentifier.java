@@ -55,12 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AVItemIdentifier&gt; from the schema author:
- * 
- * <pre>
- * Identifier for an audiovisual content item (eg a chapter)
- * &#9679; Added at revision 3.0.5
- * </pre>
- * 
+ *
+ * Identifier for an audiovisual content item (eg a chapter) &#9679; Added at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AVItem}&gt;</li>

@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TextItemType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of a textual content item, eg front matter, body matter
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextItem}&gt;</li>

@@ -70,11 +70,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AncillaryContentDescription&gt; from the schema author:
- * 
- * <pre>
+ *
  * Textual description of ancillary content of a product for which a coded description is insufficient
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AncillaryContent}&gt;</li>

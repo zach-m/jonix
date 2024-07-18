@@ -80,14 +80,12 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;DescriptiveDetail&gt; from the schema author:
- * 
- * <pre>
- * Block 1, container for data describing the form and content of the product
- * &#9679; Added &lt;Event&gt;, deprecated &lt;Conference&gt; at revision 3.0.3
- * &#9679; Added &lt;EpubLicense&gt; at revision 3.0.2
- * &#9679; Modified cardinality of &lt;ContributorStatement&gt;, &lt;EditionStatement&gt;, &lt;IllustrationsNote&gt;, &lt;AudienceDescription&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Block 1, container for data describing the form and content of the product &#9679; Removed &lt;Conference&gt; at
+ * release 3.1 &#9679; Added &lt;Event&gt;, deprecated &lt;Conference&gt; at revision 3.0.3 &#9679; Added
+ * &lt;EpubLicense&gt; at revision 3.0.2 &#9679; Modified cardinality of &lt;ContributorStatement&gt;,
+ * &lt;EditionStatement&gt;, &lt;IllustrationsNote&gt;, &lt;AudienceDescription&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

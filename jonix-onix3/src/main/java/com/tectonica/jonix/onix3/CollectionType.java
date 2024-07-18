@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CollectionType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of a collection (eg collection defined bibliographically by the publisher, or by a third party)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Collection}&gt;</li>

@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;LocationIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * Identifier for a stockholding warehouse location
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>

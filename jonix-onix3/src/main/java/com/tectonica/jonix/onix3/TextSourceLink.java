@@ -70,12 +70,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TextSourceLink&gt; from the schema author:
- * 
- * <pre>
- * URL which provides access to full text content used for marketing and promotional purposes (eg a link to the full text of a review)
- * &#9679; Added at release 3.1
- * </pre>
- * 
+ *
+ * URL which provides access to full text content used for marketing and promotional purposes (eg a link to the full
+ * text of a review) &#9679; Added at release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>

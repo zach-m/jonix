@@ -65,15 +65,12 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Stock&gt; from the schema author:
- * 
- * <pre>
- * Details of a supplier's stock holding
- * &#9679; Added &lt;Reserved&gt; and adjacent &lt;Proximity&gt; at revision 3.0.4
- * &#9679; Modified cardinality of &lt;LocationIdentifier&gt;, &lt;LocationName&gt; at revision 3.0.3
- * &#9679; Added &lt;Proximity&gt;, &lt;Velocity&gt; at revision 3.0.2
- * &#9679; Modified cardinality of &lt;StockQuantityCoded&gt; at revision 3.0.2
- * </pre>
- * 
+ *
+ * Details of a supplier's stock holding &#9679; Added &lt;Reserved&gt; and adjacent &lt;Proximity&gt; at revision 3.0.4
+ * &#9679; Modified cardinality of &lt;LocationIdentifier&gt;, &lt;LocationName&gt; at revision 3.0.3 &#9679; Added
+ * &lt;Proximity&gt;, &lt;Velocity&gt; at revision 3.0.2 &#9679; Modified cardinality of &lt;StockQuantityCoded&gt; at
+ * revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

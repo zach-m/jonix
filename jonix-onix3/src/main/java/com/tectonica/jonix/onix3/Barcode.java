@@ -54,11 +54,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Barcode&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of a barcode (eg its symbology and position) on a product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

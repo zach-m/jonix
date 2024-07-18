@@ -60,11 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;StockQuantityCode&gt; from the schema author:
- * 
- * <pre>
+ *
  * Coded expression of a supplier's stockholding
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link StockQuantityCoded}&gt;</li>

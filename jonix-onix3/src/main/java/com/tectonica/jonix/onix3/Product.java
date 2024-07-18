@@ -74,14 +74,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Product&gt; from the schema author:
- * 
- * <pre>
- * Container for details of a single product
- * &#9679; Added &lt;ProductionDetail&gt; (Block 8) at revision 3.0.8
- * &#9679; Added &lt;PromotionDetail&gt; (Block 7) at revision 3.0.7
- * &#9679; Modified cardinality of &lt;DeletionText&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Container for details of a single product &#9679; Added &lt;ProductionDetail&gt; (Block 8) at revision 3.0.8 &#9679;
+ * Added &lt;PromotionDetail&gt; (Block 7) at revision 3.0.7 &#9679; Modified cardinality of &lt;DeletionText&gt; at
+ * revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ONIXMessage}&gt;</li>

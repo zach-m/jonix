@@ -60,11 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContactName&gt; from the schema author:
- * 
- * <pre>
+ *
  * Name of a person or department within an organization
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContact}&gt;</li>

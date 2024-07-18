@@ -65,12 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AVItemIDType&gt; from the schema author:
- * 
- * <pre>
- * Type of identifier for an audiovisual content item (eg a proprietary work ID, an ISBN proxy for a work ID)
- * &#9679; Added at revision 3.0.5
- * </pre>
- * 
+ *
+ * Type of identifier for an audiovisual content item (eg a proprietary work ID, an ISBN proxy for a work ID) &#9679;
+ * Added at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AVItemIdentifier}&gt;</li>

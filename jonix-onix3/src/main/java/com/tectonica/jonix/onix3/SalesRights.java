@@ -60,13 +60,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SalesRights&gt; from the schema author:
- * 
- * <pre>
- * Details of a geographical territory and the sales rights and restriction that apply in that territory
- * &#9679; Modified cardinality of &lt;PublisherName&gt; at release 3.1
- * &#9679; Added &lt;SalesRestriction&gt; at revision 3.0.2
- * </pre>
- * 
+ *
+ * Details of a geographical territory and the sales rights and restriction that apply in that territory &#9679;
+ * Modified cardinality of &lt;PublisherName&gt; at release 3.1 &#9679; Added &lt;SalesRestriction&gt; at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>

@@ -56,13 +56,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MarketDate&gt; from the schema author:
- * 
- * <pre>
- * Details of a date associated with the publishing status of the product within a market
- * &#9679; Removed &lt;DateFormat&gt; at release 3.1
- * &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Details of a date associated with the publishing status of the product within a market &#9679; Removed
+ * &lt;DateFormat&gt; at release 3.1 &#9679; Modified cardinality of &lt;DateFormat&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

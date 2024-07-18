@@ -62,14 +62,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductSupply&gt; from the schema author:
- * 
- * <pre>
+ *
  * Container for data describing a market, and specific publishing and supply details of the product in that market
- * &#9679; Added &lt;MarketReference&gt; at release 3.1
- * &#9679; Modified cardinality of &lt;SupplyDetail&gt; at release 3.1
- * &#9679; Modified cardinality of &lt;SupplyDetail&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ * &#9679; Added &lt;MarketReference&gt; at release 3.1 &#9679; Modified cardinality of &lt;SupplyDetail&gt; at release
+ * 3.1 &#9679; Modified cardinality of &lt;SupplyDetail&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

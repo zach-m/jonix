@@ -57,13 +57,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CopyrightStatement&gt; from the schema author:
- * 
- * <pre>
- * Details of a copyright or neighbouring rights statement
- * &#9679; Modified cardinality of &lt;CopyrightYear&gt; at revision 3.0.7
- * &#9679; Added &lt;CopyrightType&gt; at revision 3.0.2
- * </pre>
- * 
+ *
+ * Details of a copyright or neighbouring rights statement &#9679; Modified cardinality of &lt;CopyrightYear&gt; at
+ * revision 3.0.7 &#9679; Added &lt;CopyrightType&gt; at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

@@ -65,12 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AudienceCodeTypeName&gt; from the schema author:
- * 
- * <pre>
- * Name of proprietary scheme from which the audience code value or heading is taken
- * &#9679; Added language attribute at revision 3.0.1
- * </pre>
- * 
+ *
+ * Name of proprietary scheme from which the audience code value or heading is taken &#9679; Added language attribute at
+ * revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Audience}&gt;</li>

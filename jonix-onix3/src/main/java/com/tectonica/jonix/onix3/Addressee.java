@@ -55,12 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Addressee&gt; from the schema author:
- * 
- * <pre>
- * Details of the intended recipient organization(s) for the ONIX message
- * &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
- * </pre>
- * 
+ *
+ * Details of the intended recipient organization(s) for the ONIX message &#9679; Added &lt;TelephoneNumber&gt; at
+ * revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>

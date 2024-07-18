@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;WorkIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * Identifier for the work that is related to the product (in the manner specified by &lt;WorkRelationCode&gt;)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link RelatedWork}&gt;</li>

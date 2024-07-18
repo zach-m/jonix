@@ -66,12 +66,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MessageNote&gt; from the schema author:
- * 
- * <pre>
+ *
  * Textual note providing additional information about the ONIX message, eg the type of IT system used to generate it
  * &#9679; Added language attribute at revision 3.0.1
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Header}&gt;</li>

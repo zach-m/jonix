@@ -68,11 +68,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ToLanguage&gt; from the schema author:
- * 
- * <pre>
+ *
  * Language into which a translator has translated the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>

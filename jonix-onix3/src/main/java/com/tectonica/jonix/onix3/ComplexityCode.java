@@ -61,11 +61,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ComplexityCode&gt; from the schema author:
- * 
- * <pre>
+ *
  * Measurement of the comprehension difficulty of the content, according to the specified measurement scheme
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Complexity}&gt;</li>

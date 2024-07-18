@@ -45,7 +45,7 @@ interface CodeList256 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist256">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist256">ONIX
  *      Codelist 256 in Reference Guide</a>
  */
 public enum ResourceFeatures implements OnixCodelist, CodeList256 {
@@ -147,7 +147,17 @@ public enum ResourceFeatures implements OnixCodelist, CodeList256 {
     /**
      * Product is vertical (eg standing on table)
      */
-    _3D_perspective_vertical("48", "3D perspective ‘vertical’");
+    _3D_perspective_vertical("48", "3D perspective ‘vertical’"),
+
+    /**
+     * Product or product packaging is open, showing at least some interior detail (eg of the page content of a book)
+     */
+    _3D_perspective_open("49", "3D perspective ‘open’"),
+
+    /**
+     * Product or product packaging is closed, or no significant interior detail is visible
+     */
+    _3D_perspective_closed("50", "3D perspective ‘closed’");
 
     public final String code;
     public final String description;

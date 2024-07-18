@@ -55,13 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Audience&gt; from the schema author:
- * 
- * <pre>
- * Details of a target audience or readership of a product
- * &#9679; Added &lt;MainAudience/&gt; at release 3.1
- * &#9679; Added &lt;AudienceHeadingText&gt; at revision 3.0.8
- * </pre>
- * 
+ *
+ * Details of a target audience or readership of a product &#9679; Added &lt;MainAudience/&gt; at release 3.1 &#9679;
+ * Added &lt;AudienceHeadingText&gt; at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

@@ -64,11 +64,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TaxType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of tax included in the &lt;PriceAmount&gt;, eg VAT, GST
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Tax}&gt;</li>

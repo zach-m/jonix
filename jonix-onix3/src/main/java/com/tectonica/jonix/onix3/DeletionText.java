@@ -73,11 +73,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;DeletionText&gt; from the schema author:
- * 
- * <pre>
- * Textual note providing a reason for 'deletion' of a product (Notification type 05), when a Product record is supplied in error. Do NOT use to communicate changes of publishing status such as 'abandoned' or 'out of print'
- * </pre>
- * 
+ *
+ * Textual note providing a reason for 'deletion' of a product (Notification type 05), when a Product record is supplied
+ * in error &#9679; Do NOT use to communicate changes of publishing status such as 'abandoned' or 'out of print'
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

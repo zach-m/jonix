@@ -36,13 +36,10 @@ import java.util.function.Consumer;
 
 /**
  * Technical notes about &lt;EpubLicenseType&gt; from the schema author:
- * 
- * <pre>
- * Details of an end user license agreement for a digital product
- * &#9679; Is extended by OTHER complexType &lt;EpubLicenseWithDateType&gt;
- * &#9679; Added at revision 3.0.2
- * </pre>
- * 
+ *
+ * Details of an end user license agreement for a digital product &#9679; Is extended by OTHER complexType
+ * &lt;EpubLicenseWithDateType&gt; &#9679; Added at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

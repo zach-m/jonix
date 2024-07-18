@@ -60,11 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;IDValue&gt; from the schema author:
- * 
- * <pre>
+ *
  * Value of an identifier, taken from the specified identifier scheme
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyContactIdentifier}&gt;</li>

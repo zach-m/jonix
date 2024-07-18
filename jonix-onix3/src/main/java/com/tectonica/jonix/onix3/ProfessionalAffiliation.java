@@ -56,13 +56,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProfessionalAffiliation&gt; from the schema author:
- * 
- * <pre>
- * Details of a professional position held by a contributor to the product at the time of its creation
- * &#9679; Added &lt;AffiliationIdentifier&gt; at release 3.1
- * &#9679; Modified cardinality of &lt;ProfessionalPosition&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of a professional position held by a contributor to the product at the time of its creation &#9679; Added
+ * &lt;AffiliationIdentifier&gt; at release 3.1 &#9679; Modified cardinality of &lt;ProfessionalPosition&gt; at revision
+ * 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Contributor}&gt;</li>

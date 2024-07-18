@@ -74,11 +74,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RegionsIncluded&gt; from the schema author:
- * 
- * <pre>
+ *
  * List of regions included in a territory, or WORLD (which is subject to any countries or regions excluded)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Territory}&gt;</li>

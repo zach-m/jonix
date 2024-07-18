@@ -66,12 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RatingUnits&gt; from the schema author:
- * 
- * <pre>
- * Name of the units used by a rating scheme, eg 'stars', points
- * &#9679; Added at revision 3.0.3
- * </pre>
- * 
+ *
+ * Name of the units used by a rating scheme, eg 'stars', points &#9679; Added at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ReviewRating}&gt;</li>

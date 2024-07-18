@@ -60,11 +60,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Market&gt; from the schema author:
- * 
- * <pre>
- * Details of a 'market' or distribution territory, primarily its geographical extent but any sales restrictions applicable within that area
- * </pre>
- * 
+ *
+ * Details of a 'market' or distribution territory, primarily its geographical extent but any sales restrictions
+ * applicable within that area
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductSupply}&gt;</li>

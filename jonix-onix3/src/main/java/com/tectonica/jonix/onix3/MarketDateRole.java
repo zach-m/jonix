@@ -70,11 +70,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;MarketDateRole&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of date associated with the status of the product within a market
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketDate}&gt;</li>

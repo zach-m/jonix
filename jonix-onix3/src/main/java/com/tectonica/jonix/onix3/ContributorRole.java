@@ -66,11 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ContributorRole&gt; from the schema author:
- * 
- * <pre>
+ *
  * Role played by a contributor in creation of the product (eg writer, illustrator, editor), or in a promotional event
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContributorReference}&gt;</li>

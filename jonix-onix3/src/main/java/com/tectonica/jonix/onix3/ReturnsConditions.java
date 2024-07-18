@@ -55,12 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ReturnsConditions&gt; from the schema author:
- * 
- * <pre>
- * Details of the supplier's returns conditions
- * &#9679; Added &lt;ReturnsNote&gt; at revision 3.0.3
- * </pre>
- * 
+ *
+ * Details of the supplier's returns conditions &#9679; Added &lt;ReturnsNote&gt; at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

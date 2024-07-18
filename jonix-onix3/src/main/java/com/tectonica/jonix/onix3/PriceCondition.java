@@ -57,12 +57,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PriceCondition&gt; from the schema author:
- * 
- * <pre>
- * Details of condition that must be met to qualify for a particular price (eg ownership of a hardcover to qualify for purchase of an e-book at an advantageous price)
- * &#9679; Added &lt;ProductIdentifier&gt; at revision 3.0.2
- * </pre>
- * 
+ *
+ * Details of condition that must be met to qualify for a particular price (eg ownership of a hardcover to qualify for
+ * purchase of an e-book at an advantageous price) &#9679; Added &lt;ProductIdentifier&gt; at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

@@ -59,11 +59,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ReligiousText&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of the special features of a religious text, eg the Bible, the Qur'an
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

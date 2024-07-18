@@ -56,12 +56,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AffiliationIdentifier&gt; from the schema author:
- * 
- * <pre>
- * An identifier which uniquely identifies the affiliate organization
- * &#9679; Added at release 3.1
- * </pre>
- * 
+ *
+ * An identifier which uniquely identifies the affiliate organization &#9679; Added at release 3.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>

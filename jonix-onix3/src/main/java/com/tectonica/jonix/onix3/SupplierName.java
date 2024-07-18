@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SupplierName&gt; from the schema author:
- * 
- * <pre>
- * Organization name of a supplier of the product
- * &#9679; Added collationkey attribute at revision 3.0.7
- * </pre>
- * 
+ *
+ * Organization name of a supplier of the product &#9679; Added collationkey attribute at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link NewSupplier}&gt;</li>

@@ -56,17 +56,13 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Prize&gt; from the schema author:
- * 
- * <pre>
- * Details of a literary or other prize associated with the product or work, or with a contributor
- * &#9679; Added &lt;PrizeIdentifier&gt; at revision 3.1.1
- * &#9679; Added &lt;SequenceNumber&gt; and &lt;AwardingBody&gt; at release 3.1
- * &#9679; Added &lt;PrizeRegion&gt; at revision 3.0.7
- * &#9679; Added &lt;PrizeStatement&gt; at revision 3.0.2
- * &#9679; Modified cardinality of &lt;PrizeName&gt; at revision 3.0.2
- * &#9679; Modified cardinality of &lt;PrizeJury&gt; at revision 3.0.1
- * </pre>
- * 
+ *
+ * Details of a literary or other prize associated with the product or work, or with a contributor &#9679; Added
+ * &lt;PrizeIdentifier&gt; at revision 3.1.1 &#9679; Added &lt;SequenceNumber&gt; and &lt;AwardingBody&gt; at release
+ * 3.1 &#9679; Added &lt;PrizeRegion&gt; at revision 3.0.7 &#9679; Added &lt;PrizeStatement&gt; at revision 3.0.2
+ * &#9679; Modified cardinality of &lt;PrizeName&gt; at revision 3.0.2 &#9679; Modified cardinality of &lt;PrizeJury&gt;
+ * at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CollateralDetail}&gt;</li>
@@ -301,7 +297,7 @@ public class Prize implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A group of data elements which together specify an identifier for the Prize. The composite is optional, and
-     * repatable if more than one identifier for the same prize is sent.
+     * repeatable if more than one identifier for the same prize is sent.
      * </p>
      * JONIX adds: this list may be empty
      */

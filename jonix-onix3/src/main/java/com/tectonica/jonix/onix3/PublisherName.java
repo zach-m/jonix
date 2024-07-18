@@ -73,13 +73,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PublisherName&gt; from the schema author:
- * 
- * <pre>
- * Name of the organization responsible for publishing the product
- * &#9679; Added textscript attribute at release 3.1
+ *
+ * Name of the organization responsible for publishing the product &#9679; Added textscript attribute at release 3.1
  * &#9679; Added collationkey attribute at revision 3.0.7
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Publisher}&gt;</li>

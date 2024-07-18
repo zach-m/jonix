@@ -74,11 +74,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * An identifier which uniquely identifies the product, eg an ISBN, GTIN etc
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

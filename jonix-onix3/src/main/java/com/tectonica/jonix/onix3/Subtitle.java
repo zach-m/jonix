@@ -68,13 +68,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Subtitle&gt; from the schema author:
- * 
- * <pre>
- * The text of a subtitle of the product
- * &#9679; Added language attribute at revision 3.0.2
- * &#9679; Added collationkey, textscript attributes at revision 3.0.1
- * </pre>
- * 
+ *
+ * The text of a subtitle of the product &#9679; Do not use to carry a temporary marketing message or a subtitle that is
+ * not on the product's title page &#9679; Added language attribute at revision 3.0.2 &#9679; Added collationkey,
+ * textscript attributes at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleElement}&gt;</li>

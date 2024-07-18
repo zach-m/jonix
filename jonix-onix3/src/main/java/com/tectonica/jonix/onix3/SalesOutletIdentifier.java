@@ -54,11 +54,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SalesOutletIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * Identifier for a specific retail outlet, eg one associated with sales exclusivity
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SalesOutlet}&gt;</li>

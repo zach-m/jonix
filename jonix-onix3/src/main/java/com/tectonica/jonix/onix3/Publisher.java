@@ -62,13 +62,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Publisher&gt; from the schema author:
- * 
- * <pre>
- * Details of an organization responsible for publishing the product
- * &#9679; Modified cardinality of &lt;PublisherName&gt; at release 3.1
- * &#9679; Added &lt;Funding&gt; at revision 3.0.3
- * </pre>
- * 
+ *
+ * Details of an organization responsible for publishing the product &#9679; Modified cardinality of
+ * &lt;PublisherName&gt; at release 3.1 &#9679; Added &lt;Funding&gt; at revision 3.0.3
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

@@ -58,11 +58,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PublisherRepresentative&gt; from the schema author:
- * 
- * <pre>
- * Details of an organization appointed by the publisher to act on its behalf in a specific market, eg a 'local publisher', sales agent etc
- * </pre>
- * 
+ *
+ * Details of an organization appointed by the publisher to act on its behalf in a specific market, eg a 'local
+ * publisher', sales agent etc
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

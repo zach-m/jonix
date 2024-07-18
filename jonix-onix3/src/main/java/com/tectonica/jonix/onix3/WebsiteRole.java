@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;WebsiteRole&gt; from the schema author:
- * 
- * <pre>
+ *
  * Role or purpose of the website, eg publisher's dedicated website for the product, contributor's own website
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Website}&gt;</li>

@@ -55,13 +55,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;OccurrenceDate&gt; from the schema author:
- * 
- * <pre>
- * Date related to an occurrence of a promotional event
- * &#9679; Removed &lt;DateFormat&gt; at release 3.1
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Date related to an occurrence of a promotional event &#9679; Removed &lt;DateFormat&gt; at release 3.1 &#9679; Added
+ * at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventOccurrence}&gt;</li>

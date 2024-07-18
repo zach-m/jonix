@@ -66,12 +66,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TitleStatement&gt; from the schema author:
- * 
- * <pre>
- * Text showing how the title details should be arranged for display purposes (note that all title elements must also be provided separate)
- * &#9679; Added at revision 3.0.1
- * </pre>
- * 
+ *
+ * Text showing how the title details should be arranged for display purposes (note that all title elements must also be
+ * provided separate) &#9679; Added at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TitleDetail}&gt;</li>

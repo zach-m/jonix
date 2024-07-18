@@ -70,14 +70,11 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CorporateNameInverted&gt; from the schema author:
- * 
- * <pre>
- * Name of organization or corporate contributor in inverted order (eg Guardian, The)
- * &#9679; Added language attribute at revision 3.0.2
- * &#9679; Added collationkey, textscript attributes at revision 3.0.1
- * &#9679; Added at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Name of organization or corporate contributor in inverted order (eg Guardian, The) &#9679; Added language attribute
+ * at revision 3.0.2 &#9679; Added collationkey, textscript attributes at revision 3.0.1 &#9679; Added at revision 3.0
+ * (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AlternativeName}&gt;</li>

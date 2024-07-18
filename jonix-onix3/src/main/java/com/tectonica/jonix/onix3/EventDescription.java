@@ -68,12 +68,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EventDescription&gt; from the schema author:
- * 
- * <pre>
- * Textual description of an occurrence of a particular event promoting the product
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Textual description of an occurrence of a particular event promoting the product &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventOccurrence}&gt;</li>

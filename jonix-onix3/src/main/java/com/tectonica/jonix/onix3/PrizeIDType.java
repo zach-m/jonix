@@ -40,7 +40,7 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, two digits</td>
+ * <td>Fixed length, two alphanumeric characters</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
@@ -65,12 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PrizeIDType&gt; from the schema author:
- * 
- * <pre>
- * Type of identifier which uniquely identifies the prize, eg an ISNI or a proprietary identifier
- * &#9679; Added at revision 3.1.1
- * </pre>
- * 
+ *
+ * Type of identifier which uniquely identifies the prize, eg an ISNI or a proprietary identifier &#9679; Added at
+ * revision 3.1.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PrizeIdentifier}&gt;</li>

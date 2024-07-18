@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;LocationIDType&gt; from the schema author:
- * 
- * <pre>
+ *
  * Type of identifier for a stockholding warehouse location
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link LocationIdentifier}&gt;</li>

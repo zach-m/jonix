@@ -62,11 +62,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PriceAmount&gt; from the schema author:
- * 
- * <pre>
- * Amount of a particular price applied to the product
- * </pre>
- * 
+ *
+ * Amount of a particular price applied to the product &#9679; Do not use a Price amount of zero to mean free of charge,
+ * use &lt;UnpricedItemType&gt; instead
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ComparisonProductPrice}&gt;</li>

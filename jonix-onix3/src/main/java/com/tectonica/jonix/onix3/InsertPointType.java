@@ -64,11 +64,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;InsertPointType&gt; from the schema author:
- * 
- * <pre>
+ *
  * &#9679; Added at revision 3.0.8
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link InsertPoint}&gt;</li>

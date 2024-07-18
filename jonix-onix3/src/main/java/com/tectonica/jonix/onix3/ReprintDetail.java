@@ -68,11 +68,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ReprintDetail&gt; from the schema author:
- * 
- * <pre>
+ *
  * Textual description of the reprint history of the product, used as part of the promotion of the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

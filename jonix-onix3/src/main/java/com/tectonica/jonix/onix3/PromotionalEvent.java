@@ -72,13 +72,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PromotionalEvent&gt; from the schema author:
- * 
- * <pre>
- * Details of an event held to promote the product
- * &#9679; Added &lt;SupportingResource&gt; at revision 3.0.8
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Details of an event held to promote the product &#9679; Added &lt;SupportingResource&gt; at revision 3.0.8 &#9679;
+ * Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PromotionDetail}&gt;</li>

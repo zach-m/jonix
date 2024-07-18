@@ -35,8 +35,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Prize identifier composite</h1>
  * <p>
- * A group of data elements which together specify an identifier for the Prize. The composite is optional, and repatable
- * if more than one identifier for the same prize is sent.
+ * A group of data elements which together specify an identifier for the Prize. The composite is optional, and
+ * repeatable if more than one identifier for the same prize is sent.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -54,12 +54,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PrizeIdentifier&gt; from the schema author:
- * 
- * <pre>
- * An identifier which uniquely identifies the prize, eg an ISNI or a proprietary identifier
- * &#9679; Added at revision 3.1.1
- * </pre>
- * 
+ *
+ * An identifier which uniquely identifies the prize, eg an ISNI or a proprietary identifier &#9679; Added at revision
+ * 3.1.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Prize}&gt;</li>

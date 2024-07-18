@@ -54,12 +54,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EventIdentifier&gt; from the schema author:
- * 
- * <pre>
- * Identifier for an event or an occurrence of an event promoting the product
- * &#9679; Added at revision 3.0.7
- * </pre>
- * 
+ *
+ * Identifier for an event or an occurrence of an event promoting the product &#9679; Added at revision 3.0.7
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EventOccurrence}&gt;</li>

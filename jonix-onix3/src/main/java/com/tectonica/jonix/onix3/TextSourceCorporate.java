@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TextSourceCorporate&gt; from the schema author:
- * 
- * <pre>
+ *
  * Name of organization or corporate author of a supporting text
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextContent}&gt;</li>

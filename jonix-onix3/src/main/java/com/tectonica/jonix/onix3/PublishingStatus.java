@@ -93,11 +93,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PublishingStatus&gt; from the schema author:
- * 
- * <pre>
+ *
  * The lifecycle status of the product, eg forthcoming, active, out of print, canceled / abandoned
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>

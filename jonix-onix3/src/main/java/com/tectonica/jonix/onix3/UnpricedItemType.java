@@ -70,11 +70,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;UnpricedItemType&gt; from the schema author:
- * 
- * <pre>
- * Positive indication that a product is free of charge, or a price is yet to be announced, or the product otherwise unpriced
- * </pre>
- * 
+ *
+ * Positive indication that a product is free of charge, or a price is yet to be announced, or the product otherwise
+ * unpriced
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupplyDetail}&gt;</li>

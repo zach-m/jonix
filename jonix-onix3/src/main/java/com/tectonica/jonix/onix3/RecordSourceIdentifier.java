@@ -54,11 +54,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;RecordSourceIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * An identifier for the organization that is the source of the metadata record
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

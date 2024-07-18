@@ -68,18 +68,14 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Contributor&gt; from the schema author:
- * 
- * <pre>
- * Details of a person, persona or corporate identity - a contributor to the product (eg the author)
- * &#9679; Removed &lt;Gender&gt; at release 3.1
- * &#9679; Removed old path to &lt;UnnamedPersons&gt; at release 3.1
- * &#9679; Modified cardinality of corporate names at release 3.1
- * &#9679; Added &lt;Gender&gt;, &lt;Prize&gt; at revision 3.0.3
- * &#9679; Modified to allow &lt;NameIdentifier&gt; and &lt;AlternativeName&gt; with &lt;UnnamedPersons&gt; at revision 3.0.3
- * &#9679; Modified cardinality of &lt;BiographicalNote&gt;, &lt;ContributorDescription&gt; at revision 3.0.1
- * &#9679; Added &lt;CorporateNameInverted&gt; at revision 3.0 (2010)
- * </pre>
- * 
+ *
+ * Details of a person, persona or corporate identity - a contributor to the product (eg the author) &#9679; Removed
+ * &lt;Gender&gt; at release 3.1 &#9679; Removed old path to &lt;UnnamedPersons&gt; at release 3.1 &#9679; Modified
+ * cardinality of corporate names at release 3.1 &#9679; Added &lt;Gender&gt;, &lt;Prize&gt; at revision 3.0.3 &#9679;
+ * Modified to allow &lt;NameIdentifier&gt; and &lt;AlternativeName&gt; with &lt;UnnamedPersons&gt; at revision 3.0.3
+ * &#9679; Modified cardinality of &lt;BiographicalNote&gt;, &lt;ContributorDescription&gt; at revision 3.0.1 &#9679;
+ * Added &lt;CorporateNameInverted&gt; at revision 3.0 (2010)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CopyrightOwnerIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * Identifier for the copyright or neighbouring rightsholder
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CopyrightOwner}&gt;</li>

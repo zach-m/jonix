@@ -66,11 +66,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;AudienceRangeQualifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * The metric used for an audience or readership range (eg interest age, school grade)
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AudienceRange}&gt;</li>

@@ -61,11 +61,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;DiscountCoded&gt; from the schema author:
- * 
- * <pre>
- * Details of the trade (business-to-business) discount offered by the supplier, in a coded manner
- * </pre>
- * 
+ *
+ * Details of the business-to-business discount offered by the supplier, in a coded manner
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

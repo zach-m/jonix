@@ -54,13 +54,12 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SalesRestriction&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of a non-geographical restriction on sales, applicable within the associated sales rights territory or market
- * &#9679; Deprecated P.21.11-21.18 at revision 3.0.2, in favour of using &lt;SalesRestriction within &lt;SalesRights&gt; (P.21.5a)
- * &#9679; Modified cardinality of &lt;SalesRestrictionNote&gt; at revision 3.0.1
- * </pre>
- * 
+ * &#9679; Removed from P.21.11-21.18 at Release 3.1, use &lt;SalesRestriction within &lt;SalesRights&gt; (P.21.5a)
+ * &#9679; Deprecated P.21.11-21.18 at revision 3.0.2, in favour of using &lt;SalesRestriction within
+ * &lt;SalesRights&gt; (P.21.5a) &#9679; Modified cardinality of &lt;SalesRestrictionNote&gt; at revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Market}&gt;</li>

@@ -61,12 +61,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductionDetail&gt; from the schema author:
- * 
- * <pre>
- * Block 8, container for file manifests and manufacturing specifications
- * &#9679; Added at revision 3.0.8
- * </pre>
- * 
+ *
+ * Block 8, container for file manifests and manufacturing specifications &#9679; Added at revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Product}&gt;</li>

@@ -43,7 +43,7 @@ interface CodeList196 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_65.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -95,7 +95,16 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    PDF_UA("05", "PDF/UA"),
+    PDF_UA_1("05", "PDF/UA-1"),
+
+    /**
+     * Conforms with the requirements of ISO 32000-2:2020 (PDF 2.0) plus ISO 14289-2:2024 - Portable Document Format for
+     * Universal Accessibility v2, for example, the revised semantic tagging, MathML, Unicode support and associated
+     * documents from PDF 2.0. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    PDF_UA_2("06", "PDF/UA-2"),
 
     /**
      * Product has not yet been assessed for accessibility, or no or insufficient accessibility information is provided.
@@ -134,9 +143,9 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Table of contents allows direct (eg hyperlinked) access to all levels of text organization above individual
-     * paragraphs (eg to all sections and subsections) and to all tables, figures, illustrations etc. Non-textual items
-     * such as illustrations, tables, audio or video content may be directly accessible from the Table of contents, or
-     * from a similar List of illustrations, List of tables, etc
+     * paragraphs (ie to all chapters, sections and subsections that exist within the text), and to all tables, figures,
+     * illustrations etc (non-textual items such as illustrations, tables, audio or video content may be directly
+     * accessible from the Table of contents, or from a similar List of illustrations, List of tables, etc)
      */
     Table_of_contents_navigation("11", "Table of contents navigation"),
 
@@ -192,7 +201,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Accessible_chemistry_content_as_ChemML("18", "Accessible chemistry content as ChemML"),
 
     /**
-     * For a reflowable e-publication, contains references to the page numbering of an equivalent printed product. Use
+     * For a reflowable e-publication, contains references to the page numbering of an equivalent printed product, page
+     * number navigation based on print-equivalent page numbers or digital-only static page breaks. Use
      * &lt;RelatedProduct&gt; with relation code 13 to specify an identifier for the source of the page numbers
      */
     Print_equivalent_page_numbering("19", "Print-equivalent page numbering"),
@@ -276,17 +286,17 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Next_Previous_structural_navigation("29", "Next / Previous structural navigation"),
 
     /**
-     * Accessible Rich Internet Applications (ARIA) roles are used to organize and improve the structural or landmark
-     * navigation of the publication (eg to identify key sections of the content and the purpose of hyperlinks). Only
-     * for use in ONIX 3.0 or later
+     * Accessible Rich Internet Applications (ARIA) roles (including associated states and properties) are used to
+     * organize and improve the structural or landmark navigation of the publication (eg to identify key sections of the
+     * content and the purpose of hyperlinks). Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     ARIA_roles_provided("30", "ARIA roles provided"),
 
     /**
-     * Where interactive content is included in the product, controls are labelled to make their use clear. Only for use
-     * in ONIX 3.0 or later
+     * Where interactive content is included in the product, controls are provided (eg for speed, pause and resume,
+     * reset) and labelled to make their use clear. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -351,8 +361,9 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Supplementary_material_to_an_audiobook_is_accessible("39", "Supplementary material to an audiobook is accessible"),
 
     /**
-     * Where links are included in the product, the purpose or functionality of each link is apparent from the link text
-     * alone - or where it is unclear, separate link descriptions provided). Only for use in ONIX 3.0 or later
+     * Where links, controls or buttons are included in the product, the purpose or functionality of each link, control
+     * or button is apparent from the associated text alone - or where it is unclear, separate link, control or button
+     * descriptions are provided. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -393,7 +404,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    EEA_Exception_1_Micro_enterprises("75", "EEA Exception 1 – Micro-enterprises"),
+    EEA_exception_1_Micro_enterprises("75", "EEA exception 1 – Micro-enterprises"),
 
     /**
      * Digital product falls under European Accessibility Act exception for Disproportionate burden (as defined by
@@ -465,6 +476,15 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     WCAG_level_AAA("86", "WCAG level AAA"),
 
     /**
+     * &lt;ProductFormFeatureDescription&gt; carries the name of the organization responsible for compliance testing and
+     * certification of the product. See code 93 for the URL of the organization, which should also be provided. Only
+     * for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Compliance_certification_by_name("90", "Compliance certification by (name)"),
+
+    /**
      * &lt;ProductFormFeatureDescription&gt; contains a date in the YYYYMMDD format of the latest assessment or
      * re-assessment of the accessibility of the product. (Note that changes to or re-confirmation of individual
      * accessibility features, standards conformance or certification may be highlighted with a timestamp attribute on
@@ -493,12 +513,13 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Compliance_certification_by("93", "Compliance certification by"),
+    Compliance_certification_by_URL("93", "Compliance certification by (URL)"),
 
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
      * accessibility features, compatibility, testing, certification etc relevant to this product. The web page should
-     * be maintained by an independent compliance scheme or testing organization
+     * be maintained by an independent compliance scheme or testing organization. Note the web page may include
+     * information about specific national requirements or voluntary conformance reports
      */
     Compliance_web_page_for_detailed_accessibility_information("94",
         "Compliance web page for detailed accessibility information"),
@@ -506,7 +527,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
      * accessibility features, compatibility, testing etc relevant to this product. The web page should be provided by a
-     * trusted intermediary or third party nominated by the publisher
+     * trusted intermediary or third party nominated by the publisher. Note the web page can include information about
+     * specific national requirements or voluntary conformance reports
      */
     Trusted_intermediarys_web_page_for_detailed_accessibility_information("95",
         "Trusted intermediary’s web page for detailed accessibility information"),
@@ -514,7 +536,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
      * accessibility features, compatibility, testing etc relevant to this product. The web page should be provided by
-     * the publisher
+     * the publisher. Note the web page can include information about specific national requirements or voluntary
+     * conformance reports
      */
     Publishers_web_page_for_detailed_accessibility_information("96",
         "Publisher’s web page for detailed accessibility information"),

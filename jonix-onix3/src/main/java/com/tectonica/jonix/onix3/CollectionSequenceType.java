@@ -65,12 +65,10 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CollectionSequenceType&gt; from the schema author:
- * 
- * <pre>
- * Type of sequential ordering of a collection (eg by narrative order, by publication order etc)
- * &#9679; Added at revision 3.0.1
- * </pre>
- * 
+ *
+ * Type of sequential ordering of a collection (eg by narrative order, by publication order etc) &#9679; Added at
+ * revision 3.0.1
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CollectionSequence}&gt;</li>

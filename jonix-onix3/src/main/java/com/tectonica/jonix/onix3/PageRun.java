@@ -53,11 +53,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;PageRun&gt; from the schema author:
- * 
- * <pre>
+ *
  * Details of the start and end pages of a textual content item
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextItem}&gt;</li>

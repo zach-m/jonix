@@ -69,11 +69,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;CurrencyCode&gt; from the schema author:
- * 
- * <pre>
+ *
  * The currency in which a price is denominated
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ComparisonProductPrice}&gt;</li>

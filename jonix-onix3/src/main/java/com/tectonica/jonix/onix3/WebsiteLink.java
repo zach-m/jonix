@@ -69,11 +69,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;WebsiteLink&gt; from the schema author:
- * 
- * <pre>
+ *
  * URL of the website
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Website}&gt;</li>

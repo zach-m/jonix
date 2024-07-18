@@ -55,11 +55,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;SenderIdentifier&gt; from the schema author:
- * 
- * <pre>
+ *
  * An identifier for the sender of the ONIX message
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Sender}&gt;</li>

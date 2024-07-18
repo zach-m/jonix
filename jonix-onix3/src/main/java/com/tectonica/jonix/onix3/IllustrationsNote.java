@@ -70,11 +70,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;IllustrationsNote&gt; from the schema author:
- * 
- * <pre>
+ *
  * Text description of the type and number of illustrations in the product
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

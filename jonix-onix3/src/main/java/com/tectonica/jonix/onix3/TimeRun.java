@@ -53,12 +53,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;TimeRun&gt; from the schema author:
- * 
- * <pre>
- * Details of the start and end times of an audiovisual content item
- * &#9679; Added at revision 3.0.5
- * </pre>
- * 
+ *
+ * Details of the start and end times of an audiovisual content item &#9679; Added at revision 3.0.5
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AVItem}&gt;</li>

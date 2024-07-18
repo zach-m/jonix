@@ -65,11 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;ProductFormDetail&gt; from the schema author:
- * 
- * <pre>
+ *
  * Additional detail of the digital or physical nature of the product and its features, in addition to the Product form
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

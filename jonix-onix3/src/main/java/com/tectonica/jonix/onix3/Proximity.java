@@ -65,12 +65,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Proximity&gt; from the schema author:
- * 
- * <pre>
- * Precision of a specified stock quantity (eg more than X, about X, exactly X)
- * &#9679; Added at revision 3.0.2
- * </pre>
- * 
+ *
+ * Precision of a specified stock quantity (eg more than X, about X, exactly X) &#9679; Added at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link OnOrderDetail}&gt;</li>

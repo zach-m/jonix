@@ -54,12 +54,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;Velocity&gt; from the schema author:
- * 
- * <pre>
- * Details of the rate of stock depletion
- * &#9679; Added at revision 3.0.2
- * </pre>
- * 
+ *
+ * Details of the rate of stock depletion &#9679; Added at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>

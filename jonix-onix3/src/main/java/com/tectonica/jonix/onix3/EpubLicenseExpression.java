@@ -54,12 +54,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EpubLicenseExpression&gt; from the schema author:
- * 
- * <pre>
- * Details of a particular expression of an end user license
- * &#9679; Added at revision 3.0.2
- * </pre>
- * 
+ *
+ * Details of a particular expression of an end user license &#9679; Added at revision 3.0.2
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubLicenseType}&gt;</li>

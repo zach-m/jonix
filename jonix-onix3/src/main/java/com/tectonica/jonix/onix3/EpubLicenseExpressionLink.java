@@ -60,11 +60,9 @@ import java.util.function.Consumer;
  * </table>
  * <p/>
  * Technical notes about &lt;EpubLicenseExpressionLink&gt; from the schema author:
- * 
- * <pre>
+ *
  * &#9679; Added at revision 3.0.2
- * </pre>
- * 
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubLicenseExpression}&gt;</li>
