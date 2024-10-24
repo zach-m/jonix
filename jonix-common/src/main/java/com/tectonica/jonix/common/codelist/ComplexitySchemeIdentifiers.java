@@ -43,7 +43,7 @@ interface CodeList32 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist32">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist32">ONIX
  *      Codelist 32 in Reference Guide</a>
  */
 public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
@@ -77,9 +77,9 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
     Fountas_Pinnell_Text_Level_Gradient("05", "Fountas & Pinnell Text Level Gradient"),
 
     /**
-     * The Lexile measure in &lt;ComplexityCode&gt; combines the Lexile number (for example 620L or 880L) and optionally
-     * the Lexile code (for example AD or HL). Examples might be '880L', 'AD0L' or 'HL600L'. See
-     * https://lexile.com/about-lexile/lexile-overview/
+     * The Lexile measure in &lt;ComplexityCode&gt; combines MetaMetrics' Lexile number (for example 620L or 880L) and
+     * optionally the Lexile code (for example AD or HL). Examples might be '880L', 'AD0L' or 'HL600L'. Applies to
+     * English text. See https://lexile.com/about-lexile/lexile-overview/
      */
     Lexile_measure("06", "Lexile measure"),
 
@@ -121,7 +121,16 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Lexile_Audio_measure("12", "Lexile Audio measure");
+    Lexile_Audio_measure("12", "Lexile Audio measure"),
+
+    /**
+     * Metametrics' Lexile measure for Spanish text. See
+     * https://lexile.com/educators/understanding-lexile-measures/lexile-measures-spanish/ Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Lexile_measure_Spanish("13", "Lexile measure (Spanish)");
 
     public final String code;
     public final String description;

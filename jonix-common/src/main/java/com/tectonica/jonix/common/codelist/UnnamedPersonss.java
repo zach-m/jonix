@@ -43,7 +43,7 @@ interface CodeList19 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist19">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
@@ -56,7 +56,8 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
     Anonymous("02", "Anonymous"),
 
     /**
-     * And others. Use when some but not all contributors are listed
+     * And others. Use when some but not all contributors are listed individually, perhaps because the complete
+     * contributor list is impractically long
      */
     et_al("03", "et al"),
 
@@ -67,27 +68,30 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
     Various("04", "Various"),
 
     /**
-     * Use with Contributor role code E07 'read by', eg for audio books with digital narration
+     * Use for example with Contributor role code E07 'read by' for audio books with digital narration having a
+     * male-inflected tone. 'Brand name' of voice may be provided in &lt;AlternativeName&gt;
      */
     Synthesised_voice_male("05", "Synthesised voice – male"),
 
     /**
-     * Use with Contributor role code E07 'read by', eg for audio books with digital narration
+     * Use for example with Contributor role code E07 'read by' for audio books with digital narration having a
+     * female-inflected tone. 'Brand name' of voice may be provided in &lt;AlternativeName&gt;
      */
-    Synthesised_voice_female("06", "Synthesised voice – female"),
+    Synthesized_voice_female("06", "Synthesized voice – female"),
 
     /**
-     * Use with Contributor role code E07 'read by', eg for audio books with digital narration
+     * Use for example with Contributor role code E07 'read by' for audio books with digital narration
      */
-    Synthesised_voice_unspecified("07", "Synthesised voice – unspecified"),
+    Synthesized_voice_unspecified("07", "Synthesized voice – unspecified"),
 
     /**
-     * Use with Contributor role code E07 'read by', eg for audio books with digital narration, and provide name of
-     * voice actor in &lt;AlternativeName&gt;. Only for use in ONIX 3.0 or later
+     * Sometimes termed an 'Authorized Voice Replica'. Use for exanple with Contributor role code E07 'read by' for
+     * audio books with digital narration, and provide name of voice actor in &lt;AlternativeName&gt;. Only for use in
+     * ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Synthesised_voice_based_on_real_voice_actor("08", "Synthesised voice – based on real voice actor"),
+    Synthesized_voice_based_on_real_voice_actor("08", "Synthesized voice – based on real voice actor"),
 
     /**
      * Use when the creator (of text, of images etc) is a generative AI model or technique. Note, can also be combined

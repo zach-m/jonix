@@ -43,7 +43,7 @@ interface CodeList163 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -57,8 +57,9 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
 
     /**
      * If there is an embargo on retail sales (in the market) before a certain date, the date from which the embargo is
-     * lifted and retail sales and fulfillment of pre-orders are permitted. In the absence of an embargo date, retail
-     * sales and pre-order fulfillment may begin as soon as stock is available to the retailer
+     * lifted and retail sales and fulfillment of pre-orders are permitted. (In some markets, this may be termed a
+     * 'strict on-sale date'.) In the absence of an embargo date, retail sales and pre-order fulfillment may begin as
+     * soon as stock is available to the retailer
      */
     Sales_embargo_date("02", "Sales embargo date"),
 
@@ -85,9 +86,9 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     Date_of_first_publication("11", "Date of first publication"),
 
     /**
-     * Date when a product was last reprinted
+     * Date when a product was most recently reprinted
      */
-    Last_reprint_date("12", "Last reprint date"),
+    Latest_reprint_date("12", "Latest reprint date"),
 
     /**
      * Date when a product was (or will be) declared out-of-print, permanently withdrawn from sale or deleted
@@ -95,9 +96,9 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     Out_of_print_permanently_withdrawn_date("13", "Out-of-print / permanently withdrawn date"),
 
     /**
-     * Date when a product was last reissued
+     * Date when a product was most recently reissued
      */
-    Last_reissue_date("16", "Last reissue date"),
+    Latest_reissue_date("16", "Latest reissue date"),
 
     /**
      * Date of publication of a printed book which is the direct print counterpart to a digital product. The counterpart

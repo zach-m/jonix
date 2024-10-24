@@ -43,7 +43,7 @@ interface CodeList17 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -574,8 +574,8 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Other_recording_by("F99", "Other recording by"),
 
     /**
-     * May be associated with any contributor role, and placement should therefore be controlled by contributor sequence
-     * numbering
+     * Contributor must follow another contributor with any contributor role, and placement should therefore be
+     * controlled by contributor sequence numbering to ensure the correct association
      */
     Assisted_by("Z01", "Assisted by"),
 
@@ -597,12 +597,22 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Peer_reviewed("Z04", "Peer reviewed"),
 
     /**
-     * May be associated with any contributor role, and placement should therefore be controlled by contributor sequence
-     * numbering. Only for use in ONIX 3.0 or later
+     * Contributor must follow another (posthumous) contributor with any contributor role, and placement should
+     * therefore be controlled by contributor sequence numbering to ensure the correct association. Only for use in ONIX
+     * 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Posthumously_completed_by("Z05", "Posthumously completed by"),
+
+    /**
+     * Contributor must follow another contributor with any contributor role, and placement should therefore be
+     * controlled by contributor sequence numbering to ensure the correct association. See also 'published in
+     * association with' in List 45. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    In_association_with("Z06", "In association with"),
 
     /**
      * For use ONLY with 'et al' or 'Various' within &lt;UnnamedPersons&gt;, where the roles of the multiple
