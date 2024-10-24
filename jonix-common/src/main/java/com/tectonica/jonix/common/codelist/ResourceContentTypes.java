@@ -43,7 +43,7 @@ interface CodeList158 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -319,6 +319,14 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * JONIX adds: Not included in Onix2
      */
     Warning_label("52", "Warning label"),
+
+    /**
+     * Document giving full contact detail, including postal addresses, for product safety contacts at publisher or
+     * supplier
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Product_safety_contacts("53", "Product safety contacts"),
 
     /**
      * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.

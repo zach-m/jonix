@@ -43,7 +43,7 @@ interface CodeList5 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist5">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist5">ONIX
  *      Codelist 5 in Reference Guide</a>
  */
 public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
@@ -139,7 +139,7 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
 
     /**
      * E-publication identifier controlled by JPOIID's Committee for Research and Management of Electronic Publishing
-     * Codes
+     * Codes. 20 alphanumeric characters, without spaces, beginning with the ISBN 'registrant element'
      */
     JP_e_code("27", "JP e-code"),
 
@@ -159,7 +159,7 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
      * products. Do not use where the UPC12 itself identifies the specific product, irrespective of any 5-digit
      * extension - use code 04 instead
      */
-    UPC12_5("30", "UPC12+5"),
+    UPC_12_5("30", "UPC-12+5"),
 
     /**
      * Num&#233;ro de la notice bibliographique BNF
@@ -168,10 +168,10 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
 
     /**
      * International Standard Serial Number expressed as a GTIN-13, with optional 2- or 5-digit barcode extension (ie
-     * 13, 15 or 18 digits starting 977, without spaces or hyphens), and only when the extended ISSN is used
-     * specifically as a product identifier (ie when the two publisher-defined 'variant' digits within the ISSN-13
-     * itself and/or the 2- or 5-digit barcode extension are used to identify a single issue of a serial publication for
-     * separate sale). Only for use in ONIX 3.0 or later
+     * 13, 15 or 18 digits starting 977, without spaces or hyphens, with &lt;BarcodeType&gt; codes 02, 12 or 05), and
+     * only when the extended ISSN is used specifically as a product identifier (ie when the two publisher-defined
+     * 'variant' digits within the ISSN-13 itself and/or the 2- or 5-digit barcode extension are used to identify a
+     * single issue of a serial publication for separate sale). Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

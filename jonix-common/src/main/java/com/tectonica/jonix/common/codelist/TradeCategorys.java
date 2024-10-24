@@ -43,7 +43,7 @@ interface CodeList12 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist12">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist12">ONIX
  *      Codelist 12 in Reference Guide</a>
  */
 public enum TradeCategorys implements OnixCodelist, CodeList12 {
@@ -176,7 +176,14 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Atlas("20", "Atlas");
+    Atlas("20", "Atlas"),
+
+    /**
+     * Daily or weekly. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Newspaper("21", "Newspaper");
 
     public final String code;
     public final String description;

@@ -43,7 +43,7 @@ interface CodeList15 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist15">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist15">ONIX
  *      Codelist 15 in Reference Guide</a>
  */
 public enum TitleTypes implements OnixCodelist, CodeList15 {
@@ -122,7 +122,8 @@ public enum TitleTypes implements OnixCodelist, CodeList15 {
 
     /**
      * An alternative title that the book is widely known by, whether it appears on the book or not (including a title
-     * used in another market -&#160;but see code 06 for translations)
+     * used in another market -&#160;but see code 06 for translations - or a working title previously used in metadata
+     * but replaced before publication)
      */
     Alternative_title("14", "Alternative title"),
 

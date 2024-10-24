@@ -43,7 +43,7 @@ interface CodeList71 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist71">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
@@ -84,12 +84,13 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Retailer_own_brand("05", "Retailer own brand"),
 
     /**
-     * Sales rights (or market distribution rights) apply to supplies to libraries
+     * Sales rights (or market distribution rights) apply to supplies to libraries (public and national libraries,
+     * libraries in educational institutions)
      */
     To_libraries_only("06", "To libraries only"),
 
     /**
-     * Sales rights (or market distribution rights) apply to supplies to schools
+     * Sales rights (or market distribution rights) apply to supplies to schools (primary and secondary education)
      */
     To_schools_only("07", "To schools only"),
 
@@ -184,6 +185,22 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
      * JONIX adds: Not included in Onix2
      */
     Subscription_service_exclusive("21", "Subscription service exclusive"),
+
+    /**
+     * Sales rights (or market distribution rights) apply to supplies to educational institutions only (primary,
+     * secondary, tertiary, adult, vocational and professional etc). Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    To_education_only("22", "To education only"),
+
+    /**
+     * Sales rights (or market distribution rights) apply to supplies other than to educational institutions. Only for
+     * use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Except_to_education("23", "Except to education"),
 
     /**
      * Positive indication that no sales restrictions apply, for example to indicate the product may be sold both online

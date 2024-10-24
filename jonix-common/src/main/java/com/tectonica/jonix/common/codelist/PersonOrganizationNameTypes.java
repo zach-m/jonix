@@ -43,7 +43,7 @@ interface CodeList18 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist18">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist18">ONIX
  *      Codelist 18 in Reference Guide</a>
  */
 public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
@@ -65,7 +65,7 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
     Earlier_name("03", "Earlier name"),
 
     /**
-     * May be used to identify a well-known real name, where the primary name is a pseudonym
+     * May be used to identify a well-known 'real' name, where the primary name is a pseudonym or is unnamed
      */
     Real_name("04", "‘Real’ name"),
 

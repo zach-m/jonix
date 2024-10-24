@@ -43,7 +43,7 @@ interface CodeList198 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist198">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist198">ONIX
  *      Codelist 198 in Reference Guide</a>
  */
 public enum ProductContactRoles implements OnixCodelist, CodeList198 {
@@ -111,7 +111,15 @@ public enum ProductContactRoles implements OnixCodelist, CodeList198 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Product_safety_contact("10", "Product safety contact");
+    Product_safety_contact("10", "Product safety contact"),
+
+    /**
+     * Eg for EU Deforestation regulation (EUDR) compliance. See
+     * https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1115&amp;qid=1687867231461
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Product_raw_materials_contact("11", "Product raw materials contact");
 
     public final String code;
     public final String description;

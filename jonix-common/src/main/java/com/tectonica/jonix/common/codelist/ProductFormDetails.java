@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_66.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -521,11 +521,12 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Fuzzy_felt_book("B215", "Fuzzy-felt book"),
 
     /**
-     * A book containing pages with die-cut or press-out pieces that can be used as a jigsaw, puzzle pieces, etc
+     * A book containing pages with die-cut or press-out pieces that can be used as a jigsaw, as puzzle or game pieces,
+     * play pieces (eg paper dolls) etc
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Press_out_puzzle_pieces("B216", "Press-out puzzle pieces"),
+    Press_out_pieces("B216", "Press-out pieces"),
 
     /**
      * Picture book, generally for children, with few words per illustration: use with applicable Product Form code
@@ -553,6 +554,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Wordless_book("B224", "‘Wordless’ book"),
+
+    /**
+     * A book containing pages with pieces intended to be cut out (not pre-cut or press-out - see B216) that can be used
+     * as puzzle or game pieces, play pieces etc, but which may not be suitable for young children
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Cut_out_pieces("B225", "Cut-out pieces"),
 
     /**
      * Use with Product Form code BD, BN or PM
