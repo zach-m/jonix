@@ -4,7 +4,7 @@
 
     <groupId>com.tectonica</groupId>
     <artifactId>jonix-project</artifactId>
-    <version>2024-10-onix308-fix</version>
+    <version>2025-01-onix308-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>JONIX-PROJECT</name>
