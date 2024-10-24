@@ -1,11 +1,38 @@
 # ![jonix](JONIX.png)
 
-Jonix is a commercial-grade open source Java library for extracting data from [ONIX for Books](https://www.editeur.org/83/Overview/) sources.
+Jonix is a robust, free, open-source Java library designed for data extraction from [ONIX for Books](https://www.editeur.org/83/Overview/) sources.
 
-It comprises of various services for efficient processing of ONIX sources, emphasizing:
-- High-performance (speed and memory)
+It offers a variety of services for efficient ONIX processing, with a focus on:
+- High-performance (speed and memory efficiency)
 - Fluent, intuitive and type-safe APIs
-- Extensibility
+- Easy Extensibility
+
+Jonix is not just a simple XML-processing wrapper or an XPath tool in disguise.
+It is purpose-built for handling ONIX files and is regularly updated with each new ONIX schema release, which occurs four times a year.
+
+With Jonix, every ONIX element is represented by a dedicated Java class (automatically generated from the official schema),
+ensuring type-safe access to the data within that element. These Java classes come with a clear and intuitive API,
+where methods **never** return `null`, while public fields (representing values at terminal nodes) may.
+
+ONIX elements serve various roles: some are simple data elements containing a single value (and possibly attributes),
+others are "Composites," holding multiple elements (some of which may also be composites), and some are mere flags.
+The [Jonix Object Model](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/package-summary.html) clearly distinguishes between these types and offers tailored APIs for each.
+
+### Recent Version
+
+| Maven Version         | Onix version | Codelist Issue |
+|-----------------------|--------------|----------------|
+| `2024-10-fix`         | 3.1.01       | 67             |
+| `2024-10-onix308-fix` | 3.0.08       | 67             |
+
+API documentation for latest release can be found [here](https://zach-m.github.io/jonix).
+
+### Version History
+
+Jonix features long backward compatibility:
+- All versions of Jonix run on Java version 8 and above
+- Although being long deprecated, `Onix-2` is still supported in all versions of Jonix
+- Choose the version of Jonix based on the compatibility level of your sources with Onix standard
 
 > NOTE: version `2023-05` features the most significant leap for Jonix in a decade. The API has been revised and extended (slightly breaking backward compatibility), resulting in a more expressive and fluent syntax than ever.
 > In particular, two powerful APIs, `.firstOrEmpty()` and `.filter()` were introduced for Lists of composites, eliminating many previously-unavoidable `null`/`exists()` checks.
@@ -13,40 +40,24 @@ It comprises of various services for efficient processing of ONIX sources, empha
 > The `JonixRecords` object now offers `scanHeaders()` for `Header`-only peek of the ONIX sources. It also has `failOnInvalidFile()` method to replace a configuration flag with the same name.
 > For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixRelease()` and `.onixVersion()` were added to top-level `Product` and `Header` classes. See newly-crafted examples below.
 
-Jonix is NOT a thin XML-processing wrapper, nor is it `XPath` in disguise. It was built from scratch specifically for 
-ONIX files, and accordingly it gets updated whenever a new schema of ONIX is published (4 times a year).
-
-With Jonix, each ONIX element is represented by a dedicated Java class (code is auto-generated from the official schema),
-providing type-safe access to the data stored in that element. The Java classes have a clear and intuitive API, where
-methods never return `null`, while public fields (containing values at the terminal nodes) may.
-
-Different ONIX elements play different roles. Some are simple data elements, containing a single value (and optionally some attributes),
-others are "Composites", containing other elements (some of which may be composites by themselves), and others are merely flags.
-The [Jonix Object Model](https://zach-m.github.io/jonix/jonix.common/com/tectonica/jonix/common/package-summary.html) makes
-clear distinction betweem these types and offers different APIs for different types.
-
-### Recent Versions
-
-| Maven Version     | Onix version | Codelist Issue |
-|-------------------|--------------|----------------|
-| `2024-07`         | 3.1.01       | 66             |
-| `2024-07-onix308` | 3.0.08       | 66             |
-| `2024-04`         | 3.1.01       | 65             |
-| `2024-04-onix308` | 3.0.08       | 65             |
-| `2024-01`         | 3.1.00       | 64             |
-| `2024-01-onix308` | 3.0.08       | 64             |
-| `2023-10`         | 3.1.00       | 63             |
-| `2023-10-onix308` | 3.0.08       | 63             |
-| `2023-07`         | 3.1.00       | 62             |
-| `2023-07-onix308` | 3.0.08       | 62             |
-| `2023-05`         | 3.1.00       | 61             |
-| `2023-05-onix308` | 3.0.08       | 61             |
-| `2023-04`         | 3.1.00       | 61             |
-| `2023-01`         | 3.0.08       | 60             |
-| `2022-11`         | 3.0.08       | 59             |
-| `2022-08`         | 3.0.08       | 58             |
-
-API documentation for latest release can be found [here](https://zach-m.github.io/jonix).
+| Maven Version         | Onix version | Codelist Issue |
+|-----------------------|--------------|----------------|
+| `2024-07`             | 3.1.01       | 66             |
+| `2024-07-onix308`     | 3.0.08       | 66             |
+| `2024-04`             | 3.1.01       | 65             |
+| `2024-04-onix308`     | 3.0.08       | 65             |
+| `2024-01`             | 3.1.00       | 64             |
+| `2024-01-onix308`     | 3.0.08       | 64             |
+| `2023-10`             | 3.1.00       | 63             |
+| `2023-10-onix308`     | 3.0.08       | 63             |
+| `2023-07`             | 3.1.00       | 62             |
+| `2023-07-onix308`     | 3.0.08       | 62             |
+| `2023-05`             | 3.1.00       | 61             |
+| `2023-05-onix308`     | 3.0.08       | 61             |
+| `2023-04`             | 3.1.00       | 61             |
+| `2023-01`             | 3.0.08       | 60             |
+| `2022-11`             | 3.0.08       | 59             |
+| `2022-08`             | 3.0.08       | 58             |
 
 ## 1. Stable Release (from Central repository)
 
@@ -55,7 +66,7 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2024-07</version>
+    <version>2024-10-fix</version>
 </dependency>
 ```
 
@@ -65,7 +76,7 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2024-07-onix308</version>
+    <version>2024-10-onix308-fix</version>
 </dependency>
 ```
 
