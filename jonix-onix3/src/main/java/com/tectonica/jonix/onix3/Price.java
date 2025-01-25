@@ -19,17 +19,26 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.DiscountCodeTypes;
+import com.tectonica.jonix.common.codelist.EpublicationTechnicalProtections;
+import com.tectonica.jonix.common.codelist.PriceDateRoles;
+import com.tectonica.jonix.common.codelist.PriceIdentifierTypes;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.struct.JonixBatchBonus;
+import com.tectonica.jonix.common.struct.JonixDiscount;
+import com.tectonica.jonix.common.struct.JonixDiscountCoded;
+import com.tectonica.jonix.common.struct.JonixPriceDate;
+import com.tectonica.jonix.common.struct.JonixPriceIdentifier;
 
-import com.tectonica.jonix.common.*;
-import com.tectonica.jonix.common.OnixComposite.*;
-import com.tectonica.jonix.common.codelist.*;
-import com.tectonica.jonix.common.struct.*;
+import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

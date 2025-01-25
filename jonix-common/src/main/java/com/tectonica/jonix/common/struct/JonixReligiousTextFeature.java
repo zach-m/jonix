@@ -19,12 +19,13 @@
 
 package com.tectonica.jonix.common.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.common.JonixKeyedStruct;
 import com.tectonica.jonix.common.JonixStruct;
-import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.codelist.ReligiousTextFeatureTypes;
+import com.tectonica.jonix.common.codelist.ReligiousTextFeatures;
+
+import java.io.Serializable;
+import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

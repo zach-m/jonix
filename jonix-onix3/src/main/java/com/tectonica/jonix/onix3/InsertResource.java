@@ -19,17 +19,23 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.ResourceFileDateRoles;
+import com.tectonica.jonix.common.codelist.ResourceFileDetails;
+import com.tectonica.jonix.common.codelist.ResourceFileFeatureTypes;
+import com.tectonica.jonix.common.codelist.ResourceIdentifierTypes;
+import com.tectonica.jonix.common.struct.JonixResourceFileDate;
+import com.tectonica.jonix.common.struct.JonixResourceFileFeature;
+import com.tectonica.jonix.common.struct.JonixResourceIdentifier;
 
-import com.tectonica.jonix.common.*;
-import com.tectonica.jonix.common.OnixComposite.*;
-import com.tectonica.jonix.common.codelist.*;
-import com.tectonica.jonix.common.struct.*;
+import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

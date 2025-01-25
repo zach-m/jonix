@@ -19,12 +19,13 @@
 
 package com.tectonica.jonix.common.struct;
 
+import com.tectonica.jonix.common.JonixStruct;
+import com.tectonica.jonix.common.codelist.ContributorPlaceRelators;
+import com.tectonica.jonix.common.codelist.Countrys;
+import com.tectonica.jonix.common.codelist.Regions;
+
 import java.io.Serializable;
 import java.util.List;
-
-import com.tectonica.jonix.common.JonixStruct;
-import com.tectonica.jonix.common.JonixStruct;
-import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

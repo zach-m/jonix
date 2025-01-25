@@ -21,7 +21,6 @@ package com.tectonica.jonix.unify.base;
 
 import com.tectonica.jonix.common.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.common.codelist.AudienceRangeQualifiers;
-import com.tectonica.jonix.common.codelist.AudienceTypes;
 import com.tectonica.jonix.common.codelist.EditionTypes;
 import com.tectonica.jonix.common.codelist.LanguageRoles;
 import com.tectonica.jonix.common.struct.JonixAudience;

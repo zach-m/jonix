@@ -19,11 +19,13 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.function.Consumer;
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.codelist.PriceStatuss;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

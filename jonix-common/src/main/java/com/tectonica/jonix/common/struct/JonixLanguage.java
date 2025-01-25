@@ -19,12 +19,13 @@
 
 package com.tectonica.jonix.common.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.common.JonixKeyedStruct;
 import com.tectonica.jonix.common.JonixStruct;
-import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.codelist.Countrys;
+import com.tectonica.jonix.common.codelist.LanguageRoles;
+import com.tectonica.jonix.common.codelist.Languages;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

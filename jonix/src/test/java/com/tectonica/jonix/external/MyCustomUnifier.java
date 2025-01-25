@@ -20,7 +20,6 @@
 package com.tectonica.jonix.external;
 
 import com.tectonica.jonix.JonixRecord;
-import com.tectonica.jonix.JonixSource;
 import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.unify.CustomUnifier;
 import com.tectonica.jonix.unify.UnifiedProduct;

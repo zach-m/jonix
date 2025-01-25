@@ -19,17 +19,25 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.BookFormDetails;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.ProductContentTypes;
+import com.tectonica.jonix.common.codelist.ProductFormDetailsList78;
+import com.tectonica.jonix.common.codelist.ProductFormFeatureTypes;
+import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextCaseFlags;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TransliterationSchemes;
+import com.tectonica.jonix.common.struct.JonixProductFormFeature;
+import com.tectonica.jonix.common.struct.JonixProductIdentifier;
 
-import com.tectonica.jonix.common.*;
-import com.tectonica.jonix.common.OnixComposite.*;
-import com.tectonica.jonix.common.codelist.*;
-import com.tectonica.jonix.common.struct.*;
+import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

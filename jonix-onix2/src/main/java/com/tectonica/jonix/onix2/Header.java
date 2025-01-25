@@ -19,17 +19,21 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.OnixHeader;
+import com.tectonica.jonix.common.OnixVersion;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextCaseFlags;
+import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TransliterationSchemes;
+import com.tectonica.jonix.common.struct.JonixAddresseeIdentifier;
+import com.tectonica.jonix.common.struct.JonixSenderIdentifier;
 
-import com.tectonica.jonix.common.*;
-import com.tectonica.jonix.common.OnixComposite.*;
-import com.tectonica.jonix.common.codelist.*;
-import com.tectonica.jonix.common.struct.*;
+import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
