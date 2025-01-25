@@ -19,17 +19,27 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.ContributorRoles;
+import com.tectonica.jonix.common.codelist.Languages;
+import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
+import com.tectonica.jonix.common.codelist.PersonOrganizationDateRoles;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.struct.JonixContributorDate;
+import com.tectonica.jonix.common.struct.JonixContributorPlace;
+import com.tectonica.jonix.common.struct.JonixNameIdentifier;
+import com.tectonica.jonix.common.struct.JonixPrize;
+import com.tectonica.jonix.common.struct.JonixProfessionalAffiliation;
+import com.tectonica.jonix.common.struct.JonixWebsite;
 
-import com.tectonica.jonix.common.*;
-import com.tectonica.jonix.common.OnixComposite.*;
-import com.tectonica.jonix.common.codelist.*;
-import com.tectonica.jonix.common.struct.*;
+import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

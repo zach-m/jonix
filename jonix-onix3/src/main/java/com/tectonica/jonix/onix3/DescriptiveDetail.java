@@ -19,17 +19,39 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.ListOfOnixCodelist;
+import com.tectonica.jonix.common.ListOfOnixComposite;
+import com.tectonica.jonix.common.ListOfOnixDataComposite;
+import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.common.ListOfOnixElement;
+import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.common.codelist.AudienceCodeTypes;
+import com.tectonica.jonix.common.codelist.AudienceTypes;
+import com.tectonica.jonix.common.codelist.EditionTypes;
+import com.tectonica.jonix.common.codelist.EpublicationTechnicalProtections;
+import com.tectonica.jonix.common.codelist.ExtentTypes;
+import com.tectonica.jonix.common.codelist.IllustrationAndOtherContentTypes;
+import com.tectonica.jonix.common.codelist.LanguageRoles;
+import com.tectonica.jonix.common.codelist.MeasureTypes;
+import com.tectonica.jonix.common.codelist.ProductClassificationTypes;
+import com.tectonica.jonix.common.codelist.ProductContentTypes;
+import com.tectonica.jonix.common.codelist.ProductFormDetails;
+import com.tectonica.jonix.common.codelist.ProductFormFeatureTypes;
+import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.struct.JonixAncillaryContent;
+import com.tectonica.jonix.common.struct.JonixAudience;
+import com.tectonica.jonix.common.struct.JonixAudienceRange;
+import com.tectonica.jonix.common.struct.JonixComplexity;
+import com.tectonica.jonix.common.struct.JonixExtent;
+import com.tectonica.jonix.common.struct.JonixLanguage;
+import com.tectonica.jonix.common.struct.JonixMeasure;
+import com.tectonica.jonix.common.struct.JonixProductClassification;
+import com.tectonica.jonix.common.struct.JonixProductFormFeature;
+import com.tectonica.jonix.common.struct.JonixSubject;
 
-import com.tectonica.jonix.common.*;
-import com.tectonica.jonix.common.OnixComposite.*;
-import com.tectonica.jonix.common.codelist.*;
-import com.tectonica.jonix.common.struct.*;
+import java.io.Serializable;
+import java.util.function.Consumer;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

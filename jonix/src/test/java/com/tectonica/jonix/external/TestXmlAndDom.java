@@ -21,8 +21,8 @@ package com.tectonica.jonix.external;
 
 import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.JonixRecord;
-import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.common.OnixProduct;
+import com.tectonica.jonix.common.OnixVersion;
 import com.tectonica.jonix.common.codelist.PublishingDateRoles;
 import com.tectonica.jonix.common.codelist.SupplyDateRoles;
 import com.tectonica.jonix.json.JonixJson;

@@ -20,7 +20,6 @@
 package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.JonixRecord;
-import com.tectonica.jonix.JonixSource;
 import com.tectonica.jonix.unify.base.BaseProduct;
 
 public class BaseRecord extends UnifiedRecord<BaseProduct> {
