@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,16 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixAffiliationIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -198,9 +199,9 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
 
     /**
      * <p>
-     * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>, and –
-     * if the &lt;ProfessionalPosition&gt; element is also present – where the contributor held that position. Optional
-     * and non-repeating.
+     * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>,
+     * and&nbsp;– if the &lt;ProfessionalPosition&gt; element is also present&nbsp;– where the contributor held that
+     * position. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -216,9 +217,9 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
     /**
      * <p>
      * A group of data elements which together define an identifier for an organization to which the contributor to the
-     * product was affiliated <em>at the time of its creation</em>, and – if the &lt;ProfessionalPosition&gt; element is
-     * also present – where the contributor held that position. Optional, and repeatable to specify organization
-     * identifiers of different types for the same organization.
+     * product was affiliated <em>at the time of its creation</em>, and&nbsp;– if the &lt;ProfessionalPosition&gt;
+     * element is also present&nbsp;– where the contributor held that position. Optional, and repeatable to specify
+     * organization identifiers of different types for the same organization.
      * </p>
      * JONIX adds: this list may be empty
      */

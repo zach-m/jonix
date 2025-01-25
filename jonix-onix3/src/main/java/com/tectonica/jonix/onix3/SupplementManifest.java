@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,21 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixCodelist;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.MeasureTypes;
-import com.tectonica.jonix.common.codelist.ProductFormDetails;
-import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixMeasure;
-import com.tectonica.jonix.common.struct.JonixProductIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,10 +39,10 @@ import java.util.function.Consumer;
  * <h1>Supplement manifest composite</h1>
  * <p>
  * An optional group of data elements detailing a simple subset of Group&nbsp;P.1 to specify the Product form, an
- * optional cover, mandatory body and optionally one or more insert manifests for a single Supplement – an additional
- * item supplied with the product at retail that is NOT considered a &lt;ProductPart&gt;, for example a booklet supplied
- * in PDF form that accompanies a downloadable audio product. Each of these cover, body and insert sections within
- * &lt;SupplementManifest&gt; mirrors the structure of the parts of a &lt;ProductionManifest&gt;.
+ * optional cover, mandatory body and optionally one or more insert manifests for a single Supplement&nbsp;– an
+ * additional item supplied with the product at retail that is NOT considered a &lt;ProductPart&gt;, for example a
+ * booklet supplied in PDF form that accompanies a downloadable audio product. Each of these cover, body and insert
+ * sections within &lt;SupplementManifest&gt; mirrors the structure of the parts of a &lt;ProductionManifest&gt;.
  * </p>
  * <p>
  * These manifests may be preceded by a &lt;SequenceNumber&gt; and one or more &lt;SalesOutlet&gt; composites to enable
@@ -300,8 +296,8 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * <p>
      * An empty element that provides a positive indication there is no alternative ‘generic’ supplement to be used in
      * cases where there is a vendor-specific supplement (indicated using &lt;SalesOutlet&gt; with the same
-     * &lt;SequenceNumber&gt; specified within the Supplement manifest). The empty &lt;NoSupplement/&gt; must be used –
-     * and must only be used – when no &lt;BodyManifest&gt; is present within the Supplement manifest.
+     * &lt;SequenceNumber&gt; specified within the Supplement manifest). The empty &lt;NoSupplement/&gt; must be
+     * used&nbsp;– and must only be used&nbsp;– when no &lt;BodyManifest&gt; is present within the Supplement manifest.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -324,8 +320,8 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
      * <p>
      * Normally omitted, but for vendor-specific supplements, the &lt;SalesOutlet&gt; composite lists an outlet for
      * which the supplement is relevant. The &lt;SalesOutlet&gt; composite may be repeated where a single supplement is
-     * relevant for multiple outlets. Where &lt;SalesOutlet&gt; is omitted, the supplement is appropriate for all – or
-     * all other – outlets, depending on the use of the supplement’s Sequence number. See the use of
+     * relevant for multiple outlets. Where &lt;SalesOutlet&gt; is omitted, the supplement is appropriate for all&nbsp;–
+     * or all other&nbsp;– outlets, depending on the use of the supplement’s Sequence number. See the use of
      * &lt;SequenceNumber&gt; and &lt;SalesOutlet&gt; within the Cover resource composite.
      * </p>
      * JONIX adds: this list may be empty

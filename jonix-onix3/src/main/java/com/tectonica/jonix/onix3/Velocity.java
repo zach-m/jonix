@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixVelocity;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -34,7 +38,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Velocity composite</h1>
  * <p>
- * An optional group of data elements which together specify the rate of stock depletion – or equally, a rate of
+ * An optional group of data elements which together specify the rate of stock depletion&nbsp;– or equally, a rate of
  * accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric (<i>eg</i>
  * specifying both a minimum and maximum daily sale).
  * </p>

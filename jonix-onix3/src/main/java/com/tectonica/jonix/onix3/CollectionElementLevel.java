@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.TitleElementLevels;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -40,8 +38,8 @@ import java.util.function.Consumer;
  * </p>
  * <p>
  * When used, the specified level must match the level of a &lt;TitleElement&gt; within the same Collection composite,
- * or –&nbsp;is there is no &lt;TitleDetail&gt; within the Collection composite – the level of a &lt;TitleElement&gt;
- * within Group&nbsp;P.6.
+ * or –&nbsp;is there is no &lt;TitleDetail&gt; within the Collection composite&nbsp;– the level of a
+ * &lt;TitleElement&gt; within Group&nbsp;P.6.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

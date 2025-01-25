@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,26 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixCodelist;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.DiscountCodeTypes;
-import com.tectonica.jonix.common.codelist.EpublicationTechnicalProtections;
-import com.tectonica.jonix.common.codelist.PriceDateRoles;
-import com.tectonica.jonix.common.codelist.PriceIdentifierTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixBatchBonus;
-import com.tectonica.jonix.common.struct.JonixDiscount;
-import com.tectonica.jonix.common.struct.JonixDiscountCoded;
-import com.tectonica.jonix.common.struct.JonixPriceDate;
-import com.tectonica.jonix.common.struct.JonixPriceIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -446,7 +437,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * <p>
      * An ONIX code identifying the currency in which all monetary amounts in an occurrence of the &lt;Price&gt;
      * composite are stated. Optional and non-repeating, but required if the currency is not the default currency for
-     * the message (this default may be set in &lt;DefaultCurrencyCode&gt; – but doing so is deprecated). All ONIX
+     * the message (this default may be set in &lt;DefaultCurrencyCode&gt;&nbsp;– but doing so is deprecated). All ONIX
      * messages must include an explicit statement of the currency used for any prices. To avoid any possible ambiguity,
      * it is strongly recommended that the currency should be stated here for each individual price.
      * </p>

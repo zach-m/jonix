@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.EpublicationLicenseDateRoles;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

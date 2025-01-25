@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,12 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixFlag;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixFlag;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -35,8 +34,8 @@ import java.util.function.Consumer;
  * <p>
  * An empty element that provides a positive indication that there is no alternative ‘generic’ resource to be used in
  * cases where there is a vendor-specific resource (indicated using &lt;SalesOutlet&gt;) with the same
- * &lt;SequenceNumber&gt; specified within the manifest. The empty &lt;NoResource/&gt; must be used – and must only be
- * used – when no &lt;ResourceFileLink&gt; is present.
+ * &lt;SequenceNumber&gt; specified within the manifest. The empty &lt;NoResource/&gt; must be used&nbsp;– and must only
+ * be used&nbsp;– when no &lt;ResourceFileLink&gt; is present.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

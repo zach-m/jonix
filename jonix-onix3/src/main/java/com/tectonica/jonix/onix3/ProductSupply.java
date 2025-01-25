@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -228,8 +232,8 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * <p>
      * The &lt;Market&gt; composite is repeatable, but in almost all cases only a single instance is required. It may be
      * repeated if a non-geographical sales restriction applies only to a <em>part</em> of a geographically-defined
-     * market – for example where a product is sold throughout the European Union, but exclusive to a single retailer in
-     * France.
+     * market&nbsp;– for example where a product is sold throughout the European Union, but exclusive to a single
+     * retailer in France.
      * </p>
      * JONIX adds: this list may be empty
      */

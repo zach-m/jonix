@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,38 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixCodelist;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.AudienceCodeTypes;
-import com.tectonica.jonix.common.codelist.EditionTypes;
-import com.tectonica.jonix.common.codelist.EpublicationTechnicalProtections;
-import com.tectonica.jonix.common.codelist.ExtentTypes;
-import com.tectonica.jonix.common.codelist.IllustrationAndOtherContentTypes;
-import com.tectonica.jonix.common.codelist.LanguageRoles;
-import com.tectonica.jonix.common.codelist.MeasureTypes;
-import com.tectonica.jonix.common.codelist.ProductClassificationTypes;
-import com.tectonica.jonix.common.codelist.ProductContentTypes;
-import com.tectonica.jonix.common.codelist.ProductFormDetails;
-import com.tectonica.jonix.common.codelist.ProductFormFeatureTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixAncillaryContent;
-import com.tectonica.jonix.common.struct.JonixAudience;
-import com.tectonica.jonix.common.struct.JonixAudienceRange;
-import com.tectonica.jonix.common.struct.JonixComplexity;
-import com.tectonica.jonix.common.struct.JonixExtent;
-import com.tectonica.jonix.common.struct.JonixLanguage;
-import com.tectonica.jonix.common.struct.JonixMeasure;
-import com.tectonica.jonix.common.struct.JonixProductClassification;
-import com.tectonica.jonix.common.struct.JonixProductFormFeature;
-import com.tectonica.jonix.common.struct.JonixSubject;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -1024,8 +1003,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of data elements which together represent the name of a person or organization – real or
-     * fictional – that is part of the subject of a product. Repeatable in order to name multiple persons or
+     * An optional group of data elements which together represent the name of a person or organization&nbsp;– real or
+     * fictional&nbsp;– that is part of the subject of a product. Repeatable in order to name multiple persons or
      * organizations.
      * </p>
      * <p>

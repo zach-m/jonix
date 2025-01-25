@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,21 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.EventIdentifierTypes;
-import com.tectonica.jonix.common.codelist.EventOccurrenceDateRoles;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixEventIdentifier;
-import com.tectonica.jonix.common.struct.JonixOccurrenceDate;
-import com.tectonica.jonix.common.struct.JonixWebsite;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -63,8 +59,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;EventOccurrence&gt; from the schema author:
  *
- * Details for a particular occurrence of an event promoting the product &#9679; Added &lt;SupportingResource&gt; at
- * revision 3.0.8 &#9679; Added at revision 3.0.7
+ * Details for a particular occurrence of an event promoting the product &#9679; Added &lt;PostalCode&gt; at revision
+ * 3.1.2 &#9679; Added &lt;SupportingResource&gt; at revision 3.0.8 &#9679; Added at revision 3.0.7
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -156,6 +152,10 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
                 case StreetAddress.refname:
                 case StreetAddress.shortname:
                     streetAddress = new StreetAddress(e);
+                    break;
+                case PostalCode.refname:
+                case PostalCode.shortname:
+                    postalCode = new PostalCode(e);
                     break;
                 case EventIdentifier.refname:
                 case EventIdentifier.shortname:
@@ -295,14 +295,29 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The street address of the named venue. Optional, but typically required for physical events and omitted for a
-     * purely digital event. Do not repeat parts of the address specified in &lt;CountryCode&gt;, &lt;RegionCode&gt;,
-     * &lt;LocationName&gt; or &lt;VenueName&gt;.
+     * purely digital event. Care should be taken that if the Street address is provided, then the Venue name, Street
+     * address, Location name, any Postal code or Region code, and the Country code can be combined into a complete
+     * postal address, without repetition.
      * </p>
      * JONIX adds: this field is optional
      */
     public StreetAddress streetAddress() {
         _initialize();
         return streetAddress;
+    }
+
+    private PostalCode postalCode = PostalCode.EMPTY;
+
+    /**
+     * <p>
+     * The postal code (postcode, zip code <i>etc</i>), forming part of the postal address of the venue. Optional and
+     * non-repeatable if a Street address is present, but otherwise omitted.
+     * </p>
+     * JONIX adds: this field is optional
+     */
+    public PostalCode postalCode() {
+        _initialize();
+        return postalCode;
     }
 
     private ListOfOnixDataCompositeWithKey<EventIdentifier, JonixEventIdentifier,
@@ -407,7 +422,7 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together identify and provide pointers to a website which is related to
-     * the event occurrence – for example a website providing a ticketing service. Repeatable to provide links to
+     * the event occurrence&nbsp;– for example a website providing a ticketing service. Repeatable to provide links to
      * multiple websites.
      * </p>
      * JONIX adds: this list may be empty

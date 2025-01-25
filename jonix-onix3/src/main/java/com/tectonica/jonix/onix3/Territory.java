@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixTerritory;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,12 +49,12 @@ import java.util.function.Consumer;
  * the notes describing the use of &lt;Territory&gt; within Group&nbsp;P.21.
  * </p>
  * <p>
- * Care should be taken to avoid ambiguities (for example two different ‘short descriptions’ – without <i>language</i>
- * attributes or with the same <i>language</i> attribute – marked for use in the same country or region), and to ensure
- * that appropriate descriptions and supporting text are supplied for all countries and regions where the product may be
- * sold. The simplest way to accomplish the latter is to ensure at least one version of the text does not have a
- * territory specified. Where multiple texts of the same type are provided, those without specific &lt;Territory&gt;
- * composites are intended for use only where no appropriate targeted text is present.
+ * Care should be taken to avoid ambiguities (for example two different ‘short descriptions’&nbsp;– without
+ * <i>language</i> attributes or with the same <i>language</i> attribute&nbsp;– marked for use in the same country or
+ * region), and to ensure that appropriate descriptions and supporting text are supplied for all countries and regions
+ * where the product may be sold. The simplest way to accomplish the latter is to ensure at least one version of the
+ * text does not have a territory specified. Where multiple texts of the same type are provided, those without specific
+ * &lt;Territory&gt; composites are intended for use only where no appropriate targeted text is present.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

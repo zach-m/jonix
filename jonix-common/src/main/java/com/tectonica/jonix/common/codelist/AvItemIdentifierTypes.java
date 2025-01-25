@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,7 +20,6 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
 import java.util.Optional;
 
 /*
@@ -43,7 +42,7 @@ interface CodeList241 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist241">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist241">ONIX
  *      Codelist 241 in Reference Guide</a>
  */
 public enum AvItemIdentifierTypes implements OnixCodelist, CodeList241 {
@@ -80,9 +79,11 @@ public enum AvItemIdentifierTypes implements OnixCodelist, CodeList241 {
     ISAN("19", "ISAN"),
 
     /**
-     * Entertainment Identifier Registry DOI
+     * Entertainment Identifier Registry identifier for an audiovisual work, eg a movie, TV series (a DOI beginning
+     * '10.5240/' with a suffix of 21 hexadecimal digits and five hyphens, and without https://doi.org/ or the older
+     * http://dx.doi.org/). See ui.eidr.org/search
      */
-    EIDR_DOI("31", "EIDR DOI");
+    EIDR_Content_ID("31", "EIDR Content ID");
 
     public final String code;
     public final String description;

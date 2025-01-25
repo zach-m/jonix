@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,23 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixCodelist;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.ResourceFileDateRoles;
-import com.tectonica.jonix.common.codelist.ResourceFileDetails;
-import com.tectonica.jonix.common.codelist.ResourceFileFeatureTypes;
-import com.tectonica.jonix.common.codelist.ResourceIdentifierTypes;
-import com.tectonica.jonix.common.struct.JonixResourceFileDate;
-import com.tectonica.jonix.common.struct.JonixResourceFileFeature;
-import com.tectonica.jonix.common.struct.JonixResourceIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -269,8 +263,8 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * <p>
      * An empty element that provides a positive indication that there is no alternative ‘generic’ resource to be used
      * in cases where there is a vendor-specific resource (indicated using &lt;SalesOutlet&gt;) with the same
-     * &lt;SequenceNumber&gt; specified within the manifest. The empty &lt;NoResource/&gt; must be used – and must only
-     * be used – when no &lt;ResourceFileLink&gt; is present.
+     * &lt;SequenceNumber&gt; specified within the manifest. The empty &lt;NoResource/&gt; must be used&nbsp;– and must
+     * only be used&nbsp;– when no &lt;ResourceFileLink&gt; is present.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -293,8 +287,8 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * <p>
      * Normally omitted, but for vendor-specific resources, the &lt;SalesOutlet&gt; composite lists an outlet for which
      * the resource is relevant. The &lt;SalesOutlet&gt; composite may be repeated where a single resource is relevant
-     * for multiple outlets. Where &lt;SalesOutlet&gt; is omitted, the resource is appropriate for all – or all
-     * <em>other</em> – outlets, depending on the use of the resource’s Sequence number.
+     * for multiple outlets. Where &lt;SalesOutlet&gt; is omitted, the resource is appropriate for all&nbsp;– or all
+     * <em>other</em>&nbsp;– outlets, depending on the use of the resource’s Sequence number.
      * </p>
      * <table>
      * <thead>
@@ -306,20 +300,21 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * <tr>
      * <td style="border-style: none">
      * <ul style="margin-top: 0">
-     * <li>sequence number 1 – no sales outlet</li>
-     * <li>sequence number 2 – exclusive to Amazon</li>
-     * <li>sequence number 2 – no sales outlet (<i>ie</i> alternative resource for third parties other than Amazon)</li>
-     * <li>sequence number 3 – no sales outlet</li>
+     * <li>sequence number 1&nbsp;– no sales outlet</li>
+     * <li>sequence number 2&nbsp;– exclusive to Amazon</li>
+     * <li>sequence number 2&nbsp;– no sales outlet (<i>ie</i> alternative resource for third parties other than
+     * Amazon)</li>
+     * <li>sequence number 3&nbsp;– no sales outlet</li>
      * </ul>
      * </td>
      * <td style="border-style: none">
      * <ul style="margin-top: 0; margin-bottom: 0">
-     * <li>sequence number 1 – no sales outlet</li>
-     * <li>sequence number 2 – exclusive to Amazon/Kobo</li>
-     * <li>sequence number 2 – exclusive to publisher’s direct sales</li>
-     * <li>sequence number 2 – no sales outlet and &lt;NoResource/&gt; (<i>ie</i> no alternative resource for third
+     * <li>sequence number 1&nbsp;– no sales outlet</li>
+     * <li>sequence number 2&nbsp;– exclusive to Amazon/Kobo</li>
+     * <li>sequence number 2&nbsp;– exclusive to publisher’s direct sales</li>
+     * <li>sequence number 2&nbsp;– no sales outlet and &lt;NoResource/&gt; (<i>ie</i> no alternative resource for third
      * parties <em>other than</em> Amazon, Kobo and the publisher’s direct sales)</li>
-     * <li>sequence number 3 – no sales outlet</li>
+     * <li>sequence number 3&nbsp;– no sales outlet</li>
      * </ul>
      * </td>
      * </tr>
@@ -415,7 +410,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The content contained in the resource may be described, for manual confirmation – for example ‘Foil block
+     * The content contained in the resource may be described, for manual confirmation&nbsp;– for example ‘Foil block
      * overlay’ or ‘CMYK separations of rear cover’.
      * </p>
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,17 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.PublishingDateRoles;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixPublishingDate;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -284,7 +284,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * composite. Optional, but required in all cases where no sales rights type is associated with the region ‘WORLD’,
      * and in all cases where a sales rights type is associated with ‘WORLD’ but with exclusions that are not themselves
      * associated with a sales rights type. Not repeatable. Note the value ‘00’ should be used to indicate where sales
-     * rights are genuinely unknown, or are unstated for any reason – in this case, data recipients must not assume
+     * rights are genuinely unknown, or are unstated for any reason&nbsp;– in this case, data recipients must not assume
      * anything about the rights that are applicable.
      * </p>
      * JONIX adds: this field is optional
@@ -319,7 +319,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * cities of publication.
      * </p>
      * <p>
-     * Where necessary to avoid ambiguity, a state, province or region may be included – for example
+     * Where necessary to avoid ambiguity, a state, province or region may be included&nbsp;– for example
      * ‘Springfield,&nbsp;IL’.
      * </p>
      * <p>

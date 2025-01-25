@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,22 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixCodelist;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.ResourceFileDateRoles;
-import com.tectonica.jonix.common.codelist.ResourceFileDetails;
-import com.tectonica.jonix.common.codelist.ResourceFileFeatureTypes;
-import com.tectonica.jonix.common.codelist.ResourceIdentifierTypes;
-import com.tectonica.jonix.common.struct.JonixResourceFileDate;
-import com.tectonica.jonix.common.struct.JonixResourceFileFeature;
-import com.tectonica.jonix.common.struct.JonixResourceIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -320,8 +315,8 @@ public class BodyResource implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The content contained in the resource may be described, for manual confirmation – for example ‘Chapters 2 and 3’
-     * or ‘CMYK separations pages 16–31’.
+     * The content contained in the resource may be described, for manual confirmation&nbsp;– for example ‘Chapters 2
+     * and 3’ or ‘CMYK separations pages 16–31’.
      * </p>
      * <p>
      * Note that individual resources do not need to be aligned with the physical organization of the book (<i>eg</i>

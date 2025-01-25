@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -38,7 +42,7 @@ import java.util.function.Consumer;
  * optional within the &lt;Product&gt; record, and is used only when there is a requirement to communicate specification
  * and file manifest detail relating to intermediary services within the supply chain, for example manufacturing on
  * demand, e‑book conversion services or distribution of digital audio. It is not expected to be present in most ONIX
- * messages – though recipients not requiring the data should be able to ignore the entire block if it is supplied.
+ * messages&nbsp;– though recipients not requiring the data should be able to ignore the entire block if it is supplied.
  * </p>
  * <p>
  * When used, the block should normally contain at least one instance of &lt;ProductionManifest&gt;. It may be empty

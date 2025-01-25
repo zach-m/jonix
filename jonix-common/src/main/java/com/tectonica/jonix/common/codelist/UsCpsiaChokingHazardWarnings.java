@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,7 +20,6 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
 import java.util.Optional;
 
 /*

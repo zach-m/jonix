@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,15 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.Languages;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.TextCaseFlags;
-import com.tectonica.jonix.common.codelist.TextScripts;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -40,10 +36,12 @@ import java.util.function.Consumer;
  * &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.
  * </p>
  * <p>
- * This element is deprecated, and intended to be used only when the sending system cannot reliably provide prefixes
- * that are ignored for sorting purposes in a separate data element. If the system <em>can</em> reliably separate
- * prefixes, it should state whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or
- * absent (using &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
+ * This element is deprecated&nbsp;– except in cases where the language of the title does not use explicit definite or
+ * indefinite articles articles (<i>eg</i> The, A). Other than in such languages, the element is intended to be used
+ * only when the sending system cannot reliably provide prefixes that are ignored for sorting purposes in a separate
+ * data element. If the system <em>can</em> reliably separate prefixes, it should state whether a prefix is present
+ * (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
+ * &lt;TitleWithoutPrefix&gt;).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -74,7 +72,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;TitleText&gt; from the schema author:
  *
- * Full text of a title element, but without any subtitle, used only when &lt;TitleWithoutPrefix&gt; and one of
+ * Full text of a title element, without any subtitle, used only when &lt;TitleWithoutPrefix&gt; and one of
  * &lt;TitlePrefix&gt; or &lt;NoPrefix/&gt; cannot be used &#9679; Deprecated from release 3.1 - use either
  * &lt;TitlePrefix&gt; or &lt;NoPrefix&gt;, plus &lt;TitleWithoutPrefix&gt; instead &#9679; Added textscript attribute
  * at revision 3.0.2 &#9679; Added collationkey attribute at revision 3.0.1

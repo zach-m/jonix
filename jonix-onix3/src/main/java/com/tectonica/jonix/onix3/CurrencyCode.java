@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.CurrencyCodes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -36,8 +34,8 @@ import java.util.function.Consumer;
  * <p>
  * An ONIX code identifying the currency in which all monetary amounts in an occurrence of the &lt;Price&gt; composite
  * are stated. Optional and non-repeating, but required if the currency is not the default currency for the message
- * (this default may be set in &lt;DefaultCurrencyCode&gt; – but doing so is deprecated). All ONIX messages must include
- * an explicit statement of the currency used for any prices. To avoid any possible ambiguity, it is strongly
+ * (this default may be set in &lt;DefaultCurrencyCode&gt;&nbsp;– but doing so is deprecated). All ONIX messages must
+ * include an explicit statement of the currency used for any prices. To avoid any possible ambiguity, it is strongly
  * recommended that the currency should be stated here for each individual price.
  * </p>
  * <table border='1' cellpadding='3'>

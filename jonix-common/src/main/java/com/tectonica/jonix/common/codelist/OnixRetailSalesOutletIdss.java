@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,10 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +43,7 @@ interface CodeList139 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -75,9 +75,23 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
+    Akademika("AKA", "Akademika"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
     Akateeminen_Kirjakauppa("AKK", "Akateeminen Kirjakauppa"),
 
     Albertsons("ALB", "Albertson’s"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Allvit("ALV", "Allvit"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -95,6 +109,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Apabi("APA", "Apabi"),
 
     Apple("APC", "Apple"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Ark("ARK", "Ark"),
 
     Asda("ASD", "Asda"),
 
@@ -275,6 +296,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
+    BS_Undervisning("BSU", "BS Undervisning"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
     Cairn("CAI", "Cairn"),
 
     Casa_del_Libro("CDL", "Casa del Libro"),
@@ -351,6 +379,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Dymocks("DYM", "Dymocks"),
 
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    E_kirjasto("EKJ", "E-kirjasto"),
+
     E_Pagine("EPA", "E-Pagine"),
 
     E_Reads("ERD", "E-Reads"),
@@ -358,6 +393,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Early_Learning_Centre("ELC", "Early Learning Centre"),
 
     Eason("ESN", "Eason"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Ebok_Premium("EBK", "Ebok Premium"),
 
     /**
      * www.ebooks.com
@@ -371,19 +413,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     El_Corte_Ingles("ECI", "El Corte Inglés"),
 
-    /**
-     * Only for use in ONIX 3.0 or later
-     * <p>
-     * JONIX adds: Not included in Onix2
-     */
-    E_kirjasto("EKJ", "E-kirjasto"),
-
     Electre("ELE", "Electre"),
-
-    /**
-     * Formerly Axiell Elib.se
-     */
-    Publizon("ELB", "Publizon"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -435,6 +465,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * JONIX adds: Not included in Onix2
      */
     Everybook("EVB", "Everybook"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Fabel("FAB", "Fabel"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -531,6 +568,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
+    Kirja_fi("KRJ", "Kirja.fi"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
     Kirja_Idea("KID", "Kirja&Idea"),
 
     /**
@@ -539,13 +583,6 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * JONIX adds: Not included in Onix2
      */
     Kirjastopalvelu("KPV", "Kirjastopalvelu"),
-
-    /**
-     * Only for use in ONIX 3.0 or later
-     * <p>
-     * JONIX adds: Not included in Onix2
-     */
-    Kirja_fi("KRJ", "Kirja.fi"),
 
     KNFB_Blio("KNB", "KNFB/Blio"),
 
@@ -567,14 +604,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Lidl("LDL", "Lidl"),
+    Legible_com("LEG", "Legible.com"),
 
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Legible_com("LEG", "Legible.com"),
+    Lehtipiste("LTP", "Lehtipiste"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -588,7 +625,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Lehtipiste("LTP", "Lehtipiste"),
+    Lidl("LDL", "Lidl"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -659,6 +696,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Nextory("NXT", "Nextory"),
 
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Norli("NOL", "Norli"),
+
     Numilog("NUM", "Numilog"),
 
     /**
@@ -674,6 +718,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     OLF("OLF", "OLF"),
 
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Osloskolen("OSS", "Osloskolen"),
+
     OverDrive("OVD", "OverDrive"),
 
     /**
@@ -682,16 +733,16 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Oyster("OYS", "Oyster"),
 
     /**
+     * Deprecated
+     */
+    Past_Times("PST", "Past Times"),
+
+    /**
      * Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Perlego("PER", "Perlego"),
-
-    /**
-     * Deprecated
-     */
-    Past_Times("PST", "Past Times"),
 
     Pet_Smart("PTS", "Pet Smart"),
 
@@ -721,6 +772,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Podit_Oy("POY", "Podit Oy"),
 
     /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Podme("PDM", "Podme"),
+
+    /**
      * Only for use in ONIX 3.0 or later. Deprecated
      * <p>
      * JONIX adds: Not included in Onix2
@@ -735,6 +793,11 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * JONIX adds: Not included in Onix2
      */
     Publio("PLO", "Publio"),
+
+    /**
+     * Formerly Axiell Elib.se
+     */
+    Publizon("ELB", "Publizon"),
 
     /**
      * Deprecated
@@ -802,6 +865,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Sesamy("SES", "Sesamy"),
 
     Shanghai_Book_Traders("SBT", "Shanghai Book Traders"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Skolon("SKL", "Skolon"),
 
     Skoobe("SKB", "Skoobe"),
 

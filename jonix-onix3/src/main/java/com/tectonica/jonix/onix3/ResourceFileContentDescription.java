@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.Languages;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -34,8 +32,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Resource file content description</h1>
  * <p>
- * The content contained in the resource may be described, for manual confirmation – for example ‘Foil block overlay’ or
- * ‘CMYK separations of rear cover’.
+ * The content contained in the resource may be described, for manual confirmation&nbsp;– for example ‘Foil block
+ * overlay’ or ‘CMYK separations of rear cover’.
  * </p>
  * <p>
  * Note that individual resources do not need to be aligned with the physical organization of the book (<i>eg</i> with

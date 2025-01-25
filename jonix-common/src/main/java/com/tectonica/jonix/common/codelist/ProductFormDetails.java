@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,10 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -660,6 +660,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Lay_flat_binding("B318", "Lay-flat binding"),
+
+    /**
+     * Hardcover books where the cover is trimmed flush with the trimmed book block
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Flush_cut_binding("B319", "Flush cut binding"),
 
     /**
      * Covers do not use a distinctive stock, but are the same as the body pages. Use for example with Product form BF,
@@ -1520,9 +1527,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Reflowable("E200", "Reflowable"),
 
     /**
-     * Use this and/or code E200 when a particular e-publication type (specified using codes E100 and upwards) is fixed
-     * layout or has both fixed layout and reflowable sections or variants, to indicate which option is included in this
-     * product
+     * Use this and possibly code E200 when a particular e-publication type (specified using codes E100 and upwards) is
+     * fixed layout or has both fixed layout and reflowable sections or variants, to indicate which option is included
+     * in this product
      */
     Fixed_format("E201", "Fixed format"),
 

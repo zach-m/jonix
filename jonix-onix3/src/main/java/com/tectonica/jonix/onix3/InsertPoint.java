@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.common.codelist.InsertPointTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixInsertPoint;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -36,7 +39,7 @@ import java.util.function.Consumer;
  * <h1>Insertion point composite</h1>
  * <p>
  * A group of data elements which together specify <em>where</em> within the body of the product the insert must be
- * positioned. For a physical product, this is normally specified as a page number – either a physical printed page
+ * positioned. For a physical product, this is normally specified as a page number&nbsp;– either a physical printed page
  * number or a ‘logical’ page number which counts all pages in the book block irrespective of any printed page numbers.
  * For physical numbers, an insert may be placed immediately <em>following</em> an even numbered page or
  * <em>preceding</em> an odd numbered page.

@@ -50,7 +50,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.slf4j>1.7.36</version.slf4j>
-        <javadoc.bottom>Copyright &#169; 2012-2024 Zach Melamed. All rights reserved.</javadoc.bottom>
+        <javadoc.bottom>Copyright &#169; 2012-2025 Zach Melamed. All rights reserved.</javadoc.bottom>
     </properties>
 
     <build>

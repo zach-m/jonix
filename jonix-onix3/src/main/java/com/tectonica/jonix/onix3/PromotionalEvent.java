@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,22 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixCodelist;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.ContentAudiences;
-import com.tectonica.jonix.common.codelist.EventIdentifierTypes;
-import com.tectonica.jonix.common.codelist.EventTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixEventIdentifier;
-import com.tectonica.jonix.common.struct.JonixWebsite;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -278,15 +273,15 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * Optional composite that identifies a contributor – a person or corporate body – participating in the promotional
-     * event <em>who is also a contributor to the product, or who is its subject</em> (<i>ie</i> who is fully described
-     * in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or in an instance
-     * of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or&nbsp;P.18, in the same Product record). Repeatable to refer
-     * to multiple contributors.
+     * Optional composite that identifies a contributor&nbsp;– a person or corporate body&nbsp;– participating in the
+     * promotional event <em>who is also a contributor to the product, or who is its subject</em> (<i>ie</i> who is
+     * fully described in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or
+     * in an instance of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or&nbsp;P.18, in the same Product record).
+     * Repeatable to refer to multiple contributors.
      * </p>
      * <p>
-     * Note that an instance of &lt;PromotionalEvent&gt; may also contain one or more &lt;Contributor&gt; composites –
-     * the latter listing participants to the event <em>who are not contributors to the product</em>.
+     * Note that an instance of &lt;PromotionalEvent&gt; may also contain one or more &lt;Contributor&gt;
+     * composites&nbsp;– the latter listing participants to the event <em>who are not contributors to the product</em>.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -363,11 +358,11 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * Optional composite that describes a contributor – a person or corporate body – participating in the promotional
-     * event <em>who is neither a contributor to the product, nor its subject</em> (<i>ie</i> is <em>not</em> described
-     * in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or in an instance
-     * of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or P.18, in the same Product record). Repeatable to identify
-     * multiple contributors.
+     * Optional composite that describes a contributor&nbsp;– a person or corporate body&nbsp;– participating in the
+     * promotional event <em>who is neither a contributor to the product, nor its subject</em> (<i>ie</i> is
+     * <em>not</em> described in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7
+     * or&nbsp;P.18, or in an instance of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or P.18, in the same Product
+     * record). Repeatable to identify multiple contributors.
      * </p>
      * JONIX adds: this list may be empty
      */

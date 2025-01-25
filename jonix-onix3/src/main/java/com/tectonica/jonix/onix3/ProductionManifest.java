@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,16 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixProductIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -189,8 +190,8 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </ul>
      * <p>
      * Note that the high-level specifications such as the Product form and size are carried in
-     * <a href="#onixmessage_product_b1">Block 1</a> – the manifest specifications are more detailed in nature, and must
-     * be consistent with the high-level specifications.
+     * <a href="#onixmessage_product_b1">Block 1</a>&nbsp;– the manifest specifications are more detailed in nature, and
+     * must be consistent with the high-level specifications.
      * </p>
      * <p>
      * Technical specifications in the manifest can be provided either as a pre-defined and named ‘bundle’ encompassing
@@ -222,8 +223,8 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </ul>
      * <p>
      * Note that the high-level specifications such as the Product form or overall size are carried in
-     * <a href="#onixmessage_product_b1">Block 1</a> – the manifest specifications are more detailed in nature, and must
-     * be consistent with the high-level specifications.
+     * <a href="#onixmessage_product_b1">Block 1</a>&nbsp;– the manifest specifications are more detailed in nature, and
+     * must be consistent with the high-level specifications.
      * </p>
      * <p>
      * Technical specifications in the manifest can be provided either as a pre-defined and named ‘bundle’ encompassing
@@ -233,8 +234,8 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * use the individually-specified details.
      * </p>
      * <p>
-     * The composite is optional – it may be omitted where the Product or Product part has no cover – and is not
-     * repeatable.
+     * The composite is optional&nbsp;– it may be omitted where the Product or Product part has no cover&nbsp;– and is
+     * not repeatable.
      * </p>
      * <p>
      * </p>
@@ -277,8 +278,8 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * </ul>
      * <p>
      * Note that the high-level specifications such as the Product form, trimmed page size or file type for final
-     * delivery are carried in <a href="#onixmessage_product_b1">Block&nbsp;1</a> – the manifest specifications are more
-     * detailed in nature, and must be consistent with the high-level specifications.
+     * delivery are carried in <a href="#onixmessage_product_b1">Block&nbsp;1</a>&nbsp;– the manifest specifications are
+     * more detailed in nature, and must be consistent with the high-level specifications.
      * </p>
      * <p>
      * Technical specifications in the manifest can be provided either as a pre-defined and named ‘bundle’ encompassing
@@ -288,7 +289,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
      * use the individually-specified details.
      * </p>
      * <p>
-     * The composite is optional – it may be omitted where the Product or Product part has no inserts – and is
+     * The composite is optional&nbsp;– it may be omitted where the Product or Product part has no inserts&nbsp;– and is
      * repeatable to provide manifest details for multiple inserts.
      * </p>
      * JONIX adds: this list may be empty
@@ -304,7 +305,7 @@ public class ProductionManifest implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements detailing a simple subset of Group&nbsp;P.1 to specify the Product form, an
-     * optional cover, mandatory body and optionally one or more insert manifests for a single Supplement – an
+     * optional cover, mandatory body and optionally one or more insert manifests for a single Supplement&nbsp;– an
      * additional item supplied with the product at retail that is NOT considered a &lt;ProductPart&gt;, for example a
      * booklet supplied in PDF form that accompanies a downloadable audio product. Each of these cover, body and insert
      * sections within &lt;SupplementManifest&gt; mirrors the structure of the parts of a &lt;ProductionManifest&gt;.

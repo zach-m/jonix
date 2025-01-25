@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixProductIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -55,8 +58,8 @@ import java.util.function.Consumer;
  * </p>
  * <p>
  * Note that for some identifiers such as ISBN, punctuation (typically hyphens or spaces for ISBNs) is used to enhance
- * readability when printed, but the punctuation is dropped when carried in ONIX data. But for other identifiers – for
- * example DOI – the punctuation is an integral part of the identifier and must always be included.
+ * readability when printed, but the punctuation is dropped when carried in ONIX data. But for other identifiers&nbsp;–
+ * for example DOI&nbsp;– the punctuation is an integral part of the identifier and must always be included.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

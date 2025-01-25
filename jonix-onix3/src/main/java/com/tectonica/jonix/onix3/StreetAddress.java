@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.Languages;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -35,8 +33,9 @@ import java.util.function.Consumer;
  * <h1>Venue street address</h1>
  * <p>
  * The street address of the named venue. Optional, but typically required for physical events and omitted for a purely
- * digital event. Do not repeat parts of the address specified in &lt;CountryCode&gt;, &lt;RegionCode&gt;,
- * &lt;LocationName&gt; or &lt;VenueName&gt;.
+ * digital event. Care should be taken that if the Street address is provided, then the Venue name, Street address,
+ * Location name, any Postal code or Region code, and the Country code can be combined into a complete postal address,
+ * without repetition.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -71,10 +70,17 @@ import java.util.function.Consumer;
  *
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link SupplyContact}&gt;</li>
+ * <li>&lt;{@link ProductContact}&gt;</li>
  * <li>&lt;{@link EventOccurrence}&gt;</li>
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link SupplyContact} ⯈
+ * {@link StreetAddress}</li>
+ * <li>{@link Product} ⯈ {@link PublishingDetail} ⯈ {@link ProductContact} ⯈ {@link StreetAddress}</li>
+ * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link MarketPublishingDetail} ⯈ {@link ProductContact} ⯈
+ * {@link StreetAddress}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventOccurrence} ⯈
  * {@link StreetAddress}</li>
  * </ul>

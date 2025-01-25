@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,10 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +43,7 @@ interface CodeList158 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -67,9 +67,9 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      */
     Contributor_picture("04", "Contributor picture"),
 
-    Series_image_artwork("05", "Series image / artwork"),
+    Collection_image_artwork("05", "Collection image / artwork"),
 
-    Series_logo("06", "Series logo"),
+    Collection_logo("06", "Collection logo"),
 
     /**
      * For example, an isolated image from the front cover (without text), image of a completed jigsaw
@@ -322,7 +322,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
 
     /**
      * Document giving full contact detail, including postal addresses, for product safety contacts at publisher or
-     * supplier
+     * supplier. Deprecated, except for use in ONIX 3.0
      * <p>
      * JONIX adds: Not included in Onix2
      */

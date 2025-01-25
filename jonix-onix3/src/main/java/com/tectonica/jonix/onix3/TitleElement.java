@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixTitleElement;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -321,10 +325,12 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.
      * </p>
      * <p>
-     * This element is deprecated, and intended to be used only when the sending system cannot reliably provide prefixes
-     * that are ignored for sorting purposes in a separate data element. If the system <em>can</em> reliably separate
-     * prefixes, it should state whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;)
-     * or absent (using &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
+     * This element is deprecated&nbsp;– except in cases where the language of the title does not use explicit definite
+     * or indefinite articles articles (<i>eg</i> The, A). Other than in such languages, the element is intended to be
+     * used only when the sending system cannot reliably provide prefixes that are ignored for sorting purposes in a
+     * separate data element. If the system <em>can</em> reliably separate prefixes, it should state whether a prefix is
+     * present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
+     * &lt;TitleWithoutPrefix&gt;).
      * </p>
      * JONIX adds: this field is optional
      */

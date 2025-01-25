@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,7 +20,6 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
 import java.util.Optional;
 
 /*
@@ -43,7 +42,7 @@ interface CodeList239 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist239">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist239">ONIX
  *      Codelist 239 in Reference Guide</a>
  */
 public enum SupplyContactRoles implements OnixCodelist, CodeList239 {
@@ -61,8 +60,8 @@ public enum SupplyContactRoles implements OnixCodelist, CodeList239 {
 
     /**
      * Eg for EU Deforestation regulation (EUDR) compliance where the supplier acts on behalf of the publisher or
-     * publisher representtive as an importer into the EU. See https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=
-     * CELEX%3A32023R1115&amp;qid=1687867231461
+     * publisher representtive as an importer into the EU. See
+     * https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1115&amp;qid=1687867231461
      */
     Product_raw_materials_contact("11", "Product raw materials contact"),
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixComposite.OnixDataCompositeWithKey;
-import com.tectonica.jonix.common.codelist.LicenseExpressionTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixEpubLicenseExpression;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -220,8 +223,8 @@ public class EpubLicenseExpression
     /**
      * <p>
      * A short free-text name for a license expression type, when the code in &lt;EpubLicenseExpressionType&gt; provides
-     * insufficient detail – for example when a machine-readable license is expressed using a particular proprietary
-     * encoding scheme. Optional and non-repeating, and must be included when (and only when) the
+     * insufficient detail&nbsp;– for example when a machine-readable license is expressed using a particular
+     * proprietary encoding scheme. Optional and non-repeating, and must be included when (and only when) the
      * &lt;EpubLicenseExpressionType&gt; element indicates the expression is encoded in a proprietary way.
      * </p>
      * JONIX adds: this field is optional

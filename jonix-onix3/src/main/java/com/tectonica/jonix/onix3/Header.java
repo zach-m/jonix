@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,15 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixHeader;
-import com.tectonica.jonix.common.OnixVersion;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -37,9 +39,7 @@ import java.util.function.Consumer;
  * <h1>Header composite</h1>
  * <p>
  * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books message to
- * provide metadata about the message itself, and non-repeating.<del datetime="2023-03-06">In ONIX&nbsp;3.0, a number of
- * redundant elements have been deleted, and the Sender and Addressee structures and the name and format of the
- * &lt;SentDateTime&gt; element have been made consistent with other current ONIX formats.</del>
+ * provide metadata about the message itself, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,22 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixProduct;
-import com.tectonica.jonix.common.OnixVersion;
-import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
-import com.tectonica.jonix.common.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixBarcode;
-import com.tectonica.jonix.common.struct.JonixProductIdentifier;
-import com.tectonica.jonix.common.struct.JonixRecordSourceIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -54,9 +49,10 @@ import java.util.function.Consumer;
  * carrying data that identifies the record and the product to which it refers. This is followed by up to eight
  * ‘blocks’, each of which is optional. Of these blocks, Blocks 1 to 5, plus 7 and 8 are not repeatable. Block 6
  * <em>appears</em> to be repeatable, but it is often more useful to think of a singular Block 6 comprising all repeats
- * of its contained &lt;ProductSupply&gt; composites. In special circumstances – with partial (‘Block’) updates and only
- * when &lt;MarketReference&gt; is used to label each individual &lt;ProductSupply&gt; composite – Block&nbsp;6 can be
- * thought of as a truly repeatable block, each repeat consisting of a single &lt;ProductSupply&gt; composite.
+ * of its contained &lt;ProductSupply&gt; composites. In special circumstances&nbsp;– with partial (‘Block’) updates and
+ * only when &lt;MarketReference&gt; is used to label each individual &lt;ProductSupply&gt; composite&nbsp;–
+ * Block&nbsp;6 can be thought of as a truly repeatable block, each repeat consisting of a single &lt;ProductSupply&gt;
+ * composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -260,14 +256,14 @@ public class Product implements OnixProduct, Serializable {
      * For every product, you must choose a single record reference which will uniquely identify the Information record
      * which you send out about that product, and which will remain as its permanent identifier every time you send an
      * update. It doesn’t matter what reference you choose, provided that it is unique and permanent. This record
-     * reference doesn’t identify the <em>product</em> – even though you may choose to use the ISBN or another product
-     * identifier as a part of your record reference – it identifies <em>your information record about the product</em>,
-     * so that the person to whom you are sending an update can match it with what you have previously sent. It is not
-     * recommended to use a product identifier as the whole of the record reference. A good way of generating references
-     * which are not part of a recognized product identification scheme but which can be guaranteed to be unique is to
-     * prefix a product identifier or a meaningless row ID from your internal database with a reversed Internet domain
-     * name which is registered to your organization (reversal prevents the record reference appearing to be a
-     * resolvable URL). Alternatively, use a UUID.
+     * reference doesn’t identify the <em>product</em>&nbsp;– even though you may choose to use the ISBN or another
+     * product identifier as a part of your record reference&nbsp;– it identifies <em>your information record about the
+     * product</em>, so that the person to whom you are sending an update can match it with what you have previously
+     * sent. It is not recommended to use a product identifier as the whole of the record reference. A good way of
+     * generating references which are not part of a recognized product identification scheme but which can be
+     * guaranteed to be unique is to prefix a product identifier or a meaningless row ID from your internal database
+     * with a reversed Internet domain name which is registered to your organization (reversal prevents the record
+     * reference appearing to be a resolvable URL). Alternatively, use a UUID.
      * </p>
      * <p>
      * This field is mandatory and non-repeating.
@@ -319,8 +315,8 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * Note that for some identifiers such as ISBN, punctuation (typically hyphens or spaces for ISBNs) is used to
      * enhance readability when printed, but the punctuation is dropped when carried in ONIX data. But for other
-     * identifiers – for example DOI – the punctuation is an integral part of the identifier and must always be
-     * included.
+     * identifiers&nbsp;– for example DOI&nbsp;– the punctuation is an integral part of the identifier and must always
+     * be included.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -478,7 +474,7 @@ public class Product implements OnixProduct, Serializable {
      * optional within the &lt;Product&gt; record, and is used only when there is a requirement to communicate
      * specification and file manifest detail relating to intermediary services within the supply chain, for example
      * manufacturing on demand, e‑book conversion services or distribution of digital audio. It is not expected to be
-     * present in most ONIX messages – though recipients not requiring the data should be able to ignore the entire
+     * present in most ONIX messages&nbsp;– though recipients not requiring the data should be able to ignore the entire
      * block if it is supplied.
      * </p>
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,21 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixCodelist;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.SpecificationDetails;
-import com.tectonica.jonix.common.codelist.SpecificationFeatureTypes;
-import com.tectonica.jonix.common.struct.JonixSpecificationBundleName;
-import com.tectonica.jonix.common.struct.JonixSpecificationFeature;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -51,8 +47,8 @@ import java.util.function.Consumer;
  * </ul>
  * <p>
  * Note that the high-level specifications such as the Product form or overall size are carried in
- * <a href="#onixmessage_product_b1">Block 1</a> – the manifest specifications are more detailed in nature, and must be
- * consistent with the high-level specifications.
+ * <a href="#onixmessage_product_b1">Block 1</a>&nbsp;– the manifest specifications are more detailed in nature, and
+ * must be consistent with the high-level specifications.
  * </p>
  * <p>
  * Technical specifications in the manifest can be provided either as a pre-defined and named ‘bundle’ encompassing all
@@ -62,7 +58,8 @@ import java.util.function.Consumer;
  * individually-specified details.
  * </p>
  * <p>
- * The composite is optional – it may be omitted where the Product or Product part has no cover – and is not repeatable.
+ * The composite is optional&nbsp;– it may be omitted where the Product or Product part has no cover&nbsp;– and is not
+ * repeatable.
  * </p>
  * <p>
  * </p>

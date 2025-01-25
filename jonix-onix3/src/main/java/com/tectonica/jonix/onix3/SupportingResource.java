@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,18 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixCodelist;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.ContentAudiences;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.ResourceFeatureTypes;
-import com.tectonica.jonix.common.struct.JonixResourceFeature;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -258,8 +257,8 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * A number which specifies a single overall sequence of supporting resources. Optional and non-repeating. It is
      * strongly recommended that if <em>any</em> occurrence of the &lt;SupportingResource&gt; composite of a specific
      * &lt;ResourceContentType&gt; carries a &lt;SequenceNumber&gt;, then all of that type should carry a
-     * &lt;SequenceNumber&gt; – though there is no requirement to number supporting resources where there is a single
-     * instance of that type.
+     * &lt;SequenceNumber&gt;&nbsp;– though there is no requirement to number supporting resources where there is a
+     * single instance of that type.
      * </p>
      * JONIX adds: this field is optional
      */

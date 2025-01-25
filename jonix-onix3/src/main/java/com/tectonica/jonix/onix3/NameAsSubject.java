@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,19 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
-import com.tectonica.jonix.common.codelist.PersonOrganizationDateRoles;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixNameIdentifier;
-import com.tectonica.jonix.common.struct.JonixSubjectDate;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -40,8 +38,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Name as subject composite</h1>
  * <p>
- * An optional group of data elements which together represent the name of a person or organization – real or fictional
- * – that is part of the subject of a product. Repeatable in order to name multiple persons or organizations.
+ * An optional group of data elements which together represent the name of a person or organization&nbsp;– real or
+ * fictional&nbsp;– that is part of the subject of a product. Repeatable in order to name multiple persons or
+ * organizations.
  * </p>
  * <p>
  * Each instance of the composite must contain <em>either</em>:

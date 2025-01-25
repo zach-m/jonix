@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,21 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.StockQuantityCodeTypes;
-import com.tectonica.jonix.common.codelist.SupplierIdentifierTypes;
-import com.tectonica.jonix.common.struct.JonixLocationIdentifier;
-import com.tectonica.jonix.common.struct.JonixOnOrderDetail;
-import com.tectonica.jonix.common.struct.JonixStockQuantityCoded;
-import com.tectonica.jonix.common.struct.JonixVelocity;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -238,8 +234,8 @@ public class Stock implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The quantity of stock on hand but unavailable to fulfil new orders for any reason – for example because the stock
-     * is reserved to fulfill existing orders or frozen to prevent dispatch. Optional and non-repeating.
+     * The quantity of stock on hand but unavailable to fulfil new orders for any reason&nbsp;– for example because the
+     * stock is reserved to fulfill existing orders or frozen to prevent dispatch. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -354,8 +350,8 @@ public class Stock implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of data elements which together specify the rate of stock depletion – or equally, a rate of
-     * accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric
+     * An optional group of data elements which together specify the rate of stock depletion&nbsp;– or equally, a rate
+     * of accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric
      * (<i>eg</i> specifying both a minimum and maximum daily sale).
      * </p>
      * JONIX adds: this list may be empty

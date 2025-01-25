@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,16 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixProductContactIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -58,9 +59,10 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProductContact&gt; from the schema author:
  *
- * Details of a organization responsible for answering enquiries about the product &#9679; Added &lt;FaxNumber&gt;,
- * changed cardinality of &lt;EmailAddress&gt; at release 3.1 &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
- * &#9679; Added at revision 3.0.1
+ * Details of a organization responsible for answering enquiries about the product &#9679; Added &lt;StreetAddress&gt;,
+ * &lt;LocationName&gt;, &lt;PostalCode&gt;, &lt;RegionCode&gt; and &lt;CountryCode&gt; at revision 3.1.2 &#9679; Added
+ * &lt;FaxNumber&gt;, changed cardinality of &lt;EmailAddress&gt; at release 3.1 &#9679; Added &lt;TelephoneNumber&gt;
+ * at revision 3.0.8 &#9679; Added at revision 3.0.1
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -148,6 +150,26 @@ public class ProductContact implements OnixSuperComposite, Serializable {
                 case ContactName.shortname:
                     contactName = new ContactName(e);
                     break;
+                case StreetAddress.refname:
+                case StreetAddress.shortname:
+                    streetAddress = new StreetAddress(e);
+                    break;
+                case LocationName.refname:
+                case LocationName.shortname:
+                    locationName = new LocationName(e);
+                    break;
+                case PostalCode.refname:
+                case PostalCode.shortname:
+                    postalCode = new PostalCode(e);
+                    break;
+                case RegionCode.refname:
+                case RegionCode.shortname:
+                    regionCode = new RegionCode(e);
+                    break;
+                case CountryCode.refname:
+                case CountryCode.shortname:
+                    countryCode = new CountryCode(e);
+                    break;
                 case TelephoneNumber.refname:
                 case TelephoneNumber.shortname:
                     telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
@@ -194,8 +216,8 @@ public class ProductContact implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code which identifies the role played by the product contact in relation to the product – for example
-     * answering enquiries related to sales or to promotion.
+     * An ONIX code which identifies the role played by the product contact in relation to the product&nbsp;– for
+     * example answering enquiries related to sales or to promotion.
      * </p>
      * JONIX adds: this field is required
      */
@@ -249,6 +271,82 @@ public class ProductContact implements OnixSuperComposite, Serializable {
     public ContactName contactName() {
         _initialize();
         return contactName;
+    }
+
+    private StreetAddress streetAddress = StreetAddress.EMPTY;
+
+    /**
+     * <p>
+     * A text field giving a street address and forming the first part of the postal address of the product contact
+     * organization. Optional and non-repeatable. Care should be taken that the Product contact name (plus optionally
+     * the Contact name), Street address, Location name, any Postal code or Region code, and the Country code can be
+     * combined into a complete postal address, without repetition.
+     * </p>
+     * JONIX adds: this field is optional
+     */
+    public StreetAddress streetAddress() {
+        _initialize();
+        return streetAddress;
+    }
+
+    private LocationName locationName = LocationName.EMPTY;
+
+    /**
+     * <p>
+     * The name of a city or town location, forming part of the postal address of the product contact organization.
+     * Mandatory and non-repeatable if a Street address is present, but otherwise omitted.
+     * </p>
+     * JONIX adds: this field is optional
+     */
+    public LocationName locationName() {
+        _initialize();
+        return locationName;
+    }
+
+    private PostalCode postalCode = PostalCode.EMPTY;
+
+    /**
+     * <p>
+     * The postal code (postcode, zip code <i>etc</i>), forming part of the postal address of the product contact
+     * organization. Optional and non-repeatable if a Street address is present, but otherwise omitted.
+     * </p>
+     * JONIX adds: this field is optional
+     */
+    public PostalCode postalCode() {
+        _initialize();
+        return postalCode;
+    }
+
+    private RegionCode regionCode = RegionCode.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code identifying the region within which the product contact organization is located. Optional and
+     * non-repeatable if a Street address is present, but otherwise omitted.
+     * </p>
+     * <p>
+     * For some addresses, a Region code is useful in addition to the Postal code and Country code. In other addresses,
+     * a region is unnecessary because it is clearly encoded within the Postal code.
+     * </p>
+     * JONIX adds: this field is optional
+     */
+    public RegionCode regionCode() {
+        _initialize();
+        return regionCode;
+    }
+
+    private CountryCode countryCode = CountryCode.EMPTY;
+
+    /**
+     * <p>
+     * An ONIX code identifying the country within which the product contact organization is located. Mandatory and
+     * non-repeatable if a Street address is present, but otherwise omitted.
+     * </p>
+     * JONIX adds: this field is optional
+     */
+    public CountryCode countryCode() {
+        _initialize();
+        return countryCode;
     }
 
     private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();

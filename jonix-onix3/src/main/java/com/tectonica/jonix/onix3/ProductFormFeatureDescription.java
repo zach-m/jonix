@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.Languages;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +41,7 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 500 characters</td>
+ * <td>Variable length text, suggested maximum length 1000 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -115,7 +113,7 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
      * This is the raw content of ProductFormFeatureDescription. Could be null if {@code exists() == false}. Use
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text, suggested maximum length 500 characters
+     * Raw Format: Variable length text, suggested maximum length 1000 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

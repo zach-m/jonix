@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,10 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +43,7 @@ interface CodeList79 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -406,7 +406,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * for each point are space-separated, and multiple points are comma-separated. Multiple plots are semicolon
      * separated, and must be in the same country. (Any supplied species name and date must also apply to all plots in
      * the list.) (Note these GPS coordinates use decimal parts of a degree, not minutes and seconds.) ONE point defines
-     * the centre of a 4 hectare plot (200m &#215; 200m). TWO points define a line joining opposite corners of a
+     * the center of a 4 hectare plot (200m &#215; 200m). TWO points define a line joining opposite corners of a
      * 'square' plot bounded by two lines of latitude and two of longitude. THREE or more points define a simple polygon
      * outlining the plot. Plot types with one, two or multiple points must not be mixed in a list of multiple plots.
      * Lines and polygon edges may not cross a national boundary or the 180&#176; line of longitude. Polygon edges may
@@ -438,10 +438,10 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * For EU Deforestation Regulations, &lt;ProductFormFeatureValue&gt; is the 'Due Diligence Statement' (DDS) document
      * reference recorded by the publisher or other organization responsible for the product when a due diligence
-     * statement is uploaded to the EU's portal, expected to be in a format like '24FRXVV3VOS991'. This references the
-     * DDS for the product as a whole. There may also be a UUID acting as an internal or proprietary document reference,
-     * for which use &lt;ProductFormFeatureDescription&gt;. &lt;ProductFormFeature&gt; should be repeated if multiple
-     * DDSs apply to the product as a whole. See
+     * statement is uploaded to the EU's portal, expected to be in a format like '24FRXVV3VOS991' (with an optional
+     * suffix '+' and a 'password'). This references the DDS for the product as a whole. There may also be a UUID acting
+     * as an internal or proprietary document reference, for which use &lt;ProductFormFeatureDescription&gt;.
+     * &lt;ProductFormFeature&gt; should be repeated if multiple DDSs apply to the product as a whole. See
      * https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en Only for
      * use in ONIX 3.0 or later
      * <p>
@@ -482,6 +482,18 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * JONIX adds: Not included in Onix2
      */
     EUDR_deforestation_free_attestation("53", "EUDR deforestation-free attestation"),
+
+    /**
+     * For EU Deforestation regulations, a 'flag' indicating that no (in-EU) supplier has stock that was not physically
+     * present within the EU prior to the enforcement date of the Regulation, and that documentation to verify this is
+     * available upon request. Presence of code 54 acts as a positive attestation that all copies of the product held at
+     * distributors and wholesalers within the EU pre-dates the enforcement date, but the attestation is meaningful only
+     * if there is no pre-existing DDS for the product as a whole (presence of a DDS reference already attests the
+     * product is compliant with the regulation and that documentation is available). Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EUDR_stock_present_attestation("54", "EUDR stock present attestation"),
 
     /**
      * DEPRECATED - use code 12 and List 143

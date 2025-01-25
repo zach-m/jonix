@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,19 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.CollectionIdentifierTypes;
-import com.tectonica.jonix.common.codelist.CollectionSequenceTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.struct.JonixCollectionIdentifier;
-import com.tectonica.jonix.common.struct.JonixCollectionSequence;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -308,8 +306,8 @@ public class Collection implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional and repeatable group of data elements which indicates some ordinal position of a product within a
-     * collection. Different ordinal positions may be specified using separate repeats of the composite – for example, a
-     * product may be published first while also being third in narrative order within a collection.
+     * collection. Different ordinal positions may be specified using separate repeats of the composite&nbsp;– for
+     * example, a product may be published first while also being third in narrative order within a collection.
      * </p>
      * JONIX adds: this list may be empty
      */

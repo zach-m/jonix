@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,13 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.Languages;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -39,7 +37,8 @@ import java.util.function.Consumer;
  * publication.
  * </p>
  * <p>
- * Where necessary to avoid ambiguity, a state, province or region may be included – for example ‘Springfield,&nbsp;IL’.
+ * Where necessary to avoid ambiguity, a state, province or region may be included&nbsp;– for example
+ * ‘Springfield,&nbsp;IL’.
  * </p>
  * <p>
  * A place of publication is normally given in the form in which it appears on the title page. If the place name appears

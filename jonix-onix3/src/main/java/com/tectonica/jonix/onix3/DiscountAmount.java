@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,12 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.OnixElement;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-
 import java.io.Serializable;
 import java.util.function.Consumer;
+import com.tectonica.jonix.common.JPU;
+import com.tectonica.jonix.common.OnixElement;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -35,7 +34,7 @@ import java.util.function.Consumer;
  * <p>
  * A discount expressed as an absolute amount per copy. Optional and non-repeating; but either &lt;DiscountPercent&gt;
  * or &lt;DiscountAmount&gt; or both must be present in each occurrence of the &lt;Discount&gt; composite. Note that
- * when both are present, they represent two different expressions of the same discount – the discounts are not
+ * when both are present, they represent two different expressions of the same discount&nbsp;– the discounts are not
  * cumulative.
  * </p>
  * <table border='1' cellpadding='3'>
