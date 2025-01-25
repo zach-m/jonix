@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,17 +20,18 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 184 (EU Toy Safety Directive hazard warning type)
+ * marker interface to assist in IDE navigation to code-list 184 (EU General Product Safety Regulation and Toy Safety
+ * Directive hazard warning type)
  */
 interface CodeList184 {
 }
@@ -38,15 +39,16 @@ interface CodeList184 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 184</b>
  * <p>
- * Description: EU Toy Safety Directive hazard warning type
+ * Description: EU General Product Safety Regulation and Toy Safety Directive hazard warning type
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist184">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist184">ONIX
  *      Codelist 184 in Reference Guide</a>
  */
-public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, CodeList184 {
+public enum EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes
+    implements OnixCodelist, CodeList184 {
     /**
      * Use to provide positive indication that no warnings are applicable
      */
@@ -111,7 +113,7 @@ public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, Code
     public final String code;
     public final String description;
 
-    EuToySafetyDirectiveHazardWarningTypes(String code, String description) {
+    EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -126,16 +128,16 @@ public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, Code
         return description;
     }
 
-    private static volatile Map<String, EuToySafetyDirectiveHazardWarningTypes> map;
+    private static volatile Map<String, EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes> map;
 
-    private static Map<String, EuToySafetyDirectiveHazardWarningTypes> map() {
-        Map<String, EuToySafetyDirectiveHazardWarningTypes> result = map;
+    private static Map<String, EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes> map() {
+        Map<String, EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes> result = map;
         if (result == null) {
-            synchronized (EuToySafetyDirectiveHazardWarningTypes.class) {
+            synchronized (EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes.class) {
                 result = map;
                 if (result == null) {
                     result = new HashMap<>();
-                    for (EuToySafetyDirectiveHazardWarningTypes e : values()) {
+                    for (EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes e : values()) {
                         result.put(e.code, e);
                     }
                     map = result;
@@ -145,14 +147,15 @@ public enum EuToySafetyDirectiveHazardWarningTypes implements OnixCodelist, Code
         return result;
     }
 
-    public static EuToySafetyDirectiveHazardWarningTypes byCode(String code) {
+    public static EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
         return map().get(code);
     }
 
-    public static Optional<EuToySafetyDirectiveHazardWarningTypes> byCodeOptional(String code) {
+    public static Optional<EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes>
+        byCodeOptional(String code) {
         return Optional.ofNullable(byCode(code));
     }
 

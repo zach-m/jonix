@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,10 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +43,7 @@ interface CodeList44 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -188,9 +188,11 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     Identifiant_Editeur_Electre("28", "Identifiant Editeur Electre"),
 
     /**
-     * DOI used in EIDR party registry, for example '10.5237/C9F6-F41F' (Sam Raimi). See http://eidr.org
+     * DOI used in EIDR party registry (a DOI beginning '10.5237/' with a suffix of 8 hexadecimal digits and one hyphen,
+     * and without the https://doi.org/ or the older http://dx.doi.org/), for example '10.5237/C9F6-F41F' (Sam Raimi).
+     * See http://eidr.org
      */
-    EIDR_Party_DOI("29", "EIDR Party DOI"),
+    EIDR_Party_ID("29", "EIDR Party ID"),
 
     /**
      * French Electre imprint Identifier
@@ -297,7 +299,16 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    SIRET("44", "SIRET");
+    SIRET("44", "SIRET"),
+
+    /**
+     * Chinese Participant identifier on the Publishing and distribution public service platform. 12-digits (or 11
+     * digits plus X), usually presented with a / and hyphens dividing the number into groups of three, four and four
+     * digits plus a check digit, but in ONIX the / and hyphens should be omitted. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Chinese_Participant_identifier("45", "Chinese Participant identifier");
 
     public final String code;
     public final String description;

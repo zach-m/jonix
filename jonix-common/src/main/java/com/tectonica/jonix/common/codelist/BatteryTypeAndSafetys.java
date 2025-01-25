@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,10 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -45,7 +45,7 @@ interface CodeList242 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist242">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist242">ONIX
  *      Codelist 242 in Reference Guide</a>
  */
 public enum BatteryTypeAndSafetys implements OnixCodelist, CodeList242 {
@@ -121,7 +121,7 @@ public enum BatteryTypeAndSafetys implements OnixCodelist, CodeList242 {
 
     /**
      * For all specific battery chemistries, &lt;ProductFormFeatureDescription&gt; may optionally describe the battery
-     * construction - for example the nunber of individual cells per battery and any other physical details, eg '4 x
+     * construction - for example the number of individual cells per battery and any other physical details, eg '4 x
      * pouch cells'
      */
     Lithium_ion("21", "Lithium-ion"),

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,8 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +45,7 @@ interface CodeList262 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist262">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist262">ONIX
  *      Codelist 262 in Reference Guide</a>
  */
 public enum CarbonGhgEmissionsCertificationSchemes implements OnixCodelist, CodeList262 {
@@ -69,9 +71,21 @@ public enum CarbonGhgEmissionsCertificationSchemes implements OnixCodelist, Code
     ClimatePartner("104", "ClimatePartner"),
 
     /**
-     * See www.ecolabel.eu
+     * See https://www.ecolabel.eu
      */
     EU_Ecolabel("105", "EU Ecolabel"),
+
+    /**
+     * Per book CO&#8322;e calculator, used widely in Denmark and as the basis of the IPA's Publishing 2030 Accelerator
+     * project's calculator. See https://www.climatecalc.eu and
+     * https://sdg.internationalpublishers.org/cop26-accelerator/
+     */
+    ClimateCalc("201", "ClimateCalc"),
+
+    /**
+     * Per book CO&#8322;e calculator from Booknet Canada, see https://www.booknetcanada.ca/sustainable-publishing-tools
+     */
+    Canadian_SPT_Carbon_calculator("202", "Canadian SPT Carbon calculator"),
 
     /**
      * Indicates the product is certified as vegan (does not use animal products, for example in binding or adhesives).
@@ -97,16 +111,30 @@ public enum CarbonGhgEmissionsCertificationSchemes implements OnixCodelist, Code
         return description;
     }
 
+    private static volatile Map<String, CarbonGhgEmissionsCertificationSchemes> map;
+
+    private static Map<String, CarbonGhgEmissionsCertificationSchemes> map() {
+        Map<String, CarbonGhgEmissionsCertificationSchemes> result = map;
+        if (result == null) {
+            synchronized (CarbonGhgEmissionsCertificationSchemes.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (CarbonGhgEmissionsCertificationSchemes e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static CarbonGhgEmissionsCertificationSchemes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (CarbonGhgEmissionsCertificationSchemes e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 
     public static Optional<CarbonGhgEmissionsCertificationSchemes> byCodeOptional(String code) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,10 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +43,7 @@ interface CodeList74 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -1074,6 +1074,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Lojban("jbo", "Lojban"),
 
     /**
+     * ONIX local code for Liberian language, equivalent to lom in ISO 639-3. See also Toma for the closely-related
+     * Guinean variant. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Loma_Liberia("lom", "Loma (Liberia)"),
+
+    /**
      * ONIX local code for Italian dialect, equivalent to lmo in ISO 639-3. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
@@ -1382,6 +1390,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
      * Macrolanguage. See also ojs (Severn Ojibwa)
      */
     Ojibwa("oji", "Ojibwa"),
+
+    /**
+     * Colville-Okanagan. ONIX local code, equivalent to oka in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Okanagan_Nsyilxcn_Nsyilxcn("oka", "Okanagan; Nsyilxcn / Nsyilxcən"),
 
     /**
      * ONIX local code, equivalent to odt in ISO 639-3
@@ -1824,6 +1839,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Tok_Pisin("tpi", "Tok Pisin"),
 
     Tokelauan("tkl", "Tokelauan"),
+
+    /**
+     * ONIX local code for Guinean language, equivalent to tod in ISO 639-3. See also Loma for the closely-related
+     * Liberian variant. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Toma("tod", "Toma"),
 
     Tonga_Nyasa("tog", "Tonga (Nyasa)"),
 

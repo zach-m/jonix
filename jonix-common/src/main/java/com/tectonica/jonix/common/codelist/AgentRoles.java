@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,7 +20,6 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
 import java.util.Optional;
 
 /*
@@ -41,10 +40,18 @@ interface CodeList69 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist69">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist69">ONIX
  *      Codelist 69 in Reference Guide</a>
  */
 public enum AgentRoles implements OnixCodelist, CodeList69 {
+    /**
+     * Normally omitted, but required in some countries to provide positive indication the publisher acts as its own
+     * sales agent (FR: auto-diffuseur) in a specified market. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Publisher_acts_as_own_sales_agent("01", "Publisher acts as own sales agent"),
+
     /**
      * Publisher's exclusive sales agent in a specified territory
      */

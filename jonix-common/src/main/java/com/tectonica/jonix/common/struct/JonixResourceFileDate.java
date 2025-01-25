@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,12 +19,12 @@
 
 package com.tectonica.jonix.common.struct;
 
+import java.io.Serializable;
+import java.util.List;
+
 import com.tectonica.jonix.common.JonixKeyedStruct;
 import com.tectonica.jonix.common.JonixStruct;
-import com.tectonica.jonix.common.codelist.DateFormats;
-import com.tectonica.jonix.common.codelist.ResourceFileDateRoles;
-
-import java.io.Serializable;
+import com.tectonica.jonix.common.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY

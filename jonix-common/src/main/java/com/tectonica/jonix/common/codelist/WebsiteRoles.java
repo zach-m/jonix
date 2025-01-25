@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -20,10 +20,10 @@
 package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
+
+import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -43,7 +43,7 @@ interface CodeList73 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_67.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -309,7 +309,15 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Legal_deposit_website_for_digital_preservation("51", "Legal deposit website for digital preservation");
+    Legal_deposit_website_for_digital_preservation("51", "Legal deposit website for digital preservation"),
+
+    /**
+     * For example, a web page providing an interactive contact form for safety-related issues. Only for use in ONIX 3.0
+     * or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Publishers_or_third_party_contact_form("52", "Publisher’s or third party contact form");
 
     public final String code;
     public final String description;

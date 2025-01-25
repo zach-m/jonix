@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2024 Zach Melamed
+ * Copyright (C) 2012-2025 Zach Melamed
  *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
@@ -19,30 +19,17 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.common.JPU;
-import com.tectonica.jonix.common.ListOfOnixComposite;
-import com.tectonica.jonix.common.ListOfOnixDataComposite;
-import com.tectonica.jonix.common.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.common.ListOfOnixElement;
-import com.tectonica.jonix.common.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.common.codelist.ImageAudioVideoFileTypes;
-import com.tectonica.jonix.common.codelist.Languages;
-import com.tectonica.jonix.common.codelist.OtherTextTypes;
-import com.tectonica.jonix.common.codelist.RecordSourceTypes;
-import com.tectonica.jonix.common.codelist.TextCaseFlags;
-import com.tectonica.jonix.common.codelist.TextFormats;
-import com.tectonica.jonix.common.codelist.TitleTypes;
-import com.tectonica.jonix.common.codelist.TransliterationSchemes;
-import com.tectonica.jonix.common.codelist.WorkIdentifierTypes;
-import com.tectonica.jonix.common.struct.JonixMediaFile;
-import com.tectonica.jonix.common.struct.JonixOtherText;
-import com.tectonica.jonix.common.struct.JonixSubject;
-import com.tectonica.jonix.common.struct.JonixTitle;
-import com.tectonica.jonix.common.struct.JonixWebsite;
-import com.tectonica.jonix.common.struct.JonixWorkIdentifier;
-
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.function.Consumer;
+
+import com.tectonica.jonix.common.*;
+import com.tectonica.jonix.common.OnixComposite.*;
+import com.tectonica.jonix.common.codelist.*;
+import com.tectonica.jonix.common.struct.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
