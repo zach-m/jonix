@@ -20,10 +20,10 @@ The [Jonix Object Model](https://zach-m.github.io/jonix/jonix.common/com/tectoni
 
 ### Recent Version
 
-| Maven Version         | Onix version | Codelist Issue |
-|-----------------------|--------------|----------------|
-| `2024-10-fix`         | 3.1.01       | 67             |
-| `2024-10-onix308-fix` | 3.0.08       | 67             |
+| Maven Version     | Onix version | Codelist Issue |
+| ----------------- | ------------ | -------------- |
+| `2025-01`         | 3.1.02       | 68             |
+| `2025-01-onix308` | 3.0.08       | 68             |
 
 API documentation for latest release can be found [here](https://zach-m.github.io/jonix).
 
@@ -41,7 +41,9 @@ Jonix features long backward compatibility:
 > For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixRelease()` and `.onixVersion()` were added to top-level `Product` and `Header` classes. See newly-crafted examples below.
 
 | Maven Version         | Onix version | Codelist Issue |
-|-----------------------|--------------|----------------|
+| --------------------- | ------------ | -------------- |
+| `2024-10-fix`         | 3.1.01       | 67             |
+| `2024-10-onix308-fix` | 3.0.08       | 67             |
 | `2024-07`             | 3.1.01       | 66             |
 | `2024-07-onix308`     | 3.0.08       | 66             |
 | `2024-04`             | 3.1.01       | 65             |
@@ -66,7 +68,7 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2024-10-fix</version>
+    <version>2025-01</version>
 </dependency>
 ```
 
@@ -76,7 +78,7 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2024-10-onix308-fix</version>
+    <version>2025-01-onix308</version>
 </dependency>
 ```
 
