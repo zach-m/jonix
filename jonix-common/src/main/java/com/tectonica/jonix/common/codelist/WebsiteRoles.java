@@ -43,7 +43,7 @@ interface CodeList73 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -317,7 +317,17 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Publishers_or_third_party_contact_form("52", "Publisher’s or third party contact form");
+    Publishers_or_third_party_contact_form("52", "Publisher’s or third party contact form"),
+
+    /**
+     * The URL of a web page describing the CSR policies, including corporate ethics, governance and human rights or
+     * modern slavery statements, of the organization, but see code 50 for sustainability. Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Organizations_website_for_corporate_social_responsibility("53",
+        "Organization’s website for corporate social responsibility");
 
     public final String code;
     public final String description;

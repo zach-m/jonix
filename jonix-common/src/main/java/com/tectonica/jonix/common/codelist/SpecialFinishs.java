@@ -43,13 +43,18 @@ interface CodeList258 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist258">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist258">ONIX
  *      Codelist 258 in Reference Guide</a>
  */
 public enum SpecialFinishs implements OnixCodelist, CodeList258 {
     Overall_matt_laminate("01", "Overall matt laminate"),
 
-    Overall_gloss_laminate("02", "Overall gloss laminate");
+    Overall_gloss_laminate("02", "Overall gloss laminate"),
+
+    /**
+     * Provide any further details in Specification feature description
+     */
+    Overall_textured_laminate("03", "Overall textured laminate");
 
     public final String code;
     public final String description;

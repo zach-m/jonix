@@ -43,7 +43,7 @@ interface CodeList158 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -219,7 +219,8 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Digital_review_copy("38", "Digital review copy"),
 
     /**
-     * For example, video showing how to use the product
+     * For example, a video, PDF, web page or app showing how to assemble, use or maintain the product, that is separate
+     * from the product itself
      */
     Instructional_material("39", "Instructional material"),
 
@@ -270,7 +271,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Cover_holding_image("45", "Cover holding image"),
 
     /**
-     * Eg for a game, kit
+     * Eg for a game or kit - as supplied with the product
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -314,7 +315,8 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Cover_flap("51", "Cover flap"),
 
     /**
-     * Image of any warning label or hazard warning text on product or packaging
+     * Image of any warning label or hazard warning text on product or packaging, eg as required for EU General Product
+     * Safety or Toy Safety, or for battery safety purposes
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -329,8 +331,23 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Product_safety_contacts("53", "Product safety contacts"),
 
     /**
+     * 2D image of edge decoration (see also List 79 code 02)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Page_edge_deco_image("54", "Page edge deco image"),
+
+    /**
+     * 2D image of endpaper (or inside front and back cover) decoration (see also List 79 code 55)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Endpaper_deco_image("55", "Endpaper deco image"),
+
+    /**
      * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.
-     * This was a temporary workaround in ONIX 3.0, and use of &lt;EpubLicense&gt; is strongly preferred
+     * This was a temporary workaround in ONIX 3.0, and use of &lt;EpubLicense&gt; is strongly preferred. Not for use in
+     * ONIX 3.1 or later
      */
     License("99", "License");
 

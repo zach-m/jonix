@@ -43,7 +43,7 @@ interface CodeList92 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist92">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist92">ONIX
  *      Codelist 92 in Reference Guide</a>
  */
 public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
@@ -97,7 +97,24 @@ public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
      * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
      * Spaces, dashes etc should be omitted
      */
-    VAT_Identity_Number("23", "VAT Identity Number");
+    VAT_Identity_Number("23", "VAT Identity Number"),
+
+    /**
+     * Economic Operators Registration and Identification, identifier for businesses that import into or export from the
+     * EU. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EORI("41", "EORI"),
+
+    /**
+     * Chinese Participant identifier on the Publishing and distribution public service platform. 12-digits (or 11
+     * digits plus X), usually presented with a / and hyphens dividing the number into groups of three, four and four
+     * digits plus a check digit, but in ONIX the / and hyphens should be omitted. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Chinese_participant_identifier("45", "Chinese participant identifier");
 
     public final String code;
     public final String description;

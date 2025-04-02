@@ -43,7 +43,7 @@ interface CodeList27 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -102,24 +102,39 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     BISAC_Regional_theme("11", "BISAC Regional theme"),
 
     /**
-     * For all BIC subject codes and qualifiers, see https://bic.org.uk/resources/BIC-Standard-Subject-Categories/
+     * Deprecated . The BIC subject category scheme is obsolete, see
+     * https://bic.org.uk/resources/BIC-Standard-Subject-Categories/
      */
     BIC_subject_category("12", "BIC subject category"),
 
+    /**
+     * Deprecated
+     */
     BIC_geographical_qualifier("13", "BIC geographical qualifier"),
 
+    /**
+     * Deprecated
+     */
     BIC_language_qualifier_language_as_subject("14", "BIC language qualifier (language as subject)"),
 
+    /**
+     * Deprecated
+     */
     BIC_time_period_qualifier("15", "BIC time period qualifier"),
 
+    /**
+     * Deprecated
+     */
     BIC_educational_purpose_qualifier("16", "BIC educational purpose qualifier"),
 
+    /**
+     * Deprecated
+     */
     BIC_reading_level_and_special_interest_qualifier("17", "BIC reading level and special interest qualifier"),
 
     /**
      * Used for German National Bibliography since 2004 (100 subjects). Is different from value 30. See
-     * http://www.dnb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or
-     * http://www.dnb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf (English)
+     * https://www.dnb.de/SharedDocs/Downloads/DE/Professionell/Erschliessen/ddcSachgruppenDNBAb2013.html (in German)
      */
     DDC_Sachgruppen_der_Deutschen_Nationalbibliografie("18", "DDC-Sachgruppen der Deutschen Nationalbibliografie"),
 
@@ -768,7 +783,14 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    YSO_places("D2", "YSO-places");
+    YSO_places("D2", "YSO-places"),
+
+    /**
+     * See https://www.nb.no/nbvok/nb/. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Norske_emneord("D3", "Norske emneord");
 
     public final String code;
     public final String description;

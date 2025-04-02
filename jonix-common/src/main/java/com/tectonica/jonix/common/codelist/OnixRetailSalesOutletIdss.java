@@ -43,7 +43,7 @@ interface CodeList139 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -515,6 +515,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     HMV("HMV", "HMV"),
 
     Home_Depot("HMD", "Home Depot"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Illumicrate("ILU", "Illumicrate"),
 
     Immateriel_fr("IMM", "Immatériel.fr"),
 

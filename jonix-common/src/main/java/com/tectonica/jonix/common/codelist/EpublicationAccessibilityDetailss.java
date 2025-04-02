@@ -43,7 +43,7 @@ interface CodeList196 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -270,7 +270,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * should include full alternative descriptions (eg audio-described video) and transcript, subtitles or captions
      * (whether closed or open) suitable for hearing-impaired as well as for visually-impaired readers. (Purely
      * decorative non-text content can be ignored, but the accessibility of resources delivered via a network connection
-     * rather than as part of the e-publication package must be included). Only for use in ONIX 3.0 or later
+     * rather than as part of the e-publication package must be included). For products that are primarily video, see
+     * Product form detail code V215. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -295,8 +296,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     ARIA_roles_provided("30", "ARIA roles provided"),
 
     /**
-     * Where interactive content is included in the product, controls are provided (eg for speed, pause and resume,
-     * reset) and labelled to make their use clear. Only for use in ONIX 3.0 or later
+     * Where interactive content is included in the product, timing controls are provided (eg for speed, pause and
+     * resume, reset) and labelled to make their use clear. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -332,7 +333,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    All_textual_content_can_be_modified("36", "All textual content can be modified"),
+    Appearance_of_all_textual_content_can_be_modified("36", "Appearance of all textual content can be modified"),
 
     /**
      * Body text is presented with a contrast ratio of at least 7:1 (or 4.5:1 for large/heading text). Only for use in
@@ -370,6 +371,14 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Link_purposes_clear("40", "Link purposes clear"),
 
     /**
+     * E-publication includes page number navigation, based on print-equivalent page numbers (see code 19) or
+     * digital-only static page breaks. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Page_list_navigation("41", "Page list navigation"),
+
+    /**
      * All contents of the digital publication necessary to use and understanding, including any text, images (via
      * alternative descriptions), video (via audio description) is fully accessible via suitable audio reproduction. The
      * entire publication can be navigated and 'read' using only pre-recorded sound, and does not require visual or
@@ -395,6 +404,21 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      */
     All_non_decorative_content_supports_reading_without_sight("52",
         "All non-decorative content supports reading without sight"),
+
+    /**
+     * Textual description of mathematical content, either as an alternative description attached to an image of the
+     * content, or in addition to MathML or LaTeX. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Described_math_content("53", "Described math content"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Accessible_chemistry_content_as_LaTeX("54", "Accessible chemistry content (as LaTeX)"),
 
     /**
      * Digital product falls under European Accessibility Act exception for Micro-enterprises (as defined by current
@@ -497,7 +521,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     /**
      * &lt;ProductFormFeatureDescription&gt; contains a short addendum to the accessibility detail of the product, or
      * the URL of a web page comprising such an addendum, providing further details of the specific conformance and
-     * features derails provided. The addendum should be considered additional to the more structured data. A complete
+     * features details provided. The addendum should be considered additional to the more structured data. A complete
      * Accessibility summary (including information that is duplicated in the structured data) should be provided using
      * code 00. Further detailed information may be provided in an external file using codes 94-96. Only for use in ONIX
      * 3.0 or later

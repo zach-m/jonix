@@ -43,7 +43,7 @@ interface CodeList17 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -89,10 +89,13 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     By_photographer("A08", "By (photographer)"),
 
     /**
-     * For example of editorial concept, of board game, etc
+     * For example of an editorial concept, of a board game, etc
      */
     Created_by("A09", "Created by"),
 
+    /**
+     * For example of a plot idea. Implies a less direct association or active participation than 'created by'
+     */
     From_an_idea_by("A10", "From an idea by"),
 
     Designed_by("A11", "Designed by"),

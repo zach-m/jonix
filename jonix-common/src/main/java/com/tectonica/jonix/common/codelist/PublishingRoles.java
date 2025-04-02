@@ -43,7 +43,7 @@ interface CodeList45 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist45">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist45">ONIX
  *      Codelist 45 in Reference Guide</a>
  */
 public enum PublishingRoles implements OnixCodelist, CodeList45 {
@@ -74,7 +74,7 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
     Published_in_association_with("07", "Published in association with"),
 
     /**
-     * When ownership of a product or title is transferred from one publisher to another
+     * When ownership of a product is transferred from one publisher to another
      */
     New_or_acquiring_publisher("09", "New or acquiring publisher"),
 
@@ -98,7 +98,7 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
     Repackager_of_prebound_edition("12", "Repackager of prebound edition"),
 
     /**
-     * When ownership of a product or title is transferred from one publisher to another (complement of code 09)
+     * When ownership of a product is transferred from one publisher to another (complement of code 09)
      */
     Former_publisher("13", "Former publisher"),
 
@@ -137,6 +137,13 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
      * directly appropriate (for example, with disc or tape products, or digital products on a physical carrier)
      */
     Manufacturer("19", "Manufacturer"),
+
+    /**
+     * Use for the publisher of earlier manifestations of the work. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Previous_publisher("21", "Previous publisher"),
 
     /**
      * DEPRECATED: use code 06
