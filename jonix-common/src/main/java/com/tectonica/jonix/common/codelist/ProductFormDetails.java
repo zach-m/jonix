@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -662,11 +662,25 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Lay_flat_binding("B318", "Lay-flat binding"),
 
     /**
-     * Hardcover books where the cover is trimmed flush with the trimmed book block
+     * Hardcover where the cover boards are trimmed flush with the trimmed book block
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Flush_cut_binding("B319", "Flush cut binding"),
+
+    /**
+     * Hardcover where the spine is rounded during binding
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Rounded_spine("B320", "Rounded spine"),
+
+    /**
+     * Hardcover where the spine is straight
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Square_spine("B321", "Square spine"),
 
     /**
      * Covers do not use a distinctive stock, but are the same as the body pages. Use for example with Product form BF,
@@ -723,7 +737,17 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Head_and_tail_bands("B407", "Head and tail bands"),
 
     /**
-     * Illustrated or abstract printed endpapers, but not those solely of colored paper
+     * Colored, stained, gilded, patterned, abstract or illustrated sprayed edges. Use &lt;ProductFormFeature&gt; to
+     * specify the color, and optionally, use &lt;SupportingResource&gt; to provide an image of the decoration
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Decorated_page_edges("B419", "Decorated page edges"),
+
+    /**
+     * Colored, patterned, printed, abstract or illustrated endpapers or of inside front and back covers. Use
+     * &lt;ProductFormFeature&gt; to specify the color, and optionally, use &lt;SupportingResource&gt; to provide an
+     * image of the decoration
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -793,6 +817,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Delicate_cover_jacket_finish("B420", "Delicate cover / jacket finish"),
+
+    /**
+     * Embossing (or debossing) used on cover or jacket
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Embossed_cover("B421", "Embossed cover"),
 
     /**
      * Type unspecified
@@ -1032,7 +1063,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Unified_English_Contracted_Braille("B709", "Unified English Contracted Braille"),
 
     /**
-     * Eg charts, diagrams, maps, that are embossed or textured for accessibility purposes
+     * Eg charts, diagrams, maps, or other tactile graphics or illustrations that are embossed or textured for
+     * accessibility purposes
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -1945,14 +1977,15 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     _3D_video("V207", "3D video"),
 
     /**
-     * Or subtitles
+     * Or subtitles, where visibility may be controlled by the viewer. Use &lt;Language&gt; for the language of the
+     * captions/subtitles
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Closed_captions("V210", "Closed captions"),
 
     /**
-     * 'Burnt-in' or hard captions or subtitles
+     * 'Burnt-in' or hard captions or subtitles. Use &lt;Language&gt; for the language of the captions/subtitles
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -1972,6 +2005,23 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Sign_language_interpretation("V213", "Sign language interpretation"),
+
+    /**
+     * Closed or open captions/subtitles include descriptions of non-dialogue audio (eg background sounds, music,
+     * speaker identification) in addition to dialogue. Use in combination with V210 or V211. Use V210, V211 alone for
+     * captions/subtitles that include only dialogue. In some markets, described audio is termed 'subtitles for the deaf
+     * and hard of hearing'
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Textual_description_of_audio("V214", "Textual description of audio"),
+
+    /**
+     * Also termed 'described video' - audio track describes the video content
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Audio_description_of_video("V215", "Audio description of video"),
 
     /**
      * Licensed for use in domestic contexts only

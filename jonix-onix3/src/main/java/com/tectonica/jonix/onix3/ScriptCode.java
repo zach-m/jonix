@@ -39,12 +39,12 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, four letters. Note that ISO 15924 specifies that script codes shall be sent as one upper case
- * followed by three lower case letters</td>
+ * <td>Fixed length, four letters, based on ISO 15924. Note that ISO 15924 specifies that script codes shall be sent as
+ * one upper case followed by three lower case letters</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>ISO 15924 four-letter script codes List 121</td>
+ * <td>List 121</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>

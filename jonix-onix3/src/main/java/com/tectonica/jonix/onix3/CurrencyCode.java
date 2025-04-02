@@ -43,11 +43,11 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, three letters</td>
+ * <td>Fixed length, three letters, based on ISO 4217</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>ISO 4217 currency codes List 96</td>
+ * <td>List 96</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>

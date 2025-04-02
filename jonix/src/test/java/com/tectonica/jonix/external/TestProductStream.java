@@ -20,11 +20,7 @@
 package com.tectonica.jonix.external;
 
 import com.tectonica.jonix.Jonix;
-import com.tectonica.jonix.common.codelist.NameIdentifierTypes;
-import com.tectonica.jonix.common.codelist.ResourceContentTypes;
-import com.tectonica.jonix.common.codelist.ResourceForms;
-import com.tectonica.jonix.common.codelist.ResourceVersionFeatureTypes;
-import com.tectonica.jonix.common.codelist.SupportingResourceFileFormats;
+import com.tectonica.jonix.common.codelist.*;
 import com.tectonica.jonix.json.JonixJson;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
@@ -46,9 +42,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class TestProductStream {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestProductStream.class);

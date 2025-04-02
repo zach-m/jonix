@@ -43,7 +43,7 @@ interface CodeList153 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_68.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -225,7 +225,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     Abstract("30", "Abstract"),
 
     /**
-     * Eg for a game, kit
+     * Eg for a game or kit - as supplied with the product
      * <p>
      * JONIX adds: Not included in Onix2
      */

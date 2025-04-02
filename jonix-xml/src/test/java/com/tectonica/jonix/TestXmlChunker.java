@@ -21,11 +21,7 @@ package com.tectonica.jonix;
 
 import com.tectonica.xmlchunk.XmlChunker;
 import com.tectonica.xmlchunk.XmlUtil;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 import org.w3c.dom.Element;
 
 import javax.xml.stream.events.StartElement;

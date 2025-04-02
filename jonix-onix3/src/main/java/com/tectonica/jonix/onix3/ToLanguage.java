@@ -42,12 +42,12 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Fixed length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
- * lower-case</td>
+ * <td>Fixed length, three lower-case letters, based on ISO 639-2/B. Note that ISO 639 specifies that these codes should
+ * always be in lower-case</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>ISO 639-2/B List 74</td>
+ * <td>List 74</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>

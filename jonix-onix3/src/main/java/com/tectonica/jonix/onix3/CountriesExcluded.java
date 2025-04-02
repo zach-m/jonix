@@ -41,13 +41,13 @@ import java.util.function.Consumer;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>One or more fixed-length codes, each consisting of two upper case letters, and with successive codes being
- * separated by spaces. Suggested maximum length 750 characters. Note that ISO 3166-1 specifies that country codes shall
- * be sent as upper case only</td>
+ * <td>One or more fixed-length codes, based on ISO 3166-1, each consisting of two upper case letters, and with
+ * successive codes being separated by spaces. Suggested maximum length 750 characters. Note that ISO 3166-1 specifies
+ * that country codes shall be sent as upper case only</td>
  * </tr>
  * <tr>
  * <td>Codelist</td>
- * <td>ISO 3166-1 two-letter country codes List 91</td>
+ * <td>List 91</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
