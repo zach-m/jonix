@@ -169,7 +169,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.41.1</version> <!-- when version changes, update IntelliJ.md -->
+                        <version>9.3</version> <!-- when version changes, update IntelliJ.md -->
                     </dependency>
                 </dependencies>
                 <configuration>
