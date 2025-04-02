@@ -22,8 +22,8 @@ The [Jonix Object Model](https://zach-m.github.io/jonix/jonix.common/com/tectoni
 
 | Maven Version     | Onix version | Codelist Issue |
 | ----------------- | ------------ | -------------- |
-| `2025-01`         | 3.1.02       | 68             |
-| `2025-01-onix308` | 3.0.08       | 68             |
+| `2025-04`         | 3.1.2        | 69             |
+| `2025-04-onix308` | 3.0.8        | 69             |
 
 API documentation for latest release can be found [here](https://zach-m.github.io/jonix).
 
@@ -42,24 +42,26 @@ Jonix features long backward compatibility:
 
 | Maven Version         | Onix version | Codelist Issue |
 | --------------------- | ------------ | -------------- |
-| `2024-10-fix`         | 3.1.01       | 67             |
-| `2024-10-onix308-fix` | 3.0.08       | 67             |
-| `2024-07`             | 3.1.01       | 66             |
-| `2024-07-onix308`     | 3.0.08       | 66             |
-| `2024-04`             | 3.1.01       | 65             |
-| `2024-04-onix308`     | 3.0.08       | 65             |
-| `2024-01`             | 3.1.00       | 64             |
-| `2024-01-onix308`     | 3.0.08       | 64             |
-| `2023-10`             | 3.1.00       | 63             |
-| `2023-10-onix308`     | 3.0.08       | 63             |
-| `2023-07`             | 3.1.00       | 62             |
-| `2023-07-onix308`     | 3.0.08       | 62             |
-| `2023-05`             | 3.1.00       | 61             |
-| `2023-05-onix308`     | 3.0.08       | 61             |
-| `2023-04`             | 3.1.00       | 61             |
-| `2023-01`             | 3.0.08       | 60             |
-| `2022-11`             | 3.0.08       | 59             |
-| `2022-08`             | 3.0.08       | 58             |
+| `2025-01`             | 3.1.2        | 68             |
+| `2025-01-onix308`     | 3.0.8        | 68             |
+| `2024-10-fix`         | 3.1.1        | 67             |
+| `2024-10-onix308-fix` | 3.0.8        | 67             |
+| `2024-07`             | 3.1.1        | 66             |
+| `2024-07-onix308`     | 3.0.8        | 66             |
+| `2024-04`             | 3.1.1        | 65             |
+| `2024-04-onix308`     | 3.0.8        | 65             |
+| `2024-01`             | 3.1.0        | 64             |
+| `2024-01-onix308`     | 3.0.8        | 64             |
+| `2023-10`             | 3.1.0        | 63             |
+| `2023-10-onix308`     | 3.0.8        | 63             |
+| `2023-07`             | 3.1.0        | 62             |
+| `2023-07-onix308`     | 3.0.8        | 62             |
+| `2023-05`             | 3.1.0        | 61             |
+| `2023-05-onix308`     | 3.0.8        | 61             |
+| `2023-04`             | 3.1.0        | 61             |
+| `2023-01`             | 3.0.8        | 60             |
+| `2022-11`             | 3.0.8        | 59             |
+| `2022-08`             | 3.0.8        | 58             |
 
 ## 1. Stable Release (from Central repository)
 
@@ -68,7 +70,7 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2025-01</version>
+    <version>2025-04</version>
 </dependency>
 ```
 
@@ -78,7 +80,7 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2025-01-onix308</version>
+    <version>2025-04-onix308</version>
 </dependency>
 ```
 
