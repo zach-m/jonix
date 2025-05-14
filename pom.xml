@@ -333,14 +333,6 @@
         <profile>
             <id>release</id>
 
-            <!-- Repository location -->
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-            </distributionManagement>
-
             <build>
                 <plugins>
 
@@ -391,20 +383,19 @@
                         </executions>
                     </plugin>
 
-                    <!-- deployment to OSSRH -->
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.13</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                            <keepStagingRepositoryOnFailure>true</keepStagingRepositoryOnFailure>
-                            <stagingProgressTimeoutMinutes>30</stagingProgressTimeoutMinutes>
-                        </configuration>
-                    </plugin>
+                    <!-- deployment to CENTRAL -->
+					<plugin>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+						<version>0.7.0</version>
+						<extensions>true</extensions>
+						<configuration>
+							<!-- see https://central.sonatype.org/publish/publish-portal-maven/#plugin-configuration-options -->
+							<publishingServerId>central</publishingServerId>
+							<autoPublish>true</autoPublish>
+							<waitUntil>published</waitUntil>
+						</configuration>
+					</plugin>
 
                 </plugins>
             </build>
