@@ -21,9 +21,9 @@ The [Jonix Object Model](https://zach-m.github.io/jonix/jonix.common/com/tectoni
 ### Recent Version
 
 | Maven Version     | Onix version | Codelist Issue |
-| ----------------- | ------------ | -------------- |
-| `2025-04`         | 3.1.2        | 69             |
-| `2025-04-onix308` | 3.0.8        | 69             |
+|-------------------| ------------ |----------------|
+| `2025-07`         | 3.1.2        | 70             |
+| `2025-07-onix308` | 3.0.8        | 70             |
 
 API documentation for latest release can be found [here](https://zach-m.github.io/jonix).
 
@@ -41,7 +41,9 @@ Jonix features long backward compatibility:
 > For convenience, `pair()` was added to all Codelist Enums for ease of unification, and - for distinction between ONIX version 3.0 and 3.1 - `.onixRelease()` and `.onixVersion()` were added to top-level `Product` and `Header` classes. See newly-crafted examples below.
 
 | Maven Version         | Onix version | Codelist Issue |
-| --------------------- | ------------ | -------------- |
+|-----------------------|--------------|----------------|
+| `2025-04`             | 3.1.2        | 69             |
+| `2025-04-onix308`     | 3.0.8        | 69             |
 | `2025-01`             | 3.1.2        | 68             |
 | `2025-01-onix308`     | 3.0.8        | 68             |
 | `2024-10-fix`         | 3.1.1        | 67             |
@@ -70,7 +72,7 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2025-04</version>
+    <version>2025-07</version>
 </dependency>
 ```
 
@@ -80,7 +82,7 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2025-04-onix308</version>
+    <version>2025-07-onix308</version>
 </dependency>
 ```
 
