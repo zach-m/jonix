@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Person name part 1: titles before names</h1>
  * <p>
  * The first part of a structured name of a person who contributed to the creation of the product: qualifications and/or
- * titles preceding a person’s names, <i>eg</i> ‘Professor’ or ‘HRH Prince’ or ‘Saint’. Optional and non-repeating: see
- * Group&nbsp;P.7 introductory text for valid options.
+ * titles preceding a person’s names, <i>eg</i>&nbsp;‘Professor’ or ‘HRH Prince’ or ‘Saint’. Optional and non-repeating:
+ * see Group&nbsp;P.7 introductory text for valid options.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

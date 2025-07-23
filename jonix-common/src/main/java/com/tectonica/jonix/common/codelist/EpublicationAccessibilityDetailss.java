@@ -43,7 +43,7 @@ interface CodeList196 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -86,7 +86,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Epub_Accessibility_Specification_1_1("04", "Epub Accessibility Specification 1.1"),
+    EPUB_Accessibility_Specification_1_1("04", "EPUB Accessibility Specification 1.1"),
 
     /**
      * Conforms with the requirements of ISO 32000-1:2008 plus ISO 14289-1:2014 - Portable Document Format for Universal
@@ -133,7 +133,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * as images (ie as pictures of text, rather than as 'text-as-text', and without any textual equivalent) or the
      * application of some technical protection measures (DRM), inevitably prevents full use of these accessibility
      * options. Code 10 means 'this e-publication is accessible to the full extent that the file format and types of
-     * content allow, on a specific reading device, by default, without necessarily inluding any additions such as
+     * content allow, on a specific reading device, by default, without necessarily including any additions such as
      * textual descriptions of images or enhanced navigation. Note that for reflowable e-books, this means code 36 also
      * applies, although code 10 can also be used with accessible non-reflowable (fixed-format) e-publications and with
      * audio material. Should be used with other codes that describe any additions to enhance the level of accessibility
@@ -184,10 +184,10 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Full_alternative_textual_descriptions("15", "Full alternative textual descriptions"),
 
     /**
-     * Where data visualisations are provided (eg graphs and charts), the underlying data is also available in
+     * Where data visualizations are provided (eg graphs and charts), the underlying data is also available in
      * non-graphical (usually tabular, textual) form
      */
-    Visualised_data_also_available_as_non_graphical_data("16", "Visualised data also available as non-graphical data"),
+    Visualized_data_also_available_as_non_graphical_data("16", "Visualized data also available as non-graphical data"),
 
     /**
      * Mathematical content such as equations is usable with assistive technology, through use of MathML. Semantic
@@ -208,26 +208,26 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Print_equivalent_page_numbering("19", "Print-equivalent page numbering"),
 
     /**
-     * Text-synchronised pre-recorded audio narration (natural or synthesised voice) is included for substantially all
+     * Text-synchronized pre-recorded audio narration (natural or synthesized voice) is included for substantially all
      * textual matter, including all alternative descriptions, eg via a SMIL media overlay
      */
-    Synchronised_pre_recorded_audio("20", "Synchronised pre-recorded audio"),
+    Synchronized_pre_recorded_audio("20", "Synchronized pre-recorded audio"),
 
     /**
-     * Text-to-speech has been optimised through provision of PLS lexicons, SSML or CSS Speech synthesis hints or other
+     * Text-to-speech has been optimized through provision of PLS lexicons, SSML or CSS Speech synthesis hints or other
      * speech synthesis markup languages or hinting
      */
     Text_to_speech_hinting_provided("21", "Text-to-speech hinting provided"),
 
     /**
-     * The language of the text has been specified (eg via the HTML or XML lang attribute) to optimise text-to-speech
+     * The language of the text has been specified (eg via the HTML or XML lang attribute) to optimize text-to-speech
      * (and other alternative renderings), both at whole document level and, where appropriate, for individual words,
      * phrases or passages in a different language
      */
     Language_tagging_provided("22", "Language tagging provided"),
 
     /**
-     * Specialised font, character and/or line spacing, justification and paragraph spacing, coloring and other options
+     * Specialized font, character and/or line spacing, justification and paragraph spacing, coloring and other options
      * provided specifically to improve readability for dyslexic readers. Details, including the name of the font if
      * relevant, should be listed in &lt;ProductFormFeatureDescription&gt;. Use with &lt;EditionType&gt; code HRE as
      * appropriate
@@ -498,6 +498,24 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * JONIX adds: Not included in Onix2
      */
     WCAG_level_AAA("86", "WCAG level AAA"),
+
+    /**
+     * &lt;ProductFormFeatureDescription&gt; carries the name of the organization responsible for credentialling the
+     * certifier named as certifying the compliance of the product (see code 90) - ie 'who certifies the certifier?'
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Certifier_credentialled_by_name("88", "Certifier credentialled by (name)"),
+
+    /**
+     * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page belonging to an organization responsible for
+     * credentialling the certifier identified (via URL) as certifying the compliance of the product (see code 93) - ie
+     * 'who certifies the certifier?' Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Certifier_credentialled_by_URL("89", "Certifier credentialled by (URL)"),
 
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the name of the organization responsible for compliance testing and

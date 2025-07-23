@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Proprietary subject scheme name</h1>
  * <p>
- * A name identifying a proprietary subject scheme (<i>ie</i> a scheme which is not a standard and for which there is no
- * individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded ‘24’. Optional and non-repeating.
+ * A name identifying a proprietary subject scheme (<i>ie</i>&nbsp;a scheme which is not a standard and for which there
+ * is no individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded ‘24’. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

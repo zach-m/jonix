@@ -54,7 +54,7 @@ import java.util.function.Consumer;
  * updated to describe the reissued product as soon as details can be made available;</li>
  * <li>When the product is still available during the period up to the reissue date. In this case, the ONIX record
  * should continue to describe the existing product and the &lt;ProductAvailability&gt; value should continue to record
- * the product as ‘available’ (<i>eg</i> code 21) right up to the reissue date. At that date, the record should be
+ * the product as ‘available’ (<i>eg</i>&nbsp;code 21) right up to the reissue date. At that date, the record should be
  * updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining
  * unchanged.</li>
  * </ol>

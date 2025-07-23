@@ -34,9 +34,9 @@ import java.util.function.Consumer;
  * <h1>Collection sequence number</h1>
  * <p>
  * A number which specifies the ordinal position of the product in a collection. The ordinal position may be a simple
- * number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level (<i>eg</i> 3.2) if the collection has a multi-level structure
- * (<i>ie</i> there are both collection and sub-collection title elements). Mandatory and non-repeating within the
- * &lt;CollectionSequence&gt; composite.
+ * number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level (<i>eg</i>&nbsp;3.2) if the collection has a multi-level
+ * structure (<i>ie</i>&nbsp;there are both collection and sub-collection title elements). Mandatory and non-repeating
+ * within the &lt;CollectionSequence&gt; composite.
  * </p>
  * <p>
  * <span style="color: deeppink; font-weight: bold">New in 3.0.4</span> A hyphen may be used in place of an integer

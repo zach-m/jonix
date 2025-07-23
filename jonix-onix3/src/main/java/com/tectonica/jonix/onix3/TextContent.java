@@ -302,8 +302,8 @@ public class TextContent implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i> if it is a review or promotional quote.
-     * Optional, and repeatable if the text is jointly authored.
+     * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i>&nbsp;if it is a review or promotional
+     * quote. Optional, and repeatable if the text is jointly authored.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -334,9 +334,9 @@ public class TextContent implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The title of a publication from which the text sent in the &lt;Text&gt; element was taken, <i>eg</i> if it is a
-     * review quote. Optional, and repeatable to provide the title in multiple languages. The <i>language</i> attribute
-     * is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if
+     * The title of a publication from which the text sent in the &lt;Text&gt; element was taken, <i>eg</i>&nbsp;if it
+     * is a review quote. Optional, and repeatable to provide the title in multiple languages. The <i>language</i>
+     * attribute is optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if
      * &lt;SourceTitle&gt; is repeated.
      * </p>
      * JONIX adds: this list may be empty
@@ -352,8 +352,8 @@ public class TextContent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together specify a date associated with the text carried in an
-     * occurrence of the &lt;TextContent&gt; composite, <i>eg</i> date when quoted text was published. Repeatable to
-     * specify different dates with their various roles.
+     * occurrence of the &lt;TextContent&gt; composite, <i>eg</i>&nbsp;date when quoted text was published. Repeatable
+     * to specify different dates with their various roles.
      * </p>
      * JONIX adds: this list may be empty
      */

@@ -41,7 +41,7 @@ interface CodeList221 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist221">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist221">ONIX
  *      Codelist 221 in Reference Guide</a>
  */
 public enum MessageStatuss implements OnixCodelist, CodeList221 {
@@ -56,19 +56,19 @@ public enum MessageStatuss implements OnixCodelist, CodeList221 {
 
     /**
      * Entire original ONIX message rejected (ie NONE of the data records have been ingested). The status of any
-     * recognisable records MAY be summarised in the remainder of the Acknowledgement Message
+     * recognizable records MAY be summarized in the remainder of the Acknowledgement Message
      */
     Message_rejected("01", "Message rejected"),
 
     /**
      * Original ONIX message partially parsed (ie at least SOME of the data records have been ingested, in whole or in
-     * part). Records processed to date MUST be summarised in the remainder of the Acknowledgement Message
+     * part). Records processed to date MUST be summarized in the remainder of the Acknowledgement Message
      */
     Message_part_processed("02", "Message part-processed"),
 
     /**
      * Original ONIX message parsed and processed in full, and at least SOME of the data records have been ingested, in
-     * whole or in part), Results MUST be summarised in the remainder of the Acknowledgement Message
+     * whole or in part), Results MUST be summarized in the remainder of the Acknowledgement Message
      */
     Message_processed("03", "Message processed");
 

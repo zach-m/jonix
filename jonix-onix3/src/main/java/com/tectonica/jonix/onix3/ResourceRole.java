@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.ResourceRoles;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -87,7 +88,7 @@ import java.util.function.Consumer;
  *
  * @since Onix-3.08
  */
-public class ResourceRole implements OnixElement<String>, Serializable {
+public class ResourceRole implements OnixElement<ResourceRoles>, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "ResourceRole";
@@ -113,21 +114,13 @@ public class ResourceRole implements OnixElement<String>, Serializable {
     // VALUE MEMBER
     /////////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * This is the raw content of ResourceRole. Could be null if {@code exists() == false}. Use {@link #value()} instead
-     * if you want to get this as an {@link java.util.Optional}.
-     * <p>
-     * Raw Format: Fixed length, three characters: one letter followed by two digits
-     * <p>
-     * (type: List251)
-     */
-    public String value;
+    public ResourceRoles value;
 
     /**
      * Internal API, use the {@link #value()} method or the {@link #value} field instead
      */
     @Override
-    public String __v() {
+    public ResourceRoles __v() {
         return value;
     }
 
@@ -148,7 +141,7 @@ public class ResourceRole implements OnixElement<String>, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 
-        value = JPU.getContentAsString(element);
+        value = ResourceRoles.byCode(JPU.getContentAsString(element));
     }
 
     /**
@@ -163,5 +156,13 @@ public class ResourceRole implements OnixElement<String>, Serializable {
         if (exists) {
             action.accept(this);
         }
+    }
+
+    public String codeOrNull() {
+        return value == null ? null : value.code;
+    }
+
+    public String descriptionOrNull() {
+        return value == null ? null : value.description;
     }
 }

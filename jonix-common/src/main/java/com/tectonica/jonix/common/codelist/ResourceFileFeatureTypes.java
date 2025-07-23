@@ -43,7 +43,7 @@ interface CodeList253 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist253">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist253">ONIX
  *      Codelist 253 in Reference Guide</a>
  */
 public enum ResourceFileFeatureTypes implements OnixCodelist, CodeList253 {
@@ -84,7 +84,7 @@ public enum ResourceFileFeatureTypes implements OnixCodelist, CodeList253 {
     SHA_256_hash_value("08", "SHA-256 hash value"),
 
     /**
-     * Resource File Feature Value is the loudness in LKFS (LUFS) used for audio normalisation - see ITU-R BS.1770
+     * Resource File Feature Value is the loudness in LKFS (LUFS) used for audio normalization - see ITU-R BS.1770
      */
     Audio_loudness("31", "Audio loudness");
 

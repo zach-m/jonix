@@ -43,14 +43,14 @@ interface CodeList239 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist239">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist239">ONIX
  *      Codelist 239 in Reference Guide</a>
  */
 public enum SupplyContactRoles implements OnixCodelist, CodeList239 {
     /**
-     * Eg for use where authorisation must be gained from the supplier (distributor or wholesaler)
+     * Eg for use where authorization must be gained from the supplier (distributor or wholesaler)
      */
-    Return_authorisation_contact("07", "Return authorisation contact"),
+    Return_authorization_contact("07", "Return authorization contact"),
 
     /**
      * Eg for EU General product safety regulation (GPSR) compliance where the supplier acts on behalf of the publisher
@@ -61,7 +61,7 @@ public enum SupplyContactRoles implements OnixCodelist, CodeList239 {
 
     /**
      * Eg for EU Deforestation regulation (EUDR) compliance where the supplier acts on behalf of the publisher or
-     * publisher representtive as an importer into the EU. See
+     * publisher representative as an importer into the EU. See
      * https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1115&amp;qid=1687867231461
      */
     Product_raw_materials_contact("11", "Product raw materials contact"),

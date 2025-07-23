@@ -43,7 +43,7 @@ interface CodeList65 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist65">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist65">ONIX
  *      Codelist 65 in Reference Guide</a>
  */
 public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
@@ -57,7 +57,7 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
      * Product is not yet available from the supplier, and the publisher indicates that it has been postponed
      * indefinitely. Should be used in preference to code 10 where the publisher has indicated that a
      * previously-announced publication date is no longer correct, and no new date has yet been announced. No expected
-     * avalabilty date should be included in &lt;SupplyDate&gt;. Only for use in ONIX 3.0 or later
+     * availability date should be included in &lt;SupplyDate&gt;. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -201,7 +201,7 @@ public enum ProductAvailabilitys implements OnixCodelist, CodeList65 {
     Recalled("49", "Recalled"),
 
     /**
-     * Contents of set or pack must be bought as individual items (identify contents of set or oack in
+     * Contents of set or pack must be bought as individual items (identify contents of set or pack in
      * &lt;RelatedProduct&gt; using code 01). Used when a collection that is not sold as a set nevertheless has its own
      * ONIX record
      */

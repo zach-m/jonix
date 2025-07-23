@@ -35,8 +35,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Part number</h1>
  * <p>
- * When a title element includes a part designation within a larger whole (<i>eg</i> Part I, or Volume 3), this field
- * should be used to carry the number and its ‘caption’ as text. Optional and non-repeating.
+ * When a title element includes a part designation within a larger whole (<i>eg</i>&nbsp;Part I, or Volume 3), this
+ * field should be used to carry the number and its ‘caption’ as text. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

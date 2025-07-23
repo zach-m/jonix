@@ -43,14 +43,15 @@ interface CodeList16 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist16">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist16">ONIX
  *      Codelist 16 in Reference Guide</a>
  */
 public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
     /**
-     * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
+     * For example, a publisher's own work ID scheme. Note that a distinctive &lt;IDTypeName&gt; is required with
+     * proprietary identifiers
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_work_ID_scheme("01", "Proprietary work ID scheme"),
 
     /**
      * 10-character ISBN of manifestation of work, when this is the only work identifier available - now Deprecated in
@@ -68,7 +69,8 @@ public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
     DOI("06", "DOI"),
 
     /**
-     * International Standard Text Code (16 characters: numerals and letters A-F, unhyphenated)
+     * International Standard Text Code (16 characters: numerals and letters A-F, unhyphenated). Deprecated: the ISTC
+     * was withdrawn as a standard in 2021
      */
     ISTC("11", "ISTC"),
 

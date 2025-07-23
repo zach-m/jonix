@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Discount code type name</h1>
  * <p>
  * A name which identifies a proprietary discount code scheme. Must be included when, and only when the code in the
- * &lt;DiscountCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
+ * &lt;DiscountCodeType&gt; element indicates a proprietary scheme, <i>eg</i>&nbsp;a wholesaler’s own code. Optional and
  * non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

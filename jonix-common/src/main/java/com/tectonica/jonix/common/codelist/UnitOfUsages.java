@@ -43,7 +43,7 @@ interface CodeList147 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist147">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist147">ONIX
  *      Codelist 147 in Reference Guide</a>
  */
 public enum UnitOfUsages implements OnixCodelist, CodeList147 {
@@ -107,7 +107,7 @@ public enum UnitOfUsages implements OnixCodelist, CodeList147 {
     Classes("20", "Classes"),
 
     /**
-     * Maximum number of licensed institutions, independend of concurrency of use and the number of classes or
+     * Maximum number of licensed institutions, independent of concurrency of use and the number of classes or
      * individuals per institution
      * <p>
      * JONIX adds: Not included in Onix2

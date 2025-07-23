@@ -43,7 +43,7 @@ interface CodeList12 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist12">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist12">ONIX
  *      Codelist 12 in Reference Guide</a>
  */
 public enum TradeCategorys implements OnixCodelist, CodeList12 {
@@ -66,7 +66,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     Sonderausgabe("03", "Sonderausgabe"),
 
     /**
-     * In countries where recognised as a distinct trade category, eg France &#171;&#160;livre de poche&#160;&#187;,
+     * In countries where recognized as a distinct trade category, eg France &#171;&#160;livre de poche&#160;&#187;,
      * Germany ,Taschenbuch', Italy &#171;tascabile&#187;, Spain &#171;libro de bolsillo&#187;
      */
     Pocket_book("04", "Pocket book"),
@@ -131,7 +131,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     E_book_short("14", "E-book short"),
 
     /**
-     * In countries where recognised as a distinct trade category, eg Italy &#171;supertascabile&#187;. Only for use in
+     * In countries where recognized as a distinct trade category, eg Italy &#171;supertascabile&#187;. Only for use in
      * ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
@@ -148,7 +148,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     Beau_livre("16", "Beau-livre"),
 
     /**
-     * Category of audio products typically distinguished by being free of charge (but which may be monetised through
+     * Category of audio products typically distinguished by being free of charge (but which may be monetized through
      * advertising content) and episodic. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2

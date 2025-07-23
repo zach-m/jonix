@@ -34,8 +34,8 @@ import java.util.function.Consumer;
  * <h1>Resource file link</h1>
  * <p>
  * A URL which provides a link to a resource. Mandatory in each occurrence of the &lt;CoverResource&gt; composite unless
- * &lt;NoResource/&gt; is present, and repeatable if the resource can be linked in more than one way, <i>eg</i> by HTTP,
- * FTP and DOI URLs.
+ * &lt;NoResource/&gt; is present, and repeatable if the resource can be linked in more than one way, <i>eg</i>&nbsp;by
+ * HTTP, FTP and DOI URLs.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  * <h1>Illustrations and other contents note</h1>
  * <p>
  * For books or other text media only, this data element carries text stating the number and type of illustrations. The
- * text may also include other content items, <i>eg</i> maps, bibliography, tables, index <i>etc</i>. Optional, and
+ * text may also include other content items, <i>eg</i>&nbsp;maps, bibliography, tables, index <i>etc</i>. Optional, and
  * repeatable if parallel notes are provided in multiple languages. The <i>language</i> attribute is optional for a
  * single instance of &lt;IllustrationsNote&gt;, but must be included in each instance if &lt;IllustrationsNote&gt; is
  * repeated.

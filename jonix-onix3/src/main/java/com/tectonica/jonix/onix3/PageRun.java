@@ -164,7 +164,7 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
      * <p>
      * The number of the first page of a sequence of contiguous pages. Mandatory in each occurrence of the
      * &lt;PageRun&gt; composite, and non-repeating. Note that here and in the &lt;LastPageNumber&gt; element a page
-     * ‘number’ may be Arabic, Roman, or an alphanumeric string (<i>eg</i> L123).
+     * ‘number’ may be Arabic, Roman, or an alphanumeric string (<i>eg</i>&nbsp;L123).
      * </p>
      * JONIX adds: this field is required
      */

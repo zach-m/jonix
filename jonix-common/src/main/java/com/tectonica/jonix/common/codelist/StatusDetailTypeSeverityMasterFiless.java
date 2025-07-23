@@ -43,7 +43,7 @@ interface CodeList261 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist261">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist261">ONIX
  *      Codelist 261 in Reference Guide</a>
  */
 public enum StatusDetailTypeSeverityMasterFiless implements OnixCodelist, CodeList261 {
@@ -72,12 +72,12 @@ public enum StatusDetailTypeSeverityMasterFiless implements OnixCodelist, CodeLi
     /**
      * Some data in the content or structure of a master file caused an error due to not meeting the requirements of the
      * relevant standard. The master file in question has been rejected, but processing of the remaining master files
-     * comprising tthe product has continued
+     * comprising the product has continued
      */
     Error("e", "Error"),
 
     /**
-     * Some data in the content or struture of a master file caused an unrecoverable error due to not meeting the
+     * Some data in the content or structure of a master file caused an unrecoverable error due to not meeting the
      * requirements of the relevant standard. The entire set of master files for the product has been rejected
      */
     Fatal_error("f", "Fatal error");

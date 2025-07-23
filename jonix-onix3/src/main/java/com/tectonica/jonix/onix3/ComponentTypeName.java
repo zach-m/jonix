@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Component type name</h1>
  * <p>
  * The generic name (if any) which is given in the product to the type of section which the content item represents,
- * <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
+ * <i>eg</i>&nbsp;Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
  * &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the &lt;ContentItem&gt;.
  * </p>
  * <table border='1' cellpadding='3'>

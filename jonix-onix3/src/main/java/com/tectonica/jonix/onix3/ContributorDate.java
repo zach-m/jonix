@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Contributor date composite</h1>
  * <p>
  * A group of data elements which together specify a date associated with the person or organization identified in an
- * occurrence of the &lt;Contributor&gt; composite, <i>eg</i> birth or death. Optional, and repeatable to allow multiple
- * dates to be specified.
+ * occurrence of the &lt;Contributor&gt; composite, <i>eg</i>&nbsp;birth or death. Optional, and repeatable to allow
+ * multiple dates to be specified.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

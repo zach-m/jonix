@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  * <h1>Supply date composite</h1>
  * <p>
  * An optional group of data elements which together specify a date associated with the supply status of the product,
- * <i>eg</i> expected ship date. Repeatable in order to specify multiple dates.
+ * <i>eg</i>&nbsp;expected ship date. Repeatable in order to specify multiple dates.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

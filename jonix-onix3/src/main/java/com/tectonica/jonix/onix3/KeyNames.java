@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Person name part 4: key name(s)</h1>
  * <p>
  * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
- * <i>ie</i> the name elements normally used to open an entry in an alphabetical list, <i>eg</i> ‘Smith’ or ‘Garcia
- * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
+ * <i>ie</i>&nbsp;the name elements normally used to open an entry in an alphabetical list, <i>eg</i>&nbsp;‘Smith’ or
+ * ‘Garcia Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
  * elements P.7.11 to P.7.18 are used.
  * </p>
  * <table border='1' cellpadding='3'>

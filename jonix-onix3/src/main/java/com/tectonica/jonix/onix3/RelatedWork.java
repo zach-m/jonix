@@ -183,7 +183,7 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
      * <p>
      * A group of data elements which together define an identifier of a work in accordance with a specified scheme.
      * Mandatory in each occurrence of the &lt;RelatedWork&gt; composite, and repeatable if two or more identifiers for
-     * the same work are sent using different identifier schemes (<i>eg</i> ISTC and DOI).
+     * the same work are sent using different identifier schemes (<i>eg</i>&nbsp;ISTC and DOI).
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */

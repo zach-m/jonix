@@ -35,9 +35,10 @@ import java.util.function.Consumer;
  * <h1>Location name</h1>
  * <p>
  * The name of a city or town location within the specified country or region with which a contributor is particularly
- * associated. Optional, and repeatable to provide parallel names for a single location in multiple languages (<i>eg</i>
- * Baile Átha Cliath and Dublin, or Bruxelles and Brussel). The <i>language</i> attribute is optional for a single
- * instance of &lt;LocationName&gt;, but must be included in each instance if &lt;LocationName&gt; is repeated.
+ * associated. Optional, and repeatable to provide parallel names for a single location in multiple languages
+ * (<i>eg</i>&nbsp;Baile Átha Cliath and Dublin, or Bruxelles and Brussel). The <i>language</i> attribute is optional
+ * for a single instance of &lt;LocationName&gt;, but must be included in each instance if &lt;LocationName&gt; is
+ * repeated.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

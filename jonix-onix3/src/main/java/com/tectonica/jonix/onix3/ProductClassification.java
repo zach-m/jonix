@@ -205,10 +205,10 @@ public class ProductClassification
 
     /**
      * <p>
-     * A name which identifies a proprietary classification scheme (<i>ie</i> a scheme which is not a standard and for
-     * which there is no individual scheme type code). Should be included when, and only when, the code in the
-     * &lt;ProductClassificationType&gt; element indicates a proprietary scheme, <i>ie</i> the sender’s own category
-     * scheme. Optional and non-repeating.
+     * A name which identifies a proprietary classification scheme (<i>ie</i>&nbsp;a scheme which is not a standard and
+     * for which there is no individual scheme type code). Should be included when, and only when, the code in the
+     * &lt;ProductClassificationType&gt; element indicates a proprietary scheme, <i>ie</i>&nbsp;the sender’s own
+     * category scheme. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -222,7 +222,7 @@ public class ProductClassification
     /**
      * <p>
      * The percentage of the unit value of the product that is assignable to a designated product classification.
-     * Optional and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two or more
+     * Optional and non-repeating. Used when a mixed product (<i>eg</i>&nbsp;book and CD) belongs partly to two or more
      * product classes within a particular scheme. If omitted, the product classification code applies to 100% of the
      * product.
      * </p>

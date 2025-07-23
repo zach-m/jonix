@@ -33,9 +33,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Source name</h1>
  * <p>
- * If the &lt;CollectionType&gt; code indicates an ascribed collection (<i>ie</i> a collection which has been identified
- * and described by a supply chain organization other than the publisher), this element may be used to carry the name of
- * the organization responsible. Optional and non-repeating.
+ * If the &lt;CollectionType&gt; code indicates an ascribed collection (<i>ie</i>&nbsp;a collection which has been
+ * identified and described by a supply chain organization other than the publisher), this element may be used to carry
+ * the name of the organization responsible. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

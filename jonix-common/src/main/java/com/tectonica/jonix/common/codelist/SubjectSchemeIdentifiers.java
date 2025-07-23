@@ -43,7 +43,7 @@ interface CodeList27 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -102,7 +102,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     BISAC_Regional_theme("11", "BISAC Regional theme"),
 
     /**
-     * Deprecated . The BIC subject category scheme is obsolete, see
+     * Deprecated. The BIC subject category scheme is obsolete, see
      * https://bic.org.uk/resources/BIC-Standard-Subject-Categories/
      */
     BIC_subject_category("12", "BIC subject category"),
@@ -166,7 +166,8 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     Publishers_own_category_code("23", "Publisher’s own category code"),
 
     /**
-     * As specified in &lt;SubjectSchemeName&gt;
+     * For example, a publisher's or retailer's own subject coding scheme. Note that a distinctive
+     * &lt;SubjectSchemeName&gt; is required with proprietary coding schemes
      */
     Proprietary_subject_scheme("24", "Proprietary subject scheme"),
 
@@ -437,7 +438,7 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     PTO("72", "PTO"),
 
     /**
-     * Finnish book trade categorisation
+     * Finnish book trade categorization
      */
     Suomalainen_kirja_alan_luokitus("73", "Suomalainen kirja-alan luokitus"),
 
@@ -790,7 +791,17 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Norske_emneord("D3", "Norske emneord");
+    Norske_emneord("D3", "Norske emneord"),
+
+    /**
+     * Controlled vocabulary and alphanumeric codes for Aboriginal and Torres Strait Islander languages and peoples,
+     * maintained by the Australian Institute of Aboriginal and Torres Strait Islander Studies (AIATSIS), for use where
+     * the book is about a language or the people that traditionally speak it. Only for use in ONIX 3.0 or later. See
+     * https://collection.aiatsis.gov.au/austlang
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Austlang("D4", "Austlang");
 
     public final String code;
     public final String description;

@@ -41,7 +41,7 @@ import java.util.function.Consumer;
  * </p>
  * <p>
  * &lt;PrizeStatement&gt; is intended for display purposes only. When used, a &lt;PrizeStatement&gt; must be complete in
- * itself, <i>ie</i> it should not be treated as merely supplementary to other elements within the &lt;Prize&gt;
+ * itself, <i>ie</i>&nbsp;it should not be treated as merely supplementary to other elements within the &lt;Prize&gt;
  * composite. Nor should &lt;PrizeStatement&gt; be supplied <em>instead</em> of those other elements – at minimum, the
  * &lt;PrizeCode&gt; element, and whenever appropriate the &lt;PrizeYear&gt; element should be supplied.
  * </p>

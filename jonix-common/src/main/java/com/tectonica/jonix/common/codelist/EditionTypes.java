@@ -43,7 +43,7 @@ interface CodeList21 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -130,7 +130,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Enhanced_edition("ENH", "Enhanced edition"),
 
     /**
-     * Content has been enlarged or expanded from that of a previous edition
+     * Content has been enlarged or expanded from that of a previous edition, with significant additions to the original
+     * content
      */
     Enlarged_edition("ENL", "Enlarged edition"),
 
@@ -159,7 +160,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Festschrift("FST", "Festschrift"),
 
     /**
-     * Edition optimised for high readability, typically featuring colored or tinted page backgrounds to reduce
+     * Edition optimized for high readability, typically featuring colored or tinted page backgrounds to reduce
      * contrast, extra letter, word and line spacing to reduce crowding and isolate individual words, simplified page
      * layouts and an open, sans serif font (or occasionally, an unusual font design) intended to aid readability.
      * Sometimes labelled 'dyslexia-friendly'. See also code SMP if the text itself is simplified, and codes LTE or ULP
@@ -223,9 +224,10 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Paperback_original("PBO", "Paperback original"),
 
     /**
-     * In the US, a book that was previously bound, normally as a paperback, and has been rebound with a library-quality
-     * hardcover binding by a supplier other than the original publisher. See also the &lt;Publisher&gt; and
-     * &lt;RelatedProduct&gt; composites for other aspects of the treatment of prebound editions in ONIX
+     * Book that was previously bound, normally as a paperback, and has been rebound with, for example, a
+     * library-quality hardcover binding, or a lay-flat binding, by a supplier other than the original publisher. See
+     * also the &lt;Publisher&gt; and &lt;RelatedProduct&gt; composites for other aspects of the treatment of prebound
+     * editions in ONIX
      */
     Prebound_edition("PRB", "Prebound edition"),
 
@@ -299,7 +301,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Variorum_edition("VAR", "Variorum edition"),
 
     /**
-     * Readaloud edition - specifially intended and designed for reading aloud (to children). Only for use in ONIX 3.0
+     * Readaloud edition - specifically intended and designed for reading aloud (to children). Only for use in ONIX 3.0
      * or later
      * <p>
      * JONIX adds: Not included in Onix2

@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <p>
  * The number of the first page of a sequence of contiguous pages. Mandatory in each occurrence of the &lt;PageRun&gt;
  * composite, and non-repeating. Note that here and in the &lt;LastPageNumber&gt; element a page ‘number’ may be Arabic,
- * Roman, or an alphanumeric string (<i>eg</i> L123).
+ * Roman, or an alphanumeric string (<i>eg</i>&nbsp;L123).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

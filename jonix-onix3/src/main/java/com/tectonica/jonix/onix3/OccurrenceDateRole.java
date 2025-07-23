@@ -34,7 +34,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Occurrence date role</h1>
  * <p>
- * An ONIX code indicating the significance of the date, <i>eg</i> the date of the occurrence, last date of ticket
+ * An ONIX code indicating the significance of the date, <i>eg</i>&nbsp;the date of the occurrence, last date of ticket
  * availability <i>etc</i>. Mandatory in each instance of the &lt;OccurrenceDate&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

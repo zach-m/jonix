@@ -234,7 +234,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The generic name (if any) which is given in the product to the type of section which the content item represents,
-     * <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
+     * <i>eg</i>&nbsp;Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
      * &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the &lt;ContentItem&gt;.
      * </p>
      * JONIX adds: this field is required
@@ -299,9 +299,9 @@ public class ContentItem implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of data elements which are specific to audio or audiovisual (<i>ie</i> time-based) content.
-     * Exactly one of either the &lt;AVItem&gt; composite or the similar &lt;TextItem&gt; composite must occur in a
-     * &lt;ContentItem&gt; composite which describes a content item.
+     * An optional group of data elements which are specific to audio or audiovisual (<i>ie</i>&nbsp;time-based)
+     * content. Exactly one of either the &lt;AVItem&gt; composite or the similar &lt;TextItem&gt; composite must occur
+     * in a &lt;ContentItem&gt; composite which describes a content item.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -314,8 +314,8 @@ public class ContentItem implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The number (if any) which is given to the content item in the product, in the form (<i>eg</i> Arabic or Roman) in
-     * which it is given in the product. Optional and non-repeating.
+     * The number (if any) which is given to the content item in the product, in the form (<i>eg</i>&nbsp;Arabic or
+     * Roman) in which it is given in the product. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

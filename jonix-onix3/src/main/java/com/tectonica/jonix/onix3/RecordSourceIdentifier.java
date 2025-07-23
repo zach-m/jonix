@@ -197,8 +197,8 @@ public class RecordSourceIdentifier
 
     /**
      * <p>
-     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
-     * there is no individual ID type code). Used when, and only when, the code in the &lt;RecordSourceIDType&gt;
+     * A name which identifies a proprietary identifier scheme (<i>ie</i>&nbsp;a scheme which is not a standard and for
+     * which there is no individual ID type code). Used when, and only when, the code in the &lt;RecordSourceIDType&gt;
      * element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional

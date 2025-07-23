@@ -43,7 +43,7 @@ interface CodeList198 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist198">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist198">ONIX
  *      Codelist 198 in Reference Guide</a>
  */
 public enum ProductContactRoles implements OnixCodelist, CodeList198 {
@@ -85,11 +85,11 @@ public enum ProductContactRoles implements OnixCodelist, CodeList198 {
     Permissions_contact("06", "Permissions contact"),
 
     /**
-     * Eg for use where authorisation must be gained from the publisher rather than the distributor or wholesaler
+     * Eg for use where authorization must be gained from the publisher rather than the distributor or wholesaler
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Return_authorisation_contact("07", "Return authorisation contact"),
+    Return_authorization_contact("07", "Return authorization contact"),
 
     /**
      * Eg for legal deposit or long-term preservation

@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Resource file feature type</h1>
  * <p>
  * An ONIX code which specifies the feature of the resource file described by an instance of the
- * &lt;ResourceFileFeature&gt; composite, <i>eg</i> a checksum or hash for the resource file. Mandatory in each
+ * &lt;ResourceFileFeature&gt; composite, <i>eg</i>&nbsp;a checksum or hash for the resource file. Mandatory in each
  * occurrence of the composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

@@ -34,7 +34,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Supplier role</h1>
  * <p>
- * An ONIX code identifying the role of the supplier in relation to the product, <i>eg</i> Publisher, Publisher’s
+ * An ONIX code identifying the role of the supplier in relation to the product, <i>eg</i>&nbsp;Publisher, Publisher’s
  * exclusive distributor, <i>etc</i>. Mandatory in each occurrence of the &lt;Supplier&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

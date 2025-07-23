@@ -41,7 +41,7 @@ interface CodeList100 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist100">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist100">ONIX
  *      Codelist 100 in Reference Guide</a>
  */
 public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
@@ -53,11 +53,11 @@ public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
     BIC_discount_group_code("01", "BIC discount group code"),
 
     /**
-     * A publisher's or supplier's own code which identifies a trade discount category, as specified in
-     * &lt;DiscountCodeTypeName&gt;. The actual discount for each code is set by trading partner agreement (applies to
-     * goods supplied on standard trade discounting terms)
+     * A publisher's or supplier's own code which identifies a trade discount category. Note that a distinctive
+     * &lt;DiscountCodeTypeName&gt; is required with proprietary coding schemes. The actual discount for each code is
+     * set by trading partner agreement (applies to goods supplied on standard trade discounting terms)
      */
-    Proprietary_discount_code("02", "Proprietary discount code"),
+    Proprietary_discount_code_scheme("02", "Proprietary discount code scheme"),
 
     /**
      * Terms code used in the Netherlands book trade
@@ -70,11 +70,11 @@ public enum DiscountCodeTypes implements OnixCodelist, CodeList100 {
     German_terms_code("04", "German terms code"),
 
     /**
-     * A publisher's or supplier's own code which identifies a commission rate category, as specified in
-     * &lt;DiscountCodeTypeName&gt;. The actual commission rate for each code is set by trading partner agreement
-     * (applies to goods supplied on agency terms)
+     * A publisher's or supplier's own code which identifies a commission rate category. Note that a distinctive
+     * &lt;DiscountCodeTypeName&gt; is required with proprietary coding schemes. The actual commission rate for each
+     * code is set by trading partner agreement (applies to goods supplied on agency terms)
      */
-    Proprietary_commission_code("05", "Proprietary commission code"),
+    Proprietary_commission_code_scheme("05", "Proprietary commission code scheme"),
 
     /**
      * UK publisher's or distributor's commission group code in format specified by BIC to ensure uniqueness. Format is

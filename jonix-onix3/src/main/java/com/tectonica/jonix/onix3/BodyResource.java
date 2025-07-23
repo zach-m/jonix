@@ -208,7 +208,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A URL which provides a link to a resource. Mandatory in each occurrence of the &lt;BodyResource&gt; composite,
-     * and repeatable if the resource can be linked in more than one way, <i>eg</i> by HTTP, FTP and DOI URLs.
+     * and repeatable if the resource can be linked in more than one way, <i>eg</i>&nbsp;by HTTP, FTP and DOI URLs.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -223,8 +223,8 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * <p>
      * A number which specifies a single overall sequence of body resources. Optional and non-repeating. It is strongly
      * recommended that each occurrence of the &lt;BodyResource&gt; composite should carry a &lt;SequenceNumber&gt;, and
-     * that primary resources are numbered in ‘spine order’. Ancillary resources (<i>eg</i> an image file referenced by
-     * a primary HTML file) should be numbered after the primary resources.
+     * that primary resources are numbered in ‘spine order’. Ancillary resources (<i>eg</i>&nbsp;an image file
+     * referenced by a primary HTML file) should be numbered after the primary resources.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -270,7 +270,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code which provides added detail of the resource file which is specified in &lt;ResourceFileLink&gt;,
-     * <i>eg</i> the file type of the resource. Optional, and repeatable in order to provide multiple additional
+     * <i>eg</i>&nbsp;the file type of the resource. Optional, and repeatable in order to provide multiple additional
      * details.
      * </p>
      * JONIX adds: this list may be empty
@@ -324,9 +324,9 @@ public class BodyResource implements OnixSuperComposite, Serializable {
      * or ‘CMYK separations pages 16-31’.
      * </p>
      * <p>
-     * Note that individual resources do not need to be aligned with the physical organization of the book (<i>eg</i>
-     * with the folded signatures of a print-on-demand product), nor with the logical organization (<i>eg</i> with the
-     * chapters in the work).
+     * Note that individual resources do not need to be aligned with the physical organization of the book
+     * (<i>eg</i>&nbsp;with the folded signatures of a print-on-demand product), nor with the logical organization
+     * (<i>eg</i>&nbsp;with the chapters in the work).
      * </p>
      * <p>
      * The field is optional, and is repeatable to provide parallel descriptions in multiple languages. The
@@ -347,7 +347,7 @@ public class BodyResource implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together specify a date associated with the resource file specified in
-     * &lt;ResourceFileLink&gt;, <i>eg</i> date when the resource was last updated. Repeatable to specify different
+     * &lt;ResourceFileLink&gt;, <i>eg</i>&nbsp;date when the resource was last updated. Repeatable to specify different
      * dates with their various roles.
      * </p>
      * JONIX adds: this list may be empty

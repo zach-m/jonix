@@ -201,9 +201,9 @@ public class ReviewRating implements OnixDataComposite<JonixReviewRating>, Seria
 
     /**
      * <p>
-     * The ‘units’ used by a rating, <i>eg</i> stars, tomatoes <i>etc</i>. Optional, and repeatable to provide the units
-     * in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;RatingUnits&gt;,
-     * but must be included in each instance if &lt;RatingUnits&gt; is repeated.
+     * The ‘units’ used by a rating, <i>eg</i>&nbsp;stars, tomatoes <i>etc</i>. Optional, and repeatable to provide the
+     * units in multiple languages. The <i>language</i> attribute is optional for a single instance of
+     * &lt;RatingUnits&gt;, but must be included in each instance if &lt;RatingUnits&gt; is repeated.
      * </p>
      * JONIX adds: this list may be empty
      */

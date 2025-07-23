@@ -200,9 +200,9 @@ public class AVItemIdentifier
 
     /**
      * <p>
-     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
-     * there is no individual ID type code). Must be used when, and only when, the code in &lt;AVItemIDType&gt;
-     * indicates a proprietary scheme, <i>eg</i> a publisher’s own code. Optional and non-repeating
+     * A name which identifies a proprietary identifier scheme (<i>ie</i>&nbsp;a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be used when, and only when, the code in &lt;AVItemIDType&gt;
+     * indicates a proprietary scheme, <i>eg</i>&nbsp;a publisher’s own code. Optional and non-repeating
      * </p>
      * JONIX adds: this field is optional
      */

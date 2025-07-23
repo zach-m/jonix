@@ -223,7 +223,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
 
     /**
      * <p>
-     * When a title element includes a part designation within a larger whole (<i>eg</i> Part I, or Volume 3), this
+     * When a title element includes a part designation within a larger whole (<i>eg</i>&nbsp;Part I, or Volume 3), this
      * field should be used to carry the number and its ‘caption’ as text. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is required
@@ -283,8 +283,8 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * Text at the beginning of a title element which is to be ignored for alphabetical sorting. Optional and
      * non-repeating; can only be used when &lt;TitleText&gt; is omitted, and if the &lt;TitleWithoutPrefix&gt; element
      * is also present. These two elements may be used in combination in applications where it is necessary to
-     * distinguish an initial word or character string which is to be ignored for filing purposes, <i>eg</i> in library
-     * systems and in some bookshop databases.
+     * distinguish an initial word or character string which is to be ignored for filing purposes, <i>eg</i>&nbsp;in
+     * library systems and in some bookshop databases.
      * </p>
      * JONIX adds: this field is optional
      */

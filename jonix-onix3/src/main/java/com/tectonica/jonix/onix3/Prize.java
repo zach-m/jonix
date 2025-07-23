@@ -236,9 +236,9 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
     /**
      * <p>
      * An ONIX code identifying the region in which a prize or award is given. Optional and non-repeatable. A region is
-     * an area which is not a country, but which is precisely defined in geographical terms, <i>eg</i> Newfoundland and
-     * Labrador, Florida. If both country and region are specified, the region must be within the country. Note that US
-     * States have region codes, while US overseas territories have distinct ISO Country Codes.
+     * an area which is not a country, but which is precisely defined in geographical terms, <i>eg</i>&nbsp;Newfoundland
+     * and Labrador, Florida. If both country and region are specified, the region must be within the country. Note that
+     * US States have region codes, while US overseas territories have distinct ISO Country Codes.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -251,7 +251,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
 
     /**
      * <p>
-     * An ONIX code indicating the achievement of the product in relation to a prize or award, <i>eg</i> winner,
+     * An ONIX code indicating the achievement of the product in relation to a prize or award, <i>eg</i>&nbsp;winner,
      * runner-up, shortlisted. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
@@ -271,7 +271,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * </p>
      * <p>
      * &lt;PrizeStatement&gt; is intended for display purposes only. When used, a &lt;PrizeStatement&gt; must be
-     * complete in itself, <i>ie</i> it should not be treated as merely supplementary to other elements within the
+     * complete in itself, <i>ie</i>&nbsp;it should not be treated as merely supplementary to other elements within the
      * &lt;Prize&gt; composite. Nor should &lt;PrizeStatement&gt; be supplied <em>instead</em> of those other elements –
      * at minimum, the &lt;PrizeCode&gt; element, and whenever appropriate the &lt;PrizeYear&gt; element should be
      * supplied.

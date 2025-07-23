@@ -21,6 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 /*
@@ -41,7 +43,7 @@ interface CodeList230 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist230">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist230">ONIX
  *      Codelist 230 in Reference Guide</a>
  */
 public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
@@ -54,18 +56,34 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
     /**
      * Preview before purchase. Allows a retail customer, account holder or patron to view or listen to a proportion of
      * the book before purchase. Also applies to borrowers making use of 'acquisition on demand' models in libraries,
-     * and to 'subscription' models where the purchase is made on behalf of the reader. Generally used to specify
-     * different preview percentages across different customer types
+     * and to 'subscription' models where the purchase is made on behalf of the reader. Generally used here to specify
+     * different preview percentages across different customer types. Note that any Sales embargo date (in
+     * &lt;PublishingDate&gt; or &lt;MarketDate&gt;) also applies to provision of previews, unless an explicit date is
+     * provided for the preview
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Preview("01", "Preview"),
 
     /**
-     * Lendable by the purchaser to other device owner, account holder or patron, eg library lending (use where the
-     * library product is not identified with a separate &lt;ProductIdentifier&gt; from the consumer product). The
-     * 'primary' copy becomes unusable while the secondary copy is on loan, unless a number of concurrent borrowers is
-     * also specified
+     * Make physical copy of extract
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Print("02", "Print"),
+
+    /**
+     * Make digital copy of extract
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Copy_paste("03", "Copy / paste"),
+
+    /**
+     * Lendable by the purchaser to another device owner or account holder or patron, eg 'Lend-to-a-friend', or library
+     * lending (where the library product has a separate &lt;ProductIdentifier&gt; from the consumer product -&#160;but
+     * for this prefer code 16). The 'primary' copy becomes unusable while the secondary copy is 'lent' unless a number
+     * of concurrent borrowers is also specified
      */
     Lend("06", "Lend"),
 
@@ -78,14 +96,14 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
     Time_limited_license("07", "Time-limited license"),
 
     /**
-     * Maximum number of consecutive loans or loan extensions (eg from a library) to a single device owner, account
-     * holder or patron. Note that a limit of 1 indicates that a loan cannot be renewed or extended
+     * Maximum number of consecutive loans or loan extensions (usually from a library) to a single device owner or
+     * account holder or patron. Note that a limit of 1 indicates that a loan cannot be renewed or extended
      */
-    Loan_renewal("08", "Loan renewal"),
+    Library_loan_renewal("08", "Library loan renewal"),
 
     /**
      * E-publication license is multi-user. Maximum number of concurrent users licensed to use the product should be
-     * given in &lt;PriceConstraintLimit&gt;. For clarity, unlimited concurrencyis the default, but may be specified
+     * given in &lt;PriceConstraintLimit&gt;. For clarity, unlimited concurrency is the default, but may be specified
      * explicitly with code 01 from list 146, or with code 02 and a limit &lt;Quantity&gt; of 0 users
      */
     Multi_user_license("09", "Multi-user license"),
@@ -98,7 +116,29 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Preview_on_premises("10", "Preview on premises");
+    Preview_on_premises("10", "Preview on premises"),
+
+    /**
+     * Make use of the content of the product (text, images, audio etc) or the product metadata or supporting resources
+     * for extraction of useful (and possibly new) information through automated computer analysis, or for training of
+     * tools for such analysis (including training of generative AI models). By convention, use 01 or 03 in
+     * &lt;EpubUsageStatus&gt;. Note 03 should be regarded as 'prohibited to the full extent allowed by law', or
+     * otherwise expressly reserved by the rightsholder, as in some jurisdictions, TDM may be subject to copyright
+     * exception (eg for not-for-profit purposes), subject to optional reservation, or allowed under 'fair use' doctrine
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Text_and_data_mining("11", "Text and data mining"),
+
+    /**
+     * Loanable by the purchaser (usually a library) to other device owner or account holder or patron, eg library
+     * lending (whether or not the library product has a separate &lt;ProductIdentifier&gt; from the consumer product).
+     * The 'primary' copy becomes unusable while the secondary copy is 'on loan' unless a number of concurrent borrowers
+     * is also specified. Use code 08 to specify any limit on loan renewals
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Library_loan("16", "Library loan");
 
     public final String code;
     public final String description;
@@ -118,16 +158,30 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
         return description;
     }
 
+    private static volatile Map<String, PriceConstraintTypes> map;
+
+    private static Map<String, PriceConstraintTypes> map() {
+        Map<String, PriceConstraintTypes> result = map;
+        if (result == null) {
+            synchronized (PriceConstraintTypes.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (PriceConstraintTypes e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static PriceConstraintTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (PriceConstraintTypes e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 
     public static Optional<PriceConstraintTypes> byCodeOptional(String code) {

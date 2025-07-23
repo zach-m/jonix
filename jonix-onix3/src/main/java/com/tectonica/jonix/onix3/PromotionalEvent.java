@@ -279,10 +279,10 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * Optional composite that identifies a contributor – a person or corporate body – participating in the promotional
-     * event <em>who is also a contributor to the product, or who is its subject</em> (<i>ie</i> who is fully described
-     * in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or in an instance
-     * of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or&nbsp;P.18, in the same Product record). Repeatable to refer
-     * to multiple contributors.
+     * event <em>who is also a contributor to the product, or who is its subject</em> (<i>ie</i>&nbsp;who is fully
+     * described in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or in an
+     * instance of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or&nbsp;P.18, in the same Product record). Repeatable
+     * to refer to multiple contributors.
      * </p>
      * <p>
      * Note that an instance of &lt;PromotionalEvent&gt; may also contain one or more &lt;Contributor&gt; composites –
@@ -364,10 +364,10 @@ public class PromotionalEvent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * Optional composite that describes a contributor – a person or corporate body – participating in the promotional
-     * event <em>who is neither a contributor to the product, nor its subject</em> (<i>ie</i> is <em>not</em> described
-     * in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or in an instance
-     * of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or P.18, in the same Product record). Repeatable to identify
-     * multiple contributors.
+     * event <em>who is neither a contributor to the product, nor its subject</em> (<i>ie</i>&nbsp;is <em>not</em>
+     * described in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or in an
+     * instance of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or P.18, in the same Product record). Repeatable to
+     * identify multiple contributors.
      * </p>
      * JONIX adds: this list may be empty
      */

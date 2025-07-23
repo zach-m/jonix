@@ -43,7 +43,7 @@ interface CodeList96 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist96">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
 public enum CurrencyCodes implements OnixCodelist, CodeList96 {
@@ -76,7 +76,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
      * Cura&#231;ao, Sint Maarten. Replaced by the Caribbean Guilder (XCG) from April 2025. Deprecated - use only for
      * historical prices that pre-date withdrawal
      */
-    Netherlands_Antillian_Guilder("ANG", "Netherlands Antillian Guilder"),
+    Netherlands_Antillean_Guilder("ANG", "Netherlands Antillean Guilder"),
 
     /**
      * Angola
@@ -296,7 +296,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Algerian_Dinar("DZD", "Algerian Dinar"),
 
     /**
-     * Estonia.Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
+     * Estonia. Now replaced by the Euro (EUR). Deprecated - use only for historical prices that pre-date the
      * introduction of the Euro
      */
     Kroon("EEK", "Kroon"),
@@ -533,7 +533,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     Cayman_Islands_Dollar("KYD", "Cayman Islands Dollar"),
 
     /**
-     * Kazakstan
+     * Kazakhstan
      */
     Tenge("KZT", "Tenge"),
 
@@ -1033,7 +1033,7 @@ public enum CurrencyCodes implements OnixCodelist, CodeList96 {
     East_Caribbean_Dollar("XCD", "East Caribbean Dollar"),
 
     /**
-     * Cura&#231;ao, Sint Maarten
+     * Cura&#231;ao, Sint Maarten. Only for use in ONIX 3.0
      * <p>
      * JONIX adds: Not included in Onix2
      */

@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Resource file date composite</h1>
  * <p>
  * An optional group of data elements which together specify a date associated with the resource file specified in
- * &lt;ResourceFileLink&gt;, <i>eg</i> date when the resource was last updated. Repeatable to specify different dates
- * with their various roles, but may only be used when &lt;ResourceFileLink&gt; is present.
+ * &lt;ResourceFileLink&gt;, <i>eg</i>&nbsp;date when the resource was last updated. Repeatable to specify different
+ * dates with their various roles, but may only be used when &lt;ResourceFileLink&gt; is present.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -187,8 +187,8 @@ public class CollectionSequence
     /**
      * <p>
      * A number which specifies the ordinal position of the product in a collection. The ordinal position may be a
-     * simple number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level (<i>eg</i> 3.2) if the collection has a
-     * multi-level structure (<i>ie</i> there are both collection and sub-collection title elements). Mandatory and
+     * simple number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level (<i>eg</i>&nbsp;3.2) if the collection has a
+     * multi-level structure (<i>ie</i>&nbsp;there are both collection and sub-collection title elements). Mandatory and
      * non-repeating within the &lt;CollectionSequence&gt; composite.
      * </p>
      * <p>

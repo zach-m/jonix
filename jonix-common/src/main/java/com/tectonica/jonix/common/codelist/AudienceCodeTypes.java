@@ -43,7 +43,7 @@ interface CodeList29 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist29">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist29">ONIX
  *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -53,9 +53,10 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     ONIX_audience_codes("01", "ONIX audience codes"),
 
     /**
-     * As specified in &lt;AudienceCodeTypeName&gt;
+     * For example, a publisher's or retailer's own audience coding scheme. Note that a distinctive
+     * &lt;AudienceCodeTypeName&gt; is required with proprietary coding schemes
      */
-    Proprietary("02", "Proprietary"),
+    Proprietary_audience_scheme("02", "Proprietary audience scheme"),
 
     /**
      * Motion Picture Association of America rating applied to movies
@@ -139,9 +140,9 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     CBG_age_guidance("16", "CBG age guidance"),
 
     /**
-     * Audience code used in Nielsen Book Services
+     * Audience code used in NielsenIQ BookData services
      */
-    Nielsen_Book_audience_code("17", "Nielsen Book audience code"),
+    BookData_audience_code("17", "BookData audience code"),
 
     /**
      * Code list used to specify reading levels for children's books, used in the Netherlands - see also code 09
@@ -173,7 +174,7 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     ONIX_Adult_audience_rating("22", "ONIX Adult audience rating"),
 
     /**
-     * Codes A1 to C2 indicating standardised level of language learning or teaching material, from beginner to
+     * Codes A1 to C2 indicating standardized level of language learning or teaching material, from beginner to
      * advanced, defined by the Council of Europe (see http://www.coe.int/lang-CEFR)
      */
     Common_European_Framework_of_Reference_for_Language_Learning_CEFR("23",

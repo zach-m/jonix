@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Conference role</h1>
  * <p>
- * An ONIX code which indicates the relationship between the product and a conference to which it is related, <i>eg</i>
- * Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
+ * An ONIX code which indicates the relationship between the product and a conference to which it is related,
+ * <i>eg</i>&nbsp;Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

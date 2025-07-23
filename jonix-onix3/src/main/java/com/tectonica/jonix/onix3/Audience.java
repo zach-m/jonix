@@ -202,7 +202,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     /**
      * <p>
      * A name which identifies a proprietary audience code when the code in &lt;AudienceCodeType&gt; indicates a
-     * proprietary scheme, <i>eg</i> a vendor’s own code. Optional and non-repeating.
+     * proprietary scheme, <i>eg</i>&nbsp;a vendor’s own code. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Resource mode</h1>
  * <p>
- * An ONIX code indicating the mode of the supporting resource, <i>eg</i> audio, video. Mandatory in each occurrence of
- * the &lt;SupportingResource&gt; composite, and non-repeating.
+ * An ONIX code indicating the mode of the supporting resource, <i>eg</i>&nbsp;audio, video. Mandatory in each
+ * occurrence of the &lt;SupportingResource&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

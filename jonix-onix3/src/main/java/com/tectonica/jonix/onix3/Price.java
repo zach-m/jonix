@@ -301,8 +301,8 @@ public class Price implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code which further specifies the type of price, <i>eg</i> member price, reduced price when purchased as
-     * part of a set. Optional and non-repeating.
+     * An ONIX code which further specifies the type of price, <i>eg</i>&nbsp;member price, reduced price when purchased
+     * as part of a set. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -379,10 +379,10 @@ public class Price implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The amount of a price. Optional and non-repeating, but each occurrence of the &lt;Price&gt; composite must
-     * include either a &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional tax details, or an
-     * &lt;UnpricedItemType&gt; element. Note that free-of-charge products must use &lt;UnpricedItemType&gt; rather than
-     * a zero price.
+     * The amount of a price, dependent on the &lt;PriceType&gt; and other elements present within the &lt;Price&gt;
+     * composite. Optional and non-repeating, but each occurrence of the &lt;Price&gt; composite must include either a
+     * &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional tax details, or an &lt;UnpricedItemType&gt;
+     * element. Note that free-of-charge products must use &lt;UnpricedItemType&gt; rather than a zero price.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -589,8 +589,8 @@ public class Price implements OnixSuperComposite, Serializable {
      * The Price constraint composite has the same structure as &lt;EpubUsageConstraint&gt;. Use
      * &lt;EpubUsageConstraint&gt; for constraints that limit the user experience of the product, whether or not they
      * are enforced by technical protection measures (DRM). Use &lt;PriceConstraint&gt; where a single product is
-     * available under multiple terms and conditions (<i>ie</i> multiple commercial offers for the same product which
-     * differ in their Price constraints, and whether or not they are enforced by DRM).
+     * available under multiple terms and conditions (<i>ie</i>&nbsp;multiple commercial offers for the same product
+     * which differ in their Price constraints, and whether or not they are enforced by DRM).
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -636,9 +636,9 @@ public class Price implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A repeatable group of data elements which together specify a batch bonus, <i>ie</i> a quantity of free copies
-     * which are supplied (typically to a reseller) with a certain order quantity. The &lt;BatchBonus&gt; composite is
-     * optional.
+     * A repeatable group of data elements which together specify a batch bonus, <i>ie</i>&nbsp;a quantity of free
+     * copies which are supplied (typically to a reseller) with a certain order quantity. The &lt;BatchBonus&gt;
+     * composite is optional.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -690,15 +690,16 @@ public class Price implements OnixSuperComposite, Serializable {
      * <p>
      * A repeatable group of data elements which together specify tax included within a price amount. Optional, and used
      * only when &lt;PriceType&gt; indicates an inc-tax price. For items to which different taxes or tax rates apply
-     * (<i>eg</i> mixed media products in the UK which are partly taxed at standard rate and partly at zero rate), the
-     * composite is repeated for each separate tax or tax rate. Although only one of &lt;TaxRatePercent&gt; or
+     * (<i>eg</i>&nbsp;mixed media products in the UK which are partly taxed at standard rate and partly at zero rate),
+     * the composite is repeated for each separate tax or tax rate. Although only one of &lt;TaxRatePercent&gt; or
      * &lt;TaxAmount&gt; is mandatory within the composite, it is recommended that all tax elements in the composite
      * should be explicitly populated.
      * </p>
      * <p>
      * If the tax regime requires separate tax rates and amounts linked explicitly to particular product parts
-     * (<i>eg</i> in Germany), the &lt;ProductIdentifier&gt; composite may be included in each &lt;Tax&gt; composite.
-     * Where tax is payable on multiple product parts, each should have its own instance of the &lt;Tax&gt; composite.
+     * (<i>eg</i>&nbsp;in Germany), the &lt;ProductIdentifier&gt; composite may be included in each &lt;Tax&gt;
+     * composite. Where tax is payable on multiple product parts, each should have its own instance of the &lt;Tax&gt;
+     * composite.
      * </p>
      * JONIX adds: this list may be empty
      */

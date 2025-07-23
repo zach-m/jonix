@@ -188,9 +188,9 @@ public class Supplier implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code identifying the role of the supplier in relation to the product, <i>eg</i> Publisher, Publisher’s
-     * exclusive distributor, <i>etc</i>. Mandatory in each occurrence of the &lt;Supplier&gt; composite, and
-     * non-repeating.
+     * An ONIX code identifying the role of the supplier in relation to the product, <i>eg</i>&nbsp;Publisher,
+     * Publisher’s exclusive distributor, <i>etc</i>. Mandatory in each occurrence of the &lt;Supplier&gt; composite,
+     * and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */

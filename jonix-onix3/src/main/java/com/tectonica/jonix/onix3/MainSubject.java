@@ -34,8 +34,8 @@ import java.util.function.Consumer;
  * <h1>Main subject flag</h1>
  * <p>
  * An empty element that identifies an instance of the &lt;Subject&gt; composite as representing the main subject
- * category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i> there may be
- * two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
+ * category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i>&nbsp;there
+ * may be two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
  * &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em>. Optional and non-repeating
  * in each occurrence of the &lt;Subject&gt; composite.
  * </p>

@@ -34,8 +34,8 @@ import java.util.function.Consumer;
  * <h1>Percentage</h1>
  * <p>
  * The percentage of the unit value of the product that is assignable to a designated product classification. Optional
- * and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two or more product classes
- * within a particular scheme. If omitted, the product classification code applies to 100% of the product.
+ * and non-repeating. Used when a mixed product (<i>eg</i>&nbsp;book and CD) belongs partly to two or more product
+ * classes within a particular scheme. If omitted, the product classification code applies to 100% of the product.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

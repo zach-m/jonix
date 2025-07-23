@@ -43,7 +43,7 @@ interface CodeList176 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist176">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist176">ONIX
  *      Codelist 176 in Reference Guide</a>
  */
 public enum OperatingSystems implements OnixCodelist, CodeList176 {
@@ -87,7 +87,7 @@ public enum OperatingSystems implements OnixCodelist, CodeList176 {
     Palm_OS("07", "Palm OS"),
 
     /**
-     * A proprietry Linux-based operating system for handheld devices, originally developed by Palm (now owned by LG)
+     * A proprietary Linux-based operating system for handheld devices, originally developed by Palm (now owned by LG)
      */
     webOS("08", "webOS"),
 

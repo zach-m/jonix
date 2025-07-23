@@ -35,8 +35,8 @@ import java.util.function.Consumer;
  * <h1>Resource file detail</h1>
  * <p>
  * An ONIX code which provides added detail of the resource file which is specified in &lt;ResourceFileLink&gt;,
- * <i>eg</i> the file type of the resource. Optional, and repeatable in order to provide multiple additional details,
- * but may only be used when &lt;ResourceFileLink&gt; is present.
+ * <i>eg</i>&nbsp;the file type of the resource. Optional, and repeatable in order to provide multiple additional
+ * details, but may only be used when &lt;ResourceFileLink&gt; is present.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

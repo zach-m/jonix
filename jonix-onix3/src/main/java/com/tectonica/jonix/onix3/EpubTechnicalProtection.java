@@ -35,8 +35,8 @@ import java.util.function.Consumer;
  * <h1>Digital product technical protection</h1>
  * <p>
  * An ONIX code specifying whether a digital product has DRM or other technical protection features. Optional, and
- * repeatable if a product has two or more kinds of protection (<i>ie</i> different parts of a product are protected in
- * different ways).
+ * repeatable if a product has two or more kinds of protection (<i>ie</i>&nbsp;different parts of a product are
+ * protected in different ways).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

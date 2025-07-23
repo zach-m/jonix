@@ -34,9 +34,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Review rating units</h1>
  * <p>
- * The ‘units’ used by a rating, <i>eg</i> stars, tomatoes <i>etc</i>. Optional, and repeatable to provide the units in
- * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;RatingUnits&gt;, but must
- * be included in each instance if &lt;RatingUnits&gt; is repeated.
+ * The ‘units’ used by a rating, <i>eg</i>&nbsp;stars, tomatoes <i>etc</i>. Optional, and repeatable to provide the
+ * units in multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;RatingUnits&gt;,
+ * but must be included in each instance if &lt;RatingUnits&gt; is repeated.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

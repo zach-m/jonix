@@ -43,15 +43,15 @@ interface CodeList5 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist5">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist5">ONIX
  *      Codelist 5 in Reference Guide</a>
  */
 public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
     /**
-     * For example, a publisher's or wholesaler's product number or SKU. Note that &lt;IDTypeName&gt; is required with
-     * proprietary identifiers
+     * For example, a publisher's or wholesaler's product number or SKU. Note that a distinctive &lt;IDTypeName&gt; is
+     * required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_product_ID_scheme("01", "Proprietary product ID scheme"),
 
     /**
      * International Standard Book Number, pre-2007 (10 digits, or 9 digits plus X, without spaces or hyphens) - now

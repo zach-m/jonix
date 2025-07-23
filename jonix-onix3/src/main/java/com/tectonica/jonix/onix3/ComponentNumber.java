@@ -33,8 +33,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Component number</h1>
  * <p>
- * The number (if any) which is given to the content item in the product, in the form (<i>eg</i> Arabic or Roman) in
- * which it is given in the product. Optional and non-repeating.
+ * The number (if any) which is given to the content item in the product, in the form (<i>eg</i>&nbsp;Arabic or Roman)
+ * in which it is given in the product. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

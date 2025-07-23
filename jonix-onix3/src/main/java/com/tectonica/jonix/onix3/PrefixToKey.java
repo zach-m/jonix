@@ -36,9 +36,9 @@ import java.util.function.Consumer;
  * <h1>Person name part 3: prefix to key names</h1>
  * <p>
  * The third part of a structured name of a person who contributed to the creation of the product: a prefix which
- * precedes the key name(s) but which is not to be treated as part of the key name, <i>eg</i> ‘van’ in Ludwig van
- * Beethoven. This element may also be used for titles that appear after given names and before key names, <i>eg</i>
- * ‘Lord’ in Alfred, Lord Tennyson. Optional and non-repeating.
+ * precedes the key name(s) but which is not to be treated as part of the key name, <i>eg</i>&nbsp;‘van’ in Ludwig van
+ * Beethoven. This element may also be used for titles that appear after given names and before key names,
+ * <i>eg</i>&nbsp;‘Lord’ in Alfred, Lord Tennyson. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -43,7 +43,7 @@ interface CodeList58 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist58">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist58">ONIX
  *      Codelist 58 in Reference Guide</a>
  */
 public enum PriceTypes implements OnixCodelist, CodeList58 {
@@ -122,7 +122,7 @@ public enum PriceTypes implements OnixCodelist, CodeList58 {
      * Special sale RRP excluding any sales tax or value-added tax. Note 'special sales' are sales where terms and
      * conditions are different from normal trade sales, when for example products that are normally sold on a
      * sale-or-return basis are sold on firm-sale terms, where a particular product is tailored for a specific retail
-     * outlet (often termed a 'premium' product), or where other specific conditions or qualiifications apply. Further
+     * outlet (often termed a 'premium' product), or where other specific conditions or qualifications apply. Further
      * details of the modified terms and conditions should be given in &lt;PriceTypeDescription&gt;
      */
     Special_sale_RRP_excluding_tax("11", "Special sale RRP excluding tax"),

@@ -176,7 +176,7 @@ public class ProductFormFeature
     /**
      * <p>
      * An ONIX code which specifies the feature described by an instance of the &lt;ProductFormFeature&gt; composite,
-     * <i>eg</i> binding color. Mandatory in each occurrence of the composite, and non-repeating.
+     * <i>eg</i>&nbsp;binding color. Mandatory in each occurrence of the composite, and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */
@@ -190,8 +190,8 @@ public class ProductFormFeature
     /**
      * <p>
      * A controlled value that describes a product form feature. Presence or absence of this element depends on the
-     * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i> thumb index) do not require an
-     * accompanying value, while others (<i>eg</i> text font) require free text in
+     * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i>&nbsp;thumb index) do not require an
+     * accompanying value, while others (<i>eg</i>&nbsp;text font) require free text in
      * &lt;ProductFormFeatureDescription&gt;; and others may have both code and free text. Non-repeating.
      * </p>
      * JONIX adds: this field is optional

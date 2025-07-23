@@ -202,9 +202,9 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A URL which provides a link to a supporting resource. Mandatory in each occurrence of the &lt;ResourceVersion&gt;
-     * composite, and repeatable if the resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a
-     * supporting resource is available in multiple parallel languages. Where multiple languages are used, all repeats
-     * must carry the <i>language</i> attribute.
+     * composite, and repeatable if the resource can be linked in more than one way, <i>eg</i>&nbsp;by URL or DOI, or
+     * where a supporting resource is available in multiple parallel languages. Where multiple languages are used, all
+     * repeats must carry the <i>language</i> attribute.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -239,7 +239,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together specify a date associated with a supporting resource version,
-     * <i>eg</i> the date until which the resource version will be available for download. Repeatable to specify
+     * <i>eg</i>&nbsp;the date until which the resource version will be available for download. Repeatable to specify
      * different dates with their various roles.
      * </p>
      * JONIX adds: this list may be empty

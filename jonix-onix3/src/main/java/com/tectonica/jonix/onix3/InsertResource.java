@@ -232,8 +232,8 @@ public class InsertResource implements OnixSuperComposite, Serializable {
      * A number which (in combination with any &lt;SalesOutlet&gt; composite) specifies a single overall sequence of
      * insert resources. Optional and non-repeating. It is strongly recommended that each occurrence of the
      * &lt;InsertResource&gt; composite should carry a &lt;SequenceNumber&gt;, and that primary resources are numbered
-     * in ‘spine order’ (within the insert). Ancillary resources (<i>eg</i> an image file referenced by a primary HTML
-     * file) should be numbered after the primary resources.
+     * in ‘spine order’ (within the insert). Ancillary resources (<i>eg</i>&nbsp;an image file referenced by a primary
+     * HTML file) should be numbered after the primary resources.
      * </p>
      * JONIX adds: this field is optional
      */

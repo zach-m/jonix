@@ -214,7 +214,7 @@ public class Conference implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code which indicates the relationship between the product and a conference to which it is related,
-     * <i>eg</i> Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
+     * <i>eg</i>&nbsp;Proceedings of / Selected papers from / Developed from. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

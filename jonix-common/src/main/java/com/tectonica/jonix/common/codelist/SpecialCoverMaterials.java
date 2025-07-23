@@ -43,7 +43,7 @@ interface CodeList99 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist99">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist99">ONIX
  *      Codelist 99 in Reference Guide</a>
  */
 public enum SpecialCoverMaterials implements OnixCodelist, CodeList99 {
@@ -126,7 +126,21 @@ public enum SpecialCoverMaterials implements OnixCodelist, CodeList99 {
 
     Pigskin("26", "Pigskin"),
 
-    Goatskin("27", "Goatskin");
+    Goatskin("27", "Goatskin"),
+
+    /**
+     * Smooth or textured synthetic rubber. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Rubber("28", "Rubber"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Padded_or_quilted_fabric("29", "Padded or quilted fabric");
 
     public final String code;
     public final String description;

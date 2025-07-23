@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -168,10 +168,10 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Speakalong_audio("A304", "Speakalong audio"),
 
     /**
-     * Audio synchronised to text within an e-publication, for example an EPUB3 with audio overlay. Synchronisation at
+     * Audio synchronized to text within an e-publication, for example an EPUB3 with audio overlay. Synchronization at
      * least at paragraph level, and covering the full content
      */
-    Synchronised_audio("A305", "Synchronised audio"),
+    Synchronized_audio("A305", "Synchronized audio"),
 
     /**
      * Incidental sounds added to the audiobook narration (eg background environmental sounds)
@@ -297,13 +297,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Trade_paperback_UK("B106", "Trade paperback (UK)"),
 
     /**
-     * In North America, a category of paperback characterised partly by page size (typically 7&#189; x 4&#188; inches)
+     * In North America, a category of paperback characterized partly by page size (typically 7&#189; x 4&#188; inches)
      * and partly by target market and terms of trade; use with Product Form code BC
      */
     Tall_rack_paperback_US("B107", "Tall rack paperback (US)"),
 
     /**
-     * Japanese A-series size, 210 x 148mm. A tankobon is a complete collected story originally published in serialised
+     * Japanese A-series size, 210 x 148mm. A tankobon is a complete collected story originally published in serialized
      * form (eg in a magazine)
      */
     A5_size_Tankobon("B108", "A5 size Tankobon"),
@@ -529,7 +529,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Press_out_pieces("B216", "Press-out pieces"),
 
     /**
-     * Picture book, generally for children, with few words per illustration: use with applicable Product Form code
+     * Picture book, generally for children though also occasionally for teens or adults, with few words per
+     * illustration: use with applicable Product form code
      */
     Picture_book("B221", "Picture book"),
 
@@ -547,9 +548,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Pull_the_tab_book("B223", "Pull-the-tab book"),
 
     /**
-     * Picture book, generally for children though also used in augmentative and alternative education, without text in
-     * the body of the book. Also 'silent books', wordless graphic novels and comic books: use with applicable Product
-     * Form code
+     * Picture book, generally for children though also used in augmentative and alternative education, or for teens and
+     * adults, without text in the body of the book. Also 'silent books', wordless graphic novels and comic books: use
+     * with applicable Product Form code
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -580,7 +581,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Loose_leaf_or_partwork_sheets_parts_only("B303", "Loose leaf or partwork – sheets / parts only"),
 
     /**
-     * AKA stitched; for 'saddle-sewn', see code B310
+     * AKA stitched; for 'saddle-sewn', prefer code B310
      */
     Sewn("B304", "Sewn"),
 
@@ -600,13 +601,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Reinforced_binding("B307", "Reinforced binding"),
 
     /**
-     * Highest qualiy material used on spine and corners only. Must be accompanied by a code specifiying a material, eg
+     * Highest quality material used on spine and corners only. Must be accompanied by a code specifying a material, eg
      * 'half-bound real leather'
      */
     Half_bound("B308", "Half bound"),
 
     /**
-     * Highest qualiy material used on spine only. Must be accompanied by a code specifiying a material, eg 'quarter
+     * Highest quality material used on spine only. Must be accompanied by a code specifying a material, eg 'quarter
      * bound real leather'
      */
     Quarter_bound("B309", "Quarter bound"),
@@ -730,7 +731,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Vellum("B406", "Vellum"),
 
     /**
-     * Decorative or functional
+     * Capital bands, either decorative or functional. Use &lt;ProductFormFeature&gt; to specify the color
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -848,7 +849,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     With_thumb_index("B505", "With thumb index"),
 
     /**
-     * If the number of markers is significant, it can be stated as free text in &lt;ProductFormDescription&gt;
+     * If the number of markers is significant, it can be stated as free text in &lt;ProductFormDescription&gt;. Use
+     * &lt;ProductFormFeature&gt; to specify the color
      */
     With_ribbon_marker_s("B506", "With ribbon marker(s)"),
 
@@ -947,6 +949,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     With_accessibility_claim_ticket("B523", "With accessibility claim ticket"),
+
+    /**
+     * Pages composed of microporous sheets comprised of non-woven HDPE or HDPP fibers, or of non-porous HDPP film, eg
+     * Tyvek or Yupo
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Plastic_paper("B524", "Plastic paper"),
 
     /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
@@ -1597,64 +1607,64 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     No_preferred_page_progression("E206", "No preferred page progression"),
 
     /**
-     * Use for fixed-format e-books optimised for landscape display. Also include an indication of the optimal screen
+     * Use for fixed-format e-books optimized for landscape display. Also include an indication of the optimal screen
      * aspect ratio
      */
     Landscape("E210", "Landscape"),
 
     /**
-     * Use for fixed-format e-books optimised for portrait display. Also include an indication of the optimal screen
+     * Use for fixed-format e-books optimized for portrait display. Also include an indication of the optimal screen
      * aspect ratio
      */
     Portrait("E211", "Portrait"),
 
     /**
-     * Use for fixed-format e-books optimised for a square display.
+     * Use for fixed-format e-books optimized for a square display
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Square("E212", "Square"),
 
     /**
-     * Use for fixed-format e-publications optimised for vertical scrolling display ('webtoon format')
+     * Use for fixed-format e-publications optimized for vertical scrolling display ('webtoon format')
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Vertical_scrolling("E213", "Vertical scrolling"),
 
     /**
-     * (1.25:1) Use for fixed-format e-books optimised for displays with a 5:4 aspect ratio (eg 1280x1024 pixels etc,
+     * (1.25:1) Use for fixed-format e-books optimized for displays with a 5:4 aspect ratio (eg 1280x1024 pixels etc,
      * assuming square pixels). Note that aspect ratio codes are NOT specific to actual screen dimensions or pixel
      * counts, but to the ratios between two dimensions or two pixel counts
      */
     _5_4("E221", "5:4"),
 
     /**
-     * (1.33:1) Use for fixed-format e-books optimised for displays with a 4:3 aspect ratio (eg 800x600, 1024x768,
+     * (1.33:1) Use for fixed-format e-books optimized for displays with a 4:3 aspect ratio (eg 800x600, 1024x768,
      * 2048x1536 pixels etc)
      */
     _4_3("E222", "4:3"),
 
     /**
-     * (1.5:1) Use for fixed-format e-books optimised for displays with a 3:2 aspect ratio (eg 960x640, 3072x2048 pixels
+     * (1.5:1) Use for fixed-format e-books optimized for displays with a 3:2 aspect ratio (eg 960x640, 3072x2048 pixels
      * etc)
      */
     _3_2("E223", "3:2"),
 
     /**
-     * (1.6:1) Use for fixed-format e-books optimised for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600
+     * (1.6:1) Use for fixed-format e-books optimized for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600
      * pixels etc)
      */
     _16_10("E224", "16:10"),
 
     /**
-     * (1.77:1) Use for fixed-format e-books optimised for displays with a 16:9 aspect ratio (eg 1024x576, 1920x1080,
+     * (1.77:1) Use for fixed-format e-books optimized for displays with a 16:9 aspect ratio (eg 1024x576, 1920x1080,
      * 2048x1152 pixels etc)
      */
     _16_9("E225", "16:9"),
 
     /**
-     * (2:1) Use for fixed-format e-books optimised for displays with an 18:9 aspect ratio (eg 2160x1080, 2880x1440
+     * (2:1) Use for fixed-format e-books optimized for displays with an 18:9 aspect ratio (eg 2160x1080, 2880x1440
      * pixels etc)
      * <p>
      * JONIX adds: Not included in Onix2
@@ -1662,7 +1672,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     _18_9("E226", "18:9"),
 
     /**
-     * (2.37:1) Use for fixed-format e-books optimised for displays with an 21:9 (or 64:27) aspect ratio (eg 3840x1644
+     * (2.37:1) Use for fixed-format e-books optimized for displays with an 21:9 (or 64:27) aspect ratio (eg 3840x1644
      * pixels etc)
      * <p>
      * JONIX adds: Not included in Onix2
@@ -1894,7 +1904,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Gift_cards("P126", "Gift cards"),
 
     /**
-     * Blank certificate, award or achivement cards, Use with Product form code PD
+     * Blank certificate, award or achievement cards, Use with Product form code PD
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -1992,15 +2002,15 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Open_captions("V211", "Open captions"),
 
     /**
-     * Full transcript of audio and audiovisual content included within the product supplied. See also List 158, where a
-     * transcript is a separate resource
+     * Full transcript of audio and audiovisual content, supplied as a separate file (not as captions or subtitles) and
+     * included within the product. See also List 158, where a transcript is a separate resource
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Transcript("V212", "Transcript"),
 
     /**
-     * Full signing of audio and audiovisual content of the included within the product supplied
+     * Full signing of audio and audiovisual content included within the product
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -2009,8 +2019,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     /**
      * Closed or open captions/subtitles include descriptions of non-dialogue audio (eg background sounds, music,
      * speaker identification) in addition to dialogue. Use in combination with V210 or V211. Use V210, V211 alone for
-     * captions/subtitles that include only dialogue. In some markets, described audio is termed 'subtitles for the deaf
-     * and hard of hearing'
+     * captions/subtitles that include only dialogue. In some markets, textual description of audio is termed 'subtitles
+     * for the deaf and hard of hearing' (SDH)
      * <p>
      * JONIX adds: Not included in Onix2
      */

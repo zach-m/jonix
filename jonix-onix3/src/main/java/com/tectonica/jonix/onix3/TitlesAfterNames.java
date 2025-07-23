@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  * <h1>Person name part 8: titles after names</h1>
  * <p>
  * The eighth part of a structured name of a person who contributed to the creation of the product: titles following a
- * person’s names, <i>eg</i> ‘Duke of Edinburgh’. Optional and non-repeating.
+ * person’s names, <i>eg</i>&nbsp;‘Duke of Edinburgh’. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -34,8 +34,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Price constraint status</h1>
  * <p>
- * An ONIX code specifying the status of a contractual term or constraint, <i>eg</i> permitted without limit, permitted
- * with limit, prohibited. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and non-repeating.
+ * An ONIX code specifying the status of a contractual term or constraint, <i>eg</i>&nbsp;permitted without limit,
+ * permitted with limit, prohibited. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and
+ * non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

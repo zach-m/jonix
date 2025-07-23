@@ -287,9 +287,9 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
     /**
      * <p>
      * A group of data elements which together specify a date associated with the publishing status of the product in a
-     * specified market, <i>eg</i> ‘local publication date’. Optional, but if known, a date of publication <em>must</em>
-     * be specified either here as a ‘local pubdate’ or in P.20. Other dates relating to the publication of the product
-     * in the specific market may be sent in further repeats of the composite.
+     * specified market, <i>eg</i>&nbsp;‘local publication date’. Optional, but if known, a date of publication
+     * <em>must</em> be specified either here as a ‘local pubdate’ or in P.20. Other dates relating to the publication
+     * of the product in the specific market may be sent in further repeats of the composite.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -355,7 +355,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
 
     /**
      * <p>
-     * Free text detailing the number of copies already sold, <i>eg</i> for a new paperback, the copies sold in
+     * Free text detailing the number of copies already sold, <i>eg</i>&nbsp;for a new paperback, the copies sold in
      * hardback. Optional, and repeatable if parallel text is provided in multiple languages. The <i>language</i>
      * attribute is optional for a single instance of &lt;CopiesSold&gt;, but must be included in each instance if
      * &lt;CopiesSold&gt; is repeated.

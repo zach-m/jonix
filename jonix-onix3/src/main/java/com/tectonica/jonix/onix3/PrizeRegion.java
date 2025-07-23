@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Prize or award region</h1>
  * <p>
  * An ONIX code identifying the region in which a prize or award is given. Optional and non-repeatable. A region is an
- * area which is not a country, but which is precisely defined in geographical terms, <i>eg</i> Newfoundland and
+ * area which is not a country, but which is precisely defined in geographical terms, <i>eg</i>&nbsp;Newfoundland and
  * Labrador, Florida. If both country and region are specified, the region must be within the country. Note that US
  * States have region codes, while US overseas territories have distinct ISO Country Codes.
  * </p>

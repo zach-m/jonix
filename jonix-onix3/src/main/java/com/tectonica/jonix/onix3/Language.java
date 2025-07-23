@@ -206,8 +206,8 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
 
     /**
      * <p>
-     * A code identifying the country when this specifies a variant of the language, <i>eg</i> US English. Optional and
-     * non-repeating.
+     * A code identifying the country when this specifies a variant of the language, <i>eg</i>&nbsp;US English. Optional
+     * and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -220,10 +220,10 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
 
     /**
      * <p>
-     * An ONIX code identifying the region when this specifies a variant of the language <i>eg</i> Flemish – Dutch as
-     * used in the Flemish region of Belgium. Optional and non-repeatable. A region is an area which is not a country
+     * An ONIX code identifying the region when this specifies a variant of the language <i>eg</i>&nbsp;Flemish – Dutch
+     * as used in the Flemish region of Belgium. Optional and non-repeatable. A region is an area which is not a country
      * (in the sense that it does not have a distinct country code), but which is precisely defined in geographical
-     * terms, <i>eg</i> Quebec, Scotland. If both country and region are specified, the region must be within the
+     * terms, <i>eg</i>&nbsp;Quebec, Scotland. If both country and region are specified, the region must be within the
      * country. Note that US States have region codes, while US overseas territories have distinct ISO Country Codes.
      * </p>
      * JONIX adds: this field is optional

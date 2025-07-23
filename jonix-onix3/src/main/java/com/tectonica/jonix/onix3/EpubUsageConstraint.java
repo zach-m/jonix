@@ -183,8 +183,8 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code specifying the status of a usage of a digital product, <i>eg</i> permitted without limit, permitted
-     * with limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and
+     * An ONIX code specifying the status of a usage of a digital product, <i>eg</i>&nbsp;permitted without limit,
+     * permitted with limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and
      * non-repeating.
      * </p>
      * JONIX adds: this field is required

@@ -43,19 +43,20 @@ interface CodeList44 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     /**
-     * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
+     * For example, a publisher's own name, contributor or imprint ID scheme. Note that a distinctive &lt;IDTypeName&gt;
+     * is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_name_ID_scheme("01", "Proprietary name ID scheme"),
 
     /**
      * Deprecated - use code 01
      */
-    Proprietary_("02", "Proprietary"),
+    Proprietary("02", "Proprietary"),
 
     /**
      * Deutsche Nationalbibliothek publisher identifier
@@ -253,7 +254,7 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
     IDRef("38", "IDRef"),
 
     /**
-     * Party ID from CISAC's proprietary Interested Party Information scheme, used primarily in rights and royalies
+     * Party ID from CISAC's proprietary Interested Party Information scheme, used primarily in rights and royalties
      * administration. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2

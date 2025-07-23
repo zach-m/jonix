@@ -43,7 +43,7 @@ interface CodeList204 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist204">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist204">ONIX
  *      Codelist 204 in Reference Guide</a>
  */
 public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
@@ -68,8 +68,8 @@ public enum OnixReturnsConditionss implements OnixCodelist, CodeList204 {
     /**
      * Contact supplier for applicable returns authorization process. The retailer is invoiced for the goods immediately
      * (or upon dispatch) and pays within the specified credit period, but can return excess unsold inventory to the
-     * supplier for full credit at a later date. Some kind of returns authorisation process is normally required.
-     * Returns must be in saleable conditon, except when return of stripped covers or proof of destruction may be
+     * supplier for full credit at a later date. Some kind of returns authorization process is normally required.
+     * Returns must be in saleable condition, except when return of stripped covers or proof of destruction may be
      * allowed instead. For more detail, use codes 05, 06 or 07
      */
     Sale_or_return("03", "Sale or return"),

@@ -43,7 +43,7 @@ interface CodeList64 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist64">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist64">ONIX
  *      Codelist 64 in Reference Guide</a>
  */
 public enum PublishingStatuss implements OnixCodelist, CodeList64 {
@@ -120,7 +120,7 @@ public enum PublishingStatuss implements OnixCodelist, CodeList64 {
      * remaindered are often made available in the supply chain at a reduced price. However, such remainders are often
      * sold under a product identifier that differs from the ISBN on the full-priced copy of the book. A Publishing
      * Status code 10 'Remaindered' on a given product record may or may not be followed by a Publishing Status code 06
-     * 'Out of Stock Indefinitely' or 07 'Out of Print': the practise varies from one publisher to another. Some
+     * 'Out of Stock Indefinitely' or 07 'Out of Print': the practice varies from one publisher to another. Some
      * publishers may revert to a Publishing Status code 04 'Active' if a desired inventory level on the product in
      * question has subsequently been reached. No change in rights should ever be inferred from this (or any other)
      * Publishing Status code value

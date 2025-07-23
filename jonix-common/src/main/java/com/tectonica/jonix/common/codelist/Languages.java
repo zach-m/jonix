@@ -43,7 +43,7 @@ interface CodeList74 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -1049,8 +1049,8 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Latvian("lav", "Latvian"),
 
     /**
-     * ONIX local code, distinct dialect of of Rusyn (not distinguished from rue by ISO 639-3). Only for use in ONIX 3.0
-     * or later
+     * ONIX local code, distinct dialect of Rusyn (not distinguished from rue by ISO 639-3). Only for use in ONIX 3.0 or
+     * later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -1171,6 +1171,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Maore_Comorian("swb", "Maore Comorian"),
 
+    /**
+     * M&#257;ori
+     */
     Maori("mao", "Maori"),
 
     Mapudungun_Mapuche("arn", "Mapudungun; Mapuche"),
@@ -1408,6 +1411,14 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Old_Persian_ca_600_400_B_C_("peo", "Old Persian (ca. 600-400 B.C.)"),
 
     /**
+     * Tohono O'odham, Akimel O'odham. ONIX local code, equivalent to ood in ISO 639-3. Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Oodham("ood", "O’odham"),
+
+    /**
      * Macrolanguage
      */
     Oriya("ori", "Oriya"),
@@ -1529,8 +1540,25 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Rajasthani("raj", "Rajasthani"),
 
+    /**
+     * Tajpuria. ONIX local code, equivalent to rjs in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Rajbanshi("rjs", "Rajbanshi"),
+
+    /**
+     * Bahe. ONIX local code, equivalent to rkt in ISO 639-3. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Rangpuri("rkt", "Rangpuri"),
+
     Rapanui("rap", "Rapanui"),
 
+    /**
+     * M&#257;ori K&#363;ki &#699;&#256;irani
+     */
     Rarotongan_Cook_Islands_Maori("rar", "Rarotongan; Cook Islands Maori"),
 
     /**

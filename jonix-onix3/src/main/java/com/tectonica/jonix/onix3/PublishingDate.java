@@ -172,7 +172,7 @@ public class PublishingDate
 
     /**
      * <p>
-     * An ONIX code indicating the significance of the date, <i>eg</i> publication date, announcement date, latest
+     * An ONIX code indicating the significance of the date, <i>eg</i>&nbsp;publication date, announcement date, latest
      * reprint date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite, and non-repeating.
      * </p>
      * JONIX adds: this field is required

@@ -43,7 +43,7 @@ interface CodeList139 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -62,6 +62,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * JONIX adds: Not included in Onix2
      */
     Adlibris("ADL", "Adlibris"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Ajassa("AJA", "Ajassa"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -199,6 +206,20 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
+    Bokkilden("BKL", "Bokkilden"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Bokklubben("BKK", "Bokklubben"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
     Boksnok("BSK", "Boksnok"),
 
     /**
@@ -292,11 +313,11 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     British_Bookshops("BRT", "British Bookshops"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Formerly BS Undervisning. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    BS_Undervisning("BSU", "BS Undervisning"),
+    Lre("BSU", "Lære"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -395,11 +416,11 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Eason("ESN", "Eason"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Formerly Ebok Premium. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Ebok_Premium("EBK", "Ebok Premium"),
+    Ebok("EBK", "Ebok"),
 
     /**
      * www.ebooks.com
@@ -442,6 +463,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * JONIX adds: Not included in Onix2
      */
     Ellibs_com("ELL", "Ellibs.com"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Ellibs_university_libraries("ELM", "Ellibs university libraries"),
 
     Empik("EMP", "Empik"),
 
@@ -733,6 +761,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Osloskolen("OSS", "Osloskolen"),
 
     OverDrive("OVD", "OverDrive"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    OwlCrate("OWC", "OwlCrate"),
 
     /**
      * Deprecated

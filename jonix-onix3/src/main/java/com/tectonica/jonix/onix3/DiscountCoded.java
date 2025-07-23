@@ -204,8 +204,8 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
     /**
      * <p>
      * A name which identifies a proprietary discount code scheme. Must be included when, and only when the code in the
-     * &lt;DiscountCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
-     * non-repeating.
+     * &lt;DiscountCodeType&gt; element indicates a proprietary scheme, <i>eg</i>&nbsp;a wholesaler’s own code. Optional
+     * and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

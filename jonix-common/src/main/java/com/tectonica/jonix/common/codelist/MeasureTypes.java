@@ -43,7 +43,7 @@ interface CodeList48 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist48">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist48">ONIX
  *      Codelist 48 in Reference Guide</a>
  */
 public enum MeasureTypes implements OnixCodelist, CodeList48 {
@@ -166,8 +166,8 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
     /**
      * Mass or equivalent mass of elemental Lithium within the batteries built-in, pre-installed or supplied with the
      * product (eg a Lithium Iron phosphate battery with 160g of cathode material would have a total of around 7g of
-     * Lithium). Details of the batteries must be provided using ProductFormFeature. A per-battery unit mass of Lithium
-     * may be calculated from the number of batteries if required. Only for use in ONIX 3.0 or later
+     * Lithium). Details of the batteries must be provided using &lt;ProductFormFeature&gt;. A per-battery unit mass of
+     * Lithium may be calculated from the number of batteries if required. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -254,7 +254,7 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
     /**
      * Includes the weight of product(s) and cartons stacked on the pallet. See &lt;PalletQuantity&gt; for the number of
      * copies per pallet, and used only when the weight of individual copies (code 08) AND &lt;PalletQuantity&gt; are
-     * supplied.Only for use in ONIX 3.0 or later
+     * supplied. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
