@@ -43,7 +43,7 @@ interface CodeList150 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
@@ -112,7 +112,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Pre_recorded_SD_card("AL", "Pre-recorded SD card"),
 
     /**
-     * Vinyl disc (analogue).
+     * 'Long player'. Vinyl disc (analogue), typically 12 inches diameter and played at 33&#8531;rpm
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -210,7 +210,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Big_book("BM", "Big book"),
 
     /**
-     * A part-work issued with its own ISBN and intended to be collected and bound into a complete book.
+     * A part-work issued with its own ISBN and intended to be collected and bound into a complete book
      */
     Part_work_fasciculo("BN", "Part-work (fascículo)"),
 

@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Edition type code</h1>
  * <p>
  * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
- * characteristics of two or more types (<i>eg</i> ‘revised’ and ‘annotated’).
+ * characteristics of two or more types (<i>eg</i>&nbsp;‘revised’ and ‘annotated’).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -41,7 +41,7 @@ interface CodeList156 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist156">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist156">ONIX
  *      Codelist 156 in Reference Guide</a>
  */
 public enum CitedContentTypes implements OnixCodelist, CodeList156 {
@@ -76,7 +76,14 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Commentary_discussion("06", "Commentary / discussion");
+    Commentary_discussion("06", "Commentary / discussion"),
+
+    /**
+     * Interview, for example with a contributor, in a third-party publication in any medium
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Interview("07", "Interview");
 
     public final String code;
     public final String description;

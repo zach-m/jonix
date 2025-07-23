@@ -207,10 +207,11 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     /**
      * <p>
      * An empty element that identifies an instance of the &lt;Audience&gt; composite as representing the primary or
-     * main audience for the product. The main audience may be expressed in more than one audience scheme, <i>ie</i>
-     * there may be two or more instances of the &lt;Audience&gt; composite, using different schemes, each carrying the
-     * &lt;MainAudience/&gt; flag, so long as there is only one main audience <em>per scheme</em> (<i>ie</i> per value
-     * of &lt;AudienceCodeType&gt;). Optional and non-repeating in each occurrence of the &lt;Audience&gt; composite.
+     * main audience for the product. The main audience may be expressed in more than one audience scheme,
+     * <i>ie</i>&nbsp;there may be two or more instances of the &lt;Audience&gt; composite, using different schemes,
+     * each carrying the &lt;MainAudience/&gt; flag, so long as there is only one main audience <em>per scheme</em>
+     * (<i>ie</i>&nbsp;per value of &lt;AudienceCodeType&gt;). Optional and non-repeating in each occurrence of the
+     * &lt;Audience&gt; composite.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -228,7 +229,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
     /**
      * <p>
      * A name which identifies a proprietary audience scheme when the code in &lt;AudienceCodeType&gt; indicates a
-     * proprietary scheme, <i>eg</i> a vendor’s own coding scheme. Optional and non-repeating.
+     * proprietary scheme, <i>eg</i>&nbsp;a vendor’s own coding scheme. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

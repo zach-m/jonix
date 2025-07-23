@@ -34,10 +34,10 @@ import java.util.function.Consumer;
 /**
  * <h1>Extent type code</h1>
  * <p>
- * An ONIX code which identifies the type of extent carried in the composite, <i>eg</i> running time for an audio or
- * video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating. From Issue 9 of the
- * code lists, an extended set of values for &lt;ExtentType&gt; has been defined to allow more accurate description of
- * pagination.
+ * An ONIX code which identifies the type of extent carried in the composite, <i>eg</i>&nbsp;running time for an audio
+ * or video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating. From Issue 9 of
+ * the code lists, an extended set of values for &lt;ExtentType&gt; has been defined to allow more accurate description
+ * of pagination.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

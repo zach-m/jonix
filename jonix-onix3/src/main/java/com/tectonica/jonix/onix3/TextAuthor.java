@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Author of text</h1>
  * <p>
- * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i> if it is a review or promotional quote.
- * Optional, and repeatable if the text is jointly authored.
+ * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i>&nbsp;if it is a review or promotional
+ * quote. Optional, and repeatable if the text is jointly authored.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -43,14 +43,15 @@ interface CodeList241 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist241">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist241">ONIX
  *      Codelist 241 in Reference Guide</a>
  */
 public enum AvItemIdentifierTypes implements OnixCodelist, CodeList241 {
     /**
-     * For example, a publisher's own identifier. Note that &lt;IDTypeName&gt; is required with proprietary identifiers
+     * For example, a publisher's own identifier. Note that a distinctive &lt;IDTypeName&gt; is required with
+     * proprietary AV item identifiers
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_AV_Item_ID_scheme("01", "Proprietary AV Item ID scheme"),
 
     /**
      * Formerly known as the EAN-13 (unhyphenated)

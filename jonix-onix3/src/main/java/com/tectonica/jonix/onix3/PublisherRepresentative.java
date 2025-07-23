@@ -189,8 +189,8 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
     /**
      * <p>
-     * An ONIX code identifying the role of an agent in relation to the product in the specified market, <i>eg</i>
-     * Exclusive sales agent, Local publisher, <i>etc</i>. Mandatory in each occurrence of the
+     * An ONIX code identifying the role of an agent in relation to the product in the specified market,
+     * <i>eg</i>&nbsp;Exclusive sales agent, Local publisher, <i>etc</i>. Mandatory in each occurrence of the
      * &lt;PublisherRepresentative&gt; composite.
      * </p>
      * JONIX adds: this field is required

@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  * <h1>Person name part 2: names before key names</h1>
  * <p>
  * The second part of a structured name of a person who contributed to the creation of the product: name(s) and/or
- * initial(s) preceding a person’s key name(s), <i>eg</i> James J. Optional and non-repeating.
+ * initial(s) preceding a person’s key name(s), <i>eg</i>&nbsp;James J. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

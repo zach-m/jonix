@@ -43,7 +43,7 @@ interface CodeList71 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist71">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
@@ -67,7 +67,8 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Through_office_supplies_outlets_only("02", "Through office supplies outlets only"),
 
     /**
-     * For an ISBN that is assigned for a publisher's internal purposes
+     * For an ISBN that is assigned for a publisher's internal purposes. Should not appear in ONIX messages sent
+     * externally, and if sent inadvertently, data recipients should not list the product in their catalogs
      */
     Internal_publisher_use_only_do_not_list("03", "Internal publisher use only: do not list"),
 
@@ -154,7 +155,7 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Through_Inventoryless_POD("17", "Through Inventoryless POD"),
 
     /**
-     * POD copies may be manfactured only to fulfill a customer order immediately while out of stock and awaiting
+     * POD copies may be manufactured only to fulfill a customer order immediately while out of stock and awaiting
      * delivery of further stock from the supplier. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2

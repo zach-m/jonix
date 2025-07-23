@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  * <h1>Subject date composite</h1>
  * <p>
  * A group of data elements which together specify a date associated with the person or organization identified in an
- * occurrence of the &lt;NameAsSubject&gt; composite, <i>eg</i> birth or death. Optional, and repeatable to provide
+ * occurrence of the &lt;NameAsSubject&gt; composite, <i>eg</i>&nbsp;birth or death. Optional, and repeatable to provide
  * multiple dates with their various roles.
  * </p>
  * <table border='1' cellpadding='3'>

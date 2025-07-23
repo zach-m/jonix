@@ -35,8 +35,8 @@ import java.util.function.Consumer;
  * <h1>Velocity composite</h1>
  * <p>
  * An optional group of data elements which together specify the rate of stock depletion&nbsp;– or equally, a rate of
- * accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric (<i>eg</i>
- * specifying both a minimum and maximum daily sale).
+ * accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric
+ * (<i>eg</i>&nbsp;specifying both a minimum and maximum daily sale).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

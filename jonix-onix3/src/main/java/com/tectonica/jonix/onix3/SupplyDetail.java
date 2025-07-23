@@ -407,7 +407,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together specify a date associated with the supply status of the
-     * product, <i>eg</i> expected ship date. Repeatable in order to specify multiple dates.
+     * product, <i>eg</i>&nbsp;expected ship date. Repeatable in order to specify multiple dates.
      * </p>
      * JONIX adds: this list may be empty
      */

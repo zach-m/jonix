@@ -34,8 +34,8 @@ import java.util.function.Consumer;
  * <h1>Product form feature value</h1>
  * <p>
  * A controlled value that describes a product form feature. Presence or absence of this element depends on the
- * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i> color of cover binding) require an
- * accompanying value, while some (<i>eg</i> text font) require free text in &lt;ProductFormFeatureDescription&gt;.
+ * &lt;ProductFormFeatureType&gt;, since some product form features (<i>eg</i>&nbsp;color of cover binding) require an
+ * accompanying value, while some (<i>eg</i>&nbsp;text font) require free text in &lt;ProductFormFeatureDescription&gt;.
  * Others may have both code value and free text. Non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

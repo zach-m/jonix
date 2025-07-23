@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Audience code type name</h1>
  * <p>
  * A name which identifies a proprietary audience scheme when the code in &lt;AudienceCodeType&gt; indicates a
- * proprietary scheme, <i>eg</i> a vendor’s own coding scheme. Optional and non-repeating.
+ * proprietary scheme, <i>eg</i>&nbsp;a vendor’s own coding scheme. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

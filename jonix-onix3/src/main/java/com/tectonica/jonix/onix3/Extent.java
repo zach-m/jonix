@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Extent composite</h1>
  * <p>
  * A group of data elements which together describe an extent pertaining to the product. Optional, but in practice
- * required for most products, <i>eg</i> to give the number of pages in a printed book or paginated e‑book, or to give
- * the running time of an audiobook. Repeatable to specify different extent types or units.
+ * required for most products, <i>eg</i>&nbsp;to give the number of pages in a printed book or paginated e‑book, or to
+ * give the running time of an audiobook. Repeatable to specify different extent types or units.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -172,10 +172,10 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
 
     /**
      * <p>
-     * An ONIX code which identifies the type of extent carried in the composite, <i>eg</i> running time for an audio or
-     * video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating. From Issue 9 of
-     * the code lists, an extended set of values for &lt;ExtentType&gt; has been defined to allow more accurate
-     * description of pagination.
+     * An ONIX code which identifies the type of extent carried in the composite, <i>eg</i>&nbsp;running time for an
+     * audio or video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating. From
+     * Issue 9 of the code lists, an extended set of values for &lt;ExtentType&gt; has been defined to allow more
+     * accurate description of pagination.
      * </p>
      * JONIX adds: this field is required
      */

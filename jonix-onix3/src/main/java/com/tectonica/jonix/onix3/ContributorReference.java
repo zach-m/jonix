@@ -39,9 +39,9 @@ import java.util.function.Consumer;
  * <h1>Contributor by reference composite</h1>
  * <p>
  * Optional composite that identifies a contributor&nbsp;– a person or corporate body&nbsp;– participating in the
- * promotional event <em>who is also a contributor to the product, or who is its subject</em> (<i>ie</i> who is fully
- * described in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or in an
- * instance of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or&nbsp;P.18, in the same Product record). Repeatable to
+ * promotional event <em>who is also a contributor to the product, or who is its subject</em> (<i>ie</i>&nbsp;who is
+ * fully described in an instance of the &lt;Contributor&gt; composite within Groups&nbsp;P.5, P.7 or&nbsp;P.18, or in
+ * an instance of &lt;NameAsSubject&gt; within Groups&nbsp;P.12 or&nbsp;P.18, in the same Product record). Repeatable to
  * refer to multiple contributors.
  * </p>
  * <p>

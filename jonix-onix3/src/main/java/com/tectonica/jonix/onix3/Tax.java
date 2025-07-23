@@ -39,15 +39,15 @@ import java.util.function.Consumer;
  * <p>
  * A repeatable group of data elements which together specify tax included within a price amount. Optional, and used
  * only when &lt;PriceType&gt; indicates an inc-tax price. For items to which different taxes or tax rates apply
- * (<i>eg</i> mixed media products in the UK which are partly taxed at standard rate and partly at zero rate), the
+ * (<i>eg</i>&nbsp;mixed media products in the UK which are partly taxed at standard rate and partly at zero rate), the
  * composite is repeated for each separate tax or tax rate. Although only one of &lt;TaxRatePercent&gt; or
  * &lt;TaxAmount&gt; is mandatory within the composite, it is recommended that all tax elements in the composite should
  * be explicitly populated.
  * </p>
  * <p>
- * If the tax regime requires separate tax rates and amounts linked explicitly to particular product parts (<i>eg</i> in
- * Germany), the &lt;ProductIdentifier&gt; composite may be included in each &lt;Tax&gt; composite. Where tax is payable
- * on multiple product parts, each should have its own instance of the &lt;Tax&gt; composite.
+ * If the tax regime requires separate tax rates and amounts linked explicitly to particular product parts
+ * (<i>eg</i>&nbsp;in Germany), the &lt;ProductIdentifier&gt; composite may be included in each &lt;Tax&gt; composite.
+ * Where tax is payable on multiple product parts, each should have its own instance of the &lt;Tax&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -209,7 +209,7 @@ public class Tax implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code identifying a tax type, <i>eg</i> VAT. Optional, and non-repeating.
+     * An ONIX code identifying a tax type, <i>eg</i>&nbsp;VAT. Optional, and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

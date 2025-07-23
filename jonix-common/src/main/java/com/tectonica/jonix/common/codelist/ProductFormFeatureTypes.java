@@ -43,7 +43,7 @@ interface CodeList79 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -75,12 +75,28 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Color_of_page_edges("02", "Color of page edges"),
 
     /**
-     * Or of inside front and back covers. For Product Form Feature Values see code list 98. For patterned and
+     * Or of inside front and back covers. For Product Form Feature Values see Codelist 98. For patterned and
      * illustrated endpapers, see also List 158 code 55. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Color_of_endpapers("55", "Color of endpapers"),
+
+    /**
+     * Use also for color of elasticated strap. For Product Form Feature Values see Codelist 98, and with multicolored
+     * or multiple ribbons, also use Product Form Feature Description. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Color_of_ribbon_marker_s("57", "Color of ribbon marker(s)"),
+
+    /**
+     * Capital bands. For Product Form Feature Values see codelist 98, and with multicolored (eg striped) bands, use
+     * Product Form Feature Description. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Color_of_head_and_tail_bands("58", "Color of head and tail bands"),
 
     /**
      * The principal font used for body text, when this is a significant aspect of product description, eg for some
@@ -334,7 +350,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Green_inks("38", "‘Green’ inks"),
 
     /**
-     * Product binding uses environmentally-concious adhesives and other binding materials.
+     * Product binding uses environmentally-conscious adhesives and other binding materials.
      * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement. Only for use in ONIX
      * 3.0 or later
      * <p>
@@ -409,22 +425,26 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeature&gt; for each plot or use the 'list of plots' option below. Further repeats of
      * &lt;ProductFormFeature&gt; may be used for multiple paper, card and board types. &lt;ProductFormFeatureValue&gt;
      * is a country code from List 91 indicating the country in which the source plot is, optionally followed by a space
-     * and the binomial (Latin) name of the species, optionally followed by a space and the date of harvest of the
-     * source plot (YYYY, YYYYMM or YYYYMMDD). &lt;ProductFormFeatureDescription&gt; is a list of points defining one or
-     * more plots from which the raw material was harvested, using GPS coordinates with 6 decimal places of precision
-     * (these are real numbers, &#177;90 for latitude [negative numbers indicate a latitude south of the equator],
-     * &#177;180 excluding -180 itself for longitude [negative numbers indicate a longitude west of the Prime Greenwich
-     * meridian]). Latitude and Longitude for each point are space-separated, and multiple points are comma-separated.
-     * Multiple plots are semicolon separated, and must be in the same country. (Any supplied species name and date must
-     * also apply to all plots in the list.) (Note these GPS coordinates use decimal parts of a degree, not minutes and
-     * seconds.) ONE point defines the center of a 4 hectare plot (200m &#215; 200m). TWO points define a line joining
-     * opposite corners of a 'square' plot bounded by two lines of latitude and two of longitude. THREE or more points
-     * define a simple polygon outlining the plot. Plot types with one, two or multiple points must not be mixed in a
-     * list of multiple plots. Lines and polygon edges may not cross a national boundary or the 180&#176; line of
-     * longitude. Polygon edges may not intersect. It is good practice to ensure the polygon is drawn clockwise and is
-     * 'closed' (that is, that the first and last points are identical, so that for example four points define a
-     * triangle). If not closed, the closing polygon edge is implied, and to avoid ambiguity, trailing zeros in the
-     * latitude and longitude should be explicit. Only for use in ONIX 3.0 or later
+     * and the name of the species, and optionally followed by a space and the date of harvest of the source plot (YYYY,
+     * YYYYMM or YYYYMMDD). The species name may itself consist of the binomial Latin name (the 'scientific name'), or
+     * the binomial Latin name followed by a space plus the common name in parentheses. Note there can be up to four
+     * pieces of data (country, Latin name, common name and date), each space separated, but only the country is
+     * mandatory. The common name may only be included if the Latin name is also present.
+     * &lt;ProductFormFeatureDescription&gt; is a list of points defining one or more plots from which the raw material
+     * was harvested, using GPS coordinates with 6 decimal places of precision (these are real numbers, &#177;90 for
+     * latitude [negative numbers indicate a latitude south of the equator], &#177;180 excluding -180 itself for
+     * longitude [negative numbers indicate a longitude west of the Prime Greenwich meridian]). Latitude and Longitude
+     * for each point are space-separated, and multiple points are comma-separated. Multiple plots are semicolon
+     * separated, and must be in the same country. (Any supplied species name and date must also apply to all plots in
+     * the list.) (Note these GPS coordinates use decimal parts of a degree, not minutes and seconds.) ONE point defines
+     * the center of a 4 hectare plot (200m &#215; 200m). TWO points define a line joining opposite corners of a
+     * 'square' plot bounded by two lines of latitude and two of longitude. THREE or more points define a simple polygon
+     * outlining the plot. Plot types with one, two or multiple points must not be mixed in a list of multiple plots.
+     * Lines and polygon edges may not cross a national boundary or the 180&#176; line of longitude. Polygon edges may
+     * not intersect. It is good practice to ensure the polygon is drawn clockwise and is 'closed' (that is, that the
+     * first and last points are identical, so that for example four points define a triangle). If not closed, the
+     * closing polygon edge is implied, and to avoid ambiguity, trailing zeros in the latitude and longitude should be
+     * explicit. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -506,6 +526,18 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * JONIX adds: Not included in Onix2
      */
     EUDR_stock_present_attestation("54", "EUDR stock present attestation"),
+
+    /**
+     * For EU Deforestation regulations, a 'flag' indicating that the raw materials for the product are entirely outside
+     * the scope of the regulations for any reason, for example because a map - that would otherwise be required to
+     * conform - is printed on plastic rather than paper, or a book is made wholly of recycled raw materials (including
+     * the cover). &lt;ProductClassification&gt; may contain an additional TARIC exemption code. Ensure other Product
+     * form features agree, and that documentation is available. Only for use in ONIX 3.0 or later. No other EUDR
+     * metadata need be included
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EUDR_beyond_scope_attestation("56", "EUDR beyond scope attestation"),
 
     /**
      * DEPRECATED - use code 12 and List 143

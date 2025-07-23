@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Content date composite</h1>
  * <p>
  * An optional group of data elements which together specify a date associated with the text carried in an occurrence of
- * the &lt;TextContent&gt; composite, <i>eg</i> date when quoted text was published. Repeatable to specify different
- * dates with their various roles.
+ * the &lt;TextContent&gt; composite, <i>eg</i>&nbsp;date when quoted text was published. Repeatable to specify
+ * different dates with their various roles.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

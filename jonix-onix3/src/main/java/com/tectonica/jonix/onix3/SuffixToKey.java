@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  * <h1>Person name part 6: suffix after key names</h1>
  * <p>
  * The sixth part of a structured name of a person who contributed to the creation of the product: a suffix following a
- * person’s key name(s), <i>eg</i> ‘Jr’ or ‘III’. Optional and non-repeating.
+ * person’s key name(s), <i>eg</i>&nbsp;‘Jr’ or ‘III’. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

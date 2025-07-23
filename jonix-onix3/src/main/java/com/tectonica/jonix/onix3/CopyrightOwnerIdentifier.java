@@ -201,8 +201,8 @@ public class CopyrightOwnerIdentifier
 
     /**
      * <p>
-     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
-     * there is no individual ID type code). Must be included when, and only when, the code in the
+     * A name which identifies a proprietary identifier scheme (<i>ie</i>&nbsp;a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in the
      * &lt;CopyrightOwnerIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional

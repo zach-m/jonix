@@ -28,44 +28,39 @@ import java.util.Optional;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 250 (Resource identifier type)
+ * marker interface to assist in IDE navigation to code-list 251 (Resource role code)
  */
-interface CodeList250 {
+interface CodeList251 {
 }
 
 /**
- * <code>Enum</code> that corresponds to ONIX <b>Codelist 250</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 251</b>
  * <p>
- * Description: Resource identifier type
+ * Description: Resource role code
  * <p>
  * JONIX adds: Not included in Onix2
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist250">ONIX
- *      Codelist 250 in Reference Guide</a>
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist251">ONIX
+ *      Codelist 251 in Reference Guide</a>
  */
-public enum ResourceIdentifierTypes implements OnixCodelist, CodeList250 {
+public enum ResourceRoles implements OnixCodelist, CodeList251 {
     /**
-     * For example, a publisher's internal digital asset ID. Note that a distinctive &lt;IDTypeName&gt; is required with
-     * proprietary resource identifiers
+     * Artwork for printing a case or card cover
      */
-    Proprietary_resource_ID_scheme("01", "Proprietary resource ID scheme"),
+    Cover("C01", "Cover"),
 
     /**
-     * International Standard Content Code, a 'similarity hash' derived algorithmically from the resource content itself
-     * (see https://iscc.codes). &lt;IDValue&gt; is the ISCC-CODE generated from a digital manifestation of the work, as
-     * a variable-length case-insensitive alphanumeric string (or 55 characters including three hyphens if using ISCC
-     * v1.0, but this is deprecated). Note alphabetic characters in v1.x ISCCs use Base32 encoding and are
-     * conventionally upper case. The 'ISCC:' prefix is omitted
+     * Artwork for printing a papr dust jacket
      */
-    ISCC("09", "ISCC");
+    Jacket("C02", "Jacket");
 
     public final String code;
     public final String description;
 
-    ResourceIdentifierTypes(String code, String description) {
+    ResourceRoles(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -80,11 +75,11 @@ public enum ResourceIdentifierTypes implements OnixCodelist, CodeList250 {
         return description;
     }
 
-    public static ResourceIdentifierTypes byCode(String code) {
+    public static ResourceRoles byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (ResourceIdentifierTypes e : values()) {
+        for (ResourceRoles e : values()) {
             if (e.code.equals(code)) {
                 return e;
             }
@@ -92,7 +87,7 @@ public enum ResourceIdentifierTypes implements OnixCodelist, CodeList250 {
         return null;
     }
 
-    public static Optional<ResourceIdentifierTypes> byCodeOptional(String code) {
+    public static Optional<ResourceRoles> byCodeOptional(String code) {
         return Optional.ofNullable(byCode(code));
     }
 

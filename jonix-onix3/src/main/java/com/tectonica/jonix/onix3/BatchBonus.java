@@ -34,8 +34,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Batch bonus composite</h1>
  * <p>
- * A repeatable group of data elements which together specify a batch bonus, <i>ie</i> a quantity of free copies which
- * are supplied (typically to a reseller) with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.
+ * A repeatable group of data elements which together specify a batch bonus, <i>ie</i>&nbsp;a quantity of free copies
+ * which are supplied (typically to a reseller) with a certain order quantity. The &lt;BatchBonus&gt; composite is
+ * optional.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

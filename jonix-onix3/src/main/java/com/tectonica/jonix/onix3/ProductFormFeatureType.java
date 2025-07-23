@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Product form feature type</h1>
  * <p>
  * An ONIX code which specifies the feature described by an instance of the &lt;ProductFormFeature&gt; composite,
- * <i>eg</i> binding color. Mandatory in each occurrence of the composite, and non-repeating.
+ * <i>eg</i>&nbsp;binding color. Mandatory in each occurrence of the composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

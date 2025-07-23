@@ -43,8 +43,8 @@ import java.util.function.Consumer;
  * The Price constraint composite has the same structure as &lt;EpubUsageConstraint&gt;. Use &lt;EpubUsageConstraint&gt;
  * for constraints that limit the user experience of the product, whether or not they are enforced by technical
  * protection measures (DRM). Use &lt;PriceConstraint&gt; where a single product is available under multiple terms and
- * conditions (<i>ie</i> multiple commercial offers for the same product which differ in their Price constraints, and
- * whether or not they are enforced by DRM).
+ * conditions (<i>ie</i>&nbsp;multiple commercial offers for the same product which differ in their Price constraints,
+ * and whether or not they are enforced by DRM).
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -192,7 +192,7 @@ public class PriceConstraint implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code specifying the status of a contractual term or constraint, <i>eg</i> permitted without limit,
+     * An ONIX code specifying the status of a contractual term or constraint, <i>eg</i>&nbsp;permitted without limit,
      * permitted with limit, prohibited. Mandatory in each occurrence of the &lt;PriceConstraint&gt; composite, and
      * non-repeating.
      * </p>

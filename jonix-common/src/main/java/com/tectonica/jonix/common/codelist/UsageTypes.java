@@ -43,12 +43,12 @@ interface CodeList145 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist145">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist145">ONIX
  *      Codelist 145 in Reference Guide</a>
  */
 public enum UsageTypes implements OnixCodelist, CodeList145 {
     /**
-     * Allows positive indication that there are no particular constraints (that can be specifed in
+     * Allows positive indication that there are no particular constraints (that can be specified in
      * &lt;EpubUsageConstraint&gt;). By convention, use 01 in &lt;EpubUsageStatus&gt;
      * <p>
      * JONIX adds: Not included in Onix2
@@ -58,12 +58,14 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
     /**
      * Preview before purchase. Allows a retail customer, account holder or patron to view or listen to a proportion of
      * the book before purchase. Also applies to borrowers making use of 'acquisition on demand' models in libraries,
-     * and to 'subscription' models where the purchase is made on behalf of the reader
+     * and to 'subscription' models where the purchase is made on behalf of the reader. Note that any Sales embargo date
+     * (in &lt;PublishingDate&gt; or &lt;MarketDate&gt;) also applies to provision of previews, unless an explicit date
+     * is provided for the preview
      */
     Preview("01", "Preview"),
 
     /**
-     * Print paper copy of extract
+     * Make physical copy of extract
      */
     Print("02", "Print"),
 
@@ -85,10 +87,10 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
     Text_to_speech("05", "Text to speech"),
 
     /**
-     * Lendable by the purchaser to other device owner or account holder or patron, eg 'Lend-to-a-friend', library
-     * lending (where the library product has a separate &lt;ProductIdentifier&gt; from the consumer product). The
-     * 'primary' copy becomes unusable while the secondary copy is 'on loan' unless a number of concurrent borrowers is
-     * also specified
+     * Lendable by the purchaser to another device owner or account holder or patron, eg 'Lend-to-a-friend', or library
+     * lending (where the library product has a separate &lt;ProductIdentifier&gt; from the consumer product -&#160;but
+     * for this prefer code 16). The 'primary' copy becomes unusable while the secondary copy is 'lent' unless a number
+     * of concurrent borrowers is also specified
      */
     Lend("06", "Lend"),
 
@@ -101,14 +103,14 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
     Time_limited_license("07", "Time-limited license"),
 
     /**
-     * Maximum number of consecutive loans or loan extensions (eg from a library) to a single device owner or account
-     * holder. Note that a limit of 1 indicates that a loan cannot be renewed or extended
+     * Maximum number of consecutive loans or loan extensions (usually from a library) to a single device owner or
+     * account holder or patron. Note that a limit of 1 indicates that a loan cannot be renewed or extended
      */
-    Loan_renewal("08", "Loan renewal"),
+    Library_loan_renewal("08", "Library loan renewal"),
 
     /**
      * E-publication license is multi-user. Maximum number of concurrent users licensed to use the product should be
-     * given in &lt;EpubUsageLimit&gt;. For clarity, unlimited concurrencyis the default, but may be specified
+     * given in &lt;EpubUsageLimit&gt;. For clarity, unlimited concurrency is the default, but may be specified
      * explicitly with code 01 from list 146, or with code 02 and a limit &lt;Quantity&gt; of 0 users
      */
     Multi_user_license("09", "Multi-user license"),
@@ -124,15 +126,26 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
     Preview_on_premises("10", "Preview on premises"),
 
     /**
-     * Make use of the content of the product (text, images, audio etc) for extraction of useful (and possibly new)
-     * information through automated computer analysis. By convention, use 01 or 03 in &lt;EpubUsageStatus&gt;. Note 03
-     * should be regarded as 'prohibited to the full extent allowed by law', or otherwise expressly reserved by the
-     * rightsholder, as in some jurisdictions, TDM may be subject to copyright exception (eg for not-for-profit
-     * purposes), subject to optional reservation, or allowed under 'fair use' doctrine
+     * Make use of the content of the product (text, images, audio etc) or the product metadata or supporting resources
+     * for extraction of useful (and possibly new) information through automated computer analysis, or for training of
+     * tools for such analysis (including training of generative AI models). By convention, use 01 or 03 in
+     * &lt;EpubUsageStatus&gt;. Note 03 should be regarded as 'prohibited to the full extent allowed by law', or
+     * otherwise expressly reserved by the rightsholder, as in some jurisdictions, TDM may be subject to copyright
+     * exception (eg for not-for-profit purposes), subject to optional reservation, or allowed under 'fair use' doctrine
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Text_and_data_mining("11", "Text and data mining");
+    Text_and_data_mining("11", "Text and data mining"),
+
+    /**
+     * Loanable by the purchaser (usually a library) to other device owner or account holder or patron, eg library
+     * lending (whether or not the library product has a separate &lt;ProductIdentifier&gt; from the consumer product).
+     * The 'primary' copy becomes unusable while the secondary copy is 'on loan' unless a number of concurrent borrowers
+     * is also specified. Use code 08 to specify any limit on loan renewals
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Library_loan("16", "Library loan");
 
     public final String code;
     public final String description;

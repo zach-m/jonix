@@ -33,10 +33,10 @@ import java.util.function.Consumer;
 /**
  * <h1>Price amount</h1>
  * <p>
- * The amount of a price. Optional and non-repeating, but each occurrence of the &lt;Price&gt; composite must include
- * either a &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional tax details, or an
- * &lt;UnpricedItemType&gt; element. Note that free-of-charge products must use &lt;UnpricedItemType&gt; rather than a
- * zero price.
+ * The amount of a price, dependent on the &lt;PriceType&gt; and other elements present within the &lt;Price&gt;
+ * composite. Optional and non-repeating, but each occurrence of the &lt;Price&gt; composite must include either a
+ * &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite, with optional tax details, or an &lt;UnpricedItemType&gt;
+ * element. Note that free-of-charge products must use &lt;UnpricedItemType&gt; rather than a zero price.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

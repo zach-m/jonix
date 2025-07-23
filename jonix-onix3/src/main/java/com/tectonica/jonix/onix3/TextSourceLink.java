@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <p>
  * A URL which provides a link to a full text accessible in digital form, from which the supporting text in &lt;Text&gt;
  * is an extract. Use, for example, to link to an original review. Optional, and repeatable if the resource can be
- * linked in more than one way, <i>eg</i> by URL or DOI, or where a linked full text is available in multiple parallel
- * languages. Where multiple languages are used, all repeats must carry the <i>language</i> attribute.
+ * linked in more than one way, <i>eg</i>&nbsp;by URL or DOI, or where a linked full text is available in multiple
+ * parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i> attribute.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -39,7 +39,7 @@ import java.util.function.Consumer;
  * Text at the beginning of a title element which is to be ignored for alphabetical sorting. Optional and non-repeating;
  * can only be used when &lt;TitleText&gt; is omitted, and if the &lt;TitleWithoutPrefix&gt; element is also present.
  * These two elements may be used in combination in applications where it is necessary to distinguish an initial word or
- * character string which is to be ignored for filing purposes, <i>eg</i> in library systems and in some bookshop
+ * character string which is to be ignored for filing purposes, <i>eg</i>&nbsp;in library systems and in some bookshop
  * databases.
  * </p>
  * <table border='1' cellpadding='3'>

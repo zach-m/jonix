@@ -41,51 +41,57 @@ interface CodeList217 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist217">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist217">ONIX
  *      Codelist 217 in Reference Guide</a>
  */
 public enum PriceIdentifierTypes implements OnixCodelist, CodeList217 {
     /**
-     * Note that &lt;IDTypeName&gt; is required for proprietary identifiers
+     * Note that a distinctive &lt;IDTypeName&gt; is required for proprietary price identifiers
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_price_identifier_scheme("01", "Proprietary price identifier scheme"),
 
     /**
      * Proprietary identifier uniquely identifies price amount and currency. Two unrelated products with the same price
-     * amount carry the same identifier, though their price types may be different
+     * amount carry the same identifier, though their price types may be different. Note that a distinctive
+     * &lt;IDTypeName&gt; is required for proprietary price identifiers
      */
-    Proprietary_price_point_identifier("02", "Proprietary price point identifier"),
+    Proprietary_price_point_identifier_scheme("02", "Proprietary price point identifier scheme"),
 
     /**
      * Proprietary identifier uniquely identifies price type, qualifier and any constraints and conditions. Two
-     * unrelated products with the same price type carry the same identifier, though their price points may be different
+     * unrelated products with the same price type carry the same identifier, though their price points may be
+     * different. Note that a distinctive &lt;IDTypeName&gt; is required for proprietary price identifiers
      */
-    Proprietary_price_type_identifier("03", "Proprietary price type identifier"),
+    Proprietary_price_type_identifier_scheme("03", "Proprietary price type identifier scheme"),
 
     /**
      * Proprietary identifier identifies a unique combination of price point and type, though two unrelated products may
-     * carry the same identifier if all details of their prices are identical
+     * carry the same identifier if all details of their prices are identical. Note that a distinctive
+     * &lt;IDTypeName&gt; is required for proprietary price identifiers
      */
-    Proprietary_price_point_and_type_identifier("04", "Proprietary price point and type identifier"),
+    Proprietary_price_point_and_type_identifier_scheme("04", "Proprietary price point and type identifier scheme"),
 
     /**
      * Proprietary identifier is unique to a single price point, price type and product. No two products can carry the
-     * same identifier, even if all details of their prices are identical
+     * same identifier, even if all details of their prices are identical. Note that a distinctive &lt;IDTypeName&gt; is
+     * required for proprietary price identifiers
      */
-    Proprietary_unique_price_identifier("05", "Proprietary unique price identifier"),
+    Proprietary_unique_price_identifier_scheme("05", "Proprietary unique price identifier scheme"),
 
     /**
      * Proprietary identifier uniquely identifies a specific combination of product, price amount and currency,
-     * independent of the price type
+     * independent of the price type. Note that a distinctive &lt;IDTypeName&gt; is required for proprietary price
+     * identifiers
      */
-    Proprietary_product_price_point_identifier("06", "Proprietary product price point identifier"),
+    Proprietary_product_price_point_identifier_scheme("06", "Proprietary product price point identifier scheme"),
 
     /**
      * Proprietary identifier uniquely identifies a specific combination of product, price type, qualifier and any
      * constraints and conditions, independent of the price amount and currency. A product with the same product price
-     * type identififer may carry differing price amounts, currencies at different points in time
+     * type identifier may carry differing price amounts, currencies at different points in time. Note that a
+     * distinctive &lt;IDTypeName&gt; is required for proprietary price identifiers
      */
-    Proprietary_product_price_type_identifier("07", "Proprietary product price type identifier");
+    Proprietary_product_price_type_identifier_scheme("07", "Proprietary product price type identifier scheme");
 
     public final String code;
     public final String description;

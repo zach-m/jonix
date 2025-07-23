@@ -38,9 +38,9 @@ import java.util.function.Consumer;
  * overlay’ or ‘CMYK separations of rear cover’.
  * </p>
  * <p>
- * Note that individual resources do not need to be aligned with the physical organization of the book (<i>eg</i> with
- * the folded signatures of a print-on-demand product), nor with the logical organization (<i>eg</i> with the chapters
- * in the work).
+ * Note that individual resources do not need to be aligned with the physical organization of the book
+ * (<i>eg</i>&nbsp;with the folded signatures of a print-on-demand product), nor with the logical organization
+ * (<i>eg</i>&nbsp;with the chapters in the work).
  * </p>
  * <p>
  * The field is optional but may only be used when &lt;ResourceFileLink&gt; is present, and is repeatable to provide

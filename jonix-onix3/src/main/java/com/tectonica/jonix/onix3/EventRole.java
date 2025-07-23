@@ -34,9 +34,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Event role</h1>
  * <p>
- * An ONIX code which indicates the relationship between the product and an event to which it is related, <i>eg</i>
- * Proceedings of conference / Selected papers from conference / Programme for sporting event / Guide for art
- * exhibition. Mandatory and non-repeating.
+ * An ONIX code which indicates the relationship between the product and an event to which it is related,
+ * <i>eg</i>&nbsp;Proceedings of conference / Selected papers from conference / Programme for sporting event / Guide for
+ * art exhibition. Mandatory and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

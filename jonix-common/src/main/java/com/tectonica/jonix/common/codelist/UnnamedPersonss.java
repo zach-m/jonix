@@ -43,7 +43,7 @@ interface CodeList19 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist19">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
@@ -71,7 +71,7 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
      * Use for example with Contributor role code E07 'read by' for audio books with digital narration having a
      * male-inflected tone. 'Brand name' of voice may be provided in &lt;AlternativeName&gt;
      */
-    Synthesised_voice_male("05", "Synthesised voice – male"),
+    Synthesized_voice_male("05", "Synthesized voice – male"),
 
     /**
      * Use for example with Contributor role code E07 'read by' for audio books with digital narration having a
@@ -85,7 +85,7 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
     Synthesized_voice_unspecified("07", "Synthesized voice – unspecified"),
 
     /**
-     * Sometimes termed an 'Authorized Voice Replica'. Use for exanple with Contributor role code E07 'read by' for
+     * Sometimes termed an 'Authorized Voice Replica'. Use for example with Contributor role code E07 'read by' for
      * audio books with digital narration, and provide name of voice actor in &lt;AlternativeName&gt;. Only for use in
      * ONIX 3.0 or later
      * <p>

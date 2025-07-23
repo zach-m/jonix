@@ -297,9 +297,9 @@ public class Stock implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The name of a stock location. Optional, and repeatable to provide parallel names for a single location in
-     * multiple languages (<i>eg</i> <span lang="ga">Baile Átha Cliath</span> and Dublin, or
+     * multiple languages (<i>eg</i>&nbsp;<span lang="ga">Baile Átha Cliath</span> and Dublin, or
      * <span lang="fr">Bruxelles</span> and <span lang="nl">Brussel</span>). It may if necessary include a postal code
-     * (<i>eg</i> <span lang="el">10680 Αθήνα</span>, or <span lang="it">20090 Assago</span>). The <i>language</i>
+     * (<i>eg</i>&nbsp;<span lang="el">10680 Αθήνα</span>, or <span lang="it">20090 Assago</span>). The <i>language</i>
      * attribute is optional for a single instance of &lt;LocationName&gt;, but must be included in each instance if
      * &lt;LocationName&gt; is repeated.
      * </p>
@@ -338,9 +338,9 @@ public class Stock implements OnixSuperComposite, Serializable {
      * </p>
      * <p>
      * Note that quantities in the &lt;OnOrderDetail&gt; composite must be included in any total quantity on order given
-     * in P.26.37 &lt;OnOrder&gt;, and detail need not be given for all outstanding shipments (<i>ie</i> the P.26.37
-     * &lt;OnOrder&gt; must be greater than or equal to the total of the &lt;OnOrder&gt; elements in repeats of the
-     * composite).
+     * in P.26.37 &lt;OnOrder&gt;, and detail need not be given for all outstanding shipments (<i>ie</i>&nbsp;the
+     * P.26.37 &lt;OnOrder&gt; must be greater than or equal to the total of the &lt;OnOrder&gt; elements in repeats of
+     * the composite).
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -356,7 +356,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * <p>
      * An optional group of data elements which together specify the rate of stock depletion&nbsp;– or equally, a rate
      * of accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric
-     * (<i>eg</i> specifying both a minimum and maximum daily sale).
+     * (<i>eg</i>&nbsp;specifying both a minimum and maximum daily sale).
      * </p>
      * JONIX adds: this list may be empty
      */

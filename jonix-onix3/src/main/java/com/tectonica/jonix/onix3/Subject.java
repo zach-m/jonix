@@ -219,13 +219,14 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
     /**
      * <p>
      * An empty element that identifies an instance of the &lt;Subject&gt; composite as representing the primary or main
-     * subject category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i>
-     * there may be two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
-     * &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em> (<i>ie</i> per value of
-     * &lt;SubjectSchemeIdentifier&gt;). Optional, though for some subject schemes (<i>eg</i> <i>Thema</i>),
-     * &lt;MainSubject/&gt; can be vital in order to prevent potential misinterpretation of a group of subject codes,
-     * and for other schemes which by their nature only allow one code (<i>eg</i> Dewey), &lt;MainSubject&gt; is not
-     * relevant. Non-repeating in each occurrence of the &lt;Subject&gt; composite.
+     * subject category for the product. The main category may be expressed in more than one subject scheme,
+     * <i>ie</i>&nbsp;there may be two or more instances of the &lt;Subject&gt; composite, using different schemes, each
+     * carrying the &lt;MainSubject/&gt; flag, so long as there is only one main category <em>per scheme</em>
+     * (<i>ie</i>&nbsp;per value of &lt;SubjectSchemeIdentifier&gt;). Optional, though for some subject schemes
+     * (<i>eg</i>&nbsp;<i>Thema</i>), &lt;MainSubject/&gt; can be vital in order to prevent potential misinterpretation
+     * of a group of subject codes, and for other schemes which by their nature only allow one code
+     * (<i>eg</i>&nbsp;Dewey), &lt;MainSubject&gt; is not relevant. Non-repeating in each occurrence of the
+     * &lt;Subject&gt; composite.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -242,8 +243,9 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
 
     /**
      * <p>
-     * A name identifying a proprietary subject scheme (<i>ie</i> a scheme which is not a standard and for which there
-     * is no individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded ‘24’. Optional and non-repeating.
+     * A name identifying a proprietary subject scheme (<i>ie</i>&nbsp;a scheme which is not a standard and for which
+     * there is no individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded ‘24’. Optional and
+     * non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

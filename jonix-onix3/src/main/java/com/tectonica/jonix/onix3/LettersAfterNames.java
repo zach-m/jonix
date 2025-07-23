@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  * <h1>Person name part 7: qualifications and honors after names</h1>
  * <p>
  * The seventh part of a structured name of a person who contributed to the creation of the product: qualifications and
- * honors following a person’s names, <i>eg</i> ‘CBE FRS’. Optional and non-repeating.
+ * honors following a person’s names, <i>eg</i>&nbsp;‘CBE FRS’. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Price type qualifier</h1>
  * <p>
- * An ONIX code which further specifies the type of price, <i>eg</i> member price, reduced price when purchased as part
- * of a set. Optional and non-repeating.
+ * An ONIX code which further specifies the type of price, <i>eg</i>&nbsp;member price, reduced price when purchased as
+ * part of a set. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

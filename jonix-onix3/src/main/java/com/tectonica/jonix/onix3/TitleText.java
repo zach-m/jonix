@@ -41,10 +41,11 @@ import java.util.function.Consumer;
  * </p>
  * <p>
  * This element is deprecated&nbsp;– except in cases where the language of the title does not use explicit definite or
- * indefinite articles articles (<i>eg</i> The, A). Other than in such languages, the element is intended to be used
- * only when the sending system cannot reliably provide prefixes that are ignored for sorting purposes in a separate
- * data element. If the system <em>can</em> reliably separate prefixes, it should state whether a prefix is present
- * (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
+ * indefinite articles (<i>eg</i>&nbsp;The, A) or where national practice is to <em>include</em> these articles for
+ * alphabetic sorting purposes. Other than in such languages, the element is intended to be used only when the sending
+ * system cannot reliably provide prefixes that are ignored for sorting purposes in a separate data element. If the
+ * system <em>can</em> reliably separate prefixes, it should state whether a prefix is present (using
+ * &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
  * &lt;TitleWithoutPrefix&gt;).
  * </p>
  * <table border='1' cellpadding='3'>

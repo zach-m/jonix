@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Source type</h1>
  * <p>
- * An ONIX code indicating the type of source from which the cited material originated, <i>eg</i> radio, TV. Optional,
- * and non-repeating.
+ * An ONIX code indicating the type of source from which the cited material originated, <i>eg</i>&nbsp;radio, TV.
+ * Optional, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

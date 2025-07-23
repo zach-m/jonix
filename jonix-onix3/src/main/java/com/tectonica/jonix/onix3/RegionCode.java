@@ -37,7 +37,7 @@ import java.util.function.Consumer;
  * An ONIX code identifying a region with which a contributor is particularly associated. Optional and non-repeatable.
  * There must be an occurrence of either the &lt;CountryCode&gt; or the &lt;RegionCode&gt; elements in each occurrence
  * of &lt;ContributorPlace&gt;. A region is an area which is not a country, but which is precisely defined in
- * geographical terms, <i>eg</i> Northern Ireland, Australian Capital Territory. If both country and region are
+ * geographical terms, <i>eg</i>&nbsp;Northern Ireland, Australian Capital Territory. If both country and region are
  * specified, the region must be within the country. Note that US States have region codes, while US overseas
  * territories have distinct ISO Country Codes.
  * </p>

@@ -304,7 +304,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code indicating the type of source from which the cited material originated, <i>eg</i> radio, TV.
+     * An ONIX code indicating the type of source from which the cited material originated, <i>eg</i>&nbsp;radio, TV.
      * Optional, and non-repeating.
      * </p>
      * JONIX adds: this field is optional
@@ -379,8 +379,8 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A URL which provides a link to cited content which is accessible in digital form. Optional, and repeatable if the
-     * resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a cited resource is available in
-     * multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i>
+     * resource can be linked in more than one way, <i>eg</i>&nbsp;by URL or DOI, or where a cited resource is available
+     * in multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i>
      * attribute.
      * </p>
      * JONIX adds: this list may be empty
@@ -396,7 +396,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional and repeatable group of data elements which together specify a date associated with cited content,
-     * <i>eg</i> date on which it was published or broadcast.
+     * <i>eg</i>&nbsp;date on which it was published or broadcast.
      * </p>
      * JONIX adds: this list may be empty
      */

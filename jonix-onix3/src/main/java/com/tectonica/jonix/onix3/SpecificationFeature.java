@@ -188,7 +188,7 @@ public class SpecificationFeature
     /**
      * <p>
      * An ONIX code which specifies the feature described by an instance of the &lt;SpecificationFeature&gt; composite,
-     * <i>eg</i> paper color for the body. Mandatory in each occurrence of the composite, and non-repeating.
+     * <i>eg</i>&nbsp;paper color for the body. Mandatory in each occurrence of the composite, and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */

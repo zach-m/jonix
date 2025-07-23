@@ -38,8 +38,8 @@ import java.util.function.Consumer;
 /**
  * <h1>AV item composite</h1>
  * <p>
- * An optional group of data elements which are specific to audio or audiovisual (<i>ie</i> time-based) content. Exactly
- * one of either the &lt;AVItem&gt; composite or the similar &lt;TextItem&gt; composite must occur in a
+ * An optional group of data elements which are specific to audio or audiovisual (<i>ie</i>&nbsp;time-based) content.
+ * Exactly one of either the &lt;AVItem&gt; composite or the similar &lt;TextItem&gt; composite must occur in a
  * &lt;ContentItem&gt; composite which describes a content item.
  * </p>
  * <table border='1' cellpadding='3'>

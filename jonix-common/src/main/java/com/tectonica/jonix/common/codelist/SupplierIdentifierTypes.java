@@ -43,19 +43,20 @@ interface CodeList92 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist92">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist92">ONIX
  *      Codelist 92 in Reference Guide</a>
  */
 public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92 {
     /**
-     * Note that &lt;IDTypeName&gt; is required with proprietary identifiers
+     * For example, a publisher's own agent, suppier or location ID scheme. Note that a distinctive &lt;IDTypeName&gt;
+     * is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_name_ID_scheme("01", "Proprietary name ID scheme"),
 
     /**
      * Deprecated - use code 01
      */
-    Proprietary_("02", "Proprietary"),
+    Proprietary("02", "Proprietary"),
 
     Borsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"),
 

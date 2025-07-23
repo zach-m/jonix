@@ -34,7 +34,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Country of publication</h1>
  * <p>
- * An ONIX code identifying the country where the product is published (<i>ie</i> where the publisher is based).
+ * An ONIX code identifying the country where the product is published (<i>ie</i>&nbsp;where the publisher is based).
  * Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

@@ -34,9 +34,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Product relation code</h1>
  * <p>
- * An ONIX code which identifies the nature of the relationship between two products, <i>eg</i> ‘replaced-by’. Mandatory
- * in each occurrence of the &lt;RelatedProduct&gt; composite, and repeatable where the related product has multiple
- * types of relationship to the product described.
+ * An ONIX code which identifies the nature of the relationship between two products, <i>eg</i>&nbsp;‘replaced-by’.
+ * Mandatory in each occurrence of the &lt;RelatedProduct&gt; composite, and repeatable where the related product has
+ * multiple types of relationship to the product described.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

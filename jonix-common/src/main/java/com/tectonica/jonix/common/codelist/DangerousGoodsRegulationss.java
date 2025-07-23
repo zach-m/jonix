@@ -43,7 +43,7 @@ interface CodeList243 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist243">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist243">ONIX
  *      Codelist 243 in Reference Guide</a>
  */
 public enum DangerousGoodsRegulationss implements OnixCodelist, CodeList243 {
@@ -60,7 +60,7 @@ public enum DangerousGoodsRegulationss implements OnixCodelist, CodeList243 {
      * list of hazard classes and categories). The text is usually available on the Safety Data Sheet, along with
      * equivalent GHS Hazard Pictograms, and may also be on the product or packaging. Must be accompanied by a Safety
      * Data Sheet URL (see code 06), and is usually accompanied by one or more of codes 02-05 listing the specific
-     * chemlcal hazard
+     * chemical hazard
      */
     GHS("01", "GHS"),
 

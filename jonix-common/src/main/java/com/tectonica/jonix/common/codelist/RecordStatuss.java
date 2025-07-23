@@ -41,7 +41,7 @@ interface CodeList226 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist226">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist226">ONIX
  *      Codelist 226 in Reference Guide</a>
  */
 public enum RecordStatuss implements OnixCodelist, CodeList226 {
@@ -68,7 +68,7 @@ public enum RecordStatuss implements OnixCodelist, CodeList226 {
     Record_with_errors("02", "Record with errors"),
 
     /**
-     * Entire record rejected, record MUST have a Product record in the Acknowedgemet, with a &lt;RecordStatusNote&gt;
+     * Entire record rejected, record MUST have a Product record in the Acknowledgement, with a &lt;RecordStatusNote&gt;
      * or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial
      * queries or warnings). NONE of the data in the original Product record has been ingested
      */

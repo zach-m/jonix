@@ -41,15 +41,15 @@ interface CodeList102 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist102">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist102">ONIX
  *      Codelist 102 in Reference Guide</a>
  */
 public enum SalesOutletIdentifierTypes implements OnixCodelist, CodeList102 {
     /**
-     * Proprietary list of retail and other end-user sales outlet IDs. Note that &lt;IDTypeName&gt; is required with
-     * proprietary identifiers
+     * Proprietary list of retail and other end-user sales outlet IDs. Note that a distinctive &lt;IDTypeName&gt; is
+     * required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_sales_outlet_ID_scheme("01", "Proprietary sales outlet ID scheme"),
 
     /**
      * Use with ONIX retail and other end-user sales outlet IDs from List 139

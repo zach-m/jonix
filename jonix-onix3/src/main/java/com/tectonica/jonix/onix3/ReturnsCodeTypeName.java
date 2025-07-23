@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Returns code type name</h1>
  * <p>
  * A name which identifies a proprietary returns code scheme. Must be used when, and only when, the code in the
- * &lt;ReturnsCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and
+ * &lt;ReturnsCodeType&gt; element indicates a proprietary scheme, <i>eg</i>&nbsp;a wholesaler’s own code. Optional and
  * non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

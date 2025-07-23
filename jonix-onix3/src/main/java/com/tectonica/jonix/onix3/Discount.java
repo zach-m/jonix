@@ -206,8 +206,8 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
     /**
      * <p>
      * A minimum order quantity required to qualify for a specified discount. Optional, and non-repeating. Where
-     * omitted, the discount applies regardless of the order quantity (<i>ie</i> the minimum qualifying order quantity
-     * is 1).
+     * omitted, the discount applies regardless of the order quantity (<i>ie</i>&nbsp;the minimum qualifying order
+     * quantity is 1).
      * </p>
      * JONIX adds: this field is optional
      */
@@ -222,8 +222,8 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * <p>
      * A maximum order quantity eligible for a specified discount, used only in the case of ‘progressive’ discounts.
      * Optional, but where used, must be preceded by a minimum qualifying order quantity (even if that minimum is 1).
-     * For the special case where there is no maximum (<i>ie</i> in the repeat of the &lt;Discount&gt; composite that
-     * specifies the highest progressive discount), use zero.
+     * For the special case where there is no maximum (<i>ie</i>&nbsp;in the repeat of the &lt;Discount&gt; composite
+     * that specifies the highest progressive discount), use zero.
      * </p>
      * JONIX adds: this field is optional
      */

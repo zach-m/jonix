@@ -48,9 +48,9 @@ import java.util.function.Consumer;
  * <p>
  * A group of data elements which together describe a personal or corporate contributor to a collection. Optional, and
  * repeatable to describe multiple contributors. <strong>The &lt;Contributor&gt; composite is included here for use only
- * by those ONIX communities whose national practice requires contributors to the collection as a whole (<i>eg</i>
- * Series editors) to be identified at collection level. In many countries, including the UK, USA, Canada and Spain, the
- * required practice is to identify all contributors at product level in Group&nbsp;P.7.</strong>
+ * by those ONIX communities whose national practice requires contributors to the collection as a whole
+ * (<i>eg</i>&nbsp;Series editors) to be identified at collection level. In many countries, including the UK, USA,
+ * Canada and Spain, the required practice is to identify all contributors at product level in Group&nbsp;P.7.</strong>
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -303,9 +303,9 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The fourth part of a structured name of a person who contributed to the creation of the product: key name(s),
-     * <i>ie</i> the name elements normally used to open an entry in an alphabetical list, <i>eg</i> ‘Smith’ or ‘Garcia
-     * Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if name part
-     * elements P.7.11 to P.7.18 are used.
+     * <i>ie</i>&nbsp;the name elements normally used to open an entry in an alphabetical list, <i>eg</i>&nbsp;‘Smith’
+     * or ‘Garcia Marquez’ or ‘Madonna’ or ‘Francis de Sales’ (in Saint Francis de Sales). Non-repeating. Required if
+     * name part elements P.7.11 to P.7.18 are used.
      * </p>
      * JONIX adds: this field is required
      */
@@ -352,7 +352,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * <p>
      * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in
      * normal order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel
-     * names for a single organization in multiple languages (<i>eg</i> ‘World Health Organization’ and
+     * names for a single organization in multiple languages (<i>eg</i>&nbsp;‘World Health Organization’ and
      * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional
      * for a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
      * repeated.
@@ -384,7 +384,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code indicating the type of a primary name. Optional, and non-repeating. If omitted, the default is
-     * ‘unspecified’ (<i>ie</i> the name as it is presented on the book).
+     * ‘unspecified’ (<i>ie</i>&nbsp;the name as it is presented on the book).
      * </p>
      * JONIX adds: this field is optional
      */
@@ -413,7 +413,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The first part of a structured name of a person who contributed to the creation of the product: qualifications
-     * and/or titles preceding a person’s names, <i>eg</i> ‘Professor’ or ‘HRH Prince’ or ‘Saint’. Optional and
+     * and/or titles preceding a person’s names, <i>eg</i>&nbsp;‘Professor’ or ‘HRH Prince’ or ‘Saint’. Optional and
      * non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
      * JONIX adds: this field is optional
@@ -428,7 +428,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The second part of a structured name of a person who contributed to the creation of the product: name(s) and/or
-     * initial(s) preceding a person’s key name(s), <i>eg</i> James J. Optional and non-repeating.
+     * initial(s) preceding a person’s key name(s), <i>eg</i>&nbsp;James J. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -442,9 +442,9 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The third part of a structured name of a person who contributed to the creation of the product: a prefix which
-     * precedes the key name(s) but which is not to be treated as part of the key name, <i>eg</i> ‘van’ in Ludwig van
-     * Beethoven. This element may also be used for titles that appear after given names and before key names, <i>eg</i>
-     * ‘Lord’ in Alfred, Lord Tennyson. Optional and non-repeating.
+     * precedes the key name(s) but which is not to be treated as part of the key name, <i>eg</i>&nbsp;‘van’ in Ludwig
+     * van Beethoven. This element may also be used for titles that appear after given names and before key names,
+     * <i>eg</i>&nbsp;‘Lord’ in Alfred, Lord Tennyson. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -458,7 +458,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The fifth part of a structured name of a person who contributed to the creation of the product: name suffix, or
-     * name(s) following a person’s key name(s), <i>eg</i> ‘Ibrahim’ (in Anwar Ibrahim). Optional and non-repeating.
+     * name(s) following a person’s key name(s), <i>eg</i>&nbsp;‘Ibrahim’ (in Anwar Ibrahim). Optional and
+     * non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -472,7 +473,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The sixth part of a structured name of a person who contributed to the creation of the product: a suffix
-     * following a person’s key name(s), <i>eg</i> ‘Jr’ or ‘III’. Optional and non-repeating.
+     * following a person’s key name(s), <i>eg</i>&nbsp;‘Jr’ or ‘III’. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -486,7 +487,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The seventh part of a structured name of a person who contributed to the creation of the product: qualifications
-     * and honors following a person’s names, <i>eg</i> ‘CBE FRS’. Optional and non-repeating.
+     * and honors following a person’s names, <i>eg</i>&nbsp;‘CBE FRS’. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -500,7 +501,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The eighth part of a structured name of a person who contributed to the creation of the product: titles following
-     * a person’s names, <i>eg</i> ‘Duke of Edinburgh’. Optional and non-repeating.
+     * a person’s names, <i>eg</i>&nbsp;‘Duke of Edinburgh’. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -562,10 +563,10 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * <p>
      * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with
      * the element used for alphabetical sorting placed first. Optional: see Group&nbsp;P.7 introductory text for valid
-     * options. Repeatable, to provide parallel names for a single organization in multiple languages (<i>eg</i> ‘Polar
-     * Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The <i>language</i>
-     * attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but must be included in each
-     * instance if &lt;CorporateNameInverted&gt; is repeated.
+     * options. Repeatable, to provide parallel names for a single organization in multiple languages
+     * (<i>eg</i>&nbsp;‘Polar Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The
+     * <i>language</i> attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but must be
+     * included in each instance if &lt;CorporateNameInverted&gt; is repeated.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -581,10 +582,10 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * A group of data elements which together represent an alternative name of a contributor, and specify its type. The
      * &lt;AlternativeName&gt; composite is optional, and is repeatable to give multiple alternative names for the
      * contributor. It may be used to send a pseudonym as well as a real name, where both names are on the product,
-     * <i>eg</i> to handle such cases as ‘Ian Rankin writing as Jack Harvey’; or to send an authority-controlled form of
-     * a name; or to identify the real name of the contributor where the book is written under a pseudonym (and the real
-     * identity need not be kept private) or is anonymous. Note that in all cases, the primary name is that used on the
-     * product, and the alternative name merely provides additional information.
+     * <i>eg</i>&nbsp;to handle such cases as ‘Ian Rankin writing as Jack Harvey’; or to send an authority-controlled
+     * form of a name; or to identify the real name of the contributor where the book is written under a pseudonym (and
+     * the real identity need not be kept private) or is anonymous. Note that in all cases, the primary name is that
+     * used on the product, and the alternative name merely provides additional information.
      * </p>
      * <p>
      * Each instance of the composite must contain the &lt;NameType&gt; element with <em>either</em>:
@@ -609,8 +610,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A group of data elements which together specify a date associated with the person or organization identified in
-     * an occurrence of the &lt;Contributor&gt; composite, <i>eg</i> birth or death. Optional, and repeatable to allow
-     * multiple dates to be specified.
+     * an occurrence of the &lt;Contributor&gt; composite, <i>eg</i>&nbsp;birth or death. Optional, and repeatable to
+     * allow multiple dates to be specified.
      * </p>
      * JONIX adds: this list may be empty
      */

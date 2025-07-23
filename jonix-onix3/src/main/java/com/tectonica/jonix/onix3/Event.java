@@ -196,9 +196,9 @@ public class Event implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code which indicates the relationship between the product and an event to which it is related, <i>eg</i>
-     * Proceedings of conference / Selected papers from conference / Programme for sporting event / Guide for art
-     * exhibition. Mandatory and non-repeating.
+     * An ONIX code which indicates the relationship between the product and an event to which it is related,
+     * <i>eg</i>&nbsp;Proceedings of conference / Selected papers from conference / Programme for sporting event / Guide
+     * for art exhibition. Mandatory and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */
@@ -213,9 +213,10 @@ public class Event implements OnixSuperComposite, Serializable {
      * <p>
      * The name of an event or series of events to which the product is related. This element is mandatory in each
      * occurrence of the &lt;Event&gt; composite, and repeatable to provide parallel names for a single event in
-     * multiple languages (<i>eg</i> ‘United Nations Climate Change Conference’ and <span lang="fr">«&nbsp;Conférences
-     * des Nations unies sur les changements climatiques&nbsp;»</span>). The <i>language</i> attribute is optional for a
-     * single instance of &lt;EventName&gt;, but must be included in each instance if &lt;EventName&gt; is repeated.
+     * multiple languages (<i>eg</i>&nbsp;‘United Nations Climate Change Conference’ and
+     * <span lang="fr">«&nbsp;Conférences des Nations unies sur les changements climatiques&nbsp;»</span>). The
+     * <i>language</i> attribute is optional for a single instance of &lt;EventName&gt;, but must be included in each
+     * instance if &lt;EventName&gt; is repeated.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */

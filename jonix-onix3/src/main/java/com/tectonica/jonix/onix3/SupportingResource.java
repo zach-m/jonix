@@ -211,8 +211,8 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code indicating the mode of the supporting resource, <i>eg</i> audio, video. Mandatory in each occurrence
-     * of the &lt;SupportingResource&gt; composite, and non-repeating.
+     * An ONIX code indicating the mode of the supporting resource, <i>eg</i>&nbsp;audio, video. Mandatory in each
+     * occurrence of the &lt;SupportingResource&gt; composite, and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */

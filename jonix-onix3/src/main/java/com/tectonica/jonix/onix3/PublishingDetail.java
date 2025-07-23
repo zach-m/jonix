@@ -230,8 +230,8 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code identifying the country where the product is published (<i>ie</i> where the publisher is based).
-     * Optional and non-repeating.
+     * An ONIX code identifying the country where the product is published (<i>ie</i>&nbsp;where the publisher is
+     * based). Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

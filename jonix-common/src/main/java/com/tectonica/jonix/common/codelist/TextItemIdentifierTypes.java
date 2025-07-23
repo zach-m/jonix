@@ -43,32 +43,43 @@ interface CodeList43 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist43">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist43">ONIX
  *      Codelist 43 in Reference Guide</a>
  */
 public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43 {
     /**
-     * For example, a publisher's own identifier. Note that &lt;IDTypeName&gt; is required with proprietary identifiers
+     * For example, a publisher's own identifier scheme for a textual content item. Note that a distinctive
+     * &lt;IDTypeName&gt; is required with proprietary identifiers
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_text_item_ID_scheme("01", "Proprietary text item ID scheme"),
 
     /**
      * Formerly known as the EAN-13 (unhyphenated)
      */
     GTIN_13("03", "GTIN-13"),
 
+    /**
+     * Digital Object Identifier (variable length and character set, beginning '10.' and without https://doi.org/ or the
+     * older http://dx.doi.org/)
+     */
     DOI("06", "DOI"),
 
     /**
-     * Publisher item identifier
+     * Publisher item identifier, 17 characters, without punctuation, beginning with B (for book) or S (for serial
+     * publications)
      */
     PII("09", "PII"),
 
     /**
-     * For serial items only
+     * Serial Item and Contribution Identifier, for serial items only. Deprecated: the SICI was withdrawn as a standard
+     * in 2012
      */
     SICI("10", "SICI"),
 
+    /**
+     * International Standard Text Code (16 characters: numerals and letters A-F, unhyphenated). Deprecated: the ISTC
+     * was withdrawn as a standard in 2021
+     */
     ISTC("11", "ISTC"),
 
     /**

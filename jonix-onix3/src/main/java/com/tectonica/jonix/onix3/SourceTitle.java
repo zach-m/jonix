@@ -34,7 +34,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Source title</h1>
  * <p>
- * The title of a publication from which the text sent in the &lt;Text&gt; element was taken, <i>eg</i> if it is a
+ * The title of a publication from which the text sent in the &lt;Text&gt; element was taken, <i>eg</i>&nbsp;if it is a
  * review quote. Optional, and repeatable to provide the title in multiple languages. The <i>language</i> attribute is
  * optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if &lt;SourceTitle&gt;
  * is repeated.

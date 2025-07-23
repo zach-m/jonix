@@ -395,7 +395,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code which indicates certain types of content which are closely related to but not strictly an attribute
-     * of product form, <i>eg</i> audiobook. Optional and repeatable.
+     * of product form, <i>eg</i>&nbsp;audiobook. Optional and repeatable.
      * </p>
      * JONIX adds: this list may be empty
      */

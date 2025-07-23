@@ -43,7 +43,7 @@ interface CodeList158 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -56,6 +56,13 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * 2D
      */
     Back_cover("02", "Back cover"),
+
+    /**
+     * 2D, portrait orientation
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Spine_image("56", "Spine image"),
 
     /**
      * Not limited to front or back, including 3D perspective
@@ -122,7 +129,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Reading_group_guide("19", "Reading group guide"),
 
     /**
-     * Incuding associated teacher / instructor resources
+     * Including associated teacher / instructor resources
      */
     Teachers_guide("20", "Teacher’s guide"),
 
@@ -142,8 +149,8 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
 
     /**
      * A table of contents held in a separate downloadable file, not in the ONIX record. Equivalent of code 04 in List
-     * 153. Use the &lt;TextContent&gt; composite for a table of contents carried in the ONIX record. Use &lt;Supporting
-     * Resource&gt; for text offered as a separate file resource
+     * 153. Use the &lt;TextContent&gt; composite for a table of contents carried in the ONIX record. Use
+     * &lt;SupportingResource&gt; for text offered as a separate file resource
      */
     Table_of_contents("25", "Table of contents"),
 
@@ -174,14 +181,14 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
 
     /**
      * Descriptive text in a separate downloadable file, not in the ONIX record. Equivalent of code 03 in List 153. Use
-     * the &lt;TextContent&gt; composite for descriptions carried in the ONIX record. Use &lt;Supporting Resource&gt;
-     * for text offered as a separate file resource for reproduction as part of promotional material for the product
+     * the &lt;TextContent&gt; composite for descriptions carried in the ONIX record. Use &lt;SupportingResource&gt; for
+     * text offered as a separate file resource for reproduction as part of promotional material for the product
      */
     Description("31", "Description"),
 
     /**
      * Index text held in a separate downloadable file, not in the ONIX record. Equivalent of code 15 in List 153. Use
-     * the &lt;TextContent&gt; composite for index text carried in the ONIX record. Use &lt;Supporting Resource&gt; for
+     * the &lt;TextContent&gt; composite for index text carried in the ONIX record. Use &lt;SupportingResource&gt; for
      * an index offered as a separate file resource
      */
     Index("32", "Index"),
@@ -214,7 +221,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
 
     /**
      * Availability of a digital review, evaluation or sample copy, or a digital proof copy, which may be limited to
-     * authorised users or account holders, but should otherwise be fully readable and functional
+     * authorized users or account holders, but should otherwise be fully readable and functional
      */
     Digital_review_copy("38", "Digital review copy"),
 
@@ -238,9 +245,9 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
 
     /**
      * Descriptive material in a separate resource file, not in the ONIX record. Equivalent of code 17 in List 153. Use
-     * the &lt;TextContent&gt; composite for collection descriptions carried in the ONIX record. Use &lt;Supporting
-     * Resource&gt; for material (which need not be solely only) offered as a separate file resource for reproduction as
-     * part of promotional material for the product and collection
+     * the &lt;TextContent&gt; composite for collection descriptions carried in the ONIX record. Use
+     * &lt;SupportingResource&gt; for material (which need not be solely only) offered as a separate file resource for
+     * reproduction as part of promotional material for the product and collection
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -285,7 +292,7 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Transcript("47", "Transcript"),
 
     /**
-     * For use with dramatised audiobooks, filmed entertainment etc, for a cast list sent as a separate resource file,
+     * For use with dramatized audiobooks, filmed entertainment etc, for a cast list sent as a separate resource file,
      * not in the ONIX record. Equivalent of code 28 in List 153
      * <p>
      * JONIX adds: Not included in Onix2
@@ -312,11 +319,11 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Cover_flap("51", "Cover flap"),
+    Cover_flap_image("51", "Cover flap image"),
 
     /**
-     * Image of any warning label or hazard warning text on product or packaging, eg as required for EU General Product
-     * Safety or Toy Safety, or for battery safety purposes
+     * Image of any warning label or hazard warning text on product or packaging, eg as required for EU General or Toy
+     * Safety, or for battery safety purposes
      * <p>
      * JONIX adds: Not included in Onix2
      */

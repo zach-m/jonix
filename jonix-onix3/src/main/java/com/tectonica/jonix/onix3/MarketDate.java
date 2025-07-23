@@ -36,9 +36,9 @@ import java.util.function.Consumer;
  * <h1>Market date composite</h1>
  * <p>
  * A group of data elements which together specify a date associated with the publishing status of the product in a
- * specified market, <i>eg</i> ‘local publication date’. Optional, but if known, a date of publication <em>must</em> be
- * specified either here as a ‘local publication date’ or in P.20. Other dates relating to the publication of the
- * product in the specific market may be sent in further repeats of the composite.
+ * specified market, <i>eg</i>&nbsp;‘local publication date’. Optional, but if known, a date of publication
+ * <em>must</em> be specified either here as a ‘local publication date’ or in P.20. Other dates relating to the
+ * publication of the product in the specific market may be sent in further repeats of the composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

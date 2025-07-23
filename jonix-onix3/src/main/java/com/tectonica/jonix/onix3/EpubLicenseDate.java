@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Digital product license date</h1>
  * <p>
  * An optional group of date elements which together specify a date associated with the license in an occurrence of the
- * &lt;EpubLicense&gt; composite, <i>eg</i> a date when a license expires. Repeatable to specify different dates with
- * their various roles.
+ * &lt;EpubLicense&gt; composite, <i>eg</i>&nbsp;a date when a license expires. Repeatable to specify different dates
+ * with their various roles.
  * </p>
  * <p>
  * Note that if no dates are specified, the license is effective at the time the ONIX message is sent.

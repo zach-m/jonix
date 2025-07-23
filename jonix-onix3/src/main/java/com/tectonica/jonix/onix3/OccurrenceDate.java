@@ -170,8 +170,9 @@ public class OccurrenceDate
 
     /**
      * <p>
-     * An ONIX code indicating the significance of the date, <i>eg</i> the date of the occurrence, last date of ticket
-     * availability <i>etc</i>. Mandatory in each instance of the &lt;OccurrenceDate&gt; composite, and non-repeating.
+     * An ONIX code indicating the significance of the date, <i>eg</i>&nbsp;the date of the occurrence, last date of
+     * ticket availability <i>etc</i>. Mandatory in each instance of the &lt;OccurrenceDate&gt; composite, and
+     * non-repeating.
      * </p>
      * JONIX adds: this field is required
      */
@@ -188,7 +189,7 @@ public class OccurrenceDate
      * &lt;OccurrenceDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the
      * attribute is missing, then the default format is YYYYMMDDThhmm (local time at the venue). Note that this date
      * format may include a time zone offset (Z for times in UTC, or ±hhmm), and this should always be included where
-     * there is any doubt, <i>eg</i> when the event is available online.
+     * there is any doubt, <i>eg</i>&nbsp;when the event is available online.
      * </p>
      * JONIX adds: this field is required
      */

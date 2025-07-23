@@ -346,10 +346,10 @@ public class EventOccurrence implements OnixSuperComposite, Serializable {
      * <p>
      * The name of a city or town location within the specified country or region at which an event occurrence takes
      * place. Optional, but required for a physical event and omitted for a purely digital event, and repeatable to
-     * provide parallel names for a single location in multiple languages (<i>eg</i> Baile Átha Cliath and Dublin, or
-     * Bruxelles and Brussel). It may if necessary include a postal code (<i>eg</i> 10680 Αθήνα, or 20090 Assago). The
-     * <i>language</i> attribute is optional for a single instance of &lt;LocationName&gt;, but must be included in each
-     * instance if &lt;LocationName&gt; is repeated.
+     * provide parallel names for a single location in multiple languages (<i>eg</i>&nbsp;Baile Átha Cliath and Dublin,
+     * or Bruxelles and Brussel). It may if necessary include a postal code (<i>eg</i>&nbsp;10680 Αθήνα, or 20090
+     * Assago). The <i>language</i> attribute is optional for a single instance of &lt;LocationName&gt;, but must be
+     * included in each instance if &lt;LocationName&gt; is repeated.
      * </p>
      * JONIX adds: this list may be empty
      */

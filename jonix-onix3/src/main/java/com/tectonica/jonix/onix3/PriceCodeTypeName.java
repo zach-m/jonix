@@ -35,8 +35,8 @@ import java.util.function.Consumer;
  * <h1>Price code type name</h1>
  * <p>
  * A name which identifies a proprietary price code type. Must be used when, and only when the code in the
- * &lt;PriceCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a retailer’s price banding scheme. Optional
- * and non-repeating.
+ * &lt;PriceCodeType&gt; element indicates a proprietary scheme, <i>eg</i>&nbsp;a retailer’s price banding scheme.
+ * Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

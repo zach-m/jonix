@@ -41,11 +41,14 @@ interface CodeList223 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist223">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist223">ONIX
  *      Codelist 223 in Reference Guide</a>
  */
 public enum StatusDetailCodeTypes implements OnixCodelist, CodeList223 {
-    Proprietary("01", "Proprietary"),
+    /**
+     * Note that a distinctive &lt;IDTypeName&gt; is required for proprietary status detail codes
+     */
+    Proprietary_status_detail_code_type("01", "Proprietary status detail code type"),
 
     /**
      * Status detail code is taken from List 225

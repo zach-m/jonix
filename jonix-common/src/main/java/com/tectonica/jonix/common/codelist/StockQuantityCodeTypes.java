@@ -41,14 +41,14 @@ interface CodeList70 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist70">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist70">ONIX
  *      Codelist 70 in Reference Guide</a>
  */
 public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70 {
     /**
-     * As specified in &lt;StockQuantityCodeTypeName&gt;
+     * Note that a distinctive &lt;StockQuantityCodeTypeName&gt; is required with proprietary coding schemes
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_stock_quantity_coding_scheme("01", "Proprietary stock quantity coding scheme"),
 
     /**
      * Code scheme defined by the Australian Publishers Association. Deprecated

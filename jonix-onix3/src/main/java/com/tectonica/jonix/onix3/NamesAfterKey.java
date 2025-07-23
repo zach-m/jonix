@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  * <h1>Person name part 5: names after key names</h1>
  * <p>
  * The fifth part of a structured name of a person who contributed to the creation of the product: name suffix, or
- * name(s) following a person’s key name(s), <i>eg</i> ‘Ibrahim’ (in Anwar Ibrahim). Optional and non-repeating.
+ * name(s) following a person’s key name(s), <i>eg</i>&nbsp;‘Ibrahim’ (in Anwar Ibrahim). Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

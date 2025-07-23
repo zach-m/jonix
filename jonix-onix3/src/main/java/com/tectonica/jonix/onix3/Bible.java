@@ -275,7 +275,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
 
     /**
      * <p>
-     * An ONIX code specifying a feature of a Bible text not covered elsewhere, <i>eg</i> red letter. Optional, and
+     * An ONIX code specifying a feature of a Bible text not covered elsewhere, <i>eg</i>&nbsp;red letter. Optional, and
      * repeatable to specify multiple features.
      * </p>
      * JONIX adds: this list may be empty

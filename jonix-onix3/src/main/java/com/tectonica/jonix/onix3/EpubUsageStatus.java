@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Usage status (digital products)</h1>
  * <p>
- * An ONIX code specifying the status of a usage of a digital product, <i>eg</i> permitted without limit, permitted with
- * limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and non-repeating.
+ * An ONIX code specifying the status of a usage of a digital product, <i>eg</i>&nbsp;permitted without limit, permitted
+ * with limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

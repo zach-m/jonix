@@ -43,7 +43,7 @@ interface CodeList15 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist15">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist15">ONIX
  *      Codelist 15 in Reference Guide</a>
  */
 public enum TitleTypes implements OnixCodelist, CodeList15 {
@@ -99,7 +99,8 @@ public enum TitleTypes implements OnixCodelist, CodeList15 {
 
     /**
      * For books: the title carried in a book distributor's title file: frequently incomplete, and may include elements
-     * not properly part of the title
+     * not properly part of the title. Usually limited in length and character set (eg to about 30 ASCII characters) for
+     * use on other e-commerce documentation
      */
     Distributors_title("10", "Distributor’s title"),
 

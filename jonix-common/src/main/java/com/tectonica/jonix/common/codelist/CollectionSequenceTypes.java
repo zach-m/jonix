@@ -41,14 +41,14 @@ interface CodeList197 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist197">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist197">ONIX
  *      Codelist 197 in Reference Guide</a>
  */
 public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
     /**
      * A short explanatory label for the sequence should be provided in &lt;CollectionSequenceTypeName&gt;
      */
-    Proprietary("01", "Proprietary"),
+    Proprietary_collection_sequence_type("01", "Proprietary collection sequence type"),
 
     /**
      * Order as specified by the title, eg by volume or part number sequence, provided for confirmation

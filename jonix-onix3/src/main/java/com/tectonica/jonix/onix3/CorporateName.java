@@ -37,7 +37,7 @@ import java.util.function.Consumer;
  * <p>
  * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in normal
  * order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel names for a
- * single organization in multiple languages (<i>eg</i> ‘World Health Organization’ and
+ * single organization in multiple languages (<i>eg</i>&nbsp;‘World Health Organization’ and
  * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional for
  * a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
  * repeated.

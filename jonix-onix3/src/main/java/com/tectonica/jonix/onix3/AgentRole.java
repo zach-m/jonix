@@ -34,9 +34,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Agent role</h1>
  * <p>
- * An ONIX code identifying the role of an agent in relation to the product in the specified market, <i>eg</i> Exclusive
- * sales agent, Local publisher, <i>etc</i>. Mandatory in each occurrence of the &lt;PublisherRepresentative&gt;
- * composite.
+ * An ONIX code identifying the role of an agent in relation to the product in the specified market,
+ * <i>eg</i>&nbsp;Exclusive sales agent, Local publisher, <i>etc</i>. Mandatory in each occurrence of the
+ * &lt;PublisherRepresentative&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

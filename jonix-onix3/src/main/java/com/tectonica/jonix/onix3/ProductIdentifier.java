@@ -44,12 +44,12 @@ import java.util.function.Consumer;
  * ISBN-13 numbers in their unhyphenated form constitute a range of&nbsp;GTIN-13 numbers that has been reserved for the
  * international book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should be
  * <em>mandatory</em> in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled
- * as a GTIN-13 number (<i>ie</i> as &lt;ProductIDType&gt; code 03), since this is how the ISBN-13 will be used in book
- * trade transactions. For many ONIX applications this will also be sufficient.
+ * as a GTIN-13 number (<i>ie</i>&nbsp;as &lt;ProductIDType&gt; code 03), since this is how the ISBN-13 will be used in
+ * book trade transactions. For many ONIX applications this will also be sufficient.
  * </p>
  * <p>
  * For some ONIX applications, however, particularly when data is to be supplied to the library sector, there may be
- * reasons why the ISBN-13 must <em>also</em> be sent labelled distinctively as an ISBN-13 (<i>ie</i> as
+ * reasons why the ISBN-13 must <em>also</em> be sent labelled distinctively as an ISBN-13 (<i>ie</i>&nbsp;as
  * &lt;ProductIDType&gt; code 15). Users should consult ‘good practice’ guidelines and/or discuss with their trading
  * partners.
  * </p>
@@ -239,9 +239,10 @@ public class ProductIdentifier
 
     /**
      * <p>
-     * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
-     * there is no individual ID type code). Must be included when, and only when, the code in the &lt;ProductIDType&gt;
-     * element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional and non-repeating.
+     * A name which identifies a proprietary identifier scheme (<i>ie</i>&nbsp;a scheme which is not a standard and for
+     * which there is no individual ID type code). Must be included when, and only when, the code in the
+     * &lt;ProductIDType&gt; element indicates a proprietary scheme, <i>eg</i>&nbsp;a wholesaler’s own code. Optional
+     * and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

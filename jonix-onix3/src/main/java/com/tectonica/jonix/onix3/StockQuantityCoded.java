@@ -199,9 +199,9 @@ public class StockQuantityCoded
 
     /**
      * <p>
-     * A name that identifies a proprietary stock quantity coding scheme (<i>ie</i> a scheme which is not a standard and
-     * for which there is no individual ID type code). Must be used when, and only when the code in the
-     * &lt;StockQuantityCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code.
+     * A name that identifies a proprietary stock quantity coding scheme (<i>ie</i>&nbsp;a scheme which is not a
+     * standard and for which there is no individual ID type code). Must be used when, and only when the code in the
+     * &lt;StockQuantityCodeType&gt; element indicates a proprietary scheme, <i>eg</i>&nbsp;a wholesaler’s own code.
      * Optional, and non-repeating.
      * </p>
      * JONIX adds: this field is optional

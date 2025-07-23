@@ -43,7 +43,7 @@ interface CodeList9 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist9">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
@@ -73,8 +73,8 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     Warenverzeichnis_fur_die_Auenhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"),
 
     /**
-     * EU TARIC codes, an extended version of the Harmonized System primarily for imports into the EU. Use 10 digits,
-     * without punctuation. See
+     * EU TARIC codes, an extended version of the Harmonized System primarily for imports into the EU. Use 10 digits
+     * (very occasionally 11), without punctuation. See
      * https://taxation-customs.ec.europa.eu/customs-4/calculation-customs-duties/customs-tariff/eu-customs-tariff-taric_en
      */
     TARIC("05", "TARIC"),
@@ -125,8 +125,8 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     PKWiU("12", "PKWiU"),
 
     /**
-     * US HTS (or HTSA) commodity codes for import of goods into USA (10 digits, without punctuation). Only for use in
-     * ONIX 3.0 or later. See https://hts.usitc.gov/current
+     * US HTS (or HTSA) commodity codes for import of goods into USA (10 digits including the 'statistical suffix', and
+     * without punctuation). Only for use in ONIX 3.0 or later. See https://hts.usitc.gov/current
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -155,7 +155,7 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    CN("16", "CN"),
+    CN_EU_Combined_Nomenclature("16", "CN (EU Combined Nomenclature)"),
 
     /**
      * Canadian Customs Tariff scheme, 8 or 10 digits for imports into and exports from Canada. Only for use in ONIX 3.0
@@ -181,6 +181,14 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
      * JONIX adds: Not included in Onix2
      */
     NICO("19", "NICO"),
+
+    /**
+     * Code for TARIC additions and exemptions, 4 alphanumeric characters (usually 1 letter, 3 digits), eg Y129 (for
+     * goods outside the scope of EUDR). Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    TARIC_additional_code("20", "TARIC additional code"),
 
     /**
      * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)

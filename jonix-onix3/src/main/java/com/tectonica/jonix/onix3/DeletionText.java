@@ -41,9 +41,9 @@ import java.util.function.Consumer;
  * been ‘deleted’ (in industries which use this terminology when a product is withdrawn).
  * </p>
  * <p>
- * A product cancellation or abandonment prior to publication, or a product becoming unavailable (<i>eg</i> as a result
- * of being Out of print) are changes of &lt;PublishingStatus&gt; or of &lt;ProductAvailability&gt;, not reasons for
- * deletion.
+ * A product cancellation or abandonment prior to publication, or a product becoming unavailable (<i>eg</i>&nbsp;as a
+ * result of being Out of print) are changes of &lt;PublishingStatus&gt; or of &lt;ProductAvailability&gt;, not reasons
+ * for deletion.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

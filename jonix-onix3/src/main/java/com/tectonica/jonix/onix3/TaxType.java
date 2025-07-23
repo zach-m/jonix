@@ -34,7 +34,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Tax type</h1>
  * <p>
- * An ONIX code identifying a tax type, <i>eg</i> VAT. Optional, and non-repeating.
+ * An ONIX code identifying a tax type, <i>eg</i>&nbsp;VAT. Optional, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

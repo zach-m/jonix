@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Prize or award achievement code</h1>
  * <p>
- * An ONIX code indicating the achievement of the product in relation to a prize or award, <i>eg</i> winner, runner-up,
- * shortlisted. Optional and non-repeating.
+ * An ONIX code indicating the achievement of the product in relation to a prize or award, <i>eg</i>&nbsp;winner,
+ * runner-up, shortlisted. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

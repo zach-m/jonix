@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <p>
  * An ONIX code which indicates the primary or only content type included in a product. The element is intended to be
  * used in particular for digital products, when the sender wishes to make it clear that one of a number of content
- * types (<i>eg</i> text, audio, video) is the primary type for the product. Other content types may be specified in the
- * &lt;ProductContentType&gt;. Optional and non-repeating.
+ * types (<i>eg</i>&nbsp;text, audio, video) is the primary type for the product. Other content types may be specified
+ * in the &lt;ProductContentType&gt;. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -43,7 +43,7 @@ interface CodeList163 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -171,12 +171,30 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     /**
      * For digital products that are available to end customers both as purchases and as part of a subscription package,
      * the earliest date the product can be made available by subscription, where the product may not be included in a
-     * subscription package until shome while after publication. For ordinary sales, see code 02 if there is a sales
+     * subscription package until some while after publication. For ordinary sales, see code 02 if there is a sales
      * embargo or code 01 if there is no embargo
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Subscription_embargo_date("31", "Subscription embargo date"),
+
+    /**
+     * For digital products that are available to end customers both as a download and streamed, the earliest date the
+     * product can be made available via download, where the download version becomes available later than the stream.
+     * For any embargo on the stream, see code 02
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Download_embargo_date("32", "Download embargo date"),
+
+    /**
+     * For digital products that are available to end customers both as purchases and as part of a subscription package,
+     * the earliest date the product can be made available to purchase, where the product may not be purchased until
+     * some while after it becomes available via the subscription. For any embargo on the subscription, see code 02
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Purchase_embargo_date("33", "Purchase embargo date"),
 
     /**
      * Date by which CIP copy is required for inclusion in the product

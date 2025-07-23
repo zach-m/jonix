@@ -34,9 +34,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Identifier type name</h1>
  * <p>
- * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
- * there is no individual ID type code). Must be included when, and only when, the code in the &lt;SenderIDType&gt;
- * element indicates a proprietary scheme. Optional and non-repeating.
+ * A name which identifies a proprietary identifier scheme (<i>ie</i>&nbsp;a scheme which is not a standard and for
+ * which there is no individual ID type code). Must be included when, and only when, the code in the
+ * &lt;SenderIDType&gt; element indicates a proprietary scheme. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Publishing date role code</h1>
  * <p>
- * An ONIX code indicating the significance of the date, <i>eg</i> publication date, announcement date, latest reprint
- * date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite, and non-repeating.
+ * An ONIX code indicating the significance of the date, <i>eg</i>&nbsp;publication date, announcement date, latest
+ * reprint date. Mandatory in each occurrence of the &lt;PublishingDate&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

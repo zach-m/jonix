@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Resource link</h1>
  * <p>
  * A URL which provides a link to cited content which is accessible in digital form. Optional, and repeatable if the
- * resource can be linked in more than one way, <i>eg</i> by URL or DOI, or where a cited resource is available in
+ * resource can be linked in more than one way, <i>eg</i>&nbsp;by URL or DOI, or where a cited resource is available in
  * multiple parallel languages. Where multiple languages are used, all repeats must carry the <i>language</i> attribute.
  * </p>
  * <table border='1' cellpadding='3'>

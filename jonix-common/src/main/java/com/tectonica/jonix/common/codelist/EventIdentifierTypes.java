@@ -43,11 +43,14 @@ interface CodeList244 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist244">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist244">ONIX
  *      Codelist 244 in Reference Guide</a>
  */
 public enum EventIdentifierTypes implements OnixCodelist, CodeList244 {
-    Proprietary("01", "Proprietary");
+    /**
+     * Note that a distinctive &lt;IDTypeName&gt; is required with proprietary event identifiers
+     */
+    Proprietary_event_ID_scheme("01", "Proprietary event ID scheme");
 
     public final String code;
     public final String description;

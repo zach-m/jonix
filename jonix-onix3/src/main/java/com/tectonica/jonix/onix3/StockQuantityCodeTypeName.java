@@ -34,10 +34,10 @@ import java.util.function.Consumer;
 /**
  * <h1>Stock quantity code type name</h1>
  * <p>
- * A name that identifies a proprietary stock quantity coding scheme (<i>ie</i> a scheme which is not a standard and for
- * which there is no individual ID type code). Must be used when, and only when the code in the
- * &lt;StockQuantityCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional,
- * and non-repeating.
+ * A name that identifies a proprietary stock quantity coding scheme (<i>ie</i>&nbsp;a scheme which is not a standard
+ * and for which there is no individual ID type code). Must be used when, and only when the code in the
+ * &lt;StockQuantityCodeType&gt; element indicates a proprietary scheme, <i>eg</i>&nbsp;a wholesaler’s own code.
+ * Optional, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

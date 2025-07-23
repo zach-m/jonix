@@ -39,7 +39,7 @@ import java.util.function.Consumer;
  * </p>
  * <p>
  * Note that quantities in the &lt;OnOrderDetail&gt; composite must be included in any total quantity on order given in
- * P.26.37 &lt;OnOrder&gt;, and detail need not be given for all outstanding shipments (<i>ie</i> the P.26.37
+ * P.26.37 &lt;OnOrder&gt;, and detail need not be given for all outstanding shipments (<i>ie</i>&nbsp;the P.26.37
  * &lt;OnOrder&gt; must be greater than or equal to the total of the &lt;OnOrder&gt; elements in repeats of the
  * composite).
  * </p>

@@ -199,7 +199,7 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
     /**
      * <p>
      * A name which identifies a proprietary price code type. Must be used when, and only when the code in the
-     * &lt;PriceCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a retailer’s price banding scheme.
+     * &lt;PriceCodeType&gt; element indicates a proprietary scheme, <i>eg</i>&nbsp;a retailer’s price banding scheme.
      * Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional

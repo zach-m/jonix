@@ -457,7 +457,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * <p>
      * An ONIX code which indicates the primary or only content type included in a product. The element is intended to
      * be used in particular for digital products, when the sender wishes to make it clear that one of a number of
-     * content types (<i>eg</i> text, audio, video) is the primary type for the product. Other content types may be
+     * content types (<i>eg</i>&nbsp;text, audio, video) is the primary type for the product. Other content types may be
      * specified in the &lt;ProductContentType&gt;. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
@@ -754,8 +754,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code specifying whether a digital product has DRM or other technical protection features. Optional, and
-     * repeatable if a product has two or more kinds of protection (<i>ie</i> different parts of a product are protected
-     * in different ways).
+     * repeatable if a product has two or more kinds of protection (<i>ie</i>&nbsp;different parts of a product are
+     * protected in different ways).
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -910,7 +910,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
-     * characteristics of two or more types (<i>eg</i> ‘revised’ and ‘annotated’).
+     * characteristics of two or more types (<i>eg</i>&nbsp;‘revised’ and ‘annotated’).
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -926,11 +926,11 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * A short free-text description of a version or edition. Optional, and repeatable if parallel text is provided in
      * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;EditionStatement&gt;,
      * but must be included in each instance if &lt;EditionStatement&gt; is repeated. When used, an
-     * &lt;EditionStatement&gt; must be complete in itself, <i>ie</i> it should not be treated as merely supplementary
-     * to an &lt;EditionType&gt; or an &lt;EditionNumber&gt;, nor as a replacement for them. Appropriate edition type
-     * and number must also be sent, for indexing and retrieval. An &lt;EditionStatement&gt; should be strictly limited
-     * to describing features of the content of the edition, and should <em>not</em> include aspects such as rights or
-     * market restrictions which are properly covered elsewhere in the ONIX record.
+     * &lt;EditionStatement&gt; must be complete in itself, <i>ie</i>&nbsp;it should not be treated as merely
+     * supplementary to an &lt;EditionType&gt; or an &lt;EditionNumber&gt;, nor as a replacement for them. Appropriate
+     * edition type and number must also be sent, for indexing and retrieval. An &lt;EditionStatement&gt; should be
+     * strictly limited to describing features of the content of the edition, and should <em>not</em> include aspects
+     * such as rights or market restrictions which are properly covered elsewhere in the ONIX record.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -960,8 +960,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A group of data elements which together describe an extent pertaining to the product. Optional, but in practice
-     * required for most products, <i>eg</i> to give the number of pages in a printed book or paginated e‑book, or to
-     * give the running time of an audiobook. Repeatable to specify different extent types or units.
+     * required for most products, <i>eg</i>&nbsp;to give the number of pages in a printed book or paginated e‑book, or
+     * to give the running time of an audiobook. Repeatable to specify different extent types or units.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -975,9 +975,9 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * For books or other text media only, this data element carries text stating the number and type of illustrations.
-     * The text may also include other content items, <i>eg</i> maps, bibliography, tables, index <i>etc</i>. Optional,
-     * and repeatable if parallel notes are provided in multiple languages. The <i>language</i> attribute is optional
-     * for a single instance of &lt;IllustrationsNote&gt;, but must be included in each instance if
+     * The text may also include other content items, <i>eg</i>&nbsp;maps, bibliography, tables, index <i>etc</i>.
+     * Optional, and repeatable if parallel notes are provided in multiple languages. The <i>language</i> attribute is
+     * optional for a single instance of &lt;IllustrationsNote&gt;, but must be included in each instance if
      * &lt;IllustrationsNote&gt; is repeated.
      * </p>
      * JONIX adds: this list may be empty

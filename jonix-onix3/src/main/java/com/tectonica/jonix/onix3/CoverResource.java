@@ -220,7 +220,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * <p>
      * A URL which provides a link to a resource. Mandatory in each occurrence of the &lt;CoverResource&gt; composite
      * unless &lt;NoResource/&gt; is present, and repeatable if the resource can be linked in more than one way,
-     * <i>eg</i> by HTTP, FTP and DOI URLs.
+     * <i>eg</i>&nbsp;by HTTP, FTP and DOI URLs.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -308,7 +308,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * <ul style="margin-top: 0">
      * <li>sequence number 1&nbsp;– no sales outlet</li>
      * <li>sequence number 2&nbsp;– exclusive to Amazon</li>
-     * <li>sequence number 2&nbsp;– no sales outlet (<i>ie</i> alternative resource for third parties other than
+     * <li>sequence number 2&nbsp;– no sales outlet (<i>ie</i>&nbsp;alternative resource for third parties other than
      * Amazon)</li>
      * <li>sequence number 3&nbsp;– no sales outlet</li>
      * </ul>
@@ -318,8 +318,8 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * <li>sequence number 1&nbsp;– no sales outlet</li>
      * <li>sequence number 2&nbsp;– exclusive to Amazon/Kobo</li>
      * <li>sequence number 2&nbsp;– exclusive to publisher’s direct sales</li>
-     * <li>sequence number 2&nbsp;– no sales outlet and &lt;NoResource/&gt; (<i>ie</i> no alternative resource for third
-     * parties <em>other than</em> Amazon, Kobo and the publisher’s direct sales)</li>
+     * <li>sequence number 2&nbsp;– no sales outlet and &lt;NoResource/&gt; (<i>ie</i>&nbsp;no alternative resource for
+     * third parties <em>other than</em> Amazon, Kobo and the publisher’s direct sales)</li>
      * <li>sequence number 3&nbsp;– no sales outlet</li>
      * </ul>
      * </td>
@@ -364,7 +364,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code which provides added detail of the resource file which is specified in &lt;ResourceFileLink&gt;,
-     * <i>eg</i> the file type of the resource. Optional, and repeatable in order to provide multiple additional
+     * <i>eg</i>&nbsp;the file type of the resource. Optional, and repeatable in order to provide multiple additional
      * details, but may only be used when &lt;ResourceFileLink&gt; is present.
      * </p>
      * JONIX adds: this list may be empty
@@ -420,9 +420,9 @@ public class CoverResource implements OnixSuperComposite, Serializable {
      * overlay’ or ‘CMYK separations of rear cover’.
      * </p>
      * <p>
-     * Note that individual resources do not need to be aligned with the physical organization of the book (<i>eg</i>
-     * with the folded signatures of a print-on-demand product), nor with the logical organization (<i>eg</i> with the
-     * chapters in the work).
+     * Note that individual resources do not need to be aligned with the physical organization of the book
+     * (<i>eg</i>&nbsp;with the folded signatures of a print-on-demand product), nor with the logical organization
+     * (<i>eg</i>&nbsp;with the chapters in the work).
      * </p>
      * <p>
      * The field is optional but may only be used when &lt;ResourceFileLink&gt; is present, and is repeatable to provide
@@ -443,7 +443,7 @@ public class CoverResource implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together specify a date associated with the resource file specified in
-     * &lt;ResourceFileLink&gt;, <i>eg</i> date when the resource was last updated. Repeatable to specify different
+     * &lt;ResourceFileLink&gt;, <i>eg</i>&nbsp;date when the resource was last updated. Repeatable to specify different
      * dates with their various roles, but may only be used when &lt;ResourceFileLink&gt; is present.
      * </p>
      * JONIX adds: this list may be empty

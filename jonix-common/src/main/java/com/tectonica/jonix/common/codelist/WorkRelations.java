@@ -43,7 +43,7 @@ interface CodeList164 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_69.html#codelist164">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist164">ONIX
  *      Codelist 164 in Reference Guide</a>
  */
 public enum WorkRelations implements OnixCodelist, CodeList164 {
@@ -123,14 +123,14 @@ public enum WorkRelations implements OnixCodelist, CodeList164 {
      * The content of the work X has been formed by compilation of work W and another work Z. The instance of
      * &lt;RelatedWork&gt; must include an identifier for work W. &lt;EditionType&gt; of product A may be CMB. Work Z
      * may be identified using a separate instance of &lt;RelatedWork&gt; with code 23. The compiled parent work X may
-     * be identified using a separate instance of &lt;Related&gt; work with relation code 01
+     * be identified using a separate instance of &lt;RelatedWork&gt; with relation code 01
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Derived_from_by_compilation("23", "Derived from by compilation"),
 
     /**
-     * The content of the work W has been augmented by the addition of critical commendary to form work X. The instance
+     * The content of the work W has been augmented by the addition of critical commentary to form work X. The instance
      * of &lt;RelatedWork&gt; must include an identifier for work W. &lt;EditionType&gt; of Product A would normally be
      * CRI
      * <p>
