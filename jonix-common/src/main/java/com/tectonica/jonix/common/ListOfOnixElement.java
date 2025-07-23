@@ -65,7 +65,7 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
      * @return an {@link Optional} of the {@code value} in the first {@link OnixElement} listed, if any
      */
     public Optional<V> firstValue() {
-        return (size() == 0) ? Optional.empty() : Optional.of(get(0).__v());
+        return (size() == 0) || get(0).__v() == null ? Optional.empty() : Optional.of(get(0).__v());
     }
 
     /**
