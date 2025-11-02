@@ -43,7 +43,7 @@ interface CodeList158 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -63,6 +63,13 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * JONIX adds: Not included in Onix2
      */
     Spine_image("56", "Spine image"),
+
+    /**
+     * 2D, image spans multiple upright spines
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Spine_panorama_image("57", "Spine panorama image"),
 
     /**
      * Not limited to front or back, including 3D perspective

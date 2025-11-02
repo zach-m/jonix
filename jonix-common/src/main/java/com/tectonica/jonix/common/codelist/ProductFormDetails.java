@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -492,8 +492,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Sticker_book("B209", "Sticker book"),
 
     /**
-     * A book whose pages have a variety of textured inserts designed to stimulate tactile exploration: see also B214
-     * and B215
+     * Sensory book. A book whose pages have a variety of textured inserts designed to stimulate tactile exploration:
+     * see also B214 and B215
      */
     Touch_and_feel_book("B210", "Touch-and-feel book"),
 
@@ -542,8 +542,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * A book with movable card 'tabs' within the pages. Pull a tab to reveal or animate part of a picture (distinct
-     * from a 'lift-the-flap' book, where flaps simply reveal hidden pictures, and not a 'pop-up' book with 3D paper
-     * engineering)
+     * from a 'lift-the-flap' book, where flaps simply reveal hidden pictures, and not specifically a 'pop-up' book with
+     * 3D paper engineering - though when combined with code B206 indicates a pop-up book with tabs for moveable parts
+     * of 3D 'scenes')
      */
     Pull_the_tab_book("B223", "Pull-the-tab book"),
 
@@ -827,6 +828,40 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Embossed_cover("B421", "Embossed cover"),
 
     /**
+     * JONIX adds: Not included in Onix2
+     */
+    Foil_on_cover("B422", "Foil (on cover)"),
+
+    /**
+     * JONIX adds: Not included in Onix2
+     */
+    Foil_on_jacket("B423", "Foil (on jacket)"),
+
+    /**
+     * All types of promotional stickers, applied on behalf of the publisher, but easily removable by the reader without
+     * damage to the cover or jacket
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Temporary_stickers_on_cover_or_jacket("B424", "Temporary stickers on cover or jacket"),
+
+    /**
+     * All types of promotional stickers, applied on behalf of the publisher, but not capable of being removed easily
+     * without damage to the cover or jacket
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Permanent_stickers_on_cover_or_jacket("B425", "Permanent stickers on cover or jacket"),
+
+    /**
+     * Spine illustration combines with spines of other products in a collection to form a panoramic image. Sometimes
+     * termed a 'spinescape'
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Spine_panorama("B426", "Spine panorama"),
+
+    /**
      * Type unspecified
      */
     With_dust_jacket("B501", "With dust jacket"),
@@ -842,7 +877,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     With_translucent_dust_cover("B503", "With translucent dust cover"),
 
     /**
-     * For paperback with flaps
+     * For paperback with flaps - sometimes known as gatefolds or French flaps (extensions of the cover that fold inside
+     * the front and back cover)
      */
     With_flaps("B504", "With flaps"),
 
@@ -870,7 +906,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Rough_front("B510", "Rough front"),
 
     /**
-     * With one or more gatefold or foldout sections bound in
+     * With one or more gatefold or foldout sections bound into the book block
      */
     Foldout("B511", "Foldout"),
 
@@ -957,6 +993,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Plastic_paper("B524", "Plastic paper"),
+
+    /**
+     * For paperback with flaps (an extension of the cover that folds outside the front or back cover, covering the
+     * foredge). The other flap may be absent, conventional or may also wrap around the foredge
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    With_wraparound_foredge_flap("B525", "With wraparound foredge flap"),
 
     /**
      * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
@@ -1560,6 +1604,13 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     EPUB_A("E150", "EPUB/A"),
+
+    /**
+     * DAISY/APH Braille file standard based on ePUB (formerly known as eBRF)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    eBraille("E151", "eBraille"),
 
     /**
      * Use this and/or code E201 when a particular e-publication type (specified using codes E100 and upwards) is

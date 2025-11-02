@@ -43,7 +43,7 @@ interface CodeList21 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -76,6 +76,14 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Annotated_edition("ANN", "Annotated edition"),
 
     /**
+     * Edition published to mark a special anniversary of first publication of the content. Use &lt;EditionStatement&gt;
+     * to describe the nature of the anniversary. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Anniversary_edition("AVS", "Anniversary edition"),
+
+    /**
      * Both languages should be specified in the &lt;Language&gt; group. Use MLL for an edition in more than two
      * languages
      */
@@ -102,7 +110,7 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
 
     /**
      * An edition in which two or more works also published separately are combined in a single volume; AKA 'omnibus
-     * edition', or in comic books a 'trade paperback' (fr: 'int&#233;grale')
+     * edition' or occasionally 'bind-up', or in comic books a 'trade paperback' (fr: 'int&#233;grale')
      */
     Combined_volume("CMB", "Combined volume"),
 
@@ -131,7 +139,8 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
 
     /**
      * Content has been enlarged or expanded from that of a previous edition, with significant additions to the original
-     * content
+     * content - for example additional chapters. Do not use where the only additions are not a part of the original
+     * work (eg 'teaser chapters' from another work)
      */
     Enlarged_edition("ENL", "Enlarged edition"),
 
@@ -254,9 +263,9 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Simplified_language_edition("SMP", "Simplified language edition"),
 
     /**
-     * Use for anniversary, collectors', de luxe, gift, limited (but prefer codes NUM or UNN as appropriate),
-     * autographed (but prefer code SIG as appropriate) edition. Use &lt;EditionStatement&gt; to describe the exact
-     * nature of the special edition
+     * Use for anniversary, collectors', de luxe, gift, limited, signed, commemorative or celebratory, tie-in, special
+     * variant cover or otherwise special editions, but prefer more specific codes AVS, FST, MDT, NUM, SIG, UNN whenever
+     * appropriate. Use &lt;EditionStatement&gt; to describe the exact nature of the special edition
      */
     Special_edition("SPE", "Special edition"),
 

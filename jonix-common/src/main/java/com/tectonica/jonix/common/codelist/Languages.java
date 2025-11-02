@@ -43,7 +43,7 @@ interface CodeList74 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -163,7 +163,8 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Australian_languages("aus", "Australian languages"),
 
     /**
-     * Collective name. ONIX local code, equivalent of aav in ISO 639-5. Only for use in ONIX 3.0 or later
+     * Collective name, not related to Australian languages. ONIX local code, equivalent of aav in ISO 639-5. Only for
+     * use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

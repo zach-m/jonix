@@ -43,7 +43,7 @@ interface CodeList153 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -272,7 +272,24 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Cover_line("37", "Cover line");
+    Cover_line("37", "Cover line"),
+
+    /**
+     * Short summary description of special nature of cover or jacket, for use with special editions (use with Edition
+     * type SPE), or with variant covers, when there is also a 'standard' cover
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Special_cover_statement("38", "Special cover statement"),
+
+    /**
+     * Short summary description of bonus content (when there is also a 'standard' set of contents). Bonus material may
+     * include a new or extra foreword, additional illustrations, previously-unpublished bonus chapters (for these use
+     * with Edition type ENL), or for teaser chapters, author interview etc (do not use ENL)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    List_of_bonus_contents("39", "List of bonus contents");
 
     public final String code;
     public final String description;

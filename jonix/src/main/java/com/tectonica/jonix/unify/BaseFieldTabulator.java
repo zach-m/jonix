@@ -54,15 +54,15 @@ public class BaseFieldTabulator {
     ));
 
     public static final Set<SalesRightsTypes> NO_SALES_RIGHTS = new HashSet<>(Arrays.asList(
-        SalesRightsTypes.Not_for_sale_in_the_specified_countries_or_territories_reason_unspecified,
-        SalesRightsTypes.Not_for_sale_in_the_specified_countries_but_publisher_holds_exclusive_rights_in_those_countries_or_territories,
-        SalesRightsTypes.Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories,
-        SalesRightsTypes.Not_for_sale_in_the_specified_countries_because_publisher_does_not_hold_rights_in_those_countries_or_territories
+        SalesRightsTypes.Not_for_sale_in_the_specified_territory_reason_unspecified,
+        SalesRightsTypes.Not_for_sale_in_the_specified_territory_but_publisher_holds_exclusive_publishing_rights_in_that_territory,
+        SalesRightsTypes.Not_for_sale_in_the_specified_territory_but_publisher_holds_non_exclusive_publishing_rights_in_that_territory,
+        SalesRightsTypes.Not_for_sale_in_the_specified_territory_because_publisher_does_not_hold_publishing_rights_in_that_territory
     ));
 
     public static final Set<SalesRightsTypes> UNRESTRICTED_SALES_RIGHTS = new HashSet<>(Arrays.asList(
-        SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories,
-        SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories,
+        SalesRightsTypes.For_sale_based_on_publishers_exclusive_publishing_rights_in_the_specified_territory,
+        SalesRightsTypes.For_sale_based_on_publishers_non_exclusive_publishing_rights_in_the_specified_territory,
         SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies,
         SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies
     ));

@@ -43,7 +43,7 @@ interface CodeList46 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist46">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist46">ONIX
  *      Codelist 46 in Reference Guide</a>
  */
 public enum SalesRightsTypes implements OnixCodelist, CodeList46 {
@@ -52,29 +52,34 @@ public enum SalesRightsTypes implements OnixCodelist, CodeList46 {
      */
     Sales_rights_unknown_or_unstated_for_any_reason("00", "Sales rights unknown or unstated for any reason"),
 
-    For_sale_with_exclusive_rights_in_the_specified_countries_or_territories("01",
-        "For sale with exclusive rights in the specified countries or territories"),
+    For_sale_based_on_publishers_exclusive_publishing_rights_in_the_specified_territory("01",
+        "For sale, based on publisher’s exclusive publishing rights in the specified territory"),
 
-    For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories("02",
-        "For sale with non-exclusive rights in the specified countries or territories"),
+    /**
+     * It is possible that a different publisher offers the same content under another ISBN
+     */
+    For_sale_based_on_publishers_non_exclusive_publishing_rights_in_the_specified_territory("02",
+        "For sale, based on publisher’s non-exclusive publishing rights in the specified territory"),
 
-    Not_for_sale_in_the_specified_countries_or_territories_reason_unspecified("03",
-        "Not for sale in the specified countries or territories (reason unspecified)"),
+    /**
+     * Publisher may or may not hold publishing rights - use codes 04-06 instead to provide greater detail
+     */
+    Not_for_sale_in_the_specified_territory_reason_unspecified("03",
+        "Not for sale in the specified territory (reason unspecified)"),
 
     // CHECKSTYLE:OFF
-    Not_for_sale_in_the_specified_countries_but_publisher_holds_exclusive_rights_in_those_countries_or_territories("04",
-        "Not for sale in the specified countries (but publisher holds exclusive rights in those countries or territories)"),
+    Not_for_sale_in_the_specified_territory_but_publisher_holds_exclusive_publishing_rights_in_that_territory("04",
+        "Not for sale in the specified territory (but publisher holds exclusive publishing rights in that territory)"),
     // CHECKSTYLE:ON
 
     // CHECKSTYLE:OFF
-    Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories("05",
-        "Not for sale in the specified countries (publisher holds non-exclusive rights in those countries or territories)"),
+    Not_for_sale_in_the_specified_territory_but_publisher_holds_non_exclusive_publishing_rights_in_that_territory("05",
+        "Not for sale in the specified territory (but publisher holds non-exclusive publishing rights in that territory)"),
     // CHECKSTYLE:ON
 
     // CHECKSTYLE:OFF
-    Not_for_sale_in_the_specified_countries_because_publisher_does_not_hold_rights_in_those_countries_or_territories(
-        "06",
-        "Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)"),
+    Not_for_sale_in_the_specified_territory_because_publisher_does_not_hold_publishing_rights_in_that_territory("06",
+        "Not for sale in the specified territory (because publisher does not hold publishing rights in that territory)"),
     // CHECKSTYLE:ON
 
     /**

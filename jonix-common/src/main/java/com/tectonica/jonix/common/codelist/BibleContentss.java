@@ -43,7 +43,7 @@ interface CodeList82 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist82">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist82">ONIX
  *      Codelist 82 in Reference Guide</a>
  */
 public enum BibleContentss implements OnixCodelist, CodeList82 {
@@ -83,7 +83,7 @@ public enum BibleContentss implements OnixCodelist, CodeList82 {
 
     /**
      * The 66 books included in the Protestant, Catholic and Orthodox canons, together with Apocryphal texts, canon not
-     * specified. (Equivalent to OT plus NT plus AQ)
+     * specified. (Equivalent to OT plus NT plus AQ, 77 books in all)
      */
     General_canon_with_Apocryphal_texts_canon_unspecified("GC",
         "General canon with Apocryphal texts (canon unspecified)"),

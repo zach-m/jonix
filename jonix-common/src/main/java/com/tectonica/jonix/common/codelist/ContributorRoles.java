@@ -43,7 +43,7 @@ interface CodeList17 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -98,6 +98,10 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      */
     From_an_idea_by("A10", "From an idea by"),
 
+    /**
+     * Use for interior graphic design. See code A36 for cover design, code A12, A35 for interior illustrations or
+     * drawings
+     */
     Designed_by("A11", "Designed by"),
 
     /**
@@ -458,6 +462,13 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * JONIX adds: Not included in Onix2
      */
     Image_descriptions_by("B35", "Image descriptions by"),
+
+    /**
+     * Use for modernization or minor updating of language, but not for original contributions to the text
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Text_modernized_or_updated_by("B36", "Text modernized or updated by"),
 
     /**
      * Other type of adaptation or editing not specified above

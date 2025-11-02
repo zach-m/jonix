@@ -43,7 +43,7 @@ interface CodeList79 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -61,22 +61,31 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Color_of_spine("26", "Color of spine"),
 
     /**
-     * On cover or spine. For Product Form Feature values see metallic colors from code list 98. Only for use in ONIX
-     * 3.0 or later
+     * On cover or spine. For Product form feature values see metallic colors from code list 98. If further detail is
+     * required, also use Product form feature description. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Color_of_foil("27", "Color of foil"),
+    Color_of_foil_on_cover("27", "Color of foil (on cover)"),
 
     /**
-     * Sprayed / stained / gilded edges. For Product Form Feature values see code list 98. For patterned and illustrated
-     * page edges, see also List 158 code 54
+     * On dustjacket. For Product Form Feature values see metallic colors from code list 98. If further detail is
+     * required, also use Product form feature description. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Color_of_foil_on_jacket("59", "Color of foil (on jacket)"),
+
+    /**
+     * Sprayed / stained / gilded edges. For Product form feature values see code list 98. For patterned and illustrated
+     * page edges, also use Product form feature description or see List 158 code 54
      */
     Color_of_page_edges("02", "Color of page edges"),
 
     /**
-     * Or of inside front and back covers. For Product Form Feature Values see Codelist 98. For patterned and
-     * illustrated endpapers, see also List 158 code 55. Only for use in ONIX 3.0 or later
+     * Or of inside front and back covers. For Product form feature values see Codelist 98. For patterned and
+     * illustrated endpapers, also use Product form feature description or see List 158 code 55. Only for use in ONIX
+     * 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -91,8 +100,8 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     Color_of_ribbon_marker_s("57", "Color of ribbon marker(s)"),
 
     /**
-     * Capital bands. For Product Form Feature Values see codelist 98, and with multicolored (eg striped) bands, use
-     * Product Form Feature Description. Only for use in ONIX 3.0 or later
+     * Capital bands. For Product form feature values see codelist 98, and with multicolored (eg striped) bands, also
+     * use Product form feature description. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -426,41 +435,43 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * &lt;ProductFormFeature&gt; may be used for multiple paper, card and board types. &lt;ProductFormFeatureValue&gt;
      * is a country code from List 91 indicating the country in which the source plot is, optionally followed by a space
      * and the name of the species, and optionally followed by a space and the date of harvest of the source plot (YYYY,
-     * YYYYMM or YYYYMMDD). The species name may itself consist of the binomial Latin name (the 'scientific name'), or
-     * the binomial Latin name followed by a space plus the common name in parentheses. Note there can be up to four
-     * pieces of data (country, Latin name, common name and date), each space separated, but only the country is
-     * mandatory. The common name may only be included if the Latin name is also present.
-     * &lt;ProductFormFeatureDescription&gt; is a list of points defining one or more plots from which the raw material
-     * was harvested, using GPS coordinates with 6 decimal places of precision (these are real numbers, &#177;90 for
-     * latitude [negative numbers indicate a latitude south of the equator], &#177;180 excluding -180 itself for
-     * longitude [negative numbers indicate a longitude west of the Prime Greenwich meridian]). Latitude and Longitude
-     * for each point are space-separated, and multiple points are comma-separated. Multiple plots are semicolon
-     * separated, and must be in the same country. (Any supplied species name and date must also apply to all plots in
-     * the list.) (Note these GPS coordinates use decimal parts of a degree, not minutes and seconds.) ONE point defines
-     * the center of a 4 hectare plot (200m &#215; 200m). TWO points define a line joining opposite corners of a
-     * 'square' plot bounded by two lines of latitude and two of longitude. THREE or more points define a simple polygon
-     * outlining the plot. Plot types with one, two or multiple points must not be mixed in a list of multiple plots.
-     * Lines and polygon edges may not cross a national boundary or the 180&#176; line of longitude. Polygon edges may
-     * not intersect. It is good practice to ensure the polygon is drawn clockwise and is 'closed' (that is, that the
-     * first and last points are identical, so that for example four points define a triangle). If not closed, the
-     * closing polygon edge is implied, and to avoid ambiguity, trailing zeros in the latitude and longitude should be
-     * explicit. Only for use in ONIX 3.0 or later
+     * YYYYMM or YYYYMMDD). A species name may itself consist of the binomial Latin name (the 'scientific name'), or the
+     * binomial Latin name followed by a space plus the common name in parentheses. The common name may only be included
+     * if the Latin name is also present. Alternatively, a list of multiple species names from the same source plot may
+     * be listed, separated by commas. In such a list, all species names must include both scientific and common name,
+     * or all must include a scientific name only. Note there can be up to four types of data (country, a Latin name and
+     * a common name, or a comma-separated list of Latin names and common names, and a date), each space separated, but
+     * only the country is mandatory. &lt;ProductFormFeatureDescription&gt; is a list of points defining one or more
+     * plots from which the raw material was harvested, using GPS coordinates with 6 decimal places of precision (these
+     * are real numbers, &#177;90 for latitude [negative numbers indicate a latitude south of the equator], &#177;180
+     * excluding -180 itself for longitude [negative numbers indicate a longitude west of the Prime Greenwich
+     * meridian]). Latitude and Longitude for each point are space-separated, and multiple points are comma-separated.
+     * Multiple plots are semicolon separated, and must be in the same country. (Any supplied species name and date must
+     * also apply to all plots in the list.) (Note these GPS coordinates use decimal parts of a degree, not minutes and
+     * seconds.) ONE point defines the center of a 4 hectare plot (200m &#215; 200m). TWO points define a line joining
+     * opposite corners of a 'square' plot bounded by two lines of latitude and two of longitude. THREE or more points
+     * define a simple polygon outlining the plot. Plot types with one, two or multiple points must not be mixed in a
+     * list of multiple plots. Lines and polygon edges may not cross a national boundary or the 180&#176; line of
+     * longitude. Polygon edges may not intersect. It is good practice to ensure the polygon is drawn clockwise and is
+     * 'closed' (that is, that the first and last points are identical, so that for example four points define a
+     * triangle). If not closed, the closing polygon edge is implied, and to avoid ambiguity, trailing zeros in the
+     * latitude and longitude should be explicit. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     EUDR_raw_material_location_interior_or_full_product("47", "EUDR raw material location (interior or full product)"),
 
     /**
-     * For endpaper, cover card or board, any other binding or covering material and any jacket (but not including any
-     * slipcase or other packaging). Only for use in ONIX 3.0 or later
+     * As code 47, but for endpaper, cover card or board, any other binding or covering material and any jacket (but not
+     * including any slipcase or other packaging). Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     EUDR_raw_material_location_binding("48", "EUDR raw material location (binding)"),
 
     /**
-     * Including any slipcase or box, retail packaging, supplementary material (but not including any packaging
-     * discarded before retail sale). Only for use in ONIX 3.0 or later
+     * As code 47, but for any slipcase or box, retail packaging, supplementary material (but not including any
+     * packaging discarded before retail sale). Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -470,12 +481,11 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * For EU Deforestation Regulations, &lt;ProductFormFeatureValue&gt; is the 'Due Diligence Statement' (DDS) document
      * reference recorded by the publisher or other organization responsible for the product when a due diligence
      * statement is uploaded to the EU's portal, expected to be in a format like '24FRXVV3VOS991' (with an optional
-     * suffix '+' and a 'verification code'). This references the DDS for the product as a whole. There may also be a
-     * UUID acting as an internal or proprietary document reference, for which use
-     * &lt;ProductFormFeatureDescription&gt;. &lt;ProductFormFeature&gt; should be repeated if multiple DDSs apply to
-     * the product as a whole. See
-     * https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en Only for
-     * use in ONIX 3.0 or later
+     * suffix '+' and a 'verification code' expected to be in a format like 'A4B3C2D1'). This reference is the DDS for
+     * the product as a whole. There may also be a UUID acting as an internal or proprietary document reference, for
+     * which use &lt;ProductFormFeatureDescription&gt;. &lt;ProductFormFeature&gt; should be repeated if multiple DDSs
+     * apply to the product as a whole. Only for use in ONIX 3.0 or later. See
+     * https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -484,7 +494,8 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
     /**
      * For EU Deforestation Regulation, &lt;ProductFormFeatureValue&gt; is a space-separated list of document references
      * for DDSs (including optional verification code) created by upstream operators that are or may be referred to in
-     * the DDS for the product as a whole (ie the DDS specified using code 50). Only for use in ONIX 3.0 or later
+     * the DDS for the product as a whole (ie the DDS specified using code 50)) - for example DDSs for the paper types
+     * used to manufacture the product. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -538,6 +549,31 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * JONIX adds: Not included in Onix2
      */
     EUDR_beyond_scope_attestation("56", "EUDR beyond scope attestation"),
+
+    /**
+     * As code 47, but &lt;ProductFormFeatureDescription&gt; is the URL of a GeoJSON file outlining the source plot.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EUDR_raw_material_location_interior_or_full_product_("60",
+        "EUDR raw material location (interior or full product) URL"),
+
+    /**
+     * As code 48, but &lt;ProductFormFeatureDescription&gt; is the URL of a GeoJSON file outlining the source plot.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EUDR_raw_material_location_binding_("61", "EUDR raw material location (binding) URL"),
+
+    /**
+     * As code 49, but &lt;ProductFormFeatureDescription&gt; is the URL of a GeoJSON file outlining the source plot.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EUDR_raw_material_location_other_("62", "EUDR raw material location (other) URL"),
 
     /**
      * DEPRECATED - use code 12 and List 143
