@@ -30,6 +30,7 @@ import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.After;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +43,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -151,25 +154,52 @@ public class TestProductStream {
             });
     }
 
+    static class Target {
+        public List<String> jsons;
+        private Path jsonFilePath;
+
+        void setJsonPath(File xmlFile) {
+            this.jsonFilePath = new File(xmlFile.getAbsolutePath().replace(".xml", ".json")).toPath();
+        }
+
+        void readJson(File xmlFile) {
+            this.setJsonPath(xmlFile);
+            try (Stream<String> lines = Files.lines(this.jsonFilePath)) {
+                jsons = lines.collect(Collectors.toList());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        void createJsonFile(File xmlFile) {
+            this.setJsonPath(xmlFile);
+            try {
+                Files.deleteIfExists(this.jsonFilePath);
+                Files.createFile(this.jsonFilePath);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        void appendToJsonFile(String json) {
+            try {
+                Files.write(this.jsonFilePath, (json + "\n").getBytes(), StandardOpenOption.APPEND);
+                System.out.println("Added json to " + this.jsonFilePath.getFileName());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
     @Test
     public void streamMultipleProducts() throws IOException {
         File folder = new File("./src/test/resources/samples");
-        class Target {
-            public List<String> jsons;
-
-            void readJson(String jsonFileName) {
-                try (Stream<String> lines = Files.lines(new File(jsonFileName).toPath())) {
-                    jsons = lines.collect(Collectors.toList());
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }
         final Target target = new Target();
+
         Jonix.source(folder, "*.xml", false).onSourceStart(jonixSource -> {
             System.out.println("Validating " + jonixSource);
             assert jonixSource.file != null;
-            target.readJson(jonixSource.file.getAbsolutePath().replace(".xml", ".json"));
+            target.readJson(jonixSource.file);
         }).stream().forEach(record -> {
 
             //BaseRecord baseRecord = JonixUnifier.unifyRecord(record);
@@ -195,5 +225,23 @@ public class TestProductStream {
             assertEquals("Difference in source " + record.source, targetJson, json);
             target.jsons.remove(0);
         });
+    }
+
+    @Test
+    @Ignore
+    public void generateJsonFiles() {
+        final Target target = new Target();
+        List<String> fs = List.of("./src/test/resources/samples", "./src/test/resources");
+        List<String> gs = List.of("*.xml", "single-book-*.xml");
+        for (int i = 0; i < fs.size(); i++) {
+            Jonix.source(new File(fs.get(i)), gs.get(i), false).onSourceStart(jonixSource -> {
+                assert jonixSource.file != null;
+                System.out.println("Converting " + jonixSource);
+                target.createJsonFile(jonixSource.file);
+            }).stream().forEach(record -> {
+                String json = JonixJson.toJson(record.product, false, true);
+                target.appendToJsonFile(json);
+            });
+        }
     }
 }
