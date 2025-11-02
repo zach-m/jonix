@@ -57,7 +57,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SpecificationFeature&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Container specifying a feature of the technical specification for the product &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

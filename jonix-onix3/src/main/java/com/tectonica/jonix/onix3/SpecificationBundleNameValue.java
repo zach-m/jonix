@@ -62,7 +62,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SpecificationBundleNameValue&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Name of a 'bundle' of product specifications for the creatiom of the product is taken &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

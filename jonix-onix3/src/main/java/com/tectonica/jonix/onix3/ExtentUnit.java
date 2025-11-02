@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ExtentUnit&gt; from the schema author:
+ *
+ * Units used to count an extent of a product (eg words, pages, minutes)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Extent}&gt;</li>

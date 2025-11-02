@@ -59,6 +59,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Number&gt; from the schema author:
+ *
+ * Number of content items of the type specified in &lt;AncillaryContentType&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link AncillaryContent}&gt;</li>

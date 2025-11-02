@@ -62,7 +62,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ResourceFileFeatureValue&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Value of a feature of a resource file &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

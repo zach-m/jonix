@@ -43,7 +43,7 @@ interface CodeList73 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -327,7 +327,20 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * JONIX adds: Not included in Onix2
      */
     Organizations_website_for_corporate_social_responsibility("53",
-        "Organization’s website for corporate social responsibility");
+        "Organization’s website for corporate social responsibility"),
+
+    /**
+     * The URL of a web page providing a statement, protocol or resource relevant to indigenous publishing. This may
+     * include content hosted by the publisher, a contributor, or a third party. Examples include Reconciliation Action
+     * Plans (RAPs), Indigenous Cultural and Intellectual Property (ICIP) acknowledgements, cultural protocols, author
+     * guidelines, nation, community, or language resources, or contextual references such as Indigenous place names,
+     * territories, or treaties (eg native-land.ca). May be used at either organisational or product level, and
+     * additional specifics about the web page should be provided using &lt;WebsiteDescription&gt;. Only for use in ONIX
+     * 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Website_for_Indigenous_statement_or_resource("54", "Website for Indigenous statement or resource");
 
     public final String code;
     public final String description;

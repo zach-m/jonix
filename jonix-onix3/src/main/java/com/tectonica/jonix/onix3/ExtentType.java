@@ -66,6 +66,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ExtentType&gt; from the schema author:
+ *
+ * Method used to count an extent of a product (eg main content only, production page count, duration)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Extent}&gt;</li>

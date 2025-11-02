@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceConditionType&gt; from the schema author:
+ *
+ * Type of a &lt;PriceCondition&gt;, eg must also purchase updates
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PriceCondition}&gt;</li>

@@ -59,6 +59,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Measurement&gt; from the schema author:
+ *
+ * Value of a physical measurement of &lt;MeasureType&gt;, using the units in &lt;MeasureUnitCode&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Measure}&gt;</li>

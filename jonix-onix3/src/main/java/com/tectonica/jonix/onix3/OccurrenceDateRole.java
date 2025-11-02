@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;OccurrenceDateRole&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.7
+ * Role of date and time within &lt;OccurrenceDate&gt;, eg beginning, end &#9679; Added at revision 3.0.7
  *
  * This tag may be included in the following composites:
  * <ul>

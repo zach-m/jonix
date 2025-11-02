@@ -65,6 +65,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;LanguageCode&gt; from the schema author:
+ *
+ * The language used in the manner specified by &lt;LanguageRole&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Language}&gt;</li>

@@ -64,6 +64,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceRole&gt; from the schema author:
+ *
+ * The role or purpose of a resource required for manufacturing or packaging the product, eg (to come) &#9679; Added at
+ * revision 3.0.8
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CoverResource}&gt;</li>

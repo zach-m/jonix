@@ -64,7 +64,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;PackQuantity&gt; from the schema author:
  *
- * The quantity in each carton or binder's pack currently held in stock by the supplier
+ * The number of copies in each carton or binder's pack currently held in stock by the supplier
  *
  * This tag may be included in the following composites:
  * <ul>

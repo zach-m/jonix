@@ -66,6 +66,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ProfessionalPosition&gt; from the schema author:
+ *
+ * 'Job title' held by the contributor at the named affiliated institution
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProfessionalAffiliation}&gt;</li>

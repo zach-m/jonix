@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SpecificationDetail&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Code specifying a detail of the technical specification for the product &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

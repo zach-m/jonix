@@ -77,7 +77,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ResourceFileContentDescription&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Textual description of a resource file, eg CMYK separations of jacket &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

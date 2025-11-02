@@ -66,6 +66,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;MinimumOrderQuantity&gt; from the schema author:
+ *
+ * Minimum number of copies which must be ordered to obtain the price carried in &lt;Price&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

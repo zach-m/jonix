@@ -69,8 +69,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;LocationName&gt; from the schema author:
  *
- * Name of a city, town (or other location) associated with (eg) a contributor, with a stockholding warehouse, with an
- * event, with a product contact
+ * Name of a city, town (or other location) associated with, for example, a contributor, a stockholding warehouse, an
+ * event, a product contact
  *
  * This tag may be included in the following composites:
  * <ul>

@@ -65,6 +65,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PricePer&gt; from the schema author:
+ *
+ * Unit of product which is the basis for the price carried in &lt;Price&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Price}&gt;</li>

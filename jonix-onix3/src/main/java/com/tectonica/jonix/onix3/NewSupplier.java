@@ -60,7 +60,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;NewSupplier&gt; from the schema author:
  *
- * Replacement supplier as the Supplier no longer supplies the product &#9679; Added &lt;Website&gt; at release 3.1
+ * Replacement supplier as the &lt;Supplier&gt; no longer supplies the product &#9679; Added &lt;Website&gt; at release
+ * 3.1
  *
  * This tag may be included in the following composites:
  * <ul>

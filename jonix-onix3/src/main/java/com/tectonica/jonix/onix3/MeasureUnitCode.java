@@ -65,6 +65,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;MeasureUnitCode&gt; from the schema author:
+ *
+ * Units used for a physical measurement of a product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Measure}&gt;</li>

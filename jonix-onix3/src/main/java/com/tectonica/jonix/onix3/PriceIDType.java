@@ -70,7 +70,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;PriceIDType&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.2
+ * Type of price identifier &#9679; Added at revision 3.0.2
  *
  * This tag may be included in the following composites:
  * <ul>

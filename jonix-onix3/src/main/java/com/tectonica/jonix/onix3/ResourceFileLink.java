@@ -65,8 +65,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ResourceFileLink&gt; from the schema author:
  *
- * URL which provides a link to a resource required for manufacturing or packaging of the product &#9679; Added at
- * revision 3.0.8
+ * URL which provides a link to a resource required for manufacturing or packaging of the product NB use CDATA to avoid
+ * escaping &amp; if there is more than a single query parameter &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

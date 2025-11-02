@@ -70,7 +70,8 @@ import java.util.function.Consumer;
  * Technical notes about &lt;ResourceLink&gt; from the schema author:
  *
  * URL which provides access to cited content used for marketing and promotional purposes (eg a link to a bestseller
- * list) &#9679; Added language attribute at revision 3.0.3
+ * list) NB use CDATA to avoid escaping &amp; if there is more than a single query parameter &#9679; Added language
+ * attribute at revision 3.0.3
  *
  * This tag may be included in the following composites:
  * <ul>

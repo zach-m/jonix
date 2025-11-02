@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SupplierIDType&gt; from the schema author:
  *
- * Type of identifier for a supplier organization
+ * Type of identifier for a supplier organization, eg SAN, GLN
  *
  * This tag may be included in the following composites:
  * <ul>

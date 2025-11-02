@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;RecordSourceIDType&gt; from the schema author:
+ *
+ * Type of identifier for the organization that is the record source, eg SAN, GLN, ISNI
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link RecordSourceIdentifier}&gt;</li>

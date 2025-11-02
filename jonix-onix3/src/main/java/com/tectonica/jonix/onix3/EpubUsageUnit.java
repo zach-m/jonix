@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;EpubUsageUnit&gt; from the schema author:
+ *
+ * Units used when specifying usage limit, eg pages (over life of product), pages per month, percentage
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link EpubUsageLimit}&gt;</li>

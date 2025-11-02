@@ -69,7 +69,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SpecificationFeatureDescription&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Textual description of a specification feature, used when &lt;SpecificationFeatureValue&gt; is not adequate &#9679;
+ * Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

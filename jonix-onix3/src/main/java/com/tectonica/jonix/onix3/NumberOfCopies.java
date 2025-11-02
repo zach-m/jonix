@@ -66,6 +66,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NumberOfCopies&gt; from the schema author:
+ *
+ * Number of identical copies of a component represented by particular &lt;ProductPart&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductPart}&gt;</li>

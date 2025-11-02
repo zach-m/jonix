@@ -62,7 +62,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SourceName&gt; from the schema author:
  *
- * Organization name of the organization responsible for an ascribed collection
+ * Organization name of the organization responsible for curating an ascribed collection
  *
  * This tag may be included in the following composites:
  * <ul>

@@ -56,7 +56,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProductContactIdentifier&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.1
+ * Identifier which uniquely identifies the product contact organization &#9679; Added at revision 3.0.1
  *
  * This tag may be included in the following composites:
  * <ul>

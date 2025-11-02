@@ -66,6 +66,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ListName&gt; from the schema author:
+ *
+ * Name or title of a bestseller list
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CitedContent}&gt;</li>

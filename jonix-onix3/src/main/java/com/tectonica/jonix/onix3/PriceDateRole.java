@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceDateRole&gt; from the schema author:
+ *
+ * Role of a date relating to the price, eg from, until
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PriceDate}&gt;</li>

@@ -70,7 +70,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;WebsiteLink&gt; from the schema author:
  *
- * URL of the website
+ * URL of the website NB use CDATA to avoid escaping &amp; if there is more than a single query parameter
  *
  * This tag may be included in the following composites:
  * <ul>

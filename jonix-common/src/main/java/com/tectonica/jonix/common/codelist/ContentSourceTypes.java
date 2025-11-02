@@ -41,7 +41,7 @@ interface CodeList157 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist157">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist157">ONIX
  *      Codelist 157 in Reference Guide</a>
  */
 public enum ContentSourceTypes implements OnixCodelist, CodeList157 {
@@ -51,7 +51,25 @@ public enum ContentSourceTypes implements OnixCodelist, CodeList157 {
 
     Radio("03", "Radio"),
 
-    TV("04", "TV");
+    /**
+     * Including streaming video services ('TV on demand') as well as broadcast TV
+     */
+    TV("04", "TV"),
+
+    /**
+     * JONIX adds: Not included in Onix2
+     */
+    Podcast("05", "Podcast"),
+
+    /**
+     * JONIX adds: Not included in Onix2
+     */
+    Social_media("06", "Social media"),
+
+    /**
+     * JONIX adds: Not included in Onix2
+     */
+    Playlist("07", "Playlist");
 
     public final String code;
     public final String description;

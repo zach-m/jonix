@@ -66,7 +66,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;PriceConstraintUnit&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.3
+ * Units - eg pages, percentage, days - applied to a &lt;Quantity&gt; within a &lt;PriceConstraintLimit&gt; &#9679;
+ * Added at revision 3.0.3
  *
  * This tag may be included in the following composites:
  * <ul>

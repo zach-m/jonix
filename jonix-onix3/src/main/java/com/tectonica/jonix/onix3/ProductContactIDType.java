@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProductContactIDType&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.1
+ * Type of identifier for a product contact, eg an ISNI for the contact organization &#9679; Added at revision 3.0.1
  *
  * This tag may be included in the following composites:
  * <ul>

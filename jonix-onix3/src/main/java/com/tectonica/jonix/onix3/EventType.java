@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;EventType&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.7
+ * Type of a promotional event &#9679; Added at revision 3.0.7
  *
  * This tag may be included in the following composites:
  * <ul>

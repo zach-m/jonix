@@ -43,7 +43,7 @@ interface CodeList151 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist151">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist151">ONIX
  *      Codelist 151 in Reference Guide</a>
  */
 public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
@@ -96,7 +96,17 @@ public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Eligible_for_geographical_marketing_programs("11", "Eligible for geographical marketing programs");
+    Eligible_for_geographical_marketing_programs("11", "Eligible for geographical marketing programs"),
+
+    /**
+     * Use to indicate that an Indigenous contributor has chosen to be publicly identified as an Indigenous person
+     * associated with a particular territory or geography. Used with &lt;LocationName&gt; (in addition to country or
+     * region) to indicate an Indigenous territoriality or geography
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Indigenous_to_Indigenous_geographies_or_territorialities("12",
+        "Indigenous to (Indigenous geographies or territorialities)");
 
     public final String code;
     public final String description;

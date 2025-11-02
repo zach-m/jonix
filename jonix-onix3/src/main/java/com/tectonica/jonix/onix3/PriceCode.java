@@ -59,6 +59,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceCode&gt; from the schema author:
+ *
+ * Code for a price represented by &lt;PriceCoded&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PriceCoded}&gt;</li>

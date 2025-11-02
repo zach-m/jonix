@@ -43,7 +43,7 @@ interface CodeList98 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist98">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist98">ONIX
  *      Codelist 98 in Reference Guide</a>
  */
 public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
@@ -86,6 +86,14 @@ public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
     Green("GRN", "Green"),
 
     Grey("GRY", "Grey"),
+
+    /**
+     * Generally semi-transparent or reflective silver, with holographic or 'special effect' patterning. Use
+     * &lt;ProductFormFeatureDescription&gt; to add brief details if required. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Holographic("HOL", "Holographic"),
 
     /**
      * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required

@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PublisherIDType&gt; from the schema author:
+ *
+ * Type of identifier for the publisher, eg SAN, GLN, ISNI or other organization ID
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublisherIdentifier}&gt;</li>

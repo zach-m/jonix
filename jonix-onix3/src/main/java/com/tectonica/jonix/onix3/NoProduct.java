@@ -63,7 +63,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;NoProduct&gt; from the schema author:
  *
- * Positive indication that there are no product records in the message &#9679; XML empty element - must not contain
+ * Positive indication that there are no Product records in the message &#9679; XML empty element - must not contain
  * data &#9679; Added at revision 3.0.2
  *
  * This tag may be included in the following composites:

@@ -66,8 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;AffiliationIDType&gt; from the schema author:
  *
- * Type of identifier which uniquely identifies the affiliate organization, eg an ROR, ISNI etc &#9679; Added at release
- * 3.1
+ * Type of identifier which uniquely identifies the affiliate organization, eg ROR, ISNI &#9679; Added at release 3.1
  *
  * This tag may be included in the following composites:
  * <ul>

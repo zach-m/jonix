@@ -71,7 +71,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;IllustrationsNote&gt; from the schema author:
  *
- * Text description of the type and number of illustrations in the product
+ * Textual description of the type and number of illustrations in the product
  *
  * This tag may be included in the following composites:
  * <ul>

@@ -65,7 +65,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;InsertPointType&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Type of insert point in &lt;InsertPointValue&gt;, eg page number, timecode &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

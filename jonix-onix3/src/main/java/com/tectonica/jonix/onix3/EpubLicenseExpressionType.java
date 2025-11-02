@@ -67,7 +67,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;EpubLicenseExpressionType&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.2
+ * Type of expression of a license, eg text for legal professionals, text for lay user &#9679; Added at revision 3.0.2
  *
  * This tag may be included in the following composites:
  * <ul>

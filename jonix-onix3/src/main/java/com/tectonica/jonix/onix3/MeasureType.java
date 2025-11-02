@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;MeasureType&gt; from the schema author:
+ *
+ * Type of a physical measurement, eg height, width, weight of a physical product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Measure}&gt;</li>

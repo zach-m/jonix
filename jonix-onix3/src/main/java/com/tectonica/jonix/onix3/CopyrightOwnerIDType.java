@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CopyrightOwnerIDType&gt; from the schema author:
+ *
+ * The type of identifier for a copyright owner
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CopyrightOwnerIdentifier}&gt;</li>

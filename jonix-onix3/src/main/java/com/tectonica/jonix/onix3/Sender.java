@@ -56,8 +56,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;Sender&gt; from the schema author:
  *
- * Details of the sender of the ONIX message (which may be different from the source of individual records in the
- * message) &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
+ * Details of the sender organization of the ONIX message (which may be different from the source of individual records
+ * in the message) &#9679; Added &lt;TelephoneNumber&gt; at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

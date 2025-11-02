@@ -78,7 +78,9 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;RecordReference&gt; from the schema author:
  *
- * Unique and persistent identifier for the metadata record (not for the product itself)
+ * Unique and persistent identifier for the metadata record (not for the product itself), used to enable updates without
+ * reliance on the product identifier (and thus enabling management of data about the same product from different
+ * sources)
  *
  * This tag may be included in the following composites:
  * <ul>

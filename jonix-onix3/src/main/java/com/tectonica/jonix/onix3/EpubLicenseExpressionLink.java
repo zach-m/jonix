@@ -61,7 +61,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;EpubLicenseExpressionLink&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.2
+ * URI for an expression of a license NB use CDATA to avoid escaping &amp; if there is more than a single query
+ * parameter &#9679; Added at revision 3.0.2
  *
  * This tag may be included in the following composites:
  * <ul>

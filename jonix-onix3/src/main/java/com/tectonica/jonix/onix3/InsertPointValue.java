@@ -60,7 +60,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;InsertPointValue&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Value of insert point, based on the type in &lt;InsertPointType&gt;, eg a page number, a time &#9679; Added at
+ * revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

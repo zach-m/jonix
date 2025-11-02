@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceFeatureType&gt; from the schema author:
+ *
+ * Type of feature of a supporting resource, eg required credit or caption for a photo, duration of an audio resource
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ResourceFeature}&gt;</li>

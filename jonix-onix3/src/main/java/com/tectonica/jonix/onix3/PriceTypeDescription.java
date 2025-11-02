@@ -70,7 +70,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;PriceTypeDescription&gt; from the schema author:
  *
- * Textual description of the price type, when the coded PriceType and PriceQualifier are inadequate
+ * Textual description of the price type, when the coded &lt;PriceType&gt; and &lt;PriceQualifier&gt; are inadequate
  *
  * This tag may be included in the following composites:
  * <ul>

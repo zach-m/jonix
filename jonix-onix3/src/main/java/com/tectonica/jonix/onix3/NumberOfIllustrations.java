@@ -61,6 +61,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NumberOfIllustrations&gt; from the schema author:
+ *
+ * Total number of illustations in the product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link DescriptiveDetail}&gt;</li>

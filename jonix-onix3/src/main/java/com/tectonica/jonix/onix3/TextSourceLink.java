@@ -72,7 +72,8 @@ import java.util.function.Consumer;
  * Technical notes about &lt;TextSourceLink&gt; from the schema author:
  *
  * URL which provides access to full text content used for marketing and promotional purposes (eg a link to the full
- * text of a review) &#9679; Added at release 3.1
+ * text of a review) NB use CDATA to avoid escaping &amp; if there is more than a single query parameter &#9679; Added
+ * at release 3.1
  *
  * This tag may be included in the following composites:
  * <ul>

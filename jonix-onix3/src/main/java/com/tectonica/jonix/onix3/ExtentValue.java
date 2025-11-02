@@ -62,6 +62,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ExtentValue&gt; from the schema author:
+ *
+ * Count of an extent of a product, using the method in &lt;ExtentType&gt; and the units in &lt;ExtentUnit&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Extent}&gt;</li>

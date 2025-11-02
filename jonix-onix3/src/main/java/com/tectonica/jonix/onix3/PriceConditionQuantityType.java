@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceConditionQuantityType&gt; from the schema author:
+ *
+ * Type of a quantity related to a &lt;PriceCondition&gt;, eg a period of time, or a number of copies
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PriceConditionQuantity}&gt;</li>

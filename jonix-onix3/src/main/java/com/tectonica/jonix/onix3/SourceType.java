@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;SourceType&gt; from the schema author:
+ *
+ * Type of media from which the cited content originated, eg print, TV
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CitedContent}&gt;</li>

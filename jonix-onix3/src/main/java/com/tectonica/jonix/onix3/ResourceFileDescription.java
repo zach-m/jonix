@@ -69,7 +69,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ResourceFileDescription&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Textual description for a resource file, to augment coded file details and features &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

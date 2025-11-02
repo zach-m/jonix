@@ -58,6 +58,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;OnOrderDetail&gt; from the schema author:
+ *
+ * Container for details of an expected stock shipment
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Stock}&gt;</li>

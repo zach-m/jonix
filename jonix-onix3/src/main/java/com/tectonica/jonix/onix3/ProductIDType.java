@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProductIDType&gt; from the schema author:
  *
- * Type of identifier which uniquely identifies the product, eg an ISBN, GTIN etc
+ * Type of identifier which uniquely identifies the product, eg an ISBN, GTIN
  *
  * This tag may be included in the following composites:
  * <ul>

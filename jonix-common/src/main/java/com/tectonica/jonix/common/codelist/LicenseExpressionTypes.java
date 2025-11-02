@@ -41,7 +41,7 @@ interface CodeList218 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist218">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist218">ONIX
  *      Codelist 218 in Reference Guide</a>
  */
 public enum LicenseExpressionTypes implements OnixCodelist, CodeList218 {
@@ -56,7 +56,7 @@ public enum LicenseExpressionTypes implements OnixCodelist, CodeList218 {
     Professional_readable("02", "Professional readable"),
 
     /**
-     * Document (eg Word file, PDF or web page) Intended for the lay reader, expressing an additional license that may
+     * Document (eg Word file, PDF or web page) intended for the lay reader, expressing an additional license that may
      * be separately obtained covering uses of the content that are not granted by the intrinsic product license (the
      * license expressed by code 01)
      * <p>
@@ -65,7 +65,7 @@ public enum LicenseExpressionTypes implements OnixCodelist, CodeList218 {
     Human_readable_additional_license("03", "Human readable additional license"),
 
     /**
-     * Document (eg Word file, PDF or web page) Intended for the legal specialist reader, expressing an additional
+     * Document (eg Word file, PDF or web page) intended for the legal specialist reader, expressing an additional
      * license that may be separately obtained covering uses of the content that are not granted by the intrinsic
      * product license (the license expressed by code 02)
      * <p>

@@ -64,6 +64,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceVersionFeatureType&gt; from the schema author:
+ *
+ * Type of a particular feature of one version of a resource used for marketing and promotional purposes, eg pixel size,
+ * hash value
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ResourceVersionFeature}&gt;</li>

@@ -45,12 +45,12 @@ interface CodeList242 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist242">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist242">ONIX
  *      Codelist 242 in Reference Guide</a>
  */
 public enum BatteryTypeAndSafetys implements OnixCodelist, CodeList242 {
     /**
-     * The default if battery type and safety information is omitted
+     * No electronics included. The default if battery type and safety information is omitted
      */
     Batteries_not_required("00", "Batteries not required"),
 
@@ -147,6 +147,20 @@ public enum BatteryTypeAndSafetys implements OnixCodelist, CodeList242 {
     Zinc_air("28", "Zinc-air"),
 
     Silver_oxide("29", "Silver oxide"),
+
+    /**
+     * No batteries are required or included with the product, possibly because it is externally powered, but the
+     * product may nonetheless qualify as Waste Electrical and Electronic Equipment (WEEE) upon disposal.
+     * &lt;ProductFormFeatureDescription&gt; may contain a brief description of the electrical or electronic components
+     * that form a part of the product. Note that presence of any battery information except code 00 indicates the
+     * product may be subject to WEEE regulation, and this code need not be included unless a description is needed
+     */
+    WEEE_waste("97", "WEEE waste"),
+
+    /**
+     * Exact text of warning must be included in &lt;ProductFormFeatureDescription&gt;
+     */
+    Battery_safety_warning_text("98", "Battery safety warning text"),
 
     /**
      * &lt;ProductFormFeatureDescription&gt; may contain a full description of the batteries supplied (chemistry, cell

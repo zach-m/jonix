@@ -43,7 +43,7 @@ interface CodeList9 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_70.html#codelist9">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
 public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
@@ -183,12 +183,30 @@ public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
     NICO("19", "NICO"),
 
     /**
-     * Code for TARIC additions and exemptions, 4 alphanumeric characters (usually 1 letter, 3 digits), eg Y129 (for
-     * goods outside the scope of EUDR). Only for use in ONIX 3.0 or later
+     * EU TARIC Document codes, 4 alphanumeric characters (usually 1 letter, 3 digits), eg Y129 (for goods outside the
+     * scope of EUDR). Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     TARIC_additional_code("20", "TARIC additional code"),
+
+    /**
+     * HTSUS code for special classification provisions, or temporary legislation and restrictions, particularly from
+     * HTSUS chapters 98 and 99 (8 digits, or 10 where a statistical suffix is appropriate), and without punctuation).
+     * Only for use in ONIX 3.0 or later. See https://hts.usitc.gov/current
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    HTSUS_additional_code("21", "HTSUS additional code"),
+
+    /**
+     * Commission paritaire des publications et agences de presse, identifier used in France (mostly for serial
+     * publications). 10 characters (4 digits, one letter, then five digits). The initial four digits indicate the month
+     * and year of expiry of the CPPAP registration. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    CPPAP("22", "CPPAP"),
 
     /**
      * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)

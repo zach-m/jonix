@@ -61,7 +61,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;IDValue&gt; from the schema author:
  *
- * Value of an identifier, taken from the specified identifier scheme
+ * Value of proprietary identifier, taken from the specified identifier scheme
  *
  * This tag may be included in the following composites:
  * <ul>

@@ -56,7 +56,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;Measure&gt; from the schema author:
  *
- * Detail of a physical measurement - a dimension of the product
+ * Container for a physical measurement - a dimension of the product
  *
  * This tag may be included in the following composites:
  * <ul>

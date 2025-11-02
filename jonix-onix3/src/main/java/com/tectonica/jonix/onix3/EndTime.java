@@ -62,8 +62,9 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;EndTime&gt; from the schema author:
  *
- * The end time of a content item, relative to the beginning of the whole of the product's audio or video content (not
- * to the beginning of a specific filc containing that audio or video content) &#9679; Added at revision 3.0.5
+ * The end time of an audiovisual content item, relative to the beginning of the whole of the product's audio or video
+ * content (not to the beginning of a specific file containing that audio or video content) &#9679; Added at revision
+ * 3.0.5
  *
  * This tag may be included in the following composites:
  * <ul>

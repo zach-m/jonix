@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceContentType&gt; from the schema author:
+ *
+ * Type of a supporting resource, eg a front cover image, photo of author, reading group guide
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link SupportingResource}&gt;</li>

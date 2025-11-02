@@ -59,6 +59,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NumberOfPages&gt; from the schema author:
+ *
+ * Total number of (numbered) pages within a &lt;TextItem&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link TextItem}&gt;</li>

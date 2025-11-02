@@ -61,6 +61,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;NumberOfItemsOfThisForm&gt; from the schema author:
+ *
+ * Number of different components of the same &lt;ProductForm&gt; represented by a particular &lt;ProductPart&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductPart}&gt;</li>

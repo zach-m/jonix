@@ -59,6 +59,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;LatestReprintNumber&gt; from the schema author:
+ *
+ * Sequential number of most recent manufacturing batch (impression or reprint)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PublishingDetail}&gt;</li>

@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ContentAudience&gt; from the schema author:
  *
- * Target audience of an item of marketing collateral (eg for consumers, for the booktrade etc)
+ * Target audience of an item of marketing collateral (eg for consumers, for the booktrade)
  *
  * This tag may be included in the following composites:
  * <ul>

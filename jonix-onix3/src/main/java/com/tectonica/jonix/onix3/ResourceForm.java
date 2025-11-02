@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ResourceForm&gt; from the schema author:
+ *
+ * Form of supply of a version of a supporting resource, eg downloadable, linkable
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ResourceVersion}&gt;</li>

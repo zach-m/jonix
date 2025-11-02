@@ -54,7 +54,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;PriceConstraintLimit&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.3
+ * Details of a limit related to a constraint on use of a product &#9679; Added at revision 3.0.3
  *
  * This tag may be included in the following composites:
  * <ul>

@@ -66,8 +66,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;MarketPublishingStatus&gt; from the schema author:
  *
- * Market-specific publishing status of the product in the market, particular where it differs from the publishing
- * status in Block 4
+ * Market-specific publishing status of the product in the market, particular where it differs from the
+ * &lt;PublishingStatus&gt; in Block 4
  *
  * This tag may be included in the following composites:
  * <ul>

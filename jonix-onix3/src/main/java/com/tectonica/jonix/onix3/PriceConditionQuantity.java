@@ -53,6 +53,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PriceConditionQuantity&gt; from the schema author:
+ *
+ * Detail of a quantity related to a &lt;PriceCondition&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link PriceCondition}&gt;</li>

@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;NameIDType&gt; from the schema author:
  *
- * Type of dentifier for the name of a person, persona or corporate identity, eg an ISNI or ORCID, or the publisher's
+ * Type of dentifier for the name of a person, persona or corporate identity, eg an ISNI or ORCID, or a publisher's
  * proprietary internal identifier
  *
  * This tag may be included in the following composites:

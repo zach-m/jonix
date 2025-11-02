@@ -61,6 +61,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;Percent&gt; from the schema author:
+ *
+ * Percentage of unit value of a product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ProductClassification}&gt;</li>

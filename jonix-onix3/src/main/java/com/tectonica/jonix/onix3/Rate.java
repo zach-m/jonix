@@ -62,7 +62,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;Rate&gt; from the schema author:
  *
- * Rate of stock depletion, as measured by the specified Velocity metric &#9679; Added at revision 3.0.2
+ * Rate of stock depletion, as measured by the specified &lt;Velocity&gt; metric &#9679; Added at revision 3.0.2
  *
  * This tag may be included in the following composites:
  * <ul>

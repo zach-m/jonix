@@ -70,7 +70,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;PublishingStatusNote&gt; from the schema author:
  *
- * Textual description of the publishing status, when the coded Pubishing status is inadequate
+ * Textual description of the publishing status, when the coded &lt;PublishingStatus&gt; is inadequate
  *
  * This tag may be included in the following composites:
  * <ul>

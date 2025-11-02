@@ -61,8 +61,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;StartTime&gt; from the schema author:
  *
- * The start time of a content item, relative to the beginning of the whole of gthe product's audio or video content
- * (not to the beginning of a specific filc containing that audio or video content) &#9679; Added at revision 3.0.5
+ * The start time of a content item, relative to the beginning of the whole of the product's audio or video content (not
+ * to the beginning of a specific filc containing that audio or video content) &#9679; Added at revision 3.0.5
  *
  * This tag may be included in the following composites:
  * <ul>

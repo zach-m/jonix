@@ -59,6 +59,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PositionOnList&gt; from the schema author:
+ *
+ * Highest position achieved by the product on bestseller list named in &lt;ListName&gt;
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CitedContent}&gt;</li>

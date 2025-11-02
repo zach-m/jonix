@@ -66,6 +66,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;LevelSequenceNumber&gt; from the schema author:
+ *
+ * Number used to place content items in a logical order within a book, eg 2.7.1 for first part of seventh chapter in
+ * part 2 (need not be related to the physical numbering of the items)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

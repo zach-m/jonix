@@ -66,7 +66,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;OrderQuantityMinimum&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.3
+ * Minimum number of copies that may be ordered in a single order from the &lt;Supplier&gt; &#9679; Added at revision
+ * 3.0.3
  *
  * This tag may be included in the following composites:
  * <ul>

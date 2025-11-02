@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SenderIDType&gt; from the schema author:
  *
- * Type of identifier for the sender of the ONIX message
+ * Type of identifier for the sender of the ONIX message, eg GLN, SAN
  *
  * This tag may be included in the following composites:
  * <ul>

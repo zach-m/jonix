@@ -72,7 +72,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProductForm&gt; from the schema author:
  *
- * The primary form of a product, eg hardcover, softcover, e-book etc
+ * The primary form of a product, eg hardcover, softcover, e-book
  *
  * This tag may be included in the following composites:
  * <ul>

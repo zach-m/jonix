@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SpecificationFeatureType&gt; from the schema author:
  *
- * &#9679; Added at revision 3.0.8
+ * Type of Specification feature, eg paper type, weight or color, special finish &#9679; Added at revision 3.0.8
  *
  * This tag may be included in the following composites:
  * <ul>

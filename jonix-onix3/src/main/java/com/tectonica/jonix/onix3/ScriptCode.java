@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ScriptCode&gt; from the schema author:
+ *
+ * The type of script used to represent a language in the book, eg Latin, Cyrillic
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Language}&gt;</li>
