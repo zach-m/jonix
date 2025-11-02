@@ -68,15 +68,15 @@ public class TestXmlAndDom {
 
     @Test
     public void testSingleOnix2() {
-        testViaAPI("/single-book-onix2.xml", 3274, OnixVersion.ONIX2);
-        testViaDOM("/single-book-onix2.xml", 3274, OnixVersion.ONIX2);
+        testViaAPI("/single-book-onix2.xml", 3285, OnixVersion.ONIX2);
+        testViaDOM("/single-book-onix2.xml", 3285, OnixVersion.ONIX2);
     }
 
     @Test
     public void testSingleOnix3() {
-        testViaAPI("/single-book-onix3-short.xml", 16110, OnixVersion.ONIX3);
-        testViaAPI("/single-book-onix3.xml", 16110, OnixVersion.ONIX3);
-        testViaDOM("/single-book-onix3.xml", 16110, OnixVersion.ONIX3);
+        testViaAPI("/single-book-onix3-short.xml", 16127, OnixVersion.ONIX3);
+        testViaAPI("/single-book-onix3.xml", 16127, OnixVersion.ONIX3);
+        testViaDOM("/single-book-onix3.xml", 16127, OnixVersion.ONIX3);
     }
 
     private void testViaAPI(String xmlResourceName, int expectedLength, OnixVersion expectedOnixVersion) {
