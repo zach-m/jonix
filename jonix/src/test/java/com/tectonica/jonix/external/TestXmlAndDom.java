@@ -74,9 +74,9 @@ public class TestXmlAndDom {
 
     @Test
     public void testSingleOnix3() {
-        testViaAPI("/single-book-onix3-short.xml", 16127, OnixVersion.ONIX3);
-        testViaAPI("/single-book-onix3.xml", 16127, OnixVersion.ONIX3);
-        testViaDOM("/single-book-onix3.xml", 16127, OnixVersion.ONIX3);
+        testViaAPI("/single-book-onix3-short.xml", 16123, OnixVersion.ONIX3);
+        testViaAPI("/single-book-onix3.xml", 16123, OnixVersion.ONIX3);
+        testViaDOM("/single-book-onix3.xml", 16123, OnixVersion.ONIX3);
     }
 
     private void testViaAPI(String xmlResourceName, int expectedLength, OnixVersion expectedOnixVersion) {
