@@ -43,7 +43,7 @@ interface CodeList139 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -619,7 +619,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Kirjastopalvelu("KPV", "Kirjastopalvelu"),
 
-    KNFB_Blio("KNB", "KNFB/Blio"),
+    KNFB_Blio("KNB", "KNFB / Blio"),
 
     /**
      * Deprecated
@@ -635,7 +635,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Kroger("KRG", "Kroger"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Only for use in ONIX 3.0 or later. Deprecated
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -654,6 +654,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * JONIX adds: Not included in Onix2
      */
     Lexplore("LEX", "Lexplore"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Libro_fm("LIB", "Libro.fm"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -689,7 +696,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     /**
      * Also known as Media World
      */
-    Media_Markt_Saturn("MMS", "Media Markt/Saturn"),
+    Media_Markt_Saturn("MMS", "Media Markt / Saturn"),
 
     Messageries_ADP("ADP", "Messageries ADP"),
 
@@ -929,6 +936,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Spotify("SPO", "Spotify"),
 
     Staples("STP", "Staples"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Staytuned_io("STY", "Staytuned.io"),
 
     /**
      * Only for use in ONIX 3.0 or later

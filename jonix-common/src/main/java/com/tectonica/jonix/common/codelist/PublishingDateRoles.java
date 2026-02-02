@@ -43,7 +43,7 @@ interface CodeList163 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -107,8 +107,8 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     Publication_date_of_print_counterpart("19", "Publication date of print counterpart"),
 
     /**
-     * Date when the original language version of work incorporated in a product was first published (note, use only on
-     * works in translation - see code 11 for first publication date in the translated language)
+     * Date when the original language version of the work incorporated in a product was first published (note, use only
+     * on works in translation - and also see code 11 for the first publication date of the translation)
      */
     Date_of_first_publication_in_original_language("20", "Date of first publication in original language"),
 
@@ -201,7 +201,15 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    CIP_date("35", "CIP date");
+    CIP_date("35", "CIP date"),
+
+    /**
+     * Date when the unabridged version of the work incorporated in a product was first published (note, use only on
+     * abridged works - and also see code 11 for the first publication date of the abridgement)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Date_of_first_unabridged_publication("36", "Date of first unabridged publication");
 
     public final String code;
     public final String description;

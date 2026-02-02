@@ -65,6 +65,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;BibleVersion&gt; from the schema author:
+ *
+ * Specific translation or version of the Bible
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Bible}&gt;</li>

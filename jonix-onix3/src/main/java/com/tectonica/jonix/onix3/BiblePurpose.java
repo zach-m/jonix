@@ -64,6 +64,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;BiblePurpose&gt; from the schema author:
+ *
+ * Intended purpose of the version of the Bible, eg a children's Bible, wedding gift Bible, or a Bible for scholarly
+ * research
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Bible}&gt;</li>

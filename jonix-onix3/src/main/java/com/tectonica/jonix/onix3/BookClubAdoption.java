@@ -67,6 +67,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;BookClubAdoption&gt; from the schema author:
+ *
+ * Textual description of adoption of the book as a book club selection
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

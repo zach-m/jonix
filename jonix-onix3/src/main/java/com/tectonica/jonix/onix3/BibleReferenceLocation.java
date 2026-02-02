@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;BibleReferenceLocation&gt; from the schema author:
+ *
+ * Location of references within the Bible content (centre column, side column, page end etc)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Bible}&gt;</li>

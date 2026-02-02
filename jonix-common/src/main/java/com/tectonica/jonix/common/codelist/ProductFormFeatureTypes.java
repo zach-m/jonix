@@ -43,7 +43,7 @@ interface CodeList79 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -201,7 +201,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Point_and_watch_device_app_compatibility("17", "‘Point and watch’ device/app compatibility"),
+    Point_and_watch_device_app_compatibility("17", "‘Point and watch’ device / app compatibility"),
 
     /**
      * Requirement for user authentication prior to use, with detail of authentication method (user enrolment, and login
@@ -380,7 +380,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Carbon_GHG_emission_certification_scheme("41", "Carbon/GHG emission certification scheme"),
+    Carbon_GHG_emission_certification_scheme("41", "Carbon / GHG emission certification scheme"),
 
     /**
      * &lt;ProductFormFeatureValue&gt; is a code from List 262 identifying a particular certification scheme.
@@ -389,7 +389,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Carbon_GHG_emission_certification_license_number("42", "Carbon/GHG emission certification / license number"),
+    Carbon_GHG_emission_certification_license_number("42", "Carbon / GHG emission certification / license number"),
 
     /**
      * &lt;ProductFormFeatureValue&gt; is a code from List 262 identifying a particular certification scheme.
@@ -398,7 +398,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Carbon_GHG_emission_certification_URL("43", "Carbon/GHG emission certification URL"),
+    Carbon_GHG_emission_certification_URL("43", "Carbon / GHG emission certification URL"),
 
     /**
      * &lt;ProductFormFeatureValue&gt; is a code from List 262 identifying a particular certification scheme.
@@ -409,7 +409,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_Scope_3_certified_Carbon_dioxide_equivalent_emission("44",
-        "Carbon/GHG Scope 3 certified Carbon dioxide equivalent emission"),
+        "Carbon / GHG Scope 3 certified Carbon dioxide equivalent emission"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -417,7 +417,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_Scope_2_certified_Carbon_dioxide_equivalent_emission("45",
-        "Carbon/GHG Scope 2 certified Carbon dioxide equivalent emission"),
+        "Carbon / GHG Scope 2 certified Carbon dioxide equivalent emission"),
 
     /**
      * Scope 1 emission certifications are not recommended for use. Only for use in ONIX 3.0 or later
@@ -425,7 +425,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * JONIX adds: Not included in Onix2
      */
     Carbon_GHG_Scope_1_certified_Carbon_dioxide_equivalent_emission("46",
-        "Carbon/GHG Scope 1 certified Carbon dioxide equivalent emission"),
+        "Carbon / GHG Scope 1 certified Carbon dioxide equivalent emission"),
 
     /**
      * For EU Deforestation regulations, location of raw material source plot ('where the tree grew') for the interior

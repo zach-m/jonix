@@ -43,7 +43,7 @@ interface CodeList98 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist98">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist98">ONIX
  *      Codelist 98 in Reference Guide</a>
  */
 public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
@@ -53,14 +53,14 @@ public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
 
     Brown("BRN", "Brown"),
 
-    Burgundy_Maroon("BUR", "Burgundy/Maroon"),
+    Burgundy_Maroon("BUR", "Burgundy / Maroon"),
 
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Celadon_Pale_green("CEL", "Celadon/Pale green"),
+    Celadon_Pale_green("CEL", "Celadon / Pale green"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -100,7 +100,7 @@ public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
      */
     Multicolor("MUL", "Multicolor"),
 
-    Navy_Dark_blue("NAV", "Navy/Dark blue"),
+    Navy_Dark_blue("NAV", "Navy / Dark blue"),
 
     Orange("ORG", "Orange"),
 
@@ -110,13 +110,13 @@ public enum BindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
 
     Red("RED", "Red"),
 
-    Sky_Pale_blue("SKY", "Sky/Pale blue"),
+    Sky_Pale_blue("SKY", "Sky / Pale blue"),
 
     Silver("SLV", "Silver"),
 
-    Tan_Light_brown("TAN", "Tan/Light brown"),
+    Tan_Light_brown("TAN", "Tan / Light brown"),
 
-    Teal_Turquoise_green("TEA", "Teal/Turquoise green"),
+    Teal_Turquoise_green("TEA", "Teal / Turquoise green"),
 
     White("WHI", "White"),
 

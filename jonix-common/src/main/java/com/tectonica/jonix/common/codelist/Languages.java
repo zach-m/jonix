@@ -43,7 +43,7 @@ interface CodeList74 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -1391,7 +1391,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Official_Aramaic_Imperial_Aramaic_700_300_BCE("arc", "Official Aramaic; Imperial Aramaic (700-300 BCE)"),
 
     /**
-     * Macrolanguage. See also ojs (Severn Ojibwa)
+     * Ojibwe, Anishinaabemowin. Macrolanguage. See also ojs (Severn Ojibwa)
      */
     Ojibwa("oji", "Ojibwa"),
 
@@ -1840,7 +1840,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Telugu("tel", "Telugu"),
 
-    Temne_Time("tem", "Temne; Time"),
+    Temne_Timne("tem", "Temne; Timne"),
 
     Terena("ter", "Terena"),
 
@@ -1969,7 +1969,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Venetian_Venetan("vec", "Venetian/Venetan"),
+    Venetian_Venetan("vec", "Venetian / Venetan"),
 
     Vietnamese("vie", "Vietnamese"),
 

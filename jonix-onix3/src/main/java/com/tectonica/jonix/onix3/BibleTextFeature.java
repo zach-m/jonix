@@ -64,6 +64,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;BibleTextFeature&gt; from the schema author:
+ *
+ * Any feature of a Bible text not covered elsewhere, eg red letter
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Bible}&gt;</li>

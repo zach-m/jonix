@@ -43,7 +43,7 @@ interface CodeList48 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist48">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist48">ONIX
  *      Codelist 48 in Reference Guide</a>
  */
 public enum MeasureTypes implements OnixCodelist, CodeList48 {
@@ -111,12 +111,12 @@ public enum MeasureTypes implements OnixCodelist, CodeList48 {
     /**
      * The height of a folded or rolled sheet map, poster etc when unfolded
      */
-    Unfolded_unrolled_sheet_height("10", "Unfolded/unrolled sheet height"),
+    Unfolded_unrolled_sheet_height("10", "Unfolded / unrolled sheet height"),
 
     /**
      * The width of a folded or rolled sheet map, poster etc when unfolded
      */
-    Unfolded_unrolled_sheet_width("11", "Unfolded/unrolled sheet width"),
+    Unfolded_unrolled_sheet_width("11", "Unfolded / unrolled sheet width"),
 
     /**
      * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01 'Height'

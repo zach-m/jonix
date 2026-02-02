@@ -68,6 +68,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;CitationNote&gt; from the schema author:
+ *
+ * Note giving additional information about cited content
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link CitedContent}&gt;</li>

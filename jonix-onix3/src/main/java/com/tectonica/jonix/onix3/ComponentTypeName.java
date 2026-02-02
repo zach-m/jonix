@@ -65,6 +65,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;ComponentTypeName&gt; from the schema author:
+ *
+ * Type of text or AV content item within the product (named as in the TOC, Chapter, Section etc)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link ContentItem}&gt;</li>

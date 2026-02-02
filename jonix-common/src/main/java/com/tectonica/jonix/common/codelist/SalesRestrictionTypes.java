@@ -43,7 +43,7 @@ interface CodeList71 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist71">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
 public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
@@ -170,9 +170,9 @@ public enum SalesRestrictionTypes implements OnixCodelist, CodeList71 {
     Except_through_POD("19", "Except through POD"),
 
     /**
-     * Sales rights (or market distribution rights) apply to all supplies through retailers, and to the designated
-     * subscription services, which must be identified or named in an instance of the &lt;SalesOutlet&gt; composite.
-     * Only for use in ONIX 3.0 or later
+     * Sales rights (or market distribution rights) apply to all supplies through retailers, and to streaming via the
+     * designated subscription services, which must be identified or named in an instance of the &lt;SalesOutlet&gt;
+     * composite. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

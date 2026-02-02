@@ -43,7 +43,7 @@ interface CodeList5 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist5">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist5">ONIX
  *      Codelist 5 in Reference Guide</a>
  */
 public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
@@ -180,7 +180,17 @@ public enum ProductIdentifierTypes implements OnixCodelist, CodeList5 {
     /**
      * Archival Resource Key, as a URL (including the address of the ARK resolver provided by eg a national library)
      */
-    ARK("35", "ARK");
+    ARK("35", "ARK"),
+
+    /**
+     * Identifier for a specific revision of a particular product file or package of files, changed each time the file
+     * or package is modified in any way (eg to correct errors, update the content, or rebuild the package), whether the
+     * change is visible to the reader or not). For example, the 'release identifier' within an EPUB package such as
+     * 'urn:uuid:a1b0d67e-2e81-4df5-9e67-a64cbe366809@2011-01-01T12:00:00Z'. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Digital_file_internal_version_number("36", "Digital file internal version number");
 
     public final String code;
     public final String description;

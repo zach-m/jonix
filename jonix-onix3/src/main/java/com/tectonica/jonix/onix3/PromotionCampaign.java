@@ -63,6 +63,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;PromotionCampaign&gt; from the schema author:
+ *
+ * Textual description of the advertising and promotion campaign for the product
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

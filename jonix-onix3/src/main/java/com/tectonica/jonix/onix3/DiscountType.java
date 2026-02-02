@@ -60,6 +60,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;DiscountType&gt; from the schema author:
+ *
+ * Type of B2B discount (eg rising, progressive)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Discount}&gt;</li>

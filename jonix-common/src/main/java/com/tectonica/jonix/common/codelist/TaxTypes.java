@@ -41,19 +41,19 @@ interface CodeList171 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist171">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist171">ONIX
  *      Codelist 171 in Reference Guide</a>
  */
 public enum TaxTypes implements OnixCodelist, CodeList171 {
     /**
-     * TVA, IVA, MwSt, GST etc, levied incrementally at all parts of the supply chain
+     * VAT, TVA, IVA, MwSt, GST etc, levied incrementally at all parts of the supply chain
      */
-    VAT_Value_added_tax("01", "VAT (Value-added tax)"),
+    Value_added_tax("01", "Value-added tax"),
 
     /**
-     * General sales tax, levied on retail sales
+     * General sales tax, levied on retail sales only
      */
-    GST_Sales_tax("02", "GST (Sales tax)"),
+    Sales_tax("02", "Sales tax"),
 
     /**
      * 'Green' or eco-tax, levied to encourage responsible production or disposal, used only where this is identified

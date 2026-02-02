@@ -21,6 +21,8 @@ package com.tectonica.jonix.common.codelist;
 
 import com.tectonica.jonix.common.OnixCodelist;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 /*
@@ -41,7 +43,7 @@ interface CodeList156 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist156">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist156">ONIX
  *      Codelist 156 in Reference Guide</a>
  */
 public enum CitedContentTypes implements OnixCodelist, CodeList156 {
@@ -83,7 +85,14 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Interview("07", "Interview");
+    Interview("07", "Interview"),
+
+    /**
+     * For example a curated music playlist to accompany the product, environmental sounds etc
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Soundtrack("08", "Soundtrack");
 
     public final String code;
     public final String description;
@@ -103,16 +112,30 @@ public enum CitedContentTypes implements OnixCodelist, CodeList156 {
         return description;
     }
 
+    private static volatile Map<String, CitedContentTypes> map;
+
+    private static Map<String, CitedContentTypes> map() {
+        Map<String, CitedContentTypes> result = map;
+        if (result == null) {
+            synchronized (CitedContentTypes.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (CitedContentTypes e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static CitedContentTypes byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
-        for (CitedContentTypes e : values()) {
-            if (e.code.equals(code)) {
-                return e;
-            }
-        }
-        return null;
+        return map().get(code);
     }
 
     public static Optional<CitedContentTypes> byCodeOptional(String code) {

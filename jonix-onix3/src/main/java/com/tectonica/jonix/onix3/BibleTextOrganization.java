@@ -64,6 +64,11 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;BibleTextOrganization&gt; from the schema author:
+ *
+ * Manner in which Biblical text is laid out, eg traditional, arranged chronologically, or parallel (side-by-side
+ * alignment of two versions)
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link Bible}&gt;</li>

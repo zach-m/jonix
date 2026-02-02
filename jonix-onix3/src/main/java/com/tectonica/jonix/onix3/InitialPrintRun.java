@@ -68,6 +68,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;InitialPrintRun&gt; from the schema author:
+ *
+ * Textual description of the initial impression, eg number of copies and associated marketing effort
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link MarketPublishingDetail}&gt;</li>

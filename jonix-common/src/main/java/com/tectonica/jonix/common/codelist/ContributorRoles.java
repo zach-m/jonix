@@ -43,7 +43,7 @@ interface CodeList17 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -227,7 +227,8 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Drawings_by("A35", "Drawings by"),
 
     /**
-     * Use also for the cover artist of a graphic novel or comic book if named separately
+     * Use also for the cover artist of a graphic novel or comic book if named separately. Prefer code A53 to credit a
+     * graphic designer separately from the creator of the cover artwork
      */
     Cover_design_or_artwork_by("A36", "Cover design or artwork by"),
 
@@ -320,6 +321,15 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      * JONIX adds: Not included in Onix2
      */
     Original_character_design("A52", "Original character design"),
+
+    /**
+     * Use where the overall graphic designer of the cover is credited separately from the creator of the cover artwork.
+     * Use code A36 for the creator of the cover artwork (who could be a photographer, illustrator etc), or where only a
+     * single cover creator is credited. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Cover_graphic_design_by("A56", "Cover graphic design by"),
 
     /**
      * Other type of primary creator not specified above
@@ -464,7 +474,8 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Image_descriptions_by("B35", "Image descriptions by"),
 
     /**
-     * Use for modernization or minor updating of language, but not for original contributions to the text
+     * Use for modernization or minor updating of language, but not for original contributions to the text. Only for use
+     * in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -585,7 +596,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     /**
      * Cinematographer, etc
      */
-    Filmed_photographed_by("F01", "Filmed/photographed by"),
+    Filmed_photographed_by("F01", "Filmed / photographed by"),
 
     Editor_film_or_video("F02", "Editor (film or video)"),
 
@@ -600,7 +611,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
      */
     Assisted_by("Z01", "Assisted by"),
 
-    Honored_dedicated_to("Z02", "Honored/dedicated to"),
+    Honored_dedicated_to("Z02", "Honored / dedicated to"),
 
     /**
      * For publication of laws, regulations, rulings etc. Only for use in ONIX 3.0 or later

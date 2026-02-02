@@ -43,7 +43,7 @@ interface CodeList85 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist85">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist85">ONIX
  *      Codelist 85 in Reference Guide</a>
  */
 public enum BiblePurposes implements OnixCodelist, CodeList85 {
@@ -172,8 +172,8 @@ public enum BiblePurposes implements OnixCodelist, CodeList85 {
     /**
      * A Bible (or selected Biblical text) specifically designed with features that are helpful for public speaking and
      * delivering sermons, including a larger font size, wider margins for taking notes, and a layout that makes it easy
-     * to locate verses quickly. Smaller and le. Only for use in ONIX 3.0 or laterss elaborately-decorated than a Pulpit
-     * Bible
+     * to locate verses quickly. Smaller and less elaborately-decorated than a Pulpit Bible. Only for use in ONIX 3.0 or
+     * later
      * <p>
      * JONIX adds: Not included in Onix2
      */

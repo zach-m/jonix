@@ -59,6 +59,10 @@ import java.util.function.Consumer;
  * </tr>
  * </table>
  * <p/>
+ * Technical notes about &lt;FreeQuantity&gt; from the schema author:
+ *
+ * Number of free copies supplied with an order for a specific number of paid-for copies
+ *
  * This tag may be included in the following composites:
  * <ul>
  * <li>&lt;{@link BatchBonus}&gt;</li>
