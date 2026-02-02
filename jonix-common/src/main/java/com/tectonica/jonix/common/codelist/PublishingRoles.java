@@ -43,7 +43,7 @@ interface CodeList45 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist45">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist45">ONIX
  *      Codelist 45 in Reference Guide</a>
  */
 public enum PublishingRoles implements OnixCodelist, CodeList45 {
@@ -64,9 +64,9 @@ public enum PublishingRoles implements OnixCodelist, CodeList45 {
      */
     Publisher_of_original_language_version("04", "Publisher of original-language version"),
 
-    Host_distributor_of_electronic_content("05", "Host/distributor of electronic content"),
+    Host_distributor_of_electronic_content("05", "Host / distributor of electronic content"),
 
-    Published_for_on_behalf_of("06", "Published for/on behalf of"),
+    Published_for_on_behalf_of("06", "Published for / on behalf of"),
 
     /**
      * Use also for 'Published in cooperation with'

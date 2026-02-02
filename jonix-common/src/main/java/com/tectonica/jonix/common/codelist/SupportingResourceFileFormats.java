@@ -43,7 +43,7 @@ interface CodeList178 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist178">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist178">ONIX
  *      Codelist 178 in Reference Guide</a>
  */
 public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
@@ -128,9 +128,9 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     WebM("D109", "WebM"),
 
     /**
-     * Portable Document File (single page image)
+     * Portable Document Format (single page, treated as an image)
      */
-    PDF("D401", "PDF"),
+    PDF_single_page("D401", "PDF (single page)"),
 
     /**
      * Graphic Interchange File format
@@ -195,6 +195,13 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     SVG("D510", "SVG"),
 
     /**
+     * High Efficiency Image File Format, container format for images and video (.heif or .heic)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    HEIF("D511", "HEIF"),
+
+    /**
      * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
      * (IDPF) [File extension .epub]
      */
@@ -206,9 +213,9 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     HTML("E105", "HTML"),
 
     /**
-     * Portable Document Format (ISO 32000-1:2008) [File extension .pdf]
+     * Portable Document Format (single or multi-page document) [File extension .pdf]
      */
-    PDF_("E107", "PDF"),
+    PDF("E107", "PDF"),
 
     /**
      * Plain text (either ASCII or UTF-8/16 Unicode)

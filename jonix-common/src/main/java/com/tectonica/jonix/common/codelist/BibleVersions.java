@@ -43,7 +43,7 @@ interface CodeList83 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist83">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist83">ONIX
  *      Codelist 83 in Reference Guide</a>
  */
 public enum BibleVersions implements OnixCodelist, CodeList83 {
@@ -302,7 +302,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     New_American_Standard_Updated("NAU", "New American Standard, Updated"),
 
     /**
-     * (CTS NCB) 2007 revision of the 1966 Jerusalem Bible, with new textual and liturgical notes and changes to the
+     * (CTS, NCB) 2007 revision of the 1966 Jerusalem Bible, with new textual and liturgical notes and changes to the
      * Psalms, published by the Catholic Truth Society. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
@@ -356,7 +356,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
     /**
      * Norwegian Bible translation
      */
-    Bibelen_1978_85_rev_2005("NBH", "Bibelen 1978-85/rev. 2005"),
+    Bibelen_1978_85_rev_2005("NBH", "Bibelen 1978-85 / rev. 2005"),
 
     /**
      * Norwegian Bible translation
@@ -368,7 +368,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Norsk_Bibel_88_rev_2007("NBJ", "Norsk Bibel 88/rev. 2007"),
+    Norsk_Bibel_88_rev_2007("NBJ", "Norsk Bibel 88 / rev. 2007"),
 
     /**
      * Norwegian Bible translation with commentary. Only for use in ONIX 3.0 or later
@@ -382,7 +382,7 @@ public enum BibleVersions implements OnixCodelist, CodeList83 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Bibelen_2011_rev_2024("NBL", "Bibelen 2011/rev. 2024"),
+    Bibelen_2011_rev_2024("NBL", "Bibelen 2011 / rev. 2024"),
 
     /**
      * Norwegian Bible translation. Only for use in ONIX 3.0 or later

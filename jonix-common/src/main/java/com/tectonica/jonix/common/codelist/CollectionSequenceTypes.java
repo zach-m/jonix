@@ -41,7 +41,7 @@ interface CodeList197 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist197">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist197">ONIX
  *      Codelist 197 in Reference Guide</a>
  */
 public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
@@ -64,7 +64,7 @@ public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
      * Order defined by a continuing narrative or temporal sequence within products in the collection. Applicable to
      * either fiction or to non-fiction (eg within a collection of history textbooks)
      */
-    Temporal_narrative_order("04", "Temporal/narrative order"),
+    Temporal_narrative_order("04", "Temporal / narrative order"),
 
     /**
      * Original publication order, for a republished collection or collected works originally published outside a

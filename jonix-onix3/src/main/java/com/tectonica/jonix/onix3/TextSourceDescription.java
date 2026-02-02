@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;TextSourceDescription textformat=&quot;05&quot;&gt;Literary editor of &lt;cite&gt;The Spectator&lt;/cite&gt;&lt;/ContributorDescription&gt;</tt></td>
+ * <td><tt>&lt;TextSourceDescription textformat=&quot;05&quot;&gt;Literary editor of &lt;cite&gt;The Spectator&lt;/cite&gt;&lt;/TextSourceDescription&gt;</tt></td>
  * </tr>
  * </table>
  * <p/>

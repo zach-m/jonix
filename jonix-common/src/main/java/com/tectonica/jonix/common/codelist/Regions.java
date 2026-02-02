@@ -43,7 +43,7 @@ interface CodeList49 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist49">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist49">ONIX
  *      Codelist 49 in Reference Guide</a>
  */
 public enum Regions implements OnixCodelist, CodeList49 {
@@ -602,7 +602,10 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     Campobasso("IT-CB", "Campobasso"),
 
-    Carbonia_Iglesias("IT-CI", "Carbonia-Iglesias"),
+    /**
+     * Formerly Carbonia-Iglesias
+     */
+    Sulcis_Iglesiente("IT-CI", "Sulcis Iglesiente"),
 
     Caserta("IT-CE", "Caserta"),
 
@@ -688,7 +691,10 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     Ogliastra("IT-OG", "Ogliastra"),
 
-    Olbia_Tempio("IT-OT", "Olbia-Tempio"),
+    /**
+     * Formerly Olbia-Tempio
+     */
+    Gallura_Nord_Est_Sardegna("IT-OT", "Gallura Nord-Est Sardegna"),
 
     Oristano("IT-OR", "Oristano"),
 
@@ -1054,11 +1060,11 @@ public enum Regions implements OnixCodelist, CodeList49 {
 
     /**
      * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of
-     * writing, this is a synonym for 'AT BE CY EE FI FR DE ES GR HR IE IT LT LU LV MT NL PT SI SK' (the official
-     * Eurozone 20), plus 'AD MC SM VA ME' and Kosovo (other Euro-using countries in continental Europe). Note some
-     * other territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
-     * specified separately. ONLY valid in ONIX 3.0, and ONLY within P.26 - and this use is itself Deprecated. Use of an
-     * explicit list of countries instead of ECZ is strongly encouraged
+     * writing, this is a synonym for 'AT BE BG CY DE EE ES FI FR GR HR IE IT LT LU LV MT NL PT SI SK' (the official
+     * Eurozone 21), plus 'AD MC SM VA ME' and region RS-KM (other Euro-using countries in continental Europe). Note
+     * some other territories using the Euro but outside continental Europe (eg 'GF GP MQ PM RE') are excluded from this
+     * list, and may need to be specified separately. ONLY valid in ONIX 3.0, and ONLY within P.26 - and this use is
+     * itself Deprecated. Use of an explicit list of countries instead of ECZ is strongly encouraged
      */
     Eurozone("ECZ", "Eurozone"),
 

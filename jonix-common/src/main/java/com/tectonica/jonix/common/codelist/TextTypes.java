@@ -43,7 +43,7 @@ interface CodeList153 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -58,7 +58,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * Of the product. Limited to a maximum of 350 characters. In ONIX 3.0, this is assumed to include markup
      * characters. In ONIX 3.1 and later, this limit does not include markup
      */
-    Short_description_annotation("02", "Short description/annotation"),
+    Short_description_annotation("02", "Short description / annotation"),
 
     /**
      * Of the product. Length unrestricted
@@ -136,7 +136,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     /**
      * (of which the product is a part.) Limited to a maximum of 350 characters
      */
-    Short_description_annotation_for_collection("16", "Short description/annotation for collection"),
+    Short_description_annotation_for_collection("16", "Short description / annotation for collection"),
 
     /**
      * (of which the product is a part.) Length unrestricted
@@ -243,7 +243,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Short_description_annotation_for_imprint("33", "Short description/annotation for imprint"),
+    Short_description_annotation_for_imprint("33", "Short description / annotation for imprint"),
 
     /**
      * Length unrestricted
@@ -257,7 +257,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Short_description_annotation_for_publisher("35", "Short description/annotation for publisher"),
+    Short_description_annotation_for_publisher("35", "Short description / annotation for publisher"),
 
     /**
      * Length unrestricted

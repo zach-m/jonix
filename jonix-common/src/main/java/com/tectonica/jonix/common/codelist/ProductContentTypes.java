@@ -43,7 +43,7 @@ interface CodeList81 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
@@ -127,7 +127,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      */
     Additional_images_graphics_not_part_of_main_work("20", "Additional images / graphics not part of main work"),
 
-    Maps_and_or_other_cartographic_content("12", "Maps and/or other cartographic content"),
+    Maps_and_or_other_cartographic_content("12", "Maps and / or other cartographic content"),
 
     /**
      * Indicates that the publication contains chemical notations, formulae. Only for use in ONIX 3.0 or later

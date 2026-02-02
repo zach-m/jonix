@@ -43,12 +43,13 @@ interface CodeList154 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist154">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist154">ONIX
  *      Codelist 154 in Reference Guide</a>
  */
 public enum ContentAudiences implements OnixCodelist, CodeList154 {
     /**
-     * Any audience
+     * Any audience. Use when there is only a single version of the promotional text or other marketing collateral.
+     * Avoid when there are differentiated versions (eg for end customers, for educators, for children) available
      */
     Unrestricted("00", "Unrestricted"),
 
@@ -63,16 +64,26 @@ public enum ContentAudiences implements OnixCodelist, CodeList154 {
      */
     Booktrade("02", "Booktrade"),
 
-    End_customers("03", "End-customers"),
+    /**
+     * Potential purchasers, typically adults, who may or may not also be the audience for the book itself, particularly
+     * in the case of children's books or books for younger teens
+     */
+    End_customers("03", "End customers"),
 
     Librarians("04", "Librarians"),
 
+    /**
+     * Including other educators
+     */
     Teachers("05", "Teachers"),
 
+    /**
+     * Content aimed at learners who are specified in &lt;Audience&gt; (including any relevant &lt;AudienceRange&gt;)
+     */
     Students("06", "Students"),
 
     /**
-     * Press or other media
+     * Press or other (traditional) media
      */
     Press("07", "Press"),
 
@@ -87,11 +98,25 @@ public enum ContentAudiences implements OnixCodelist, CodeList154 {
     Search_engine_index("09", "Search engine index"),
 
     /**
-     * (Including vloggers, influencers etc) Where this is distinct from end customers or the Press
+     * (Including bloggers, vloggers, influencers etc) Where this is distinct from end customers or the Press
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Bloggers("10", "Bloggers");
+    Social_media("10", "Social media"),
+
+    /**
+     * Content aimed at children who are specified in &lt;Audience&gt; (including any relevant &lt;AudienceRange&gt;)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Children("11", "Children"),
+
+    /**
+     * Content aimed at teens who are specified in &lt;Audience&gt; (including any relevant &lt;AudienceRange&gt;)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Teens("12", "Teens");
 
     public final String code;
     public final String description;

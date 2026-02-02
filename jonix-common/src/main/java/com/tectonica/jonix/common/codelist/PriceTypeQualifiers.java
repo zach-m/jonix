@@ -43,7 +43,7 @@ interface CodeList59 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_71.html#codelist59">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist59">ONIX
  *      Codelist 59 in Reference Guide</a>
  */
 public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
@@ -56,7 +56,7 @@ public enum PriceTypeQualifiers implements OnixCodelist, CodeList59 {
     /**
      * Price applies to a designated group membership
      */
-    Member_subscriber_price("01", "Member/subscriber price"),
+    Member_subscriber_price("01", "Member / subscriber price"),
 
     /**
      * Price applies to sales outside the territory in which the supplier is located
