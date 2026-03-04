@@ -26,10 +26,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -56,18 +56,18 @@ public class JonixSource {
     public final File file;
 
     // set externally AFTER construction
-    OnixVersion onixVersion;
+    volatile OnixVersion onixVersion;
 
-    String onixRelease;
+    volatile String onixRelease;
 
     // set externally AFTER construction (if available)
-    OnixHeader header;
+    volatile OnixHeader header;
 
     /**
      * Per-source key-value store, for the convenience of the user when processing multiple sources. Can be read-from
      * and written-to with {@link #retrieve(String)} and {@link #store(String, Object)}.
      */
-    private Map<String, Object> sourceDict;
+    private final ConcurrentMap<String, Object> sourceDict = new ConcurrentHashMap<>();
 
     // internal, packaged-protected variable, managed during iteration over the source
     AtomicInteger sourceProductCount = new AtomicInteger(0);
@@ -127,7 +127,7 @@ public class JonixSource {
      * the next one
      */
     public void skipSource() {
-        records.skipSourceRequested = true;
+        records.skipSourceRequested.set(true);
     }
 
     /**
@@ -136,9 +136,6 @@ public class JonixSource {
      * stored object can be retrieved with {@link #retrieve(String)}.
      */
     public <T> JonixSource store(String key, T value) {
-        if (sourceDict == null) {
-            sourceDict = new HashMap<>();
-        }
         sourceDict.put(key, value);
         return this;
     }
@@ -148,9 +145,6 @@ public class JonixSource {
      *     {@code null} if the {@code key} doesn't exist
      */
     public <T> T retrieve(String key) {
-        if (sourceDict == null) {
-            return null;
-        }
         return (T) sourceDict.get(key);
     }
 
@@ -159,9 +153,6 @@ public class JonixSource {
      *     {@code defaultValue} if the {@code key} doesn't exist
      */
     public <T> T retrieve(String key, T defaultValue) {
-        if (sourceDict == null) {
-            return null;
-        }
         return (T) sourceDict.getOrDefault(key, defaultValue);
     }
 

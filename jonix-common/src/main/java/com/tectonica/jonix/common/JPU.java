@@ -32,8 +32,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.StringWriter;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * JPU (Jonix Processing Utility) is an all-static internal utility class, assisting in run time processing of the DOM
@@ -185,10 +186,12 @@ public class JPU {
         return out;
     }
 
-    private static final Map<Class<?>, ListOfOnixDataComposite<?, ?>> emptyListOfOnixDataComposites = new HashMap<>();
-    private static final Map<Class<?>, ListOfOnixDataCompositeWithKey<?, ?, ?>> emptyListOfOnixDataCompositeWithKeys =
-        new HashMap<>();
-    private static final Map<Class<?>, ListOfOnixComposite<?>> emptyListOfOnixComposites = new HashMap<>();
+    private static final ConcurrentMap<Class<?>, ListOfOnixDataComposite<?, ?>> emptyListOfOnixDataComposites =
+        new ConcurrentHashMap<>();
+    private static final ConcurrentMap<Class<?>, ListOfOnixDataCompositeWithKey<?, ?, ?>>
+        emptyListOfOnixDataCompositeWithKeys = new ConcurrentHashMap<>();
+    private static final ConcurrentMap<Class<?>, ListOfOnixComposite<?>> emptyListOfOnixComposites =
+        new ConcurrentHashMap<>();
 
     public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S>
         emptyListOfOnixDataComposite(Class<C> clazz) {
