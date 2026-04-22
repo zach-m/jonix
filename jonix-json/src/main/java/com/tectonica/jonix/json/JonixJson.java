@@ -137,7 +137,9 @@ public class JonixJson {
             } else {
                 mapper = indent ? PRODUCT_OBJECT_MAPPER : PRODUCT_OBJECT_MAPPER_NO_IDENT;
             }
-            return mapper.writeValueAsString(onixProduct);
+            String jsonStr = mapper.writeValueAsString(onixProduct);
+            jsonStr = jsonStr.replace("\\r\\n", "\\n");  // Avoid Windows style
+            return jsonStr;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -162,7 +164,9 @@ public class JonixJson {
     public static String objectToJson(Object object) {
         Objects.requireNonNull(object);
         try {
-            return PUBLIC_FIELDS_MAPPER.writeValueAsString(object);
+            String jsonStr = PUBLIC_FIELDS_MAPPER.writeValueAsString(object);
+            jsonStr = jsonStr.replace("\\r\\n", "\\n");  // Avoid Windows style
+            return jsonStr;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
