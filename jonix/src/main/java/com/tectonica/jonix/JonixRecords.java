@@ -45,12 +45,15 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -181,7 +184,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JonixRecords.class);
     protected final AtomicInteger globalProductCount = new AtomicInteger(0);
-    protected boolean failOnInvalidFile = true;
+    protected volatile boolean failOnInvalidFile = true;
 
     @FunctionalInterface
     public interface OnSourceEvent {
@@ -190,22 +193,22 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
     private final InputStream inputStream;
     private final List<File> files;
-    private final List<OnSourceEvent> onSourceStartEvents = new ArrayList<>();
-    private final List<OnSourceEvent> onSourceEndEvents = new ArrayList<>();
-    private final Map<String, Object> globalConfig = new HashMap<>();
+    private final List<OnSourceEvent> onSourceStartEvents = new CopyOnWriteArrayList<>();
+    private final List<OnSourceEvent> onSourceEndEvents = new CopyOnWriteArrayList<>();
+    private final ConcurrentMap<String, Object> globalConfig = new ConcurrentHashMap<>();
 
-    boolean skipSourceRequested;
+    final AtomicBoolean skipSourceRequested = new AtomicBoolean(false);
 
-    private boolean openOnlyHeadersRequested;
+    private volatile boolean openOnlyHeadersRequested;
 
-    private String encoding = "UTF-8";
+    private volatile String encoding = "UTF-8";
 
     /**
      * not to be called directly, use {@link Jonix#source(InputStream)}
      */
     JonixRecords(InputStream inputStream) {
         this.inputStream = Objects.requireNonNull(inputStream);
-        this.files = new ArrayList<>();
+        this.files = new CopyOnWriteArrayList<>();
     }
 
     /**
@@ -213,7 +216,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
      */
     JonixRecords(List<File> files) {
         this.inputStream = null;
-        this.files = new ArrayList<>(Objects.requireNonNull(files));
+        this.files = new CopyOnWriteArrayList<>(Objects.requireNonNull(files));
     }
 
     public JonixRecords source(List<File> files) {
@@ -377,9 +380,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
             while (!hasNext) {
                 // before switching to the next file, fire 'onSourceEnd' event for existing source
                 if (currentSource != null) {
-                    if (skipSourceRequested) {
-                        skipSourceRequested = false;
-                    } else {
+                    if (!skipSourceRequested.getAndSet(false)) {
                         onSourceEndEvents.forEach(e -> e.onSource(currentSource));
                     }
                 }
@@ -461,7 +462,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
             // fire 'onSourceStart' events, allowing the even handler to skip to the next source
             for (OnSourceEvent e : onSourceStartEvents) {
                 e.onSource(currentSource);
-                if (skipSourceRequested) {
+                if (skipSourceRequested.get()) {
                     return null;
                 }
             }
