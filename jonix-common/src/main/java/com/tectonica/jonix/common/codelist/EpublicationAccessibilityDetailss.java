@@ -43,7 +43,7 @@ interface CodeList196 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -245,7 +245,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
         "Use of color is not sole means of conveying information"),
 
     /**
-     * Body text is presented with a contrast ratio of at least 4.5:1 (or 3:1 for large/heading text). Only for use in
+     * Body text is presented with a contrast ratio of at least 4.5:1 (or 3:1 for large / heading text). Only for use in
      * ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
@@ -336,7 +336,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Appearance_of_all_textual_content_can_be_modified("36", "Appearance of all textual content can be modified"),
 
     /**
-     * Body text is presented with a contrast ratio of at least 7:1 (or 4.5:1 for large/heading text). Only for use in
+     * Body text is presented with a contrast ratio of at least 7:1 (or 4.5:1 for large / heading text). Only for use in
      * ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2

@@ -43,7 +43,7 @@ interface CodeList79 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -196,7 +196,7 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * Indicates compatibility with proprietary 'point and watch' devices or apps. These scan invisible codes specially
      * printed on the page, or the whole page image, to identify the book and page position. Scanning can trigger
      * display of (for example) an augmented reality view of the page. The name of the compatible app or device (or
-     * range of apps/devices) should be given in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or
+     * range of apps / devices) should be given in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or
      * later
      * <p>
      * JONIX adds: Not included in Onix2

@@ -43,7 +43,7 @@ interface CodeList261 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist261">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist261">ONIX
  *      Codelist 261 in Reference Guide</a>
  */
 public enum StatusDetailTypeSeverityMasterFiless implements OnixCodelist, CodeList261 {
@@ -55,7 +55,7 @@ public enum StatusDetailTypeSeverityMasterFiless implements OnixCodelist, CodeLi
 
     /**
      * For information only, provided to encourage the master file supplier to improve the quality of their files (eg to
-     * make rendering of the product more reliable/interoperable, or to improve accessibility, etc)
+     * make rendering of the product more reliable / interoperable, or to improve accessibility, etc)
      */
     Info("i", "Info"),
 

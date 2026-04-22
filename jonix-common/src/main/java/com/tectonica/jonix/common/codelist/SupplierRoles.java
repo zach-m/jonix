@@ -43,7 +43,7 @@ interface CodeList93 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist93">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist93">ONIX
  *      Codelist 93 in Reference Guide</a>
  */
 public enum SupplierRoles implements OnixCodelist, CodeList93 {
@@ -73,7 +73,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
     Sales_agent("05", "Sales agent"),
 
     /**
-     * In a specified supply territory. Use only where exclusive/non-exclusive status is not known. Prefer 02 or 03 as
+     * In a specified supply territory. Use only where exclusive / non-exclusive status is not known. Prefer 02 or 03 as
      * appropriate, where possible
      */
     Publishers_distributor_to_retailers("06", "Publisher’s distributor to retailers"),
@@ -101,7 +101,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
     Non_exclusive_distributor_to_end_customers("11", "Non-exclusive distributor to end-customers"),
 
     /**
-     * Use only where exclusive/non-exclusive status is not known. Prefer 10 or 11 as appropriate, where possible
+     * Use only where exclusive / non-exclusive status is not known. Prefer 10 or 11 as appropriate, where possible
      */
     Distributor_to_end_customers("12", "Distributor to end-customers"),
 
@@ -123,7 +123,7 @@ public enum SupplierRoles implements OnixCodelist, CodeList93 {
         "Non-exclusive distributor to resellers and end-customers"),
 
     /**
-     * Use only where exclusive/non-exclusive status is not known. Prefer codes 13 or 14 as appropriate whenever
+     * Use only where exclusive / non-exclusive status is not known. Prefer codes 13 or 14 as appropriate whenever
      * possible. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2

@@ -43,7 +43,7 @@ interface CodeList153 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist153">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist153">ONIX
  *      Codelist 153 in Reference Guide</a>
  */
 public enum TextTypes implements OnixCodelist, CodeList153 {
@@ -72,7 +72,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     Table_of_contents("04", "Table of contents"),
 
     /**
-     * Primary descriptive blurb usually taken from the back cover or jacket, or occasionally from the cover/jacket
+     * Primary descriptive blurb usually taken from the back cover or jacket, or occasionally from the cover / jacket
      * flaps. See also code 27
      */
     Primary_cover_copy("05", "Primary cover copy"),
@@ -195,7 +195,7 @@ public enum TextTypes implements OnixCodelist, CodeList153 {
     Introduction("26", "Introduction"),
 
     /**
-     * Secondary descriptive blurb taken from the cover/jacket flaps, or occasionally from the back cover or jacket,
+     * Secondary descriptive blurb taken from the cover / jacket flaps, or occasionally from the back cover or jacket,
      * used only when there are two separate texts and the primary text is included using code 05
      * <p>
      * JONIX adds: Not included in Onix2

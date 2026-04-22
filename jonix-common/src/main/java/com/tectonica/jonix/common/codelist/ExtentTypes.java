@@ -43,7 +43,7 @@ interface CodeList23 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist23">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist23">ONIX
  *      Codelist 23 in Reference Guide</a>
  */
 public enum ExtentTypes implements OnixCodelist, CodeList23 {
@@ -52,11 +52,11 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
      * in a book; or, for books without page numbers or (rarely) with multiple numbered sequences of main content, the
      * total number of pages that carry the main content of the book. Note that this may include numbered but otherwise
      * blank pages (eg pages inserted to ensure chapters start on a recto page) and may exclude unnumbered (but
-     * contentful) pages such as those in inserts/plate sections. It should exclude pages of back matter (eg any index)
-     * even when their numbering sequence continues from the main content. Either this or the Content Page count is the
-     * preferred page count for most books for the general reader. For books with substantial front and/or back matter,
-     * include also Front matter (03) and Back matter (04) page counts, or Total numbered pages (05). For books with
-     * inserts (plate sections), also include Total unnumbered insert page count whenever possible
+     * contentful) pages such as those in inserts / plate sections. It should exclude pages of back matter (eg any
+     * index) even when their numbering sequence continues from the main content. Either this or the Content Page count
+     * is the preferred page count for most books for the general reader. For books with substantial front and/or back
+     * matter, include also Front matter (03) and Back matter (04) page counts, or Total numbered pages (05). For books
+     * with inserts (plate sections), also include Total unnumbered insert page count whenever possible
      */
     Main_content_page_count("00", "Main content page count"),
 
@@ -81,7 +81,7 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
     /**
      * The sum of all Roman- and Arabic-numbered pages. Note that this may include numbered but otherwise blank pages
      * (eg pages inserted to ensure chapters start on a recto page) and may exclude unnumbered (but contentful) pages
-     * such as those in inserts/plate sections. It is the sum of the main content (00), front matter (03) and back
+     * such as those in inserts / plate sections. It is the sum of the main content (00), front matter (03) and back
      * matter (04) page counts
      */
     Total_numbered_pages("05", "Total numbered pages"),
@@ -125,7 +125,7 @@ public enum ExtentTypes implements OnixCodelist, CodeList23 {
 
     /**
      * The total number of unnumbered pages with content inserted within the main content of a book - for example
-     * inserts/plate sections that are not numbered
+     * inserts / plate sections that are not numbered
      */
     Total_unnumbered_insert_page_count("12", "Total unnumbered insert page count"),
 

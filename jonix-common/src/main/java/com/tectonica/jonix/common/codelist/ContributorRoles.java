@@ -43,7 +43,7 @@ interface CodeList17 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist17">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
 public enum ContributorRoles implements OnixCodelist, CodeList17 {
@@ -172,7 +172,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Introduction_by("A24", "Introduction by"),
 
     /**
-     * Author/compiler of footnotes
+     * Author / compiler of footnotes
      */
     Footnotes_by("A25", "Footnotes by"),
 
@@ -227,7 +227,7 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Drawings_by("A35", "Drawings by"),
 
     /**
-     * Use also for the cover artist of a graphic novel or comic book if named separately. Prefer code A53 to credit a
+     * Use also for the cover artist of a graphic novel or comic book if named separately. Prefer code A56 to credit a
      * graphic designer separately from the creator of the cover artwork
      */
     Cover_design_or_artwork_by("A36", "Cover design or artwork by"),
@@ -248,10 +248,10 @@ public enum ContributorRoles implements OnixCodelist, CodeList17 {
     Maps_by("A39", "Maps by"),
 
     /**
-     * Use for secondary creators when separate persons are named as having respectively drawn and
-     * inked/colored/finished artwork, eg for a graphic novel or comic book. Use with A12 for 'drawn by'. Use A40 for
-     * 'finished by', but prefer more specific codes A46 to A48 instead of A40 unless the more specific secondary roles
-     * are inappropriate, unclear or unavailable
+     * Use for secondary creators when separate persons are named as having respectively drawn and inked / colored /
+     * finished artwork, eg for a graphic novel or comic book. Use with A12 for 'drawn by'. Use A40 for 'finished by',
+     * but prefer more specific codes A46 to A48 instead of A40 unless the more specific secondary roles are
+     * inappropriate, unclear or unavailable
      */
     Inked_or_colored_by("A40", "Inked or colored by"),
 

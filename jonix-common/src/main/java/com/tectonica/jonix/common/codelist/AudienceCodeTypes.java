@@ -43,7 +43,7 @@ interface CodeList29 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist29">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist29">ONIX
  *      Codelist 29 in Reference Guide</a>
  */
 public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
@@ -168,8 +168,9 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     Japanese_Childrens_audience_code("21", "Japanese Children’s audience code"),
 
     /**
-     * Publisher's rating indicating suitability for a particular adult audience, using a code from List 203. Should
-     * only be used when the ONIX Audience code indicates a general adult audience (code 01 from List 28)
+     * Publisher's rating indicating suitability for a particular adult audience, using an &lt;AudienceCodeValue&gt;
+     * from List 203. Should only be used when the ONIX Audience code indicates a general adult audience (code 01 from
+     * List 28)
      */
     ONIX_Adult_audience_rating("22", "ONIX Adult audience rating"),
 
@@ -193,8 +194,8 @@ public enum AudienceCodeTypes implements OnixCodelist, CodeList29 {
     IoE_Book_Band("25", "IoE Book Band"),
 
     /**
-     * Used for German videos/DVDs with educational or informative content; value for &lt;AudienceCodeValue&gt; must be
-     * either 'Infoprogramm gem&#228;&#223; &#167; 14 JuSchG' or 'Lehrprogramm gem&#228;&#223; &#167; 14 JuSchG'
+     * Used for German videos / DVDs with educational or informative content; value for &lt;AudienceCodeValue&gt; must
+     * be either 'Infoprogramm gem&#228;&#223; &#167; 14 JuSchG' or 'Lehrprogramm gem&#228;&#223; &#167; 14 JuSchG'
      */
     FSK_Lehr_Infoprogramm("26", "FSK Lehr-/Infoprogramm"),
 

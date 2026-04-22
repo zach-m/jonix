@@ -43,7 +43,7 @@ interface CodeList18 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist18">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist18">ONIX
  *      Codelist 18 in Reference Guide</a>
  */
 public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
@@ -53,7 +53,8 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
     Unspecified("00", "Unspecified"),
 
     /**
-     * May be used to give a well-known pseudonym, where the primary name is a 'real' name
+     * 'Pen name', usually adopted for anonymity, semi-anonymity or for 'branding' purposes. May be used to give a
+     * well-known pseudonym, where another name is a 'real' name
      */
     Pseudonym("01", "Pseudonym"),
 
@@ -65,7 +66,7 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
     Earlier_name("03", "Earlier name"),
 
     /**
-     * May be used to identify a well-known 'real' name, where the primary name is a pseudonym or is unnamed
+     * May be used to identify a 'real' name, where another name is a pseudonym, professional name or is unnamed
      */
     Real_name("04", "‘Real’ name"),
 
@@ -95,7 +96,15 @@ public enum PersonOrganizationNameTypes implements OnixCodelist, CodeList18 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Acronym_initialism("08", "Acronym / initialism");
+    Acronym_initialism("08", "Acronym / initialism"),
+
+    /**
+     * Name other than a 'pen name' adopted for professional purposes (eg a 'stage name'). Only for use in ONIX 3.0 or
+     * later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Professional_name("09", "Professional name");
 
     public final String code;
     public final String description;

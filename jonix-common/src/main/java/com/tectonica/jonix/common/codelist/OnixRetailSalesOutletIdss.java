@@ -43,7 +43,7 @@ interface CodeList139 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -549,6 +549,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
+    Hugendubel("HUG", "Hugendubel"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
     Illumicrate("ILU", "Illumicrate"),
 
     Immateriel_fr("IMM", "Immatériel.fr"),
@@ -745,6 +752,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Norli("NOL", "Norli"),
 
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Novelist("NOV", "Novelist"),
+
     Numilog("NUM", "Numilog"),
 
     /**
@@ -835,6 +849,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Pokkaritukku("POK", "Pokkaritukku"),
 
     Pottery_Barn("PTB", "Pottery Barn"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    PressReader("PRR", "PressReader"),
 
     /**
      * Publio.pl. Only for use in ONIX 3.0 or later
@@ -980,6 +1001,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * JONIX adds: Not included in Onix2
      */
     Suuri_Suomalainen_Kirjakerho("SSK", "Suuri Suomalainen Kirjakerho"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Thalia("THA", "Thalia"),
 
     Target("TRG", "Target"),
 

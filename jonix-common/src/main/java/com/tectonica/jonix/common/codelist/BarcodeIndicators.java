@@ -43,7 +43,7 @@ interface CodeList141 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist141">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist141">ONIX
  *      Codelist 141 in Reference Guide</a>
  */
 public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
@@ -75,22 +75,22 @@ public enum BarcodeIndicators implements OnixCodelist, CodeList141 {
     GTIN_13_5_no_price_encoded("05", "GTIN-13+5 (no price encoded)"),
 
     /**
-     * AKA item/price
+     * AKA item / price
      */
     UPC_12_item_specific("06", "UPC-12 (item-specific)"),
 
     /**
-     * AKA item/price
+     * AKA item / price
      */
     UPC_12_5_item_specific("07", "UPC-12+5 (item-specific)"),
 
     /**
-     * AKA price/item
+     * AKA price / item
      */
     UPC_12_price_point("08", "UPC-12 (price-point)"),
 
     /**
-     * AKA price/item
+     * AKA price / item
      */
     UPC_12_5_price_point("09", "UPC-12+5 (price-point)"),
 

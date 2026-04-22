@@ -41,7 +41,7 @@ interface CodeList165 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist165">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist165">ONIX
  *      Codelist 165 in Reference Guide</a>
  */
 public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
@@ -57,8 +57,8 @@ public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
     Suppliers_bonus_eligibility("02", "Supplier’s bonus eligibility"),
 
     /**
-     * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only
-     * when the publisher is not the 'supplier'
+     * A rating applied by the publisher to indicate a sales category (eg backlist / frontlist, core stock etc). Use
+     * only when the publisher is not the 'supplier'
      */
     Publishers_sales_classification("03", "Publisher’s sales classification"),
 
@@ -83,7 +83,7 @@ public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165 {
 
     /**
      * Code indicates whether an order can be placed with the supplier indirectly via an intermediary system. The code
-     * name type indicates the specific intermediate order aggregation/routing platform and the code indicates the
+     * name type indicates the specific intermediate order aggregation / routing platform and the code indicates the
      * eligibility
      * <p>
      * JONIX adds: Not included in Onix2
