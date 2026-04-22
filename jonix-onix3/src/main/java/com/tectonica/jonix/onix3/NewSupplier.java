@@ -218,8 +218,9 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A telephone number of a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable.
+     * A telephone number of a supply source from which the product may be ordered by a trade customer, wherever
+     * possible including the plus sign (representing the international calling prefix) and the international dialing
+     * code for the contact’s country. Optional and repeatable.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -232,8 +233,9 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A fax number of a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable.
+     * A fax number of a supply source from which the product may be ordered by a trade customer, wherever possible
+     * including the plus sign (representing the international calling prefix) and the international dialing code for
+     * the contact’s country. Optional and repeatable.
      * </p>
      * JONIX adds: this list may be empty
      */

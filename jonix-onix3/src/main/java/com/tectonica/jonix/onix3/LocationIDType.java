@@ -66,7 +66,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;LocationIDType&gt; from the schema author:
  *
- * Type of identifier for a stockholding warehouse location
+ * Type of identifier for a stockholding warehouse location, eg SAN, GLN
  *
  * This tag may be included in the following composites:
  * <ul>

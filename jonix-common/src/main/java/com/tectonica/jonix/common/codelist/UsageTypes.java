@@ -43,7 +43,7 @@ interface CodeList145 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist145">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist145">ONIX
  *      Codelist 145 in Reference Guide</a>
  */
 public enum UsageTypes implements OnixCodelist, CodeList145 {
@@ -136,6 +136,27 @@ public enum UsageTypes implements OnixCodelist, CodeList145 {
      * JONIX adds: Not included in Onix2
      */
     Text_and_data_mining("11", "Text and data mining"),
+
+    /**
+     * Where text and data mining is prohibited or otherwise expressly reserved by the rightsholder, make use of the
+     * content of the product (text, images, audio etc) or the product metadata or supporting resources to train or
+     * enable a generative AI-enhanced purchase experience for a customer, with no use outside of a private AI instance
+     * controlled by the reseller -&#160;for example to provide AI-assisted book selection
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    TDM_for_AI_to_enhance_the_private_purchase_experience("13",
+        "TDM for AI to enhance the private purchase experience"),
+
+    /**
+     * Where text and data mining is otherwise prohibited, make use of the content of the product (text, images, audio
+     * etc) or the product metadata or supporting resources to train or enable an AI-enhanced reading experience for the
+     * purchaser, with no use outside of a private AI instance controlled by the reseller or embedded in the product
+     * itself - for example to provide AI-enhanced reading
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    TDM_for_AI_to_enhance_the_private_reading_experience("14", "TDM for AI to enhance the private reading experience"),
 
     /**
      * Loanable by the purchaser (usually a library) to other device owner or account holder or patron, eg library

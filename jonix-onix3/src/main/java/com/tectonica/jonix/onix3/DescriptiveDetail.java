@@ -61,8 +61,8 @@ import java.util.function.Consumer;
  * <p>
  * The descriptive detail block covers data Groups P.3 to P.13, all of which are essentially part of the factual
  * description of the form and content of a product. The block as a whole is non-repeating. It is mandatory in any
- * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an update
- * notice which carries only those blocks in which changes have occurred.
+ * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a partial
+ * update (‘block update’) which carries only those blocks in which changes have occurred.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -379,7 +379,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code which indicates the primary form of a product. Mandatory in an occurrence of
+     * An ONIX code which indicates the primary physical or digital form of a product. Mandatory in an occurrence of
      * &lt;DescriptiveDetail&gt;, and non-repeating.
      * </p>
      * <p>
@@ -457,8 +457,9 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * <p>
      * An ONIX code which indicates the primary or only content type included in a product. The element is intended to
      * be used in particular for digital products, when the sender wishes to make it clear that one of a number of
-     * content types (<i>eg</i>&nbsp;text, audio, video) is the primary type for the product. Other content types may be
-     * specified in the &lt;ProductContentType&gt;. Optional and non-repeating.
+     * content types (<i>eg</i>&nbsp;text, audio, video) is the primary type for the product&nbsp;– but use with
+     * physical products is not precluded. Further content types may be specified in the &lt;ProductContentType&gt;.
+     * Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -471,9 +472,9 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An ONIX code identifying the country of manufacture of a single-item product, or of a multiple-item product when
-     * all items are manufactured in the same country. This information is needed in some countries to meet regulatory
-     * requirements. Optional and non-repeating.
+     * An ONIX code identifying the country of manufacture of a single-item product, or of a multiple-item or
+     * multi-component product when all items are manufactured in the same country. This information is needed in some
+     * countries to meet regulatory requirements, and for international shipping. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -723,7 +724,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * <p>
      * An ONIX code which indicates a content type included in a product. The element is intended to be used in
      * particular for digital products, to specify content types other than the primary type, or to list content types
-     * when none is singled out as the primary type. Optional, and repeatable to list multiple content types.
+     * when none is singled out as the primary type&nbsp;– but use with physical products is not precluded. Optional,
+     * and repeatable to list multiple content types.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -795,8 +797,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data element, without
-     * spaces or punctuation. Optional, and repeatable if a product comprises maps with two or more different scales.
+     * The scale of a map, expressed as a ratio 1:n; only the number n is carried in the data element, without spaces or
+     * punctuation. Optional, and repeatable if a product comprises maps with two or more different scales.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -925,12 +927,14 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * <p>
      * A short free-text description of a version or edition. Optional, and repeatable if parallel text is provided in
      * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;EditionStatement&gt;,
-     * but must be included in each instance if &lt;EditionStatement&gt; is repeated. When used, an
-     * &lt;EditionStatement&gt; must be complete in itself, <i>ie</i>&nbsp;it should not be treated as merely
-     * supplementary to an &lt;EditionType&gt; or an &lt;EditionNumber&gt;, nor as a replacement for them. Appropriate
-     * edition type and number must also be sent, for indexing and retrieval. An &lt;EditionStatement&gt; should be
-     * strictly limited to describing features of the content of the edition, and should <em>not</em> include aspects
-     * such as rights or market restrictions which are properly covered elsewhere in the ONIX record.
+     * but must be included in each instance if &lt;EditionStatement&gt; is repeated.
+     * </p>
+     * <p>
+     * When used, an &lt;EditionStatement&gt; must be complete in itself, <i>ie</i>&nbsp;it should not be treated as
+     * merely supplementary to an &lt;EditionType&gt; or an &lt;EditionNumber&gt;, nor as a replacement for them.
+     * Appropriate edition type and number must also be sent, for indexing and retrieval. An &lt;EditionStatement&gt;
+     * should be strictly limited to describing features of the content of the edition, and should <em>not</em> include
+     * aspects such as rights or market restrictions which are properly covered elsewhere in the ONIX record.
      * </p>
      * JONIX adds: this list may be empty
      */

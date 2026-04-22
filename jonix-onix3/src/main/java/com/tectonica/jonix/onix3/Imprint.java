@@ -36,9 +36,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Imprint or brand composite</h1>
  * <p>
- * An optional group of data elements which together identify an imprint or brand under which the product is marketed.
- * The composite must carry either a name identifier or a name or both, and is repeatable to specify multiple imprints
- * or brands.
+ * An optional group of data elements which together identify an imprint or brand under which the product is placed on
+ * the market. The composite must carry at least one of a name identifier, a name or an inverted name, and is repeatable
+ * to specify multiple imprints or brands.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -57,7 +57,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;Imprint&gt; from the schema author:
  *
- * Details of the publisher's imprint or branding under which the product is marketed
+ * Details of the publisher's imprint or branding under which the product is marketed &#9679; Added
+ * &lt;ImprintNameInverted&gt; at revision 3.1.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -132,6 +133,10 @@ public class Imprint implements OnixSuperComposite, Serializable {
                 case ImprintName.shortname:
                     imprintName = new ImprintName(e);
                     break;
+                case ImprintNameInverted.refname:
+                case ImprintNameInverted.shortname:
+                    imprintNameInverted = new ImprintNameInverted(e);
+                    break;
                 default:
                     break;
             }
@@ -167,8 +172,8 @@ public class Imprint implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A group of data elements which together define the identifier of an imprint name. Optional, but mandatory if the
-     * &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite is repeatable in order to specify
-     * multiple identifiers for the same imprint or brand.
+     * &lt;Imprint&gt; composite carries neither an &lt;ImprintName&gt; nor an &lt;ImprintNameInverted&gt;. The
+     * composite is repeatable in order to specify multiple identifiers for the same imprint or brand.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -182,14 +187,30 @@ public class Imprint implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The name of an imprint or brand under which the product is issued, as it appears on the product. Mandatory if
-     * there is no imprint identifier in an occurrence of the &lt;Imprint&gt; composite, and optional if an imprint
-     * identifier is included. Non-repeating.
+     * The name of an imprint or brand under which the product is issued, presented in normal order as it appears on the
+     * product. Mandatory if there is neither an imprint identifier nor an &lt;ImprintNameInverted&gt; in an occurrence
+     * of the &lt;Imprint&gt; composite, and expected but optional if an imprint identifier or inverted imprint name is
+     * included. Non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
     public ImprintName imprintName() {
         _initialize();
         return imprintName;
+    }
+
+    private ImprintNameInverted imprintNameInverted = ImprintNameInverted.EMPTY;
+
+    /**
+     * <p>
+     * The name of an imprint or brand under which the product is issued, presented in inverted order, with the element
+     * used for alphabetical sorting placed first. Mandatory if there is neither an imprint identifier nor an
+     * &lt;ImprintName&gt; but otherwise optional. Non-repeating.
+     * </p>
+     * JONIX adds: this field is optional
+     */
+    public ImprintNameInverted imprintNameInverted() {
+        _initialize();
+        return imprintNameInverted;
     }
 }

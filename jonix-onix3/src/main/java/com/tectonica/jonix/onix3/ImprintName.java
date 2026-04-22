@@ -34,8 +34,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Imprint or brand name</h1>
  * <p>
- * The name of an imprint or brand under which the product is issued, as it appears on the product. Mandatory if there
- * is no imprint identifier in an occurrence of the &lt;Imprint&gt; composite, and optional if an imprint identifier is
+ * The name of an imprint or brand under which the product is issued, presented in normal order as it appears on the
+ * product. Mandatory if there is neither an imprint identifier nor an &lt;ImprintNameInverted&gt; in an occurrence of
+ * the &lt;Imprint&gt; composite, and expected but optional if an imprint identifier or inverted imprint name is
  * included. Non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>

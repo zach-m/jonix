@@ -43,7 +43,7 @@ interface CodeList150 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
@@ -88,8 +88,8 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     MiniDisc("AG", "MiniDisc"),
 
     /**
-     * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for 'Blue book' and
-     * 'Yellow/Red book' two-session discs
+     * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for 'Blue book' and 'Yellow
+     * / Red book' two-session discs
      */
     CD_Extra("AH", "CD-Extra"),
 
@@ -124,14 +124,14 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Downloadable_and_online_audio_file("AN", "Downloadable and online audio file"),
+    Downloadable_and_online_streamed_audio_file("AN", "Downloadable and online / streamed audio file"),
 
     /**
      * Digital audio recording available online (eg streamed), not downloadable to the purchaser's own device(s)
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Online_audio_file("AO", "Online audio file"),
+    Online_streamed_audio_file("AO", "Online / streamed audio file"),
 
     /**
      * Other audio format not specified by AB to AO. Further detail is expected in &lt;ProductFormDescription&gt;, as
@@ -319,12 +319,12 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     /**
      * Digital content available both by download and by online access
      */
-    Digital_download_and_online("EB", "Digital download and online"),
+    Digital_download_and_online_streamed("EB", "Digital download and online / streamed"),
 
     /**
      * Digital content accessed online only (eg streamed), not downloadable to the purchaser's own device(s)
      */
-    Digital_online("EC", "Digital online"),
+    Digital_online_streamed("EC", "Digital online / streamed"),
 
     /**
      * Digital content delivered by download only
@@ -545,9 +545,9 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
     Multiple_component_retail_product_loose("SE", "Multiple-component retail product, loose"),
 
     /**
-     * Multiple component product where subsidiary product part(s) is/are supplied as enclosures to the primary part, eg
-     * a book with a CD packaged in a sleeve glued within the back cover. Format of product components must be given in
-     * &lt;ProductPart&gt;
+     * Multiple component product where subsidiary product part(s) is / are supplied as enclosures to the primary part,
+     * eg a book with a CD packaged in a sleeve glued within the back cover. Format of product components must be given
+     * in &lt;ProductPart&gt;
      */
     Multiple_component_retail_product_part_s("SF", "Multiple-component retail product, part(s) enclosed"),
 

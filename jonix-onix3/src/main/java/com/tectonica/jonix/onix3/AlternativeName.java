@@ -299,9 +299,10 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in
      * normal order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel
      * names for a single organization in multiple languages (<i>eg</i>&nbsp;‘World Health Organization’ and
-     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional
-     * for a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
-     * repeated.
+     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>) or scripts. The <i>language</i> attribute
+     * is optional for a single instance of &lt;CorporateName&gt;, but must be included in each instance if
+     * &lt;CorporateName&gt; is repeated. If any two or more repeats are in the same language but different scripts,
+     * each instance of <em>every</em> language must also carry the <i>textscript</i> attribute.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -434,9 +435,11 @@ public class AlternativeName implements OnixSuperComposite, Serializable {
      * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with
      * the element used for alphabetical sorting placed first. Optional: see Group&nbsp;P.7 introductory text for valid
      * options. Repeatable, to provide parallel names for a single organization in multiple languages
-     * (<i>eg</i>&nbsp;‘Polar Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The
-     * <i>language</i> attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but must be
-     * included in each instance if &lt;CorporateNameInverted&gt; is repeated.
+     * (<i>eg</i>&nbsp;‘Polar Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>) or
+     * scripts. The <i>language</i> attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but
+     * must be included in each instance if &lt;CorporateNameInverted&gt; is repeated. If any two or more repeats are in
+     * the same language but different scripts, each instance of <em>every</em> language must also carry the
+     * <i>textscript</i> attribute..
      * </p>
      * JONIX adds: this list may be empty
      */

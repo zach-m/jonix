@@ -40,8 +40,8 @@ import java.util.function.Consumer;
  * <p>
  * The publishing detail block covers data Groups P.19 to P.21, carrying information on the publisher(s), ‘global’
  * publishing status, and rights attaching to a product. The block as a whole is non-repeating. It is mandatory in any
- * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an update
- * notice which carries only those blocks in which changes have occurred.
+ * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a partial
+ * update (‘block update’) which carries only those blocks in which changes have occurred.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -215,9 +215,9 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * An optional group of data elements which together identify an imprint or brand under which the product is
-     * marketed. The composite must carry either a name identifier or a name or both, and is repeatable to specify
-     * multiple imprints or brands.
+     * An optional group of data elements which together identify an imprint or brand under which the product is placed
+     * on the market. The composite must carry at least one of a name identifier, a name or an inverted name, and is
+     * repeatable to specify multiple imprints or brands.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -300,8 +300,8 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * <p>
      * An optional group of data elements which together identify an entity which is associated with the publishing of a
      * product. The composite allows additional publishing roles to be introduced without adding new fields. Each
-     * occurrence of the composite must carry a publishing role code and either a name identifier or a name or both, and
-     * the composite is repeatable in order to identify multiple entities.
+     * occurrence of the composite must carry a publishing role code and at least one of a name identifier, a name or an
+     * inverted name, and the composite is repeatable in order to identify multiple entities.
      * </p>
      * JONIX adds: this list may be empty
      */

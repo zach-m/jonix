@@ -81,7 +81,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProductAvailability&gt; from the schema author:
  *
- * The availability of the product from a particular supplier
+ * Availability of the product from a particular supplier
  *
  * This tag may be included in the following composites:
  * <ul>

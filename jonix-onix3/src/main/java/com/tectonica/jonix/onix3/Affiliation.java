@@ -23,6 +23,7 @@ import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextScripts;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -35,8 +36,11 @@ import java.util.function.Consumer;
  * <h1>Affiliation</h1>
  * <p>
  * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>, and&nbsp;–
- * if the &lt;ProfessionalPosition&gt; element is also present&nbsp;– where the contributor held that position. Optional
- * and non-repeating.
+ * if the &lt;ProfessionalPosition&gt; element is also present&nbsp;– where the contributor held that position.
+ * Optional, and repeatable to provide parallel text in multiple languages or scripts. The <i>language</i> attribute is
+ * optional for a single instance of &lt;Affiliation&gt;, but must be included in each instance if &lt;Affilition&gt; is
+ * repeated. If any two or more repeats are in the same language but different scripts, each instance of <em>every</em>
+ * language must also carry the textscript attribute.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -53,11 +57,11 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Cardinality</td>
- * <td>0&#8230;1</td>
+ * <td>0&#8230;n</td>
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language</td>
+ * <td>language, textscript</td>
  * </tr>
  * <tr>
  * <td>Example</td>
@@ -67,7 +71,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;Affiliation&gt; from the schema author:
  *
- * Name of an organization to which a contributor is professionally affiliated
+ * Name of an organization to which a contributor is professionally affiliated &#9679; Added textscript attribute at
+ * revision 3.1.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -75,6 +80,10 @@ import java.util.function.Consumer;
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link Affiliation}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
  * {@link Affiliation}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
@@ -112,6 +121,8 @@ public class Affiliation implements OnixElement<String>, Serializable {
     public RecordSourceTypes sourcetype;
 
     public Languages language;
+
+    public TextScripts textscript;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -152,6 +163,7 @@ public class Affiliation implements OnixElement<String>, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
 
         value = JPU.getContentAsString(element);
     }

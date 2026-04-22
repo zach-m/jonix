@@ -45,7 +45,7 @@ interface CodeList248 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist248">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist248">ONIX
  *      Codelist 248 in Reference Guide</a>
  */
 public enum SpecificationDetails implements OnixCodelist, CodeList248 {
@@ -90,7 +90,7 @@ public enum SpecificationDetails implements OnixCodelist, CodeList248 {
     Printed_CMYK("B004", "Printed CMYK"),
 
     /**
-     * Printed 'premium' or high-fidelity / high resolution CMYK (where different from 'Printed CMYK', and the
+     * Printed 'premium' or high fidelity / high resolution CMYK (where different from 'Printed CMYK', and the
      * manufacturer offers two quality settings)
      */
     Printed_higher_quality_CMYK("B005", "Printed higher-quality CMYK"),
@@ -101,7 +101,7 @@ public enum SpecificationDetails implements OnixCodelist, CodeList248 {
     Printed_with_bleed("B006", "Printed with bleed"),
 
     /**
-     * Printed 'premium' or high-fidelity / high resolution monochrome (where different from 'Printed monochrome', and
+     * Printed 'premium' or high fidelity / high resolution monochrome (where different from 'Printed monochrome', and
      * the manufacturer offers two quality settings)
      */
     Printed_higher_quality_monochrome("B007", "Printed higher-quality monochrome");

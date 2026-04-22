@@ -34,16 +34,20 @@ import java.util.function.Consumer;
 /**
  * <h1>Product form feature description</h1>
  * <p>
- * If the &lt;ProductFormFeatureType&gt; requires free text rather than a code value, or if the code in
+ * If the &lt;ProductFormFeatureType&gt; requires free text rather than a coded value, or if the code in
  * &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text description may be added.
  * Optional, and repeatable to provide parallel descriptive text in multiple languages. The <i>language</i> attribute is
  * optional for a single instance of &lt;ProductFormFeatureDescription&gt;, but must be included in each instance if
  * &lt;ProductFormFeatureDescription&gt; is repeated.
  * </p>
+ * <p>
+ * Note for most features, the suggested maximum length of the description is 1000 characters, but the text may be up to
+ * 10,000 characters for GPS coordinates supplied for EUDR compliance.
+ * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text, suggested maximum length 10,000 characters</td>
+ * <td>Variable length text, suggested maximum length 1000 or 10,000 characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -115,7 +119,7 @@ public class ProductFormFeatureDescription implements OnixElement<String>, Seria
      * This is the raw content of ProductFormFeatureDescription. Could be null if {@code exists() == false}. Use
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text, suggested maximum length 10,000 characters
+     * Raw Format: Variable length text, suggested maximum length 1000 or 10,000 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

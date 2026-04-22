@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -292,7 +292,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * In UK and IE, a category of paperback characterized largely by size (usually in traditional hardback dimensions),
-     * and often used for paperback originals or retailer/travel/export-exclusives; use with Product Form code BC
+     * and often used for paperback originals or retailer / travel / export-exclusives; use with Product Form code BC
      */
     Trade_paperback_UK("B106", "Trade paperback (UK)"),
 
@@ -1132,7 +1132,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Lenticular_images("B751", "Lenticular images"),
 
     /**
-     * Stereoscopic 3D effect (eg of images) as viewed through red/green filters
+     * Stereoscopic 3D effect (eg of images) as viewed through red / green filters
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -1394,7 +1394,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     TCR("E111", "TCR"),
 
     /**
-     * Text file format [File extension .txt]. Typically ASCII or Unicode UTF-8/16
+     * Text file format [File extension .txt]. Typically ASCII or Unicode UTF-8 / 16
      */
     TXT("E112", "TXT"),
 
@@ -1606,7 +1606,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     EPUB_A("E150", "EPUB/A"),
 
     /**
-     * DAISY/APH Braille file standard based on ePUB (formerly known as eBRF)
+     * DAISY / APH Braille file standard based on EPUB (formerly known as eBRF)
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -1814,12 +1814,12 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Wall_calendar("P106", "Wall calendar"),
 
     /**
-     * Usually undated. Use with Product Form code PC or PF, and can be combined with other calendar/diary type codes
+     * Usually undated. Use with Product Form code PC or PF, and can be combined with other calendar / diary type codes
      */
     Perpetual_calendar_or_diary("P107", "Perpetual calendar or diary"),
 
     /**
-     * Use with Product Form code PC, and can be combined with other calendar/diary type codes
+     * Use with Product Form code PC, and can be combined with other calendar / diary type codes
      */
     Advent_calendar("P108", "Advent calendar"),
 
@@ -1830,7 +1830,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * Mid-year diary, start and end aligned with the academic year. Use with Product Form code PC or PF, and can be
-     * combined with other calendar/diary type codes
+     * combined with other calendar / diary type codes
      */
     Student_or_Academic_calendar_or_diary("P110", "Student or Academic calendar or diary"),
 
@@ -1967,7 +1967,7 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Hardback_stationery("P201", "Hardback (stationery)"),
 
     /**
-     * Stationery item in paperback/softback book format
+     * Stationery item in paperback / softback book format
      */
     Paperback_softback_stationery("P202", "Paperback / softback (stationery)"),
 
@@ -2039,14 +2039,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * Or subtitles, where visibility may be controlled by the viewer. Use &lt;Language&gt; for the language of the
-     * captions/subtitles
+     * captions / subtitles
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Closed_captions("V210", "Closed captions"),
 
     /**
-     * 'Burnt-in' or hard captions or subtitles. Use &lt;Language&gt; for the language of the captions/subtitles
+     * 'Burnt-in' or hard captions or subtitles. Use &lt;Language&gt; for the language of the captions / subtitles
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -2068,10 +2068,10 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Sign_language_interpretation("V213", "Sign language interpretation"),
 
     /**
-     * Closed or open captions/subtitles include descriptions of non-dialogue audio (eg background sounds, music,
+     * Closed or open captions / subtitles include descriptions of non-dialogue audio (eg background sounds, music,
      * speaker identification) in addition to dialogue. Use in combination with V210 or V211. Use V210, V211 alone for
-     * captions/subtitles that include only dialogue. In some markets, textual description of audio is termed 'subtitles
-     * for the deaf and hard of hearing' (SDH)
+     * captions / subtitles that include only dialogue. In some markets, textual description of audio is termed
+     * 'subtitles for the deaf and hard of hearing' (SDH)
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -2096,21 +2096,21 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * Primary material composition (eg of kit or puzzle pieces, of gameplay tokens or tiles) is wood or has wooden
-     * pieces/parts
+     * pieces / parts
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Wooden("Z101", "Wooden"),
 
     /**
-     * Plastic or plastic pieces/parts
+     * Plastic or plastic pieces / parts
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Plastic("Z102", "Plastic"),
 
     /**
-     * Card or board pieces/parts
+     * Card or board pieces / parts
      * <p>
      * JONIX adds: Not included in Onix2
      */

@@ -37,18 +37,20 @@ import java.util.function.Consumer;
  * <p>
  * A short free-text description of a version or edition. Optional, and repeatable if parallel text is provided in
  * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;EditionStatement&gt;, but
- * must be included in each instance if &lt;EditionStatement&gt; is repeated. When used, an &lt;EditionStatement&gt;
- * must be complete in itself, <i>ie</i>&nbsp;it should not be treated as merely supplementary to an &lt;EditionType&gt;
- * or an &lt;EditionNumber&gt;, nor as a replacement for them. Appropriate edition type and number must also be sent,
- * for indexing and retrieval. An &lt;EditionStatement&gt; should be strictly limited to describing features of the
- * content of the edition, and should <em>not</em> include aspects such as rights or market restrictions which are
- * properly covered elsewhere in the ONIX record.
+ * must be included in each instance if &lt;EditionStatement&gt; is repeated.
+ * </p>
+ * <p>
+ * When used, an &lt;EditionStatement&gt; must be complete in itself, <i>ie</i>&nbsp;it should not be treated as merely
+ * supplementary to an &lt;EditionType&gt; or an &lt;EditionNumber&gt;, nor as a replacement for them. Appropriate
+ * edition type and number must also be sent, for indexing and retrieval. An &lt;EditionStatement&gt; should be strictly
+ * limited to describing features of the content of the edition, and should <em>not</em> include aspects such as rights
+ * or market restrictions which are properly covered elsewhere in the ONIX record.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML, XML, JSON within ONIX text fields</td>
+ * XHTML, multilingual text, HTML, XML, JSON</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -121,7 +123,7 @@ public class EditionStatement implements OnixElement<String>, Serializable {
      * instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML, XML, JSON within ONIX text fields
+     * Using XHTML, multilingual text, HTML, XML, JSON
      * <p>
      * (type: XHTML)
      */

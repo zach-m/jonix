@@ -43,7 +43,7 @@ interface CodeList176 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist176">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist176">ONIX
  *      Codelist 176 in Reference Guide</a>
  */
 public enum OperatingSystems implements OnixCodelist, CodeList176 {
@@ -76,8 +76,8 @@ public enum OperatingSystems implements OnixCodelist, CodeList176 {
     Mac_OS("05", "Mac OS"),
 
     /**
-     * Proprietary 'OS X' operating system supplied by Apple on Macintosh computers from 2001/2002. Deprecated - use
-     * code 13 for all Mac OS versions
+     * Proprietary 'OS X' operating system supplied by Apple on Macintosh computers from 2001-02. Deprecated - use code
+     * 13 for all Mac OS versions
      */
     Mac_OS_X("06", "Mac OS X"),
 

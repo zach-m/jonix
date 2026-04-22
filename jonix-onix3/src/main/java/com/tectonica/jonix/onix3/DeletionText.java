@@ -34,11 +34,12 @@ import java.util.function.Consumer;
 /**
  * <h1>Reason for deletion</h1>
  * <p>
- * Free text which indicates the reason why an ONIX record is being deleted. Optional and repeatable, and may occur only
- * when the &lt;NotificationType&gt; element carries the code value 05. The <i>language</i> attribute is optional for a
- * single instance of &lt;DeletionText&gt;, but must be included in each instance if &lt;DeletionText&gt; is repeated.
- * Note that it refers to the reason why the <em>record</em> is being deleted, not the reason why a <em>product</em> has
- * been ‘deleted’ (in industries which use this terminology when a product is withdrawn).
+ * Free text which indicates the reason why an ONIX record is being deleted. Optional, and repeatable to provide
+ * parallel descriptive text in multiple languages. It may occur only when the &lt;NotificationType&gt; element carries
+ * the code value 05. The <i>language</i> attribute is optional for a single instance of &lt;DeletionText&gt;, but must
+ * be included in each instance if &lt;DeletionText&gt; is repeated. Note that it refers to the reason why the
+ * <em>record</em> is being deleted, not the reason why a <em>product</em> has been ‘deleted’ (in industries which use
+ * this terminology when a product is withdrawn).
  * </p>
  * <p>
  * A product cancellation or abandonment prior to publication, or a product becoming unavailable (<i>eg</i>&nbsp;as a

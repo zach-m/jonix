@@ -33,8 +33,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Sender contact e‑mail address</h1>
  * <p>
- * A text field giving the e‑mail address for a contact person in the sender organization who is responsible for the
- * content of the message. Optional and non-repeating.
+ * A text field giving the e‑mail address for a contact person within the sender organization who is responsible for the
+ * content of the message as a whole. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

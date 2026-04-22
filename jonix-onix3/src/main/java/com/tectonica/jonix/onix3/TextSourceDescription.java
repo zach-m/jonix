@@ -35,10 +35,10 @@ import java.util.function.Consumer;
 /**
  * <h1>Text source description</h1>
  * <p>
- * Brief text describing or providing context for the text author or corporate source, at the publisher’s discretion,
- * and intended to be used in addition to &lt;TextAuthor&gt; or &lt;TextSourceCorporate&gt;. Optional, and repeatable to
- * provide parallel descriptions in multiple languages. The <i>language</i> attribute is optional for a single instance
- * of &lt;TextSourceDescription&gt;, but must be included in each instance if &lt;TextSourceDescription&gt; is repeated.
+ * Brief text describing or providing context for the text source name, at the publisher’s discretion, and intended to
+ * be used in addition to the source’s personal or corporate name. Optional, and repeatable to provide parallel
+ * descriptions in multiple languages. The <i>language</i> attribute is optional for a single instance of
+ * &lt;TextSourceDescription&gt;, but must be included in each instance if &lt;TextSourceDescription&gt; is repeated.
  * The description may be used with either a person or corporate name, to draw attention to any aspect of the text
  * source’s background which provides context for the text in &lt;Text&gt;.
  * </p>
@@ -46,7 +46,7 @@ import java.util.function.Consumer;
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML, XML, JSON within ONIX text fields</td>
+ * XHTML, multilingual text, HTML, XML, JSON</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -72,20 +72,26 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;TextSourceDescription&gt; from the schema author:
  *
- * Brief description of a personal or corporate author of a supporting text &#9679; Added at revision 3.0.7
+ * Brief description of a personal or corporate author of a supporting text &#9679; Deprecated within
+ * &lt;TextContent&gt; (but not within &lt;TextSource&gt;) at revision 3.1.3 &#9679; Added at revision 3.0.7
  *
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link TextSource}&gt;</li>
  * <li>&lt;{@link TextContent}&gt;</li>
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link TextSourceDescription}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link TextSourceDescription}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈
  * {@link TextSourceDescription}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSourceDescription}</li>
  * </ul>
  *
- * @since Onix-3.07
+ * @since Onix-3.13
  */
 public class TextSourceDescription implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
@@ -122,7 +128,7 @@ public class TextSourceDescription implements OnixElement<String>, Serializable 
      * {@link #value()} instead if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML, XML, JSON within ONIX text fields
+     * Using XHTML, multilingual text, HTML, XML, JSON
      * <p>
      * (type: XHTML)
      */

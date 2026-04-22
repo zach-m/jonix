@@ -60,7 +60,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt></tt></td>
+ * <td><tt>&lt;x483&gt;06&lt;/x483&gt;</tt> (GLN)</td>
  * </tr>
  * </table>
  * <p/>

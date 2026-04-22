@@ -60,7 +60,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt></tt></td>
+ * <td><tt>&lt;x482&gt;10&lt;/x482&gt;</tt> (Product safety contact)</td>
  * </tr>
  * </table>
  * <p/>

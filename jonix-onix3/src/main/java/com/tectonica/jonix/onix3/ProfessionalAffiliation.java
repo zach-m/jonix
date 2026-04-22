@@ -57,17 +57,22 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProfessionalAffiliation&gt; from the schema author:
  *
- * Details of a professional position held by a contributor to the product at the time of its creation &#9679; Added
- * &lt;AffiliationIdentifier&gt; at release 3.1 &#9679; Modified cardinality of &lt;ProfessionalPosition&gt; at revision
- * 3.0.1
+ * Details of a professional position held by a contributor to the product at the time of its creation &#9679; Modified
+ * cardinality of &lt;Affiliation&gt; at revision 3.1.3 &#9679; Added &lt;AffiliationIdentifier&gt; at release 3.1
+ * &#9679; Modified cardinality of &lt;ProfessionalPosition&gt; at revision 3.0.1
  *
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link TextSource}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link ProfessionalAffiliation}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link ProfessionalAffiliation}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
  * {@link ProfessionalAffiliation}</li>
@@ -140,13 +145,13 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
                 case ProfessionalPosition.shortname:
                     professionalPositions = JPU.addToList(professionalPositions, new ProfessionalPosition(e));
                     break;
-                case Affiliation.refname:
-                case Affiliation.shortname:
-                    affiliation = new Affiliation(e);
-                    break;
                 case AffiliationIdentifier.refname:
                 case AffiliationIdentifier.shortname:
                     affiliationIdentifiers = JPU.addToList(affiliationIdentifiers, new AffiliationIdentifier(e));
+                    break;
+                case Affiliation.refname:
+                case Affiliation.shortname:
+                    affiliations = JPU.addToList(affiliations, new Affiliation(e));
                     break;
                 default:
                     break;
@@ -183,30 +188,16 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
     /**
      * <p>
      * A professional position held by a contributor to the product <em>at the time of its creation</em>. Optional, and
-     * repeatable to provide parallel text in multiple languages. The <i>language</i> attribute is optional for a single
-     * instance of &lt;ProfessionalPosition&gt;, but must be included in each instance if &lt;ProfessionalPosition&gt;
-     * is repeated.
+     * repeatable to provide parallel text in multiple languages or scripts. The <i>language</i> attribute is optional
+     * for a single instance of &lt;ProfessionalPosition&gt;, but must be included in each instance if
+     * &lt;ProfessionalPosition&gt; is repeated. If any two or more repeats are in the same language but different
+     * scripts, each instance of <em>every</em> language must also carry the <i>textscript</i> attribute.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<ProfessionalPosition, String> professionalPositions() {
         _initialize();
         return professionalPositions;
-    }
-
-    private Affiliation affiliation = Affiliation.EMPTY;
-
-    /**
-     * <p>
-     * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>,
-     * and&nbsp;– if the &lt;ProfessionalPosition&gt; element is also present&nbsp;– where the contributor held that
-     * position. Optional and non-repeating.
-     * </p>
-     * JONIX adds: this field is optional
-     */
-    public Affiliation affiliation() {
-        _initialize();
-        return affiliation;
     }
 
     private ListOfOnixDataCompositeWithKey<AffiliationIdentifier, JonixAffiliationIdentifier,
@@ -226,5 +217,23 @@ public class ProfessionalAffiliation implements OnixSuperComposite, Serializable
         affiliationIdentifiers() {
         _initialize();
         return affiliationIdentifiers;
+    }
+
+    private ListOfOnixElement<Affiliation, String> affiliations = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * An organization to which a contributor to the product was affiliated <em>at the time of its creation</em>,
+     * and&nbsp;– if the &lt;ProfessionalPosition&gt; element is also present&nbsp;– where the contributor held that
+     * position. Optional, and repeatable to provide parallel text in multiple languages or scripts. The <i>language</i>
+     * attribute is optional for a single instance of &lt;Affiliation&gt;, but must be included in each instance if
+     * &lt;Affilition&gt; is repeated. If any two or more repeats are in the same language but different scripts, each
+     * instance of <em>every</em> language must also carry the textscript attribute.
+     * </p>
+     * JONIX adds: this list may be empty
+     */
+    public ListOfOnixElement<Affiliation, String> affiliations() {
+        _initialize();
+        return affiliations;
     }
 }

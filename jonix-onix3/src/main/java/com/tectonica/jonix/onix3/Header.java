@@ -36,8 +36,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Header composite</h1>
  * <p>
- * A group of data elements which together constitute a message header. Mandatory in any ONIX for Books message to
- * provide metadata about the message itself, and non-repeating.
+ * A group of data elements which together constitute a message header giving information about the message itself.
+ * Mandatory in any ONIX for Books message, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -57,7 +57,7 @@ import java.util.function.Consumer;
  * Technical notes about &lt;Header&gt; from the schema author:
  *
  * Container for message metadata &#9679; Deprecated &lt;DefaultLanguageOfText&gt;, &lt;DefaultPriceType&gt; and
- * &lt;DefaultCurrency&gt; at release 3.1 &#9679; Modified cardinality of &lt;MessageNote&gt; at revision 3.0.1
+ * &lt;DefaultCurrency&gt; from release 3.1 &#9679; Modified cardinality of &lt;MessageNote&gt; at revision 3.0.1
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -209,8 +209,8 @@ public class Header implements OnixHeader, Serializable {
 
     /**
      * <p>
-     * A group of data elements which together specify the sender of an ONIX for Books message. Mandatory in any ONIX
-     * for Books message, and non-repeating.
+     * A group of data elements which together specify the sender organization of an ONIX for Books message. Mandatory
+     * in any ONIX for Books message, and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */
@@ -237,8 +237,9 @@ public class Header implements OnixHeader, Serializable {
 
     /**
      * <p>
-     * A monotonic sequence number of the messages in a series sent between trading partners, to enable the receiver to
-     * check against gaps and duplicates. Optional and non-repeating.
+     * A monotonic sequence number of the message within a series of messages sent between trading partners. If this
+     * element is used, the initial message sent is numbered 1 and subsequent messages are numbered 2, 3 <i>etc</i>, to
+     * enable the receiver to check against gaps and duplicates in the series. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -252,7 +253,8 @@ public class Header implements OnixHeader, Serializable {
     /**
      * <p>
      * A number which distinguishes any repeat transmissions of a message. If this element is used, the original is
-     * numbered 1 and repeats are numbered 2, 3 <i>etc</i>. Optional and non-repeating.
+     * numbered 1 and retransmissions are numbered 2, 3 <i>etc</i>, while the Message sequence number remains the same
+     * for each repeat. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -319,8 +321,8 @@ public class Header implements OnixHeader, Serializable {
 
     /**
      * <p>
-     * A group of data elements which together specify the addressee of an ONIX for Books message. Optional, and
-     * repeatable if there are several addressees.
+     * A group of data elements which together specify the addressee organization of an ONIX for Books message.
+     * Optional, and repeatable if there are several addressees for the message.
      * </p>
      * JONIX adds: this list may be empty
      */

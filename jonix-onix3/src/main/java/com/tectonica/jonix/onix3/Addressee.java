@@ -36,8 +36,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Addressee composite</h1>
  * <p>
- * A group of data elements which together specify the addressee of an ONIX for Books message. Optional, and repeatable
- * if there are several addressees.
+ * A group of data elements which together specify the addressee organization of an ONIX for Books message. Optional,
+ * and repeatable if there are several addressees for the message.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -178,9 +178,10 @@ public class Addressee implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A group of data elements which together define an identifier of the addressee. The composite is optional, and
+     * A group of data elements which together specify an identifier of the addressee. The composite is optional, and is
      * repeatable if more than one identifier of different types for the same addressee is sent; but <em>either</em> an
-     * &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt; <em>must</em> be included.
+     * &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt; <em>must</em> be included within each
+     * &lt;Addressee&gt; composite.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -196,7 +197,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * <p>
      * The name of the addressee organization, which should always be stated in a standard form agreed with the
      * addressee. Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element <em>or</em> a
-     * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.
+     * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included within the &lt;Addressee&gt; composite.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -209,8 +210,8 @@ public class Addressee implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * Free text giving the name, department, <i>etc</i> for a contact person in the addressee organization to whom the
-     * message is to be directed. Optional and non-repeating.
+     * Free text giving the name, department, <i>etc</i> for a contact person within the addressee organization to whom
+     * the message is to be directed. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -223,8 +224,9 @@ public class Addressee implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A telephone number of the contact person in the addressee organization, wherever possible including the plus sign
-     * and the international dialing code. Optional, and non-repeating.
+     * A telephone number of the contact person within the addressee organization to whom the message is to be directed,
+     * wherever possible including the plus sign (representing the international call prefix) and the international
+     * dialing code for the addressee’s country. Optional, and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -237,8 +239,8 @@ public class Addressee implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A text field giving the e‑mail address for a contact person in the addressee organization. Optional and
-     * non-repeating.
+     * A text field giving the e‑mail address for a contact person within the addressee organization to whom the message
+     * is to be directed. Optional and non-repeating.
      * </p>
      * JONIX adds: this field is optional
      */

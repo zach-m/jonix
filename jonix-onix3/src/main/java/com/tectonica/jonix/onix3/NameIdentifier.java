@@ -62,6 +62,7 @@ import java.util.function.Consumer;
  *
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link TextSource}&gt;</li>
  * <li>&lt;{@link AlternativeName}&gt;</li>
  * <li>&lt;{@link ContributorReference}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
@@ -69,6 +70,10 @@ import java.util.function.Consumer;
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link NameIdentifier}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link NameIdentifier}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈
  * {@link NameIdentifier}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈

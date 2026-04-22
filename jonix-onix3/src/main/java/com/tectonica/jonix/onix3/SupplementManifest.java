@@ -256,12 +256,14 @@ public class SupplementManifest implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which (in combination with any &lt;SalesOutlet&gt; composite) specifies a single overall sequence of
-     * supplements. Optional and non-repeating. It is strongly recommended that each occurrence of the
-     * &lt;SupplementManifest&gt; composite should carry a &lt;SequenceNumber&gt;.
+     * An ordinal number which (in combination with any &lt;SalesOutlet&gt; composite) specifies a single overall
+     * sequence of supplements. Optional and non-repeating. It is strongly recommended that where there are two or more
+     * instances of &lt;SupplementManifest&gt; within &lt;ProductionManifest&gt;, each occurrence of the
+     * &lt;SupplementManifest&gt; composite should carry a &lt;SequenceNumber&gt;. Note that duplicated sequence numbers
+     * are allowed if &lt;SalesOutlet&gt; differs.
      * </p>
      * <p>
-     * Note that with &lt;SalesOutlet&gt; below the provision of vendor-specific supplements can require the use of
+     * Note that with &lt;SalesOutlet&gt; below, the provision of vendor-specific supplements can require the use of
      * duplicate sequence numbers.
      * </p>
      * JONIX adds: this field is optional

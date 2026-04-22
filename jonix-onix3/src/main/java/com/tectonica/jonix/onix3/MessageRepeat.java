@@ -34,7 +34,8 @@ import java.util.function.Consumer;
  * <h1>Message repeat number</h1>
  * <p>
  * A number which distinguishes any repeat transmissions of a message. If this element is used, the original is numbered
- * 1 and repeats are numbered 2, 3 <i>etc</i>. Optional and non-repeating.
+ * 1 and retransmissions are numbered 2, 3 <i>etc</i>, while the Message sequence number remains the same for each
+ * repeat. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

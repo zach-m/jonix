@@ -72,12 +72,17 @@ import java.util.function.Consumer;
  *
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link TextSource}&gt;</li>
  * <li>&lt;{@link AlternativeName}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link LettersAfterNames}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link LettersAfterNames}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈
  * {@link LettersAfterNames}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈
@@ -129,9 +134,9 @@ public class LettersAfterNames implements OnixElement<String>, Serializable {
      */
     public String collationkey;
 
-    public TextScripts textscript;
-
     public Languages language;
+
+    public TextScripts textscript;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -172,8 +177,8 @@ public class LettersAfterNames implements OnixElement<String>, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         collationkey = JPU.getAttribute(element, "collationkey");
-        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
 
         value = JPU.getContentAsString(element);
     }

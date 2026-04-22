@@ -58,7 +58,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProductContact&gt; from the schema author:
  *
- * Details of a organization responsible for answering enquiries about the product &#9679; Added &lt;StreetAddress&gt;,
+ * Details of an organization responsible for answering enquiries about the product &#9679; Added &lt;StreetAddress&gt;,
  * &lt;LocationName&gt;, &lt;PostalCode&gt;, &lt;RegionCode&gt; and &lt;CountryCode&gt; at revision 3.1.2 &#9679; Added
  * &lt;FaxNumber&gt;, changed cardinality of &lt;EmailAddress&gt; at release 3.1 &#9679; Added &lt;TelephoneNumber&gt;
  * at revision 3.0.8 &#9679; Added at revision 3.0.1
@@ -352,9 +352,10 @@ public class ProductContact implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A telephone number of the contact person in the product contact organization who is responsible for the product,
-     * wherever possible including the plus sign and the international dialing code. Optional, and repeatable to provide
-     * multiple numbers for the same contact.
+     * A telephone number of the contact person within the product contact organization who is responsible for the
+     * product, wherever possible including the plus sign (representing the international call prefix) and the
+     * international dialing code for the contact’s country. Optional, and repeatable to provide multiple numbers for
+     * the same contact.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -367,9 +368,10 @@ public class ProductContact implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A fax number for the contact person in the product contact organization who is responsible for the product,
-     * wherever possible including the plus sign and the international dialing code. Optional, and repeatable to provide
-     * multiple numbers for the same contact.
+     * A fax number for the contact person within the product contact organization who is responsible for the product,
+     * wherever possible including the plus sign (representing the international calling prefix) and the international
+     * dialing code for the contact’s country. Optional, and repeatable to provide multiple numbers for the same
+     * contact.
      * </p>
      * JONIX adds: this list may be empty
      */

@@ -257,11 +257,12 @@ public class CitedContent implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of cited content. Optional and non-repeating. It is strongly
-     * recommended that if <em>any</em> occurrence of the &lt;CitedContent&gt; composite of a specific
-     * &lt;CitedContentType&gt; carries a &lt;SequenceNumber&gt;, then all of that type should carry a
-     * &lt;SequenceNumber&gt;&nbsp;– though there is no requirement to number cited content where there is a single
-     * instance of that type.
+     * An ordinal number which specifies a single overall sequence of cited content, which is the preferred order for
+     * display of the various cited contents. Optional and non-repeating. It is strongly recommended that where there
+     * are two or more instances of &lt;CitedContent&gt; of the same specific &lt;CitedContentType&gt; within
+     * &lt;CollateralDetail&gt;, each occurrence of the &lt;CitedContent&gt; composite of that &lt;CitedContentType&gt;
+     * should carry a &lt;SequenceNumber&gt;&nbsp;– though there is no requirement to number cited content where there
+     * is a single instance of &lt;CitedContent&gt; of that particular type.
      * </p>
      * JONIX adds: this field is optional
      */

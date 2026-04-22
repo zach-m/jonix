@@ -23,6 +23,7 @@ import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextScripts;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -35,9 +36,10 @@ import java.util.function.Consumer;
  * <h1>Professional position</h1>
  * <p>
  * A professional position held by a contributor to the product <em>at the time of its creation</em>. Optional, and
- * repeatable to provide parallel text in multiple languages. The <i>language</i> attribute is optional for a single
- * instance of &lt;ProfessionalPosition&gt;, but must be included in each instance if &lt;ProfessionalPosition&gt; is
- * repeated.
+ * repeatable to provide parallel text in multiple languages or scripts. The <i>language</i> attribute is optional for a
+ * single instance of &lt;ProfessionalPosition&gt;, but must be included in each instance if
+ * &lt;ProfessionalPosition&gt; is repeated. If any two or more repeats are in the same language but different scripts,
+ * each instance of <em>every</em> language must also carry the <i>textscript</i> attribute.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -58,7 +60,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language</td>
+ * <td>language, textscript</td>
  * </tr>
  * <tr>
  * <td>Example</td>
@@ -68,7 +70,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProfessionalPosition&gt; from the schema author:
  *
- * 'Job title' held by the contributor at the named affiliated institution
+ * 'Job title' held by the contributor at the named affiliated institution &#9679; Added textscript attribute at
+ * revision 3.1.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -76,6 +79,10 @@ import java.util.function.Consumer;
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link ProfessionalPosition}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
  * {@link ProfessionalPosition}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
@@ -113,6 +120,8 @@ public class ProfessionalPosition implements OnixElement<String>, Serializable {
     public RecordSourceTypes sourcetype;
 
     public Languages language;
+
+    public TextScripts textscript;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -153,6 +162,7 @@ public class ProfessionalPosition implements OnixElement<String>, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
 
         value = JPU.getContentAsString(element);
     }

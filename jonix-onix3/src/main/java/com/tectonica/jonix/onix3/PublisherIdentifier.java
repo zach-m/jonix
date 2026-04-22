@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Publisher identifier composite</h1>
  * <p>
  * An optional group of data elements which together define the identifier of a publisher name. Optional, but mandatory
- * if the &lt;Publisher&gt; composite does not carry a &lt;PublisherName&gt;. The composite is repeatable in order to
- * specify multiple identifiers for the same publisher.
+ * if the &lt;Publisher&gt; composite carries neither a &lt;PublisherName&gt; nor a &lt;PublisherNameInverted&gt;. The
+ * composite is repeatable in order to specify multiple identifiers for the same publisher.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

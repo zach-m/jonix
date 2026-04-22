@@ -38,9 +38,10 @@ import java.util.function.Consumer;
  * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in normal
  * order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel names for a
  * single organization in multiple languages (<i>eg</i>&nbsp;‘World Health Organization’ and
- * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional for
- * a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
- * repeated.
+ * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>) or scripts. The <i>language</i> attribute is
+ * optional for a single instance of &lt;CorporateName&gt;, but must be included in each instance if
+ * &lt;CorporateName&gt; is repeated. If any two or more repeats are in the same language but different scripts, each
+ * instance of <em>every</em> language must also carry the <i>textscript</i> attribute.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -76,6 +77,7 @@ import java.util.function.Consumer;
  *
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link TextSource}&gt;</li>
  * <li>&lt;{@link AlternativeName}&gt;</li>
  * <li>&lt;{@link CopyrightOwner}&gt;</li>
  * <li>&lt;{@link EventSponsor}&gt;</li>
@@ -84,6 +86,10 @@ import java.util.function.Consumer;
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link CorporateName}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link CorporateName}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈
  * {@link CorporateName}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈
@@ -143,9 +149,9 @@ public class CorporateName implements OnixElement<String>, Serializable {
      */
     public String collationkey;
 
-    public TextScripts textscript;
-
     public Languages language;
+
+    public TextScripts textscript;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -186,8 +192,8 @@ public class CorporateName implements OnixElement<String>, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         collationkey = JPU.getAttribute(element, "collationkey");
-        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
 
         value = JPU.getContentAsString(element);
     }

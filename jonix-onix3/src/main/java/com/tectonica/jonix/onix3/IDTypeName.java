@@ -67,8 +67,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;IDTypeName&gt; from the schema author:
  *
- * Type of an identifier - the name of the identifier scheme, used when the identifier comes from a proprietary rather
- * than a standard identifier scheme
+ * Type of a proprietary identifier - the name of the identifier scheme, used when the identifier comes from a
+ * proprietary rather than a standard identifier scheme
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -120,6 +120,10 @@ import java.util.function.Consumer;
  * {@link EventSponsor} ⯈ {@link EventSponsorIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link EventSponsor} ⯈
  * {@link EventSponsorIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link ProfessionalAffiliation} ⯈ {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link ProfessionalAffiliation} ⯈
  * {@link AffiliationIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈
@@ -203,6 +207,10 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link ProductSupply} ⯈ {@link SupplyDetail} ⯈ {@link Price} ⯈ {@link PriceCondition} ⯈
  * {@link ProductIdentifier} ⯈ {@link IDTypeName}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link CollectionIdentifier} ⯈
+ * {@link IDTypeName}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link NameIdentifier} ⯈ {@link IDTypeName}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈ {@link NameIdentifier} ⯈
  * {@link IDTypeName}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link AlternativeName} ⯈
  * {@link NameIdentifier} ⯈ {@link IDTypeName}</li>

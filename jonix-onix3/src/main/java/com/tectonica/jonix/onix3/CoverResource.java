@@ -233,9 +233,11 @@ public class CoverResource implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which (in combination with any &lt;SalesOutlet&gt; composite) specifies a single overall sequence of
-     * cover resources. Optional and non-repeating. It is strongly recommended that each occurrence of the
-     * &lt;CoverResource&gt; composite should carry a &lt;SequenceNumber&gt;.
+     * An ordinal number which (in combination with any &lt;SalesOutlet&gt; composite) specifies a single overall
+     * sequence of cover resources. Optional and non-repeating. It is strongly recommended that where there are two or
+     * more instances of &lt;CoverResource&gt; within &lt;CoverManifest&gt;, each occurrence of the
+     * &lt;CoverResource&gt; composite should carry a &lt;SequenceNumber&gt;. Note that duplicated sequence numbers are
+     * allowed if &lt;SalesOutlet&gt; differs.
      * </p>
      * <p>
      * Note that with &lt;SalesOutlet&gt; below, the provision of vendor-specific resources can require the use of

@@ -61,7 +61,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;TextContent&gt; from the schema author:
  *
- * Details of a supporting text, primarily for marketing and promotional purposes &#9679; Added
+ * Details of a supporting text, primarily for marketing and promotional purposes &#9679; Added &lt;TextSource&gt;,
+ * deprecated &lt;TextAuthor&gt;, &lt;TextSourceCorporate&gt; at revision 3.1.3 &#9679; Added
  * &lt;EpubUsageConstraint&gt; and &lt;EpubLicense&gt; at revision 3.1.1 &#9679; Added &lt;SequenceNumber&gt; and
  * &lt;TextSourceLink&gt; at release 3.1 &#9679; Added &lt;TextSourceDescription&gt; at revision 3.0.7 &#9679; Added
  * &lt;Territory&gt;, &lt;ReviewRating&gt; at revision 3.0.3 &#9679; Modified cardinality of &lt;SourceTitle&gt; at
@@ -170,6 +171,10 @@ public class TextContent implements OnixSuperComposite, Serializable {
                 case TextSourceDescription.shortname:
                     textSourceDescriptions = JPU.addToList(textSourceDescriptions, new TextSourceDescription(e));
                     break;
+                case TextSource.refname:
+                case TextSource.shortname:
+                    textSources = JPU.addToList(textSources, new TextSource(e));
+                    break;
                 case SourceTitle.refname:
                 case SourceTitle.shortname:
                     sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
@@ -252,9 +257,10 @@ public class TextContent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The text specified in the &lt;TextType&gt; element. Mandatory in each occurrence of the &lt;TextContent&gt;
-     * composite, and repeatable when essentially identical text is supplied in multiple languages. The <i>language</i>
-     * attribute is optional for a single instance of &lt;Text&gt;, but must be included in each instance if
-     * &lt;Text&gt; is repeated.
+     * composite, and repeatable when essentially identical text is supplied in multiple languages or scripts. The
+     * <i>language</i> attribute is optional for a single instance of &lt;Text&gt;, but must be included in each
+     * instance if &lt;Text&gt; is repeated. If any two or more repeats are in the same language but different scripts,
+     * each instance of <em>every</em> language must also carry the <i>textscript</i> attribute.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -267,11 +273,12 @@ public class TextContent implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of supporting texts. Optional and non-repeating. It is
-     * strongly recommended that if <em>any</em> occurrence of the &lt;TextContent&gt; composite of a specific
-     * &lt;TextType&gt; carries a &lt;SequenceNumber&gt;, then all of that type should carry a
-     * &lt;SequenceNumber&gt;&nbsp;– though there is no requirement to number supporting texts where there is a single
-     * instance of that type.
+     * An ordinal number which specifies a single overall sequence of supporting texts, which is the preferred order of
+     * display for the various supporting texts. Optional and non-repeating. It is strongly recommended that where there
+     * are two or more instances of &lt;TextContent&gt; of the same specific &lt;TextType&gt; within
+     * &lt;CollateralDetail&gt;, each occurrence of the &lt;TextContent&gt; composite of that &lt;TextType&gt; should
+     * carry a unique and sequential &lt;SequenceNumber&gt;&nbsp;– though there is no requirement to number supporting
+     * texts where there is a single instance of &lt;TextContent&gt; of that particular type.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -329,7 +336,8 @@ public class TextContent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The name of a company or corporate body responsible for the text sent in the &lt;Text&gt; element. Optional and
-     * non-repeating.
+     * non-repeating, but may not be used if &lt;TextSource&gt; is present. Deprecated&nbsp;– where possible, use the
+     * &lt;TextSource&gt; composite instead.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -343,7 +351,8 @@ public class TextContent implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i>&nbsp;if it is a review or promotional
-     * quote. Optional, and repeatable if the text is jointly authored.
+     * quote. Optional, and repeatable if the text is jointly authored, but may not be used if &lt;TextSource&gt; is
+     * present. Deprecated&nbsp;– where possible, use the &lt;TextSource&gt; composite instead.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -358,16 +367,37 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * <p>
      * Brief text describing or providing context for the text author or corporate source, at the publisher’s
      * discretion, and intended to be used in addition to &lt;TextAuthor&gt; or &lt;TextSourceCorporate&gt;. Optional,
-     * and repeatable to provide parallel descriptions in multiple languages. The <i>language</i> attribute is optional
-     * for a single instance of &lt;TextSourceDescription&gt;, but must be included in each instance if
-     * &lt;TextSourceDescription&gt; is repeated. The description may be used with either a person or corporate name, to
-     * draw attention to any aspect of the text source’s background which provides context for the text in &lt;Text&gt;.
+     * and repeatable to provide parallel descriptions in multiple languages, but may not be used if &lt;TextSource&gt;
+     * is present. The <i>language</i> attribute is optional for a single instance of &lt;TextSourceDescription&gt;, but
+     * must be included in each instance if &lt;TextSourceDescription&gt; is repeated. The description may be used with
+     * either a person or corporate name, to draw attention to any aspect of the text source’s background which provides
+     * context for the text in &lt;Text&gt;. Deprecated in this context&nbsp;– where possible, use the
+     * &lt;TextSource&gt; composite instead.
      * </p>
      * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<TextSourceDescription, String> textSourceDescriptions() {
         _initialize();
         return textSourceDescriptions;
+    }
+
+    private ListOfOnixComposite<TextSource> textSources = JPU.emptyListOfOnixComposite(TextSource.class);
+
+    /**
+     * <p>
+     * Group of elements providing a personal or corporate name for the authorship of the supporting text, typically
+     * where the text is a review of the product. Optional, and repeatable to provide multiple names, but may only be
+     * used if &lt;TextAuthor&gt;, &lt;TextSourceCorporate&gt; and &lt;TextSourceDescription&gt; (at P.14.5a) are
+     * omitted.
+     * </p>
+     * <p>
+     * The structure of this composite is a subset of the structure of &lt;Contributor&gt; composite.
+     * </p>
+     * JONIX adds: this list may be empty
+     */
+    public ListOfOnixComposite<TextSource> textSources() {
+        _initialize();
+        return textSources;
     }
 
     private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();

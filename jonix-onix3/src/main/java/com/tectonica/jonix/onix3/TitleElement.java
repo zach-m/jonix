@@ -35,17 +35,17 @@ import java.util.function.Consumer;
  * <h1>Title element composite (collection)</h1>
  * <p>
  * A group of data elements which together represent an element of a collection title. At least one title element is
- * mandatory in each occurrence of the &lt;TitleDetail&gt; composite. The composite is repeatable with different
- * sequence numbers and/or title element levels. An instance of the &lt;TitleElement&gt; composite must include at least
- * one of: &lt;PartNumber&gt;; &lt;YearOfAnnual&gt;; &lt;TitleText&gt;, &lt;NoPrefix/&gt; together with
- * &lt;TitleWithoutPrefix&gt;, or &lt;TitlePrefix&gt; together with &lt;TitleWithoutPrefix&gt;. In other words, it
- * <em>must</em> carry <em>either</em> the text of a title element <em>or</em> a part or year designation, and it
- * <em>may</em> carry both.
+ * mandatory in each occurrence of the &lt;TitleDetail&gt; composite. The composite is repeatable, normally with
+ * different sequence numbers and/or title element levels that indicate the structure of the collection title. An
+ * instance of the &lt;TitleElement&gt; composite must include at least one of: &lt;PartNumber&gt;;
+ * &lt;YearOfAnnual&gt;; &lt;TitleText&gt;, &lt;NoPrefix/&gt; together with &lt;TitleWithoutPrefix&gt;, or
+ * &lt;TitlePrefix&gt; together with &lt;TitleWithoutPrefix&gt;. In other words, it <em>must</em> carry <em>either</em>
+ * the text of a title element <em>or</em> a part or year designation, and it <em>may</em> carry both.
  * </p>
  * <p>
  * A title element must be designated as belonging to <em>product level</em>, <em>collection level</em>, or
- * <em>subcollection level</em> (the first of these may not occur in a title element representing a <em>collective</em>
- * identity, and the last-named may only occur in the case of a multi-level collection).
+ * <em>sub-collection level</em> <i>etc</i> (the first of these may not occur in a title element representing a
+ * <em>collective</em> identity, and the last-named may only occur in the case of a multi-level collection).
  * </p>
  * <p>
  * In the simplest case, title detail sent in a &lt;Collection&gt; composite will consist of a single title element, at
@@ -70,7 +70,7 @@ import java.util.function.Consumer;
  * Technical notes about &lt;TitleElement&gt; from the schema author:
  *
  * Details of one element (or part) of a title of a product, collection or content item &#9679; Deprecated
- * &lt;TitleText&gt; at release 3.1 &#9679; Added &lt;NoPrefix&gt; at revision 3.0.2 &#9679; Added
+ * &lt;TitleText&gt; at release 3.1 &#9679; Added &lt;NoPrefix/&gt; at revision 3.0.2 &#9679; Added
  * &lt;SequenceNumber&gt; at revision 3.0.1
  *
  * This tag may be included in the following composites:
@@ -210,8 +210,8 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
 
     /**
      * <p>
-     * An ONIX code indicating the level of a title element: collection level, sub-collection level, or product level.
-     * Mandatory in each occurrence of the &lt;TitleElement&gt; composite, and non-repeating.
+     * An ONIX code indicating the level of a title element: collection level, sub-collection level <i>etc</i>, or
+     * product level. Mandatory in each occurrence of the &lt;TitleElement&gt; composite, and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */
@@ -252,9 +252,11 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of title elements, which is the preferred order for display of
-     * the various title elements when constructing a complete title. Optional and non-repeating. It is strongly
-     * recommended that each occurrence of the &lt;TitleElement&gt; composite should carry a &lt;SequenceNumber&gt;.
+     * An ordinal number which specifies a single overall sequence of collection title elements, which is the preferred
+     * order for display of the various title elements when constructing a complete collection title. Optional and
+     * non-repeating. It is strongly recommended that where there are two or more instances of &lt;TitleElement&gt;
+     * within &lt;TitleDetail&gt;, each occurrence of the &lt;TitleElement&gt; composite should carry a unique and
+     * sequential &lt;SequenceNumber&gt;.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -327,7 +329,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * sending system cannot reliably provide prefixes that are ignored for sorting purposes in a separate data element.
      * If the system <em>can</em> reliably separate prefixes, it should state whether a prefix is present (using
      * &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
-     * &lt;TitleWithoutPrefix&gt;).
+     * &lt;TitleWithoutPrefix&gt;), and &lt;TitleText&gt; should not be used.
      * </p>
      * JONIX adds: this field is optional
      */

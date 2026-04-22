@@ -41,7 +41,7 @@ public class JonixWebsite implements JonixStruct, Serializable {
 
     /**
      * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML, XML, JSON within ONIX text fields
+     * Using XHTML, multilingual text, HTML, XML, JSON
      * <p>
      * (type: XHTML)
      */

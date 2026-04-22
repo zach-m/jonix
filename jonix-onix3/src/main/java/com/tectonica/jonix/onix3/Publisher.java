@@ -63,8 +63,9 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;Publisher&gt; from the schema author:
  *
- * Details of an organization responsible for publishing the product &#9679; Modified cardinality of
- * &lt;PublisherName&gt; at release 3.1 &#9679; Added &lt;Funding&gt; at revision 3.0.3
+ * Details of an organization responsible for publishing the product &#9679; Added &lt;PublisherNameInverted&gt; at
+ * revision 3.1.3 &#9679; Modified cardinality of &lt;PublisherName&gt; at release 3.1 &#9679; Added &lt;Funding&gt; at
+ * revision 3.0.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -147,6 +148,10 @@ public class Publisher implements OnixSuperComposite, Serializable {
                 case PublisherName.shortname:
                     publisherNames = JPU.addToList(publisherNames, new PublisherName(e));
                     break;
+                case PublisherNameInverted.refname:
+                case PublisherNameInverted.shortname:
+                    publisherNameInverteds = JPU.addToList(publisherNameInverteds, new PublisherNameInverted(e));
+                    break;
                 case Funding.refname:
                 case Funding.shortname:
                     fundings = JPU.addToList(fundings, new Funding(e));
@@ -204,8 +209,9 @@ public class Publisher implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An optional group of data elements which together define the identifier of a publisher name. Optional, but
-     * mandatory if the &lt;Publisher&gt; composite does not carry a &lt;PublisherName&gt;. The composite is repeatable
-     * in order to specify multiple identifiers for the same publisher.
+     * mandatory if the &lt;Publisher&gt; composite carries neither a &lt;PublisherName&gt; nor a
+     * &lt;PublisherNameInverted&gt;. The composite is repeatable in order to specify multiple identifiers for the same
+     * publisher.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -219,17 +225,37 @@ public class Publisher implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * The name of an entity associated with the publishing of a product. Mandatory if there is no publisher identifier
-     * in an occurrence of the &lt;Publisher&gt; composite, and optional if a publisher identifier is included.
-     * Repeatable if the entity is officially known by names in multiple languages. The <i>language</i> attribute is
-     * optional for a single instance of &lt;PublisherName&gt;, but must be included in each instance if
-     * &lt;PublisherName&gt; is repeated.
+     * The name of an entity associated with the publishing of a product, presented in inverted order, with the element
+     * used for alphabetical sorting placed first. Mandatory if there is neither a publisher identifier nor a
+     * &lt;PublisherName&gt; but otherwise optional, and repeatable if the entty is officially known by names in
+     * multiple languages or scripts. The <i>language</i> attribute is optional for a single instance of
+     * &lt;PublisherName&gt;, but must be included in each instance if &lt;PublisherName&gt; is repeated. If any two or
+     * more repeats are in the same language but different scripts, each instance of <em>every</em> language must also
+     * carry the <i>textscript</i> attribute.
      * </p>
      * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<PublisherName, String> publisherNames() {
         _initialize();
         return publisherNames;
+    }
+
+    private ListOfOnixElement<PublisherNameInverted, String> publisherNameInverteds = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of an entity associated with the publishing of a product, presented in inverted order, with the element
+     * used for alphabetical sorting placed first. Optional, and repeatable if the entity is officially known by names
+     * in multiple languages or scripts. The <i>language</i> attribute is optional for a single instance of
+     * &lt;PublisherNameInverted&gt;, but must be included in each instance if &lt;PublisherNameInverted&gt; is
+     * repeated. If any two or more repeats are in the same language but different scripts, each instance of
+     * <em>every</em> language must also carry the <i>textscript</i> attribute.
+     * </p>
+     * JONIX adds: this list may be empty
+     */
+    public ListOfOnixElement<PublisherNameInverted, String> publisherNameInverteds() {
+        _initialize();
+        return publisherNameInverteds;
     }
 
     private ListOfOnixComposite<Funding> fundings = JPU.emptyListOfOnixComposite(Funding.class);

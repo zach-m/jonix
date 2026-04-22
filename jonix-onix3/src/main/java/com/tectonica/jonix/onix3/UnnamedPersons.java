@@ -35,8 +35,8 @@ import java.util.function.Consumer;
  * <h1>Unnamed person(s)</h1>
  * <p>
  * An ONIX code allowing a positive indication to be given when authorship is unknown or anonymous, or when as a matter
- * of editorial policy only a limited number of contributors are named. Optional and non-repeating: see Group&nbsp;P.7
- * introductory text for valid options.
+ * of editorial policy only a limited number of contributors are named, or when the contributor is artificial. Optional
+ * and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -72,10 +72,15 @@ import java.util.function.Consumer;
  *
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link TextSource}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link UnnamedPersons}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link UnnamedPersons}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Contributor} ⯈ {@link UnnamedPersons}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link Contributor} ⯈ {@link UnnamedPersons}</li>
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈

@@ -35,7 +35,8 @@ import java.util.function.Consumer;
  * <h1>Corporate source of text</h1>
  * <p>
  * The name of a company or corporate body responsible for the text sent in the &lt;Text&gt; element. Optional and
- * non-repeating.
+ * non-repeating, but may not be used if &lt;TextSource&gt; is present. Deprecated&nbsp;– where possible, use the
+ * &lt;TextSource&gt; composite instead.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -66,7 +67,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;TextSourceCorporate&gt; from the schema author:
  *
- * Name of organization or corporate author of a supporting text
+ * Name of organization or corporate author of a supporting text &#9679; Deprecated from revision 3.1.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -78,7 +79,10 @@ import java.util.function.Consumer;
  * {@link TextSourceCorporate}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSourceCorporate}</li>
  * </ul>
+ *
+ * @deprecated
  */
+@Deprecated
 public class TextSourceCorporate implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 

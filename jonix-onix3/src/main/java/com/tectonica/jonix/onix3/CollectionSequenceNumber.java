@@ -41,7 +41,7 @@ import java.util.function.Consumer;
  * <p>
  * <span style="color: deeppink; font-weight: bold">New from 3.0.4</span> A hyphen may be used in place of an integer
  * within a multi-level number, where a particular level of the hierarchy is unnumbered, for example -.3 where a product
- * is the third in a sub-collection, and the sub-collections are in no particular order within the collection.
+ * is the third in a sub-collection, but multiple sub-collections are in no particular order within the collection.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -63,7 +63,8 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td><tt>&lt;CollectionSequenceNumber&gt;2.4&lt;/CollectionSequenceNumber&gt;</tt></td>
+ * <td><tt>&lt;CollectionSequenceNumber&gt;2.4&lt;/CollectionSequenceNumber&gt;</tt> (fourth product in second
+ * sub-collection within a collection)</td>
  * </tr>
  * </table>
  * <p/>

@@ -36,7 +36,8 @@ import java.util.function.Consumer;
  * <p>
  * An ONIX code which indicates a content type included in a product. The element is intended to be used in particular
  * for digital products, to specify content types other than the primary type, or to list content types when none is
- * singled out as the primary type. Optional, and repeatable to list multiple content types.
+ * singled out as the primary type&nbsp;– but use with physical products is not precluded. Optional, and repeatable to
+ * list multiple content types.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

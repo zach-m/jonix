@@ -35,7 +35,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Record source identifier composite</h1>
  * <p>
- * A group of data elements which together define an identifier of the organization which is the source of the ONIX
+ * A group of data elements which together specify an identifier of the organization which is the source of the ONIX
  * record. Optional, and repeatable in order to send multiple identifiers for the same organization.
  * </p>
  * <table border='1' cellpadding='3'>

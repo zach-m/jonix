@@ -43,7 +43,7 @@ interface CodeList81 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
@@ -56,7 +56,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
 
     /**
      * E-publication contains a significant number of actionable (clickable) cross-references, hyperlinked notes and
-     * annotations, or with other actionable links between largely textual elements (eg quiz/test questions, 'choose
+     * annotations, or with other actionable links between largely textual elements (eg quiz / test questions, 'choose
      * your own ending' etc)
      */
     Extensive_links_between_internal_content("15", "Extensive links between internal content"),
@@ -76,9 +76,9 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Links_to_external_interactive_content("51", "Links to external interactive content"),
 
     /**
-     * Publication contains additional textual content such as an interview, feature article, essay, bibliography,
-     * quiz/test, other background material, or text that is not included in a primary or 'unenhanced' version. Note
-     * 'text' is 'text-as-text', not 'text as an image' or images of text
+     * Publication contains additional textual content such as an interview, feature article, essay, bibliography, quiz
+     * / test, other background material, or text that is not included in a primary or 'unenhanced' version. Note 'text'
+     * is 'text-as-text', not 'text as an image' or images of text
      */
     Additional_text_not_part_of_main_content("16", "Additional text not part of main content"),
 

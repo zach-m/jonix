@@ -41,11 +41,11 @@ import java.util.function.Consumer;
  * sent as part of the ONIX record.
  * </p>
  * <p>
- * ISBN-13 numbers in their unhyphenated form constitute a range of&nbsp;GTIN-13 numbers that has been reserved for the
- * international book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should be
- * <em>mandatory</em> in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled
- * as a GTIN-13 number (<i>ie</i>&nbsp;as &lt;ProductIDType&gt; code 03), since this is how the ISBN-13 will be used in
- * book trade transactions. For many ONIX applications this will also be sufficient.
+ * ISBN-13s in their unhyphenated form constitute a range of&nbsp;GTIN-13s that has been reserved for the international
+ * book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should be <em>mandatory</em>
+ * in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13 labelled as a GTIN-13
+ * (<i>ie</i>&nbsp;as &lt;ProductIDType&gt; code 03), since this is how the ISBN-13 will be used in book trade
+ * transactions. For many ONIX applications this will also be sufficient.
  * </p>
  * <p>
  * For some ONIX applications, however, particularly when data is to be supplied to the library sector, there may be
@@ -55,8 +55,8 @@ import java.util.function.Consumer;
  * </p>
  * <p>
  * Note that for some identifiers such as ISBN, punctuation (typically hyphens or spaces for ISBNs) is used to enhance
- * readability when printed, but the punctuation is dropped when carried in ONIX data. But for other identifiers&nbsp;–
- * for example DOI&nbsp;– the punctuation is an integral part of the identifier and must always be included.
+ * readability when printed, but the punctuation is omitted when carried in ONIX data. For other identifiers&nbsp;– for
+ * example DOI&nbsp;– the punctuation is an integral part of the identifier and must always be included.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

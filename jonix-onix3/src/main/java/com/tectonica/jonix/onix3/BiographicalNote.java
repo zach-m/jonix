@@ -24,6 +24,7 @@ import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TextScripts;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -38,19 +39,21 @@ import java.util.function.Consumer;
  * A biographical note about a contributor to the product. (See the &lt;TextContent&gt; composite in
  * Group&nbsp;<a href="#onixmessage_product_collateraldetail_p14">P.14</a> for a biographical note covering all
  * contributors to a product in a single text.) Optional, and repeatable to provide parallel biographical notes in
- * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;BiographicalNote&gt;, but
- * must be included in each instance if &lt;BiographicalNote&gt; is repeated. May occur with a person name or with a
- * corporate name. A biographical note in ONIX should <em>always</em> contain the name of the person or body concerned,
- * and it should <em>always</em> be presented as a piece of continuous text consisting of full sentences. Some
- * recipients of ONIX data feeds will not accept text which has embedded URLs. A contributor website link can be sent
- * using the &lt;Website&gt; composite below.
+ * multiple languages or scripts. The <i>language</i> attribute is optional for a single instance of
+ * &lt;BiographicalNote&gt;, but must be included in each instance if &lt;BiographicalNote&gt; is repeated. If any two
+ * or more repeats are in the same language but different scripts, each instance of <em>every</em> language must also
+ * carry the <i>textscript</i> attribute. Biographical note may occur with a person name or with a corporate name. A
+ * biographical note in ONIX should <em>always</em> contain the name of the person or body concerned, and it should
+ * <em>always</em> be presented as a piece of continuous text consisting of full sentences. Some recipients of ONIX data
+ * feeds will not accept text which has embedded URLs. A contributor website link can be sent using the &lt;Website&gt;
+ * composite below.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, no suggested maximum length (since there is no suggested length for the text in a
  * &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this element
- * - see Using XHTML, HTML, XML, JSON within ONIX text fields</td>
+ * - see Using XHTML, multilingual text, HTML, XML, JSON</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -66,7 +69,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language, textformat</td>
+ * <td>language, textscript, textformat</td>
  * </tr>
  * <tr>
  * <td>Example</td>
@@ -92,7 +95,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;BiographicalNote&gt; from the schema author:
  *
- * Textual biography of a contributor (or of a subject)
+ * Textual biography of a contributor (or of a subject) &#9679; Added textscript attribute at revision 3.1.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -133,6 +136,8 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
 
     public Languages language;
 
+    public TextScripts textscript;
+
     public TextFormats textformat;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -145,7 +150,7 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
      * <p>
      * Raw Format: Variable length text, no suggested maximum length (since there is no suggested length for the text in
      * a &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this
-     * element - see Using XHTML, HTML, XML, JSON within ONIX text fields
+     * element - see Using XHTML, multilingual text, HTML, XML, JSON
      * <p>
      * (type: XHTML)
      */
@@ -176,6 +181,7 @@ public class BiographicalNote implements OnixElement<String>, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
         value = JPU.getChildXHTML(element, true);

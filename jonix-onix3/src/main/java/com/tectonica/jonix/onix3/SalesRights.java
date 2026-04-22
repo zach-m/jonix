@@ -61,8 +61,9 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SalesRights&gt; from the schema author:
  *
- * Details of a geographical territory and the sales rights and restriction that apply in that territory &#9679;
- * Modified cardinality of &lt;PublisherName&gt; at release 3.1 &#9679; Added &lt;SalesRestriction&gt; at revision 3.0.2
+ * Details of a geographical territory and the sales rights and restriction that apply in that territory &#9679; Added
+ * &lt;PublisherNameInverted&gt; at revision 3.1.3 &#9679; Modified cardinality of &lt;PublisherName&gt; at release 3.1
+ * &#9679; Added &lt;SalesRestriction&gt; at revision 3.0.2
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -148,6 +149,10 @@ public class SalesRights implements OnixSuperComposite, Serializable {
                 case PublisherName.refname:
                 case PublisherName.shortname:
                     publisherNames = JPU.addToList(publisherNames, new PublisherName(e));
+                    break;
+                case PublisherNameInverted.refname:
+                case PublisherNameInverted.shortname:
+                    publisherNameInverteds = JPU.addToList(publisherNameInverteds, new PublisherNameInverted(e));
                     break;
                 default:
                     break;
@@ -246,16 +251,34 @@ public class SalesRights implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * The name of the publisher of an equivalent product which is available in the territory specified in the
-     * &lt;SalesRights&gt; composite, used only when &lt;SalesRightsType&gt; has a value indicating ‘not for sale’.
-     * Optional, and repeatable if the name is sent in multiple languages. The <i>language</i> attribute is optional for
-     * a single instance of &lt;PublisherName&gt;, but must be included in each instance if &lt;PublisherName&gt; is
-     * repeated.. Except where they are essential to the recognized form of the name, it is recommended that suffixes
-     * denoting incorporation (‘Co’, ‘Inc’, ‘Ltd’, ‘SA’, ‘GmbH’ <i>etc</i>) should be omitted.
+     * &lt;SalesRights&gt; composite, used only when &lt;SalesRightsType&gt; has a value indicating ‘not for sale’, and
+     * presented in normal order as it appears on the product. Optional, and repeatable if the entity is officially
+     * known by names in multiple languages. The <i>language</i> attribute is optional for a single instance of
+     * &lt;PublisherName&gt;, but must be included in each instance if &lt;PublisherName&gt; is repeated.. Except where
+     * they are essential to the recognized form of the name, it is recommended that suffixes denoting incorporation
+     * (‘Co’, ‘Inc’, ‘Ltd’, ‘SA’, ‘GmbH’ <i>etc</i>) should be omitted.
      * </p>
      * JONIX adds: this list may be empty
      */
     public ListOfOnixElement<PublisherName, String> publisherNames() {
         _initialize();
         return publisherNames;
+    }
+
+    private ListOfOnixElement<PublisherNameInverted, String> publisherNameInverteds = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * The name of the publisher of an equivalent product which is available in the territory specified in the
+     * &lt;SalesRights&gt; composite, used only when &lt;SalesRightsType&gt; has a value indicating ‘not for sale’, and
+     * presented in inverted order. Optional, and repeatable if the entity is officially known by names in multiple
+     * languages. The <i>language</i> attribute is optional for a single instance of &lt;PublisherNameInverted&gt;, but
+     * must be included in each instance if &lt;PublisherNameInverted&gt; is repeated.
+     * </p>
+     * JONIX adds: this list may be empty
+     */
+    public ListOfOnixElement<PublisherNameInverted, String> publisherNameInverteds() {
+        _initialize();
+        return publisherNameInverteds;
     }
 }

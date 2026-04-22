@@ -43,7 +43,7 @@ interface CodeList85 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist85">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist85">ONIX
  *      Codelist 85 in Reference Guide</a>
  */
 public enum BiblePurposes implements OnixCodelist, CodeList85 {
@@ -102,7 +102,7 @@ public enum BiblePurposes implements OnixCodelist, CodeList85 {
     Devotional("DV", "Devotional"),
 
     /**
-     * A Bible (or selected Biblical text) containing family record pages and / or additional study material for family
+     * A Bible (or selected Biblical text) containing family record pages and/or additional study material for family
      * devotion
      */
     Family("FM", "Family"),
@@ -193,7 +193,7 @@ public enum BiblePurposes implements OnixCodelist, CodeList85 {
     Readers("RD", "Reader’s"),
 
     /**
-     * A Bible (or selected Biblical text) including texts in Greek and / or Hebrew and designed for scholarly study
+     * A Bible (or selected Biblical text) including texts in Greek and/or Hebrew and designed for scholarly study
      */
     Scholarly("SC", "Scholarly"),
 

@@ -34,7 +34,7 @@ import java.util.function.Consumer;
 /**
  * <h1>Position on product</h1>
  * <p>
- * An ONIX code indicating a position on a product; in this case, the position in which a barcode appears. Required if
+ * An ONIX code indicating a position on a product, in this case the position in which a barcode appears. Required if
  * the &lt;BarcodeType&gt; element indicates that the barcode appears on the product, even if the position is ‘unknown’.
  * Omitted if the &lt;BarcodeType&gt; element specifies that the product does not carry a barcode. Non-repeating.
  * </p>

@@ -43,7 +43,7 @@ interface CodeList12 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist12">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist12">ONIX
  *      Codelist 12 in Reference Guide</a>
  */
 public enum TradeCategorys implements OnixCodelist, CodeList12 {
@@ -110,7 +110,7 @@ public enum TradeCategorys implements OnixCodelist, CodeList12 {
     Precio_libre_textbook("11", "Precio libre textbook"),
 
     /**
-     * For editions sold only through newsstands/newsagents
+     * For editions sold only through newsstands / newsagents
      */
     News_outlet_edition("12", "News outlet edition"),
 

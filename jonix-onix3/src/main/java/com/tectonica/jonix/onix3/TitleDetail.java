@@ -190,16 +190,17 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * A group of data elements which together represent an element of a collection title. At least one title element is
-     * mandatory in each occurrence of the &lt;TitleDetail&gt; composite. The composite is repeatable with different
-     * sequence numbers and/or title element levels. An instance of the &lt;TitleElement&gt; composite must include at
-     * least one of: &lt;PartNumber&gt;; &lt;YearOfAnnual&gt;; &lt;TitleText&gt;, &lt;NoPrefix/&gt; together with
-     * &lt;TitleWithoutPrefix&gt;, or &lt;TitlePrefix&gt; together with &lt;TitleWithoutPrefix&gt;. In other words, it
-     * <em>must</em> carry <em>either</em> the text of a title element <em>or</em> a part or year designation, and it
-     * <em>may</em> carry both.
+     * mandatory in each occurrence of the &lt;TitleDetail&gt; composite. The composite is repeatable, normally with
+     * different sequence numbers and/or title element levels that indicate the structure of the collection title. An
+     * instance of the &lt;TitleElement&gt; composite must include at least one of: &lt;PartNumber&gt;;
+     * &lt;YearOfAnnual&gt;; &lt;TitleText&gt;, &lt;NoPrefix/&gt; together with &lt;TitleWithoutPrefix&gt;, or
+     * &lt;TitlePrefix&gt; together with &lt;TitleWithoutPrefix&gt;. In other words, it <em>must</em> carry
+     * <em>either</em> the text of a title element <em>or</em> a part or year designation, and it <em>may</em> carry
+     * both.
      * </p>
      * <p>
      * A title element must be designated as belonging to <em>product level</em>, <em>collection level</em>, or
-     * <em>subcollection level</em> (the first of these may not occur in a title element representing a
+     * <em>sub-collection level</em> <i>etc</i> (the first of these may not occur in a title element representing a
      * <em>collective</em> identity, and the last-named may only occur in the case of a multi-level collection).
      * </p>
      * <p>

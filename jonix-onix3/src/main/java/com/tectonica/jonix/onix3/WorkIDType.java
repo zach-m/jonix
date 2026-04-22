@@ -66,7 +66,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;WorkIDType&gt; from the schema author:
  *
- * Type of identifier for the work that is related to the product (in the manner specified by &lt;WorkRelationCode&gt;)
+ * Type of identifier for the work that is related to the product (in the manner specified by &lt;WorkRelationCode&gt;),
+ * eg proprietary, ISCC
  *
  * This tag may be included in the following composites:
  * <ul>

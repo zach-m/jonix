@@ -38,7 +38,7 @@ import java.util.function.Consumer;
  * representation detail of the product in that market, and the supply arrangements for the product in that market. The
  * &lt;ProductSupply&gt; composite is repeatable within the block to describe multiple markets. At least one occurrence
  * is expected in a &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the
- * record is a partial update notice which carries only those blocks in which changes have occurred.
+ * record is a partial update (‘block update’) which carries only those blocks in which changes have occurred.
  * </p>
  * <p>
  * Note that for many products with simple supply arrangements and a single market, many details of that market are
@@ -63,9 +63,10 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;ProductSupply&gt; from the schema author:
  *
- * Container for data describing a market, and specific publishing and supply details of the product in that market
- * &#9679; Added &lt;MarketReference&gt; at release 3.1 &#9679; Modified cardinality of &lt;SupplyDetail&gt; at release
- * 3.1 &#9679; Modified cardinality of &lt;SupplyDetail&gt; at revision 3.0 (2010)
+ * Container for data describing a market, and specific publishing and supply details of the product in that market.
+ * Loosely, Block 6, although Block 6 may be the combination of all &lt;ProductSupply&gt; composites &#9679; Added
+ * &lt;MarketReference&gt; at release 3.1 &#9679; Modified cardinality of &lt;SupplyDetail&gt; at release 3.1 &#9679;
+ * Modified cardinality of &lt;SupplyDetail&gt; at revision 3.0 (2010)
  *
  * This tag may be included in the following composites:
  * <ul>

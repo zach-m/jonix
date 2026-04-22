@@ -35,9 +35,10 @@ import java.util.function.Consumer;
 /**
  * <h1>Addressee identifier composite</h1>
  * <p>
- * A group of data elements which together define an identifier of the addressee. The composite is optional, and
+ * A group of data elements which together specify an identifier of the addressee. The composite is optional, and is
  * repeatable if more than one identifier of different types for the same addressee is sent; but <em>either</em> an
- * &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt; <em>must</em> be included.
+ * &lt;AddresseeName&gt; <em>or</em> an &lt;AddresseeIdentifier&gt; <em>must</em> be included within each
+ * &lt;Addressee&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

@@ -72,7 +72,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;Date&gt; from the schema author:
  *
- * Date on which a particular event of the type specified in the preceding date role happens &#9679; Added dateformat
+ * Date on which a particular event of the type specified in the preceding date role occurs &#9679; Added dateformat
  * attribute at revision 3.0 (2010)
  *
  * This tag may be included in the following composites:

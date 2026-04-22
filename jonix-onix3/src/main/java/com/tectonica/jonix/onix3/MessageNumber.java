@@ -33,8 +33,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Message sequence number</h1>
  * <p>
- * A monotonic sequence number of the messages in a series sent between trading partners, to enable the receiver to
- * check against gaps and duplicates. Optional and non-repeating.
+ * A monotonic sequence number of the message within a series of messages sent between trading partners. If this element
+ * is used, the initial message sent is numbered 1 and subsequent messages are numbered 2, 3 <i>etc</i>, to enable the
+ * receiver to check against gaps and duplicates in the series. Optional and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

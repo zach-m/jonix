@@ -353,9 +353,10 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in
      * normal order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel
      * names for a single organization in multiple languages (<i>eg</i>&nbsp;‘World Health Organization’ and
-     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional
-     * for a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
-     * repeated.
+     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>) or scripts. The <i>language</i> attribute
+     * is optional for a single instance of &lt;CorporateName&gt;, but must be included in each instance if
+     * &lt;CorporateName&gt; is repeated. If any two or more repeats are in the same language but different scripts,
+     * each instance of <em>every</em> language must also carry the <i>textscript</i> attribute.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
@@ -368,9 +369,11 @@ public class Contributor implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of contributor names (across the contributors in
-     * Groups&nbsp;P.7 and P.5). Optional and non-repeating. It is strongly recommended that each occurrence of the
-     * &lt;Contributor&gt; composite should carry a &lt;SequenceNumber&gt;.
+     * An ordinal number which specifies a single overall sequence of contributor names (across the contributors in
+     * Groups&nbsp;P.7 and P.5), which is the preferred order for display of the various contributors. Optional and
+     * non-repeating. It is strongly recommended that where there are two or more instances of &lt;Contributor&gt;
+     * across Groups&nbsp;P.5 and&nbsp;P.7, each occurrence of the &lt;Contributor&gt; composite should carry a unique
+     * and sequential &lt;SequenceNumber&gt;.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -515,8 +518,8 @@ public class Contributor implements OnixSuperComposite, Serializable {
     /**
      * <p>
      * An ONIX code allowing a positive indication to be given when authorship is unknown or anonymous, or when as a
-     * matter of editorial policy only a limited number of contributors are named. Optional and non-repeating: see
-     * Group&nbsp;P.7 introductory text for valid options.
+     * matter of editorial policy only a limited number of contributors are named, or when the contributor is
+     * artificial. Optional and non-repeating: see Group&nbsp;P.7 introductory text for valid options.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -564,9 +567,11 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with
      * the element used for alphabetical sorting placed first. Optional: see Group&nbsp;P.7 introductory text for valid
      * options. Repeatable, to provide parallel names for a single organization in multiple languages
-     * (<i>eg</i>&nbsp;‘Polar Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The
-     * <i>language</i> attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but must be
-     * included in each instance if &lt;CorporateNameInverted&gt; is repeated.
+     * (<i>eg</i>&nbsp;‘Polar Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>) or
+     * scripts. The <i>language</i> attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but
+     * must be included in each instance if &lt;CorporateNameInverted&gt; is repeated. If any two or more repeats are in
+     * the same language but different scripts, each instance of <em>every</em> language must also carry the
+     * <i>textscript</i> attribute..
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -658,12 +663,14 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * A biographical note about a contributor to the product. (See the &lt;TextContent&gt; composite in
      * Group&nbsp;<a href="#onixmessage_product_collateraldetail_p14">P.14</a> for a biographical note covering all
      * contributors to a product in a single text.) Optional, and repeatable to provide parallel biographical notes in
-     * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;BiographicalNote&gt;,
-     * but must be included in each instance if &lt;BiographicalNote&gt; is repeated. May occur with a person name or
-     * with a corporate name. A biographical note in ONIX should <em>always</em> contain the name of the person or body
-     * concerned, and it should <em>always</em> be presented as a piece of continuous text consisting of full sentences.
-     * Some recipients of ONIX data feeds will not accept text which has embedded URLs. A contributor website link can
-     * be sent using the &lt;Website&gt; composite below.
+     * multiple languages or scripts. The <i>language</i> attribute is optional for a single instance of
+     * &lt;BiographicalNote&gt;, but must be included in each instance if &lt;BiographicalNote&gt; is repeated. If any
+     * two or more repeats are in the same language but different scripts, each instance of <em>every</em> language must
+     * also carry the <i>textscript</i> attribute. Biographical note may occur with a person name or with a corporate
+     * name. A biographical note in ONIX should <em>always</em> contain the name of the person or body concerned, and it
+     * should <em>always</em> be presented as a piece of continuous text consisting of full sentences. Some recipients
+     * of ONIX data feeds will not accept text which has embedded URLs. A contributor website link can be sent using the
+     * &lt;Website&gt; composite below.
      * </p>
      * JONIX adds: this list may be empty
      */

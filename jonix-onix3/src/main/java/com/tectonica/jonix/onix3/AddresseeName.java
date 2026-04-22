@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <p>
  * The name of the addressee organization, which should always be stated in a standard form agreed with the addressee.
  * Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element <em>or</em> a
- * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.
+ * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included within the &lt;Addressee&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

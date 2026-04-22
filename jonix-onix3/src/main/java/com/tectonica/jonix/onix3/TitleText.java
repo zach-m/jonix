@@ -46,7 +46,7 @@ import java.util.function.Consumer;
  * system cannot reliably provide prefixes that are ignored for sorting purposes in a separate data element. If the
  * system <em>can</em> reliably separate prefixes, it should state whether a prefix is present (using
  * &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
- * &lt;TitleWithoutPrefix&gt;).
+ * &lt;TitleWithoutPrefix&gt;), and &lt;TitleText&gt; should not be used.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -79,7 +79,7 @@ import java.util.function.Consumer;
  *
  * Full text of a title element, without any subtitle, used only when &lt;TitleWithoutPrefix&gt; and one of
  * &lt;TitlePrefix&gt; or &lt;NoPrefix/&gt; cannot be used &#9679; Deprecated from release 3.1 - use either
- * &lt;TitlePrefix&gt; or &lt;NoPrefix&gt;, plus &lt;TitleWithoutPrefix&gt; instead &#9679; Added textscript attribute
+ * &lt;TitlePrefix&gt; or &lt;NoPrefix/&gt;, plus &lt;TitleWithoutPrefix&gt; instead &#9679; Added textscript attribute
  * at revision 3.0.2 &#9679; Added collationkey attribute at revision 3.0.1
  *
  * This tag may be included in the following composites:

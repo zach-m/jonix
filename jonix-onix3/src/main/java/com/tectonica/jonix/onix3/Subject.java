@@ -278,9 +278,10 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * &lt;SubjectHeadingText&gt; or both must be present in each occurrence of the &lt;Subject&gt; composite.
      * </p>
      * <p>
-     * Optional, and repeatable if the heading text is sent in multiple languages. The <i>language</i> attribute is
-     * optional for a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance if
-     * &lt;SubjectHeadingText&gt; is repeated.
+     * Optional, and repeatable if the heading text is sent in multiple languages or scripts. The <i>language</i>
+     * attribute is optional for a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance
+     * if &lt;SubjectHeadingText&gt; is repeated. If any two or more repeats are in the same language but different
+     * scripts, each instance of every language must also carry the <i>textscript</i> attribute.
      * </p>
      * JONIX adds: this list may be empty
      */

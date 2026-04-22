@@ -224,9 +224,10 @@ public class Prize implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of prizes. Optional and non-repeating. It is strongly
-     * recommended that if any occurrence of the &lt;Prize&gt; composite carries a &lt;SequenceNumber&gt;, then all
-     * should carry a &lt;SequenceNumber&gt;.
+     * An ordinal number which specifies a single overall sequence of prizes, which is the preferred order for display
+     * of the various prizes. Optional and non-repeating. It is strongly recommended that where there are two or more
+     * instances of &lt;Prize&gt; within &lt;CollateralDetail&gt;, each occurrence of the &lt;Prize&gt; composite should
+     * carry a unique and sequential &lt;SequenceNumber&gt;.
      * </p>
      * JONIX adds: this field is optional
      */

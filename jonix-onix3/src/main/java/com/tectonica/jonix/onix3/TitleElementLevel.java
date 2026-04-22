@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Title element level</h1>
  * <p>
- * An ONIX code indicating the level of a title element: collection level, sub-collection level, or product level.
- * Mandatory in each occurrence of the &lt;TitleElement&gt; composite, and non-repeating.
+ * An ONIX code indicating the level of a title element: collection level, sub-collection level <i>etc</i>, or product
+ * level. Mandatory in each occurrence of the &lt;TitleElement&gt; composite, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

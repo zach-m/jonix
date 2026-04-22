@@ -207,11 +207,15 @@ public class ProductFormFeature
 
     /**
      * <p>
-     * If the &lt;ProductFormFeatureType&gt; requires free text rather than a code value, or if the code in
+     * If the &lt;ProductFormFeatureType&gt; requires free text rather than a coded value, or if the code in
      * &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text description may be added.
      * Optional, and repeatable to provide parallel descriptive text in multiple languages. The <i>language</i>
      * attribute is optional for a single instance of &lt;ProductFormFeatureDescription&gt;, but must be included in
      * each instance if &lt;ProductFormFeatureDescription&gt; is repeated.
+     * </p>
+     * <p>
+     * Note for most features, the suggested maximum length of the description is 1000 characters, but the text may be
+     * up to 10,000 characters for GPS coordinates supplied for EUDR compliance.
      * </p>
      * JONIX adds: this list may be empty
      */

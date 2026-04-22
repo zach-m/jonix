@@ -23,6 +23,7 @@ import com.tectonica.jonix.common.JPU;
 import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
+import com.tectonica.jonix.common.codelist.TextScripts;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -40,9 +41,10 @@ import java.util.function.Consumer;
  * present in each occurrence of the &lt;Subject&gt; composite.
  * </p>
  * <p>
- * Optional, and repeatable if the heading text is sent in multiple languages. The <i>language</i> attribute is optional
- * for a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance if
- * &lt;SubjectHeadingText&gt; is repeated.
+ * Optional, and repeatable if the heading text is sent in multiple languages or scripts. The <i>language</i> attribute
+ * is optional for a single instance of &lt;SubjectHeadingText&gt;, but must be included in each instance if
+ * &lt;SubjectHeadingText&gt; is repeated. If any two or more repeats are in the same language but different scripts,
+ * each instance of every language must also carry the <i>textscript</i> attribute.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -63,7 +65,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language</td>
+ * <td>language, textscript</td>
  * </tr>
  * <tr>
  * <td>Example</td>
@@ -74,7 +76,7 @@ import java.util.function.Consumer;
  * Technical notes about &lt;SubjectHeadingText&gt; from the schema author:
  *
  * Heading text associated with the code in &lt;SubjectCode&gt;, or the text of the subject heading where no code is
- * available (eg for keywords)
+ * available (eg for keywords) &#9679; Added textscript attribute at revision 3.1.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -109,6 +111,8 @@ public class SubjectHeadingText implements OnixElement<String>, Serializable {
     public RecordSourceTypes sourcetype;
 
     public Languages language;
+
+    public TextScripts textscript;
 
     /////////////////////////////////////////////////////////////////////////////////
     // VALUE MEMBER
@@ -149,6 +153,7 @@ public class SubjectHeadingText implements OnixElement<String>, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
 
         value = JPU.getContentAsString(element);
     }

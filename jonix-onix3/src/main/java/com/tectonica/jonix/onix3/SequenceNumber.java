@@ -33,9 +33,11 @@ import java.util.function.Consumer;
 /**
  * <h1>Title element sequence number</h1>
  * <p>
- * A number which specifies a single overall sequence of title elements, which is the preferred order for display of the
- * various title elements when constructing a complete title. Optional and non-repeating. It is strongly recommended
- * that each occurrence of the &lt;TitleElement&gt; composite should carry a &lt;SequenceNumber&gt;.
+ * An ordinal number which specifies a single overall sequence of collection title elements, which is the preferred
+ * order for display of the various title elements when constructing a complete collection title. Optional and
+ * non-repeating. It is strongly recommended that where there are two or more instances of &lt;TitleElement&gt; within
+ * &lt;TitleDetail&gt;, each occurrence of the &lt;TitleElement&gt; composite should carry a unique and sequential
+ * &lt;SequenceNumber&gt;.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -62,11 +64,12 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;SequenceNumber&gt; from the schema author:
  *
- * Ordinal number, eg of a contributor, indicating the required order (which may be different from the order of
- * occurrence in the ONIX XML file itself)
+ * Ordinal number, eg of a contributor, of a resource, indicating the required order (which may be different from the
+ * order of occurrence in the ONIX XML file itself)
  *
  * This tag may be included in the following composites:
  * <ul>
+ * <li>&lt;{@link TextSource}&gt;</li>
  * <li>&lt;{@link SupportingResource}&gt;</li>
  * <li>&lt;{@link SupplementManifest}&gt;</li>
  * <li>&lt;{@link Prize}&gt;</li>
@@ -78,9 +81,14 @@ import java.util.function.Consumer;
  * <li>&lt;{@link CitedContent}&gt;</li>
  * <li>&lt;{@link InsertResource}&gt;</li>
  * <li>&lt;{@link Contributor}&gt;</li>
+ * <li>&lt;{@link NameAsSubject}&gt;</li>
  * </ul>
  * Possible placements within ONIX message:
  * <ul>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link SequenceNumber}</li>
+ * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextSource} ⯈
+ * {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link SupportingResource} ⯈
  * {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link SupportingResource} ⯈ {@link SequenceNumber}</li>
@@ -128,6 +136,9 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link PromotionDetail} ⯈ {@link PromotionalEvent} ⯈ {@link Contributor} ⯈
  * {@link SequenceNumber}</li>
  * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link Collection} ⯈ {@link Contributor} ⯈
+ * {@link SequenceNumber}</li>
+ * <li>{@link Product} ⯈ {@link DescriptiveDetail} ⯈ {@link NameAsSubject} ⯈ {@link SequenceNumber}</li>
+ * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link NameAsSubject} ⯈
  * {@link SequenceNumber}</li>
  * </ul>
  *

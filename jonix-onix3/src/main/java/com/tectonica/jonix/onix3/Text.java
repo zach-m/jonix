@@ -24,6 +24,7 @@ import com.tectonica.jonix.common.OnixElement;
 import com.tectonica.jonix.common.codelist.Languages;
 import com.tectonica.jonix.common.codelist.RecordSourceTypes;
 import com.tectonica.jonix.common.codelist.TextFormats;
+import com.tectonica.jonix.common.codelist.TextScripts;
 
 import java.io.Serializable;
 import java.util.function.Consumer;
@@ -36,16 +37,17 @@ import java.util.function.Consumer;
  * <h1>Supporting text</h1>
  * <p>
  * The text specified in the &lt;TextType&gt; element. Mandatory in each occurrence of the &lt;TextContent&gt;
- * composite, and repeatable when essentially identical text is supplied in multiple languages. The <i>language</i>
- * attribute is optional for a single instance of &lt;Text&gt;, but must be included in each instance if &lt;Text&gt; is
- * repeated.
+ * composite, and repeatable when essentially identical text is supplied in multiple languages or scripts. The
+ * <i>language</i> attribute is optional for a single instance of &lt;Text&gt;, but must be included in each instance if
+ * &lt;Text&gt; is repeated. If any two or more repeats are in the same language but different scripts, each instance of
+ * <em>every</em> language must also carry the <i>textscript</i> attribute.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length text. XHTML is enabled in this element - see Using XHTML, HTML, XML, JSON within ONIX text
- * fields. Note that certain Text types impose a strict limit on the number of characters, and such limits do not count
- * the characters of any (X)HTML markup</td>
+ * <td>Variable length text. XHTML is enabled in this element - see Using XHTML, multilingual text, HTML, XML, JSON.
+ * Note that certain Text types impose a strict limit on the number of characters, and such limits do not count the
+ * characters of any (X)HTML markup</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -61,7 +63,7 @@ import java.util.function.Consumer;
  * </tr>
  * <tr>
  * <td>Attributes</td>
- * <td>language, textformat</td>
+ * <td>language, textscript, textformat</td>
  * </tr>
  * <tr>
  * <td>Example</td>
@@ -80,7 +82,8 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;Text&gt; from the schema author:
  *
- * Textual content of a supporting text, primarily for marketing and promotional purposes
+ * Textual content of a supporting text, primarily for marketing and promotional purposes &#9679; Added textscript
+ * attribute at revision 3.1.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -116,6 +119,8 @@ public class Text implements OnixElement<String>, Serializable {
 
     public Languages language;
 
+    public TextScripts textscript;
+
     public TextFormats textformat;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -126,9 +131,9 @@ public class Text implements OnixElement<String>, Serializable {
      * This is the raw content of Text. Could be null if {@code exists() == false}. Use {@link #value()} instead if you
      * want to get this as an {@link java.util.Optional}.
      * <p>
-     * Raw Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML, XML, JSON within ONIX
-     * text fields. Note that certain Text types impose a strict limit on the number of characters, and such limits do
-     * not count the characters of any (X)HTML markup
+     * Raw Format: Variable length text. XHTML is enabled in this element - see Using XHTML, multilingual text, HTML,
+     * XML, JSON. Note that certain Text types impose a strict limit on the number of characters, and such limits do not
+     * count the characters of any (X)HTML markup
      * <p>
      * (type: XHTML)
      */
@@ -159,6 +164,7 @@ public class Text implements OnixElement<String>, Serializable {
         sourcename = JPU.getAttribute(element, "sourcename");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         language = Languages.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScripts.byCode(JPU.getAttribute(element, "textscript"));
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
         value = JPU.getChildXHTML(element, true);

@@ -71,7 +71,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;UnpricedItemType&gt; from the schema author:
  *
- * Positive indication that a product is free of charge, or a price is yet to be announced, or the product otherwise
+ * Positive indication that a product is free of charge, or a price is yet to be announced, or the product is otherwise
  * unpriced
  *
  * This tag may be included in the following composites:

@@ -221,10 +221,11 @@ public class BodyResource implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of body resources. Optional and non-repeating. It is strongly
-     * recommended that each occurrence of the &lt;BodyResource&gt; composite should carry a &lt;SequenceNumber&gt;, and
-     * that primary resources are numbered in ‘spine order’. Ancillary resources (<i>eg</i>&nbsp;an image file
-     * referenced by a primary HTML file) should be numbered after the primary resources.
+     * An ordinal number which specifies a single overall sequence of body resources. Optional and non-repeating. It is
+     * strongly recommended that where there are two or more instances of &lt;BodyResource&gt; within
+     * &lt;BodyManifest&gt;, each occurrence of the &lt;BodyResource&gt; composite should carry a unique and sequential
+     * &lt;SequenceNumber&gt;, and that primary resources are numbered in ‘spine order’. Ancillary resources
+     * (<i>eg</i>&nbsp;an image file referenced by a primary HTML file) should be numbered after the primary resources.
      * </p>
      * JONIX adds: this field is optional
      */

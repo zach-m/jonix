@@ -35,10 +35,13 @@ import java.util.function.Consumer;
 /**
  * <h1>Publisher name</h1>
  * <p>
- * The name of an entity associated with the publishing of a product. Mandatory if there is no publisher identifier in
- * an occurrence of the &lt;Publisher&gt; composite, and optional if a publisher identifier is included. Repeatable if
- * the entity is officially known by names in multiple languages. The <i>language</i> attribute is optional for a single
- * instance of &lt;PublisherName&gt;, but must be included in each instance if &lt;PublisherName&gt; is repeated.
+ * The name of an entity associated with the publishing of a product, presented in inverted order, with the element used
+ * for alphabetical sorting placed first. Mandatory if there is neither a publisher identifier nor a
+ * &lt;PublisherName&gt; but otherwise optional, and repeatable if the entty is officially known by names in multiple
+ * languages or scripts. The <i>language</i> attribute is optional for a single instance of &lt;PublisherName&gt;, but
+ * must be included in each instance if &lt;PublisherName&gt; is repeated. If any two or more repeats are in the same
+ * language but different scripts, each instance of <em>every</em> language must also carry the <i>textscript</i>
+ * attribute.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

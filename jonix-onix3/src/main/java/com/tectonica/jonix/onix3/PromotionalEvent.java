@@ -43,8 +43,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Promotional event composite</h1>
  * <p>
- * An group of data elements which together describe a promotional event or series of event occurrences such as an
- * author tour. Optional in any occurrence of the &lt;PromotionDetail&gt; composite, but it may be omitted only within a
+ * A group of data elements which together describe a promotional event or series of event occurrences such as an author
+ * tour. Optional in any occurrence of the &lt;PromotionDetail&gt; composite, but it may be omitted only within a
  * partial or ‘block update’ (Notification or update type 04, see&nbsp;P.1.2) when the intention is to remove all
  * previously supplied promotional event detail. When used normally, it is repeatable to describe multiple events linked
  * to promotion of the product.

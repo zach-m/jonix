@@ -55,7 +55,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;PrizeIdentifier&gt; from the schema author:
  *
- * An identifier which uniquely identifies the prize, eg a FAST ID or a proprietary identifier &#9679; Added at revision
+ * Identifier which uniquely identifies the prize, eg a FAST ID or a proprietary identifier &#9679; Added at revision
  * 3.1.1
  *
  * This tag may be included in the following composites:

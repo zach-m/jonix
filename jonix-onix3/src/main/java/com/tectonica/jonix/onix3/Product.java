@@ -47,7 +47,9 @@ import java.util.function.Consumer;
  * label &lt;/Product&gt;. The entire group of data elements which is enclosed between these two labels constitutes an
  * ONIX Product record. The Product record is the fundamental unit within an ONIX Product Information message. In almost
  * every case, each Product record describes an individually tradable item; and in all circumstances, each tradable item
- * identified by a recognized product identifier should be described by one, and only one, ONIX Product record.
+ * identified by a recognized product identifier should be described by one, and only one, ONIX Product record. The
+ * Product composite is repeatable for different products within the ONIX message, and a typical ONIX message may
+ * contain tens&nbsp;– or tens of thousands&nbsp;– of Product records.
  * </p>
  * <p>
  * In ONIX&nbsp;3.0 and later, a Product record has a mandatory ‘preamble’ comprising data Groups P.1 and P.2, and
@@ -258,20 +260,21 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * For every product, you must choose a single record reference which will uniquely identify the Information record
-     * which you send out about that product, and which will remain as its permanent identifier every time you send an
-     * update. It doesn’t matter what reference you choose, provided that it is unique and permanent. This record
-     * reference doesn’t identify the <em>product</em>&nbsp;– even though you may choose to use the ISBN or another
-     * product identifier as a part of your record reference&nbsp;– it identifies <em>your information record about the
-     * product</em>, so that the person to whom you are sending an update can match it with what you have previously
-     * sent. It is not recommended to use a product identifier as the whole of the record reference. A good way of
-     * generating references which are not part of a recognized product identification scheme but which can be
-     * guaranteed to be unique is to prefix a product identifier or a meaningless row ID from your internal database
-     * with a reversed Internet domain name which is registered to your organization (reversal prevents the record
-     * reference appearing to be a resolvable URL). Alternatively, use a UUID.
+     * For every Product record, the sender must choose a single Record reference which will uniquely identify the
+     * Information record which it sends out about that product, and which will remain as its permanent identifier every
+     * time it sends an update of that record. It doesn’t matter what reference is chosen, provided that it is unique
+     * and permanent. This Record reference doesn’t identify the <em>product</em>&nbsp;– even though the sender may
+     * choose to use the ISBN or another product identifier as a part of the Record reference&nbsp;– it identifies
+     * <em>the sender’s information record about the product</em>, so that the organization to whom the sender is
+     * sending an update can match it with what the sender has previously sent. It is not recommended to use a product
+     * identifier such as an ISBN as the whole of the record reference. A good way of generating Record references which
+     * are not part of a recognized product identification scheme but which can be guaranteed to be unique is to prefix
+     * a product identifier or a meaningless row ID from an internal database with a reversed Internet domain name which
+     * is registered to the sender organization (reversal prevents the Record reference appearing to be a resolvable
+     * URL). Alternatively, use a UUID.
      * </p>
      * <p>
-     * This field is mandatory and non-repeating.
+     * Record reference is mandatory in every Product record, and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */
@@ -284,8 +287,8 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * An ONIX code which indicates the type of notification or update which you are sending. Mandatory and
-     * non-repeating.
+     * An ONIX code which indicates the type of notification or update which the sender is sending. The Notification
+     * type indicates how the recipient should treat the supplied Product record. Mandatory and non-repeating.
      * </p>
      * JONIX adds: this field is required
      */
@@ -305,11 +308,11 @@ public class Product implements OnixProduct, Serializable {
      * or vendors) to be sent as part of the ONIX record.
      * </p>
      * <p>
-     * ISBN-13 numbers in their unhyphenated form constitute a range of&nbsp;GTIN-13 numbers that has been reserved for
-     * the international book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should
-     * be <em>mandatory</em> in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13
-     * labelled as a GTIN-13 number (<i>ie</i>&nbsp;as &lt;ProductIDType&gt; code 03), since this is how the ISBN-13
-     * will be used in book trade transactions. For many ONIX applications this will also be sufficient.
+     * ISBN-13s in their unhyphenated form constitute a range of&nbsp;GTIN-13s that has been reserved for the
+     * international book trade. Effective from 1 January 2007, it was agreed by ONIX national groups that it should be
+     * <em>mandatory</em> in an ONIX &lt;Product&gt; record for any item carrying an ISBN-13 to include the ISBN-13
+     * labelled as a GTIN-13 (<i>ie</i>&nbsp;as &lt;ProductIDType&gt; code 03), since this is how the ISBN-13 will be
+     * used in book trade transactions. For many ONIX applications this will also be sufficient.
      * </p>
      * <p>
      * For some ONIX applications, however, particularly when data is to be supplied to the library sector, there may be
@@ -319,7 +322,7 @@ public class Product implements OnixProduct, Serializable {
      * </p>
      * <p>
      * Note that for some identifiers such as ISBN, punctuation (typically hyphens or spaces for ISBNs) is used to
-     * enhance readability when printed, but the punctuation is dropped when carried in ONIX data. But for other
+     * enhance readability when printed, but the punctuation is omitted when carried in ONIX data. For other
      * identifiers&nbsp;– for example DOI&nbsp;– the punctuation is an integral part of the identifier and must always
      * be included.
      * </p>
@@ -365,8 +368,8 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * The descriptive detail block covers data Groups P.3 to P.13, all of which are essentially part of the factual
      * description of the form and content of a product. The block as a whole is non-repeating. It is mandatory in any
-     * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an
-     * update notice which carries only those blocks in which changes have occurred.
+     * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a
+     * partial update (‘block update’) which carries only those blocks in which changes have occurred.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -441,8 +444,8 @@ public class Product implements OnixProduct, Serializable {
      * <p>
      * The publishing detail block covers data Groups P.19 to P.21, carrying information on the publisher(s), ‘global’
      * publishing status, and rights attaching to a product. The block as a whole is non-repeating. It is mandatory in
-     * any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an
-     * update notice which carries only those blocks in which changes have occurred.
+     * any &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is a
+     * partial update (‘block update’) which carries only those blocks in which changes have occurred.
      * </p>
      * JONIX adds: this field is optional
      */
@@ -498,12 +501,12 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * Free text which indicates the reason why an ONIX record is being deleted. Optional and repeatable, and may occur
-     * only when the &lt;NotificationType&gt; element carries the code value 05. The <i>language</i> attribute is
-     * optional for a single instance of &lt;DeletionText&gt;, but must be included in each instance if
-     * &lt;DeletionText&gt; is repeated. Note that it refers to the reason why the <em>record</em> is being deleted, not
-     * the reason why a <em>product</em> has been ‘deleted’ (in industries which use this terminology when a product is
-     * withdrawn).
+     * Free text which indicates the reason why an ONIX record is being deleted. Optional, and repeatable to provide
+     * parallel descriptive text in multiple languages. It may occur only when the &lt;NotificationType&gt; element
+     * carries the code value 05. The <i>language</i> attribute is optional for a single instance of
+     * &lt;DeletionText&gt;, but must be included in each instance if &lt;DeletionText&gt; is repeated. Note that it
+     * refers to the reason why the <em>record</em> is being deleted, not the reason why a <em>product</em> has been
+     * ‘deleted’ (in industries which use this terminology when a product is withdrawn).
      * </p>
      * <p>
      * A product cancellation or abandonment prior to publication, or a product becoming unavailable (<i>eg</i>&nbsp;as
@@ -523,7 +526,7 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * A group of data elements which together define an identifier of the organization which is the source of the ONIX
+     * A group of data elements which together specify an identifier of the organization which is the source of the ONIX
      * record. Optional, and repeatable in order to send multiple identifiers for the same organization.
      * </p>
      * JONIX adds: this list may be empty
@@ -538,9 +541,10 @@ public class Product implements OnixProduct, Serializable {
 
     /**
      * <p>
-     * A group of data elements which together specify a barcode type and its position on a product. Optional: expected
-     * to be used only in North America. Repeatable if more than one type of barcode is carried on a single product. The
-     * absence of this composite does <em>not</em> mean that a product is not bar-coded.
+     * A group of data elements which together specify a barcode type and its position on a product. Optional, and
+     * expected to be used only for physical products, and only in North America. Repeatable if more than one type of
+     * barcode is carried on a single product, or if the same barcode is printed in multiple locations on the product.
+     * The absence of this composite does <em>not</em> mean that a product is not barcoded.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -557,8 +561,8 @@ public class Product implements OnixProduct, Serializable {
      * representation detail of the product in that market, and the supply arrangements for the product in that market.
      * The &lt;ProductSupply&gt; composite is repeatable within the block to describe multiple markets. At least one
      * occurrence is expected in a &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1
-     * indicates that the record is a partial update notice which carries only those blocks in which changes have
-     * occurred.
+     * indicates that the record is a partial update (‘block update’) which carries only those blocks in which changes
+     * have occurred.
      * </p>
      * <p>
      * Note that for many products with simple supply arrangements and a single market, many details of that market are

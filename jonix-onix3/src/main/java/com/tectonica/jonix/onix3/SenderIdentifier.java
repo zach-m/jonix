@@ -35,9 +35,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Sender identifier composite</h1>
  * <p>
- * A group of data elements which together define an identifier of the sender. The composite is optional, and repeatable
- * if more than one identifier of different types is sent; but <em>either</em> a &lt;SenderName&gt; <em>or</em> a
- * &lt;SenderIdentifier&gt; <em>must</em> be included.
+ * A group of data elements which together specify an identifier of the sender. The composite is optional, and is
+ * repeatable if more than one identifier of different types is sent; but <em>either</em> a &lt;SenderName&gt;
+ * <em>or</em> a &lt;SenderIdentifier&gt; <em>must</em> be included within the &lt;Sender&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

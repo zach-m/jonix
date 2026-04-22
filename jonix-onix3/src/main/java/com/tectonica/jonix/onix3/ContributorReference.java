@@ -36,7 +36,7 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Contributor by reference composite</h1>
+ * <h1>Event contributor by reference composite></h1>
  * <p>
  * Optional composite that identifies a contributor&nbsp;– a person or corporate body&nbsp;– participating in the
  * promotional event <em>who is also a contributor to the product, or who is its subject</em> (<i>ie</i>&nbsp;who is
@@ -215,10 +215,12 @@ public class ContributorReference implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of event participant names. Optional and non-repeating. It is
-     * strongly recommended that each occurrence of the &lt;ContributorReference&gt; and &lt;Contributor&gt; composites
-     * within &lt;PromotionalEvent&gt; should carry a &lt;SequenceNumber&gt;. The sequence is independent of the
-     * sequence of contributors to the product specified in Groups&nbsp;P.5, P.7 or&nbsp;P.18.
+     * An ordinal number which specifies a single overall sequence of event contributors, which is the preferred order
+     * for display of the event contributors. Optional and non-repeating. It is strongly recommended that where there
+     * are two or more instances of &lt;ContributorReference&gt; and &lt;Contributor&gt; within
+     * &lt;PromotionalEvent&gt;, each occurrence of the &lt;ContributorReference&gt; and &lt;Contributor&gt; composites
+     * within &lt;PromotionalEvent&gt; should carry a unique and sequential &lt;SequenceNumber&gt;. The sequence is
+     * independent of the sequence of contributors to the product specified in Groups&nbsp;P.5, P.7 or&nbsp;P.18.
      * </p>
      * JONIX adds: this field is optional
      */

@@ -43,7 +43,7 @@ interface CodeList163 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -209,7 +209,34 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Date_of_first_unabridged_publication("36", "Date of first unabridged publication");
+    Date_of_first_unabridged_publication("36", "Date of first unabridged publication"),
+
+    /**
+     * Where this is managed separately from the date of publication (code 01), for example for library use. Note,
+     * requires an explicit dateformat=&quot;05&quot; attribute (YYYY)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Year_of_publication("37", "Year of publication"),
+
+    /**
+     * Date from which previews of a product may be made available, where the embargo is managed separately from any
+     * Sales embargo date. Applies to all previews (previews in &lt;TextContent&gt; or &lt;SupportingResource&gt;,
+     * previews covered by &lt;EpubUsageConstraint&gt; and external preview 'widgets') unless overridden by a Valid from
+     * date for a specific preview
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Preview_embargo_date("38", "Preview embargo date"),
+
+    /**
+     * For digital products that are available to end customers both via retail sale and sales to libraries, the
+     * earliest date the product can be made available to purchase by libraries, or made available by a library to
+     * patrons. For any embargo on non-library sales, see code 02
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Library_embargo_date("39", "Library embargo date");
 
     public final String code;
     public final String description;

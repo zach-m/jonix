@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <h1>Product classification type name</h1>
  * <p>
  * A name which identifies a proprietary classification scheme (<i>ie</i>&nbsp;a scheme which is not a standard and for
- * which there is no individual scheme type code). Should be included when, and only when, the code in the
+ * which there is no individual scheme type code). Must be included when, and only when, the code in the
  * &lt;ProductClassificationType&gt; element indicates a proprietary scheme, <i>ie</i>&nbsp;the sender’s own category
  * scheme. Optional and non-repeating.
  * </p>

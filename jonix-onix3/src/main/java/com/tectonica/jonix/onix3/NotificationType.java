@@ -32,9 +32,10 @@ import java.util.function.Consumer;
  */
 
 /**
- * <h1>Notification or update type code</h1>
+ * <h1>Notification type code</h1>
  * <p>
- * An ONIX code which indicates the type of notification or update which you are sending. Mandatory and non-repeating.
+ * An ONIX code which indicates the type of notification or update which the sender is sending. The Notification type
+ * indicates how the recipient should treat the supplied Product record. Mandatory and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

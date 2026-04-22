@@ -255,11 +255,13 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A number which specifies a single overall sequence of supporting resources. Optional and non-repeating. It is
-     * strongly recommended that if <em>any</em> occurrence of the &lt;SupportingResource&gt; composite of a specific
-     * &lt;ResourceContentType&gt; carries a &lt;SequenceNumber&gt;, then all of that type should carry a
-     * &lt;SequenceNumber&gt;&nbsp;– though there is no requirement to number supporting resources where there is a
-     * single instance of that type.
+     * An ordinal number which specifies a single overall sequence of supporting resources, which is the preferred order
+     * for display of the various supporting resources. Optional and non-repeating. It is strongly recommended that
+     * where there are two or more instances of &lt;SupportingResource&gt; of the same specific
+     * &lt;ResourceContentType&gt; within &lt;CollateralDetail&gt;, each occurrence of the &lt;SupportingResource&gt;
+     * composite of that &lt;ResourceContentType&gt; should carry a unique and sequential &lt;SequenceNumber&gt;&nbsp;–
+     * though there is no requirement to number supporting resources where there is a single instance of
+     * &lt;SupportingResource&gt; of that particular type.
      * </p>
      * JONIX adds: this field is optional
      */

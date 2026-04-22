@@ -45,7 +45,7 @@ interface CodeList242 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist242">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist242">ONIX
  *      Codelist 242 in Reference Guide</a>
  */
 public enum BatteryTypeAndSafetys implements OnixCodelist, CodeList242 {
@@ -62,22 +62,22 @@ public enum BatteryTypeAndSafetys implements OnixCodelist, CodeList242 {
 
     /**
      * Batteries pre-installed, user replaceable. Use &lt;ProductFormFeatureDescription&gt; to provide further details,
-     * eg '2 x 1.2V LR6/AA rechargeable', with these details formatted as [integer] x [number]V [type or descriptive
+     * eg '2 x 1.2V LR6 / AA rechargeable', with these details formatted as [integer] x [number]V [type or descriptive
      * text] and usually taken from the outer packaging
      */
     Batteries_pre_installed("02", "Batteries pre-installed"),
 
     /**
      * Batteries included with the product, but not pre-installed. Use &lt;ProductFormFeatureDescription&gt; to provide
-     * further details, eg '2 x 1.2V LR6/AA rechargeable', with these details formatted as [integer] x [number]V [type
+     * further details, eg '2 x 1.2V LR6 / AA rechargeable', with these details formatted as [integer] x [number]V [type
      * or descriptive text] and usually taken from the outer packaging
      */
     Batteries_supplied("03", "Batteries supplied"),
 
     /**
      * Batteries required for use, but not supplied with the product. May use &lt;ProductFormFeatureDescription&gt; to
-     * provide further details, eg '2 x 1.2V LR6/AA rechargeable', with these details formatted as [integer] x [number]V
-     * [type or descriptive text] and usually taken from the outer packaging
+     * provide further details, eg '2 x 1.2V LR6 / AA rechargeable', with these details formatted as [integer] x
+     * [number]V [type or descriptive text] and usually taken from the outer packaging
      */
     Batteries_required("04", "Batteries required"),
 

@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Product form code</h1>
  * <p>
- * An ONIX code which indicates the primary form of a product. Mandatory in an occurrence of &lt;DescriptiveDetail&gt;,
- * and non-repeating.
+ * An ONIX code which indicates the primary physical or digital form of a product. Mandatory in an occurrence of
+ * &lt;DescriptiveDetail&gt;, and non-repeating.
  * </p>
  * <p>
  * Note that in ONIX&nbsp;3.0 and later, the handling of multiple-item and multi-component products requires that the

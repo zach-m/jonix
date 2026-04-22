@@ -348,9 +348,10 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A telephone number of the contact person in the supply contact organization who is responsible for the product,
-     * wherever possible including the plus sign and the international dialing code. Optional, and repeatable to provide
-     * multiple numbers for the same contact.
+     * A telephone number of the contact person within the supply contact organization who is responsible for the
+     * product, wherever possible including the plus sign (representing the international call prefix) and the
+     * international dialing code for the contact’s country. Optional, and repeatable to provide multiple numbers for
+     * the same contact.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -363,9 +364,10 @@ public class SupplyContact implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A fax number for the contact person in the supply contact organization who is responsible for the product,
-     * wherever possible including the plus sign and the international dialing code. Optional, and repeatable to provide
-     * multiple numbers for the same contact.
+     * A fax number for the contact person within the supply contact organization who is responsible for the product,
+     * wherever possible including the plus sign (representing the international call prefix) and the international
+     * dialing code for the contact’s country. Optional, and repeatable to provide multiple numbers for the same
+     * contact.
      * </p>
      * JONIX adds: this list may be empty
      */

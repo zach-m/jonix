@@ -36,8 +36,8 @@ import java.util.function.Consumer;
  * <h1>Imprint or brand identifier composite</h1>
  * <p>
  * A group of data elements which together define the identifier of an imprint name. Optional, but mandatory if the
- * &lt;Imprint&gt; composite does not carry an &lt;ImprintName&gt;. The composite is repeatable in order to specify
- * multiple identifiers for the same imprint or brand.
+ * &lt;Imprint&gt; composite carries neither an &lt;ImprintName&gt; nor an &lt;ImprintNameInverted&gt;. The composite is
+ * repeatable in order to specify multiple identifiers for the same imprint or brand.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

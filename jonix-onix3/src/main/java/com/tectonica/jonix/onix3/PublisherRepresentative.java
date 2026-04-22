@@ -236,9 +236,10 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
     /**
      * <p>
-     * A telephone number of an agent or local publisher. Optional and repeatable. Use to provide contact details for
-     * the organization as a whole, but prefer &lt;ProductContact&gt; for individual functions or contacts within the
-     * organization.
+     * A telephone number of an agent or local publisher, wherever possible including the plus sign (representing the
+     * international call prefix) and the international dialing code for the agent’s country. Optional and repeatable.
+     * Use to provide contact details for the organization as a whole, but prefer &lt;ProductContact&gt; for individual
+     * functions or contacts within the organization.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -251,9 +252,10 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
     /**
      * <p>
-     * A fax number of an agent or local publisher. Optional and repeatable. Use to provide contact details for the
-     * organization as a whole, but prefer &lt;ProductContact&gt; for individual functions or contacts within the
-     * organization.
+     * A fax number of an agent or local publisher, wherever possible including the plus sign (representing the
+     * international call prefix) and the international dialing code for the agent’s country. Optional and repeatable.
+     * Use to provide contact details for the organization as a whole, but prefer &lt;ProductContact&gt; for individual
+     * functions or contacts within the organization.
      * </p>
      * JONIX adds: this list may be empty
      */

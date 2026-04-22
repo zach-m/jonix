@@ -43,7 +43,7 @@ interface CodeList178 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist178">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist178">ONIX
  *      Codelist 178 in Reference Guide</a>
  */
 public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
@@ -218,7 +218,7 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
     PDF("E107", "PDF"),
 
     /**
-     * Plain text (either ASCII or UTF-8/16 Unicode)
+     * Plain text (either ASCII or UTF-8 / 16 Unicode)
      */
     TXT("E112", "TXT"),
 

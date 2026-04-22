@@ -46,7 +46,7 @@ public class JonixProductFormFeature implements JonixKeyedStruct<ProductFormFeat
     public ProductFormFeatureTypes productFormFeatureType;
 
     /**
-     * Raw Format: Variable length text, suggested maximum length 10,000 characters
+     * Raw Format: Variable length text, suggested maximum length 1000 or 10,000 characters
      * <p>
      * (type: dt.NonEmptyString)
      */

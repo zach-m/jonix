@@ -33,8 +33,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Map scale</h1>
  * <p>
- * The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data element, without
- * spaces or punctuation. Optional, and repeatable if a product comprises maps with two or more different scales.
+ * The scale of a map, expressed as a ratio 1:n; only the number n is carried in the data element, without spaces or
+ * punctuation. Optional, and repeatable if a product comprises maps with two or more different scales.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

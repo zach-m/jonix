@@ -35,7 +35,8 @@ import java.util.function.Consumer;
  * <h1>Author of text</h1>
  * <p>
  * The name of an author of text sent in the &lt;Text&gt; element, <i>eg</i>&nbsp;if it is a review or promotional
- * quote. Optional, and repeatable if the text is jointly authored.
+ * quote. Optional, and repeatable if the text is jointly authored, but may not be used if &lt;TextSource&gt; is
+ * present. Deprecated&nbsp;– where possible, use the &lt;TextSource&gt; composite instead.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -66,7 +67,7 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;TextAuthor&gt; from the schema author:
  *
- * Name of an author of a supporting text
+ * Name of an author of a supporting text &#9679; Deprecated from revision 3.1.3
  *
  * This tag may be included in the following composites:
  * <ul>
@@ -77,7 +78,10 @@ import java.util.function.Consumer;
  * <li>{@link Product} ⯈ {@link ContentDetail} ⯈ {@link ContentItem} ⯈ {@link TextContent} ⯈ {@link TextAuthor}</li>
  * <li>{@link Product} ⯈ {@link CollateralDetail} ⯈ {@link TextContent} ⯈ {@link TextAuthor}</li>
  * </ul>
+ *
+ * @deprecated
  */
+@Deprecated
 public class TextAuthor implements OnixElement<String>, Serializable {
     private static final long serialVersionUID = 1L;
 

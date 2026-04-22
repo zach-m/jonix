@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <p>
  * The name of the sender organization, which should always be stated in a standard form agreed with the addressee.
  * Optional and non-repeating, but <em>either</em> a &lt;SenderName&gt; element <em>or</em> a &lt;SenderIdentifier&gt;
- * composite <em>must</em> be included.
+ * composite <em>must</em> be included within the &lt;Sender&gt; composite.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

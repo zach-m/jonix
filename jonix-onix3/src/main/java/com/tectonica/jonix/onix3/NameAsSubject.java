@@ -75,8 +75,9 @@ import java.util.function.Consumer;
  * <p/>
  * Technical notes about &lt;NameAsSubject&gt; from the schema author:
  *
- * Details of a person, persona or corporate identity that is the subject of the product &#9679; Removed &lt;Gender&gt;
- * at release 3.1 &#9679; Modified cardinality of corporate names at release 3.1 &#9679; Added &lt;AlternativeName&gt;,
+ * Details of a person, persona or corporate identity that is the subject of the product &#9679; Added
+ * &lt;SequenceNumber&gt; and &lt;SubjectDescription&gt; at revision 3.1.3 &#9679; Removed &lt;Gender&gt; at release 3.1
+ * &#9679; Modified cardinality of corporate names at release 3.1 &#9679; Added &lt;AlternativeName&gt;,
  * &lt;SubjectDate&gt;, &lt;ProfessionalAffiliation&gt;, &lt;Gender&gt; at revision 3.0.3 &#9679; Added
  * &lt;CorporateNameInverted&gt; at revision 3.0 (2010) &#9679; Modified cardinality of &lt;NameType&gt; at revision 3.0
  * (2010)
@@ -164,6 +165,10 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
                 case CorporateName.shortname:
                     corporateNames = JPU.addToList(corporateNames, new CorporateName(e));
                     break;
+                case SequenceNumber.refname:
+                case SequenceNumber.shortname:
+                    sequenceNumber = new SequenceNumber(e);
+                    break;
                 case NameType.refname:
                 case NameType.shortname:
                     nameType = new NameType(e);
@@ -215,6 +220,10 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
                 case ProfessionalAffiliation.refname:
                 case ProfessionalAffiliation.shortname:
                     professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(e));
+                    break;
+                case SubjectDescription.refname:
+                case SubjectDescription.shortname:
+                    subjectDescriptions = JPU.addToList(subjectDescriptions, new SubjectDescription(e));
                     break;
                 default:
                     break;
@@ -293,15 +302,32 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
      * The name of a corporate body which contributed to the creation of the product, unstructured, and presented in
      * normal order. Optional: see Group&nbsp;P.7 introductory text for valid options. Repeatable, to provide parallel
      * names for a single organization in multiple languages (<i>eg</i>&nbsp;‘World Health Organization’ and
-     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>).The <i>language</i> attribute is optional
-     * for a single instance of &lt;CorporateName&gt;, but must be included in each instance if &lt;CorporateName&gt; is
-     * repeated.
+     * <span lang="fr">«&nbsp;Organisation mondiale de la santé&nbsp;»</span>) or scripts. The <i>language</i> attribute
+     * is optional for a single instance of &lt;CorporateName&gt;, but must be included in each instance if
+     * &lt;CorporateName&gt; is repeated. If any two or more repeats are in the same language but different scripts,
+     * each instance of <em>every</em> language must also carry the <i>textscript</i> attribute.
      * </p>
      * JONIX adds: this list is required to contain at least one item
      */
     public ListOfOnixElement<CorporateName, String> corporateNames() {
         _initialize();
         return corporateNames;
+    }
+
+    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
+
+    /**
+     * <p>
+     * An ordinal number which specifies a single overall sequence of subject names, which is the preferred order for
+     * display of the various subject names. Optional and non-repeating. It is strongly recommended that where there are
+     * two or more instances of &lt;NameAsSubject&gt; within &lt;DescriptiveDetail&gt;, each occurrence of the
+     * &lt;NameAsSubject&gt; composite should carry a unique and sequential &lt;SequenceNumber&gt;.
+     * </p>
+     * JONIX adds: this field is optional
+     */
+    public SequenceNumber sequenceNumber() {
+        _initialize();
+        return sequenceNumber;
     }
 
     private NameType nameType = NameType.EMPTY;
@@ -442,9 +468,11 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
      * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with
      * the element used for alphabetical sorting placed first. Optional: see Group&nbsp;P.7 introductory text for valid
      * options. Repeatable, to provide parallel names for a single organization in multiple languages
-     * (<i>eg</i>&nbsp;‘Polar Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>).The
-     * <i>language</i> attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but must be
-     * included in each instance if &lt;CorporateNameInverted&gt; is repeated.
+     * (<i>eg</i>&nbsp;‘Polar Research Foundation, The’ and <span lang="de">‚Polarforschungsinstitut, Das‘</span>) or
+     * scripts. The <i>language</i> attribute is optional for a single instance of &lt;CorporateNameInverted&gt;, but
+     * must be included in each instance if &lt;CorporateNameInverted&gt; is repeated. If any two or more repeats are in
+     * the same language but different scripts, each instance of <em>every</em> language must also carry the
+     * <i>textscript</i> attribute..
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -496,5 +524,23 @@ public class NameAsSubject implements OnixSuperComposite, Serializable {
     public ListOfOnixComposite<ProfessionalAffiliation> professionalAffiliations() {
         _initialize();
         return professionalAffiliations;
+    }
+
+    private ListOfOnixElement<SubjectDescription, String> subjectDescriptions = ListOfOnixElement.empty();
+
+    /**
+     * <p>
+     * Brief text describing or providing context for the subject, at the publisher’s discretion, and intended to be
+     * used in addition to the subject’s name. Optional, and repeatable to provide parallel descriptions in multiple
+     * languages. The <i>language</i> attribute is optional for a single instance of &lt;SubjectDescription&gt;, but
+     * must be included in each instance if &lt;SubjectDescription&gt; is repeated. The description may be used with
+     * either a person or corporate subject name, to draw attention to any aspect of the subject’s background which
+     * provides context for the subject of the book.
+     * </p>
+     * JONIX adds: this list may be empty
+     */
+    public ListOfOnixElement<SubjectDescription, String> subjectDescriptions() {
+        _initialize();
+        return subjectDescriptions;
     }
 }

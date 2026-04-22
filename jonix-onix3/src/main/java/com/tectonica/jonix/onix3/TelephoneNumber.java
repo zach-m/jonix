@@ -33,8 +33,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Sender telephone number</h1>
  * <p>
- * A telephone number of the contact person in the sender organization, wherever possible including the plus sign and
- * the international dialing code. Optional, and non-repeating.
+ * A telephone number of the contact person within the sender organization who is responsible for the content of the
+ * message as a whole, wherever possible including the plus sign (representing the international call prefix) and the
+ * international dialing code for the sender’s country. Optional, and non-repeating.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

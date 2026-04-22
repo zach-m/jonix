@@ -43,7 +43,7 @@ interface CodeList121 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_72.html#codelist121">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist121">ONIX
  *      Codelist 121 in Reference Guide</a>
  */
 public enum TextScripts implements OnixCodelist, CodeList121 {
@@ -60,14 +60,14 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Afaka("Afak", "Afaka"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Caucasian_Albanian("Aghb", "Caucasian Albanian"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -83,14 +83,14 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Arabic_Nastaliq_variant("Aran", "Arabic (Nastaliq variant)"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Imperial_Aramaic("Armi", "Imperial Aramaic"),
 
     Armenian("Armn", "Armenian"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Avestan("Avst", "Avestan"),
 
@@ -99,7 +99,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Bamun("Bamu", "Bamun"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Bassa_Vah("Bass", "Bassa Vah"),
 
@@ -115,7 +115,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Beria_Erfe("Berf", "Beria Erfe"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -129,7 +129,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Bopomofo("Bopo", "Bopomofo"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Brahmi("Brah", "Brahmi"),
 
@@ -144,7 +144,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Unified_Canadian_Aboriginal_Syllabics("Cans", "Unified Canadian Aboriginal Syllabics"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Carian("Cari", "Carian"),
 
@@ -160,7 +160,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Chisoi("Chis", "Chisoi"),
 
     /**
-     * Khw&#257;rezmian. Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Khw&#257;rezmian. Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -172,19 +172,19 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Cirth("Cirt", "Cirth"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Coptic("Copt", "Coptic"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Cypro_Minoan("Cpmn", "Cypro-Minoan"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Cypriot("Cprt", "Cypriot"),
 
@@ -198,7 +198,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Devanagari_Nagari("Deva", "Devanagari (Nagari)"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -226,17 +226,17 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Egyptian_hieratic("Egyh", "Egyptian hieratic"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Egyptian_hieroglyphs("Egyp", "Egyptian hieroglyphs"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Elbasan("Elba", "Elbasan"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -259,7 +259,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Georgian_Mkhedruli_and_Mtavruli("Geor", "Georgian (Mkhedruli and Mtavruli)"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Glagolitic("Glag", "Glagolitic"),
 
@@ -278,12 +278,12 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Masaram_Gondi("Gonm", "Masaram Gondi"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Gothic("Goth", "Gothic"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Grantha("Gran", "Grantha"),
 
@@ -324,7 +324,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Han_Traditional_variant("Hant", "Han (Traditional variant)"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -335,7 +335,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Hiragana("Hira", "Hiragana"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -364,7 +364,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Japanese_syllabaries_alias_for_Hiragana_Katakana("Hrkt", "Japanese syllabaries (alias for Hiragana + Katakana)"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Old_Hungarian_Hungarian_Runic("Hung", "Old Hungarian (Hungarian Runic)"),
 
@@ -374,7 +374,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Indus_Harappan("Inds", "Indus (Harappan)"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Old_Italic_Etruscan_Oscan_etc_("Ital", "Old Italic (Etruscan, Oscan, etc.)"),
 
@@ -402,21 +402,21 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Katakana("Kana", "Katakana"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Kawi("Kawi", "Kawi"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Kharoshthi("Khar", "Kharoshthi"),
 
     Khmer("Khmr", "Khmer"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Khojki("Khoj", "Khojki"),
 
@@ -454,7 +454,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Kirat_Rai("Krai", "Kirat Rai"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Kaithi("Kthi", "Kaithi"),
 
@@ -486,12 +486,12 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Limbu("Limb", "Limbu"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Linear_A("Lina", "Linear A"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Linear_B("Linb", "Linear B"),
 
@@ -503,17 +503,17 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Loma("Loma", "Loma"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Lycian("Lyci", "Lycian"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Lydian("Lydi", "Lydian"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -529,12 +529,12 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Mandaic_Mandaean("Mand", "Mandaic, Mandaean"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Manichaean("Mani", "Manichaean"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -555,19 +555,19 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Mende_Kikakui("Mend", "Mende Kikakui"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Meroitic_Cursive("Merc", "Meroitic Cursive"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Meroitic_Hieroglyphs("Mero", "Meroitic Hieroglyphs"),
 
     Malayalam("Mlym", "Malayalam"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -588,7 +588,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Meitei_Mayek_Meithei_Meetei("Mtei", "Meitei Mayek (Meithei, Meetei)"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -604,19 +604,19 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Nag_Mundari("Nagm", "Nag Mundari"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Nandinagari("Nand", "Nandinagari"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Old_North_Arabian_Ancient_North_Arabian("Narb", "Old North Arabian (Ancient North Arabian)"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Nabatean("Nbat", "Nabatean"),
 
@@ -644,7 +644,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Nushu("Nshu", "Nüshu"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Ogham("Ogam", "Ogham"),
 
@@ -658,7 +658,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Ol_Onal("Onao", "Ol Onal"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Old_Turkic_Orkhon_Runic("Orkh", "Old Turkic, Orkhon Runic"),
 
@@ -674,14 +674,14 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Osmanya("Osma", "Osmanya"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Old_Uyghur("Ougr", "Old Uyghur"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Palmyrene("Palm", "Palmyrene"),
 
@@ -693,36 +693,36 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Pau_Cin_Hau("Pauc", "Pau Cin Hau"),
 
     /**
-     * Ancient/historic script, not supported by Unicode. Only for use in ONIX 3.0 or later
+     * Ancient / historic script, not supported by Unicode. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Proto_Cuneiform("Pcun", "Proto-Cuneiform"),
 
     /**
-     * Ancient/historic script, not supported by Unicode. Only for use in ONIX 3.0 or later
+     * Ancient / historic script, not supported by Unicode. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Proto_Elamite("Pelm", "Proto-Elamite"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Old_Permic("Perm", "Old Permic"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Phags_pa("Phag", "Phags-pa"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Inscriptional_Pahlavi("Phli", "Inscriptional Pahlavi"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Psalter_Pahlavi("Phlp", "Psalter Pahlavi"),
 
@@ -732,7 +732,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Book_Pahlavi("Phlv", "Book Pahlavi"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Phoenician("Phnx", "Phoenician"),
 
@@ -746,12 +746,12 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Miao_Pollard("Plrd", "Miao (Pollard)"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Inscriptional_Parthian("Prti", "Inscriptional Parthian"),
 
     /**
-     * Ancient/historic script, not supported by Unicode. Only for use in ONIX 3.0 or later
+     * Ancient / historic script, not supported by Unicode. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -799,7 +799,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Rongorongo("Roro", "Rongorongo"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Runic("Runr", "Runic"),
 
@@ -811,7 +811,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Sarati("Sara", "Sarati"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Old_South_Arabian("Sarb", "Old South Arabian"),
 
@@ -838,7 +838,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Shuishu("Shui", "Shuishu"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -856,14 +856,14 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Sinhala("Sinh", "Sinhala"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Sogdian("Sogd", "Sogdian"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -917,7 +917,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Tamil("Taml", "Tamil"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Tangut("Tang", "Tangut"),
 
@@ -985,7 +985,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Tulu_Tigalari("Tutg", "Tulu-Tigalari"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Ugaritic("Ugar", "Ugaritic"),
 
@@ -997,7 +997,7 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Visible_Speech("Visp", "Visible Speech"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -1018,17 +1018,17 @@ public enum TextScripts implements OnixCodelist, CodeList121 {
     Woleai("Wole", "Woleai"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Old_Persian("Xpeo", "Old Persian"),
 
     /**
-     * Ancient/historic script
+     * Ancient / historic script
      */
     Cuneiform_Sumero_Akkadian("Xsux", "Cuneiform, Sumero-Akkadian"),
 
     /**
-     * Ancient/historic script. Only for use in ONIX 3.0 or later
+     * Ancient / historic script. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

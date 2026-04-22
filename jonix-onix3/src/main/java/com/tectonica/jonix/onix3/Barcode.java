@@ -34,9 +34,10 @@ import java.util.function.Consumer;
 /**
  * <h1>Barcode composite</h1>
  * <p>
- * A group of data elements which together specify a barcode type and its position on a product. Optional: expected to
- * be used only in North America. Repeatable if more than one type of barcode is carried on a single product. The
- * absence of this composite does <em>not</em> mean that a product is not bar-coded.
+ * A group of data elements which together specify a barcode type and its position on a product. Optional, and expected
+ * to be used only for physical products, and only in North America. Repeatable if more than one type of barcode is
+ * carried on a single product, or if the same barcode is printed in multiple locations on the product. The absence of
+ * this composite does <em>not</em> mean that a product is not barcoded.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -177,7 +178,7 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
 
     /**
      * <p>
-     * An ONIX code indicating a position on a product; in this case, the position in which a barcode appears. Required
+     * An ONIX code indicating a position on a product, in this case the position in which a barcode appears. Required
      * if the &lt;BarcodeType&gt; element indicates that the barcode appears on the product, even if the position is
      * ‘unknown’. Omitted if the &lt;BarcodeType&gt; element specifies that the product does not carry a barcode.
      * Non-repeating.

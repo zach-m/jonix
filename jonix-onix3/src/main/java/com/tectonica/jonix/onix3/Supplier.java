@@ -236,9 +236,10 @@ public class Supplier implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A telephone number of a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable. Use to provide contact details for the organization as a whole, but prefer &lt;SupplyContact&gt; for
-     * individual functions or contacts within the organization.
+     * A telephone number of a supply source from which the product may be ordered by a trade customer, wherever
+     * possible including the plus sign (representing the international call prefix) and the international dialing code
+     * for the supplier’s country. Optional and repeatable. Use to provide contact details for the organization as a
+     * whole, but prefer &lt;SupplyContact&gt; for individual functions or contacts within the organization.
      * </p>
      * JONIX adds: this list may be empty
      */
@@ -251,9 +252,10 @@ public class Supplier implements OnixSuperComposite, Serializable {
 
     /**
      * <p>
-     * A fax number of a supply source from which the product may be ordered by a trade customer. Optional and
-     * repeatable. Use to provide contact details for the organization as a whole, but prefer &lt;SupplyContact&gt; for
-     * individual functions or contacts within the organization.
+     * A fax number of a supply source from which the product may be ordered by a trade customer, wherever possible
+     * including the plus sign (representing the international call prefix) and the international dialing code for the
+     * supplier’s country. Optional and repeatable. Use to provide contact details for the organization as a whole, but
+     * prefer &lt;SupplyContact&gt; for individual functions or contacts within the organization.
      * </p>
      * JONIX adds: this list may be empty
      */

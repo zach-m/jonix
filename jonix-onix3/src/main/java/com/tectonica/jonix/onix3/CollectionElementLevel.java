@@ -34,8 +34,8 @@ import java.util.function.Consumer;
 /**
  * <h1>Collection title element level</h1>
  * <p>
- * An ONIX code indicating the level of the collection title element (collection level or sub-collection level) to which
- * the identifier in the &lt;IDValue&gt; element is assigned. Optional in each occurrence of the
+ * An ONIX code indicating the level of the collection title element (collection level or sub-collection level
+ * <i>etc</i>) to which the identifier in the &lt;IDValue&gt; element is assigned. Optional in each occurrence of the
  * &lt;CollectionIdentifier&gt; composite, and non-repeating.
  * </p>
  * <p>

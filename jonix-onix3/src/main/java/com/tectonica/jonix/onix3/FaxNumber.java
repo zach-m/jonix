@@ -33,9 +33,9 @@ import java.util.function.Consumer;
 /**
  * <h1>Product contact fax number</h1>
  * <p>
- * A fax number for the contact person in the product contact organization who is responsible for the product, wherever
- * possible including the plus sign and the international dialing code. Optional, and repeatable to provide multiple
- * numbers for the same contact.
+ * A fax number for the contact person within the product contact organization who is responsible for the product,
+ * wherever possible including the plus sign (representing the international calling prefix) and the international
+ * dialing code for the contact’s country. Optional, and repeatable to provide multiple numbers for the same contact.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>

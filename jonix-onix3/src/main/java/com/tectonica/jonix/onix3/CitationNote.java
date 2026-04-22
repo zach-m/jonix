@@ -44,7 +44,7 @@ import java.util.function.Consumer;
  * <tr>
  * <td>Format</td>
  * <td>Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML, XML, JSON within ONIX text fields</td>
+ * XHTML, multilingual text, HTML, XML, JSON</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -117,7 +117,7 @@ public class CitationNote implements OnixElement<String>, Serializable {
      * if you want to get this as an {@link java.util.Optional}.
      * <p>
      * Raw Format: Variable length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-     * Using XHTML, HTML, XML, JSON within ONIX text fields
+     * Using XHTML, multilingual text, HTML, XML, JSON
      * <p>
      * (type: XHTML)
      */
