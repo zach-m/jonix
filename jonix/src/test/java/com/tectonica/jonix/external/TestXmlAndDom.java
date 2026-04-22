@@ -89,9 +89,6 @@ public class TestXmlAndDom {
             assertEquals(expectedOnixVersion, record.source.onixVersion());
 
             String json = JonixJson.toJson(record.product, false);
-            //System.out.println("------------------------------------------------------");
-            //System.out.println(json);
-            //System.out.println("------------------------------------------------------");
             LOGGER.debug("API: {}", json); // or: JonixJson.productToJson(record.product);
             assertEquals(expectedLength, json.length());
         }
