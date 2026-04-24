@@ -46,12 +46,8 @@ import com.tectonica.jonix.onix2.Publisher;
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.util.JonixUtil;
+import com.tectonica.xmlchunk.XmlUtil;
 
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-import java.io.StringReader;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -150,8 +146,7 @@ public class Onix2Essentials implements JonixEssentials {
             case FontSize:
                 return product.productFormFeatures().findAsStruct(ProductFormFeatureTypes.Text_font)
                     .filter(tf -> !tf.productFormFeatureDescriptions.isEmpty())
-                    .map(tf -> tf.productFormFeatureDescriptions.get(0))
-                    .orElse(null);
+                    .map(tf -> tf.productFormFeatureDescriptions.get(0)).orElse(null);
 
             case Publisher:
                 Publisher candidatePublisher = null;
@@ -198,9 +193,8 @@ public class Onix2Essentials implements JonixEssentials {
 
             case AudienceAgeRange:
                 Integer[] ageRange = getAudienceAgeRange();
-                return Arrays
-                    .asList(ageRange[0] == null ? null : ageRange[0].toString(),
-                        ageRange[1] == null ? null : ageRange[1].toString());
+                return Arrays.asList(ageRange[0] == null ? null : ageRange[0].toString(),
+                    ageRange[1] == null ? null : ageRange[1].toString());
 
             case Measurements:
                 List<String> wht = new ArrayList<>();
@@ -229,8 +223,8 @@ public class Onix2Essentials implements JonixEssentials {
             SupplyDetail supplyDetail = product.supplyDetails().get(0);
             for (Price price : supplyDetail.prices()) {
                 PriceTypes type = price.priceTypeCode().value;
-                boolean correctType = (includingTax && type == PriceTypes.RRP_including_tax)
-                    || (!includingTax && type == PriceTypes.RRP_excluding_tax);
+                boolean correctType = (includingTax && type == PriceTypes.RRP_including_tax) ||
+                    (!includingTax && type == PriceTypes.RRP_excluding_tax);
                 if (correctType && (price.currencyCode().value == currency)) {
                     return price.priceAmount().value;
                 }
@@ -246,8 +240,7 @@ public class Onix2Essentials implements JonixEssentials {
 
     private String getTitle(TitleTypes titleType, boolean returnSubtitle) {
         return product.titles().findAsStruct(titleType)
-            .map(titleTag -> returnSubtitle ? titleTag.subtitle : titleTag.titleText)
-            .orElse(null);
+            .map(titleTag -> returnSubtitle ? titleTag.subtitle : titleTag.titleText).orElse(null);
     }
 
     public List<Contributor> findContributors(ContributorRoles... requestedRoles) {
@@ -303,8 +296,9 @@ public class Onix2Essentials implements JonixEssentials {
         List<String> result = new ArrayList<>();
 
         for (Contributor c : findContributors(requestedRoles)) {
-            String displayName = JonixUtil.contributorDisplayName(c.personName().value, c.keyNames().value,
-                c.namesBeforeKey().value, c.personNameInverted().value, c.corporateName().value);
+            String displayName =
+                JonixUtil.contributorDisplayName(c.personName().value, c.keyNames().value, c.namesBeforeKey().value,
+                    c.personNameInverted().value, c.corporateName().value);
             result.add(displayName);
         }
 
@@ -377,14 +371,10 @@ public class Onix2Essentials implements JonixEssentials {
                 JonixOtherText jonixOtherText = x.asStruct();
                 if ((jonixOtherText.textFormat == null) && (x.text().exists())) {
                     jonixOtherText.textFormat = x.text().textformat;
-                    if ((jonixOtherText.textFormat == TextFormats.XHTML)
-                        || (jonixOtherText.textFormat == TextFormats.XML)
-                        || (jonixOtherText.textFormat == TextFormats.HTML)) {
-                        try {
-                            jonixOtherText.text = unescape(jonixOtherText.text);
-                        } catch (XMLStreamException e) {
-                            // ignore
-                        }
+                    if ((jonixOtherText.textFormat == TextFormats.XHTML) ||
+                        (jonixOtherText.textFormat == TextFormats.XML) ||
+                        (jonixOtherText.textFormat == TextFormats.HTML)) {
+                        jonixOtherText.text = XmlUtil.unescape(jonixOtherText.text);
                     }
                 }
                 return jonixOtherText;
@@ -393,28 +383,7 @@ public class Onix2Essentials implements JonixEssentials {
         return null;
     }
 
-    private static final XMLInputFactory inputFactory;
-
-    static {
-        inputFactory = XMLInputFactory.newInstance();
-
-        // no need to validate, or even try to access, the remote DTD file
-        inputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, Boolean.FALSE);
-
-        // no need to validate internal entities - this is important because ONIX files are designed to contain HTML
-        // sections inside them. these sections may include entities (such as '&nbsp;') that aren't XML-compatible
-        inputFactory.setProperty(XMLInputFactory.IS_REPLACING_ENTITY_REFERENCES, false);
-    }
-
-    public static String unescape(String escaped) throws XMLStreamException {
-        XMLStreamReader reader = inputFactory.createXMLStreamReader(new StringReader("<xml>" + escaped + "</xml>"));
-        StringWriter sw = new StringWriter(escaped.length());
-        while (reader.hasNext()) {
-            reader.next();
-            if (reader.hasText()) {
-                sw.append(reader.getText());
-            }
-        }
-        return sw.toString();
+    public static String unescape(String escaped) {
+        return XmlUtil.unescape(escaped);
     }
 }

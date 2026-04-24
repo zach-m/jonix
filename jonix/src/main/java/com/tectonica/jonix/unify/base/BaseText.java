@@ -23,7 +23,6 @@ import com.tectonica.jonix.common.codelist.TextFormats;
 import com.tectonica.jonix.common.codelist.TextTypes;
 import com.tectonica.xmlchunk.XmlUtil;
 
-import javax.xml.stream.XMLStreamException;
 import java.io.Serializable;
 
 /**
@@ -41,11 +40,7 @@ public abstract class BaseText implements Serializable {
 
     public String getUnescapedText() {
         if ((textFormat == TextFormats.XHTML) || (textFormat == TextFormats.XML) || (textFormat == TextFormats.HTML)) {
-            try {
-                return XmlUtil.unescape(text);
-            } catch (XMLStreamException e) {
-                // ignore
-            }
+            return XmlUtil.unescape(text);
         }
         return text;
     }
