@@ -21,14 +21,11 @@ package com.tectonica.xmlchunk;
 
 import org.w3c.dom.Element;
 
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.StringReader;
 import java.io.StringWriter;
 
 public class XmlUtil {
@@ -62,24 +59,63 @@ public class XmlUtil {
 
     /**
      * Transforms an escaped XML into the original, "un-escaped" value (for example turn &amp;lt;Hello&amp;gt; into
-     * &lt;Hello&gt;)
+     * &lt;Hello&gt;).
+     * <p>
+     * If the input contains no {@code &} character it is returned as-is (preserving any actual XML markup). Standard
+     * entity references ({@code &lt;}, {@code &gt;}, {@code &amp;}, {@code &apos;}, {@code &quot;}) and numeric
+     * character references ({@code &#NNN;} / {@code &#xHHH;}) are decoded; unknown named entities are left unchanged.
      *
-     * @param escaped the escaped XML string
-     * @return the un-escaped XML string
+     * @param escaped the (possibly escaped) XML string
+     * @return the un-escaped string
      */
-    public static String unescape(String escaped) throws XMLStreamException {
-        if (escaped == null) {
-            return null;
+    public static String unescape(String escaped) {
+        if (escaped == null || !escaped.contains("&")) {
+            return escaped;
         }
-        XMLStreamReader reader = XmlChunkerContext.inputFactory.createXMLStreamReader(new StringReader("<xml>"
-            + escaped + "</xml>"));
-        StringWriter sw = new StringWriter(escaped.length());
-        while (reader.hasNext()) {
-            reader.next();
-            if (reader.hasText()) {
-                sw.append(reader.getText());
+        StringBuilder sb = new StringBuilder(escaped.length());
+        int i = 0;
+        while (i < escaped.length()) {
+            if (escaped.charAt(i) == '&') {
+                int end = escaped.indexOf(';', i + 1);
+                if (end > i) {
+                    String decoded = decodeXmlRef(escaped.substring(i + 1, end));
+                    if (decoded != null) {
+                        sb.append(decoded);
+                        i = end + 1;
+                        continue;
+                    }
+                }
             }
+            sb.append(escaped.charAt(i));
+            i++;
         }
-        return sw.toString();
+        return sb.toString();
+    }
+
+    private static String decodeXmlRef(String ref) {
+        switch (ref) {
+            case "lt":
+                return "<";
+            case "gt":
+                return ">";
+            case "amp":
+                return "&";
+            case "apos":
+                return "'";
+            case "quot":
+                return "\"";
+            default:
+                if (ref.startsWith("#")) {
+                    try {
+                        int codePoint =
+                            (ref.startsWith("#x") || ref.startsWith("#X")) ? Integer.parseInt(ref.substring(2), 16)
+                                : Integer.parseInt(ref.substring(1));
+                        return new String(Character.toChars(codePoint));
+                    } catch (IllegalArgumentException e) {
+                        return null;
+                    }
+                }
+                return null; // unknown named entity — leave as-is
+        }
     }
 }
