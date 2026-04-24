@@ -52,6 +52,6 @@ public abstract class BaseTitle implements Serializable {
     }
 
     protected static String noBreaks(String s) {
-        return (s == null || s.isEmpty()) ? s : s.replaceAll("[\\t\\n\\r]", " ").trim();
+        return (s == null || s.isEmpty()) ? s : s.replaceAll("[\\t\\n\\r]+", " ").trim();
     }
 }
