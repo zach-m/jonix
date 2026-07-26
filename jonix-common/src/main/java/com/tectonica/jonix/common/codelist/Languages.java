@@ -43,7 +43,7 @@ interface CodeList74 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist74">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
 public enum Languages implements OnixCodelist, CodeList74 {
@@ -687,6 +687,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Gujarati("guj", "Gujarati"),
 
+    /**
+     * Gojri. ONIX local code, equivalent of gju in ISO 639-3
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Gujari("gju", "Gujari"),
+
     Gwichin("gwi", "Gwich’in"),
 
     /**
@@ -1107,6 +1114,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Luo_Kenya_and_Tanzania("luo", "Luo (Kenya and Tanzania)"),
 
+    /**
+     * Mizo
+     */
     Lushai("lus", "Lushai"),
 
     Luxembourgish_Letzeburgesch("ltz", "Luxembourgish; Letzeburgesch"),
@@ -1156,6 +1166,9 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Mandingo("man", "Mandingo"),
 
+    /**
+     * Meitei
+     */
     Manipuri("mni", "Manipuri"),
 
     /**
@@ -1375,6 +1388,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
      */
     Nubian_languages("nub", "Nubian languages"),
 
+    /**
+     * ONIX local code, equivalent of hux in ISO 639-3
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Nupode_Huitoto_Nipode("hux", "Nüpode Huitoto (Nipóde)"),
+
     Nyamwezi("nym", "Nyamwezi"),
 
     Nyankole("nyn", "Nyankole"),
@@ -1420,7 +1440,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Oodham("ood", "O’odham"),
 
     /**
-     * Macrolanguage
+     * Odia. Macrolanguage
      */
     Oriya("ori", "Oriya"),
 
@@ -1445,6 +1465,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Pahlavi("pal", "Pahlavi"),
 
+    /**
+     * ONIX local code, equivalent to pri in ISO 639-3
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Paici("pri", "Paicî"),
+
     Palauan("pau", "Palauan"),
 
     Pali("pli", "Pali"),
@@ -1453,7 +1480,7 @@ public enum Languages implements OnixCodelist, CodeList74 {
 
     Pangasinan("pag", "Pangasinan"),
 
-    Panjabi("pan", "Panjabi"),
+    Panjabi_Punjabi("pan", "Panjabi; Punjabi"),
 
     Papiamento("pap", "Papiamento"),
 
@@ -1993,6 +2020,13 @@ public enum Languages implements OnixCodelist, CodeList74 {
     Wallisian("wls", "Wallisian"),
 
     Walloon("wln", "Walloon"),
+
+    /**
+     * Konyagi. ONIX local code, equivalent to cou in ISO 639-3
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Wamey("cou", "Wamey"),
 
     Waray("war", "Waray"),
 

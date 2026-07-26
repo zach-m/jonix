@@ -45,7 +45,7 @@ interface CodeList262 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist262">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist262">ONIX
  *      Codelist 262 in Reference Guide</a>
  */
 public enum CarbonGhgEmissionsCertificationSchemes implements OnixCodelist, CodeList262 {
@@ -83,9 +83,10 @@ public enum CarbonGhgEmissionsCertificationSchemes implements OnixCodelist, Code
     ClimateCalc("201", "ClimateCalc"),
 
     /**
-     * Per book CO&#8322;e calculator from Booknet Canada, see https://www.booknetcanada.ca/sustainable-publishing-tools
+     * Per book CO&#8322;e calculator from BookNet Canada, see https://www.booknetcanada.ca/sustainable-publishing-tools
+     * and https://www.greenbookalliance.org/carbon-calculator-project
      */
-    Canadian_SPT_Carbon_calculator("202", "Canadian SPT Carbon calculator"),
+    Canadian_SPT_Green_Book_Alliance_Carbon_calculator("202", "Canadian SPT / Green Book Alliance Carbon calculator"),
 
     /**
      * Indicates the product is certified as vegan (does not use animal products, for example in binding or adhesives).

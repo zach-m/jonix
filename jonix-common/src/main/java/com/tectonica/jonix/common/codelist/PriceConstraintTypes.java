@@ -43,7 +43,7 @@ interface CodeList230 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist230">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist230">ONIX
  *      Codelist 230 in Reference Guide</a>
  */
 public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
@@ -142,10 +142,11 @@ public enum PriceConstraintTypes implements OnixCodelist, CodeList230 {
         "TDM for AI to enhance the private purchase experience"),
 
     /**
-     * Where text and data mining is otherwise prohibited, make use of the content of the product (text, images, audio
-     * etc) or the product metadata or supporting resources to train or enable an AI-enhanced reading experience for the
-     * purchaser, with no use outside of a private AI instance controlled by the reseller or embedded in the product
-     * itself - for example to provide AI-enhanced reading
+     * Where text and data mining is prohibited or otherwise expressly reserved by the rightsholder, make use of the
+     * content of the product (text, images, audio etc) or the product metadata or supporting resources to train or
+     * enable a generative AI-enhanced reading experience for the purchaser, with no use outside of a private AI
+     * instance controlled by the reseller or embedded in the product itself - for example to provide AI-enhanced
+     * reading
      * <p>
      * JONIX adds: Not included in Onix2
      */

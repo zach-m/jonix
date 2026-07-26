@@ -43,7 +43,7 @@ interface CodeList21 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist21">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
 public enum EditionTypes implements OnixCodelist, CodeList21 {
@@ -310,12 +310,12 @@ public enum EditionTypes implements OnixCodelist, CodeList21 {
     Variorum_edition("VAR", "Variorum edition"),
 
     /**
-     * Readaloud edition - specifically intended and designed for reading aloud (to children). Only for use in ONIX 3.0
-     * or later
+     * (de: Vorleseb&#252;cher) Edition specifically intended and designed for reading aloud (to children). Only for use
+     * in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Vorlesebucher("VOR", "Vorlesebücher");
+    Readaloud_edition("VOR", "Readaloud edition");
 
     public final String code;
     public final String description;

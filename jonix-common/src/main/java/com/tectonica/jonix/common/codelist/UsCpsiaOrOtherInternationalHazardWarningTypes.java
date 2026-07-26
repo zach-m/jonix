@@ -43,7 +43,7 @@ interface CodeList143 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist143">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist143">ONIX
  *      Codelist 143 in Reference Guide</a>
  */
 public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelist, CodeList143 {
@@ -114,6 +114,15 @@ public enum UsCpsiaOrOtherInternationalHazardWarningTypes implements OnixCodelis
      * JONIX adds: Not included in Onix2
      */
     No_strangulation_hazard_warning_necessary("09", "No strangulation hazard warning necessary"),
+
+    /**
+     * A General Certificate of Conformity (GCC), or for children's products, a Children's Product Certificate (CPC),
+     * required to certify the product complies with applicable safety rules enforced by the US Consumer Products Safety
+     * Commission. &lt;ProductFormFeatureDescription&gt; must carry the URL of the GCC or CPC document
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    US_CPSC_Certificate_of_Conformity_available("10", "US CPSC Certificate of Conformity available"),
 
     /**
      * Required on applicable products sold in the US. Should be accompanied by additional text: Swallowed magnets can

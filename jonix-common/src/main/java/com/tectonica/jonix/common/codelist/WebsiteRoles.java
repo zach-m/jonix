@@ -43,7 +43,7 @@ interface CodeList73 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -340,7 +340,30 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Website_for_Indigenous_statement_or_resource("54", "Website for Indigenous statement or resource");
+    Website_for_Indigenous_statement_or_resource("54", "Website for Indigenous statement or resource"),
+
+    /**
+     * Use within &lt;Contributor&gt; or &lt;Publisher&gt; as appropriate. Use &lt;WebsiteDescription&gt; to include
+     * name of the certification scheme, eg 'Human Authored' or 'Proudly Human certified'. &lt;WebsiteLink&gt; must link
+     * directly to certification that the product or work is entirely human-created (within the specific limits of the
+     * certification scheme, which may allow de minimis use of generative AI in initial ideation, research or
+     * spell-checking). Certified products should carry the certification scheme logo
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Link_to_third_party_certification_of_absence_of_AI_generated_content("55",
+        "Link to third-party certification of absence of AI-generated content"),
+
+    /**
+     * Use within &lt;Contributor&gt; or &lt;Publisher&gt; as appropriate. &lt;WebsiteDescription&gt; should include
+     * 'Publisher declaration of human authorship' or similar. &lt;WebsiteLink&gt; must link directly to a declaration
+     * that the product or work is entirely human-created (with no more than de minimis use of generative AI in initial
+     * ideation, research or spell-checking)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Link_to_first_party_declaration_of_absence_of_AI_generated_content("56",
+        "Link to first-party declaration of absence of AI-generated content");
 
     public final String code;
     public final String description;

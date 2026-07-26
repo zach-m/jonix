@@ -43,7 +43,7 @@ interface CodeList163 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -222,7 +222,7 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     /**
      * Date from which previews of a product may be made available, where the embargo is managed separately from any
      * Sales embargo date. Applies to all previews (previews in &lt;TextContent&gt; or &lt;SupportingResource&gt;,
-     * previews covered by &lt;EpubUsageConstraint&gt; and external preview 'widgets') unless overridden by a Valid from
+     * previews covered by &lt;EpubUsageConstraint&gt; and external preview 'widgets') UNLESS overridden by a Valid from
      * date for a specific preview
      * <p>
      * JONIX adds: Not included in Onix2
