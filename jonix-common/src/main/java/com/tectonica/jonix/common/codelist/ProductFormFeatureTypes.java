@@ -43,7 +43,7 @@ interface CodeList79 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist79">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
 public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
@@ -574,6 +574,39 @@ public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79 {
      * JONIX adds: Not included in Onix2
      */
     EUDR_raw_material_location_other_("62", "EUDR raw material location (other) URL"),
+
+    /**
+     * As code 47, but &lt;ProductFormFeatureDescription&gt; is the country and postcode or full postal address of a
+     * source plot or of the paper manufacturer or printer (eg GB M10 9KC). Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EUDR_raw_material_location_interior_or_full_product__("63",
+        "EUDR raw material location (interior or full product) Postal address"),
+
+    /**
+     * As code 48, but &lt;ProductFormFeatureDescription&gt; is the country and postcode or full postal address of a
+     * source plot or of the paper manufacturer or printer. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EUDR_raw_material_location_binding__("64", "EUDR raw material location (binding) Postal address"),
+
+    /**
+     * As code 49, but &lt;ProductFormFeatureDescription&gt; is the country and postcode or full postal address of a
+     * source plot or of the paper manufacturer or printer. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EUDR_raw_material_location_other__("65", "EUDR raw material location (other) Postal address"),
+
+    /**
+     * The primary projection used for a cartographic product. &lt;ProductFormFeatureDescription&gt; is the name of the
+     * projection, eg Mercator, Winkel tripel projection
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Map_projection("66", "Map projection"),
 
     /**
      * DEPRECATED - use code 12 and List 143

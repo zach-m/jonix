@@ -43,7 +43,7 @@ interface CodeList139 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -290,6 +290,11 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Books_Etc("BRB", "Books Etc"),
 
     Books_A_Million("BKM", "Books-A-Million"),
+
+    /**
+     * JONIX adds: Not included in Onix2
+     */
+    Bookshop_org("BSO", "Bookshop.org"),
 
     Bookshout("BKS", "Bookshout"),
 
@@ -543,6 +548,11 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     HMV("HMV", "HMV"),
 
     Home_Depot("HMD", "Home Depot"),
+
+    /**
+     * JONIX adds: Not included in Onix2
+     */
+    Hoopla_Midwest_Tape("HOO", "Hoopla / Midwest Tape"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -1075,6 +1085,11 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Williams_Sonoma("WLS", "Williams Sonoma"),
 
     Woolworths("WLW", "Woolworths"),
+
+    /**
+     * JONIX adds: Not included in Onix2
+     */
+    XigXag("XIG", "XigXag"),
 
     Youboox("YOU", "Youboox"),
 

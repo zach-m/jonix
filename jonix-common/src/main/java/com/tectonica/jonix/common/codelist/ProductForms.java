@@ -43,7 +43,7 @@ interface CodeList150 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist150">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
 public enum ProductForms implements OnixCodelist, CodeList150 {
@@ -216,7 +216,7 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
 
     /**
      * Concertina-folded booklet or chart, designed to fold to pocket or regular page size, and usually bound within
-     * distinct board or card covers (de: 'Leporello')
+     * distinct board or card covers (de: Leporello)
      */
     Fold_out_book_or_chart("BO", "Fold-out book or chart"),
 
@@ -559,6 +559,15 @@ public enum ProductForms implements OnixCodelist, CodeList150 {
      * JONIX adds: Not included in Onix2
      */
     Multiple_component_retail_product_entirely_digital("SG", "Multiple-component retail product, entirely digital"),
+
+    /**
+     * Multiple component product where some parts are digital, but at least one is physical, eg a physical book with a
+     * digital version also included, or an educational product containing a mix of physical and digital material.
+     * Format of product components must be given in &lt;ProductPart&gt;
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Multiple_component_retail_product_partly_digital("SH", "Multiple-component retail product, partly digital"),
 
     /**
      * Video - detail unspecified. Use only when the form is unknown and no further detail can be provided. Prefer VZ

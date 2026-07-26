@@ -43,7 +43,7 @@ interface CodeList203 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist203">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist203">ONIX
  *      Codelist 203 in Reference Guide</a>
  */
 public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
@@ -55,64 +55,81 @@ public enum OnixAdultAudienceRatings implements OnixCodelist, CodeList203 {
     Any_adult_audience("01", "Any adult audience"),
 
     /**
-     * The publisher warns the content may offend parts of the adult audience (for any reason)
+     * The publisher advises the content may offend or distress parts of the adult audience (for any reason)
      */
-    Content_warning("02", "Content warning"),
+    Content_advice("02", "Content advice"),
 
     /**
-     * The publisher warns the product includes content of an explicit sexual nature
+     * The publisher advises the product includes content of an explicit sexual nature
      */
-    Content_warning_sex("03", "Content warning (sex)"),
+    Content_advice_sex("03", "Content advice (sex)"),
 
     /**
-     * The publisher warns the product includes content of an extreme violent nature
+     * The publisher advises the product includes content of an extreme violent nature
      */
-    Content_warning_violence("04", "Content warning (violence)"),
+    Content_advice_violence("04", "Content advice (violence)"),
 
     /**
-     * The publisher warns the product includes content involving severe misuse of drugs or alcohol
+     * The publisher advises the product includes content involving severe misuse of drugs or alcohol
      */
-    Content_warning_drugs("05", "Content warning (drugs)"),
+    Content_advice_drugs("05", "Content advice (drugs)"),
 
     /**
-     * The publisher warns the product includes extreme / offensive / explicit language
+     * The publisher advises the product includes extreme / offensive / explicit language
      */
-    Content_warning_language("06", "Content warning (language)"),
+    Content_advice_language("06", "Content advice (language)"),
 
     /**
-     * The publisher warns the product includes content involving severe intolerance or abuse of particular groups (eg
+     * The publisher advises the product includes content involving severe intolerance or abuse of particular groups (eg
      * religious, ethnic, racial, gendered and other social groups)
      */
-    Content_warning_intolerance("07", "Content warning (intolerance)"),
+    Content_advice_intolerance("07", "Content advice (intolerance)"),
 
     /**
-     * The publisher warns the product includes content involving sexual or extreme domestic abuse (including both
+     * The publisher advises the product includes content involving sexual or extreme domestic abuse (including both
      * mental and physical abuse)
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Content_warning_abuse("08", "Content warning (abuse)"),
+    Content_advice_abuse("08", "Content advice (abuse)"),
 
     /**
-     * The publisher warns the product includes content involving severe self-harm (including serious eating disorders)
+     * The publisher advises the product includes content involving severe self-harm (including serious eating
+     * disorders)
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Content_warning_self_harm("09", "Content warning (self-harm)"),
+    Content_advice_self_harm("09", "Content advice (self-harm)"),
 
     /**
-     * The publisher warns the product includes content involving extreme cruelty to animals
+     * The publisher advises the product includes content involving extreme cruelty to animals
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Content_warning_animal_cruelty("10", "Content warning (animal cruelty)"),
+    Content_advice_animal_cruelty("10", "Content advice (animal cruelty)"),
 
     /**
-     * The publisher warns the product includes content involving serious chronic or acute illness (mental or physical)
+     * The publisher advises the product includes content involving serious chronic or acute illness (mental or
+     * physical)
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Content_warning_illness("11", "Content warning (illness)");
+    Content_advice_illness("11", "Content advice (illness)"),
+
+    /**
+     * The publisher advises the product includes content relating to severe emotional distress resulting from death and
+     * grief
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Content_advice_death_and_grief("12", "Content advice (death and grief)"),
+
+    /**
+     * The publisher advises the product includes content relating to suicide
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Content_advice_suicide("13", "Content advice (suicide)");
 
     public final String code;
     public final String description;

@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -860,6 +860,14 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
      * JONIX adds: Not included in Onix2
      */
     Spine_panorama("B426", "Spine panorama"),
+
+    /**
+     * Obi. Paper band around the middle of a book (typically tucked inside the front and back cover rather than
+     * extending around the whole book)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Belly_band("B427", "Belly band"),
 
     /**
      * Type unspecified
@@ -2078,7 +2086,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Textual_description_of_audio("V214", "Textual description of audio"),
 
     /**
-     * Also termed 'described video' - audio track describes the video content
+     * Also termed 'described video' - audio track describes the video content as a spoken narration of crucial visual
+     * information, usually inserted during pauses in main dialogue
      * <p>
      * JONIX adds: Not included in Onix2
      */

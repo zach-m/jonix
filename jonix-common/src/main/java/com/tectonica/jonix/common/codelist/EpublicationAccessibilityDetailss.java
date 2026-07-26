@@ -43,7 +43,7 @@ interface CodeList196 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -52,37 +52,46 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * or the URL of a web page comprising such a summary, consistent with the more specific conformance, feature and
      * certification details provided. The summary should note both the accessibility features provided and any
      * potential deficiencies. The summary does not remove the requirement for full structured accessibility data, but
-     * should be considered a fall-back option if more structured detail cannot be provided or used. Further detailed
-     * information may be provided in an external file using codes 94-96. Only for use in ONIX 3.0 or later
+     * should be considered a fallback option if more structured detail cannot be provided or used. Use code 92 for a
+     * shorter accessibility summary that does NOT repeat information that is sent using codes. Both 00 and 92 can be
+     * included. Further detailed information may be provided in an external file using codes 94-96. Only for use in
+     * ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Accessibility_summary("00", "Accessibility summary"),
 
+    /**
+     * Conforms with the requirements of the LIA accessibility certification scheme. See
+     * https://www.fondazionelia.org/en/services/certification/
+     */
     LIA_Compliance_Scheme("01", "LIA Compliance Scheme"),
 
     /**
-     * Conforms with the requirements of EPUB Accessibility Spec 1.0 and WCAG level A.
+     * Conforms with the requirements of EPUB Accessibility Specification 1.0 and WCAG level A.
      * &lt;ProductFormFeatureDescription&gt; may carry a URL linking to a compliance report or certification provided by
      * an independent third party certifier. In the absence of a URL, conformance with the requirements of the
-     * Accessibility Specification is self-certified by the publisher
+     * Accessibility Specification is self-certified by the publisher. Alternatively, use codes 88-99 to provide extra
+     * details about certification
      */
     EPUB_Accessibility_Specification_1_0_A("02", "EPUB Accessibility Specification 1.0 A"),
 
     /**
-     * Conforms with the requirements of EPUB Accessibility Spec 1.0 and WCAG level AA.
+     * Conforms with the requirements of EPUB Accessibility Specification 1.0 and WCAG level AA.
      * &lt;ProductFormFeatureDescription&gt; may carry a URL linking to a compliance report or certification provided by
      * an independent third party certifier. In the absence of a URL, conformance with the requirements of the
-     * Accessibility Specification is self-certified by the publisher
+     * Accessibility Specification is self-certified by the publisher. Alternatively, use codes 88-99 to provide extra
+     * details about certification
      */
     EPUB_Accessibility_Specification_1_0_AA("03", "EPUB Accessibility Specification 1.0 AA"),
 
     /**
-     * Conforms with the requirements of EPUB Accessibility Spec v1.1 - see https://www.w3.org/TR/epub-a11y-11/.
-     * &lt;ProductFormFeatureDescription&gt; may carry a URL linking to a compliance report or certification provided by
-     * an independent third-party certifier. In the absence of a URL, conformance with the requirements of the
-     * Accessibility Specification is self- certified by the publisher. Use with other List 196 codes to indicate WCAG
-     * version and level, ARIA inclusion. Only for use in ONIX 3.0 or later
+     * Conforms with the requirements of EPUB Accessibility Specification v1.1 - see
+     * https://www.w3.org/TR/epub-a11y-11/. &lt;ProductFormFeatureDescription&gt; may carry a URL linking to a
+     * compliance report or certification provided by an independent third-party certifier. In the absence of a URL,
+     * conformance with the requirements of the Accessibility Specification is self- certified by the publisher.
+     * Alternatively, use codes 88-99 to provide extra details about certification. Use with other List 196 codes to
+     * indicate WCAG version and level, ARIA inclusion. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -90,8 +99,9 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Conforms with the requirements of ISO 32000-1:2008 plus ISO 14289-1:2014 - Portable Document Format for Universal
-     * Accessibility, for example, all content is tagged in logical reading order and correctly represents the
-     * document's semantic structure. Only for use in ONIX 3.0 or later
+     * Accessibility, including for example, ensuring all content is tagged in logical reading order and correctly
+     * represents the document's semantic structure. See https://pdfa.org/accessibility/. Only for use in ONIX 3.0 or
+     * later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -99,8 +109,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Conforms with the requirements of ISO 32000-2:2020 (PDF 2.0) plus ISO 14289-2:2024 - Portable Document Format for
-     * Universal Accessibility v2, for example, the revised semantic tagging, MathML, Unicode support and associated
-     * documents from PDF 2.0. Only for use in ONIX 3.0 or later
+     * Universal Accessibility v2, including for example, the revised semantic tagging, MathML, Unicode support and
+     * associated documents from PDF 2.0. See https://pdfa.org/accessibility/. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -109,8 +119,10 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     /**
      * Product has not yet been assessed for accessibility, or no or insufficient accessibility information is provided.
      * It should be treated as likely to be inaccessible (and also may not have been checked for hazards).
-     * &lt;ProductFormFeatureDescription&gt; may carry details of why the accessibility of the title is unknown. Only
-     * for use in ONIX 3.0 or later
+     * &lt;ProductFormFeatureDescription&gt; may carry details of why the accessibility of the title is unknown, or an
+     * Accessibility summary using code 00 may give further details. Include code 92 with latest Accessibility
+     * assessment date, where available, and code 99 (or &lt;ProductContact&gt;) for an accessibility contact. Only for
+     * use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -118,7 +130,9 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Known to lack significant features required for broad accessibility. Details of and reasons for limitations on
-     * accessibility can be given in &lt;ProductFormFeatureDescription&gt;. Only for use in ONIX 3.0 or later
+     * accessibility can be given in &lt;ProductFormFeatureDescription&gt;, or an Accessibility summary using code 00
+     * may give further details. Include code 92 with latest accessibility assessment date, and code 99 for an
+     * accessibility contact, if available. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -145,7 +159,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * Table of contents allows direct (eg hyperlinked) access to all levels of text organization above individual
      * paragraphs (ie to all chapters, sections and subsections that exist within the text), and to all tables, figures,
      * illustrations etc (non-textual items such as illustrations, tables, audio or video content may be directly
-     * accessible from the Table of contents, or from a similar List of illustrations, List of tables, etc)
+     * accessible from the Table of contents, or from a similar List of illustrations, List of tables, etc). For audio
+     * and audiovisual content, chapter, section and sub-section timings are provided in &lt;AVItem&gt;
      */
     Table_of_contents_navigation("11", "Table of contents navigation"),
 
@@ -165,64 +180,81 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * All or substantially all non-text content has short alternative (textual) descriptions, usually provided via alt
-     * attributes. Note this applies to normal images (eg photographs, charts and diagrams) and also to any embedded
-     * audio, video etc. Audio and video content should include alternative descriptions suitable for hearing-impaired
-     * as well as for visually-impaired readers. (Purely decorative non-text content can be ignored, but the
-     * accessibility of resources delivered via a network connection rather than as part of the e-publication package
-     * must be included)
+     * attributes, so that they can be presented in the form the reader needs - large text on screen, Braille, speech,
+     * simplified language or symbols. Note this applies to normal images (eg photographs, charts and diagrams) and also
+     * to any embedded audio, video etc. Audio and video content should include alternative descriptions suitable for
+     * hearing-impaired as well as for visually-impaired readers. (Purely decorative non-text content can be ignored,
+     * but the accessibility of resources delivered via a network connection rather than delivered as part of the
+     * e-publication package must be included). Should be used in association with relevant codes from list 81 or list
+     * 175, so it is clear what kind of non-text content is included in the product. In general, short alternative
+     * descriptions are intended as brief textual substitutes for images. The short alternative description should not
+     * repeat the image's caption, title or legend
      */
     Short_alternative_textual_descriptions("14", "Short alternative textual descriptions"),
 
     /**
-     * All or substantially all non-text content has full alternative (textual) descriptions. Note this applies to
-     * normal images (eg photographs, charts and diagrams) and also to any embedded audio, video etc. Audio and video
-     * content should include full alternative descriptions (eg audio-described video) and transcript, subtitles or
-     * captions (whether closed or open) suitable for hearing-impaired as well as for visually-impaired readers. (Purely
-     * decorative non-text content can be ignored, but the accessibility of resources delivered via a network connection
-     * rather than as part of the e-publication package must be included)
+     * Extended descriptions. All or substantially all non-text content has full alternative (textual) extended
+     * descriptions, so that they can be presented in the form the reader needs - large text on screen, Braille, speech,
+     * simplified language or symbols. Note this applies to normal images (eg photographs, charts and diagrams) and also
+     * to any embedded audio, video etc. Audio and video content should include full alternative descriptions (eg
+     * audio-described video) and transcript, subtitles or captions (whether closed or open) suitable for
+     * hearing-impaired as well as for visually-impaired readers. (Purely decorative non-text content can be ignored,
+     * but the accessibility of resources delivered via a network connection rather than delivered as part of the
+     * e-publication package must be included). Should be used in association with relevant codes from lists 81 or 175,
+     * so it is clear what kind of non-text content is included in the product. In general, full alternative
+     * descriptions are intended to describe the image and explain the editorial points that it illustrates in detail.
+     * The full extended description should not repeat the image's caption, title or legend, but should elaborate upon
+     * any provided short alt description
      */
     Full_alternative_textual_descriptions("15", "Full alternative textual descriptions"),
 
     /**
      * Where data visualizations are provided (eg graphs and charts), the underlying data is also available in
-     * non-graphical (usually tabular, textual) form
+     * non-graphical (usually tabular or textual) form. Tabular form involves organizing data into rows and columns,
+     * making it easier to compare and analyse different items. Textual form uses words and sentences to describe
+     * information, alongside or instead of a tabular presentation. Use with relevant codes from list 81
      */
     Visualized_data_also_available_as_non_graphical_data("16", "Visualized data also available as non-graphical data"),
 
     /**
      * Mathematical content such as equations is usable with assistive technology, through use of MathML. Semantic
-     * MathML is preferred but Presentational MathML is acceptable
+     * MathML is preferred but Presentational MathML is acceptable. Use with code 48 from list 81
      */
     Accessible_math_content_as_MathML("17", "Accessible math content as MathML"),
 
     /**
-     * Chemistry content such as chemical formulae is usable with assistive technology, through use of ChemML
+     * Chemistry content such as chemical formulae is usable with assistive technology, through use of ChemML. Use with
+     * code 47 from list 81
      */
     Accessible_chemistry_content_as_ChemML("18", "Accessible chemistry content as ChemML"),
 
     /**
      * For a reflowable e-publication, contains references to the page numbering of an equivalent printed product, page
-     * number navigation based on print-equivalent page numbers or digital-only static page breaks. Use
-     * &lt;RelatedProduct&gt; with relation code 13 to specify an identifier for the source of the page numbers
+     * number navigation based on print-equivalent page numbers or digital-only static page breaks, such as the
+     * doc-pagebreak role in ARIA or other page break markers. Use &lt;RelatedProduct&gt; with relation code 13 to
+     * specify an identifier for the product that is the source of the page numbers
      */
     Print_equivalent_page_numbering("19", "Print-equivalent page numbering"),
 
     /**
      * Text-synchronized pre-recorded audio narration (natural or synthesized voice) is included for substantially all
-     * textual matter, including all alternative descriptions, eg via a SMIL media overlay
+     * textual matter, including all alternative descriptions, eg via a SMIL media overlay. The product includes both
+     * text and audio renditions, and it includes sync information that allows them to be used simultaneously
      */
     Synchronized_pre_recorded_audio("20", "Synchronized pre-recorded audio"),
 
     /**
-     * Text-to-speech has been optimized through provision of PLS lexicons, SSML or CSS Speech synthesis hints or other
-     * speech synthesis markup languages or hinting
+     * Text-to-speech has been optimized through provision of PLS (Pronunciation Lexicon Specification) lexicons, SSML
+     * (Speech Synthesis Markup Language) or CSS Speech synthesis hints, or other speech synthesis markup languages or
+     * hinting
      */
     Text_to_speech_hinting_provided("21", "Text-to-speech hinting provided"),
 
     /**
      * The language of the text has been specified (eg via the HTML or XML lang attribute) to optimize text-to-speech
      * (and other alternative renderings), both at whole document level and, where appropriate, for individual words,
-     * phrases or passages in a different language
+     * phrases or passages in a different language. Language(s) used in the product should be specified using
+     * &lt;Language&gt;
      */
     Language_tagging_provided("22", "Language tagging provided"),
 
@@ -236,8 +268,10 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * For readers with color vision deficiency, use of color (eg in diagrams, graphs and charts, in prompts or on
-     * buttons inviting a response) is not the sole means of graphical distinction or of conveying information. Only for
-     * use in ONIX 3.0 or later
+     * buttons inviting a response) is not the sole means of graphical distinction or of conveying information, which
+     * means that color perception is not necessary to understand the content, and the content is not color-dependent.
+     * Use &lt;PrimaryContent&gt; and &lt;ProductContent&gt;, and relevant codes from list 81, to specify the types of
+     * content included in the product. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -245,8 +279,10 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
         "Use of color is not sole means of conveying information"),
 
     /**
-     * Body text is presented with a contrast ratio of at least 4.5:1 (or 3:1 for large / heading text). Only for use in
-     * ONIX 3.0 or later
+     * Body text is presented with a contrast ratio of at least 4.5:1 (or 3:1 for large / heading text), so the text can
+     * be read more easily by people with impaired vision. Use &lt;PrimaryContent&gt; and &lt;ProductContent&gt;, and
+     * relevant codes from list 81, to specify the types of content included in the product. Only for use in ONIX 3.0 or
+     * later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -257,7 +293,9 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * Foreground audio content (eg voice) is presented with no or low background noise (eg ambient sounds, music), at
      * least 20dB below the level of the foreground, or background noise can be switched off (eg via an alternative
      * audio track). Brief and occasional sound effects may be as loud as foreground voice so long as they are isolated
-     * from the foreground. Only for use in ONIX 3.0 or later
+     * (or isolatable) from the foreground, to ensure any speech is not disrupted. Detailed description of how the audio
+     * meets this requirement can be included in an accessibility addendum (see code 92). Only for use in ONIX 3.0 or
+     * later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -265,13 +303,12 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
         "Use of high contrast between foreground and background audio"),
 
     /**
-     * All or substantially all non-text content has full alternative descriptions as pre-recorded audio. Note this
-     * applies to normal images (eg photographs, charts and diagrams) and also to any embedded video etc. Video content
+     * All or substantially all video or moving image content has full description as pre-recorded audio. Video content
      * should include full alternative descriptions (eg audio-described video) and transcript, subtitles or captions
      * (whether closed or open) suitable for hearing-impaired as well as for visually-impaired readers. (Purely
      * decorative non-text content can be ignored, but the accessibility of resources delivered via a network connection
-     * rather than as part of the e-publication package must be included). For products that are primarily video, see
-     * Product form detail code V215. Only for use in ONIX 3.0 or later
+     * rather than delivered as part of the e-publication package must be included). For products that are primarily
+     * video, see Product form detail code V215. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -297,7 +334,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Where interactive content is included in the product, timing controls are provided (eg for speed, pause and
-     * resume, reset) and labelled to make their use clear. Only for use in ONIX 3.0 or later
+     * resume, reset) and labelled to make their use clear. All activities that have a timed interaction are adjustable
+     * so that all users have adequate time to complete tasks. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -312,14 +350,16 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     Landmark_navigation("32", "Landmark navigation"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Chemistry content such as chemical formulae is usable with assistive technology, through use of MathML. Use with
+     * code 47 from list 81. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Accessible_chemistry_content_as_MathML("34", "Accessible chemistry content (as MathML)"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Mathematical content such as equations is usable with assistive technology, through use of LaTeX. Use with code
+     * 48 from list 81. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -407,14 +447,15 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Textual description of mathematical content, either as an alternative description attached to an image of the
-     * content, or in addition to MathML or LaTeX. Only for use in ONIX 3.0 or later
+     * content, or in addition to MathML or LaTeX. Use with code 48 from list 81. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Described_math_content("53", "Described math content"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Chemistry content such as chemical formulae is usable with assistive technology, through use of laTeX. Use with
+     * code 47 from list 81. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -422,9 +463,11 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Digital product falls under European Accessibility Act exception for Micro-enterprises (as defined by current
-     * regulations). The product may not have to comply with requirements of the EAA if the publisher is a
+     * regulations). The product may not have to comply fully with requirements of the EAA if the publisher is a
      * micro-enterprise. &lt;ProductFormFeatureDescription&gt; may carry details justifying the exception claim. Use for
-     * example with code 09. Only for use in ONIX 3.0 or later
+     * example with code 09, if product is considered of limited accessibility, but include codes for other relevant
+     * features of the product that make it accessible to some, and include an Accessibility summary describing the
+     * accessibility features and limitations of the product. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -432,9 +475,11 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Digital product falls under European Accessibility Act exception for Disproportionate burden (as defined by
-     * current regulations). The product may not have to comply with requirements of the EAA if doing so would
+     * current regulations). The product may not have to comply fully with requirements of the EAA if doing so would
      * financially overburden the publisher. &lt;ProductFormFeatureDescription&gt; may carry details justifying the
-     * exception claim. Use for example with code 09. Only for use in ONIX 3.0 or later
+     * exception claim. Use for example with code 09, if product is considered of limited accessibility, but include
+     * codes for other relevant features of the product that make it accessible to some, and include an Accessibility
+     * summary describing the accessibility features and limitations of the product. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -442,9 +487,12 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * Digital product falls under European Accessibility Act exception for Fundamental alteration (as defined by
-     * current regulations). The product may not have to comply with requirements of the EAA if doing so requires a
-     * fundamental modification of the nature of the product or service. &lt;ProductFormFeatureDescription&gt; may carry
-     * details justifying the exception claim. Use for example with code 09. Only for use in ONIX 3.0 or later
+     * current regulations). The product may not have to comply fully with requirements of the EAA if doing so requires
+     * a fundamental modification of the nature of the product or service. &lt;ProductFormFeatureDescription&gt; may
+     * carry details justifying the exception claim. Use for examp with code 09, if product is considered of limited
+     * accessibility, but include codes for other relevant features of the product that make it accessible to some, and
+     * include an Accessibility summary describing the accessibility features and limitations of the product. Only for
+     * use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -594,13 +642,19 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
 
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the e-mail address for a contact at a 'trusted intermediary', to
-     * whom detailed questions about accessibility for this product may be directed
+     * whom detailed questions about accessibility for this product may be directed. This information is recommended
+     * where a title has some limitations to its accessibility or may present difficulties for some complex
+     * accessibility needs. This information can also be included using &lt;ProductContactRole&gt; and code 01 from list
+     * 198, where the publisher delegates all responsibility for accessibility queries to the trusted intermediary
      */
     Trusted_Intermediary_contact("98", "Trusted Intermediary contact"),
 
     /**
      * &lt;ProductFormFeatureDescription&gt; carries the e-mail address for a contact at the publisher to whom detailed
-     * questions about accessibility of this product may be directed
+     * questions about accessibility of this product may be directed. This information is recommended where a title has
+     * some limitations to its accessibility or may present difficulties for some complex accessibility needs. This
+     * information can also be included using &lt;ProductContactRole&gt; and code 01 from list 198, particularly if the
+     * publisher does not delegate responsibility to a trusted intermediary
      */
     Publisher_contact_for_further_accessibility_information("99",
         "Publisher contact for further accessibility information");

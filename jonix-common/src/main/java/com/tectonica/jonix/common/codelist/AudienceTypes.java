@@ -43,7 +43,7 @@ interface CodeList28 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist28">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist28">ONIX
  *      Codelist 28 in Reference Guide</a>
  */
 public enum AudienceTypes implements OnixCodelist, CodeList28 {
@@ -67,15 +67,14 @@ public enum AudienceTypes implements OnixCodelist, CodeList28 {
     /**
      * Kindergarten, pre-school, primary / elementary or secondary / high school education. Note 'secondary' includes
      * both level 2 and level 3 secondary education as defined in UNESCO's ISCED 2011 (see
-     * http://uis.unesco.org/en/topic/international-standard-classification-education-isced). An audience range should
-     * also be included
+     * https://www.uis.unesco.org/en/methods-and-tools/isced). An audience range should also be included
      */
     Primary_and_secondary_education("04", "Primary and secondary education"),
 
     /**
-     * Equivalent to UNESCO's ISCED Level 0 - see
-     * http://uis.unesco.org/en/topic/international-standard-classification-education-isced (note codes 11-14 are
-     * specific subsets of the Primary and secondary education audience, code 04). Only for use in ONIX 3.0 or later
+     * Equivalent to UNESCO's ISCED Level 0 - see https://www.uis.unesco.org/en/methods-and-tools/isced (note codes
+     * 11-14 are specific subsets of the Primary and secondary education audience, code 04). Only for use in ONIX 3.0 or
+     * later
      * <p>
      * JONIX adds: Not included in Onix2
      */

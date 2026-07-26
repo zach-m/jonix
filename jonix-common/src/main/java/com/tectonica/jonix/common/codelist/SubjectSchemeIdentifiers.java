@@ -43,7 +43,7 @@ interface CodeList27 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist27">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist27">ONIX
  *      Codelist 27 in Reference Guide</a>
  */
 public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
@@ -271,19 +271,19 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     ANELE_Materias("42", "ANELE Materias"),
 
     /**
-     * Codes for Norwegian 'utdanningsprogram' used in secondary education. See: http://www.udir.no/. (Formerly labelled
-     * 'Skolefag')
+     * Codes for Norwegian Educational program ('utdanningsprogram') used in secondary education. See
+     * https://www.udir.no/ and https://data.udir.no/kl06/v201906/utdanningsprogram
      */
-    Utdanningsprogram("43", "Utdanningsprogram"),
+    GREP_Utdanningsprogram("43", "GREP Utdanningsprogram"),
 
     /**
-     * Codes for Norwegian 'programomr&#229;de' used in secondary education. See http://www.udir.no/. (Formerly labelled
-     * 'Videreg&#229;ende' or 'Programfag')
+     * Codes for Norwegian educational Program area ('programomr&#229;de') used in secondary education. See
+     * https://www.udir.no/ and https://data.udir.no/kl06/v201906/programomraader
      */
-    Programomrade("44", "Programområde"),
+    GREP_Programomrade("44", "GREP Programområde"),
 
     /**
-     * Norwegian list of categories for books and other material used in education
+     * Bokbasen list of categories for books and other types of learning material used in education ('undervisning')
      */
     Undervisningsmateriell("45", "Undervisningsmateriell"),
 
@@ -362,9 +362,10 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist, CodeList27 {
     VdS_Bildungsmedien_Facher("59", "VdS Bildungsmedien Fächer"),
 
     /**
-     * Norwegian primary and secondary school subject categories (fagkoder), see http://www.udir.no/
+     * Codes for Norwegian educational subject categories ('fagkoder'), used in primary and secondary education. See
+     * https://www.udir.no/ and https://data.udir.no/kl06/v201906/fagkoder
      */
-    Fagkoder("60", "Fagkoder"),
+    GREP_Fagkoder("60", "GREP Fagkoder"),
 
     /**
      * Journal of Economic Literature classification scheme

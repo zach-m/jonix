@@ -43,14 +43,15 @@ interface CodeList81 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_73.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     /**
      * Readable text of the main content: this value is required, together with applicable &lt;ProductForm&gt; and
      * &lt;ProductFormDetail&gt; values, to designate an e-book or other digital or physical product whose primary
-     * content is text. Note 'text' is 'text-as-text', not 'text as an image' or images of text
+     * content is text. Note 'text' is 'text as text', not 'text as an image'. To indicate the accessibility of this
+     * text, this code should be used with relevant values from list 196
      */
     Text("10", "Text"),
 
@@ -107,37 +108,43 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Musical_notation("11", "Musical notation"),
 
     /**
-     * Includes any type of illustrations. Use only when no more detailed specification is provided
+     * Includes any type of illustrations. To indicate accessibility of the images, use with codes 14, 15, 16, 25, 26
+     * and other codes from list 196 as appropriate. Use only when no more detailed specification is provided
      */
     Still_images_graphics("07", "Still images / graphics"),
 
     /**
-     * Whether in a plate section / insert, or not
+     * Whether in a plate section / insert, or not. To indicate accessibility of the images, use with codes 14, 15, 16,
+     * 25, 26 and other codes from list 196 as appropriate
      */
     Photographs("18", "Photographs"),
 
     /**
-     * Including other 'mechanical' (ie non-photographic) illustrations
+     * Including other 'mechanical' (ie non-photographic) illustrations. To indicate accessibility of the images, use
+     * with codes 14, 15, 16,25, 26 and other codes from list 196 as appropriate
      */
     Figures_diagrams_charts_graphs("19", "Figures, diagrams, charts, graphs"),
 
     /**
      * Publication is enhanced with additional images or graphical content such as supplementary photographs that are
-     * not included in a primary or 'unenhanced' version
+     * not included in a primary or 'unenhanced' version. To indicate accessibility of the images, use with codes 14,
+     * 15, and other codes from list 196 as appropriate
      */
     Additional_images_graphics_not_part_of_main_work("20", "Additional images / graphics not part of main work"),
 
     Maps_and_or_other_cartographic_content("12", "Maps and / or other cartographic content"),
 
     /**
-     * Indicates that the publication contains chemical notations, formulae. Only for use in ONIX 3.0 or later
+     * Indicates that the publication contains chemical notations, formulae. To indicate accessibility of the images,
+     * use with codes 18, 34 or 54, and other codes from list 196 as appropriate. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Chemical_content("47", "Chemical content"),
 
     /**
-     * Indicates that the publication contains mathematical notation, equations, formulae. Only for use in ONIX 3.0 or
+     * Indicates that the publication contains mathematical notation, equations, formulae. To indicate accessibility of
+     * the images, use with codes 17, 35 or 53 and other codes from list 196 as appropriate. Only for use in ONIX 3.0 or
      * later
      * <p>
      * JONIX adds: Not included in Onix2
@@ -161,17 +168,43 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Assessment_material("42", "Assessment material"),
 
     /**
-     * Audio recording of a reading of a book or other text
+     * Audio recording of a reading of a book or other text - typically single voice. To indicate the accessibility of
+     * the audio, use with codes 11, 15, 27, 39, and other codes from list 196 as appropriate, and with code V212 from
+     * list 175 to indicate availability of a transcript
      */
     Audiobook("01", "Audiobook"),
 
     /**
-     * Audio recording of a drama or other spoken word performance
+     * Audio recording of a reading of a book or other text - typically two or multiple voices. Not dramatized: each
+     * voice reads a chapter or section written from that character's point of view. To indicate the accessibility of
+     * the audio, use with codes 11, 15, 27, 39 and other codes from list 196 as appropriate, and with code V212 from
+     * list 175 to indicate availability of a transcript
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Audiobook_dual("52", "Audiobook – dual"),
+
+    /**
+     * Audio recording of a reading of a book or other text - typically two or multiple voices. Not fully dramatized:
+     * each voice reads a chapter or section written from that character's point of view, but dialogue is 'performed' by
+     * alternating voices. To indicate the accessibility of the audio, use with codes 11, 15, 27, 39 and other codes
+     * from list 196 as appropriate, and with code V212 from list 175 to indicate availability of a transcript
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Audiobook_duet("53", "Audiobook – duet"),
+
+    /**
+     * Audio recording of a drama performed by a multi-voice cast, or other spoken word performance. To indicate the
+     * accessibility of the audio, use with codes 11, 15, 27, 39 and other codes from list 196 as appropriate, and with
+     * code V212 from list 175 to indicate availability of a transcript
      */
     Performance_spoken_word("02", "Performance – spoken word"),
 
     /**
-     * eg an interview, speech, lecture or commentary / discussion, not a 'reading' or 'performance')
+     * eg an interview, speech, lecture or commentary / discussion, not a 'reading' or 'performance'). To indicate the
+     * accessibility of the audio, use with codes 11, 15, 27, 39 and other codes from list 196 as appropriate, and with
+     * code V212 from list 175 to indicate availability of a transcript
      */
     Other_speech_content("13", "Other speech content"),
 
@@ -211,8 +244,9 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
     Promotional_audio_for_other_book_product("23", "Promotional audio for other book product"),
 
     /**
-     * Includes Film, video, animation etc. Use only when no more detailed specification is provided. Formerly 'Moving
-     * images'
+     * Includes film, video, animation etc, with or without audio. Use only when no more detailed specification is
+     * provided. To indicate the accessibility of the moving images and any accompanying audio, use with code 27, 28,
+     * and other codes from list 196, and codes V210, V211, V212, V213, V214 or V215 from list 175 as appropriate
      */
     Video("06", "Video"),
 
@@ -220,24 +254,28 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
 
     /**
      * Publication contains video material with no audio recording or narration (but may have music or textual
-     * subtitles) . Only for use in ONIX 3.0 or later
+     * subtitles). To indicate the accessibility of the moving images, use with code 28 and other codes from list 196.
+     * Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Video_content_without_audio("50", "Video content without audio"),
 
     /**
-     * Video recording of a drama or other performance, including musical performance
+     * Video recording of a drama or other performance, including musical performance. To indicate the accessibility of
+     * the moving images, use with code 28 and other codes from list 196
      */
     Performance_visual("27", "Performance – visual"),
 
     /**
-     * eg animated diagrams, charts, graphs or other illustrations (usually without sound)
+     * eg animated diagrams, charts, graphs or other illustrations (usually without sound). To indicate accessibility
+     * features, use with codes 14, 15, 16, 25, 26, 28 or other codes from list 196 or list 175 as appropriate
      */
     Animated_interactive_illustrations("24", "Animated / interactive illustrations"),
 
     /**
-     * eg cartoon, animatic or CGI animation (usually includes sound)
+     * eg cartoon, animatic or CGI animation (usually includes sound). To indicate accessibility features, use with code
+     * 28 from list 196, and codes V210, V211, V212, V213, V214 or V215 from list 175 as appropriate
      */
     Narrative_animation("25", "Narrative animation"),
 
