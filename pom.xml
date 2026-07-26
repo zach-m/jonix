@@ -151,7 +151,8 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>3.3.9</version>
+                                    <!-- 3.6.3 is the minimum required by maven-checkstyle-plugin 3.6.0 -->
+                                    <version>3.6.3</version>
                                 </requireMavenVersion>
                             </rules>
                         </configuration>
@@ -164,12 +165,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.6.0</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>9.3</version> <!-- when version changes, update IntelliJ.md -->
+                        <!-- NOTE: checkstyle.xml uses the javadoc token names introduced in CheckStyle 12.0.0,
+                             so this must stay >= 12.0.0, as should the version selected in the IntelliJ plugin.
+                             Also note that CheckStyle 12.x requires Java 17+, CheckStyle 13.x requires Java 21+ -->
+                        <version>13.8.0</version>
                     </dependency>
                 </dependencies>
                 <configuration>

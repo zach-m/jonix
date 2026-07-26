@@ -181,7 +181,8 @@
         <module name="JavadocTagContinuationIndentation"/>
         <module name="NonEmptyAtclauseDescription">
             <!-- we don't allow empty At-Clause for all except for @deprecated -->
-            <property name="javadocTokens" value="PARAM_LITERAL,RETURN_LITERAL,THROWS_LITERAL,EXCEPTION_LITERAL"/>
+            <property name="javadocTokens"
+                      value="PARAM_BLOCK_TAG,RETURN_BLOCK_TAG,THROWS_BLOCK_TAG,EXCEPTION_BLOCK_TAG"/>
         </module>
         <module name="SingleLineJavadoc">
             <property name="ignoreInlineTags" value="false"/>
