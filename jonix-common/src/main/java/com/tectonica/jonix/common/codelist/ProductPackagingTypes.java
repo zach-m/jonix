@@ -43,7 +43,7 @@ interface CodeList80 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist80">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist80">ONIX
  *      Codelist 80 in Reference Guide</a>
  */
 public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
@@ -53,7 +53,8 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
     No_outer_packaging("00", "No outer packaging"),
 
     /**
-     * Thin card or soft plastic sleeve, much less rigid than a slip case
+     * Thin card or soft plastic sleeve, much less rigid than a slip case, open at one end and covering the entire
+     * product, with or without a tuck-in flap or fastener. Essentially, an envelope
      */
     Slip_sleeve("01", "Slip-sleeve"),
 
@@ -64,12 +65,20 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
     Clamshell("02", "Clamshell"),
 
     /**
-     * Typical DVD-style packaging, sometimes known as an 'Amaray' case
+     * Typical DVD-style packaging made from non-brittle plastic, sometimes known as an 'Amaray' case or softbox
      */
     Keep_case("03", "Keep case"),
 
     /**
-     * Typical CD-style packaging
+     * Card or soft plastic sleeve, wrapping around four sides of the product but leaving two sides or ends uncovered.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Wraparound_sleeve("04", "Wraparound sleeve"),
+
+    /**
+     * Typical CD-style packaging, including CD-single and Slimcase packaging made from rigid, brittle plastic
      */
     Jewel_case("05", "Jewel case"),
 
@@ -88,8 +97,9 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
     Shrink_wrapped_biodegradable("08", "Shrink-wrapped (biodegradable)"),
 
     /**
-     * Individual item, items or set in card box with separate or hinged lid: not to be confused with the commonly-used
-     * 'boxed set' which is more likely to be packaged in a slip case
+     * Individual item, items or set in card box with separate or hinged lid, and with or without a transparent
+     * 'window': not to be confused with the commonly-used 'boxed set' which is more likely to be packaged in a slip
+     * case
      */
     In_box_with_lid("09", "In box (with lid)"),
 
@@ -128,12 +138,16 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
      */
     Long_square_package("16", "Long square package"),
 
+    /**
+     * Deprecated - use code 03 instead
+     */
     Softbox_for_DVD("17", "Softbox (for DVD)"),
 
     /**
-     * In pouch, eg teaching materials in a plastic bag or pouch
+     * In pouch or bag, typically of lightweight and flexible polyethylene or polypropylene, eg teaching materials in a
+     * plastic bag or pouch
      */
-    Pouch("18", "Pouch"),
+    Pouch_or_bag("18", "Pouch or bag"),
 
     /**
      * In duroplastic or other rigid plastic case, eg for a class set
@@ -168,8 +182,8 @@ public enum ProductPackagingTypes implements OnixCodelist, CodeList80 {
     In_tin("24", "In tin"),
 
     /**
-     * (ja: koguchi tome) Peelable sticker or tape sealing the foredge of a book to prevent pre-purchase reading of the
-     * content. Only for use in ONIX 3.0 or later
+     * (ja: koguchi tome) Peelable, often tamper-evident sticker or tape sealing the foredge of a book to prevent
+     * pre-purchase reading of the content. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

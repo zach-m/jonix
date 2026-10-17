@@ -43,7 +43,7 @@ interface CodeList139 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist139">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist139">ONIX
  *      Codelist 139 in Reference Guide</a>
  */
 public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
@@ -55,6 +55,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * Academic and Professional Book Center (HK)
      */
     AandP("AAP", "AandP"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Aanel("AAN", "Äänel"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -149,7 +156,7 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Barnes_and_Noble("BNO", "Barnes and Noble"),
 
     /**
-     * Only for use in ONIX 3.0 or later
+     * Only for use in ONIX 3.0 or later. Deprecated
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -282,6 +289,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Bookmate("BMA", "Bookmate"),
 
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Bookoutlet("BKO", "Bookoutlet"),
+
     Bookpeople("BKP", "Bookpeople"),
 
     /**
@@ -292,6 +306,8 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Books_A_Million("BKM", "Books-A-Million"),
 
     /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
      * JONIX adds: Not included in Onix2
      */
     Bookshop_org("BSO", "Bookshop.org"),
@@ -316,13 +332,6 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * Deprecated
      */
     British_Bookshops("BRT", "British Bookshops"),
-
-    /**
-     * Formerly BS Undervisning. Only for use in ONIX 3.0 or later
-     * <p>
-     * JONIX adds: Not included in Onix2
-     */
-    Lre("BSU", "Lære"),
 
     /**
      * Only for use in ONIX 3.0 or later
@@ -467,14 +476,14 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Ellibs_com("ELL", "Ellibs.com"),
+    Ellibs_university_libraries("ELM", "Ellibs university libraries"),
 
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Ellibs_university_libraries("ELM", "Ellibs university libraries"),
+    Ellibs_com("ELL", "Ellibs.com"),
 
     Empik("EMP", "Empik"),
 
@@ -550,6 +559,8 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Home_Depot("HMD", "Home Depot"),
 
     /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
      * JONIX adds: Not included in Onix2
      */
     Hoopla_Midwest_Tape("HOO", "Hoopla / Midwest Tape"),
@@ -650,6 +661,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Kortext("KOR", "Kortext"),
 
     Kroger("KRG", "Kroger"),
+
+    /**
+     * Formerly BS Undervisning. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Lre("BSU", "Lære"),
 
     /**
      * Only for use in ONIX 3.0 or later. Deprecated
@@ -935,6 +953,9 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
 
     Selfridges("SLF", "Selfridges"),
 
+    /**
+     * Deprecated
+     */
     Sequencity("SEQ", "Sequencity"),
 
     /**
@@ -989,6 +1010,13 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
+    Studentapan("STA", "Studentapan"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
     Suomalainen_Kirjakauppa("SKK", "Suomalainen Kirjakauppa"),
 
     /**
@@ -1012,16 +1040,16 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
      */
     Suuri_Suomalainen_Kirjakerho("SSK", "Suuri Suomalainen Kirjakerho"),
 
+    Target("TRG", "Target"),
+
+    Tesco("TES", "Tesco"),
+
     /**
      * Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Thalia("THA", "Thalia"),
-
-    Target("TRG", "Target"),
-
-    Tesco("TES", "Tesco"),
 
     /**
      * TikTok's in-app store. Only for use in ONIX 3.0 or later
@@ -1087,6 +1115,8 @@ public enum OnixRetailSalesOutletIdss implements OnixCodelist, CodeList139 {
     Woolworths("WLW", "Woolworths"),
 
     /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
      * JONIX adds: Not included in Onix2
      */
     XigXag("XIG", "XigXag"),

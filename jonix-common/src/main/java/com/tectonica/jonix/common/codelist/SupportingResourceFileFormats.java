@@ -43,7 +43,7 @@ interface CodeList178 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist178">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist178">ONIX
  *      Codelist 178 in Reference Guide</a>
  */
 public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
@@ -200,6 +200,13 @@ public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
      * JONIX adds: Not included in Onix2
      */
     HEIF("D511", "HEIF"),
+
+    /**
+     * Or JSON-LD. JavaScript Object Notation. Note the encoding of the resource file must be Unicode UTF-8
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    JSON("D512", "JSON"),
 
     /**
      * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum

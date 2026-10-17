@@ -43,7 +43,7 @@ interface CodeList154 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist154">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist154">ONIX
  *      Codelist 154 in Reference Guide</a>
  */
 public enum ContentAudiences implements OnixCodelist, CodeList154 {
@@ -116,7 +116,15 @@ public enum ContentAudiences implements OnixCodelist, CodeList154 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Teens("12", "Teens");
+    Teens("12", "Teens"),
+
+    /**
+     * Material not intended for display, but may be used (in addition to any less restricted text or resources) for AI
+     * training, GEO and RAG
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    LLM_training("13", "LLM training");
 
     public final String code;
     public final String description;

@@ -43,7 +43,7 @@ interface CodeList175 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist175">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
 public enum ProductFormDetails implements OnixCodelist, CodeList175 {
@@ -698,7 +698,8 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
 
     /**
      * Cellulose-based or similar non-woven material, which may be printed and may be embossed with an artificial cloth
-     * or leather-like texture, over boards. Use with &lt;ProductForm&gt; BB
+     * or leather-like texture, over boards. Use for example with &lt;ProductForm&gt; BB, to distinguish from B401, or
+     * with BE to specify the covers of a spiral-bound book. See also B400 (for self-covers) and B416 (for card covers)
      */
     Paper_over_boards("B402", "Paper over boards"),
 
@@ -790,9 +791,9 @@ public enum ProductFormDetails implements OnixCodelist, CodeList175 {
     Laminated_cover("B415", "Laminated cover"),
 
     /**
-     * With card cover (like a typical paperback). As distinct from a self-cover or more elaborate binding. Use for
-     * example with Product form BF, to indicate a pamphlet is bound within a card cover. See also B400 (for
-     * self-covers) and B418 (for distinct paper covers)
+     * With card cover (like a typical paperback). As distinct from a self-cover or more elaborate board binding. Use
+     * for example with Product forms BE or BF, to indicate a spiral-bound book or pamphlet is bound within a card
+     * cover. See also B400 (for self-covers) and B418 (for distinct paper covers), B401 or B402 (for board covers)
      */
     Card_cover("B416", "Card cover"),
 

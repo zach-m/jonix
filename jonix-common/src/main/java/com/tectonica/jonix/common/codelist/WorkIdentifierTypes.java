@@ -43,7 +43,7 @@ interface CodeList16 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist16">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist16">ONIX
  *      Codelist 16 in Reference Guide</a>
  */
 public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
@@ -87,7 +87,7 @@ public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
 
     /**
      * International Standard Audiovisual Number (17 or 26 characters - 16 or 24 hexadecimal digits, plus one or two
-     * alphanumeric check characters, and without spaces or hyphens)
+     * alphanumeric check characters, and without spaces or hyphens). Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

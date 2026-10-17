@@ -43,7 +43,7 @@ interface CodeList158 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist158">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
@@ -329,8 +329,8 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
     Cover_flap_image("51", "Cover flap image"),
 
     /**
-     * Image of any warning label or hazard warning text on product or packaging, eg as required for EU General or Toy
-     * Safety, or for battery safety purposes
+     * 2D image of any warning label or hazard warning text on or attached to product or packaging, eg as required for
+     * EU General or Toy Safety, or for battery safety purposes
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -357,6 +357,22 @@ public enum ResourceContentTypes implements OnixCodelist, CodeList158 {
      * JONIX adds: Not included in Onix2
      */
     Endpaper_deco_image("55", "Endpaper deco image"),
+
+    /**
+     * 2D image of warranty label on or attached to product or its packaging, eg EU GARAN label for purposes related to
+     * the EU's Directive on Empowering Consumers for the Green Transition (EmpCo). Use Resource feature Caption to name
+     * standardized label types (eg 'GARAN label')
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Image_of_warranty_label("58", "Image of warranty label"),
+
+    /**
+     * Data file specifically intended for use for AI training, GEO and RAG
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    LLM_training_data("60", "LLM training data"),
 
     /**
      * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.
