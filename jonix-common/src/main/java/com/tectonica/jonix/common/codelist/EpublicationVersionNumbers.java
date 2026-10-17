@@ -43,7 +43,7 @@ interface CodeList220 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist220">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist220">ONIX
  *      Codelist 220 in Reference Guide</a>
  */
 public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
@@ -80,6 +80,13 @@ public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
      * JONIX adds: Not included in Onix2
      */
     EPUB_3_3("101F", "EPUB 3.3"),
+
+    /**
+     * Use only with &lt;ProductFormDetail&gt; code E101
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EPUB_3_4("101G", "EPUB 3.4"),
 
     /**
      * Use only with &lt;ProductFormDetail&gt; E107 or E108

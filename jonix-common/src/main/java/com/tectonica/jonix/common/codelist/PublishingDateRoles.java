@@ -43,7 +43,7 @@ interface CodeList163 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist163">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
 public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
@@ -58,8 +58,9 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
     /**
      * If there is an embargo on retail sales (in the market) before a certain date, the date from which the embargo is
      * lifted and retail sales and fulfillment of pre-orders are permitted. (In some markets, this may be termed a
-     * 'strict on-sale date'.) In the absence of an embargo date, retail sales and pre-order fulfillment may begin as
-     * soon as stock is available to the retailer
+     * 'strict on-sale date'.) The embargo applies equally to previews, unless a separate preview embargo is also
+     * provided. In the absence of an embargo date, previews, retail sales and pre-order fulfillment may begin as soon
+     * as stock is available to the retailer
      */
     Sales_embargo_date("02", "Sales embargo date"),
 
@@ -213,7 +214,7 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
 
     /**
      * Where this is managed separately from the date of publication (code 01), for example for library use. Note,
-     * requires an explicit dateformat=&quot;05&quot; attribute (YYYY)
+     * requires an explicit dateformat code 05 attribute (YYYY)
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -236,7 +237,31 @@ public enum PublishingDateRoles implements OnixCodelist, CodeList163 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Library_embargo_date("39", "Library embargo date");
+    Library_embargo_date("39", "Library embargo date"),
+
+    /**
+     * The earliest date on which the book may be released from a distributor's or wholesaler's warehouse (ie an embargo
+     * on the expected availability date)
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Availability_embargo_date("40", "Availability embargo date"),
+
+    /**
+     * Date of submission of the completed manuscript to the publisher, prior to review. Typically for academic and
+     * scholarly publishing
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Manuscript_submission_date("41", "Manuscript submission date"),
+
+    /**
+     * Date of acceptance of the final completed manuscript by the publisher, after review but before final preparation
+     * for publication. Typically for academic and scholarly publishing
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Manuscript_accepted_date("42", "Manuscript accepted date");
 
     public final String code;
     public final String description;

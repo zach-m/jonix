@@ -30,8 +30,7 @@ import java.util.Optional;
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 184 (EU General Product Safety Regulation and Toy Safety
- * Directive hazard warning type)
+ * marker interface to assist in IDE navigation to code-list 184 (EU Product Safety and related regulations)
  */
 interface CodeList184 {
 }
@@ -39,16 +38,15 @@ interface CodeList184 {
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 184</b>
  * <p>
- * Description: EU General Product Safety Regulation and Toy Safety Directive hazard warning type
+ * Description: EU Product Safety and related regulations
  *
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist184">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist184">ONIX
  *      Codelist 184 in Reference Guide</a>
  */
-public enum EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes
-    implements OnixCodelist, CodeList184 {
+public enum EuProductSafetyAndRelatedRegulationss implements OnixCodelist, CodeList184 {
     /**
      * Use to provide positive indication that no warnings are applicable
      */
@@ -97,7 +95,7 @@ public enum EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTy
 
     /**
      * If specific alternative wording is carried in &lt;ProductFormFeatureDescription&gt;, this must be used in place
-     * of the default 'Conforms to EN71' text
+     * of the default 'Conforms to EN71' text. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -108,12 +106,31 @@ public enum EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTy
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Carries_UKCA_logo("09", "Carries ‘UKCA’ logo");
+    Carries_UKCA_logo("09", "Carries ‘UKCA’ logo"),
+
+    /**
+     * Declaration of Conformity for the product packaging available online (for PPWR purposes), typically as a PDF file
+     * or similar. &lt;ProductFormFeatureDescription&gt; must carry the URL of the document. Refers to packaging
+     * referenced in &lt;ProductPackaging&gt; or &lt;ProductForm&gt;. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Declaration_of_Conformity_for_product_packaging_available("10",
+        "Declaration of Conformity for product packaging available"),
+
+    /**
+     * Technical documentation (a data sheet or dossier that backs up the packaging DoC, see code 10) available online,
+     * typically as a PDF file or similar. &lt;ProductFormFeatureDescription&gt; must carry the URL of the document
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Technical_documentation_for_product_packaging_available("11",
+        "Technical documentation for product packaging available");
 
     public final String code;
     public final String description;
 
-    EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes(String code, String description) {
+    EuProductSafetyAndRelatedRegulationss(String code, String description) {
         this.code = code;
         this.description = description;
     }
@@ -128,16 +145,16 @@ public enum EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTy
         return description;
     }
 
-    private static volatile Map<String, EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes> map;
+    private static volatile Map<String, EuProductSafetyAndRelatedRegulationss> map;
 
-    private static Map<String, EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes> map() {
-        Map<String, EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes> result = map;
+    private static Map<String, EuProductSafetyAndRelatedRegulationss> map() {
+        Map<String, EuProductSafetyAndRelatedRegulationss> result = map;
         if (result == null) {
-            synchronized (EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes.class) {
+            synchronized (EuProductSafetyAndRelatedRegulationss.class) {
                 result = map;
                 if (result == null) {
                     result = new HashMap<>();
-                    for (EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes e : values()) {
+                    for (EuProductSafetyAndRelatedRegulationss e : values()) {
                         result.put(e.code, e);
                     }
                     map = result;
@@ -147,15 +164,14 @@ public enum EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTy
         return result;
     }
 
-    public static EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes byCode(String code) {
+    public static EuProductSafetyAndRelatedRegulationss byCode(String code) {
         if (code == null || code.isEmpty()) {
             return null;
         }
         return map().get(code);
     }
 
-    public static Optional<EuGeneralProductSafetyRegulationAndToySafetyDirectiveHazardWarningTypes>
-        byCodeOptional(String code) {
+    public static Optional<EuProductSafetyAndRelatedRegulationss> byCodeOptional(String code) {
         return Optional.ofNullable(byCode(code));
     }
 

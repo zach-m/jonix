@@ -43,7 +43,7 @@ interface CodeList198 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist198">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist198">ONIX
  *      Codelist 198 in Reference Guide</a>
  */
 public enum ProductContactRoles implements OnixCodelist, CodeList198 {
@@ -120,6 +120,14 @@ public enum ProductContactRoles implements OnixCodelist, CodeList198 {
      * JONIX adds: Not included in Onix2
      */
     Product_raw_materials_contact("11", "Product raw materials contact"),
+
+    /**
+     * Eg for Product Packaging and Waste Recycling (PPWR), Waste Electrical and Electronic Equipment (WEEE) and
+     * extended producer responsibility (EPR) purposes
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Packaging_recycling_waste_and_EPR_contact("12", "Packaging, recycling, waste and EPR contact"),
 
     /**
      * For general enquiries

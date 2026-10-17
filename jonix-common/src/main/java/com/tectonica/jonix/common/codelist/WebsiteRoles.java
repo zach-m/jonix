@@ -43,7 +43,7 @@ interface CodeList73 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist73">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
 public enum WebsiteRoles implements OnixCodelist, CodeList73 {
@@ -347,7 +347,7 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * name of the certification scheme, eg 'Human Authored' or 'Proudly Human certified'. &lt;WebsiteLink&gt; must link
      * directly to certification that the product or work is entirely human-created (within the specific limits of the
      * certification scheme, which may allow de minimis use of generative AI in initial ideation, research or
-     * spell-checking). Certified products should carry the certification scheme logo
+     * spell-checking). Certified products should carry the certification scheme logo. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -358,12 +358,21 @@ public enum WebsiteRoles implements OnixCodelist, CodeList73 {
      * Use within &lt;Contributor&gt; or &lt;Publisher&gt; as appropriate. &lt;WebsiteDescription&gt; should include
      * 'Publisher declaration of human authorship' or similar. &lt;WebsiteLink&gt; must link directly to a declaration
      * that the product or work is entirely human-created (with no more than de minimis use of generative AI in initial
-     * ideation, research or spell-checking)
+     * ideation, research or spell-checking). Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
     Link_to_first_party_declaration_of_absence_of_AI_generated_content("56",
-        "Link to first-party declaration of absence of AI-generated content");
+        "Link to first-party declaration of absence of AI-generated content"),
+
+    /**
+     * For example, a web page providing details of the packaging types used for transport purposes by an organization
+     * (this does not include packaging that is part of the product at retail, such as a slipcase or shrinkwrap, which
+     * should be listed using &lt;ProductForm&gt; or &lt;ProductPackaging&gt;). Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Organizations_website_for_packaging_details("57", "Organization’s website for packaging details");
 
     public final String code;
     public final String description;

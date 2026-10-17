@@ -43,7 +43,7 @@ interface CodeList44 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist44">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
 public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
@@ -309,7 +309,16 @@ public enum NameIdentifierTypes implements OnixCodelist, CodeList44 {
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Chinese_Participant_identifier("45", "Chinese Participant identifier");
+    Chinese_Participant_identifier("45", "Chinese Participant identifier"),
+
+    /**
+     * Note that a distinctive &lt;IDTypeName&gt; is required with EPR registration numbers, for example LUCID for
+     * Germany and CONAI for Italy. An organization may have many EPR registration numbers across multiple countries.
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    EPR_registration_number("46", "EPR registration number");
 
     public final String code;
     public final String description;

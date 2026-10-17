@@ -43,7 +43,7 @@ interface CodeList19 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist19">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
@@ -69,13 +69,13 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
 
     /**
      * Use for example with Contributor role code E07 'read by' for audio books with digital narration having a
-     * male-inflected tone. 'Brand name' of voice may be provided in &lt;AlternativeName&gt;
+     * male-inflected tone. Fictional 'brand name' of voice may be provided in &lt;AlternativeName&gt;
      */
     Synthesized_voice_male("05", "Synthesized voice – male"),
 
     /**
      * Use for example with Contributor role code E07 'read by' for audio books with digital narration having a
-     * female-inflected tone. 'Brand name' of voice may be provided in &lt;AlternativeName&gt;
+     * female-inflected tone. Fictional 'brand name' of voice may be provided in &lt;AlternativeName&gt;
      */
     Synthesized_voice_female("06", "Synthesized voice – female"),
 
@@ -86,8 +86,8 @@ public enum UnnamedPersonss implements OnixCodelist, CodeList19 {
 
     /**
      * Sometimes termed an 'Authorized Voice Replica'. Use for example with Contributor role code E07 'read by' for
-     * audio books with digital narration, and provide name of voice actor in &lt;AlternativeName&gt;. Only for use in
-     * ONIX 3.0 or later
+     * audio books with digital narration, and provide a real or professional name of the voice actor in
+     * &lt;AlternativeName&gt;. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

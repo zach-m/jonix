@@ -43,7 +43,7 @@ interface CodeList81 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist81">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
 public enum ProductContentTypes implements OnixCodelist, CodeList81 {
@@ -178,7 +178,7 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * Audio recording of a reading of a book or other text - typically two or multiple voices. Not dramatized: each
      * voice reads a chapter or section written from that character's point of view. To indicate the accessibility of
      * the audio, use with codes 11, 15, 27, 39 and other codes from list 196 as appropriate, and with code V212 from
-     * list 175 to indicate availability of a transcript
+     * list 175 to indicate availability of a transcript. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -188,7 +188,8 @@ public enum ProductContentTypes implements OnixCodelist, CodeList81 {
      * Audio recording of a reading of a book or other text - typically two or multiple voices. Not fully dramatized:
      * each voice reads a chapter or section written from that character's point of view, but dialogue is 'performed' by
      * alternating voices. To indicate the accessibility of the audio, use with codes 11, 15, 27, 39 and other codes
-     * from list 196 as appropriate, and with code V212 from list 175 to indicate availability of a transcript
+     * from list 196 as appropriate, and with code V212 from list 175 to indicate availability of a transcript. Only for
+     * use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

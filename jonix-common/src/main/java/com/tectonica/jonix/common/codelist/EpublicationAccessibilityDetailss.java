@@ -43,7 +43,7 @@ interface CodeList196 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist196">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
 public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196 {
@@ -54,7 +54,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * potential deficiencies. The summary does not remove the requirement for full structured accessibility data, but
      * should be considered a fallback option if more structured detail cannot be provided or used. Use code 92 for a
      * shorter accessibility summary that does NOT repeat information that is sent using codes. Both 00 and 92 can be
-     * included. Further detailed information may be provided in an external file using codes 94-96. Only for use in
+     * included.. Further detailed information may be provided in an external file using codes 94-96. Only for use in
      * ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
@@ -281,8 +281,8 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
     /**
      * Body text is presented with a contrast ratio of at least 4.5:1 (or 3:1 for large / heading text), so the text can
      * be read more easily by people with impaired vision. Use &lt;PrimaryContent&gt; and &lt;ProductContent&gt;, and
-     * relevant codes from list 81, to specify the types of content included in the product. Only for use in ONIX 3.0 or
-     * later
+     * relevant codes from list 81, to specify the types of content included in the product.. Only for use in ONIX 3.0
+     * or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
@@ -467,7 +467,7 @@ public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList1
      * micro-enterprise. &lt;ProductFormFeatureDescription&gt; may carry details justifying the exception claim. Use for
      * example with code 09, if product is considered of limited accessibility, but include codes for other relevant
      * features of the product that make it accessible to some, and include an Accessibility summary describing the
-     * accessibility features and limitations of the product. Only for use in ONIX 3.0 or later
+     * accessibility features and limitations of the product.. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */

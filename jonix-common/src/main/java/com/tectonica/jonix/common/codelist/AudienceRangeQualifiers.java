@@ -43,7 +43,7 @@ interface CodeList30 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist30">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist30">ONIX
  *      Codelist 30 in Reference Guide</a>
  */
 public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
@@ -166,12 +166,12 @@ public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30 {
     Detailed_French_educational_levels("34", "Detailed French educational levels"),
 
     /**
-     * Norwegian educational level for primary and secondary education. See https://www.udir.no/ and
-     * https://data.udir.no/kl06/v201906/aarstrinn/
+     * Norwegian educational level for primary and secondary education. Only for use in ONIX 3.0 or later. See
+     * https://www.udir.no/ and https://data.udir.no/kl06/v201906/aarstrinn/
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    GREP_Aarstrinn("35", "GREP Aarstrinn");
+    GREP_Arstrinn("35", "GREP Årstrinn");
 
     public final String code;
     public final String description;

@@ -43,67 +43,129 @@ interface CodeList99 {
  * @see <a href="https://www.editeur.org/14/Code-Lists/">About ONIX Codelists</a>
  * @see <a href="https://ns.editeur.org/onix/en/">ONIX online Codelist browser</a>
  * @see <a href=
- *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_74.html#codelist99">ONIX
+ *      "https://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_75.html#codelist99">ONIX
  *      Codelist 99 in Reference Guide</a>
  */
 public enum SpecialCoverMaterials implements OnixCodelist, CodeList99 {
-    /**
-     * Pigskin
-     */
-    Berkshire_leather("01", "Berkshire leather"),
+    Pigskin("26", "Pigskin"),
+
+    Goatskin("27", "Goatskin"),
 
     Calfskin("02", "Calfskin"),
 
-    /**
-     * Calf split or sheep split
-     */
-    French_Morocco("03", "French Morocco"),
+    Cowhide("13", "Cowhide"),
 
     /**
-     * Goatskin
+     * Or sheepskin. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Lambskin("30", "Lambskin"),
+
+    /**
+     * Vegetable-tanned goatskin
      */
     Morocco("04", "Morocco"),
-
-    Bonded_buffalo_grain("05", "Bonded buffalo grain"),
-
-    Bonded_calf_grain("06", "Bonded calf grain"),
-
-    Bonded_Cordova("07", "Bonded Cordova"),
-
-    Bonded_eelskin("08", "Bonded eelskin"),
-
-    Bonded_Ostraleg("09", "Bonded Ostraleg"),
-
-    Bonded_ostrich("10", "Bonded ostrich"),
-
-    Bonded_reptile_grain("11", "Bonded reptile grain"),
-
-    Bonded_leather("12", "Bonded leather"),
-
-    Cowhide("13", "Cowhide"),
 
     /**
      * Usually hagfish skin
      */
     Eelskin("14", "Eelskin"),
 
-    Kivar("15", "Kivar"),
+    /**
+     * Calf split or sheep split, textured to resembe goatskin
+     */
+    French_Morocco("03", "French Morocco"),
 
     /**
-     * An imitation leather binding material
+     * Calfskin leather, textured to resemble ostrich leg skin
+     */
+    Ostraleg("09", "Ostraleg"),
+
+    /**
+     * Pigskin, textured to resemble calfskin
+     */
+    Berkshire_leather("01", "Berkshire leather"),
+
+    /**
+     * Leather, (usually chromium-) tanned to feel smooth, soft and flexible
+     */
+    Softhide_leather("18", "Softhide leather"),
+
+    /**
+     * Leather binding material constructed from shredded leather fibers bonded with polyurethane or latex, textured to
+     * resemble real leather
+     */
+    Bonded_leather("12", "Bonded leather"),
+
+    Bonded_buffalo_grain("05", "Bonded buffalo grain"),
+
+    Bonded_calf_grain("06", "Bonded calf grain"),
+
+    /**
+     * Bonded leather, textured to resemble authentic Cordovan leather (a type of high-quality horsehide)
+     */
+    Bonded_Cordova("07", "Bonded Cordova"),
+
+    Bonded_eelskin("08", "Bonded eelskin"),
+
+    /**
+     * Bonded leather, textured to resemble ostrich leg grain
+     */
+    Bonded_ostrich("10", "Bonded ostrich"),
+
+    Bonded_reptile_grain("11", "Bonded reptile grain"),
+
+    /**
+     * An imitation made of any non-leather material
+     */
+    Imitation_leather("25", "Imitation leather"),
+
+    /**
+     * Imitation leather binding material, cellulose-based, coated in polyurethane or vinyl
      */
     Leatherflex("16", "Leatherflex"),
 
+    /**
+     * Proprietary imitation leather binding material, cellulose-based with latex, usually embossed / textured
+     */
+    Kivar("15", "Kivar"),
+
+    /**
+     * Proprietary imitation leather binding material, cellulose-based, usually embossed / textured
+     */
+    Guaflex_Skivertex("24", "Guaflex / Skivertex"),
+
+    /**
+     * Textile, linen or cotton. Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Cloth("31", "Cloth"),
+
+    /**
+     * Cloth binding material with a brushed pile surface texture
+     */
     Moleskin("17", "Moleskin"),
-
-    Softhide_leather("18", "Softhide leather"),
-
-    Metal("19", "Metal"),
 
     /**
      * (de: 'Samt')
      */
     Velvet("20", "Velvet"),
+
+    /**
+     * Only for use in ONIX 3.0 or later
+     * <p>
+     * JONIX adds: Not included in Onix2
+     */
+    Padded_or_quilted_fabric("29", "Padded or quilted fabric"),
+
+    /**
+     * Proprietary imitation cloth binding material, cellulose-based, usually embossed / textured
+     */
+    Geltex_Wibalin("23", "Géltex / Wibalin"),
+
+    Metal("19", "Metal"),
 
     /**
      * (es: 'n&#225;car')
@@ -113,37 +175,11 @@ public enum SpecialCoverMaterials implements OnixCodelist, CodeList99 {
     Papyrus("22", "Papyrus"),
 
     /**
-     * Proprietary imitation cloth binding material, cellulose-based, usually embossed / textured
-     */
-    Geltex_Wibalin("23", "Géltex / Wibalin"),
-
-    /**
-     * Proprietary imitation leather binding material, cellulose-based, usually embossed / textured
-     */
-    Guaflex_Skivertex("24", "Guaflex / Skivertex"),
-
-    /**
-     * An imitation made of any non-leather material
-     */
-    Imitation_leather("25", "Imitation leather"),
-
-    Pigskin("26", "Pigskin"),
-
-    Goatskin("27", "Goatskin"),
-
-    /**
      * Smooth or textured synthetic rubber. Only for use in ONIX 3.0 or later
      * <p>
      * JONIX adds: Not included in Onix2
      */
-    Rubber("28", "Rubber"),
-
-    /**
-     * Only for use in ONIX 3.0 or later
-     * <p>
-     * JONIX adds: Not included in Onix2
-     */
-    Padded_or_quilted_fabric("29", "Padded or quilted fabric");
+    Rubber("28", "Rubber");
 
     public final String code;
     public final String description;
