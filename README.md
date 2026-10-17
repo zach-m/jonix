@@ -22,8 +22,8 @@ The [Jonix Object Model](https://zach-m.github.io/jonix/jonix.common/com/tectoni
 
 | Maven Version     | Onix version | Codelist Issue |
 | ----------------- | ------------ | -------------- |
-| `2026-07`         | 3.1.3        | 74             |
-| `2026-07-onix308` | 3.0.8        | 74             |
+| `2026-10`         | 3.1.3        | 75             |
+| `2026-10-onix308` | 3.0.8        | 75             |
 
 API documentation for latest release can be found [here](https://zach-m.github.io/jonix).
 
@@ -42,6 +42,8 @@ Jonix features long backward compatibility:
 
 | Maven Version         | Onix version | Codelist Issue |
 | --------------------- | ------------ | -------------- |
+| `2026-07`             | 3.1.3        | 74             |
+| `2026-07-onix308`     | 3.0.8        | 74             |
 | `2026-04`             | 3.1.3        | 73             |
 | `2026-04-onix308`     | 3.0.8        | 73             |
 | `2026-01`             | 3.1.2        | 72             |
@@ -80,7 +82,7 @@ Maven
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2026-07</version>
+    <version>2026-10</version>
 </dependency>
 ```
 
@@ -90,7 +92,7 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 <dependency>
     <groupId>com.tectonica</groupId>
     <artifactId>jonix</artifactId>
-    <version>2026-07-onix308</version>
+    <version>2026-10-onix308</version>
 </dependency>
 ```
 
@@ -99,7 +101,7 @@ Or, if you are NOT ready to switch to ONIX version `3.1`, use the latest `3.0` i
 To build locally from source:
 
 ```shell
-# verify requirements: Maven-version >= 3.3.9  &&  JDK-version >= 9
+# verify requirements: Maven-version >= 3.6.3  &&  JDK-version >= 9
 mvn -version
 
 # clone the repository
